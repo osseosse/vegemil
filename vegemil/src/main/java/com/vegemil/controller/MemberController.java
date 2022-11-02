@@ -127,23 +127,24 @@ public class MemberController extends UiUtils {
 			
 			boolean isRegistered = memberService.registerMember(member);
 			if (isRegistered == false) {
-				out.println("<script>alert('회원 가입 실패'); history.go(-1);</script>");
+				out.println("<script>alert('이미 가입된 회원입니다.'); history.go(-1);</script>");
 				out.flush();
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 			}
 			model.addAttribute("member", member);
 			
 		} catch (DataAccessException e) {
 			out.println("<script>alert('데이터베이스 처리 과정에 문제가 발생하였습니다.'); history.back();</script>");
 			out.flush();
-			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/member/list", Method.GET, null, model);
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/member/agreement", Method.GET, null, model);
 
 		} catch (Exception e) {
 			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
 			out.flush();
-			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/member/list", Method.GET, null, model);
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/member/agreement", Method.GET, null, model);
 		}
 
-		return "member/joinConfirm";
+		return "member/joinOk";
 	}
 	
 	@GetMapping(value = "/member/login")
@@ -156,15 +157,15 @@ public class MemberController extends UiUtils {
 	}
 	
 	@GetMapping(value = "/member/detail")
-	public String openMemberDetail(@ModelAttribute("params") MemberDTO params, @RequestParam(value = "sTh", required = false) String emailAddr, Model model, HttpServletResponse response) throws Exception {
+	public String openMemberDetail(@ModelAttribute("params") MemberDTO params, @RequestParam(value = "mId", required = false) String mId, Model model, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		if (emailAddr == null) {
+		if (mId == null) {
 			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
 			out.flush();
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "member/memberList", Method.GET, null, model);
 		}
-		MemberDTO member = memberService.loadUserByUsername(emailAddr);
+		MemberDTO member = memberService.loadUserByUsername(mId);
 		if (member == null) {
 			out.println("<script>alert('이미 종료된 채용입니다.'); history.go(-1);</script>");
 			out.flush();

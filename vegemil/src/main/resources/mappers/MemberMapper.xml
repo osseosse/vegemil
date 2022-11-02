@@ -21,6 +21,7 @@
 	   m_logincount,
 	   m_ip,
 	   m_active,
+	   m_auth,
 	   m_leavedate,
 	   m_leavememo,
 	   m_cybermonitor,
@@ -43,6 +44,7 @@
 		INSERT INTO M_Member (
 		   m_id,
 		   m_pwd,
+		   m_auth,
 		   m_name,
 		   m_year,
 		   m_sex,
@@ -65,6 +67,7 @@
 		) VALUES (
 		   #{mId},
 		   #{mPwd},
+		   #{mAuth},
 		   #{mName},
 		   #{mYear},
 		   #{mSex},
@@ -85,6 +88,9 @@
 		   '0',
 		   #{mDi}
 		)
+		<selectKey keyProperty="mIdx" keyColumn="m_idx" resultType="long" >
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 
 	<select id="overlappedID" parameterType="com.vegemil.domain.MemberDTO" resultType="int">

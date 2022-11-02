@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             	//.antMatchers("/mypage/qna").permitAll()
                 //.antMatchers("/member/**").hasAuthority("USER") // user 권한의 유저만  접근가능
                 //.antMatchers("/application/**").hasAuthority("USER") // user 권한의 유저만  접근가능
-                //.antMatchers("/mypage/**").hasAuthority("USER") // user 권한의 유저만  접근가능
+                .antMatchers("/mypage/**").hasAuthority("USER") // user 권한의 유저만  접근가능
                 //.antMatchers("/recruit/join", "/recruit/register").hasAuthority("USER") // user 권한의 유저만  접근가능
                 .antMatchers("/**").permitAll()
             .anyRequest()

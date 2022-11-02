@@ -79,9 +79,9 @@ public class MemberService implements UserDetailsService  {
 	}
 	
 	@Override
-    public MemberDTO loadUserByUsername(String emailAddr) throws UsernameNotFoundException {
+    public MemberDTO loadUserByUsername(String mId) throws UsernameNotFoundException {
         //여기서 받은 유저 패스워드와 비교하여 로그인 인증
-		MemberDTO member = memberMapper.getMemberAccount(emailAddr);
+		MemberDTO member = memberMapper.getMemberAccount(mId);
         if (member == null){
             throw new UsernameNotFoundException("User not authorized.");
         }

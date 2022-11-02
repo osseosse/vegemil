@@ -114,10 +114,10 @@ function btnAvtive() {
 	&& $.trim(idDuplicate) == '1'
 	&& $.trim(sPw1).length > 1
 	&& $.trim(sPw2).length > 1
-	&& $("input:radio[name='smsAgree']").is(":checked") == true
+	&& $("input:radio[name='mSmssend']").is(":checked") == true
 	&& $.trim(sAddr1).length > 1
 	&& $.trim(sAddr2).length > 1
-	&& $("input:radio[name='emailAgree']").is(":checked") == true
+	&& $("input:radio[name='mEmailsend']").is(":checked") == true
 	&& $.trim(sEmail).length > 1) 
 	{
 		$("#joinBtn").attr("disabled", false); //해제
@@ -152,13 +152,13 @@ $('#mId').keyup(function () {
 
 });
 
-$("input[name='smsAgree']:radio").change(function () {
+$("input[name='mSmssend']:radio").change(function () {
 
 	btnAvtive();
 	
 });
 
-$("input[name='emailAgree']:radio").change(function () {
+$("input[name='mEmailsend']:radio").change(function () {
 
 	btnAvtive();
 	

@@ -16,7 +16,7 @@ public interface MemberMapper {
 	
 	public int activeMember(MemberDTO params);
 
-	public MemberDTO getMemberAccount(String emailAddr);
+	public MemberDTO getMemberAccount(String mId);
 
 	public int updateMemPwd(MemberDTO params);
 
