@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.QnaMapper">
+
+	<sql id="qnaColumns">
+		  q_id
+		, mem_no
+		, r_title
+		, r_content
+		, r_company
+		, r_delete_yn
+		, DATE_FORMAT(r_insert_date,'%Y-%m') as r_insert_date
+		, DATE_FORMAT(r_update_date,'%Y-%m') as r_update_date
+		, DATE_FORMAT(r_delete_date,'%Y-%m') as r_delete_date
+		, r_answer_yn
+		, r_answer
+		, r_answer_email
+		, r_answer_tel
+		, r_email
+		, r_phone_no
+		, r_agree
+		, DATE_FORMAT(r_answer_date,'%Y-%m') as r_answer_date
+	</sql>
+
+	<insert id="insertQna" parameterType="com.vegemil.domain.QnaDTO">
+		INSERT INTO r_recruit_qna (
+			  mem_no
+			, r_title
+			, r_content
+			, r_company
+			, r_email
+			, r_phone_no
+			, r_agree
+			, r_insert_date
+			, r_update_date
+			, r_delete_yn
+		) VALUES (
+			  #{memNo}
+			, #{rTitle}
+			, #{rContent}
+			, #{rCompany}
+			, #{rEmail}
+			, #{rPhoneNo}
+			, #{rAgree}
+			, NOW()
+			, NOW()
+			, 'N'
+		)
+	</insert>
+
+	<select id="selectQnaDetail" parameterType="long" resultType="com.vegemil.domain.QnaDTO">
+		SELECT
+			<include refid="qnaColumns" />
+		FROM
+			r_recruit_qna
+		WHERE
+			q_id = #{qId} and mem_no = #{memNo}
+	</select>
+
+	<update id="updateQna" parameterType="com.vegemil.domain.QnaDTO">
+		UPDATE r_recruit_qna
+		SET
+			  r_update_date = NOW()
+			, r_title = #{rTitle}
+			, r_company = #{rCompany}
+			, r_content = #{rContent}
+		WHERE
+			q_id = #{qId} and mem_no = #{memNo}
+	</update>
+
+	<update id="deleteQna" parameterType="long">
+		UPDATE r_recruit_qna
+		SET
+			  r_delete_yn = 'Y'
+			, r_delete_date = NOW()
+		WHERE
+			q_id = #{qId} and mem_no = #{memNo}
+	</update>
+
+	<select id="selectQnaList" parameterType="long" resultType="com.vegemil.domain.QnaDTO">
+		SELECT
+			<include refid="qnaColumns" />
+		FROM
+			r_recruit_qna
+		WHERE
+			r_delete_yn = 'N'
+		AND
+			mem_no = #{memNo}
+		ORDER BY
+			r_insert_date DESC
+	</select>
+
+	<select id="selectQnaTotalCount" parameterType="com.vegemil.domain.QnaDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			r_recruit_qna
+		WHERE
+			mem_no = #{memNo}
+	</select>
+
+</mapper>

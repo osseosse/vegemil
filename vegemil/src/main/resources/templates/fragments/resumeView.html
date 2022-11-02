@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- ================================  Popup > 마이페이지 > 보기 ================================ -->
+<div th:id="pop_view" class="pop_wrap" style="display:none;" th:fragment="resumeFragment">
+	<div class="popBasePW" cellspacing="0"  summary="타이틀">
+		<div class="text-center mb60"><p class="f23 fw600" th:text="${resume.setupTitle}"></p></div>
+		<p class="btn_pop_close"><a href="#pop_view"><img th:src="@{/img/btn_popClose.png}" alt="닫기" /></a></p>
+		<div class="viewBox">
+			<p class="f18 fw600">지원부문</p>
+			<ul class="divide2">
+				<li><span class="gray3">지원회사</span>
+					<span class="sublist" th:if="${resume.joinCompany} != null and ${resume.joinCompany} != ''" th:text="${resume.joinCompany}"></span>
+					<span class="sublist" th:if="${resume.joinField1} != null and ${resume.joinField1} != ''" th:text="${resume.joinField1}"></span>
+					<span class="sublist" th:if="${resume.joinArea1} != null and ${resume.joinArea1} != ''" th:text="${resume.joinArea1}"></span></li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">인적사항</p>
+			<ul class="divide30">
+				<li>
+					<img th:if="*{resume.photo != null and resume.photo != ''}" th:src="|@{/recruit/img/}*{resume.photo}|" />
+					<img th:unless="*{resume.photo != null and resume.photo != ''}" th:src="@{/img/photo_sample.jpg}"/>
+				</li>
+			</ul>
+			<ul class="divide70 divide2">
+				<li><span class="gray3">성명</span>
+					<span class="sublist" th:if="${member.memName} != null and ${member.memName} != ''" th:text="${member.memName}"></span>
+					<span class="sublist" th:if="${resume.nameEng} != null and ${resume.nameEng} != ''" th:text="${resume.nameEng}"></span>
+					<span class="sublist" th:if="${resume.nameHan} != null and ${resume.nameHan} != ''" th:text="${resume.nameHan}"></span></li>
+				<li><span class="gray3">생년월일</span>
+					<span class="sublist" th:if="${member.birthday} != null and ${member.birthday} != ''" th:text="${member.birthday}"></span></li>
+				<li><span class="gray3">성별</span>
+					<span class="sublist" th:if="${resume.sex} != null and ${resume.sex} != ''" th:text="${#strings.equals( resume.sex, '1' ) ? '남' : '여'}"></span></li>
+				<li><span class="gray3">주소</span>
+					<span class="sublist" th:if="${resume.addr11} != null and ${resume.addr11} != ''" th:text="|${resume.addr11} ${resume.addr12}"></span></li>
+				<li><span class="gray3">휴대전화</span>
+					<span class="sublist" th:if="${member.phoneNo} != null and ${member.phoneNo} != ''" th:text="${member.phoneNo}"></span></li>
+				<li><span class="gray3">이메일</span>
+					<span class="sublist" th:if="${member.emailAddr} != null and ${member.emailAddr} != ''" th:text="${member.emailAddr}"></span></li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">가족사항</p>
+			<ul class="divide4 ">
+				<li th:if="${resume.famCount} == '1'
+						or ${resume.famCount} == '2'
+						or ${resume.famCount} == '3'
+						or ${resume.famCount} == '4'">
+					<span class="gray3" th:if="${resume.famCon1} != null" th:text="${resume.famCon1}"></span>
+					<span class="sublist" th:if="${resume.famName1} != null" th:text="${resume.famName1}"></span>
+					<span class="sublist" th:if="${resume.famAge1} != null" th:text="|${resume.famAge1}세|"></span>
+				</li>
+				<li th:if="${resume.famCount} == '2'
+						or ${resume.famCount} == '3'
+						or ${resume.famCount} == '4'">
+					<span class="gray3" th:text="${resume.famCon2}"></span>
+					<span class="sublist" th:text="${resume.famName2}"></span>
+					<span class="sublist" th:text="|${resume.famAge2}세|"></span>
+				</li>
+				<li th:if="${resume.famCount} == '3'
+						or ${resume.famCount} == '4'">
+					<span class="gray3" th:text="${resume.famCon3}"></span>
+					<span class="sublist" th:text="${resume.famName3}"></span>
+					<span class="sublist" th:text="|${resume.famAge3}세|"></span>
+				</li>
+				<li th:if="${resume.famCount} == '4'">
+					<span class="gray3" th:text="${resume.famCon4}"></span>
+					<span class="sublist" th:text="${resume.famName4}"></span>
+					<span class="sublist" th:text="|${resume.famAge4}세|"></span>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">개인신상 및 기타</p>
+			<ul class="divide2 ">
+				<li>
+					<span class="gray3 w100">보훈대상여부</span>
+					<span th:if="${resume.bohun} != null and ${resume.bohun} != ''" th:text="${#strings.equals( resume.bohun, '1' ) ? '대상' : '비대상'}"></span>
+				</li>
+				<li>
+					<span class="gray3 w100">보훈대상번호</span>
+					<span th:if="${resume.bohunNo} != null and ${resume.bohunNo} != ''" th:text="${resume.bohunNo}"></span>
+				</li>
+				<li>
+					<span class="gray3 w100">장애여부</span>
+					<span th:if="${resume.handicap} != null and ${resume.handicap} != ''" th:text="${#strings.equals( resume.handicap, '1' ) ? '대상' : '비대상'}"></span>
+				</li>
+				<li>
+					<span class="gray3 w100">병역사항</span>
+					<span th:if="${resume.milClass} != null and ${resume.milClass} != ''" th:text="${resume.milClass}"></span>
+				</li>
+				<li><span class="gray3 w100">병과</span><span th:if="${resume.milType} != null and ${resume.milType} != ''" th:text="${resume.milType}"></span></li>
+				<li><span class="gray3 w100">계급</span><span th:if="${resume.milLv} != null and ${resume.milLv} != ''" th:text="${resume.milLv}"></span></li>
+				<li>
+					<span class="gray3 w100">복무기간</span>
+					<span th:if="${resume.milSDate} != null and ${resume.milEdate} != null" th:text="|${resume.milSDate} ~ ${resume.milEdate}|"></span>
+				</li>
+				<li><span class="gray3 w100">제대구분</span><span th:if="${resume.milTicket} != null and ${resume.milTicket} != ''" th:text="${resume.milTicket}"></span></li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">학력정보</p>
+			<ul class="divide1">
+				<li th:if="*{resume.schName1 != null and resume.schName1 != ''}">
+					<dl>
+						<dt>
+							<span class="gray3">고등학교</span>
+						</dt>
+						<dd>
+							<span class="sublist" th:if="${resume.schGrad1} != null" th:text="${resume.schGrad1}"></span>
+							<span class="sublist" th:if="${resume.schName1} != null" th:text="${resume.schName1}"></span>
+							<span class="sublist" th:if="${resume.schSite1} != null" th:text="${resume.schSite1}"></span>
+							<span class="sublist" th:if="${resume.schAdmis1} != null" th:text="${resume.schAdmis1}"></span>
+							<span class="sublist" th:if="${resume.schNight1} != null" th:text="${resume.schNight1}"></span>
+							<span class="sublist" th:if="${resume.schEnterYm1} != null and ${resume.schGradYm1} != null" th:text="|${resume.schEnterYm1} ~ ${resume.schGradYm1}|"></span>
+						</dd><br class="clear">
+					</dl>			
+				</li>
+				<li th:if="*{resume.schName2 != null and resume.schName2 != ''}">
+					<dl>
+						<dt>
+							<span class="gray3">전문대학</span>
+						</dt>
+						<dd>
+							<span class="sublist" th:text="${resume.schGrad2}"></span>
+							<span class="sublist" th:text="${resume.schName2}"></span>
+							<span class="sublist" th:text="${resume.schSite2}"></span>
+							<span class="sublist" th:text="${resume.schMajor2}"></span>
+							<span class="sublist" th:text="${resume.schNight2}"></span>
+							<span class="sublist" th:text="|${resume.schEnterYm2} ~ ${resume.schGradYm2}|"></span>
+							<span class="sublist" th:text="|${resume.schPointEvg2}/4.5|"></span>
+						</dd>
+					</dl>
+				</li>
+				<li th:if="*{resume.schName3 != null and resume.schName3 != ''}">
+					<dl>
+						<dt>
+							<span class="gray3">대학교</span>
+						</dt>
+						<dd>
+							<!-- <span class="sublist">편입</span>  -->
+							<span class="sublist" th:text="${resume.schGrad3}"></span>
+							<span class="sublist" th:text="${resume.schName3}"></span>
+							<span class="sublist" th:text="${resume.schSite3}"></span>
+							<span class="sublist" th:text="${resume.schMajor3}"></span>
+							<span class="sublist" th:text="${resume.schNight3}"></span>
+							<span class="sublist" th:text="|${resume.schEnterYm3} ~ ${resume.schGradYm3}|"></span>
+							<span class="sublist" th:text="|${resume.schPointEvg3}/4.5|"></span>
+							<span class="sublist" th:if="${resume.schSubMajor3} != null" th:text="|(부)${resume.schSubMajor3}|"></span>
+						</dd>
+					</dl>
+				</li>
+				<li th:if="*{resume.schName4 != null and resume.schName4 != ''}">
+					<dl>
+						<dt>
+							<span class="gray3">석사</span>
+						</dt>
+						<dd>
+							<!-- <span class="sublist">편입</span>  -->
+							<span class="sublist" th:text="${resume.schGrad4}"></span>
+							<span class="sublist" th:text="${resume.schName4}"></span>
+							<span class="sublist" th:text="${resume.schSite4}"></span>
+							<span class="sublist" th:text="${resume.schMajor4}"></span>
+							<span class="sublist" th:text="${resume.schNight4}"></span>
+							<span class="sublist" th:text="|${resume.schEnterYm4} ~ ${resume.schGradYm4}|"></span>
+							<span class="sublist" th:text="|${resume.schPointEvg4}/4.5|"></span>
+						</dd>
+					</dl>
+				</li>
+				<li th:if="*{resume.schName5 != null and resume.schName5 != ''}">
+					<dl>
+						<dt>
+							<span class="gray3">박사</span>
+						</dt>
+						<dd>
+							<!-- <span class="sublist">편입</span>  -->
+							<span class="sublist" th:text="${resume.schGrad5}"></span>
+							<span class="sublist" th:text="${resume.schName5}"></span>
+							<span class="sublist" th:text="${resume.schSite5}"></span>
+							<span class="sublist" th:text="${resume.schMajor5}"></span>
+							<span class="sublist" th:text="${resume.schNight5}"></span>
+							<span class="sublist" th:text="|${resume.schEnterYm5} ~ ${resume.schGradYm5}|"></span>
+							<span class="sublist" th:text="|${resume.schPointEvg5}/4.5|"></span>
+						</dd>
+					</dl>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">외국어사항</p>
+			<ul class="divide1 ">
+				<li th:if="${resume.langCount} == '1'
+						or ${resume.langCount} == '2'
+						or ${resume.langCount} == '3'
+						or ${resume.langCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:if="${resume.langName1} != null" th:text="${resume.langName1}"></span>
+					<span class="sublist" th:if="${resume.langLicName1} != null" th:text="${resume.langLicName1}"></span>
+					<span class="sublist" th:if="${resume.langPoint1} != null" th:text="${resume.langPoint1}"></span>
+					<span class="sublist" th:if="${resume.langLv1} != null" th:text="${resume.langLv1}"></span>
+					<span class="sublist" th:if="${resume.langLicNum1} != null" th:text="${resume.langLicNum1}"></span>
+					<span class="sublist" th:if="${resume.langGet1} != null" th:text="${resume.langGet1}"></span>
+					<span class="sublist" th:if="${resume.langTalk1} != null" th:text="|회화 ${resume.langTalk1}|"></span>
+					<span class="sublist" th:if="${resume.langMake1} != null" th:text="|작문 ${resume.langMake1}|"></span>
+					<span class="sublist" th:if="${resume.langRead1} != null" th:text="|독해 ${resume.langRead1}|"></span>
+				</li>
+				<li th:if="${resume.langCount} == '2'
+						or ${resume.langCount} == '3'
+						or ${resume.langCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.langName2}"></span>
+					<span class="sublist" th:text="${resume.langLicName2}"></span>
+					<span class="sublist" th:text="${resume.langPoint2}"></span>
+					<span class="sublist" th:text="${resume.langLv2}"></span>
+					<span class="sublist" th:text="${resume.langLicNum2}"></span>
+					<span class="sublist" th:text="${resume.langGet2}"></span>
+					<span class="sublist" th:text="|회화 ${resume.langTalk2}|"></span>
+					<span class="sublist" th:text="|작문 ${resume.langMake2}|"></span>
+					<span class="sublist" th:text="|독해 ${resume.langRead2}|"></span>
+				</li>
+				<li th:if="${resume.langCount} == '3'
+						or ${resume.langCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.langName3}"></span>
+					<span class="sublist" th:text="${resume.langLicName3}"></span>
+					<span class="sublist" th:text="${resume.langPoint3}"></span>
+					<span class="sublist" th:text="${resume.langLv3}"></span>
+					<span class="sublist" th:text="${resume.langLicNum3}"></span>
+					<span class="sublist" th:text="${resume.langGet3}"></span>
+					<span class="sublist" th:text="|회화 ${resume.langTalk3}|"></span>
+					<span class="sublist" th:text="|작문 ${resume.langMake3}|"></span>
+					<span class="sublist" th:text="|독해 ${resume.langRead3}|"></span>
+				</li>
+				<li th:if="${resume.langCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.langName4}"></span>
+					<span class="sublist" th:text="${resume.langLicName4}"></span>
+					<span class="sublist" th:text="${resume.langPoint4}"></span>
+					<span class="sublist" th:text="${resume.langLv4}"></span>
+					<span class="sublist" th:text="${resume.langLicNum4}"></span>
+					<span class="sublist" th:text="${resume.langGet4}"></span>
+					<span class="sublist" th:text="|회화 ${resume.langTalk4}|"></span>
+					<span class="sublist" th:text="|작문 ${resume.langMake4}|"></span>
+					<span class="sublist" th:text="|독해 ${resume.langRead4}|"></span>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">IT 사항</p>
+			<ul class="divide4 ">
+				<li th:if="${resume.swCount} == '1'
+						or ${resume.swCount} == '2'
+						or ${resume.swCount} == '3'">
+					<span class="w50">&middot;</span>
+					<span  class="sublist" th:if="${resume.swName1} != null" th:text="${resume.swName1}"></span>
+					<span  class="sublist" th:if="${resume.swLv1} != null" th:text="${resume.swLv1}"></span>
+				</li>
+				<li th:if="${resume.swCount} == '2'
+						or ${resume.swCount} == '3'">
+					<span class="w50">&middot;</span>
+					<span  class="sublist" th:text="${resume.swName2}"></span>
+					<span  class="sublist" th:text="${resume.swLv2}"></span>
+				</li>
+				<li th:if="${resume.swCount} == '3'">
+					<span class="w50">&middot;</span>
+					<span  class="sublist" th:text="${resume.swName3}"></span>
+					<span  class="sublist" th:text="${resume.swLv3}"></span>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">자격 및 면허</p>
+			<ul class="divide1 ">
+				<li th:if="${resume.licCount} == '1'
+						or ${resume.licCount} == '2'
+						or ${resume.licCount} == '3'
+						or ${resume.licCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:if="${resume.licName1} != null" th:text="${resume.licName1}"></span>
+					<span class="sublist" th:if="${resume.licPub1} != null" th:text="${resume.licPub1}"></span>
+					<span class="sublist" th:if="${resume.licNum1} != null" th:text="${resume.licNum1}"></span>
+					<span class="sublist" th:if="${resume.licGetDate1} != null" th:text="${resume.licGetDate1}"></span>
+				</li>
+				<li th:if="${resume.licCount} == '2'
+						or ${resume.licCount} == '3'
+						or ${resume.licCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.licName2}"></span>
+					<span class="sublist" th:text="${resume.licPub2}"></span>
+					<span class="sublist" th:text="${resume.licNum2}"></span>
+					<span class="sublist" th:text="${resume.licGetDate2}"></span>
+				</li>
+				<li th:if="${resume.licCount} == '3'
+						or ${resume.licCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.licName3}"></span>
+					<span class="sublist" th:text="${resume.licPub3}"></span>
+					<span class="sublist" th:text="${resume.licNum3}"></span>
+					<span class="sublist" th:text="${resume.licGetDate3}"></span>
+				</li>
+				<li th:if="${resume.licCount} == '4'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.licName4}"></span>
+					<span class="sublist" th:text="${resume.licPub4}"></span>
+					<span class="sublist" th:text="${resume.licNum4}"></span>
+					<span class="sublist" th:text="${resume.licGetDate4}"></span>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">수상경력</p>
+			<ul class="divide1 ">
+				<li th:if="${resume.medalCount} == '1'
+						or ${resume.medalCount} == '2'
+						or ${resume.medalCount} == '3'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:if="${resume.medalName1} != null" th:text="${resume.medalName1}"></span>
+					<span class="sublist" th:if="${resume.medalDate1} != null" th:text="${resume.medalDate1}"></span>
+					<span class="sublist" th:if="${resume.medalContent1} != null" th:text="${resume.medalContent1}"></span>
+				</li>
+				<li th:if="${resume.medalCount} == '2'
+						or ${resume.medalCount} == '3'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.medalName2}"></span>
+					<span class="sublist" th:text="${resume.medalDate2}"></span>
+					<span class="sublist" th:text="${resume.medalContent2}"></span>
+				</li>
+				<li th:if="${resume.medalCount} == '3'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.medalName3}"></span>
+					<span class="sublist" th:text="${resume.medalDate3}"></span>
+					<span class="sublist" th:text="${resume.medalContent3}"></span>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">해외연수 및 대외활동</p>
+			<ul class="divide1 ">
+				<li th:if="${resume.forCount} == '1'
+						or ${resume.forCount} == '2'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:if="${resume.forState1} != null" th:text="${resume.forState1}"></span>
+					<span class="sublist" th:if="${resume.forName1} != null" th:text="${resume.forName1}"></span>
+					<span class="sublist" th:if="${resume.forContent1} != null" th:text="${resume.forContent1}"></span>
+					<span class="sublist" th:if="${resume.forSDate1} != null" th:text="|${resume.forSDate1} ~ ${resume.forEDate1}|"></span>
+				</li>
+				<li th:if="${resume.forCount} == '2'">
+					<span class="w50">&middot;</span>
+					<span class="sublist" th:text="${resume.forState2}"></span>
+					<span class="sublist" th:text="${resume.forName2}"></span>
+					<span class="sublist" th:text="${resume.forContent2}"></span>
+					<span class="sublist" th:text="|${resume.forSDate2} ~ ${resume.forEDate2}|"></span>
+				</li>
+			</ul><br class="clear">
+		</div>
+		<div class="viewBox">
+			<p class="f18 fw600">자기소개서</p>
+			<ul class="divide1 ">
+				<li class="mt50" th:if="${resume.introduce1} != null and ${resume.introduce1} != ''">
+					<span class="w50">1. 성장과정을 서술하여 주시기 바랍니다.</span>
+					<p class="txtbox" th:text="${resume.introduce1}"></p>
+				</li>
+				<li class="mt50" th:if="${resume.introduce2} != null and ${resume.introduce2} != ''">
+					<span class="w50">2. 성격의 장,단점을 서술하여 주시기 바랍니다.</span>
+					<p class="txtbox" th:text="${resume.introduce2}"></p>
+				</li>
+				<li class="mt50" th:if="${resume.introduce3} != null and ${resume.introduce3} != ''">
+					<span class="w50">3. 차별화되는 본인만의 핵심역량은 무엇인지 서술하여 주시기 바랍니다.</span>
+					<p class="txtbox" th:text="${resume.introduce3}"></p>
+				</li>
+				<li class="mt50" th:if="${resume.introduce4} != null and ${resume.introduce4} != ''">
+					<span class="w50">4. 도전했던 경험과 이를 통해 얻은 성취는 무엇인지 서술하여 주시기 바랍니다.</span>
+					<p class="txtbox" th:text="${resume.introduce4}"></p>
+				</li>
+				<li class="mt50" th:if="${resume.introduce5} != null and ${resume.introduce5} != ''">
+					<span class="w50">5. 협업,팀워크를 통해 달성한 성과를 서술하여 주시기 바랍니다.</span>
+					<p class="txtbox" th:text="${resume.introduce5}"></p>
+				</li>
+				<li class="mt50" th:if="${resume.introduce6} != null and ${resume.introduce6} != ''">
+					<span class="w50">6. 지원동기 및 입사 후 포부는 무엇인지 서술하여 주시기 바랍니다.</span>
+					<p class="txtbox" th:text="${resume.introduce6}"></p>
+				</li>
+				
+			</ul><br class="clear">
+		</div>
+		<div class="text-center">
+			<p class="mt40 btn_type13 center"><a href="#pop_view" class="pop_wrap"><span class="white">닫기</span></a></p>
+		</div>
+	</div>
+</div>
+</html>	

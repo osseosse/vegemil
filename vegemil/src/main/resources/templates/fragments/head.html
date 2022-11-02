@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="headFragment">
+	<meta charset="utf-8">
+	<meta name="author" content="osse">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="description" content="정식품 오신것을 환영합니다."/> 
+	<meta name="Keywords" content="정식품,두유,베지밀,유아식,썬몬드,그린비아,콩,대두,소이,식물성,음료" />
+	<meta property="og:title" content="정식품"> 
+	<meta property="og:url" content="https://www.vegemil.co.kr/"> 
+	<meta property="og:image" content="~~~~~~~~~~~~~~~~~" /> 
+	<meta property="og:description" content="두유 및 음료 제조업체, 베지밀, 영유아식, 그린비아, 라잇미닛, 한끼생식, 음료류 등"/>
+	
+	<!-- CSS -->
+	<link th:href="@{/common/css/slide.css}" rel="stylesheet">
+	<link th:href="@{/common/css/reset.css}" rel="stylesheet">
+	<link th:href="@{/common/css/style.css}" rel="stylesheet">
+	<link th:href="@{/common/css/bootstrap.css}" rel="stylesheet">
+	<link th:href="@{/common/css/product.css}" rel="stylesheet">
+	
+	<!-- JS -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
+	<script type="text/javascript" th:src="@{/common/js/jquery-1.7.2.min.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/jquery.Floater.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/main.js}" charset="utf-8"></script>
+	<script type="text/javascript" th:src="@{/common/js/prrple.slider.js}" charset="utf-8"></script>
+	<script type="text/javascript" th:src="@{/common/js/jquery.collapse.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/jquery.touchSwipe.1.6.min.js}"></script>
+	
+	<th:block layout:fragment="add-script"></th:block>
+	<th:block layout:fragment="add-css"></th:block>
+</head>
+</html>

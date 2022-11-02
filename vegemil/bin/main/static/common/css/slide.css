@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+/*================================ 
+   PRRPLE SLIDER 구분
+================================*/
+	#slider0 .slider .slider_dot {width:60px; border-radius:0; background:none; bordeR:1px solid #fff; height:5px; margin-bottom:10px}
+	#slider0 .slider .slider_dot.current {background:#fff; border:1px solid #fff;}
+	#slider0 .slider .slider_left {opacity:0}
+	#slider0 .slider .slider_right {opacity:0}
+	#slider0 .slider .slider_area {border-radius:20px}
+	#slider0 .slider0-txtbox {position:relative; padding:110px 77px 0 107px   }
+	#slider0 .slider0-txtbox li {width:48%; display:inline-block; vertical-align:top}
+	#slider0 .slider0-txtbox li:first-child {text-align:left}
+	#slider0 .slider0-txtbox li:nth-child(2) {text-align:right}
+	#slider0 .slider0-txtbox li dl { padding-left:77%}
+	#slider0 .slider0-txtbox li dl dd {line-h eight:120%; text-align:left;  padding-left:15px; opacity:0.6; margin-bottom:25px}
+	#slider0 .slider0-txtbox li dl dd.active {background:url(../../img/ico/ico_dot_small.png) no-repeat 0px 5px; color:#fff; opacity:1}
+
+	#slider1 {width:100%; overflow:hidden}
+	#slider1 .slider {width:190%; } /* 걸침 */
+	#slider1 .slide {margin-right:0px}
+	#slider1 .slide:first-child {margin-right:0px}
+	#slider1 .slide div {margin-right:10px}
+	#slider1 .slider .slider_left,
+    #slider1 .slider .slider_right {opacity:0}
+	#slider1 .slider .slider_dotwrap {display:none}
+
+	#slider2 {width:100%; overflow:hidden}
+	#slider2 .slider {width:190%; } /* 걸침 */
+	#slider2 .slide {margin-right:0px}
+	#slider2 .slide:first-child {margin-right:0px}
+	#slider2 .slide div {margin-right:10px}
+	#slider2 .slider .slider_left,
+    #slider2 .slider .slider_right {opacity:0}
+	#slider2 .slider .slider_dotwrap {display:none}
+/*================================ 
+   PRRPLE SLIDER 공통
+================================*/
+/* MAIN */
+.slider{
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%; top:0px
+}
+.slider .slider_area{
+  display:block;
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+}
+.slider .slides{
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.slider .slide{
+  display:block;
+  position:relative;
+  float:left;
+  width:100%;
+  height:100%;
+ 
+}
+.slider .slide:nth-child(even){
+  
+}
+.slider.fade .slide{
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+.slider.vertical .slide{
+  float:none;
+}
+.slider .slider_clear{
+  display:block;
+  position:relative;
+  height:0;
+  clear:both;
+}
+.slider .animate{
+  -webkit-transition:all 500ms ease-in-out;
+  -moz-transition:all 500ms ease-in-out;
+  -o-transition:all 500ms ease-in-out;
+  transition:all 500ms ease-in-out;
+}
+
+
+/* ARROW NAVIGATION */
+
+.slider .slider_left,
+.slider .slider_right{
+  display:none;
+  position:absolute;
+  top:45%;
+  left:15px;
+  color:#333;
+  cursor:pointer;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+}
+.slider .slider_right{
+  left:auto;
+  right:15px;
+}
+.slider .slider_left:hover,
+.slider .slider_right:hover{
+  color:#888;
+}
+.slider .slider_left.inactive,
+.slider .slider_right.inactive{
+  color:#BBB;
+  cursor:default;
+}
+
+
+/* DOT NAVIGATION */
+
+.slider .slider_dotwrap{
+  display:block;
+  position:absolute;
+  width:100%;
+  bottom:20px;
+  left:0;
+  font-size:0;
+  line-height:0;
+  text-align:center;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+}
+
+.slider .slider_dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  margin:0 8px;
+  border:1px solid #999;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+}
+.slider .slider_dot.current{
+  background:#999;
+}
+
+
+
+
+/* PLAY / PAUSE CONTROLS */
+
+.slider .slider_controls{
+  display:none;
+}
+.slider .slider_play.hidden,
+.slider .slider_pause.hidden{
+  display:none !important;
+}
+
+
+
+@media (max-width: 1000px) {
+	#slider0 .slider0-txtbox {padding:70px 0 0 30px}
+	#slider0 .slider0-txtbox li {width:100%}
+	#slider0 .slider0-txtbox li:nth-child(2) {display:none; border:3px solid blue}
+
+
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header id="header" th:fragment="headerFragment">
+<!-- Skip -->
+<div id="skipNav">
+	<a href="#content">본문 바로가기</a>
+</div>
+<!-- //Skip -->
+<div id="header" class="white">
+	<div class="bg"></div>
+	<div class="wView" >
+		<h1 class="logo"><a href="" title="정식품 CI"></a></h1>
+		<nav id="gnb" >
+			<ul>
+				<li><a href="#" id="gnbTarget" onclick="oneDepMenu()" class="f_pp">Company</a>
+				<div class="depth02_menu_wrap">
+					<div class="inner">
+						<ul class="gnb_depth2">
+							<li><a href="">베지밀 스토리</a>
+								<ul class="gnb_depth3">
+									<li><a href="">창업주 스토리</a></li>
+									<li><a href="">베지밀 탄생 스토리</a></li>
+								</ul>
+							</li>
+							<li><a href="">기업 정보</a>
+								<ul class="gnb_depth3">
+									<li><a href="">대표 인사말</a></li>
+									<li><a href="">프로필</a></li>
+									<li><a href="">연혁</a></li>
+									<li><a href="">관련사</a></li>
+									<li><a href="">공시</a></li>
+								</ul>
+							</li>
+							<li><a href="">홍보 영상</a>
+								<ul class="gnb_depth3">
+									<li><a href="">DSP 미디어</a></li>
+									<li><a href="">영상 공모전</a></li>
+								</ul>
+							</li>
+							<li><a href="">PR PRESS</a>
+								<ul class="gnb_depth3">
+									<li><a href="">보도자료</a></li>
+									<li><a href="">공지사항</a></li>
+								</ul>
+							</li>
+							<li><a href="">사회공헌활동</a>
+								<ul class="gnb_depth3">
+									<li><a href="">보도자료</a></li>
+									<li><a href="">공지사항</a></li>
+								</ul>
+							</li>
+							<li><a href="">전국 영업소</a>
+								<ul class="gnb_depth3">
+									<li><a href="">대리점 모집</a></li>
+									<li><a href="">전국 영업소 현황</a></li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				</li>
+				<li><a href="" onclick="oneDepMenu()" class="f_pp">Product</a>
+				<div class="depth02_menu_wrap">
+					<div class="inner">
+						<ul class="gnb_depth2">
+							<li><a href="">브랜드 스토리</a>
+								<ul class="gnb_depth3">
+									<li><a href="">베지밀</a></li>
+									<li><a href="">그린비아</a></li>
+									<li><a href="">심천수</a></li>
+									<li><a href="">콩국물</a></li>
+								</ul>
+							</li>
+							<li><a href="">제품 소개</a></li>
+							<li><a href="">쿡앤쿡 레시피</a>
+								<ul class="gnb_depth3">
+									<li><a href="">베지밀 레시피</a></li>
+									<li><a href="">간단요리사 레시피</a></li>
+									<li><a href="">콩국물 레시피</a></li>
+								</ul>
+							</li>
+							<li><a href="">공식 쇼핑몰</a></li>
+						</ul>
+					</div>
+				</div>
+				</li>
+				<li><a href="" id="gnbTarget" onclick="oneDepMenu()" class="f_pp">R&D</a>
+				<div class="depth02_menu_wrap" >
+					<div class="inner" >
+						<ul class="gnb_depth2">
+							<li><a href="">중앙연구소</a>
+								<ul class="gnb_depth3">
+									<li><a href="">연구소장 인사말</a></li>
+									<li><a href="">연구소 소개</a></li>
+									<li><a href="">연구활동</a></li>
+								</ul>
+							</li>
+							<li><a href="">특허 및 연구논문</a>
+								<ul class="gnb_depth3">
+									<li><a href="">연구논문</a></li>
+									<li><a href="">특허현황</a></li>
+									<li><a href="">공동 연구현황</a></li>
+								</ul>
+							</li>
+							<li><a href="">식품안전인증현황</a>
+								<ul class="gnb_depth3">
+									<li><a href="">HACCP 인증</a></li>
+									<li><a href="">FSSC22000</a></li>
+									<li><a href="">HALAL 인증</a></li>
+									<li><a href="">환경성적표지 인증</a></li>
+								</ul>
+							</li>
+							<li><a href="">청주공장</a>
+								<ul class="gnb_depth3">
+									<li><a href="">청주공장 소개</a></li>
+									<li><a href="">견학신청</a></li>
+									<li><a href="">견학후기</a></li>
+								</ul>
+							</li>
+							<li><a href="">베지밀 FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+				</li>
+
+				<li><a href="" onclick="oneDepMenu()" class="f_pp">Communication</a>
+					<div class="depth02_menu_wrap">
+						<div class="inner">				
+							<ul class="gnb_depth2">
+								<li><a href="">고객문의</a>
+									<ul class="gnb_depth3">
+										<li><a href="">고객의 소리</a></li>
+										<li><a href="">1:1문의</a></li>
+									</ul>
+								</li>
+								<li><a href="">영유아식 샘플신청</a></li>
+								<li><a href="">정식품 웹진</a></li>
+								<li><a href="">CCM/CP</a>
+									<ul class="gnb_depth3">
+										<li><a href="">CCM이란?</a></li>
+										<li><a href="">공정거래(CP)</a></li>
+									</ul>
+								</li>
+								<li><a href="">SNS</a>
+									<ul class="gnb_depth3">
+										<li><a href="">V컨슈머피아</a></li>
+										<li><a href="">소셜 미디어</a></li>
+									</ul>
+								</li>
+								<li><a href="">이벤트</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<div class="header-right">
+			<ul class="sub_area">
+				<li><a href="#">로그인</a></li>
+				<li><a href="#">회원가입</a></li>
+				<li>
+					<div class="custom-sel">
+					  <select>
+						<option value="KOR">KOR</option>
+						<option value="ENG">ENG</option>
+					  </select>
+					</div>
+				</li>
+				
+				<li>
+					<!-- fullMenu -->
+					<span style="font-size:30px;cursor:pointer" onclick="openNav()"><img th:src="@{/img/btn/btn_fullMenu.png}" alt="전체메뉴열림버튼" /></span>
+					<div id="myNav" class="overlay">
+						
+						<div class="overlay-content">
+							<dl class="full_box">
+								<dd>
+									<p class="full_logo"><a href="#"><img th:src="@{/img/ico/logo_w.png}" alt="정식품 CI" /></a></p>
+									<ul class="full-header-right">
+										<li><a href="#">로그인</a></li>
+										<li><a href="#">회원가입</a></li>
+										<li>
+											<div class="custom-sel gray">
+											  <select>
+												<option value="KOR">KOR</option>
+												<option value="ENG" >ENG</option>
+											  </select>
+											</div>
+										</li>
+										<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img th:src="@{/img/btn/btn_fullMenu_close.png}" alt="닫기버튼" /></a></li>
+									</ul>
+								</dd>
+								<dd class="full_dep">
+									<div class="fd_title">
+										<li class="f30 f_pp white lh100">Company</li>
+									</div>
+									<ul>
+										<li><a href="">베지밀 스토리</a></li>
+										<li><a href="">창업주 스토리</a></li>
+										<li><a href="">베지밀 탄생 스토리</a></li>
+									</ul>
+									<ul>
+										<li><a href="">기업 정보</a></li>
+										<li><a href="">대표 인사말</a></li>
+										<li><a href="">프로필</a></li>
+										<li><a href="">연혁</a></li>
+										<li><a href="">관련사</a></li>
+										<li><a href="">공시</a></li>
+									</ul>
+									<ul>
+										<li><a href="">홍보영상</a></li>
+										<li><a href="">DCF 미디어</a></li>
+										<li><a href="">영상 공모전</a></li>
+									</ul>
+									<ul>
+										<li><a href="">PR PRESS</a></li>
+										<li><a href="">보도자료</a></li>
+										<li><a href="">공지사항</a></li>
+									</ul>
+									<ul>
+										<li><a href="">사회공헌활동</a></li>
+									</ul>
+									<ul>
+										<li><a href="">전국 영업소</a></li>
+									</ul>
+								</dd>
+								<dd class="full_dep">
+									<div class="fd_title">
+										<li class="f30 f_pp white lh100">Product</li>
+									</div>
+									<ul>
+										<li><a href="">브랜드 스토리</a></li>
+										<li><a href="">베지밀</a></li>
+										<li><a href="">그린비아</a></li>
+										<li><a href="">심천수</a></li>
+									</ul>
+									<ul>
+										<li><a href="">제품소개</a></li>
+									</ul>
+									<ul>
+										<li><a href="">쿡앤쿡 레시피</a></li>
+										<li><a href="">베지밀 레시피</a></li>
+										<li><a href="">간단요리사 레시피</a></li>
+										<li><a href="">콩국물 레시피</a></li>
+									</ul>
+									<ul>
+										<li><a href="">공식 쇼핑몰</a></li>
+									</ul>
+									
+								</dd>
+								<dd class="full_dep">
+									<div class="fd_title">
+										<li class="f30 f_pp white lh100">R&D</li>
+									</div>
+									<ul>
+										<li><a href="">중앙연구소</a></li>
+										<li><a href="">연구소장 인사말</a></li>
+										<li><a href="">연구소 소개</a></li>
+										<li><a href="">연구활동</a></li>
+									</ul>
+									
+									<ul>
+										<li><a href="">특허 및 연구논문</a></li>
+										<li><a href="">연구논문</a></li>
+										<li><a href="">특허현황</a></li>
+										<li><a href="">공동 연구현황</a></li>
+									</ul>
+									<ul>
+										<li><a href="">식품안전인증현황</a></li>
+										<li><a href="">HACCP 인증</a></li>
+										<li><a href="">FSSC22000</a></li>
+										<li><a href="">HALAL 인증</a></li>
+										<li><a href="">환경성적표지 인증</a></li>
+									</ul>
+									<ul>
+										<li><a href="">청주공장</a></li>
+										<li><a href="">청주공장 소개</a></li>
+										<li><a href="">견학신청</a></li>
+										<li><a href="">견학후기</a></li>
+									</ul>
+									<ul>
+										<li><a href="">베지밀 FAQ</a></li>
+									</ul>
+								</dd>
+								<dd class="full_dep">
+									<div class="fd_title">
+										<li class="f30 f_pp white lh100">Communication</li>
+									</div>
+									<ul>
+										<li><a href="">고객문의</a></li>
+										<li><a href="">고객의 소리</a></li>
+										<li><a href="">1:1문의</a></li>
+									</ul>
+									
+									<ul>
+										<li><a href="">영유아식 샘플신청</a></li>
+									</ul>
+									
+									<ul>
+										<li><a href="">정식품 웹진</a></li>
+									</ul>
+									<ul>
+										<li><a href="">CCM/CP</a></li>
+										<li><a href="">CCM이란?</a></li>
+										<li><a href="">공정거래(CP)</a></li>
+									</ul>
+									<ul>
+										<li><a href="">SNS</a></li>
+										<li><a href="">V컨슈머피아</a></li>
+										<li><a href="">소셜 미디어</a></li>
+									</ul>
+									<ul>
+										<li><a href="">이벤트</a></li>
+									</ul>
+									
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<!-- //fullMenu -->
+				</li>
+				
+			</ul>
+		</div>
+	</div><!-- //wView -->
+</div><!-- //header -->
+<div class="mView">
+	<div class="m_header">
+		<div class="m_h_left"><a href="#"><img th:src="@{/img/ico/logo.png}" alt="로고"/></a></div>
+		<ul class="m_h_right">
+			<li><a href="#"><img th:src="@{/img/btn/btn_m_search.png}" alt="로고"/></a></li>
+			<li><a href="#"><img th:src="@{/img/btn/btn_m_edaymall.png}" alt="구매"/></a></li>	
+			<li class="btnOpen"><span style="cursor:pointer" onclick="openAside()"><img th:src="@{/img/btn/btn_fullMenu.png}" alt="모바일 열림버튼"/></span></li>	
+		</ul>
+	</div>
+
+	<div id="mobileAside" class="mAside scrollNone" >
+		<ul class="maTop">
+			<li><span class="active">KOR</span> <span>EN</span></li>
+			<li><a href="javascript:void(0)" class="m_closebtn" onclick="closeAside()"><img th:src="@{/img/btn/btn_fullMenu_close.png}" alt="모바일 닫기버튼"/></a></li>
+		</ul>
+		
+		<div class="mAside-content">
+			<!-- vertical -->
+			<div id="verticalType01" >
+				<div class="ver-title01"><p>Company</p></div>
+				<div>
+					<div class="v_content">
+						<ul class="v_con_ul">
+							<li><a href="#">창업주 스토리</a></li>
+							<li><a href="#">기업정보</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">대표 인사말</a></dd>
+									<dd><a href="#">프로필</a></dd>
+									<dd><a href="#">연혁</a></dd>
+									<dd><a href="#">관련사</a></dd>
+									<dd><a href="#">공시</a></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="ver-title01"><p>Product</p></div>
+				<div>
+					<div class="v_content">
+						<ul class="v_con_ul">
+							<li><a href="#">브랜드 스토리</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">베지밀</a></dd>
+									<dd><a href="#">그린비아</a></dd>
+									<dd><a href="#">심천수</a></dd>
+									<dd><a href="#">콩국물</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">제품소개</a></li>
+							<li><a href="#">쿡앤쿡 레시피</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">베지밀 레시피</a></dd>
+									<dd><a href="#">간단요리사레시피</a></dd>
+									<dd><a href="#">콩구구물 레시피</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">공식 쇼핑몰</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="ver-title01"><p>R&D</p></div>
+				<div>
+					<div class="v_content" >
+						<ul class="v_con_ul">
+							<li><a href="#">중앙연구소</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">연구소장 인사말</a></dd>
+									<dd><a href="#">연구소장 소개</a></dd>
+									<dd><a href="#">R&D 활동</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">식품안전인증현황</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">HACCP 인증</a></dd>
+									<dd><a href="#">FSSC22000</a></dd>
+									<dd><a href="#">HALAL 인증</a></dd>
+									<dd><a href="#">환경성적표지 인증</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">청주공장</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">청주공장 소개</a></dd>
+									<dd><a href="#">견학신청</a></dd>
+									<dd><a href="#">견학후기</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">베지밀 FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="ver-title01"><p>Communication</p></div>
+				<div>
+					<div class="v_content">
+						<ul class="v_con_ul">
+							<li><a href="#">고객문의</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">고객의 소리</a></dd>
+									<dd><a href="#">1:1문의</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">영유아식 샘플신청</a></li>
+							<li><a href="#">정식품 웹진</a></li>
+							<li><a href="#">CCM/CP</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">CCM이란?</a></dd>
+									<dd><a href="#">공정거래(CP)</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">SNS</a>
+								<dl class="v_con_dl">
+									<dd><a href="#">V컨슈머피아</a></dd>
+									<dd><a href="#">소셜 미디어</a></dd>
+								</dl>
+							</li>
+							<li><a href="#">이벤트</a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //vertical -->
+		</div>
+
+		<ul class="maBotton">
+			<li><span><a href="#">로그인</a></span> <span><a href="#">회원가입</a></span></li>
+		</ul>
+	</div>
+	
+</div>
+
+
+<!-- -------------------------------
+	개발시 아래 스크립트 삭제해주세요.
+--------------------------------- -->
+<script>
+/*---------------------------------------------------------------------------------------------------------------------------
+ * 	 PC Menu
+ *--------------------------------------------------------------------------------------------------------------------------*/
+	$('#gnb > ul > li > a').on("mouseenter focusin",function(e){
+		$('#gnb > ul > li').removeClass('on');
+
+		$(this).parent('li').addClass('on')
+		$('#header').addClass('open');
+		
+		var hd = $(this).next('.depth02_menu_wrap').stop().innerHeight();
+		var num = hd + 91;
+		
+		$('#header').stop().animate({height: num}, 340);
+		e.preventDefault();
+	})
+
+	$('.gnb_depth2').find('a').on("focusin",function(e){
+		$('#gnb > ul > li').removeClass('on');
+
+		$(this).parents('#gnb > ul > li').addClass('on')
+		$('#header').addClass('open');
+		
+		var hd = $(this).parents('.depth02_menu_wrap').stop().innerHeight();
+		var num = hd + 101;
+		
+		$('#header').stop().animate({height: num}, 340);
+	})
+
+	// 
+	if (matchMedia("screen and (min-width: 800px)").matches) {
+		$('#header, .all_search_pop').on("mouseleave",function(){
+			gnb_close();
+		})
+	}
+	
+	$('#gnb').find("a").last().on("focusout",function(){
+		gnb_close();
+	});
+
+	function gnb_close(){
+		$('#header ').stop().css({height: 90});//웹에서 90으로 변경필요, 
+		$('#gnb > ul > li').removeClass('on');
+		$('#header').removeClass('open');
+	}
+
+
+	
+	
+	/*================================
+	 * 	 FullMenu
+	*================================*/
+	/* Open */
+	function openNav() {
+	  document.getElementById("myNav").style.height = "100%";
+	}
+	/* Close */
+	function closeNav() {
+	  document.getElementById("myNav").style.height = "0%";
+	}
+	/*================================
+	 * 	 모바일 FullMenu
+	*================================*/
+	/* mobileAside Open */
+	function openAside() {
+	  document.getElementById("mobileAside").style.width = "70%";
+	}
+
+	/* mobileAside Close */
+	function closeAside() {
+	  document.getElementById("mobileAside").style.width = "0%";
+	}
+
+
+	// 모바일메뉴 vertical
+	$("#verticalType01").collapse({
+	  accordion: true, //다열리고 싶을때
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+
+
+	/*================================
+	 * 	 Main > Floating
+	 *================================*/
+	// jQuery Load
+	(function($){
+		$(document).ready(function() {
+			
+			//
+			if (!$('#flotingPage').length){return false}; //#contents -> wrap으로 변경 
+			var limit =  $(window).height() - ($('.floting').height()+00);
+			//alert(limit);
+			if (limit > 0){
+				$('.floting').addFloating({  
+					targetRight: 10,  
+					targetTop: 40,  //스크롤시 높이설정 
+					snap: true  
+				});  
+			} else {
+				$('.floting').addFloating({  
+					targetRight: 10,  
+					targetTop: 40,  
+					snap: true  
+				});  
+			}	// end - 2022-02-18 주문 > 결제금액 계산기
+
+
+		});
+	})(jQuery);
+
+
+
+</script>
+</header>
+</html>	
