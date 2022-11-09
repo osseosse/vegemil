@@ -8,26 +8,24 @@ import lombok.Setter;
 public class QnaDTO extends CommonDTO {
 
 	//질문
-	private Long qId;
-	private Long memNo;
-	private String rIdx;
-	private String rCompany;
-	private String rTitle;
-	private String rContent;
-	private String rInsertDate;
-	private String rUpdateDate;
-	private String rDeleteDate;
-	private String rDeleteYn;
-	
-	private String rEmail;
-	private String rPhoneNo;
-	private String rAgree;
-	
+	private Long sIdx;
+	private String sCate;
+	private String sId;
+	private String sName;
+	private String sHp;
+	private String sEmail;
+	private String sAddr;
+	private String sSubject;
+	private String sContent;
+	private String sFile;
+	private String sWritedate;
+	private String sActiveuser;
+	private String sActiv;
+	private int sHit;
+	private String sGory;
 	//답변
-	private String rAnswerYn;
-	private String rAnswer;
-	private String rAnswerEmail;
-	private String rAnswerTel;
-	private String rAnswerDate;
+	private String sAnswerYn;
+	private String sAnswer;
+	
 
 }

@@ -20,7 +20,7 @@ public class QnaServiceImpl implements QnaService {
 	public boolean registerQna(QnaDTO params) {
 		int queryResult = 0;
 
-		if (params.getQId() == null) {
+		if (params.getSIdx() == null) {
 			queryResult = qnaMapper.insertQna(params);
 		} else {
 			queryResult = qnaMapper.updateQna(params);
@@ -40,7 +40,7 @@ public class QnaServiceImpl implements QnaService {
 
 		QnaDTO qna = qnaMapper.selectQnaDetail(params);
 
-		if (qna != null && "N".equals(qna.getRDeleteYn())) {
+		if (qna != null) {
 			queryResult = qnaMapper.deleteQna(params);
 		}
 
@@ -59,7 +59,7 @@ public class QnaServiceImpl implements QnaService {
 		params.setPaginationInfo(paginationInfo);
 
 		if (qnaTotalCount > 0) {
-			qnaList = qnaMapper.selectQnaList(params.getMemNo());
+			qnaList = qnaMapper.selectQnaList(params.getSId());
 		}
 
 		return qnaList;

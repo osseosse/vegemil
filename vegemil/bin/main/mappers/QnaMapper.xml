@@ -4,48 +4,57 @@
 <mapper namespace="com.vegemil.mapper.QnaMapper">
 
 	<sql id="qnaColumns">
-		  q_id
-		, mem_no
-		, r_title
-		, r_content
-		, r_company
-		, r_delete_yn
-		, DATE_FORMAT(r_insert_date,'%Y-%m') as r_insert_date
-		, DATE_FORMAT(r_update_date,'%Y-%m') as r_update_date
-		, DATE_FORMAT(r_delete_date,'%Y-%m') as r_delete_date
-		, r_answer_yn
-		, r_answer
-		, r_answer_email
-		, r_answer_tel
-		, r_email
-		, r_phone_no
-		, r_agree
-		, DATE_FORMAT(r_answer_date,'%Y-%m') as r_answer_date
+		s_idx,
+		s_cate,
+		s_id,
+		s_name,
+		s_hp,
+		s_email,
+		s_addr,
+		s_subject,
+		s_content,
+		s_file,
+		DATE_FORMAT(s_writedate,'%Y-%m') as s_writedate,
+		DATE_FORMAT(s_updatedate,'%Y-%m') as s_updatedate,
+		s_activeuser,
+		s_hit,
+		s_active,
+		s_answer,
+		s_gory,
+		s_delete_yn
 	</sql>
 
 	<insert id="insertQna" parameterType="com.vegemil.domain.QnaDTO">
-		INSERT INTO r_recruit_qna (
-			  mem_no
-			, r_title
-			, r_content
-			, r_company
-			, r_email
-			, r_phone_no
-			, r_agree
-			, r_insert_date
-			, r_update_date
-			, r_delete_yn
+		INSERT INTO M_SupportFaq (
+			s_cate,
+			s_id,
+			s_name,
+			s_hp,
+			s_email,
+			s_addr,
+			s_subject,
+			s_content,
+			s_file,
+			DATE_FORMAT(s_writedate,'%Y-%m') as s_writedate,
+			s_activeuser,
+			s_hit,
+			s_active,
+			s_gory,
 		) VALUES (
-			  #{memNo}
-			, #{rTitle}
-			, #{rContent}
-			, #{rCompany}
-			, #{rEmail}
-			, #{rPhoneNo}
-			, #{rAgree}
-			, NOW()
-			, NOW()
-			, 'N'
+			#{sCate},
+			#{sId},
+			#{sName},
+			#{sHp},
+			#{sEmail},
+			#{sAddr},
+			#{sSubject},
+			#{sContent},
+			#{sFile},
+			NOW(),
+			#{sActiveuser},
+			0,
+			'1',
+			#{sGory},
 		)
 	</insert>
 
@@ -53,51 +62,52 @@
 		SELECT
 			<include refid="qnaColumns" />
 		FROM
-			r_recruit_qna
+			M_SupportFaq
 		WHERE
-			q_id = #{qId} and mem_no = #{memNo}
+			s_idx = #{sIdx} and s_id = #{sId}
 	</select>
 
 	<update id="updateQna" parameterType="com.vegemil.domain.QnaDTO">
-		UPDATE r_recruit_qna
+		UPDATE M_SupportFaq
 		SET
-			  r_update_date = NOW()
-			, r_title = #{rTitle}
-			, r_company = #{rCompany}
-			, r_content = #{rContent}
+			  s_updatedate = NOW()
+			, s_subject = #{sSubject}
+			, s_content = #{sContent}
+			, s_cate = #{sCate}
+			, s_gory = #{sGory}
 		WHERE
-			q_id = #{qId} and mem_no = #{memNo}
+			s_idx = #{sIdx} and s_id = #{sId}
 	</update>
 
 	<update id="deleteQna" parameterType="long">
-		UPDATE r_recruit_qna
+		UPDATE M_SupportFaq
 		SET
-			  r_delete_yn = 'Y'
+			  s_delete_yn = 'Y'
 			, r_delete_date = NOW()
 		WHERE
-			q_id = #{qId} and mem_no = #{memNo}
+			s_idx = #{sIdx} and s_id = #{sId}
 	</update>
 
-	<select id="selectQnaList" parameterType="long" resultType="com.vegemil.domain.QnaDTO">
+	<select id="selectQnaList" parameterType="String" resultType="com.vegemil.domain.QnaDTO">
 		SELECT
 			<include refid="qnaColumns" />
 		FROM
-			r_recruit_qna
+			M_SupportFaq
 		WHERE
-			r_delete_yn = 'N'
+			s_delete_yn = 'N'
 		AND
-			mem_no = #{memNo}
+			s_id = #{sId}
 		ORDER BY
-			r_insert_date DESC
+			s_writedate DESC
 	</select>
 
 	<select id="selectQnaTotalCount" parameterType="com.vegemil.domain.QnaDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
-			r_recruit_qna
+			M_SupportFaq
 		WHERE
-			mem_no = #{memNo}
+			s_id = #{sId}
 	</select>
 
 </mapper>

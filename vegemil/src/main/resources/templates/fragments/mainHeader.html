@@ -11,7 +11,7 @@
 <div id="header" class="white">
 	<div class="bg"></div>
 	<div class="wView" >
-		<h1 class="logo"><a href="" title="정식품 CI"></a></h1>
+		<h1 class="logo"><a href="/" title="정식품 CI"></a></h1>
 		<nav id="gnb" >
 			<ul>
 				<li><a href="#" id="gnbTarget" onclick="oneDepMenu()" class="f_pp">Company</a>
@@ -159,8 +159,10 @@
 		</nav>
 		<div class="header-right">
 			<ul class="sub_area">
-				<li><a href="#">로그인</a></li>
-				<li><a href="#">회원가입</a></li>
+				<li><a sec:authorize="isAnonymous()" th:href="@{/member/login}">로그인</a></li>
+				<li><a sec:authorize="isAnonymous()" th:href="@{/member/join}">회원가입</a></li>
+			    <li><a sec:authorize="isAuthenticated()" th:href="@{/mypage/list}">마이페이지</a></li>
+			    <li><a sec:authorize="isAuthenticated()" th:href="@{/member/logout}" >로그아웃</a></li>
 				<li>
 					<div class="custom-sel">
 					  <select>
@@ -178,7 +180,7 @@
 						<div class="overlay-content">
 							<dl class="full_box">
 								<dd>
-									<p class="full_logo"><a href="#"><img th:src="@{/img/ico/logo_w.png}" alt="정식품 CI" /></a></p>
+									<p class="full_logo"><a href="/"><img th:src="@{/img/ico/logo_w.png}" alt="정식품 CI" /></a></p>
 									<ul class="full-header-right">
 										<li><a href="#">로그인</a></li>
 										<li><a href="#">회원가입</a></li>
@@ -451,7 +453,12 @@
 		</div>
 
 		<ul class="maBotton">
-			<li><span><a href="#">로그인</a></span> <span><a href="#">회원가입</a></span></li>
+			<li>
+				<span><a sec:authorize="isAnonymous()" th:href="@{/member/login}">로그인</a></span>
+				<span><a th:href="@{/member/join}">회원가입</a></span>
+			    <span><a  sec:authorize="isAuthenticated()" th:href="@{/mypage/list}">마이페이지</a></span>>
+			    <span><a th:href="@{/member/logout}" sec:authorize="isAuthenticated()">로그아웃</a></span>
+			</li>
 		</ul>
 	</div>
 	

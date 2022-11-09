@@ -16,16 +16,11 @@ public class MainController {
 	@RequestMapping(value = "/")
 	public String index(Model model, Authentication authentication) {
 		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
-		MemberDTO member = null;
+		MemberDTO member = new MemberDTO();
 		if(authentication != null)
         member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
 		
-        if(member != null) {
-	        if(member.getMActive() != "1") {
-	        	return "member/joinConfirm";
-	        }
-	        model.addAttribute("member",member);	//유저 정보
-        }
+        model.addAttribute("member",member);	//유저 정보
         
         return "index";
 	}
@@ -47,22 +42,22 @@ public class MainController {
 		return "fragments/"+viewName;
     }
 	
-	@RequestMapping(value = "/information/{viewName}")
-    public String moveInformation(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+	@RequestMapping(value = "/communication/{viewName}")
+    public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
-		return "information/"+viewName;
+		return "communication/"+viewName;
     }
 	
-	@RequestMapping(value = "/member/{viewName}")
-    public String moveMember(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+	@RequestMapping(value = "/company/{viewName}")
+    public String moveCompany(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
-		return "member/"+viewName;
+		return "company/"+viewName;
     }
 	
-	@RequestMapping(value = "/application/{viewName}")
-    public String moveAapplication(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+	@RequestMapping(value = "/rnd/{viewName}")
+    public String moveRnd(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
-		return "application/"+viewName;
+		return "rnd/"+viewName;
     }
 	
 	@GetMapping("/mail")

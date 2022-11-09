@@ -51,7 +51,7 @@ public class MemberController extends UiUtils {
 		return result;
 	}
 	
-	@RequestMapping(value="/member/agreement" , method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value="/member/join" , method = {RequestMethod.GET, RequestMethod.POST})
 	public String moveJoin(Model model, HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value="step", required=false, defaultValue="1") int step) throws Exception {
 		

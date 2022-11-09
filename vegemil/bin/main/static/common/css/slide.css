@@ -33,6 +33,32 @@
 	#slider2 .slider .slider_left,
     #slider2 .slider .slider_right {opacity:0}
 	#slider2 .slider .slider_dotwrap {display:none}
+
+	#slider3 {width:100%; overflow:hidden; margin-top:90px; max-height:620px; height:auto  }
+	#slider3 .slider {margin:0 auto; overflow:hidden;  padding-bottom:110px; } /* 걸침 */
+	#slider3 .slider .slide {  padding:20px;  position:relative;  overflow:hidden }
+	#slider3 .slider .slide .h300 {border-radius:20px; margin-top:50px; }
+	#slider3 .slider .slider_dotwrap{bottom:0}
+	#slider3 .slider .slider_dot {width:6px;  background:gray; height:6px; margin-bottom:10px; border-radius:20px; margin:0 6px}
+	#slider3 .slider .slider_dot.current {background:#000; }
+	#slider3 .slider .slider_left {opacity:0}
+	#slider3 .slider .slider_right {opacity:0}
+	#slider3 .slider .slider_area {border-radius:0px;transform: scale( 1.4 ); }
+
+	#slider4 {width:100%; overflow:hidden; margin-top:90px; max-height:620px; height:auto  }
+	#slider4 .slider {margin:0 auto; overflow:hidden;  padding-bottom:110px; } /* 걸침 */
+	#slider4 .slider .slide {  padding:20px;  position:relative;  overflow:hidden }
+	#slider4 .slider .slide .h300 {border-radius:20px; margin-top:50px; }
+	#slider4 .slider .slider_dotwrap{bottom:0}
+	#slider4 .slider .slider_dot {width:6px;  background:gray; height:6px; margin-bottom:10px; border-radius:20px; margin:0 6px}
+	#slider4 .slider .slider_dot.current {background:#000; }
+	#slider4 .slider .slider_left {opacity:0}
+	#slider4 .slider .slider_right {opacity:0}
+	#slider4 .slider .slider_area {border-radius:0px;transform: scale( 1.4 ); }
+	
+
+	.st-txt {text-align:center}
+
 /*================================ 
    PRRPLE SLIDER 공통
 ================================*/
@@ -174,5 +200,14 @@
 	#slider0 .slider0-txtbox li {width:100%}
 	#slider0 .slider0-txtbox li:nth-child(2) {display:none; border:3px solid blue}
 
+	#slider3 {margin-top:20px}
+	#slider3 .slider .slider_area {transform: scale(1.9);padding-top:80px }
+	#slider3 .slider .slider_area .h300 {height:150px; margin-top:0; border-radius:10px;}
+	#slider3 .slider .slide {padding:5px}
+	#slider3 .slider .slider_area .st-txt {height:70px; }
+	#slider3 .slider .slider_area .st-txt .f27 { font-size:10px; font-weight:500}
+	#slider3 .slider .slider_area .st-txt .f13 { font-size:7px; font-weight:400;  }
+
+	
 
 }

@@ -165,6 +165,13 @@ $(".verticalType02").collapse({
 		autoPlay:true,	
 		autoPlayInterval:	4000,	
 	});  
+	/********** 제품리스트 > 상단배너 **********/
+	$('#slider3 .slider').prrpleSlider({
+		multiple:3,
+		autoPlay:true,	
+		autoPlayInterval:	4000,	
+		
+	});  
 	
 
 });
@@ -200,11 +207,11 @@ $(".verticalType02").collapse({
 
 
 (function( $ ) {
-  $.fn.basicTabs2 = function(options){ /* basicTabs1 변경 */
+  $.fn.basicTabs2 = function(options){ /* basicTabs2 변경 */
     var settings = $.extend({
       active_class: "current",
       list_class: "tabs2", /* tabe2 변경*/
-      content_class: "tab_content2", /* tab_content1 */
+      content_class: "tab_content2", /* tab_content2 */
       starting_tab: 1
     }, options );
     var $content = $('.' + settings.content_class);
@@ -223,5 +230,66 @@ $(".verticalType02").collapse({
     });
   };
 }( jQuery ));
+
+
+/*================================
+ * 	 제품진열 > 카테고리 Tab
+ *================================*/
+(function( $ ) {
+  $.fn.basicTabs3 = function(options){ /* basicTabs1 변경 */
+    var settings = $.extend({
+      active_class: "current",
+      list_class: "tabs3", /* tabe2 변경*/
+      content_class: "tab_content3", /* tab_content1 */
+      starting_tab: 1
+    }, options );
+    var $content = $('.' + settings.content_class);
+    var $list = $('.' + settings.list_class);
+    $content.find('tab_content3 > div').hide();
+    $content.find("div:nth-child(" + settings.starting_tab + ")").show();
+    $list.find("li:nth-child(" + settings.starting_tab + ")").addClass(settings.active_class);
+
+    $("." + settings.list_class + ' li a').click(function(e){
+        $list.find("li").removeClass(settings.active_class);
+        $("." + settings.content_class + " > div").hide();
+        $(this).parent().addClass(settings.active_class);
+        var currentTab = $(this).attr('href');
+        $(currentTab).show();
+        e.preventDefault();
+    });
+  };
+}( jQuery ));
+
+
+/*================================
+ * 	 제품상세 > 상단 썸네일 Tab
+ *================================*/
+(function( $ ) {
+  $.fn.basicTabs4 = function(options){ /* basicTabs4 변경 */
+    var settings = $.extend({
+      active_class: "current",
+      list_class: "tabs4", /* tabe4 변경*/
+      content_class: "tab_content4", /* tab_content4 */
+      starting_tab: 1
+    }, options );
+    var $content = $('.' + settings.content_class);
+    var $list = $('.' + settings.list_class);
+    $content.find('tab_content4 > div').hide();
+    $content.find("div:nth-child(" + settings.starting_tab + ")").show();
+    $list.find("li:nth-child(" + settings.starting_tab + ")").addClass(settings.active_class);
+
+    $("." + settings.list_class + ' li a').click(function(e){
+        $list.find("li").removeClass(settings.active_class);
+        $("." + settings.content_class + " > div").hide();
+        $(this).parent().addClass(settings.active_class);
+        var currentTab = $(this).attr('href');
+        $(currentTab).show();
+        e.preventDefault();
+    });
+  };
+}( jQuery ));
+
+
+
 
 

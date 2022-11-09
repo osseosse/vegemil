@@ -18,7 +18,7 @@ public interface QnaMapper {
 
 	public int deleteQna(QnaDTO params);
 
-	public List<QnaDTO> selectQnaList(Long memNo);
+	public List<QnaDTO> selectQnaList(String sId);
 
 	public int selectQnaTotalCount(QnaDTO params);
 
