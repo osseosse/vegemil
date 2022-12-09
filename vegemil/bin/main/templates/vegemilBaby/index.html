@@ -1,0 +1,460 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+  <head>
+    <title>메인 화면</title>
+    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+    </head>
+  <body style="  padding-top: 90px;">
+
+	<script th:src="@{/common/js/vegemilBaby/modality.js}"></script>	
+	 <script>
+	    /* $(document).ready(function(){
+	        if('<%=info1 %>' == '0') $('#info1').hide();
+	        if('<%=info2 %>' == '0') $('#info2').hide();
+	        if('<%=qna1 %>' == '0') $('#qna1').hide();
+	        if('<%=qna2 %>' == '0') $('#qna2').hide();
+	    }); */
+	 </script>
+
+<!--   <div id="wrap"> -->
+ 
+ 
+  <div id="content">
+		<div class="container100">
+			<div class="banner_special">
+				<p><a th:href="@{https://www.vegemil.co.kr/main/webzine/special/sub2.aspx}" target="_blank"><img th:src="@{/img/vegemilBaby/banner_special.png}" alt="임출산 육아 쿨팁 대방출, 정식품 웹진 스페셜칼럼에서 확인하세요"/></a></p>
+			</div>
+
+			<div class="row pd0 mg0 flex" style="background:#eee8cb;">
+				<div class="col-md-5">
+					<div class="top_copy">
+						<div class="title_box_">
+							
+							<div id="font-ani">
+								<p class="f62_3" > 식물성 유아식,  </p>
+							  <div id="flip">								
+								<div><div>베지밀 인펀트</div>로</div>
+								<div><div>베지밀 토들러</div>로</div>
+								<div><div>베지밀 영&middot;유아식</div>으로</div>
+							  </div>
+								<p class="f62_3 mt10"> 시작부터 균형있게!</p>
+							</div>
+							<!-- // font ani -->
+														
+							<p class="f17_4 mt70_m bg_bean">
+								 Right now!
+							</p>
+							<p class="f17_4 mt_20 ">
+								베지밀 영&middot;유아식. 우리 아이가 잘먹을까 고민되시나요? 지금 바로 샘플 신청하세요!
+							</p>
+							<!--
+							<p class="f22_4 btn01 mt30 ">
+								 <a href="#">무료 샘플 신청 하러가기 <img src="./HTMLMain/HTML/img/ico_arrow.png" alt="#"/></a>
+							</p>
+							-->
+							<p class="mt30 ">
+								<a th:href="@{/vegemilBaby/sample}" class="btn hide-icon btn_type01"><i class="fa  "><img th:src="@{/img/vegemilBaby/ico_arrow_w.png}" /></i><span>무료 샘플 신청 하러가기</span></a>
+							</p>
+
+						</div>
+					</div>
+				</div>
+				<!-- /.col-lg-6 -->
+				<div class="col-md-7">
+					<!-- slider1 -->
+					<div id="slider1">
+						<div class="slider">
+							<div class="slider_area">
+								<div class="slides">
+									<!-- <div class="slide "><a href="#"><p class="bg01"></p></a></div> -->
+									<div class="slide">
+										<img th:src="@{/img/vegemilBaby/mainTop_banner01.jpg}" alt="배너설명"/>
+									</div>
+									<div class="slide">
+										<img th:src="@{/img/vegemilBaby/mainTop_banner02.jpg}" alt="배너설명"/>
+									</div>
+								</div>
+							</div>
+							<a class="slider_left"></a>
+							<a class="slider_right"></a>
+						</div>
+					</div>
+					<!-- //slider1 -->
+				</div>
+				<!-- /.col-lg-6-- -->
+			</div>
+			<!-- /.row pd0 mg0 flex -->
+		</div>
+		<div class="container100">
+	
+			
+			<div class="row pd0 mg0">
+				<!-- 2022-01-28 -->
+				<div class="container100 bg_blue3">
+					<a href="/Main/webzine/special/sub01.aspx" target="_blank"><p class="banner_special_mo"><img class="img100" th:src="@{/img/vegemilBabybanner_special_mo.jpg}" alt=""/></p></a>
+				</div>
+				<!-- //2022-01-28 -->
+				<div class="col-md-12 m_rs">
+					<script type="text/javascript">
+							$(document).ready(function(){
+								$('#tab_type01').basicTabs1();
+							});
+						</script>
+					<div id="tab_type01">
+						<ul class="tabs1 btn_rs_main">
+							<li class="li_icoBG01"><a href="#step01">1단계</a></li>
+							<li class="li_icoBG02"><a href="#step02">2단계</a></li>
+							<li class="li_icoBG03"><a href="#step03">3단계</a></li>
+						</ul>
+						<div class="tab_content1">
+							<dl id="step01">
+								<a href="#step01"><img th:src="@{/img/vegemilBaby/step01.jpg}" alt="1단계"/></a>
+							</dl>
+							<dl id="step02">
+								<a href="#step02"><img th:src="@{/img/vegemilBaby/step02.jpg}" alt="2단계"/></a>
+							</dl>
+							<dl id="step03">
+								<a href="#step03"><img th:src="@{/img/vegemilBaby/step03.jpg}" alt="3단계"/></a>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!-- /.col-lg-12  m_rs -->
+				<div class="col-md-12 web_rs" style="background:#fef6e1; position:relative; overflow:hidden; height:1000px; padding-top:160px">
+					<!-- circular -->
+					<div class="rotating-slider">
+						<p class="waterLine">
+							<img th:src="@{/img/vegemilBaby/waterLine.png}">
+						</p>
+						<ul class="slides">
+							<li>
+							<div class="inner">
+								<h2 class="f35_6 mt50">Step 1.</h2>
+								<p class="f55_6 mt10" >
+									6개월부터 첫돌까지
+								</p>
+								<p class="f17_4 mt20">
+									 뇌세포를 구성하는 주요 성분인 인지질, DHA, 레시틴과<br>
+									 아기들의 장을 편안하게 하는 콩 식이섬유, <br>
+									 갈락토올리고당과 장내균 총개선 특허소재가 들어있으며, <br>
+									 필수아미노산인 메티오닌과 트릴토판이 함유되어 있습니다.
+								</p>
+							
+								<a th:href="@{/vegemilBaby/premium}">
+									<p class="more mt10">
+										<img th:src="@{/img/vegemilBaby/ico_crucial.png}"/>
+									</p>
+								</a>
+								
+							</div>
+							</li>
+							<li>
+							<div class="inner">
+								<h2 class="f35_6 mt50">Step 2.</h2>
+								<p class="f55_6 mt10">
+									첫돌부터 24개월까지
+								</p>
+								<p class="f17_4 mt20">
+									항산화 영양소인 비타민C, 비타민E, 체내 대사에 관여하는 아연, <br>
+									철분이 한국인 영양섭취기준 대비 30%이상 들어있으며, <br>
+									아기들이 튼튼하게 자랄 수 있도록 도와주는 감마리놀렌산과 <br>
+									베타글루칸이 함유되어 있습니다.
+								</p>
+							
+								<a th:href="@{/vegemilBaby/premium}">
+									<p class="more mt10">
+										<img th:src="@{/img/vegemilBaby/ico_crucial.png}"/>
+									</p>
+								</a>
+								
+							</div>
+							</li>
+							<li>
+							<div class="inner">
+								<h2 class="f35_6 mt50">Step 3.</h2>
+								<p class="f55_6 mt10">
+									24개월부터 36개월까지
+								</p>
+								<p class="f17_4 mt20">
+									골격을 형성하는 칼슘과 혈액의 구성성분인 철분이<br>
+									한국인 영양섭취기준 대비 40%이상 들어있고, 칼슘 흡수와 <br>
+									이용에 필요한 비타민D, 인이 들어있습니다. 또한 균형성장을 <br>
+									돕는 비타민, 무기질과 베타카로틴이 골고루 함유되어 있습니다.
+								</p>
+								<a th:href="@{/vegemilBaby/premium}">
+									<p class="more mt10">
+									<img th:src="@{/img/vegemilBaby/ico_crucial.png}"/>
+									</p>
+								</a>
+								
+							</div>
+							</li>
+						</ul>
+						<p class="waterDrop">
+							<img th:src="@{/img/vegemilBaby/drop05.png}"/>
+						</p>
+						
+						<p class="beanTop"><img th:src="@{/img/vegemilBaby/beanTop.png}" alt="콩 탑"/></p>
+						<p class="beanBottom"><img th:src="@{/img/vegemilBaby/beanBottom.png}" alt="콩아래"/></p>
+						<p class="bean01 bounce"><img th:src="@{/img/vegemilBaby/bean01.png}" alt="콩 가운데 아래" /></p>
+						<p class="bean02 shake"><img th:src="@{/img/vegemilBaby/bean02.png}" alt="콩 왼쪽"/></p>
+						<p class="bean03 shake"><img th:src="@{/img/vegemilBaby/bean03.png}" alt="콩 오른쪽위"/></p>
+					</div>
+					<!-- // circular -->
+				</div>
+				<!-- /.col-lg-12  web_rs -->
+			</div>
+			<!-- /.row -->
+		</div>
+		
+
+		
+		<!-- //container100 -->
+		<div class="container100 bg_pink ">
+			<div class="container">
+				<div class="row drtBox">
+					<div class="col-md-6">
+						<div class="drt_evt bgLine">
+							<p>
+								우리 아기의 베지밀 영&middot;유아식 이야기를 남겨주세요.
+							</p>
+							<p class="btn02 mt20">
+								<a th:href="@{/vegemilBaby/event_review_best}" class="hvr-bounce-to-right">후기 이벤트 바로가기</a>
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="drt_evt">
+							<p>
+								안전한 제품을 위한 노력, 정식품 중앙연구소
+							</p>
+							<p class="btn02 mt20">
+								<a th:href="@{https://youtu.be/aoXfvRI7JWQ}" class="hvr-bounce-to-right" target="_blank">정식품 홍보영상 보러가기</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<!-- //container100 bg_g -->
+	<!-- popup -->
+	
+    
+    <!-- 베스트후기 개발
+		
+		<!-- //베스트 후기 개발 ontainer100 bestBG -->
+
+		<!-- 베스트후기 하드코딩 -->
+		<div class="container100 bestBG">
+			<div class="row pd0 mg0 flex-2">
+				<div class="col-md-2 hvr-float-shadow">
+					<a href="./event_best_review.aspx">
+						<div class="be_box">
+							<p class="be_img" style="background: url(/img/vegemilBaby/best/best_202002_01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
+							<p class="be_f01 mt30">
+								우리 아기 아침 두유 한 팩! 가장 현명한 우리아들 아침식사!
+							</p>
+							<p class="be_f01 mt20">
+								zpstlscjstk
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-2 hvr-float-shadow">
+					<a href="./event_best_review.aspx">
+						<div class="be_box mt50_be">
+							<p class="be_img" style="background: url(/img/vegemilBaby/best/best_202002_02.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
+							<p class="be_f01 mt30">
+								우리아기 균형 영양을 위해 좋은 아기두유 개월수별로 선택할수 있는 베지밀 토들러!
+							</p>
+							<p class="be_f01 mt20">
+								yheehoho
+							</p>
+						</div>
+					</a>
+				</div>
+			    <div class="col-md-2 hvr-float-shadow">
+					<a href="./event_best_review.aspx">
+						<div class="be_box">
+							<p class="be_img" style="background: url(/img/vegemilBaby/best/best_202001_01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
+							<p class="be_f01 mt30">
+								단유 후 먹는 바꾼 두유 영양만점 베지밀 토들러!
+							</p>
+							<p class="be_f01 mt20">
+								aasszz14
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-2 hvr-float-shadow">
+					<a th:href="@{/vegemilBaby/event_best_review}">
+						<div class="be_box mt50_be">
+							<p class="be_img" style="background: url(/img/vegemilBaby/best/best_202001_02.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
+							<p class="be_f01 mt30">
+								우리아이 챙겨주는 식물성 단백질, 아이원츄 베지밀 토들러!
+							</p>
+							<p class="be_f01 mt20">
+								pixie7
+							</p>
+						</div>
+					</a>
+				</div>
+				
+				
+				<div class="col-md-4">
+					<div class="be_box">
+						<p class="be_f02 bg_bestBean">
+							#Best Review
+						</p>
+						<p class="be_f03 mt50">
+							고마워요, <br>
+							베지밀 영&middot;유아식!
+						</p>
+						<p class="mt90">
+							<a th:href="@{/vegemilBaby/event_review_best}" class="hvr-wobble-horizontal"><img th:src="@{/img/vegemilBaby/btn_viewmore.png}" alt=""/></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //베스트후기 하드코딩 -->
+   
+    <!--웹진 관리자 에디터 영역-->   
+    <div class="container100 webzineBG">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="btn_arrow">
+							<a th:href="@{/vegemilBaby/e_magazine?p=1}" class="hvr-wobble-horizontal"><img th:src="@{/img/vegemilBaby/btn_viewmore.png}" alt="view more"/></a>
+						</p>
+					</div>
+				</div>
+				<div class="row webzine">
+					<div class="col-md-4 hvr-float-shadow" id="info1">
+						<asp:repeater id=DataList1 runat="server">			
+							<itemtemplate>   
+							<div class="wz_box mt90">
+							<a href="./e_magazine_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">
+								<p class="wz_img" style="background: url(/admin/summernote/upload/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>);  background-position:center;-webkit-background-size: cover; background-size: cover">
+								</p>
+								<p class="wz_f01">육아정보</p>
+							    <p class="wz_f02 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_title") %></p>
+								<p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_summary") %></p></div>
+							</a>
+							</itemtemplate>
+                         </asp:repeater>
+					</div>
+					<div class="col-md-4 hvr-float-shadow" id="info2">						
+						 <asp:repeater id=DataList2 runat="server">			
+							<itemtemplate>   
+							<a href="./e_magazine_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">
+							<div class="wz_box mt30">
+								<p class="wz_img"  style="background: url(/admin/summernote/upload/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>);  background-position:center;-webkit-background-size: cover; background-size: cover">
+								</p>
+								<p class="wz_f01">육아정보</p>
+								<p class="wz_f02 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_title") %></p>
+								<p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_summary") %></p></div>
+							</a>
+							</itemtemplate>
+                         </asp:repeater>						
+					</div>
+					<div class="col-md-4 hvr-float-shadow" id="qna1">					
+						 <asp:repeater id=DataList3 runat="server">			
+							<itemtemplate>   
+							<a href="./qna_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">
+							<div class="wz_box mt90">
+								<p class="wz_img"  style="background: url(/admin/summernote/uploadqna/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>);  background-position:center;-webkit-background-size: cover; background-size: cover">
+								</p>
+								<p class="wz_f01">육아상담 Q&amp;A</p>
+								<p class="wz_f02 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_title") %></p>
+								<p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_summary") %></p>
+							</div>
+							</a>
+							</itemtemplate>
+                         </asp:repeater>				
+					</div>
+					<div class="col-md-4 hvr-float-shadow" id="qna2">
+						<asp:repeater id=DataList4 runat="server">			
+						  <itemtemplate>  
+						  <a href="./qna_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">						   
+							<div class="wz_box mt30">
+								<p class="wz_img"  style="background: url(/admin/summernote/uploadqna/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>);  background-position:center;-webkit-background-size: cover; background-size: cover">
+								</p>
+								<p class="wz_f01">육아상담 Q&amp;A</p>
+								<p class="wz_f02 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_title") %></p>
+								<p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_summary") %></p>
+							</div>				
+						 </a>
+						 </itemtemplate>
+                      </asp:repeater>
+					</div>
+					<div class="col-md-4 mt-30 hvr-float-shadow">
+					 <asp:repeater id=DataList5 runat="server">			
+						<itemtemplate>   
+						<a href="<%# String.Format("./recipe.aspx?p={0}&c_code={1}&i={2}&page_code=CNC", DataBinder.Eval(Container.DataItem,"c_page"), DataBinder.Eval(Container.DataItem,"c_code"), DataBinder.Eval(Container.DataItem,"c_idx") )%>">				
+							<div class="wz_box">
+								<p class="wz_img" style="background: url(/upload/COMMUNITY/<%# DataBinder.Eval(Container.DataItem, "c_code_full") %>.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover">
+								</p>
+								<p class="wz_f01">베지밀 레시피</p>
+								<p class="wz_f02 txtHide"><%# DataBinder.Eval(Container.DataItem, "c_subject") %></p>
+								<p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "c_content") %></p>
+							</div>			
+						</a>
+					   </itemtemplate>
+                      </asp:repeater> 
+					</div>
+					<div class="col-md-4 hvr-float-shadow">
+					  <asp:repeater id=DataList6 runat="server">			
+						<itemtemplate>   	
+						<a href="<%# DataBinder.Eval(Container.DataItem, "e_uri") %>">
+							<div class="wz_box mt30">
+								<p class="wz_img" style="background: url(/upload/EVENT/<%# DataBinder.Eval(Container.DataItem, "e_img") %>);  background-position:center;-webkit-background-size: cover; background-size: cover">
+								</p>
+								<p class="wz_f01">Event</p>
+								<p class="wz_f02 txtHide"><%# DataBinder.Eval(Container.DataItem, "e_subject") %></p>
+								<p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "e_content") %></p>
+							</div>
+						</a>
+						</itemtemplate>
+                      </asp:repeater> 
+					</div>
+				 <!-- //테스트 -->
+				</div>
+				<!-- // row webzine -->
+			</div>
+		</div>
+		
+	
+   </div> 
+  
+   </div>
+   <!-- 뷰저블리 -->
+   <script type="text/javascript">
+	(function(w, d, a){
+		w.__beusablerumclient__ = {
+			load : function(src){
+				var b = d.createElement("script");
+				b.src = src; b.async=true; b.type = "text/javascript";
+				d.getElementsByTagName("head")[0].appendChild(b);
+			}
+		};w.__beusablerumclient__.load(a);
+	})(window, document, '//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5');
+	</script>
+	<!-- //뷰저블리 -->
+
+
+ 
+  
+
+  	 
+
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+  
+  </body>
+</html>

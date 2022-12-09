@@ -1,0 +1,19 @@
+package com.vegemil.controller.vegemilBaby;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class VegemilBabyProductController {
+	
+	@GetMapping("/vegemilBaby/premium")
+	public String premium() {
+		return "vegemilBaby/premium";
+	}
+	
+	@GetMapping("/vegemilBaby/belief")
+	public String belief() {
+		return "vegemilBaby/belief";
+	}
+
+}

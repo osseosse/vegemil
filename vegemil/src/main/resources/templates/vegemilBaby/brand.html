@@ -1,0 +1,234 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+  <head>
+    <title>브랜드 소개</title>
+    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+    </head>
+    
+    
+  <body style="padding-top: 90px;">
+  
+  <div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG01_01 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">브랜드 소개</p>
+								<p class="f20_4 mt20">소아과 전문의의 순수한 열정으로 탄생한 베지밀 인펀트&middot;토들러<br>우리 아기의 안전을 최우선으로 생각하는 성장기용 조제식입니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b2">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a th:href="@{/vegemilBaby/brand}">Brand</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="javascript:void(0);">브랜드소개</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
+															<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
+															<li><a th:href="@{/vegemilBaby/safe}"> 안심플러스</a></li>
+															<li><a th:href="@{/vegemilBaby/tv}"> TV광고</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container100 -->
+
+		<div class="container100">
+				<div class="row  pd0 mg0 ">
+					<div class="col-md-12 brandTxt">
+						<p class="f24_4_bg">인류건강문화에 이 몸 바치고저</p>
+						<p class="f55_6 mt30">소아과 전문의가 만든 <br>최초의 베지밀</p>
+					</div>
+				</div>
+				<div class="row  pd0 mg0 brandDrJ">
+					<div class="col-md-4" >
+						<img th:src="@{/img/vegemilBaby/brand01.jpg}" alt="두유 이미지" />
+					</div>
+					<div class="col-md-4 ">
+						<div class="brand_line">
+							아이들을   위해   만들어진   베지밀   영&middot;유아식
+							<br><br>
+							유당이   함유   되지   않은   모유대용식<br>
+							그것이   바로   베지밀   영&middot;유아식의   시작이었습니다. 
+						</div>
+					</div>
+					<div class="col-md-4"  >
+							<img th:src="@{/img/vegemilBaby/brand02.jpg}" alt="정재원 명예회장님 의사시절" />
+					</div>
+				</div>
+				<!-- // row -->
+		</div>
+		<!-- //container100 -->
+
+		<div class="container100">
+			<div class="row pd0 mg0">
+				<div class="col-md-12 brand_story">
+					<p class="f55_6">VEGEMIL STORY</p>
+					<p class="f24_4 mt10 brand_s_txt">의인(義&middot;醫人) 의 마음을 담아 만듭니다.  오리지날 두유, 베지밀</p>
+					<p><img th:src="@{/img/vegemilBaby/vegemilStory.jpg}" alt="베지밀 스토리" /></p>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- youtube -->
+						<div class="youtubeBox ">
+							<iframe width="100%" th:src="@{https://www.youtube.com/embed/IfIpAiAGwPs}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<!-- //youtube -->
+					</div>
+				</div>
+				<div class="row brandIcon">
+					<div class="prd_iconBox ">
+						<div class="col-md-12 pb100">
+							<div class="col-md-6">
+								<ul>
+									<li>
+										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand01.gif}" alt="" /></p>
+										<p class="mt30 f30_4">49년 전통의 역사</p>
+										<p class="f17_4 mt20">국내 최초 오리지날 두유<br>브랜드 파워 두유부문 20년 연속 1위<br>(한국능률협회컨설팅, 2003~2022)</p>
+									</li>
+									<li>
+										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand02.gif}" alt="" /></p>
+										<p class="f30_4 mt30">안전한 두유</p>
+										<p class="f17_4 mt20">철저한 원료 관리와 <br>
+										인증 받은 위생 품질 관리<br>
+										(HACCP, FSSC22000)</p>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6 mt30m">
+								<ul>
+									<li>
+										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand03.gif}" alt="" /></p>
+										<p class="mt30 f30_4">기술력</p>
+										<p class="f17_4 mt20">정식품 중앙연구소 연구진의 꾸준한R&D <br>최첨단 기술력을 통한 제조</p>
+									</li>
+									<li>
+										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand04.gif}" alt="" /></p>
+										<p class="f30_4 mt30">빈틈없는 영양설계</p>
+										<p class="f17_4 mt20">동&middot;식물성 영양균형을 위한 성장기용 조제식</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="row mg0 bg_g2">
+						<div class="container base02">
+							<div class="col-md-12 center">
+							    <p class="f30_4 mt40">아이의 건강한 성장을 위한 선택</p>
+								<p class="f45_6">베지밀 영&middot;유아식 인펀트/토들러</p>
+							</div>
+							<div class="mt70 inb">
+								<div class="col-md-6">
+									<div class="bg_w safeBox02">
+										<p class="img100"><img th:src="@{/img/vegemilBaby/p_01_common.jpg}" alt="Premium - 1/2/3" /></p>
+                                        <div>
+                                            <p class="f30_6 mt50">Premium - 1 / 2 / 3</p>
+                                            <a th:href="@{/vegemilBaby/premium}" class="f17_4 moreBtn mt50 hvr-wobble-horizontal">
+                                                View more
+                                                <i class="arrowIcon"></i>
+                                            </a>
+                                        </div>
+									</div>
+								</div>
+								<div class="col-md-6 mt30m">
+									<div class="bg_w safeBox02">
+										<p class="img100"><img th:src="@{/img/vegemilBaby/p_01_common02.jpg}" alt="Premium - 1/2/3" /></p>
+                                        <div>
+                                            <p class="f30_6 mt50">Belief - 1 / 2 / 3</p>
+                                            <a th:href="@{/vegemilBaby/belief}" class="f17_4 moreBtn mt50 hvr-wobble-horizontal">
+                                                View more
+                                            </a>
+                                        </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+		</div>
+		<!-- //container100 -->
+
+		</div>
+		
+		
+	
+	
+
+
+
+
+ 
+  
+
+  	 
+
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+  
+  </body>
+</html>

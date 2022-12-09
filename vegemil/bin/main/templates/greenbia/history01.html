@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>그린비아 연혁</title>
+	<head th:replace="fragments/greenbia/head :: headFragment"></head>
+</head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+
+<header>
+<!-- 모바일 메뉴 -->
+
+<!-- //모바일 메뉴 -->
+</header>
+
+<!--------------------- 
+		//Header
+------------------- -->
+
+
+<!--------------------- 
+		content
+------------------- -->
+<main>
+<form id="Form1" method="post" runat="server">
+    <uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
+</form>
+<div class="container100">
+	<div class="row h500 bg_history">
+		<div class="hcenter center">
+			<p class="f26_4_w f_ms">History</p>
+			<p class="f50_5_w mt20">연혁</p>
+		</div>
+		<div class="col-md-12 subNav">
+			<div class="subNavBox">
+				<ul>
+					<li><a href="#">그린비아 소개</a></li>
+					<li><a href="#">연혁</a></li>
+				</ul>
+				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="container100">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12" >
+				<ul class="tabMenu4">
+				<li class="hvr-underline-from-center"><a th:href="@{/greenbia/newInfo}">그린비아는?</a></li>
+				<li class="hvr-underline-from-center"><a th:href="@{/greenbia/features}">특징</a></li>
+				<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/history01}">연혁</a></li>
+				<li class="hvr-underline-from-center"><a th:href="@{/greenbia/thesis}">논문</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container1400_15  hisBox">
+	<div class="row">
+		<div class="col-md-7 mt120" >
+				<p class="brand_logo"><img th:src="@{/img/greenbia/brand_logo02.gif}" alt="그린비아로고"/></p>		
+				<p class="f50_6 mt50">국내 최초 경장 영양식의 <br class="noneM">시작<span class="pupple">.</span></p>
+				<p class="f20_4 mt20">30년간의 전문화된 연구개발을 통해 더욱 발전해 온 그린비아의 발자취입니다.</p>
+		</div>
+		<div class="col-md-5 mt150">
+			<div class="hisType">
+				<p class="ht01"><img th:src="@{/img/greenbia/brand01.png}" alt="#"/></p>
+				<p class="f30_5 "><span class="pupple">의인</span>(義·醫人)의 마음을 담아..</p>
+				<p class="f18_4 gray01 mt30">
+				소아과 전문의의 순수한 열정으로 탄생한 균형영양식, 그린비아.<br class="none">
+				인류 건강을 위한 마음과 고객의 올바른 식생활을 위해 연구를 이어 온<br class="none">
+				정식품의 40년 노력이 담겨 있습니다.
+				</p>
+				<p class="ht02"><img th:src="@{/img/greenbia/brand02.png}" alt="#"/></p>
+			</div>
+		</div>
+		<div class="col-md-12 grayLine" ></div>
+	</div>
+</div>
+
+<div class="container100 " id="his">
+	<div class="row">
+		<div class="col-md-12 ">
+			<!---------------------------------------
+			탭메뉴 클릭시 화면이동 없이 ajax로 불러오는 방식
+			---------------------------------------->
+			<div class="col-md-12 mt60" >
+				<ul class="tab">
+					<a th:href="@{/greenbia/history01}"><li class="active f_ms "><p class="hvr-bounce-to-right">최근 ~ 2020</p></li></a>
+					<a th:href="@{/greenbia/history02}"><li class="f_ms"><p class="hvr-bounce-to-right">2019 ~ 2010</li></p></a>
+					<a th:href="@{/greenbia/history03}"><li class="f_ms"><p class="hvr-bounce-to-right">2009 ~ 2000</li></p></a>
+					<a th:href="@{/greenbia/history04}"><li class="f_ms"><p class="hvr-bounce-to-right">1999~ 1990</li></p></a>
+				</ul>
+			</div>
+			<!-- 연혁 최근 ~ 2010 -->
+			<div class="bg_history_01 mt60">
+				<div class="timeline">
+					<!-- 프로틴밀 아몬드와 호두 -->
+					<div class="timeline-item">
+						<div class="timeline-photo">
+							<img th:src="@{/img/greenbia/product/G06003_B.jpg}" alt="그린비아1.5"/>
+							<button class="timeline-cta"></button>
+						</div>
+						<div class="timeline-headline">
+							<p class="timeline-title f_ms f30_6_w">2020. 06</p>
+							<p class="timeline-subtitle f22_4_w">그린비아 <br class="noneM">프로틴밀 아몬드와 호두 출시</p>
+							<p class="timeline-excerpt"></p>
+						</div>
+						<div class="timeline-content">
+							<!-- 샘플 move클래스 제거 -->
+							<div class="row">
+								<div class="col-md-6 hecnter">
+									<!-- <div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="100"> -->
+                                        <div>
+                                            <p class="round round23">일반영양식</p>
+                                            <p class="f_ms f60_6_w mt30">프로틴밀 <span class="f30_6_w">아몬드와 호두</span></p>
+                                            <p class="f_ms f14_4_w wview">Protein Meal</p>
+                                            <p class="f_ms f22_4_w mt30">간편하게 챙기는 18g의<br>고단백 균형 영양</p>
+                                        </div>
+                                        <!-- <div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="100" > -->
+									<div>
+										<p class="f14_4_w mt30 point_w bar-graph-web">
+											열량 구성비
+										</p>
+										<!-- BAR-GRAPH -->
+										<ul class="bar-graph">
+											<li>
+											<dl>
+												<dd>단백질</dd>
+												<dd>
+												<div class="bar-wrap">
+													<span class="bar-fill" style="width: 33.3%;"></span>
+												</div>
+												</dd>
+												<dd class="f_ms"><span class="counter">33.3</span>%</dd>
+											</dl>
+											</li>
+											<li>
+											<dl>
+												<dd>지방</dd>
+												<dd>
+												<div class="bar-wrap">
+													<span class="bar-fill" style="width: 33.3%;"></span>
+												</div>
+												</dd>
+												<dd class="f_ms"><span class="counter">33.3</span>%</dd>
+											</dl>
+											</li>
+											<li>
+											<dl>
+												<dd>탄수화물</dd>
+												<dd>
+												<div class="bar-wrap">
+													<span class="bar-fill" style="width: 33.3%;"></span>
+												</div>
+												</dd>
+												<dd class="f_ms"><span class="counter">33.3</span>%</dd>
+											</dl>
+											</li>
+										</ul>
+									</div>
+									<a href="#"><div class="btn_type04 mt50 ">구매하기</div></a>
+								</div>
+								<div class="col-md-6">
+									<div class="h600 G06003 hcenter center hisR"></div>
+								</div>
+							</div>
+							<!-- //샘플 -->
+						</div>
+					</div>
+					<!-- 프로틴밀 검은참깨 -->
+					<div class="timeline-item">
+						<div class="timeline-photo">
+							<img th:src="@{/img/greenbia/product/G06004_B.jpg}" alt="그린비아1.5"/>
+							<button class="timeline-cta"></button>
+						</div>
+						<div class="timeline-headline">
+							<p class="timeline-title f_ms f30_6_w">2020. 06</p>
+							<p class="timeline-subtitle f22_4_w">그린비아 <br class="noneM">프로틴밀 검은참깨 출시</p>
+							<p class="timeline-excerpt"></p>
+						</div>
+						<div class="timeline-content">
+							<!-- 샘플 move클래스 제거 -->
+							<div class="row">
+								<div class="col-md-6 hecnter">
+									<!-- <div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="100"> -->
+                                        <div>
+                                            <p class="round round24">일반영양식</p>
+                                            <p class="f_ms f60_6_w mt30">프로틴밀 <span class="f30_6_w">검은참깨</span></p>
+                                            <p class="f_ms f14_4_w wview">Protein Meal</p>
+                                            <p class="f_ms f22_4_w mt30">간편하게 챙기는 18g의<br>고단백 균형 영양</p>
+                                        </div>
+                                        <!-- <div data-aos="fade-right" data-aos-easing="ease" data-aos-delay="100" > -->
+									<div style="position:relative">
+										<p class="f14_4_w mt30 point_w bar-graph-web">
+											열량 구성비
+										</p>
+										<!-- BAR-GRAPH -->
+										<ul class="bar-graph">
+											<li>
+											<dl>
+												<dd>단백질</dd>
+												<dd>
+												<div class="bar-wrap">
+													<span class="bar-fill" style="width: 33.3%;"></span>
+												</div>
+												</dd>
+												<dd class="f_ms"><span class="counter">33.3</span>%</dd>
+											</dl>
+											</li>
+											<li>
+											<dl>
+												<dd>지방</dd>
+												<dd>
+												<div class="bar-wrap">
+													<span class="bar-fill" style="width: 33.3%;"></span>
+												</div>
+												</dd>
+												<dd class="f_ms"><span class="counter">33.3</span>%</dd>
+											</dl>
+											</li>
+											<li>
+											<dl>
+												<dd>탄수화물</dd>
+												<dd>
+												<div class="bar-wrap">
+													<span class="bar-fill" style="width: 33.3%;"></span>
+												</div>
+												</dd>
+												<dd class="f_ms"><span class="counter">33.3</span>%</dd>
+											</dl>
+											</li>
+										</ul>
+									</div>
+									<a href="#"><div class="btn_type04 mt50 ">구매하기</div></a>
+								</div>
+								<div class="col-md-6">
+									<div class="h600 G06004 hcenter center hisR"></div>
+								</div>
+							</div>
+							<!-- //샘플 -->
+						</div>
+					</div>
+				</div>
+				<div class="timeline-overlay">
+				</div>
+				<button class="timeline-back">
+				<svg viewbox="0 0 24 24"><path fill="none" stroke-width="2" d="M6,12.4 L18,12.4 M12.6,7 L18,12.4 L12.6,17.8" transform="matrix(-1 0 0 1 24 0)"></path></svg>
+				</button>
+			</div>
+			<!--//연혁 최근 ~ 2020 -->
+
+		
+		</div>
+	</div>
+</div>
+
+<!--------------------- 
+		Footer
+------------------- -->
+
+<uc1:mainfooter id="mainFooter1" runat="server" ></uc1:mainfooter>
+<!--------------------- 
+		//Footer
+------------------- -->
+
+
+</main>
+<!--------------------- 
+		//content
+------------------- -->
+
+<!-- Brook Slider -->
+ <script src="./common/js/vendor.min.js"></script>
+ <script src="./common/js/plugins.min.js"></script>
+<!-- Brook Slider -->
+<script src="./common/js/main.js"></script>
+<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+<!-- countUp 
+<script>
+$('.counter').countUp();
+</script>
+-->
+<!-- 미사용 - 연혁페이지에만 필요 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
+<script src="./common/js/history.js"></script>
+-->
+<script type="text/javascript">
+    (function(w, d, a){
+    w.__beusablerumclient__ = {
+    load : function(src){
+    var b = d.createElement("script");
+    b.src = src; b.async=true; b.type = "text/javascript";
+    d.getElementsByTagName("head")[0].appendChild(b);
+    }
+    };w.__beusablerumclient__.load(a);
+    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+</script>
+
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+		
+</body>
+</html>

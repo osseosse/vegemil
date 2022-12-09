@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content">
+	<div class="content100">
+	   <div class="subTopCommunication h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Communication</p>
+				<p class="white f45 fw600">고객의소리</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 active"><a href="#"><span>고객의소리</span></a></li>
+				<li class="f18 fw500"><a href="#"><span>1:1문의</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+		</div>
+		<div class="row">
+			<div class=" col-md-12">
+				<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+				<p class="f52 fw600 mt50 black">고객의 소리 절차</p>
+				<p class="f27 fw500 mt80 black">소비자 불만 처리 프로세스</p>
+				<ul class="prs mt20 ">
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs01.png}" alt="고객 불만 접수"/></p><p class="f16 mt10">고객 불만 접수</p></a></li>
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs02.png}" alt="고객방문/불만해소"/></p><p class="f16 mt10">고객방문/불만해소</p></a></li>
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs03.png}" alt="Q-C, 연구소 원인규명"/></p><p class="f16 mt10">Q-C, 연구소 원인규명</p></a></li>
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs04.png}" alt="원인규명에 따른 대책 수립"/></p><p class="f16 mt10">원인규명에 따른 대책 수립</p></a></li>
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs05.png}" alt="고객지원팀 점검결과 확인"/></p><p class="f16 mt10">고객지원팀 점검결과 확인</p></a></li>
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs06.png}" alt="점검사항 임원보고"/></p><p class="f16 mt10">점검사항 임원보고</p></a></li>
+					<li><p class="imgBox"><img th:src="@{/img/ico/ico_prs07.png}" alt="결과 통보"/></p><p class="f16 mt10">결과 통보</p></a></li>
+				</ul>
+			</div>
+			<div class=" col-md-12">
+				<p class="f27 fw500 mt100 black">처리 절차</p>
+			</div>
+			<div class="col-md-5">
+				<div class="grayBox mt20">
+					<ul class="f18"><li class="number">01</li><li class="stepCopy">고객의 소리는 다양한 경로 (인터넷, 전화, FAX, 서신,<br>고객 접점 등)를 통해 접수됩니다.</li></ul>
+					<table cellspacing="0" border="0" class="stepT mt20">
+						<colgroup>
+							<col width="60px">
+							<col width="*">
+							<col width="60px">
+							<col width="*">
+						</colgroup>
+						<tr>
+							<th><img class="mr5" th:src="@{/img/ico/ico_custom01.png}" />전화</th>
+							<td colspan="3">
+								<span class="wBox f14 black mr10 mb10">제품문의 02-553-8888</span>
+								<span class="wBox f14 f_pp black mb10">고객상담 080-930-8888</span>
+								<p class="gray04 f14  ">평일 오전 9시~ 오후 6시(휴일 및 국경일 콜 매니저 운영)</p>
+							</td>
+						</tr>
+						<tr>
+							<th><img class="mr5" th:src="@{/img/ico/ico_custom02.png}" />메일</th>
+							<td>
+								<span class="wBox f14 black">cs@vegemil.co.kr</span>
+								
+							</td>
+							<th><img class="mr5" th:src="@{/img/ico/ico_custom04.png}" />팩스</th>
+							<td>
+								<span class="wBox f14 black">02-553-0620</span>
+							</td>
+						</tr>
+						<tr>
+							<th><img class="mr5" th:src="@{/img/ico/ico_custom03.png}" />주소</th>
+							<td colspan="3">
+								<span class="wBox f14 black">서울특별시 중구 퇴계로 6길 3-30 (주)정식품 고객지원부</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="grayBox mt20">
+					<ul class="f18"><li class="number">02</li><li class="stepCopy mt5">접수사항은 통합시스템에서 일괄 접수되어 관할부서/ 담당자에게 실시간 통보됩니다.</li></ul>
+				</div>
+				<div class="grayBox mt20">
+					<ul class="f18"><li class="number">03</li><li class="stepCopy mt5">관할부서/담당자별로 접수사항을 확인/조치하여 최단시간 내에 고객님께 알려드립니다.</li></ul>
+				</div>
+				<div class="grayBox mt20">
+					<ul class="f18"><li class="number">04</li><li class="stepCopy mt5">문제 발생 시에는 공정거래위원회 고시 소비자분쟁해결기준에 의거하여 처리됩니다.</li></ul>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="qBox mt50 f18 fw400">
+					<span class="custom-into mr50"><img th:src="@{/img/ico/icoQ.png}" alt="물음표" /> 온라인 고객상담은 24시간 운영됩니다.</span>
+					<p class="btnType02"><a href=""><span>1:1문의 바로가기</span></a></p>
+				</div>
+			</div>
+			<div class=" col-md-12">
+				<p class="f27 fw500 black mt100">소비자분쟁 해결 기준</p>
+				<p class="f18 fw400 black mt20 blackLine2 pt20">클레임에 대한 보상기준은 소비자분쟁해결기준(공정거래위원회 고시)에 의거, 동일품목 동일수량으로 현물교환을 원칙으로 함.</p>
+				<table cellspacing="0" border="0" class="custom mt40">
+					<colgroup>
+						<col width="15%">
+						<col width="25%">
+						<col width="25%">
+						<col width="25%">
+					</colgroup>
+					<tr>
+						<th>구분</th>
+						<th>피해유형</th>
+						<th>보상기준</th>
+						<th>비고</th>
+					</tr>
+					<tr>
+						<td rowspan="2">식료품</td>
+						<td>1)함량·용량부족<br>2)부패·변질<br>3)유통기간경과<br>4)이물혼입</td>
+						<td>제품교환 또는 구입가 환급</td>
+						<td rowspan="2">일실소득 : 피해로 인하여 소득상실이 발생한 것이 <br>입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 <br>시중 노임단가를 기준으로 함.</td>
+					</tr>
+					<tr>
+						<td>5)부작용<br>6)용기파손 등으로 인한 상해 사고</td>
+						<td>치료비, 경비 및 일실소득배상</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<br class="clear">
+		
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

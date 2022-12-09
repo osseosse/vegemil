@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<footer id="footer" th:fragment="footerFragment">
+<div class=" grayLine">
+	<div class="contant1760 mt100 mb100">
+		<div class="row footWrap">
+			<div class="col-md-7 wView">
+				<ul class="foot_box">
+					<li class="foot_box_title f_pp f18 fw600"><a href="#">Company</a></li>
+					<li><a href="#">베지밀 스토리</a></li>
+					<li><a href="#">기업정보</a></li>
+					<li><a href="#">홍보영상</a></li>
+					<li><a href="#">PR Press</a></li>
+					<li><a href="#">사회공헌활동</a></li>
+					<li><a href="#">전국 영업소</a></li>
+				</ul>
+				<ul class="foot_box">
+					<li class="foot_box_title f_pp f18 fw600"><a href="#">Product</a></li>
+					<li><a href="#">브랜드스토리</a></li>
+					<li><a href="#">제품소개</a></li>
+					<li><a href="#">쿡앤쿡 레시피</a></li>
+					<li><a href="#">공식 쇼핑몰</a></li>
+				</ul>
+				<ul class="foot_box">
+					<li class="foot_box_title f_pp f18 fw600"><a href="#">R&D</a></li>
+					<li><a href="#">중앙연구소</a></li>
+					<li><a href="#">특허 및 연구논문</a></li>
+					<li><a href="#">식품안전인증현황</a></li>
+					<li><a href="#">청주공장</a></li>
+					<li><a href="#">베지밀 FAQ</a></li>
+				</ul>
+				<ul class="foot_box">
+					<li class="foot_box_title f_pp f18 fw600"><a href="#">Communication</a></li>
+					<li><a href="#">고객문의</a></li>
+					<li><a href="#">사이버 견학</a></li>
+					<li><a href="#">영유아식 샘플신청</a></li>
+					<li><a href="#">정식품 웹진</a></li>
+					<li><a href="#">CCM / CP</a></li>
+					<li><a href="#">SNS</a></li>
+					<li><a href="#">이벤트</a></li>
+				</ul>
+			</div>
+			<div class="col-md-5 text-right">
+				<p class="f14 fw400 gray04">(주)정식품 충청북도 청주시 흥덕구 산단로 124 (우)28446</p>
+				<p class="f14 fw400 gray04 mt10">사업자등록번호: 315-81-19977</p> 
+				<p class="f14 fw400 gray04 mt10">업태 : 제조(기타 비알콜성 음료) 대표이사 이순구 대표전화 02 3484 9300</p> 
+				<p class="f13 fw600 f_pp mt60">Copyright(c)2008 Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved.</p> 
+			</div>
+		</div>
+	</div>
+</div>
+</footer>
+</html>

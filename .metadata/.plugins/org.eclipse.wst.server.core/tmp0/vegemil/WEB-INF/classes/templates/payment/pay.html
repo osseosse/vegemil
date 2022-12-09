@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<script src="https://js.tosspayments.com/v1/payment"></script>
+<script>
+  function startPayment() {
+	  
+	  var clientKey = 'test_ck_OALnQvDd2VJoXJYYWBnrMj7X41mN'; // 테스트용 클라이언트 키
+	  //var clientKey = 'live_ck_ADpexMgkW36RQGla9Ow3GbR5ozO0'; // 라이브 클라이언트 키
+	  // 2. 초기화
+	  var tossPayments = TossPayments(clientKey);
+	  
+	  var amount = $("#payAmt").val();
+	  var bizNum = $("#bizNum").val();
+	  var companyName = $("#companyName").val();
+	  var now = new Date();
+	  
+	  if(amount == '' || amount == 0) {
+		  alert("결제 금액을 입력해 주세요.");  
+		  return false;
+	  }
+	  
+	  tossPayments.requestPayment('카드', {
+		  amount: amount,
+		  orderId: bizNum+'_'+now.getMonth()+now.getDate()+now.getHours()+now.getMinutes()+now.getSeconds(),
+		  orderName: '그린비아 결제',
+		  customerName: bizNum,
+		  successUrl: 'http://localhost:8080/payment/success',
+		  failUrl: 'http://localhost:8080/payment/fail',
+		})
+		.catch(function (error) {
+		    if (error.code === 'USER_CANCEL') {
+		      // 결제 고객이 결제창을 닫았을 때 에러 처리
+		    } else if (error.code === 'INVALID_CARD_COMPANY') {
+		      // 유효하지 않은 카드 코드에 대한 에러 처리
+		      alert("유효하지 않은 카드 입니다.");
+		    }
+	  	});
+	  
+  }
+</script>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content">
+	<div class="contant1460" >
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">그린비아 법인 결제</p>
+			</div>
+			<input type="hidden" th:value="${member.mDi}" />
+			<div class="col-md-12 ">
+				<div class="w860 center0 mt80">
+					<div cellspacing="0" border="0" class="joinT">
+						<ul>
+							<li>법인명</li>
+							<li><input readonly type="text" id="companyName" th:value="${member.mCompName}" class="inp02"></li>
+						</ul>
+						<ul>
+							<li>대표자명</li>
+							<li><input readonly type="text" th:value="${member.mName}" class="inp02"></li>
+						</ul>
+						<ul>
+							<li><span>사업자번호</span></li>
+							<li>
+								<input type="text" th:value="${member.mId}" id="bizNum" class="inp02 w330" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="10자리 숫자 ">
+							</li>
+						</ul>
+						<ul>
+							<li><span>결제명</span></li>
+							<li>
+								<input type="text" readonly value="그린비아 결제" class="inp02 w330" >
+							</li>
+						</ul>
+						<ul>
+							<li><span>결제금액</span></li>
+							<li>
+								<input type="text" id="payAmt" name="payAmt" class="inp02 w330" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="결제금액 ">
+							</li>
+						</ul>
+						<ul>
+							<li>휴대전화</li>
+							<li>
+								<input type="text" class="inp02" th:value="${member.mHp}">
+							</li>
+						</ul>
+						<ul>
+							<li>이메일</li>
+							<li>
+								<input type="text" class="inp02" th:value="${member.mEmail}">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w1160 center0 grayLine mt70">
+			<div class="w560 center0 mb200">
+				<ul class="joinbtnFoot mt50">
+					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
+					<li><button type="button" id="payBtn" onclick="startPayment();" class="btnType07 f20 fw500 lh140">결제하기</button></li>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

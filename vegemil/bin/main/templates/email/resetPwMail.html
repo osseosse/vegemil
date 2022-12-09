@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="osse">
+  <meta name="Keywords" content="정식품 채용">
+  <meta name="Description" content="정식품 채용 재설성 인증메일">
+  <title>정식품 비밀번호 재설정</title>
+ </head>
+ <body>
+<div style="background:#f4f4f4; width:100%; height:900px; display:inline-block; ">
+	<div style="margin-left: auto; margin-right: auto; width: 100%; max-width:800px; margin-top:100px " >
+		  <table width="800" style="border:0px solid #ccc; border-radius:5px; background:#fff ; " cellspacing="0">
+			<tr><td style="text-align:right; padding:20px 15px"><a href="index.html"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/logo.png" alt="정식품 Career" style="width:70px; "/></a></td></tr>
+			<tr>
+				<td style="font-size:36px; font-weight:600; letter-spacing:-4px; padding:0 60px; color:#333333">안녕하세요?<span th:text="${mName}"></span>님<br>정식품 고객지원센터에서 알려드립니다.</td>
+			</tr>
+			<tr>
+				<td style="font-size:14px; color:#333333; padding:50px 60px 30px 60px; line-height:150%; letter-spacing:-1px">
+				안녕하세요. 고객님<br>
+				본 메일은 정식품 홈페이지 비밀번호 재설정을 위한 인증메일입니다.<br><br>
+				아래 버튼을 누르시면 비밀번호 재설정 페이지로 이동합니다.
+				</td>
+			</tr>
+			<tr >
+				<td style="text-align:center; padding-top:40px; padding-bottom:70px">
+					<a th:href="|http://localhost:8080/email/pwReset?authToken=${authToken}|" target="_blank" style="padding:0; margin:0; border:0; background:none; cursor:pointer; color:#fff; font-size:16px; background:#0F93E1; padding:18px 70px; line-height:120%"; >재설정하기</a>	
+				</td>
+			</tr>
+			<tr>
+				<td style="font-size:13px; color:#fff; background:#333333; padding:30px 60px; color:#AAAAAA; line-height:150%">
+				- 본 메일은 발신 전용으로 회신이 불가합니다.<br>
+				- 본 메일 상의 내용을 사전에 서면 합의된 업무 목적 이외로 사용하거나 외부에 유출할 수 없습니다.
+				</td>
+			</tr>
+		  </table>
+			<p style="font-size:12px; color:#b4b4b4; padding-top:10px">Copyright © Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved.</p>
+	</div>
+</div>
+</body>
+</html>

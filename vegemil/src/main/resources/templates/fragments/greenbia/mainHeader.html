@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header id="header" th:fragment="headerFragment">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async th:src="@{https://www.googletagmanager.com/gtag/js?id=UA-141294099-1}"></script>
+
+<script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141294099-1');
+
+</script>
+
+<!-- ---------------------------------------------------------------------------------------------
+	1. 모바일 GNB스크립트 모바일 메뉴 스크립트 입니다. 개발시 아래 JS삭제해주세요.
+	2. common.js에 있는 gnb, 모바일gnb와 동일한 스크립트입니다.
+	3. 불러오기방식은 HTML에서 작동이 안됨. mainHeader.html에 다이렉트로 스크립트 적용
+--------------------------------------------------------------------------------------------- -->
+<!-- 모달팝업 -->
+	 <link rel="stylesheet" th:href="@{/common/css/greenbia/modality.css}" />
+	 <script th:src="@{/common/js/greenbia/modality.js}"></script>
+	 
+	 
+	 <!-- <input  id="isLogin" name="isLogin" th:value="${#authentication.authenticated}"/>
+	 <input  id="principalId" name="principalId" th:value="${#authentication.name}"/>
+	 <span sec:authentication="name"/></span> -->
+	 
+
+<div id="gnb" class="f_mw">
+	<div class="gnbBG"></div>
+	<div class="logo"><a th:href="@{/greenbia/index}"><img th:src="@{/img/greenbia/logo.png}" alt="로고"></a></div>
+	<ul>
+		<li class="first"><a th:href="@{/greenbia/newInfo}" class="dep01">그린비아 소개</a>
+			<ul>
+				<li><a th:href="@{/greenbia/newInfo}">그린비아는?</a></li>
+				<li><a th:href="@{/greenbia/features}">특징</a></li>
+				<li><a th:href="@{/greenbia/history01}">연혁</a></li>
+				<li><a th:href="@{/greenbia/thesis}">논문</a></li>
+			</ul>
+		</li>
+		<li><a th:href="@{/greenbia/newProduct}" class="dep01 ">제품소개</a>
+			<ul>
+				<li><a th:href="@{/greenbia/guide}">선택가이드</a></li>
+				<li>
+					<a th:href="@{/greenbia/newProduct}">전체제품</a>
+					<dl>
+						<dd><a th:href="@{/greenbia/newProduct?category=02}">일반영양식</a></dd>
+						<dd><a th:href="@{/greenbia/newProduct?category=03}">전문영양식</a></dd>
+						<dd><a th:href="@{/greenbia/newProduct?category=04}">연하식</a></dd>
+						<dd><a th:href="@{/greenbia/newProduct?category=05}">건강식품</a></dd>
+					</dl>
+				</li>
+				<li><a th:href="@{/greenbia/search}">제품검색</a></li>
+			</ul>
+		</li>
+		<li><a th:href="@{/greenbia/enteral}" class="dep01">섭취방법/주의사항</a>
+			<ul>
+				<li><a th:href="@{/greenbia/enteral}">경장영양식<br><span>(환자용 식품)이란?</span></a></li>
+				<li><a th:href="@{/greenbia/ingestion}">경관 급식 사용 방법</a></li>
+				<li><a th:href="@{/greenbia/safety}">주의사항</a></li>
+			</ul>
+		</li>
+		<li><a th:href="@{/greenbia/newFaq}" class="dep01">고객지원</a>
+			<ul>
+				<li><a th:href="@{/greenbia/newFaq}">FAQ</a></li>
+				<li><a th:href="@{/greenbia/mall}">온라인 구매</a></li>
+
+			</ul>
+		</li>
+	</ul>
+	<dl>	
+		<dd><a th:href="@{https://www.vegemil.co.kr/main/}" class="hvr-float"><img th:src="@{/img/greenbia/ico_home_h.gif}" alt="" /><p>정식품 홈페이지</p></a></dd>
+		<dd><a th:href="@{/greenbia/mall}" class="hvr-float"><img th:src="@{/img/greenbia/ico_cash_h.gif}" alt="" /><p>온라인 구매</p></a></dd>		
+		<dd sec:authorize="!isAuthenticated()" id="logIn">
+			<a th:href="@{/member/login}" class="hvr-float"><img th:src="@{/img/greenbia/ico_peple_h.gif}" alt="" /><p>로그인</p></a>
+		</dd> 	
+ 		<dd sec:authorize="isAuthenticated()" id="logOut" >
+	 		<a href="#" class="hvr-float">
+	 			<input type ="image" th:onclick="|location.href='@{/member/logout}'|"  th:src="@{/img/greenbia/ico_peple_h.gif}" id="logout1" alternatetext="로그아웃" />
+	 			<p>로그아웃</p>
+	 		</a>
+ 		</dd>	
+	</dl>
+	
+    <script>
+/* 	    if(<%=login%>=='1'){
+	        $( document ).ready( function() {
+	            $('#logIn').hide();
+	            $('#logOut').show();
+	            
+	            $('#logIn2').hide();
+	            $('#logOut2').show();
+	        });
+	    }
+	    else if(<%=login%>=='0'){
+	        $( document ).ready( function() {
+	            $('#logIn').show();
+	            $('#logOut').hide();
+	            
+	            $('#logIn2').show();
+	            $('#logOut2').hide();
+	        });
+	    } */
+	 </script>
+</div>
+    
+
+<!-- <div id="gnbM">
+	<ul class="m_menuBox">
+		<li><div class="logo"><a href="./index.aspx"><img th:src="@{/img/greenbia/logo500.png}" alt="로고"></a></li>
+		<li>
+			<dl>
+				<dd><a href="./index.aspx"><img src="./img/ico_home_h.gif" alt="홈"></a></dd>
+				<dd><a href="./mall.aspx"><img src="./img/ico_cash_h.gif" alt="구매"></a></dd>
+				<dd><a href="#pop_Login"><img src="./img/ico_peple_h.gif" alt="기업회원"></a></dd>
+				<dd><p onclick="openNav()">
+					<span class="m_line"></span>
+					<span class="m_line"></span>
+					<span class="m_line"></span>
+					</p>
+				</dd>
+				
+				<dd><span style="font-size:40px;cursor:pointer;line-height:20%; border:1px solid blue;vertical-align:top" onclick="openNav()">&#9776;</span></dd>
+				
+			</dl>
+		</li>
+	</ul>
+	<div style="clear:both"></div>
+	
+	<div id="myNav" class="overlay_m">
+	 
+	  <div class="overlay-content">
+			
+	
+		<ul class="m_ov_top">
+			<li><a href="/main">정식품 홈페이지</a></li>
+			<li><a href="./mall.aspx">온라인구매</a></li>
+			<li id="logIn2"><a href="#pop_Login">로그인</a></li>
+			<li id="logOut2"><a href="#">로그아웃</a></li>
+			<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+		</ul>
+		<ul class="m_ov_center">
+			<li>
+				<dl>
+					<dt>그린비아 소개</dt>
+					<dd><a href="./newInfo.aspx">그린비아는 ?</a></dd>
+					<dd><a href="./features.aspx">특징</a></dd>
+					<dd><a href="./history01.aspx">연혁</a></dd>
+					<dd><a href="./thesis.aspx">논문</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>제품소개</dt>
+					<dd><a href="./guide.aspx">선택가이드</a></dd>
+					<dd><a href="./newProduct.aspx">전체제품</a></dd>
+					<dd><a href="./newProduct.aspx?category=02">- 일반영양식</a></dd>
+					<dd><a href="./newProduct.aspx?category=03">- 전문영양식</a></dd>
+					<dd><a href="./newProduct.aspx?category=04">- 연하식</a></dd>
+					<dd><a href="./newProduct.aspx?category=05">- 건강식품</a></dd>
+					<dd><a href="./search.aspx">제품검색</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>섭취방법/주의사항</dt>
+					<dd><a href="./enteral.aspx">경장영양식<br><span>(환자용 식품)이란?</span></a></dd>
+					<dd><a href="./ingestion.aspx">경관 급식 사용 방법</a></dd>
+					<dd><a href="./safety.aspx">주의사항</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>고객지원</dt>
+					<dd><a href="./newFaq.aspx">FAQ</a></dd>
+					<dd><a href="./mall.aspx">온라인 구매</a></dd>
+					<dd><a href="./sampleKidsmore.aspx">샘플신청</a></dd>
+					<br><br><br><br><br><br><br><br>
+				</dl>
+			</li>
+		</ul>
+		
+	
+	  </div>
+	</div>
+</div>-->
+
+<div style="clear:both"></div> 
+
+<!-- popup -->
+<script th:src="@{https://www.vegemil.co.kr/Main/brandVegemilBaby/HTML/js/modality.js}"></script>
+<div id="pop_Login"  style="display:none;">
+	<table class="popBaby" cellspacing="0"  summary="로그인">
+        <caption>로그인팝업</caption>
+		<colgroup>
+		</colgroup>
+		<tr>
+			<th>
+				<span class="f40_6">로그인</span>
+				<p class="btn_pop_close"><a href="#pop_Login"><img th:src="@{/img/greenbia/btn_popClose.gif}" alt="닫기" /></a></p>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<p class="f20_4 mt40 tdLine">
+					정식품 기업사이트 회원가입 후 이용 가능합니다.<br>미회원이실 경우, 회원가입 후 신청 부탁드립니다. 
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<!-- <ul class="pop_style01 mt40 pop_line">			
+					<form h:action="@{/auth/signin}" method="post" >
+	                    <input  class="mt40"type="text" name="username" placeholder="유저네임" required="required" />
+	                    <input class="mt40" type="password" name="password" placeholder="비밀번호" required="required" />
+	                    <button>로그인</button>
+	                 </form>
+				</ul>	 -->		
+			
+			
+				<ul class="pop_style01 mt40 pop_line">
+					<form th:action= "@{/member/login}" method="POST">
+						<li class="mt40">
+						    <input type="text" id="txtId" name="txtId" tabindex=1 placeholder="아이디" style="IME-MODE: disabled; MARGIN-LEFT: 6px" />					
+						</li>
+						<li>
+						   <input type="password" id="txtPwd" name="password" tabindex=2 placeholder="비밀번호" style="IME-MODE: disabled; MARGIN-LEFT: 6px" />					
+						</li>
+						<li class="f14_4 textRight"><a th:href="@{https://www.vegemil.co.kr/main/member/idPwSearch.aspx}">* 아이디 / 비밀번호찾기</a></li>
+						<li class="btn_in">
+							<input type="image" class="btn btn-secondary" th:src="@{/img/greenbia/btn_login.gif}" />						
+						</li>					
+					</form>
+				</ul>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<div class="tdLine2 mt30">
+					<ul class="popUL">
+						<li><span class="f17_4"><b class="blue">Stop! &nbsp;</b> 아직 회원이 아니신가요? &nbsp;&nbsp;<img class="pop_arr" th:src="@{https://www.vegemil.co.kr/Main/brandVegemilBaby/HTML/img/ico_popArrow.png}" alt="화살" /></span> </li>
+						<li><a th:href="@{https://www.vegemil.co.kr/main/member/terms.aspx}"><p class="btn_member">회원가입</p></a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<script>
+	var modal1 = Modality.init('#pop_Login ', {effect: 'slide-up'}); 
+</script>
+<!-- //popup -->
+
+	<!-- -------------------------------
+		개발시 아래 스크립트 삭제해주세요.
+	--------------------------------- -->
+	<script>
+	// 모바일 메뉴
+	function openNav() {
+	  document.getElementById("myNav").style.width = "100%";
+		$('.container100').css('display','none')
+	}
+
+	function closeNav() {
+	  document.getElementById("myNav").style.width = "0%";
+		 $('.container100').css('display','block')
+	}
+
+
+
+	</script>
+
+	<script>
+	// PC 메뉴
+	function chk(){
+			if(cc == 1){
+			$("#gnb ul li ul").slideDown(200);
+			$(".gnbBG").slideDown(200);
+			//$("#gnb .gnb_bg").slideDown(100);
+		}else{
+			$("#gnb ul li ul").slideUp(250);
+			$(".gnbBG").slideUp(250);
+			//$("#gnb .gnb_bg").slideUp(250);
+		}
+	}
+
+
+	$(function(){
+		$('#gnb>ul>li').mouseover(function(){
+			setTimeout(chk, 100);
+			cc = 1;
+			$(this).addClass('active');
+		});
+		$('#gnb').mouseout(function(){
+			setTimeout(chk, 400);
+			cc = 0;
+			$('#gnb ul li').removeClass('active');
+		});
+		$('#gnb ul li a').focus(function(){
+			setTimeout(chk, 100);
+			cc = 1;
+			$(this).parent().addClass('active');
+		});
+		$('#gnb ul li a').blur(function(){
+			setTimeout(chk, 100);
+			cc = 0;
+			$('#gnb ul li').removeClass('active');
+		});
+	});
+	</script>
+	
+</html>
+						
+				
+</header>
+</html>	

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="osse">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="description" content="정식품 오신것을 환영합니다."/> 
+<meta name="Keywords" content="정식품,두유,베지밀,유아식,썬몬드,그린비아,콩,대두,소이,식물성,음료" />
+<meta property="og:title" content="정식품"> 
+<meta property="og:url" content="https://www.vegemil.co.kr/"> 
+<meta property="og:image" content="~~~~~~~~~~~~~~~~~" /> 
+<meta property="og:description" content="두유 및 음료 제조업체, 베지밀, 영유아식, 그린비아, 라잇미닛, 한끼생식, 음료류 등"/>
+<title>정식품 개인정보 수정</title>
+<!-- CSS -->
+<link href="./common/css/slide.css" rel="stylesheet">
+<link href="./common/css/reset.css" rel="stylesheet">
+<link href="./common/css/style.css" rel="stylesheet">
+<link href="./common/css/bootstrap.css" rel="stylesheet">
+<link href="./common/css/product.css" rel="stylesheet">
+
+<!-- JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="./common/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./common/js/jquery.Floater.js"></script>
+<script type="text/javascript" src="./common/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="./common/js/prrple.slider.js" charset="utf-8"></script>
+<script type="text/javascript" src="./common/js/jquery.collapse.js"></script>
+<script type="text/javascript" src="./common/js/jquery.touchSwipe.1.6.min.js"></script>
+</head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="contant1460" >
+		
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">개인정보 수정</p>
+				<p class="f18 fw400 mt10 gray04 center">회원가입은 무료이며, 가입시 다양한 정보와 서비스를 이용하실 수 있습니다.<br>
+모든 정보는 고객님의 동의없이 공개되지 않으며,개인정보보호방침에 의해 보호받습니다.</p>	
+			</div>
+		
+			
+
+			<div class="col-md-12 ">
+				<div class="w860 center0 mt100">
+					<div cellspacing="0" border="0" class="joinT">
+						
+						<ul>
+							<li><span>아이디</span></li>
+							<li><input type="text" readonly class="inp02 w330" placeholder="jadepost"><span class="green f16 pl10">통합회원입니다.</span></li>
+						</ul>
+						<p class="js">이데이몰 아이디는 통합회원일 경우에만 노출</p>
+						<ul>
+							
+							<li><span>이데이몰 아이디</span></li>
+							<li>
+								<input type="text" readonly class="inp02 w330 " placeholder="jadepost"><span class="green f16 pl10">통합회원입니다.</span>
+							</li>
+						</ul>
+
+
+						<ul>
+							<li>비밀번호</li>
+							<li><input type="password" class="inp05 w330"></li>
+						</ul>
+						<ul>
+							<li>비밀번호 확인</li>
+							<li><input type="password" class="inp05 w330"></li>
+						</ul>
+						<ul>
+							<li>이름</li>
+							<li><input readonly type="text" class="inp02" placeholder="하지숙"></li>
+						</ul>
+						<ul>
+							<li>성별</li>
+							<li><span class="readOnly w200" >남</span></li>
+						</ul>
+						<ul>
+							<li>생년월일</li>
+							<li><span class="readOnly w200">1988-01-01</span></li>
+						</ul>
+						<ul>
+							<li>휴대전화</li>
+							<li>
+								<!--
+								<select class="sel01" >
+									<option>010</option>
+									<option>011</option>
+									<option>016</option>
+									<option>017</option>
+									<option>018</option>
+									<option>019</option>
+								</select>
+								-->
+								<input  type="text" class="inp05 w120"  placeholder="010">
+								- <input  type="text" class="inp05 w130"  placeholder="5412"> - <input  type="text" class="inp05 w130" placeholder="5412"> 
+							</li>
+						</ul>
+						<ul>
+							<li>SMS 수신동의</li>
+							<li>
+								<div class="boxType">
+									<div class="baseRadioBox">
+										<input type="radio" id="snsAgree1" name="sns수신동의" /><label for="snsAgree1"><span></span>수신동의</label>
+										<input type="radio" id="snsAgree2" name="sns수신동의" checked/><label for="snsAgree2"><span></span>수신거부</label>
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+						<ul>
+							<li>주소</li>
+							<li>
+								<input name="txtZipcode" class="inp03 gray03" type="text" value="17066" maxlength="5" id="txtZipcode" onclick="javascript:EditZipcode('txtZipcode');" readonly="readonly" placeholder="우편번호입력"><button type="text" class="btnType09 ml10">우편번호검색</button>
+								<!--<img style="CURSOR:pointer" id="imgZipcode" class="veM" name="imgZipcode" onclick="javascript:EditZipcodeNew();" alt="우편번호검색" align="top" src="../images/btn/btn_zip.gif">
+								--><br>
+
+								<input name="txtAddr1" class="inp05 mt10 gray03 w700" type="text" value="경기도 용인시 기흥구 기흥역로58번길 56 (구갈동, 기흥역파크푸르지오)" maxlength="150" id="txtAddr1" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
+								<input name="txtAddr2" class="inp05 mt10 w700" type="text" value="" placeholder="상세주소를 입력해 주세요" maxlength="150" id="txtAddr2">
+							</li>
+						</ul>
+						<ul>
+							<li>이메일</li>
+							<li>
+								<input name="txtEmail" type="text" value="jadepost" maxlength="50" id="txtEmail" class="inp05 w200"><input name="txtEmail2" type="text" value="naver.com" maxlength="50" id="txtEmail2" class="inp03 ml10 w220 mr10">
+								<select name="selEmail" id="selEmail" onchange="writeMailAddr();" class="sel02 w200 mt10m">
+									<option value="선택하세요">선택하세요</option>
+									<option selected="selected" value="naver.com">naver.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="self">직접 입력</option>
+								</select>
+							</li>
+						</ul>
+						<ul>
+							<li>이메일 수신동의</li>
+							<li>
+								<div class="boxType">
+									<div class="baseRadioBox">
+										<input type="radio" id="emailAgree1" name="이메일동의" /><label for="emailAgree1"><span></span>수신동의</label>
+										<input type="radio" id="emailAgree2" name="이메일동의" checked /><label for="emailAgree2"><span></span>수신거부</label>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w1160 center0 grayLine mt70">
+			<div class="w860 center0 mt80">
+				<div cellspacing="0" border="0" class="joinT">
+					<p class="mt20 f20 fw400">대리점회원은 아래내용을 추가로 입력해주세요</p>
+					<ul class="mt50">
+						<li><span>대리점명</span></li>
+						<li><input type="text" class="inp05 w500"></li>
+					</ul>
+					<ul>
+						<li><span>사업자등록번호</span></li>
+						<li><input type="text" class="inp05 w500" placeholder="-를 제외한 숫자만 입력하세요" ></li>
+					</ul>
+				</div>
+			</div>
+			
+
+			<div class="w560 center0 mb200">
+				<ul class="joinbtnFoot mt50">
+					<li class="mr10"><button type="text" class="btnType10 f20 fw500 lh140" >취소</button></li>
+					<li><button type="text" class="btnType07 f20 fw500 lh140">수정완료</button></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+
+
+<!-- ================================ 
+		Footer
+================================ -->
+<footer class="contant100" >
+	
+</footer>
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType02").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+
+<script>
+  /* 로드방식 local 크롬에서 노출되지 않음. */
+  $( document ).ready( function() {
+	$( 'footer' ).load( './mainFooter.html' );
+  });
+</script>
+<!-- ================================ 
+		// Footer
+================================ -->
+
+
+</body>
+</html>

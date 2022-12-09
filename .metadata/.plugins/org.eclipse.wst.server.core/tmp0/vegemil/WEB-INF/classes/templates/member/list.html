@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="bg_rightBlue pb100">
+	<div class="contant1460" >
+		<div class="row mt90h">&nbsp;</div>
+		<div class="w1460 center0 mt80">
+			<div class="row ">
+				<div class="col-md-4 my pr100">
+					<div class="myBox">
+						<p class="f14 fw400  mebOut gray04"><a href="">회원 탈퇴 신청</a></p>
+						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
+						<ul class="account_box mt40">
+							<li th:text="${member.mId}"></li>
+							<li>정회원</li><!-- "대리점장이 회원가입시" <li>대리점</li> -->
+							<li>본인인증완료</li><!-- "본인인증이 되지 않은 고객일경우" <li>본인인증필요</li> -->
+						</ul>
+						<p class="f14 fw400 gray04 mt25">
+						개인정보를 수정, 변경하실 수 있습니다.<br>
+						모든 정보는 고객님의 동의없이 공개되지 않으며, 
+						개인 정보 보호 방침에 의해 보호받습니다.</p>
+						<a href=""><p class="btnType12 mt30"><span class="lh140">개인정보 변경</span></p></a>
+					</div>
+					<ul class="mt30 myBoxFoot">
+						<li class="f18"><a href="#">1:1 문의</a></li>
+						<!-- <li class="f18"><a href="#">공장견학 신청</a></li> -->
+						<li class="f18"><a href="#">샘플신청</a></li>
+					</ul>
+					
+				</div>
+				<div class="col-md-8 mt50m">
+					<ul class="my_subTitle">
+						<li><p class="f20 fw400">나의 상담내역</p></li>
+						<li><a href="#"><span class="gray04 f14">문의하기 &gt;</span></a></li>
+					</ul><br class="clear">
+					<div class="myBox mt20">
+						<div class="myQus f16">지난 상담내역이 <span th:text="|${qnaCount}건|"></span> 있습니다.</div>
+						<table cellspacing="0" summary="나의상담" border="0" class="myT mt30">
+							<caption>지난 상담</caption>
+							<colgroup>
+								<col width="20%">
+								<col width="60%">
+								<col width="20%">
+							</colgroup>
+							<tr>
+								<th>상담분류</th>
+								<th>질문내용</th>
+								<th>작성일</th>
+							</tr>
+							<tr th:if="${not #lists.isEmpty( qnaList )}" th:each="qna : ${qnaList}">
+								<td><p class="cate" th:text="${qna.sCate}"></p></td>
+								<td>
+									<a th:href="|/mypage/answer?sIdx=${qna.sIdx}|"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
+									<p class="ans" th:if="${qna.sAnswerYn} == 'Y'">답변</p>
+									<p class="ans" th:unless="${qna.sAnswerYn} == 'Y'">미답변</p>
+								</td>
+								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
+							</tr>
+							<tr class="r-box mt20" th:unless="${not #lists.isEmpty( qnaList )}">
+								<td>상담내역이 없습니다.</td>
+							</tr>
+						</table>
+						<p class="center mt20"><button type="text" class="btnType13" ><span class="f14 fw400 gray04">+ 더보기</span></button></p>
+					</div>
+					<p class="f20 fw400 mt50">샘플 신청내역</p>
+					<div class="sampleWrap mt20">
+						<ul>
+							<li>
+								<div class="myBox">
+									<p class="f23 fw500 ">영&middot;유아식 우리콩</p>
+									<dl class="mt20 sampleList">
+										<p class="js">영유아식 샘플신청으로 링크, 버튼노출 문제있을시 "신청하기"로 변경</p>
+										<dd><p >베지밀 인펀트 우리콩 1단계</p><span class="stype01"><a href="#">신청가능</a></span></dd>
+										<dd><p >베지밀 인펀트 우리콩 2단계</p><span class="stype02"><a href="#">신청마감</a></span></dd>
+										<dd><p >베지밀 인펀트 우리콩 3단계</p><span class="stype03"><a href="#">신청중</a></span></dd>
+									</dl>
+								</div>
+
+							</li>
+							<!-- 
+							<li class="mt30">
+								<p class="js">현재 서비스중이 아님. 향후 서비스시 오픈할 예정</p>
+								<div class="myBox">
+									<p class="f23 fw500 ">베지밀 건강맘</p>
+									<dl class="mt20 sampleList">
+										<dd><p>베지밀 건강맘</p><span class="stype01"><a href="#">신청가능</a></span></dd>
+									</dl>
+									<p class="f23 fw500  mt30">그린비아 키즈모아</p>
+									<dl class="mt20 sampleList">
+										<dd><p>그린비아 키즈모아</p><span class="stype01"><a href="#">신청가능</a></span></dd>
+									</dl>
+								</div>
+							</li>
+							 -->
+						</ul>
+					</div><!-- sampleWrap -->
+
+				</div>
+			</div>
+			
+		</div><!-- // w1460 -->
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

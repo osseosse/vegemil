@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>정식품</title>
+    <head th:replace="fragments/head :: headFragment"></head>
+</head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content">
+	<div class="contant1460" >
+		
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">로그인</p>
+				<p class="f18 fw400 mt10 gray04 center">(주)정식품 웹사이트에 오신 것을 환영합니다.<br>로그인을 하시면(주)정식품 웹사이트의 다양한 서비스를 이용하실 수 있습니다.</p>	
+			</div>
+			<div class=" col-md-12">
+				<form th:action="@{/member/loginProc}" method="post" onsubmit="return loginCheck();">
+				<div class="w560 center0">
+					<p class="mt20 fw400 mt100 f20">로그인</p>
+					<p class="mt10 center"><input id="txtId" name="username" type="text" placeholder="아이디" class="inp01"></p>
+					<p class="error" id="idCheck" style="display: none;">아이디는 필수 입력값입니다.</p>
+					<p class="mt20 fw400 mt30 f20">비밀번호</p>
+					<p class="mt10 center"><input id="txtPw" name="password" type="password" placeholder="비밀번호" class="inp01"></p>
+					<p class="error" id="pwCheck" style="display: none;">비밀번호는  필수 입력값입니다.</p>
+					<p class="checkStyle gray03 f16 mt15"><a href="#"><input type="checkbox" id="wk02" name="wk02" /><label for="wk02"><span></span>로그인 유지</label></a></p>
+					<div align="center" th:if="${param.error}">
+		                <p class="error"><img th:src="@{/img/error.png}">아이디 패스워드가 올바르지 않거나 비활성화된 회원입니다.</p>
+		            </div>
+					<p class="mt50 center"><button type="submit" id="loginBtn" disabled="disabled" class="btnType07  f20 fw500 lh140" >로그인</button></p>
+					<ul class="loginFoot mt30">
+						<li><a href="/member/join">회원가입</a></li>
+						<li><a href="/member/idSearch">아이디찾기</a></li>
+						<li><a href="/member/pwSearch">비밀번호찾기</a></li>
+					</ul>
+				</div>
+				</form>
+			</div>
+		</div>
+		<div class="w1160 center0 grayLine mt70">
+			<p class="f20 fw500 lh140 center mt50">회원가입을 원하지 않는 고객님들께서는<br>아래의 CS 메일로 문의를 주시면, <br class="mView">당사 고객지원팀에서 신속하게 응대하여 드리겠습니다.</p>
+			<div class="w560 center0">
+				<ul class="dv2 mt50">
+					<li><p class="btnType08"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_mic.png}" alt="마이크" />고객상담 <span class="f_pp f14">080-930-8888</span></a></li>
+					<li><p class="btnType08"><a href="mailto:cs@vegemil.co.kr"><img class="mr5" th:src="@{/img/ico/ico_mail.png}" alt="메일" />상담메일 <span class="f_pp f14">cs@vegemil.co.kr</span></a></p></li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+/*<![CDATA[*/
+	
+//이메일 정규식
+$('#txtId').keyup(function () {
+	
+	var sId = $('#txtId').val();
+	var sPw = $("#txtPw").val();
+	
+	if ($.trim(sId).length == 0) {
+		$("#idCheck").css('display', 'inline-block');
+		$("#txtId").addClass('error');
+	} else {
+		$("#idCheck").css('display', 'none');
+		$("#txtId").removeClass('error');
+		//$("#idCheck").css('display', 'none');
+	}
+	
+	if($.trim(sId).length != 0 && $.trim(sPw).length != 0) {
+		$("#loginBtn").attr("disabled", false); //해제
+		$("#loginBtn").addClass('active');
+	} else {
+		$("#loginBtn").attr("disabled", true); //설정
+		$("#loginBtn").removeClass('active');
+	}
+	 
+});
+
+//비밀번호 일치 검사
+$('#txtPw').keyup(function () {
+	
+	var sId = $('#txtId').val();
+    var sPw = $("#txtPw").val();
+
+    if ($.trim(sPw).length == 0) {
+		$("#pwCheck").css('display', 'inline-block');
+		$("#txtPw").addClass('error');
+	} else {
+		$("#pwCheck").css('display', 'none');
+		$("#txtPw").removeClass('error');
+	}
+    
+    if($.trim(sId).length != 0 && $.trim(sPw).length != 0) {
+		$("#loginBtn").attr("disabled", false); //해제
+		$("#loginBtn").addClass('active');
+	} else {
+		$("#loginBtn").attr("disabled", true); //설정
+		$("#loginBtn").removeClass('active');
+	}
+    
+});
+
+function loginCheck() {
+    
+  	//이메일 공백 확인
+    if($("#txtId").val() == ""){
+      alert("아이디를 입력해주세요");
+      $("#txtId").focus();
+      return false;
+    }
+
+    //비밀번호 공백 확인
+    if($("#txtPw").val() == ""){
+      alert("패스워드를 입력해 주세요");
+      $("#txtPw").focus();
+      return false;
+    }
+	
+	return true;
+}
+
+/*]]>*/
+</script>
+</body>
+</html>

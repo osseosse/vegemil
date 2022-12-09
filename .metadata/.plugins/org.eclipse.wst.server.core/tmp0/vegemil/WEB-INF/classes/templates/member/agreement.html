@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<link th:href="@{/common/css/modality.css}" rel="stylesheet">
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content">
+	<div class="contant1460" >
+	<form name="authForm" id="authForm" method="post" action="" target="">
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">회원가입</p>
+				<p class="f18 fw400 mt10 gray04 center">회원가입은 무료이며, 가입시 다양한 정보와 서비스를 이용하실 수 있습니다.<br>모든 정보는 고객님의 동의없이 공개되지 않으며,개인정보보호방침에 의해 보호받습니다.</p>	
+			</div>
+			<div class="w1160 center0 mt100">
+				<div class=" center0 ">
+					<ul class="agree">
+						<li class="f20 fw500 active"><a href="#"><span>약관동의</span></a></li>
+						<li class="f20 fw500"><a href="#"><span>정보입력</span></a></li>
+						<li class="f20 fw500"><a href="#"><span>가입완료</span></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="agreeBox center0 mt50">
+					<ul>
+						<li>
+							<dl>
+								<dd class="checkStyle "><input type="checkbox" id="agree01" name="agree" /><label for="agree01"><span></span><b class="red">[필수]</b> ㈜정식품 이용 약관</label> </dd>
+								<dd><a href="#pop_policy"><img th:src="@{/img/btn/btn_agree_plus.png}" alt="팝업띄우기"/></a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dd class="checkStyle "><input type="checkbox" id="agree02" name="agree" /><label for="agree02"><span></span><b class="red">[필수]</b> ㈜정식품 개인정보 처리방침</label> </dd>
+								<dd><a href="#pop_privacy"><img th:src="@{/img/btn/btn_agree_plus.png}" alt="팝업띄우기"/></a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dd class="checkStyle "><input type="checkbox" id="agree03" name="agree" /><label for="agree03"><span></span><b class="gray04">[선택]</b> 이데이몰에 동시 가입(선택)</label> </dd>
+								<dd><a href="#pop_edaymall"><img th:src="@{/img/btn/btn_agree_plus.png}" alt="팝업띄우기"/></a></dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="w560 center0 mt20  text-right" >
+					<p class="checkStyle "><input type="checkbox" id="agreeAll" name="agreeAll" /><label for="agreeAll"><span></span> 모두 동의합니다.</label> </p>
+					<p class="mt50 center"><button type="button" class="btnType07  f20 fw500 lh140"  onclick = "btnCheck()">휴대폰 인증</button></p>
+				</div>
+			</div>
+		</div>
+		<div class="w1160 center0 grayLine mt70">
+			<div class="w560 center0">
+				<p class="f20 fw500 lh140 mt50 text-centerM mt40m"><img th:src="@{/img/ico/icoQ.png}" alt="팝업띄우기"/> 알려드립니다.</p>
+				<p class="f14 mt30 gray04 lh140 mt20m">- 본인인증을 위해 입력하신 개인정보는 본인인증기관에서 수집하는 정보이며, <br>이때 수집된 정보는 본인인증 외 어떠한 용도로도 이용되거나 별도 저장되지 않습니다.</p>
+				<p class="f14 mt30 gray04 lh140">- 본인 인증 서비스는 신용정보 취급 정식 인가 업체인 서울신용평가정보(주)에서 제공합니다.</p>
+				<p class="f14 mt30 gray04 lh140">- 본인 인증에 문제가 있는경우, 서울신용평가정보 (주)[SIREN24 고객센터(1577-1006)]로 문의해 주시기 바랍니다.</p>
+			</div>
+		
+		<input type="hidden"	name="joinType"	 id="joinType"			 />
+		<input type="hidden"	name="step"		 id="step"		value="2"/>
+		<input type="hidden"	name="reqURL"	 id="reqURL"			 />
+		<input type="hidden"	name="firstURL"  id="firstURL"		   	 />
+		<input type="hidden"	name="secondURL" id="secondURL"		   	 />
+		
+		</form>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+
+<!-- 정식품 이용약관 pop_policy -->
+	<div id="pop_policy" class="pop_wrap" style="display:none;">
+		<div class="popBase" cellspacing="0"  summary="타이틀">
+			<p class="f30 fw500 gray04 center">이용약관</p>		
+			<div class="policy popTextbox mt20"></div>
+			<div th:replace="fragments/policy :: policyFragment"></div>
+			<div class="text-center">
+				<p class="mt40 btnType11 center"><a href="#pop_policy" class="type"><span class="white">닫기</span></a></p>
+			</div>
+		</div>
+	</div>
+	<!-- 정식품 개인정보처리방침 pop_privacy -->
+	<div id="pop_privacy" class="pop_wrap" style="display:none;">
+		<div class="popBase" cellspacing="0"  summary="타이틀">
+			<p class="f30 fw500 gray04 center">개인정보처리방침</p>		
+			<div class="privacy popTextbox mt20"></div>
+			<div th:replace="fragments/privacy :: privacyFragment"></div>
+			<div class="text-center">
+				<p class="mt40 btnType11 center"><a href="#pop_privacy" class="type"><span class="white">닫기</span></a></p>
+			</div>
+		</div>
+	</div>
+	<!-- 이데이몰 이용약관 pop_edaymall -->
+	<div id="pop_edaymall" class="pop_wrap" style="display:none;">
+		<div class="popBase" cellspacing="0"  summary="타이틀">
+			<p class="f30 fw500 gray04 center">이용약관</p>		
+			<div class="edaymall popTextbox mt20"></div>
+			<div th:replace="fragments/edaymall :: edaymallFragment"></div>
+			<div class="text-center">
+				<p class="mt40 btnType11 center"><a href="#pop_edaymall" class="type"><span class="white">닫기</span></a></p>
+			</div>
+		</div>
+	</div>
+	<!-- //이데이몰이용약관 pop_edaymall -->
+
+	<script th:src="@{/common/js/modality.js}"></script>
+	<!-- 팝업 script -->
+	<script>
+		var modal1 = Modality.init('#pop_policy', {effect: 'slide-up'}); 
+		var modal2 = Modality.init('#pop_privacy', {effect: 'slide-up'}); 
+		var modal3 = Modality.init('#pop_edaymall', {effect: 'slide-up'}); 
+	</script>
+	<!-- //팝업 script -->
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script>
+
+//체크박스 전체 선택
+$(".col-md-12").on("click", "#agreeAll", function () {
+	
+  var checked = $(this).is(":checked");
+
+  if(checked){
+  	$(this).parents(".col-md-12").find('input').prop("checked", true);
+  } else {
+  	$(this).parents(".col-md-12").find('input').prop("checked", false);
+  }
+});
+
+function btnCheck() {
+	
+	if($("#agree01").is(":checked") == true
+	&& $("#agree02").is(":checked") == true) 
+	{
+		joinHPCheck();
+	} else {
+		alert("필수 항목을 체크해주세요");
+		return false;
+	}
+}
+
+//휴대폰 인증 확인
+function joinHPCheck(){
+	
+	var authForm = $('#authForm');
+    //조인타입에 flag 값을 넣어줌
+	/////////////////////////해당URL가져온후문자열정리//////////////////////////////
+	var url = document.URL;
+	//var tmpUrl = url.split("?");
+	//var reqURL_result = tmpUrl[0];
+	var urlStr = url.split("/");
+	var urlStr_1 = urlStr[3];
+	var urlStr_2 = urlStr[4];
+	var urlStr_3 = urlStr[5];
+	var urlStr_4 = urlStr[6];
+
+	var reqURL;
+	//alert("/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3 + "/" + urlStr_4);
+	if(urlStr_3 == null){
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2;
+	}else if(urlStr_4 == null){
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3;
+	}else{
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3 + "/" + urlStr_4;
+	}
+	/////////////////////////해당URL가져온후문자열정리//////////////////////////////
+
+	$('#reqURL').attr("value", reqURL);
+	$('#firstURL').attr("value", urlStr[0]);
+	$('#secondURL').attr("value", urlStr[2]);
+	
+	var PCC_window = window.open('', 'PCCV3Window', 'width=430, height=560, resizable=1, scrollbars=no, status=0, titlebar=0, toolbar=0, left=300, top=200' );
+	authForm.attr("action", "/input_seed.jsp");
+	authForm.attr("target", "PCCV3Window");
+	authForm.submit();
+
+	if(PCC_window == null){
+		alert(" ※ 윈도우 XP SP2 또는 인터넷 익스플로러 7 사용자일 경우에는 \n    화면 상단에 있는 팝업 차단 알림줄을 클릭하여 팝업을 허용해 주시기 바랍니다. \n\n※ MSN,야후,구글 팝업 차단 툴바가 설치된 경우 팝업허용을 해주시기 바랍니다.");
+   	}
+
+}
+</script>
+</body>
+</html>

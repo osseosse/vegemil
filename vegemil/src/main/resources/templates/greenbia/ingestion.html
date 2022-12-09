@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>그린비아 섭취방법</title>
+	<head th:replace="fragments/greenbia/head :: headFragment"></head>
+</head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+
+<header>
+<!-- 모바일 메뉴 -->
+
+<!-- //모바일 메뉴 -->
+</header>
+
+<!--------------------- 
+		//Header
+------------------- -->
+
+
+<!--------------------- 
+		content
+------------------- -->
+<main>
+<form id="Form1" method="post" runat="server">
+    <uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
+</form>
+<div class="container100">
+	<div class="row h500 bg_ingestion">
+		<div class="hcenter center">
+			<p class="f26_4_w f_ms">Method Of Ingestion</p>
+			<p class="f50_5_w mt20">섭취방법</p>
+		</div>
+		<div class="col-md-12 subNav">
+			<div class="subNavBox">
+				<ul>
+					<li><a href="#">섭취사항/주의사항</a></li>
+					<li><a href="#">섭취방법</a></li>
+				</ul>
+				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="container100">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12" >
+				<ul class="tabMenu3">
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/enteral}">경장영양식이란?</a></li>
+					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/ingestion}">경관 급식 사용 방법</a></li>
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/safety}">주의사항</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container1400_15 mt100">
+	<div class="row">
+		<div class="col-md-12 " data-aos="fade-right" data-aos-duration="2000">
+			<p class="f50_6 mt20 center">경관급식의 준비와 순서<br><span class="f45_6 pupple">Tube Feeding</span></p>
+		</div>
+	</div>
+</div>
+
+<div class="container100 mt350 pb200">
+	<div class="container1660_15" >
+		<!-- 영양기준 -->
+		<div class="row">
+			<div class="col-md-12 mt-200">
+				<p><img th:src="@{/img/greenbia/ingestion01.jpg}" alt="진료보는 모습"/></p>
+			</div> 
+		</div>
+		<div class="container1400_15 entBG mt-120 bgGray">
+			<div class="row">
+				<div class="col-md-12">
+					<p class="ebtTitle f34_5 center mt60 check"><img th:src="@{/img/greenbia/ico_check.png}" alt="연구하는 모습"/> 그린비아 경관급식<br class="noneM"> 제품 사용 방법</p></p>
+				</div>
+				<div class="col-md-12 mt40" data-aos="fade-up" data-aos-duration="1000">
+					<div class="bgPupple">
+						<p class="f22_4_w unlerline_w">* RTH 사용 시 장점 </p>
+						<p class="f18_4_w mt20m">
+						경관 급식 준비 과정에서 발생하는 오염 요인의 감소 (공기 중 노출 최소화)<br>
+						피딩백, 라인 재사용으로 인한 오염 및 부작용 최소화<br>
+						개봉 후 더 오랜 기간 사용 가능</p>
+					</div>
+				</div>
+			</div>
+			<div class="row mt50 igs grayLine2">
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs01.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">1</span>
+						<li><span class="f22_4 gray01">경관 급식 공급을 준비하기 앞서, 꼭 손을 깨끗하게 씻어줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs02.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">2</span>
+						<li><span class="f22_4 gray01">손을 건조시킨 뒤 위생장갑을 끼웁니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs03.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">3</span>
+						<li>
+							<span class="f22_4 gray01">개봉 전 제품을 충분히 흔들어 줍니다.</span><br><br>
+							<span class="f16_4 gray01">※ 제품을 직접 중탕하거나 전자레인지에 넣어 데우지 않습니다. 성분이 변질되거나 터질 염려가 있습니다.</span>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs04.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">4</span>
+						<li>
+							<span class="f22_4 gray01">경관급식 주입용기 또는 RTH를 준비합니다.</span><br><br>
+							<span class="f16_4 gray01">
+								   &middot; 캔의 경우 : 내용물을 주입 용기에 주입합니다.<br>
+								   &middot; 포장된 팩 (RTH)제품의 경우 : 별도 용기 없이
+								   바로 주입가능합니다.
+							</span>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs05.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">5</span>
+						<li><span class="f22_4 gray01">영양액 주입 세트의 클램프를 잠궈놓습니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs06.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">6</span>
+						<li>
+							<span class="f22_4 gray01">영양액 주입 세트(급식관)를 주입 용기 또는 RTH 팩과 연결합니다.</span><br><br>
+							<span class="f16_4 gray01">
+								   (RTH 팩은 연결 전 마개를 제거해야합니다.)
+							</span>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs07.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">7</span>
+						<li><span class="f22_4 gray01">주입용기 또는  RTH 제품을 높은 곳(행거)에 걸어줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs08.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">8</span>
+						<li><span class="f22_4 gray01">챔버를 눌러 영양액을 반 정도 채웁니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs09.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">9</span>
+						<li><span class="f22_4 gray01">주입 전 튜브가 본래 위치에 적절히 삽입되어 있는지 확인합니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs10.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">10</span>
+						<li><span class="f22_4 gray01">클램프를 열어 주입 속도를 조절합니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs11.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">11</span>
+						<li><span class="f22_4 gray01">환자의 머리 및 상체 부분을 약 30 ~ 45도 가량 올려줍니다.<br>(흡인 예방에 도움)</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img th:src="@{/img/greenbia/igs12.gif}" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">12</span>
+						<li><span class="f22_4 gray01">주입 후 최소 30분이 경과한 뒤 환자를 눕히는 것이 좋습니다.<br>(구토 및 흡인 예방에 도움)</span></li>
+					</ul>
+				</div>
+				
+				<div class="col-md-12 mt100 mb80">
+					<p class="f16_4 gray01">
+						<span class="pupple">※ 경관급식을 고려하는 경우 의사 또는 임상영양사와의 상담이 필요합니다.</span><br>
+						참고 :  환자용 식품의 올바른 사용을 위한 자율 영양관리 정보집, 2018년 1월 식품의약품안전처
+					</p>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<!--<div class="container100 mt350 pb200">
+	<div class="container1660_15" >
+		<!-- 영양기준 -->
+		<!--<div class="row">
+			<div class="col-md-12 mt-200">
+				<p><img src="./img/ingestion02.jpg" alt="연구하는 모습"/></p>
+			</div> 
+		</div>
+		<div class="container1400_15 entBG mt-120 bgGray">
+			<div class="row">
+				<div class="col-md-12">
+					<p class="ebtTitle f34_5 center mt60 check"><img src="./img/ico_check.png" alt="연구하는 모습"/> RTH 제품 사용 방법</p></p>
+				</div>
+			</div>
+			<div class="row mt50 igs grayLine2">
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs01.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">1</span>
+						<li><span class="f22_4 gray01">경관 급식 공급을 준비하기 앞서, 꼭 손을 깨끗하게 씻어줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth02.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">2</span>
+						<li><span class="f22_4 gray01">손을 건조시킨 뒤 위생장갑을 끼웁니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth03.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">3</span>
+						<li><span class="f22_4 gray01">개봉 전 제품을 충분히 흔들어 줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth04.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">4</span>
+						<li><span class="f22_4 gray01">영양액 주입 세트의 클램프를 잠궈놓습니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth05.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">5</span>
+						<li><span class="f22_4 gray01">RTH 제품의 마개를 제거해줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth06.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">6</span>
+						<li><span class="f22_4 gray01">RTH 제품과 영양 주입 세트를 연결해줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth07.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">7</span>
+						<li><span class="f22_4 gray01">RTH 제품을 높은 곳(행거)에 걸어줍니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth08.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">8</span>
+						<li><span class="f22_4 gray01">챔버를 눌러 영양액을 반 정도 채웁니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth09.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">9</span>
+						<li><span class="f22_4 gray01">영양액 주입세트의 마개를 제거한 뒤 환자의 경관 튜브와 연결합니다.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+					<img src="./img/igs_rth10.gif" alt="#"/>
+					<ul class="igsType">
+						<li><span class="igs_number f_ms">10</span>
+						<li><span class="f22_4 gray01">클램프를 열어 주입 속도를 조절합니다.</span></li>
+					</ul>
+				</div>
+				
+
+				<div class="col-md-8 mt50m" data-aos="fade-up" data-aos-duration="1000">
+					<div class="bgPupple">
+						<p class="f22_4_w unlerline_w">* RTH 사용 시 장점 </p>
+						<p class="f18_4_w mt20">
+						경관 급식 준비 과정에서 발생하는 오염 요인의 감소 (공기 중 노출 최소화)<br>
+						피딩백, 라인 재사용으로 인한 오염 및 부작용 최소화<br>
+						개봉 후 더 오랜 기간 사용 가능</p>
+					</div>
+				</div>
+
+
+			</div>
+		</div>-->
+		
+	</div>
+</div>
+
+<!--------------------- 
+		Footer
+------------------- -->
+<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
+<!--------------------- 
+		//Footer
+------------------- -->
+
+</main>
+<!--------------------- 
+		//content
+------------------- -->
+
+<!-- Brook Slider -->
+<script src="./common/js/vendor.min.js"></script>
+<script src="./common/js/plugins.min.js"></script>
+<!-- Brook Slider -->
+<script src="./common/js/main.js"></script>
+<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+<!-- countUp 
+<script>
+$('.counter').countUp();
+</script>
+-->
+
+<script type="text/javascript">
+    (function(w, d, a){
+    w.__beusablerumclient__ = {
+    load : function(src){
+    var b = d.createElement("script");
+    b.src = src; b.async=true; b.type = "text/javascript";
+    d.getElementsByTagName("head")[0].appendChild(b);
+    }
+    };w.__beusablerumclient__.load(a);
+    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+</script>
+
+
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+		
+</body>
+</html>

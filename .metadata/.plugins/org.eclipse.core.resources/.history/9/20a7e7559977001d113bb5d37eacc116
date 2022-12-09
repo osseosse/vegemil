@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<div class="" id="slider0" th:fragment="sliderFragment">
+	<div class="slider" >
+		<div class="slider_area">
+			<div class="slides ">
+				<div class="slide">
+					<div class="slidetitle sbg01 h520">
+						<ul class="slider0-txtbox">
+							<li>
+								<p class="f27 white">대한민국 오리지날 두유 베지밀</p>
+								<p class="f70 fw700 f_pp white" >Originality</p>
+							</li>
+							<li>
+								<dl>
+									<dd class="active f14_4 white f_pp">01. Originality</dd>
+									<dd class="f14_4 white f_pp">02. Rightness</dd>
+									<dd class="f14_4 white f_pp">03. Devotion</dd>
+								</dl>
+							</li>
+						</ul> 
+					</div>
+				</div>
+			
+				<div class="slide">
+					<div class="slidetitle sbg02 h520">
+						<ul class="slider0-txtbox">
+							<li>
+								<p class="f27 white">건강하고 정직한 먹거리 개발 </p>
+								<p class="f70 fw700 f_pp white" >Rightness</p>
+							</li>
+							<li>
+								<dl>
+									<dd class="f14_4 white f_pp">01. Originality</dd>
+									<dd class="active f14_4 white f_pp">02. Rightness</dd>
+									<dd class="f14_4 white f_pp">03. Devotion</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="slide">
+					<div class="slidetitle sbg03 h520">
+						<ul class="slider0-txtbox">
+							<li>
+								<p class="f27 white">인류건강에 대한 헌신</p>
+								<p class="f70 fw700 f_pp white" >Devotion</p>
+							</li>
+							<li>
+								<dl>
+									<dd class="f14_4 white f_pp">01. Originality</dd>
+									<dd class="f14_4 white f_pp">02. Rightness</dd>
+									<dd class="active f14_4 white f_pp">03. Devotion</dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<a class="slider_left"><img th:src="@{/img/btn_ppl_left.png}" alt="왼쪽" /></a>
+		<a class="slider_right"><img th:src="@{/img/btn_ppl_right.png}" alt="오른족" /></a>
+	</div>
+</div>  
+</html>	

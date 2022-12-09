@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 임시비밀번호 발급</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<form th:action="@{/member/sendPwResetEmail}" th:object="${member}" method="post">
+	<div class="contant1460" >
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">비밀번호 찾기</p>
+				<p class="f18 fw400 mt20 gray04 center">비밀번호가 기억나지 않으세요?<br>정보를 입력하시면 고객님의 메일주소로 재설정 메일을 보내드립니다.</p>	
+			</div>
+			<div class="w1160 center0 mt100">
+				<div class="center0 ">
+					<ul class="agree">
+						<li class="f20 fw500"><a href="/member/idSearch"><span>아이디 찾기</span></a></li>
+						<li class="f20 fw500 active"><a href="#"><span>비밀번호 찾기</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-12 ">
+				<div class="w860 center0 mt80">
+					<div cellspacing="0" border="0" class="joinT">
+						<ul>
+							<li><span>아이디</span></li>
+							<li><input type="text" th:field="*{mId}" maxlength="30" class="inp05 w330" >
+						</ul>
+						<ul>
+							<li>이메일</li>
+							<li>
+								<input type="hidden" th:field="*{mEmail}">
+								<input name="txtEmail" type="text" value="" maxlength="30" id="txtEmail" class="inp06 w200">
+								@<input name="txtEmail2" type="text" value="" maxlength="30" id="txtEmail2" placeholder="직접입력" class="inp06 ml10 w200 mr10" disabled >
+								<select name="selEmail" id="selEmail" class="sel02 w200 mt10m">
+									<option value="">선택하세요</option>
+									<option selected="selected" value="naver.com">naver.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="1">직접 입력</option>
+								</select>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant1460 -->
+	<div class="contant100 mt50 grayLineM max1160"></div>
+	<div class=" contant1460">
+		<div class="w1160 center0  mt70">
+			<div class="w560 center0 mb200">
+				<p class="mt50 f20 fw400 center">고객님의 성함과 회원가입시 입력한 이메일 주소를 입력하세요.</p>
+				<ul class="joinbtnFoot mt50">
+					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
+					<li>
+						<button type="submit" id="searchBtn" class="btnType17 f20 fw500 lh140" disabled>확인</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+	</form>
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script>
+
+function btnAvtive() {
+	
+	const sId = $('#mId').val();
+	const sEmail = $('#mEmail').val();
+	
+	if($.trim(sId).length > 2
+	&& $.trim(sEmail).length > 2) 
+	{
+		$("#searchBtn").attr("disabled", false); //해제
+		$("#searchBtn").addClass('active');
+	} else {
+		$("#searchBtn").attr("disabled", true); //설정
+		$("#searchBtn").removeClass('active');		
+	}
+}
+
+
+//이메일 입력방식 선택
+$('#selEmail').change(function(){
+   $("#selEmail option:selected").each(function () {
+		
+		if($(this).val()== '1'){ //직접입력일 경우
+			 $("#txtEmail2").val('');                        //값 초기화
+			 $("#txtEmail2").attr("disabled",false); //활성화
+		}else{ //직접입력이 아닐경우
+			 $("#txtEmail2").val($(this).text());      //선택값 입력
+			 $("#txtEmail2").attr("disabled",true); //비활성화
+		}
+		
+		$("#mEmail").val( $("#txtEmail").val() +'@'+ $("#txtEmail2").val() );
+		
+		if($("#txtEmail2").val().length > 2) {
+			btnAvtive();
+		} else {
+			return false;
+		}
+   });
+});
+
+$('#mId').keyup(function (event) {
+
+	//한글입력 안되게 처리
+	if (!(event.keyCode >=37 && event.keyCode<=40)) {
+		var inputVal = $(this).val();
+		$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+	}
+	btnAvtive();
+
+});
+
+$('#txtEmail').keyup(function (event) {
+
+	//한글입력 안되게 처리
+	if (!(event.keyCode >=37 && event.keyCode<=40)) {
+		var inputVal = $(this).val();
+		$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+	}
+	btnAvtive();
+
+});
+
+$('#txtEmail2').keyup(function () {
+
+	$("#mEmail").val( $("#txtEmail").val() +'@'+ $("#txtEmail2").val());
+	if($("#txtEmail2").val().length > 2) {
+		btnAvtive();
+	} else {
+		return false;
+	}
+
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 관련사</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100 subCategoryBg">
+	<div class="content100 ">
+	   <div class="subTopRelatedCompany h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">관련사</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460">
+		<div  th:replace="fragments/companySubMenu :: companySubMenuFragment"></div>
+    </div>
+    <div class="contant100_01">
+        <div class="contant1460">
+    		<div class="row">
+                <div class="col-md-12 subCategory mt70">
+                    <ul class="float-left">
+                        <li>
+                            <a href="01_04_companyNNP.html">(주)자연과사람들</a>
+                        </li>
+                        <li>
+                            <a href="01_05_companyOSSE.html">(주)오쎄</a>
+                        </li>
+                        <li class="active">
+                            <a href="01_06_companyHCF.html">(주)재단법인 혜춘장학회</a>
+                        </li>
+                    </ul>
+                    <p class="f14 fw400 black float-right btnType03">
+                        <a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a>
+                    </p><br class="clear">
+                </div>
+            </div>
+		</div>
+    </div>
+    <div class="contant100_01 whiteBg">
+        <div class="contant1460">
+            <div class="row mt160">
+                <div class="col-md-4">
+                   <div class="companyLeftInfo01">
+                        <ul>
+                            <li>
+                               <a href="#">
+                                   <img th:src="@{/img/ico/ico_arrowPrev.jpg}" alt="이전버튼">
+                               </a>
+                            </li>
+                            <li>
+                               <a href="#">
+                                   <img th:src="@{/img/ico/ico_arrowNext.jpg}" alt="다음버튼">
+                               </a>
+                            </li>
+                       </ul>
+                        <p class="f45 fw600 black mt80">
+                            유능한 인재를 양성,<br class="none">
+                            국가발전에 기여한
+                            혜춘장학회
+                        </p>
+                        <p class="f18 fw300 mt50 black">
+                            재단법인 혜춘장학회는 정식품의 창업자이신 <br class="none">
+                            의학박사 정재원 회장께서 유능한 인재를 양성, <br class="none">
+                            국가발전에 기여하고 기업의 사회적 책임을 <br class="none"> 
+                            다하려는 뜻을 실천하기 위해 설립되었습니다.
+                        </p>
+                        <p class="btnType21 mt100">
+                            <a href="#" class="f16">사이트 바로가기</a>
+                        </p>
+                    </div>
+                    <div class="companyLeftInfo02 mt150">
+                        <p class="f23 fw500">연락처</p>
+                        <div class="mt30">
+                            <p class="f18">
+                                <span class="f16 gray04">전화/팩스</span><br>
+                                02-6273-1313 / 02-553-0839
+                            </p>
+                        </div>
+                    </div>
+                    <div class="companyLeftInfo02 mt70">
+                        <p class="f23 fw500">사회공헌</p>
+                        <div class="mt30 center">
+                            <ul class="hcfInfo row">
+                                <li class="col-md-6">
+                                    <img th:src="@{/img/company/hcfIcon_01.jpg}" alt="혜춘장학회">
+                                    <p class="f14 gray04 mt15">혜춘장학회</p>
+                                </li>
+                                <li class="col-md-6">
+                                    <img th:src="@{/img/company/hcfIcon_02.jpg}" alt="굿네이버스">
+                                    <p class="f14 gray04 mt15">굿네이버스</p>
+                                </li>
+                                <li class="col-md-6">
+                                    <img th:src="@{/img/company/hcfIcon_03.jpg}" alt="한국심장재단">
+                                    <p class="f14 gray04 mt15">한국심장재단</p>
+                                </li>
+                                <li class="col-md-6">
+                                    <img th:src="@{/img/company/hcfIcon_04.jpg}" alt="혈액암협회">
+                                    <p class="f14 gray04 mt15">혈액암협회</p>
+                                </li>
+                            </ul>
+                            <p class="btnType22 mt30 f16">
+                                <a href="#">사회공헌 바로가기</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 centerMo">
+                    <img th:src="@{/img/company/hcf_01.jpg}" alt="혜춘장학회이미지" class="mt60m">
+                    <div class="mt160">
+                        <img th:src="@{/img/company/hcfLogo.jpg}" alt="혜춘장학회 로고">
+                        <p class="f18 mt70">
+                            1985년부터 지급하고 있는 장학금지원사업은 학업성적은 우수하나 가정형편이 어려운 학생에게 학비를 지원해 줌으로서  <br class="none">
+                            면학에만 전념할 수 있도록 하는데 목적이 있습니다. 2021년 6월 현재 총 2,500명의 학생들에게 지급한 장학금 누계액은  <br class="none">
+                            약 26억원을 넘어서고 있습니다. 또한, 많은 학술연구활동을 지원하여 여러 유수 학술지에 논문이 발표된 바 있습니다.
+                        </p>
+                    </div>
+                    <ul class="row center mt100 btnType23">
+                        <li class="col-md-4">
+                            <p><a href="#" class="f22 fw500">임원소개<span></span></a></p>
+                        </li>
+                        <li class="col-md-4 mt20m">
+                            <p><a href="#" class="f22 fw500">활동소식<span></span></a></p>
+                        </li>
+                        <li class="col-md-4 mt20m">
+                            <p><a href="#" class="f22 fw500">결산공고<span></span></a></p>
+                        </li>
+                    </ul>
+                    <ul class="mt50 companyRightInfo02">
+                       <li class="col-md-4">
+                            <p class="f18">법인재단 설립년차</p>
+                            <p class="f18"><span class="f55 fw600 f_pp">37</span>년</p>
+                        </li>
+                        <li class="col-md-4">
+                            <p class="f18">장학금 지급 누적액</p>
+                            <p class="f18"><span class="f55 fw600 f_pp">256,000</span>만원</p>
+                        </li>
+                        <li class="col-md-4">
+                            <p class="f18">장학생 누적현황</p>
+                            <p class="f18"><span class="f55 fw600 f_pp">2535</span>명</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--1460 끝-->
+    </div>
+    <br class="clear">
+		
+</div><!-- //contant1760 -->
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

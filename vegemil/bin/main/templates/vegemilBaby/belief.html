@@ -1,0 +1,1382 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+  <head>
+    <title>우리콩</title>
+    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+    </head>    
+    
+	<body style="padding-top: 90px;">
+	
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG02_02 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">Belief</p>
+								<p class="f20_4 mt20">우리 땅에서 재배한 우리 콩을 <br>갈아 만든 베지밀 영&middot;유아식  </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b2">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="javascript:void(0);">Product</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="javascript:void(0);">우리콩</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/premium}">프리미엄</a></li>
+															<li><a th:href="@{/vegemilBaby/belief}">우리콩</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container100 -->
+		
+		<div class="container100">
+			<div class="row  pd0 mg0 ">
+				<div class="container">					
+					<div class="col-md-12 brandTxt">
+						<p class="f24_4_bg">Belief</p>
+						<p class="f55_6 mt30">베지밀 영&middot;유아식 우리콩</p>
+						<p class="f24_4 mt10">1-2-3 단계</p>
+					</div>
+				</div>
+				<div class="container100 mt120">
+					<div class="row pd0 mg0">
+							<div class="col-md-12 center">
+								<img th:src="@{/img/vegemilBaby/p02.jpg}" alt="우리콩제품"/>
+							</div>
+					</div>
+					<div class="row  mg0 mt90">
+						<div class="container pd0">
+							<div class="col-md-12 center">
+								<p class="f45_6">치밀한 영양설계에 더해진<br>기능성 성분</p>
+							</div>
+							<div class="col-md-12  row ">
+								<div class=" mt70">
+									<div class="col-md-4">
+										<p class="img100"><img th:src="@{/img/vegemilBaby/p_list04.jpg}" alt="인펀트 우리콩1" /></p>
+										<div class="prd_box01" >
+											<p class="f20_4_b">6개월부터 첫돌까지</p>
+											<p class="f26_6_1 mt15">Infant Belief 1</p>
+											<ul class="prd_ul">
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_bottle.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">중량 및 구성</p>
+													<p class="f17_6 mt10">190ml</p>
+												</li>
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_time.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">유통기한</p>
+													<p class="f17_6 mt10">6개월</p>
+												</li>
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_temperature.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">보관방법</p>
+													<p class="f17_6 mt10">실온보관</p>
+												</li>
+											</ul>
+											<p class="btn_prd01 ">
+												<a href="http://www.edaymall.com/display/goods.do?goods_code=10237158" class="btn hide-icon btn_type01"><i class="fa fa-angle-right "></i><span>베지밀 인펀트 우리콩 1단계 구매하기</span></a>
+											</p>
+										</div>
+									</div>
+									<div class="col-md-4 mt30m">
+										<p class="img100"><img th:src="@{/img/vegemilBaby/p_list05.jpg}" alt="토들러 우리콩2" /></p>
+										<div class="prd_box01" >
+											<p class="f20_4_g">첫돌부터 24개월까지</p>
+											<p class="f26_6_1 mt15">Toddler Belief 2</p>
+											<ul class="prd_ul">
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_bottle.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">중량 및 구성</p>
+													<p class="f17_6 mt10">190ml</p>
+												</li>
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_time.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">유통기한</p>
+													<p class="f17_6 mt10">6개월</p>
+												</li>
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_temperature.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">보관방법</p>
+													<p class="f17_6 mt10">실온보관</p>
+												</li>
+											</ul>
+											<p class="btn_prd01 ">
+												<a href="http://www.edaymall.com/display/goods.do?goods_code=10237163" class="btn hide-icon btn_type01"><i class="fa fa-angle-right "></i><span>베지밀 토들러 우리콩 2단계 구매하기</span></a>
+											</p>
+										</div>
+									</div>
+									<div class="col-md-4 mt30m">
+										<p class="img100"><img th:src="@{/img/vegemilBaby/p_list06.jpg}" alt="토들러 우리콩3" /></p>
+										<div class="prd_box01" >
+											<p class="f20_4_o">24개월부터 36개월까지</p>
+											<p class="f26_6_1 mt15">Toddler Belief 3</p>
+											<ul class="prd_ul">
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_bottle.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">중량 및 구성</p>
+													<p class="f17_6 mt10">190ml</p>
+												</li>
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_time.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">유통기한</p>
+													<p class="f17_6 mt10">6개월</p>
+												</li>
+												<li>
+													<img th:src="@{/img/vegemilBaby/ico_temperature.png}" alt="중량 및 구성" />
+													<p class="f14_4 mt20">보관방법</p>
+													<p class="f17_6 mt10">실온보관</p>
+												</li>
+											</ul>
+											<p class="btn_prd01 ">
+												<a href="http://www.edaymall.com/display/goods.do?goods_code=10237168" class="btn hide-icon btn_type01"><i class="fa fa-angle-right "></i><span>베지밀 토들러 우리콩 3단계 구매하기</span></a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- //container100-->
+				
+				<!-- 탭 -->
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('#tab_brand').basicTabs();/* 영양탭 */
+					});
+				</script>
+				<div class="container100">
+					<div class="row  pd0 mg0 ">
+						<div id="tab_brand">
+							<div class="container btn_tab">
+								<ul class="tabs2 btn_ch19">
+									<li class="li_icoBG01"><a href="#con01">상세설명</a></li>
+									<li class="li_icoBG02"><a href="#con02">영양분석표</a></li>
+								</ul>
+							</div>
+							<div class="tab_content_brand ">
+									<dl id="con01" class="bg_b">
+										<div class="container pb120">
+											<div class="row">
+												<div class="col-md-12 brandTxt">
+													<p class="f55_6 mt30">우리 아이 균형 영양식<br>베지밀 인펀트 / 토들러</p>
+													<p class="mt90"><img th:src="@{/img/vegemilBaby/p01_01.jpg}" alt="" /></p>
+												</div>
+												<div class="col-md-12 mt90">
+													<div class="col-md-4 mt50m">
+														<ul class="prd_txt bg_p01">
+															<li class="f30_5"><span class="org">성장발달</span>을 위한<br> 기초 영양성분을 더 탄탄히</li>
+															<li class="mt50">
+																<div class="org_icon f26_4">세밀하게 영양설계</div>
+																<ul class="mt20">
+																	<li class="f17_4">3대 영양소 균형</li>
+																	<li class="f17_4">13종 비타민</li>
+																	<li class="f17_4">10종 무기질</li>
+																</ul>
+															</li>
+															<li class="mt40">
+																<div class="org_icon f26_4">베타카로틴 배합</div>
+																<ul class="mt20">
+																	<li class="f17_4">아기 성장발달에 중요</li>
+																</ul>
+															</li>
+															<li class="mt40">
+																<div class="org_icon f26_4">올레인산 보강</div>
+																<ul class="mt20">
+																	<li class="f17_4">모유에 함유되어 있는 지방산</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+													<div class="col-md-4 mt50m">
+														<ul class="prd_txt bg_p02">
+															<li class="f30_5">아기를 위한<br><span class="grn">두뇌 구성성분</span> 배합</li>
+															<li class="mt50">
+																<div class="grn_icon f26_4">인지질,DHA,레시틴 보강</div>
+																<ul class="mt20">
+																	<li class="f17_4">뇌세포를 구성하는 주요 성분</li>
+																</ul>
+															</li>
+															<li class="mt40">
+																<div class="grn_icon f26_4">타우린 배합</div>
+																<ul class="mt20">
+																	<li class="f17_4">두뇌와 망막에 존재</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+													<div class="col-md-4 mt50m">
+														<ul class="prd_txt bg_p03">
+															<li class="f30_5">황금변을 위한<br><span class="blue">정장 소재</span> 배합</li>
+															<li class="mt50">
+																<div class="blue_icon f26_4">4종의 식물성 프리바이오틱스,<br>특허받은 장내균 소재인 이눌린 등의 복합 작용</div>
+																<ul class="mt20">
+																	<li class="f17_4">장내 유익균 생육에 도움</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="container100 bg_w ">
+											<div class="container ">
+												<div class="col-md-12 brandTxt01">
+													<p class="f45_6 mt50">아이가 6개월이 되면 <span class="point">동물성과 식물성 영양균형</span>이 중요합니다.</p>
+													<p class="f30_4 mt60">“베지밀 인펀트/토들러”는 식물성 영양을 공급하며, 한쪽으로만 치우칠 수 있는<br>우리 아기의 영양이 균형 잡힐 수 있도록 도와줍니다.</p>
+												</div>
+												<div class="col-md-12 row mt60 pb180">
+													<div class="prd_iconBox2 ">
+														<div class="col-md-5">
+															<ul>
+																<li class="mt40">
+																	<p class="iconImg2"><img th:src="@{/img/vegemilBaby/ico_bean01.png}" alt="" /></p>
+																	<p class="mt30 f30_4">식물성 영양</p>
+																</li>
+																<li class="mt40">
+																	<p class="iconImg2"><img th:src="@{/img/vegemilBaby/ico_bean02.png}" alt="" /></p>
+																	<p class="mt30 f30_4">성장기용 조제식</p>
+																</li>
+															</ul>
+														</div>
+														<div class="col-md-7 mt30m">
+															<ul>
+																<li class="mt40">
+																	<p class="iconImg2"><img th:src="@{/img/vegemilBaby/ico_bean03.png}" alt="" /></p>
+																	<p class="mt30 f30_4">빈틈없는 영양설계</p>
+																</li>
+																<li class="mt40">
+																	<p class="iconImg2"><img th:src="@{/img/vegemilBaby/ico_bean04.png}" alt="" /></p>
+																	<p class="mt30 f30_4">간편 액상타입</p>
+																</li>
+																<li class="mt40">
+																	<p class="iconImg2"><img th:src="@{/img/vegemilBaby/ico_bean05.png}" alt="" /></p>
+																	<p class="mt30 f30_4">안심가득 우리콩</p>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="container100">
+											<div class="pd0">
+												<div class="col-md-12 ">
+													<div class="col-md-6 bg_blue2 prd_thum">
+														<div class="center ">
+															<p class="f30_4 bg_bean ">돌 이전에는 성장기용 조제식</p>
+															<p class="f45_6 mt20">Vegemil Infant </p>
+															<p class="mt30 f17_4">제품 선택 시 식품의 유형을 꼭 확인하세요!</p>
+															<p class="mt70"><img th:src="@{/img/vegemilBaby/p_Infant_belief.jpg}" alt="1단계제품" /></p>
+															<table class="t_type02" cellspacing="0" summary="영양정보">
+																<colgroup>
+																	<col width="33.3%">
+																	<col width="33.3%">
+																	<col width="33.3%">
+																</colgroup>
+																<tr>
+																	<th>제품</th>
+																	<td>일반 조제식 (6~12개월)</td>
+																	<td class="bg_blue">베지밀 인펀트</td>
+																</tr>
+																<tr>
+																	<th>식품의 유형</th>
+																	<td colspan="2"><p class="f26_6_1">성장기용 조제식</p></td>
+																</tr>
+															</table>
+														</div>
+													</div>
+													<div class="col-md-6 bg_green prd_thum">
+														<div class="center ">
+															<p class="f30_4 bg_bean_pink">돌 이후 균형 영양을 위해</p>
+															<p class="f45_6 mt20">Vegemil Toddler</p>
+															<p class="mt30 f17_4">베지밀 토들러는 식물성 단백질을 기초로 하여 성장, 발육에 필요한 영양을 꽉꽉 채웠습니다.</p>
+															<p class="mt70"><img th:src="@{/img/vegemilBaby/p_Toddler_belief.jpg}" alt="2단계제품" /></p>
+															<table class="t_type03" cellspacing="0" summary="영양정보">
+																<colgroup>
+																	<col width="33.3%">
+																	<col width="33.3%">
+																	<col width="33.3%">
+																</colgroup>
+																<tr>
+																	<th>제품</th>
+																	<td>일반우유</td>
+																	<td class="bg_blue">베지밀 토들러</td>
+																</tr>
+																<tr>
+																	<th rowspan="2">주요 원재료</th>
+																	<td class="lowP">동물성 단백질</td>
+																	<td class="bg_blue lowP"><b>식물성 단백질</b></td>
+																</tr>
+																<tr>
+																	<td class="lowP">원유</td>
+																	<td class="bg_blue lowP"><b>대두</b></td>
+																</tr>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</dl><!-- //con01 -->
+									<dl id="con02">
+										<div class="container">
+											<div class="row pd0 pb100" >
+												<div class="col-md-12" >
+													<div class="col-md-6" >
+														<div class="yy_title mt90">
+															<p class="f26_6_1">인펀트 우리콩 1단계</p>
+															<p class="f26_4">총내용량 190ml &middot; 128kcal</p>
+														</div>
+														<ul class="yy mt30">
+															<li>
+																<table class="t_type04" summary="영양성분1_1">
+																	<caption>인펀트 우리콩 1단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>나트륨(mg)</th>
+																		<td>65</td>
+																		<td>18%</td>
+																	</tr>
+																	<tr>
+																		<th>탄수화물(g)</th>
+																		<td>14</td>
+																		<td>16%</td>
+																	</tr>
+																	<tr>
+																		<th class="in">식이섬유(g)</th>
+																		<td>1.4</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">당류(g)</th>
+																		<td>6</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>지방(g)</th>
+																		<td>6</td>
+																		<td>24%</td>
+																	</tr>
+																	<tr>
+																		<th class="in">트랜스지방(g)</th>
+																		<td>0</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">포화지방(g)</th>
+																		<td>3</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>콜레스테롤(mg)</th>
+																		<td>0</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>단백질(g)</th>
+																		<td>4</td>
+																		<td>27%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 A(㎍RE)</th>
+																		<td>114</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B1(mg)</th>
+																		<td>0.11</td>
+																		<td>37%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B2(mg)</th>
+																		<td>0.09</td>
+																		<td>23%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B6(mg)</th>
+																		<td>0.13</td>
+																		<td>43%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B12(㎍)</th>
+																		<td>0.2</td>
+																		<td>40%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 C(mg)</th>
+																		<td>10.7</td>
+																		<td>24%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 D(㎍)</th>
+																		<td>1.9</td>
+																		<td>38%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 E(mg α-TE)</th>
+																		<td>1.9</td>
+																		<td>48%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 K1(㎍)</th>
+																		<td>5.3</td>
+																		<td>76%</td>
+																	</tr>
+																	<tr>
+																		<th>판토텐산(mg)</th>
+																		<td>0.48</td>
+																		<td>25%</td>
+																	</tr>
+																</table>
+															</li>
+															<li>
+																<table class="t_type04" summary="영양성분1_2">
+																	<caption>인펀트 우리콩 1단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>나이아신(mgNE)</th>
+																		<td>1</td>
+																		<td>33%</td>
+																	</tr>
+																	<tr>
+																		<th>엽산(㎍)</th>
+																		<td>20</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비오틴(㎍)</th>
+																		<td>2</td>
+																		<td>29%</td>
+																	</tr>
+																	<tr>
+																		<th>칼슘(mg)</th>
+																		<td>150</td>
+																		<td>50%</td>
+																	</tr>
+																	<tr>
+																		<th>인(mg)</th>
+																		<td>100</td>
+																		<td>33%</td>
+																	</tr>
+																	<tr>
+																		<th>칼륨(mg)</th>
+																		<td>160</td>
+																		<td>23%</td>
+																	</tr>
+																	<tr>
+																		<th>철(mg)</th>
+																		<td>2.6</td>
+																		<td>43%</td>
+																	</tr>
+																	<tr>
+																		<th>마그네슘(mg)</th>
+																		<td>21</td>
+																		<td>38%</td>
+																	</tr>
+																	<tr>
+																		<th>동(㎍)</th>
+																		<td>52</td>
+																		<td>17%</td>
+																	</tr>
+																	<tr>
+																		<th>요오드(㎍)</th>
+																		<td>19</td>
+																		<td>11%</td>
+																	</tr>
+																	<tr>
+																		<th>아연(mg)</th>
+																		<td>0.92</td>
+																		<td>31%</td>
+																	</tr>
+																	<tr>
+																		<th>염소(mg)</th>
+																		<td>75</td>
+																		<td>13%</td>
+																	</tr>
+																	<tr>
+																		<th>망간(㎍)</th>
+																		<td>100</td>
+																		<td>13%</td>
+																	</tr>
+																	<tr>
+																		<th>셀레늄(㎍)</th>
+																		<td>3.5</td>
+																		<td>32%</td>
+																	</tr>
+
+																	<tr>
+																		<th>갈락토올리고당(mg)</th>
+																		<td>320</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>프락토올리고당(mg)</th>
+																		<td>36</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>이눌린(mg)</th>
+																		<td>50</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>리놀레산(g)</th>
+																		<td>1.7</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>리놀렌산(g)</th>
+																		<td>0.23</td>
+																		<td></td>
+																	</tr>
+																</table>
+															</li>
+															<li>
+																<table class="t_type04" summary="영양성분1_3">
+																	<caption>인펀트 우리콩 1단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>콜린(mg)</th>
+																		<td>9</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>타우린(mg)</th>
+																		<td>10</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-카르니틴(mg)</th>
+																		<td>2.1</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-메티오닌(mg)</th>
+																		<td>55</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-시스틴(mg)</th>
+																		<td>55</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-아르지닌(mg)</th>
+																		<td>254</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-트립토판(mg)</th>
+																		<td>46</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>인지질(mg)</th>
+																		<td>80</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>DHA(mg)</th>
+																		<td>9</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>뉴클레오타이드(mg)</th>
+																		<td>5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜콜린(mg)</th>
+																		<td>16</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜이노시톨(mg)</th>
+																		<td>7</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>감마리놀렌산(mg)</th>
+																		<td>4</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜세린(mg)</th>
+																		<td>1.2</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>아라키돈산(mg)</th>
+																		<td>0.95</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>베타글루칸(mg)</th>
+																		<td>5.7</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>이노시톨(mg)</th>
+																		<td>28</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>베타카로틴(㎍)</th>
+																		<td>20</td>
+																		<td></td>
+																	</tr>
+																</table>
+															</li>
+															<div class="yy_foot">
+																<p class="clear f17_4"><b>*1일 영양성분 기준치에 대한 비율(%)</b> : 한국인 영아(6-11개월) 영양섭취기준에 대한 비율</p>
+																<p class="f14_4_1">DHA(9mg), 인지질(80mg), 뉴클레오타이드(5mg), 포스파티딜콜린(16mg), 포스파티딜이노시톨(7mg), 포스파티딜세린(1.2mg), 감마리놀렌산(4mg), 아라키돈산(0.95mg), 베타글루칸(5.7mg), 이노시톨(28mg)</p>
+															</div>
+														</ul>
+													</div>
+													<div class="col-md-6" >
+														<div class="yy_title mt90">
+															<p class="f26_6_1">토들러 우리콩 2단계</p>
+															<p class="f26_4">총내용량 190ml &middot; 135kcal</p>
+														</div>
+														<ul class="yy mt30">
+															<li>
+																<table class="t_type04" summary="영양성분2_1">
+																	<caption>토들러 우리콩 2단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>나트륨(mg)</th>
+																		<td>75</td>
+																		<td>11%</td>
+																	</tr>
+																	<tr>
+																		<th>탄수화물(g)</th>
+																		<td>14</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">식이섬유(g)</th>
+																		<td>2</td>
+																		<td>20%</td>
+																	</tr>
+																	<tr>
+																		<th class="in">당류(g)</th>
+																		<td>6</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>지방(g)</th>
+																		<td>6.5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">트랜스지방(g)</th>
+																		<td>0</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">포화지방(g)</th>
+																		<td>3.5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>콜레스테롤(mg)</th>
+																		<td>0</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>단백질(g)</th>
+																		<td>5</td>
+																		<td>33%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 A(㎍RE)</th>
+																		<td>105</td>
+																		<td>35%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B1(mg)</th>
+																		<td>0.125</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B2(mg)</th>
+																		<td>0.13</td>
+																		<td>26%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B6(mg)</th>
+																		<td>0.15</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B12(㎍)</th>
+																		<td>0.225</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 C(mg)</th>
+																		<td>10.5</td>
+																		<td>30%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 D(㎍)</th>
+																		<td>2</td>
+																		<td>40%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 E(mg α-TE)</th>
+																		<td>2.1</td>
+																		<td>42%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 K1(㎍)</th>
+																		<td>6</td>
+																		<td>24%</td>
+																	</tr>
+																	<tr>
+																		<th>판토텐산(mg)</th>
+																		<td>0.5</td>
+																		<td>25%</td>
+																	</tr>
+																</table>
+															</li>
+															<li>
+																<table class="t_type04" summary="영양성분2_2">
+																	<caption>토들러 우리콩 2단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>나이아신(mgNE)</th>
+																		<td>1.5</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>엽산(㎍)</th>
+																		<td>37</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비오틴(㎍)</th>
+																		<td>2.1</td>
+																		<td>23%</td>
+																	</tr>
+																	<tr>
+																		<th>칼슘(mg)</th>
+																		<td>180</td>
+																		<td>36%</td>
+																	</tr>
+																	<tr>
+																		<th>인(mg)</th>
+																		<td>100</td>
+																		<td>22%</td>
+																	</tr>
+																	<tr>
+																		<th>칼륨(mg)</th>
+																		<td>230</td>
+																		<td>12%</td>
+																	</tr>
+																	<tr>
+																		<th>철(mg)</th>
+																		<td>2.9</td>
+																		<td>48%</td>
+																	</tr>
+																	<tr>
+																		<th>마그네슘(mg)</th>
+																		<td>24</td>
+																		<td>30%</td>
+																	</tr>
+																	<tr>
+																		<th>동(㎍)</th>
+																		<td>58</td>
+																		<td>21%</td>
+																	</tr>
+																	<tr>
+																		<th>요오드(㎍)</th>
+																		<td>21</td>
+																		<td>26%</td>
+																	</tr>
+																	<tr>
+																		<th>아연(mg)</th>
+																		<td>0.97</td>
+																		<td>32%</td>
+																	</tr>
+																	<tr>
+																		<th>염소(mg)</th>
+																		<td>98</td>
+																		<td>8%</td>
+																	</tr>
+																	<tr>
+																		<th>망간(㎍)</th>
+																		<td>140</td>
+																		<td>10%</td>
+																	</tr>
+																	<tr>
+																		<th>셀레늄(㎍)</th>
+																		<td>3.5</td>
+																		<td>15%</td>
+																	</tr>
+
+																	<tr>
+																		<th>갈락토올리고당(mg)</th>
+																		<td>442</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>프락토올리고당(mg)</th>
+																		<td>49</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>이눌린(mg)</th>
+																		<td>50</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>리놀레산(g)</th>
+																		<td>2.1</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>리놀렌산(g)</th>
+																		<td>0.3</td>
+																		<td></td>
+																	</tr>
+																</table>
+															</li>
+															<li>
+																<table class="t_type04" summary="영양성분2_3">
+																	<caption>인펀트 우리콩 2단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>콜린(mg)</th>
+																		<td>11.4</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>타우린(mg)</th>
+																		<td>10</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-카르니틴(mg)</th>
+																		<td>2.4</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-메티오닌(mg)</th>
+																		<td>64</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-시스틴(mg)</th>
+																		<td>70</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-아르지닌(mg)</th>
+																		<td>281</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-트립토판(mg)</th>
+																		<td>48</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>인지질(mg)</th>
+																		<td>86</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>DHA(mg)</th>
+																		<td>9</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>뉴클레오타이드(mg)</th>
+																		<td>5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜콜린(mg)</th>
+																		<td>26</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜이노시톨(mg)</th>
+																		<td>10</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>감마리놀렌산(mg)</th>
+																		<td>4</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜세린(mg)</th>
+																		<td>1.2</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>아라키돈산(mg)</th>
+																		<td>0.95</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>베타글루칸(mg)</th>
+																		<td>5.7</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>이노시톨(mg)</th>
+																		<td></td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>베타카로틴(㎍)</th>
+																		<td>20</td>
+																		<td></td>
+																	</tr>
+																</table>
+															</li>
+															<div class="yy_foot">
+																<p class="clear f17_4"><b>*1일 영양성분 기준치에 대한 비율(%)</b> : 한국인 유아(1-2세) 영양섭취기준에 대한 비율</p>
+																<p class="f14_4_1">DHA(9mg), 인지질(86mg), 뉴클레오타이드(5mg), 포스파티딜콜린(26mg), 포스파티딜이노시톨(10mg), 포스파티딜세린(1.2mg), 감마리놀렌산(4mg), 아라키돈산(0.95mg), 베타글루칸(5.7mg)</p>
+															</div>
+														</ul>
+													</div>
+													<div class="col-md-6" >
+														<div class="yy_title mt90">
+															<p class="f26_6_1">토들러 우리콩 3단계</p>
+															<p class="f26_4">총내용량 190ml &middot; 120kcal</p>
+														</div>
+														<ul class="yy mt30">
+															<li>
+																<table class="t_type04" summary="영양성분2_3">
+																	<caption>인펀트 우리콩 3단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>나트륨(mg)</th>
+																		<td>70</td>
+																		<td>10%</td>
+																	</tr>
+																	<tr>
+																		<th>탄수화물(g)</th>
+																		<td>15</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">식이섬유(g)</th>
+																		<td>1.8</td>
+																		<td>18%</td>
+																	</tr>
+																	<tr>
+																		<th class="in">당류(g)</th>
+																		<td>6</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>지방(g)</th>
+																		<td>4.5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">트랜스지방(g)</th>
+																		<td>0</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th class="in">포화지방(g)</th>
+																		<td>2.5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>콜레스테롤(mg)</th>
+																		<td>0</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>단백질(g)</th>
+																		<td>5</td>
+																		<td>33%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 A(㎍RE)</th>
+																		<td>103</td>
+																		<td>34%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B1(mg)</th>
+																		<td>0.1</td>
+																		<td>20%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B2(mg)</th>
+																		<td>0.11</td>
+																		<td>22%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B6(mg)</th>
+																		<td>0.11</td>
+																		<td>18%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 B12(㎍)</th>
+																		<td>0.2</td>
+																		<td>22%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 C(mg)</th>
+																		<td>8.6</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 D(㎍)</th>
+																		<td>2</td>
+																		<td>40%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 E(mg α-TE)</th>
+																		<td>1.8</td>
+																		<td>36%</td>
+																	</tr>
+																	<tr>
+																		<th>비타민 K1(㎍)</th>
+																		<td>5</td>
+																		<td>20%</td>
+																	</tr>
+																	<tr>
+																		<th>판토텐산(mg)</th>
+																		<td>0.43</td>
+																		<td>22%</td>
+																	</tr>
+																</table>
+															</li>
+															<li>
+																<table class="t_type04" summary="영양성분2_2">
+																	<caption>토들러 우리콩 2단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>나이아신(mgNE)</th>
+																		<td>1.2</td>
+																		<td>20%</td>
+																	</tr>
+																	<tr>
+																		<th>엽산(㎍)</th>
+																		<td>32</td>
+																		<td>21%</td>
+																	</tr>
+																	<tr>
+																		<th>비오틴(㎍)</th>
+																		<td>1.9</td>
+																		<td>21%</td>
+																	</tr>
+																	<tr>
+																		<th>칼슘(mg)</th>
+																		<td>200</td>
+																		<td>40%</td>
+																	</tr>
+																	<tr>
+																		<th>인(mg)</th>
+																		<td>100</td>
+																		<td>22%</td>
+																	</tr>
+																	<tr>
+																		<th>칼륨(mg)</th>
+																		<td>210</td>
+																		<td>11%</td>
+																	</tr>
+																	<tr>
+																		<th>철(mg)</th>
+																		<td>2.5</td>
+																		<td>42%</td>
+																	</tr>
+																	<tr>
+																		<th>마그네슘(mg)</th>
+																		<td>20</td>
+																		<td>25%</td>
+																	</tr>
+																	<tr>
+																		<th>동(㎍)</th>
+																		<td>50</td>
+																		<td>18%</td>
+																	</tr>
+																	<tr>
+																		<th>요오드(㎍)</th>
+																		<td>18</td>
+																		<td>23%</td>
+																	</tr>
+																	<tr>
+																		<th>아연(mg)</th>
+																		<td>1.5</td>
+																		<td>50%</td>
+																	</tr>
+																	<tr>
+																		<th>염소(mg)</th>
+																		<td>72</td>
+																		<td>6%</td>
+																	</tr>
+																	<tr>
+																		<th>망간(㎍)</th>
+																		<td>130</td>
+																		<td>9%</td>
+																	</tr>
+																	<tr>
+																		<th>셀레늄(㎍)</th>
+																		<td>3.5</td>
+																		<td>15%</td>
+																	</tr>
+
+																	<tr>
+																		<th>갈락토올리고당(mg)</th>
+																		<td>380</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>프락토올리고당(mg)</th>
+																		<td>42</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>이눌린(mg)</th>
+																		<td>50</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>리놀레산(g)</th>
+																		<td>2</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>리놀렌산(g)</th>
+																		<td>0.27</td>
+																		<td></td>
+																	</tr>
+																</table>
+															</li>
+															<li>
+																<table class="t_type04" summary="영양성분2_3">
+																	<caption>토들러 우리콩 2단계</caption>
+																	<colgroup>
+																		<col width="55%">
+																		<col width="25%">
+																		<col width="20%">
+																	</colgroup>
+																	<tr>
+																		<th>콜린(mg)</th>
+																		<td>15</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>타우린(mg)</th>
+																		<td>10</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-카르니틴(mg)</th>
+																		<td>1.5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-메티오닌(mg)</th>
+																		<td>64</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-시스틴(mg)</th>
+																		<td>70</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-아르지닌(mg)</th>
+																		<td>279</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>L-트립토판(mg)</th>
+																		<td>54</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>인지질(mg)</th>
+																		<td>80</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>DHA(mg)</th>
+																		<td>9</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>뉴클레오타이드(mg)</th>
+																		<td>5</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜콜린(mg)</th>
+																		<td>24</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜이노시톨(mg)</th>
+																		<td>8</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>감마리놀렌산(mg)</th>
+																		<td>4</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>포스파티딜세린(mg)</th>
+																		<td>1.2</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>아라키돈산(mg)</th>
+																		<td>0.95</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>베타글루칸(mg)</th>
+																		<td>5.7</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>이노시톨(mg)</th>
+																		<td></td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<th>베타카로틴(㎍)</th>
+																		<td>20</td>
+																		<td></td>
+																	</tr>
+																</table>
+															</li>
+															<div class="yy_foot">
+																<p class="clear f17_4"><b>*1일 영양성분 기준치에 대한 비율(%)</b> : 한국인 유아(1-2세) 영양섭취기준에 대한 비율</p>
+																<p class="f14_4_1">DHA(9mg), 인지질(80mg), 뉴클레오타이드(5mg), 포스파티딜콜린(24mg), 포스파티딜이노시톨(8mg), 포스파티딜세린(1.2mg), 감마리놀렌산(4mg), 아라키돈산(0.95mg), 베타글루칸(5.7mg) </p>
+															</div>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</dl><!-- //con02 -->
+							</div><!-- //tab_content_brand -->
+						</div><!-- // Tab -->
+					</div><!-- //row-->
+				</div><!-- //container100 -->
+				<!-- //탭 -->
+			</div><!-- //row-->
+		</div><!-- //container100 -->
+				
+	  </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

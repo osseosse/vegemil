@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 보도자료</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class=" pb100">
+	<div class="content100 ">
+	   <div class="subTopPress h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">보도자료</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 active"><a href="01_01_greetings.html"><span>보도자료</span></a></li>
+				<li class="f18 fw500 "><a href="01_02_profile.html"><span>공지사항</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+    </div>
+
+
+    <div class="contant1460" >
+		<div class="row">
+			<div class="col-md-12">
+				<th:block layout:fragment="search">
+					<div th:replace="fragments/common :: search"></div>
+				</th:block>
+				<table cellspacing="0" border="0" class="press mt50" th:if="${not #lists.isEmpty( mediaNewsList )}">
+					<caption>보도자료</caption>
+					<tr th:each="mediaNews : ${mediaNewsList}">
+						<td>
+							<a href="${mediaNews.mAduri1}">
+								<div class="t-day">
+									<p class="f_pp  f55 fw700 lh120" th:text="${mediaNews.mDay}"></p><!-- 일 -->
+									<p class="f_pp  f15 fw700 lh130" th:text="${mediaNews.mYearMonth}"></p><!-- 년,월 -->
+								</div>
+							</a>
+						</td>
+						<td>
+							<a href="${mediaNews.mAduri1}">
+								<p class="t-bo">보도자료</p>
+							</a>
+						</td>
+						<td>
+							<div class="press-tag f14">
+								<span th:if="${mediaNews.mAduri1 != null and mediaNews.mAduri1 !=''}"><a href="${mediaNews.mAduri1}" th:text="${mediaNews.mAdname1}"></a></span>
+								<span th:if="${mediaNews.mAduri2 != null and mediaNews.mAduri2 !=''}"><a href="${mediaNews.mAduri2}" th:text="${mediaNews.mAdname2}"></a></span>
+								<span th:if="${mediaNews.mAduri3 != null and mediaNews.mAduri3 !=''}"><a href="${mediaNews.mAduri3}" th:text="${mediaNews.mAdname3}"></a></span>
+								<span th:if="${mediaNews.mAduri4 != null and mediaNews.mAduri4 !=''}"><a href="${mediaNews.mAduri4}" th:text="${mediaNews.mAdname4}"></a></span>
+								<span th:if="${mediaNews.mAduri5 != null and mediaNews.mAduri5 !=''}"><a href="${mediaNews.mAduri5}" th:text="${mediaNews.mAdname5}"></a></span>
+								<span th:if="${mediaNews.mAduri6 != null and mediaNews.mAduri6 !=''}"><a href="${mediaNews.mAduri6}" th:text="${mediaNews.mAdname6}"></a></span>
+								<span th:if="${mediaNews.mAduri7 != null and mediaNews.mAduri7 !=''}"><a href="${mediaNews.mAduri7}" th:text="${mediaNews.mAdname7}"></a></span>
+								<span th:if="${mediaNews.mAduri8 != null and mediaNews.mAduri8 !=''}"><a href="${mediaNews.mAduri8}" th:text="${mediaNews.mAdname8}"></a></span>
+								<span th:if="${mediaNews.mAduri9 != null and mediaNews.mAduri9 !=''}"><a href="${mediaNews.mAduri9}" th:text="${mediaNews.mAdname9}"></a></span>
+								<span th:if="${mediaNews.mAduri10 != null and mediaNews.mAduri10 !=''}"><a href="${mediaNews.mAduri10}" th:text="${mediaNews.mAdname10}"></a></span>
+							</div>
+							<a href="${mediaNews.mSubject}">
+							<div class="press-title f27 fw500 black"><p th:text="${mediaNews.mSubject}"></p></div></a>
+						</td>
+					</tr>
+				</table>
+
+				<!-- paging -->
+				<th:block layout:fragment="paging">
+					<nav th:replace="fragments/common :: pagination"></nav>
+				</th:block>
+				<!-- //paging -->
+
+			</div>
+			<div class="col-md-12">
+			</div>
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ 
+		Footer
+================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+		// Footer
+================================ -->
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+    function movePage(uri, queryString) {
+		location.href = uri + queryString;
+	}
+
+	function searchMediaNews(form) {
+		/*[- 드롭다운이 아닌 메인 검색 키워드로 검색했을 때 -]*/
+		if (isEmpty(form) == true) {
+			var searchKeyword = document.getElementById("mainSearchKeyword");
+			if (isEmpty(searchKeyword.value) == true) {
+				alert("키워드를 입력해 주세요.");
+				searchKeyword.focus();
+				return false;
+			}
+
+			form = document.getElementById("searchForm");
+			form.searchKeyword.value = searchKeyword.value;
+			form.submit();
+		}
+
+		if (isEmpty(form.searchKeyword.value) == true) {
+			alert("키워드를 입력해 주세요.");
+			form.searchKeyword.focus();
+			return false;
+		}
+	}
+	
+/*]]>*/
+</script>
+</body>
+</html>

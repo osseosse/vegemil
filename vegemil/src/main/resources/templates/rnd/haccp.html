@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 HACCP 인증</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopHaccp h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">프로필</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 active"><a href="03_07_haccp.html"><span>HACCP 인증</span></a></li>
+				<li class="f18 fw500"><a href="03_08_fssc.html"><span>FSSC22000인증</span></a></li>
+				<li class="f18 fw500"><a href="03_09_halal.html"><span>HALAL 인증</span></a></li>
+				<li class="f18 fw500"><a href="03_10_epd.html"><span>환경성적표지 인증</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+        <div class="center mt50 HaccpInfo01">
+            <p class="f45 fw600">HACCP 이란?</p>
+            <p class="f18 mt100 f_pp gray04">Hazard Analysis Critical Control Points</p>
+            <p class="mt40">
+                <img th:src="@{/img/R&D/haccp_01.jpg}" alt="해썹이미지" class="haccp_01">
+            </p>
+            <p class="f66 fw600 mt50">식품안전관리인증기준</p>
+            <p class="f18 mt60 fw400 gray04">
+                식품의 원재료 생산에서부터 제조, 가공, 보존, 유통단계를 거쳐 최종 소비자가 섭취하기 전까지의 <br class="none">
+                각 단계에서 발생할 우려가있는 위해요소를 규명 하고, 이를 중점적으로 관리하기 위한 중요관리점을 결정하여 <br class="none">
+                자주적이며 체계적이고 효율적인 관리로 식품의 안전성(safety)을 확보하기 위한 과학적인 위생관리체계입니다.
+            </p>
+        </div>
+    </div><!--//contant1460-->
+    <div class="content100 mt200">
+	   <div class="haccpBg">
+			<div>
+				<img th:src="@{/img/R&D/haccp_02.png}" alt="해썹이미지" class="haccp_02">
+				<img th:src="@{/img/R&D/haccp_03.png}" alt="해썹이미지" class="mt100">
+			</div>
+		</div>
+	</div><!--//content100-->
+	<div class="contant1460 mt200">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="f38 fw600">
+                    청주공장에서 생산하는 두유(베지밀) 전제품
+                    식품의약품안전처 HACCP 인증을 완료
+                </p>
+                <p class="f14 gray04 mt40">
+                    HACCP 인증 일자 : 콩유아식(2010.05.06), 팩 제품(2010.12.08), 병.파우치 제품(2012.12.11)
+                </p>
+                <p class="haccpLogo centerMo mt100">
+                    <img th:src="@{/img/R&D/haccpLogo.jpg}" alt="해썹로고">
+                </p>
+            </div>
+            <div class="col-md-6 mt50m">
+                <img th:src="@{/img/R&D/haccp_04.jpg}" alt="엄마아아이미지">
+            </div>
+            <div class="col-md-12 mt190">
+                <p class="f27 fw500">HACCP 적용업소 인증서</p>
+            </div>
+            <ul class="certInfo mt40 mb100 center">
+                <li>
+                    <img th:src="@{/img/R&D/haccp_05.jpg}" alt="해썹인증서_01">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/haccp_06.jpg}" alt="해썹인증서_02">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/haccp_07.jpg}" alt="해썹인증서_03">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/haccp_08.jpg}" alt="해썹인증서_04">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/haccp_09.jpg}" alt="해썹인증서_05">
+                </li>
+            </ul>
+        </div>
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

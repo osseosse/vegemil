@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.CustomerMapper">
+
+    <sql id="faqColumns">
+          f_idx
+        , f_cate
+        , f_question
+        , f_answer
+        , f_view
+        , f_hit
+        , f_gory
+        , f_img
+        , notice_yn
+        , delete_yn
+        , DATE_FORMAT(created_date,'%Y-%m') as created_date
+        , DATE_FORMAT(modified_date,'%Y-%m') as modified_date
+    </sql>
+    
+    <sql id="faqFeedbackColumns">
+          idx
+        , f_id
+        , f_score
+        , f_etcbox
+        , f_name
+        , faq_idx
+        , f_question
+        , DATE_FORMAT(f_insertdate,'%Y-%m') as f_insertdate
+    </sql>
+
+
+    <!-- 게시글 검색 -->
+    <sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != ''">
+            <choose>
+                <!-- 검색 유형이 있을 때 -->
+                <when test="searchType != null and searchType != ''">
+                    <choose>
+                        <when test="'fQuestion'.equals( searchType )">
+                            AND f_question LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'fAnswer'.equals( searchType )">
+                            AND f_answer LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'fCate'.equals( searchType )">
+                            AND f_cate LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                    </choose>
+                </when>
+                <!-- 전체 검색일 때 때 -->
+                <otherwise>
+                    AND (
+                           f_question LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR f_answer LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR f_cate LIKE CONCAT('%', #{searchKeyword}, '%')
+                    )
+                </otherwise>
+            </choose>
+        </if>
+    </sql>
+
+    <!-- 게시글 저장 -->
+    <insert id="faqSave" parameterType="com.vegemil.domain.FaqDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO M_Faq (
+            <include refid="faqColumns" />
+        ) VALUES (
+            , #{fCate}
+            , #{fQuestion}
+            , #{fAnswer}
+            , 0
+            , #{fGory}
+            , #{fImg}
+            , 0
+            , 0
+            , NOW()
+            , NULL
+        )
+    </insert>
+    
+    <insert id="faqFeedbackSave" parameterType="com.vegemil.domain.FaqFeedbackDTO" useGeneratedKeys="true" keyProperty="idx">
+        INSERT INTO m_faq_feedback (
+              f_id
+	        , f_score
+	        , f_etcbox
+	        , f_name
+	        , faq_idx
+	        , f_question
+	        , f_insertdate
+        ) VALUES (
+            , #{fId}
+	        , #{fScore}
+	        , #{fEtcbox}
+	        , #{fName}
+	        , #{faqIdx}
+	        , #{fQuestion}
+            , NOW()
+        )
+    </insert>
+
+    <select id="faqFindByIdx" parameterType="long" resultType="com.vegemil.domain.FaqDTO">
+        SELECT
+            <include refid="faqColumns" />
+        FROM
+            M_Faq
+        WHERE
+            f_idx = #{fIdx}
+    </select>
+
+
+    <select id="faqFindAll" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.FaqDTO">
+        SELECT
+            <include refid="faqColumns" />
+        FROM
+            M_Faq
+        WHERE
+            delete_yn = 0
+            <if test="category != null and category != ''">
+            	and f_gory = #{category}
+            </if>
+            <include refid="search" />
+        ORDER BY
+            f_idx DESC
+        <include refid="CommonMapper.paging" />
+    </select>
+
+
+    <select id="faqCount" parameterType="com.vegemil.domain.SearchDTO" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            M_Faq
+        WHERE
+            delete_yn = 0
+            <if test="category != null and category != ''">
+            	and f_gory = #{category}
+            </if>
+            <include refid="search" />
+    </select>
+    
+    <select id="faqCountByIdx" parameterType="long" resultType="com.vegemil.domain.FaqDTO">
+        SELECT
+            COUNT(*)
+        FROM
+            M_Faq
+        WHERE
+        	delete_yn = 0
+        	and
+            f_idx = #{fIdx}
+    </select>
+
+</mapper>

@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>정식품</title>
+    <head th:replace="fragments/head :: headFragment"></head>
+</head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="video">
+		<div class="videoCopy">
+			<p class="f80 fw700 f_pp white lh110">Right Food<br>Right Person</p>
+			<p class="f23 fw400 white mt40">생명 존중 정신을 바탕으로<br>건강한 식문화 발전에 이바지 하겠습니다.</p>
+			<p class="btnType01 mt100"><a href="">View More</a></p>
+		</div>
+		<video autoplay loop muted>
+			<source src="https://image.edaymall.com/images/mail/news/dcf/v3/part_01.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="contant1760" >
+		<div id="flotingPage">
+			<div class="floting-left mt110">
+				<div class="row">
+					<div class=" col-md-12">
+						<!-- 슬라이드 -->
+						<div class="" id="slider0">
+							<div class="slider" >
+								<div class="slider_area">
+									<div class="slides ">
+										<div class="slide">
+											<div class="slidetitle sbg01 h520">
+												<ul class="slider0-txtbox">
+													<li>
+														<p class="f27 white">대한민국 오리지날 두유 베지밀</p>
+														<p class="f70 fw700 f_pp white" >Originality</p>
+													</li>
+													<li>
+														<dl>
+															<dd class="active f14_4 white f_pp">01. Originality</dd>
+															<dd class="f14_4 white f_pp">02. Rightness</dd>
+															<dd class="f14_4 white f_pp">03. Devotion</dd>
+														</dl>
+													</li>
+												</ul> 
+											</div>
+										</div>
+									
+										<div class="slide">
+											<div class="slidetitle sbg02 h520">
+												<ul class="slider0-txtbox">
+													<li>
+														<p class="f27 white">건강하고 정직한 먹거리 개발 </p>
+														<p class="f70 fw700 f_pp white" >Rightness</p>
+													</li>
+													<li>
+														<dl>
+															<dd class="f14_4 white f_pp">01. Originality</dd>
+															<dd class="active f14_4 white f_pp">02. Rightness</dd>
+															<dd class="f14_4 white f_pp">03. Devotion</dd>
+														</dl>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="slide">
+											<div class="slidetitle sbg03 h520">
+												<ul class="slider0-txtbox">
+													<li>
+														<p class="f27 white">인류건강에 대한 헌신</p>
+														<p class="f70 fw700 f_pp white" >Devotion</p>
+													</li>
+													<li>
+														<dl>
+															<dd class="f14_4 white f_pp">01. Originality</dd>
+															<dd class="f14_4 white f_pp">02. Rightness</dd>
+															<dd class="active f14_4 white f_pp">03. Devotion</dd>
+														</dl>
+													</li>
+												</ul>
+											</div>
+										</div>
+									
+									</div>
+								</div>
+								<a class="slider_left"><img th:src="@{/img/btn_ppl_left.png}" alt="왼쪽" /></a>
+								<a class="slider_right"><img th:src="@{/img/btn_ppl_right.png}" alt="오른족" /></a>
+							</div>
+						</div>  
+						<!-- //슬라이드 -->
+					</div>
+				</div>
+				<div class="row contactBox mt30">
+					<div class="col-md-3 col-6">
+						<ul class="contactDetail">
+							<li><p class="f14 fw400"><span><img th:src="@{/img/ico/ico_mic.png}" alt="고객상담" /></span> 고객상담 080-930-8888</p></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-6">
+						<ul class="contactDetail">
+							<li><p class="f14 fw400"><span><img th:src="@{/img/ico/ico_mail.png}" alt="메일" /></span> cs@vegemil.co.kr</p></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-6">
+						<ul class="contactDetail">
+							<li><p class="f14 fw400"><span><img th:src="@{/img/ico/ico_call.png}" alt="전화번호" /></span> 02-3484-9300</p></li>
+						</ul>
+					</div>
+
+
+					<div class="col-md-3 col-6">
+						<!-- 자주 묻는 질문 -->
+						<div class="verticalType02" >
+							<div class="ver-title02"><p class="f14 fw400"><img th:src="@{/img/ico/ico_mic.png}" alt="오른족" /> 자주 묻는 질뭇</p></div>
+							<div>
+								<div class="v_content">
+									<p><a href="#">제품일반</a></p>
+									<p><a href="#">음료류</a></p>
+									<p><a href="#">유아동두유</a></p>
+									<p><a href="#">베지밀</a></p>
+									<p><a href="#">그린비아</a></p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class=" col-md-12">
+						<p class="f23 fw500 mt80 black">사업영역</p>
+						<ul class="baseList mt20">
+							<li><a href="#"><img th:src="@{/img/ico/ico_bus01.png}" alt="제품개발"/><p class="f18 mt10">제품 개발</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_bus02.png}" alt="연구개발"/><p class="f18 mt10">연구 개발</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_bus03.png}" alt="제품생산"/><p class="f18 mt10">제품 생산</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_bus04.png}" alt="안전 및 분석"/><p class="f18 mt10">인잔 및 분석</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_bus05.png}" alt="기술 인증 및 특허"/><p class="f18 mt10">기술 인증 및 특허</p></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mt80">
+					<div class=" col-md-8">
+						<p class="f23 fw500  black">기업이념</p>
+						<!-- tab -->
+						<div class="cp_iden mt20">
+							<ul class="tabs1">
+								<li class="li_icoBG01"><a href="#spf_tab01">건강한 문화</a></li>
+								<li class="li_icoBG02"><a href="#spf_tab02">건강한 사회</a></li>
+								<li class="li_icoBG03"><a href="#spf_tab03">건강한 세상</a></li>
+							</ul>
+							<div class="tab_content1 ">
+								<div id="spf_tab01" class="idenBG01 h460">
+									<div class="iden_txt">
+										<p class="f23 fw500 white lh160">인류 건강문화에 기여하고자 <br>건강식품의 보급에 힘쓰고 있습니다.</p>
+										<p class="f52 fw600 white mt40">건강한 문화</p>
+									</div>
+								</div>
+								<!-------------------------- Mom&Baby ------------------------->
+								<div id="spf_tab02" class="idenBG02 h460">
+									<div class="iden_txt">
+										<p class="f23 fw500 white lh160">유능한 인재를 양성하고 기업의<br>사회적 책임을 다하며 국가발전에 기여합니다.</p>
+										<p class="f52 fw600 white mt40">건강한 사회</p>
+									</div>
+								</div>
+								<!-------------------------- // Mom&Baby ------------------------->
+
+								<!-------------------------- Food ------------------------->
+								<div id="spf_tab03" class="idenBG03 h460">
+									<div class="iden_txt">
+										<p class="f23 fw500 white lh160">지구와 자연환경을 훼손하지 않도록<br>믿을 수 있는 제품을 생산합니다.</p>
+										<p class="f52 fw600 white mt40">건강한 세상</p>
+									</div>
+								</div>
+								<!-------------------------- // Food ------------------------->
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('.cp_iden').basicTabs1();/* basicTabs1 변경 */
+							});
+						</script>
+					
+						<!-- //tab -->
+					</div>
+					<div class=" col-md-4">
+						<p class="f23 fw500">&nbsp;</p>
+						<!-- news -->
+						<div class="newsLine mt20">
+							<p style="border:2px dashed #000; background:yellow; color:#000">여기 뉴스 썸네일 이미지 가져오기</p>
+							<p class="f18 fw600 newsIco f_pp black">NEWS<a href=""><img th:src="@{/img/ico/ico_newsMore.png}" alt="more"></a></p>
+							<ul class="newsBox mt10">
+								<li>
+									<dl>
+										<a href="#">
+											<dd class="newsImg"><img src="http://www.enewstoday.co.kr/news/photo/202211/1612268_668644_710.jpg" alt="제품사진"/></dd>
+											<dd class="newsTxt f14">무더운 여름 더위 시원하게 극복 가능! 라잇미닛 아몬드 & 코코넛출시 무더운 여름 더위 시원하게 극복 가능! 라잇미닛 아몬드 & 코코넛출시 무더운 여름 더위 시원하게 극복 가능! 라잇미닛 아몬드 & 코코넛출시</dd>
+										</a>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<a href="#">
+											<dd class="newsImg"><img src="http://www.enewstoday.co.kr/news/photo/202211/1612268_668644_710.jpg" alt="제품사진"/></dd>
+											<dd class="newsTxt f14">무더운 여름 더위 시원하게 극복 가능! 라잇미닛 아몬드 & 코코넛출시</dd>
+										</a>
+									</dl>
+								</li>
+								<li>
+									<dl>
+										<a href="#">
+											<dd class="newsImg"><img src="http://www.enewstoday.co.kr/news/photo/202211/1612268_668644_710.jpg" alt="제품사진"/></dd>
+											<dd class="newsTxt f14">무더운 여름 더위 시원하게 극복 가능! 라잇미닛 아몬드 & 코코넛출시</dd>
+										</a>
+									</dl>
+								</li>
+							</ul>
+						<!-- //news -->
+						</div>
+					</div>
+					<div class=" col-md-12 col-sm-6 col-6 col-mt3 ">
+						<ul class="dv5 mt50">
+							<li class="f18 fw400 black">사회공헌</li>
+							<li class="f14 fw400"><a href="https://www.hcsf.co.kr/">혜춘장학회</a></li>
+							<li class="f14 fw400 "><a href="https://www.goodneighbors.kr/">굿네이버스</a></li>
+							<li class="f14 fw400"><a href="https://www.heart.or.kr/">한국심장재단</a></li>
+						</ul>
+						
+					</div>
+					<div class=" col-md-12 col-sm-6 col-6 ">
+						<ul class="dv6 mt10">
+							<li class="f18 fw400 black">식품안전인증현황</li>
+							<li class="f14 fw400"><a href="https://www.haccp.or.kr/" target="_blank">한국식품안전관리인증</a></li>
+							<li class="f14 fw400"><a href="https://www.fssc.com/" target="_blank">식품안전시스템인증</a></li>
+							<li class="f14 fw400"><a href="https://www.greenproduct.go.kr/epd/" target="_blank">환경성적표지인증</a></li>
+							<li class="f14 fw400"><a href="https://www.knab.go.kr/" target="_blank">한국인정기구</a></li>
+							<li class="f14 fw400"><a href="https://www.kca.go.kr/ccm/" target="_blank">소비자중심경영</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row mt80">
+					<div class="col-md-12">
+						<p class="f23 fw500  black">샘플신청</p>
+						<ul class="middleBanner wView">
+							<li><a href="https://www.vegemil.co.kr/Main/BrandVegemilBaby/sample2.aspx"><img th:src="@{/img/bnr/bnr_main_sample.png}" alt="샘플신청" /></a></li>
+							<li><a href="https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G06005"><img th:src="@{/img/bnr/bnr_main_kidmore.png}" alt="키즈모아" /></a></li>
+						</ul>
+						<ul class="middleBanner_m mView">
+							<li class="mt20"><a href="https://www.vegemil.co.kr/Main/BrandVegemilBaby/sample2.aspx"><img th:src="@{/img/bnr/bnr_main_sample_m.png}" alt="샘플신청" /></a></li>
+							<li class="mt20"><a href="https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G06005"><img th:src="@{/img/bnr/bnr_main_kidmore_m.png}" alt="키즈모아" /></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 슬라이드PC -->
+				<div class="row mt80 wView">
+					<div class="col-md-12" ><div class="grayLine pb140"></div></div>
+					<div class="col-md-4 mb110">
+						<a href="">
+							<div class="recom">
+								<ul class="recomTitle">
+									<li><img th:src="@{/img/ico/ico_dis01.png}"/></li>
+									<li class="f23 black fw500 lh140">아침식사 대용으로<br>강력추천</li>
+								</ul>
+								<div class="VGR03_860_01 h260 reImg mt20"></div>
+								<div class="recomTxt mt30">
+									<p class="key"><span class="greenR">베지밀</span><span class="grayR">곡물&견과두유</span></p>
+									<p class="f20 fw500 black lh160 mt20">베지밀 꼭꼭 씹히는 귀리두유</p>
+									<div class="key02 f14 gray04 mt30"><p>#귀리함유</p><p>#귀리함유</p><p>#귀리함유</p></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 mb110">
+						<a href="">
+							<div class="recom">
+								<ul class="recomTitle">
+									<li><img th:src="@{/img/ico/ico_dis02.png}"/></li>
+									<li class="f23 black fw500 lh140">건강하게! 맛있게!<br>요리용 제품</li>
+								</ul>
+								<div class="SCI01_860_01 h260 reImg mt20"></div>
+								<div class="recomTxt mt30">
+									<p class="key"><span class="yellowR">진한콩국물</span><span class="grayR">콩국물</span></p>
+									<p class="f20 fw500 black lh160 mt20">정식품 진한 콩국물</p>
+									<div class="key02 f14 gray04 mt30"><p>##식물성건강식재료</p><p>#콩의맛과영양</p><p>#여름대표요리</p></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 mb110">
+						<a href="">
+							<div class="recom">
+								<ul class="recomTitle">
+									<li><img th:src="@{/img/ico/ico_dis03.png}"/></li>
+									<li class="f23 black fw500 lh140">체계적이고 과학적인<br>영양밸런스</li>
+								</ul>
+								<div class="CHD01_860_01 h260 reImg mt20"></div>
+								<div class="recomTxt mt30">
+									<p class="key"><span class="purpleR">그린비아</span><span class="grayR">건강식품</span></p>
+									<p class="f20 fw500 black lh160 mt20">그린비아 프로틴밀 아몬드와 호두</p>
+									<div class="key02 f14 gray04 mt30"><p>#아몬드와호두</p><p>#부담없는단백질섭취</p><p>#고단백균형영양</p></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 mb110">
+						<a href="">
+							<div class="recom">
+								<ul class="recomTitle">
+									<li><img th:src="@{/img/ico/ico_dis04.png}"/></li>
+									<li class="f23 black fw500 lh140">식이섬유<br>섭취 부족시</li>
+								</ul>
+								<div class="VPM04_860_01 h260 reImg mt20"></div>
+								<div class="recomTxt mt30">
+									<p class="key"><span class="greenR">베지밀</span><span class="grayR">건강식품</span></p>
+									<p class="f20 fw500 black lh160 mt20">프리바이오틱스 두유</p>
+									<div class="key02 f14 gray04 mt30"><p>#프리바이오틱스</p><p>#식이섬유충전</p><p>#프리미엄두유</p></div>
+								</div>
+							</div>
+						</a>
+					</div>
+
+
+
+					<div class="col-md-4 mb110">
+						<a href="">
+							<div class="recom">
+								<ul class="recomTitle">
+									<li><img th:src="@{/img/ico/ico_dis05.png}"/></li>
+									<li class="f23 black fw500 lh140">성장기 어린이를 위한<br>어린이 음료</li>
+								</ul>
+								<div class="CHD03_860_01 h260 reImg mt20"></div>
+								<div class="recomTxt mt30">
+									<p class="key"><span class="purpleR">그린비아</span><span class="grayR">건강식품</span></p>
+									<p class="f20 fw500 black lh160 mt20">그린비아 키즈모아</p>
+									<div class="key02 f14 gray04 mt30"><p>#어린이</p><p>#소아환자균형영양식</p><p>#성장에필요한영양성분구성</p></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 mb110">
+						<a href="">
+							<div class="recom">
+								<ul class="recomTitle">
+									<li><img th:src="@{/img/ico/ico_dis03.png}"/></li>
+									<li class="f23 black fw500 lh140">평소 단백질 섭취가<br>부족하다면?</li>
+								</ul>
+								<div class="VPM05_860_01 h260 reImg mt20"></div>
+								<div class="recomTxt mt30">
+									<p class="key"><span class="greenR">베지밀</span><span class="grayR">블랙두유</span></p>
+									<p class="f20 fw500 black lh160 mt20">베지밀 고단백두유 검은콩</p>
+									<div class="key02 f14 gray04 mt30"><p>#베지밀 고단백두유 검은콩</p><p>#든든하고고소한맛</p><p>#운동전후단백질</p></div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //슬라이드PC -->
+
+
+				<!-- 슬라이드모바일 -->
+				<div class="row mt80">
+					<div class="col-md-12" >
+						<div id="slider1" class="mView">
+							<div  class="slider">
+								<div class="slider_area">
+									<div class="slides">
+										<div class="slide">
+											<a href="">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img th:src="@{/img/ico/ico_dis01.png}"/></li>
+														<li class="f23 black fw500 lh140">아침식사 대용으로<br>강력추천</li>
+													</ul>
+													<div class="VGR03_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="greenR">베지밀</span><span class="grayR">곡물&견과두유</span></p>
+														<p class="f20 fw500 black lh160 mt20">베지밀 꼭꼭 씹히는 귀리두유</p>
+														<div class="key02 f14 gray04 mt30"><p>#귀리함유</p><p>#귀리함유</p><p>#귀리함유</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img th:src="@{/img/ico/ico_dis02.png}"/></li>
+														<li class="f23 black fw500 lh140">건강하게! 맛있게!<br>요리용 제품</li>
+													</ul>
+													<div class="SCI01_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="yellowR">진한콩국물</span><span class="grayR">콩국물</span></p>
+														<p class="f20 fw500 black lh160 mt20">정식품 진한 콩국물</p>
+														<div class="key02 f14 gray04 mt30"><p>##식물성건강식재료</p><p>#콩의맛과영양</p><p>#여름대표요리</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img th:src="@{/img/ico/ico_dis03.png}"/></li>
+														<li class="f23 black fw500 lh140">체계적이고 과학적인<br>영양밸런스</li>
+													</ul>
+													<div class="CHD01_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="purpleR">그린비아</span><span class="grayR">건강식품</span></p>
+														<p class="f20 fw500 black lh160 mt20">그린비아 프로틴밀 아몬드와 호두</p>
+														<div class="key02 f14 gray04 mt30"><p>#아몬드와호두</p><p>#부담없는단백질섭취</p><p>#고단백균형영양</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img th:src="@{/img/ico/ico_dis04.png}"/></li>
+														<li class="f23 black fw500 lh140">식이섬유<br>섭취 부족시</li>
+													</ul>
+													<div class="VPM04_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="greenR">베지밀</span><span class="grayR">건강식품</span></p>
+														<p class="f20 fw500 black lh160 mt20">프리바이오틱스 두유</p>
+														<div class="key02 f14 gray04 mt30"><p>#프리바이오틱스</p><p>#식이섬유충전</p><p>#프리미엄두유</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img th:src="@{/img/ico/ico_dis05.png}"/></li>
+														<li class="f23 black fw500 lh140">성장기 어린이를 위한<br>어린이 음료</li>
+													</ul>
+													<div class="CHD03_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="purpleR">그린비아</span><span class="grayR">건강식품</span></p>
+														<p class="f20 fw500 black lh160 mt20">그린비아 키즈모아</p>
+														<div class="key02 f14 gray04 mt30"><p>#어린이</p><p>#소아환자균형영양식</p><p>#성장에필요한영양성분구성</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img th:src="@{/img/ico/ico_dis03.png}"/></li>
+														<li class="f23 black fw500 lh140">평소 단백질 섭취가<br>부족하다면?</li>
+													</ul>
+													<div class="VPM05_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="greenR">베지밀</span><span class="grayR">블랙두유</span></p>
+														<p class="f20 fw500 black lh160 mt20">베지밀 고단백두유 검은콩</p>
+														<div class="key02 f14 gray04 mt30"><p>#베지밀 고단백두유 검은콩</p><p>#든든하고고소한맛</p><p>#운동전후단백질</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<a class="slider_left"><img th:src="@{/img/btn_ppl_left.png}" alt="왼쪽" /></a>
+								<a class="slider_right"><img th:src="@{/img/btn_ppl_right.png}" alt="오른족" /></a>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear">
+				<!-- //슬라이드모바일 -->
+
+				<!-- BREND TAB -->
+				<div class="row mt70m">
+					<div class="col-md-12">
+						<p class="f23 fw500 black"><img th:src="@{/img/ico/ico_best.png}" alt="엄지척" /> Brand Best Product</p>
+						<!-- tab -->
+						<div class="bestTab mt20">
+							<ul class="tabs2">
+								<li class="f16 fw400"><a href="#best01">베지밀</a></li>
+								<li class="f16 fw400"><a href="#best02">그린비아</a></li>
+								<li class="f16 fw400"><a href="#best03">심천수</a></li>
+								<li class="f16 fw400"><a href="#best04">콩국물</a></li>
+								<li class="f16 fw400"><a href="#best05">식재료</a></li>
+							</ul>
+							<div class="tab_content2 ">
+								<div id="best01">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="VPM01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">베지밀 5060 시니어 두유 검은콩</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">신체활력과 건강증진에 필요한 영양성분을<br>공급하는 균형영양두유</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="VPM03_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">담백한 베지밀 에이</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">40여년 역사를 지닌 베지밀 정통두유 40여년 역사를 지닌 베지밀 정통두유 40여년 역사를 지닌 베지밀 정통두유</p>
+													</a>
+												</li>
+												<li>
+													<a href="#" >
+														<dd class="VPM05_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">베지밀 고단백두유 검은콩</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">고함량 단백질 12g을 한 팩으로 즐길 수 있는 프리미엄 두유</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="VBL02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">베지밀 검은콩과 16곡두유</p>
+														<p class="f14 fw400 gray04  lh150 best-subCopy mt10">국내산 곡물을 사용한 간편한 균형 곡물 건강식</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="VGR02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">베지밀 17곡 한끼두유</p>
+														<p class="f14 fw400 gray04  lh150 best-subCopy mt10">바쁜 아침을 든든하게 채워주는 입자감이 살아 있는 17곡 한끼 두유</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best02">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="VPM01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">그린비아 마일드케어 구수한맛</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">씹기 어려워 일반 식사가 힘들거나,<br>소화기능이 약하신 분들을 위한 균형 영양식</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="GPL03_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">그린비아 키즈</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">영양불량 소아 환자를 위한<br>어린이 균형 영양식</p>
+													</a>
+												</li>
+												<li>
+													<a href="#" >
+														<dd class="GPL04_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">그린비아 플러스 케어 당뇨식</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">씹기 어려워 일반 식사가 힘들고,<br>당뇨가 있는 분들을 위한 전문영양식</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="GED04_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">당뇨솔루션</p>
+														<p class="f14 fw400 gray04  lh150 best-subCopy mt10">장관계 민감도가 높은<br>당뇨환자를 위한 전문영양식</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="CHD02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">프로틴밀 검은참깨</p>
+														<p class="f14 fw400 gray04  lh150 best-subCopy mt10">간편하게 챙기는 18g의<br>고단백 균형 영양</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best03">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="CWA01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">정식품 심천수</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">청정지역 지리산이 품은 맑고 깊은 샘물</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="CWA01_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">정식품 심천수</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">청정지역 지리산이 품은 맑고 깊은 샘물</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best04">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="SCI04_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">정식품 진한 콩국물</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">통 콩을 그대로 갈아 만든 콩 국물!<br>간편하게 다양한 요리에 활용 할 수 있어요~</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="SCI04_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">정식품 진한 콩국물 검은콩</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">통 콩을 그대로 갈아 만든 콩 국물!<br>간편하게 다양한 요리에 활용 할 수 있어요~</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="SCI05_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">정식품 진한 콩국물 검은콩</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">통 콩을 그대로 갈아 만든 콩 국물!<br>검은콩이 들어간 콩국물로 다양한 요리에 활용 할 수 있어요~</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best05">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="SCI01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">간단요리사 구수한 사골육수</p>
+												<p class="f14 fw400 gray04 lh150 best-subCopy mt10">육수만 부어 끓이면 완성되는 간단 요리!<br>간편하게 다양한 요리에 활용할 수 있어요~</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="SCI02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">간단요리사 담백한 채소육수</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">요리를 간단하고 맛있게!<br>간편하게 다양한 요리에 활용할 수 있어요~</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="SCI03_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">간단요리사 시원한 채소육수</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">요리를 간단하고 맛있게!<br>간편하게 다양한 요리에 활용할 수 있어요~</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('.bestTab').basicTabs2();/* basicTabs2 변경 */
+							});
+						</script>
+
+					</div>
+				</div>
+				
+				<!-- //BREND TAB -->
+				
+				<!-- Now  Tab 
+				<div class="row">
+					<div class="col-md-12" ><div class="grayLine pb120"></div></div>
+					<div class="col-md-12" >
+						<p class="f23 fw500 black"><img th:src="@{/img/ico/ico_smail.png}" alt="엄지척" /> Now, New Hit Item Top 5</p>
+					</div>
+					<div class="col-md-12" >
+						<ul class="tabs3 mt30">
+							<li class="f16 fw400"><a href="#now01">01</a></li>
+							<li class="f16 fw400"><a href="#now02">02</a></li>
+							<li class="f16 fw400"><a href="#now03">03</a></li>
+							<li class="f16 fw400"><a href="#now04">04</a></li>
+							<li class="f16 fw400"><a href="#now05">05</a></li>
+						</ul>
+						<div class="tab_content3">
+							<div id="now01">
+								11111111
+							</div>
+							<div id="now02">
+								2222222
+							</div>
+							<div id="now03">
+							3333333
+							</div>
+							<div id="now04">
+								44444
+							</div>
+							<div id="now05">
+								555555
+							</div>
+						</div>
+					</div> 
+				</div>
+				<!-- // Now Tab -->
+
+				<!-- 제품음용후기 web -->
+				<div class="row rivewWrap " style="">
+					<div class="col-md-12" >
+						<div class="grayLine pb120"></div>
+						<p class="f23 fw500 black">제품음용후기</p>
+					</div>
+					
+					<div class="col-md-12 wView768" >
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img th:src="@{/img/product/thumb/VPL01_600_01.png}" /></p></li>
+									<li>
+										<p class="f23 fw500  black">담백한 베지밀 에이</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"달지 않고 고소해서 좋아요."</dd>
+											<dd class="f14 gray04 fw400">"온가족이 박스로 구매해요."</dd>
+											<dd class="f14 gray04 fw400">"최고에요."</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img th:src="@{/img/product/thumb/SCI04_600_01.png}" /></p></li>
+									<li>
+										<p class="f23 fw500  black">정식품 진한 콩국물</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"요리용으로 최고에요."</dd>
+											<dd class="f14 gray04 fw400">"여름 별미로 콩국수 만들기 좋아요."</dd>
+											<dd class="f14 gray04 fw400">"진하고 걸쭉해서 사먹는 맛이에요."</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img th:src="@{/img/product/thumb/VBB01_600_01.png}" /></p></li>
+									<li>
+										<p class="f23 fw500  black">베지밀 인펀트 우리콩 1단계</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"처음 먹여보았는데도 잘 먹네요."</dd>
+											<dd class="f14 gray04 fw400">"아기에게 수시로 먹이고 있어요."</dd>
+											<dd class="f14 gray04 fw400">"주변 엄마들에게 추천받았습니다."</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img th:src="@{/img/product/thumb/VPM01_600_01.png}" /></p></li>
+									<li>
+										<p class="f23 fw500  black">베지밀 5060 시니어 두유</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"떨어지지 않도록 항상 주문하고 있어요."</dd>
+											<dd class="f14 gray04 fw400">"건강도 건강이지만 맛있어서 좋아요"</dd>
+											<dd class="f14 gray04 fw400">"가볍게 선물드리기 좋습니다."</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- //제품음용후기 web -->
+
+				<!-- 제품음용후기 mobile -->
+				<div class="row">
+					<div class="col-md-12" >
+						<div id="slider2" class="mView768">
+							<div  class="slider">
+								<div class="slider_area">
+									<div class="slides">
+										<div class="slide"><div class="VPL01X262"></div></div>
+										<div class="slide"><div class="SCI04X262"></div></div>
+										<div class="slide"><div class="VBB01X262"></div></div>
+										<div class="slide"><div class="VPM01X262"></div></div>
+									</div>
+								</div>
+								<a class="slider_left"><img th:src="@{/img/btn_ppl_left.png}" alt="왼쪽" /></a>
+								<a class="slider_right"><img th:src="@{/img/btn_ppl_right.png}" alt="오른족" /></a>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear">
+				<!-- //제품음용후기 mobile -->
+
+				<!-- 제품음용후기 mobile -->
+				<div class="row  mt100">
+					<div class="col-md-12 wView">
+						<p class="img100"><img th:src="@{/img/bnr/bnr_main_middle.png}" /></p>
+					</div>
+					<div class="col-md-12 mView">
+						<p class="img100"><img th:src="@{/img/bnr/bnr_main_middle_m.png}" /></p>
+					</div>
+				</div>
+				<!-- //제품음용후기 mobile -->
+
+				<!-- 맛있고 건강한 레시피 -->
+				<div class="row mt120">
+					<div class="col-md-12" >
+						<p class="f27 fw500 black">맛있고 건강한 레시피</p>
+					</div>
+					<div class="col-md-6 mb70 mb70m" >
+						<a href="#"><div class="round20 SCI04_860_01 h320 mt20"></div></a>
+						<p class="f23 fw500 black mt30">식물성 소이 베이스, <br>맛도 좋고 건강에도 좋은 진한 콩국물 2종</p>
+						<ul class="recipe_btn round10 mt40">
+							<li class="f18 fw400 "><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/index.html" target="_blank"><span class="black">진한 콩국물 레시피 사이트</span></a></li>
+							<li class="f14 gray03"><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/sub_product.html" target="_blank"><span class="gray04">제품소개</span></a></li>
+							<li class="f14 gray04"><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/sub_list.html" target="_blank"><span class="gray04">특별 레시피</span></a></li>
+						</ul>
+						<ul class="recipeBox mt40">
+							<li><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/sub_recipe04.html" target="_blank"><img th:src="@{/img/product/photo/recipe_01.png}" /><p class="f18 fw400 black mt10">콩스프 오리말이</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/sub_recipe03.html" target="_blank"><img th:src="@{/img/product/photo/recipe_02.png}" alt="버섯 들깨찜" /><p class="f18 fw400 black mt10">버섯 들깨찜</span></p></li>
+							<li><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/sub_recipe05.html" target="_blank"><img th:src="@{/img/product/photo/recipe_03.png}" alt="콘치즈 새우 그라탕" /><p class="f18 fw400 black mt10">콘치즈 새우 그라탕</p></a></li>
+						</ul>
+
+					</div>
+					<div class="col-md-6 mb70" >
+						<a href="#"><div class="round20 SCI02_860_01 h320 mt20"></div></a>
+						<p class="f23 fw500 black mt30">밋밋한 요리에 깊은 맛을 더하는, <br>요리 초보 필수템, 간단요리사 채소육수 2종</p>
+						<ul class="recipe_btn round10 mt40">
+							<li class="f18 fw400 "><a href="https://www.vegemil.co.kr/Main/beanSoup/index.aspx" target="_blank"><span class="black">간단요리사 레시피 사이트</span></a></li>
+							<li class="f14 gray03"><a href="https://www.vegemil.co.kr/Main/beanSoup/brand.aspx" target="_blank"><span class="gray04">제품소개</span></a></li>
+							<li class="f14 gray04"><a href="https://www.vegemil.co.kr/Main/beanSoup/list.aspx" target="_blank"><span class="gray04 mt5">특별 레시피</span></a></li>
+						</ul>
+						<ul class="recipeBox mt40">
+							<li><a href="https://www.vegemil.co.kr/Main/beanSoup/list_detail.aspx?recipe=recipe06"  target="_blank"><img th:src="@{/img/product/photo/recipe_04.png}" alt="만둣국" /><p class="f18 fw400 black mt10">만둣국</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/Main/beanSoup/list_detail.aspx?recipe=recipe05"  target="_blank"><img th:src="@{/img/product/photo/recipe_05.png}" alt="두부버섯전골" /><p class="f18 fw400 black mt10">두부버섯전골</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/Main/beanSoup/list_detail.aspx?recipe=recipe02"  target="_blank"><img th:src="@{/img/product/photo/recipe_06.png}" alt="냉면" /><p class="f18 fw400 black mt10">냉면</p></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- //맛있고 건강한 레시피 -->
+
+				<!-- 웹진배너 -->
+				<div class="row  mt100">
+					<div class="col-md-12 wView">
+						<p class="img100"><a href="#"><img th:src="@{/img/bnr/bnr_main_webzine.png}" alt="웹진배너" /></a></p>
+					</div>
+					<div class="col-md-12 mView">
+						<p class="img100"><a href="#"><img th:src="@{/img/bnr/bnr_main_webzine_m.png}" alt="웹진배너" /></a></p>
+					</div>
+				</div>
+				<!-- //웹진배너 -->
+
+
+				<!-- SNS+관련사 -->
+				<div class="row  mt100">
+					<div class="col-md-3 mb70" >
+						<p class="f23 fw500 black">SNS</p>
+						<ul class="snsUL mt20">
+							<li class="sli"><a href="https://www.facebook.com/vegemilgood" target="_blank"><img th:src="@{/img/ico/ico_f.png}" alt="페이스북"/>페이스북</a></li>
+							<li class="sli"><a href="https://blog.naver.com/vegemilstory" target="_blank"><img th:src="@{/img/ico/ico_b.png}" alt="페이스북"/>정식품 블로그</a></li>
+							<li class="sli"><a href="https://www.youtube.com/user/vegemilgood" target="_blank"><img th:src="@{/img/ico/ico_y.png}" alt="페이스북"/>정식품 유튜브</a></li>
+							<li>
+								<div class="verticalType02" >
+									<div class="ver-title02"><p class="f14 fw400"><img th:src="@{/img/ico/ico_i.png}" alt="인스타그램" />인스타그램</p></div>
+									<div>
+										<div class="v_content">
+											<p><a href="https://www.instagram.com/vegemil.official/">베지밀 인스타그램</a></p>
+											<!-- <p><a href="#">영&middot;유아식 인스타그램</a></p> -->
+										</div>
+									</div>
+								</div>
+	
+							</li>
+						</ul>
+					</div>
+					
+					<div class="col-md-9 mb70">
+						<p class="f23 fw500 black">관련사 및 이용안내</p>
+						<ul class="fcFamily mt20">
+							<li><a href="https://www.innp.co.kr/kr/Default.aspx " target="_blank"><img th:src="@{/img/ico/ci_nnp.png}" alt="자연과사람들"/><p class="f18 fw400 mt10">자연과사람들</p></a></li>
+							<li><a href="https://www.innp.co.kr//kr/Default.aspx" target="_blank"><img th:src="@{/img/ico/ci_osse.png}" alt="오쎄"/><p class="f18 fw400 mt10">오쎄</p></a></li>
+							<li><a href="https://www.hcsf.co.kr/" target="_blank"><img th:src="@{/img/ico/ci_hc.png}" alt="혜춘장학회"/><p class="f18 fw400 mt10">혜춘장학회</p></a></li>
+						</ul>
+						<ul class="fcLinbox">
+							<li><a href="">대리점 모집</a></li>
+							<li><a href="">개인정보 처리방침</a></li>
+							<li><a href="">이용약관</a></li>
+							<li><a href="">고객의 소리</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- //SNS+관련사 -->
+
+
+
+
+
+			</div><!-- //floting-left -->
+			<div class="floting-right mt110">
+				<div class="floting">
+					<div class="flotingContent"><!-- 2022-11-01 "flotingContent" 클래스추가 --> 
+						<p class="f23 fw500">정식품 브랜드</p>
+						<ul class="f_ul mt30">
+							<li>
+								<a href="#">
+								<div class="bg01"><img th:src="@{/img/product/thumb/VPL01_600_01.png}" alt="베지밀병"/><span class="count01">89</span>	</div>	
+								<p class="f16 fw400 glay04">베지밀</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+								<div class="bg02"><img th:src="@{/img/product/thumb/VPL01_600_01.png}" alt="베지밀병"/><span class="count02">89</span>	</div>	
+								<p class="f16 fw400 glay04">그린비아</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+								<div class="bg03"><img th:src="@{/img/product/thumb/VPL01_600_01.png}" alt="베지밀병"/><span class="count03">89</span>	</div>	
+								<p class="f16 fw400 glay04">심천수</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+								<div class="bg04"><img th:src="@{/img/product/thumb/VPL01_600_01.png}" alt="베지밀병"/><span class="count04">89</span>	</div>	
+								<p class="f16 fw400 glay04">진한콩국물</p>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+								<div class="bg05"><img th:src="@{/img/product/thumb/VPL01_600_01.png}" alt="베지밀병"/><span class="count05">89</span>	</div>	
+								<p class="f16 fw400 glay04">간단요리사</p>
+								</a>
+							</li>
+						</ul><br class="clear">
+						<p class="f23 fw500 f_pp mt50">All Category</p>
+						<ul class="f_ul_middle">
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate01.png}" alt=""/><p class="f14 gray04 mt10 center">두유</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate02.png}" alt=""/><p class="f14 gray04 mt10 center">임산부영양식</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate03.png}" alt=""/><p class="f14 gray04 mt10 center">영&middot;유아식</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate04.png}" alt=""/><p class="f14 gray04 mt10 center">특수영양식</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate05.png}" alt=""/><p class="f14 gray04 mt10 center">건강식품</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate06.png}" alt=""/><p class="f14 gray04 mt10 center">식재료</p></a></li>
+							<li><a href="#"><img class="mt10" th:src="@{/img/ico/ico_all_cate07.png}" alt=""/><p class="f14 gray04 mt10 center">식물성음료</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate08.png}" alt=""/><p class="f14 gray04 mt10 center">음료</p></a></li>
+							<li><a href="#"><img th:src="@{/img/ico/ico_all_cate09.png}" alt=""/><p class="f14 gray04 mt10 center">생수</p></a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- //floting-right -->
+		</div><!-- //flotingPage -->
+		<br class="clear">
+		
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- //main > 자주묻는질문+SNS -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType02").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+</body>
+</html>

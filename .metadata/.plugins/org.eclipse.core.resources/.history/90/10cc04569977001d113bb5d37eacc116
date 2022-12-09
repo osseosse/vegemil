@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>그린비아 제품검색</title>
+	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
+	
+<!-- 	<style>
+	  input.btn_search {
+        background: url(/img/greenbia/btn_search.gif) no-repeat;
+        position:absolute; 
+        right:0; 
+        top:0px; 
+        outline:0
+      }
+	</style> -->
+	
+      
+	<script> 
+	 	$(document).ready(function(){
+			$('#btnSearch').click(function(){
+				var word = $('#searchKeyword').val();
+				if( word == "" || word == null){
+					alert("검색어를 입력하세요.");
+					return false;
+				}
+			});
+			
+			function onKeydownEnterKey(obj) {
+			    if(event.keycode == 13){
+				    self.focus();
+				    obj.click();
+				
+				    return false;
+				}
+			}
+		});
+		
+		
+		function getSearchList(){
+			
+			let data = $("#search-form").serialize();
+		    console.log(data);
+		    alert(data);
+
+/* 			$.ajax({
+				type: 'GET',
+				url : "/getSearchList",
+				data : $("form[name=search-form]").serialize(),
+				success : function(result){
+					//테이블 초기화
+					$('#boardtable > tbody').empty();
+					if(result.length>=1){
+						result.forEach(function(item){
+							str='<tr>'
+							str += "<td>"+item.idx+"</td>";
+							str+="<td>"+item.writer+"</td>";
+							str+="<td><a href = '/board/detail?idx=" + item.idx + "'>" + item.title + "</a></td>";
+							str+="<td>"+item.date+"</td>";
+							str+="<td>"+item.hit+"</td>";
+							str+="</tr>"
+							$('#boardtable').append(str);
+		        		})				 
+					}
+				}
+			}) */
+		}
+		
+		
+		
+		
+		
+</script>	
+</head>
+<header id="header" th:fragment="headerFragment"></header>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+
+<header>
+<!-- 모바일 메뉴 -->
+
+<!-- //모바일 메뉴 -->
+</header>
+
+<!--------------------- 
+		//Header
+------------------- -->
+
+
+<!--------------------- 
+		content
+------------------- -->
+<main>
+
+
+<div class="container100">
+	<div class="row h500 bg_search">
+		<div class="hcenter center">
+			<p class="f26_4_w f_ms">Search</p>
+			<p class="f50_5_w mt20">제품검색</p>
+		</div>
+		<div class="col-md-12 subNav">
+			<div class="subNavBox">
+				<ul>
+					<li><a href="#">제품소개</a></li>
+					<li><a href="#">제품검색</a></li>
+				</ul>
+				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="container100">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12" >
+				<ul class="tabMenu3">
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/guide}">선택가이드</a></li>
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/newProduct}">전체제품</a></li>
+					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/search}">제품검색</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container1400_15 mt100">
+	<div class="row">
+		<div class="col-md-12 ">
+			<p class="f50_6">제품명 검색,<br class="noneM"> 제품특징 태그로<br>원하시는 그린비아 제품을<br class="noneM"> 찾아보세요.</p>
+		</div>
+	</div>
+	
+					
+	<div class="row">
+		<div class="col-md-12 ">
+			<div class="searchBox mt90">
+				<ul class="search_in_box">	
+
+					<form name="search-form"  id="search-form" th:action="@{/greenbia/search}" method="GET">				   		
+				   		<li>
+				   			<input type="text"  class="search-input"  name="searchKeyword" id="searchKeyword" tabindex=1  placeholder="제품명을 입력해 주세요" autofocus />
+						</li>
+						<li>
+					   		<input type="image" id ="btnSearch" class="btn_search" th:src="@{/img/greenbia/btn_search.gif}" />																	
+						</li>
+					</form>
+					
+				</ul>	
+			</div>
+			
+			
+  			<div class="portfolio-grid-metro4 mesonry-list"> 
+			
+			<div class="resizer" ></div>
+				<div class="portfolio portfolio_style--1 portfolio-33-33">	
+			      	<div  th:each="product : ${searchList}" > 
+				      	<a th:with="var=${product.gCode}" th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=}+${var}"> 
+					        <div class="poss_relative">				
+								<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
+							        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
+								        <li class="f_ms" th:text="${product.gCapacity}">용량</li> 
+								        <li class="f_ms" th:text="${product.gCal}">칼로리</li> 
+							        </ul>
+						        </div>			        
+						        <div class="thumb_txt">
+						        	<p class="f14_41 thumb_line"><b th:text="${product.gLcate}"></b><span></span><b th:text="${product.gMcate}"></b></p>        
+						            <p class="f28_4 mt20" th:text="${product.gName}">제품명</p> 
+							        <p class="f16_4 mt10 gray01" th:text="${product.gContents}">제품설명</p> 
+						        </div>
+					        </div>
+				        </a>
+			        </div>	
+			        
+			       </div>
+	        </div>  
+		        
+				 
+
+			
+		</div>
+		
+	
+	</div>
+	
+</div>
+
+
+<div class="container100 bgGray mt100">
+	<div class="container1400_15 ">
+		<div class="row">
+			<div class="col-lg-12">
+				
+				<div class="messonry-search">
+					<p class="center pb40 f34_5"># 특징별 제품찾기</p>
+					<button data-filter="*" class="is-checked btn_search_box" type="button"><span class="filter-text"><b>전체</b></span><span class="filter-counter">34</span></button>
+					<button data-filter=".s1" class="btn_search_box" type="button"><span class="filter-text"><b>#베스트 상품</b></span> <span class="filter-counter">3</span></button>
+					<button data-filter=".s2" class="btn_search_box" type="button"><span class="filter-text"><b>#추천 상품</b></span> <span class="filter-counter">2</span></button>
+					<button data-filter=".s3" class="btn_search_box" type="button"><span class="filter-text"><b>#일반영양식</b></span> <span class="filter-counter">5</span></button>
+					<button data-filter=".s4" class="btn_search_box" type="button"><span class="filter-text"><b>#어린이 일반영양식</b></span> <span class="filter-counter">1</span></button>
+					<button data-filter=".s5" class="btn_search_box" type="button"><span class="filter-text"><b>#당뇨 환자를 위한</b></span> <span class="filter-counter">5</span></button>
+					<button data-filter=".s6" class="btn_search_box" type="button"><span class="filter-text"><b>#신장 질환자를 위한</b></span> <span class="filter-counter">3</span></button>
+					<button data-filter=".s7" class="btn_search_box" type="button"><span class="filter-text"><b>#민감한 장</b></span> <span class="filter-counter">6</span></button>
+					<button data-filter=".s8" class="btn_search_box" type="button"><span class="filter-text"><b>#건강식품</b></span> <span class="filter-counter">5</span></button>
+					<button data-filter=".s9" class="btn_search_box" type="button"><span class="filter-text"><b>#외상 및 수술 환자식</b></span> <span class="filter-counter">1</span></button>
+					<button data-filter=".s10" class="btn_search_box" type="button"><span class="filter-text"><b>#고단백식</b></span> <span class="filter-counter">3</span></button>
+					<button data-filter=".s11" class="btn_search_box" type="button"><span class="filter-text"><b>#경관급식 전용</b></span> <span class="filter-counter">14</span></button>
+					<button data-filter=".s12" class="btn_search_box" type="button"><span class="filter-text"><b>#점도증진</b></span> <span class="filter-counter">1</span></button>
+					<button data-filter=".s13" class="btn_search_box" type="button"><span class="filter-text"><b>#단백질 보충</b></span> <span class="filter-counter">8</span></button>
+					<button data-filter=".s14" class="btn_search_box" type="button"><span class="filter-text"><b>#화이바</b></span> <span class="filter-counter">3</span></button>
+					<button data-filter=".s15" class="btn_search_box" type="button"><span class="filter-text"><b>#RTH</b></span> <span class="filter-counter">5</span></button>
+					<button data-filter=".s16" class="btn_search_box" type="button"><span class="filter-text"><b>#암환자용 제품</b></span> <span class="filter-counter">1</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container1400_15 ">
+	<div class="row pb200">
+		<div class="col-lg-12">
+			<div class="portfolio-grid-metro4 mesonry-list">
+				<div class="resizer"></div>
+				
+				<div class="container">
+			        <div class="row g-3">						
+						<!-- 수정후 -->	
+			            <div th:each="product : ${keywordProductList}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 " th:classappend="${product.gKeyword}">
+			                <div class="card border-0">	                
+			                    <a th:with="var=${product.gCode}" th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=}+${var}"> 
+							        <div class="poss_relative">
+							       	 	<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
+									        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
+										        <li class="f_ms" th:text="${product.gCapacity}">용량</li> 
+										        <li class="f_ms" th:text="${product.gCal}">칼로리</li> 
+									        </ul>
+								        </div>
+								        <div class="thumb_txt" style="text-align: left;">
+									        <p class="f14_41 thumb_line"><b th:text="${product.gLcate}"></b><span></span><b th:text="${product.gMcate}"></b></p>        
+									        <p class="f28_4 mt20" th:text="${product.gName}" style="font-weight: bold">제품명</p> 
+									        <p class="f16_4 mt10 gray01" th:text="${product.gContents}">제품설명</p> 
+								        </div>
+							        </div>
+					    		</a>	                    
+			                </div>
+			            </div>
+					</div>
+				</div>
+					
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+
+<!-- </form> -->
+</main>
+<!--------------------- 
+		//content
+------------------- -->
+
+ <script th:src="@{/common/js/vendor.min.js}"></script>
+ <script th:src="@{/common/js/plugins.min.js}"></script>
+ <!--
+<script src="https://demo.hasthemes.com/brook-preview/brook/js/plugins.min.js"></script>-->
+<script th:src="@{/common/js/main.js}"></script>
+<script th:src="@{/common/js/card-slider.js}"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<!-- AOS -->
+<script th:src="@{https://unpkg.com/aos@2.3.1/dist/aos.js}"></script>
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+<script type="text/javascript">
+    (function(w, d, a){
+    w.__beusablerumclient__ = {
+    load : function(src){
+    var b = d.createElement("script");
+    b.src = src; b.async=true; b.type = "text/javascript";
+    d.getElementsByTagName("head")[0].appendChild(b);
+    }
+    };w.__beusablerumclient__.load(a);
+    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+</script>
+
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+		
+</body>
+</html>

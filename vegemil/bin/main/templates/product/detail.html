@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+   <head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="contant1760 mt90h" >
+
+		<div class="row prd-sel">
+			<div class="col-md-8 mt50">
+				<select class="sel03 w180 mr5">
+					<option>두유(베지밀)</option>
+					<option>임산&middot;수유뷰 영양식(베지밀)</option>
+					<option>영&middot;유아식(베지밀)</option>
+					<option>특수영양식(그린비아)</option>
+					<option>건강식품</option>
+					<option>식재료</option>
+					<option>식물성음료(라잇미닛)</option>
+					<option>음료</option>
+					<option>생수(심천수)</option>
+				</select>
+				<select class="sel03 w180 mr5">
+					<option>플레인 두유</option>
+					<option>프리미엄 두유</option>
+					<option>플레인 두유</option>
+					<option>블랙 두유</option>
+					<option>곡물&견과 두유</option>
+					<option>과즙&차류 두유</option>
+				</select>
+				<select class="sel03 w250 dep3">
+					<option>담백한 베지밀 에이</option>
+					<option>달콤한 베지밀 비</option>
+					<option>베지밀 무첨가두유</option>
+					<option>베지밀 진하고 고소한 두유</option>
+					<option>베지밀에이 담백한 고칼슘 두유</option>
+					<option>베지밀비 달콤한 고칼슘 두유</option>
+					<option>베지밀 고칼슘 두유</option>
+				</select>
+			</div>
+			<div class="col-md-4 mt50">
+				<p class="f14 fw400 black  float-right btnType18"><a href="#"><img  th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+			</div>
+		</div>
+		<div class="row pro-top-tab">
+			<div class="col-md-8 mt50 ">
+				<!-- tabs4 -->
+				<div class="prd_thumb">
+					<ul class="tabs4">
+						<li><a href="#photo01"><div class="VPL01_700_01 h190"></div></a></li>
+						<li><a href="#photo02"><div class="VPL01_860_01 h190"></div></a></li>
+						<li><a href="#photo03"><div class="VPL01_860_02 h190"></div></a></li>
+					
+					</ul>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('.prd_thumb').basicTabs4();/* basicTabs4 변경 */
+					});
+				</script>
+				<!-- //tabs4 -->
+
+
+				<!-- tabs4 content -->
+				<div class="tab_content4">
+					<div id="photo01" class="thumb_img">
+						<div class="VPL01_700_01 h590"></div>
+						<div class="prd-txt ab-bottom">
+							<span class="f14" th:if="${product.tag} != null and ${product.tag} != ''" th:text="${product.tag}"></span>
+							<!-- <span class="f14">#든든하고고소한맛</span> -->
+							<!--<span class="f14">#운동전후단백질</span>-->
+						</div>
+						<div class="prd-label">
+							<img th:if="${product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+							<img th:if="${product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+						</div>
+					</div>
+					<div id="photo02">
+						<div class="VPL01_860_01 h590"></div>
+					</div>
+					<div id="photo03">
+						<div class="VPL01_860_02 h590"></div>
+					</div>
+				</div><!-- //tabs4 content -->
+
+
+			</div>
+			<div class="col-md-4  mt50">
+				<div class="prd-info-wrap">
+					<div class="prd-key  text-left">
+						<span class="key-green" th:text="${product.pCate}"></span>
+						<span class="key-white" th:text="${product.subCategoryName}"></span>
+					</div>
+					<p class="f38 fw600 lh130 mt20" th:text="${product.pName}"></p>
+					<p class="mt10 gray04" th:text="${product.description}"></p>	
+					<ul class="info_ul mt40">
+						<li th:if="${product.tag} != null and ${product.tag} != ''">
+							<p><img th:src="@{/img/ico/ico_info01.png}" alt="용량" /></p>
+							<p><span class="f16 fw400 gray04">용량1</span><span class="f16 f_pp fw400" th:text="${product.capacity1}"></span></p>
+						</li>
+						<li th:if="${product.tag} != null and ${product.tag} != ''" >
+							<p><img th:src="@{/img/ico/ico_info02.png}" alt="용량" /></p>
+							<p><span class="f16 fw400 gray04">용량2</span><span class="f16 f_pp fw400" th:text="${product.capacity2}"></span></p>
+						</li>
+						<li th:if="${product.tag} != null and ${product.tag} != ''" >
+							<p><img th:src="@{/img/ico/ico_info03.png}" alt="용량" /></p>
+							<p><span class="f16 fw400 gray04">칼로리1</span><span class="f16 f_pp fw400" th:text="${product.kcal1}"></span></p>
+						</li>
+						<li th:if="${product.tag} != null and ${product.tag} != ''" >
+							<p><img th:src="@{/img/ico/ico_info04.png}" alt="용량" /></p>
+							<p><span class="f16 fw400 gray04">칼로리2</span><span class="f16 f_pp fw400" th:text="${product.kcal2}"></span></p>
+						</li>
+					</ul>
+					<ul class="info_ul_bottom mt30">
+						<li>
+							<p class="f16 fw400">추천인 </p>
+							<p class="f14 fw400 gray04" th:text="${product.recommender}"></p>
+						</li>
+						<li>
+							<p class="f16 fw400">활용팁</p>
+							<p class="f14 fw400 gray04" th:text="${product.tip}"></p>
+						</li>
+					</ul>
+					<ul class="info_btn_box mt40">
+						<li><p class="btnType19"><a th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
+						<li><p class="btnType20"><a href="#yysWrap">영양정보</a></p></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div><!-- // contant1760 -->
+	<div class="contant100-15 " >
+		<div class="banner-prd green mt50 mt50m">
+			<div class="contant1460">
+				<div class="f16 fw500">
+					<a href="#">
+						<ul class="banner-logo">
+							<li><img th:src="@{/img/ico/bi_vegemil.png}" /></li>
+							<li class="banner-txt">Brand Story 대한민국 두유의 기준, 베지밀 브랜드 스토리 확인하고 다른 제품도 확인하세요!</li>
+						</ul>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- // contant100 -->
+	<div class="contant1760" >
+		<div id="flotingPage">
+			<div class="floting-left mt110">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-01 scroll">
+							<p class="center"><img src="https://www.vegemil.co.kr/Upload/PRODUCTS/V01013_mall.jpg" /></p>
+						</div>
+
+						<div class="section-02 scroll  mt100">
+							<!-- 영양정보 yys_wrap -->
+							<div class="row yys_wrap">
+								<div class="col-md-12">
+									<ul class="yys_top">
+										<li><p class="f20 fw400">영양정보</p></li>
+										<li><p class="f17_4">총내용량 200ml / 200kcal</p></li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<div class="row">
+										<div class="col-6 col-sm-6">
+											<dl class="yys_subtop"><dt>총 내용량 당</dt><dd>1일 영양성분<br>기준치에 대한 비율<sup>1)</sup></dd></dl>
+											<div class="yys">
+												<dl>
+													<dt>나트륨</dt>
+													<dd>120mg</dd>
+													<dd>6%</dd>
+												</dl>
+												<dl>
+													<dt>탄수화물</dt>
+													<dd>34g</dd>
+													<dd>10%</dd>
+												</dl>
+												<dl>
+													<dt class="in">당류</dt>
+													<dd>3g</dd>
+													<dd>3%</dd>
+												</dl>
+												<dl>
+													<dt class="in">식이섬유</dt>
+													<dd>3g</dd>
+													<dd>12%</dd>
+												</dl>
+												<dl>
+													<dt>지방</dt>
+													<dd>4.5g</dd>
+													<dd>8%</dd>
+												</dl>
+												<dl>
+													<dt class="in">트랜스지방</dt>
+													<dd>0g</dd>
+													<dd>&nbsp;</dd>
+												</dl>
+												<dl>
+													<dt class="in">포화지방</dt>
+													<dd>2g</dd>
+													<dd>13%</dd>
+												</dl>
+												<dl>
+													<dt>콜레스테롤</dt>
+													<dd>0mg</dd>
+													<dd>0%</dd>
+												</dl>
+												<dl>
+													<dt>단백질</dt>
+													<dd>8g</dd>
+													<dd>15%</dd>
+												</dl>
+
+												
+											</div>
+										</div>
+										<div class="col-6 col-sm-6">
+											<dl class="yys_subtop"><dt>총 내용량 당</dt><dd>1일 영양성분<br>기준치에 대한 비율<sup>1)</sup></dd></dl>
+											<div class="yys">
+												
+												<dl>
+													<dt>비타민A</dt>
+													<dd>150㎍RE</dd>
+													<dd>21%</dd>
+												</dl>
+												<dl>
+													<dt>비타민B<sub>1</sub></dt>
+													<dd>0.24mg</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>비타민B<sub>2</sub></dt>
+													<dd>0.3mg</dd>
+													<dd>21%</dd>
+												</dl>
+												<dl>
+													<dt>비타민B<sub>6</sub></dt>
+													<dd>0.3mg</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>비타민B<sub>12</sub></dt>
+													<dd>0.48㎍</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>비타민C</dt>
+													<dd>20mg</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>비타민D</dt>
+													<dd>1㎍</dd>
+													<dd>10%</dd>
+												</dl>
+												<dl>
+													<dt>비타민E</dt>
+													<dd>2mgα-TE</dd>
+													<dd>18%</dd>
+												</dl>
+												<dl>
+													<dt>비타민K</dt>
+													<dd>15㎍</dd>
+													<dd>21%</dd>
+												</dl>
+
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="row">
+										
+										
+										<div class="col-6 col-sm-6">
+											<dl class="yys_subtop"><dt>총 내용량 당</dt><dd>1일 영양성분<br>기준치에 대한 비율<sup>1)</sup></dd></dl>
+											<div class="yys">
+												<dl>
+													<dt>엽산</dt>
+													<dd>80㎍</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>나이아신</dt>
+													<dd>3.2mgNE</dd>
+													<dd>21%</dd>
+												</dl>
+												<dl>
+													<dt>비오틴</dt>
+													<dd>6㎍</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>판토텐산</dt>
+													<dd>1mg</dd>
+													<dd>20%</dd>
+												</dl>
+												<dl>
+													<dt>칼슘</dt>
+													<dd>140mg</dd>
+													<dd>20%</dd>
+												</dl>
+												
+												<dl>
+													<dt>인</dt>
+													<dd>140mg</dd>
+													<dd>20% </dd>
+												</dl>
+												<dl>
+													<dt>마그네슘</dt>
+													<dd>44mg</dd>
+													<dd>14%</dd>
+												</dl>
+												<dl>
+													<dt>아연</dt>
+													<dd>2mg</dd>
+													<dd>24%</dd>
+												</dl>
+												<dl>
+													<dt>철</dt>
+													<dd>2mg</dd>
+													<dd>17% </dd>
+												</dl>
+											</div>
+										</div>
+										<div class="col-6 col-sm-6">
+											<dl class="yys_subtop"><dt>총 내용량 당</dt><dd>1일 영양성분<br>기준치에 대한 비율<sup>1)</sup></dd></dl>
+											<div class="yys">	
+												<dl>
+													<dt>칼륨</dt>
+													<dd>190mg</dd>
+													<dd>5%</dd>
+												</dl>
+												<dl>
+													<dt>망간</dt>
+													<dd>0.46mg</dd>
+													<dd>15%</dd>
+												</dl>
+												<dl>
+													<dt>구리</dt>
+													<dd>0.1mg</dd>
+													<dd>13%</dd>
+												</dl>
+												<dl>
+													<dt>요오드</dt>
+													<dd>19.5㎍</dd>
+													<dd>13%</dd>
+												</dl>
+												
+												<dl>
+													<dt>셀레늄</dt>
+													<dd>5.5㎍</dd>
+													<dd>10%</dd>
+												</dl>
+												<dl>
+													<dt>크롬</dt>
+													<dd>5㎍</dd>
+													<dd>17%</dd>
+												</dl>
+												<dl>
+													<dt>몰리브덴</dt>
+													<dd>2.5㎍</dd>
+													<dd>10%</dd>
+												</dl> 
+												<dl>
+													<dt>염소</dt>
+													<dd>120mg</dd>
+													<dd>5%<sup>2)</sup></dd>
+												</dl>
+												
+												<dl>
+													<dt>&nbsp;</dt>
+													<dd>&nbsp;</dd>
+													<dd>&nbsp;</dd>
+												</dl>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="yys_info">
+										<p class="f14 fw400 gray04"><sup>1)</sup> 1일 영양성분 기준치에 대한 비율(%)은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수 있습니다.</p>
+										<p class="f14 fw400 gray04"><sup>2)</sup> 한국인 성인 남자(19~29세) 영양섭취 기준에 대한 비율입니다.</p>
+									</div>
+								</div>
+							</div>
+							<!-- // 영양정보 yys_wrap -->
+						</div>
+						<!-- 추천상품 진열 -->
+						<div class="section-03 scroll  mt100">
+							<div class="row mt150 alsoLove-box">			
+								<div class="col-md-12 mb70">
+									<p class="text-center f_pp f55 fw600"><span class="gold">You</span> may also <span class="gold">love</span></p>
+								</div>
+								<div class="col-md-3">
+									<div class="alsoLove">
+										<a href="#">
+											<p class="alsoThumb VPL01_860_01 h330"></p>
+											<p class="f20 fw500 mt30 lh140 also-name">베지밀 칼슘가득 검은콩 검은깨 검은쌀 두유</p>
+											<p class="f16 gray04 mt10 also-sub-txt">성장기 어린이를 위한 어린이 음료 성장기 어린이를 위한 어린이 음료</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="alsoLove">
+										<a href="#">
+											<p class="alsoThumb VPL01_860_01 h330"></p>
+											<p class="f20 fw500 mt30 lh140 also-name">베지밀 칼슘가득 검은콩 검은깨 검은쌀 두유</p>
+											<p class="f16 gray04 mt10 also-sub-txt">성장기 어린이를 위한 어린이 음료 성장기 어린이를 위한 어린이 음료</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="alsoLove">
+										<a href="#">
+											<p class="alsoThumb VPL01_860_01 h330"></p>
+											<p class="f20 fw500 mt30 lh140 also-name">베지밀 칼슘가득 검은콩 검은깨 검은쌀 두유 검은깨 검은쌀 두유</p>
+											<p class="f16 gray04 mt10 also-sub-txt">성장기 어린이를 위한 어린이 음료 성장기 어린이를 위한 어린이 음료</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="alsoLove">
+										<a href="#">
+											<p class="alsoThumb VPL01_860_01 h330"></p>
+											<p class="f20 fw500 mt30 lh140 also-name">베지밀 칼슘가득 검은콩 검은깨 검은쌀 두유</p>
+											<p class="f16 gray04 mt10 also-sub-txt">성장기 어린이를 위한 어린이 음료 성장기 어린이를 위한 어린이 음료</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="bnr-faq h230 mt160">
+						<div class="centerH">
+							<p class="f27 fw500 black">고객 여러분께서 자주 물으시는 질문을 모아 답변드립니다.</p>
+							<div class="btnType11 mt20">							
+								<a href="#">FAQ 바로가기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- //floting-left -->
+			<div class="floting-right mt110">
+				<div class="floting">
+					<div class="flotingContent">
+						<div class="floating-menu">
+							<p class="f23 fw500 prd_subCateTitle">담백한 베지밀 에이(팩)</p>
+							<ul class="prd_subCate mt40">
+								<li class="m"><a href="#section-01" class="menu-01"><span>상품 상세정보</span></a></li>
+								<li class="m"><a href="#section-02" class="menu-02"><span>영양정보</span></a></li>
+								<li class="m"><a href="#section-03" class="menu-03"><span>추천제품</span></a></li>
+							</ul>
+							<script type="text/javascript" src="./common/js/floating-menu-position.js"></script>
+						</div>
+					</div>
+					<div class="flotingContent mt20">
+						<p class="f23 fw500 lh150 black">안녕하세요 고객님,<br>찾으시는 제품이 있으신가요?</p>
+						 <div class="search-container mt30">
+							 <span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span><input type="text" placeholder="제품을 검색해 보세요 " name="search">
+							<button type="submit" class="btn-search">검색</button>
+						</div>
+					</div>
+					<div class="flotingContent-bnr mt60">
+						<p class="f18"><img class="mr5" th:src="@{/img/ico/ico_youtube.png}" />유튜브에서 확인하세요</p>
+						<div class="bnr-y-box mt20">
+							<a href= "" target="_blank">
+								<ul>
+									<li><img th:src="@{/img/product/photo/VPL01_500_01.jpg" alt="베지밀에이 레시피"/><span class="y-play"><img th:src="@{/img/ico/ico_play.png}" alt="플레이" /></span></li>
+									<li class="f18 ml10">베지밀 에이로 만든 한끼메뉴 채소 만두 레시피</li>
+								</ul>
+							</a>
+						</div>
+					</div>
+					<br class="clear"><br class="clear">
+					
+					
+				</div>
+			</div><!-- //floting-right -->
+		</div><!-- //flotingPage -->
+		<br class="clear">
+		
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

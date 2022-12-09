@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="osse">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="description" content="정식품 오신것을 환영합니다."/> 
+<meta name="Keywords" content="정식품,두유,베지밀,유아식,썬몬드,그린비아,콩,대두,소이,식물성,음료" />
+<meta property="og:title" content="정식품"> 
+<meta property="og:url" content="https://www.vegemil.co.kr/"> 
+<meta property="og:image" content="~~~~~~~~~~~~~~~~~" /> 
+<meta property="og:description" content="두유 및 음료 제조업체, 베지밀, 영유아식, 그린비아, 라잇미닛, 한끼생식, 음료류 등"/>
+<title>정식품 공정거래(CP)</title>
+<!-- CSS -->
+<link href="./common/css/slide.css" rel="stylesheet">
+<link href="./common/css/reset.css" rel="stylesheet">
+<link href="./common/css/style.css" rel="stylesheet">
+<link href="./common/css/bootstrap.css" rel="stylesheet">
+<link href="./common/css/product.css" rel="stylesheet">
+<link rel='stylesheet' href='./common/css/swiper-bundle.min.css'><!-- swiper(카테고리별제품 메뉴) -->
+
+<!-- JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="./common/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./common/js/jquery.Floater.js"></script>
+<script type="text/javascript" src="./common/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="./common/js/prrple.slider.js" charset="utf-8"></script>
+<script type="text/javascript" src="./common/js/jquery.collapse.js"></script>
+<script type="text/javascript" src="./common/js/jquery.touchSwipe.1.6.min.js"></script>
+<script src='./common/js/swiper-bundle.min.js'></script><!-- swiper(카테고리별제품 메뉴) -->
+<script src='./common/js/swiper.js'></script><!-- swiper(카테고리별제품 메뉴) -->
+</head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100 subCategoryBg">
+	<div class="content100 ">
+	   <div class="subTopCp h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Communication</p>
+				<p class="white f45 fw600">공정거래(CP)</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460">
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="./img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="#"><span>CCM이란?</span></a></li>
+				<li class="f18 fw500 active"><a href="#"><span>공정거래(CP)</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="./img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+    </div>
+	<div class="contant100 bg_Gray ">
+		<div class="contant1460" >
+			<div class="row">
+				<div class="col-md-10">
+					<div class="swiper-box mt80 mt30m">
+					  <div class="swiper-container" id="scroll-tags">
+						<ul class="swiper-wrapper">
+						  <li class="swiper-slide"><a href="javascript:void(0);">CP도입선언문</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">자율준수 프로그램 소개</a></li>
+						  <li class="swiper-slide active"><a href="javascript:void(0);">자율준수 운영현황</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">자율준수 편람</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">불공정거래 신고</a></li>
+						</ul>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-2 ">
+					 <p class="f14 fw400 black  btnType03 mt65 float-right wView">
+                        <a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a>
+                    </p>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant100 -->
+
+    <div class="contant100_01 whiteBg">
+        <div class="contant1460">
+			<!-- BREND TAB -->
+			<div class="row mt160">
+				<div class="col-md-12">
+					 <p class="f52 fw600 blac center">자율준수 프로그램<br class="mView"> 운영현황</p>
+					<!-- tab -->
+					<div class="cpTab mt100">
+						<ul class="tabs5 menu7 f14">
+							<li class="fw400"><a href="#cp01">정식품 자율준수 프로그램 운영</a></li>
+							<li class="fw400"><a href="#cp02">자율준수 협의회 구성</a></li>
+							<li class="fw400"><a href="#cp03">교육</a></li>
+							<li class="fw400"><a href="#cp04">자율준수 점검 체계</a></li>
+							<li class="fw400"><a href="#cp05">보고 및 처리절차</a></li>
+							<li class="fw400"><a href="#cp06">법 위반 내부 감독 예방활동</a></li>
+							<li class="fw400"><a href="#cp07">문서관리</a></li>
+						</ul>
+						<div class="tab_content5 ">
+							<div id="cp01">
+								<div class="row mt100">
+									<div class="col-md-12 mb50">
+										<p class="f27 fw500">공정거래 관련 법규</p>
+									</div>
+									<ul class="col-md-12 cpLawInfo mb50">
+										<li class="cpLawBg_01 white round20">
+										   <div class="">
+												<p class="f_pp f18">01.</p>
+												<p class="f23 mt10">미션</p>
+												<p class="f18 mt30">
+													공정거래 관련법령 준수를 통한 영업력 확대가 
+													진정한 경쟁력임을 인식하고 전략목표 달성을 위한 
+													선행조건으로서의 역할을 수행할 것임
+												</p> 
+										   </div>
+										</li>
+										<li class="cpLawBg_02 white round20">
+										   <div class="">
+												<p class="f_pp f18">02.</p>
+												<p class="f23 mt10">목표</p>
+												<p class="f18 mt30">
+													- 공정거래 관련 법규 위반 방지<br>
+													- 공정거래 자율준수풍토 등 문화조성<br>
+													- 업무 효율성 제고
+												</p>
+										   </div>
+										</li>
+										<li class="cpLawBg_03 white round20">
+										   <div class="">
+												<p class="f_pp f18">03.</p>
+												<p class="f23 mt10">기대효과</p>
+												<p class="f18 mt30">
+													- 법률위반의 사전예방<br>
+													- 공정거래 관련 법규 위반 예방의 중요성 인식 
+													   및 업무 행태 개선<br>
+													- 업무추진 효율성 증대<br>
+												</p>
+										   </div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="cp02">
+								 <div class="row mt150">
+									<div class="col-md-6 mb50">
+										<p class="f27 fw500">1. 기능</p>
+										<p class="gray04 f16 mt50">
+											1) 자율준수 프로그램의 중요 사항의 심의 및 자율준수관리자 자문<br>
+											2) 각 위원은 해당 부문의 법 위반 여부 자체 점검 및 예방활동 등 실시
+										</p>
+									</div>
+									<div class="col-md-6 mb50">
+										<p class="f27 fw500">2. 운영</p>
+										<p class="gray04 f16 mt50">
+											1) 반기단위로 정기회의를 개최하고 필요 시 임시회의를 개최<br>
+											2) 각 실무 운영 리더를 선정하여 자율준수 협의회의 실절적인 운영이 가능하도록 함
+										</p>
+									</div>
+									<div class="col-md-12 mt120">
+										<p class="f27 fw500">3. 구성 부분별 전문조직</p>
+										<img src="img/communication/cpComposition_pc.jpg" alt="구성 부분별 전문조직" class="wView mt50">
+										<img src="img/communication/cpComposition_mo.jpg" alt="구성 부분별 전문조직" class="mView mt50">
+										<p class="mt70 textRight">
+											<span class="f16">※ 실천리더 : 자율준수관리자가 선임</span><br><br>
+											<span class="gray04 f16">
+												[조직구성]
+												자율준수관리자 산하에 CP사무국을 두며 고객지원부에서 담당한다.<br>
+												협의회는 5개 업무 부문으로 분장하고 5명의 부문위원과 11명의 팀별 리더를 두어 협의회 조직을 구성하도록 하며 겸직한다.
+											</span>
+										</p>
+									</div>
+									<div class="col-md-12 mt110">
+										<p class="f27 fw500">4. 역할과 책임</p>
+										<table class="mt50 cpCompositionTable">
+											<caption>4. 역할과 책임</caption>
+											<tbody>
+											   <tr class="f18">
+													<th>실행주체</th>
+													<th>역할과 주요업무</th>
+												</tr>
+												<tr class="f16">
+													<td>자율준수 <br class="mView">협의회</td>
+													<td>
+														<p>[역할]</p>
+														<p class="gray04">
+															자율준수프로그램의 중요사항 심의 및 자율준수관리자 자문
+														</p>
+														<p class="mt20">[주요업무]</p>
+														<p class="gray04">
+															해당 부문의 법 위반여부 자체점검 실시 및 위반자 제재 심의, 의결
+														</p>
+													</td>
+												</tr>
+												<tr class="f16">
+													<td>자율준수 <br class="mView">관리자</td>
+													<td>
+														<p>[역할]</p>
+														<p class="gray04">
+															자율준수관리자는 공정거래 관련법령의 준수 및 자율준수프로그램 운영계획 수립과 협의회 의장, 협의회 위원을 선임하여 협의회를 운영하고, 자율준수 편람의 제정 및 개정, CP운영의 감사, 제재, 개선 등에 대한 권한과 책임을 가짐
+														</p>
+													</td>
+												</tr>
+												<tr class="f16">
+													<td>자율준수 <br class="mView">협의회 의원</td>
+													<td>
+														<p>[역할]</p>
+														<p class="gray04">
+															자율준수 프로그램의 총괄관리 및 해당부문의 CP 위반여부 자체 점검
+														</p>
+														<p class="mt20">[주요업무]</p>
+														<p class="gray04">
+															- 자율준수 관리자 직무수행보고/법무상담 및 지원/교육관리/문서관리<br>
+															- 각 위원은 공정거래 실천 리더들을 선정하여 협의회의 실질적 운영이 가능하도록 조치
+														</p>
+													</td>
+												</tr>
+												<tr class="f16">
+													<td>자율준수 <br class="mView">실천 리더</td>
+													<td >
+														<p>[역할]</p>
+														<p class="gray04">
+															- 공정거래 자율준수프로그램의 업무를 실질적으로 지원하는 부서별 전담 요원<br>
+															- 자율준수협의회 운영 효율성 제고 및 공정거래 마인드 확산
+														</p>
+														<p class="mt20">[주요업무]</p>
+														<p class="gray04">
+															- 소관부서의 자율점검 총괄(CHECK List에 의한 점검 주관)<br>
+															- 소관부서에 대한 공정거래 관련 상담 및 지도<br>
+															- CP운영관련 문제점 및 개선 사항 발굴
+														</p>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								 </div>
+							</div>
+							<div id="cp03">
+								<div class="row mt150">
+								   <div class="col-md-12">
+										<p class="f27 fw500">교육 </p>
+								   </div>
+									<div class="col-md-6 mt50">
+										<table class="cpEduTable">
+											<caption>교육</caption>
+											<tbody>
+											   <tr class="borderB">
+													<th class="f18">목적</th>
+													<td class="f16" colspan="2">
+														01. 공정거래 자율준수프로그램에 대한 인식 제고<br>
+														02. 공정거래 자율준수프로그램의 실질적 운영 및 법 위반 사항 사전 예방
+													</td>
+												</tr>
+												<tr class="borderB">
+													<th class="f18" rowspan="2">운영<br class="mView">방안</th>
+													<td class="f16 borderR">년간 계획 수립</td>
+													<td class="f14 gray04">
+														- 상반기/하반기 각 120분 이상 기준<br>
+														- 전임직원 공동 및 해당 부문별 자체 교육
+													</td>
+												</tr>
+												<tr>
+													<td class="f16 borderR">
+														년간 계획 수립<br>
+														<span class="gray04">
+															- 법 위반 위험 높은 부서<br>
+															- 법 위반 관련자<br>
+															- 신입사원
+														</span>
+													</td>
+													<td class="f14 gray04">
+														- 해당 부서에 맞춘 전문 법률 교육<br>
+														  (하도급법, 표시˙광고법 등)<br><br>
+
+														- 주요 법률 공동 교육<br>
+														  (불공정거래 행위, 카르텔)
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<p class="gray04 f14 mt20">
+											- 전 자율준수 협의회 의원의 전무화 및 정기/수시 교육 자체 시행<br>
+											- 온라인 교육 시행 및 평가 측정
+										</p>
+									</div>
+									<div class="col-md-6 mt50 mt60m">
+										<table class="cpEduTable">
+											<caption>교육</caption>
+											<tbody>
+											   <tr class="borderB">
+													<th class="f18">결과<br class="mView">보고</th>
+													<td class="f16">매 교육실시 후 결과보고</td>
+													<td class="f14 gray04">
+														- 교육이수 확인<br>
+														- 교육만족도 조사
+													</td>
+												</tr>
+												<tr class="borderB">
+													<th class="f18" rowspan="4">교육<br class="mView">내용</th>
+													<td class="f16 borderR">공정거래 관련 주요 법률</td>
+													<td class="f14 gray04">
+														- 공정거래법<br>
+														- 하도급 법<br>
+														- 표시, 광고법<br>
+														- 약관 법
+													</td>
+												</tr>
+												<tr class="borderB">
+													<td class="f16 borderR">심결 사례</td>
+													<td class="f14 gray04">
+														공정위 주요 심결 사례 
+													</td>
+												</tr>
+												<tr class="borderB">
+													<td class="f16 borderR">자율준수 업무 편람</td>
+													<td class="f14 gray04">
+														- 자율준수 편람<br>
+														- 가이드 북<br>
+														- e Book
+													</td>
+												</tr>
+												<tr>
+													<td class="f16 borderR">과정별 교육 교제</td>
+													<td class="f14 gray04">
+														CP운영 규정 외 자체 작성
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="col-md-12 mt130">
+									   <table class="cpEduTable02">
+											<caption>교육계획</caption>
+											<thead>
+												<tr>
+													<th colspan="4" class="f18">교육계획</th>
+												</tr>
+												<tr>
+													<th class="f16 borderR">구분</th>
+													<th class="f16 borderR">대상</th>
+													<th class="f16 borderR">교육내용</th>
+													<th class="f16">시행시기</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th class="f16 borderR borderB">전문가<br class="mView">교육</th>
+													<td class="f14 gray04 borderR borderB">
+														CP 사무국 실무담당<br>
+														협의회 위원 및 리더
+													</td>
+													<td class="f14 gray04 borderR borderB">
+														- 공정거래관련 주요 법률 이해<br>
+														- CP운영 관련<br>
+														- 자율준수를 위한 업무 지침
+													</td>
+													<td class="f14 gray04 borderB center">수시</td>
+												</tr>
+												<tr>
+													<th class="f16 borderR borderB" rowspan="2">전사 <br class="mView">정기교육</th>
+													<td class="f14 gray04 borderR borderB">당연대상 : 영업, 마케팅, 총무부서</td>
+													<td class="f14 gray04 borderR borderB" rowspan="2">
+														- 공정거래관련 주요 법률 이해<br>
+														- CP운영 관련<br>
+														- 심결 사례
+													</td>
+													<td class="f14 gray04 borderB center">년 20회 240분 필수 이수</td>
+												</tr>
+												<tr>
+													<td class="f14 gray04 borderR borderB">일반대상 : 공장, 연구소, 일반부서</td>
+													<td class="f14 gray04 borderB center">년 1회 이상</td>
+												</tr>
+												<tr>
+													<th class="f16 borderR borderB" rowspan="2">특별<br class="mView">교육</th>
+													<td class="f14 gray04 borderR borderB">
+														법 위반 위험 높은 부서<br>
+														법 위반자
+													</td>
+													<td class="f14 gray04 borderR borderB">
+														- 주요 공정거래관련 법률 이해
+													</td>
+													<td class="f14 gray04 borderB center">년 2회</td>
+												</tr>
+												<tr>
+													<td class="f14 gray04 borderR borderB">신입사원</td>
+													<td class="f14 gray04 borderR borderB">
+														- CP운영<br>
+														- 공정거래 입문과정
+													</td>
+													<td class="f14 gray04 borderB center">입사교육 시</td>
+												</tr>
+												<tr>
+													<td class="f14 gray04 borderR borderB center" colspan="3">공정거래 관련 외부교육 및 세미나</td>
+													<td class="f14 gray04 borderB center">수시</td>
+												</tr>
+												<tr>
+													<td class="f14 gray04 borderB center" colspan="4">※교육내용/시행시기 등 운영 형태는 탄력적 변겨 운영 가능</td>
+												</tr>
+											</tbody>
+									   </table>
+									</div>
+								</div>
+							</div>
+							<div id="cp04">
+								 <div class="row mt150">
+									<div class="col-md-12 mb50">
+										<p class="f27 fw500">자율준수 점검 체계</p>
+									</div>
+									<ul class="col-md-12 cpSystemInfo mb50">
+										<li class="">
+										   <div class="cpSystemBg_01 white round20">
+												<p class="f_pp f18">01.</p>
+												<p class="f23 mt10">사전 스크린 제도</p>
+										   </div>
+										   <div class="black mt30 f16 borderBoxType01">
+												가. 자율 점검 Check List를 활용한 조직원의 자진점검<br><br>
+
+												나. 위반 가능성있는 업무수행전 자율관리자 검토를 통한 법 준수
+										   </div>
+										</li>
+										<li class="">
+										   <div class="cpSystemBg_02 white round20">
+												<p class="f_pp f18">02.</p>
+												<p class="f23 mt10">공정거래 준수 모니터링</p>
+										   </div>
+										   <div class="black mt30 f16 borderBoxType01">
+												가. 공정거래 자율 점검<br>
+												<span class="gray04 f14">CP 사무국 주관하에, 공정거래법, 하도급법, 표시·광고법등에 대한 감사(상반기,하반기 각 1회)</span><br><br>
+
+												나. 내부 자율 운영위원 자율 점검<br>
+												<span class="gray04 f14">공정거래 자율준수 운영위원의 해당부서 조직원에 대한 공정거래법, 하도급법, 표시·광고법 등 준수여부에 대한 조사(상반기, 하반기 각 1회)</span>
+										   </div>
+										</li>
+										<li class="">
+										   <div class="cpSystemBg_03 white round20">
+												<p class="f_pp f18">03.</p>
+												<p class="f23 mt10">모니터링 결과에 따른 대응</p>
+										   </div>
+										   <div class="black mt30 f16 borderBoxType01">
+												가. 법 위반 원인분석 후 즉각적인 시정방안 수립 및 장기 재발방지책 수립<br><br>
+
+												나. 위반 사례 자율준수관리자 보고 및 이사회 보고 후 재발방지 교육 시행<br><br>
+
+												다. 인사 제재 지침에 따라 법 위반자에 대한 인사제재 및 제보자에 대한 보상
+										   </div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="cp05">
+								  <div class="row mt150">
+										<div class="col-md-12 mb50">
+											<p class="f27 fw500">보고 및 처리절차</p>
+											<div class="mt50">
+												<img src="img/communication/cpProcedure_pc.jpg" alt="보고 및 처리절차" class="wView">
+												<img src="img/communication/cpProcedure_mo.jpg" alt="보고 및 처리절차" class="mView">
+											</div>
+										</div>
+									</div>
+							</div>
+							<div id="cp06">
+								 <div class="row mt150">
+								   <div class="col-md-12">
+										<p class="f27 fw500">법 위반 내부 감독 예방활동</p>
+								   </div>
+									<div class="col-md-6 mt50">
+										<table class="cpEduTable">
+											<caption>법 위반 내부 감독 예방활동</caption>
+											<tbody>
+											   <tr class="borderB">
+													<th class="f18">목적</th>
+													<td class="f14 gray04" colspan="2">
+														- 공정하고 투명한 경영 실천을 위한 기반 구축<br>
+														- 공정거래법 위반 행위에 대한 예방<br>
+														- 공정거래 자율 준수에 대한 중요성의 전 임직원의 인식 제고<br>
+														- 자율준수프로그램의 실질적 운영 활동
+													</td>
+												</tr>
+												<tr class="borderB">
+													<th class="f18 borderB" rowspan="2">운영<br class="mView">방안</th>
+													<td class="f16 borderR">
+														사전 예방 시스템 구축
+														(ON, OFF-LINE)운영
+													</td>
+													<td class="f16">
+														ON, OFF-LINE 질의 응답<br>
+														업무 기안 시 사전업무 협의제도 시행
+													</td>
+												</tr>
+												<tr>
+													<td class="f16 borderR borderB">내부 감시 시스템 운영</td>
+													<td class="f16 borderB">
+														자율준수 협의회 리더 중심의 정기/수시점검 보고<br>
+														제보/신고 시스템 구축
+													</td>
+												</tr>
+												<tr class="borderB">
+													<th class="f18">결과<br class="mView">보고</th>
+													<td class="f16" colspan="2">
+														- 축적 : 자율준수 편람 제작 시 활용
+														- 위반사항 시정조치 명령, 제재조치
+														- 재발 방지 정책 수립, 전사 통보 운영
+													</td>
+												</tr>
+												<tr class="borderB">
+													<th class="f18" rowspan="2">사전 모니터링<br>시스템 구축</th>
+													<td class="f16 borderR">단순업무 질의 사항</td>
+													<td class="f16">
+														사내 이메일 활용<br>
+														자율준수 사무국 전화 상담(02-3484-9331)
+													</td>
+												</tr>
+												<tr>
+													<td class="f16 borderR">정책 업무 기안 시<br class="mView">사전 협의제도</td>
+													<td class="f16">
+														정책업무 기안 시 CP사무국, 자율준수관리자 업무 스크린 협의<br>
+														시행 전 사전 모니터링-업무 FLOW 의거 진행
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="col-md-6 mt50 mt60m">
+										<table class="cpEduTable02">
+											<caption>교육계획</caption>
+											<thead>
+												<tr>
+													<th class="f18">시행 전 사전 모니터링 업무 FLOW</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="tableImg">
+														<img src="img/communication/cpFlow_pc.jpg" alt="시행 전 사전 모니터링 업무 FLOW" class="wView">
+														<img src="img/communication/cpFlow_mo.jpg" alt="시행 전 사전 모니터링 업무 FLOW" class="mView">
+													</td>
+												</tr>
+											</tbody>
+									   </table>
+									</div>
+									<div class="col-md-12 mt130">
+									   <table class="cpEduTable02">
+											<caption>내부감시 시스템</caption>
+											<thead>
+												<tr>
+													<th colspan="5" class="f18">내부감시 시스템</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="f16 borderR borderB center">세부 운영 <br class="mView">방안</td>
+													<td class="f14 gray04  borderB" colspan="4">
+														- 자율준수 관리자 주관, CP협의회 실무 리더 중심 시행<br>
+														- 년간 계획 수립 시행<br>
+														- 정기/수시 점검 시행<br>
+														- 전체 공동 점검 후, 위반 정도에 따라 시정내용을 집중 점검
+													</td>
+												</tr>
+												<tr>
+													<td class="f16 borderR borderB center" rowspan="3">정기<br class="mView">점검</td>
+													<td class="f14 gray04 borderR borderB"></td>
+													<td class="f16 fw500 borderR borderB center">방법</td>
+													<td class="f16 fw500 borderR borderB center">시기</td>
+													<td class="f16 fw500 borderB center">점검자</td>
+												</tr>
+												<tr>
+													<td class="f14 gray04 borderR borderB center">방식1</td>
+													<td class="f14 gray04 borderR borderB center">현장 방문 집중 점검</td>
+													<td class="f14 gray04 borderR borderB center">4월/10월 대상선정</td>
+													<td class="f14 gray04 borderB center center">CP사무국</td>
+												</tr>
+												<tr>
+													<td class="f14 gray04 borderR borderB center">방식2</td>
+													<td class="f14 gray04 borderR borderB center">전체 Check List 동시점검</td>
+													<td class="f14 gray04 borderR borderB center">4월/10월</td>
+													<td class="f14 gray04 borderB center center">자율준수협의회리더</td>
+												</tr>
+												<tr>
+													<td class="f16 borderR borderB center">수시<br class="mView">점검</td>
+													<td class="f14 gray04 borderB" colspan="4">
+														- 각 부서별 상황 발생시 해당부서 시행<br>
+														- 자율준수관리자 지시
+													</td>
+												</tr>
+											</tbody>
+									   </table>
+									</div>
+									<div class="col-md-6 mt50 mt60m">
+										<div>
+										   <p class="grayBox03 f18 center">내부감시 시스템</p>
+										   <ul class="center pr30 pl30 mt30">
+											   <li class="grayBox04">점검 세부계획 수립</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">해당부서 통보</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">자율점검 결과 CP 사무국 및 자율준수관리자에게 보고</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">자율준수 협의회 실천 리더 통보<br>해당부서/팀 점검</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">점검결과 해당 부서장 확인</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">자율준수관리자 결과 통보</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">자율준수관리자 위반 경/중 판단</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">1.현장 시정 또는 시정 계획서 수령<br>2.인사위원회 회부(경고 등)</li>
+											   <p class="center mt10">
+												   <img src="img/ico/ic_arrow_down.jpg" alt="아래 화살표">
+											   </p>
+											   <li class="grayBox04 mt20">필요 시 재발 방지 대책 수립 및 전사 통보 공유</li>
+										   </ul>
+									   </div>
+									</div>
+									<div class="col-md-6 mt50 mt60m">
+										<table>
+											<caption>내부감시 결과 조치</caption>
+											<colgroup>
+												<col style="width: 10%">
+												<col style="width: 10%;">
+												<col style="width: 10%;">
+												<col style="width: 10%;">
+												<col style="width: 10%;">
+												<col style="width: 15%;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th class="f18 center grayBox03" colspan="6">내부감시 결과 조치</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="f16 fw500 center borderR borderB" rowspan="2">제재기준</td>
+													<td class="f14 gray04 borderB" colspan="5">
+														① 인사규정에서 정하는 제재기준의 범위내의 인사제재조치 필요 시 즉시 인사위원회의 회부 할 수 있으며, 이 경우 제재조치는 인사위원회의 결정에 따른다<br>
+														② 법 위반 행위로 공정거래 질서에 반하거나 협력업체에 중대한 손실발생 및 기업 이미지 실추 등 위반의 정도에 따라 제재 기준을 차등하여 반영 한다
+													</td>
+												</tr>
+												<tr>
+													<td class="f16 center borderR borderB" colspan="2">연간 1회 위반</td>
+													<td class="f16 center borderR borderB" colspan="2">연간 2회 위반</td>
+													<td class="f16 center borderB">연간 3회 위반</td>
+												</tr>
+												<tr>
+													<td class="f16 fw500 center borderR borderB">구분</td>
+													<td class="f14 gray04 center borderR borderB">조치</td>
+													<td class="f14 gray04 center borderR borderB">시정조치 불이행</td>
+													<td class="f14 gray04 center borderR borderB">조치</td>
+													<td class="f14 gray04 center borderR borderB">시정조치 불이행</td>
+													<td class="f14 gray04 center borderB"></td>
+												</tr>
+												<tr>
+													<td class="f16 fw500 center borderR borderB">행위자</td>
+													<td class="f14 gray04 center borderR borderB">
+														① 시정조치
+														   경고장발부<br>
+														② 교육명령
+													</td>
+													<td class="f14 gray04 center borderR borderB">① 시말서 제출</td>
+													<td class="f14 gray04 center borderR borderB">
+														① 시정조치
+														   경고장발부<br>
+														② 교육명령
+													</td>
+													<td class="f14 gray04 center borderR borderB">① 인사징계 위원회 회부</td>
+													<td class="f14 gray04 center borderB">① 인사징계 위원회 회부</td>
+												</tr>
+												<tr>
+													<td class="f16 fw500 center borderR borderB">부서장</td>
+													<td class="f14 gray04 borderR borderB"> </td>
+													<td class="f14 gray04 center borderR borderB">
+														① 시정조치<br>
+														  경고장발부
+													</td>
+													<td class="f14 gray04 center borderR borderB">
+														① 시정조치<br> 
+														  경고장발부
+													</td>
+													<td class="f14 gray04 center borderR borderB">① 시말서 제출</td>
+													<td class="f14 gray04 center borderB">
+														① 인사징계<br> 
+														  위원회 회부
+													</td>
+												</tr>
+											</tbody>
+									   </table>
+									   <p class="f14 gray04 mt20">
+											※현장 즉시 시정 가능(경미 사항)<br>
+											※위반 관련자 별도 집합교육(2~4시간)<br>
+											※시정조치 불이행시 동일위반 내역의 1단계 상향 조정하여 추가 제재 조치
+									   </p>
+									   <div class="mt100">
+										   <p class="grayBox03 f18 center">내자율준수 운영 우수 팀 포상 방안</p>
+										   <p class="borderB gray04 f14 pt20 pb20">
+											   공정거래법 자율 준수에 현저한 공로가 있는 자에 대하여 자율준수관리자가 포상을 추천하여 포상 할 수 있으며 세부사항은 자율준수관리자가 관련 부서와 협의하여 정한다.
+										   </p>
+									   </div>
+									</div>
+								</div>
+							</div>
+							<div id="cp07">
+								<div class="row mt150">
+									<div class="col-md-12 mb30">
+										<table class="cpCompositionTable">
+											<caption>문서 관리</caption>
+											<tbody>
+											   <tr class="f18">
+													<th>구분</th>
+													<th>주요내용</th>
+												</tr>
+												<tr class="f16">
+													<td>문서 관리 <br class="mView">책임자</td>
+													<td>
+														<p class="gray04 f14">
+															공정거래 자율 준수 담당(CP사무국)
+														</p>
+													</td>
+												</tr>
+												<tr class="f16">
+													<td>주요 문서 <br class="mView">관리 업무</td>
+													<td>
+														<p class="gray04 f14">
+															- 관리대상 문서의 적기 Upgrade 관리<br>
+															- 대외발송 문서의 검토, 결재관리<br>
+															- 수시 문서관리 현황 점검 및 정기보고 등
+														</p>
+													</td>
+												</tr>
+												<tr class="f16">
+													<td>주요 관리 <br class="mView">대상 문서</td>
+													<td>
+														<p class="gray04 f14">
+															- 최고경영자의 자율준수의지 선언문과 임직원 대상 통보문<br>
+															- 자율준수 관리자 임명장<br>
+															- 공정거래 자율준수 편람<br>
+															- 내부감시, 감독 활동 보고서<br>
+															- 법 위반 임직원에 대한 제재조치 현황<br>
+															- 공정거래위원회 제출 자료 등
+														</p>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$('.cpTab').basicTabs5();/* basicTabs5 변경 */
+						});
+					</script>
+
+				</div>
+			</div>
+			<!-- //BREND TAB -->
+        </div><!--1460 끝-->
+    </div>
+    <br class="clear">
+		
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+
+<!-- ================================ 
+		Footer
+================================ -->
+<footer class="contant100" >
+	
+</footer>
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType02").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+
+<script>
+  /* 로드방식 local 크롬에서 노출되지 않음. */
+  $( document ).ready( function() {
+	$( 'footer' ).load( './mainFooter.html' );
+  });
+</script>
+<!-- ================================ 
+		// Footer
+================================ -->
+
+
+</body>
+</html>

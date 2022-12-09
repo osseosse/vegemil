@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 비밀번호 찾기</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class=" contant1460">
+		<div class="row mt90h">
+			<div class=" col-md-12 center ">
+				<p class=" ico_notFin mt170"><img th:src="@{/img/ico/ico_notFin.png}" alt="찾을수없습니다."/></p>
+				<p class="f18 fw400 mt20 gray04" th:if="*{member.mEmail != null and member.mEmail != ''}">
+					<span class="blackLine3" th:text="${member.mEmail}"></span>
+					<span class="f20 fw500 gray04">로 비밀번호 재설정 메일이 발송되었습니다.</span>
+				</p>
+				<p class="f34 fw600 mt80 black" th:if="*{member.mEmail == null or member.mEmail == ''}">검색하신 데이터가 존재하지 않습니다.<br>다시 확인해주시기 바랍니다.</p>
+			</div>
+		</div>
+		<div class="w1160 center0 ">
+			<div class="w560 center0 ">
+				<ul class="joinbtnFoot mt70">
+					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >메인페이지</button></li>
+					<li>
+						<button type="button" onclick="location.href='/member/login'" class="btnType07 f20 fw500 lh140">로그인 바로가기</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ 
+		Footer
+================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+		// Footer
+================================ -->
+</body>
+</html>

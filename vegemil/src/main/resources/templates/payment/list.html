@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title>정식품 채용</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+	<div class="wrap">
+		<!-- ================================ Header ================================ -->
+		<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+		<!-- ================================ // Header ================================ -->
+		<!-- ================================ Content ================================ -->
+		<section>
+			<div class="container100">
+				<div class="nav">
+					<div class="container1300 center">
+						<a href="/"><span class="round">HOME</span></a><img class="arrow" th:src="@{/img/arrow.png}" alt="화살표" /><a href="#"><span class="round">마이페이지</span></a>
+					</div>
+				</div>
+				<div class="container1300 center" >
+					<div class="memberWrapBase">
+						<div class="sidebar fixedsticky w300 f-left">
+							<div class="myTitle">
+								<p class="f20 fw600">마이페이지</p>
+								<p class="f36 fw600 mt30" th:text="|${member.mName}님|"></p>
+								<p class="f16 fw300 ac mt20" th:text="${member.mCompName}"></p>
+								<p class="f16 fw300 ac mt20" th:text="${member.mHp}"></p>
+							</div>
+						</div>
+						<div class="wrap860 f-right" >
+							<!-- (1)제출완료 / 제출완료 없을때 -->
+							<p class="f23 fw600">결제내역<span class="abs-r f16 fw400  mr10 mt10 gray">
+								<a href="/recruit/list">지원하기 <img th:src="@{/img/ico_arrow_g.png}" /></a>
+								</span></p>
+								<div class="r-box mt20 bgHover" th:if="${not #lists.isEmpty( payList )}" th:each="pay, i : ${payList}">
+									<div class="info01" th:if="${pay.lgdRespcode.equals('DONE')}">
+										<span class="r-blue">결제완료</span>
+										<span class="f16">결제일</span>
+										<span class="ac f16 fw300 gray"  th:text="${pay.insertDate}"></span>
+									</div>
+									<div class="info01" th:if="${pay.lgdRespcode.equals('CANCELED')}">
+										<span class="r-blue">취소완료</span>
+										<span class="f16">취소일</span>
+										<span class="ac f16 fw300 gray"  th:text="${pay.insertDate}"></span>
+									</div>
+									<div class="info02" th:if="${pay.lgdRespcode.equals('DONE')} or ${pay.lgdRespcode.equals('CANCELED')}">
+										<dl class="mt20">
+											<dt>
+												<span class="f16" th:text="${pay.lgdMid}"></span>
+												<span class="f16" th:text="${pay.lgdAmount}"></span>
+												<span class="f16" th:text="${pay.lgdTid}"></span>
+												<span class="f16" th:text="${pay.lgdFinancename}"></span>
+												<span class="f16" th:text="${pay.lgdCardnum}"></span>
+												<span class="f16" th:text="${pay.lgdCardinstallmonth}"></span>
+												<a th:href="|${pay.lgdReceiptUrl}|">
+													<span class="f16">영수증 보기</span>
+												</a>
+											</dt>
+											<dd>
+												<button type="button" th:if="${pay.lgdRespcode.equals('DONE')}" class="btn_reviewBox mt20" th:onclick="'location.href=\'/payment/cancel/'+ @{${pay.lgdTid}} + '\''">
+													<ul>
+														<li class="btn_review ">결제취소</li>
+														<li class="btn_review_arrow ml10"></li>
+													</ul>
+												</button>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							
+							<div class="r-box mt20" th:unless="${not #lists.isEmpty( payList )}">
+								<div class="tex-center f16 pt20 pb20 gray">결제내역이 없습니다.</div>
+							</div>
+							<!-- //(1)제출완료 / 제출완료없을때 -->
+							
+							<!-- (3)1:1문의 / 1:1문의 없을때 -->
+							<p class="f23 fw600 mt80">1:1문의 <span class="abs-r f16 fw400  mr10 mt10 gray">
+								<a href="/mypage/qna">문의하기 <img th:src="@{/img/ico_arrow_g.png}" /></a>
+								</span></p>
+								
+							<!--  
+							<div class="r-box mt20 bgHover" th:if="${not #lists.isEmpty( qnaList )}" th:each="qna : ${qnaList}">
+								<div class="info01">
+									<span class="r-blue-line" th:if="${qna.rAnswerYn} == 'N'" th:text="답변대기"></span> 
+									<span class="r-blue" th:unless="${qna.rAnswerYn} == 'N'" th:text="답변완료"></span>
+									<span class="ac f16 fw300 gray">2022.04.05</span>
+								</div>
+								<div class="info02">
+									<dl class="mt20">
+										<dt><span class="f20 fw600 mt20 line-height140" th:text="${qna.rTitle}"></span></dt>
+										<dd>
+											<a class="btn_reviewBox" th:href="|@{/mypage/qna}?qId=${qna.qId}|">
+												<ul>
+													<li class="btn_review ">문의 보기</li>
+													<li class="btn_review_arrow ml10"></li>
+												</ul>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							
+							<div class="r-box mt20" th:unless="${not #lists.isEmpty( qnaList )}">
+								<div class="tex-center f16 pt20 pb20 gray">문의 내역이 없습니다.</div>
+							</div>
+							-->
+							<!-- (3)1:1문의 / 1:1문의 없을때-->
+							
+						</div><!-- //wrap860 -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- ================================ 
+				// Content
+		================================ -->
+	</div><!-- //wrap bg_01 -->
+	
+<!-- ================================ Footer ================================ -->
+<footer class="container100 center bgGray" th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

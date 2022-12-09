@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.ProductMapper">
+
+	<sql id="productColumns">
+		p_idx,
+		p_cate,
+		p_name,
+		p_code,
+		p_onuri,
+		p_onclick,
+		p_active,
+		p_onactive,
+		category_code,
+		category_name,
+		sub_category_code,
+		sub_category_name,
+		sub_category_ico,
+		thumbnail1,
+		thumbnail2,
+		thumbnail3,
+		new_or_best,
+		display_priority,
+		link_url,
+		capacity1,
+		capacity2,
+		capacity3,
+		kcal1,
+		kcal2,
+		kcal3,
+		release_ym,
+		description,
+		expiration_date,
+		recommender,
+		tip,
+		tag,
+		DATE_FORMAT(insert_date,'%Y-%m') as insert_date
+	</sql>
+
+	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.ProductDTO">
+		SELECT
+			<include refid="productColumns" />
+		FROM
+			M_Product
+		WHERE
+			p_idx = #{pIdx}
+	</select>
+
+
+	<select id="selectProductList" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
+		SELECT 
+			 <include refid="productColumns" />
+		FROM          
+			 M_Product           
+		WHERE p_active = 1
+		  <if test="searchKeyword != null and searchKeyword != ''">  
+		  and p_name = #{searchKeyword}
+		  </if>                 
+	    ORDER BY display_priority
+		
+	</select>
+
+	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			M_Product
+		WHERE
+			p_active = '1'
+	</select>
+
+</mapper>
