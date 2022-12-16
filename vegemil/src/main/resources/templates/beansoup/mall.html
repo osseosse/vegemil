@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->
+        <!-- ================================ 
+		        Content
+        ================================ -->
+        <!-- main Visual -->
+        <div class="container100 clear" >
+	        <div class="row  h500" >
+		        <div class="col-lg-12 bg_mall">
+			        <div class="hCenter02">
+				        <p class="f50 white fw600">구매처</p>
+						<p class="f20 white mt20">언제 어디서나 간단요리사를 만나보세요</p>
+			        </div>
+		        </div>
+	        </div>
+        </div>  
+        <!-- // main Visual -->
+        <div class="container pb100 mt100">
+	        <div class="row mall">
+		        <div class="col-lg-6">
+			        <p class="top_line"><span class="f38 fw600">Off-Line</span></p>
+			        <ul class="mall_list">
+				        <!--<li>
+					        <a href="void(0);" onclick="alert('준비중입니다.');return false;">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_m.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_m.jpg}" alt="이마트" /></dd>
+							        <dd>
+								        <p class="f16 gray">오프라인 판매처</p>
+								        <p class="f24 mt10 fw600">이마트</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+					       <a href="void(0);" onclick="alert('준비중입니다.');return false;">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_h.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_h.jpg}" alt="홈플러스" /></dd>
+							        <dd>
+								        <p class="f16 gray">오프라인 판매처</p>
+								        <p class="f24 mt10 fw600">홈플러스</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+					        <a href="void(0);" onclick="alert('준비중입니다.');return false;">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_l.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_l.jpg}" alt="롯데마트" /></dd>
+							        <dd>
+								        <p class="f16 gray">오프라인 판매처</p>
+								        <p class="f24 mt10 fw600">롯데마트</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>-->
+						<li>
+					        <dl class="mallBox">
+						        <dd><img src=".https://image.edaymall.com/images/vegemil/beansoup/img/store_n.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_n.jpg}" alt="농협" /></dd>
+						        <dd>
+							        <p class="f16 gray">오프라인 판매처</p>
+							        <p class="f24 mt10 fw600">농협</p>
+						        </dd>
+					        </dl>
+				        </li>
+				        <li>
+					        <dl class="mallBox">
+						        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_h2.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_h2.jpg}" alt="현대백화점" /></dd>
+						        <dd>
+							        <p class="f16 gray">오프라인 판매처</p>
+							        <p class="f24 mt10 fw600">현대백화점</p>
+						        </dd>
+					        </dl>
+				        </li>
+				        <li>
+					        <dl class="mallBox">
+						        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_g2.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_g2.jpg}" alt="갤러리아 백화점" /></dd>
+						        <dd>
+							        <p class="f16 gray">오프라인 판매처</p>
+							        <p class="f24 mt10 fw600">갤러리아 백화점</p>
+						        </dd>
+					        </dl>
+				        </li>
+						<li>
+					        <dl class="mallBox">
+						        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_a2.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_a2.jpg}" alt="AK 백화점" /></dd>
+						        <dd>
+							        <p class="f16 gray">오프라인 판매처</p>
+							        <p class="f24 mt10 fw600">AK 백화점</p>
+						        </dd>
+					        </dl>
+				        </li>
+						<li>
+					        <dl class="mallBox">
+						        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_g3.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_g3.jpg}" alt="gs더프레시" /></dd>
+						        <dd>
+							        <p class="f16 gray">오프라인 판매처</p>
+							        <p class="f24 mt10 fw600">GS더프레시</p>
+						        </dd>
+					        </dl>
+				        </li>
+			        </ul>
+		        </div>
+		        <div class="col-lg-6">
+			        <p class="top_line"><span class="f38 fw600">On-Line</span><span class="f16 wView2">온라인몰 검색창에 <b>정식품 간단요리사</b>를 검색해보세요!</span></p>
+			        <ul class="mall_list">
+				        <li>
+					        <a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000301&pCateCode=20000268" target="_blank">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_e.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_e.jpg}" alt="이데이몰" /></dd>
+							        <dd>
+								        <p class="f16 gray">온라인 판매처</p>
+								        <p class="f24 mt10 fw600">이데이몰</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+							<a href="https://www.coupang.com/" target="_blank">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_c.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_c.jpg}" alt="쿠팡" /></dd>
+							        <dd>
+								        <p class="f16 gray">온라인 판매처</p>
+								        <p class="f24 mt10 fw600">쿠팡</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+							<a href="https://emart.ssg.com/" target="_blank">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_m.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_m.jpg}" alt="이마트" /></dd>
+							        <dd>
+								        <p class="f16 gray">온라인 판매처</p>
+								        <p class="f24 mt10 fw600">이마트</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+							<a href="https://front.homeplus.co.kr/" target="_blank">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_h.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_h.jpg}" alt="홈플러스" /></dd>
+							        <dd>
+								        <p class="f16 gray">온라인 판매처</p>
+								        <p class="f24 mt10 fw600">홈플러스</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+							<a href="https://www.lotteon.com/p/display/main/lotteon" target="_blank">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_l.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_l.jpg}" alt="롯데마트" /></dd>
+							        <dd>
+								        <p class="f16 gray">온라인 판매처</p>
+								        <p class="f24 mt10 fw600">롯데마트</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+				        <li>
+							<a href="https://www.gmarket.co.kr/" target="_blank">
+						        <dl class="mallBox">
+							        <dd><img src="https://image.edaymall.com/images/vegemil/beansoup/img/store_g.jpg" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/store_g.jpg}" alt="지마켓" /></dd>
+							        <dd>
+								        <p class="f16 gray">온라인 판매처</p>
+								        <p class="f24 mt10 fw600">지마켓</p>
+							        </dd>
+						        </dl>
+					        </a>
+				        </li>
+			        </ul>
+		        </div>		
+	        </div><!-- //row -->
+        </div><!-- // container -->
+        <!-- ================================ 
+		        // Content
+        ================================ -->
+        <!-- ================================ 
+		        Footer
+        ================================ -->
+       	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+        <!-- ================================ 
+		        // Footer
+        ================================ -->
+    </body>
+</html>

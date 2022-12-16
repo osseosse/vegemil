@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<footer id="footer"  class="container100"  th:fragment="footerFragment">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 col-md-12 col-sm-12">
+				<ul class="foot_ul">
+					<li><img src="https://image.edaymall.com/images/vegemil/beansoup/img/logo_footer.gif" alt="정식품CI" /></li>
+					<li>
+						<p class="f20 fw600 gray3">고객상담</p>
+						<p class="f40 fw600 gray3">080-930-8888</p>
+						<p class="f18 mt20 gray3">
+							상담메일 cs@vegemil.co.kr<br> 웹마스터 webmaster@vegemil.co.kr
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-7 col-md-12 col-sm-12 f14 gray2 add">
+				<p>충청북도 청주시 흥덕구 산단로 124번지 (우) 28446</p>
+				<p>사업자등록번호 : 315-81-19977 l 업태 : 제조 (기타 비알콜성 음료) 대표전화 :
+					02-3484-9300</p>
+				<p>2022 ⓒ Dr.CHUNG’S FOOD Co.LTD All right Reserved.</p>
+				<div class="btn_top--------" id="movetopbt">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/btn_top.png" alt="top" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./beansoup/js/jquery.backTop.js"
+		th:src="@{/beansoup/js/jquery.backTop.js}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#movetopbt').backTop({});
+		});
+	</script>
+	<script th:inline="javascript">
+/*<![CDATA[*/
+
+    function movePage(uri, queryString) {
+		location.href = uri + queryString;
+	}
+
+	function searchFaq(form) {
+		/*[- 드롭다운이 아닌 메인 검색 키워드로 검색했을 때 -]*/
+		if (isEmpty(form) == true) {
+			var searchKeyword = document.getElementById("mainSearchKeyword");
+			if (isEmpty(searchKeyword.value) == true) {
+				alert("키워드를 입력해 주세요.");
+				searchKeyword.focus();
+				return false;
+			}
+
+			form = document.getElementById("searchForm");
+			form.searchKeyword.value = searchKeyword.value;
+			form.submit();
+		}
+
+		if (isEmpty(form.searchKeyword.value) == true) {
+			alert("키워드를 입력해 주세요.");
+			form.searchKeyword.focus();
+			return false;
+		}
+	}
+	
+	function saveFaqFeedback(idx){
+		
+		const fEtcbox = $("#fEtcbox"+idx).val();
+		const fScore = $('input[name=rating'+idx+']:checked').val();
+		
+		alert(fEtcbox);
+		alert(fScore);
+		
+		$.ajax({
+			url: "/faq/saveFaqFeedback",
+			data: {idx: idx, fEtcbox: fEtcbox, fScore: fScore},
+			success: function (response) {
+				if (response.result == false) {
+					alert("저장에 실패하였습니다.");
+					return false;
+				}
+				alert("저장되었습니다.");
+			}
+		})
+		return;
+	}
+
+/*]]>*/
+</script>
+</footer>
+
+
+	

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.BeansoupMapper">
+	
+	<!-- ///////////////// [m_beanSoup] ///////////////// -->
+	
+	<sql id="beansoupColumns">
+		idx, 
+		file_no, 
+		css_class, 
+		l_cate, 
+		m_cate, 
+		product, 
+		name, 
+		title, 
+		tag, 
+		ingredient, 
+		cooking, 
+		tip, 
+		display,
+		keyword
+	</sql>
+
+	<select id="selectBeansoupList" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		SELECT
+			<include refid="beansoupColumns" />
+		FROM
+			m_beanSoup
+		WHERE
+			display = '1'
+		ORDER BY
+			idx DESC
+	</select>
+	
+	<select id="selectBeanListWithKeyword" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		SELECT
+			<include refid="beansoupColumns" />
+		FROM
+			m_beanSoup
+		WHERE
+			display = '1'
+		<if test="searchKeyword != null and searchKeyword != ''">  
+		  	AND l_cate like CONCAT('%',#{searchKeyword},'%')
+		  	OR m_cate like CONCAT('%',#{searchKeyword},'%')
+		  	OR product like CONCAT('%',#{searchKeyword},'%')
+		  	OR name like CONCAT('%',#{searchKeyword},'%')
+		  	OR title like CONCAT('%',#{searchKeyword},'%')
+		  	OR tag like CONCAT('%',#{searchKeyword},'%')
+		  	OR ingredient like CONCAT('%',#{searchKeyword},'%')
+		  	OR cooking like CONCAT('%',#{searchKeyword},'%')
+		  	OR tip like CONCAT('%',#{searchKeyword},'%')
+		  	OR display like CONCAT('%',#{searchKeyword},'%')
+		  	OR keyword like CONCAT('%',#{searchKeyword},'%')
+		</if>  
+		ORDER BY
+			idx DESC
+	</select>
+
+	<select id="selectBeansoupListCount" parameterType="com.vegemil.domain.BeansoupDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_beanSoup
+		WHERE
+			display = '1'
+	</select>
+	
+	<select id="selectBeansoupProposalList" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		SELECT
+			<include refid="beansoupColumns" />
+		FROM
+			m_beanSoup
+		WHERE
+			display = '1'
+		
+		<if test="mCate != null and mCate != ''">
+			AND m_cate like CONCAT('%',#{mCate},'%')
+			LIMIT 4;
+		</if>
+	</select>
+	
+	<select id="selectBeansoupDetail" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		SELECT
+			<include refid="beansoupColumns" />
+		FROM
+			m_beanSoup
+		WHERE
+			file_no = #{fileNo}
+	</select>
+	
+	<!-- ///////////////// [m_beanSoup_event] ///////////////// -->
+	
+	<sql id="beansoupEventColumns">
+		m_idx, 
+		m_title, 
+		m_startDate,
+		m_endDate, 
+		m_ing, 
+		m_display, 
+		m_thum, 
+		m_img, 
+		m_eday_id,
+		m_content, 
+		m_type, 
+		m_product
+	</sql>
+                   
+	<select id="selectBeansoupEventList" parameterType="com.vegemil.domain.BeansoupEventDTO" resultType="com.vegemil.domain.BeansoupEventDTO">
+		SELECT
+			<include refid="beansoupEventColumns" />
+		FROM
+			m_beanSoup_event
+		WHERE
+			m_display = '1'
+		ORDER BY
+			m_idx DESC
+		LIMIT
+			#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	<select id="selectBeansoupEventCount" parameterType="com.vegemil.domain.BeansoupEventDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_beanSoup_event
+		WHERE
+			m_display = '1'
+	</select>
+	
+	<!-- ///////////////// [m_beansoup_news] ///////////////// -->
+	
+	<sql id="beansoupNewsColumns">
+		m_idx,
+		m_title, 
+		m_url, 
+		m_thum, 
+		m_display, 
+		m_writeDate, 
+		m_start_date, 
+		m_end_date, 
+		m_ing
+	</sql>
+	
+	<select id="selectBeansoupNewsList" parameterType="String" resultType="com.vegemil.domain.BeansoupNewsDTO">
+		SELECT
+			<include refid="beansoupNewsColumns" />
+		FROM
+			m_beansoup_news
+		WHERE
+			m_display = '1'
+		
+		ORDER BY
+			m_idx DESC
+	</select>
+
+	<select id="selectBeansoupNewsListCount" parameterType="com.vegemil.domain.BeansoupNewsDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_beansoup_news
+		WHERE
+			m_display = '1'
+	</select>
+	
+	<!-- ///////////////// [m_beanSoup_video] ///////////////// -->
+	
+	<sql id="beansoupVideoColumns">
+		m_idx,
+		m_title, 
+		m_display, 
+		m_writeDate, 
+		m_src
+	</sql>
+
+	<select id="selectBeansoupVideoList" parameterType="com.vegemil.domain.BeansoupVideoDTO" resultType="com.vegemil.domain.BeansoupVideoDTO">
+		SELECT
+			<include refid="beansoupVideoColumns" />
+		FROM
+			m_beanSoup_video
+		WHERE
+			m_display = '1'
+		ORDER BY
+			m_idx DESC
+		LIMIT
+			#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	<select id="selectBeansoupVideoCount" parameterType="com.vegemil.domain.BeansoupVideoDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_beanSoup_video
+		WHERE
+			m_display = '1'
+	</select>
+
+</mapper>

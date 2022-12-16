@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->
+        <!-- ================================ 
+		        Content
+        ================================ -->
+        <!-- main Visual -->
+        <div class="container100 clear" >
+	        <div class="row bg_news h500">
+		        <div class="hCenter03">
+			        <p class="f50 white fw600">새소식</p>
+		        </div>
+		        <div class="container">
+			        <ul class="board_tab">
+				        <li><a href="/beanSoup/video">영상</a></li>
+				        <li class="active"><a href="/beanSoup/news">새소식</a></li>
+				        <li><a href="/beanSoup/event">생생후기</a></li>
+			        </ul>
+		        </div>
+	        </div>
+        </div>  
+        <!-- // main Visual -->
+        <div class="container pb100">
+            <form id="Form1" runat="server">
+	            <div class="row newsWrap">
+		            <div class="col-lg-12 mt100 mb50 boardline">
+			            <p class="f38 fw600 mt50m mCenter">새소식</p>
+		            </div>        		
+                        <th:block th:each="item : ${beansoupNewsList}">
+                            <div class="col-lg-4">
+			                    <div class="thumbBox">
+				                    <a href="#" th:href="${item.mUrl}" target="_blank">
+				                    		<div th:if="${item.ingStr == '진행중'}">
+							                    <div class="round">
+							                    	<p class='event_ing'>진행중</p>
+								                    <p class="img100" ><img th:src="${item.thumPath}" alt="뉴스이미지" /></p>
+							                    </div>
+				                    		</div>
+				                    		<div th:if="${item.ingStr == '진행마감'}">
+							                    <div class="round">
+							                    	<p class='event_end'>진행마감</p><p class='event_endBG'></p>
+								                    <p class="img100"><img th:src="${item.thumPath}" alt="뉴스이미지" /></p>
+							                    </div>
+				                    		</div>
+					                    <div class="recipeTxt_white">
+						                    <p class="f16 gray" th:text="${#dates.format(item.mWritedate, 'yyyy-MM-dd')}" >m_writeDate</p>
+						                    <p class="f22 fw600 mt10" th:text="${item.mTitle}">m_title</p>
+					                    </div>
+				                    </a>
+			                    </div>
+		                    </div> 
+                        </th:block >
+	            </div><!-- //row -->
+	            <!-- paging 
+	         
+	         
+	         
+	            <!-- paging //-->
+        	</form>
+        </div><!-- // container -->
+        <!-- ================================ 
+		        // Content
+        ================================ -->
+        <!-- ================================ 
+		        Footer
+        ================================ -->
+        <footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+        <!-- ================================ 
+		        // Footer
+        ================================ -->
+    </body>
+</html>

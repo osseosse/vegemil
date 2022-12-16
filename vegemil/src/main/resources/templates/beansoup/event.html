@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+        <th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->
+        <!-- ================================ 
+		        Content
+        ================================ -->
+        <!-- main Visual -->
+        <div class="container100 clear" >
+	        <div class="row bg_event h500">
+		        <div class="hCenter03">
+			        <p class="f50 white fw600">생생후기</p>
+		        </div>
+		        <div class="container">
+			        <ul class="board_tab">
+				        <li><a href="/beanSoup/video">영상</a></li>
+				        <li><a href="/beanSoup/news">새소식</a></li>
+				        <li class="active"><a href="/beanSoup/event">생생후기</a></li>
+			        </ul>
+		        </div>
+	        </div>
+        </div>  
+        <!-- // main Visual -->
+
+        <div class="container pb100">
+            <form id="Form1" runat="server">
+	            <div class="row">
+		            <div class="col-lg-12 mt100 mb50 boardline">
+			            <p class="f38 fw600 mt50m mCenter">생생후기</p>
+		            </div>
+                    <th:block th:each="item : ${beansoupEventList}">
+                    <div class="col-lg-4">
+	                    <div class="thumbBox">
+			                    <div class="round-review">
+			                        <ul>
+				                        <!--1-->
+				                        <li class="review-img"><img src="https://image.edaymall.com/images/vegemil/beansoup/event/test.JPG" th:src="'https://image.edaymall.com/images/vegemil/beansoup/event/'+${item.mThum}" alt="이벤트이미지" /></li>
+				                        <li>
+				                        <p class="f14 gray4" th:classappend="'pd'+${item.mType}" th:text="${item.mProduct}"></p>
+				                        <p class="f16 over-hidden mt10 mb10" th:text="${item.mContent}"></p>
+				                        <span class="f14 gray4" th:text="${item.mStartDate}"></span>
+				                        <span class="f14 gray4 ml20" th:text="${item.mEdayId}"></span>
+			                        </li>
+				                    </ul>
+			                    </div>
+		                    </a>
+	                    </div>
+                    </div>
+                    </th:block>
+                        
+	            </div>
+	            <!-- //row -->
+
+	            <!-- paging -->
+	          	<div class="paging3">
+	          		<ol>
+		            <nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" 
+		            		th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+						<div class="paging mt50">
+			                <li class="pre" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+								<img name="btnPrev" id="btnPrev" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/page_left.png}">
+							</li>
+						    <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}">
+						    	<span id="labPageList">
+							    	<th:block th:if="${pageNo == params.currentPageNo}">
+							    		<strong th:text="${pageNo}"></strong>
+							    	</th:block>
+							    	<th:block th:if="${pageNo != params.currentPageNo}">
+										<a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+							    	</th:block>
+								</span>
+							</li>
+						    <li class="next" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+								<img name="btnNext" id="btnNext" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/page_right.png}">
+							</li>
+						</div>
+					</nav>
+					</ol>
+	            </div>
+	            <!-- paging //-->
+            </form>
+        </div><!-- // container -->
+        <!-- ================================ 
+		        // Content
+        ================================ -->
+        <!-- ================================ 
+		        Footer
+        ================================ -->
+		<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+        <!-- ================================ 
+		        // Footer
+        ================================ -->
+    </body>
+</html>

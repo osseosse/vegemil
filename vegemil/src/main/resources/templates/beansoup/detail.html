@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+<body>
+	<!-- ================================ 
+		        Header
+        ================================ -->
+	<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+	<!-- ================================ 
+		        // Header
+        ================================ -->
+	<!-- ================================ 
+		        Content
+        ================================ -->
+	<div id="result"></div>
+		
+	<div class="container mt130 detailLine">
+		<div class="row recommend">
+			<div class="col-lg-12 mb30 mt20">
+				<p class="f28 fw600 ">이런 레시피는 어떠세요?</p>
+			</div>
+		</div>
+		<div class="row recommend">
+			<th:block th:each="item : ${beansoupList}">
+				<div class="col-lg-3 col-sm-6">
+					<div class="thumbBox">
+						<a href="#"
+							th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
+							<div class="h220 round" th:classappend="${item.cssClass}">
+								<th:block th:if="${item.mCate == '온요리'}">
+									<ul class="labelBox">
+										<li class="hot"><span>온요리</span></li>
+									</ul>
+								</th:block>
+								<th:block th:if="${item.mCate == '냉요리'}">
+									<ul class="labelBox">
+										<li class="cool"><span>냉요리</span></li>
+									</ul>
+								</th:block>
+							</div>
+							<div class="recipeTxt_white">
+								<p class="f16 gray" th:text="${item.tag}">tag</p>
+								<p class="f22 fw600 mt10" th:text="${item.name}">name</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</th:block>
+		</div>
+	</div>
+
+	<!-- ================================ 
+		        // Content
+        ================================ -->
+	<!-- ================================ 
+		        Footer
+        ================================ -->
+	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+	<!-- ================================ 
+		        // Footer
+        ================================ -->
+        
+    <script type="text/javascript">
+	//<![CDATA[
+	$(function(){
+		//html 파일 로드
+		var recipe = "[[ ${recipe} ]]";
+	    $("#result").load("/beansoup/html/"+recipe+".html");
+	});
+	//]]>
+	</script>
+</body>
+</html>
