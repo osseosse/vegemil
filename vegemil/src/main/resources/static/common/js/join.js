@@ -115,10 +115,10 @@ function btnAvtive() {
 	&& $.trim(idDuplicate) == '1'
 	&& $.trim(sPw1).length > 1
 	&& $.trim(sPw2).length > 1
-	&& $("input:radio[name='mSmssend']").is(":checked") == true
+	&& $("input:radio[name='smsAgree']").is(":checked") == true
 	&& $.trim(sAddr1).length > 1
 	&& $.trim(sAddr2).length > 1
-	&& $("input:radio[name='mEmailsend']").is(":checked") == true
+	&& $("input:radio[name='emailAgree']").is(":checked") == true
 	&& $.trim(sEmail).length > 1) 
 	{
 		$("#joinBtn").attr("disabled", false); //해제
@@ -127,6 +127,8 @@ function btnAvtive() {
 		$("#joinBtn").attr("disabled", true); //설정
 		$("#joinBtn").removeClass('active');		
 	}
+	
+	return;
 }
 
 //이메일 입력방식 선택
@@ -142,27 +144,33 @@ $('#selEmail').change(function(){
 		}
 		
 		$("#mEmail").val($("#txtEmail").val()+$("#txtEmail2").val());
-		
    });
+   btnAvtive();
+   
 });
 
-$('#txtEmail2').keyup(function () {
+$('#mAddr2').keyup(function () {
 
-	$("#mEmail").val($("#txtEmail").val()+$("#txtEmail2").val());
+	btnAvtive();
 	return;
 
 });
 
-$("input[name='mSmssend']:radio").change(function () {
-
+$('#txtEmail').keyup(function () {
 	btnAvtive();
-	
 });
 
-$("input[name='mEmailsend']:radio").change(function () {
-
+$('#txtEmail2').keyup(function () {
+	$("#mEmail").val($("#txtEmail").val()+$("#txtEmail2").val());
 	btnAvtive();
-	
+});
+
+$("input[name='smsAgree']:radio").change(function () {
+	btnAvtive();
+});
+
+$("input[name='emailAgree']:radio").change(function () {
+	btnAvtive();
 });
 
 //비밀번호 정규식 검사

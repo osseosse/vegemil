@@ -109,8 +109,8 @@
 							<li>주소</li>
 							<li>
 								<input name="txtZipcode" class="inp03" type="text" readonly th:field="*{mZipcode}" maxlength="5" placeholder="우편번호"><button type="button" onclick="execPostcode()" class="btnType09 ml10">우편번호검색</button><br>
-								<input name="txtAddr1" class="inp02 mt10 w700" type="text" th:field="*{mAddr1}" maxlength="150" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
-								<input name="txtAddr2" class="inp02 mt10 w700" type="text" th:field="*{mAddr2}" placeholder="상세주소를 입력해 주세요" maxlength="150">
+								<input name="txtAddr1" class="inp02 mt10 w700" type="text" th:field="*{mAddr1}" maxlength="100" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
+								<input name="txtAddr2" class="inp02 mt10 w700" type="text" th:field="*{mAddr2}" placeholder="상세주소를 입력해 주세요" maxlength="50">
 							</li>
 						</ul>
 						<ul>
@@ -160,7 +160,7 @@
 			<div class="w560 center0 mb200">
 				<ul class="joinbtnFoot mt50">
 					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
-					<li><button type="submit" disabled id="joinBtn" class="btnType07 f20 fw500 lh140">회원가입</button></li>
+					<li><button type="submit" disabled id="joinBtn" class="btnType17 f20 fw500 lh140">회원가입</button></li>
 				</ul>
 			</div>
 			
