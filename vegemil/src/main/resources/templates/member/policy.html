@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 이용약관</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="contant1460" >
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f45 fw600 mt130 black center">이용약관</p>
+			</div>
+			<div class="col-md-12 mt100">
+				<!------------------
+				이용약관 
+				-------------------->
+				<div class="person f14 lh180 gray04 mb200" >
+					
+				</div>
+				<!------------------
+				//이용약관 
+				-------------------->
+				
+			</div>		
+		</div>
+	</div><!-- //contant1460 -->
+	
+	
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script>
+	/* 로드방식 local 크롬에서 노출되지 않음. */
+  $( document ).ready( function() {
+	$( '.person' ).load( '/privacy/policy_v10.html' );
+  } );
+</script>
+</body>
+</html>
