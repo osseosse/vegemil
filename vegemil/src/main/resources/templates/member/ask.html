@@ -1,67 +1,16 @@
 <!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="author" content="osse">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<meta name="description" content="정식품 오신것을 환영합니다."/> 
-<meta name="Keywords" content="정식품,두유,베지밀,유아식,썬몬드,그린비아,콩,대두,소이,식물성,음료" />
-<meta property="og:title" content="정식품"> 
-<meta property="og:url" content="https://www.vegemil.co.kr/"> 
-<meta property="og:image" content="~~~~~~~~~~~~~~~~~" /> 
-<meta property="og:description" content="두유 및 음료 제조업체, 베지밀, 영유아식, 그린비아, 라잇미닛, 한끼생식, 음료류 등"/>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 1:1문의</title>
-<!-- CSS -->
-<link href="./common/css/slide.css" rel="stylesheet">
-<link href="./common/css/reset.css" rel="stylesheet">
-<link href="./common/css/style.css" rel="stylesheet">
-<link href="./common/css/bootstrap.css" rel="stylesheet">
-<link href="./common/css/product.css" rel="stylesheet">
-
-<!-- JS -->
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
-<script type="text/javascript" src="./common/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="./common/js/jquery.Floater.js"></script>
-<script type="text/javascript" src="./common/js/main.js" charset="utf-8"></script>
-<script type="text/javascript" src="./common/js/prrple.slider.js" charset="utf-8"></script>
-<script type="text/javascript" src="./common/js/jquery.collapse.js"></script>
-<script type="text/javascript" src="./common/js/jquery.touchSwipe.1.6.min.js"></script>
-</head>
+<head th:replace="fragments/head :: headFragment"></head>
 <body>
-<!-- ================================ 
-		Header
-================================ -->
-<header class="white">
-	
-</header>
-<script>
-	/* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'header' ).load( './mainHeader.html' );
-	$( '.vpd01' ).load( './load/vpd01.html' );
-	$( '.vpd02' ).load( './load/vpd02.html' );
-	$( '.vpd03' ).load( './load/vpd03.html' );
-	$( '.vpd04' ).load( './load/vpd04.html' );
-	$( '.vpd05' ).load( './load/vpd05.html' );
-	$( '.vpd06' ).load( './load/vpd06.html' );
-	$( '.VPL01X262' ).load( './load/VPL01X262.html' );
-	$( '.VPM01X262' ).load( './load/VPM01X262.html' );
-	$( '.SCI04X262' ).load( './load/SCI04X262.html' );
-	$( '.VBB01X262' ).load( './load/VBB01X262.html' );
-  } );
-</script>
-<!-- ================================ 
-		// Header
-================================ -->
-
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
 ================================ -->
-
 <div id="content">
 	<div class="content100">
 	   <div class="subTopCommunication h440 mt90h">
@@ -73,22 +22,22 @@
 	</div>
 	<div class="contant1460" >
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img src="./img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
 				<li class="f18 fw500"><a href="#"><span>고객의소리</span></a></li>
 				<li class="f18 fw500 active"><a href="#"><span>1:1문의</span></a></li>
 			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="./img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
 		</div>
 		<div class="row">
 			<div class=" col-md-12">
-				<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+				<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
 				<p class="f52 fw600 mt50 black center">도움이 필요하신가요?</p>
 				<p class="f27 fw500 mt10 black center">고객 여러분의 문의사항을 정확하게 답변드리겠습니다.</p>
 				<div class="btnbox-ask mt130">
-					<p class="f23 fw500 black btnType04 mb40"><a href=""><img class="mr10" src="./img/ico/ico_ask01.png" alt="문의"/>1:1문의 작성하기</a></p>
-					<p class="f23 fw500 white btnType05 mb40"><a href=""><img class="mr10" src="./img/ico/ico_ask02.png" alt="문의"/>FAQ에서 자주 묻는 질문 빠르게 확인하기</a></p>
-					<p class="f23 fw500 black btnType04"><a href=""><img class="mr10" src="./img/ico/ico_ask03.png" alt="문의"/>나의 지난 문의내용 확인하기</a></p>
+					<p class="f23 fw500 black btnType04 mb40"><a href=""><img class="mr10" th:src="@{/img/ico/ico_ask01.png}" alt="문의"/>1:1문의 작성하기</a></p>
+					<p class="f23 fw500 white btnType05 mb40"><a href=""><img class="mr10" th:src="@{/img/ico/ico_ask02.png}" alt="문의"/>FAQ에서 자주 묻는 질문 빠르게 확인하기</a></p>
+					<p class="f23 fw500 black btnType04"><a href=""><img class="mr10" th:src="@{/img/ico/ico_ask03.png}" alt="문의"/>나의 지난 문의내용 확인하기</a></p>
 				</div>
 			</div>
 			<div class=" col-md-12">
@@ -109,43 +58,8 @@
 <!-- ================================  
 		// Content
 ================================ -->
-
-
-<!-- ================================ 
-		Footer
-================================ -->
-<footer class="contant100 mt100" >
-	
-</footer>
-<script>
-/*================================
- * 	 main > 자주묻는질문+SNS
- *================================ */
-$(".verticalType02").collapse({
-	  accordion: true, 
-	  open: function() {
-		this.addClass("open");
-		this.css({ height: this.children().outerHeight() });
-	  },
-	  close: function() {
-		this.css({ height: "0px" });
-		this.removeClass("open");
-	  }
-	});
-</script>
-<!-- //main > 자주묻는질문+SNS -->
-
-
-<script>
-  /* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'footer' ).load( './mainFooter.html' );
-  });
-</script>
-<!-- ================================ 
-		// Footer
-================================ -->
-
-
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
 </body>
 </html>

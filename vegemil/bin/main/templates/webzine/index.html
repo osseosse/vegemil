@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title>정식품</title>
+<head th:replace="webzine/head :: headFragment"></head>
+<!-- Snow 효과 -->
+<link rel="stylesheet" th:href="@{/webzine/css/jquery.fallingsnow.css}">
+<body>
+<!-- ================================ Header ================================ --> 
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ Content ================================ -->
+<div id="wrapper">
+<!-- <div id="result"></div> -->
+<div th:insert="|webzine/html/index/${qrtYear}_index|"></div>
+<!-- ================================ //Content ================================ -->
+
+<!-- ================================ Footer ================================ -->
+<footer th:replace="webzine/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+    
+    function moveUrl(str1, str2){
+        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	}
+    
+});
+//]]>
+</script>
+<!--=============== scripts  ===============-->
+<!-- 세계를 보다 Tab -->
+<script src="/webzine/js/jquery.accTabs2019.js"></script> 
+<script>
+	$(".demo").accTabs();
+</script>
+<!-- 세계를 보다 마우스오버 -->
+<script type="text/javascript" src="/webzine/js/jquery.directional-hover2019.min.js"></script>
+<script>
+	$(window).load(function() {
+		$('.dh-container').directionalHover();
+	});
+</script>
+<!-- 레이어팝업:검색 -->
+<script src="/webzine/js/modality2019.js"></script>
+<script>
+	var modal1 = Modality.init('#pop_search', {
+		effect: 'slide-up'
+	});
+</script>
+<!-- 레이어팝업:CF -->
+<script>
+	$(".youtube-link").grtyoutube({
+		autoPlay:true,
+		theme: "dark"
+	});
+</script>
+</body>
+</html>

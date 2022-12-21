@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title>정식품</title>
+<head th:replace="webzine/oldHead :: headFragment"></head>
+<!-- Snow 효과 -->
+<link rel="stylesheet" th:href="@{/webzine/css/jquery.fallingsnow.css}">
+<body>
+<!-- ================================ Header ================================ --> 
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ Content ================================ -->
+	<div th:insert="|webzine/html/index/${qrtYear}_index|"></div>
+       <!-- ================================ Footer ================================ -->
+	<footer th:replace="webzine/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+<!-- ================================ //Content ================================ -->
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+    function moveUrl(str1, str2){
+        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	}
+});
+//]]>
+</script>
+</body>
+</html>

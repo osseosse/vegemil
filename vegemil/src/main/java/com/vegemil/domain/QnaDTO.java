@@ -19,8 +19,10 @@ public class QnaDTO extends CommonDTO {
 	private String sContent;
 	private String sFile;
 	private String sWritedate;
+	private String sUpdatedate;
 	private String sActiveuser;
-	private String sActiv;
+	private String sActive;
+	private String sDeleteYn;
 	private int sHit;
 	private String sGory;
 	//답변

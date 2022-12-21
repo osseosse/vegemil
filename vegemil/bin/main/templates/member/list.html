@@ -2,13 +2,11 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-	<title>정식품</title>
-    <head th:replace="fragments/head :: headFragment"></head>
-</head>
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
 <!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
@@ -21,9 +19,9 @@
 				<div class="col-md-4 my pr100">
 					<div class="myBox">
 						<p class="f14 fw400  mebOut gray04"><a href="">회원 탈퇴 신청</a></p>
-						<p class="f34 fw600 lh130 mt50" th:text="|${member.sName} 님,|"><br>반갑습니다.</p>
+						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
 						<ul class="account_box mt40">
-							<li th:text="${member.emailAddr}">ssu070</li>
+							<li th:text="${member.mId}"></li>
 							<li>정회원</li><!-- "대리점장이 회원가입시" <li>대리점</li> -->
 							<li>본인인증완료</li><!-- "본인인증이 되지 않은 고객일경우" <li>본인인증필요</li> -->
 						</ul>
@@ -45,7 +43,6 @@
 						<li><p class="f20 fw400">나의 상담내역</p></li>
 						<li><a href="#"><span class="gray04 f14">문의하기 &gt;</span></a></li>
 					</ul><br class="clear">
-					
 					<div class="myBox mt20">
 						<div class="myQus f16">지난 상담내역이 <span th:text="|${qnaCount}건|"></span> 있습니다.</div>
 						<table cellspacing="0" summary="나의상담" border="0" class="myT mt30">
@@ -60,10 +57,10 @@
 								<th>질문내용</th>
 								<th>작성일</th>
 							</tr>
-							<tr th:if="${not #lists.isEmpty( qnaList )}" th:each="qna i : ${qnaList}">
+							<tr th:if="${not #lists.isEmpty( qnaList )}" th:each="qna : ${qnaList}">
 								<td><p class="cate" th:text="${qna.sCate}"></p></td>
 								<td>
-									<a href="#"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
+									<a th:href="|/mypage/answer?sIdx=${qna.sIdx}|"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
 									<p class="ans" th:if="${qna.sAnswerYn} == 'Y'">답변</p>
 									<p class="ans" th:unless="${qna.sAnswerYn} == 'Y'">미답변</p>
 								</td>

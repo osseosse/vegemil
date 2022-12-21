@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div th:fragment="recViewFragment">
+<script th:inline="javascript">
+    function moveUrl(str1, str2){
+        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	}
+</script>
+<section>
+    <div class="wrap-inner6">
+        <div class="container pb130-m">
+            <div class="project-detail-wrap fl-wrap ">
+                <div class="row">
+                    <p class="center type03 mt30-m">&middot; 추천기사 &middot;</p>
+                    <ul th:if="${not #lists.isEmpty( recommandWebzineList )}">
+	                    <li th:each="webzine i : ${recommandWebzineList}">
+		                    <!-- <a href="javascript:;" th:onclick="|javascript:moveUrl('${webzine.qrtYear}','${webzine.fileNo}')|"> -->
+		                    <div class="col-md-3 mt25-m">
+			                    <div class="images" > 
+				                    <!-- <p th:class="|h180-m ${webzine.qrtYear}_${webzine.fileNo}|"><span></span></p> -->
+			                    </div>
+			                    <ul class="txtBox02 hvr-overline-from-left">
+				                    <li class="type18" th:text="${webzine.snsTitle}"></li>
+			                    </ul>
+		                    </div>
+		                    </a>
+	                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="headFragment">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="Keywords" content="웹진, 정식품, 정식품웹진, webzine, 두유,베지밀,영유아식,썬몬드,그린비아,우리안,콩,대두,소이,식물성,음료" />
+<meta name="Description" content="신뢰와 믿음의 기업 (주)정식품의 웹진입니다." />
+	<!-- Twitter Bootstrap -->
+	<link href="/webzine/css/bootstrap.css" rel="stylesheet" />
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="/webzine/css/img.css" />
+	<link rel="stylesheet" href="/webzine/css/style.css" />
+	<link rel="stylesheet" href="/webzine/css/responsive.css" />
+	<link type="text/css" rel="stylesheet" href="/webzine/css/style2022_used.css">
+	<!-- 구글폰트 -->
+	<script type="text/javascript">
+	WebFontConfig = {
+	google: { families: [ 'Noto+Sans:400italic:latin' ] }
+	};
+	(function() {
+	var wf = document.createElement('script');
+	wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	wf.type = 'text/javascript';
+	wf.async = 'true';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(wf, s);
+	})(); </script>
+	<!-- // 구글폰트 -->
+	<!--=============== scripts  ===============-->   
+	<script type="text/javascript">
+	function Change (target,type) 
+	{  
+	if ( target.value == target.defaultValue && type==0) target.value = ''; 
+	if ( !target.value && type==1) target.value = target.defaultValue; 
+	} 
+	</script>
+	
+	<script src="/webzine/js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="/webzine/js/bootstrap.min.js"></script>
+	<script src="/webzine/js/instafeed.min.js"></script>
+	<script src="/webzine/js/jquery.scrolly.js"></script>
+	<script src="/webzine/js/main.js"></script>
+	<script src="/webzine/js/scripts2019.js"></script>
+	<script src="/webzine/js/kakao.min.js"></script>
+	
+	
+	<script type="text/javascript" src="/webzine/js/jquery2019.min.js"></script>
+	<script type="text/javascript" src="/webzine/js/plugins2019.js"></script>
+	<script type="text/javascript" src="/webzine/js/jquery.collapse.js"></script>
+	<script type="text/javascript" src="/webzine/js/prrple.slider.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script src="https://www.googletagmanager.com/gtag/js?id=UA-141294099-1"></script>
+	<script>
+	
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-141294099-1');
+	
+	</script>
+	
+	<th:block layout:fragment="add-script"></th:block>
+	<th:block layout:fragment="add-css"></th:block>
+</head>
+</html>

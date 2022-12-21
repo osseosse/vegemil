@@ -1,8 +1,6 @@
 package com.vegemil.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.vegemil.paging.Criteria;

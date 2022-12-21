@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content">
+	<div class="contant1460" >
+	<form th:action="|@{/payment/register}|" th:object="${member}" method="post">
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">법인 회원가입</p>
+			</div>
+			<input type="hidden" th:field="*{mDi}" />
+			<div class="col-md-12 ">
+				<div class="w860 center0 mt80">
+					<div cellspacing="0" border="0" class="joinT">
+						<ul>
+							<li>법인명</li>
+							<li><input type="text" th:field="*{mCompName}" class="inp02" placeholder="법인명" maxlength="20"></li>
+						</ul>
+						<ul>
+							<li>대표자명</li>
+							<li><input type="text" th:field="*{mName}" class="inp02" placeholder="대표자명" maxlength="20"></li>
+						</ul>
+						<ul>
+							<li><span>사업자번호(아이디)</span></li>
+							<li>
+								<input type="text" th:field="*{mId}" class="inp02 w330" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="10" placeholder="10자리 숫자 "><button type="button" id="overlappedBiz" class="btnType09 ml10">중복확인</button>
+								<p class="confirm" id="bizCheackOk" style="display: none;">사용 가능한 아이디 입니다.</p>
+								<p class="error" id="bizCheackNo" style="display: none;">이미 사용중인 사업자번호 입니다.</p>
+								<p class="error" id="bizCheack" style="display: none;">사업자번호는 10자리 숫자여야합니다.</p>
+								<input type="hidden" id="bizDuplicate" value="0" />
+							</li>
+						</ul>
+						<ul>
+							<li>비밀번호</li>
+							<li>
+								<input type="password" id="pw1" class="inp02" maxlength="21">
+								<p class="error" id="pwCheack" style="display: none;">공백 없이 영문,숫자,특수문자를 혼합하여 8자리 ~ 20자리 이내로 입력해주세요.</p>
+							</li>
+							
+						</ul>
+						<ul>
+							<li>비밀번호 확인</li>
+							<li>
+								<input type="password" id="pw2" th:field="*{mPwd}" class="inp02" maxlength="21">
+								<p class="error" id="pwCheackNo" style="display: none;">비밀번호가 일치하지 않습니다.</p>
+								<p class="confirm" id="pwCheackOk" style="display: none;">비밀번호가 일치합니다.</p>
+							</li>
+						</ul>
+						<ul>
+							<li>휴대전화</li>
+							<li>
+								<input type="hidden" class="inp03 w200" th:field="*{mHp}">
+								<input type="text" class="inp03 w120" id="hp1" name="hp" th:value="${#strings.substring(member.mHp, 0, 3)}" placeholder="010" maxlength="3" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+								- <input type="text" class="inp03 w130" id="hp2" name="hp" th:value="${#strings.substring(member.mHp, 3, 7)}" placeholder="0000" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+								- <input type="text" class="inp03 w130" id="hp3" name="hp" th:value="${#strings.substring(member.mHp, 7, 11)}" placeholder="0000" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"> 
+							</li>
+						</ul>
+						<ul>
+							<li>이메일</li>
+							<li>
+								<input name="txtEmail" type="text" maxlength="30" id="txtEmail" class="inp03 w200"><input name="txtEmail2" placeholder="직접입력" type="text" disabled maxlength="30" id="txtEmail2" class="inp03 ml10 w220 mr10">
+								<select name="selEmail" id="selEmail" class="sel02 w200 mt10m">
+									 <option value="1">직접 입력</option>
+									 <option value="naver.com">naver.com</option>
+									 <option value="hanmail.net">hanmail.net</option>
+									 <option value="hotmail.com">hotmail.com</option>
+									 <option value="nate.com">nate.com</option>
+									 <option value="gmail.com">gmail.com</option>
+								</select>
+								<input type="hidden" class="inp03 w200" th:field="*{mEmail}">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w1160 center0 grayLine mt70">
+			<div class="w560 center0 mb200">
+				<ul class="joinbtnFoot mt50">
+					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
+					<li><button type="submit" disabled id="joinBtn" class="btnType07 f20 fw500 lh140">회원가입</button></li>
+				</ul>
+			</div>
+		</div>
+		</form>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:src="@{/common/js/payJoin.js}"></script>
+</body>
+</html>

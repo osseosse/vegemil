@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title>정식품</title>
+<head th:replace="webzine/head :: headFragment"></head>
+<script type="text/javascript">	
+//<![CDATA[
+	
+	function onselChanged(){
+
+		var selectedValue = $('#selectYear option:selected').val();
+		$('#selectYear option:selected').attr("selected");	
+		location.href="lastlistNew.aspx?year="+selectedValue;							
+			
+	}	
+	
+	$(function(){
+		var q1 = "[[ ${q1} ]]";
+		var q2 = "[[ ${q2} ]]";
+		var q3 = "[[ ${q3} ]]";
+		var q4 = "[[ ${q4} ]]";
+		
+	    if(q1 == '0'){
+               $('#q1').hide();
+           }
+           if(q2 == '0'){
+               $('#q2').hide();
+           }
+           if(q3 == '0'){
+               $('#q3').hide();
+           }
+           if(q4 == '0'){
+               $('#q4').hide();
+           }
+	});
+//]]>
+</script>
+<body>
+<!-- ================================ Header ================================ --> 
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ Content ================================ -->
+<div id="wrapper">
+	<div class="content-holder1">
+	     <!--Content -->
+	     <div class="content h550-3 home-content">
+	         <!-- hero-content -->
+	         <div class="hero-content fl-wrap h550-3">
+					<!-- IMG -->
+	             <div class="bg-lastlist" ></div>
+	         </div>	
+	     </div>
+         <!-- hero-content end-->
+     </div>
+     <!-- content  end -->
+	<div class="content">
+		<section>
+			<div class="wrap-inner2">
+				<div class="container">
+					<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+						<div class="row grayLine3">
+							<div class="col-md-12">
+								<h3 class="center mt80">ARCHIVES</h3>
+								<h1 class="center mt50-m">지난호 보기</h1>
+							</div>
+							<div class="col-md-12 row">
+								<div class="mt100-m2">
+									<div class="col-md-6">
+										<p class="type25">건강한 사람들의 건강한 이야기</p>
+									</div>
+									<div class="col-md-6">
+										<div class="right ">
+											<select id="selectYear" class="selBox" name="selectYear" onchange="onselChanged();"> 
+												<option value="">선택해주세요</option>
+												<option value=2022>2022년</option>
+												<option value=2021>2021년</option>
+												<option value=2020>2020년</option>
+												<option value=2019>2019년</option>
+												<option value=2018>2018년</option> 
+												<option value=2017>2017년</option> 
+											</select> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!--//row-->
+							<div class="row pb80" id="q4">
+								<div class="col-md-4 mt50-m "> 
+									<a th:href="|/main/webzine/Q4_${year}/index.aspx|"><div th:class="|Q4_${year}_01 h350|"></div><p class="type07-1 mt20" th:text="|${year}년 10/11/12월호|"></p></a>
+								</div>
+								<div class="col-md-8 mt50-m"> 
+									<div class="row">
+										<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ4 )}" th:each="webzine : ${webzineListQ4}">
+											<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+												<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
+												<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
+											</a>
+										</div>
+									</div><!--//row-->
+								</div>
+							</div><!--//row-->
+						
+							<div class="row pb80" id="q3">
+								<div class="col-md-4 mt50-m "> 
+									<a th:href="|/main/webzine/Q3_${year}/index.aspx|"><div th:class="|Q3_${year}_01 h350|"></div><p class="type07-1 mt20" th:text="|${year}년 7/8/9월호|"></p></a>
+								</div>
+								<div class="col-md-8 mt50-m"> 
+									<div class="row">
+										<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ3 )}" th:each="webzine : ${webzineListQ3}">
+											<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+												<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
+												<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
+											</a>
+										</div>
+									</div><!--//row	-->
+								</div>
+							</div><!--//row-->
+						
+							<div class="row pb80" id="q2">
+								<div class="col-md-4 mt50-m "> 
+									<a th:href="|/main/webzine/Q2_${year}/index.aspx|"><div th:class="|Q2_${year}_01 h350|"></div><p class="type07-1 mt20" th:text="|${year}년 4/5/6월호|"></p></a>
+								</div>
+								<div class="col-md-8 mt50-m"> 
+									<div class="row">
+										<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ2 )}" th:each="webzine : ${webzineListQ2}">
+											<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+												<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
+												<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div><!--//row-->
+						   <div class="row pb80" id="q1">
+							<div class="col-md-4 mt50-m "> 
+								<a th:href="|/main/webzine/Q1_${year}/index.aspx|"><div th:class="|Q1_${year}_01 h350|"></div><p class="type07-1 mt20" th:text="|${year}년 1/2/3월호|"></p></a>
+							</div>
+							<div class="col-md-8 mt50-m"> 
+								<div class="row">
+									<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ1 )}" th:each="webzine : ${webzineListQ1}">
+										<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+											<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
+											<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
+										</a>
+									</div>
+								</div><!--//row-->	
+							</div>
+						</div><!--//row-->
+					</div>
+				</div><!-- //container -->
+			</div><!-- //wrap-inner2 -->
+		</section>
+	</div>
+    <!-- ================================ Footer ================================ -->
+	<footer th:replace="webzine/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+</div>
+<!-- ================================ //Content ================================ -->
+</body>
+</html>

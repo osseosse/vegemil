@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 KOLAS</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100 subCategoryBg">
+	<div class="content100 ">
+	   <div class="subTopRandD h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">연구활동</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460">
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="#"><span>연구소장 인사말</span></a></li>
+				<li class="f18 fw500"><a href="#"><span>연구소 소개</span></a></li>
+				<li class="f18 fw500 active"><a href="#"><span>연구활동</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+    </div>
+    <div class="contant100_01">
+        <div class="contant1460">
+    		<div class="row">
+                <div class="col-md-12 subCategory mt70">
+                    <ul class="float-left">
+                        <li>
+                            <a href="#">연구 활동</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">KOLAS</a>
+                        </li>
+                    </ul>
+                    <p class="f14 fw400 black float-right btnType03">
+                        <a href="#"><img class="mr5" src="/img/ico/ico_share.png" alt="공유"/>공유</a>
+                    </p><br class="clear">
+                </div>
+            </div>
+		</div>
+    </div>
+    <div class="contant100_01 whiteBg">
+        <div class="contant1460">
+            <div class="row mt160">
+                <div class="col-md-12 center mb200">
+                   <p class="f45 fw600">KOLAS란?</p>
+                   <p class="gold f_pp f18 mt100">KOLAS: Korea Laboratory Accreditation Scheme</p>
+                   <p class="f66 fw600 mt40">국제공인시험기관인정제도</p>
+                   <p class="f18 gray04 mt60">
+                       국가적 권위를 인정받은 인정기구(산업통상자원부 국가기술표준원)가 국제적으로 인정된 평가기준(KS Q ISO/IEC 17025 등)에 따라 <br class="none">
+                        시험 기관의 시험능력 및 시험환경 등을 평가하여 공인시험기관으로 지정함으로써, 그 기관이 발급한 시험성적서가 국제적으로 공신력을 갖추고 있음을 인정해 주는 제도입니다. <br class="none">
+                        특히 시험소의 능력향상과 더불어 적합성평가결과(시험성적서)에 대한 국내외 신뢰를 확보하고 해외에서 수용되도록 하여 기술무역장벽을 극복할 수 있습니다.
+                   </p>
+                </div>
+                <div class="col-md-6 kolasInfo">
+                    <p class="f27 fw500">취득 현황 및 운영</p>
+                    <ul>
+                       <li class="mt70">
+                            <span class="f18">인정기관</span>
+                            <span class="f16">정식품 중앙연구소</span>
+                       </li>
+                        <li class="mt50">
+                            <span class="f18">인정일자</span>
+                            <span class="f16">2003년 12월 22일</span>
+                       </li>
+                       <li class="mt50">
+                            <span class="f18">인정번호</span>
+                            <span class="f16">KT212</span>
+                       </li>
+                       <li class="mt50">
+                            <span class="f18">인정 분야 및 규격</span>
+                            <span class="f14 gray04">
+                                -  화학시험-식품 : 9개 규격(수분, 회분, 단백질, 지방, 비타민, 무기질 등)<br>
+                                -  생물학적시험-미생물 : 1개 규격(일반세균수, 대장균군)
+                            </span>
+                       </li>
+                       <li class="mt50">
+                            <span class="f18">운영 현황</span>
+                            <span class="f14 gray04">
+                                검증 자격을 갖춘 인력(품질책임자, 기술책임자, 실무자)과 검교정으로 <br class="none">
+                                확인된 분석장비 및 시험 측정 설비, 검증된 시약 및 불확도가 확인된 <br class="none">
+                                시험 초자기구를 사용하여 시험성적서를 발행하고 있으며, <br class="none">
+                                국제적으로 인증된 시험기관이 주최하는 비교숙련도를 통하여 <br class="none">
+                                정확도를 높여 시험성적서의 국내외 신뢰를 확보하고 있습니다.
+                            </span>
+                       </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt50m">
+                   <img src="/img/R&D/kolas_01.jpg" alt="kolas 이미지">
+                </div>
+            </div>
+            <div class="row mt240">
+                <div class="col-md-3">
+                    <img src="/img/R&D/kolas_02.jpg" alt="ICP/MS">
+                    <p class="f_pp f23 mt20">ICP/MS</p>
+                </div>
+                <div class="col-md-3 mt30m">
+                    <img src="/img/R&D/kolas_03.jpg" alt="RT PCR">
+                    <p class="f_pp f23 mt20">RT PCR</p>
+                </div>
+                <div class="col-md-3 mt30m">
+                    <img src="/img/R&D/kolas_04.jpg" alt="GC/MS">
+                    <p class="f_pp f23 mt20">GC/MS</p>
+                </div>
+                <div class="col-md-3 mt30m">
+                    <img src="/img/R&D/kolas_05.jpg" alt="HPLC">
+                    <p class="f_pp f23 mt20">HPLC</p>
+                </div>
+            </div>
+        </div><!--1460 끝-->
+    </div>
+    <br class="clear">
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

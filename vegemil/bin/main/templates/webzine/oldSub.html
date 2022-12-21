@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<title>정식품</title>
+    <head th:replace="webzine/head :: headFragment"></head>
+    <meta property="og:site_name" content="신뢰와 믿음의 기업 (주)정식품입니다." > <!--페이스북 내용-->
+    <meta property="og:title" th:attr="content=${title}"> 
+	<!-- <meta property="og:image" th:attr="|content=https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${fileNo}/_sns.png|" > -->
+<body>
+<div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
+<!-- ******************* header ******************* -->
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ******************* // header ******************* -->
+<section class="slider-450">
+    <div data-velocity="-.4" th:class="|slide-bg-sub${num}_${sortYear}${qrt}|"></div>
+</section>
+<!-- ******************* main-content ******************* -->
+<div id="result"></div>
+<!-- ******************* //main-content ******************* -->
+<!-- 페지넘김, Top, 목록 -->
+<div class="col-md-12 text-right topList">
+	<table class="pagetop">
+		<colgroup>
+			<col width="50%">
+			<col width="50%">
+		</colgroup>
+		<tr>
+			<td class="ptLeft">
+				<!--  Mobile Btn -->
+				<ul class="topList fleft btnM">
+					<li>
+						<input type="image" id="btnBeforeM" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_beforeS.gif">
+						<input type="image" id="btnNextM" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_afterS.gif">
+					</li>
+				</ul>
+				<!--  PC Btn -->
+				<ul class="topList fleft btnPC">
+					<li>
+						<input type="image" id="btnBeforePC" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_before.gif">
+						<input type="image" id="btnNextPC" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_after.gif">
+					</li>
+				</ul>
+			</td>
+			<td class="ptRight">
+				<ul class="topList fright">
+					<li><a th:href="|/main/webzine/${qrtYear}/index.aspx|"><img src="/https://image.edaymall.com/images/dcf/webzine/common/btn_list.gif" alt="목록으로" ></a></li> 
+					<li><div class="scroll-to-top"><a href="#"><img src="/https://image.edaymall.com/images/dcf/webzine/common/btn_top.gif" alt="top" ></a></div></li> 
+				</ul>
+			</td>
+		</tr>
+	</table>
+</div><!-- // 페지넘김, Top, 목록 -->
+<!-- ******************* footer ******************* -->
+<footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
+<!-- ******************* // footer ******************* -->
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+	//html 파일 로드
+	var qrtYear = "[[ ${qrtYear} ]]";
+	var wYear = "[[ ${wYear} ]]";
+	var filNo = "[[ ${fileNo} ]]";
+	var loadHtml = qrtYear + "_" + filNo;
+    $("#result").load("/webzine/html/"+wYear+"/"+loadHtml+".html");
+    
+    function moveUrl(str1, str2){
+        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	}
+    
+});
+//]]>
+</script>
+</body>
+</html>

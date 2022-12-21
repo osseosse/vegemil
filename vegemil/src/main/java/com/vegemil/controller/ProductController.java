@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vegemil.constant.Method;
@@ -18,29 +18,42 @@ public class ProductController extends UiUtils {
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping(value = "/product/productList")
+	@GetMapping(value = "/product/list")
 	public String openProductList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
 	        	
-		List<ProductDTO> ProductList = productService.getProductList(searchKeyword);
-		model.addAttribute("ProductList", ProductList);
-		model.addAttribute("ProductCount", ProductList.size());
+		List<ProductDTO> productList = productService.getProductList(searchKeyword);
+		model.addAttribute("productList", productList);
+		model.addAttribute("productCount", productList.size());
 
-		return "product/productList";
+		return "product/list";
 	}
 	
-	@GetMapping(value = "/product/productDetail")
-	public String openProductDetail(@ModelAttribute("params") ProductDTO params, @RequestParam(value = "pIdx", required = false) Long pIdx, Model model) {
+	@GetMapping(value = "/brandStory/vegemil")
+	public String openBrandStroyList( Model model) {
+	        	
+		List<ProductDTO> brandStroyList = productService.getBrandStroyList();
+		model.addAttribute("brandStroyList", brandStroyList);
+		model.addAttribute("brandStroyCount", brandStroyList.size());
+
+		return "brandStory/vegemil";
+	}
+	
+	@GetMapping(value = "/product/detail/{pIdx}")
+	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model) {
 		if (pIdx == null) {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "product/productList", Method.GET, null, model);
 		}
 
-		ProductDTO Product = productService.getProductDetail(params);
-		if (Product == null) {
+		ProductDTO product = productService.getProductDetail(pIdx);
+		if (product == null) {
 			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/productList", Method.GET, null, model);
 		}
-		model.addAttribute("Product", Product);
+		
+		List<ProductDTO> recProduct = productService.getRecProduct(product.getCategoryCode());
+		model.addAttribute("product", product);
+		model.addAttribute("recProduct", recProduct);
 
-		return "product/productDetail";
+		return "product/detail";
 	}
 
 }

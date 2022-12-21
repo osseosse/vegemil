@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 ID찾기</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<form th:action="@{/member/searchMemId}" th:object="${member}" method="post">
+	<div class="contant1460" >
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">ID/비밀번호 찾기</p>
+				<p class="f18 fw400 mt20 gray04 center">ID 또는 비밀번호가 기억나지 않으세요?<br>정보를 입력하시면 고객님의 아이디와 비밀번호를 신속하게 찾아드립니다.</p>	
+			</div>
+			<div class="w1160 center0 mt100">
+				<div class="center0 ">
+					<ul class="agree">
+						<li class="f20 fw500 active"><a href="#"><span>아이디 찾기</span></a></li>
+						<li class="f20 fw500 "><a href="/member/pwSearch"><span>비밀번호 찾기</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-12 ">
+				<div class="w860 center0 mt80">
+					<div cellspacing="0" border="0" class="joinT">
+						<ul>
+							<li><span>이름</span></li>
+							<li><input type="text" th:field="*{mName}" maxlength="30" class="inp05 w340" ></li>
+						</ul>
+						<ul>
+							<li>휴대폰번호</li>
+							<li>
+								<input th:field="*{mHp}" type="hidden" >
+								<input name="hp" type="text" id="hp1" class="inp05 w100" maxlength="3" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+								- <input name="hp" type="text" id="hp2" class="inp05 w120" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+								- <input name="hp" type="text" id="hp3" class="inp05 w120 mr10" maxlength="4" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant1460 -->
+	<div class="contant100 mt50 grayLineM max1160"></div>
+	<div class=" contant1460">
+		<div class="w1160 center0  mt70">
+			<div class="w560 center0 mb200">
+				<p class="mt50 f20 fw400 center">고객님의 이름과 회원가입시 입력한 휴대폰 번호를 입력하세요.</p>
+				<ul class="joinbtnFoot mt50">
+					<li class="mr10"><button type="button" onclick="location.href='/member/login'" class="btnType10 f20 fw500 lh140" >취소</button></li>
+					<li>
+						<button type="submit" id="searchBtn" class="btnType07 f20 fw500 lh140" disabled >확인</button>
+						<!-- <button type="submit" class="btnType17 f20 fw500 lh140">확인</button> -->
+					</li>
+				</ul>
+			</div>
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+	</form>
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script>
+
+function btnAvtive() {
+	
+	const sName = $('#mName').val();
+	const sHp = $('#mHp').val();
+	
+	if($.trim(sName).length > 1
+	&& $.trim(sHp).length > 1) 
+	{
+		$("#searchBtn").attr("disabled", false); //해제
+		$("#searchBtn").addClass('active');
+	} else {
+		$("#searchBtn").attr("disabled", true); //설정
+		$("#searchBtn").removeClass('active');		
+	}
+}
+
+$("#mName").keyup(function (event) {
+	
+     regexp = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
+     v = $(this).val();
+     if (regexp.test(v)) {
+         $(this).val(v.replace(regexp, ''));
+     }
+     
+     btnAvtive();
+     
+});
+
+
+
+//핸드폰 번호 입력
+$('input[name=hp]').keyup(function () {
+
+	$('#mHp').val($('#hp1').val()+$('#hp2').val()+$('#hp3').val());
+	
+	btnAvtive();
+	
+});
+
+</script>
+</body>
+</html>

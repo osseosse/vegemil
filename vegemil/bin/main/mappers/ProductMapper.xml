@@ -5,58 +5,149 @@
 
 	<sql id="productColumns">
 		p_idx,
-		p_cate,
-		p_code,
 		p_name,
+		p_code,
+		p_onuri,
 		p_active,
 		p_onactive,
-		p_onuri,
-		p_onclick,
 		category_code,
+		category_name,
+		sub_category_code,
+		sub_category_name,
+		sub_category_ico,
+		thumbnail1,
+		thumbnail2,
+		thumbnail3,
+		replace(thumbnail1, '.png', '') as product_class1,
+		replace(thumbnail2, '.jpg', '') as product_class2,
+		replace(thumbnail3, '.jpg', '') as product_class3,
+		new_product,
+		best_product,
+		new_product_all,
+		rep_product_all,
+		new_product_cate,
+		rep_product_cate,
 		display_priority,
-		remark,
-		link_url,
-		s_categorycode,
-		p_capacity,
-		p_capacity2,
-		p_capacity3,
-		DATE_FORMAT(insert_date,'%Y-%m') as insert_date,
-		DATE_FORMAT(modify_date,'%Y-%m') as modify_date,
+		capacity1,
+		capacity2,
+		capacity3,
+		kcal1,
+		kcal2,
+		kcal3,
+		release_ym,
+		description,
+		expiration_month,
+		recommender,
+		tip,
+		tag1,
+		tag2,
+		tag3,
+		DATE_FORMAT(insert_date,'%Y-%m') as insert_date
+	</sql>
+	
+	<sql id="brandStoryColumns">
+		p_idx,
+		p_name,
+		p_code,
+		p_onuri,
+		p_active,
+		category_code,
+		category_name,
+		sub_category_code,
+		sub_category_name,
+		replace(thumbnail1, '.png', '') as product_class1,
+		replace(thumbnail2, '.jpg', '') as product_class2,
+		replace(thumbnail3, '.jpg', '') as product_class3,
+		new_product_all,
+		rep_product_all,
+		new_product_cate,
+		rep_product_cate,
+		tip,
+		tag1,
+		tag2,
+		tag3
 	</sql>
 
 	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.ProductDTO">
 		SELECT
 			<include refid="productColumns" />
 		FROM
-			M_Product
+			m_product
 		WHERE
 			p_idx = #{pIdx}
 	</select>
 
 
 	<select id="selectProductList" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
-		SELECT p_idx, category_code, category_name, p_cate, p_code, p_name, display_priority, link_url, p_onuri, p_capacity, p_capacity2, p_capacity3 , DATE_FORMAT(insert_date,'%Y-%m') as insert_date
-		  FROM          
-			  (                   
-			  SELECT ca.category_code, ca.category_name, pr.p_code, pr.p_name , pr.display_priority , pr.link_url, pr.p_onuri, pr.p_capacity, pr.p_capacity2, pr.p_capacity3, pr.insert_date
-			  FROM M_Category ca INNER JOIN  M_Product pr              
-			  	ON ca.category_code = pr.category_code            
-			  WHERE pr.p_active = '1'
-			  <if test="searchKeyword != null and searchKeyword != ''">  
-			  	and pr.p_name = #{searchKeyword}
-			  </if>          
-			  ) T          
-	     ORDER BY display_priority
-		
+		SELECT 
+			 <include refid="productColumns" />
+		FROM          
+			 m_product           
+		WHERE p_active = 1
+		  <if test="searchKeyword != null and searchKeyword != ''">  
+		  and p_name = #{searchKeyword}
+		  </if>                 
+	    ORDER BY display_priority
+	</select>
+	
+	<select id="selectRecProduct" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
+		SELECT 
+			 <include refid="productColumns" />
+		FROM          
+			 m_product           
+		WHERE p_active = 1
+		  <if test="searchKeyword != null and searchKeyword != ''">  
+		  and category_code = #{categoryCode}
+		  </if>                 
+	    ORDER BY 
+	    	  display_priority desc
+	    LIMIT
+	    	  4
 	</select>
 
 	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
-			M_Product
+			m_product
 		WHERE
 			p_active = '1'
+	</select>
+	
+	<select id="selectBrandStroyList" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
+		SELECT 
+			 <include refid="brandStoryColumns" />
+		FROM          
+			 m_product           
+		WHERE 
+		    p_active = 1
+		  and
+		    new_product_all != 0
+		  or
+		    rep_product_all != 0
+		  or
+		    new_product_cate != 0
+		  or
+		    rep_product_cate != 0
+		ORDER BY 
+			new_product_all, rep_product_all, new_product_cate, rep_product_cate
+	</select>
+	
+	<select id="selectBrandStroyCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_product
+		WHERE
+			p_active = '1'
+		 and
+		   new_product_all != 0
+		 or
+		   rep_product_all != 0
+		 or
+		   new_product_cate != 0
+		 or
+		   rep_product_cate != 0
 	</select>
 
 </mapper>

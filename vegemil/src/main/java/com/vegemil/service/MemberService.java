@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.mapper.MemberMapper;
-import com.vegemil.paging.PaginationInfo;
 
 @Service
 public class MemberService implements UserDetailsService  {
@@ -30,9 +29,26 @@ public class MemberService implements UserDetailsService  {
 		return memberTotalCount;
 	}
 	
+	public int getMemberIdx(MemberDTO params) {
+		
+		int mIdx = memberMapper.getMemberIdx(params);
+		if(mIdx < 0 ) {
+			mIdx = 0;
+		}
+		
+		return mIdx;
+	}
+	
 	public int overlappedID(MemberDTO member) throws Exception{
 		int result = memberMapper.overlappedID(member);
 		return result;
+	}
+	
+	public String searchMemId(MemberDTO member) throws Exception{
+		
+		String mId = memberMapper.getMemId(member);
+		
+		return mId;
 	}
 	
 	public List<MemberDTO> getMemberList(MemberDTO params) {
@@ -48,6 +64,23 @@ public class MemberService implements UserDetailsService  {
 	}
 	
 	@Transactional
+	public boolean resetPassword(MemberDTO member) {
+		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		int queryResult = 0;
+		int memCount = 0;
+		
+		memCount = memberMapper.selectMemberCount(member);
+		member.setMPwd(passwordEncoder.encode(member.getPassword()));
+		
+		if (memCount == 0) {
+			queryResult = memberMapper.updateMemPwd(member);
+		}
+
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Transactional
 	public boolean registerMember(MemberDTO member) {
 		
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -56,7 +89,7 @@ public class MemberService implements UserDetailsService  {
 		
 		memCount = memberMapper.selectMemberCount(member);
 		member.setMPwd(passwordEncoder.encode(member.getPassword()));
-		member.setMAuth("USER");
+		//member.setMAuth("COMP");
 		
 		
 		if (memCount == 0) {

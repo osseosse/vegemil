@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 관련사</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100 subCategoryBg">
+	<div class="content100 ">
+	   <div class="subTopRelatedCompany h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">관련사</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460">
+		<div  th:replace="fragments/companySubMenu :: companySubMenuFragment"></div>
+    </div>
+    <div class="contant100_01">
+        <div class="contant1460">
+    		<div class="row">
+                <div class="col-md-12 subCategory mt70">
+                    <ul class=" float-left">
+                        <li class="active">
+                            <a href="/company/nnp">(주)자연과사람들</a>
+                        </li>
+                        <li>
+                            <a href="/company/osse">(주)오쎄</a>
+                        </li>
+                        <li>
+                            <a href="/company/hcf">(주)재단법인 혜춘장학회</a>
+                        </li>
+                    </ul>
+                    <p class="f14 fw400 black float-right btnType03">
+                        <a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a>
+                    </p><br class="clear">
+                </div>
+            </div>
+		</div>
+    </div>
+    <div class="contant100_01 whiteBg">
+        <div class="contant1460">
+            <div class="row mt160">
+                <div class="col-md-4">
+                   <div class="companyLeftInfo01">
+                       <ul>
+                            <li>
+                               <a href="#">
+                                   <img th:src="@{/img/ico/ico_arrowPrev.jpg}" alt="이전버튼">
+                               </a>
+                            </li>
+                            <li>
+                               <a href="#">
+                                   <img th:src="@{/img/ico/ico_arrowNext.jpg}" alt="다음버튼">
+                               </a>
+                            </li>
+                       </ul>
+                        <p class="f45 fw600 black mt80">
+                            자연과 사람을<br class="none">
+                            소중히 여기는 기업,<br>
+                            자연과사람들
+                        </p>
+                        <p class="f18 fw300 mt50 black">
+                            주식회사 자연과사람들은 팩 제품, 캔 제품,<br class="none">
+                            요구르트, 우유 등을 위생적으로 생산할 수 있는<br class="none">
+                            최첨단 설비를 갖추어 고객 만족을 위해<br class="none">
+                            최선을 다하고 있습니다.
+                        </p>
+                        <p class="btnType21 mt100">
+                            <a href="#" class="f16">사이트 바로가기</a>
+                        </p>
+                    </div>
+                    <div class="companyLeftInfo02 mt150">
+                        <p class="f23 fw500">본사, 공장</p>
+                        <div class="mt30">
+                            <p class="f18">
+                                <span class="f16 gray04">주소</span><br>
+                                전남 담양군 금성면 금성공단길 10
+                            </p>
+                            <p class="f18 mt30">
+                                <span class="f16 gray04">전화/팩스</span><br>
+                                061-380-1100/061-381-7846
+                            </p>
+                        </div>
+                    </div>
+                    <div class="companyLeftInfo02 mt70">
+                        <p class="f23 fw500">서울사무소</p>
+                        <div class="mt30">
+                            <p class="f18">
+                                <span class="f16 gray04">주소</span><br>
+                                서울 중구 퇴계로8길 16
+                            </p>
+                            <p class="f18 mt30">
+                                <span class="f16 gray04">전화/팩스</span><br>
+                                02-6263-9000/02-6263-9010
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 centerMo">
+                    <img th:src="@{/img/company/nnp_01.jpg}" alt="자연과사람들 이미지" class="mt60m">
+                    <div class="mt160">
+                        <img th:src="@{/img/company/nnpLogo_01.jpg}" alt="자연과사람들 로고">
+                        <p class="f18 mt70">
+                            음료시장에서의 소비자의 다양한 요구에 부응하고자 다년간 축적된 국내 최고의<br class="none">
+                            식품(음료)제조 노하우를 가진 ㈜정식품의 기술력을 바탕으로 2001년 11월 1일 새롭게 출발한 신설 법인입니다.<br class="none">
+                            현대인에게 자연 친화적인 순수한 제품을 제공하여 사람을 소중히 하는 기업이념을 바탕으로 패션화하고 있는 음료시장에서,<br class="none">
+                            창조적인 제품을 개발하여 경쟁력있는 종합음료회사로 선도기업이 될 수 있도록 노력하는 회사가 되겠습니다.
+                        </p>
+                    </div>
+                    <ul class="mt100 companyRightInfo02">
+                        <li class="col-md-4">
+                            <p class="f18">자본금</p>
+                            <p class="f18"><span class="f55 fw600 f_pp">40</span>억원</p>
+                            <p class="f16 gray04">
+                                1984년 우리나라<br>
+                                최초의 두유 베지밀 탄생
+                            </p>
+                        </li>
+                        <li class="col-md-4">
+                            <p class="f18">임직원</p>
+                            <p class="f18"><span class="f55 fw600 f_pp">165</span>명</p>
+                            <p class="f16 gray04">
+                                매년 지속적인 성장을 통해<br>
+                                약2,174억원의 매출액을 기록
+                            </p>
+                        </li>
+                        <li class="col-md-4">
+                            <p class="f18">매출액</p>
+                            <p class="f18"><span class="f55 fw600 f_pp">670</span>억원</p>
+                            <p class="f16 gray04">
+                                한국산업의 브랜드파워<br>
+                                20년 연속 1위
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--1460 끝-->
+    </div>
+    <br class="clear">
+		
+	</div><!-- //contant1760 -->
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

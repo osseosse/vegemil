@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.PaymentMapper">
+
+	<sql id="paymentColumns">
+	    ROW_INDEX,
+		LGD_RESPCODE,
+		LGD_RESPMSG,
+		LGD_MID,
+		LGD_OID,
+		LGD_AMOUNT,
+		LGD_TID,
+		LGD_PAYTYPE,
+		LGD_PAYDATE,
+		LGD_FINANCECODE,
+		LGD_FINANCENAME,
+		LGD_BUYER,
+		LGD_BUYERID,
+		LGD_BUYERMAIL,
+		LGD_PRODUCTINFO,
+		LGD_CARDNUM,
+		LGD_CARDINSTALLMONTH,
+		LGD_CARDNOINTYN,
+		LGD_FINANCEAUTHNUM,
+		DATE_FORMAT(INSERT_DATE,'%Y.%m.%d. %r') as INSERT_DATE,
+		LGD_STATUS_CODE,
+		LGD_STATUS,
+		LGD_IP,
+		LGD_CANCEL_DATE,
+		CANCEL_DATE,
+		CANCEL_REQ_DATE,
+		LGD_MD5,
+		LGD_RECEIPT_URL
+	</sql>
+
+	<insert id="savePayment" parameterType="com.vegemil.domain.PaymentDTO" useGeneratedKeys="true" keyProperty="memNo">
+		INSERT INTO m_payment (
+		    LGD_RESPCODE,
+			LGD_RESPMSG,
+			LGD_MID,
+			LGD_OID,
+			LGD_AMOUNT,
+			LGD_TID,
+			LGD_PAYTYPE,
+			LGD_PAYDATE,
+			LGD_FINANCECODE,
+			LGD_FINANCENAME,
+			LGD_BUYER,
+			LGD_BUYERID,
+			LGD_BUYERMAIL,
+			LGD_PRODUCTINFO,
+			LGD_CARDNUM,
+			LGD_CARDINSTALLMONTH,
+			LGD_CARDNOINTYN,
+			LGD_FINANCEAUTHNUM,
+			INSERT_DATE,
+			LGD_STATUS_CODE,
+			LGD_STATUS,
+			LGD_IP,
+			LGD_CANCEL_DATE,
+			CANCEL_DATE,
+			CANCEL_REQ_DATE,
+			LGD_MD5,
+			LGD_RECEIPT_URL
+		) VALUES (
+			#{lgdRespcode},
+			#{lgdRespmsg},
+			#{lgdMid},
+			#{lgdOid},
+			#{lgdAmount},
+			#{lgdTid},
+			#{lgdPaytype},
+			#{lgdPaydate},
+			#{lgdFinancecode},
+			#{lgdFinancename},
+			#{lgdBuyer},
+			#{lgdBuyerid},
+			#{lgdBuyermail},
+			#{lgdProductinfo},
+			#{lgdCardnum},
+			#{lgdCardinstallmonth},
+			#{lgdCardnointyn},
+			#{lgdFinanceauthnum},
+			NOW(),
+			#{lgdStatusCode},
+			#{lgdStatus},
+			#{lgdIp},
+			#{lgdCancelDate},
+			#{cancelDate},
+			#{cancelReqDate},
+			#{lgdMd5},
+			#{lgdReceiptUrl}
+		)
+		<selectKey keyProperty="rowIndex" keyColumn="ROW_INDEX" resultType="long" >
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<select id="getPayment" parameterType="long" resultType="com.vegemil.domain.PaymentDTO">
+		SELECT
+			<include refid="paymentColumns" />
+		FROM
+			m_payment
+		WHERE
+			ROW_INDEX = #{rowIndex}
+	</select>
+	
+	<select id="selectPaymentList" parameterType="com.vegemil.domain.PaymentDTO" resultType="com.vegemil.domain.PaymentDTO">
+		SELECT
+			<include refid="paymentColumns" />
+		FROM
+			 m_payment p1
+	   WHERE 
+			 p1.row_index = (SELECT MAX(p2.row_index)
+		                    FROM m_payment p2
+		                    WHERE p2.LGD_TID = p1.LGD_TID)
+		 and p1.LGD_BUYERID = #{lgdBuyerid}
+	ORDER BY p1.LGD_TID;
+	</select>
+	
+	<select id="selectPaymentCount" parameterType="com.vegemil.domain.PaymentDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_payment
+		WHERE
+			LGD_BUYERID = #{lgdBuyerid}
+	</select>
+
+	<select id="selectPaymentTotalCount" parameterType="com.vegemil.domain.PaymentDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_payment
+		WHERE
+		<include refid="CommonMapper.search" />
+	</select>
+
+</mapper>

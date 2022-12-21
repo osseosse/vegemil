@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+		<div class="paging mt50">
+			<ol class="f_pp">
+				<li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
+					<a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+				</li>
+				<li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+					<a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+				</li>
+				<li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" th:class="${pageNo == params.currentPageNo} ? 'active'">
+					<a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+				</li>
+				<li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+					<a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+				</li>
+				<li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
+					<a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+				</li>
+			</ol>
+		</div>
+	</nav>
+
+	<div th:fragment="search" id="adv-search" class="text-right mt70">
+	
+		<div class="search-container w410  inline">
+			<form id="searchForm" th:action="@{/faq/list}" method="get" th:onsubmit="return searchFaq(this)" class="form-horizontal" role="form">
+				<span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span>
+				<input type="text" placeholder="검색해 보세요 " id="mainSearchKeyword" th:value="${params.searchKeyword}">
+				<input type="hidden" name="searchKeyword" th:value="${params.searchKeyword}" />
+				<button type="submit" class="btn-search">검색</button>
+			</form>
+		</div>
+		<!-- <button type="button" class="btn btn-primary" onclick="searchFaq(null)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button> 
+		<div class="count-box pl10" th:if="${params != null and params.searchKeyword != ''}">
+			<p>총 <span th:text="${params.paginationInfo.totalRecordCoun}"></span>건</p>
+		</div>
+		<div class="faqSearch" th:if="${params != null and params.searchKeyword != ''}">
+			<p class="mt80 center f23 fw500 gray04" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}"><span class="f45 fw500 black" th:text="${params.searchKeyword}"></span> 검색 결과입니다.</p>
+			<p class="mt80 center f23 fw500 gray04" th:unless="${params != null and params.paginationInfo.totalRecordCount > 0}"><span class="f45 fw500 black" th:text="|${params.searchKeyword}|"></span> 검색 결과가 없습니다.</p>
+		</div>
+		-->
+	</div>
+
+</html>

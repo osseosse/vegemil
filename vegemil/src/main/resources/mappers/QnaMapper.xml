@@ -58,7 +58,7 @@
 		)
 	</insert>
 
-	<select id="selectQnaDetail" parameterType="long" resultType="com.vegemil.domain.QnaDTO">
+	<select id="selectQnaDetail" parameterType="com.vegemil.domain.QnaDTO" resultType="com.vegemil.domain.QnaDTO">
 		SELECT
 			<include refid="qnaColumns" />
 		FROM

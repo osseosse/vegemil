@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 연구소 소개</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopRndIntroduce h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">연구소 소개</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="03_06_greetingsPhD.html"><span>연구소장 인사말</span></a></li>
+				<li class="f18 fw500 active"><a href="#"><span>연구소 소개</span></a></li>
+				<li class="f18 fw500"><a href="#"><span>연구활동</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+        <div class="center mt50">            
+            <p class="f18 mt100 f_pp gold">Global Research &amp; Development </p>
+            <p class="f66 fw600 mt40">국내 최고 수준의<br class="mView"> 정식품 산하 연구소</p>
+            <p class="f23 mt50 fw500 black">
+                정식품 중앙연구소는 전문 연구인력과 첨단설비를 갖추었으며<br class="none">
+                체계적이고 지속적인 대두 관련 기초연구 및 다양한 기능성 식품 개발에 주력하고 있습니다.
+            </p>
+        </div>
+    </div>
+   <div class="content100 mt120">
+	   <div class="rndIntroduceBg">
+            <div class="contant1460">
+                <div class="row white">
+                   <div class="col-md-12 rndIntroduceInfo01">
+                        <p class="f45 fw600 centerMo">
+                            꾸준한 중앙연구소의 <br class="mView">R&amp;D 활동을 통해 <br class="none">
+                            글로벌 식음료 기업으로 도약하고자 합니다.
+                        </p>
+                        <ul class="mt100">
+                            <li class="f16">국산대두 및 한국농수산유통공사 안전한 수입대두 사용</li>
+                            <li class="f16 mt30">국내 공인시험기관 인정 기관</li>
+                            <li class="f16 mt30">기술 인증 및 특허 출원, 정부 지원 및 산학협동 연구</li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+		</div>
+	</div><!--//content100-->
+	
+	<div class="contant100">
+		<div class="contant1460">
+			<p class="f_pp fw600 f55 mt150 lh110">R&D<br>Center</p>
+			<p class="mt10 fw400 f18">연구소 소개</p>
+		</div>
+		<div class="row mt50">
+			<div class="col-md-12 Rnd-swi">
+					
+				  <!-- Rnd-swi Swiper -->
+				  <div class="swiper-container">
+					<div class="swiper-wrapper">
+					  <div class="swiper-slide"><div class="Rnd-img"><img src="/img/R&D/Rnd-slide01.jpg" /><p class="f18 mt20 text-right">중앙연구소 입구</p></div></div>
+					  <div class="swiper-slide"><div class="Rnd-img"><img src="/img/R&D/Rnd-slide02.jpg" /><p class="f18 mt20 text-right">연구소 전경</p></div></div>
+					  <div class="swiper-slide"><div class="Rnd-img"><img src="/img/R&D/Rnd-slide03.jpg" /><p class="f18 mt20 text-right">연구실</p></div></div>
+					  <div class="swiper-slide"><div class="Rnd-img"><img src="/img/R&D/Rnd-slide04.jpg" /><p class="f18 mt20 text-right">연구장비</p></div></div>
+					  <div class="swiper-slide"><div class="Rnd-img"><img src="/img/R&D/Rnd-slide05.jpg" /><p class="f18 mt20 text-right">연구장비</p></div></div>
+					  <div class="swiper-slide"><div class="Rnd-img"><img src="/img/R&D/Rnd-slide06.jpg" /><p class="f18 mt20 text-right">대두연구</p></div></div>
+					</div>
+					<!-- Add Pagination 
+					<div class="swiper-pagination"></div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next" ></div>
+					<div class="swiper-button-prev"></div>
+				  </div>
+
+				  <!-- Swiper JS -->
+				  <script src="/common/js/swiper.min.js"></script>
+
+				  <!-- Initialize Swiper -->
+				  <script>
+					var swiper = new Swiper('.swiper-container', {
+					  slidesPerView: 'auto',
+
+					  spaceBetween: 10,
+					  autoplay: {
+						delay: 2500,
+						disableOnInteraction: false,
+					  },
+
+					   pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+					  },
+					  navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					  },
+					   loop: true,
+					});
+				  </script>
+
+				<!-- //Rnd-swi Swiper -->
+			</div>
+		</div>
+	</div>
+
+	<div class="contant1460 mt180">
+	    <div class="row rndIntroduceInfo02">
+	        <div class="col-md-6">
+	            <p class="f38 fw600">체계적이고 지속적인 R&amp;D 활동</p>
+	            <p class="f18 gray04 mt60">
+	                대한민국 대표 두유기업에서 한 걸음 더 나아가 글로벌 식음료 기업으로의 도약을 위해 정식품은 꾸준히 연구투자를 확대하고 있습니다. 전문 연구인력과 첨단설비를 갖춘 정식품 중앙연구소는 체계적이고 지속적으로 대두 관련 기초연구 및 다양한 기능성 식품 개발에 주력하고 있으며, 다방면 신규 시장의 R&D 활동을 통한 기술 확보와 제품 개발로써 글로벌 경쟁력을 한층 강화하고 있습니다.
+	            </p>
+	        </div>
+	        <div class="col-md-6 mt50m">
+	            <p class="f38 fw600">정부&middot;대학 협력을 통한 품질향상</p>
+	            <p class="f18 gray04 mt60">
+	                더욱 우수하고 안전한 제품의 개발을 위한 R&amp;D 활동에 전념하고 있는 정식품은 현재의 위치에 만족하지 않고, 정부의 국책 연구과제 참여 및 산학협동 시스템을 통한 국내&middot;외 유수 대학과 연구자들과의 공동연구를 통해 건강에 좋은 제품의 연구개발과 지속적 품질향상에 힘쓰고 있습니다. 글로벌 식음료 기업으로 성장하기 위해 갖춰야 할 제품의 안전성과 우수한 품질에 대한 연구를 계속해나갈 것입니다.
+	            </p>
+	        </div>
+	    </div>
+	</div><!--//content1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

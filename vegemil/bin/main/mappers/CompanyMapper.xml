@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.CompanyMapper">
+
+    <sql id="mediaNewsColumns">
+        m_idx,
+		m_subject,
+		DATE_FORMAT(m_date,'%Y-%m') as m_year_month,
+		DATE_FORMAT(m_date,'%d') as m_day,
+		m_hit,
+		m_adname1,
+		m_aduri1,
+		m_adname2,
+		m_aduri2,
+		m_adname3,
+		m_aduri3,
+		m_adname4,
+		m_aduri4,
+		m_adname5,
+		m_aduri5,
+		m_adname6,
+		m_aduri6,
+		m_adname7,
+		m_aduri7,
+		m_adname8,
+		m_aduri8,
+		m_adname9,
+		m_aduri9,
+		m_adname10,
+		m_aduri10,
+		m_display,
+        DATE_FORMAT(insert_date,'%Y-%m') as insert_date,
+        DATE_FORMAT(insert_date,'%Y-%m') as modified_date
+    </sql>
+    
+    <sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != ''">
+            AND m_subject LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
+    </sql>
+
+    <!-- 게시글 저장 -->
+    <insert id="mediaNewsSave" parameterType="com.vegemil.domain.MediaNewsDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO m_media_news (
+            m_subject,
+			m_date,
+			m_hit,
+			m_adname1,
+			m_aduri1,
+			m_adname2,
+			m_aduri2,
+			m_adname3,
+			m_aduri3,
+			m_adname4,
+			m_aduri4,
+			m_adname5,
+			m_aduri5,
+			m_adname6,
+			m_aduri6,
+			m_adname7,
+			m_aduri7,
+			m_adname8,
+			m_aduri8,
+			m_adname9,
+			m_aduri9,
+			m_adname10,
+			m_aduri10,
+			m_display,
+	        insert_date,
+	        modified_date
+        ) VALUES (
+			, #{mSubject}
+			, #{mDate}
+			, #{mHit}
+			, #{mAdname1}
+			, #{mAduri1}
+			, #{mAdname2}
+			, #{mAduri2}
+			, #{mAdname3}
+			, #{mAduri3}
+			, #{mAdname4}
+			, #{mAduri4}
+			, #{mAdname5}
+			, #{mAduri5}
+			, #{mAdname6}
+			, #{mAduri6}
+			, #{mAdname7}
+			, #{mAduri7}
+			, #{mAdname8}
+			, #{mAduri8}
+			, #{mAdname9}
+			, #{mAduri9}
+			, #{mAdname10}
+			, #{mAduri10}
+			, #{mDisplay}
+            , NOW()
+            , NULL
+        )
+    </insert>
+    
+
+    <select id="mediaNewsFindByIdx" parameterType="long" resultType="com.vegemil.domain.MediaNewsDTO">
+        SELECT
+            <include refid="mediaNewsColumns" />
+        FROM
+            m_media_news
+        WHERE
+        	m_display = '1'
+       	  and
+            m_idx = #{mIdx}
+    </select>
+
+
+    <select id="mediaNewsFindAll" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.MediaNewsDTO">
+        SELECT
+            <include refid="mediaNewsColumns" />
+        FROM
+            m_media_news
+        WHERE
+            m_display = '1'
+            <include refid="search" />
+        ORDER BY
+            m_idx DESC
+       	LIMIT
+		#{paginationInfo.firstRecordIndex}, 5
+    </select>
+
+
+    <select id="mediaNewsCount" parameterType="com.vegemil.domain.SearchDTO" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            m_media_news
+        WHERE
+            m_display = '1'
+            <include refid="search" />
+    </select>
+    
+    <select id="mediaNewsCountByIdx" parameterType="long" resultType="com.vegemil.domain.FaqDTO">
+        SELECT
+            COUNT(*)
+        FROM
+            M_Faq
+        WHERE
+        	m_display = '1'
+        	and
+            m_idx = #{mIdx}
+    </select>
+    
+</mapper>

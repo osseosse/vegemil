@@ -60,12 +60,12 @@ public class QnaController extends UiUtils {
 				}
 		        
 		        model.addAttribute("member", member);
-		        returnPage = "mypage/qna";
+		        returnPage = "member/qna";
 		        
 	        }
 		} else {
 			model.addAttribute("qna", new QnaDTO());
-			returnPage = "mypage/qnaNonLogin";
+			returnPage = "member/qnaNonLogin";
 		}
 		
 		return returnPage;
@@ -73,23 +73,31 @@ public class QnaController extends UiUtils {
 	}
 	
 	@GetMapping(value = "/mypage/answer")
-	public String openQnaAnswer(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "rId", required = false) Long rId, Model model, Authentication authentication) {
+	public String openQnaAnswer(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "sIdx", required = false) Long sIdx, Model model, Authentication authentication) {
+		
+		if (sIdx == null) {
+			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/mypage/list", Method.GET, null, model);
+		}
 		
 		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
         MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
         if(member != null) {
 	        
+    		params.setSIdx(sIdx);
+    		params.setSId(member.getMId());
 	        QnaDTO qna = qnaService.getQnaDetail(params);
 			if (qna == null) {
 				return showMessageWithRedirect("올바르지 않은 접근입니다.", "/mypage/list", Method.GET, null, model);
 			} else {
+				List<QnaDTO> qnaList = qnaService.getQnaList(qna);
+	    		model.addAttribute("qnaCount", qnaList.size());
 				model.addAttribute("qna", qna);
 			}
 	        model.addAttribute("member", member);
 	        
         }
 		
-		return "mypage/qna";
+		return "member/answer";
 	}
 
 	@PostMapping(value = "/mypage/registerQna")
@@ -161,35 +169,12 @@ public class QnaController extends UiUtils {
         }
 		
 
-		return "mypage/list";
+		return "member/list";
 	}
 	
-	@GetMapping(value = "/adminQna")
-	public String adminQnaList(@ModelAttribute("params") QnaDTO params, Model model) {
-		List<QnaDTO> qnaList = qnaService.getQnaList(params);
-		model.addAttribute("qnaList", qnaList);
-
-		return "adminQna";
-	}
-
-	@GetMapping(value = "/qna/view")
-	public String openQnaDetail(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "rId", required = false) Long rId, Model model) {
-		if (rId == null) {
-			return showMessageWithRedirect("올바르지 않은 접근입니다.", "qna", Method.GET, null, model);
-		}
-
-		QnaDTO qna = qnaService.getQnaDetail(params);
-		if (qna == null) {
-			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "qna", Method.GET, null, model);
-		}
-		model.addAttribute("qna", qna);
-
-		return "qna/view";
-	}
-
 	@PostMapping(value = "/qna/delete")
-	public String deleteQna(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "idx", required = false) Long idx, Model model) {
-		if (idx == null) {
+	public String deleteQna(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "sIdx", required = false) Long sIdx, Model model) {
+		if (sIdx == null) {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/adminQna", Method.GET, null, model);
 		}
 

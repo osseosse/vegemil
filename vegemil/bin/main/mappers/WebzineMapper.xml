@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.WebzineMapper">
+
+    <sql id="webzineColumns">
+		  index_no
+		, qrt_year
+		, right(qrt_year, 4) as w_year
+		, left(qrt_year, 2) as w_quarter
+		, file_no
+		, title
+		, sns_title
+		, category
+		, remark
+		, DATE_FORMAT(insert_date,'%Y-%m-%d') as insert_date
+    </sql>
+    
+    <sql id="subscribeColumns">
+		  s_idx
+		, s_name
+		, s_hp
+		, s_memo
+		, s_active
+		, s_writedate
+		, s_email
+    </sql>
+    
+    <!-- 게시글 검색 -->
+    <sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != ''">
+            <choose>
+                <!-- 검색 유형이 있을 때 -->
+                <when test="searchType != null and searchType != ''">
+                    <choose>
+                        <when test="'title'.equals( searchType )">
+                            AND title LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'snsTitle'.equals( searchType )">
+                            AND sns_title LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'remark'.equals( searchType )">
+                            AND remark LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                    </choose>
+                </when>
+                <!-- 전체 검색일 때 때 -->
+                <otherwise>
+                    AND (
+                           title LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR sns_title LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR remark LIKE CONCAT('%', #{searchKeyword}, '%')
+                    )
+                </otherwise>
+            </choose>
+        </if>
+    </sql>
+
+    <insert id="webzineSave" parameterType="com.vegemil.domain.WebzineDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO m_webzine (
+              qrt_year
+	        , file_no
+	        , title
+	        , sns_title
+	        , category
+	        , remark
+	        , insert_date
+        ) VALUES (
+            , #{qrtYear}
+            , #{fileNo}
+            , #{title}
+            , #{snsTitle}
+            , #{category}
+            , #{remark} 
+            , NOW()
+        )
+    </insert>
+    
+    <insert id="subscribeSave" parameterType="com.vegemil.domain.SubscribeDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO M_Sabo (
+              s_name
+			, s_hp
+			, s_memo
+			, s_active
+			, s_writedate
+			, s_email
+        ) VALUES (
+            , #{sName}
+            , #{sHp}
+            , #{sMemo}
+            , #{sActive}
+            , NOW()
+            , #{sEmail}
+        )
+    </insert>
+    
+    <select id="webzineFindByIdx" parameterType="long" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            <include refid="webzineColumns" />
+        FROM
+            m_webzine
+        WHERE
+            index_no = #{indexNo}
+    </select>
+
+    <select id="webzineFindAll" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+			, right(qrt_year, 4) as w_year
+			, left(qrt_year, 2) as w_quarter
+			, file_no
+			, sns_title
+        FROM
+            m_webzine
+        ORDER BY
+            qrt_year DESC
+    </select>
+    
+    <select id="selectSubscibeAll" resultType="com.vegemil.domain.SubscribeDTO">
+        SELECT
+			  s_name
+			, s_hp
+			, s_memo
+			, s_active
+			, s_writedate
+			, s_email
+        FROM
+            M_Sabo
+        ORDER BY
+            s_writedate DESC
+    </select>
+    
+    <select id="subscibeCount" parameterType="com.vegemil.domain.SubscribeDTO" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            M_Sabo
+		WHERE
+			s_active = 1
+    </select>
+    
+    <select id="isSubscibeByEmail" parameterType="String" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            M_Sabo
+		WHERE
+			s_email = #{sEmail}
+    </select>
+
+	<select id="selectWebzineByQrtYear" parameterType="String" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+	        , sns_title
+	        , file_no
+        FROM
+            m_webzine
+        WHERE
+            qrt_year = #{qrtYear}
+        ORDER BY
+            file_no
+    </select>
+    
+    <select id="selectWebzine" parameterType="com.vegemil.domain.WebzineDTO" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            <include refid="webzineColumns" />
+        FROM
+            m_webzine
+        WHERE
+            qrt_year = #{qrtYear} and file_no like CONCAT('%',#{fileNo},'%')
+    </select>
+    
+    <select id="selectWebzineRandom" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            index_no
+			, qrt_year
+			, file_no
+			, title
+			, sns_title
+        FROM
+            m_webzine
+        Order by
+        	rand()
+		Limit
+			4
+    </select>
+    
+    <select id="selectWebzineYear" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            distinct substring(qrt_year, 4, 4) as qrt_year
+        FROM
+            m_webzine
+        Order by
+        	qrt_year desc
+    </select>
+    
+    <select id="selectWebzineQrt" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            distinct qrt_year
+			, substring(qrt_year,2,1) as qrt_year2
+        FROM
+            m_webzine
+        Order by
+        	qrt_year asc
+    </select>
+    
+    <select id="selectWebzineLink" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            CONCAT(qrt_year, '/', file_no) as qrt_year
+			, sns_title
+        FROM
+            m_webzine
+        Order by
+        	file_no asc
+    </select>
+    
+    <select id="selectWebzineQ" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+            , substring(file_no, 4, 2) as file_no 
+            , sns_title
+        FROM
+            m_webzine
+        WHERE
+        	qrt_year like CONCAT('%',#{qrtYear},'%')
+          and
+          	sns_title != '메인'
+        Order by
+        	qrt_year desc
+    </select>
+    
+    <select id="selectWebzine02" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+            , substring(file_no, 4, 2) as file_no 
+            , sns_title
+        FROM
+            m_webzine
+        WHERE
+        	remark like '%아는 만큼 보이는 행복 육아%'
+          or
+          	remark like '%임신과 편견%'
+          or
+          	remark like '%육아박사%'
+          or
+          	remark like '%톡톡!%'
+          or
+          	category = '임신,육아'
+        Order by
+        	index_no desc
+    </select>
+    
+    <select id="selectWebzine03" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+            , substring(file_no, 4, 2) as file_no 
+            , sns_title
+        FROM
+            m_webzine
+        WHERE
+        	remark like '%레시피%' and title not like '%베지밀 베이비 TALK%' and qrt_year not like '%2016' and title not like '%과일이 꼭꼭 씹히는 두유%' and title not like '%똑똑한 엄마들의 선택%'
+          and
+          	title not like '%DCF 뉴스%'
+          and
+          	title not like '%넬보스코%'
+          or
+          	category = '레시피'
+        Order by
+        	index_no desc
+    </select>
+    
+    <select id="selectWebzine04" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+            , substring(file_no, 4, 2) as file_no 
+            , sns_title
+        FROM
+            m_webzine
+        WHERE
+        	remark like '%여유만만 생활 꿀팁'
+          or
+          	remark like '%생활 속 꿀팁%'
+          or
+          	category = '꿀팁'
+        Order by
+        	index_no desc
+    </select>
+    
+    <select id="selectWebzine05" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+            , substring(file_no, 4, 2) as file_no 
+            , sns_title
+        FROM
+            m_webzine
+        WHERE
+        	remark like '%영화와 떠나다%'
+          or
+          	remark like '%세계를 보다%'
+          or
+          	remark like '%국내 여행%'
+          or
+          	category = '여행'
+        Order by
+        	index_no desc
+    </select>
+    
+    <select id="selectWebzine06" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            qrt_year
+            , substring(file_no, 4, 2) as file_no 
+            , sns_title
+        FROM
+            m_webzine
+        WHERE
+        	remark like '%제품 이야기%'
+          or
+          	((file_no = 'sub02.aspx' and qrt_year != 'q2_2019' and qrt_year != 'q4_2018' and qrt_year != 'q4_2017' and qrt_year != 'q3_2017') and title not like '%신년사%')
+          or
+          	category = '베지밀'
+        Order by
+        	index_no desc
+    </select>
+
+    <select id="webzineCount" parameterType="com.vegemil.domain.SearchDTO" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            m_webzine
+    </select>
+    
+    <select id="webzineCountByIdx" parameterType="long" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            COUNT(*)
+        FROM
+            m_webzine
+        WHERE
+            index_no = #{indexNo}
+    </select>
+
+</mapper>

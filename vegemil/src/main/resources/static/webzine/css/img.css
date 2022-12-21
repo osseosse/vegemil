@@ -1,0 +1,777 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------------------------------------------------
+
+	! 반응형 사이트 특성상 배경으로 이미지처리 합니다.
+
+	- 분기별 이미지폴더(ex 'Q2_2016') 를 만들어서 폴더경로만 변경해 줍니다. 
+	- sub페이지는 상당빅배너만 CSS에서 적용해 줍니다.
+	- CSS에서 배경을 정의하는 이유는 width, height에서 비율을 유지하고 줄여주는 것 이 가능하기 때문
+	- 16Q2 -> "2016년도 2분기"
+
+
+--------------------------------------------------------------------------------------------------*/
+
+
+/* --------------------------------------------------------------------------------------
+				2016_2분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */   
+.slide-bg_16Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_16Q2  { position: absolute;left: 0;top: 0; width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* 커버미사용시 z-index:0 */
+/* slide-bg 커버기능 */
+.slide-bg_16Q2:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: #000;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.4;}
+/* main 02 */	.post-featured-img.square_2_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_16Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_16Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_16Q2	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_16Q2	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/09_main.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_16Q2_main   { background:#cb9630 }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/13_01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_16Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub search Top이미지  */   
+.slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine//search.jpg) no-repeat scroll 0 0; }
+.slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+/* --------------------------------------------------------------------------------------
+				2016_3분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */   
+.slide-bg_16Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_16Q3  { position: absolute;left: 0;top: 0; width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* 커버미사용시 z-index:0 */
+/* slide-bg 커버기능 */
+.slide-bg_16Q3:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%; /*background: #000*/;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.4;}
+/* main 02 */	.post-featured-img.square_2_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_16Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_16Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_16Q3	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_16Q3	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_16Q3_main   { background:#cb9630 }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/13_01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_16Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub search Top이미지  */   
+.slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
+.slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+
+
+
+/* --------------------------------------------------------------------------------------
+				2016_4분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_16Q4  { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_16Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* 커버미사용시 z-index:0 */
+/* slide-bg 커버기능 */
+.slide-bg_16Q4:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%; background: #000;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.2;}
+/* main 02 */	.post-featured-img.square_2_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_16Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_16Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_16Q4	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_16Q4	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_16Q4_main   { background:#cb9630 }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/13_01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_16Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub search Top이미지  */   
+.slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
+.slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+
+/* --------------------------------------------------------------------------------------
+				2017_1분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_17Q1  { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_17Q1  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_17Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_17Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_17Q1	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_17Q1	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_17Q1_main   { background:#cb9630 }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_17Q1_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/01_top.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_17Q1_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/13.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_17Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 14 Top이미지  */   
+.slide-bg-sub14_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/14.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub14_17Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 15 Top이미지  */   
+.slide-bg-sub15_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/15.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub15_17Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub search Top이미지  */   
+.slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
+.slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+
+/* --------------------------------------------------------------------------------------
+				2017_2분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_17Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_17Q2  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_17Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_17Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_17Q2	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_17Q2	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_17Q2_main   { background:#cb9630 }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_17Q2_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/01_top.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_17Q2_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/13.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_17Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 14 Top이미지  */   
+.slide-bg-sub14_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/14.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub14_17Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 15 Top이미지  */   
+.slide-bg-sub15_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/15.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub15_17Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub search Top이미지  */   
+.slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
+.slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+
+/* --------------------------------------------------------------------------------------
+				2017_3분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_17Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_17Q3  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_17Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_17Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_17Q3	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_17Q3	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_17Q3_main   { background:#cb9630 }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_17Q3_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/01_top.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_17Q3_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/13.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_17Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 14 Top이미지  */   
+.slide-bg-sub14_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/14.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub14_17Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 15 Top이미지  */   
+.slide-bg-sub15_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/15.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub15_17Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub search Top이미지  */   
+.slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
+.slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+
+/* --------------------------------------------------------------------------------------
+				2017_4분기 
+--------------------------------------------------------------------------------------- */
+/* main 00 */
+.slide-bg_17Q4  { background:#ccc url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_17Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 01 */	.post-featured-img.square_1_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/01.jpg) ; background-position:center; }
+/* main 02 */	.post-featured-img.square_2_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_17Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_17Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_17Q4	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_17Q4	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/10.jpg) ; background-position:center; }
+					.post-featured-img.square_6_17Q4:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%; /*background: #000*/;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.4;}
+/* main 11 */	.post-featured-img.square_7_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.full_2_17Q4_main   { background:#cb9630 }
+
+/* sub 00 Top이미지 */ 
+.slide-bg-sub01_17Q4_00 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00_1.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_17Q4_00 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 01 Top이미지 */ 
+.slide-bg-sub01_17Q4_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_17Q4_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지  */   
+.slide-bg-sub13_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/13.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_17Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 14 Top이미지  */   
+.slide-bg-sub14_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/14.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub14_17Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 15 Top이미지(퀴즈메인)  */   
+.slide-bg-sub15_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/15.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub15_17Q4 { position: absolute;left: 0;top: 0; ba ckground-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 16 Top이미지(퀴즈)  */   
+.slide-bg-sub16_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/16.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub16_17Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+/* --------------------------------------------------------------------------------------
+				2018_1분기 
+--------------------------------------------------------------------------------------- */
+/* main 00 */
+.slide-bg_18Q1  { background:#ccc url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_18Q1  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 01 */	.post-featured-img.square_1_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) ; background-position:center; }
+/* main 02 */	.post-featured-img.square_2_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.square_6_18Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_1_18Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.long_3_18Q1	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_18Q1	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.full_10_18Q1	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/12.jpg) ; background-position:center; }
+/* main 13 */	.post-featured-img.square_13_18Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/13_1.jpg) ; background-position:center;  }
+
+/* sub 01 Top이미지 */ 
+.slide-bg-sub01_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지 */   
+.slide-bg-sub12_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 13 Top이미지(퀴즈)  */   
+.slide-bg-sub13_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/13.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub13_18Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+/* --------------------------------------------------------------------------------------
+				2018_2분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_18Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_18Q2  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_18Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_18Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.half_3_18Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_18Q2	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/12.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_13_18Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/12_1.jpg) ; background-position:center;  }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지(퀴즈) */   
+.slide-bg-sub12_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+/* --------------------------------------------------------------------------------------
+				2018_3분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_18Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_18Q3  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_18Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_18Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.half_3_18Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_18Q3	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/12.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_13_18Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/12_1.jpg) ; background-position:center;  }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지(퀴즈) */   
+.slide-bg-sub12_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+/* --------------------------------------------------------------------------------------
+				2018_4분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_18Q4  { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_18Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_18Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_18Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.half_3_18Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_18Q4	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/12.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_13_18Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/12_1.jpg) ; background-position:center;  }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지(퀴즈) */   
+.slide-bg-sub12_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+
+
+
+/* --------------------------------------------------------------------------------------
+				2019_1분기 
+--------------------------------------------------------------------------------------- */
+/* main 01 */
+.slide-bg_19Q1  { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css에 메인슬라이드 탑의 class를 공통으로 변경 */
+.slide-bg_19Q1  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
+/* main 02 */	.post-featured-img.square_2_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/02.jpg) ; background-position:center; }
+/* main 03 */	.post-featured-img.square_3_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/03.jpg) ; background-position:center; }
+/* main 04 */	.post-featured-img.square_4_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/04.jpg) ; background-position:center; }
+/* main 05 */	.post-featured-img.square_5_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/05.jpg) ; background-position:center; }
+/* main 06 */	.post-featured-img.half_1_19Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/06.jpg) ; background-position:center; }
+/* main 07 */	.post-featured-img.half_2_19Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/07.jpg) ; background-position:center; }
+/* main 08 */	.post-featured-img.half_3_19Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/08.jpg) ; background-position:center; }
+/* main 09 */	.post-featured-img.full_1_19Q1	 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/09.jpg) ; background-position:center; }
+/* main 10 */	.post-featured-img.square_6_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/10.jpg) ; background-position:center; }
+/* main 11 */	.post-featured-img.square_7_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/11.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_8_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/12.jpg) ; background-position:center; }
+/* main 12 */	.post-featured-img.square_13_19Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/12_1.jpg) ; background-position:center;  }
+/* sub 01 Top이미지 */   
+.slide-bg-sub01_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/01.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 02 Top이미지 */   
+.slide-bg-sub02_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/02.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub02_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 03 Top이미지 */   
+.slide-bg-sub03_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/03.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub03_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 04 Top이미지 */   
+.slide-bg-sub04_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/04.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub04_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 05 Top이미지 */   
+.slide-bg-sub05_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/05.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub05_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 06 Top이미지 */   
+.slide-bg-sub06_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/06.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub06_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 07 Top이미지 */   
+.slide-bg-sub07_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/07.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub07_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 08 Top이미지 */   
+.slide-bg-sub08_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/08.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub08_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 09 Top이미지 */   
+.slide-bg-sub09_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/09.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub09_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 10 Top이미지 */   
+.slide-bg-sub10_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/10.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub10_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 11 Top이미지 */   
+.slide-bg-sub11_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/11.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub11_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+/* sub 12 Top이미지(퀴즈) */   
+.slide-bg-sub12_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/12.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub12_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
+

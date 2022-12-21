@@ -1,7 +1,11 @@
 package com.vegemil.util;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +40,18 @@ public class UiUtils {
 		params.put("searchKeyword", criteria.getSearchKeyword());
 
 		return params;
+	}
+	
+	//클라이언트 ip주소 가져오기
+	public String getClientIp(HttpServletRequest req) {
+	    String ip = "";
+	    try {
+			byte[] bytes = Inet4Address.getLocalHost().getAddress();
+			ip = new String(bytes);
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+	    return ip;
 	}
 
 }

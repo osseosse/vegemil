@@ -57,14 +57,13 @@ dl,
 dd,ul {margin-bottom:0 !important;}
 label {margin-bottom:0 !important;}
 
-body {}
+body {overflow-x: hidden;}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
 
 
-
-
+/*@import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');*/
 
 
 
@@ -169,11 +168,24 @@ body {}
 	01. font / color / margin / padding 
 =========================== */
 @media (max-width: 3000px) {
+	.f1 {font-size:1px}
+	.f2 {font-size:2px}
+	.f3 {font-size:3px}
+	.f4 {font-size:4px}
+	.f5 {font-size:5px}
+	.f6 {font-size:6px}
+	.f7 {font-size:7px}
+	.f8 {font-size:8px}
+	.f9 {font-size:9px}
+	.f10 {font-size:10px}
+	.f11 {font-size:11px}
+	.f12 {font-size:12px}
 	.f13 {font-size:13px}
 	.f14 {font-size:14px}
 	.f16 {font-size:16px}
 	.f18 {font-size:18px}
 	.f20 {font-size:20px}
+	.f22 {font-size:22px} 
 	.f23 {font-size:23px}
 	.f27 {font-size:27px}
 	.f30 {font-size:30px}
@@ -227,6 +239,7 @@ body {}
 	.mt50 {margin-top:50px !important}
 	.mt55 {margin-top:55px !important}
 	.mt60 {margin-top:60px !important}
+	.mt65 {margin-top:65px !important}
 	.mt70 {margin-top:70px !important}
 	.mt80 {margin-top:80px !important}
 	.mt90 {margin-top:90px !important}
@@ -420,6 +433,7 @@ body {}
 	.lh200 {line-height:200%}
 	.lh210 {line-height:210%}
 	.lh220 {line-height:220%}
+	.imgMo{display: none}
 }
 
 
@@ -461,12 +475,60 @@ body {}
 	.f36 {font-size:28px}
 	.f38 {font-size:30px}
 	.f45 {font-size:36px}
-	.f52 {font-size:41px}
+	.f52 {font-size:41px; letter-spacing:-1.5px; }
 	.f55 {font-size:44px}
 	.f60 {font-size:48px}
 	.f66 {font-size:52px}
 	.f70 {font-size:56px}
 	.f80 {font-size:64px}
+
+
+
+	/* padding-top */
+	.pt10{padding-top:5px !important}
+	.pt20{padding-top:10px !important}
+	.pt30{padding-top:15px !important}
+	.pt40{padding-top:20px !important}
+	.pt50{padding-top:25px !important}
+	.pt60{padding-top:30px !important}
+	.pt70{padding-top:35px !important}
+	.pt80{padding-top:40px !important}
+	.pt90{padding-top:45px !important}
+	.pt100{padding-top:50px !important}
+	.pt110{padding-top:55px !important}
+	.pt120{padding-top:60px !important}
+	.pt130{padding-top:65px !important}
+	.pt140{padding-top:70px !important}
+	.pt150{padding-top:75px !important}
+	.pt160{padding-top:80px !important}
+	.pt170{padding-top:85px !important}
+	.pt180{padding-top:90px !important}
+	.pt190{padding-top:95px !important}
+	.pt200{padding-top:100px !important}
+	/* padding-bottom */
+	.pb10{padding-bottom:5px !important}
+	.pb20{padding-bottom:10px !important}
+	.pb30{padding-bottom:15px !important}
+	.pb40{padding-bottom:20px !important}
+	.pb50{padding-bottom:25px !important}
+	.pb60{padding-bottom:30px !important}
+	.pb70{padding-bottom:35px !important}
+	.pb80{padding-bottom:40px !important}
+	.pb90{padding-bottom:45px !important}
+	.pb100{padding-bottom:50px !important}
+	.pb110{padding-bottom:55px !important}
+	.pb120{padding-bottom:60px !important}
+	.pb130{padding-bottom:65px !important}
+	.pb140{padding-bottom:70px !important}
+	.pb150{padding-bottom:75px !important}
+	.pb160{padding-bottom:80px !important}
+	.pb170{padding-bottom:85px !important}
+	.pb180{padding-bottom:90px !important}
+	.pb190{padding-bottom:95px !important}
+	.pb200{padding-bottom:100px !important}
+
+
+
 }
 
 

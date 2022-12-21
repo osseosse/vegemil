@@ -34,25 +34,7 @@
 <!-- ================================ 
 		Header
 ================================ -->
-<header class="white">
-	
-</header>
-<script>
-	/* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'header' ).load( './mainHeader.html' );
-	$( '.vpd01' ).load( './load/vpd01.html' );
-	$( '.vpd02' ).load( './load/vpd02.html' );
-	$( '.vpd03' ).load( './load/vpd03.html' );
-	$( '.vpd04' ).load( './load/vpd04.html' );
-	$( '.vpd05' ).load( './load/vpd05.html' );
-	$( '.vpd06' ).load( './load/vpd06.html' );
-	$( '.VPL01X262' ).load( './load/VPL01X262.html' );
-	$( '.VPM01X262' ).load( './load/VPM01X262.html' );
-	$( '.SCI04X262' ).load( './load/SCI04X262.html' );
-	$( '.VBB01X262' ).load( './load/VBB01X262.html' );
-  } );
-</script>
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
 <!-- ================================ 
 		// Header
 ================================ -->

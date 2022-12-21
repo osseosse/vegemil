@@ -1,0 +1,348 @@
+@charset "utf-8";
+/*==============================================
+
+    ----------------------------------------------------------------
+	* Date		:	2020.06.08
+	* Modify		:   
+	* Name		:	reset.css
+	----------------------------------------------------------------
+	
+	- Description -
+
+	00. reset			:	css 초기화
+
+==============================================*/
+
+
+/* ===========================
+	00. reset
+=========================== */
+html, body, /*div,*/ span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong,  tt, var,
+b, u, i, center,input,select,textarea,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin:0px; padding:0px; /*vertical-align:top; */}
+body {width:100%;  color:#343434;  font-size:15px; line-height:1; letter-spacing:-0.025em; word-break:break-all; }
+ul, ol, dl {list-style-type:none;}
+h1, h2, h3, h4, h5, h6, th { font-weight:normal;}
+table {border-collapse:collapse; border-spacing:0; word-break:break-all;}
+table th { font-weight:normal;}
+img, button, fieldset, abbr, acronym {border:0;}
+label {cursor:pointer;}
+address, caption, cite, code, dfn, em, var {font-style:normal; font-weight:normal;}
+strong { font-weight:normal;}
+caption, legend {width:0px; height:0px; font-size:0px; line-height:0px; visibility:hidden;}
+img {max-width:100%;}
+q:before, q:after {content:'';}
+hr {display:none;}
+iframe {border:none; outline:none;}
+br{font-family:dotum}
+sup {vertical-align:top}
+/* html5 ie9 else */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block; padding:0; margin:0;}
+
+a {text-decoration:none;color:#343434;cursor:pointer;}
+a:link, a:visited {text-decoration:none;color:#343434;}
+a:hover, a:focus, a:active {text-decoration:none;}
+
+
+
+/* ===========================
+	01. margin / padding
+=========================== */
+@media (max-width: 3000px) {
+.mt-15 {margin-top:-15px }
+.mt-20 {margin-top:-20px }
+.mt-30 {margin-top:-30px }
+.mt-50 {margin-top:-50px}
+.mt-70 {margin-top:-70px }
+.mt-120 {margin-top:-120px }
+.mt-200 {margin-top:-200px }
+
+/* margin-top */
+.mt0 {margin-top:0 }
+.mt1 {margin-top:1px }
+.mt2 {margin-top:2px }
+.mt3 {margin-top:3px }
+.mt4 {margin-top:4px }
+.mt5 {margin-top:5px }
+.mt6 {margin-top:6px }
+.mt7 {margin-top:7px }
+.mt8 {margin-top:8px }
+.mt9 {margin-top:9px}
+.mt10 {margin-top:10px}
+.mt13 {margin-top:13px}
+.mt15 {margin-top:15px}
+.mt17 {margin-top:17px}
+.mt20 {margin-top:20px}
+.mt25 {margin-top:25px}
+.mt30 {margin-top:30px}
+.mt40 {margin-top:40px}
+.mt50 {margin-top:50px}
+.mt55 {margin-top:55px}
+.mt60 {margin-top:60px}
+.mt70 {margin-top:70px}
+.mt80 {margin-top:80px}
+.mt90 {margin-top:90px}
+.mt100 {margin-top:100px}
+.mt110 {margin-top:110px}
+.mt120 {margin-top:120px}
+.mt130 {margin-top:130px }
+.mt140 {margin-top:140px }
+.mt150 {margin-top:150px }
+.mt160 {margin-top:160px }
+.mt170 {margin-top:170px }
+.mt180 {margin-top:180px }
+.mt190 {margin-top:190px }
+.mt200 {margin-top:200px }
+.mt210 {margin-top:210px }
+.mt220 {margin-top:220px }
+.mt230 {margin-top:230px }
+.mt240 {margin-top:240px }
+.mt250 {margin-top:250px }
+.mt260 {margin-top:260px }
+.mt270 {margin-top:270px }
+.mt280 {margin-top:280px }
+.mt290 {margin-top:290px }
+.mt300 {margin-top:300px }
+.mt350 {margin-top:350px }
+/* margin-bottom */
+.mb10{margin-bottom:10px }
+.mb20{margin-bottom:20px }
+.mb30{margin-bottom:30px }
+.mb40{margin-bottom:40px }
+.mb50{margin-bottom:50px }
+.mb60{margin-bottom:60px }
+.mb70{margin-bottom:70px }
+.mb80{margin-bottom:80px }
+.mb90{margin-bottom:90px }
+.mb100{margin-bottom:100px }
+.mb110{margin-bottom:110px }
+.mb120{margin-bottom:120px }
+.mb130{margin-bottom:130px }
+.mb140{margin-bottom:140px }
+.mb150{margin-bottom:150px }
+.mb160{margin-bottom:160px }
+.mb170{margin-bottom:170px }
+.mb180{margin-bottom:180px }
+.mb190{margin-bottom:190px }
+.mb200{margin-bottom:200px }
+
+/* padding-top */
+.pt10{padding-top:10px}
+.pt20{padding-top:20px}
+.pt30{padding-top:30px}
+.pt40{padding-top:40px}
+.pt50{padding-top:50px}
+.pt60{padding-top:60px}
+.pt70{padding-top:70px}
+.pt80{padding-top:80px}
+.pt90{padding-top:90px}
+.pt100{padding-top:100px}
+.pt110{padding-top:110px}
+.pt120{padding-top:120px}
+.pt130{padding-top:130px}
+.pt140{padding-top:140px}
+.pt150{padding-top:150px}
+.pt160{padding-top:160px}
+.pt170{padding-top:170px}
+.pt180{padding-top:180px}
+.pt190{padding-top:190px}
+.pt200{padding-top:200px}
+/* padding-bottom */
+.pb10{padding-bottom:10px}
+.pb20{padding-bottom:20px}
+.pb30{padding-bottom:30px}
+.pb40{padding-bottom:40px}
+.pb50{padding-bottom:50px}
+.pb60{padding-bottom:60px}
+.pb70{padding-bottom:70px}
+.pb80{padding-bottom:80px}
+.pb90{padding-bottom:90px}
+.pb100{padding-bottom:100px}
+.pb110{padding-bottom:110px}
+.pb120{padding-bottom:120px}
+.pb130{padding-bottom:130px}
+.pb140{padding-bottom:140px}
+.pb150{padding-bottom:150px}
+.pb160{padding-bottom:160px}
+.pb170{padding-bottom:170px}
+.pb180{padding-bottom:180px}
+.pb190{padding-bottom:190px}
+.pb200{padding-bottom:200px}
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 992px) {
+.mt-120 {margin-top:0px }
+.mt-150 {margin-top:-50px}
+.mt-200 {margin-top:-50px}
+/* margin-top */
+.mt0 {margin-top:0 }
+.mt1 {margin-top:1px }
+.mt2 {margin-top:2px }
+.mt3 {margin-top:3px }
+.mt4 {margin-top:4px }
+.mt5 {margin-top:5px }
+.mt6 {margin-top:6px }
+.mt7 {margin-top:7px }
+.mt8 {margin-top:8px }
+.mt9 {margin-top:9px}
+.mt10 {margin-top:5px}
+.mt13 {margin-top:6px}
+.mt15 {margin-top:7px}
+.mt17 {margin-top:8px}
+.mt20 {margin-top:10px}
+.mt25 {margin-top:12px}
+.mt30 {margin-top:15px}
+.mt40 {margin-top:20px}
+.mt50 {margin-top:25px}
+.mt55 {margin-top:27px}
+.mt60 {margin-top:30px}
+.mt70 {margin-top:35px}
+.mt80 {margin-top:40px}
+.mt90 {margin-top:45px}
+.mt100 {margin-top:50px}
+.mt110 {margin-top:55px}
+.mt120 {margin-top:60px}
+.mt130 {margin-top:65px }
+.mt140 {margin-top:70px }
+.mt150 {margin-top:75px }
+.mt160 {margin-top:80px }
+.mt170 {margin-top:85px }
+.mt180 {margin-top:90px }
+.mt190 {margin-top:95px }
+.mt200 {margin-top:100px }
+.mt210 {margin-top:105px }
+.mt220 {margin-top:110px }
+.mt230 {margin-top:115px }
+.mt240 {margin-top:120px }
+.mt250 {margin-top:125px }
+.mt260 {margin-top:130px }
+.mt270 {margin-top:135px }
+.mt280 {margin-top:140px }
+.mt290 {margin-top:145px }
+.mt300 {margin-top:150px }
+.mt350{margin-top:150px }
+/* margin-bottom */
+.mb10{margin-bottom:5px }
+.mb20{margin-bottom:10px }
+.mb30{margin-bottom:15px }
+.mb40{margin-bottom:20px }
+.mb50{margin-bottom:25px }
+.mb60{margin-bottom:30px }
+.mb70{margin-bottom:35px }
+.mb80{margin-bottom:40px }
+.mb90{margin-bottom:45px }
+.mb100{margin-bottom:50px }
+.mb110{margin-bottom:55px }
+.mb120{margin-bottom:60px }
+.mb130{margin-bottom:65px }
+.mb140{margin-bottom:70px }
+.mb150{margin-bottom:75px }
+.mb160{margin-bottom:80px }
+.mb170{margin-bottom:85px }
+.mb180{margin-bottom:90px }
+.mb190{margin-bottom:95px }
+.mb200{margin-bottom:100px }
+/* padding-top */
+.pt10{padding-top:5px }
+.pt20{padding-top:10px }
+.pt30{padding-top:15px }
+.pt40{padding-top:20px }
+.pt50{padding-top:25px }
+.pt60{padding-top:30px }
+.pt70{padding-top:35px }
+.pt80{padding-top:40px }
+.pt90{padding-top:45px }
+.pt100{padding-top:50px }
+.pt110{padding-top:55px }
+.pt120{padding-top:60px }
+.pt130{padding-top:65px }
+.pt140{padding-top:70px }
+.pt150{padding-top:75px }
+.pt160{padding-top:80px }
+.pt170{padding-top:85px }
+.pt180{padding-top:90px }
+.pt190{padding-top:95px }
+.pt200{padding-top:100px }
+/* padding-bottom */
+.pb10{padding-bottom:5px }
+.pb20{padding-bottom:10px }
+.pb30{padding-bottom:15px }
+.pb40{padding-bottom:20px }
+.pb50{padding-bottom:25px }
+.pb60{padding-bottom:30px }
+.pb70{padding-bottom:35px }
+.pb80{padding-bottom:40px }
+.pb90{padding-bottom:45px }
+.pb100{padding-bottom:50px }
+.pb110{padding-bottom:55px }
+.pb120{padding-bottom:60px }
+.pb130{padding-bottom:65px }
+.pb140{padding-bottom:70px }
+.pb150{padding-bottom:75px }
+.pb160{padding-bottom:80px }
+.pb170{padding-bottom:85px }
+.pb180{padding-bottom:90px }
+.pb190{padding-bottom:95px }
+.pb200{padding-bottom:100px }
+
+}
+
+@media (max-width:768px) {
+/* 모바일전용 : margin-top */
+
+.mt10m {margin-top:10px}
+.mt13m {margin-top:13px}
+.mt15m {margin-top:15px}
+.mt17m {margin-top:17px}
+.mt20m {margin-top:20px}
+.mt25m {margin-top:25px}
+.mt30m {margin-top:30px}
+.mt40m {margin-top:40px}
+.mt50m {margin-top:50px}
+.mt55m {margin-top:55px}
+.mt60m {margin-top:60px}
+.mt70m {margin-top:70px}
+.mt80m {margin-top:80px}
+.mt90m {margin-top:90px}
+.mt100m {margin-top:100px}
+.mt110m {margin-top:110px}
+.mt120m {margin-top:120px}
+.mt130m {margin-top:130px }
+.mt140m {margin-top:140px }
+.mt150m {margin-top:150px }
+
+.mb10m {margin-bottom:10px}
+.mb13m {margin-bottom:13px}
+.mb15m {margin-bottom:15px}
+.mb17m {margin-bottom:17px}
+.mb20m {margin-bottom:20px}
+.mb25m {margin-bottom:25px}
+.mb30m {margin-bottom:30px}
+.mb40m {margin-bottom:40px}
+.mb50m {margin-bottom:50px}
+.mb55m {margin-bottom:55px}
+.mb60m {margin-bottom:60px}
+.mb70m {margin-bottom:70px}
+.mb80m {margin-bottom:80px}
+.mb90m {margin-bottom:90px}
+.mb100m {margin-bottom:100px}
+.mb110m {margin-bottom:110px}
+.mb120m {margin-bottom:120px}
+.mb130m {margin-bottom:130px }
+.mb140m {margin-bottom:140px }
+.mb150m {margin-bottom:150px }
+}

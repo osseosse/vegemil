@@ -42,7 +42,7 @@ public class PaginationInfo {
 			criteria.setRecordsPerPage(10);
 		}
 		if (criteria.getPageSize() < 5 || criteria.getPageSize() > 20) {
-			criteria.setPageSize(5);
+			criteria.setPageSize(10);
 		}
 
 		this.criteria = criteria;

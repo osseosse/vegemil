@@ -9,10 +9,16 @@ import com.vegemil.domain.ProductDTO;
 @Mapper
 public interface ProductMapper {
 
-	public ProductDTO selectProductDetail(ProductDTO params);
+	public ProductDTO selectProductDetail(Long pIdx);
 
 	public List<ProductDTO> selectProductList(String searchKeyword);
+	
+	public List<ProductDTO> selectRecProduct(String categoryCode);
+	
+	public List<ProductDTO> selectBrandStroyList();
 
 	public int selectProductTotalCount();
 
+	public int selectBrandStroyCount();
+	
 }

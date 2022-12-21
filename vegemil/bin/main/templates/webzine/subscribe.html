@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<title>정식품 웹진 구독</title>
+    <head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="contant1160" >
+		<form th:action="|@{/webzine/saveSabo}|" th:object="${subscribe}" method="post">
+		<div class="row mt90h">
+			<div class=" col-md-12">
+				<p class="f52 fw600 mt130 black center">정식품웹진 신청 및 변경</p>
+				<p class="f18 fw400 mt20 gray04 center">(주)정식품웹진을 신청하거나 신청 내용을 변경할 수 있습니다. <br>정확한 메일주소와 연락처를 기재해 주시기 바랍니다.</p>	
+			</div>
+			<div class="col-md-12 mt100">
+				<p class="f18 fw500 black">개인정보의 수집 이용에 대한 안내</p>
+				<div class="center0 mt20">
+					<table cellspacing="0" border="0" class="int f14 gray04">
+						<colgroup>
+							<col width="15%">
+							<col width="85%">
+						</colgroup>
+						<tr>
+							<th>수집학목</th>
+							<td>성명, 이메일주소, 전화번호,휴대폰번호(SMS 알림 요청시 선택) 문의/신고접수 및 결과 회신</td>
+						</tr>
+						<tr>
+							<th>수집목적</th>
+							<td>원칙적으로 개인정보 수집 및 이용목적이 달성된 후에 해당 정보를 지체없이파기합니다.</td>
+						</tr>
+						<tr>
+							<th>이용기간</th>
+							<td>단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 일정기간 동안 개인정보를 보관할 수 있습니다.</td>
+						</tr>
+					</table>
+					<p class="mt10 gray04 f14 fw400"><span class="mr20">* 위 개인정보수집 방법에 동의하십니까?(필수) </span>
+						<input id="radioStip1" type="radio" name="gStip" value="radioStip1" /> <label for="radioStip1">동의합니다</label>&nbsp;&nbsp;
+						<input id="radioStip2" type="radio" name="gStip" value="radioStip2" /> <label for="radioStip2">동의하지 않습니다</label>
+					</p>
+					<p class="f18 fw500 black mt100">정식품웹진 신청서</p>
+					<table cellspacing="0" border="0" class="int f14 gray04 mt10">
+						<colgroup>
+							<col width="20%">
+							<col width="80%">
+						</colgroup>
+						<tr>
+							<th>구독</th>
+							<td>
+								<input id="radioActive1" type="radio" name="sActive" value="1" /><label for="radioActive1" class="mr10">신청</label>&nbsp;
+								<input id="radioActive0" type="radio" name="sActive" value="0"/><label for="radioActive0">중지</label>
+							</td>
+						</tr>
+						<tr>
+							<th>이름</th>
+							<td><input type="text" th:field="*{sName}" class="inp04 w200" /></td>
+						</tr>
+						<tr>
+							<th>연락처</th>
+							<td><input type="text" maxlength="13" th:field="*{sHp}" class="inp04 w400" />
+							</td>
+						</tr>
+						<tr>
+							<th>이메일</th>
+							<td>
+							<input name="txtEmail" type="text" maxlength="50" id="txtEmail" class="inp04 w200"/> @  
+							<input name="txtEmail2" type="text" maxlength="50" id="txtEmail2" class="inp04 w200"/>
+								<select name="selEmail" id="selEmail" onchange="writeMailAddr();" class="sel03 ml10">
+									<option value="1">직접 입력</option>
+									<option value="naver.com">naver.com</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="hotmail.com">hotmail.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="gmail.com">gmail.com</option>
+								</select>
+							<input type="hidden" class="inp03 w200" th:field="*{sEmail}">
+							</td>
+						</tr>
+						<tr>
+							<th>메모</th>
+							<td><textarea class="basetxt h200" th:field="*{sMemo}"></textarea></td>
+						</tr>
+					</table>
+					<p class="mt20 fw400 f14 gray04">정식품웹진 발행시 이메일로 알림 서비스를 받으실 수 있습니다.</p>
+				</div>	
+			</div>
+			<div class="col-md-12 mt50 pb100">
+				<div class="w560 center0 ">
+					<ul class="joinbtnFoot mt50">
+						<li class="mr10"><button type="button" onclick="location.href='/main/webzine'" class="btnType10 f20 fw500 lh140" >취소</button></li>
+						<li>
+							<button type="submit" id="submitBtn" class="btnType17 f20 fw500 lh140">웹진신청</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header class="header" th:fragment="headerFragment">
+<script th:inline="javascript">
+/*<![CDATA[*/
+	function openNav() {
+	  document.getElementById("myNav").style.width = "100%";
+	}
+
+	function closeNav() {
+	  document.getElementById("myNav").style.width = "0%";
+	}
+	
+	function goSub(sub){
+        location.href = "/main/webzine/" + sub;
+    }
+    
+/*]]>*/
+</script>
+<div class="header2022">
+	<!-- 모바일 메뉴 -->
+	<div class="n-menu-top mView2022">
+		<p class="f_left"><a href="/"><img src="https://image.edaymall.com/images/dcf/webzine/common/logo2022.jpg" alt="정식품CI"/></a>
+		<a th:href="|/main/webzine/${qrtYear}/index.aspx|"><span>건강한 사람들의 건강한 이야기</span></a><a th:href="|/main/webzine/${qrtYear}/index.aspx|" th:text="${qrtYear}"></a></p>
+	</div>	
+	<div id="myNav" class="overlay2022">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <div class="overlay-content">
+		<ul th:if="${not #lists.isEmpty( webzineListQY )}">
+            <li th:each="webzine : ${webzineListQY}"><a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|" th:text="${webzine.snsTitle}"></a></li>
+		</ul>
+		<ul class="mnav-bottom">
+			<li><a href="/main/webzine/special/sub01.aspx">SPECIAL COLUMN</a></li>
+			<li><a href="#">검색</a></li>
+			<li><a href="#">정기구독</a></li>
+			<li><a href="#">TOP20</a></li>
+			<li><a href="#">과월호</a></li>
+		</ul>
+	  </div>
+	</div>
+	<span class="ham mView2022" onclick="openNav()"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_btn.png" /></span>
+	<!-- //모바일 메뉴 -->
+	<div class="w1140 wView2022">
+		<div class="n-menu-top">
+			<p class="f_left"><a href="/Main/"><img src="https://image.edaymall.com/images/dcf/webzine/common/logo2022.jpg" alt="정식품CI"/></a>
+			<a th:href="|/main/webzine/${qrtYear}/index.aspx|"><span>건강한 사람들의 건강한 이야기</span></a><a th:href="|/main/webzine/${qrtYear}/index.aspx|"></a></p>
+			<ul class="f_right nm-search">
+				<li><a href="/Main/webzine/searchNew.aspx"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_search_2022.png" alt="검색"/><p>검색</p></a></li>
+				<li><a href="/Main/customer/offlineNews.aspx?page_code=OLN"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_subscribe_2022.png" alt="확대"/><p>정기구독</p></a></li>
+			</ul>
+		</div>				
+	</div>
+	<div class="wLine wView2022">
+		<div class="w1140">
+			<div class="n-menu-middle">
+				<ul>
+				<li><a href="/main/webzine/special/sub01.aspx">SPECIAL COLUMN</a></li>
+				<li><a href="/main/webzine/special/sub1.aspx">임신&육아</a></li>
+				<li><a href="/main/webzine/special/sub3.aspx">레시피</a></li>
+				<li><a href="/main/webzine/special/sub4.aspx">국내여행</a></li>
+				<li><a href="/main/webzine/special/sub5.aspx">해외여행</a></li>
+				</ul>
+				<p class="n-menu-info"><img src="https://image.edaymall.com/images/dcf/webzine/common/arrow_2022.gif" alt="확대"/>가장 인기있는 스페셜칼럼을 확인하세요.</p>
+			</div>
+			
+		</div>
+	</div>
+	<div class="w1140 wView2022">
+		<div class="n-menu-bottom">
+			<div class="f_left">
+				<span>년도 </span>
+				<select id="year" onchange="javascript:selectQrt(this.value);" th:if="${not #lists.isEmpty( webzineYear )}">
+		            <option th:each="year : ${webzineYear}" th:value="${year.qrtYear}" th:text="|${year.qrtYear}년|"></option>
+		        </select>
+				<span>분기 </span>
+				<select id="qrt" onchange="javascript:selectContents(this.value);" th:if="${not #lists.isEmpty( webzineQrt )}">
+	            	<option th:each="qrt : ${webzineQrt}" th:value="${qrt.qrtYear}" th:text="|${qrt.qrtYear2}분기|"></option>
+                </select>	
+				<span>목차 </span>
+				<select id="contents" class="w450" onchange="javascript:goSub(this.value);" th:if="${not #lists.isEmpty( webzineLink )}">
+		            <option th:each="link : ${webzineLink}" th:value="${link.qrtYear}" th:text="${link.snsTitle}"></option>
+		        </select>
+				<script th:inline="javascript">
+				/*<![CDATA[*/
+				
+                    var yearVar = $("#year option:selected").val();
+                    var qrtVar = $("#qrt option:selected").val();
+                    var curYear = [[ ${wYear} ]];
+                    var qrtYear = [[ ${qrtYear} ]];
+                    var fileNo = [[ ${fileNo} ]];
+                    
+                    $(function(){
+                        $("#qrt").prepend("<option value='0'>선택</option>");
+                        $("#contents").prepend("<option value='0'>선택</option>");   
+
+                        selectQrt(curYear);
+                        selectContents(qrtYear);
+                        $("#year").children("[value='"+ curYear + "']").prop("selected",true);
+                        $("#qrt").children("[value='"+ qrtYear + "']").prop("selected",true);
+                        $("#contents").children("[value='"+ qrtYear + "/"+ fileNo +".aspx']").prop("selected",true);
+                    });
+                    
+                    function selectQrt(year){
+                        var tmpYear1 = 'Q1_'+year;
+                        var tmpYear2 = 'Q2_'+year;
+                        var tmpYear3 = 'Q3_'+year;
+                        var tmpYear4 = 'Q4_'+year;
+                        
+                        $("#qrt option:eq(0)").prop("selected",true);
+                        selectContents("0");
+                        
+                        for(var i=1;i<$("#qrt option").size();i++){  
+                            var tmp=$("#qrt option:eq(" + i + ")").val();
+                            $("#qrt").children("[value='" + tmp + "']").hide();
+                            if($("#qrt option:eq(" + i + ")").val() == tmpYear1 || $("#qrt option:eq(" + i + ")").val() == tmpYear2 || $("#qrt option:eq(" + i + ")").val() == tmpYear3 || $("#qrt option:eq(" + i + ")").val() == tmpYear4){
+                                $("#qrt").children("[value='" + tmp + "']").show();
+                            }
+                        }
+                    }
+                    
+                    function selectContents(qrt){
+                        $("#contents option:eq(0)").prop("selected",true);
+                        
+                        for(var i=1;i<$("#contents option").size();i++){
+                            var tmpQrt = $("#contents option:eq("+i+")").val().split("/");
+                            $("#contents").children("[value='" + $("#contents option:eq("+i+")").val() + "']").hide();
+                            if(tmpQrt[0] == qrt){
+                                $("#contents").children("[value='" + $("#contents option:eq("+i+")").val() + "']").show();
+                            }  
+                        }
+                    }
+                    
+                    function goSub(sub){
+                        location.href = "/main/webzine/" + sub;
+                    }
+                    
+                /*]]>*/
+           		</script>
+			</div>
+			<div class="f_right">
+				<ul class="list__itmenu">
+					<li><a href="/main/webzine/theme.aspx">TOP20</a></li>
+					<li><a href="/main/webzine/events/event_Q4_2022.aspx">이벤트</a></li>
+					<li><a href="/main/webzine/lastlistNew.aspx">과월호</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+</header>
+</html>	

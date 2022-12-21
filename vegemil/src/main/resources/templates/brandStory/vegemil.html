@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 베지밀 스토리</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
+<!-- JS -->
+<script th:src="@{/common/js/swiper-bundle.min.js}"></script><!-- swiper(카테고리별제품 메뉴) -->
+<script th:src="@{/common/js/swiper.js}"></script><!-- swiper(카테고리별제품 메뉴) -->
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="greenHeader" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="mt90h" >
+		<div class="bg_Green h530" >
+			<div class="contant1460">
+				<div class="row">
+					<div class="col-md-12 mt150">
+						<p class="f52 fw600 lh150 white">건강하고 올바른 먹거리를 위해<br class="wView"> 사람과 진심이 함께합니다</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row bg_Gray pb120">
+			<!-- brand_big -->
+			<div class="col-md-12">
+				<div class="brand_big">
+					<div class="contant1460">
+						<div class="visual-slide">
+							 <div class="swiper-wrapper"> 
+								<div class="swiper-slide bnr_brand01">
+									<div class="slBox">
+										<div class="centerH ">
+											<p class="f_pp f18 fw500 lh120">Brand 01</p>
+											<p class="f45 fw600 lh120 mt20">베지밀</p>
+											<p class="f20 fw500 mt20">50여년 역사를 지닌 대한민국 정통두유 브랜드.<br class="wView">콩의 맛과 영양을 그대로!</p>
+											<div class="btnType25 mt30"><a href=""><img th:src="@{/img/btn/btnType25.png}" /></a></div>
+										</div>
+									</div>
+								</div>                    
+								<div class="swiper-slide bnr_brand02">
+									<div class="slBox">
+										<div class="centerH ">
+											<p class="f_pp f18 fw500 lh120">Brand 01</p>
+											<p class="f45 fw600 lh120 mt20">베지밀</p>
+											<p class="f20 fw500 mt20">50여년 역사를 지닌 대한민국 정통두유 브랜드.<br class="wView">콩의 맛과 영양을 그대로!</p>
+											<div class="btnType25 mt30"><a href=""><img th:src="@{/img/btn/btnType25.png}" /></a></div>
+										</div>
+									</div>
+								</div>                         
+								
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<script>
+					jQuery(document).ready(function() {
+						var swiper1 = new Swiper(".visual-slide", {
+							speed: 1000,
+							autoplay: {
+								delay: 5000,
+							},
+							 pagination: {
+								el: '.swiper-pagination',
+								clickable: true,
+							  },
+							navigation: {
+								nextEl: ".visual-slide .swiper-button-next",
+								prevEl: ".visual-slide .swiper-button-prev",
+							},
+							spaceBetween: 152,
+							loop: true,
+						});
+					})
+				</script>
+			</div>
+			<!-- //brand_big -->
+		</div>
+	</div>
+	<div class="contant100 bg_Gray line_bottom_gray">
+		<div class="contant1460" >
+			<div class="row">
+				<div class="col-md-12">
+					<p class="f38 fw600 ">카테고리별 제품보기</p>
+					<!-- 스크롤 -->
+					<div class="swiper-box mt30 mt30m">
+					  <div class="swiper-container" id="scroll-tags">
+						<ul class="swiper-wrapper">
+						  <li class="swiper-slide active"><a href="javascript:void(0);">전체보기</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">프리미엄 두유</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">플레인두유</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">블랙두유</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">곡물&견과 두유</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">과즙&차류 두유</a></li>
+						</ul>
+					  </div>
+					</div>
+					<!-- //스크롤 -->
+				</div>
+			</div>
+		</div><!-- //contant1460 -->
+	</div>
+
+	<div class="contant1460">
+		<div class="row mt50 line_bottom_gray pb100">
+			<div class="col-md-6 brand_thumb mt50 mt50m" id="all_new">
+				<p class="f23 fw500">신제품</p>
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 VPM05_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>프리미엄 두유</span></p></div>
+							<div class="bottom_tag"><p><span>#귀리함유</span></p><p><span>#씨리널느낌</span></p><p><span>#아침식사대용</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">베지밀 고단백두유 검은콩</p>
+						<p class="f16 mt5 fw400 gray04">고함량 단백질 12g을 한 팩으로 즐길 수 있는 프리미엄 두유</p>
+					</div>
+				</a>
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'V' and ${brandStroy.newProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m" id="all_rep">
+				<p class="f23 fw500">대표제품</p>
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 VPL01_860_02 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>플레인 두유</span></p></div>
+							<div class="bottom_tag"><p><span>#오리지날정통두유</span></p><p><span>#담백고소한맛</span></p><p><span>#아침식사대용</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">담백한 베지밀에이</p>
+						<p class="f16 mt5 fw400 gray04">40여년 역사를 지닌 베지밀 정통두유, 콩 본래의 담백한 맛과 영양을 그대로!</p>
+					</div>
+				</a>
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if=" ${brandStroy.categoryCode} == 'V' and ${brandStroy.repProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant1460 -->
+
+	<div class="contant100">
+		<div class="row">
+			<div class="col-md-12 center">
+				<p class="f18 f_pp gold mt160 fw600">Vegemil Brand Story</p>
+				<p class="f52 fw600 lh120 mt30">50여년 역사를 지닌 대한민국 정통 두유 브랜드</p>
+				<p class="f23 fw400 lh140 mt30">정식품은 ‘국민 건강을 위해 더 나은 제품을 개발한다’ 라는 사명을 가지고,<br class="wView"> 언제나 소비자의 건강과 안전을 최우선으로 생각하고 있습니다.</p>
+			</div>
+		</div>
+		<div class="row bnr_brand03 h760 mt110">
+			<div class="col-md-12">
+				<div class="centerH">
+					<p class="f18 f_pp white fw600 brand-line">Korea's First Soy Milk</p>
+					<p class="f80 f_pp white lh120 mt20 fw700">Since 1973</p>
+					<p class="f45 white lh120 mt20 fw600">베지밀의 탄생</p>
+					<p class="f18 white lh160 mt30">
+						베지밀은 정재원 회장이 의사로서의 소명의식을 바탕으로<br class="wView">30년간의 연구활동과 경험을 통해 콩의 영양적 가치를 발견하고 콩으로 만든<br class="wView">식품개발에 시간과 열성을 바쳐 탄생시킨 건강 식품입니다.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant100 -->
+
+	<div class="contant1460">
+		<div class="row mt180">
+			<div class="col-md-6 center brandMaintxt">
+				<div class="text-left">
+					<p class="f52 fw600 lh140">고객 여러분의 다양한 니즈를<br class="wView">충족하는 제품 생산을 위해<br class="wView">최선을 다하고 있습니다.</p>
+				</div>
+			</div>
+			<div class="col-md-6 center mt30m">
+				<div class="text-left">
+					<p class="f18 fw400 lh180 gray04">우수한 인재들과 함께 사명감과 자부심을 가지고 콩 관련 최고의 연구력과 기술력을 쌓고 있습니다.
+					FSSC22000(식품안전시스템), HACCP(식품안전관리인증기준)인증 획득으로 식품위생 안정성을 
+					검증받았을 뿐만 아니라 국제공인시험기관(KOLAS)으로 
+					우수한 식품 분석 기술 역량을 세계적으로 인정받았습니다.</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant1460 -->
+	<div class="contant1760">
+		<div class="row brand_bnr mt100 wView">
+			<div class="col-md-4"><div class="h200 SCI01_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 SCI03_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 CHP01_860_02"></div></div>
+			<div class="col-md-4"><div class="h200 CHD01_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 VPL01_860_02"></div></div>
+			<div class="col-md-4"><div class="h200 VBP02_860_02"></div></div>
+		</div>
+		<div class="row brand_bnr_m mt200 mView pb100">
+			<div class="col-md-12"><p class="img100"><img th:src="@{/img/product/brand/brand_all.png}" /></p></div>
+		</div>
+	</div><!-- //contant1760 -->
+	<div class="contant100_01 mt200">
+		<div class="prd_acd_m mView">
+			<ul>
+				<li class="h400 bnr_v_acd01">
+					<div class="centerH">
+						<div class="whiteBox">
+							<p class="f18 fw600 f_pp">Tasty and safe food</p>
+							<p class="mt30 f45 fw500">엄선된 콩만 사용</p>
+							<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+						</div>
+					</div>
+				</li>
+				<li class="h400 bnr_v_acd02">
+					<div class="centerH">
+						<div class="whiteBox">
+							<p class="f18 fw600 f_pp">Tasty and safe food</p>
+							<p class="mt30 f45 fw500">엄선된 콩만 사용</p>
+							<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+						</div>
+					</div>
+				</li>
+				<li class="h400 bnr_v_acd03">
+					<div class="centerH">
+						<div class="whiteBox">
+							<p class="f18 fw600 f_pp">Tasty and safe food</p>
+							<p class="mt30 f45 fw500">엄선된 콩만 사용</p>
+							<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<ul class="prd_acd wView" >
+			<li class="bnr_v_acd01 h800">
+				<!-- 기본노출 -->
+				<div class="outType">
+					<div class="centerH2">
+						<div class="mt170"><span class="f18 fw600 f_pp white lh140">Tasty and safe food</span></div>
+						<p><img th:src="@{/img/ico/brandLine.png}" /></p>
+						<p class="f27 fw600 mt20 white">엄선된 콩만 사용</p>
+						<p class="mt20"><img th:src="@{/img/ico/ico_brand_more.png}" /></p>
+					</div>
+				</div>
+				<!-- 마우스오버노출 -->
+				<div class="inType centerH">
+					<div class="whiteBox">
+						<p class="f18 fw600 f_pp">Tasty and safe food</p>
+						<p class="mt50 inType_ico"><img th:src="@{/img/ico/ico_brand_01.png}" /></p>
+						<p class="mt30 f27 fw500">엄선된 콩만 사용</p>
+						<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+					</div>
+				</div>
+			</li>
+			<li class="bnr_v_acd02 h800">
+				<!-- 기본노출 -->
+				<div class="outType">
+					<div class="centerH2">
+						<div class="mt170"><span class="f18 fw600 f_pp white lh140">Perfect nutrition balance</span></div>
+						<p><img th:src="@{/img/ico/brandLine.png}" /></p>
+						<p class="f27 fw600 mt20 white">완벽한 영양 추구</p>
+						<p class="mt20"><img th:src="@{/img/ico/ico_brand_more.png}" /></p>
+					</div>
+				</div>
+				<!-- 마우스오버노출 -->
+				<div class="inType centerH">
+					<div class="whiteBox">
+						<p class="f18 fw600 f_pp">Tasty and safe food</p>
+						<p class="mt50 inType_ico"><img th:src="@{/img/ico/ico_brand_02.png}" /></p>
+						<p class="mt30 f27 fw500">완벽한 영양 추구</p>
+						<p class="mt30 f18 fw400 gray04 lh160">두유 원액에 부족한 비타민과 무기질,<br class="wView">칼슘 등의 영양성분을 강화하여<br class="wView">보다 영양가 높은 두유를 제조합니다.</p>
+					</div>
+				</div>
+			</li>
+			<li class="bnr_v_acd03 h800">
+				<!-- 기본노출 -->
+				<div class="outType">
+					<div class="centerH2">
+						<div class="mt170"><span class="f18 fw600 f_pp white lh140">high-quality equipment</span></div>
+						<p><img th:src="@{/img/ico/brandLine.png}" /></p>
+						<p class="f27 fw600 mt20 white">첨단 멸균 시스템</p>
+						<p class="mt20"><img th:src="@{/img/ico/ico_brand_more.png}" /></p>
+					</div>
+				</div>
+				<!-- 마우스오버노출 -->
+				<div class="inType centerH">
+					<div class="whiteBox">
+						<p class="f18 fw600 f_pp">Tasty and safe food</p>
+						<p class="mt50 inType_ico"><img th:src="@{/img/ico/ico_brand_03.png}" /></p>
+						<p class="mt30 f27 fw500">첨단 멸균 시스템</p>
+						<p class="mt30 f18 fw400 gray04 lh160">균을 차단하는 테트라팩의 아셉틱<br class="wView">기술로 실온에서도 약 4~6개월 가량<br class="wView">오랫동안 보관이 가능합니다.</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="contant1760">
+		<div class="row mt180 brand-recom-box">
+			<div class="col-md-1"></div>
+			<div class="col-md-11">
+				<ul class="brandTitle">
+					<li><img th:src="@{/img/ico/ico_brand.png}" /></li>
+					<li>
+						<p class="f38 fw600 lh100">지금 이 순간! 맞춤형 추천 제품</p>
+						<p class="f18 gray04 f_pp fw400 lh140 mt15">2022, Spring </p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-2 mt70">
+				<p class="img100"><img th:src="@{/img/product/brand/brand_v01.png}" /></p>
+				<p class="f23 fw500 lh150 mt20">급찐 급빠를 위한 <br class="wView">체중조절이 필요할 때</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">콩 이외에 아무것도 첨가<br>하지 않은 100% 두유</p>
+								<p class="f18 fw400 lh160 mt15">베지밀 무첨가 두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">기존 두유 대비 칼로리를<br class="wView">40% 낮춘 식사대용 두유</p>
+								<p class="f18 fw400 lh160 mt15">베지밀 하루건강<br>칼로리컷 두유</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 ">
+				<p class="img100"><img th:src="@{/img/product/brand/brand_v02.png}" /></p>
+				<p class="f23 fw500 lh150 mt20">입맛 까다로운<br class="wView">우리 아이가 먹기 좋은</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">우리 땅에서 재배한<br>우리 콩을 갈아 만든</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 영유아식<br>우리콩 1단계</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">달콤한 땅콩향과 콩 본래의<br class="wView">담백한 맛의 조화!</p>
+								<p class="f18 fw400 lh140 mt15">달콤한 베지밀 비</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 mt50m">
+				<p class="img100"><img th:src="@{/img/product/brand/brand_v03.png}" /></p>
+				<p class="f23 fw500 lh150 mt20">나이 드신 부모님 신체활<br class="wView">건강증진에 도움되는</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">신체활력과<br>건강증진에 필요한</p>
+								<p class="f18 fw400 lh160 mt15">베지밀 5060<br>시니어두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">천천히 흡수되는 <br>당(糖)으로 담백하게</p>
+								<p class="f18 fw400 lh140 mt15">베지밀<br>에이스저당 두유</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 mt50m">
+				<p class="img100"><img th:src="@{/img/product/brand/brand_v04.png}" /></p>
+				<p class="f23 fw500 lh150 mt20">여름 맞이! 시원하고<br class="wView">맛있게 수분 충전</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">상큼한 애플망고 과즙을<br>넣은 애플망고 두유</p>
+								<p class="f18 fw400 lh140 mt15">베지밀꼭꼭 씹히는<br>애플망고 두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">달콤한 진짜 바나나 과즙과 <br>고소한 두유의 만남</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 입안 가득<br>바나나 두유</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 mt50m">
+				<p class="img100"><img th:src="@{/img/product/brand/brand_v05.png}" /></p>
+				<p class="f23 fw500 lh150 mt20">고소하고 영양가 높은<br class="wView">곡물류가 들어간</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">아침을 든든하게 채워주는<br>입자감이 살아 있는</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 17곡<br>한끼두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">몸에 좋은 국산콩으로<br>만든 프리미엄 견과 두유</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 국산콩 두유<br>아몬드와 호두</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div><!-- //contant1460 -->
+	<div class="contant100_1 bg_Blue mt250">
+		<div class="row">
+			<div class="col-md-12 pt50 pb50">
+				<div class="contant1460">
+					<div class="row">
+						<div class="col-md-6">
+							<p class="f38 fw600 white lh140">공식 온라인스토어 [이데이몰] 브랜드관</p>
+						</div>
+						<div class="col-md-4 mt10m">
+							<p class="f18 fw400 white lh160">정식품 공식 인터넷 쇼핑몰인 이데이몰은<br class="mView">고품질의 제품들은 물론, 뷰티-헬스 전문관을 운영하고 있습니다.</p>
+						</div>
+						<div class="col-md-2 mt10m">
+							<div class="btnType06"><span><a href="https://www.edaymall.com" target="_blank">View More</a></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<footer class="contant100" th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+		Footer
+================================ -->
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+	$(".swiper-slide").click(function(){
+		alert("li클릭");
+		$(".swiper-slide").removeClass("active");
+		$(this).addClass("active");
+	});
+
+/*]]>*/
+</script>
+</body>
+</html>

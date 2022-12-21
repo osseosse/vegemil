@@ -6,8 +6,12 @@ import com.vegemil.domain.ProductDTO;
 
 public interface ProductService {
 
-	public ProductDTO getProductDetail(ProductDTO params);
+	public ProductDTO getProductDetail(Long pIdx);
 
 	public List<ProductDTO> getProductList(String searchKeyword);
+	
+	public List<ProductDTO> getBrandStroyList();
+	
+	public List<ProductDTO> getRecProduct(String categoryCode);
 
 }

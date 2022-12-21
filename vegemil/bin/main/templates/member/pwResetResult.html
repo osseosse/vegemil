@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 비밀번호 변경</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<section>
+<div id="content" class="pb200">
+	<div class=" contant1460">
+		<div class="row mt90h">
+			<div class=" col-md-12 center ">
+				<p class="f36 fw600">비빌번호 변경</p>
+				<p class="f18 fw400 mt20 gray04">비밀번호가 변경되었습니다.</p>
+				<button class="btnType07 f20 fw500 lh140" type="button" onclick="location.href='/member/login'" >로그인 바로가기</button>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ 
+		Footer
+================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+		// Footer
+================================ -->
+</body>
+</html>

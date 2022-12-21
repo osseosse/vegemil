@@ -11,22 +11,23 @@ $("#overlappedID").click(function(){
 	}
 	
 	$.ajax({
-	url: "/member/idCheck",
-	data: {mId: mId},
-	success: function (data) {
-		if(data == 1) {
-			$("#idCheackOk").css('display', 'none');
-            $("#idCheackNo").css('display', 'inline-block');
-            $("#idDuplicate").val('0');
-            btnAvtive();
-		} else {
-			$("#idCheackNo").css('display', 'none');
-            $("#idCheackOk").css('display', 'inline-block');
-			$("#joinBtn").prop("type", "submit");
-			$("#idDuplicate").val('1');
+		url: "/member/idCheck",
+		data: {mId: mId},
+		success: function (data) {
+			if(data == 1) {
+				$("#idCheackOk").css('display', 'none');
+	            $("#idCheackNo").css('display', 'inline-block');
+	            $("#idDuplicate").val('0');
+	            btnAvtive();
+			} else {
+				$("#idCheackNo").css('display', 'none');
+	            $("#idCheackOk").css('display', 'inline-block');
+				$("#joinBtn").prop("type", "submit");
+				$("#idDuplicate").val('1');
+			}
 		}
-	}
 	})
+	return;
 });
 
 $('#mId').keyup(function () {
@@ -145,7 +146,7 @@ $('#selEmail').change(function(){
    });
 });
 
-$('#mId').keyup(function () {
+$('#txtEmail2').keyup(function () {
 
 	$("#mEmail").val($("#txtEmail").val()+$("#txtEmail2").val());
 	return;

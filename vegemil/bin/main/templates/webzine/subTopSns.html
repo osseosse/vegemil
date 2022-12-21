@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<th:block id="topSnsScript" th:fragment="topSnsScriptFragment">
+<script type='text/javascript'>
+//<![CDATA[	
+	var uri = window.location.href;
+	var title = "[[ ${snsTtitle} ]]";
+	var image = "https://image.edaymall.com/images/dcf/webzine/dcf_logo.jpg";
+	
+    //트위터
+	function twitter(){
+	
+		var win = window.open("http://twitter.com/intent/tweet?text=" + encodeURIComponent(title) + " " + encodeURIComponent(uri), 'twitter', 'width=500,height=364,scrollbars=no,resizable=no');
+		
+		if(win){
+			win.focus();
+		}
+	}
+	
+	//페이스북
+	function facebook() {
+	                                
+        url2 = "http://www.facebook.com/sharer.php?u="+uri;
+		url2 = url2.split("#").join("%23");
+		url2 = encodeURI(url2);
+		window.open(url2);
+		
+	}	
+	
+	function blog() {
+	    window.open("http://blog.naver.com/openapi/share?url=" + encodeURIComponent(uri) + "&title=" + encodeURIComponent(title));
+	}
+	
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[																																	
+    Kakao.init('69dcb1eae2476d998ca3272b99b45897');
+    var title = $(document).find("title").text();							
+    function kakaostory(){
+    // 스토리 공유 버튼을 생성합니다.
+        Kakao.Story.share({
+		    url: window.location.href,
+		    text: title
+	    });
+    }
+//]]>
+</script>
+</th:block>
+</html>

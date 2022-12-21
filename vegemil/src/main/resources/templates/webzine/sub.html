@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<title th:text="${snsTitle}"></title>
+    <head th:replace="webzine/head :: headFragment"></head>
+    <meta property="og:title" th:attr="content=${snsTitle}" >
+	<!-- <meta property="og:url" th:attr="content=${webPath}" > -->
+<body>
+<div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
+<!-- ******************* header ******************* -->
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ******************* // header ******************* -->	
+<div id="wrapper"> 
+    <div class="content-holder1">
+        <div class="content h550-3 home-content">
+            <div class="hero-content fl-wrap h550-3">
+				<!-- IMG -->
+                <div th:class="|${qrtYear}_${num}|"></div>
+            </div>
+        </div>
+    </div>
+	<!-- ******************* remote ******************* -->
+   	<th:block th:replace="webzine/tourRemote :: tourFragment"></th:block>
+    <!-- ******************* // remote ******************* -->
+    <div class="content">
+		<div class="wrap-inner5">
+			<div class="container">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<!-- <th:block th:replace="webzine/subTopSns :: topSnsFragment"></th:block>-->
+					<div class="subTopSNS">
+					    <span><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_insta.gif" alt="인스타그램" ></a></span>
+					    <span><a href="javascript:facebook();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_facebook.gif" alt="페이스북" ></a></span>
+					    <span><a href="javascript:blog();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_blog.gif" alt="블로그" ></a></span>
+					    <span><a href="javascript:kakaostory();"><img src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png"/></a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ******************* main-content ******************* -->
+	<div th:insert="|webzine/html/sub${wYear}/${qrtYear}_${fileNo}|"></div>
+	<!-- ******************* //main-content ******************* -->
+	<div class="content">
+		<div class="wrap-inner5">
+			<div class="container">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<!-- ******************* navi ******************* -->
+					<th:block th:replace="webzine/subNewNavy :: navyFragment"></th:block>
+					<!-- ******************* // navi ******************* -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 추천기사
+	<th:block th:replace="webzine/recommandView :: recViewFragment"></th:block> -->
+	<section>
+	    <div class="wrap-inner6">
+	        <div class="container pb130-m">
+	            <div class="project-detail-wrap fl-wrap ">
+	                <div class="row">
+	                    <p class="center type03 mt30-m">&middot; 추천기사 &middot;</p>
+	                    <ul>
+		                    <li th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+			                    <a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|" >
+			                    <div class="col-md-3 mt25-m">
+				                    <div class="images" > 
+					                    <p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"><span></span></p>
+				                    </div>
+				                    <ul class="txtBox02 hvr-overline-from-left">
+					                    <li class="type18" th:text="${recWebzine.snsTitle}"></li>
+				                    </ul>
+			                    </div>
+			                    </a>
+		                    </li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<!-- //추천기사 -->
+	<!-- ******************* footer ******************* -->
+	<footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
+	<!-- ******************* // footer ******************* -->
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+    function moveUrl(str1, str2){
+        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	}
+    
+});
+//]]>
+</script>
+</body>
+</html>

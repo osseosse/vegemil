@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
 <!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
@@ -30,15 +30,15 @@
 					<p class="mt20 fw400 mt30 f20">비밀번호</p>
 					<p class="mt10 center"><input id="txtPw" name="password" type="password" placeholder="비밀번호" class="inp01"></p>
 					<p class="error" id="pwCheck" style="display: none;">비밀번호는  필수 입력값입니다.</p>
-					<p class="checkStyle gray03 f16 mt15"><a href="#"><input type="checkbox" id="remember-me" name="remember-me" /><label for="remember-me"><span></span>로그인 유지</label></a></p>
+					<p class="checkStyle gray03 f16 mt15"><a href="#"><input type="checkbox" id="wk02" name="wk02" /><label for="wk02"><span></span>로그인 유지</label></a></p>
 					<div align="center" th:if="${param.error}">
 		                <p class="error"><img th:src="@{/img/error.png}">아이디 패스워드가 올바르지 않거나 비활성화된 회원입니다.</p>
 		            </div>
 					<p class="mt50 center"><button type="submit" id="loginBtn" disabled="disabled" class="btnType07  f20 fw500 lh140" >로그인</button></p>
 					<ul class="loginFoot mt30">
 						<li><a href="/member/join">회원가입</a></li>
-						<li><a href="/member/findEmail">아이디찾기</a></li>
-						<li><a href="/member/findPassword">비밀번호찾기</a></li>
+						<li><a href="/member/idSearch">아이디찾기</a></li>
+						<li><a href="/member/pwSearch">비밀번호찾기</a></li>
 					</ul>
 				</div>
 				</form>

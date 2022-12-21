@@ -125,7 +125,7 @@
 			  m_pwd_moddate = NOW()
 			, m_pwd = #{mPwd}
 		WHERE
-			m_id = #{mId}
+			m_idx = #{mIdx}
 	</update>
 
 	<select id="selectMemberList" parameterType="com.vegemil.domain.MemberDTO" resultType="com.vegemil.domain.MemberDTO">
@@ -141,13 +141,31 @@
 		<include refid="CommonMapper.paging" />
 	</select>
 	
+	<select id="getMemId" parameterType="com.vegemil.domain.MemberDTO" resultType="String">
+		SELECT
+			m_id
+		FROM
+			M_Member
+		WHERE
+			m_name = #{mName} and m_hp = #{mHp}
+	</select>
+	
 	<select id="selectMemberCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
 			M_Member
 		WHERE
-			m_id = #{mId}
+			m_id = #{mId} and m_email = #{mEmail}
+	</select>
+	
+	<select id="getMemberIdx" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
+		SELECT
+			m_idx
+		FROM
+			M_Member
+		WHERE
+			m_id = #{mId} and m_email = #{mEmail}
 	</select>
 
 	<select id="selectMemberTotalCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">

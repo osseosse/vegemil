@@ -7,7 +7,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
 <!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
@@ -98,8 +98,8 @@
 								<div class="boxType">
 									<div class="baseRadioBox">
 									
-										<input type="radio" id="smsAgree1" th:attr="checked=*{mSmssend == '1' ? 'true' : 'false'}" value="1" name="mSmssend" /><label for="smsAgree1"><span></span>수신동의</label>
-										<input type="radio" id="smsAgree2" th:attr="checked=*{mSmssend == '0' ? 'true' : 'false'}" value="0" name="mSmssend" /><label for="smsAgree2"><span></span>수신거부</label>
+										<input type="radio" id="smsAgree1" th:attr="checked=*{mSmssend == '1' ? 'true' : 'false'}" value="1" name="smsAgree" /><label for="smsAgree1"><span></span>수신동의</label>
+										<input type="radio" id="smsAgree2" th:attr="checked=*{mSmssend == '0' ? 'true' : 'false'}" value="0" name="smsAgree" /><label for="smsAgree2"><span></span>수신거부</label>
 									</div>
 								</div>
 							</li>
@@ -133,8 +133,8 @@
 							<li>
 								<div class="boxType">
 									<div class="baseRadioBox">
-										<input type="radio" id="emailAgree1" th:attr="checked=*{mEmailsend == '1' ? 'true' : 'false'}" name="mEmailsend" value="1" /><label for="emailAgree1"><span></span>수신동의</label>
-										<input type="radio" id="emailAgree2" th:attr="checked=*{mEmailsend == '0' ? 'true' : 'false'}" name="mEmailsend" value="0"/><label for="emailAgree2"><span></span>수신거부</label>
+										<input type="radio" id="emailAgree1" th:attr="checked=*{mEmailsend == '1' ? 'true' : 'false'}" name="emailAgree" value="1" /><label for="emailAgree1"><span></span>수신동의</label>
+										<input type="radio" id="emailAgree2" th:attr="checked=*{mEmailsend == '0' ? 'true' : 'false'}" name="emailAgree" value="0"/><label for="emailAgree2"><span></span>수신거부</label>
 									</div>
 								</div>
 							</li>
@@ -157,8 +157,6 @@
 					</ul>
 				</div>
 			</div>
-			
-
 			<div class="w560 center0 mb200">
 				<ul class="joinbtnFoot mt50">
 					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
@@ -167,7 +165,6 @@
 			</div>
 			
 		</div>
-		
 		</form>
 		<br class="clear">
 	</div><!-- //contant1460 -->

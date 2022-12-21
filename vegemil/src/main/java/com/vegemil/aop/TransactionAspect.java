@@ -21,7 +21,7 @@ public class TransactionAspect {
 	@Autowired
 	private PlatformTransactionManager transactionManager;
 
-	private static final String EXPRESSION = "execution(* com.hyechun..service.*Impl.*(..))";
+	private static final String EXPRESSION = "execution(* com.vegemil..service.*Impl.*(..))";
 
 	@Bean
 	public TransactionInterceptor transactionAdvice() {

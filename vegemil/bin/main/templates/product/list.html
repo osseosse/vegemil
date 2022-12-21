@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+   <head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="contant100 mt90h" >
+		<div class="row">
+			<!-- 슬라이드 -->
+			<div  id="slider3">
+				<div class="slider" >
+					<div class="slider_area">
+						<div class="slides ">
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI01_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 구수한 사골육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 구수한 사골육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI02_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 담백한 채소육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI03_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 시원한 채소육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 시원한 채소육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle VPM05_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 고단백 두유 검은콩</p>
+										<p class="f13 fw400 gray04 mt10">국산 검은콩으로 든든하고 고소한<br>고단백 두유 검은콩</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle VPM04_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 프리바이오틱스 두유</p>
+										<p class="f13 fw400 gray04 mt10">가볍게 비우고, 건강하게 채우자<br>프리바이오틱스</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI01_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">진한 콩국물</p>
+										<p class="f13 fw400 gray04 mt10">콩을 통째로 갈아 만든<br>진한 콩국물</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI01_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">진한 콩국물 검은콩</p>
+										<p class="f13 fw400 gray04 mt10">콩을 통째로 갈아 만든<br>진한 콩국물 검은콩</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle CHD02_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">그린비아 프로틴밀 2종</p>
+										<p class="f13 fw400 gray04 mt10">간편하게 챙기는<br>18g의 고단백 균형 건강 </p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle VPM02_860_02 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 루테인 두유 검은콩</p>
+										<p class="f13 fw400 gray04 mt10">루테인이 두유 속으로!<br>루테인 두유</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<a class="slider_left"><img th:src="@{/img/btn_ppl_left.png}" alt="왼쪽" /></a>
+					<a class="slider_right"><img th:src="@{/img/btn_ppl_right.png}" alt="오른족" /></a>
+				</div>
+			</div>  
+			<!-- //슬라이드 -->
+		</div>
+	</div>
+	<div class="contant1760" >
+		<div class="row">
+			<div class="col-md-12 mt100">
+				<!-- tabs3 -->
+				<div class="prd_wrap mt20">
+					<ul class="tabs3">
+						<li class=""><a href="#V"><p class="ico_VE">두유 (베지밀)</p></a></li>
+						<li ><a href="#P"><p class="ico_VM">임산부 영양식</p></ a></li>
+						<li ><a href="#B"><p class="ico_VB">영&middot;유아식</p></a></li>
+						<li ><a href="#G"><p class="ico_GE">특수영양식</p></a></li>
+						<li ><a href="#H"><p class="ico_GH">건강식품</p></a></li>
+						<li ><a href="#F"><p class="ico_SC">식재료</p></a></li>
+						<li ><a href="#M"><p class="ico_CV">식물성음료</p></a></li>
+						<li ><a href="#S"><p class="ico_CD">음료</p></a></li>
+						<li ><a href="#M"><p class="ico_CW">생수</p></a></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('.prd_wrap').basicTabs3();/* basicTabs3 변경 */
+					});
+				</script>
+				<!-- //tabs3 -->
+			</div>
+		</div>
+		<div id="flotingPage" class="mt110">
+			<!-- tabs3 content -->
+			<div class="tab_content3">
+				<div id="V">
+					<div class="floting-left_prd">
+						<div class="floting">
+							<div class="flotingContent"><!-- 2022-11-01 "flotingContent" 클래스추가 --> 
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="active"><input type="radio" name="rr" id="#0" value="" > <label for="#0"><span></span>전체보기</label></li>
+									<li><input type="radio" name="rr" id="#1" value="VPM" > <label for="#1"><span></span>프리미엄 두유</label></li>
+									<li><input type="radio" name="rr" id="#2" value="VPL" > <label for="#2"><span></span>플레인 두유</label></li>
+									<li><input type="radio" name="rr" id="#3" value="VBL" > <label for="#3"><span></span>블랙두유</label></li>
+									<li><input type="radio" name="rr" id="#4" value="VGR" > <label for="#4"><span></span>곡물&견과 두유</label></li>
+									<li><input type="radio" name="rr" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
+								</ul>
+							</div>
+							<br class="clear">
+							<div class="h300"></div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd" th:if="${not #lists.isEmpty( productList )}">
+						<div class="row" id="v_tab">
+							<div class="col-md-4 col-6" id="v_list" th:if="${product.categoryCode == 'V'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+											<span class="f14" th:text="${product.tag2}"></span>
+											<span class="f14" th:text="${product.tag3}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div><br class="clear">
+				</div><br class="clear"><!-- //floting-right_prd -->
+				<div id="P"><!-- 임산 수유 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">임산 &middot; 수유부 영양식</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'P'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="B"><!-- 영유아식 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">프리미엄</a><span></span></li>
+									<li><a href="#">우리콩</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'B'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="G"><!-- 특수영양식(그린비아) -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">일반영양식</a><span></span></li>
+									<li><a href="#">전문영양식</a><span></span></li>
+									<li><a href="#">연하식</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'G'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="H"><!-- 건강식품 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">균형영양음료</a><span></span></li>
+									<li><a href="#">건강기능식품</a><span></span></li>
+									<li><a href="#">생식&선식</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'H'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="F"><!-- 식재료 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">콩국물&육수</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'F'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="M"><!-- 식물성음료 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">코코넛&아몬드 음료</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'M'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="${product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="S"><!-- 음료 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">과일&야채음료</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+				
+				<div id="W"><!-- 생수 -->
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">생수</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6" th:if="${not #lists.isEmpty( productList )}" th:each="product, i : ${productList}" >
+								<div class="prd-list" th:if="${product.categoryCode == 'W'}" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newProduct == 1}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/vegemil/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear"><!-- //floting-right_prd -->
+			</div><!-- //tabs3 content -->
+		</div><br class="clear"><!-- //flotingPage -->
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+$(document).ready(function(){
+	//카테고리 필터링
+	$("input[name='rr']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#v_tab #v_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#v_tab #v_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+	});
+	
+});
+</script>
+</body>
+</html>

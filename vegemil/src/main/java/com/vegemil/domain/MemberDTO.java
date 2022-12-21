@@ -18,7 +18,7 @@ import lombok.Setter;
 public class MemberDTO implements UserDetails {
 
 	private Long   mIdx;
-	private String   mId;
+	private String mId;
 	private String mName;
 	private String mPwd;
 	private String mSex;
@@ -53,7 +53,7 @@ public class MemberDTO implements UserDetails {
 	private String mDualYn;
 	private String mDi;
 
-	 @Override
+	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(this.mAuth));
     }

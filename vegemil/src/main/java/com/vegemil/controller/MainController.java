@@ -60,6 +60,12 @@ public class MainController {
 		return "rnd/"+viewName;
     }
 	
+	@RequestMapping(value = "/story/{viewName}")
+    public String moveStory(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		
+		return "story/"+viewName;
+    }
+	
 	@GetMapping("/mail")
     public String dispMail() {
         return "utils/mail";

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<title>스페셜페이지</title>
+    <head th:replace="webzine/head :: headFragment"></head>
+    <link rel=stylesheet type=text/css href="/webzine/css/aos.css" />
+	<link rel=stylesheet type=text/css href="/webzine/css/effect.css" />
+    <link rel="stylesheet" type=text/css href="/webzine/css/style_tour.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.9/jquery.touchSwipe.min.js"></script>
+    <meta property="og:title" content="스페셜페이지" >
+<script type='text/javascript'>
+//<![CDATA[	
+	var url = window.location.href;
+	var title = "스페셜페이지";
+
+//페이스북
+	function facebook() {
+		var url ="https://www.vegemil.co.kr/Main/webzine/special/sub3.aspx";
+        url2 = "http://www.facebook.com/sharer.php?u="+url;
+		url2 = url2.split("#").join("%23");
+		url2 = encodeURI(url2);
+		window.open(url2);
+	}	
+
+	
+	function blog() {
+		window.open("http://blog.naver.com/openapi/share?url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title));
+	}
+//]]>		
+</script>
+<body>
+<div id="wrapper" class="x-hidden">
+	<!-- ******************* main-content ******************* -->
+	<div th:insert="|webzine/html/special/sub${fileNo}|"></div>
+	<!-- ******************* //main-content ******************* -->
+	<!-- ******************* footer ******************* -->
+	<footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
+	<!-- ******************* // footer ******************* -->
+</div>
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+    function moveUrl(str1, str2){
+        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	}
+});
+//]]>
+</script>
+<script src="/webzine/js/tour_script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		//duration: 700
+	});
+</script>
+</body>
+</html>

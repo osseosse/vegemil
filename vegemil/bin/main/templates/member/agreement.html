@@ -2,14 +2,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-	<title>정식품</title>
-    <head th:replace="fragments/head :: headFragment"></head>
-</head>
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
 <link th:href="@{/common/css/modality.css}" rel="stylesheet">
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
 <!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
