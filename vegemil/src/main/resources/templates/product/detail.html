@@ -15,6 +15,7 @@
 	<div class="contant1760 mt90h" >
 
 		<div class="row prd-sel">
+		<!-- 메뉴 개발 필요
 			<div class="col-md-8 mt50">
 				<select class="sel03 w180 mr5">
 					<option>두유(베지밀)</option>
@@ -45,20 +46,19 @@
 					<option>베지밀 고칼슘 두유</option>
 				</select>
 			</div>
+			 -->
 			<div class="col-md-4 mt50">
 				<p class="f14 fw400 black  float-right btnType18"><a href="#"><img  th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
 			</div>
 		</div>
 		<div class="row pro-top-tab">
-			<p class="js">🡇 그린비아만 썸네일 2개만 노출</p>
 			<div class="col-md-8 mt50 ">
 				<!-- tabs4 -->
 				<div class="prd_thumb">
 					<ul class="tabs4">
 						<li><a href="#photo01"><div th:class="|${product.productClass1} h190|"></div></a></li>
 						<li><a href="#photo02"><div th:class="|${product.productClass2} h190|"></div></a></li>
-						<li><a href="#photo03"><div th:class="|${product.productClass3} h190|"></div></a></li>
-					
+						<li th:if="${product.categoryCode} != 'G'"><a href="#photo03"><div th:class="|${product.productClass3} h190|"></div></a></li>
 					</ul>
 				</div>
 				<script type="text/javascript">
@@ -97,19 +97,19 @@
 					<p class="f38 fw600 lh130 mt20" th:text="${product.pName}"></p>
 					<p class="mt10 gray04" th:text="${product.description}"></p>	
 					<ul class="info_ul mt40">
-						<li >
+						<li th:if="${product.capacity1} != null">
 							<p><img th:src="@{/img/ico/ico_info01.png}" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">용량1</span><span class="f16 f_pp fw400" th:text="${product.capacity1}"></span></p>
 						</li>
-						<li>
+						<li th:if="${product.capacity2} != null">
 							<p><img th:src="@{/img/ico/ico_info02.png}" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">용량2</span><span class="f16 f_pp fw400" th:text="${product.capacity2}"></span></p>
 						</li>
-						<li >
+						<li th:if="${product.kcal1} != null">
 							<p><img th:src="@{/img/ico/ico_info03.png}" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">칼로리1</span><span class="f16 f_pp fw400" th:text="${product.kcal1}"></span></p>
 						</li>
-						<li >
+						<li th:if="${product.kcal2} != null">
 							<p><img th:src="@{/img/ico/ico_info04.png}" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">칼로리2</span><span class="f16 f_pp fw400" th:text="${product.kcal2}"></span></p>
 						</li>
@@ -126,7 +126,7 @@
 					</ul>
 					<ul class="info_btn_box mt40">
 						<li><p class="btnType19"><a th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
-						<li><p class="btnType20"><a href="#yysWrap">영양정보</a></p></li>
+						<li><p class="btnType20"><a href="#section-02">영양정보</a></p></li>
 					</ul>
 				</div>
 			</div>

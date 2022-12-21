@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 그린비아 브랜드관</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<script src='/common/js/swiper-bundle.min.js'></script><!-- swiper(카테고리별제품 메뉴) -->
+<script src='/common/js/swiper.js'></script><!-- swiper(카테고리별제품 메뉴) -->
+<body>
+<!-- ================================ Header ================================ -->
+<header class="puppleHeader" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" >
+	<div class="mt90h" >
+		<div class="bg_Pupple h530" >
+			<div class="contant1460">
+				<div class="row">
+					<div class="col-md-12 mt150">
+						<p class="f52 fw600 lh150 white">건강하고 올바른 먹거리를 위해<br class="wView"> 사람과 진심이 함께합니다</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row bg_Gray pb120">
+			<!-- brand_big -->
+			<div class="col-md-12">
+				<div class="brand_big">
+					<div class="contant1460">
+						<div class="visual-slide">
+							 <div class="swiper-wrapper"> 
+								<div class="swiper-slide bnr_brand01">
+									<div class="slBox">
+										<div class="centerH ">
+											<p class="f_pp f18 fw500 lh120">Brand 01</p>
+											<p class="f45 fw600 lh120 mt20">베지밀</p>
+											<p class="f20 fw500 mt20">50여년 역사를 지닌 대한민국 정통두유 브랜드.<br class="wView">콩의 맛과 영양을 그대로!</p>
+											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+										</div>
+									</div>
+								</div>                    
+								<div class="swiper-slide bnr_brand02">
+									<div class="slBox">
+										<div class="centerH ">
+											<p class="f_pp f18 fw500 lh120">Brand 02</p>
+											<p class="f45 fw600 lh120 mt20">그린비아</p>
+											<p class="f20 fw500 mt20">그린비아는 1991년 국내기술력으로 탄생한<br class="wView">국내최초 경장영양식 선도 브랜드입니다.</p>
+											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide bnr_brand09">
+									<div class="slBox">
+										<div class="centerH ">
+											<p class="f_pp f18 fw500 lh120">Brand 03</p>
+											<p class="f45 fw600 lh120 mt20">심천수</p>
+											<p class="f20 fw500 mt20">지리산에서 만들어진 자연 그대로의 깨끗함.<br class="wView">부드럽게 마시는 맛있는 물!</p>
+											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+										</div>
+									</div>
+								</div> 
+								<div class="swiper-slide bnr_brand04">
+									<div class="slBox">
+										<div class="centerH ">
+											<p class="f_pp f18 fw500 lh120">Brand 04</p>
+											<p class="f45 fw600 lh120 mt20">간단요리사</p>
+											<p class="f20 fw500 mt20">주방의 든든한 지원군! <br class="wView">간단요리사는 밋밋한 요리에 깊은 맛을 더해줍니다.</p>
+											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+										</div>
+									</div>
+								</div>  
+							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<script>
+					jQuery(document).ready(function() {
+						var swiper1 = new Swiper(".visual-slide", {
+							speed: 1000,
+							autoplay: {
+								delay: 5000,
+							},
+							 pagination: {
+								el: '.swiper-pagination',
+								clickable: true,
+							  },
+							navigation: {
+								nextEl: ".visual-slide .swiper-button-next",
+								prevEl: ".visual-slide .swiper-button-prev",
+							},
+							spaceBetween: 152,
+							loop: true,
+						});
+					})
+				</script>
+			</div>
+			<!-- //brand_big -->
+		</div>
+	</div>
+	<div class="contant100 bg_Gray line_bottom_gray">
+		<div class="contant1460" >
+			<div class="row">
+				<div class="col-md-12">
+					<p class="f38 fw600 ">카테고리별 제품보기</p>
+					<!-- 스크롤 -->
+					<div class="swiper-box mt30 mt30m">
+					  <div class="swiper-container" id="scroll-tags">
+						<ul class="swiper-wrapper">
+						  <li class="swiper-slide active"><a href="javascript:void(0);">전체보기</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">일반영양식</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">전문영양식</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">연하식</a></li>
+						  <li class="swiper-slide"><a href="javascript:void(0);">건강식품</a></li>
+						</ul>
+					  </div>
+					</div>
+					<!-- //스크롤 -->
+				</div>
+			</div>
+		</div><!-- //contant1460 -->
+	</div>
+
+	<div class="contant1460">
+		<div class="row mt50 line_bottom_gray pb100">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">신제품</p>
+				<!-- 전체보기 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL03_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#소아환자균형영양식</span></p><p><span>#성장에필요한영양성분구성</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 키즈</p>
+						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //전체보기 > 신제품 -->
+				<!-- 일반영양식 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL03_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#소아환자균형영양식</span></p><p><span>#성장에필요한영양성분구성</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 키즈</p>
+						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //일반영양식 > 신제품 -->
+				<!-- 전문영양식 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GED04_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>전문영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#당뇨식</span></p><p><span>#발효성당류제한</span></p><p><span>#식이섬유</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 당뇨솔루션</p>
+						<p class="f16 mt5 fw400 gray04">장관계 민감도가 높은 당뇨환자를 위한 전문영양식</p>
+					</div>
+				</a>
+				<!-- //전문영양식 > 신제품 -->
+				<!-- 연하식 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GDY01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>연하식</span></p></div>
+							<div class="bottom_tag"><p><span>#자유로운점도조절</span></p><p><span>#간편한사용</span></p><p><span>#무미무취무색</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 연하솔루션</p>
+						<p class="f16 mt5 fw400 gray04">음식물을 삼키는데 어려움을 겪는 분들을 위한</p>
+					</div>
+				</a>
+				<!-- //연하식 > 신제품 -->
+				<!-- 건강식품 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 CHD01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>건강식품</span></p></div>
+							<div class="bottom_tag"><p><span>#동식물성균형단백질</span></p><p><span>#필수아미노산</span></p><p><span>#아몬드와호두</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 프로틴밀 아몬드와 호두</p>
+						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //건강식품 > 신제품 -->
+				<div class="row">
+					<div class="col-md-6">
+						<div class="recom">
+							<a href="#">
+								<div class="VGR03_860_01 h260 reImg mt60"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p>건강식품</p></div>
+									<p class="f20 fw500 black lh160 mt20">그린비아 프로틴밀 아몬드와 호두</p>
+									<div class="key02 f14 gray04 mt20"><p>#귀리함유</p><p>#시리얼느낌</p><p>#아침식사대용</p></div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="recom">
+							<a href="#">
+								<div class="VPM02_860_01 h260 reImg mt60"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p>건강식품</p></div>
+									<p class="f20 fw500 black lh160 mt20">그린비아 멀티케어 프로틴</p>
+									<div class="key02 f14 gray04 mt20"><p>#식물성건강식재료</p><p>#콩의맛과영양</p><p>#프로틴</p></div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">대표제품</p>
+				<!-- 전체보기 > 대표제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL02_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#고소한검은참깨</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 마일드케어 검은참깨</p>
+						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반식사가 힘들거나, 소화기능이 약하신 분들을 위한 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //전체보기 > 대표제품 -->
+				<!-- 일반영양식 > 대표제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL04_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#편리성</span></p><p><span>중쇄지방산함유</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 플러스 케어</p>
+						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반식사가 힘들거나, 소화기능이 약하신 분들을 위한 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //일반영양식 > 대표제품 -->
+				<!-- 전문영양식 > 대표제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GEI06_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>전문영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#발효성당류제한</span></p><p><span>#가수분해유청단백</span></p><p><span>#경관급식</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 알티에이치</p>
+						<p class="f16 mt5 fw400 gray04">장을 자극하는 '발효성 당류'를 제한한 전문영양식</p>
+					</div>
+				</a>
+				<!-- //전문영양식 > 대표제품 -->
+				<!-- 연하식 > 대표제품 -->
+				<p class="js">제품이 1개뿐, 신제품 1개 노출만 적용</p>
+				<!-- //연하식 > 대표제품 -->
+				<!-- 건강식품 > 대표제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 CHP01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>건강식품</span></p></div>
+							<div class="bottom_tag"><p><span>#47가지국내산100</span></p><p><span>#컬러푸드</span></p><p><span>#간편한섭취</span></p></div>
+						</div>
+
+						<p class="f27 mt40 fw500">정식품 오색채움 한끼생식</p>
+						<p class="f16 mt5 fw400 gray04">47가지 국내산 100% 컬러푸드</p>
+					</div>
+				</a>
+				<!-- //건강식품 > 대표제품 -->
+				<div class="row">
+					<div class="col-md-6">
+						<div class="recom">
+							<a href="#">
+								<div class="VPL02_860_01 h260 reImg mt60"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p>전문영양식</p></div>
+									<p class="f20 fw500 black lh160 mt20">그린비아 DM</p>
+									<div class="key02 f14 gray04 mt20"><p>#당뇨 환자용</p><p>#균형영야식</p><p>#디엠</p></div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="recom">
+							<a href="#">
+								<div class="VBL05_860_02 h260 reImg mt60"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p>전문영양식</p></div>
+									<p class="f20 fw500 black lh160 mt20">그린비아 장솔루션</p>
+									<div class="key02 f14 gray04 mt20"><p>#식물성건강식재료</p><p>#국내산검은콩</p><p>#칼슘강화</p></div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant1460 -->
+
+	<div class="contant100">
+		<div class="row">
+			<div class="col-md-12 center">
+				<p class="f18 f_pp gold mt160 fw600">The First, Greenbia</p>
+				<p class="f52 fw600 lh120 mt30">국내기술력으로 탄생한 국내최초 경장영양식 선도 브랜드</p>
+				<p class="f23 fw400 lh140 mt30">수술 또는 특정 질환으로 일반적인 식사가 어려운<br class="webView">환자들의 영양 보충을 위한 특수용도 식품 브랜드입니다.</p>
+			</div>
+		</div>
+		<div class="row  mt110">
+			<div class="col-md-12 bnr_brand08 h760">
+				<div class="centerH">
+					<p class="f18 f_pp white fw600 brand-line">First &middot; Balance &middot; Safety</p>
+					<p class="f80 f_pp white lh120 mt20 fw700">Since 1991</p>
+					<p class="f45 white lh120 mt20 fw600">그린비아의 탄생</p>
+					<p class="f18 white lh160 mt30">
+						그린비아는 국내 최초의 경장 영양식 브랜드로 환자의 질환 및 용도에 따라 설계된<br class="wView">
+						특수의료용도 제품을 공급합니다. 국내 우수 대학과 지속적인 임상연구를 통해 전문적인 영양설계로<br class="wView">
+						대한민국 환자용 균형 영양식의 체계를 만들어 나갑니다.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant100 -->
+
+	<div class="contant1460">
+		<div class="row mt180">
+			<div class="col-md-6 center brandMaintxt">
+				<div class="text-left">
+
+
+					<p class="f47 fw600 lh140">임상 연구와 논문으로 안전성이 <br class="wView">검증된 한국인의 영양요구량에 맞게 <br class="wView">개발된 국내 최초 경장영양식</p>
+				</div>
+			</div>
+			<div class="col-md-6 center mt30m">
+				<div class="text-left">
+					<p class="f18 fw400 lh180 gray04 mt30">
+						1990년 이전 외국 제품에만 의존하던 국내 환자용 특수영양식 시장상황에서<br>
+						한국인의 영양요구량에 맞게 개발된 경장영양제품으로,1991년 출시된 이래로 <br>
+						국내 상업용 경장영양식 시장을이끌어가고 있습니다.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- //contant1460 -->
+	<div class="contant1760">
+		<div class="row brand_bnr mt100 wView">
+			<div class="col-md-4"><div class="h200 SCI01_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 SCI03_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 VPM01_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 CHD01_860_01"></div></div>
+			<div class="col-md-4"><div class="h200 VPL01_860_02"></div></div>
+			<div class="col-md-4"><div class="h200 VBP01_860_01"></div></div>
+		</div>
+		<div class="row brand_bnr_m mt200 mView pb100">
+			<div class="col-md-12"><p class="img100"><img src="/img/brand/brand_all.png" /></p></div>
+		</div>
+	</div><!-- //contant1760 -->
+	<div class="contant100_01 mt200">
+		<div class="prd_acd_m mView">
+			<ul>
+				<li class="h400 bnr_g_acd01">
+					<div class="centerH">
+						<div class="whiteBox">
+							<p class="f18 fw600 f_pp">First</p>
+							<p class="mt30 f45 fw500">엄선된 콩만 사용</p>
+							<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+						</div>
+					</div>
+				</li>
+				<li class="h400 bnr_g_acd02">
+					<div class="centerH">
+						<div class="whiteBox">
+							<p class="f18 fw600 f_pp">Tasty and safe food</p>
+							<p class="mt30 f45 fw500">엄선된 콩만 사용</p>
+							<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+						</div>
+					</div>
+				</li>
+				<li class="h400 bnr_g_acd03">
+					<div class="centerH">
+						<div class="whiteBox">
+							<p class="f18 fw600 f_pp">Tasty and safe food</p>
+							<p class="mt30 f45 fw500">엄선된 콩만 사용</p>
+							<p class="mt30 f18 fw400 gray04 lh160">철저히 엄선된 원료만을 사용합니다.<br class="wView">원료 3중 관리 시스템을 통해 안전성이 <br class="wView">보증된 원료를 엄선하여 사용합니다.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+
+
+
+
+		<ul class="prd_acd wView" >
+			<li class="bnr_g_acd01 h800">
+				<!-- 기본노출 -->
+				<div class="outType">
+					<div class="centerH2">
+						<div class="mt170"><span class="f18 fw600 f_pp white lh140">First</span></div>
+						<p><img src="/img/ico/brandLine.png" /></p>
+						<p class="f27 fw600 mt20 white">국내 최초 경장 영양식</p>
+						<p class="mt20"><img src="/img/ico/ico_brand_more.png" /></p>
+					</div>
+				</div>
+				<!-- 마우스오버노출 -->
+				<div class="inType centerH">
+					<div class="whiteBox">
+						<p class="f18 fw600 f_pp">First</p>
+						<p class="mt50 inType_ico"><img src="/img/ico/ico_brand_g01.png" /></p>
+						<p class="mt30 f27 fw500">국내 최초 경장 영양식</p>
+						<p class="mt30 f18 fw400 gray04 lh160">1991년 국내기술력으로 탄생한<br>
+						한국인의 영양요구량에 맞게 개발된<br>
+						국내 최초 경장 영양식입니다.</p>
+					</div>
+				</div>
+			</li>
+			<li class="bnr_g_acd02 h800">
+				<!-- 기본노출 -->
+				<div class="outType">
+					<div class="centerH2">
+						<div class="mt170"><span class="f18 fw600 f_pp white lh140">Balance</span></div>
+						<p><img src="/img/ico/brandLine.png" /></p>
+						<p class="f27 fw600 mt20 white">균형적인 영양 공급</p>
+						<p class="mt20"><img src="/img/ico/ico_brand_more.png" /></p>
+					</div>
+				</div>
+				<!-- 마우스오버노출 -->
+				<div class="inType centerH">
+					<div class="whiteBox">
+						<p class="f18 fw600 f_pp">Balance</p>
+						<p class="mt50 inType_ico"><img src="/img/ico/ico_brand_02.png" /></p>
+						<p class="mt30 f27 fw500">균형적인 영양 공급</p>
+						<p class="mt30 f18 fw400 gray04 lh160">임상연구로 검증된 전문적인<br class="wView">영양설계로 체계적이고 균형적인<br class="wView">영양을 공급합니다.</p>
+					</div>
+				</div>
+			</li>
+			<li class="bnr_g_acd03 h800">
+				<!-- 기본노출 -->
+				<div class="outType">
+					<div class="centerH2">
+						<div class="mt170"><span class="f18 fw600 f_pp white lh140">Safety</span></div>
+						<p><img src="/img/ico/brandLine.png" /></p>
+						<p class="f27 fw600 mt20 white">제품 안전성 검증</p>
+						<p class="mt20"><img src="/img/ico/ico_brand_more.png" /></p>
+					</div>
+				</div>
+				<!-- 마우스오버노출 -->
+				<div class="inType centerH">
+					<div class="whiteBox">
+						<p class="f18 fw600 f_pp">Safety</p>
+						<p class="mt50 inType_ico"><img src="/img/ico/ico_brand_g03.png" /></p>
+						<p class="mt30 f27 fw500">제품 안전성 검증</p>
+						<p class="mt30 f18 fw400 gray04 lh160">국내 우수 대학과 지속적인<br>임상연구로 제품 안정성을<br>검증하였습니다.</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="contant1760">
+		<div class="row mt180 brand-recom-box">
+			<div class="col-md-1"></div>
+			<div class="col-md-11">
+				<ul class="brandTitle">
+					<li><img src="/img/ico/ico_brand.png" /></li>
+					<li>
+						<p class="f38 fw600 lh100">지금 이 순간! 맞춤형 추천 제품</p>
+						<p class="f18 gray04 f_pp fw400 lh140 mt15">2022, Spring </p>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-2 mt70">
+				<p class="img100"><img src="/img/product/brand/brand_v01.png" /></p>
+				<p class="f23 fw500 lh150 mt20">적절한 영양공급이 <br class="wView">필요한 분들을 위한</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPL01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">일반 식사가 힘들거나,<br>소화기능이 약한 분들에게</p>
+								<p class="f18 fw400 lh160 mt15">그린비아 마일드케어 고소한 맛</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VGR05_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">기존 두유 대비 칼로리를<br class="wView">40% 낮춘 식사대용 두유</p>
+								<p class="f18 fw400 lh160 mt15">베지밀 하루건강<br>칼로리컷 두유</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 ">
+				<p class="img100"><img src="/img/product/brand/brand_v02.png" /></p>
+				<p class="f23 fw500 lh150 mt20">입맛 까다로운<br class="wView">우리 아이가 먹기 좋은</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VBB01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">우리 땅에서 재배한<br>우리 콩을 갈아 만든</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 영유아식<br>우리콩 1단계</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPL02_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">달콤한 땅콩향과 콩 본래의<br class="wView">담백한 맛의 조화!</p>
+								<p class="f18 fw400 lh140 mt15">달콤한 베지밀 비</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 mt50m">
+				<p class="img100"><img src="/img/product/brand/brand_v03.png" /></p>
+				<p class="f23 fw500 lh150 mt20">나이 드신 부모님 신체활<br class="wView">건강증진에 도움되는</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VPM01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">신체활력과<br>건강증진에 필요한</p>
+								<p class="f18 fw400 lh160 mt15">베지밀 5060<br>시니어두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VPM03_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">천천히 흡수되는 <br>당(糖)으로 담백하게</p>
+								<p class="f18 fw400 lh140 mt15">베지밀<br>에이스저당 두유</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 mt50m">
+				<p class="img100"><img src="/img/product/brand/brand_v04.png" /></p>
+				<p class="f23 fw500 lh150 mt20">여름 맞이! 시원하고<br class="wView">맛있게 수분 충전</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VFT01_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">상큼한 애플망고 과즙을<br>넣은 애플망고 두유</p>
+								<p class="f18 fw400 lh140 mt15">베지밀꼭꼭 씹히는<br>애플망고 두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VFT02_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">달콤한 진짜 바나나 과즙과 <br>고소한 두유의 만남</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 입안 가득<br>바나나 두유</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-2 mt70 mt50m">
+				<p class="img100"><img src="/img/product/brand/brand_v05.png" /></p>
+				<p class="f23 fw500 lh150 mt20">고소하고 영양가 높은<br class="wView">곡물류가 들어간</p>
+				<div class="brandPrdWrap line_top_gray mt40 pt40">
+					<ul class="brandPrd">
+						<a href="#">
+							<li><div class="VGR02_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">아침을 든든하게 채워주는<br>입자감이 살아 있는</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 17곡<br>한끼두유</p>
+							</li>
+						</a>
+					</ul>
+					<ul class=" brandPrd mt30">
+						<a href="#">
+							<li><div class="VBL13_600_01 h120"></div></li>
+							<li>	
+								<p class="f14 fw400 gray04 mt10">100% 국산콩으로<br>만든 프리미엄 블랙 두유</p>
+								<p class="f18 fw400 lh140 mt15">베지밀 국산콩 두유 검은콩 고칼슘</p>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div><!-- //contant1460 -->
+	<div class="contant100_1 bg_Blue mt250">
+		<div class="row">
+			<div class="col-md-12 pt50 pb50">
+				<div class="contant1460">
+					<div class="row">
+						<div class="col-md-6">
+							<p class="f38 fw600 white lh140">공식 온라인스토어 [이데이몰] 브랜드관</p>
+						</div>
+						<div class="col-md-4 mt10m">
+							<p class="f18 fw400 white lh160">정식품 공식 인터넷 쇼핑몰인 이데이몰은<br class="mView">고품질의 제품들은 물론, 뷰티-헬스 전문관을 운영하고 있습니다.</p>
+							</p>
+						</div>
+						<div class="col-md-2 mt10m">
+							<div class="btnType06"><span><a href="https://www.edaymall.com/index.do" target="_blank">View More</a></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

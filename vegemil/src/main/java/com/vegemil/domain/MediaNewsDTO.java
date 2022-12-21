@@ -10,6 +10,8 @@ public class MediaNewsDTO extends CommonDTO {
 
 	private Long mIdx;
 	private String mSubject;
+	private String mContent;
+	private String mImg;
 	private String mDate;
 	private String mDay;
 	private String mYearMonth;

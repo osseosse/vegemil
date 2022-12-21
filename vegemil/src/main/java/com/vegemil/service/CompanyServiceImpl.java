@@ -69,5 +69,13 @@ public class CompanyServiceImpl implements CompanyService {
 		}
         return faqList;
     }
+	
+	@Override
+    public List<MediaNewsDTO> getMediaNewsTop3() {
+		
+		List<MediaNewsDTO> faqList = Collections.emptyList();
+		faqList = companyMapper.selectMediaNewsTop3();
+        return faqList;
+    }
 
 }

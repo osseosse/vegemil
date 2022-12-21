@@ -1,5 +1,8 @@
 package com.vegemil.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,19 +11,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.vegemil.domain.MediaNewsDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.service.CompanyService;
 
 @Controller
 public class MainController {
+	
+	@Autowired
+	private CompanyService companyService;
 	
 	@RequestMapping(value = "/")
 	public String index(Model model, Authentication authentication) {
 		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 		MemberDTO member = new MemberDTO();
-		if(authentication != null)
-        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-		
-        model.addAttribute("member",member);	//유저 정보
+		if(authentication != null) {
+	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        model.addAttribute("member",member);	//유저 정보
+		}
+		List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
+        model.addAttribute("mediaNewsList", mediaNewsList);
         
         return "index";
 	}
@@ -32,7 +42,17 @@ public class MainController {
     }
 	
 	@RequestMapping(value = "/home")
-    public String main()throws Exception{
+    public String main(Model model, Authentication authentication)throws Exception{
+		
+		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
+		MemberDTO member = new MemberDTO();
+		if(authentication != null) {
+	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        model.addAttribute("member",member);	//유저 정보
+		}
+		List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
+        model.addAttribute("mediaNewsList", mediaNewsList);
+		
 		return "index";
     }
 	

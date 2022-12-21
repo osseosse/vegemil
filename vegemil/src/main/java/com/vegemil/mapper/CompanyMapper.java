@@ -21,6 +21,8 @@ public interface CompanyMapper {
 	public void deleteMediaNewsByIdx(Long fIdx);
 
 	public List<MediaNewsDTO> mediaNewsFindAll(SearchDTO params);
+	
+	public List<MediaNewsDTO> selectMediaNewsTop3();
 
 	public int mediaNewsCount(SearchDTO params);
 

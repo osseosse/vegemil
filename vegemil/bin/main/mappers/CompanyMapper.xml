@@ -6,6 +6,8 @@
     <sql id="mediaNewsColumns">
         m_idx,
 		m_subject,
+		m_content,
+		m_img,
 		DATE_FORMAT(m_date,'%Y-%m') as m_year_month,
 		DATE_FORMAT(m_date,'%d') as m_day,
 		m_hit,
@@ -45,6 +47,8 @@
     <insert id="mediaNewsSave" parameterType="com.vegemil.domain.MediaNewsDTO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO m_media_news (
             m_subject,
+            m_content,
+            m_img,
 			m_date,
 			m_hit,
 			m_adname1,
@@ -71,6 +75,8 @@
 	        insert_date,
 	        modified_date
         ) VALUES (
+        	#{mContent}
+			, #{mImg}
 			, #{mSubject}
 			, #{mDate}
 			, #{mHit}
@@ -112,6 +118,21 @@
             m_idx = #{mIdx}
     </select>
 
+	<select id="selectMediaNewsTop3" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.MediaNewsDTO">
+        SELECT
+        	m_idx,
+            m_subject,
+			m_content,
+			m_img,
+			m_adname1,
+			m_aduri1
+        FROM
+            m_media_news
+        ORDER BY
+            m_idx DESC
+       	LIMIT
+       		3
+    </select>
 
     <select id="mediaNewsFindAll" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.MediaNewsDTO">
         SELECT

@@ -1,6 +1,8 @@
 package com.vegemil.controller;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,23 +17,29 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CompanyController {
 
+	@Autowired
     private final CompanyService companyService;
 
-    @GetMapping("/pr/mediaNews")
+    @GetMapping("/company/mediaNews")
     public String openFaqList(@ModelAttribute("params") final SearchDTO params, Model model) {
     	
     	List<MediaNewsDTO> mediaNewsList = companyService.findAllMediaNews(params);
         model.addAttribute("mediaNewsList", mediaNewsList);
         
-        return "pr/mediaNews";
+        return "company/mediaNews";
     }
-
     
     @ResponseBody
-    @GetMapping(value="/pr/saveMediaNews")
+    @GetMapping(value="/company/saveMediaNews")
 	public boolean saveMediaNews(MediaNewsDTO params) throws Exception{
 		boolean result = companyService.saveMediaNews(params);
 		return result;
 	}
+    
+    @GetMapping("/company/notice")
+    public String openNotice(Model model) {
+        
+        return "company/notice";
+    }
 
 }

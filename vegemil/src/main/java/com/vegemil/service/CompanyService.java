@@ -16,5 +16,7 @@ public interface CompanyService {
     public Long deleteMediaNews(Long mIdx);
 
     public List<MediaNewsDTO> findAllMediaNews(SearchDTO params);
+    
+    public List<MediaNewsDTO> getMediaNewsTop3();
 
 }

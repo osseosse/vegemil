@@ -34,7 +34,7 @@
 	.dv3 li {width:33.3%; float:left}
 	.dv4 {width:100%}
 	.dv4 li {width:25%; float:left}
-	.overhidden {overflow:hidden}
+
 
 	/* display None*/
 	.wView {position:relative !important; }
@@ -319,16 +319,10 @@
 	.subTopPress {position:relative;  background: url(../../img/company/subTopPress.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subTopNotice {position:relative;  background: url(../../img/company/subTopNotice.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subFaq {position:relative;  background: url(../../img/communication/faq.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+
+
+
 	.subTopCommunication {position:relative;  background: url(../../img/bnr/subTopCommunication.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    .subTopFactory{position:relative;  background: url(../../img/R&D/subTopFactory.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    .subTopExcursions{position:relative;  background: url(../../img/R&D/subTopExcursions.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    .subTopRndIntroduce{position:relative;  background: url(../../img/R&D/subTopRndIntroduce.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    .subTopCcm{position:relative;  background: url(../../img/company/subTopFinance.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    .subTopDcfMedia{position:relative;  background: url(../../img/company/subTopDcfMedia.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    .subTopDcfContest{position:relative;  background: url(../../img/company/subTopDcfContest.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.subTopCook{position:relative;  background: url(../../img/product/recipe/subTopCook.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-    
-	
 	.bnr_login {position:relative;  background: url(../../img/bnr/bnr_login.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bg_rightBlue {background:#F1F4F5}
 	.bg_White {background:#fff}
@@ -386,7 +380,6 @@
 	.h540 {height:540px}
 	.h530 {height:530px}
 	.h520 {height:520px}
-	.h500 {height:500px}
 	.h480 {height:480px}
 	.h460 {height:460px}
 	.h440 {height:440px}
@@ -604,13 +597,7 @@
     .logoInfo li:first-child{padding-right: 70px;}
     .logoInfo li:nth-child(2){border-left: 1px solid #dcdcdc; padding-left: 70px;}
     .goldUnderL{ border-bottom: 2px solid #E3A62C; }
-	.main-quick { position:absolute; top:50%;left:95%;color:#fff;transform:translate(-50%,-50%); z-index:100; }
-	.main-quick ul {background:#fff; border-radius:10px; text-align:center; display:inline-block; padding:0px 13px;}
-    .main-quick li {margin:20px 0; border-bottom:1px solid #DCDCDC; padding-bottom:15px }
-	.main-quick li:last-child {border-bottom:0; padding-bottom:0}
-	.main-quick li img {width:22px; margin-bottom:5px}
-	.main-quick-scroll {width:40px; margin:0 auto; margin-top:30px; z-index:200; position:relative; }
-	/* html {scroll-behavior:smooth} */
+    
     /* 3000 company (사회공헌) */
     .csrInfo li{display: flex; flex-direction: column; justify-content: center; padding-left: 50px; padding-bottom: 50px;}
     .csrInfo li div{width: 100%; height: 100%;  border-radius: 20px; padding: 50px;} 
@@ -813,111 +800,11 @@
     .historyInfo02 table{ border-collapse: collapse;}
     .historyInfo02 table th,.historyInfo02 table td{border-bottom: 1px solid #dcdcdc; padding: 15px 5px;}
 
-    
-    /* 3000 청주공장 소개 */
-    .factoryBg{position:relative;  background: url(../../img/R&D/factoryBg.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; padding: 185px 0; }
-    .factoryInfo01 ul{display: flex; text-align: center;}
-    .factoryInfo01 img{height: 45px;}
-    .factoryInfo01 ul li{margin-right: 55px;}
-    .factoryInfo01 ul li:last-child{margin-right: 0px;}
-    
-    
-    /* 3000 오프라인 견학 */
-    .grayBox06{background-color:#F1F4F5; width: 100%;}
-    .grayBox06 tr td{ padding: 25px 0px;}
-    .grayBox06 tr:first-child td{padding-top: 50px;}
-    .grayBox06 tr:last-child td{padding-bottom: 50px;}
-    .grayBox06 tr td:first-child{padding-left: 150px;}
-    .grayBox06 tr td:nth-child(2){padding-right: 150px;}
-    .grayBox06 .whiteBox{background-color: #fff; padding: 5px 8px; border-radius: 5px; line-height: 250%;}
-    .grayBox06 .whiteBox02{background-color: #fff; padding: 15px; border-radius: 5px;}
-
-    
-    .underLineG{border-bottom: 1px solid #DCDCDC;}
-    
-    .exTable{width: 100%; border-collapse: collapse;}
-    .exTable th{background-color: #F1F4F5; padding: 15px 5px;}
-    .exTable td{padding: 20px 5px;}
-    .exTable tr{border-bottom: 1px solid #dcdcdc;}
-    .exTable .exDate{border: 1px solid #dcdcdc; border-radius: 5px; display: inline-block; width: 180px; height: 50px; line-height: 50px;}
-    .exTable .exStart{background-color: #000; border-radius: 5px; color: #fff; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
-    .exTable .exIng{background-color: #fff; border: 1px solid #dcdcdc; border-radius: 5px; color: #000; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
-    .exTable .exEnd{background-color: #F1F4F5; border: 1px solid #dcdcdc; border-radius: 5px; color: #787878; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
-    
-    
-    /* 3000 연구소 소개 */
-    .rndIntroduceBg{position:relative;  background: url(../../img/R&D/rndIntroduceBg.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover; background-size: cover;z-index:1; padding: 200px 50px; }
-    .rndIntroduceBg ul li{background-image: url(../../img/ico/ico_circleChk.png); background-repeat: no-repeat; background-size: 22px; background-position: 0 center; padding-left: 30px;}
-    .rndIntroduceInfo02 > div:first-child{padding-right: 170px;}
-    .rndIntroduceInfo02 > div:last-child{padding-left: 170px;}
-    
-    
-    /* 3000 연구 특허 현황 */
-    .stu_table01H, .stu_table02H, .stu_table03H{background-color: #F1F4F5;}
-    .stu_table01H th, .stu_table02H th, .stu_table03H th{padding: 18px 5px; background-image: url(../../img/ico/ico_grayLine.jpg); background-repeat: no-repeat; background-position: center right;}
-    .stu_table01H th:last-child, .stu_table02H th:last-child, .stu_table03H th:last-child{background-image: none;}
-    .stu_table01 tr, .stu_table02 tr, .stu_table03 tr{border: 1px solid #DCDCDC;}
-    .stu_table01 td, .stu_table02 td, .stu_table03 td{border-bottom: 1px solid #DCDCDC; padding: 35px 50px;}
-    
-    .stu_table01H tr th:nth-child(1){width: 10%;}
-    .stu_table01H tr th:nth-child(2){width: 50%;}
-    .stu_table01H tr th:nth-child(3){width: 30%;}
-    .stu_table01H tr th:nth-child(4){width: 10%;}
-    .stu_table01 tr td:nth-child(1){width: 10%;}
-    .stu_table01 tr td:nth-child(2){width: 50%; text-align: left;}
-    .stu_table01 tr td:nth-child(3){width: 30%; text-align: left;}
-    .stu_table01 tr td:nth-child(4){width: 10%;}
-
-    
-    .stu_table02H tr th:nth-child(1){width: 10%;}
-    .stu_table02H tr th:nth-child(2){width: 65%; }
-    .stu_table02H tr th:nth-child(3){width: 25%;}
-    .stu_table02 tr td:nth-child(1){width: 10%;}
-    .stu_table02 tr td:nth-child(2){width: 65%; text-align: left;}
-    .stu_table02 tr td:nth-child(3){width: 25%;}
-    
-    .stu_table03H tr th:nth-child(1){width: 10%;}
-    .stu_table03H tr th:nth-child(2){width: 55%; }
-    .stu_table03H tr th:nth-child(3){width: 35%;}
-    .stu_table03 tr td:nth-child(1){width: 10%; text-align: center;}
-    .stu_table03 tr td:nth-child(2){width: 55%;}
-    .stu_table03 tr td:nth-child(3){width: 35%;}
-
-    
-    /* 3000 ccm이란 */
-    .grayRoundBox{background-color: #F1F4F5; border-radius: 500px; padding: 20px;}
-	.ccmYouyube {position:relative; padding-top:50px}
-	.ccmYouyube iframe {position:relative; width:100%; max-width:600px; height:340px; border-radius:20px}
-    
-    /* 3000 DCF 미디어 */
-    .yellowDot{background-image: url(../../img/ico/ico_ydot.png); background-repeat: no-repeat; background-position: center left; padding-left: 15px;}
-    .dcfMdiaBox01{display: flex; flex-wrap: wrap;}
-    .dcfMdiaBox01 li:first-child{padding: 0;}
-    .grayBox3{width: 100%; background-color: #F1F4F5; padding: 40px 30px !important; }
-    .grayBox3 iframe{width: 100%; height: 220px;}
-    
-    .dcfMdiaBox02{display: flex; flex-wrap: wrap;}
-    .dcfMdiaBox02 li{width: 20%; padding: 0 15px; box-sizing: border-box;}
-    .dcfMdiaBox02 li iframe{width: 100%;}
-    .dcfMdiaBox02 li:nth-child(odd){ margin-bottom: 100px;}
-    .dcfMdiaBox02 li:nth-child(even){ margin-bottom: 100px;}
-    
-    /* 3000 DCF 영상 공모전 */
-    .dcfContestBg{width: 100%; height: 650px; background-image: url(../../img/company/dcfContestBg.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; position: relative; top: -40px;}
-    .dcfContestBg > img{position: absolute; bottom: 0; right: 0;}
-    .dcfContestBtn {width: 300px; float: right; }
-    .dcfContestBtn li:first-child{border-bottom: 1px solid #fff;}
-    .dcfContestBtn li a{display: flex; align-items: center; padding: 10px 0px; background-image: url(../../img/ico/ico_white_arrow.png); background-repeat: no-repeat; background-position: center right; background-size: 6px;} 
-    .dcfContestBox{position: relative;}
-    .dcfContestBox iframe{width: 100%; height: 240px;}
-    .dcfContestBox .contestAward{width: 70px; height: 70px; background-color: #E3A62C; border-radius: 100px; text-align: center; line-height: 70px; color: #fff; position: absolute; bottom: 20px; left: 20px;}
-    .dcfContestBox .contestName{width: 100px; padding: 5px 10px; background-color: #222222; border-radius: 50px; text-align: center; color: #fff; position: absolute; bottom: 20px; right: 20px;}
-    .topLineG{border-top: 1px solid #dcdcdc;}
 
 
-
-
-
+    /* R&D 청주공장 소개 */
+    .factoryBg{position:relative;  background: url(../../img/R&D/factoryBg.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; height: 660px;}
+    
     
     
     /* 3000 보도자료 */
@@ -986,6 +873,16 @@
 	.paging-txt dl.pg-right a:hover dd:nth-child(1) {color:#222}
 
 
+
+	
+
+
+	
+
+	
+
+
+
 	
 	/* //보도자료 */
 
@@ -998,11 +895,10 @@
 	/* 3000 main > 컨택트 */
 	.contactBox {position:relative}
 	.contactBox ul.contactDetail li {width:100%; display:inline-block; text-align:left; margin-right:10px}
-	.contactBox ul.contactDetail li img {width:20px; }
 	.contactBox ul.contactDetail li:last-child {margin-right:0}
 	.contactBox ul.contactDetail p {border:1px solid #DCDCDC; border-radius:10px; width:100%; padding:10px 20px}
 	.contactBox ul.contactDetail p span {margin-right:5px}
-	.ver-title02 img {width:20px}
+
 
 	/* 3000 main > 자주 묻는 질문 */
 	.ver-title02 { width:100%;  padding-right:20px; border:1px solid #DCDCDC; border-radius:10px;}
@@ -1123,7 +1019,7 @@
 	ul.bestBox li:nth-child(2) {width:48%; float:right; border-bottom:1px solid #DCDCDC; padding-bottom:30px}
 	ul.bestBox li:nth-child(3) {width:48%; float:left; }
 	ul.bestBox li:nth-child(4) {width:48%; float:right}
-	.best-subCopy {position:relative;height:40px; overflow:hidden}
+	.best-subCopy {position:relative;height:45px; overflow:hidden}
 
 
 
@@ -1153,9 +1049,9 @@
 	.reImg {border-radius:10px}
 	.recomTxt {position:relative}
 	.recomTxt .key {}
-	.recomTxt .key span {margin-left:10px; font-size:14px}
+	.recomTxt .key span {margin-left:10px}
 	.recomTxt .key span:first-child {margin-left:0}
-	.recomTxt .key span.greenR {background:#00A256; border:1px solid #00A256; border-radius:5px; color:#fff; padding:2px 10px; }
+	.recomTxt .key span.greenR {background:#00A256; border:1px solid #00A256; border-radius:5px; color:#fff; padding:2px 10px}
 	.recomTxt .key span.yellowR {background:#E3A62C; border:1px solid #E3A62C; border-radius:5px; color:#fff; padding:2px 10px}
 	.recomTxt .key span.purpleR {background:#7375FB; border:1px solid #7375FB; border-radius:5px; color:#fff; padding:2px 10px}
 	.recomTxt .key span.grayR {background:#F1F4F5; border:1px solid #DCDCDC; border-radius:5px; color:#787878; padding:2px 10px}
@@ -1184,10 +1080,9 @@
 
 	/* 3000 SNS+관련사 */
 	.snsUL {position:relative}
-	.snsUL li.sli {border:1px solid #DCDCDC; border-radius:10px; padding-left:20px; margin-bottom:10px; font-size:14px}
+	.snsUL li.sli {border:1px solid #DCDCDC; border-radius:10px; padding-left:20px; margin-bottom:10px}
 	.snsUL li:nth-child(4) {bordeR:0; padding-left:0; }
-	.snsUL li:first-child img {width:11px; }
-	.snsUL li img {margin-right:10px; width:22px; }
+	.snsUL li img {margin-right:10px}
 	.snsUL li a {color:#222; }
 	.snsUL li.sli a {padding:9px 0; width:100%; display:inline-block}
 	.fcFamily {position:relative; width:100%; border:1px solid #DCDCDC; border-radius:20px; padding:19px 0}
@@ -1203,7 +1098,7 @@
 	/* 3000 커뮤니케이션 */
 	.mt90h {margin-top:90px}
 	.subMenu {position:relative; margin-top:-46px; background:#fff; border-radius:10px;width:100%; 
-	z-index:1;  -webkit-box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.26); box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.10);}
+	z-index:1;  -webkit-box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.26); box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.20);}
 	.subMenu ul {position:relative; margin:0 auto; text-align:center}
 	.subMenu p.btnSubLeft {position:absolute; top:30px; left:110px}
 	.subMenu p.btnSubRight {position:absolute; top:30px; right:110px}
@@ -1507,17 +1402,6 @@
 
 
 
-	ul.prd_dCate {position:relative; }
-	ul.prd_dCate li a {font-size:16px}
-	ul.prd_dCate li {margin-top:0px; line-height:140%; padding:7px 0; background:#fff; }
-	ul.prd_dCate li a:hover {background: url("../../img/ico/sub_cate.png") right 0px no-repeat; height:30px; 
-	padding-right:32px; display:inline-block;vertical-align:middle; background-size:22px;
-	color:#222; font-weight:500; font-size:18px;}
-	ul.prd_dCate li a:focus {color:#000; font-size:17px; font-weight:500; background-image:#fff url("../../img/ico/sub_cate.png") right 7px no-repeat; height:30px; }
-	ul.prd_dCate li a:active {color:#000; font-size:17px; font-weight:500; background-image:#fff url("../../img/ico/sub_cate.png") right 7px no-repeat; height:30px; }
-
-
-
 
 
 	
@@ -1543,7 +1427,7 @@
 	dl.prd-viewMore dd:first-child {float:left; }
 	dl.prd-viewMore dd:nth-child(2) {float:right;  border:1px solid #DCDCDC; text-align:center; border-radius:5px; width:48px; padding:11px 0; display:inline-block; background:#Fff}
 	.prd-label {position:absolute;right:10px; top:-8px; width:70px}
-	.HJS { max-width:890px; margin:0 auto}
+	
 
 	/* 3000 제품상세 Tab */
 	.prd_thumb {position:relative; margin:0 auto; float:left; max-width:150px; width:100%} 
@@ -1644,26 +1528,12 @@
 	
 	/* 3000 제품상세 > 브랜드 배너 */
 	.banner-prd.green {background:#02A85A; }
-	.banner-prd.pupple {background:#7375FB; }
-	.banner-prd.blue {background:#008BD5; }
-	.banner-prd.pink {background:#E5264D; }
-
-
-
 	.banner-prd {text-align:left; color:#fff; width:100%; padding:20px 0}
 	.banner-logo {}
 	.banner-logo img{width:75px; margin-right:20px; }
 	.banner-logo li:first-child {width:7%; min-width:100px; border-right:2px solid #fff; }
 	.banner-logo li:nth-child(2) {width:70%}
 	.banner-logo li {display:inline-block; vertical-align:top}
-
-
-	.banner-logo.easy img{width:110px; margin-right:20px; }
-	.banner-logo.easy li:first-child {width:10%; min-width:100px; border-right:2px solid #fff; }
-	.banner-logo.easy li:nth-child(2) {width:70%}
-	.banner-logo.easy li {display:inline-block; vertical-align:top}
-
-
 	.banner-txt {position:relative; margin-left:20px}
 	a .banner-txt  {color:#fff}
 
@@ -1695,10 +1565,6 @@
 	.bnr_g_acd02 {background: url(../../img/brand/bnr_g_acd02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_g_acd03 {background: url(../../img/brand/bnr_g_acd03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 
-	.bnr_s_acd01 {background: url(../../img/brand/bnr_s_acd01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-	.bnr_s_acd02 {background: url(../../img/brand/bnr_s_acd02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-	.bnr_s_acd03 {background: url(../../img/brand/bnr_s_acd03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-
 
 	
 	.bnr_brand04 {background: url(../../img/brand/bnr_brand04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
@@ -1706,19 +1572,11 @@
 	.bnr_brand06 {background: url(../../img/brand/bnr_brand06.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_brand07 {background: url(../../img/brand/bnr_brand07.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_brand08 {background: url(../../img/brand/bnr_brand08.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-	.bnr_brand09 {background: url(../../img/brand/bnr_brand09.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-	.bnr_brand10 {background: url(../../img/brand/bnr_brand10.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-
-	.bnr_rnd01 {background: url(../../img/R&D/Work-slide01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; border-radius:20px}
-	.bnr_rnd02 {background: url(../../img/R&D/Work-slide02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; border-radius:20px}
-	.bnr_rnd03 {background: url(../../img/R&D/Work-slide03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; border-radius:20px}
-	.bnr_rnd04 {background: url(../../img/R&D/Work-slide04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; border-radius:20px}
-
 
 	.east_info {position:relative; border-bottom:2px solid #222; width:100%}
 	.east_info li {display:inline-block; padding-bottom:5px; vertical-align:top; }
-	.east_info li:first-child {width:27%}
-	.east_info li:nth-child(2) {width:45%}
+	.east_info li:first-child {width:22%}
+	.east_info li:nth-child(2) {width:51%}
 	.east_info li:nth-child(3) {width:24%;text-align:right}
 	.east_info li:nth-child(3) img {width:30px}
 
@@ -1738,14 +1596,6 @@
 	.recipe-list li:nth-child(2) {width:68%}
 	.recipeRimg img {max-width:80px }
 
-	.simBox {position:relative}
-	.simBox li {display:inline-block; width:30%; text-align:center; max-width:260px; margin:0 70px}
-	.simBox li .sim{background: url(../../img/brand/sim.png) no-repeat scroll center;  background-size:100%; height:260px; position:relative }
-	table.table-sim {position:relative; width:100%; border-top:2px solid #000}
-	table.table-sim td {border-bottom:1px solid #DCDCDC; font-size:18px; padding:15px 0; padding-left:20px}
-	table.table-sim td:first-child {text-align:left}
-	table.table-sim td {text-align:center}
-	table.table-sim tr.last-td {background:#F1F4F5; color:#E3A62C}
 	/* 3000 웹진신청*/
 	table.int {width:100%; border:1px solid #ccc; border-radius:10px; }
 	table.int th {padding:10px 10px 5px 30px; vertical-align:top; }
@@ -1815,36 +1665,6 @@
 	.swiper-box .swiper-slide.active a{border-bottom:2px solid #222; font-size:18px; color:#222222; font-weight:500}
 	
 	
-	/* Rnd-swi */
-	.Rnd-swi .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
-    .Rnd-swi .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      width: 28%; 
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-    .Rnd-swi .swiper-slide:nth-child(1) { border:1px solid red}
-    .Rnd-swi .swiper-slide:nth-child(2) {}
-	.Rnd-img img {width:100% ; border-radius:20px}
-
-
 
 
 
@@ -1923,17 +1743,9 @@
 	ul.prd_acd li.expand.default .inType.centerH .whiteBox p:first-child {border-bottom:1px solid #222; padding-bottom:10px; display:inline-block} 
 	ul.prd_acd li.expand.default .inType.centerH .inType_ico {max-width:66px; margin:0 auto}
 	
-	/* 3000 쿡앤쿡 */
-	.cook-wrap {position:relative; width:100%}
-	.cook-wrap li {width:17.8%;  margin:0 1%; display:inline-block; vertical-align:top; margin-bottom:50px}
-	.cookThumb {position:relative}
-	.cookThumb .cook-img  {height:160px; display:inline-block; border-radius:20px; }
-	.cookThumb2 {position:relative; margin-bottom:50px}
-	.cookThumb2 .cook-img  {display:inline-block; border-radius:20px; }
-	.cookThumb2 .cook-img .baby {color:#fff; background:#222; padding:7px 25px; border-radius:20px; position:absolute; right:15px; bottom:15px }
-	.cook-key .key-black {background:#222; border-radius:5px; padding:2px 8px; border:1px solid #222 }
-	.cook-key .key-gray {background:#F1F4F5; border-radius:5px; padding:2px 8px; border:1px solid #DCDCDC}
-	.subMiddleCook {position:relative;  background: url(../../img/product/recipe/subMiddleCook.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	
+
+
 
 	/* 3000 footer */
 	ul.foot_box {position:relative; width:100%}
@@ -1995,7 +1807,6 @@
 	body {border:2px solid yellow}
 	.wView {position:relative !important;}
 	.mView {display:none !important;}
-	.mView2{display: none !important;}
 	.wView768 {position:relative !important; }
 	.mView768 {display:none !important;}
 	.contant1760 {max-width:1400px; width:100%;  padding-right:15px;padding-left:15px;}
@@ -2111,7 +1922,7 @@
 	ul.brand_cook li:first-child {max-width:150px; margin-right:10px; border-radius:10px; width:auto; width:26%}
 	ul.brand_cook li:nth-child(2) {width:70%}
 	.cook_red {font-size:12px; width:70px }
-	.simBox li {display:inline-block; width:30%; text-align:center; max-width:250px; margin:0 50px}
+
 
 
 	 /* 1760 연혁  */
@@ -2121,9 +1932,7 @@
 
 
 
-	/* 1760 쿡앤쿡 */
-	.cook-wrap {position:relative; width:100%}
-	.cook-wrap li {width:22.6% !important; }
+	/* 1760 보도자료 */
 	
 
 	
@@ -2135,10 +1944,9 @@
 	/* display None*/
 	.wView {position:relative !important;}
 	.mView {display:none !important;}
-	.mView2{display: none !important;}
 	.wView768 {position:relative !important; }
 	.mView768 {display:none !important;}
-	
+
 	body {border:2px solid green}
 	.floting-left { width:100%}
 	.floting-right {display:none}
@@ -2176,7 +1984,6 @@
 	.h590 {height:500px}
 	.h540 {height:280px}
 	.h520 {height:280px}
-	.h500 {height:280px}
 	.h460 {height:280px}
 	.h440 {height:270px}
 	.h420 {height:260px}
@@ -2186,18 +1993,12 @@
 	.h200 {height:180px}
 	.h190 {height:110px}
 	
-
-	/* 1200 가로 */
-	.w80pm {width:80%}
-	.tab_content2 {position:relative; padding:55px 0 10px 0 } 
-	.recomTxt .key span {margin-left:10px; font-size:11px}
-	
 	/* 1200 기업이념 */
 	.tabs1 {background:none; position:absolute; z-index:100;  width:100% ; max-width:420px;margin:30px 17% 0 17% } 
 	.tabs1 li { list-style:none;  display:block;  margin:0; float:left; width:100px;  background: rgba(0, 0, 0, 0.5);text-align:center }
 	.tabs1 li a {display:inline-block;padding:7px  0; color: #fff; width:100%;text-decoration:none;font-size: 13px;  font-weight:400; letter-spacing:-1px ;    }
 	.iden_txt {position:absolute; text-align:left; margin-left:30px; bottom:50px}
-	
+
 	
 	/* 1200 news */
 	ul.newsBox li {display:inline-block; width:100%; border-bottom:1px solid #DCDCDC; padding-bottom:10px; padding-top:10px; }
@@ -2234,7 +2035,7 @@
 	
 
 	.videoCopy {position:absolute; top:50%;left:25%;color:#fff;transform:translate(-50%,-50%);  }
-	.videoCopy .f80 {font-size:80px}
+	.videoCopy .f80 {font-size:45px}
 
 
 	/* 1200 처리절차 */
@@ -2364,10 +2165,8 @@
 	/* 1200 제품상세 > 브랜드 배너 */
 	.banner-logo li:first-child {width:10%; min-width:100px; border-right:2px solid #fff; }
 	.banner-logo li:nth-child(2) {width:75%}
-	.banner-logo.easy li:first-child {width:12%; min-width:120px; border-right:2px solid #fff; }
-	.banner-logo.easy li:nth-child(2) {width:75%}
 	.brandMaintxt {max-width:75%} 
-	.bnr_brand04 {background: url(../../img/brand/bnr_brand04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
+
 
 
 	/* 1200 제품상세 Tab */
@@ -2425,9 +2224,6 @@
 	.search-container.w410  {max-width:310px; width:310px; }
 	.search-container.w410 input {max-width:210px; width:210px; }
 
-
-	.simBox li {display:inline-block; width:30%; text-align:center; max-width:180px; margin:0 30px}
-	
 	/* 1200 보도자료 */
 	table.press td {padding:30px 0}
 	table.press td:nth-child(1) {width:13%}
@@ -2498,8 +2294,7 @@
 	}
 	.swiper-box .swiper-slide.swiper-slide-active {}
 	.swiper-box .swiper-slide.active a{border-bottom:2px solid #222; font-size:15px; color:#222222; font-weight:500}
-	
-	
+
 	
 	/* //1200 브랜드 및 공통영역 > 카테고리 */
 
@@ -2520,7 +2315,7 @@
     .halalBg03 img{width: 70px; margin-right: 0px;}
     .greetingPhDSign{text-align: right;}
     .greetingPhDSign img{position: relative;}
-	.greetingsBg ul{height: 460px;}
+
 
 	/* 1200 공정거래 CP */
     .cpProgramBg{height: 400px; padding-top: 80px;}
@@ -2590,19 +2385,6 @@
 	.ver-title04.open a { background-position: right -50px;font-weight:500}
 	.FaqStyle .v_content {padding: 35px  35px;font-size:14px; font-weight:400;}
 
-	/* 1200 연구소 소개 */
-    .rndIntroduceInfo02 > div:first-child{padding-right: 30px;}
-    .rndIntroduceInfo02 > div:last-child{padding-left: 30px;}
-    
-    /* 1200 연구 특허 현황 */
-    .stu_table01 td, .stu_table02 td, .stu_table03 td{padding: 35px 20px;}
-    
-    /* 1200 DCF 미디어 */
-    .dcfMdiaBox02{display: flex; flex-wrap: wrap;}
-    .dcfMdiaBox02 li{width: 50%; padding: 0 0px;}
-    .dcfMdiaBox02 li:nth-child(odd){padding: 15px; margin-bottom: 30px;}
-    .dcfMdiaBox02 li:nth-child(even){padding: 15px; margin-bottom: 30px;}
-
 	/* 1200 웹진신청 */
 	table.int {width:100%; border:1px solid #ccc; border-radius:10px; }
 	table.int th {padding:5px 10px 5px 10px; vertical-align:top; }
@@ -2613,9 +2395,9 @@
 	table.int tr:last-child th {padding-bottom:15px}
 
 	.txt_big07 {font-size:17px}
-	table.dataTable th {border-left:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2; text-align:left; padding-left:15px;  font-size:11px; height:30px; font-weight:500 }
+	table.dataTable th {border-left:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2; text-align:left; padding-left:5px;  font-size:10px; height:30px; font-weight:500 }
 	table.dataTable th:first-child {border-left:0px solid #d2d2d2}
-	table.dataTable td {border-bottom:1px solid #d2d2d2; text-align:left; padding-left:0px;  font-size:11px; height:30px; } 
+	table.dataTable td {border-bottom:1px solid #d2d2d2; text-align:left; padding-left:0px;  font-size:10px; height:30px; } 
 	table.dataTable .in {padding-left:20px;}
 
 	
@@ -2632,12 +2414,10 @@
 	/* display None*/
 	.wView {display:none !important;}
 	.mView {display:block !important;}
-	.mView2 {display:inline-block !important;}
 	.wView768 {position:relative !important; }
 	.mView768 {display:none !important;}
 	.text-centerM {text-align:center}
-	.centerHM {position:absolute; top:50%;left:50%;color:#fff;transform:translate(-50%,-50%);}
-	.snsUL li.sli {font-size:12px}
+
 
 	
 	/* 모바일 header */
@@ -2771,19 +2551,7 @@
 	.contactBox {position:relative}
 	.contactBox ul.contactDetail {width:100%; }
 	.contactBox ul.contactDetail li {margin-bottom:10px}
-	.contactBox ul.contactDetail li img {display:none}
 	.contactBox ul.contactDetail p span {margin-right:5px; height:19px; display:inline-block}
-
-
-	.contactBox ul.contactDetail li {width:100%; display:inline-block; text-align:left; margin-right:10px}
-	.contactBox ul.contactDetail li:last-child {margin-right:0}
-	.contactBox ul.contactDetail p {border:1px solid #DCDCDC; border-radius:10px; width:100%; padding:10px 20px}
-	.contactBox ul.contactDetail p span {margin-right:5px}
-	.contactBox .col-6:nth-child(1) {padding-right:3px}
-	.contactBox .col-6:nth-child(2) {padding-left:3px}
-	.contactBox .col-6:nth-child(3) {padding-right:3px}
-	.contactBox .col-6:nth-child(4) {padding-left:3px}
-
 
 	/* 992 사업영역 */
 	ul.baseList li {padding:10px 25px;}
@@ -2819,15 +2587,15 @@
 	/* 992 SNS+관련사 */
 	.fcLinbox li {display:inline-block; width:23.5%; text-align:center; background: url("../../img/ico/ico_lineS.png") right 10px no-repeat;}
 	.fcLinbox li a {padding:10px 0;display:inline-block;  color:#222; font-size:11px}
-	
-
+	ul.snsUL li:nth-child(1n) {width:48%; float:left}
+	ul.snsUL li:nth-child(2n) {width:48%; float:right}
 
 	/* 992 videocopy */
 	.btnType01.mt100 {margin-top:30px}
-	.videoCopy {position:absolute; top:50%;left:58%;color:#fff;transform:translate(-50%,-50%); width:100%  }
-	.videoCopy .f80 {font-size:45px}
-	.videoCopy .f23 {font-size:18px}
-
+	.videoCopy {position:absolute; top:50%;left:30%;color:#fff;transform:translate(-50%,-50%);  }
+	.videoCopy .f80 {font-size:30px}
+	.videoCopy .f23 {font-size:14px}
+	.videoCopy .btnType01 {display:none} 
 	
 
 	/* 992 커뮤니케이션 */
@@ -2965,9 +2733,6 @@
 	/* 992 제품상세 > 브랜드 배너 */
 	.banner-logo li:first-child {width:20%; min-width:100px; border-right:2px solid #fff; }
 	.banner-logo li:nth-child(2) {width:60%}
-	.banner-logo.easy li:first-child {width:25%; min-width:100px; border-right:2px solid #fff; }
-	.banner-logo.easy li:first-child img {width:90px}
-	.banner-logo.easy li:nth-child(2) {width:60%}
 
 	.brand-recipe-box .col-md-6 {width:100%;flex:100%; max-width:100%}
 	.brand-recipe-box .col-md-1 {display:none}
@@ -2981,7 +2746,6 @@
 
 	/* 992 company */
 	 .csrInfo li{padding: 20px;}
-	 .greetingsInfo .pl50 {padding-left:0px !important; }
 	/* 992 보도자료 */
 	
 	 /* 992 브랜드 */
@@ -2992,15 +2756,6 @@
 	.prd_acd_m .whiteBox p {color:#fff; }
 	.prd_acd_m .whiteBox p.f_pp {border-bottom:1px solid #fff; display:inline-block;padding-bottom:3px}
 	.prd_acd_m .whiteBox .inType_ico img{width:70px; text-align:center;}
-
-	.simBox {position:relative; vertical-align:top}
-	.simBox li {display:inline-block; width:30%; text-align:center; max-width:150px; margin:0 5px; vertical-align:top}
-	.simBox li .sim{background: url(../../img/brand/sim.png) no-repeat scroll center;  background-size:100%; height:180px; position:relative }
-	.bnr_brand10.h700 {height:400px}
-	.sim .f80 {font-size:30px}
-	.sim .f60 {font-size:30px}
-	.simBox .f23 {font-size:15px}
-
 
 	/* 992 공정거래 */
 	.tabs5.menu8 li {width:50%; }
@@ -3035,10 +2790,6 @@
 
 	.subMenu p.btnSubLeft {display: none;}
 	.subMenu p.btnSubRight {display: none;}
-
-
-	ul.snsUL li {width:48.2%; display:inline-block; vertical-align:top}
-	ul.snsUL li:nth-child(2n) { margin-left:5px;}
 
 	/* 768 사업영역 */
 	ul.baseList {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center}
@@ -3197,95 +2948,13 @@
     .cpDeclareBox div, .cpDeclareBox02 div{ max-width: 100%; }
     .cpDeclareBox02 div{float: inherit;}
 
-	 /* 768 연혁 */
+	 /* 768 연혁 sh추가 */
     .historySubTab ul li a{font-size: 12px;}
     .historyBg{height: 240px; padding-top: 70px;}
     .historyBg .leftRoundBox{bottom: -1px;}
     .historyInfo02{padding: 0px 50px;}
     .historyInfo02 p{padding-top: 0px;}
     .historyInfo02 table th{font-size: 14px;}
-
-	/* 768 R&D 청주공장 소개 */
-    .factoryBg{ padding: 100px 0;}
-    .factoryInfo01 ul{justify-content: center;}
-    .factoryInfo01 ul li{margin-right: 15px;}
-    .factoryInfo01 ul li p{font-size: 12px;}
-    
-    
-    /* 768 오프라인 견학 */
-    .grayBox06 tr td{padding: 20px 0px;}
-    .grayBox06 tr:first-child td{padding-top: 40px;}
-    .grayBox06 tr:last-child td{padding-bottom: 40px;}
-    .grayBox06 tr td:first-child{padding-left: 20px; width: 35%;}
-    .grayBox06 tr td:nth-child(2){padding-right: 20px;}
-    .grayBox06 .whiteBox{line-height: 300%;}
-    .grayBox06 .whiteBox02{padding: 10px 5px;}
-    
-    .exTable th{ padding: 10px 5px;}
-    .exTable td{padding: 10px 5px;}
-    .exTable .exDate{width: 80px; height: 40px; line-height: 40px;}
-    .exTable .exStart{ width: 80px; height: 40px; line-height: 40px;}
-    .exTable .exIng{ width: 80px; height: 40px; line-height: 40px;}
-    .exTable .exEnd{ width: 80px; height: 40px; line-height: 40px;}
-    
-    
-    /* 768 연구소 소개 */
-    .rndIntroduceBg{padding: 100px 20px; }
-    .rndIntroduceBg ul li{background-image: url(../../img/ico/ico_circleChk.png); background-repeat: no-repeat; background-size: 22px; background-position: 0 center; padding-left: 40px;}
-    .rndIntroduceInfo02 > div:first-child{padding-right: 15px;}
-    .rndIntroduceInfo02 > div:last-child{padding-left: 15px;}
-    
-    
-    /* 768 연구 특허 현황 */
-    .stu_table01H th, .stu_table02H th, .stu_table03H th{padding: 15px 5px;}
-    .stu_table01 tr td, .stu_table02 tr td, .stu_table03 tr td{padding: 15px 5px;}
-    
-    .stu_table01H tr th:nth-child(1){width: 10%;}
-    .stu_table01H tr th:nth-child(2){width: 40%;}
-    .stu_table01H tr th:nth-child(3){width: 30%;}
-    .stu_table01H tr th:nth-child(4){width: 20%;}
-    .stu_table01 tr td:nth-child(1){width: 10%;}
-    .stu_table01 tr td:nth-child(2){width: 40%;}
-    .stu_table01 tr td:nth-child(3){width: 30%;}
-    .stu_table01 tr td:nth-child(4){width: 20%;}
-    
-    .stu_table02H tr th:nth-child(1){width: 20%;}
-    .stu_table02H tr th:nth-child(2){width: 50%;}
-    .stu_table02H tr th:nth-child(3){width: 30%;}
-    .stu_table02 tr td:nth-child(1){width: 20%;}
-    .stu_table02 tr td:nth-child(2){width: 50%;}
-    .stu_table02 tr td:nth-child(3){width: 30%;}
-    
-    .stu_table03H tr th:nth-child(1){width: 20%;}
-    .stu_table03H tr th:nth-child(2){width: 50%;}
-    .stu_table03H tr th:nth-child(3){width: 30%;}
-    .stu_table03 tr td:nth-child(1){width: 20%;}
-    .stu_table03 tr td:nth-child(2){width: 50%;}
-    .stu_table03 tr td:nth-child(3){width: 30%;}
-
-    
-    /* 768 DCF 미디어 */
-
-    .grayBox3 iframe{height: 250px;}
-    .dcfMdiaBox02 li{width: 50%;}
-    .dcfMdiaBox02 li iframe{height: 110px;}
-    
-    
-    /* 768 DCF 영상 공모전 */
-    .dcfContestBg{height: 600px; top: -40px;}
-    .dcfContestBg > img{position: absolute; bottom: -1px; right: -15px;}
-    .dcfContestBtn {width: 250px;}
-    .dcfContestBtn li a{ padding: 10px 0px; }
-    .dcfContestBox iframe{height: 140px;}
-    .dcfContestBox .contestAward{width: 55px; height: 55px; line-height: 55px; bottom: 15px; left: 15px;}
-    .dcfContestBox .contestName{width: 90px; padding: 2px 5px; bottom: 15px; right: 15px;}
-
-
-	/* 768 쿡앤쿡 */
-	.cook-wrap {position:relative; width:100%}
-	.cook-wrap li {width:47.6% !important;  }
-
-	
 
 }
 
@@ -3321,6 +2990,7 @@
 
 /* 3000 브랜드빅배너 */
 @media (max-width: 3000px) {
+}
 .brand_big { padding:0;  margin-top:-150px}
 .brand_big .visual-slide {margin: 0px;height:580px;position: relative;animation-name: fadeInUp;animation-delay: 1.5s;animation-duration: 1s;animation-fill-mode: both;}
 .brand_big .visual-slide .swiper-slide { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50px; background-repeat: no-repeat; background-position: center; background-size: cover; text-align: center; }
@@ -3343,61 +3013,15 @@
 @media (max-width: 1200px) {
 	.brand_big .visual-slide .swiper-button-prev, .brand_big .visual-slide .swiper-button-next { display: none; }
 	.bnr_brand03 .centerH {width:80%}
-	.brand_big { padding:0;  margin-top:-50px}
 	
 }
 @media (max-width: 992px) {
-	.brand_big { padding:0;  margin-top:-150px}
+	.brand_big { padding:0; }
 	.brand_big .visual-ttl h1 { font-size: 53px; margin-bottom: 15px; }
 	.brand_big .visual-ttl p { font-size: 1.36rem; line-height: 1.47; }
 	.brand_big .visual-slide { width: calc(100% + 30px); height: 426px; margin-left: -15px; margin-bottom:0px; margin-top:0px; }
-	.brand_big .visual-slide .swiper-slide { border-radius: 20px; }
+	.brand_big .visual-slide .swiper-slide { border-radius: 0; }
 	.brand_big .visual-slide h2 { font-size: 2.78rem; }
 	.brand_big .visual-slide p { margin-top: 15px; }
 	.brand_big .visual-slide .swiper-pagination {  }
 	/* //3000 브랜드빅배너 */
-
-
-/* 3000 Rnd 활동 */
-@media (max-width: 3000px) {
-.rnd_big { padding:0;  margin-top:-150px}
-.rnd_big .visual-slide {margin: 0px;height:580px;position: relative;animation-name: fadeInUp;animation-delay: 1.5s;animation-duration: 1s;animation-fill-mode: both;}
-.rnd_big .visual-slide .swiper-slide { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50px; background-repeat: no-repeat; background-position: center; background-size: cover; text-align: center; }
-.rnd_big .visual-slide .swiper-button-prev, 
-.rnd_big .visual-slide .swiper-button-next {
-	width: 28px;margin-top: -13px;
-	background: url(../../img/ico/btn_slim_left.png)no-repeat; background-size: contain; 
-}
-.rnd_big .visual-slide .swiper-button-prev { left: -70px; }
-.rnd_big .visual-slide .swiper-button-next { right: -70px; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); }
-.rnd_big .visual-slide .swiper-button-prev:after, .rnd_big .visual-slide .swiper-button-next:after { display: none; }
-.rnd_big .visual-slide h2 { font-size: 4.24rem; letter-spacing: -2px; line-height: 1.25; color: #fff; }
-.rnd_big .visual-slide p { margin-top: 28px; color: #fff; }
-.rnd_big .visual-slide .swiper-pagination { }
-
-.rnd_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0; }
-.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1; border:10px solid red }
-.rnd_big .swiper-horizontal>.swiper-pagination-bullets, 
-.rnd_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
-.rnd_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
-
-
-@media (max-width: 1200px) {
-	.rnd_big .visual-slide .swiper-button-prev, .rnd_big .visual-slide .swiper-button-next { display: none; }
-	.bnr_brand03 .centerH {width:80%}
-	.rnd_big { padding:0;  margin-top:-50px}
-	.yyy {display:none}
-	
-}
-@media (max-width: 992px) {
-	.rnd_big { padding:0;  margin-top:-150px}
-	.rnd_big .visual-ttl h1 { font-size: 53px; margin-bottom: 15px; }
-	.rnd_big .visual-ttl p { font-size: 1.36rem; line-height: 1.47; }
-	.rnd_big .visual-slide { width: calc(100% + 30px); height: 426px; margin-left: -15px; margin-bottom:0px; margin-top:0px; }
-	.rnd_big .visual-slide .swiper-slide { border-radius: 20px; }
-	.rnd_big .visual-slide h2 { font-size: 2.78rem; }
-	.rnd_big .visual-slide p { margin-top: 15px; }
-	.rnd_big .visual-slide .swiper-pagination {  }
-
-
-/* //3000 브랜드빅배너 */
