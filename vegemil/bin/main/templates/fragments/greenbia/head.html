@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="headFragment">
+
+<!-- 	<meta charset="utf-8"> -->
+<!-- 	<meta name="author" content="osse"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="description" content="그린비아 사이트에서 나에게 맞는 제품을 찾아보세요"/> 
+	<meta name="Keywords" content="그린비아, 정식품, 환자식, 일반영양식, 전문영양식, 연하식, 건강식품, 경구급식용, 섭취주의사항, 섭취방법, 알티에이치, RTH " />	
+
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+
+	<meta property="og:title" content="그린비아"> <meta property="og:url" content="https://www.vegemil.co.kr/Main/BrandGreenbia/"> 
+	<meta property="og:image" content="https://www.vegemil.co.kr/Main/BrandGreenbia/img/og.jpg" /> 
+	<meta property="og:description" content="그린비아는 국내기술력으로 탄생한 경장영양식 선도 브랜드입니다."/> 
+	
+		
+	<!-- CSS -->
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{/common/css/greenbia/bootstrap.css}" rel="stylesheet"/>
+	<link th:href="@{/common/css/greenbia/reset.css}" rel="stylesheet"/>
+<!-- 	<link th:href="@{/common/css/greenbia/style_20201119.css}" rel="stylesheet"/>  -->
+ 	<link th:href="@{/common/css/greenbia/style.css}" rel="stylesheet"/>
+	<!-- brook Slide -->
+	<link rel="stylesheet" th:href="@{/common/css/greenbia/plugins.min.css}" />
+ 	<link rel="stylesheet" th:href="@{/common/css/greenbia/brook.css}"/>
+	<!-- aos / effect -->
+	<link rel="stylesheet" th:href="@{/common/css/greenbia/aos.css}" />
+	<link rel="stylesheet" th:href="@{/common/css/greenbia/effect.css}" />
+	
+	<link rel="stylesheet" th:href="@{/common/css/greenbia/modality.css}" />
+	
+	
+		
+	<!-- JS -->		
+	<script th:src="@{https://code.jquery.com/jquery-1.11.2.js}"></script> 
+	<!-- countup -->
+	<script type="text/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/prrple.slider.js}"></script>	
+	
+	<script type="text/javascript" th:src="@{/common/js/greenbia/modality.js}"></script>	
+	<script type="text/javascript" th:src="@{/common/js/greenbia/jquery.countup.js}"></script>	
+	<script type="text/javascript" th:src="@{/common/js/greenbia/main.js}"></script>	
+	<script th:src="@{https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js}"></script>
+ 	
+	
+	<!-- loader Ani -->
+	<script type="text/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js}"></script>
+	
+	
+	<link rel="canonical" th:href="@{https://getbootstrap.com/docs/4.5/examples/jumbotron/}">
+	
+	
+	
+		<!-- CSS -->
+<!-- 	<link th:href="@{/common/css/slide.css}" rel="stylesheet">
+	<link th:href="@{/common/css/product.css}" rel="stylesheet"> -->
+	
+	<!-- JS -->
+<!-- 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
+	<script type="text/javascript" th:src="@{/common/js/jquery-1.7.2.min.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/jquery.Floater.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/main.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/prrple.slider.js}" charset="utf-8"></script>
+	<script type="text/javascript" th:src="@{/common/js/jquery.collapse.js}"></script>
+	<script type="text/javascript" th:src="@{/common/js/jquery.touchSwipe.1.6.min.js}"></script> -->
+	
+	
+	
+	
+	
+<th:block layout:fragment="add-script"></th:block>
+	<th:block layout:fragment="add-css"></th:block>
+</head>
+</html>

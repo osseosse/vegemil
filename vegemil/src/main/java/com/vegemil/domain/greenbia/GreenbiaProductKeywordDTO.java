@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class GreenbiaProductKeywordDTO extends CommonDTO {
 
-
 	private String gName; 
 	private String gCode;
 	private String gLcate; 
@@ -17,7 +16,8 @@ public class GreenbiaProductKeywordDTO extends CommonDTO {
 	private String gContents; 	
 	private Long   gTube; 	
 	private String gCapacity;
-	private String gCal; 
+	private String gCal;
+	private String gTubeMark; 
 	private String gKeyword; 
 	
 }

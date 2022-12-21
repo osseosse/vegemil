@@ -21,11 +21,6 @@ public class GreenbiaProductController {
 	@Autowired
 	private GreenbiaProductService greenbiaProductService;
 		
-	@GetMapping("/greenbia/guide")
-	public String guide() {
-		return "greenbia/guide";
-	}
-		
 	@GetMapping("/greenbia/newProduct")
 	public String newGreenbiaProduct(Model model, @RequestParam(required = false) String category) {
 		

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+   <head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="contant100 mt90h" >
+		<div class="row">
+			<!-- 슬라이드 -->
+			<div  id="slider3">
+				<div class="slider" >
+					<div class="slider_area">
+						<div class="slides ">
+							<div class="slide">
+								<div class="slidetitle VBP01 h300"></div>
+								<div class="st-txt mt20">
+									<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
+									<p class="f13 fw400 gray04 mt10">간 없이 물 없이 단번에 맛있게!<br>간편하게 다양한 요리에 활용 할 수 있어요~</p>
+								</div>
+							</div>
+						
+							<div class="slide">
+								<div class="slidetitle SCI04 h300"></div>
+								<div class="st-txt mt20">
+									<p class="f27 fw600 center0">진한 콩국물</p>
+									<p class="f13 fw400 gray04 mt10">통 콩을 그대로 갈아 만든 콩 국물!<br>간편하게 다양한 요리에 활용 할 수 있어요~</p>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="slidetitle SCI02 h300"></div>
+								<div class="st-txt mt20">
+									<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
+									<p class="f13 fw400 gray04 mt10">어려운 요리도 간단하게!<br>간단하게 다양한 요리에 활용 할 수 있어요~</p>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+					<a class="slider_left"><img th:src="@{/img/btn_ppl_left.png}" alt="왼쪽" /></a>
+					<a class="slider_right"><img th:src="@{/img/btn_ppl_right.png}" alt="오른족" /></a>
+				</div>
+			</div>  
+			<!-- //슬라이드 -->
+		</div>
+	</div>
+	<div class="contant1760" >
+		<div class="row">
+			<div class="col-md-12 mt100">
+				<!-- tabs3 -->
+				<div class="prd_wrap mt20">
+					<ul class="tabs3">
+						<li class=""><a href="#V"><p class="ico_VE">두유 (베지밀)</p></a></li>
+						<li ><a href="#P"><p class="ico_VM">임산부 영양식</p></ a></li>
+						<li ><a href="#B"><p class="ico_VB">영&middot;유아식</p></a></li>
+						<li ><a href="#G"><p class="ico_GE">특수영양식</p></a></li>
+						<li ><a href="#H"><p class="ico_GH">건강식품</p></a></li>
+						<li ><a href="#F"><p class="ico_SC">식재료</p></a></li>
+						<li ><a href="#M"><p class="ico_CV">식물성음료</p></a></li>
+						<li ><a href="#S"><p class="ico_CD">음료</p></a></li>
+						<li ><a href="#M"><p class="ico_CW">생수</p></a></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('.prd_wrap').basicTabs3();/* basicTabs3 변경 */
+					});
+				</script>
+				<!-- //tabs3 -->
+			</div>
+		</div>
+		<div id="flotingPage">
+			<div class="floting-left_prd mt110">
+				<div class="floting">
+					<div class="flotingContent"><!-- 2022-11-01 "flotingContent" 클래스추가 --> 
+						<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+						<ul class="prd_subCate mt40">
+							<li class="current"><a href="">전체보기</a><span></span></li>
+							<li><a href="">프리미엄 두유</a><span></span></li>
+							<li><a href="">플레인 두유</a><span></span></li>
+							<li><a href="">블랙두유</a><span></span></li>
+							<li><a href="">곡물&견과 두유</a><span></span></li>
+							<li><a href="">과즙&차류 두유</a><span></span></li>
+						</ul>
+					</div>
+					<br class="clear">
+					<div class="h300"></div>
+				</div>
+			</div><!-- //floting-left_prd -->
+			<div class="floting-right_prd mt110">
+				<!-- tabs3 content -->
+				<div class="tab_content3">
+					<div id="V">
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'V'}"  th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="P"><!-- 임산 수유 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'P'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="B"><!-- 영유아식 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'B'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="G"><!-- 특수영양식(그린비아) -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'G'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="H"><!-- 건강식품 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'H'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="F"><!-- 식재료 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'F'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="M"><!-- 식물성음료 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'M'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="${product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="${product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="S"><!-- 음료 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}" >
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'}" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="W"><!-- 생수 -->
+						<div class="row">
+							<div class="col-md-4 col-6" th:if="${not #lists.isEmpty( productList )}" th:each="product, i : ${productList}" >
+								<div class="prd-list" th:if="${product.categoryCode == 'W'}" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.newOrBest == 'new'}" th:src="@{/img/ico/ico_list_new.png}" alt="신제품">
+											<img th:if="*{product.newOrBest == 'best'}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="@{/img/product/thumb/VPL01_700_01.png}"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.pCate}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img  th:if="*{product.pOnclick == 1}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- //tabs3 content -->
+			</div><!-- //floting-right_prd -->
+		</div><!-- //flotingPage -->
+		<br class="clear">
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

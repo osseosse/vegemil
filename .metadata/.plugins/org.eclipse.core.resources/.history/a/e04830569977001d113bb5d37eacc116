@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 FSSC 인증</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopFssc h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">FSSC 22000 인증</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="03_07_haccp.html"><span>HACCP 인증</span></a></li>
+				<li class="f18 fw500 active"><a href="03_08_fssc.html"><span>FSSC22000인증</span></a></li>
+				<li class="f18 fw500"><a href="03_09_halal.html"><span>HALAL 인증</span></a></li>
+				<li class="f18 fw500"><a href="03_10_epd.html"><span>환경성적표지 인증</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+        <div class="center mt50 fsscInfo01">
+            <p class="f45 fw600">FSSC 22000 이란?</p>
+            <p class="f18 mt100 f_pp gray04">The Food Safety System Certification 22000</p>
+            <p class="mt40">
+                <img th:src="@{/img/R&D/fssc_01.jpg}" alt="fssc이미지" class="fssc_01">
+            </p>
+            <p class="f66 fw600 mt50">식품안전시스템</p>
+            <p class="f18 mt60 fw400 gray04">
+                국제식품안전협회(GFSI)가 승인한 국제식품규격 중 하나로 <br class="none">
+                세계 각국의 인정기관(Accreditation Bodies)으로 부터 인정되고 있는 규격이며 <br class="none">
+                글로벌 식품기업에서 가장 적극적으로 채택하고 있는 식품안전규격입니다.
+            </p>
+        </div>
+    </div><!--//contant1460-->
+    <div class="content100 mt200">
+	   <div class="fsscBg">
+			<div>
+				<p class="gold f_pp f18">Safety Food</p>
+				<p class="f45 fw600 white mt40">건강하고 믿을 수 있는 먹거리 생산</p>
+				<p class="f18 white mt30">
+				    당사는 2017년 12월 4일FSSC 22000(식품안전시스템) 인증을 획득하여 <br class="none">
+                    국제적으로 인증된 안전한 식품을 생산하고 있습니다.
+				</p>
+				<p class="gold f_pp f18 mt130">FSSC 22000</p>
+				<p class="f27 white fw600">식품안전시스템</p>
+				<img th:src="@{/img/R&D/fssc_02.png}" alt="식품안전시스템이미지" class="mt50 imgPc">
+				<ul class="row mt30m">
+				    <li class="col-md-4 white">
+				        <p class="gold f_pp">HACCP</p>
+				        <p class="f23">식품안전관리인증기준</p>
+				    </li>
+				    <li class="col-md-4 white">
+				        <p class="gold f_pp">ISO 22000</p>
+				        <p class="f23">식품안전경영시스템</p>
+				    </li>
+				    <li class="col-md-4 white">
+				        <p class="gold f_pp">ISO TS 22002-1</p>
+				        <p class="f23">식품안전에 대한 선행요건 프로그램</p>
+				    </li>
+				</ul>
+			</div>
+		</div>
+	</div><!--//content100-->
+	<div class="contant1460 mt200 mb200">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="f38 fw600">
+                    국제적으로 인증된 안전한 식품을 생산,<br>
+                    FSSC 22000 인증 완료
+                </p>
+                <p class="f14 gray04 mt40">
+                    FSSC 22000 인증 일자 : 2017년 12월 4일
+                </p>
+                <p class="f27 mt100">식품안전시스템 인증서</p>
+                <div class="fsscInfo02 centerMo mt40 row">
+                    <div class="col-md-6">
+                        <img th:src="@{/img/R&D/fssc_03.jpg}" alt="fssc 인증서" >
+                    </div>
+                    <div class="col-md-6">
+                        <img th:src="@{/img/R&D/fssc_04.jpg}" alt="fssc 인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt50m">
+                <img th:src="@{/img/R&D/fssc_05.jpg}" alt="서류 보는 이미지">
+            </div>
+        </div>
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

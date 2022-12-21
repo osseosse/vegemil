@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<footer id="footer" th:fragment="footerFragment">
+
+
+	<div class="container">
+		<div class="row flex-3 ">
+			<div class="col-md-2">
+				<a href="http://www.vegemil.co.kr"><img th:src="@{/img/vegemilBaby/footer_logo.png}" alt="정식품로고" /></a>
+			</div>
+			<div class="col-md-2 f_02">
+					<p class="f13_3">사업자등록번호 315-81-19977 <br>업태:제조 (기타 비알콜성 음료) <br>대표전화 02-3484-9300 </p>
+			</div>
+			<div class="col-md-3 f_03">
+				<p class="f13_3"><span class="custom">고객상담 <span class="f35_3">080-930-8888</span><br>상담메일 cs@vegemil.co.kr  <br>웹마스터 webmaster@vegemil.co.kr<br></p>
+			</div>
+			<div class="col-md-3 f_04">
+				<p class="f13_3">충정북도 청주시 흥덕구 산단로 124 (우) 28446<br>
+				ⓒ 2020 Dr.CHUNG’S FOOD Co.LTD All right Reserved.</p>
+			</div>
+			<div class="col-md-2 f_05">
+				<!-- familt site-->
+				<div class="family_box">
+					<div class="family_open">
+						<ul>
+							<li><a href="http://www.vegemil.co.kr" target="_blank">정식품</a></li>
+							<li><a href="http://www.edaymall.com" target="_blank">이데이몰</a></li>
+							<li><a href="http://www.osse.co.kr" target="_blank">오쎄</a></li>
+						</ul>
+					</div>
+					<div class="family_site">
+						<p class="view-btn">
+							<a href="javascript:void(0);">FAMILY SITE</a>
+						</p>
+					</div>
+				</div>
+				<!-- // familt site-->
+				<a href="#wrap"><p class="btn_top"><img src="/Main/brandVegemilBaby/HTML/img/btn_top.png" alt="정식품로고" /></p></a>
+					
+				<script>
+				// main familt site JS
+				$(".family_site .view-btn").click(function(){
+						if($(this).attr("class")=="view-btn"){
+							$(this).addClass("open");
+							$(".family_open").slideDown("fast");
+						}else{
+							$(this).removeClass("open");
+							$(".family_open").slideUp("fast");
+						}
+						return false;
+					});
+				</script>
+				<!-- 구글 추적로그 -->
+	            <script type="text/javascript">
+		            var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-11500332-1']);_gaq.push(['_trackPageview']);
+		            (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+	            </script>
+	            <!-- Google Tag Manager -->
+		        <script>
+		        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		        })(window,document,'script','dataLayer','GTM-PB7HDT6');
+		        </script>
+		        <!-- End Google Tag Manager -->
+				<!-- 뷰저블 2020.10.14 -->
+	            <script type="text/x-javascript">
+	                (function(w, d, a){
+	                    w.__beusablerumclient__ = {
+	                        load : function(src){
+	                            var b = d.createElement("script");
+	                            b.src = src; b.async=true; b.type = "text/x-javascript";
+	                            d.getElementsByTagName("head")[0].appendChild(b);
+	                        }
+	                    };w.__beusablerumclient__.load(a);
+	                })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+	            </script>
+			</div>
+		</div>
+	</div>
+
+
+
+</footer>
+</html>

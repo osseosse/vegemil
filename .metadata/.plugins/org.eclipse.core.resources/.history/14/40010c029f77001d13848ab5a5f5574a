@@ -1,0 +1,19 @@
+package com.vegemil.controller.vegemilBaby;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class VegemilBabySupportController {
+	
+	@GetMapping("/vegemilBaby/faq")
+	public String faq() {
+		return "vegemilBaby/faq";
+	}
+	
+	@GetMapping("/vegemilBaby/lactation")
+	public String lactation() {
+		return "vegemilBaby/lactation";
+	}
+
+}

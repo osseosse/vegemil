@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 할랄 인증</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopHalal h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">Halal 인증</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="03_07_haccp.html"><span>HACCP 인증</span></a></li>
+				<li class="f18 fw500"><a href="03_08_fssc.html"><span>FSSC22000인증</span></a></li>
+				<li class="f18 fw500 active"><a href="03_09_halal.html"><span>HALAL 인증</span></a></li>
+				<li class="f18 fw500"><a href="03_10_epd.html"><span>환경성적표지 인증</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+        <div class="center mt50 halalInfo01">
+            <p class="f66 fw600 mt50">할랄(HALAA)이란?</p>
+            <p class="mt100">
+                <img th:src="@{/img/R&D/halal_01.jpg}" alt="halal이미지" class="halal_01">
+            </p>
+            <p class="f18 mt60 fw400 gray04">
+                이슬람교도인 무슬림이 먹고 쓸 수 있는 제품을 총칭으로 아랍어로 '허용된 것'이라는 뜻입니다.<br class="none">
+                채소 곡류 등 식물성 음식과 어류 등 해산물, 육류 중에선 닭고기 소고기 등이 포함된다. 술 돼지고기 등 무슬림에게 금지된 음식은 ‘하람(haram)’이라고 합니다.
+            </p>
+            <p class="gray04 f12 mt20">
+                금지된 사항 (HARAM:하람) : 죽은 동물 고기, 피, 돼지, 개, 술, 독, 비할랄 방식으로 도축된 고기 등. 독성이 없고 취하게 하진 않고 또한 건강에 유해하지 않을 것
+            </p>
+        </div>
+    </div><!--//contant1460-->
+	<div class="contant1460 mt120 mb200">
+        <div class="row halalInfo">
+            <div class="col-md-12 halalBg01">
+                <div class="white centerMo">
+                    <p class="f27 fw600">할랄 식품 인증 기준</p>
+                    <p class="f16 mt10">이슬람 율법(Sharia)를 준수하여 금지된 물질(Haram)을 사용하지 않습니다.</p>
+                </div>
+            </div>
+            <div class="col-md-12 halalBg02 mt60">
+                <div class="white centerMo">
+                    <p class="f27 fw600">자사 인증 기관</p>
+                    <p class="f16 mt10">IFANCA (미국 이슬람 식품 영양학회)</p>
+                    <p class="f14">IFANCA는 세계3대 할랄인증 기관으로서 전 세계적으로 공신력을 인정받은 인증기관입니다. (2015~2016 톰슨로이터 발표)</p>
+                </div>
+            </div>
+            <div class="col-md-12 halalBg03 mt60">
+                <div class="white centerMo">
+                   <img th:src="@{/img/R&D/halalLogo.png}" alt="할랄로고">
+                    <p class="f27 fw600 mt10m">할랄 인증 마크</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt200">
+            <div class="col-md-12">
+                <p class="f38 fw600 black">
+                    모든 위해요소를 사전에 방지하고 이슬람교인 뿐 아니라<br class="none">
+                    모든 소비자가 신뢰 할 수 있는 할랄 인증을 완료
+                </p>
+                <p class="f14 gray04 mt40">할랄 인증 일자 : 2015년 09월 16일 / 인증 품목 : 베지밀 A 포함 총 15개 품목</p>
+                <p class="f27 fw500 mt100">할랄 인증서</p>
+            </div>
+            <ul class="certInfo mt40 center">
+                <li>
+                    <img th:src="@{/img/R&D/halal_02.jpg}" alt="할랄인증서_01">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/halal_03.jpg}" alt="할랄인증서_02">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/halal_04.jpg}" alt="할랄인증서_03">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/halal_05.jpg}" alt="할랄인증서_04">
+                </li>
+                <li>
+                    <img th:src="@{/img/R&D/halal_06.jpg}" alt="할랄인증서_05">
+                </li>
+            </ul>
+        </div>
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

@@ -36,6 +36,4 @@ public class PaymentDTO {
 	private String lgdReceiptUrl;
 	private String lgdMd5;
 
-	
-
 }

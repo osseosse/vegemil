@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+<script>
+	$(document).ready(function() {
+		$('#btnSearch').click(function() {
+			var word = $('#txtSearch').val();
+			if (word == "" || word == null) {
+				alert("검색어를 입력하세요.");
+				return false;
+			}
+		});
+
+		function onKeydownEnterKey(obj) {
+			if (event.keycode == 13) {
+				self.focus();
+				obj.click();
+
+				return false;
+			}
+		}
+
+		/*if ('<%=search %>' != '') { <!--??-->
+			$('#originList').hide();
+			$('#searchList').show();
+			$('#searchTotal').show();
+			$('#resultWord').show();
+		} */
+	});
+
+	function selectCategory() {
+		$('#originList').show();
+		$('#searchList').hide();
+		$('#searchTotal').hide();
+		$('#resultWord').hide();
+	}
+</script>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+      $(document).ready(function(){
+    	var current = 'ㅡㅡ';
+      	current = /*[[ ${search_html} ]]*/;
+
+      	console.log(current);
+      	
+      	/* if (current == null){
+      		$('#originList')show();
+      	} */
+      	
+      	if (current != null) { 
+			$('#originList').hide();
+			$('#searchList').show();
+			$('#searchTotal').show();
+			$('#resultWord').show();
+		}
+	});
+	/*]]>*/
+</script>
+
+<body>
+	<!-- ================================ 
+		        Header
+        ================================ -->
+	<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+	<!-- ================================ 
+		        // Header
+        ================================ -->
+	<!-- ================================ 
+		        Content
+        ================================ -->
+	<!-- main Visual -->
+	<form id="Form1" method="post" action="">
+		<div class="container100 clear">
+			<div class="row h500">
+				<div class="col-lg-12 bg_list">
+					<div class="hCenter02">
+						<!-- subSearch -->
+						<div class="mainSearch w600 fw600">
+							<p class="f50  white tcenter">간단레시피</p>
+
+							<div class="search-container clear mt30">
+								<input type="text" class="in-search" name="txtSearchWord"
+									id="txtSearch" placeholder="찾으시는 레시피를 검색해보세요." autofocus></input>
+								<!--  <button id="btnSearch" name="btnSearch" class="fa fa-search" alt="검색"> -->
+									<img id="btnSearch" name="btnSearch"
+										class="fa fa-search" alt="검색" src=""
+										th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png}" onclick="document.getElementById('Form1').submit();"> 
+								<!-- </button>-->
+							</div>
+							<div class="clear"></div>
+							<ul class="mt20 key2">
+								<li><a href="/beanSoup/list?tag=담백한">#담백한
+										채소육수</a></li>
+								<li><a href="/beanSoup/list?tag=시원한">#시원한
+										채소육수</a></li>
+								<li><a href="/beanSoup/list?tag=구수한 사골육수">#구수한
+										사골육수</a></li>
+								<!--<li><a href="/Main/beanSoup/list.aspx?tag=냄비요리">#냄비요리</a></li>
+                                <li><a href="/Main/beanSoup/list.aspx?tag=면요리">#면요리</a></li>-->
+							</ul>
+						</div>
+						<!-- //subSearch -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // main Visual -->
+		<div class="container mt80">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="messonry-button text-center pb30 ">
+						<button data-filter="*" class="is-checked ico_pc_01" type="button"
+							id="01" onclick="selectCategory();">
+							<span class="filter-text"></span><span class="filter-counter" th:text="${countMap.allCount}">21</span>
+							<p class="f18 f500 mt10">전체</p>
+						</button>
+						<button data-filter=".recType01" class="ico_pc_02" type="button"
+							id="02" onclick="selectCategory();">
+							<span class="filter-text"></span> <span class="filter-counter" th:text="${countMap.recType01}">12</span>
+							<p class="f18 f500 mt10">
+								익숙한 <br class="view">일상요리
+							</p>
+						</button>
+						<button data-filter=".recType02" class="ico_pc_03" type="button"
+							id="03" onclick="selectCategory();">
+							<span class="filter-text"></span> <span class="filter-counter" th:text="${countMap.recType02}">6</span>
+							<p class="f18 f500 mt10">
+								특별한 날 <br class="view">메인요리
+							</p>
+						</button>
+						<button data-filter=".recType03" class="ico_pc_04" type="button"
+							id="04" onclick="selectCategory();">
+							<span class="filter-text"></span> <span class="filter-counter" th:text="${countMap.recType03}">3</span>
+							<p class="f18 f500 mt10">
+								부어서 <br class="view">세계속으로
+							</p>
+						</button>
+					</div>
+
+					<th:block th:if="${not #strings.isEmpty(search_result_html)}">
+						<div class="listLine mt30m">
+							<div id="searchTotal">
+								<div class='count'><p class='f16'>검색결과 <span class='green' th:text="${search_html}"></span> 조회</p></div>
+							</div>
+						</div>
+						<div id="resultWord"><div class='mt50'><p class='f38 fw600 tcenter'><span class='green' th:text="${search_result_html}">'#채소'</span> 검색결과</p></div></div>
+					</th:block>
+					<div class="portfolio-grid-metro4 mesonry-list" id="searchList"
+						style="display: none;">
+						<div class="resizer"></div>
+						<!-- <div id="DataList1"> -->
+						<!--나중에 th:block -> div로 바꿔보기 -->
+						<th:block th:each="item : ${searchList}">
+							<div class="portfolio portfolio_style--1 portfolio-25"
+								th:classappend="${item.filter}">
+								<div class="thumbBox">
+									<a href="#" th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
+										<!--pk:fileNo -->
+										<div class="h220 round" th:classappend="${item.cssClass}">
+											<th:block th:if="${item.mCate == '온요리'}">
+												<ul class="labelBox">
+													<li class="hot"><span>온요리</span></li>
+												</ul>
+											</th:block>
+											<th:block th:if="${item.mCate == '냉요리'}">
+												<ul class="labelBox">
+													<li class="cool"><span>냉요리</span></li>
+												</ul>
+											</th:block>
+										</div>
+										<div class="recipeTxt_white">
+											<p class="f16 gray" th:text="${item.tag}">tag</p>
+											<p class="f22 fw600 mt10" th:text="${item.name}">name</p>
+										</div>
+									</a>
+								</div>
+							</div>
+						</th:block>
+						<!-- </div> -->
+					</div>
+					<!-- 메인 전체리스트 -->
+					<div class="portfolio-grid-metro4 mesonry-list" id="originList" style="display: block;">
+						<div class="resizer"></div>
+						<!--나중에 th:block -> div로 바꿔보기 -->
+						<th:block th:each="item : ${beansoupList}">
+							<div class="portfolio portfolio_style--1 portfolio-25"
+								th:classappend="${item.filter}">
+								<div class="thumbBox">
+									<a href="#"
+										th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
+										<!--pk:fileNo -->
+										<div class="h220 round" th:classappend="${item.cssClass}">
+											<th:block th:if="${item.mCate == '온요리'}">
+												<ul class="labelBox">
+													<li class="hot"><span>온요리</span></li>
+												</ul>
+											</th:block>
+											<th:block th:if="${item.mCate == '냉요리'}">
+												<ul class="labelBox">
+													<li class="cool"><span>냉요리</span></li>
+												</ul>
+											</th:block>
+										</div>
+										<div class="recipeTxt_white">
+											<p class="f16 gray" th:text="${item.tag}">tag</p>
+											<p class="f22 fw600 mt10" th:text="${item.name}">name</p>
+										</div>
+									</a>
+								</div>
+							</div>
+						</th:block>
+					</div>
+					<!-- 메인 전체리스트 끝끝-->
+				</div>
+			</div>
+			<!-- paging 
+                <div class="paging3">
+                    <ol>
+                        <li class="pre"><asp:imagebutton id="btnPrev" runat="server"  img src="./assets/img/page_left.png" alt="이전" /></li>
+		                <li><asp:label id="labPageList" runat="server"></asp:label>
+                        <li class="next"><asp:imagebutton id="btnNext" runat="server" img src="./assets/img/page_right.png" alt="다음" /></li>
+                    </ol>
+                </div>
+            <!-- paging //-->
+		</div>
+	</form>
+	<!-- //container -->
+	<!-- ================================ 
+		        // Content
+        ================================ -->
+	<!-- ================================ 
+		        Footer
+        ================================ -->
+	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+	<!-- ================================ 
+		        // Footer
+        ================================ -->
+</body>
+</html>

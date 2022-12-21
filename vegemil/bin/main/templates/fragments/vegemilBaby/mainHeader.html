@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<header id="header" th:fragment="headerFragment">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<!-- <script async th:th:src="@{https://www.googletagmanager.com/gtag/js?id=UA-141294099-1}"></script>
+ -->
+<script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141294099-1');
+
+</script>
+
+<div class="navbar-wrapper" style="position: fixed; top: 0; left: 0; right: 0;">
+		<!-- nav -->
+		<nav id="primary-navigation">
+		<div class="container-fluid_">
+			<div class="navbar-header">
+				<a th:href="@{/vegemilBaby/index}" class="site-title yellow-text"><img th:src="@{/img/vegemilBaby/logo.gif}" alt="베지밀 영유아식"/></a>
+			</div>
+			<!-- 2020-02-05 -->
+			<div class="page-main mo-nav" >
+				<aside> <!-- default open 처리 : class="open" style="right:-70px" -->
+					
+					<div class="maink">
+						<input id="tab11" type="radio" name="tabs1" checked> 
+						<label for="tab11">Brand</label>
+						
+						<input id="tab12" type="radio" name="tabs1">
+						<label for="tab12">Product</label>
+
+						<input id="tab13" type="radio" name="tabs1">
+						<label for="tab13">Event</label>
+						
+						<input id="tab14" type="radio" name="tabs1">
+						<label for="tab14">Community</label>
+						
+						<input id="tab15" type="radio" name="tabs1">
+						<label for="tab15">Support</label>
+						
+						<div class="menuNav" id="content1">
+							<p><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></p>
+							<p><a th:href="@{/vegemilBaby/nutrition}">영양</a></p>
+							<p><a th:href="@{/vegemilBaby/safe}">안심플러스</a></p>
+							<p><a th:href="@{/vegemilBaby/tv}">TV 광고</a></p>
+						</div>
+						<div class="menuNav" id="content2">
+							<p><a th:href="@{/vegemilBaby/premium}">프리미엄</a></p>
+							<p><a th:href="@{/vegemilBaby/belief}">우리콩</a></p>
+						</div>
+						<div class="menuNav" id="content3">
+							<p><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></p>
+							<p><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></p>
+							<p><a th:href="@{/vegemilBaby/event_model}">아기모델 선발대회</a></p>
+							<p><a th:href="@{/vegemilBaby/sample}">샘플신청</a></p>
+						</div>
+						<div class="menuNav" id="content4">
+							<p><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></p>
+							<p><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></p>
+							<p><a th:href="@{/vegemilBaby/recipe_list?p=1}">영&middot;유아식 레시피</a></p>
+						</div>
+						
+						<div class="menuNav" id="content5">
+							<p><a th:href="@{/vegemilBaby/faq}">제품 FAQ</a></p>
+							<p><a th:href="@{/vegemilBaby/lactation}">수유법</a></p>
+						</div>
+					</div>
+					<div class="jjj"><img th:src="@{/img/vegemilBaby/btn_open.png}" alt="#" /></div>
+				</aside>
+			</div>
+			
+			
+			
+			
+			
+			<div class="main-menu" id="perfect-navbar-collapse">
+				<ul class="nav navbar-nav ">					
+					<li class="dropdown">
+						<a th:href="@{/vegemilBaby/brand}" class="dropdown-toggle">Brand <i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
+						<ul class="dropdown-menu">
+							<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
+							<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
+							<li><a th:href="@{/vegemilBaby/safe}">안심플러스</a></li>
+							<li><a th:href="@{/vegemilBaby/tv}">TV 광고</a></li>						
+						</ul>
+					</li>
+					<li class="dropdown">
+					<a th:href="@{/vegemilBaby/premium}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Product<i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu">
+						<li><a th:href="@{/vegemilBaby/premium}">프리미엄</a></li>
+						<li><a th:href="@{/vegemilBaby/belief}">우리콩</a></li>
+					</ul>
+					</li>					
+					<li class="dropdown">
+					<a th:href="@{/vegemilBaby/e_magazine?p=1}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Community<i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu">
+						<li><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></li>
+						<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></li>
+						<li><a th:href="@{/vegemilBaby/recipe_list?p=1}">영&middot;유아식 레시피</a></li>			
+					</ul>
+					</li>
+					<li class="dropdown">
+					<a th:href="@{/vegemilBaby/bv_event}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Event<i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu">					
+						<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+						<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+						<li><a th:href="@{/vegemilBaby/event_model}">아기모델 선발대회</a></li>
+						<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>			
+					</ul>
+					</li>
+					<li class="dropdown">
+					<a th:href="@{/vegemilBaby/faq}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Support<i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu">						
+						<li><a th:href="@{/vegemilBaby/faq}">제품 FAQ</a></li>
+						<li><a th:href="@{/vegemilBaby/lactation}">수유법</a></li>			
+					</ul>
+					</li>					
+				</ul>
+				<!-- // 탭
+				sns-menu -->
+				<img th:src="@{/img/vegemilBaby/ico_log2.png}" class="hvr-float"/>		
+				<ul class="tools" id="buttons2">
+						
+					<li class="shop" ><a th:href="@{http://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000029&pCateCode=20000002}" class="hvr-float"><img th:src="@{/img/vegemilBaby/ico_shop2.png}" alt="샵"/><p>SHOP</p></a></li>
+					<li class="login">		
+						<a href="#pop_Login" class="hvr-float">				
+							<p class="pc_log ">	
+								<asp:imagebutton id="logIcon1" runat="server" imageurl="./img/ico_log2.png" alternatetext="로그인" causesvalidation="false" ></asp:imagebutton><br>	    
+								<asp:imagebutton id="dButton1" runat="server" imageurl="./img/login-text.png" alternatetext="로그인" causesvalidation="false" class="mt13"></asp:imagebutton>
+							</p>
+						</a>
+						<asp:imagebutton id="logIcon2" runat="server" imageurl="./img/ico_log2.png" alternatetext="로그아웃" causesvalidation="false" ></asp:imagebutton><br>	 	    			    			
+						<asp:imagebutton id="dButton2" runat="server" imageurl="./img/logout-text.png" alternatetext="로그아웃" causesvalidation="false" class="mt13"></asp:imagebutton>
+					</li>
+					<li><a href="http://www.vegemil.co.kr/main/member/terms.aspx" class="hvr-float"><img th:src="@{/img/vegemilBaby/ico_love2.png}" alt="조인"/><p>JOIN</p></a>
+					</li>
+					<li class="sns"><a href="https://www.facebook.com/vegemilgood" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_01_off.png}" alt="페이스북"/></a></li>
+					<li class="sns"><a href="https://blog.naver.com/PostList.nhn?blogId=vegemilstory" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_02_off.png}" alt="블로그"/></a></li>
+					<li class="sns"><a href="https://www.youtube.com/channel/UCq8X6Ll0ZjacC4-M-vicVpw" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_03_off.png}" alt="유튜브"/></a></li>
+					<li class="sns"><a href="https://story.kakao.com/ch/vegemilbaby" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_04_off.png}" alt="카스"/></a></li>
+					<li class="sns"><a href="https://www.instagram.com/vegemil.official/?hl=ko" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_05_off.png}" alt="인스타"/></a></li>
+				</ul>
+				<!-- //sns-menu -->
+			</div> 
+			
+			
+		</div>
+		</nav>
+		<!-- //nav-->
+	</div>
+	
+	
+    <div id="pop_Login"  style="display:none;">
+		<table class="popBaby" cellspacing="0"  summary="로그인">
+			<caption>로그인팝업<caption>
+			<colgroup>
+			</colgroup>
+			<tr>
+				<th>
+					<span class="f40_6">로그인</span>
+					<p class="btn_pop_close"><a href="#pop_Login"><img th:src="@{/img/vegemilBaby/btn_popClose.gif}" alt="닫기" /></a></p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p class="f20_4 mt40 tdLine">
+						정식품 기업사이트 로그인 후 이용 가능합니다.<br>미회원이실 경우, 회원가입 후 신청 부탁드립니다. 
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ul class="pop_style01 mt40 pop_line">
+						<li>
+						<asp:textbox style="IME-MODE: disabled; MARGIN-LEFT: 6px" id=txtId  tabindex=1 runat=server maxlength="20" placeholder="아이디">
+						</asp:textbox>
+						<li>
+						<asp:textbox style="IME-MODE: disabled; MARGIN-LEFT: 6px" id=txtPwd tabindex=2 runat=server textmode="Password" placeholder="비밀번호">
+						</asp:textbox>
+						<li class="f14_4 textRight"><a href="/Main/member/idPwSearch.aspx">* 아이디 / 비밀번호찾기</a></li>
+						<li class="btn_in">
+						<asp:imagebutton id=modalLogin tabIndex=3 runat=server imageurl="./img/btn_popLogin.gif"></asp:imagebutton>						
+						</li>
+					</ul>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div class="tdLine2 mt40">
+						<span class="bg_bean f17_4  disnone">Stop! &nbsp; 아직 회원이 아니신가요? <img class="pop_arr" th:src="@{/img/vegemilBaby/ico_popArrow.png}" alt="화살" /></span> 
+						<a href="/Main/member/terms.aspx"><img class="btn_member" th:src="@{/img/vegemilBaby/btn_popMember.gif}" alt="회원가입" /></a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	
+	 <script>
+		var modal1 = Modality.init('#pop_Login ', {effect: 'slide-up'}); 
+	 </script>
+	 <!-- //popup -->
+</header>
+</html>
+	

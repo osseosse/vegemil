@@ -1,0 +1,16 @@
+package com.vegemil.controller.vegemilBaby;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class VegemilBabyMainController {
+	
+	@GetMapping("/vegemilBaby/index")
+	public String index() {
+		return "vegemilBaby/index";
+	}
+	
+	
+
+}

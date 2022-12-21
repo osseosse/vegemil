@@ -11,7 +11,7 @@ import com.vegemil.domain.greenbia.GreenbiaProductCountDTO;
 import com.vegemil.domain.greenbia.GreenbiaProductDTO;
 import com.vegemil.domain.greenbia.GreenbiaProductKeywordDTO;
 import com.vegemil.domain.greenbia.GreenbiaProductSearchDTO;
-import com.vegemil.mapper.greenbia.GreenbiaProductMapper;
+import com.vegemil.mapper.GreenbiaProductMapper;
 
 @Service
 public class GreenbiaProductServiceImpl implements GreenbiaProductService {

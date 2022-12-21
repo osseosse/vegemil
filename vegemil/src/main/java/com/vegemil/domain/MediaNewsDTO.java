@@ -38,5 +38,4 @@ public class MediaNewsDTO extends CommonDTO {
     private String insertDate;  
     private String modifiedDate;
     
-
 }

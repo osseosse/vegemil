@@ -2,7 +2,6 @@ package com.vegemil.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Map;

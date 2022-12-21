@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->
+        <!-- ================================ 
+		        Content
+        ================================ -->
+        <!-- main Visual -->
+        <div class="container100 clear" >
+	        <div class="row bg_video h500">
+		        <div class="hCenter03">
+			        <p class="f50 white fw600">영상</p>
+		        </div>
+		        <div class="container">
+			        <ul class="board_tab">
+				        <li class="active"><a href="/beanSoup/video">영상</a></li>
+				        <li><a href="/beanSoup/news">새소식</a></li>
+				        <li><a href="/beanSoup/event">생생후기</a></li>
+			        </ul>
+		        </div>
+	        </div>
+        </div>  
+        <!-- // main Visual -->
+        <div class="container pb100">
+            <form id="Form1" runat="server">
+	            <div class="row">
+		            <div class="col-lg-12 mt100 mb50 boardline">
+			            <p class="f38 fw600 mt50m mCenter">영상</p>
+		            </div>
+            		<!-- 준비중입니다.  
+		            <div class="col-lg-12"><p class="f28 tcenter pt100 pb200">준비중입니다.</p></div>
+		            <!-- 준비중입니다.  //-->
+                        <th:block th:each="item : ${beansoupVideoList}">
+                            <div class="col-lg-4">
+			                    <div class="thumbBox">
+				                    <a href="#">
+					                    <div class="round">
+						                    <iframe class="h240 w100"  th:src="${item.mSrc}" 
+						                    title="YouTube video player" frameborder="0" 
+						                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+						                     style="border-radius:20px" allowfullscreen></iframe>
+					                    </div>
+					                    <div class="recipeTxt_white">
+						                    <p class="f16 gray" th:text="${item.mWriteDate}"></p>
+						                    
+						                    <p class="f22 fw600 mt10" th:text="${item.mTitle}"></p>
+					                    </div>
+				                    </a>
+			                    </div>
+		                    </div>
+                        </th:block>
+	            </div><!-- //row -->
+	            
+	            <!-- paging -->
+	            <div class="paging3">
+	          		<ol>
+			            <nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0 and params.paginationInfo.firstPage != params.paginationInfo.lastPage}" 
+			            		th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+							<div class="paging mt50">
+				                <li class="pre" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+									<img name="btnPrev" id="btnPrev" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/page_left.png}">
+								</li>
+							    <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}">
+							    	<span id="labPageList">
+								    	<th:block th:if="${pageNo == params.currentPageNo}">
+								    		<strong th:text="${pageNo}"></strong>
+								    	</th:block>
+								    	<th:block th:if="${pageNo != params.currentPageNo}">
+											<a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+								    	</th:block>
+									</span>
+								</li>
+							    <li class="next" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+									<img name="btnNext" id="btnNext" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/page_right.png}">
+								</li>
+							</div>
+						</nav>
+					</ol>
+	            </div>
+	            <!-- paging -->
+	        </form>
+        </div><!-- // container -->
+        <!-- ================================ 
+		        // Content
+        ================================ -->
+        <!-- ================================ 
+		        Footer
+        ================================ -->
+        <footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+        <!-- ================================ 
+		        // Footer
+        ================================ -->
+    </body>
+</html>

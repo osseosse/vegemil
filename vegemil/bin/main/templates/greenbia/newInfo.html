@@ -4,6 +4,7 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<title>그린비아 브랜드소개</title>
+<<<<<<< HEAD
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
 </head>
 <header id="header" th:fragment="headerFragment"></header>
@@ -236,6 +237,237 @@ $('.counter').countUp();
 
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
+=======
+	<head th:replace="fragments/greenbia/head :: headFragment"></head>
+</head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+
+<header>
+<!-- 모바일 메뉴 -->
+
+<!-- //모바일 메뉴 -->
+</header>
+
+<!--------------------- 
+		//Header
+------------------- -->
+
+
+<!--------------------- 
+		content
+------------------- -->
+<main>
+
+<div class="container100">
+<!-- 	<div class="row h500 bg_info" th:style="'background-image:url('+ @{/img/greenbia/bg_subTopInfo.jpg}+');'"> -->
+	<div class="row h500 bg_info">
+	
+		<div class="hcenter center">
+			<p class="f26_4_w f_ms">About Greenbia</p>
+			<p class="f50_5_w mt20">그린비아는?</p>
+		</div>
+		<div class="col-md-12 subNav">
+			<div class="subNavBox">
+				<ul>
+					<li><a href="#">그린비아 소개</a></li>
+					<li><a href="#">그린비아는?</a></li>
+				</ul>
+				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="container100">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-12" >
+				<ul class="tabMenu4">
+					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/newInfo}">그린비아는?</a></li>
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/features}">특징</a></li>
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/history01}">연혁</a></li>
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/thesis}">논문</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container100">
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-3 mt120" >
+				<p class="center brand_logo"><img th:src="@{/img/greenbia/brand_logo.gif}" alt="그린비아로고"/></p>
+			</div>
+			<div class="col-md-9 mt120" >
+				<p class="f34_5">
+				수술 또는 특정 질환으로<br class="noneM"> 일반적인 식사가 어려운 <br class="none"><br class="noneM">
+				환자들의 영양 보충을 위한 <br class="noneM"><span class="pupple">특수용도 식품 브랜드</span>입니다.
+				</p>
+				<p class="f20_3 mt50">
+				그린비아는 국내 최초의 경장 영양식 브랜드로 환자의 질환 및 용도에 따라 설계된 특수의료용도 제품을 공급합니다.<br>
+				국내 우수 대학과 지속적인 임상연구를 통해 환자용 균형 영양식의 체계를 만든 브랜드입니다 
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container1660_15">
+	<div class="row ">
+		<div class="col-md-6 mt200">
+			<p class="img100"><img th:src="@{/img/greenbia/brand01.jpg}" alt="그린비아로고"/></p>
+			<div class="brand_type01">
+				<p class="f50_6 mt120">최초의 시도<br>그린비아의 탄생<span class="pupple">.</span></p>
+				<p class="f22_41 mt50">그린비아는 1991년 국내기술력으로 탄생한<br>국내최초 경장영양식 선도 브랜드 입니다.</p>
+			</div>
+		</div>
+		<div class="col-md-6 mt120">
+			<p class="img100"><img th:src="@{/img/greenbia/brand02.jpg}" alt="그린비아로고"/></p>
+			<p class="f18_41 mt30">
+				1990년 이전 외국 제품에만 의존하던 <br>
+				국내 환자용 특수영양식 시장상황에서 <br>
+				한국인의 영양요구량에 맞게 개발된 경장영양제품으로, <br>
+				1991년 출시된 이래로 국내 상업용 경장영양식 시장을 <br>이끌어가고 있습니다. 
+			</p>
+		</div>
+		<div class="col-md-12 mt80">
+			<div class="bg_brand h590 brandVideo">
+				<div class="hcenter center">
+					<p class="bradnVideType">FOOD <span>+</span> SCIENCE</p>
+					<p class="f30_4_w mt20">임상연구로 검증된 전문적인 영양설계로 <br class="noneM">균형적인 영양을 공급합니다.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container1250_15">
+	<div class="row">
+		<div class="col-md-12 corebox mt120">
+			<p class="f45_6 center">Core Value</p>
+		</div>
+		<div class="col-md-4 mt30">
+			<div class="brand_cv">
+				<p class="number f_ms">01</p>
+				<p class="bg_brand_cv01 h500"></p>
+				<div class="brand_txt">
+					<p class="f22_7 f_ms">First</p>
+					<p class="f22_41 mt50">한국인의 영양요구량에 <br>맞게 개발된<br>국내 최초 경장 영양식</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mt30">
+			<div class="brand_cv">
+				<p class="number f_ms">02</p>
+				<p class="bg_brand_cv02 h500"></p>
+				<div class="brand_txt">
+					<p class="f22_7 f_ms">Balance</p>
+					<p class="f22_41 mt50">체계적이고 과학적인<br>영양학적 연구를 통한<br>균형적인 영양 공급</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mt30">
+			<div class="brand_cv">
+				<p class="number f_ms">03</p>
+				<p class="bg_brand_cv03 h500"></p>
+				<div class="brand_txt">
+					<p class="f22_7 f_ms">Safety</p>
+					<p class="f22_41 mt50">끊임 없는<br>임상 연구와 눈문으로<br>제품 안전성 검증</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container1660_15 mb100">
+	<div class="row ">
+		<div class="col-md-12 mt80">
+			<div class="bg_brand_mission h590 brandVideo">
+				<div class="hcenter center">
+					<p class="bradnVideType">MISSION <span>+</span> VISION</p>
+					<p class="f30_4 mt20">인류건강을 위한 의인(義&middot;醫人)의 <br class="noneM">마음을 담아 만듭니다.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mt110">
+			<div class="brand_type01">
+				<p class="f22_4 pupple">enteral nutrition : EN</p>
+				<p class="f50_6 mt20">경장영양식이란?</p>
+				<p class="f30_5 mt10">(환자용 식품)</p>
+			</div>
+		</div>
+		<div class="col-md-8 mt120">
+			<p class="f20_4 gray01">
+			각종 질환으로 거동이 불편하거나 씹고 넘기는 기능에 문제가 있는 환자들에게<br class="none">
+			적절한 영양을 공급하기 위해 사용하는 액상형태의 식품으로 환자식, 유동식, 관급식 등으로도 불립니다.
+			</p>
+			<p class="f25_5 mt50"><span class="unlerline_b">보다 자세한 설명</span>을 보시고 싶다면, &nbsp;&nbsp;<a th:href="@{/greenbia/enteral}"><span class="btn_type03 hvr-bounce-to-right mt20m">경장영양식 바로 알기</span></a></p>
+		</div>
+	</div>
+</div>
+<div class="container100">
+	<div class="row bg_brand_sky">
+		<p class="img100 center pb200">
+			<img th:src="@{/img/greenbia/brand10.png}" alt="그린비아로고"/>
+		</p>
+	</div>
+</div>
+
+<!--------------------- 
+		Footer
+------------------- -->
+<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
+<!--------------------- 
+		//Footer
+------------------- -->
+
+</main>
+<!--------------------- 
+		//content
+------------------- -->
+
+<!-- Brook Slider -->
+ <script src="./common/js/vendor.min.js"></script>
+ <script src="./common/js/plugins.min.js"></script>
+<!-- Brook Slider -->
+<script src="./common/js/main.js"></script>
+<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+<!-- countUp -->
+<script>
+$('.counter').countUp();
+</script>
+
+<script type="text/javascript">
+    (function(w, d, a){
+    w.__beusablerumclient__ = {
+    load : function(src){
+    var b = d.createElement("script");
+    b.src = src; b.async=true; b.type = "text/javascript";
+    d.getElementsByTagName("head")[0].appendChild(b);
+    }
+    };w.__beusablerumclient__.load(a);
+    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+</script>
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
+>>>>>>> branch 'master' of https://github.com/osseosse/vegemil.git
 <!-- ================================ // Footer ================================ -->
 		
 </body>

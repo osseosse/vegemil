@@ -20,6 +20,5 @@ public class FaqDTO extends CommonDTO {
     private int noticeYn;        
     private String createdDate;  
     private String modifiedDate;
-    
 
 }

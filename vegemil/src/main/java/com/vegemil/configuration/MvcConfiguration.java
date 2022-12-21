@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.vegemil.interceptor.LoggerInterceptor;
@@ -25,10 +24,4 @@ public class MvcConfiguration implements WebMvcConfigurer {
         return bCryptPasswordEncoder;
     }
 
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/img/**")
-				.addResourceLocations("https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/");
-	}
-	
 }

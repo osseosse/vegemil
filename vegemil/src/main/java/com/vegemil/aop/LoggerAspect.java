@@ -13,7 +13,7 @@ public class LoggerAspect {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Around("execution(* com.hyechun..controller.*Controller.*(..)) or execution(* com.hyechun..service.*Impl.*(..)) or execution(* com.hyechun..mapper.*Mapper.*(..))")
+	@Around("execution(* com.vegemil..controller.*Controller.*(..)) or execution(* com.vegemil..service.*Impl.*(..)) or execution(* com.hyechun..mapper.*Mapper.*(..))")
 	public Object printLog(ProceedingJoinPoint joinPoint) throws Throwable {
 
 		String type = "";

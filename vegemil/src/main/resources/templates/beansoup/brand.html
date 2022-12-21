@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+<body>
+	<!-- ================================ 
+		        Header
+        ================================ -->
+	<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+	<!-- ================================ 
+		        // Header
+        ================================ -->
+	<!-- ================================ 
+		        Content
+        ================================ -->
+	<div class="container100 clear">
+		<div class="row">
+			<div class="col-lg-12 mt130">
+				<p class="f50 fw600 tcenter mt40">브랜드 소개</p>
+			</div>
+		</div>
+	</div>
+	<!-- main Visual Slide -->
+	<div class="container100 mt50">
+		<div id="slider0">
+			<div class="slider">
+				<div class="slider_area">
+					<div class="slides ">
+						<div class="slide">
+							<div class="slidetitle sbg09 h680">
+								<p class="f38 fw600 white brand_txt">
+									간단요리사와 함께<br>우리집 간단 레시피!
+								</p>
+							</div>
+						</div>
+						<!--<div class="slide">
+			                    <div class="slidetitle sbg04 h680">
+				                    <p class="f38 fw600 white brand_txt">간단요리사와 함께<br>우리집 간단 레시피!</p>
+			                    </div>
+		                    </div>-->
+						<!--<div class="slide">
+			                    <div class="slidetitle sbg06 h680">
+				                    <p class="f38 fw600 white brand_txt">간단요리사와 함께<br>우리집 간단 레시피!</p>
+			                    </div>
+		                    </div>-->
+						<div class="slide">
+							<div class="slidetitle sbg05 h680">
+								<p class="f38 fw600 white brand_txt">
+									간단요리사와 함께<br>요리를 간단하고 맛있게!
+								</p>
+							</div>
+						</div>
+						<div class="slide">
+							<div class="slidetitle sbg10 h680">
+								<p class="f38 fw600 white brand_txt">
+									간단요리사와 함께<br>우리집 간단 레시피!
+								</p>
+							</div>
+						</div>
+						<div class="slide">
+							<div class="slidetitle sbg11 h680">
+								<p class="f38 fw600 white brand_txt">
+									간단요리사와 함께<br>요리를 간단하고 맛있게!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="slider_left">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/btn_ppl_left.png" alt="왼쪽" />
+				</a> 
+				<a class="slider_right">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/btn_ppl_right.png" alt="오른쪽" />
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row mt20">
+			<div class="col-lg-5 col-sm-12 mt150">
+				<p class="f20 green fw400 mt50m">Simple Chef</p>
+				<p class="f48 fw600  mt20">
+					요리를 간단하고 맛있게,<br> <span class="symbol mt10m">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/symbol.gif"  alt="간단요리사" /></span>
+				</p>
+			</div>
+			<div class="col-lg-7 mt150 wView">
+				<p class="f20 gray fw400 mt50">
+					간단요리사는 소비자의 건강을 최우선으로 하는 정식품의 새로운 브랜드입니다.<br> 간을 맞추는 게 항상 어려운
+					분, 나만의 요리 노하우가 있지만 조금 더 감칠맛을 더하고 싶은 분, 일상이 바빠 맛있는 요리를 빠르게 끝내고 싶은 분
+					등 누구에게나 간단요리사를 추천드립니다.
+				</p>
+				<a href="/beanSoup/list"><p class="btnType01 mt20">간단레시피 보러가기</p></a>
+				<!-- <a href="void(0);" onclick="alert('준비중입니다.');return false;"><p class="btnType01 mt20">간단레시피 보러가기</p></a> -->
+			</div>
+		</div>
+		<!-- //row -->
+
+		<div class="row">
+			<div class="col-lg-12 mb80">
+				<p class="f35 fw600 mt200 top_line">
+					간단요리사와 함께라면 <br>고민은 단번에 해결!<br>요리는 단번에 완성!
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<p class="brand_r_img">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand01.jpg"  alt="식재료" />
+				</p>
+				<div class="brand_thumb">
+					<p class="brand_btn01 mt10">고민없이!</p>
+					<p class="f22 mt20 fw600">육수 재료 고르는 것이 고민돼요.</p>
+					<p class="f16 mt10">간단요리사와 함께 라면 어떤 재료를 우려야 할지 고민하지 않아도 돼요!</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<p class="brand_r_img">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand02.jpg" alt="물 없이 육수로 넣는 모습" />
+				</p>
+				<div class="brand_thumb">
+					<p class="brand_btn01 mt10">간 없이!</p>
+					<p class="f22 mt20 fw600">적당한 간 맞추기가 어려워요.</p>
+					<p class="f16 mt10">
+						간은 이미 되어있으니,<br>언제 어디서나 준비된 재료에 육수만 부어주세요!
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<p class="brand_r_img">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand03.jpg" alt="맛있어 보이는 떡만둣국" />
+				</p>
+				<div class="brand_thumb">
+					<p class="brand_btn01 mt10">단번에!</p>
+					<p class="f22 mt20 fw600">요리를 실패할까 봐 두려워요.</p>
+					<p class="f16 mt10">간단요리사 레시피와 함께 쉬운 요리도 어려운 요리도 단번에 맛있게 즐겨봐요!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // container -->
+	<div class="container mt130">
+		<!-- tab 기능삭제 2022-04-25 -->
+		<div class="tabwrap ">
+			<p class="tabTitle_red">담백한 채소육수</p>
+			<div>
+				<ul class="ul360">
+					<li>
+						<p class="mt20 brand_info">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_info.gif" />
+						</p>
+						<div class="cd-product-viewer-wrapper" data-frame="36" data-friction="0.33">
+							<div>
+								<figure class="product-viewer">
+									<div class="product-sprite"
+										data-image="https://image.edaymall.com/images/vegemil/beansoup/img/360-dam-550-min.png"></div>
+								</figure>
+								<div class="cd-product-viewer-handle">
+									<span class="fill"></span> <span class="handle">Handle</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p class="vr mt50m">360VR</p>
+						<p class="f38 fw600 mt20">
+							간단요리사<br>담백한 채소육수
+						</p>
+						<p class="mt20">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_txt04.jpg" alt="" />
+						</p>
+						<table cellspacing="0" border="0" class="brandTable mt50">
+							<colgroup>
+								<col width="25%">
+								<col width="75%">
+							</colgroup>
+							<tr>
+								<th>용량</th>
+								<td>950ml</td>
+							</tr>
+							<tr>
+								<th>원재료 및 원산지</th>
+								<td>정제수, 야채혼합농축액 9%[고형분 3.8%, 대파(국산), 양파(국산), 무(국산),기타 과당]
+									마늘엑기스 0.5%[고형분 5%, 마늘(국산)], 정제소금(국산), 표고버섯농축액, 아미노베이스, 다시마농축액</td>
+							</tr>
+							<tr>
+								<th>유통기한</th>
+								<td>상단부에 표기</td>
+							</tr>
+						</table>
+						<p class="f14 gray mt10">* 요리 전 채소육수를 냉장 보관하여 더욱 신선하게 즐겨 보세요.</p>
+						<a href="/beanSoup/list"><p class="btnType01 mt20">간단레시피 보러가기</p></a>
+					</li>
+				</ul>
+				<p class="clear"></p>
+
+				<p class="tcenter mt60 f30 fw600">영양정보</p>
+				<table cellspacing="0" class="brandTableYYS mt30">
+					<colgroup>
+						<col width="20%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+					</colgroup>
+					<tr>
+						<th>영양성분표</th>
+						<td>나트륨</td>
+						<td>탄수화물</td>
+						<td>당류</td>
+						<td>지방</td>
+						<td>트랜스지방</td>
+						<td>포화지방</td>
+						<td>콜레스테롤</td>
+						<td>단백질</td>
+					</tr>
+					<tr>
+						<th>950ml(1팩 기준)</th>
+						<td>280mg</td>
+						<td>0.2g</td>
+						<td>0g</td>
+						<td>0.5g</td>
+						<td>0g</td>
+						<td>0g</td>
+						<td>0mg</td>
+						<td>0g</td>
+					</tr>
+					<tr>
+						<th>영양성분기준치(%)</th>
+						<td>14%</td>
+						<td>0%</td>
+						<td>0%</td>
+						<td>1%</td>
+						<td></td>
+						<td>0%</td>
+						<td>0%</td>
+						<td>0%</td>
+					</tr>
+				</table>
+				<p class="f14 gray mt10">
+					<b>* 1일 영양성분 기준치에 대한 비율(%)</b>은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수
+					있습니다.
+				</p>
+			</div>
+			<p class="tabTitle_blue mt150">시원한 채소육수</p>
+			<div>
+				<ul class="ul360">
+					<li>
+						<p class="mt20 brand_info">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_info.gif"/>
+						</p>
+						<div class="cd-product-viewer-wrapper" data-frame="36"
+							data-friction="0.33">
+							<div>
+								<figure class="product-viewer">
+									<div class="product-sprite2"
+										data-image="https://image.edaymall.com/images/vegemil/beansoup/img/360-cool-550-min.png"></div>
+								</figure>
+								<div class="cd-product-viewer-handle">
+									<span class="fill"></span> <span class="handle">Handle</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p class="vr mt50m">360VR</p>
+						<p class="f38 fw600 mt20">
+							간단요리사<br>시원한 채소육수
+						</p>
+						<p class="mt20">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_txt05.jpg" alt="" />
+						</p>
+						<table cellspacing="0" border="0" class="brandTable mt50">
+							<colgroup>
+								<col width="25%">
+								<col width="75%">
+							</colgroup>
+							<tr>
+								<th>용량</th>
+								<td>950ml</td>
+							</tr>
+							<tr>
+								<th>원재료 및 원산지</th>
+								<td>정제수, 야채혼합농축액 10%[고형분 0.38%, 대파(국산), 양파(국산), 무(국산)],
+									동치미추출액 4.8%[고형분 1%, 무(국산), 마늘(국산), 파(국산)], 설탕, 기타과당, 정제소금(국산),
+									발효식초, 아미노베이스, 구연산, 양조간장, 합성향료</td>
+							</tr>
+							<tr>
+								<th>유통기한</th>
+								<td>상단부에 표기</td>
+							</tr>
+						</table>
+						<p class="f14 gray mt10">* 요리 전 채소육수를 냉장 보관하여 더욱 신선하게 즐겨 보세요.</p>
+						<a href="/beanSoup/list"><p class="btnType01 mt20">간단레시피 보러가기</p></a>
+					</li>
+				</ul>
+				<p class="clear"></p>
+
+				<p class="tcenter mt60 f30 fw600">영양정보</p>
+				<table cellspacing="0" class="brandTableYYS mt30">
+					<colgroup>
+						<col width="20%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+					</colgroup>
+					<tr>
+						<th>영양성분표</th>
+						<td>나트륨</td>
+						<td>탄수화물</td>
+						<td>당류</td>
+						<td>지방</td>
+						<td>트랜스지방</td>
+						<td>포화지방</td>
+						<td>콜레스테롤</td>
+						<td>단백질</td>
+					</tr>
+					<tr>
+						<th>950ml(1팩 기준)</th>
+						<td>680mg</td>
+						<td>7g</td>
+						<td>7g</td>
+						<td>0.5g</td>
+						<td>0g</td>
+						<td>0g</td>
+						<td>0mg</td>
+						<td>0g</td>
+					</tr>
+					<tr>
+						<th>영양성분기준치(%)</th>
+						<td>34%</td>
+						<td>2%</td>
+						<td>7%</td>
+						<td>1%</td>
+						<td></td>
+						<td>0%</td>
+						<td>0%</td>
+						<td>0%</td>
+					</tr>
+				</table>
+				<p class="f14 gray mt10">
+					<b>* 1일 영양성분 기준치에 대한 비율(%)</b>은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수
+					있습니다.
+				</p>
+			</div>
+			<!-- 사골육수 -->
+			<p class="tabTitle_brown mt150">구수한 사골육수</p>
+			<div>
+				<ul class="ul360">
+					<li>
+						<p class="mt20 brand_info">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_info.gif" />
+						</p>
+						<div class="cd-product-viewer-wrapper" data-frame="36" data-friction="0.33">
+							<div>
+								<figure class="product-viewer">
+									<div class="product-sprite3"
+										data-image="https://image.edaymall.com/images/vegemil/beansoup/img/360-bone-550-min.png" ></div>
+								</figure>
+								<div class="cd-product-viewer-handle">
+									<span class="fill"></span> <span class="handle">Handle</span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p class="vr mt50m">360VR</p>
+						<p class="f38 fw600 mt20">
+							간단요리사<br>구수한 사골육수
+						</p>
+						<p class="mt20">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_txt06.jpg" alt="" />
+						</p>
+						<table cellspacing="0" border="0" class="brandTable mt50">
+							<colgroup>
+								<col width="25%">
+								<col width="75%">
+							</colgroup>
+							<tr>
+								<th>용량</th>
+								<td>950ml</td>
+							</tr>
+							<tr>
+								<th>원재료 및 원산지</th>
+								<td>정제수, 사골엑기스 2.8%[고형분 58%, 사골(호주산)], 마늘엑기스[마늘(국산)],
+									무즙농축액[무(국산)], 대파엑기스[대파{국산)], 아미노베이스[밀글루텐(프랑스산)], 정제소금(국산)</td>
+							</tr>
+							<tr>
+								<th>유통기한</th>
+								<td>상단부에 표기</td>
+							</tr>
+						</table> <!--<p class="f14 gray mt10">* 요리 전 채소육수를 냉장 보관하여 더욱 신선하게 즐겨 보세요.</p>-->
+						<a href="/beanSoup/list"><p class="btnType01 mt20">간단레시피 보러가기</p></a>
+					</li>
+				</ul>
+				<p class="clear"></p>
+
+ 				<p class="tcenter mt60 f30 fw600">영양정보</p>
+				<table cellspacing="0" class="brandTableYYS mt30">
+					<colgroup>
+						<col width="20%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+						<col width="10%">
+					</colgroup>
+					<tr>
+						<th>영양성분표</th>
+						<td>나트륨</td>
+						<td>탄수화물</td>
+						<td>당류</td>
+						<td>지방</td>
+						<td>트랜스지방</td>
+						<td>포화지방</td>
+						<td>콜레스테롤</td>
+						<td>단백질</td>
+					</tr>
+					<tr>
+						<th>950ml(1팩 기준)</th>
+						<td>200mg</td>
+						<td>0g</td>
+						<td>0g</td>
+						<td>1g</td>
+						<td>0g</td>
+						<td>1g</td>
+						<td>0mg</td>
+						<td>0.5g</td>
+					</tr>
+					<tr>
+						<th>영양성분기준치(%)</th>
+						<td>10%</td>
+						<td>0%</td>
+						<td>0%</td>
+						<td>2%</td>
+						<td></td>
+						<td>7%</td>
+						<td>0%</td>
+						<td>1%</td>
+					</tr>
+				</table>
+				<p class="f14 gray mt10">
+					<b>* 1일 영양성분 기준치에 대한 비율(%)</b>은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수
+					있습니다.
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.tabwrap').basicTabs_360();
+			});
+		</script>
+		<script th:src="@{/beansoup/js/jquery.mobile.custom.min.js}"></script>
+		<script th:src="@{/beansoup/js/3d_main.js}"></script>
+		<!--//tab 기능삭제 2022-04-25
+		tab 기능유지 2022-04-25 
+            <div class="tabwrap ">
+                <ul class="tabs360">
+                    <li><a href="#spf_tab01">담백한 채소육수</a></li>
+                    <li><a href="#spf_tab02">시원한 채소육수</a></li>
+                </ul>
+                <div class="tab_content2 mt150">
+                    <dl id="spf_tab01">
+	                    <div>
+		                    <ul class="ul360">
+			                    <li>
+				                    <p class="mt20 brand_info"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_info.gif"/></p>
+				                    <div class="cd-product-viewer-wrapper" data-frame="36" data-friction="0.33">
+					                    <div>
+						                    <figure class="product-viewer">
+							                    <div class="product-sprite" data-image="https://image.edaymall.com/images/vegemil/beansoup/img/360-dam-550-min.png" >
+							                    </div>
+						                    </figure> 
+						                    <div class="cd-product-viewer-handle">
+							                    <span class="fill"></span>
+							                    <span class="handle">Handle</span>
+						                    </div>
+					                    </div> 
+				                    </div> 
+			                    </li>
+			                    <li>
+				                    <p class="vr mt50m">360VR</p>
+				                    <p class="f38 fw600 mt20">간단요리사<br>담백한 채소육수</p>
+				                    <p class="mt20">
+				                    	<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_txt04.jpg" alt="" />
+				                    </p>
+				                    <table cellspacing="0" border="0" class="brandTable mt50">
+					                    <colgroup>
+						                    <col width="25%">
+						                    <col width="75%">
+					                    </colgroup>
+					                    <tr>
+						                    <th>용량</th>
+						                    <td>950ml</td>
+					                    </tr>
+					                    <tr>
+						                    <th>주의사항</th>
+						                    <td>개봉 후 보관 시 맛이 변할 수 있으므로 냉장 보관하시길 바랍니다.</td>
+					                    </tr>
+					                    <tr>
+						                    <th>원재료 및 원산지</th>
+						                    <td>정제수, 야채혼합농축액 9%[고형분 3.8%, 대파(국산), 양파(국산), 무(국산),기타
+						                    과당] 마늘엑기스 0.5%[고형분 5%, 마늘(국산)], 정제소금(국산), 표고버섯농축액,
+						                    아미노베이스, 다시마농축액</td>
+					                    </tr>
+					                    <tr>
+						                    <th>유통기한</th>
+						                    <td>상단부에 표기</td>
+					                    </tr>
+				                    </table>
+			                    </li>
+		                    </ul>
+		                    <p class="clear"></p>
+        					
+		                    <p class="tcenter mt60 f30 fw600">영양정보</p>
+		                    <table cellspacing="0" class="brandTableYYS mt30">
+			                     <colgroup>
+				                    <col width="20%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+			                     </colgroup>
+			                     <tr>
+				                    <th>영양성분표</th>
+				                    <td>나트륨</td>
+				                    <td>탄수화물</td>
+				                    <td>당류</td>
+				                    <td>지방</td>
+				                    <td>트랜스지방</td>
+				                    <td>포화지방</td>
+				                    <td>콜레스테롤</td>
+				                    <td>단백질</td>
+			                     </tr>
+			                     <tr>
+				                    <th>950ml(1팩 기준)</th>
+				                    <td>280mg</td>
+				                    <td>0.2g</td>
+				                    <td>0g</td>
+				                    <td>0.5g</td>
+				                    <td>0g</td>
+				                    <td>0g</td>
+				                    <td>0mg</td>
+				                    <td>0g</td>
+			                     </tr>
+			                     <tr>
+				                    <th>950ml(1팩 기준)</th>
+				                    <td>280mg</td>
+				                    <td>0.2g</td>
+				                    <td>0g</td>
+				                    <td>0.5g</td>
+				                    <td>0g</td>
+				                    <td>0g</td>
+				                    <td>0mg</td>
+				                    <td>0g</td>
+			                     </tr>
+		                    </table>
+		                    <p class="f14 gray mt10"><b>* 1일 영양성분 기준치에 대한 비율(%)</b>은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수 있습니다.</p>
+	                    </div>
+                    </dl>
+                    <dl id="spf_tab02">
+	                    <div>
+		                    <ul class="ul360">
+			                    <li>
+				                    <p class="mt20 brand_info"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_info.gif"  /></p>
+				                    <div class="cd-product-viewer-wrapper" data-frame="36" data-friction="0.33">
+					                    <div>
+						                    <figure class="product-viewer">
+							                    <div class="product-sprite2" data-image="https://image.edaymall.com/images/vegemil/beansoup/img/360-cool-550-min.png">
+							                    </div>
+						                    </figure> 
+						                    <div class="cd-product-viewer-handle">
+							                    <span class="fill"></span>
+							                    <span class="handle">Handle</span>
+						                    </div>
+					                    </div> 
+				                    </div> 
+			                    </li>
+			                    <li>						
+				                    <p class="vr mt50m">360VR</p>
+				                    <p class="f38 fw600 mt20">간단요리사<br>시원한 채소육수</p>
+				                    <p class="mt20"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_txt05.jpg" alt="" /></p>
+				                    <table cellspacing="0" border="0" class="brandTable mt50">
+					                    <colgroup>
+						                    <col width="25%">
+						                    <col width="75%">
+					                    </colgroup>
+					                    <tr>
+						                    <th>용량</th>
+						                    <td>950ml</td>
+					                    </tr>
+					                    <tr>
+						                    <th>주의사항</th>
+						                    <td>개봉 후 보관 시 맛이 변할 수 있으므로 냉장 보관하시길 바랍니다.</td>
+					                    </tr>
+					                    <tr>
+						                    <th>원재료 및 원산지</th>
+						                    <td>정제수, 야채혼합농축액 10%[고형분 0.38%, 대파(국산), 양파(국산), 무(국산)],
+					                    동치미추출액 4.8%[고형분 1%, 무(국산), 마늘(국산), 파(국산)], 설탕, 기타과당,
+					                    정제소금(국산), 발효식초, 아미노베이스, 구연산, 양조간장, 합성향료</td>
+					                    </tr>
+					                    <tr>
+						                    <th>유통기한</th>
+						                    <td>상단부에 표기</td>
+					                    </tr>
+				                    </table>
+			                    </li>
+		                    </ul>
+		                    <p class="clear"></p>
+        					
+		                    <p class="tcenter mt60 f30 fw600">영양정보</p>
+		                    <table cellspacing="0" class="brandTableYYS mt30">
+			                     <colgroup>
+				                    <col width="20%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+				                    <col width="10%">
+			                     </colgroup>
+			                     <tr>
+				                    <th>영양성분표</th>
+				                    <td>나트륨</td>
+				                    <td>탄수화물</td>
+				                    <td>당류</td>
+				                    <td>지방</td>
+				                    <td>트랜스지방</td>
+				                    <td>포화지방</td>
+				                    <td>콜레스테롤</td>
+				                    <td>단백질</td>
+			                     </tr>
+			                     <tr>
+				                    <th>950ml(1팩 기준)</th>
+				                    <td>680mg</td>
+				                    <td>7g</td>
+				                    <td>7g</td>
+				                    <td>0.5g</td>
+				                    <td>0g</td>
+				                    <td>0g</td>
+				                    <td>0mg</td>
+				                    <td>0g</td>
+			                     </tr>
+			                     <tr>
+				                    <th>영양성분기준치(%)</th>
+				                    <td>34%</td>
+				                    <td>2%</td>
+				                    <td>7%</td>
+				                    <td>1%</td>
+				                    <td></td>
+				                    <td>0%</td>
+				                    <td>0%</td>
+				                    <td>0%</td>
+			                     </tr>
+		                    </table>
+		                    <p class="f14 gray mt10"><b>* 1일 영양성분 기준치에 대한 비율(%)</b>은 2,000kcal 기준이므로 개인의 필요 열량에 따라 다를 수 있습니다.</p>
+	                    </div>
+                    </dl>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.tabwrap').basicTabs_360();
+                });
+            </script>
+            <script src="./beansoup/js/jquery.mobile.custom.min.js"></script>
+            <script src="./beansoup/js/3d_main.js"></script>
+           
+             // tab 기능유지 2022-04-25
+            -->
+		<div class="tetra">
+			<ul class="mt100">
+				<li><img src="https://image.edaymall.com/images/vegemil/beansoup/img/tetra.png"/></li> 
+				<li>
+					<p class="f30 fw500">상온에서도 신선하게 안전한 테트라팩 무균 패키지</p>
+					<p>&middot; 6겹 무균종이팩이 외부의 빛이나 공기 등을 차단하여 내용물 보존</p>
+					<p>&middot; 방부제나 첨가제없이 상온에서도 신선하고 안전하게 보관 가능</p>
+					<p>&middot; 재생 가능한 원료인 종이로 만들어 재활용 가능한 패키지</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container100 bg_brand_footer mt100m">
+		<div class="container">
+			<div class="row  h400 mt100">
+				<div class="col-lg-12">
+					<div class="hCenter">
+						<p class="simpleTxt ">
+							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/brand_txt03.png"/>
+						</p>
+						<p class="f38 fw600 brown">
+							간단요리사를 빠르고 쉽게 <br>만나보세요!
+						</p>
+						<a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000301&pCateCode=20000268" target="_blank">
+							<p class="btnType01 mt50">구매하러 가기</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script th:src="@{/beansoup/js/script.js}"></script>
+	</div>
+	<!-- //container
+	================================ 
+		        // Content
+    ================================
+	================================ 
+		        Footer
+    ================================ -->
+	<footer th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+	<!-- ================================ 
+		        // Footer
+     ================================ --> 
+</body>
+</html>
