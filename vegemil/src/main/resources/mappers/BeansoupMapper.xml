@@ -3,7 +3,7 @@
 
 <mapper namespace="com.vegemil.mapper.BeansoupMapper">
 	
-	<!-- ///////////////// [m_beanSoup] ///////////////// -->
+	<!-- ///////////////// [m_beansoup] ///////////////// -->
 	
 	<sql id="beansoupColumns">
 		idx, 
@@ -26,7 +26,7 @@
 		SELECT
 			<include refid="beansoupColumns" />
 		FROM
-			m_beanSoup
+			m_beansoup
 		WHERE
 			display = '1'
 		ORDER BY
@@ -37,7 +37,7 @@
 		SELECT
 			<include refid="beansoupColumns" />
 		FROM
-			m_beanSoup
+			m_beansoup
 		WHERE
 			display = '1'
 		<if test="searchKeyword != null and searchKeyword != ''">  
@@ -61,7 +61,7 @@
 		SELECT
 			COUNT(*)
 		FROM
-			m_beanSoup
+			m_beansoup
 		WHERE
 			display = '1'
 	</select>
@@ -70,7 +70,7 @@
 		SELECT
 			<include refid="beansoupColumns" />
 		FROM
-			m_beanSoup
+			m_beansoup
 		WHERE
 			display = '1'
 		
@@ -84,12 +84,12 @@
 		SELECT
 			<include refid="beansoupColumns" />
 		FROM
-			m_beanSoup
+			m_beansoup
 		WHERE
 			file_no = #{fileNo}
 	</select>
 	
-	<!-- ///////////////// [m_beanSoup_event] ///////////////// -->
+	<!-- ///////////////// [m_beansoup_event] ///////////////// -->
 	
 	<sql id="beansoupEventColumns">
 		m_idx, 
@@ -110,7 +110,7 @@
 		SELECT
 			<include refid="beansoupEventColumns" />
 		FROM
-			m_beanSoup_event
+			m_beansoup_event
 		WHERE
 			m_display = '1'
 		ORDER BY
@@ -123,7 +123,7 @@
 		SELECT
 			COUNT(*)
 		FROM
-			m_beanSoup_event
+			m_beansoup_event
 		WHERE
 			m_display = '1'
 	</select>
@@ -163,7 +163,7 @@
 			m_display = '1'
 	</select>
 	
-	<!-- ///////////////// [m_beanSoup_video] ///////////////// -->
+	<!-- ///////////////// [m_beansoup_video] ///////////////// -->
 	
 	<sql id="beansoupVideoColumns">
 		m_idx,
@@ -177,7 +177,7 @@
 		SELECT
 			<include refid="beansoupVideoColumns" />
 		FROM
-			m_beanSoup_video
+			m_beansoup_video
 		WHERE
 			m_display = '1'
 		ORDER BY
@@ -190,7 +190,7 @@
 		SELECT
 			COUNT(*)
 		FROM
-			m_beanSoup_video
+			m_beansoup_video
 		WHERE
 			m_display = '1'
 	</select>

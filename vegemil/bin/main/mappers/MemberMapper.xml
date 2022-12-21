@@ -41,7 +41,7 @@
 	</sql>
 
 	<insert id="saveMember" parameterType="com.vegemil.domain.MemberDTO" useGeneratedKeys="true" keyProperty="memNo">
-		INSERT INTO M_Member (
+		INSERT INTO m_member (
 		   m_id,
 		   m_pwd,
 		   m_auth,
@@ -95,7 +95,7 @@
 
 	<select id="overlappedID" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
 		select count(m_id) 
-		From M_Member 
+		From m_member 
 		where m_id = #{mId}
 	</select>
 
@@ -103,7 +103,7 @@
 		SELECT
 			<include refid="memberColumns" />
 		FROM
-			M_Member
+			m_member
 		WHERE
 			m_is_idle != '1'
 		AND
@@ -111,7 +111,7 @@
 	</select>
 	
 	<update id="activeMember" parameterType="com.vegemil.domain.MemberDTO">
-		UPDATE M_Member
+		UPDATE m_member
 		SET
 			, m_active 	  = '1' 
 			, password 	  = #{password}
@@ -120,7 +120,7 @@
 	</update>
 
 	<update id="updateMemPwd" parameterType="com.vegemil.domain.MemberDTO">
-		UPDATE M_Member
+		UPDATE m_member
 		SET
 			  m_pwd_moddate = NOW()
 			, m_pwd = #{mPwd}
@@ -132,7 +132,7 @@
 		SELECT
 			<include refid="memberColumns" />
 		FROM
-			M_Member
+			m_member
 		WHERE
 			m_is_idle != '1'
 		<include refid="CommonMapper.search" />
@@ -145,7 +145,7 @@
 		SELECT
 			m_id
 		FROM
-			M_Member
+			m_member
 		WHERE
 			m_name = #{mName} and m_hp = #{mHp}
 	</select>
@@ -154,7 +154,7 @@
 		SELECT
 			COUNT(*)
 		FROM
-			M_Member
+			m_member
 		WHERE
 			m_id = #{mId} and m_email = #{mEmail}
 	</select>
@@ -163,7 +163,7 @@
 		SELECT
 			m_idx
 		FROM
-			M_Member
+			m_member
 		WHERE
 			m_id = #{mId} and m_email = #{mEmail}
 	</select>
@@ -172,7 +172,7 @@
 		SELECT
 			COUNT(*)
 		FROM
-			M_Member
+			m_member
 		WHERE
 			m_is_idle != '1'
 		<include refid="CommonMapper.search" />

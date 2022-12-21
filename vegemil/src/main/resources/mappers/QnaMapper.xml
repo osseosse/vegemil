@@ -25,7 +25,7 @@
 	</sql>
 
 	<insert id="insertQna" parameterType="com.vegemil.domain.QnaDTO">
-		INSERT INTO M_SupportFaq (
+		INSERT INTO m_support_faq (
 			s_cate,
 			s_id,
 			s_name,
@@ -62,13 +62,13 @@
 		SELECT
 			<include refid="qnaColumns" />
 		FROM
-			M_SupportFaq
+			m_support_faq
 		WHERE
 			s_idx = #{sIdx} and s_id = #{sId}
 	</select>
 
 	<update id="updateQna" parameterType="com.vegemil.domain.QnaDTO">
-		UPDATE M_SupportFaq
+		UPDATE m_support_faq
 		SET
 			  s_updatedate = NOW()
 			, s_subject = #{sSubject}
@@ -80,7 +80,7 @@
 	</update>
 
 	<update id="deleteQna" parameterType="long">
-		UPDATE M_SupportFaq
+		UPDATE m_support_faq
 		SET
 			  s_delete_yn = 'Y'
 			, r_delete_date = NOW()
@@ -92,7 +92,7 @@
 		SELECT
 			<include refid="qnaColumns" />
 		FROM
-			M_SupportFaq
+			m_support_faq
 		WHERE
 			s_delete_yn = 'N'
 		AND
@@ -105,7 +105,7 @@
 		SELECT
 			COUNT(*)
 		FROM
-			M_SupportFaq
+			m_support_faq
 		WHERE
 			s_id = #{sId}
 	</select>
