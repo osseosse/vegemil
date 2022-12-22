@@ -33,8 +33,12 @@
               <!--  <td align=center>회원사아이디</td>-->
               <input type="hidden" name="id" size='41' maxlength ='8' value = "SJSP001">
               <!--  <td align=center>서비스번호</td>-->
-              <input type="hidden" name="srvNo" size='41' maxlength ='6' value="010002">
-
+              <!-- localhost:8080 -->
+              <!-- <input type="hidden" name="srvNo" size='41' maxlength ='6' value="010002"> -->
+              <!-- vegemil.co.kr -->
+              <!-- <input type="hidden" name="srvNo" size='41' maxlength ='6' value="012001"> -->
+              <!-- vegemil.kr -->
+              <input type="hidden" name="srvNo" size='41' maxlength ='6' value="013001">
               <!--  <td align=center>요청번호</td>-->
               <input type="hidden" name="reqNum" size='41' maxlength ='40' value='<%=reqNum%>'>
               <!--  <td align=center>인증구분</td>-->

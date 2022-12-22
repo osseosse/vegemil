@@ -4,12 +4,12 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<title>그린비아브랜드사이트</title>
-	<head th:replace="fragments/greenbia/head :: headFragment"></head>
+	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
 	
 </head>
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
+<header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 
 <!-- ================================ 
@@ -314,9 +314,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row" >
-		
-		<!-- 기존버전  -->
+	<div class="row">
 		
 		<div class="col-md-12 mt90">
 			<!-- Start Verical Slider Area -->
@@ -339,16 +337,16 @@
 					]">
 			
 					<div class="slick-list draggable" style="padding: 0px;">
-					<div class="slick-track" style="opacity: 1; width: 5844px; transform: translate3d(-1161px, 0px, 0px);">
+					<div class="slick-track" style="opacity: 1; width: 4644px; transform: translate3d(-1161px, 0px, 0px);">
 					
 						<div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1" style="width: 387px;">
 							<div>						
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}" tabindex="-1"><img th:src="@{/img/greenbia/ico_pc01_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="-1"><img th:src="@{/img/greenbia/ico_pc01_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
 										<p class=" mt50 pc_line01">일반영양식</p>
 										<ul class="pc mt50">
-											<a th:href="@{/greenbia/search}" tabindex="-1"><li>일반영양식</li></a>
+											<a href="./search.aspx?contents=일반식사가" tabindex="-1"><li>일반영양식</li></a>
 											<a href="./search.aspx?contents=소아" tabindex="-1"><li>어린이 일반영양식</li></a>
 										</ul>
 									</div>
@@ -397,11 +395,11 @@
 							<div>
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc01_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc01_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
 										<p class=" mt50 pc_line01">일반영양식</p>
 										<ul class="pc mt50">
-											<a th:href="@{/greenbia/search?searchKeyword=일반식사가}" tabindex="0"><li>일반영양식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=소아}" tabindex="0"><li>어린이 일반영양식</li></a>
+											<a href="./search.aspx?contents=일반식사가" tabindex="0"><li>일반영양식</li></a>
+											<a href="./search.aspx?contents=소아" tabindex="0"><li>어린이 일반영양식</li></a>
 										</ul>
 									</div>
 								</div>
@@ -412,16 +410,16 @@
 							<div>
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc02_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc02_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc02_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc02_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line02">전문영양식</p>
 										<ul class="pc mt50">
-											<a th:href="@{/greenbia/search?searchKeyword=당뇨}" tabindex="0"><li>당뇨 환자를 위한 전문영양식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=신장}" tabindex="0"><li>신장 질환자를 위한 전문영양식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=장이}" tabindex="0"><li>장이 민감한 환자를 위한 전문영양식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=고단백식}" tabindex="0"><li>고단백식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=외상}" tabindex="0"><li>외상 및 수술 환자식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=단일영양식}" tabindex="0"><li>단일영양식</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=알티에이치 }" tabindex="0"><li>TF/RTH</li></a>
+											<a href="./search.aspx?contents=당뇨" tabindex="0"><li>당뇨 환자를 위한 전문영양식</li></a>
+											<a href="./search.aspx?contents=신장" tabindex="0"><li>신장 질환자를 위한 전문영양식</li></a>
+											<a href="./search.aspx?contents=장이" tabindex="0"><li>장이 민감한 환자를 위한 전문영양식</li></a>
+											<a href="./search.aspx?contents=고단백식" tabindex="0"><li>고단백식</li></a>
+											<a href="./search.aspx?contents=외상 수술" tabindex="0"><li>외상 및 수술 환자식</li></a>
+											<a href="./search.aspx?contents=단일영양식" tabindex="0"><li>단일영양식</li></a>
+											<a href="./search.aspx?contents=알티에이치 TF" tabindex="0"><li>TF/RTH</li></a>
 										</ul>
 									</div>
 								</div>
@@ -433,10 +431,10 @@
 							<div>
 								<div class="single-vertical-slide  d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc03_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc03_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc03_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc03_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line03">연하식</p>
 										<ul class="pc mt50">
-											<a th:href="@{/greenbia/search?searchKeyword=점도증진제 }" tabindex="-1"><li>점도증진제</li></a>
+											<a href="./search.aspx?contents=점도증진제" tabindex="-1"><li>점도증진제</li></a>
 										</ul>
 									</div>
 								</div>
@@ -448,11 +446,11 @@
 							<div>
 								<div class="single-vertical-slide   d-flex align-items-end" style="width: 100%; display: inline-block; text-align: center;" >
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc04_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc04_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc04_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img th:src="@{/img/greenbia/ico_pc04_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc04_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc04_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line04" >건강식품</p>
 										<ul class="pc mt50">
-											<a th:href="@{/greenbia/search?searchKeyword=균형영양음료 }" tabindex="0"><li>균형영양음료</li></a>
-											<a th:href="@{/greenbia/search?searchKeyword=건강기능식품 }" tabindex="0"><li>건강기능식품</li></a>
+											<a href="./search.aspx?contents=균형영양음료" tabindex="0"><li>균형영양음료</li></a>
+											<a href="./search.aspx?contents=건강기능식품" tabindex="0"><li>건강기능식품</li></a>
 										</ul>
 									</div>
 								</div>
@@ -551,8 +549,6 @@
 			</div>
 			<!-- End Verical Slider Area -->
 		</div>
-		
-	
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -610,7 +606,7 @@
 					Start Single Slide
 					<div class="single-vertical-slide d-flex align-items-end">
 						<div class="pcBox">
-							<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}"><img th:src="@{/img/greenbia/ico_pc01_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식" ></a></p>
+							<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}"><img th:src="@{/img/greenbia/ico_pc01_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식" ></a></p>
 							<p class=" mt50 pc_line01">일반영양식</p>
 							<ul class="pc mt50">
 								<a href="./search.aspx?contents=일반식사가"><li>일반영양식</li></a>
@@ -623,7 +619,7 @@
 					Start Single Slide
 					<div class="single-vertical-slide d-flex align-items-end">
 						<div class="pcBox">
-							<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}"><img th:src="@{/img/greenbia/ico_pc02_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc02_off.png'" alt="전문영양식" ></a></p>
+							<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}"><img th:src="@{/img/greenbia/ico_pc02_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc02_off.png'" alt="전문영양식" ></a></p>
 							<p class=" mt50 pc_line02">전문영양식</p>
 							<ul class="pc mt50">
 								<a href="./search.aspx?contents=당뇨"><li>당뇨 환자를 위한 전문영양식</li></a>
@@ -641,7 +637,7 @@
 					Start Single Slide
 					<div class="single-vertical-slide  d-flex align-items-end">
 						<div class="pcBox">
-							<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}" ><img th:src="@{/img/greenbia/ico_pc03_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc03_off.png'" alt="전문영양식" ></a></p>
+							<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" ><img th:src="@{/img/greenbia/ico_pc03_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc03_off.png'" alt="전문영양식" ></a></p>
 							<p class=" mt50 pc_line03">연하식</p>
 							<ul class="pc mt50">
 								<a href="./search.aspx?contents=점도증진제"><li>점도증진제</li></a>
@@ -653,7 +649,7 @@
 					Start Single Slide
 					<div class="single-vertical-slide   d-flex align-items-end">
 						<div class="pcBox">
-							<p class="hvr-float-shadow"><a th:href="@{/greenbia/newProduct}"><img th:src="@{/img/greenbia/ico_pc04_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc04_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc04_off.png'" alt="전문영양식" ></a></p>
+							<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}"><img th:src="@{/img/greenbia/ico_pc04_off.png}" onmouseover="javascript:this.src='/img/greenbia/ico_pc04_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc04_off.png'" alt="전문영양식" ></a></p>
 							<p class=" mt50 pc_line04">건강식품</p>
 							<ul class="pc mt50">
 								<a href="./search.aspx?contents=균형영양음료"><li>균형영양음료</li></a>
@@ -827,8 +823,7 @@ $('.counter').countUp();
 </script>
 
 <!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
+<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
-
 </body>
 </html>

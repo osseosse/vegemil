@@ -2,36 +2,15 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
 	<title>그린비아 특징</title>
-<<<<<<< HEAD
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
-</head>
-<header id="header" th:fragment="headerFragment"></header>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-
-
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-
-<!--------------------- 
-		//Header
-------------------- -->
-
-
 <!--------------------- 
 		content
 ------------------- -->
-<main>
-<form id="Form1" method="post" runat="server">
-<uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
-</form>
 <div class="container100">
 	<div class="row h500 bg_features">
 		<div class="hcenter center">
@@ -50,7 +29,6 @@
 		
 	</div>
 </div>
-
 
 <div class="container100">
 	<div class="container">
@@ -266,16 +244,6 @@
 		
 	</div>
 </div>
-
-<!--------------------- 
-		Footer
-------------------- -->
-<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
-<!--------------------- 
-		//Footer
-------------------- -->	
-
-</main>
 <!--------------------- 
 		//content
 ------------------- -->
@@ -294,11 +262,6 @@
 		duration: 1000
 	});
 </script>
-<!-- countUp 
-<script>
-$('.counter').countUp();
-</script>
--->
 <script type="text/javascript">
     (function(w, d, a){
     w.__beusablerumclient__ = {
@@ -310,321 +273,8 @@ $('.counter').countUp();
     };w.__beusablerumclient__.load(a);
     })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-
-
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
-=======
-	<head th:replace="fragments/greenbia/head :: headFragment"></head>
-</head>
-<body>
-<!-- ================================ Header ================================ -->
-<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-
-
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-
-<!--------------------- 
-		//Header
-------------------- -->
-
-
-<!--------------------- 
-		content
-------------------- -->
-<main>
-<form id="Form1" method="post" runat="server">
-<uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
-</form>
-<div class="container100">
-	<div class="row h500 bg_features">
-		<div class="hcenter center">
-			<p class="f26_4_w f_ms">Product Features</p>
-			<p class="f50_5_w mt20">특징</p>
-		</div>
-		<div class="col-md-12 subNav">
-			<div class="subNavBox">
-				<ul>
-					<li><a href="#">그린비아 소개</a></li>
-					<li><a th:href="@{/greenbia/features}">특징</a></li>
-				</ul>
-				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-
-<div class="container100">
-	<div class="container">
-		<div class="row ">
-			<div class="col-md-12" >
-				<ul class="tabMenu4">
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/newInfo}">그린비아는?</a></li>
-					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/features}">특징</a></li>
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/history01}">연혁</a></li>
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/thesis}">논문</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container1400_15 mt100">
-	<div class="row">
-		<div class="col-md-5 " data-aos="fade-right" data-aos-duration="2000">
-			<p class="f50_6 mt20">그린비아<br>자세히 알아보기</p>
-		</div>
-		<div class="col-md-7 " data-aos="fade-left" data-aos-duration="2000">
-			<p class="f22_41 mt40">
-			국내 우수 대학과 지속적인 임상연구로 제품 안정성을 검증하였습니다.<br class="none">
-			한국인의 영양요구량에 맞게 개발된 전문적인 영양설계! 자세한 내용을 확인하세요.</p>
-		</div>
-	</div>
-</div>
-
-<!--
-<div class="container1660_15" >
-	<div class="row">
-		<div class="col-md-12 mt80">
-			<div class="bg_ChoiceGuide h590 brandVideo">
-				<div class="hcenter center" >
-					<p class="bradnVideType" data-aos="fade-down" data-aos-duration="2000">Choice Guide</p>
-					<p class="f30_4_w mt20" data-aos="fade-down" data-aos-duration="2000">환자, 보호자가 제품을 선택하기 전 도움을 드리기 위한 안내입니다.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
--->
-
-
-
-
-<div class="container100 bgGray mt350 pb200">
-	<div class="container1660_15" >
-		<!--<!-- 영양기준 -->
-		<div class="row">
-			<div class="col-md-12 mt-200">
-				<p><img th:src="@{/img/greenbia/ent03.jpg}" alt="연구하는 모습"/></p>
-			</div> 
-		</div>
-		<div class="container1400_15 entBG mt-120">
-			<div class="row">
-				<div class="col-md-12">
-					<p class="ebtTitle f34_5 center mt60">그린비아 <span class="pupple">영양 기준</span></p>
-					<ul class="ent_info">
-						<li class="f22_4 gray01">영양소 기준치 (Daily Value) 또는 한국인 영양섭취기준 (Dietary Reference Intake   for Korean)을 근거로 영양 설계 </li>
-						<li class="f22_4 gray01">국내 섭취기준 이외에도 ASPEN, ESPEN과 같은  해외 경장영양 학회에서 발간하는 가이드 라인 참조</li>
-					</ul>
-					<table class="ent" cellspacing="0" border="0" summary="그린비아 영양기준">
-						<tr>
-							<th>구분</th>
-							<th>세부 내용</th>
-						</tr>
-						<tr>
-							<td>열량비율</td>
-							<td>단백질 : 15 ~ 26%,  지방 : 20~35%,   탄수화물 : 45~65% (제외품목 : 플러스케어 당뇨식, 당뇨솔루션, RD, 키즈)</td>
-						</tr>
-						<tr>
-							<td>열량밀도</td>
-							<td>1ml 당 1kcal 기준 (제외품목 : 1.5, RD, RD+, 하이컴팩트) </td>
-						</tr>
-						<tr>
-							<td>단백질</td>
-							<td>1) 필수아미노산 비율 : 38~44% 2) 총열량/질소비 : 83~311 3) 비단백열량/질소비 : 58~286 </td>
-						</tr>
-						<tr>
-							<td>지방</td>
-							<td>1) 지방산별 비율 (PMS ratio) 20~60% : 16~60% : 11~43%  2) 유화 안정성  3) 포화지방산 함량 5g미만/200kcal  <br class="none">4) 오메가-6 지방산 & 오메가-3 지방산 (전품목 적용) </td>
-						</tr>
-						<tr>
-							<td>탄수화물</td>
-							<td>1) 삼투압  2) FODMAPs (적용 품목 : 장솔루션, 당뇨솔루션, 고단백솔루션, 이뮨포르테, 플러스케어 화이바)</td>
-						</tr>
-						<tr>
-							<td>비타민</td>
-							<td>1) 13종 비타민 (20~29세 성인남성 기준 1,000kcal 섭취시 100% 충족 <br>2) 소아용 품목은 한국인 유아(3~5세) 영양섭취 기준 600kcal 섭취시 100% 충족)</td>
-						</tr>
-						<tr>
-							<td>무기질</td>
-							<td>1) 다량 무기질 : 칼슘, 인, 나트륨, 염소, 칼륨, 마그네슘 (전품목 적용)<br>
-								2) 미량 무기질 : 철, 아연, 구리, 망간, 요오드 (요오드 제외품목 : 마일드케어 구수한맛, 플러스케어)<br>
-								3) 극미량 무기질 : 셀레늄, 크롬, 몰리브덴 함유 (제외품목 : 마일드케어 3종 , 플러스케어, 플러스케어 당뇨식, 키즈)</td>
-						</tr>
-					</table>
-					<p class="source mt20"> ※ 영양 기준은 그린비아 환자용 식품에 국한된 기준입니다. </p>
-				</div>
-			</div>
-		</div>
-		<!-- 제품특징 -->
-		<div class="row">
-			<div class="col-md-12 mt130">
-				<p><img th:src="@{/img/greenbia/ent04.jpg}" alt="실험실 비커"/></p>
-			</div> 
-		</div>
-		<div class="container1400_15 entBG mt-120">
-			<div class="row">
-				<div class="col-md-12">
-					<p class="ebtTitle f34_5 center mt60">그린비아 환자용 균형 영양식 <br class="noneM"><span class="pupple">제품 특징</span></p>
-					<table class="ent mt70" cellspacing="0" border="0" summary="그린비아 영양기준">
-						<tr>
-							<th>구분</th>
-							<th>세부 내용</th>
-						</tr>
-						<tr>
-							<td>단백질</td>
-							<td>
-								동/식물성 단백질을 혼합 사용<br>(제외품목 : 마일드케어 검은참깨, 마일드케어 오트, RD+)
-								<ul class="mt20 mb30"> <!-- class="ent-img">-->
-									<li><img th:src="@{/img/greenbia/ent06.jpg}" alt="제품특징 표"/></li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<td>지방</td>
-							<td>대두유, 카놀라유, 고올레산 해바라기유, 정제어유 등 체내에서 합성할 수 없는 필수 지방산이 함유된 지방원을 주로 사용
-								다량의 지방을 배합하는 제품에는 오메가 9  지방산(올레인산) 함량이 높은 카놀라유, 고올레인산 해바리기유를 활용하며
-								지방 흡수가 어려운 환자를 위해 소화흡수가 용이한 MCT oil(중쇄중성지방)을 사용 (전품목 적용)
-							</td>
-						</tr>
-					
-						<tr>
-							<td>탄수화물</td>
-							<td>열량원으로 대부분 말토덱스트린을 사용(전분을 불완전 가수분해하여 만들어낸 탄수화물) (전품목 적용)</td>
-						</tr>
-						
-					</table>
-					<p class="source mt20"> ※ 제품특징은 그린비아 환자용 식품에 국한된 기준입니다. </p>
-				</div>
-			</div>
-		</div>
-		<!-- 제품관리항목 -->
-		<div class="row">
-			<div class="col-md-12 mt80 ">
-				<p><img th:src="@{/img/greenbia/ent07.jpg}" alt="펼쳐진 책"/></p>
-			</div> 
-		</div> 
-		<div class="container1400_15 entBG mt-120" >
-			<div class="row">
-				<div class="col-md-12">
-					<p class="ebtTitle f34_5 center mt60">그린비아 환자용 균형 영양식 <br class="noneM"><span class="pupple">제품 관리 항목</span></p>
-					<table class="ent2 mt70" cellspacing="0" border="0" summary="그린비아 영양기준">
-						<tr>
-							<th>구분</th>
-							<th>세부 내용</th>
-							<th>비고</th>
-						</tr>
-						<tr>
-							<td>삼투압</td>
-							<td>
-								체액과 유사한 삼투압 필요 (삼투압에 따라 체액으로의 흡수 등이 다름)<br>
-								→ 240~550mOsm/kg &middot; H2O  (신장질환자용 RD/RD+ 800mOsm/kg &middot; H2O)
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>신용질부하</td>
-							<td>
-								신체의 노폐물이 소변을 통해 배출될 경우 필요한 수분량<br>
-								→ 280~440mOsm/L (전품목 적용)
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>점도</td>
-							<td>
-								경관급식의 경우 관(Tube)을 활용하여 급식하기 때문에 제품의 적당한 흐름성이 필요
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>전해질 당량비</td>
-							<td>
-								Na/K<br>
-								→ 나트륨 함량 (200kcal 기준 75~200mg, 저나트륨) <br>
-								나트륨 : 칼륨의 당량비 = 1:1 (전해질 균형 유지)<br><br>
-
-								 Ca/P<br>
-								→ 칼슘:인 함량비 = 1:1 기반 (신장질환자용 제품 제외)
-							</td>
-							<td>
-								신장질환자 제품의 경우<br>
-								→ 칼슘 강화<br>
-								→ 인 제한
-							</td>
-						</tr>
-						<tr>
-							<td>안전성</td>
-							<td>
-								그린비아 환자용 균형 영양식 전제품 멸균 처리
-							</td>
-							<td class="center">무균 제품</td>
-						</tr>
-					</table>
-					<p class="source mt20"> ※ 제품 관리 항목은 그린비아 환자용 식품에 국한된 기준입니다. </p>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-<!--------------------- 
-		Footer
-------------------- -->
-<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
-<!--------------------- 
-		//Footer
-------------------- -->	
-
-</main>
-<!--------------------- 
-		//content
-------------------- -->
-
-<!-- Brook Slider -->
-<script src="./common/js/vendor.min.js"></script>
-<script src="./common/js/plugins.min.js"></script>
-<!-- Brook Slider -->
-<script src="./common/js/main.js"></script>
-<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-	AOS.init({
-		easing: 'ease-out-back',
-		duration: 1000
-	});
-</script>
-<!-- countUp 
-<script>
-$('.counter').countUp();
-</script>
--->
-<script type="text/javascript">
-    (function(w, d, a){
-    w.__beusablerumclient__ = {
-    load : function(src){
-    var b = d.createElement("script");
-    b.src = src; b.async=true; b.type = "text/javascript";
-    d.getElementsByTagName("head")[0].appendChild(b);
-    }
-    };w.__beusablerumclient__.load(a);
-    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
-</script>
-
-
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
->>>>>>> branch 'master' of https://github.com/osseosse/vegemil.git
 <!-- ================================ // Footer ================================ -->
-		
 </body>
 </html>

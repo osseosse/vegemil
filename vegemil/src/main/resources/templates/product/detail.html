@@ -13,10 +13,9 @@
 ================================ -->
 <div id="content" class="pb200">
 	<div class="contant1760 mt90h" >
-
 		<div class="row prd-sel">
-		<!-- 메뉴 개발 필요
 			<div class="col-md-8 mt50">
+			<!-- 메뉴 개발 필요
 				<select class="sel03 w180 mr5">
 					<option>두유(베지밀)</option>
 					<option>임산&middot;수유뷰 영양식(베지밀)</option>
@@ -45,8 +44,8 @@
 					<option>베지밀비 달콤한 고칼슘 두유</option>
 					<option>베지밀 고칼슘 두유</option>
 				</select>
+				-->
 			</div>
-			 -->
 			<div class="col-md-4 mt50">
 				<p class="f14 fw400 black  float-right btnType18"><a href="#"><img  th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
 			</div>
@@ -96,7 +95,7 @@
 					</div>
 					<p class="f38 fw600 lh130 mt20" th:text="${product.pName}"></p>
 					<p class="mt10 gray04" th:text="${product.description}"></p>	
-					<ul class="info_ul mt40">
+					<ul class="info_ul mt40" th:if="${product.capacity1} != null">
 						<li th:if="${product.capacity1} != null">
 							<p><img th:src="@{/img/ico/ico_info01.png}" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">용량1</span><span class="f16 f_pp fw400" th:text="${product.capacity1}"></span></p>
@@ -115,17 +114,17 @@
 						</li>
 					</ul>
 					<ul class="info_ul_bottom mt30">
-						<li>
+						<li th:if="${product.recommender} != null">
 							<p class="f16 fw400">추천인 </p>
 							<p class="f14 fw400 gray04" th:text="${product.recommender}"></p>
 						</li>
-						<li>
+						<li th:if="${product.tip} != null">
 							<p class="f16 fw400">활용팁</p>
 							<p class="f14 fw400 gray04" th:text="${product.tip}"></p>
 						</li>
 					</ul>
 					<ul class="info_btn_box mt40">
-						<li><p class="btnType19"><a th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
+						<li><p class="btnType19" th:if="${product.pOnuri} != null"><a th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
 						<li><p class="btnType20"><a href="#section-02">영양정보</a></p></li>
 					</ul>
 				</div>
@@ -133,19 +132,45 @@
 		</div>
 	</div><!-- // contant1760 -->
 	<div class="contant100-15 " id="section-01" >
-		<div class="banner-prd green mt50 mt50m">
+		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryCode} == 'V'">
 			<div class="contant1460">
 				<div class="f16 fw500">
-					<a href="#">
+					<a href="/product/list/#V">
 						<ul class="banner-logo">
-							<!-- <p class="js">🡅 브랜드별로 띠배너가 다릅니다. 베지밀,그린비아,심천수,콩국물, 간단요리사</p> -->
-							<li><img th:src="@{/img/ico/bi_vegemil.png}" /></li>
+							<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_vegemil.png" /></li>
 							<li class="banner-txt">Brand Story 대한민국 두유의 기준, 베지밀 브랜드 스토리 확인하고 다른 제품도 확인하세요!</li>
 						</ul>
 					</a>
 				</div>
 			</div>
 		</div>
+		
+		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryCode} == 'F'">
+			<div class="contant1460">
+				<div class="f16 fw500">
+					<a href="/product/list/#F">
+						<ul class="banner-logo">
+							<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_easy_w.png" /></li>
+							<li class="banner-txt">Brand Story 요리를 간단하고 맛있게! 간단요리사. 브랜드 스토리 확인하고 다른 제품도 확인하세요!</li>
+						</ul>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryCode} == 'W'">
+			<div class="contant1460">
+				<div class="f16 fw500">
+					<a href="/product/list/#W">
+						<ul class="banner-logo">
+							<li ><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_sim_w.png" /></li>
+							<li class="banner-txt">Brand Story 지리산에서 만들어진 자연 그대로의 깨끗함. 부드럽게 마시는 맛있는 물! 브랜드 스토리를 확인하세요!</li>
+						</ul>
+					</a>
+				</div>
+			</div>
+		</div>
+		
 	</div><!-- // contant100 -->
 	<div class="contant1760" >
 		<div id="flotingPage">
@@ -164,7 +189,7 @@
 							</div>
 							<div class="col-md-3" th:each="recProduct, i : ${recProduct}">
 								<div class="alsoLove">
-									<a href="#">
+									<a th:href="|/greenbia/product/detail/${recProduct.pCode}|">
 										<p th:class="|alsoThumb ${recProduct.productClass2} h330|"><!-- <span class="recipe-green">베지밀</span> --></p>
 										<p class="f20 fw500 mt30 lh140 also-name" th:text="${recProduct.pName}"></p>
 										<p class="f16 gray04 mt10 also-sub-txt" th:text="${recProduct.description}"></p>
@@ -239,7 +264,7 @@
 $(function(){
 	//html 파일 로드
 	var loadHtml = "[[ ${product.pCode} ]]";
-    $(".productLoad").load("/product/"+loadHtml+".html");
+    $(".productLoad").load("/product/"+loadHtml.trim()+".html");
 });
 //]]>
 </script>

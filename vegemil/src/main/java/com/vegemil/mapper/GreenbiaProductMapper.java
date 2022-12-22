@@ -4,35 +4,32 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.vegemil.domain.ProductDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductCountDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductKeywordDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductSearchDTO;
+import com.vegemil.domain.GreenbiaProductDTO;
 
 @Mapper
 public interface GreenbiaProductMapper {
 
-	public ProductDTO selectProductDetail(Long pIdx);
+	public GreenbiaProductDTO selectProductDetail(Long gIdx);
+	
+	public List<GreenbiaProductDTO> selectRecProduct();
 
 	public List<GreenbiaProductDTO> selectProductList();
 
 	public int selectProductTotalCount();
 	
-	public List<GreenbiaProductCountDTO> selectProductCount();
+	public List<GreenbiaProductDTO> selectProductCount();
 
-	public List<GreenbiaProductCategoryDTO> selectCommonProduct();
+	public List<GreenbiaProductDTO> selectCommonProduct();
 	
-	public List<GreenbiaProductCategoryDTO> selectProProduct();
+	public List<GreenbiaProductDTO> selectProProduct();
 	
-	public List<GreenbiaProductCategoryDTO> selectYeonhaProduct();
+	public List<GreenbiaProductDTO> selectYeonhaProduct();
 	
-	public List<GreenbiaProductCategoryDTO> selectHealthProduct();
+	public List<GreenbiaProductDTO> selectHealthProduct();
 
-	public List<GreenbiaProductSearchDTO> searchProduct(String searchKeyword);
+	public List<GreenbiaProductDTO> searchProduct(String searchKeyword);
 
-	public List<GreenbiaProductKeywordDTO> selectKeywordProduct();
+	public List<GreenbiaProductDTO> selectKeywordProduct();
 
 	
 

@@ -2,36 +2,16 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
 	<title>그린비아 온라인구매</title>
-<<<<<<< HEAD
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>	
-</head>
-<header id="header" th:fragment="headerFragment"></header>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 
-
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-
-<!--------------------- 
-		//Header
-------------------- -->
-
-
 <!--------------------- 
 		content
 ------------------- -->
-<main>
-<form id="Form1" method="post" runat="server">
-    <uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
-</form>
 <div class="container100">
 	<div class="row h500 bg_mall">
 		<div class="hcenter center">
@@ -108,7 +88,6 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </div>
 
@@ -120,16 +99,6 @@
 		</div>
 	</div>
 </div>
-
-<!--------------------- 
-		Footer
-------------------- -->
-<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
-<!--------------------- 
-		//Footer
-------------------- -->
-
-</main>
 <!--------------------- 
 		//content
 ------------------- -->
@@ -148,11 +117,6 @@
 		duration: 1000
 	});
 </script>
-<!-- countUp 
-<script>
-$('.counter').countUp();
-</script>
--->
 
 <script type="text/javascript">
     (function(w, d, a){
@@ -165,173 +129,8 @@ $('.counter').countUp();
     };w.__beusablerumclient__.load(a);
     })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-
-
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
-=======
-	<head th:replace="fragments/greenbia/head :: headFragment"></head>
-</head>
-<body>
-<!-- ================================ Header ================================ -->
-<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-
-
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-
-<!--------------------- 
-		//Header
-------------------- -->
-
-
-<!--------------------- 
-		content
-------------------- -->
-<main>
-<div class="container100">
-	<div class="row h500 bg_mall">
-		<div class="hcenter center">
-			<p class="f26_4_w f_ms">Shopping</p>
-			<p class="f50_5_w mt20">온라인구매</p>
-		</div>
-		<div class="col-md-12 subNav">
-			<div class="subNavBox">
-				<ul>
-					<li><a href="#">Shopping</a></li>
-					<li><a href="#">온라인구매</a></li>
-				</ul>
-				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-
-<div class="container100 pb100">
-	<div class="container">
-		<div class="row ">
-			<div class="col-md-12" >
-				<!-- 2022-09-27 -->
-				<ul class="tabMenu2">
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/newFaq}">고객상담</a></li>
-					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/mall}">온라인구매</a></li>
-					<!-- <li class="hvr-underline-from-center"><a href="./sampleKidsmore.aspx">샘플신청</a></li> -->
-				</ul>
-				<!-- //2022-09-27-->
-			</div>
-		</div>
-		<div class="row mt90">
-			<div class="col-md-6" data-aos="fade-right" data-aos-duration="2000">			
-				<p class="f22_4 pupple">Beauty - Health 전문몰</p>
-				<p class="f50_6 mt20">이데이몰에서 <br>그린비아를 구매해보세요!</p>
-			</div>
-			<div class="col-md-6 mt50" data-aos="fade-left" data-aos-duration="2000">
-				<div class="hisType">
-					<p class="f22_4 gray01 mt30">
-					정식품 공식 인터넷 쇼핑몰인 이데이몰은<br>
-					고품질의 제품들은 물론, 뷰티-헬스 전문관을<br class="noneM"> 운영하고 있습니다.
-					</p>
-				</div>
-				<div class="mt50">
-					<ul class="btnBox_sample2" >
-						<li><a th:href="@{https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=4&cateCode=20000034&pCateCode=20000002}"><div class="btn_type11">제품 구매하기</div></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container1660">
-	<div class="row ">
-		<div class="col-md-12" >
-			<a th:href="@{https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000034&pCateCode=20000002}" target="_blank"><img th:src="@{/img/greenbia/edaymall.jpg}" alt="이데이몰"/></a>
-		</div>
-	</div>
-</div>
-<div class="container100">
-	<div class="container">
-		<div class="row mt110">
-			<div class="col-md-6" data-aos="fade-right" data-aos-duration="2000">		
-				<p class="f50_6 mt20">베지밀 네이버스토어에서 <br>구매해보세요!</p>
-			</div>
-			<div class="col-md-6 mt50" data-aos="fade-left" data-aos-duration="2000">
-				<div class="hisType">
-					<p class="f22_4 gray01 mt30">
-						고객을 생각하는 마음으로 정성을 다해 준비합니다.<br>
-						다양한 베지밀 상품을 둘러보고 편하게 구매해보세요.
-					</p>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-
-<div class="container1660 mb200">
-	<div class="row ">
-		<div class="col-md-12 mt80" >
-			<a th:href="@{https://smartstore.naver.com/dcfwithedaymall}" target="_blank"><img th:src="@{/img/greenbia/vegemil.jpg}" alt="베지밀 공식 네이버스토어"/></a>
-		</div>
-	</div>
-</div>
-
-<!--------------------- 
-		Footer
-------------------- -->
-<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
-<!--------------------- 
-		//Footer
-------------------- -->
-
-</main>
-<!--------------------- 
-		//content
-------------------- -->
-
-<!-- Brook Slider -->
-<script src="./common/js/vendor.min.js"></script>
-<script src="./common/js/plugins.min.js"></script>
-<!-- Brook Slider -->
-<script src="./common/js/main.js"></script>
-<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-	AOS.init({
-		easing: 'ease-out-back',
-		duration: 1000
-	});
-</script>
-<!-- countUp 
-<script>
-$('.counter').countUp();
-</script>
--->
-
-<script type="text/javascript">
-    (function(w, d, a){
-    w.__beusablerumclient__ = {
-    load : function(src){
-    var b = d.createElement("script");
-    b.src = src; b.async=true; b.type = "text/javascript";
-    d.getElementsByTagName("head")[0].appendChild(b);
-    }
-    };w.__beusablerumclient__.load(a);
-    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
-</script>
-
-
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
->>>>>>> branch 'master' of https://github.com/osseosse/vegemil.git
 <!-- ================================ // Footer ================================ -->
-		
 </body>
 </html>

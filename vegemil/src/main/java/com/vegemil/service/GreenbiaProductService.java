@@ -2,31 +2,29 @@ package com.vegemil.service;
 
 import java.util.List;
 
-import com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductCountDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductKeywordDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductSearchDTO;
+import com.vegemil.domain.GreenbiaProductDTO;
 
 public interface GreenbiaProductService {
 
-//	public ProductDTO getProductDetail(Long pIdx);
+	public GreenbiaProductDTO getProductDetail(Long gIdx);
+	
+	public List<GreenbiaProductDTO> getRecProduct();
 
 	public List<GreenbiaProductDTO> getProductList();
 	
-	public List<GreenbiaProductCountDTO> getProductCount();
+	public List<GreenbiaProductDTO> getProductCount();
 	
-	public List<GreenbiaProductCategoryDTO> getCommonProduct();
+	public List<GreenbiaProductDTO> getCommonProduct();
 	
-	public List<GreenbiaProductCategoryDTO> getProProduct();
+	public List<GreenbiaProductDTO> getProProduct();
 	
-	public List<GreenbiaProductCategoryDTO> getYeonhaProduct();
+	public List<GreenbiaProductDTO> getYeonhaProduct();
 	
-	public List<GreenbiaProductCategoryDTO> getHealthProduct();
+	public List<GreenbiaProductDTO> getHealthProduct();
 	
-	public List<GreenbiaProductSearchDTO> searchProduct(String searchKeyword);
+	public List<GreenbiaProductDTO> searchProduct(String searchKeyword);
 	
-	public List<GreenbiaProductKeywordDTO> getKeywordProduct();
+	public List<GreenbiaProductDTO> getKeywordProduct();
 
 	
 	

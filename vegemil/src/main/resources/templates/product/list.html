@@ -151,7 +151,6 @@
 									<li><input type="radio" name="vv" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
 								</ul>
 							</div>
-							<br class="clear">
 							<div class="h300"></div>
 						</div>
 					</div><!-- //floting-left_prd -->
@@ -180,8 +179,8 @@
 								</div>
 							</div>
 						</div>
-					</div><br class="clear">
-				</div><br class="clear"><!-- //floting-right_prd -->
+					</div>
+				</div><!-- //floting-right_prd -->
 				<div id="P"><!-- 임산 수유 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
@@ -218,7 +217,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
+				</div><!-- //floting-right_prd -->
 				
 				<div id="B"><!-- 영유아식 -->
 					<div class="floting-left_prd" >
@@ -257,7 +256,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
+				</div><!-- //floting-right_prd -->
 				
 				<div id="G"><!-- 특수영양식(그린비아) -->
 					<div class="floting-left_prd" >
@@ -297,7 +296,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
+				</div><!-- //floting-right_prd -->
 				
 				<div id="H"><!-- 건강식품 -->
 					<div class="floting-left_prd" >
@@ -337,7 +336,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
+				</div><!-- //floting-right_prd -->
 				
 				<div id="F"><!-- 식재료 -->
 					<div class="floting-left_prd" >
@@ -375,8 +374,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
-				
+				</div><!-- //floting-right_prd -->
 				<div id="M"><!-- 식물성음료 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
@@ -413,8 +411,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
-				
+				</div><!-- //floting-right_prd -->
 				<div id="S"><!-- 음료 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
@@ -451,8 +448,7 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
-				
+				</div><!-- //floting-right_prd -->
 				<div id="W"><!-- 생수 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
@@ -490,9 +486,9 @@
 							</div>
 						</div>
 					</div>
-				</div><br class="clear"><!-- //floting-right_prd -->
+				</div><!-- //floting-right_prd -->
 			</div><!-- //tabs3 content -->
-		</div><br class="clear"><!-- //flotingPage -->
+		</div><!-- //flotingPage -->
 	</div><!-- //contant1760 -->
 </div>
 <!-- ================================ 
@@ -503,6 +499,11 @@
 <!-- ================================ // Footer ================================ -->
 <script th:inline="javascript">
 $(document).ready(function(){
+	
+	var link = document.location.href;  //현재 접속 url  
+	var tab = link.split('/').pop();   //배열의 맨 마지막 요소를 삭제하고 삭제된 해당 값을 반환함
+	$('a[href$='+tab+']').trigger("click"); //해당 앵커 트리거를이용 클릭 이벤트
+	
 	//카테고리 필터링
 	$("input[name='vv']").on("click", function () {
 		const value = $(this).val();

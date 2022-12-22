@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.vegemil.mapper.greenbia.GreenbiaProductMapper">
+<mapper namespace="com.vegemil.mapper.GreenbiaProductMapper">
 
 	<sql id="productColumns">
-		gIdx, 
-		gName, 
-		gActive, 
-		gCode, 
-		gKeyword, 
-		gLcate, 
-		gMcate, 
-		gContents, 	
-		gTube, 
-		gCapacity,
-		gCal,
-		gHcenterRight,
-		gLoaderRing,
-		gOnuri,
-		DATE_FORMAT(insert_date,'%Y-%m') as insert_date
+		g_idx, 
+		g_name, 
+		g_active, 
+		g_code, 
+		g_keyword, 
+		g_lcate, 
+		g_mcate, 
+		g_contents, 	
+		g_tube, 
+		g_capacity,
+		g_cal,
+		g_hcenter_right,
+		g_loader_ring,
+		g_onuri
 	</sql>
+	
+	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.GreenbiaProductDTO">
+		SELECT
+			g_idx,
+			g_name,
+			g_active,
+			g_code,
+			g_keyword,
+			g_lcate,
+			g_mcate,
+			g_contents,
+			g_tube,
+			g_capacity,
+			g_cal,
+			g_onuri
+		FROM
+			m_greenbia_product
+		WHERE
+			g_idx = #{gIdx}
+	</select>
+	
+	<select id="selectRecProduct" parameterType="String" resultType="com.vegemil.domain.GreenbiaProductDTO">
+		SELECT 
+			g_idx, 
+			g_name, 
+			g_code
+		FROM
+			 m_greenbia_product           
+	    order by 
+	    	rand()
+	    limit
+	    	3
+	</select>
 
-	<select id="selectProductList"  parameterType="String" resultType="com.vegemil.domain.greenbia.GreenbiaProductDTO" >
+	<select id="selectProductList"  parameterType="String" resultType="com.vegemil.domain.GreenbiaProductDTO" >
 		SELECT
 			g_idx, g_name, g_active, g_code
 		FROM
@@ -29,7 +61,7 @@
 	</select>
 	
 	<!-- 제품 수 구하기 -->	
-	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.greenbia.GreenbiaProductDTO" resultType="int">
+	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.GreenbiaProductDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
@@ -39,116 +71,113 @@
 	</select>
 	
 	<!-- g_Late(카테고리) 별 제품 개수 -->	
-	<select id="selectProductCount" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductCountDTO">
+	<select id="selectProductCount" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
 		
 		SELECT 
 			*
 		FROM (
-			SELECT IFNULL(g_Lcate, '전체') g_Lcate, COUNT(*) as total 
+			SELECT IFNULL(g_lcate, '전체') g_lcate, COUNT(*) as total 
 			FROM m_greenbia_product 
-			GROUP BY g_Lcate WITH ROLLUP
+			GROUP BY g_lcate WITH ROLLUP
 		) test
 		ORDER BY 
-			FIELD(g_Lcate, '전체', '일반영양식', '전문영양식', '연하식', '건강식품' );
+			FIELD(g_lcate, '전체', '일반영양식', '전문영양식', '연하식', '건강식품' );
 	</select>
 	
 	
 	<!-- 일반영양식 조회 -->	
-	<select id="selectCommonProduct" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO">
-	
-	<![CDATA[	
-	   SELECT g_name, g_code, g_Lcate, g_Mcate, g_contents, g_tube, g_capacity, g_cal,  
-	       	CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
-	        CASE WHEN g_Mcate = '일반영양식'  THEN 'normal1'
-	        WHEN g_Mcate = '어린이 일반영양식'  THEN 'normal2'  
-	        END AS g_check 
-       FROM
-       		m_greenbia_product 
-       WHERE 
-       		g_Lcate = '일반영양식'  
-       ORDER BY 
-       		g_Mcate DESC
-	]]>
+	<select id="selectCommonProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
+		<![CDATA[	
+		   SELECT g_idx, g_name, g_code, g_lcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,  
+		       	CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
+		        CASE WHEN g_mcate = '일반영양식'  THEN 'normal1'
+		        WHEN g_mcate = '어린이 일반영양식'  THEN 'normal2'  
+		        END AS g_check 
+	       FROM
+	       		m_greenbia_product 
+	       WHERE 
+	       		g_lcate = '일반영양식'  
+	       ORDER BY 
+	       		g_mcate DESC
+		]]>
 	</select>
 	
 	
 	<!-- 전문영양식  조회 -->	
-	<select id="selectProProduct" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO">
+	<select id="selectProProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
 	<![CDATA[
-	 SELECT g_name, g_code, g_Lcate, substring(g_Mcate,2, LENGTH(g_Mcate)) AS Mcate, g_Mcate, g_contents, g_tube, g_capacity, g_cal,
-	  CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
-	  CASE WHEN g_Mcate = 'ㄱ당뇨 환자를 위한 전문영양식'  THEN 'expert1'
-	       WHEN g_Mcate = 'ㄴ신장 질환자를 위한 전문영양식'  THEN 'expert2'
-	       WHEN g_Mcate = 'ㄷ장이 민감한 환자를 위한 전문영양식'  THEN 'expert3'
-	       WHEN g_Mcate = 'ㄹ외상 및 수술환자식'  THEN 'expert4'
-	       WHEN g_Mcate = 'ㅁ단일영양식'  THEN 'expert5'
-	       WHEN g_Mcate = 'ㅂTF/RTH'  THEN 'expert6'
-	       WHEN g_Mcate = 'ㅅ고단백식'  THEN 'expert7'
-	       END AS g_check
-	  FROM  m_greenbia_product
-	  WHERE g_Lcate = '전문영양식' 
-	  ORDER BY g_Mcate;
-	]]>
+		 SELECT g_idx, g_name, g_code, g_lcate, substring(g_mcate,2, LENGTH(g_mcate)) AS Mcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,
+		  CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
+		  CASE WHEN g_mcate = 'ㄱ당뇨 환자를 위한 전문영양식'  THEN 'expert1'
+		       WHEN g_mcate = 'ㄴ신장 질환자를 위한 전문영양식'  THEN 'expert2'
+		       WHEN g_mcate = 'ㄷ장이 민감한 환자를 위한 전문영양식'  THEN 'expert3'
+		       WHEN g_mcate = 'ㄹ외상 및 수술환자식'  THEN 'expert4'
+		       WHEN g_mcate = 'ㅁ단일영양식'  THEN 'expert5'
+		       WHEN g_mcate = 'ㅂTF/RTH'  THEN 'expert6'
+		       WHEN g_mcate = 'ㅅ고단백식'  THEN 'expert7'
+		       END AS g_check
+		  FROM  m_greenbia_product
+		  WHERE g_lcate = '전문영양식' 
+		  ORDER BY g_mcate;
+		]]>
 	</select>
 
 
 	<!-- 연하식  조회 -->	
-	<select id="selectYeonhaProduct" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO">
-	<![CDATA[
-	 SELECT g_name, g_code, g_Lcate, g_Mcate, g_contents, g_tube, g_capacity, g_cal,
-	 CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
-	 CASE WHEN g_Mcate = '점도증진제'  THEN 'soft1'
-	      END AS g_check
-	 FROM m_greenbia_product
-	 WHERE g_Lcate = '연하식' 
-	 ORDER BY g_idx DESC
-	]]>		
+	<select id="selectYeonhaProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
+		<![CDATA[
+		 SELECT g_idx, g_name, g_code, g_lcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,
+		 CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
+		 CASE WHEN g_mcate = '점도증진제'  THEN 'soft1'
+		      END AS g_check
+		 FROM m_greenbia_product
+		 WHERE g_lcate = '연하식' 
+		 ORDER BY g_idx DESC
+		]]>		
 	</select>
 
 	<!-- 건강식품  조회 -->	
-	<select id="selectHealthProduct" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO">
-	<![CDATA[	
-	 SELECT g_name, g_code, g_Lcate, g_Mcate, g_contents, g_tube, g_capacity, g_cal,
-	 CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
-	 CASE WHEN g_Mcate = '균형영양음료'  THEN 'health1'
-	      WHEN g_Mcate = '건강기능식품'  THEN 'health2'
-	      END AS g_check
-	 FROM m_greenbia_product
-	 WHERE g_Lcate = '건강식품' 
-	 ORDER BY g_idx DESC
-	]]>	
+	<select id="selectHealthProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
+		<![CDATA[	
+		 SELECT g_idx, g_name, g_code, g_lcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,
+		 CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
+		 CASE WHEN g_mcate = '균형영양음료'  THEN 'health1'
+		      WHEN g_mcate = '건강기능식품'  THEN 'health2'
+		      END AS g_check
+		 FROM m_greenbia_product
+		 WHERE g_lcate = '건강식품' 
+		 ORDER BY g_idx DESC
+		]]>	
 	</select>
 	
 	
 	<!-- 제품검색 -->	
-	<select id="searchProduct" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductSearchDTO"> 	
-	SELECT 
-		g_name, g_code, g_Lcate, 
-		CASE WHEN g_Lcate = '전문영양식' THEN substring(g_Mcate,2,LENGTH(g_Mcate))ELSE g_Mcate END AS g_Mcate, 
-   		 g_contents, g_tube, g_capacity, g_cal, 
-   		 CASE WHEN g_tube = '1'  THEN '경관급식' ELSE '' END AS g_tubeMark
-	FROM 
-		m_greenbia_product	
-	WHERE g_name like CONCAT('%',#{searchKeyword},'%') 
-		OR g_Lcate like CONCAT('%',#{searchKeyword},'%') 
-		OR g_Mcate like CONCAT('%',#{searchKeyword},'%') 
-		OR g_contents like CONCAT('%',#{searchKeyword},'%') 
+	<select id="searchProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO"> 	
+		SELECT 
+			g_idx, g_name, g_code, g_lcate, 
+			CASE WHEN g_lcate = '전문영양식' THEN substring(g_mcate,2,LENGTH(g_mcate))ELSE g_mcate END AS g_mcate, 
+	   		 g_contents, g_tube, g_capacity, g_cal, 
+	   		 CASE WHEN g_tube = '1'  THEN '경관급식' ELSE '' END AS g_tubeMark
+		FROM 
+			m_greenbia_product	
+		WHERE g_name like CONCAT('%',#{searchKeyword},'%') 
+			OR g_lcate like CONCAT('%',#{searchKeyword},'%') 
+			OR g_mcate like CONCAT('%',#{searchKeyword},'%') 
+			OR g_contents like CONCAT('%',#{searchKeyword},'%') 
 	</select>
 	
 	<!-- 카테고리별 조회 -->	
-	<select id="selectKeywordProduct" parameterType="String"  resultType="com.vegemil.domain.greenbia.GreenbiaProductKeywordDTO">
-	 <![CDATA[	
-	 SELECT 
-	 	g_name, g_code, g_keyword, g_Lcate, case when g_Lcate = '전문영양식'  then substring(g_Mcate,2,LENGTH(g_Mcate)) else g_Mcate end as g_Mcate, g_contents, g_tube, g_capacity, g_cal, case when g_tube = '1'  then '<b>경관<br>급식</b>' else '' end as g_tubeMark
-	 FROM  
-	 	m_greenbia_product
-	 WHERE 
-	 	g_name != '' 
-	 ORDER BY 
-	 	g_idx DESC
-	 ]]>	
+	<select id="selectKeywordProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
+		 <![CDATA[	
+		 SELECT 
+		 	g_idx, g_name, g_code, g_keyword, g_lcate, case when g_lcate = '전문영양식'  then substring(g_mcate,2,LENGTH(g_mcate)) else g_mcate end as g_mcate, g_contents, g_tube, g_capacity, g_cal, case when g_tube = '1'  then '<b>경관<br>급식</b>' else '' end as g_tubeMark
+		 FROM  
+		 	m_greenbia_product
+		 WHERE 
+		 	g_name != '' 
+		 ORDER BY 
+		 	g_idx DESC
+		 ]]>	
 	</select>
-
-	
 
 </mapper>

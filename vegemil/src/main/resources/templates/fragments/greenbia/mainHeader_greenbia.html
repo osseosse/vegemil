@@ -26,15 +26,7 @@
 	3. 불러오기방식은 HTML에서 작동이 안됨. mainHeader.html에 다이렉트로 스크립트 적용
 --------------------------------------------------------------------------------------------- -->
 <!-- 모달팝업 -->
-	 <link rel="stylesheet" th:href="@{/common/css/greenbia/modality.css}" />
-	 <script th:src="@{/common/js/greenbia/modality.js}"></script>
-	 
-	 
-	 <!-- <input  id="isLogin" name="isLogin" th:value="${#authentication.authenticated}"/>
-	 <input  id="principalId" name="principalId" th:value="${#authentication.name}"/>
-	 <span sec:authentication="name"/></span> -->
-	 
-
+<script th:src="@{/common/js/greenbia/modality.js}"></script>
 <div id="gnb" class="f_mw">
 	<div class="gnbBG"></div>
 	<div class="logo"><a th:href="@{/greenbia/index}"><img th:src="@{/img/greenbia/logo.png}" alt="로고"></a></div>
@@ -47,16 +39,16 @@
 				<li><a th:href="@{/greenbia/thesis}">논문</a></li>
 			</ul>
 		</li>
-		<li><a th:href="@{/greenbia/newProduct}" class="dep01 ">제품소개</a>
+		<li><a th:href="@{/greenbia/product/list}" class="dep01 ">제품소개</a>
 			<ul>
 				<li><a th:href="@{/greenbia/guide}">선택가이드</a></li>
 				<li>
-					<a th:href="@{/greenbia/newProduct}">전체제품</a>
+					<a th:href="@{/greenbia/product/list}">전체제품</a>
 					<dl>
-						<dd><a th:href="@{/greenbia/newProduct?category=02}">일반영양식</a></dd>
-						<dd><a th:href="@{/greenbia/newProduct?category=03}">전문영양식</a></dd>
-						<dd><a th:href="@{/greenbia/newProduct?category=04}">연하식</a></dd>
-						<dd><a th:href="@{/greenbia/newProduct?category=05}">건강식품</a></dd>
+						<dd><a th:href="@{/greenbia/product/list/#02}">일반영양식</a></dd>
+						<dd><a th:href="@{/greenbia/product/list/#03}">전문영양식</a></dd>
+						<dd><a th:href="@{/greenbia/product/list/#04}">연하식</a></dd>
+						<dd><a th:href="@{/greenbia/product/list/#05}">건강식품</a></dd>
 					</dl>
 				</li>
 				<li><a th:href="@{/greenbia/search}">제품검색</a></li>
@@ -78,8 +70,9 @@
 		</li>
 	</ul>
 	<dl>
-		<dd><a th:href="@{https://www.vegemil.co.kr/main/}" class="hvr-float"><img th:src="@{/img/greenbia/ico_home_h.gif}" alt="" /><p>정식품 홈페이지</p></a></dd>
+		<dd><a href="/" class="hvr-float"><img th:src="@{/img/greenbia/ico_home_h.gif}" alt="" /><p>정식품 홈페이지</p></a></dd>
 		<dd><a th:href="@{/greenbia/mall}" class="hvr-float"><img th:src="@{/img/greenbia/ico_cash_h.gif}" alt="" /><p>온라인 구매</p></a></dd>		
+		<!-- 
 		<dd sec:authorize-expr="!isAuthenticated()" id="logIn">
 			<a href="#pop_Login" class="hvr-float"><img th:src="@{/img/greenbia/ico_peple_h.gif}" alt="" /><p>로그인</p></a>
 		</dd> 	
@@ -89,113 +82,10 @@
 	 			<p>로그아웃</p>
 	 		</a>
  		</dd>	
+ 		 -->
 	</dl>
-	
-    <script>
-/* 	    if(<%=login%>=='1'){
-	        $( document ).ready( function() {
-	            $('#logIn').hide();
-	            $('#logOut').show();
-	            
-	            $('#logIn2').hide();
-	            $('#logOut2').show();
-	        });
-	    }
-	    else if(<%=login%>=='0'){
-	        $( document ).ready( function() {
-	            $('#logIn').show();
-	            $('#logOut').hide();
-	            
-	            $('#logIn2').show();
-	            $('#logOut2').hide();
-	        });
-	    } */
-	 </script>
 </div>
-    
-
-<!-- <div id="gnbM">
-	<ul class="m_menuBox">
-		<li><div class="logo"><a href="./index.aspx"><img th:src="@{/img/greenbia/logo500.png}" alt="로고"></a></li>
-		<li>
-			<dl>
-				<dd><a href="./index.aspx"><img src="./img/ico_home_h.gif" alt="홈"></a></dd>
-				<dd><a href="./mall.aspx"><img src="./img/ico_cash_h.gif" alt="구매"></a></dd>
-				<dd><a href="#pop_Login"><img src="./img/ico_peple_h.gif" alt="기업회원"></a></dd>
-				<dd><p onclick="openNav()">
-					<span class="m_line"></span>
-					<span class="m_line"></span>
-					<span class="m_line"></span>
-					</p>
-				</dd>
-				
-				<dd><span style="font-size:40px;cursor:pointer;line-height:20%; border:1px solid blue;vertical-align:top" onclick="openNav()">&#9776;</span></dd>
-				
-			</dl>
-		</li>
-	</ul>
-	<div style="clear:both"></div>
-	
-	<div id="myNav" class="overlay_m">
-	 
-	  <div class="overlay-content">
-			
-	
-		<ul class="m_ov_top">
-			<li><a href="/main">정식품 홈페이지</a></li>
-			<li><a href="./mall.aspx">온라인구매</a></li>
-			<li id="logIn2"><a href="#pop_Login">로그인</a></li>
-			<li id="logOut2"><a href="#">로그아웃</a></li>
-			<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
-		</ul>
-		<ul class="m_ov_center">
-			<li>
-				<dl>
-					<dt>그린비아 소개</dt>
-					<dd><a href="./newInfo.aspx">그린비아는 ?</a></dd>
-					<dd><a href="./features.aspx">특징</a></dd>
-					<dd><a href="./history01.aspx">연혁</a></dd>
-					<dd><a href="./thesis.aspx">논문</a></dd>
-				</dl>
-			</li>
-			<li>
-				<dl>
-					<dt>제품소개</dt>
-					<dd><a href="./guide.aspx">선택가이드</a></dd>
-					<dd><a href="./newProduct.aspx">전체제품</a></dd>
-					<dd><a href="./newProduct.aspx?category=02">- 일반영양식</a></dd>
-					<dd><a href="./newProduct.aspx?category=03">- 전문영양식</a></dd>
-					<dd><a href="./newProduct.aspx?category=04">- 연하식</a></dd>
-					<dd><a href="./newProduct.aspx?category=05">- 건강식품</a></dd>
-					<dd><a href="./search.aspx">제품검색</a></dd>
-				</dl>
-			</li>
-			<li>
-				<dl>
-					<dt>섭취방법/주의사항</dt>
-					<dd><a href="./enteral.aspx">경장영양식<br><span>(환자용 식품)이란?</span></a></dd>
-					<dd><a href="./ingestion.aspx">경관 급식 사용 방법</a></dd>
-					<dd><a href="./safety.aspx">주의사항</a></dd>
-				</dl>
-			</li>
-			<li>
-				<dl>
-					<dt>고객지원</dt>
-					<dd><a href="./newFaq.aspx">FAQ</a></dd>
-					<dd><a href="./mall.aspx">온라인 구매</a></dd>
-					<dd><a href="./sampleKidsmore.aspx">샘플신청</a></dd>
-					<br><br><br><br><br><br><br><br>
-				</dl>
-			</li>
-		</ul>
-		
-	
-	  </div>
-	</div>
-</div>-->
-
 <div style="clear:both"></div> 
-
 <!-- popup -->
 <script th:src="@{https://www.vegemil.co.kr/Main/brandVegemilBaby/HTML/js/modality.js}"></script>
 <div id="pop_Login"  style="display:none;">
@@ -218,15 +108,6 @@
 		</tr>
 		<tr>
 			<td>
-				<!-- <ul class="pop_style01 mt40 pop_line">			
-					<form h:action="@{/auth/signin}" method="post" >
-	                    <input  class="mt40"type="text" name="username" placeholder="유저네임" required="required" />
-	                    <input class="mt40" type="password" name="password" placeholder="비밀번호" required="required" />
-	                    <button>로그인</button>
-	                 </form>
-				</ul>	 -->		
-			
-			
 				<ul class="pop_style01 mt40 pop_line">
 					<form th:action= "@{/member/login}" method="POST">
 						<li class="mt40">
@@ -277,8 +158,6 @@
 		 $('.container100').css('display','block')
 	}
 
-
-
 	</script>
 
 	<script>
@@ -319,9 +198,6 @@
 		});
 	});
 	</script>
-	
-</html>
-						
 				
 </header>
 </html>	

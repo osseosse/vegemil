@@ -77,7 +77,6 @@
 			p_idx = #{pIdx}
 	</select>
 
-
 	<select id="selectProductList" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
 		SELECT 
 			 <include refid="productColumns" />

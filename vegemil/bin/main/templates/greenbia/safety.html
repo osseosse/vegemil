@@ -2,9 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
 	<title>그린비아 주의사항</title>
-<<<<<<< HEAD
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
 	<script>
 	    function normalCopy() {
@@ -88,32 +86,13 @@
 	
 	    }
 	</script>
-</head>
-<header id="header" th:fragment="headerFragment"></header>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-
-
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-
-<!--------------------- 
-		//Header
-------------------- -->
-
-
 <!--------------------- 
 		content
 ------------------- -->
-<main>
-<form id="Form1" method="post" runat="server">
-    <uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
-</form>
 <div class="container100">
 	<div class="row h500 bg_safety">
 		<div class="hcenter center">
@@ -212,23 +191,11 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </div>
-
-<!--------------------- 
-		Footer
-------------------- -->
-<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
-<!--------------------- 
-		//Footer
-------------------- -->
-
-</main>
 <!--------------------- 
 		//content
 ------------------- -->
-
 <!-- Brook Slider -->
 <script src="./common/js/vendor.min.js"></script>
 <script src="./common/js/plugins.min.js"></script>
@@ -254,265 +221,8 @@
     };w.__beusablerumclient__.load(a);
     })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-
-
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
-=======
-	<head th:replace="fragments/greenbia/head :: headFragment"></head>
-	<script>
-	    function normalCopy() {
-	
-	          var aux = document.createElement("input");
-	          
-	          const str = "사용전 유통기한을 확인후 사용하시기 바랍니다."+
-	                    " 장기간 정치된 제품의 경우 영양성분이 가라앉아 있을 수 있으니 가볍게 흔든 후 사용하세요."+
-	                    " 매우 세게 흔들 경우 내압 때문에 제품 개봉시 심하게 튈 수 있으니 주의하시기 바랍니다."+
-	                    " 제품을 사용하기 전에 물과 비누로 손을 잘 씻은 후 사용하세요."+
-	                    " 제품이 닿는 부위에 손이 닿지 않도록 주의하세요."+
-	                    " 손 또는 캔 용기 겉 표면에 의한 교차오염 방지를 위해 알코올 또는 알코올 솜으로 소독 후 사용하시는 것을 권장합니다."+
-	                    " 주입을 시작할 때는 의사의 지시에 따르며, 적절한 속도와 양은 환자의 상태와 순응도 (tolerance)에 따라 조절하시기 바랍니다."+
-	                    " 경관급식의 경우 튜브의 크기는 지속적 주입법의 경우 8F(2.67mm) 이상의 튜브를 사용하고, 간헐적 주입법의 경우 10F(3.34mm) 이상의 튜브를 사용합니다. "+
-	                    " 추가적인 주입이 필요할 경우 반드시 주입 전후로 튜브를 씻어주시기 바랍니다.";
-	
-	          aux.setAttribute("value", str);
-	          document.body.appendChild(aux);
-	          aux.select();
-	          document.execCommand("copy");
-	          document.body.removeChild(aux);
-	          alert('복사되었습니다.');
-	
-	    }
-	    
-	      function warmCopy() {
-	
-	          var aux = document.createElement("input");
-	          
-	          const str = "사용전에 반드시 적절한 온도인지 확인한 후 사용하시기 바랍니다."+
-	                    " 캔 제품을 중탕할 경우에는 끓는 물에서 최대 30초 이상 중탕하지 마시기 바랍니다."+
-	                    " 팩 제품이나 파우치 제품을 중탕할때 접합부가 파손될 수 있으므로 최대 30초 이상 중탕하지 마시기 바랍니다."+
-	                    " 캔, 팩 제품을 용기채로 전자레인지에 절대 넣지 마시기 바랍니다."+
-	                    " 전자레인지로 데울 경우 반드시 별도 용기를 사용하시고, 최대 1분이상 데우지 마시기 바랍니다."+
-	                    " 캔, 팩, 파우치 제품을 온장고 (50~60℃)에 보관하면 영양소의 파괴 등 품질 열화가 일어날 수 있으므"+
-	                    " 최대 3시간 이상 보관하지 마시기 바랍니다."+
-	                    " 다른 용기에 담아서 온장고에 보관하면 쉽게 변질이 일어날 수 있습니다."+
-	                    " 불가피하게 다른 용기에 담아 온장고에 보관할 경우 최대 1시간 이상 넣어 두지 마시기 바랍니다.";
-	
-	          aux.setAttribute("value", str);
-	          document.body.appendChild(aux);
-	          aux.select();
-	          document.execCommand("copy");
-	          document.body.removeChild(aux);
-	          alert('복사되었습니다.');
-	
-	    }
-	    
-	    function extraCopy() {
-	
-	      var aux = document.createElement("input");
-	      
-	      const str = "사용후 남은 것은 바로 폐기하는 것이 좋습니다."+
-	                " 사용하고 남은 제품을 상온에 방치할 경우 미생물 오염 등으로 인해 부패할 수 있으니 주의하시기 바랍니다."+
-	                " 제품 폐기 장소는 제품 보관 장소 및 사용 장소와 분리시키거나 거리를 두는 것이 좋습니다.";
-	
-	      aux.setAttribute("value", str);
-	      document.body.appendChild(aux);
-	      aux.select();
-	      document.execCommand("copy");
-	      document.body.removeChild(aux);
-	      alert('복사되었습니다.');
-	
-	    }
-	    
-	    function warningCopy() {
-	
-	      var aux = document.createElement("input");
-	      
-	      const str = "그린비아 제품은 상온(15℃~25℃:실내온도 기준)에서 보관하시고 사용하시는 것이 가장 좋습니다."+
-	                " 바닥의 물기나 해충 등의 피해를 방지하기 위해 15cm 이상의 단상 위에 보관하기시 바랍니다."+
-	                " 부득이하게 바닥에 보관하실 경우 물기가 없는 건조한 바닥면에 보관하시기 바랍니다."+
-	                " 제품을 높게 쌓아 두면 하중에 의해 파손될 우려가 있으니 많은 양을 쌓아 두지 마십시오. (5박스 이하 적재 추천)";
-	
-	      aux.setAttribute("value", str);
-	      document.body.appendChild(aux);
-	      aux.select();
-	      document.execCommand("copy");
-	      document.body.removeChild(aux);
-	      alert('복사되었습니다.');
-	
-	    }
-	</script>
-</head>
-<body>
-<!-- ================================ Header ================================ -->
-<header class="white" th:insert="fragments/greenbia/mainHeader.html :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-
-
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-
-<!--------------------- 
-		//Header
-------------------- -->
-
-
-<!--------------------- 
-		content
-------------------- -->
-<main>
-<form id="Form1" method="post" runat="server">
-    <uc1:mainheader id="mainHeader1" runat="server"></uc1:mainheader>	
-</form>
-<div class="container100">
-	<div class="row h500 bg_safety">
-		<div class="hcenter center">
-			<p class="f26_4_w f_ms">Notice</p>
-			<p class="f50_5_w mt20">주의사항</p>
-		</div>
-		<div class="col-md-12 subNav">
-			<div class="subNavBox">
-				<ul>
-					<li><a href="#">섭취사항/주의사항</a></li>
-					<li><a href="#">주의사항</a></li>
-				</ul>
-				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-
-<div class="container100">
-	<div class="container">
-		<div class="row ">
-			<div class="col-md-12" >
-				<ul class="tabMenu3">
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/enteral}">경장영양식이란?</a></li>
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/ingestion}">경관 급식 사용 방법</a></li>
-					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/safety}">주의사항</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container1400_15 mt100">
-	<div class="row">
-		<div class="col-md-12 " data-aos="fade-right" data-aos-duration="2000">
-			<p class="f50_6 mt20 center">그린비아 제품과<br class="noneM"> 관련한<br class="none"> 참고 사항</p>
-		</div>
-	</div>
-</div>
-
-<div class="container100 mt350">
-	<div class="container1660_15" >
-		<!-- 영양기준 -->
-		<div class="row">
-			<div class="col-md-12 mt-200">
-				<p><img th:src="@{/img/greenbia/safety01.jpg}" alt="연구하는 모습"/></p>
-			</div> 
-		</div>
-		<div class="container1400_15 entBG mt-120 ">
-			<div class="row pb200">
-				<div class="col-md-12">
-					<p class="ebtTitle f34_5 center mt60 check"><img th:src="@{/img/greenbia/ico_check.png}" alt="연구하는 모습"/> 제품 사용시 주의 사항</p>
-					<ul class="safety_info ">
-						<li class="f20_5 backgroundNone"><p>일반 사항</p></li> <a href="javascript:normalCopy()"><span class="btn_type13">복사하기</span></a>
-						<li class="f22_4 gray01">사용전 유통기한을 확인후 사용하시기 바랍니다.</li>
-						<li class="f22_4 gray01">장기간 정치된 제품의 경우 영양성분이 가라앉아 있을 수 있으니 가볍게 흔든 후 사용하세요.</li>
-						<li class="f22_4 gray01">매우 세게 흔들 경우 내압 때문에 제품 개봉시 심하게 튈 수 있으니 주의하시기 바랍니다.</li>
-						<li class="f22_4 gray01">제품을 사용하기 전에 물과 비누로 손을 잘 씻은 후 사용하세요.</li>
-						<li class="f22_4 gray01">제품이 닿는 부위에 손이 닿지 않도록 주의하세요. </li>
-						<li class="f22_4 gray01">손 또는 캔 용기 겉 표면에 의한 교차오염 방지를 위해 알코올 또는 알코올 솜으로 소독 후 사용하시는 것을 권장합니다.  </li>
-						<li class="f22_4 gray01">주입을 시작할 때는 의사의 지시에 따르며, 적절한 속도와 양은 환자의 상태와 순응도 (tolerance)에 따라 조절하시기 바랍니다.</li>
-						<li class="f22_4 gray01"  style="letter-spacing:-0.9px">경관급식의 경우 튜브의 크기는 지속적 주입법의 경우 8F(2.67mm) 이상의 튜브를 사용하고, 간헐적 주입법의 경우<br>10F(3.34mm) 이상의 튜브를 사용합니다. 추가적인 주입이 필요할 경우 반드시 주입 전후로 튜브를 씻어주시기 바랍니다.</li>
-					</ul>
-					<ul class="safety_info  mt50">
-						<li class="f20_5 backgroundNone">제품을 따뜻하게 데워서 사용할 경우</li> <a href="javascript:warmCopy()"><span class="btn_type13">복사하기</span></a>
-						<li class="f22_4 gray01">사용전에 반드시 적절한 온도인지 확인한 후 사용하시기 바랍니다.</li>
-						<li class="f22_4 gray01">캔 제품을 중탕할 경우에는 끓는 물에서 최대 30초 이상 중탕하지 마시기 바랍니다.</li>
-						<li class="f22_4 gray01">팩 제품이나 파우치 제품을 중탕할때 접합부가 파손될 수 있으므로 최대 30초 이상 중탕하지 마시기 바랍니다.</li>
-						<li class="f22_4 gray01">캔, 팩 제품을 용기채로 전자레인지에 절대 넣지 마시기 바랍니다.</li>
-						<li class="f22_4 gray01">전자레인지로 데울 경우 반드시 별도 용기를 사용하시고, 최대 1분이상 데우지 마시기 바랍니다.</li>
-						<li class="f22_4 gray01">캔, 팩, 파우치 제품을 온장고 (50~60℃)에 보관하면 영양소의 파괴 등 품질 열화가 일어날 수 있으므 <br>최대 3시간 이상 보관하지 마시기 바랍니다.</li>
-						<li class="f22_4 gray01">다른 용기에 담아서 온장고에 보관하면 쉽게 변질이 일어날 수 있습니다.</li>
-						<li class="f22_4 gray01">불가피하게 다른 용기에 담아 온장고에 보관할 경우 최대 1시간 이상 넣어 두지 마시기 바랍니다.</li>
-					</ul>
-					<ul class="safety_info  mt50 grayLine">
-						<li class="f20_5 backgroundNone">제품 사용후</li> <a href="javascript:extraCopy()"><span class="btn_type13">복사하기</span></a>
-						<li class="f22_4 gray01">사용후 남은 것은 바로 폐기하는 것이 좋습니다.</li>
-						<li class="f22_4 gray01">사용하고 남은 제품을 상온에 방치할 경우 미생물 오염 등으로 인해 부패할 수 있으니 주의하시기 바랍니다.</li>
-						<li class="f22_4 gray01">제품 폐기 장소는 제품 보관 장소 및 사용 장소와 분리시키거나 거리를 두는 것이 좋습니다.</li>
-					</ul>
-				</div>
-				<div class="col-md-12 mt30 mb20">
-					<p class="grayBox f20_51">
-					※  전품목 적용
-					</p>
-				</div>
-				<div class="col-md-12">
-					<p class="ebtTitle f34_5 center mt60 check"><img th:src="@{/img/greenbia/ico_check.png}" alt="연구하는 모습"/> 제품 보관 및 적재시 주의 사항 <a href="javascript:warningCopy()"><span class="btn_type13">복사하기</span></a></p> 
-					<ul class="ent_info grayLine">
-						<li class="f22_4 gray01">그린비아 제품은 상온(15℃~25℃:실내온도 기준)에서 보관하시고 사용하시는 것이 가장 좋습니다.</li>
-						<li class="f22_4 gray01">바닥의 물기나 해충 등의 피해를 방지하기 위해 15cm 이상의 단상 위에 보관하기시 바랍니다.<br>부득이하게 바닥에 보관하실 경우 물기가 없는 건조한 바닥면에 보관하시기 바랍니다. </li>
-						<li class="f22_4 gray01">제품을 높게 쌓아 두면 하중에 의해 파손될 우려가 있으니 많은 양을 쌓아 두지 마십시오.  (5박스 이하 적재 추천)</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-<!--------------------- 
-		Footer
-------------------- -->
-<uc1:mainfooter id="mainFooter1" runat="server"></uc1:mainfooter>
-<!--------------------- 
-		//Footer
-------------------- -->
-
-</main>
-<!--------------------- 
-		//content
-------------------- -->
-
-<!-- Brook Slider -->
-<script src="./common/js/vendor.min.js"></script>
-<script src="./common/js/plugins.min.js"></script>
-<!-- Brook Slider -->
-<script src="./common/js/main.js"></script>
-<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-	AOS.init({
-		easing: 'ease-out-back',
-		duration: 1000
-	});
-</script>
-<script type="text/javascript">
-    (function(w, d, a){
-    w.__beusablerumclient__ = {
-    load : function(src){
-    var b = d.createElement("script");
-    b.src = src; b.async=true; b.type = "text/javascript";
-    d.getElementsByTagName("head")[0].appendChild(b);
-    }
-    };w.__beusablerumclient__.load(a);
-    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
-</script>
-
-
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter :: footerFragment"></footer>
->>>>>>> branch 'master' of https://github.com/osseosse/vegemil.git
 <!-- ================================ // Footer ================================ -->
-		
 </body>
 </html>

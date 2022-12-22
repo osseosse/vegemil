@@ -6,11 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.vegemil.domain.greenbia.GreenbiaProductCategoryDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductCountDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductKeywordDTO;
-import com.vegemil.domain.greenbia.GreenbiaProductSearchDTO;
+import com.vegemil.domain.GreenbiaProductDTO;
 import com.vegemil.mapper.GreenbiaProductMapper;
 
 @Service
@@ -19,10 +15,24 @@ public class GreenbiaProductServiceImpl implements GreenbiaProductService {
 	@Autowired
 	private GreenbiaProductMapper greenbiaProductMapper;
 
-//	@Override
-//	public ProductDTO getProductDetail(Long pIdx) {
-//		return GreenbiaProductMapper.selectProductDetail(pIdx);
-//	}
+	@Override
+	public GreenbiaProductDTO getProductDetail(Long gIdx) {
+		return greenbiaProductMapper.selectProductDetail(gIdx);
+	}
+	
+	@Override
+	public List<GreenbiaProductDTO> getRecProduct() {
+		
+		List<GreenbiaProductDTO> productList = Collections.emptyList();
+
+		int productTotalCount = greenbiaProductMapper.selectProductTotalCount();
+
+		if (productTotalCount > 0) {
+			productList = greenbiaProductMapper.selectRecProduct();
+		}
+
+		return productList;
+	}
 
 	@Override
 	public List<GreenbiaProductDTO> getProductList() {
@@ -39,44 +49,44 @@ public class GreenbiaProductServiceImpl implements GreenbiaProductService {
 	}
 
 	@Override
-	public List<GreenbiaProductCountDTO> getProductCount() {
+	public List<GreenbiaProductDTO> getProductCount() {
 
-		List<GreenbiaProductCountDTO> ProductCountList = greenbiaProductMapper.selectProductCount();
+		List<GreenbiaProductDTO> ProductCountList = greenbiaProductMapper.selectProductCount();
 
 		return ProductCountList;
 	}
 
 	@Override
-	public List<GreenbiaProductCategoryDTO> getCommonProduct() {
+	public List<GreenbiaProductDTO> getCommonProduct() {
 
-		List<GreenbiaProductCategoryDTO> CommonProductList = greenbiaProductMapper.selectCommonProduct();
+		List<GreenbiaProductDTO> CommonProductList = greenbiaProductMapper.selectCommonProduct();
 
 		return CommonProductList;
 	}
 
 	@Override
-	public List<GreenbiaProductCategoryDTO> getProProduct() {
-		List<GreenbiaProductCategoryDTO> ProProductList = greenbiaProductMapper.selectProProduct();
+	public List<GreenbiaProductDTO> getProProduct() {
+		List<GreenbiaProductDTO> ProProductList = greenbiaProductMapper.selectProProduct();
 		return ProProductList;
 	}
 
 	@Override
-	public List<GreenbiaProductCategoryDTO> getYeonhaProduct() {
-		List<GreenbiaProductCategoryDTO> YeonhaProductList = greenbiaProductMapper.selectYeonhaProduct();
+	public List<GreenbiaProductDTO> getYeonhaProduct() {
+		List<GreenbiaProductDTO> YeonhaProductList = greenbiaProductMapper.selectYeonhaProduct();
 		return YeonhaProductList;
 	}
 
 	@Override
-	public List<GreenbiaProductCategoryDTO> getHealthProduct() {
-		List<GreenbiaProductCategoryDTO> HealthProductList = greenbiaProductMapper.selectHealthProduct();
+	public List<GreenbiaProductDTO> getHealthProduct() {
+		List<GreenbiaProductDTO> HealthProductList = greenbiaProductMapper.selectHealthProduct();
 		return HealthProductList;
 	}
 
 	@Override
-	public List<GreenbiaProductSearchDTO> searchProduct(String searchKeyword) {
+	public List<GreenbiaProductDTO> searchProduct(String searchKeyword) {
 		System.out.println("=====================GreenbiaProductServiceImpl======================");
 
-		List<GreenbiaProductSearchDTO> SearchProductList = greenbiaProductMapper.searchProduct(searchKeyword);
+		List<GreenbiaProductDTO> SearchProductList = greenbiaProductMapper.searchProduct(searchKeyword);
 		return SearchProductList;
 	}
 
@@ -85,9 +95,9 @@ public class GreenbiaProductServiceImpl implements GreenbiaProductService {
 
 	
 	@Override
-	public List<GreenbiaProductKeywordDTO> getKeywordProduct() {
+	public List<GreenbiaProductDTO> getKeywordProduct() {
 
-		List<GreenbiaProductKeywordDTO> KeywordProductList = greenbiaProductMapper.selectKeywordProduct();
+		List<GreenbiaProductDTO> KeywordProductList = greenbiaProductMapper.selectKeywordProduct();
 
 		return KeywordProductList;
 	}

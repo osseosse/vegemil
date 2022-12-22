@@ -13,11 +13,11 @@ import com.vegemil.mapper.ProductMapper;
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	private ProductMapper ProductMapper;
+	private ProductMapper productMapper;
 
 	@Override
 	public ProductDTO getProductDetail(Long pIdx) {
-		return ProductMapper.selectProductDetail(pIdx);
+		return productMapper.selectProductDetail(pIdx);
 	}
 
 	@Override
@@ -25,10 +25,10 @@ public class ProductServiceImpl implements ProductService {
 		
 		List<ProductDTO> productList = Collections.emptyList();
 
-		int productTotalCount = ProductMapper.selectProductTotalCount();
+		int productTotalCount = productMapper.selectProductTotalCount();
 
 		if (productTotalCount > 0) {
-			productList = ProductMapper.selectProductList(searchKeyword);
+			productList = productMapper.selectProductList(searchKeyword);
 		}
 
 		return productList;
@@ -39,10 +39,10 @@ public class ProductServiceImpl implements ProductService {
 		
 		List<ProductDTO> brandStroyList = Collections.emptyList();
 
-		int brandStroyCount = ProductMapper.selectBrandStroyCount();
+		int brandStroyCount = productMapper.selectBrandStroyCount();
 
 		if (brandStroyCount > 0) {
-			brandStroyList = ProductMapper.selectBrandStroyList();
+			brandStroyList = productMapper.selectBrandStroyList();
 		}
 
 		return brandStroyList;
@@ -53,10 +53,10 @@ public class ProductServiceImpl implements ProductService {
 		
 		List<ProductDTO> productList = Collections.emptyList();
 
-		int productTotalCount = ProductMapper.selectProductTotalCount();
+		int productTotalCount = productMapper.selectProductTotalCount();
 
 		if (productTotalCount > 0) {
-			productList = ProductMapper.selectRecProduct(categoryCode);
+			productList = productMapper.selectRecProduct(categoryCode);
 		}
 
 		return productList;

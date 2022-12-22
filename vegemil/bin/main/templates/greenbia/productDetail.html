@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>그린비아  제품상세</title>
+<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!--------------------- 
+		content
+------------------- -->
+<div class="container100 subBigBnr">       
+  <div th:class="|row ${product.gCode} BU01|">
+    <div class="col-md-12 subNav">
+	    <div class="subNavBox">
+		    <ul>
+			    <li><a href="/greenbia/product/list">제품소개</a></li>
+			    <li><a href="/greenbia/product/list">전체제품</a></li>
+			    <li class="active" th:text="${product.gMcate}"></li>
+		    </ul>
+		    <div class="btn_back"><a href="javascript:history.back()"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_back.png" /></a></div>
+	    </div>		
+    </div>
+    <!-- 
+    <div class="productLoad">
+	</div>
+	-->
+	<div th:replace="|greenbia/html/${product.gCode}|"></div>
+ </div>         
+</div>
+   
+<div class="container100 infoMenuLine" id="info01">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12" >
+                <ul class="infoMenu">
+                    <li class="active hvr-underline-from-center"><a href="#info01">상품상세정보</a></li>
+                    <li class="hvr-underline-from-center"><a href="#info02">영양정보</a></li>
+                    <li><a th:href="${product.gOnuri}" class="hvr-bounce-to-right" target="_blank">구매하기</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container_15">
+    <div class="row ">
+        <div class="col-md-12" >
+            <div id="Div1" class="info_img"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall.jpg|" alt="그린비아 상품상세정보" /></div>
+        </div>
+    </div>
+</div>
+<div class="container100 infoMenuLine" id="info02">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12" >
+                <ul class="infoMenu">
+                    <li class="hvr-underline-from-center"><a href="#info01">상품상세정보</a></li>
+                    <li class="active hvr-underline-from-center"><a href="#info02">영양정보</a></li>
+                    <li><a th:href="${product.gOnuri}" class="hvr-bounce-to-right" target="_blank">구매하기</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="yysWrap"></div>
+<script>
+	const gCode = "[[ ${product.gCode} ]]";
+    $.ajax("/greenbia/html/"+gCode.trim()+"_yys.html", {
+        cache: false,
+        success: function(data, textStatus, jqXHR) {
+            $("#yysWrap").html(data);
+        },
+        dataType:"html"
+    });
+</script>
+
+<div class="container100_15 bgPupple also" id="recommend">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="also_head">
+                    <p class="f_ms f40_5_w">You may <br>also love</p>
+                    <p class="f22_4_w mt50">이런 제품은 어떠세요? </p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6"  th:each="recProduct, i : ${recProduct}">
+                <a th:href="|/greenbia/product/detail/${recProduct.gIdx}|">
+                    <div th:class="|h380 ${recProduct.gCode}_s hvr-float-shadow|">
+                        <p class="also_title" th:text="${recProduct.gName}"></p>
+                        <span class="also_mark"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_mark_w.png" alt=""/></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------- 
+		//content
+------------------- -->
+<!-- Brook Slider -->
+<!-- 
+<script th:src="@{/common/js/vendor.min.js}"></script>
+<script th:src="@{/common/js/main.js}"></script>
+ -->
+<script th:src="@{/common/js/plugins.min.js}"></script>
+<script th:src="@{/common/js/card-slider.js}"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<!-- AOS -->
+<script th:src="@{https://unpkg.com/aos@2.3.1/dist/aos.js}"></script>
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+<script type="text/javascript">
+    (function(w, d, a){
+    w.__beusablerumclient__ = {
+    load : function(src){
+    var b = d.createElement("script");
+    b.src = src; b.async=true; b.type = "text/javascript";
+    d.getElementsByTagName("head")[0].appendChild(b);
+    }
+    };w.__beusablerumclient__.load(a);
+    })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+</script>
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+	//html 파일 로드
+	var loadHtml = "[[ ${product.gCode} ]]";
+    //$(".productLoad").load("/greenbia/html/"+loadHtml.trim()+".html");
+});
+//]]>
+</script>
+</body>
+</html>
