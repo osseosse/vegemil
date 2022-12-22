@@ -35,14 +35,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<ProductDTO> getBrandStroyList() {
+	public List<ProductDTO> getBrandStroyList(String categoryCode) {
 		
 		List<ProductDTO> brandStroyList = Collections.emptyList();
 
 		int brandStroyCount = productMapper.selectBrandStroyCount();
 
 		if (brandStroyCount > 0) {
-			brandStroyList = productMapper.selectBrandStroyList();
+			brandStroyList = productMapper.selectBrandStroyList(categoryCode);
 		}
 
 		return brandStroyList;

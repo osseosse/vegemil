@@ -1,3 +1,6 @@
+
+
+
 /*================================
  * 	 PC Menu
  *================================
@@ -63,7 +66,7 @@ $('#gnb > ul > li > a').on("mouseenter focusin",function(e){
 	}
 
 /*================================
- * 	 ëª¨ë°”ì¼ FullMenu
+ * 	 ¸ð¹ÙÀÏ FullMenu
  *================================*/
 
 	/* mobileAside Open */
@@ -79,7 +82,7 @@ $('#gnb > ul > li > a').on("mouseenter focusin",function(e){
 
 
 /*================================
- * 	 Mobile Menu // í™œì„±í™”ì‹œ í”Œë¡œíŒ…ë©”ë‰´ ì˜¤ë¥˜. ê°œë°œì‹œ í™œì„±í™”ë¡œ ë³€ê²½í•˜ê³ , mainHeaderì— ìŠ¤í¬ë¦½íŠ¸ ì‚­ì œí•˜ê³  ì˜¤ë¥˜ì²´í¬í•´ë³¼ê²ƒ
+ * 	 Mobile Menu // È°¼ºÈ­½Ã ÇÃ·ÎÆÃ¸Þ´º ¿À·ù. °³¹ß½Ã È°¼ºÈ­·Î º¯°æÇÏ°í, mainHeader¿¡ ½ºÅ©¸³Æ® »èÁ¦ÇÏ°í ¿À·ùÃ¼Å©ÇØº¼°Í
  *================================
 
 $("#verticalType01").collapse({
@@ -95,7 +98,7 @@ $("#verticalType01").collapse({
 	});
 
 /*================================
- * 	 main > ìžì£¼ë¬»ëŠ”ì§ˆë¬¸+SNS
+ * 	 main > ÀÚÁÖ¹¯´ÂÁú¹®+SNS
  *================================
 
 $(".verticalType02").collapse({
@@ -117,14 +120,14 @@ $(".verticalType02").collapse({
 (function($){
 	$(document).ready(function() {
 		
-		//2022-02-18 ì£¼ë¬¸ > ê²°ì œê¸ˆì•¡ ê³„ì‚°ê¸°
-		if (!$('#flotingPage').length){return false}; //#contents -> wrapìœ¼ë¡œ ë³€ê²½ 
+		//2022-02-18 ÁÖ¹® > °áÁ¦±Ý¾× °è»ê±â
+		if (!$('#flotingPage').length){return false}; //#contents -> wrapÀ¸·Î º¯°æ 
 		var limit =  $(window).height() - ($('.floting').height()+00);
 		//alert(limit);
 		if (limit > 0){
 			$('.floting').addFloating({  
 				targetRight: 10,  
-				targetTop: 40,  //ìŠ¤í¬ë¡¤ì‹œ ë†’ì´ì„¤ì • 
+				targetTop: 40,  //½ºÅ©·Ñ½Ã ³ôÀÌ¼³Á¤ 
 				snap: true  
 			});  
 		} else {
@@ -133,7 +136,7 @@ $(".verticalType02").collapse({
 				targetTop: 40,  
 				snap: true  
 			});  
-		}	// end - 2022-02-18 ì£¼ë¬¸ > ê²°ì œê¸ˆì•¡ ê³„ì‚°ê¸°
+		}	// end - 2022-02-18 ÁÖ¹® > °áÁ¦±Ý¾× °è»ê±â
 
 
 	});
@@ -144,25 +147,25 @@ $(".verticalType02").collapse({
  * 	 slide (pp)
  *================================*/
  $(document).ready(function(){
-	/********** ë©”ì¸ > ë¹…ë°°ë„ˆ **********/
+	/********** ¸ÞÀÎ > ºò¹è³Ê **********/
 	$('#slider0 .slider').prrpleSlider({
 		autoPlay:true,	
 		autoPlayInterval:4000,	
 	}); 
-	/********** ë©”ì¸ > ì¶”ì²œ **********/
+	/********** ¸ÞÀÎ > ÃßÃµ **********/
 	$('#slider1 .slider').prrpleSlider({
 		multiple:2,
 		autoPlay:true,	
 		autoPlayInterval:4000,	
 	});  
 
-	/********** ë©”ì¸ > í›„ê¸° **********/
+	/********** ¸ÞÀÎ > ÈÄ±â **********/
 	$('#slider2 .slider').prrpleSlider({
 		multiple:2,
 		autoPlay:true,	
 		autoPlayInterval:4000,	
 	});  
-	/********** ì œí’ˆë¦¬ìŠ¤íŠ¸ > ìƒë‹¨ë°°ë„ˆ **********/
+	/********** Á¦Ç°¸®½ºÆ® > »ó´Ü¹è³Ê **********/
 	$('#slider3 .slider').prrpleSlider({
 		multiple:3,
 		autoPlay:true,	
@@ -183,10 +186,10 @@ $(".verticalType02").collapse({
  * 	 main > Tab
  *================================*/
 (function( $ ) {
-  $.fn.basicTabs1 = function(options){ /* basicTabs1 ë³€ê²½ */
+  $.fn.basicTabs1 = function(options){ /* basicTabs1 º¯°æ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs1", /* tabe2 ë³€ê²½*/
+      list_class: "tabs1", /* tabe2 º¯°æ*/
       content_class: "tab_content1", /* tab_content1 */
       starting_tab: 1
     }, options );
@@ -209,10 +212,10 @@ $(".verticalType02").collapse({
 
 
 (function( $ ) {
-  $.fn.basicTabs2 = function(options){ /* basicTabs2 ë³€ê²½ */
+  $.fn.basicTabs2 = function(options){ /* basicTabs2 º¯°æ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs2", /* tabe2 ë³€ê²½*/
+      list_class: "tabs2", /* tabe2 º¯°æ*/
       content_class: "tab_content2", /* tab_content2 */
       starting_tab: 1
     }, options );
@@ -235,13 +238,13 @@ $(".verticalType02").collapse({
 
 
 /*================================
- * 	 ì œí’ˆì§„ì—´ > ì¹´í…Œê³ ë¦¬ Tab
+ * 	 Á¦Ç°Áø¿­ > Ä«Å×°í¸® Tab
  *================================*/
 (function( $ ) {
-  $.fn.basicTabs3 = function(options){ /* basicTabs3 ë³€ê²½ */
+  $.fn.basicTabs3 = function(options){ /* basicTabs3 º¯°æ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs3", /* tabe3 ë³€ê²½*/
+      list_class: "tabs3", /* tabe3 º¯°æ*/
       content_class: "tab_content3", /* tab_content3 */
       starting_tab: 1
     }, options );
@@ -264,13 +267,13 @@ $(".verticalType02").collapse({
 
 
 /*================================
- * 	 ì œí’ˆìƒì„¸ > ìƒë‹¨ ì¸ë„¤ì¼ Tab
+ * 	 Á¦Ç°»ó¼¼ > »ó´Ü ½æ³×ÀÏ Tab
  *================================*/
 (function( $ ) {
-  $.fn.basicTabs4 = function(options){ /* basicTabs4 ë³€ê²½ */
+  $.fn.basicTabs4 = function(options){ /* basicTabs4 º¯°æ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs4", /* tabe4 ë³€ê²½*/
+      list_class: "tabs4", /* tabe4 º¯°æ*/
       content_class: "tab_content4", /* tab_content4 */
       starting_tab: 1
     }, options );
@@ -292,13 +295,13 @@ $(".verticalType02").collapse({
 }( jQuery ));
 
 /*================================
- * 	 ì»¤ë®¤ë‹ˆì¼€ì´ì…˜ > ê³µì •ê±°ëž˜ > ìžìœ¨ì¤€ìˆ˜ ìš´ì˜í˜„í™©
+ * 	 Ä¿¹Â´ÏÄÉÀÌ¼Ç > °øÁ¤°Å·¡ > ÀÚÀ²ÁØ¼ö ¿î¿µÇöÈ²
  *================================*/
 (function( $ ) {
-  $.fn.basicTabs5 = function(options){ /* basicTabs5 ë³€ê²½ */
+  $.fn.basicTabs5 = function(options){ /* basicTabs5 º¯°æ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs5", /* tabe5 ë³€ê²½*/
+      list_class: "tabs5", /* tabe5 º¯°æ*/
       content_class: "tab_content5", /* tab_content5 */
       starting_tab: 1
     }, options );
@@ -321,7 +324,7 @@ $(".verticalType02").collapse({
 
 
 /*================================
- * 	 ë¸Œëžœë“œ > ì•„ì½”ë””ì–¸
+ * 	 ºê·£µå > ¾ÆÄÚµð¾ð
  *================================*/
 $(function() {
 	window.setTimeout(function() {

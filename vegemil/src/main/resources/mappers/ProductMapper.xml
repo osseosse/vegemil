@@ -120,7 +120,11 @@
 			 m_product           
 		WHERE 
 		    p_active = 1
+		  <if test="categoryCode != null and categoryCode != ''">  
+		  and category_code = #{categoryCode}
+		  </if>	
 		  and
+		    (
 		    new_product_all != 0
 		  or
 		    rep_product_all != 0
@@ -128,6 +132,7 @@
 		    new_product_cate != 0
 		  or
 		    rep_product_cate != 0
+		    )
 		ORDER BY 
 			new_product_all, rep_product_all, new_product_cate, rep_product_cate
 	</select>

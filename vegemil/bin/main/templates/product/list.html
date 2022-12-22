@@ -113,7 +113,7 @@
 		<div class="row">
 			<div class="col-md-12 mt100">
 				<!-- tabs3 -->
-				<div class="prd_wrap mt20">
+				<div class="prd_wrap mt20" id="topTap">
 					<ul class="tabs3">
 						<li><a href="#V"><p class="ico_VE">두유 (베지밀)</p></a></li>
 						<li ><a href="#P"><p class="ico_VM">임산부 영양식</p></ a></li>
@@ -143,14 +143,15 @@
 							<div class="flotingContent"><!-- 2022-11-01 "flotingContent" 클래스추가 --> 
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="vv" id="#0" value="" > <label for="#0"><span></span>전체보기</label></li>
-									<li><input type="radio" name="vv" id="#1" value="VPM" > <label for="#1"><span></span>프리미엄 두유</label></li>
-									<li><input type="radio" name="vv" id="#2" value="VPL" > <label for="#2"><span></span>플레인 두유</label></li>
-									<li><input type="radio" name="vv" id="#3" value="VBL" > <label for="#3"><span></span>블랙두유</label></li>
-									<li><input type="radio" name="vv" id="#4" value="VGR" > <label for="#4"><span></span>곡물&견과 두유</label></li>
-									<li><input type="radio" name="vv" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
+									<li class="vv active"><input type="radio" name="vv" id="#0" value="" > <label for="#0"><span></span>전체보기</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#1" value="VPM" > <label for="#1"><span></span>프리미엄 두유</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#2" value="VPL" > <label for="#2"><span></span>플레인 두유</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#3" value="VBL" > <label for="#3"><span></span>블랙두유</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#4" value="VGR" > <label for="#4"><span></span>곡물&견과 두유</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
 								</ul>
 							</div>
+							
 							<div class="h300"></div>
 						</div>
 					</div><!-- //floting-left_prd -->
@@ -173,8 +174,8 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -187,8 +188,8 @@
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="pp" id="#6" value="" > <label for="#6"><span></span>전체보기</label></li>
-									<li><input type="radio" name="pp" id="#7" value="VMO" > <label for="#7"><span></span>임산 &middot; 수유부 영양식</label></li>
+									<li class="pp active"><input type="radio" name="pp" id="#6" value="" > <label for="#6"><span></span>전체보기</label></li>
+									<li class="pp"><input type="radio" name="pp" id="#7" value="VMO" > <label for="#7"><span></span>임산 &middot; 수유부 영양식</label></li>
 								</ul>
 							</div>
 						</div>
@@ -210,8 +211,8 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -225,9 +226,9 @@
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="bb" id="#8" value="" > <label for="#8"><span></span>전체보기</label></li>
-									<li><input type="radio" name="bb" id="#9" value="VBP" > <label for="#9"><span></span>프리미엄</label></li>
-									<li><input type="radio" name="bb" id="#10" value="VBB" > <label for="#10"><span></span>우리콩</label></li>
+									<li class="bb active"><input type="radio" name="bb" id="#8" value="" > <label for="#8"><span></span>전체보기</label></li>
+									<li class="bb"><input type="radio" name="bb" id="#9" value="VBP" > <label for="#9"><span></span>프리미엄</label></li>
+									<li class="bb"><input type="radio" name="bb" id="#10" value="VBB" > <label for="#10"><span></span>우리콩</label></li>
 								</ul>
 							</div>
 						</div>
@@ -236,7 +237,7 @@
 						<div class="row" id="b_tab" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" id="b_list" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
 								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a href="/vegemilBaby/belief">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 										</div>
@@ -249,8 +250,8 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a href="/vegemilBaby/belief"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -264,10 +265,10 @@
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="gg" id="#11" value="" > <label for="#11"><span></span>전체보기</label></li>
-									<li><input type="radio" name="gg" id="#12" value="GPL" > <label for="#12"><span></span>일반영양식</label></li>
-									<li><input type="radio" name="gg" id="#13" value="GED" > <label for="#13"><span></span>전문영양식</label></li>
-									<li><input type="radio" name="gg" id="#14" value="GDY" > <label for="#14"><span></span>연하식</label></li>
+									<li class="gg active"><input type="radio" name="gg" id="#11" value="" > <label for="#11"><span></span>전체보기</label></li>
+									<li class="gg"><input type="radio" name="gg" id="#12" value="GPL" > <label for="#12"><span></span>일반영양식</label></li>
+									<li class="gg"><input type="radio" name="gg" id="#13" value="GED" > <label for="#13"><span></span>전문영양식</label></li>
+									<li class="gg"><input type="radio" name="gg" id="#14" value="GDY" > <label for="#14"><span></span>연하식</label></li>
 								</ul>
 							</div>
 						</div>
@@ -276,7 +277,7 @@
 						<div class="row" id="g_tab" th:if="${not #lists.isEmpty( productList )}" >
 							<div class="col-md-4 col-6" id="g_list" th:if="${product.categoryCode == 'G'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
 								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a th:href="|/greenbia/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 										</div>
@@ -289,8 +290,8 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -304,10 +305,10 @@
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="hh" id="#15" value="" > <label for="#15"><span></span>전체보기</label></li>
-									<li><input type="radio" name="hh" id="#16" value="CHD" > <label for="#16"><span></span>균형영양음료</label></li>
-									<li><input type="radio" name="hh" id="#17" value="GHF" > <label for="#17"><span></span>건강기능식품</label></li>
-									<li><input type="radio" name="hh" id="#18" value="CHP" > <label for="#18"><span></span>생식&선식</label></li>
+									<li class="hh active"><input type="radio" name="hh" id="#15" value="" > <label for="#15"><span></span>전체보기</label></li>
+									<li class="hh"><input type="radio" name="hh" id="#16" value="CHD" > <label for="#16"><span></span>균형영양음료</label></li>
+									<li class="hh"><input type="radio" name="hh" id="#17" value="GHF" > <label for="#17"><span></span>건강기능식품</label></li>
+									<li class="hh"><input type="radio" name="hh" id="#18" value="CHP" > <label for="#18"><span></span>생식&선식</label></li>
 								</ul>
 							</div>
 						</div>
@@ -329,8 +330,8 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -344,8 +345,8 @@
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="ff" id="#16" value="" > <label for="#16"><span></span>전체보기</label></li>
-									<li><input type="radio" name="ff" id="#17" value="SCI" > <label for="#17"><span></span>콩국물&육수</label></li>
+									<li class="ff active"><input type="radio" name="ff" id="#16" value="" > <label for="#16"><span></span>전체보기</label></li>
+									<li class="ff"><input type="radio" name="ff" id="#17" value="SCI" > <label for="#17"><span></span>콩국물&육수</label></li>
 								</ul>
 							</div>
 						</div>
@@ -367,22 +368,23 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div><!-- //floting-right_prd -->
+				
 				<div id="M"><!-- 식물성음료 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="mm" id="#18" value="" > <label for="#18"><span></span>전체보기</label></li>
-									<li><input type="radio" name="mm" id="#19" value="CVD" > <label for="#19"><span></span>콩국물&육수</label></li>
+									<li class="mm active"><input type="radio" name="mm" id="#18" value="" > <label for="#18"><span></span>전체보기</label></li>
+									<li class="mm"><input type="radio" name="mm" id="#19" value="CVD" > <label for="#19"><span></span>콩국물&육수</label></li>
 								</ul>
 							</div>
 						</div>
@@ -404,22 +406,23 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div><!-- //floting-right_prd -->
+				
 				<div id="S"><!-- 음료 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="ss" id="#20" value="" > <label for="#20"><span></span>전체보기</label></li>
-									<li><input type="radio" name="ss" id="#21" value="CDR" > <label for="#21"><span></span>과일&야채음료</label></li>
+									<li class="ss active"><input type="radio" name="ss" id="#20" value="" > <label for="#20"><span></span>전체보기</label></li>
+									<li class="ss"><input type="radio" name="ss" id="#21" value="CDR" > <label for="#21"><span></span>과일&야채음료</label></li>
 								</ul>
 							</div>
 						</div>
@@ -441,22 +444,23 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div><!-- //floting-right_prd -->
+				
 				<div id="W"><!-- 생수 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="active"><input type="radio" name="ww" id="#22" value="" > <label for="#22"><span></span>전체보기</label></li>
-									<li><input type="radio" name="ww" id="#23" value="CWA" > <label for="#23"><span></span>생수</label></li>
+									<li class="ww active"><input type="radio" name="ww" id="#22" value="" > <label for="#22"><span></span>전체보기</label></li>
+									<li class="ww"><input type="radio" name="ww" id="#23" value="CWA" > <label for="#23"><span></span>생수</label></li>
 								</ul>
 							</div>
 						</div>
@@ -479,8 +483,8 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img  th:if="*{product.pOnuri != null}" th:src="@{/img/ico/ico_buy.png}"></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img th:src="@{/img/ico/ico_buy.png}"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -504,6 +508,8 @@ $(document).ready(function(){
 	var tab = link.split('/').pop();   //배열의 맨 마지막 요소를 삭제하고 삭제된 해당 값을 반환함
 	$('a[href$='+tab+']').trigger("click"); //해당 앵커 트리거를이용 클릭 이벤트
 	
+	var offset = $("#topTap").offset(); //해당 위치 반환
+
 	//카테고리 필터링
 	$("input[name='vv']").on("click", function () {
 		const value = $(this).val();
@@ -519,6 +525,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".vv").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 	$("input[name='pp']").on("click", function () {
@@ -535,6 +546,10 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".pp").removeClass("active");
+		$(this).parent().addClass("active");
 	});
 	
 	$("input[name='bb']").on("click", function () {
@@ -551,6 +566,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".bb").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 	$("input[name='gg']").on("click", function () {
@@ -567,6 +587,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".gg").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 	$("input[name='hh']").on("click", function () {
@@ -583,6 +608,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".hh").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 	$("input[name='ff']").on("click", function () {
@@ -599,6 +629,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ff").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 	$("input[name='mm']").on("click", function () {
@@ -615,6 +650,10 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".mm").removeClass("active");
+		$(this).parent().addClass("active");
 	});
 	
 	$("input[name='ss']").on("click", function () {
@@ -631,6 +670,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ss").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 	$("input[name='ww']").on("click", function () {
@@ -647,6 +691,11 @@ $(document).ready(function(){
 				$(this).toggle($(this).attr('name').indexOf(value) > -1)
 			});
 		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ww").removeClass("active");
+		$(this).parent().addClass("active");
+		
 	});
 	
 });

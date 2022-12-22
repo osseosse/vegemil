@@ -24,6 +24,7 @@
 	.inline {display:inline-block}
 	.centerH {position:absolute; top:50%;left:50%;color:#fff;transform:translate(-50%,-50%);}
 	.centerR {position:absolute; top:50%;right:5%;color:#fff;transform:translate(0%,-50%);}
+	.centerL {position:absolute; top:50%;left:5%;color:#fff;transform:translate(0%,-50%);}
 	.center {text-align:center}
 	.center0 {margin:0 auto}
 	.dv1 {width:100%}
@@ -327,6 +328,10 @@
     .subTopDcfMedia{position:relative;  background: url(../../img/company/subTopDcfMedia.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
     .subTopDcfContest{position:relative;  background: url(../../img/company/subTopDcfContest.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subTopCook{position:relative;  background: url(../../img/product/recipe/subTopCook.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subTopHeri{position:relative;  background: url(../../img/company/subTopHeri.jpg) no-repeat scroll 0 0; right:0; top:0; background-position:right; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subMiddleHeri01{position:relative;  background: url(../../img/company/subMiddleHeri01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subMiddleHeri02{position:relative;  background: url(../../img/company/subMiddleHeri02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subMiddleHeri03{position:relative;  background: url(../../img/company/subMiddleHeri03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
     
 	
 	.bnr_login {position:relative;  background: url(../../img/bnr/bnr_login.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
@@ -381,6 +386,7 @@
 	.h760 {height:760px}
 	.h700 {height:700px}
 	.h650 {height:650px}
+	.h600 {height:600px}
 	.h590 {height:590px}
 	.h580 {height:580px}
 	.h540 {height:540px}
@@ -914,11 +920,14 @@
     .dcfContestBox .contestName{width: 100px; padding: 5px 10px; background-color: #222222; border-radius: 50px; text-align: center; color: #fff; position: absolute; bottom: 20px; right: 20px;}
     .topLineG{border-top: 1px solid #dcdcdc;}
 
-
-
-
-
-    
+	/* 3000 창업주 기념관 */
+	.whiteRound {border-radius:50px; position:relative; margin-top:-80px; z-index:10; background:#ffff}
+	iframe.vegemilstory {width:840px; height:470px}
+	.heriBox {position:relative; padding:135px}
+	table.heirT {width:100%; border-top:2px solid #222}
+	table.heirT th {padding:13px 0; border-bottom:1px solid #DCDCDC; background: url(../../img/ico/ico_dot_black.png) 3px 21px no-repeat; background-size:5px 5px; padding-left:20px; line-height:110% }
+	table.heirT td {padding:13px 0; border-bottom:1px solid #DCDCDC; line-height:110%}
+    .heriBox .w410 img{max-width:410px}
     
     /* 3000 보도자료 */
 	.count-box {position:relative; color:#787878; display:inline-block;  }
@@ -1466,7 +1475,7 @@
 	.tabs3 li.current a {color: #fff;}
 	.tabs3 li p {display:inline-block; width:110px; height:110px; padding-top:75px; }
 	.tab_content3 {position:relative; padding:0px 0 100px 0 ;} 
-	.tab_content3 > div {clear: both;line-height: 19px;color: #666;display: none; }
+	.tab_content3 > div {clear: both;line-height: 19px;color: #666;display: none; display:inline-block; width:100% }
 	.tab_content3 .current { display: block; }
 	.tab_content3 #home.first { display: block; }
 	.tabs3 li .ico_VE {background: url("../../img/ico/ico_all_cate01.png") center 25px no-repeat; background-size:45px}
@@ -1992,7 +2001,7 @@
 
 @media (max-width: 1760px) {
 	/* display None*/
-	body {border:2px solid yellow}
+	body {border:0px solid yellow}
 	.wView {position:relative !important;}
 	.mView {display:none !important;}
 	.mView2{display: none !important;}
@@ -2139,7 +2148,7 @@
 	.wView768 {position:relative !important; }
 	.mView768 {display:none !important;}
 	
-	body {border:2px solid green}
+	body {border:0px solid green}
 	.floting-left { width:100%}
 	.floting-right {display:none}
 
@@ -2173,6 +2182,7 @@
 	.h800 {height:500px}
 	.h760 {height:500px}
 	.h700 {height:500px}
+	.h600 {height:500px}
 	.h590 {height:500px}
 	.h540 {height:280px}
 	.h520 {height:280px}
@@ -2185,7 +2195,20 @@
 	.h260 {height:190px}
 	.h200 {height:180px}
 	.h190 {height:110px}
-	
+
+
+	/* 1200 창업주 기념관 창업주 기념관 */
+	.whiteRound {border-radius:50px; position:relative; margin-top:-80px; z-index:10; background:#ffff}
+	iframe.vegemilstory {max-width:540px; width:100%;  height:470px}
+	.heriBox {position:relative;padding:100px 20px}
+	table.heirT {width:100%; border-top:2px solid #222}
+	table.heirT th {width:40%; padding:10px 0; border-bottom:1px solid #DCDCDC; background: url(../../img/ico/ico_dot_black.png) 3px 21px no-repeat; background-size:5px 5px; padding-left:20px; line-height:110% }
+	table.heirT td {width:60%; padding:10px 0 10px 10px; border-bottom:1px solid #DCDCDC; line-height:110%}
+    .heriBox .w410 img{max-width:410px}
+	.heriBox .col-md-6:first-child {width:60%}
+	.heriBox .col-md-6:nth-child(2) {width:40%}
+	.subTopHeri .centerL {position:absolute; top:50%;right:5%;color:#fff;transform:translate(0%,-50%);  }
+	.subTopHeri .centerL.text-left {text-align:right !important;}
 
 	/* 1200 가로 */
 	.w80pm {width:80%}
@@ -2625,7 +2648,7 @@
 }
 
 @media (max-width: 992px) {
-	body {border:2px solid red}
+	body {border:0px solid red}
 	#header.white {display:none}
 	header {height:56px; border-bottom:1px solid #DCDCDC;} 
 	.video {position:relative; display:inline-block; width:100%; margin-top:0px}

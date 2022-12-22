@@ -15,7 +15,7 @@ public interface ProductMapper {
 	
 	public List<ProductDTO> selectRecProduct(String categoryCode);
 	
-	public List<ProductDTO> selectBrandStroyList();
+	public List<ProductDTO> selectBrandStroyList(String categoryCode);
 
 	public int selectProductTotalCount();
 

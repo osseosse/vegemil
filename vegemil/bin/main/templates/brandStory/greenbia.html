@@ -4,8 +4,10 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 그린비아 브랜드관</title>
 <head th:replace="fragments/head :: headFragment"></head>
-<script src='/common/js/swiper-bundle.min.js'></script><!-- swiper(카테고리별제품 메뉴) -->
-<script src='/common/js/swiper.js'></script><!-- swiper(카테고리별제품 메뉴) -->
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
+<!-- JS -->
+<script src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
 <body>
 <!-- ================================ Header ================================ -->
 <header class="puppleHeader" th:replace="fragments/mainHeader :: headerFragment"></header>
@@ -37,7 +39,7 @@
 											<p class="f_pp f18 fw500 lh120">Brand 01</p>
 											<p class="f45 fw600 lh120 mt20">베지밀</p>
 											<p class="f20 fw500 mt20">50여년 역사를 지닌 대한민국 정통두유 브랜드.<br class="wView">콩의 맛과 영양을 그대로!</p>
-											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+											<div class="btnType25 mt30"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/btn/btnType25.png" /></a></div>
 										</div>
 									</div>
 								</div>                    
@@ -47,7 +49,7 @@
 											<p class="f_pp f18 fw500 lh120">Brand 02</p>
 											<p class="f45 fw600 lh120 mt20">그린비아</p>
 											<p class="f20 fw500 mt20">그린비아는 1991년 국내기술력으로 탄생한<br class="wView">국내최초 경장영양식 선도 브랜드입니다.</p>
-											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+											<div class="btnType25 mt30"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/btn/btnType25.png" /></a></div>
 										</div>
 									</div>
 								</div>
@@ -57,7 +59,7 @@
 											<p class="f_pp f18 fw500 lh120">Brand 03</p>
 											<p class="f45 fw600 lh120 mt20">심천수</p>
 											<p class="f20 fw500 mt20">지리산에서 만들어진 자연 그대로의 깨끗함.<br class="wView">부드럽게 마시는 맛있는 물!</p>
-											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+											<div class="btnType25 mt30"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/btn/btnType25.png" /></a></div>
 										</div>
 									</div>
 								</div> 
@@ -67,7 +69,7 @@
 											<p class="f_pp f18 fw500 lh120">Brand 04</p>
 											<p class="f45 fw600 lh120 mt20">간단요리사</p>
 											<p class="f20 fw500 mt20">주방의 든든한 지원군! <br class="wView">간단요리사는 밋밋한 요리에 깊은 맛을 더해줍니다.</p>
-											<div class="btnType25 mt30"><a href=""><img src="/img/btn/btnType25.png" /></a></div>
+											<div class="btnType25 mt30"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/btn/btnType25.png" /></a></div>
 										</div>
 									</div>
 								</div>  
@@ -111,11 +113,11 @@
 					<div class="swiper-box mt30 mt30m">
 					  <div class="swiper-container" id="scroll-tags">
 						<ul class="swiper-wrapper">
-						  <li class="swiper-slide active"><a href="javascript:void(0);">전체보기</a></li>
-						  <li class="swiper-slide"><a href="javascript:void(0);">일반영양식</a></li>
-						  <li class="swiper-slide"><a href="javascript:void(0);">전문영양식</a></li>
-						  <li class="swiper-slide"><a href="javascript:void(0);">연하식</a></li>
-						  <li class="swiper-slide"><a href="javascript:void(0);">건강식품</a></li>
+						  <li class="swiper-slide active"><a href="#tab1">전체보기</a></li>
+						  <li class="swiper-slide"><a href="#tab2">일반영양식</a></li>
+						  <li class="swiper-slide"><a href="#tab3">전문영양식</a></li>
+						  <li class="swiper-slide"><a href="#tab4">연하식</a></li>
+						  <li class="swiper-slide"><a href="#tab5">건강식품</a></li>
 						</ul>
 					  </div>
 					</div>
@@ -124,9 +126,8 @@
 			</div>
 		</div><!-- //contant1460 -->
 	</div>
-
-	<div class="contant1460">
-		<div class="row mt50 line_bottom_gray pb100">
+<div class="contant1460">
+		<div class="row mt50 line_bottom_gray pb100" id="tab1">
 			<div class="col-md-6 brand_thumb mt50 mt50m">
 				<p class="f23 fw500">신제품</p>
 				<!-- 전체보기 > 신제품 -->
@@ -141,75 +142,19 @@
 					</div>
 				</a>
 				<!-- //전체보기 > 신제품 -->
-				<!-- 일반영양식 > 신제품 -->
-				<a href="#">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GPL03_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>일반영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#소아환자균형영양식</span></p><p><span>#성장에필요한영양성분구성</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 키즈</p>
-						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //일반영양식 > 신제품 -->
-				<!-- 전문영양식 > 신제품 -->
-				<a href="#">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GED04_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>전문영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#당뇨식</span></p><p><span>#발효성당류제한</span></p><p><span>#식이섬유</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 당뇨솔루션</p>
-						<p class="f16 mt5 fw400 gray04">장관계 민감도가 높은 당뇨환자를 위한 전문영양식</p>
-					</div>
-				</a>
-				<!-- //전문영양식 > 신제품 -->
-				<!-- 연하식 > 신제품 -->
-				<a href="#">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GDY01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>연하식</span></p></div>
-							<div class="bottom_tag"><p><span>#자유로운점도조절</span></p><p><span>#간편한사용</span></p><p><span>#무미무취무색</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 연하솔루션</p>
-						<p class="f16 mt5 fw400 gray04">음식물을 삼키는데 어려움을 겪는 분들을 위한</p>
-					</div>
-				</a>
-				<!-- //연하식 > 신제품 -->
-				<!-- 건강식품 > 신제품 -->
-				<a href="#">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 CHD01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>건강식품</span></p></div>
-							<div class="bottom_tag"><p><span>#동식물성균형단백질</span></p><p><span>#필수아미노산</span></p><p><span>#아몬드와호두</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 프로틴밀 아몬드와 호두</p>
-						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //건강식품 > 신제품 -->
-				<div class="row">
-					<div class="col-md-6">
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'G' and ${brandStroy.newProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
-							<a href="#">
-								<div class="VGR03_860_01 h260 reImg mt60"></div>
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
 								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p>건강식품</p></div>
-									<p class="f20 fw500 black lh160 mt20">그린비아 프로틴밀 아몬드와 호두</p>
-									<div class="key02 f14 gray04 mt20"><p>#귀리함유</p><p>#시리얼느낌</p><p>#아침식사대용</p></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="recom">
-							<a href="#">
-								<div class="VPM02_860_01 h260 reImg mt60"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p>건강식품</p></div>
-									<p class="f20 fw500 black lh160 mt20">그린비아 멀티케어 프로틴</p>
-									<div class="key02 f14 gray04 mt20"><p>#식물성건강식재료</p><p>#콩의맛과영양</p><p>#프로틴</p></div>
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
 								</div>
 							</a>
 						</div>
@@ -230,6 +175,63 @@
 					</div>
 				</a>
 				<!-- //전체보기 > 대표제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if=" ${brandStroy.categoryCode} == 'G' and ${brandStroy.repProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab2">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">신제품</p>
+				<!-- 일반영양식 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL03_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#소아환자균형영양식</span></p><p><span>#성장에필요한영양성분구성</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 키즈</p>
+						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //일반영양식 > 신제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GPL' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">대표제품</p>
 				<!-- 일반영양식 > 대표제품 -->
 				<a href="#">
 					<div class="line_bottom_gray pb60">
@@ -242,6 +244,65 @@
 					</div>
 				</a>
 				<!-- //일반영양식 > 대표제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'GPL' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab3">
+		
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">신제품</p>
+				<!-- 전문영양식 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GED04_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>전문영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#당뇨식</span></p><p><span>#발효성당류제한</span></p><p><span>#식이섬유</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 당뇨솔루션</p>
+						<p class="f16 mt5 fw400 gray04">장관계 민감도가 높은 당뇨환자를 위한 전문영양식</p>
+					</div>
+				</a>
+				<!-- //전문영양식 > 신제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEI' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">대표제품</p>
 				<!-- 전문영양식 > 대표제품 -->
 				<a href="#">
 					<div class="line_bottom_gray pb60">
@@ -254,9 +315,63 @@
 					</div>
 				</a>
 				<!-- //전문영양식 > 대표제품 -->
-				<!-- 연하식 > 대표제품 -->
-				<p class="js">제품이 1개뿐, 신제품 1개 노출만 적용</p>
-				<!-- //연하식 > 대표제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEK' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab4">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">신제품</p>
+				<!-- 연하식 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GDY01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>연하식</span></p></div>
+							<div class="bottom_tag"><p><span>#자유로운점도조절</span></p><p><span>#간편한사용</span></p><p><span>#무미무취무색</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 연하솔루션</p>
+						<p class="f16 mt5 fw400 gray04">음식물을 삼키는데 어려움을 겪는 분들을 위한</p>
+					</div>
+				</a>
+				<!-- //연하식 > 신제품 -->
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab5">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">신제품</p>
+				<!-- 건강식품 > 신제품 -->
+				<a href="#">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 CHD01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>건강식품</span></p></div>
+							<div class="bottom_tag"><p><span>#동식물성균형단백질</span></p><p><span>#필수아미노산</span></p><p><span>#아몬드와호두</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 프로틴밀 아몬드와 호두</p>
+						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //건강식품 > 신제품 -->
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<p class="f23 fw500">대표제품</p>
 				<!-- 건강식품 > 대표제품 -->
 				<a href="#">
 					<div class="line_bottom_gray pb60">
@@ -270,36 +385,10 @@
 					</div>
 				</a>
 				<!-- //건강식품 > 대표제품 -->
-				<div class="row">
-					<div class="col-md-6">
-						<div class="recom">
-							<a href="#">
-								<div class="VPL02_860_01 h260 reImg mt60"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p>전문영양식</p></div>
-									<p class="f20 fw500 black lh160 mt20">그린비아 DM</p>
-									<div class="key02 f14 gray04 mt20"><p>#당뇨 환자용</p><p>#균형영야식</p><p>#디엠</p></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="recom">
-							<a href="#">
-								<div class="VBL05_860_02 h260 reImg mt60"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p>전문영양식</p></div>
-									<p class="f20 fw500 black lh160 mt20">그린비아 장솔루션</p>
-									<div class="key02 f14 gray04 mt20"><p>#식물성건강식재료</p><p>#국내산검은콩</p><p>#칼슘강화</p></div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
+		
 	</div><!-- //contant1460 -->
-
 	<div class="contant100">
 		<div class="row">
 			<div class="col-md-12 center">
@@ -354,7 +443,7 @@
 			<div class="col-md-4"><div class="h200 VBP01_860_01"></div></div>
 		</div>
 		<div class="row brand_bnr_m mt200 mView pb100">
-			<div class="col-md-12"><p class="img100"><img src="/img/brand/brand_all.png" /></p></div>
+			<div class="col-md-12"><p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/brand/brand_all.png" /></p></div>
 		</div>
 	</div><!-- //contant1760 -->
 	<div class="contant100_01 mt200">
@@ -389,27 +478,22 @@
 				</li>
 			</ul>
 		</div>
-
-
-
-
-
 		<ul class="prd_acd wView" >
 			<li class="bnr_g_acd01 h800">
 				<!-- 기본노출 -->
 				<div class="outType">
 					<div class="centerH2">
 						<div class="mt170"><span class="f18 fw600 f_pp white lh140">First</span></div>
-						<p><img src="/img/ico/brandLine.png" /></p>
+						<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/brandLine.png" /></p>
 						<p class="f27 fw600 mt20 white">국내 최초 경장 영양식</p>
-						<p class="mt20"><img src="/img/ico/ico_brand_more.png" /></p>
+						<p class="mt20"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand_more.png" /></p>
 					</div>
 				</div>
 				<!-- 마우스오버노출 -->
 				<div class="inType centerH">
 					<div class="whiteBox">
 						<p class="f18 fw600 f_pp">First</p>
-						<p class="mt50 inType_ico"><img src="/img/ico/ico_brand_g01.png" /></p>
+						<p class="mt50 inType_ico"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand_g01.png" /></p>
 						<p class="mt30 f27 fw500">국내 최초 경장 영양식</p>
 						<p class="mt30 f18 fw400 gray04 lh160">1991년 국내기술력으로 탄생한<br>
 						한국인의 영양요구량에 맞게 개발된<br>
@@ -422,16 +506,16 @@
 				<div class="outType">
 					<div class="centerH2">
 						<div class="mt170"><span class="f18 fw600 f_pp white lh140">Balance</span></div>
-						<p><img src="/img/ico/brandLine.png" /></p>
+						<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/brandLine.png" /></p>
 						<p class="f27 fw600 mt20 white">균형적인 영양 공급</p>
-						<p class="mt20"><img src="/img/ico/ico_brand_more.png" /></p>
+						<p class="mt20"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand_more.png" /></p>
 					</div>
 				</div>
 				<!-- 마우스오버노출 -->
 				<div class="inType centerH">
 					<div class="whiteBox">
 						<p class="f18 fw600 f_pp">Balance</p>
-						<p class="mt50 inType_ico"><img src="/img/ico/ico_brand_02.png" /></p>
+						<p class="mt50 inType_ico"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand_02.png" /></p>
 						<p class="mt30 f27 fw500">균형적인 영양 공급</p>
 						<p class="mt30 f18 fw400 gray04 lh160">임상연구로 검증된 전문적인<br class="wView">영양설계로 체계적이고 균형적인<br class="wView">영양을 공급합니다.</p>
 					</div>
@@ -442,16 +526,16 @@
 				<div class="outType">
 					<div class="centerH2">
 						<div class="mt170"><span class="f18 fw600 f_pp white lh140">Safety</span></div>
-						<p><img src="/img/ico/brandLine.png" /></p>
+						<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/brandLine.png" /></p>
 						<p class="f27 fw600 mt20 white">제품 안전성 검증</p>
-						<p class="mt20"><img src="/img/ico/ico_brand_more.png" /></p>
+						<p class="mt20"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand_more.png" /></p>
 					</div>
 				</div>
 				<!-- 마우스오버노출 -->
 				<div class="inType centerH">
 					<div class="whiteBox">
 						<p class="f18 fw600 f_pp">Safety</p>
-						<p class="mt50 inType_ico"><img src="/img/ico/ico_brand_g03.png" /></p>
+						<p class="mt50 inType_ico"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand_g03.png" /></p>
 						<p class="mt30 f27 fw500">제품 안전성 검증</p>
 						<p class="mt30 f18 fw400 gray04 lh160">국내 우수 대학과 지속적인<br>임상연구로 제품 안정성을<br>검증하였습니다.</p>
 					</div>
@@ -464,7 +548,7 @@
 			<div class="col-md-1"></div>
 			<div class="col-md-11">
 				<ul class="brandTitle">
-					<li><img src="/img/ico/ico_brand.png" /></li>
+					<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brand.png" /></li>
 					<li>
 						<p class="f38 fw600 lh100">지금 이 순간! 맞춤형 추천 제품</p>
 						<p class="f18 gray04 f_pp fw400 lh140 mt15">2022, Spring </p>
@@ -473,7 +557,7 @@
 			</div>
 			<div class="col-md-1"></div>
 			<div class="col-md-2 mt70">
-				<p class="img100"><img src="/img/product/brand/brand_v01.png" /></p>
+				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/brand/brand_v01.png" /></p>
 				<p class="f23 fw500 lh150 mt20">적절한 영양공급이 <br class="wView">필요한 분들을 위한</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
@@ -497,7 +581,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt70 ">
-				<p class="img100"><img src="/img/product/brand/brand_v02.png" /></p>
+				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/brand/brand_v02.png" /></p>
 				<p class="f23 fw500 lh150 mt20">입맛 까다로운<br class="wView">우리 아이가 먹기 좋은</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
@@ -521,7 +605,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt70 mt50m">
-				<p class="img100"><img src="/img/product/brand/brand_v03.png" /></p>
+				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/brand/brand_v03.png" /></p>
 				<p class="f23 fw500 lh150 mt20">나이 드신 부모님 신체활<br class="wView">건강증진에 도움되는</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
@@ -545,7 +629,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt70 mt50m">
-				<p class="img100"><img src="/img/product/brand/brand_v04.png" /></p>
+				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/brand/brand_v04.png" /></p>
 				<p class="f23 fw500 lh150 mt20">여름 맞이! 시원하고<br class="wView">맛있게 수분 충전</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
@@ -569,7 +653,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 mt70 mt50m">
-				<p class="img100"><img src="/img/product/brand/brand_v05.png" /></p>
+				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/brand/brand_v05.png" /></p>
 				<p class="f23 fw500 lh150 mt20">고소하고 영양가 높은<br class="wView">곡물류가 들어간</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
@@ -608,7 +692,7 @@
 							</p>
 						</div>
 						<div class="col-md-2 mt10m">
-							<div class="btnType06"><span><a href="https://www.edaymall.com/index.do" target="_blank">View More</a></span></div>
+							<div class="btnType06"><span><a href="https://www.edaymall.com" target="_blank">View More</a></span></div>
 						</div>
 					</div>
 				</div>
@@ -623,5 +707,32 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+$(document).ready(function(){
+	
+	//페이지 로드시
+	$("#tab2").hide();
+	$("#tab3").hide();
+	$("#tab4").hide();
+	$("#tab5").hide();
+	
+	//탭 li 클릭시
+	$("ul.swiper-wrapper li").click(function() {
+
+		$("ul.swiper-wrapper li").removeClass("active");
+		$(this).addClass("active");
+		$("#tab1").hide();
+		$("#tab2").hide();
+		$("#tab3").hide();
+		$("#tab4").hide();
+		$("#tab5").hide();
+
+		var activeTab = $(this).find("a").attr("href");
+		$(activeTab).fadeIn();
+		return false;
+	});
+	
+});
+</script>
 </body>
 </html>

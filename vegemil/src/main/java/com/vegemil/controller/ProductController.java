@@ -28,15 +28,19 @@ public class ProductController extends UiUtils {
 		return "product/list";
 	}
 	
-	@GetMapping(value = "/brandStory/vegemil")
-	public String openBrandStroyList( Model model) {
-	        	
-		List<ProductDTO> brandStroyList = productService.getBrandStroyList();
-		model.addAttribute("brandStroyList", brandStroyList);
-		model.addAttribute("brandStroyCount", brandStroyList.size());
+	@GetMapping(value = "/brandStory/{viewName}")
+	public String openBrandStroyList(Model model, @PathVariable(value = "viewName", required = false) String viewName) {
+	    
+		if(!viewName.equals("") && (viewName.equals("vegemil") || viewName.equals("greenbia"))) {
+			List<ProductDTO> brandStroyList = productService.getBrandStroyList(viewName.substring(0,1).toUpperCase());
+			model.addAttribute("brandStroyList", brandStroyList);
+			model.addAttribute("brandStroyCount", brandStroyList.size());
+		}
 
-		return "brandStory/vegemil";
+		return "brandStory/"+viewName;
 	}
+	
+	
 	
 	@GetMapping(value = "/product/detail/{pIdx}")
 	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model) {

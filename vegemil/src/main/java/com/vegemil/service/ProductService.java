@@ -10,7 +10,7 @@ public interface ProductService {
 
 	public List<ProductDTO> getProductList(String searchKeyword);
 	
-	public List<ProductDTO> getBrandStroyList();
+	public List<ProductDTO> getBrandStroyList(String categoryCode);
 	
 	public List<ProductDTO> getRecProduct(String categoryCode);
 
