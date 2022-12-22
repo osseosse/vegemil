@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>사번 조회</title>
+<meta name="author" content="osse">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<!-- JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="./common/js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+ 
+  <form name="checkId" method="post" action="/cp/cIdCheck" class="" style="padding:40px">
+  	<input type="hidden" name="fileName" id="fileName" th:value="${fileName}"></input>
+  	<label id="cId"> 사번 </label>
+  	<input type="text" name="cId" id="cId"></input>
+  	<input type="submit" value="조회" >
+ 	<div id="resultDiv" class="mt-3 text-center gray100">
+	   <p id="msg" th:if="${msg}!=null" th:text="${msg}"></p>
+	</div>
+  </form>
+
+    <script type="text/javascript">
+		//<![CDATA[
+		$(function(){
+			var msg = "[[ ${msg} ]]";
+			var fileName = "[[ ${fileName} ]]";
+			var validation = "[[ ${validation} ]]";
+			
+			if(validation == '1'){
+				location.href="/cpEbookDown?fileName="+fileName;
+			}
+		});
+		//]]>
+	</script>
+	
+</body>
+</html>

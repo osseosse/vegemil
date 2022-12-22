@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegemil.mapper.CpMapper">
+	<sql id="memberCp">
+		c_idx,
+		c_id,
+		c_name,
+		c_lastdate,
+		c_count
+	</sql>
+
+	<select id="selectOneMemberCP" resultType="int" parameterType="String">
+		select count(c_id)
+		From M_Member_Cp
+		where c_id = #{cId}
+	</select>
+	
+	<sql id="mClaim">
+		c_idx,
+		c_name,
+		c_hp,
+		c_email,
+		c_subject,
+		c_content,
+		c_writedate,
+		c_writetime,
+		c_check,
+		c_answer
+	</sql>
+
+	<insert id="insertMclaim" parameterType="com.vegemil.domain.ClaimDTO">
+		insert into M_Claim (
+			c_idx,
+			c_name,
+			c_hp,
+			c_email,
+			c_subject,
+			c_content,
+			c_writedate,
+			c_writetime,
+			c_check,
+			c_answer,
+			c_tel
+		) values (
+			#{cIdx},
+			#{cName},
+			#{cHp},
+			#{cEmail},
+			#{cSubject},
+			#{cContent},
+			#{cWritedate},
+			#{cWritetime},
+			#{cCheck},
+			#{cAnswer},
+			#{cTel}
+		)
+	</insert>
+</mapper>
