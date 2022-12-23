@@ -1,0 +1,219 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<title>영 유아식 레시피 상세</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+	
+	<div id=content>
+	
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG04_03 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">영&middot;유아식 레시피</p>
+								<p class="f20_4 mt20">정식품 베지밀과 함께하는<br>간편 레시피</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="#">Community</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="#">영&middot;유아식 레시피</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></li>
+															<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></li>
+															<li><a th:href="@{/vegemilBaby/recipe?p=1}">영&middot;유아식 레시피</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+								    <!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+            <!-- //container100 -->
+	
+		<!--  쿡 상세 -->
+		
+		<div class=heg200></div>
+			
+		 <div class="container100">
+                <div class="row mg0 pd0">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt">
+                            <p class="f24_4_bg">Recipe</p>
+                            <p class="f55_6 mt30">영&middot;유아식 레시피</p>
+                            <p class="f24_4 mt10">아래 레시피를 활용하여 다양한 요리를 만들어보세요!</p>
+                        </div>
+                        <!-- col-md-12 -->
+                        <div class="col-md-12 mt120 pd0 detailBox" th:object="${recipe}" >
+                            <!-- recipe_detail -->
+                            <div class="detailTable mb80">
+                                <ul class="detail_lineT">
+                                    <li class="detail_left">
+                                        <a th:href="@{/vegemilBaby/recipe_list?p=1}">
+                                            <div class="listMenu">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <p class="f17_4">목록으로 돌아가기</p>
+                                        </a>
+                                    </li>
+                                   
+                                    <li class="detail_right">
+                                        <a th:with ="var=*{cIdx}" th:href='@{/vegemilBaby/recipe/}+${var-1}' class="f17_4">이전</a>
+                                        <a th:with ="var=*{cIdx}" th:href='@{/vegemilBaby/recipe/}+${var+1}' class="f17_4">다음</a>
+                                      
+                                    </li>                      
+                                </ul>
+                                <ul class="detail_lineB">
+                              
+                                    <li class="detail_left">
+                                        <p class="f20_4"><span class="f20_4_w"><b th:text="*{cSubject}">제목</b></span></p>
+                                    </li>
+                                    <li class="detail_right">
+                                        <p class="f20_4_w" th:text="*{cWritedate}">작성일</p>
+                                    </li>
+                                 
+                                </ul>
+                            </div>
+                            <!--//recipe_detail -->
+                            <!-- col-md-8 -->
+                            <div class="col-md-8">
+							<span id=lblContents>
+							
+							<th:block th:replace="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/Contentshtml/cook_brunch_0001.html} :: cookDetail"></th:block>
+							
+							
+							 
+										
+							</span>
+							
+							
+							<div class="listbtn">						 
+							 
+							 <!--  <div class="cookBox04">
+								<img th:src="../images/community/btn/btn_cookList.gif" onclick="history.go(-1);" style="cursor:hand;" alt="목록으로 돌아가기" border="0" name="btnList" id="btnList"  >
+							  </div class="cookBox04">
+							</div> -->
+	
+                            </div>
+                            <!--// col-md-8 -->
+                            <!-- col-md-4 -->
+                            <div class="col-md-4">
+                                <div class="inforBox">
+                                   <p class="f17_4">이런 정보는 어떠신가요?</p>
+                                    <ul class="mt20">
+                                      <asp:repeater id=DataList2 runat="server">			
+									   <itemtemplate> 
+                                        <li class="hvr-float-shadow">
+                                              <a href='<%# String.Format("/main/brandVegemilBaby/recipe.aspx?p={0}&c_code={1}&i={2}&page_code=CNC", DataBinder.Eval(Container.DataItem,"c_page"), DataBinder.Eval(Container.DataItem,"c_code"), DataBinder.Eval(Container.DataItem,"c_idx") )%>'>  
+                                                <p class="infor_img">
+                                                    <span class="inforIMG inforIMG_001" style="background: url(/Upload/community/<%# DataBinder.Eval(Container.DataItem, "c_code_full") %>.jpg); background-position:center;-webkit-background-size: cover; background-size: cover" alt="정보 썸네일"></span>
+                                                </p>
+                                                <div class="infor_txt">
+                                                    <p class="f14_4_1 txtHide6">
+                                                     <%# DataBinder.Eval(Container.DataItem, "c_content") %> </p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                      </itemtemplate>
+                                     </asp:repeater>                                  
+                                    </ul>
+                                </div>
+								<!--
+                                <a href="#" class="shareBtn" title="공유하기">
+                                    <img src="img/p_04_03_02.png" alt="공유아이콘버튼">
+                                </a>
+								-->
+                            </div>
+                            <!--// col-md-4 -->
+                        </div>
+                        <!-- //col-md-12 -->
+					</div>
+                        
+                        <!-- //container -->
+                </div><!-- //row-->
+            </div>
+            <!-- //container100 -->
+    
+		
+	</div>
+	
+	<div include-html="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/1.png"></div>
+	
+	
+	
+	
+	
+	  <script> 	    
+	    $(document).ready(function () {
+	         $('#lblContents').get("https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/1.png");
+/* 	         $('#lblContents').load("https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/Contentshtml/cook_brunch_0001.html"); */
+	     });
+    </script>
+	
+	
+	
+	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

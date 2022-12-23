@@ -1,16 +1,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <title>브랜드 소개</title>
-    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<title>브랜드 소개</title>  
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
+<body>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-    </head>
-    
-    
-  <body style="padding-top: 90px;">
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ --> 
   
   <div id="content">
 		<div class="container100">
@@ -100,7 +96,7 @@
 				</div>
 				<div class="row  pd0 mg0 brandDrJ">
 					<div class="col-md-4" >
-						<img th:src="@{/img/vegemilBaby/brand01.jpg}" alt="두유 이미지" />
+						<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/brand01.jpg}" alt="두유 이미지" />
 					</div>
 					<div class="col-md-4 ">
 						<div class="brand_line">
@@ -111,7 +107,7 @@
 						</div>
 					</div>
 					<div class="col-md-4"  >
-							<img th:src="@{/img/vegemilBaby/brand02.jpg}" alt="정재원 명예회장님 의사시절" />
+							<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/brand02.jpg}" alt="정재원 명예회장님 의사시절" />
 					</div>
 				</div>
 				<!-- // row -->
@@ -123,7 +119,7 @@
 				<div class="col-md-12 brand_story">
 					<p class="f55_6">VEGEMIL STORY</p>
 					<p class="f24_4 mt10 brand_s_txt">의인(義&middot;醫人) 의 마음을 담아 만듭니다.  오리지날 두유, 베지밀</p>
-					<p><img th:src="@{/img/vegemilBaby/vegemilStory.jpg}" alt="베지밀 스토리" /></p>
+					<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/vegemilStory.jpg}" alt="베지밀 스토리" /></p>
 				</div>
 			</div>
 			<div class="container">
@@ -142,12 +138,12 @@
 							<div class="col-md-6">
 								<ul>
 									<li>
-										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand01.gif}" alt="" /></p>
+										<p class="iconImg2"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/icon_brand01.gif}" alt="" /></p>
 										<p class="mt30 f30_4">49년 전통의 역사</p>
 										<p class="f17_4 mt20">국내 최초 오리지날 두유<br>브랜드 파워 두유부문 20년 연속 1위<br>(한국능률협회컨설팅, 2003~2022)</p>
 									</li>
 									<li>
-										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand02.gif}" alt="" /></p>
+										<p class="iconImg2"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/icon_brand02.gif}" alt="" /></p>
 										<p class="f30_4 mt30">안전한 두유</p>
 										<p class="f17_4 mt20">철저한 원료 관리와 <br>
 										인증 받은 위생 품질 관리<br>
@@ -158,12 +154,12 @@
 							<div class="col-md-6 mt30m">
 								<ul>
 									<li>
-										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand03.gif}" alt="" /></p>
+										<p class="iconImg2"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/icon_brand03.gif}" alt="" /></p>
 										<p class="mt30 f30_4">기술력</p>
 										<p class="f17_4 mt20">정식품 중앙연구소 연구진의 꾸준한R&D <br>최첨단 기술력을 통한 제조</p>
 									</li>
 									<li>
-										<p class="iconImg2"><img th:src="@{/img/vegemilBaby/icon_brand04.gif}" alt="" /></p>
+										<p class="iconImg2"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/icon_brand04.gif}" alt="" /></p>
 										<p class="f30_4 mt30">빈틈없는 영양설계</p>
 										<p class="f17_4 mt20">동&middot;식물성 영양균형을 위한 성장기용 조제식</p>
 									</li>
@@ -184,7 +180,7 @@
 							<div class="mt70 inb">
 								<div class="col-md-6">
 									<div class="bg_w safeBox02">
-										<p class="img100"><img th:src="@{/img/vegemilBaby/p_01_common.jpg}" alt="Premium - 1/2/3" /></p>
+										<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_01_common.jpg}" alt="Premium - 1/2/3" /></p>
                                         <div>
                                             <p class="f30_6 mt50">Premium - 1 / 2 / 3</p>
                                             <a th:href="@{/vegemilBaby/premium}" class="f17_4 moreBtn mt50 hvr-wobble-horizontal">
@@ -196,7 +192,7 @@
 								</div>
 								<div class="col-md-6 mt30m">
 									<div class="bg_w safeBox02">
-										<p class="img100"><img th:src="@{/img/vegemilBaby/p_01_common02.jpg}" alt="Premium - 1/2/3" /></p>
+										<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_01_common02.jpg}" alt="Premium - 1/2/3" /></p>
                                         <div>
                                             <p class="f30_6 mt50">Belief - 1 / 2 / 3</p>
                                             <a th:href="@{/vegemilBaby/belief}" class="f17_4 moreBtn mt50 hvr-wobble-horizontal">

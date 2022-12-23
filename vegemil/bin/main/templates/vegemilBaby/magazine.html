@@ -1,0 +1,431 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>육아정보</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header	th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<script type="text/javascript" th:src="@{/common/js/vegemilBaby/magazine.js}"></script>
+	<!-- //container100 -->
+	<div class="container100">
+		<div class="row pd0 mg0 ">
+			<div class="col-md-12">
+				<div class="subIMG04_01 subIMG">
+					<div class="container h640">
+						<div class="subTxt">
+							<p class="f40_6">육아정보</p>
+							<p class="f20_4 mt20">
+								일상 속 육아공감 스토리와<br>알아두면 유용할 알찬 정보를 전합니다.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row pd0 mg0 -->
+	</div>
+	<div class="container100 bg_b">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-12">
+					<!-- snbMenu -->
+					<div class="snbMenu">
+						<dl>
+							<dd>
+								<!-- cate_sel_01 -->
+								<li>
+									<div class="cate_sel_01">
+										<div class="option-list_01">
+											<p class="view-btn_01">
+												<a href="#">Community</a>
+											</p>
+										</div>
+										<div class="list_open_01">
+											<div class="cate_content">
+												<ul class="cate_ul_list">
+													<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+													<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+													<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+													<li><a th:href="@{/vegemilBaby/e_magazine}">
+															Community</a></li>
+													<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<!-- // cate_sel_01 -->
+							</dd>
+							<dd>
+								<!-- cate_sel_02 -->
+								<li>
+									<div class="cate_sel_02">
+										<div class="option-list_02">
+											<p class="view-btn_02">
+												<a href="#">육아정보</a>
+											</p>
+										</div>
+										<div class="list_open_02">
+											<div class="cate_content">
+												<ul class="cate_ul_list2">
+													<li><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></li>
+													<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담
+															Q&amp;A</a></li>
+													<li><a th:href="@{/vegemilBaby/recipe?p=1}">영&middot;유아식
+															레시피</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<!-- // cate_sel_02 -->
+							</dd>
+						</dl>
+					</div>
+					<!-- snbMenu -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container100 ">
+		<div class="row mg0 pd0">
+			<div class="container">
+				<div class="col-md-12 brandTxt ">
+					<p class="f24_4_bg">E-Magazine</p>
+					<p class="f55_6 mt30">육아정보</p>
+					<p class="f24_4 mt10">아래 카테고리를 선택하시면 원하시는 정보를 더 정확하게 확인할 수
+						있습니다.</p>
+				</div>
+				<div class="col-md-12 mt130" id="contentDetail">
+					<ul class="icon_all">
+						<li class="icon_01"><a th:href="@{/vegemilBaby/magazine?category=all&p=1}" title="전체보기">
+								<div class="imgHover " id="LcateAll">
+									<p class="off">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_all_off.png}" />
+									</p>
+									<p class="on">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_all_on.png}" />
+									</p>
+								</div>
+								<p class="f26_5 mt20 ">전체보기</p>
+						</a></li>
+
+						<li class="icon_03"><a
+							th:href="@{/vegemilBaby/magazine?category=pb&p=1}" title="임신/출산">
+								<div class="imgHover " id="LcatePb">
+									<p class="off">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_pregnant_off.png}" />
+									</p>
+									<p class="on">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_pregnant_on.png}" />
+									</p>
+								</div>
+								<p class="f26_5 mt20">임신/출산</p>
+						</a></li>
+						<li class="icon_02"><a
+							th:href="@{/vegemilBaby/magazine?category=gh&p=1}" title="성장/건강">
+								<div class="imgHover " id="LcateGh">
+									<p class="off">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_health_off.png}" />
+									</p>
+									<p class="on">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_health_on.png}" />
+									</p>
+								</div>
+								<p class="f26_5 mt20">성장/건강</p>
+						</a></li>
+						<li class="icon_04"><a
+							th:href="@{/vegemilBaby/magazine?category=pe&p=1}" title="놀이/교육">
+								<div class="imgHover" id="LcatePe">
+									<p class="off">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_play_off.png}" />
+									</p>
+									<p class="on">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_play_on.png}" />
+									</p>
+								</div>
+								<p class="f26_5 mt20">놀이/교육</p>
+						</a></li>
+						<li class="icon_05 last"><a
+							th:href="@{/vegemilBaby/magazine?category=lh&p=1}" title="리빙/헬스">
+								<div class="imgHover" id="LcateLh">
+									<p class="off">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_living_off.png}" />
+									</p>
+									<p class="on">
+										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_living_on.png}" />
+									</p>
+								</div>
+								<p class="f26_5 mt20">리빙/헬스/트렌드</p>
+						</a></li>
+					</ul>
+
+					<!-- 하위카테고리 -->
+					<div class="cateBox mt70">
+						<ul class=" btn_ch20 menu08" id="pb" style="display: none">
+							<li id="pb00" class="active"><a>전체</a></li>
+							<li id="pb01"><a>임신초기<span
+									th:text="|(${categoryCount.pb01})|"></span></a></li>
+							<li id="pb02"><a>임신중기<span
+									th:text="|(${categoryCount.pb02})|"></span></a></li>
+							<li id="pb03"><a>임신후기<span
+									th:text="|(${categoryCount.pb03})|"></span></a></li>
+							<li id="pb04"><a>임신기 건강관리<span
+									th:text="|(${categoryCount.pb04})|"></span></a></li>
+							<li id="pb05"><a>임신 준비&태교<span
+									th:text="|(${categoryCount.pb05})|"></span></a></li>
+							<li id="pb06"><a>출산 준비&용품<span
+									th:text="|(${categoryCount.pb06})|"></span></a></li>
+							<li id="pb07"><a>산후 관리<span
+									th:text="|(${categoryCount.pb07})|"></span></a></li>
+						</ul>
+						<ul class=" btn_ch20 menu09" id="gh" style="display: none">
+							<li id="gh00" class="active"><a>전체</a></li>
+							<li id="gh01"><a>1~3개월<span
+									th:text="|(${categoryCount.gh01})|"></span></a></li>
+							<li id="gh02"><a>4~6개월<span
+									th:text="|(${categoryCount.gh02})|"></span></a></li>
+							<li id="gh03"><a>7~12개월<span
+									th:text="|(${categoryCount.gh03})|"></span></a></li>
+							<li id="gh04"><a>13~18개월<span
+									th:text="|(${categoryCount.gh04})|"></span></a></li>
+							<li id="gh05"><a>19~24개월 <span
+									th:text="|(${categoryCount.gh05})|"></span></a></li>
+							<li id="gh06"><a>25~36개월<span
+									th:text="|(${categoryCount.gh06})|"></span></a></li>
+							<li id="gh07"><a>3세 이상<span
+									th:text="|(${categoryCount.gh07})|"></span></a></li>
+							<li id="gh08"><a>영유아 건강관리<span
+									th:text="|(${categoryCount.gh08})|"></span></a></li>
+						</ul>
+						<ul class=" btn_ch20 menu03" id="pe" style="display: none">
+							<li id="pe00" class="active"><a>전체</a></li>
+							<li id="pe01"><a>DIY&놀이법<span
+									th:text="|(${categoryCount.pe01})|"></span></a></li>
+							<li id="pe02"><a>교육/훈육 노하우<span
+									th:text="|(${categoryCount.pe02})|"></span></a></li>
+						</ul>
+						<ul class=" btn_ch20 menu03" id="lh" style="display: none">
+							<li id="lh00" class="active"><a>전체</a></li>
+							<li id="lh01"><a>리빙/헬스<span
+									th:text="|(${categoryCount.lh01})|"></span></a></li>
+							<li id="lh02"><a>트렌드<span
+									th:text="|(${categoryCount.lh02})|"></span></a></li>
+						</ul>
+					</div>
+					<!-- //하위카테고리 -->
+				</div>
+				<!-- 내용없음 404 -->
+				<div class="content404" id="content404" style="display: none">
+					<p class="f35_6 center">죄송합니다. 해당 콘텐츠를 찾을 수 없습니다.</p>
+					<p class="f24_4 center mt20">대신 다른 콘텐츠를 살펴보시는 건 어떨까요?</p>
+					<p class="center mt100">
+						<a href="/main/brandVegemilBaby/e_magazine.aspx?p=1"><span
+							class="f24_4 center  btn_round">육아정보 메인 바로가기</span></a>
+					</p>
+				</div>
+				<!-- //내용없음 404 -->
+				<!-- 위쪽 정보 일단 위쪽정보만 -->
+				<div class="col-md-12 mt50 new_listBox mg0 pd0">
+					<ul class="thumb-over new_list">
+<!-- 					<p class="wz_img" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" >
+ -->	
+						
+						<div th:each="magazine : ${magazineList}">
+							<li class="" th:classappend="|${magazine.mbsMCategory}${magazine.mbsCategory}|">
+								<a th:with="var=${magazine.mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var}">
+									<div class="list_thumb">
+										<p class="t_img">
+											<span class="t_img_span youtube-link"
+												th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position: center; -webkit-background-size: cover; background-size: cover;'"></span> <strong><img
+												th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></strong>
+										</p>
+										<p class="f20_4 mt30 txtHide3" th:text="${magazine.mbsTitle}">제목</p>
+										<p class="f14_4_1 mt10 txtHide4"></p>
+										<input type="hidden" th:value="${magazine.mbsIdx}">
+									</div>
+									<p class="list_day" th:text="${magazine.mbsGetdate}">날짜</p>
+							</a>
+							</li>
+						</div>
+						
+						
+<!-- 						<div th:if="${category == 'pb'}" th:each="magazine : ${pbMagazineList}">
+							<li class=""
+								th:classappend="|${magazine.mbsMCategory}${magazine.mbsCategory}|">
+								<a th:with="var=${magazine.mbsIdx}"
+								th:href="@{/vegemilBaby/e_magazine_detail?num=}+${var}">
+									<div class="list_thumb">
+										<p class="t_img">
+											<span class="t_img_span youtube-link"
+												style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/dummy/magazine.jpg); background-position: center; -webkit-background-size: cover; background-size: cover"
+												alt="이벤트 썸네일"></span> <strong><img
+												th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></strong>
+										</p>
+										<p class="f20_4 mt30 txtHide3" th:text="${magazine.mbsTitle}">제목</p>
+										<p class="f14_4_1 mt10 txtHide4"></p>
+										<input type="hidden" th:value="${magazine.mbsIdx}">
+									</div>
+									<p class="list_day" th:text="${magazine.mbsGetdate}">날짜</p>
+							</a>
+							</li>
+						</div>
+						
+						<div th:if="${category == 'gh'}"th:each="magazine : ${ghMagazineList}">
+							<li class=""
+								th:classappend="|${magazine.mbsMCategory}${magazine.mbsCategory}|">
+								<a th:with="var=${magazine.mbsIdx}"
+								th:href="@{/vegemilBaby/e_magazine_detail?num=}+${var}">
+									<div class="list_thumb">
+										<p class="t_img">
+											<span class="t_img_span youtube-link"
+												style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/dummy/magazine.jpg); background-position: center; -webkit-background-size: cover; background-size: cover"
+												alt="이벤트 썸네일"></span> <strong><img
+												th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></strong>
+										</p>
+										<p class="f20_4 mt30 txtHide3" th:text="${magazine.mbsTitle}">제목</p>
+										<p class="f14_4_1 mt10 txtHide4"></p>
+										<input type="hidden" th:value="${magazine.mbsIdx}">
+									</div>
+									<p class="list_day" th:text="${magazine.mbsGetdate}">날짜</p>
+							</a>
+							</li>
+						</div>
+						
+						<div th:if="${category == 'pe'}" th:each="magazine : ${peMagazineList}">
+							<li class=""
+								th:classappend="|${magazine.mbsMCategory}${magazine.mbsCategory}|">
+								<a th:with="var=${magazine.mbsIdx}"
+								th:href="@{/vegemilBaby/e_magazine_detail?num=}+${var}">
+									<div class="list_thumb">
+										<p class="t_img">
+											<span class="t_img_span youtube-link"
+												style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/dummy/magazine.jpg); background-position: center; -webkit-background-size: cover; background-size: cover"
+												alt="이벤트 썸네일"></span> <strong><img
+												th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></strong>
+										</p>
+										<p class="f20_4 mt30 txtHide3" th:text="${magazine.mbsTitle}">제목</p>
+										<p class="f14_4_1 mt10 txtHide4"></p>
+										<input type="hidden" th:value="${magazine.mbsIdx}">
+									</div>
+									<p class="list_day" th:text="${magazine.mbsGetdate}">날짜</p>
+							</a>
+							</li>
+						</div> -->
+
+					</ul>
+
+				</div>
+				<!-- //container -->
+			</div>
+			<!-- //row-->
+		</div>
+		<!-- //container100 -->
+		<!-- paging -->
+		<div class="row">
+			<div class="col-md-12">
+				<!-- paging -->
+				<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+					<div class="paging mt50">
+						<ol class="f_pp">
+							<li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
+								<a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+							</li>
+							<li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+								<a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+							</li>
+							<li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" th:class="${pageNo == params.currentPageNo} ? 'active'">
+								<a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+							</li>
+							<li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+								<a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+							</li>
+							<li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
+								<a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+							</li>
+						</ol>
+					</div>
+				</nav>
+				<!-- //paging -->
+			</div>
+		</div>
+
+		<!-- paging //-->
+		
+		
+		 
+
+	</div>
+	<!-- //content -->
+
+
+
+
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+	
+	    function movePage(uri, queryString) {
+			location.href = uri + queryString;
+		}
+	
+		function searchFaq(form) {
+			/*[- 드롭다운이 아닌 메인 검색 키워드로 검색했을 때 -]*/
+			if (isEmpty(form) == true) {
+				var searchKeyword = document.getElementById("mainSearchKeyword");
+				if (isEmpty(searchKeyword.value) == true) {
+					alert("키워드를 입력해 주세요.");
+					searchKeyword.focus();
+					return false;
+				}
+	
+				form = document.getElementById("searchForm");
+				form.searchKeyword.value = searchKeyword.value;
+				form.submit();
+			}
+	
+			if (isEmpty(form.searchKeyword.value) == true) {
+				alert("키워드를 입력해 주세요.");
+				form.searchKeyword.focus();
+				return false;
+			}
+		}
+		
+		function saveFaqFeedback(idx){
+			
+			const fEtcbox = $("#fEtcbox"+idx).val();
+			const fScore = $('input[name=rating'+idx+']:checked').val();
+			
+			alert(fEtcbox);
+			alert(fScore);
+			
+			$.ajax({
+				url: "/faq/saveFaqFeedback",
+				data: {idx: idx, fEtcbox: fEtcbox, fScore: fScore},
+				success: function (response) {
+					if (response.result == false) {
+						alert("저장에 실패하였습니다.");
+						return false;
+					}
+					alert("저장되었습니다.");
+				}
+			})
+			return;
+		}
+	
+	/*]]>*/
+	</script>
+
+
+
+
+
+
+
+	<!-- ================================ Footer ================================ -->
+	<footer th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+</body>
+</html>

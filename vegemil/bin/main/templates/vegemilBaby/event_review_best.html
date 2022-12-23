@@ -1,0 +1,176 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+  <head>
+    <title>베스트 후기</title>
+    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+	<script>
+	 /* $(document).ready(function(){
+		 var element = document.getElementById('isLogin').value;
+		 if(element == 'anonymousUser'){
+			 $("a[id='reviewForm']").on("click", function(){
+				 alert("로그인 후 작성해주시기 바랍니다.");
+			     return false;
+			 	})
+		 	}			
+		}); */
+	</script>
+<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+    </head>    
+    
+	<body style="padding-top: 90px;">
+	
+	
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG03_02 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">후기 이벤트</p>
+								<p class="f20_4 mt20">우리 아기의 베지밀 이야기를 <br>남겨주세요!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b2">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="javascript:void(0);">Event</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="javascript:void(0);">진행 중 이벤트</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event_review_best}">후기이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event_model}">아기모델선발대회</a></li>
+															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container100 -->
+		
+		<div class="container100">
+			<div class="row  pd0 mg0 ">
+
+				
+		<a id="form" th:href="@{/vegemilBaby/event_review_form}"></a></div>		
+				
+
+
+	
+				
+					
+				
+				<div class="container100 mt120">
+					<div class="row  pd0 mg0 ">
+						<div id="tab_brand">
+							<div class="container ">
+								<ul class="tabs2 btn_ch19">
+									<li class="li_icoBG01 current"><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트 & 혜택</a></li>
+									<li class="li_icoBG02 "><a th:href="@{/vegemilBaby/event_best_review}">베스트 후기</a></li>
+								</ul>
+							</div>
+							<div class="tab_content_brand ">
+									<dl id="con01">
+										<div class="container">					
+											<div class="col-md-12 brandTxt">
+												<p class="f24_4_bg">Event</p>
+												<p class="f55_6 mt30">베스트 후기</p>
+												<p class="f24_4 mt10">SNS에 베지밀 영&middot;유아식 체험후기 올리면 할인쿠폰과 온라인 상품권이 와르르!</p>
+											</div>
+										</div>
+
+										<div class="container pb120">
+											<div class="row">
+												<div class="col-md-12 mt120">
+													<p><img th:src= @{/img/vegemilBaby/best_info.jpg} alt="" /></p>
+													<div class="btn_best"><a id="reviewForm" th:href="@{/vegemilBaby/event_review_form}"><img th:src= @{/img/vegemilBaby/btn_best.png} alt="후기 이벤트 참여하기" /></a></div>
+													<ul class="best_txt">
+														<li>* 주의사항</li>
+														<li>
+															<p><b>- <span class="colorRed">(필수)</span> 무료 샘플을 받고 후기 작성 시  :  “정식품으로부터 제품을 지원받아 작성된 체험후기입니다” 를 반드시 명시해주세요.</b></p>
+															<p>- "이데이몰 계정"이 있어야 이벤트 참여 및 상품이 지급 되며, 휴면 아이디의 경우 포인트, 쿠폰 등의 지급이 안 될 수 있습니다. 참여 전 반드시 확인 부탁드립니다.</p>
+															<p>- 필수 해시태그와 함께 표기, SNS 계정은 전체공개, 올바른 컨텐츠 링크 등록이 되어야만 참여가 됩니다.</p>
+															<p>- 베스트 후기상은 콘텐츠 수준 및 바이럴 현황을 고려하여 내부 협의로 선정되며,콘텐츠 수준에 따라 불가피하게 월 별 3명 시상이 진행되지 않을 수 있습니다.</p>
+															<p>- 베스트 후기상 게시물은 정식품 홍보물로 사용할 수 있으며, 원본에 대한 저작권, 초상권은 당사에서 갖게 됩니다.</p>
+															<p>- 관련 문의 사항이 있으신 경우 hsy5089@vegemil.co.kr로 연락주세요.</p>
+														</li>
+													</ul>
+												
+												</div>
+												
+											</div>
+										</div>
+									</dl><!-- //con01 -->
+									
+							</div><!-- //tab_content_brand -->
+						</div><!-- // Tab -->
+					</div><!-- //row-->
+				</div><!-- //container100 -->
+				<!-- //탭 -->
+			</div><!-- //row-->
+		</div><!-- //container100 -->
+
+
+		
+	<!-- ------------------- // content ------------------- -->
+	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

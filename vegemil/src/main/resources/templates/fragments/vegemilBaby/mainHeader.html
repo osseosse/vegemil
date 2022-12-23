@@ -64,9 +64,9 @@
 							<p><a th:href="@{/vegemilBaby/sample}">샘플신청</a></p>
 						</div>
 						<div class="menuNav" id="content4">
-							<p><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></p>
+							<p><a th:href="@{/vegemilBaby/magazine?p=1}">육아정보</a></p>
 							<p><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></p>
-							<p><a th:href="@{/vegemilBaby/recipe_list?p=1}">영&middot;유아식 레시피</a></p>
+							<p><a th:href="@{/vegemilBaby/recipe?p=1}">영&middot;유아식 레시피</a></p>
 						</div>
 						
 						<div class="menuNav" id="content5">
@@ -101,11 +101,11 @@
 					</ul>
 					</li>					
 					<li class="dropdown">
-					<a th:href="@{/vegemilBaby/e_magazine?p=1}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Community<i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
+					<a th:href="@{/vegemilBaby/magazine?p=1}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Community<i class="fa fa-angle-down hidden-xs" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu">
-						<li><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></li>
+						<li><a th:href="@{/vegemilBaby/magazine?p=1}">육아정보</a></li>
 						<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></li>
-						<li><a th:href="@{/vegemilBaby/recipe_list?p=1}">영&middot;유아식 레시피</a></li>			
+						<li><a th:href="@{/vegemilBaby/recipe?p=1}">영&middot;유아식 레시피</a></li>			
 					</ul>
 					</li>
 					<li class="dropdown">
@@ -127,22 +127,30 @@
 				</ul>
 				<!-- // 탭
 				sns-menu -->
-				<img th:src="@{/img/vegemilBaby/ico_log2.png}" class="hvr-float"/>		
 				<ul class="tools" id="buttons2">
-						
+				
 					<li class="shop" ><a th:href="@{http://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000029&pCateCode=20000002}" class="hvr-float"><img th:src="@{/img/vegemilBaby/ico_shop2.png}" alt="샵"/><p>SHOP</p></a></li>
-					<li class="login">		
-						<a href="#pop_Login" class="hvr-float">				
-							<p class="pc_log ">	
-								<asp:imagebutton id="logIcon1" runat="server" imageurl="./img/ico_log2.png" alternatetext="로그인" causesvalidation="false" ></asp:imagebutton><br>	    
-								<asp:imagebutton id="dButton1" runat="server" imageurl="./img/login-text.png" alternatetext="로그인" causesvalidation="false" class="mt13"></asp:imagebutton>
-							</p>
-						</a>
-						<asp:imagebutton id="logIcon2" runat="server" imageurl="./img/ico_log2.png" alternatetext="로그아웃" causesvalidation="false" ></asp:imagebutton><br>	 	    			    			
-						<asp:imagebutton id="dButton2" runat="server" imageurl="./img/logout-text.png" alternatetext="로그아웃" causesvalidation="false" class="mt13"></asp:imagebutton>
-					</li>
-					<li><a href="http://www.vegemil.co.kr/main/member/terms.aspx" class="hvr-float"><img th:src="@{/img/vegemilBaby/ico_love2.png}" alt="조인"/><p>JOIN</p></a>
-					</li>
+					
+					<li class="login" >
+							<a sec:authorize="isAnonymous()" th:href="@{/member/login}" class="hvr-float">
+							<img th:src="@{/img/vegemilBaby/ico_log2.png}"/>		
+							<p>LOGIN</p>
+							</a>							
+					</li>										
+					<li>
+						<a sec:authorize="isAnonymous()" href="http://www.vegemil.co.kr/main/member/terms.aspx" class="hvr-float">
+							<img th:src="@{/img/vegemilBaby/ico_love2.png}" alt="조인"/>
+							<p>JOIN</p>						
+						</a>					
+					</li>				
+					
+				    <li>
+				    	<a sec:authorize="isAuthenticated()" th:href="@{/member/logout}" class="hvr-float">
+				    		<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png}" alt="조인"/>				    	
+				    		<p>LOGOUT</p>
+				    	</a>
+			    	</li>
+			    	 <!-- <li><a sec:authorize="isAuthenticated()" th:href="@{/mypage/list}">마이페이지</a></li> -->						
 					<li class="sns"><a href="https://www.facebook.com/vegemilgood" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_01_off.png}" alt="페이스북"/></a></li>
 					<li class="sns"><a href="https://blog.naver.com/PostList.nhn?blogId=vegemilstory" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_02_off.png}" alt="블로그"/></a></li>
 					<li class="sns"><a href="https://www.youtube.com/channel/UCq8X6Ll0ZjacC4-M-vicVpw" class="hvr-bounce-to-top"><img th:src="@{/img/vegemilBaby/snsBtn_03_off.png}" alt="유튜브"/></a></li>
