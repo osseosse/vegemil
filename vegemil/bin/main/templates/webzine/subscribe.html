@@ -41,8 +41,8 @@
 						</tr>
 					</table>
 					<p class="mt10 gray04 f14 fw400"><span class="mr20">* 위 개인정보수집 방법에 동의하십니까?(필수) </span>
-						<input id="radioStip1" type="radio" name="gStip" value="radioStip1" /> <label for="radioStip1">동의합니다</label>&nbsp;&nbsp;
-						<input id="radioStip2" type="radio" name="gStip" value="radioStip2" /> <label for="radioStip2">동의하지 않습니다</label>
+						<input id="radioStip1" type="radio" name="gStip" value="1" /> <label for="radioStip1">동의합니다</label>&nbsp;&nbsp;
+						<input id="radioStip2" type="radio" name="gStip" value="0" /> <label for="radioStip2">동의하지 않습니다</label>
 					</p>
 					<p class="f18 fw500 black mt100">정식품웹진 신청서</p>
 					<table cellspacing="0" border="0" class="int f14 gray04 mt10">
@@ -59,18 +59,18 @@
 						</tr>
 						<tr>
 							<th>이름</th>
-							<td><input type="text" th:field="*{sName}" class="inp04 w200" /></td>
+							<td><input type="text" id="sName" name="sName" class="inp04 w200" /></td>
 						</tr>
 						<tr>
 							<th>연락처</th>
-							<td><input type="text" maxlength="13" th:field="*{sHp}" class="inp04 w400" />
+							<td><input type="text" maxlength="13" id="sHp" name="sHp" class="inp04 w300" placeholder="000-0000-0000" />
 							</td>
 						</tr>
 						<tr>
 							<th>이메일</th>
 							<td>
 							<input name="txtEmail" type="text" maxlength="50" id="txtEmail" class="inp04 w200"/> @  
-							<input name="txtEmail2" type="text" maxlength="50" id="txtEmail2" class="inp04 w200"/>
+							<input name="txtEmail2" type="text" maxlength="50" placeholder="직접입력" id="txtEmail2" class="inp04 w200"/>
 								<select name="selEmail" id="selEmail" onchange="writeMailAddr();" class="sel03 ml10">
 									<option value="1">직접 입력</option>
 									<option value="naver.com">naver.com</option>
@@ -84,7 +84,7 @@
 						</tr>
 						<tr>
 							<th>메모</th>
-							<td><textarea class="basetxt h200" th:field="*{sMemo}"></textarea></td>
+							<td><textarea class="basetxt h200" th:field="*{sMemo}" maxlength="200"></textarea></td>
 						</tr>
 					</table>
 					<p class="mt20 fw400 f14 gray04">정식품웹진 발행시 이메일로 알림 서비스를 받으실 수 있습니다.</p>
@@ -95,7 +95,7 @@
 					<ul class="joinbtnFoot mt50">
 						<li class="mr10"><button type="button" onclick="location.href='/main/webzine'" class="btnType10 f20 fw500 lh140" >취소</button></li>
 						<li>
-							<button type="submit" id="submitBtn" class="btnType17 f20 fw500 lh140">웹진신청</button>
+							<button type="submit" disabled="disabled" id="submitBtn" class="btnType17 f20 fw500 lh140">웹진신청</button>
 						</li>
 					</ul>
 				</div>
@@ -110,5 +110,34 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script th:src="@{/common/js/subscribe.js}"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+	
+	var mName = "[[ ${mName} ]]";
+	var mHp = "[[ ${mHp} ]]";
+	var txtEmail = "[[ ${txtEmail} ]]";
+	var selEmail = "[[ ${selEmail} ]]";
+	var mEmail = "[[ ${mEmail} ]]";
+	
+	if(mName != '')
+		$('#sName').val(mName);
+	
+	if(mHp != '')
+		$('#sHp').val(mHp);
+	
+	if(txtEmail != '')
+		$('#txtEmail').val(txtEmail);
+	
+	if(selEmail != '')
+		$('#selEmail').val(selEmail);
+	
+	if(mEmail != '')
+		$('#sEmail').val(mEmail);
+	
+});
+//]]>
+</script>
 </body>
 </html>

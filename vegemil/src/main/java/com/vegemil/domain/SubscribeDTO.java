@@ -16,6 +16,5 @@ public class SubscribeDTO {
     private String sWritedate;
     private String sEmail;
     private String mSabocol;  
-    
 
 }

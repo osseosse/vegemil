@@ -57,7 +57,7 @@
         </if>
     </sql>
 
-    <insert id="webzineSave" parameterType="com.vegemil.domain.WebzineDTO" useGeneratedKeys="true" keyProperty="id">
+    <insert id="webzineSave" parameterType="com.vegemil.domain.WebzineDTO" useGeneratedKeys="true" keyProperty="indexNo">
         INSERT INTO m_webzine (
               qrt_year
 	        , file_no
@@ -67,7 +67,7 @@
 	        , remark
 	        , insert_date
         ) VALUES (
-            , #{qrtYear}
+            #{qrtYear}
             , #{fileNo}
             , #{title}
             , #{snsTitle}
@@ -77,16 +77,16 @@
         )
     </insert>
     
-    <insert id="subscribeSave" parameterType="com.vegemil.domain.SubscribeDTO" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO M_Sabo (
-              s_name
+    <insert id="subscribeSave" parameterType="com.vegemil.domain.SubscribeDTO" useGeneratedKeys="true" keyProperty="sIdx">
+        INSERT INTO m_sabo (
+            s_name
 			, s_hp
 			, s_memo
 			, s_active
 			, s_writedate
 			, s_email
         ) VALUES (
-            , #{sName}
+            #{sName}
             , #{sHp}
             , #{sMemo}
             , #{sActive}
@@ -119,14 +119,14 @@
     
     <select id="selectSubscibeAll" resultType="com.vegemil.domain.SubscribeDTO">
         SELECT
-			  s_name
+			s_name
 			, s_hp
 			, s_memo
 			, s_active
 			, s_writedate
 			, s_email
         FROM
-            M_Sabo
+            m_sabo
         ORDER BY
             s_writedate DESC
     </select>
@@ -135,7 +135,7 @@
         SELECT
             COUNT(*)
         FROM
-            M_Sabo
+            m_sabo
 		WHERE
 			s_active = 1
     </select>
@@ -144,7 +144,7 @@
         SELECT
             COUNT(*)
         FROM
-            M_Sabo
+            m_sabo
 		WHERE
 			s_email = #{sEmail}
     </select>

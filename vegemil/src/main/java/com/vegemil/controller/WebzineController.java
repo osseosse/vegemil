@@ -42,7 +42,16 @@ public class WebzineController extends UiUtils {
 	}
 	
 	@GetMapping(value = "/main/webzine")
-	public String openWebzineIndex(Model model, @RequestParam(required = false) SearchDTO params) {
+	public String openWebzineOriginal(Model model, @RequestParam(required = false) SearchDTO params) {
+		
+		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
+		model.addAttribute("webzineList", webzineList);
+		
+		return "webzine/default";
+	}
+	
+	@GetMapping(value = "/webzine")
+	public String moveWebzine(Model model, @RequestParam(required = false) SearchDTO params) {
 		
 		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
 		model.addAttribute("webzineList", webzineList);
@@ -54,14 +63,28 @@ public class WebzineController extends UiUtils {
 	public String openSubscribe(Model model, Authentication authentication) {
 		
 		SubscribeDTO subscribe = new SubscribeDTO();
+		String mName = "";
+		String mHp = "";
+		String txtEmail = "";
+		String selEmail = "";
+		String mEmail = "";
 		
 		if(authentication != null) {
 			MemberDTO member = (MemberDTO) authentication.getPrincipal();
 			if(member != null) {
-				model.addAttribute("member", member);
+				mName = member.getMName();
+				mHp = member.getMHp();
+				txtEmail = member.getTxtEmail();
+				selEmail = member.getSelEmail();
+				mEmail = member.getMEmail();
 			}
 		}
 		
+		model.addAttribute("mName", mName);
+		model.addAttribute("mHp", mHp);
+		model.addAttribute("txtEmail", txtEmail);
+		model.addAttribute("selEmail", selEmail);
+		model.addAttribute("mEmail", mEmail);
 		model.addAttribute("subscribe", subscribe);
 		
 		return "webzine/subscribe";
@@ -81,22 +104,22 @@ public class WebzineController extends UiUtils {
 			if (isRegistered == false) {
 				out.println("<script>alert('이미 신청된 이메일입니다.'); history.go(-1);</script>");
 				out.flush();
-				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/main/webzine", Method.GET, null, model);
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine/subscribe", Method.GET, null, model);
 			}
 			model.addAttribute("subscribe", subscribe);
 			
 		} catch (DataAccessException e) {
 			out.println("<script>alert('데이터베이스 처리 과정에 문제가 발생하였습니다.'); history.back();</script>");
 			out.flush();
-			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/main/webzine", Method.GET, null, model);
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine/subscribe", Method.GET, null, model);
 
 		} catch (Exception e) {
 			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
 			out.flush();
-			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/main/webzine", Method.GET, null, model);
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/webzine/subscribe", Method.GET, null, model);
 		}
 
-		return "webzine/result";
+		return showMessageWithRedirect("웹진 신청이 완료되었습니다.", "/webzine", Method.GET, null, model);
 	}
 	
 	@GetMapping(value = "/main/webzine/special/sub{fileNo}.aspx")
