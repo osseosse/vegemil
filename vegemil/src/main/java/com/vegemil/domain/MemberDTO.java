@@ -29,6 +29,8 @@ public class MemberDTO implements UserDetails {
 	private String mAddr1;
 	private String mAddr2;
 	private String mEmail;
+	private String txtEmail;
+	private String selEmail;
 	private String mSmssend;
 	private String mEmailsend;
 	private String mJoindate;

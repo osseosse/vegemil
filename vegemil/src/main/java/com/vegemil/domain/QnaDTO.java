@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +9,7 @@ import lombok.Setter;
 @Setter
 public class QnaDTO extends CommonDTO {
 
+	private MultipartFile fileName;
 	//질문
 	private Long sIdx;
 	private String sCate;

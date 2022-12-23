@@ -4,6 +4,7 @@
 <mapper namespace="com.vegemil.mapper.MemberMapper">
 
 	<sql id="memberColumns">
+	   m_idx,
 	   m_id,
 	   m_pwd,
 	   m_name,
@@ -15,6 +16,8 @@
 	   m_addr1,
 	   m_addr2,
 	   m_email,
+	   SUBSTRING_INDEX(m_email, '@', 1) as txt_email,
+	   SUBSTRING_INDEX(m_email, '@', -1) as sel_email,
 	   m_smssend,
 	   m_emailsend,
 	   m_joindate,
@@ -92,6 +95,58 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 	</insert>
+	
+	<update id="updateMember" parameterType="com.vegemil.domain.MemberDTO">
+		UPDATE m_member
+		SET
+			m_pwd = #{mPwd}
+			, m_pwd_moddate = NOW()
+			, m_auth = #{mAuth}
+			, m_name = #{mName}
+			, m_year = #{mYear}
+			, m_sex = #{mSex}
+			, m_hp = #{mHp}
+			, m_tel = #{mTel}
+			, m_zipcode = #{mZipcode}
+			, m_addr1 = #{mAddr1}
+			, m_addr2 = #{mAddr2}
+			, m_email = #{mEmail}
+			, m_smssend= #{mSmssend}
+			, m_emailsend = #{mEmailsend}
+			, m_ip = #{mIp}
+			, m_comp_name = #{mCompName}
+			, m_bizno = #{mBizno}
+			, m_di = #{mDi}
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+	
+	<update id="deleteMember" parameterType="com.vegemil.domain.MemberDTO">
+		UPDATE m_member
+		SET
+			m_pwd = ''
+			, m_auth = ''
+			, m_name = ''
+			, m_year = ''
+			, m_sex = ''
+			, m_hp = ''
+			, m_tel = ''
+			, m_zipcode = ''
+			, m_addr1 = ''
+			, m_addr2 = ''
+			, m_email = ''
+			, m_smssend = '0'
+			, m_emailsend = '0'
+			, m_ip = ''
+			, m_comp_name = ''
+			, m_bizno = ''
+			, m_di = ''
+			, m_leavedate = NOW()
+			, m_leavememo = #{mLeavememo}
+			
+		WHERE
+			m_idx = #{mIdx}
+	</update>
 
 	<select id="overlappedID" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
 		select count(m_id) 
@@ -148,6 +203,15 @@
 			m_member
 		WHERE
 			m_name = #{mName} and m_hp = #{mHp}
+	</select>
+	
+	<select id="selectMemDiKey" parameterType="Long" resultType="String">
+		SELECT
+			m_di
+		FROM
+			m_member
+		WHERE
+			m_idx = #{mIdx}
 	</select>
 	
 	<select id="selectMemberCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">

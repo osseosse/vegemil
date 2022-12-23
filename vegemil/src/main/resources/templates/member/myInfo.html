@@ -14,33 +14,21 @@
 ================================ -->
 <div id="content">
 	<div class="contant1460" >
-	<form th:action="|@{/member/register}|" th:object="${member}" method="post">
+	<form th:action="@{/mypage/update}"  th:object="${member}" method="post">
 		<div class="row mt90h">
 			<div class=" col-md-12">
-				<p class="f52 fw600 mt130 black center">회원가입</p>
-				<p class="f18 fw400 mt10 gray04 center">회원가입은 무료이며, 가입시 다양한 정보와 서비스를 이용하실 수 있습니다.<br>모든 정보는 고객님의 동의없이 공개되지 않으며,<br class="mView">개인정보보호방침에 의해 보호받습니다.</p>	
-			</div>
-			<div class="w1160 center0 mt100">
-				<div class="center0 ">
-					<ul class="agree">
-						<li class="f20 fw500"><a href="#"><span>약관동의</span></a></li>
-						<li class="f20 fw500 active"><a href="#"><span>정보입력</span></a></li>
-						<li class="f20 fw500"><a href="#"><span>가입완료</span></a></li>
-					</ul>
-				</div>
+				<p class="f52 fw600 mt130 black center">개인정보 수정</p>
+				<p class="f18 fw400 mt10 gray04 center">회원님의 정보룰 수정할 수 있습니다.<br>모든 정보는 고객님의 동의없이 공개되지 않으며,<br class="mView">개인정보보호방침에 의해 보호받습니다.</p>	
 			</div>
 			<input type="hidden" th:field="*{mDi}" />
+			<input type="hidden" th:field="*{mIdx}" />
 			<div class="col-md-12 ">
 				<div class="w860 center0 mt80">
 					<div cellspacing="0" border="0" class="joinT">
 						<ul>
 							<li><span>아이디</span></li>
 							<li>
-								<input type="text" th:field="*{mId}" class="inp02 w330" onkeyup="this.value=this.value.replace(/[^A-Za-z0-9]/g,'');" placeholder="6~20자 영문/숫자 조합"><button type="button" id="overlappedID" class="btnType09 ml10">중복확인</button>
-								<p class="confirm" id="idCheackOk" style="display: none;">사용 가능한 ID 입니다.</p>
-								<p class="error" id="idCheackNo" style="display: none;">이미 사용중인 ID 입니다.</p>
-								<p class="error" id="idCheack" style="display: none;">아이디는 6자 이상, 20자 이하여야합니다.</p>
-								<input type="hidden" id="idDuplicate" value="0" />
+								<input type="text" th:field="*{mId}" class="inp02 w330" >
 							</li>
 						</ul>
 						<!-- 
@@ -66,7 +54,7 @@
 						<ul>
 							<li>비밀번호 확인</li>
 							<li>
-								<input type="password" id="pw2" th:field="*{mPwd}" name="pw" class="inp02">
+								<input type="password" id="pw2" th:field="*{mPwd}" class="inp02">
 								<p class="error" id="pwCheackNo" style="display: none;">비밀번호가 일치하지 않습니다.</p>
 								<p class="confirm" id="pwCheackOk" style="display: none;">비밀번호가 일치합니다.</p>
 							</li>
@@ -77,7 +65,7 @@
 						</ul>
 						<ul>
 							<li>성별</li>
-							<li><input type="text" readonly name="mSex" id="mSex" th:value="*{mSex == 'M' ? '남' : '여'}" class="inp02 w200" placeholder="남/여"></li>
+							<li><input type="text" readonly id="mSex" name="mSex" th:value="*{mSex == 'M' ? '남' : '여'}" class="inp02 w200"></li>
 						</ul>
 						<ul>
 							<li>생년월일</li>
@@ -89,7 +77,7 @@
 								<input type="hidden" class="inp03 w200" th:field="*{mHp}">
 								<input readonly type="text" class="inp03 w120" th:value="${#strings.substring(member.mHp, 0, 3)}">
 								- <input readonly type="text" class="inp03 w130" th:value="${#strings.substring(member.mHp, 3, 7)}">
-								- <input readonly type="text" class="inp03 w130" th:value="${#strings.substring(member.mHp, 7, 11)}"> 
+								- <input readonly type="text" class="inp03 w130" th:value="${#strings.substring(member.mHp, 7, 11)}"><button type="button" onclick="joinHPCheck()" class="btnType09 ml10">휴대번호 번경</button>
 							</li>
 						</ul>
 						<ul>
@@ -109,15 +97,15 @@
 							<li>주소</li>
 							<li>
 								<input name="txtZipcode" class="inp03" type="text" readonly th:field="*{mZipcode}" maxlength="5" placeholder="우편번호"><button type="button" onclick="execPostcode()" class="btnType09 ml10">우편번호검색</button><br>
-								<input name="txtAddr1" class="inp02 mt10 w700" type="text" th:field="*{mAddr1}" maxlength="100" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
-								<input name="txtAddr2" class="inp02 mt10 w700" type="text" th:field="*{mAddr2}" placeholder="상세주소를 입력해 주세요" maxlength="50">
+								<input name="txtAddr1" class="inp02 mt10 w700" type="text" th:field="*{mAddr1}" maxlength="50" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
+								<input name="txtAddr2" class="inp02 mt10 w700" type="text" th:field="*{mAddr2}" placeholder="상세주소를 입력해 주세요" maxlength="30">
 							</li>
 						</ul>
 						<ul>
 							<li>이메일</li>
 							<li>
-								<input name="txtEmail" type="text" maxlength="50" id="txtEmail" class="inp03 w200"><input name="txtEmail2" placeholder="직접입력" type="text" disabled maxlength="50" id="txtEmail2" class="inp03 ml10 w220 mr10">
-								<select name="selEmail" id="selEmail" class="sel02 w200 mt10m">
+								<input  th:field="*{txtEmail}" type="text" maxlength="30" class="inp03 w200"><input name="txtEmail2" placeholder="직접입력" type="text" disabled maxlength="30" id="txtEmail2" class="inp03 ml10 w220 mr10">
+								<select th:field="*{selEmail}" class="sel02 w200 mt10m">
 									 <option value="1">직접 입력</option>
 									 <option value="naver.com">naver.com</option>
 									 <option value="hanmail.net">hanmail.net</option>
@@ -160,13 +148,19 @@
 			<div class="w560 center0 mb200">
 				<ul class="joinbtnFoot mt50">
 					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
-					<li><button type="submit" disabled id="joinBtn" class="btnType17 f20 fw500 lh140">회원가입</button></li>
+					<li><button type="submit" disabled id="joinBtn" class="btnType17 f20 fw500 lh140">수정완료</button></li>
 				</ul>
 			</div>
-			
 		</div>
 		</form>
 		<br class="clear">
+		<form name="authForm" id="authForm" method="post" action="" target="">
+			<input type="hidden"	name="joinType"	 id="joinType"			 />
+			<input type="hidden"	name="step"		 id="step"		value="2"/>
+			<input type="hidden"	name="reqURL"	 id="reqURL"			 />
+			<input type="hidden"	name="firstURL"  id="firstURL"		   	 />
+			<input type="hidden"	name="secondURL" id="secondURL"		   	 />
+		</form>
 	</div><!-- //contant1460 -->
 </div>
 <!-- ================================  
@@ -175,6 +169,23 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
-<script th:src="@{/common/js/join.js}"></script>
+<script th:src="@{/common/js/myInfo.js}"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+	
+	var mDi = "[[ ${mDi} ]]";
+	var txtStep = "[[ ${step} ]]";
+	
+	//DIKEY없는 회원 본인인증처리
+	if(mDi == '' && txtStep == '1' ) {
+		alert("본인 인증이 필요합니다.\n인증 완료후 수정완료 버튼을 꼭 눌러주세요");
+		joinHPCheck();
+	}
+	return;
+	
+});
+//]]>
+</script>
 </body>
 </html>

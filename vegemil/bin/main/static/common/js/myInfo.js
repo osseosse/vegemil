@@ -1,58 +1,41 @@
 /*<![CDATA[*/
 
-//id 중복확인
-$("#overlappedID").click(function(){
-	$("#joinBtn").prop("type", "button");
-	const mId = $("#mId").val();
+//휴대폰 인증 확인
+function joinHPCheck(){
 	
-	if( mId.length < 6 || mId.length > 20 ) {
-		alert("6~20자 영문/숫자 조합으로 입력해주세요.");
-		return false;
+	var authForm = $('#authForm');
+	var url = document.URL;
+	var urlStr = url.split("/");
+	var urlStr_1 = urlStr[3];
+	var urlStr_2 = urlStr[4];
+	var urlStr_3 = urlStr[5];
+	var urlStr_4 = urlStr[6];
+
+	var reqURL;
+	if(urlStr_3 == null){
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2;
+	}else if(urlStr_4 == null){
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3;
+	}else{
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3 + "/" + urlStr_4;
 	}
 	
-	$.ajax({
-		url: "/member/idCheck",
-		data: {mId: mId},
-		success: function (data) {
-			if(data == 1) {
-				$("#idCheackOk").css('display', 'none');
-	            $("#idCheackNo").css('display', 'inline-block');
-	            $("#idDuplicate").val('0');
-	            btnAvtive();
-			} else {
-				$("#idCheackNo").css('display', 'none');
-	            $("#idCheackOk").css('display', 'inline-block');
-				$("#joinBtn").prop("type", "submit");
-				$("#idDuplicate").val('1');
-			}
-		}
-	})
-	return;
-});
+	var step = $('#step').val();
 
-$('#mId').keyup(function () {
-
-    var retVal = false;
-    const vId = $("#mId").val();
-
-	if (vId.length < 6 || vId.length > 20) {
-	    $("#idCheack").text("아이디는 6자 이상, 20자 이하여야합니다.");
-	    $("#idCheack").css('display', 'inline-block');
-	} else if (/[^a-z0-9]+|^([a-z]+|[0-9]+)$/i.test(vId)) {
-	    $("#idCheackNo").text("아이디는 영문, 숫자 조합으로 구성하여야합니다.");
-	    $("#idCheack").css('display', 'inline-block');
-	} else if (/^[^a-z]|[^a-z0-9]+|^([a-z]+|[0-9]+)$/i.test(vId)) {
-	    $("#idCheack").text("아이디의 첫글자는 영문이여야합니다.");
-	    $("#idCheack").css('display', 'inline-block');
-	} else {
-		$("#idCheack").css('display', 'none');
-	    retVal = true;
-	    btnAvtive();
-	}
+	$('#reqURL').attr("value", reqURL+"?step="+step);
+	$('#firstURL').attr("value", urlStr[0]);
+	$('#secondURL').attr("value", urlStr[2]);
 	
-	return retVal;
+	var PCC_window = window.open('', 'PCCV3Window', 'width=430, height=560, resizable=1, scrollbars=no, status=0, titlebar=0, toolbar=0, left=300, top=200' );
+	authForm.attr("action", "/input_seed.jsp");
+	authForm.attr("target", "PCCV3Window");
+	authForm.submit();
 
-});
+	if(PCC_window == null){
+		alert(" ※ 윈도우 XP SP2 또는 인터넷 익스플로러 7 사용자일 경우에는 \n    화면 상단에 있는 팝업 차단 알림줄을 클릭하여 팝업을 허용해 주시기 바랍니다. \n\n※ MSN,야후,구글 팝업 차단 툴바가 설치된 경우 팝업허용을 해주시기 바랍니다.");
+   	}
+
+}
 
 function execPostcode() {
 new daum.Postcode({
@@ -103,17 +86,13 @@ new daum.Postcode({
 
 function btnAvtive() {
 	
-	const sId = $('#mId').val();
-	const idDuplicate = $('#idDuplicate').val();
 	const sEmail = $('#mEmail').val();
 	const sPw1 = $('#pw1').val();
 	const sPw2 = $('#pw2').val();
 	const sAddr1 = $('#mAddr1').val();
 	const sAddr2 = $('#mAddr2').val();
 	
-	if($.trim(sId).length > 1
-	&& $.trim(idDuplicate) == '1'
-	&& $.trim(sPw1).length > 1
+	if($.trim(sPw1).length > 1
 	&& $.trim(sPw2).length > 1
 	&& $("input:radio[name='mSmssend']").is(":checked") == true
 	&& $.trim(sAddr1).length > 1
@@ -143,7 +122,7 @@ $('#selEmail').change(function(){
 			 $("#txtEmail2").attr("disabled",true); //비활성화
 		}
 		
-		$("#mEmail").val($("#txtEmail").val()+"@"+ $("#txtEmail2").val());
+		$("#mEmail").val($("#txtEmail").val()+"@"+$("#txtEmail2").val());
    });
    btnAvtive();
    

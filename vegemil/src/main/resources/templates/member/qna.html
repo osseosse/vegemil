@@ -18,12 +18,13 @@
 			<div class="row ">
 				<div class="col-md-4 my pr100">
 					<div class="myBox">
-						<p class="f14 fw400  mebOut gray04"><a href="">회원 탈퇴 신청</a></p>
-						<p class="f34 fw600 lh130 mt50" th:text="|${member.memName}님|,"><br>반갑습니다.</p>
+						<p class="f14 fw400  mebOut gray04"><a href="/mypage/withdrawal">회원 탈퇴 신청</a></p>
+						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
 						<ul class="account_box mt40">
-							<li>ssu070</li>
-							<li>정회원</li><!-- "대리점장이 회원가입시" <li>대리점</li> -->
-							<li>본인인증완료</li><!-- "본인인증이 되지 않은 고객일경우" <li>본인인증필요</li> -->							
+							<li th:text="${member.mId}"></li>
+							<li th:if="${member.mCompName} != null">대리점</li>
+							<li th:if="${member.mCompName} == null">일반회원</li>
+							<li th:if="${member.mDi} != null">본인인증완료</li>				
 						</ul>
 						<p class="f14 fw400 gray04 mt25">
 						개인정보를 수정, 변경하실 수 있습니다.<br>
@@ -45,7 +46,7 @@
 					</ul><br class="clear">
 					
 					<div class="myBox mt20">
-					<form  th:action="@{/mypage/registerQna}" th:object="${qna}" method="post" enctype="multipart/form-data" >
+					<form  th:action="@{/mypage/registerQna}" th:object="${qna}" method="post" >
 					<input type="hidden" th:field="*{sIdx}" />
 						<table cellspacing="0" summary="나의상담" border="0" class="myQ">
 							<caption>지난 상담</caption>
@@ -56,35 +57,40 @@
 							<tr>
 								<th>상담분류</th>
 								<td>
-									<select class="cateQ" th:field="*{sCate}">
+									<select class="cateQ" th:field="*{sGory}">
 										<option value="선택">선택</option>
-										<option value="제품일반">제품일반</option>
-										<option value="음료류">음료류</option>
-										<option value="유아동두유">유아동두유</option>
-										<option value="베지밀">베지밀</option>
-										<option value="그린비아">그린비아</option>
+										<option value="11">제품일반</option>
+										<option value="22">음료류</option>
+										<option value="33">유아동두유</option>
+										<option value="44">베지밀</option>
+										<option value="55">그린비아</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th><p class="cate">제목</p></th>
 								<td>
-									<input type="text" th:field="*{sSubject}" class="inp04">
+									<input type="text" th:field="*{sSubject}" class="inp04" maxlength="20">
+									<p class="error" id="titleCheck" style="display: none;"><img src="https://image.edaymall.com/images/dcf/vegemil/img/error.png">제목을 입력해 주세요</p>
 								</td>
 							</tr>
 							<tr>
 								<th><p class="cate">내용</p></th>
 								<td class="day ">
-									<textarea type="text" th:field="*{sContent}" ></textarea>
+									<textarea th:field="*{sContent}" maxlength="200"></textarea>
+									<div class="mt10 f14 gray f_right" id="cnt">(0/200)</div>
+									<p class="error" id="contentCheck" style="display: none;"><img src="https://image.edaymall.com/images/dcf/vegemil/img/error.png">내용을 입력해 주세요</p>
 								</td>
 							</tr>
+							<!-- 
 							<tr>
 								<th><p class="cate">첨부파일</p></th>
-								<td><input type="file" class="fileType01" th:field="*{sFile}"></td>
+								<td><input type="file" class="fileType01" th:field="*{fileName}" accept="image/*"></td>
 							</tr>
+							 -->
 						</table>
 						<div class="faqBtnbox mt30">
-							<button type="submit" class="btnType14">등록하기</button> <button type="submit" class="btnType15">등록하기</button>
+							<button type="submit" disabled="disabled" class="btnType14" id="saveBtn">등록하기</button>
 						</div>
 						</form>
 					</div>
@@ -107,5 +113,85 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+
+	$('#sContent').on('keyup', function() {
+        $('#cnt').html("("+$(this).val().length+" / 200)");
+ 
+        if($(this).val().length > 200) {
+            $(this).val($(this).val().substring(0, 500));
+            $('#cnt').html("(200 / 200)");
+        }
+    });
+	
+});
+
+function btnAvtive() {
+	const sGory = $("select[name=sGory]").val();
+	const sSubject = $('#sSubject').val();
+	const sContent = $('#sContent').val();
+	
+	if( $.trim(sGory).length > 1
+	&& $.trim(sSubject).length > 1
+	&& $.trim(sContent).length > 1) 
+	{
+		$("#saveBtn").attr("disabled", false); //해제
+	} else {
+		$("#saveBtn").attr("disabled", true); //설정
+	}
+}
+
+$("#sGory").change( function() {
+
+	const sCate = $("select[name=sGory]").val();
+	
+	if ($.trim(sCate).length == 0) {
+		$("#companyCheck").css('display', 'inline-block');
+	} else {
+		$("#companyCheck").css('display', 'none');
+		btnAvtive();
+	}
+
+});
+
+//제목 체크
+$('#sSubject').keyup(function () {
+
+	const rTitle = $('#sSubject').val();
+	
+	if ($.trim(rTitle).length == 0) {
+		$("#titleCheck").css('display', 'inline-block');
+		$("#sSubject").addClass('error');
+	} else {
+		$("#titleCheck").css('display', 'none');
+		$("#sSubject").removeClass('error');
+	}
+	
+	btnAvtive();
+	
+});
+
+//내용 체크
+$('#sContent').keyup(function () {
+
+	const rTitle = $('#sContent').val();
+	
+	if ($.trim(sContent).length == 0) {
+		$("#contentCheck").css('display', 'inline-block');
+		$("#sContent").addClass('error');
+	} else {
+		$("#contentCheck").css('display', 'none');
+		$("#sContent").removeClass('error');
+	}
+	
+	btnAvtive();
+	
+});
+
+
+//]]>
+</script>
 </body>
 </html>

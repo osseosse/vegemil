@@ -98,8 +98,8 @@
 								<div class="boxType">
 									<div class="baseRadioBox">
 									
-										<input type="radio" id="smsAgree1" th:attr="checked=*{mSmssend == '1' ? 'true' : 'false'}" value="1" name="smsAgree" /><label for="smsAgree1"><span></span>수신동의</label>
-										<input type="radio" id="smsAgree2" th:attr="checked=*{mSmssend == '0' ? 'true' : 'false'}" value="0" name="smsAgree" /><label for="smsAgree2"><span></span>수신거부</label>
+										<input type="radio" id="smsAgree1" th:attr="checked=*{mSmssend == '1' ? 'true' : 'false'}" value="1" name="mSmssend" /><label for="smsAgree1"><span></span>수신동의</label>
+										<input type="radio" id="smsAgree2" th:attr="checked=*{mSmssend == '0' ? 'true' : 'false'}" value="0" name="mSmssend" /><label for="smsAgree2"><span></span>수신거부</label>
 									</div>
 								</div>
 							</li>
@@ -133,8 +133,8 @@
 							<li>
 								<div class="boxType">
 									<div class="baseRadioBox">
-										<input type="radio" id="emailAgree1" th:attr="checked=*{mEmailsend == '1' ? 'true' : 'false'}" name="emailAgree" value="1" /><label for="emailAgree1"><span></span>수신동의</label>
-										<input type="radio" id="emailAgree2" th:attr="checked=*{mEmailsend == '0' ? 'true' : 'false'}" name="emailAgree" value="0"/><label for="emailAgree2"><span></span>수신거부</label>
+										<input type="radio" id="emailAgree1" th:attr="checked=*{mEmailsend == '1' ? 'true' : 'false'}" name="mEmailsend" value="1" /><label for="emailAgree1"><span></span>수신동의</label>
+										<input type="radio" id="emailAgree2" th:attr="checked=*{mEmailsend == '0' ? 'true' : 'false'}" name="mEmailsend" value="0"/><label for="emailAgree2"><span></span>수신거부</label>
 									</div>
 								</div>
 							</li>

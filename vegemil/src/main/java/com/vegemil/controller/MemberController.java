@@ -278,7 +278,6 @@ public class MemberController extends UiUtils {
 		return "member/joinOk";
 	}
 	
-	
 	@GetMapping(value = "/member/detail")
 	public String openMemberDetail(@ModelAttribute("params") MemberDTO params, @RequestParam(value = "mId", required = false) String mId, Model model, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");

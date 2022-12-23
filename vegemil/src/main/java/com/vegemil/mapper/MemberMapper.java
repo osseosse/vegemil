@@ -12,6 +12,8 @@ public interface MemberMapper {
 	
 	public int updateMember(MemberDTO params);
 	
+	public int deleteMember(MemberDTO params);
+	
 	public int activeMember(MemberDTO params);
 
 	public MemberDTO getMemberAccount(String mId);
@@ -20,6 +22,8 @@ public interface MemberMapper {
 	
 	public String getMemId(MemberDTO params);
 
+	public String selectMemDiKey(Long mIdx);
+	
 	public List<MemberDTO> selectMemberList(MemberDTO params);
 
 	public int selectMemberTotalCount(MemberDTO params);

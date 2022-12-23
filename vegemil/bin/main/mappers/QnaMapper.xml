@@ -19,6 +19,7 @@
 		s_activeuser,
 		s_hit,
 		s_active,
+		s_answer_yn,
 		s_answer,
 		s_gory,
 		s_delete_yn
@@ -35,13 +36,31 @@
 			s_subject,
 			s_content,
 			s_file,
-			DATE_FORMAT(s_writedate,'%Y-%m') as s_writedate,
+			s_writedate,
 			s_activeuser,
 			s_hit,
 			s_active,
-			s_gory,
+			s_gory
 		) VALUES (
-			#{sCate},
+			<if test="sGory != null and sGory != ''"> 
+			   <choose>
+			      <when test="sGory.equalsIgnoreCase('11')">
+		          	'제품일반',
+			      </when>
+			      <when test="sGory.equalsIgnoreCase('22')">
+		          	'음료류',
+			      </when> 
+			      <when test="sGory.equalsIgnoreCase('33')">
+		          	'유아동두유',
+			      </when> 
+			      <when test="sGory.equalsIgnoreCase('44')">
+		          	'베지밀',
+			      </when> 
+			      <when test="sGory.equalsIgnoreCase('55')">
+		          	'그린비아',
+			      </when> 
+			   </choose> 
+			</if>
 			#{sId},
 			#{sName},
 			#{sHp},
@@ -54,7 +73,7 @@
 			#{sActiveuser},
 			0,
 			'1',
-			#{sGory},
+			#{sGory}
 		)
 	</insert>
 
