@@ -1,15 +1,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <title>FaQ</title>
-    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<title>FaQ</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
+<body>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-    </head>    
-    
-	<body style="padding-top: 90px;">
 	
 	<div id="content">
 		<div class="container100">
@@ -97,13 +94,13 @@
                     <div class="col-md-6">
                         <div class="yellow_lineBox">
                             <p class="f26_4 underline02">고객상담센터<span>월~금(공휴일 제외) 09:00~18:00</span></p>
-                            <p class="f30_6 mt30 callBox"><img th:src="@{/img/vegemilBaby/ico_phone.png}" alt="고객상담센터아이콘">02-553-8888 &#47; 080-930-8888</p>
+                            <p class="f30_6 mt30 callBox"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_phone.png}" alt="고객상담센터아이콘">02-553-8888 &#47; 080-930-8888</p>
                         </div>
                     </div>
                     <div class="col-md-6 mt30m">
                         <div class="blue_lineBox">
                             <p class="f26_4 underline02">1:1문의하기<span>찾으시는 답변이 없으신가요?</span></p>
-                            <a th:href="@{https://www.vegemil.co.kr/main/customer/faqList.aspx?page_code=FAQ}" class="mt40" title="1:1문의하기"><img th:src="@{/img/vegemilBaby/p_05_01_03.jpg}" alt="1:1문의하기"></a>
+                            <a th:href="@{/faq/list}" class="mt40" title="1:1문의하기"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_01_03.jpg}" alt="1:1문의하기"></a>
                         </div>
                     </div>
                 </div>
@@ -377,11 +374,11 @@
                                         <p>연령에 따라 주요 알레르기 원인 식품이 다릅니다. 영아기와 유아기는 계란 및 우유가, 청소년 및 성인은 갑각류, 견과류, 밀가루 등이 주된 알레르기 원인 식품입니다. &#40;그림 1&#41;</p><br>
                                         <div class="col-md-6 center mt10">
                                             <p class="f14_5">연령에 따른 식품의 연관성</p>
-                                            <img th:src="@{/img/vegemilBaby/p_05_01_01.jpg}" alt="연령에 따른 식품의 연관성" class="mt10">
+                                            <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_01_01.jpg}" alt="연령에 따른 식품의 연관성" class="mt10">
                                         </div>
                                         <div class="col-md-6 center mt10">
                                             <p class="f14_5">연령에 따른 주된 원인 식품</p>
-                                            <img th:src="@{/img/vegemilBaby/p_05_01_02.jpg}" alt="연령에 따른 주된 원인 식품" class="mt10">
+                                            <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_01_02.jpg}" alt="연령에 따른 주된 원인 식품" class="mt10">
                                         </div>
                                         <div class="col-md-12 center mt10">
                                             <p class="f14_5">

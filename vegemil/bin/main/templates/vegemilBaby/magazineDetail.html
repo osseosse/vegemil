@@ -1,0 +1,274 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<title>육아정보 상세</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>    
+<body>
+<!-- ================================ Header ================================ -->
+<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+	
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG04_01 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">육아정보</p>
+								<p class="f20_4 mt20">일상 속 육아공감 스토리와<br>알아두면 유용할 알찬 정보를 전합니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		
+		
+		
+			<div class="container100 bg_b">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="#">Cummunity</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="#">육아정보</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></li>
+															<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></li>
+															<li><a th:href="@{/vegemilBaby/recipe_list?p=1}">베지밀 레시피</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+								    <!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+												
+            <!-- //container100 -->
+            <div class="container100" th:object="${magazineDetail}" >
+                <div class="row mg0 pd0">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt">
+                            <p class="f24_4_bg">E-Magazine</p>
+                            <p class="f55_6 mt30">육아정보</p>
+                            <p class="f24_4 mt10">아래 카테고리를 선택하시면 원하시 는 정보를 더 정확하게 확인할 수 있습니다.</p>
+                        </div>
+                                                
+                        <!-- col-md-12 -->
+                        <div class="col-md-12 mt120 pd0 detailBox">
+                            <!-- detailTable -->
+                            <div class="detailTable mb80">
+                                <ul class="detail_lineT" id="detail_Position">
+                                    <li class="detail_left">
+                                        <a th:href="@{/vegemilBaby/magazine?p=1}">
+                                            <div class="listMenu"></div>
+                                            <p class="f17_4">목록으로 돌아가기</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="detail_right">
+                                        <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var-1}" class="f17_4">이전</a>
+                                        <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var+1}" class="f17_4">다음</a>
+                                    </li>
+
+                                </ul>
+                                <ul class="detail_lineB">
+                                    <li class="detail_left">
+                                        <p class="f20_4_w" th:text="*{mbsTitle}"></p>
+                                    </li>
+                                  
+                                    <li class="detail_right">
+                                        <p class="f20_4_w" th:text="*{mbsGetdate}"></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--//detailTable -->
+
+							<!-- col-md-4 -->
+                            <div class="col-md-3 f-left mHide">
+								<div class="cateBox_detail">
+									<!-- Vetical -->
+									<div id="verticalType01" >									
+										
+										 <h3 class="ver-title01 open" data-collapse-summary=""><a>임신출산</a></h3>
+   										 <div aria-hidden="false" style="height: 315px;" class="open">
+											<div class="v_content ">
+												<ul class="v_ul">
+													<li>
+														<dl>
+															<dt>임신 주차별 정보</dt>
+															<dd id="pb01"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">임신초기<span th:text="|(${categoryCount.pb01})|"></span></a></dd>
+															<dd id="pb02"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">임신중기<span th:text="|(${categoryCount.pb02})|"></span></a></dd>
+															<dd id="pb03"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">임신후기<span th:text="|(${categoryCount.pb03})|"></span></a></dd>
+														</dl>
+													</li>
+													<li id="pb04"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">임신기 건강관리<span th:text="|(${categoryCount.pb04})|"></span></a></li>
+													<li id="pb05"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">임신 준비&태교<span th:text="|(${categoryCount.pb05})|"></span></a></li>
+													<li id="pb06"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">출산 준비&용품<span th:text="|(${categoryCount.pb06})|"></span></a></li>
+													<li id="pb07"><a th:href="@{/vegemilBaby/e_magazine?cate=pb}">산후관리<span th:text="|(${categoryCount.pb07})|"></span></a></li>
+												</ul>
+											</div>
+										</div>
+										  <h3 class="ver-title01 open" data-collapse-summary=""><a>성장/발달</a></h3>
+   										 <div aria-hidden="false" style="height: 334px;" class="open">
+											<div class="v_content">
+												<ul class="v_ul">
+													<li>
+														<dl>
+															<dt>1~36개월 정보</dt>
+															<dd id="gh01"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">1~3개월<span th:text="|(${categoryCount.gh01})|"></span></a></dd>
+															<dd id="gh02"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">4~6개월<span th:text="|(${categoryCount.gh02})|"></span></a></dd>
+															<dd id="gh03"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">7~12개월<span th:text="|(${categoryCount.gh03})|"></span></a></dd>
+															<dd id="gh04"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">13~18개월<span th:text="|(${categoryCount.gh04})|"></span></a></dd>
+															<dd id="gh05"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">19~24개월<span th:text="|(${categoryCount.gh05})|"></span></a></dd>
+															<dd id="gh06"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">25~36개월<span th:text="|(${categoryCount.gh06})|"></span></a></dd>
+														</dl>
+													</li>
+													<li id="gh07"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">3세 이상<span th:text="|(${categoryCount.gh07})|"></span></a></li>
+													<li id="gh08"><a th:href="@{/vegemilBaby/e_magazine?cate=gh}">영유아 건강관리<span th:text="|(${categoryCount.gh08})|"></span></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<h3 class="ver-title01 open" data-collapse-summary=""><a>놀이/교육</a></h3>
+   										 <div aria-hidden="false" style="height: 99px;" class="open">
+											<div class="v_content">
+												<ul class="v_ul">
+													<li id="pe01"><a th:href="@{/vegemilBaby/e_magazine?cate=pe}">DIY&놀이법<span th:text="|(${categoryCount.pe01})|"></span></a></li>
+													<li id="pe02"><a th:href="@{/vegemilBaby/e_magazine?cate=pe}">교육/훈육 노하우<span th:text="|(${categoryCount.pe02})|"></span></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<h3 class="ver-title01 open" data-collapse-summary=""><a>리빙/헬스/트렌드</a></h3>
+   										 <div aria-hidden="false" style="height: 99px;" class="open">
+											<div class="v_content">
+												<ul class="v_ul">
+													<li id="lh01"><a th:href="@{/vegemilBaby/e_magazine?cate=lh}">리빙/헬스<span th:text="|(${categoryCount.lh01})|"></span></a></li>
+													<li id="lh02"><a th:href="@{/vegemilBaby/e_magazine?cate=lh}">트렌드<span th:text="|(${categoryCount.lh02})|"></span></a></li>
+												</ul>
+											</div>
+										</div>
+										
+									</div>
+									<script>
+									$("#verticalType01").collapse({
+									  //accordion: true,
+									  open: function() {
+										this.addClass("open");
+										this.css({ height: this.children().outerHeight() });
+									  },
+									  close: function() {
+										this.css({ height: "0px" });
+										this.removeClass("open");
+									  }
+									});
+									</script>
+									<!-- // Vetical -->
+								</div>
+								<!--
+                                <div class="inforBox">
+                                   <p class="f17_4">이런 정보는 어떠신가요?</p>
+                                    <ul class="mt20">
+                                     <asp:repeater id=DataList2 runat="server">			
+									   <itemtemplate>   
+                                        <li>
+										         			
+                                            <a href="e_magazine_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">
+                                                <p class="infor_img">
+                                                    <span class="inforIMG inforIMG_001" style="background: url(<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>); background-position:center;-webkit-background-size: cover; background-size: cover" alt="정보 썸네일"></span>
+                                                </p>
+                                                <div class="infor_txt">
+                                                    <p class="f14_4_1 txtHide6">
+                                                     <%# DataBinder.Eval(Container.DataItem, "mbs_title") %> </p>
+                                                </div>
+                                            </a>
+                                            
+                                         </li>    
+                                        </itemtemplate>
+                                    </asp:repeater> 
+                                                                    
+                                    </ul>
+								</div>
+								-->
+								
+                            </div>
+                            <!--// col-md-4 -->
+
+
+
+                            <!-- col-md-8 이부분에 리스트 삽입-->
+							<div class="col-md-8 underlineBox02 mb150 f-right">
+								<div th:utext ="*{mbsContent}"></div>                                 
+                           </div>  
+                                                    
+                            <!--// col-md-8 -->  
+                            
+                        </div>
+                        <!-- //col-md-12 -->
+					</div>
+                        <!-- //container -->
+                </div><!-- //row-->
+            </div>
+            <!-- //container100 -->
+	    </div> <!-- //content -->
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

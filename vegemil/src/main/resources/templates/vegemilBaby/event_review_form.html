@@ -1,0 +1,228 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+  <head>
+    <title>후기 이벤트 양식</title>
+    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+
+	<script>	
+	
+	function photo_link(){
+			window.open('/vegemilBaby/photoSNS','Photo','left=0,top=0,width=425,height=170,' +
+			'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no');
+	}
+
+	</script>
+    </head>    
+    
+	<body style="padding-top: 90px;">
+	
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG03_02 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">후기 이벤트</p>
+								<p class="f20_4 mt20">우리 아기의 베지밀 이야기를<br>남겨주세요!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b2">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu modelsubMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="javascript:void(0);">Event</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a href="brand.aspx">brand</a></li>
+														<li><a href="premium.aspx">Product</a></li>
+														<li><a href="bv_event.aspx"> Event</a></li>
+														<li><a href="e_magazine.aspx?p=1"> Cummunity</a></li>
+														<li><a href="faq2.aspx"> Support</a></li>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="javascript:void(0);">후기이벤트</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a href="bv_event.aspx">진행 중 이벤트</a></li>
+															<li><a href="event_review_best.aspx">후기이벤트</a></li>
+															<li><a href="event_model.aspx">아기모델선발대회</a></li>
+															<li><a href="sample2.aspx">샘플신청</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container100 -->
+        <div class="container100">
+            <div class="row  pd0 mg0 ">
+                <dl id="con01">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt">
+                            <p class="f24_4_bg">Event</p>
+                            <p class="f55_6 mt30">후기 이벤트</p>
+                            <p class="f24_4 mt10">SNS에 베지밀 영&middot;유아식 체험후기 올리면, 할인쿠폰 100%발급! 우수 작성자께 드리는 온라인 상품권도 놓치지 마세요!</p>
+                        </div>
+                    </div>
+                    <div class="container pb150">
+                        <div class="row">
+                            <div class="col-md-12 mt120 modelForm">
+								<p class="f24_4 bestFomeTitle">후기확인</p>
+								<ul class="formBox">
+									  <li class="bg_y">
+										<dl class="divideType05 f17_4">
+											<dd>번호</dd>
+											<dd>URL</dd>
+											<dd>등록일</dd>
+									
+								        </dl>
+
+								      </li>
+								      <li>  										
+							             <dl id="rptList" class="divideType05 f17_4">
+											<dd><%# DataBinder.Eval(Container.DataItem, "s_wdx") %>번호</dd>
+											<dd><%# DataBinder.Eval(Container.DataItem, "s_url") %>url</dd>
+											<dd><%# DataBinder.Eval(Container.DataItem, "s_writedate") %>등록일</dd>
+									     </dl>	
+										
+									   </li>
+									
+								</ul>
+
+								<p class="f24_4 bestFomeTitle mt120">등록하기</p>
+                               
+                                    <form th:action=@{/vegemilBaby/event_review_form} method="post" ><!-- enctype="multipart/form-data" -->
+                                        <legend>입력 폼</legend>
+                                        <ul class="formBox">
+                                           <li>
+												<dl class="divideType01 f17_4">
+													<dd>소개글</dd>
+													<dd class="mt10m">
+														<input type="text" name="txtTitle">													
+													</dd>
+												</dl>
+                                            </li>
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>공유 SNS</dd>
+													<dd>														
+															<select id=ddlSNS name="ddlSNS">
+															<option value="">선택하세요</option>
+															<option value="카카오 스토리">카카오 스토리</option>
+															<option value="인스타그램">인스타그램</option>
+															<option value="페이스북">페이스북</option>
+															<option value="블로그">블로그</option>
+															<option value="기타">기타</option>														  
+															</select>														
+													</dd>
+												</dl>
+                                            </li>
+                                            <li class="fileBox">
+												<dl class="divideType01 f17_4">
+													<dd>대표사진</dd>
+													<dd>
+														 <p class="f17_3 mt10m">우리아이 대표사진1장을 등록해주세요. (3M이하 이미지를 등록)</p>
+														 <!-- 2020-01-17 -->
+														 <!-- <label for="form_pic" class="f17_4 mt10">이미지첨부</label> -->
+														 <!-- <input id="frm_Photo_i" class="mt10" maxlength="255" id=btn_Photo onclick=javascript:photo_link(); value="이미지 첨부" type=button name=btn_Photo> -->
+														 <input id="frm_Photo_i" class="mt10" maxlength="255" th:onclick=photo_link(); value="이미지 첨부" type=button name=btn_Photo>
+													    <!-- // 2020-01-17 -->
+													     <asp:textbox id="txts_image" runat="server" Visible="false"></asp:textbox>
+													</dd>
+												</dl>
+												 
+                                     					
+                                            </li>
+                                           
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>URL</dd>
+													<dd class="mt10m">
+														 <input type="text" name="txtURL" id="txtURL">
+														 <p class="f17_3_g mt10">
+														- 영&middot;유아식과 함께하는 모습의 사진<br>
+														- 제품 이용후기<br>
+														- 필수 해시태그 입력<br>
+														- 전체 공개<br>
+														- 대표사진 첨부</p>
+														<p class="f17_3 mt10m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;SNS 업로드 시 [후기글 기본 요건]을 충족하셔야 합니다</p>
+													</dd>
+												</dl>
+                                            </li>
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>이데이몰 ID</dd>
+													<dd class="mt10m">
+													 <input type="text" name="txtEdayId" id="txtEdayId">
+													
+														<p class="f17_3 mt10"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;SNS 후기 참여 선물은 담당자 확인 후 입력하신 이데이몰 ID로 자동 지급됩니다. <br>
+												정식품 회원가입 시 통합 가입에 동의하지 않으신 분은 별도 가입 후 이데이몰 ID를 입력해주세요. <a href="https://www.edaymall.com/customer/memberChoice.do?joinType_flag=generalMem"> [회원가입]</a></p>
+													</dd>
+												</dl>
+                                            </li>
+                                        </ul>
+                                        <div class="col-md-12 center mt100">
+                                               <input type="image" id="uploadBtn"  th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg}" cssclass="submitBtn" alternatetext="응모하기"/>	
+													 <!-- input type="image -->
+                                        </div>
+                                    </form>
+                              
+                            </div>
+                        </div>
+                    </div><!-- //container-->
+                </dl><!-- //con01 -->
+            </div><!-- //row-->
+        </div><!-- //container100 -->
+
+    </div>
+    	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

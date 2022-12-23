@@ -1,16 +1,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <title>수유법</title>
-    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">   
+<title>수유법</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-    </head>    
-    
-	<body style="padding-top: 90px;">
-	
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->  
+<body>	
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
@@ -104,10 +100,10 @@
                                     <p class="f17_4 mt30">베지밀 영&middot;유아식은 실온에서 먹일 수 있게 설계되어 바로 먹이시면 되나, 
 						                                    장이 예민한 경우에는 개봉하지 않은 팩 그대로
 						                                    흐르는 따뜻한 물에 데워서 수유해 주세요.</p>
-                                    <p class="iconImg mt70"><img th:src="@{/img/vegemilBaby/ico_bag.png}" alt="편리한 휴대 아이콘" /></p>
+                                    <p class="iconImg mt70"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_bag.png}" alt="편리한 휴대 아이콘" /></p>
                                     <p class="f17_4 mt20">멸균.밀봉된 제품이라 실온보관이 가능하고, 데울 필요가 없어 외출, 여행시에도 휴대가 편해요.</p>
                                 </div>
-                                <p class="iconImg mt50"><img th:src="@{/img/vegemilBaby/ico_vegemil.png}" alt="베지밀팩 아이콘" /></p>
+                                <p class="iconImg mt50"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_vegemil.png}" alt="베지밀팩 아이콘" /></p>
                                 <p class="f17_4 mt20">별도의 보관 용기 없이 바로 수유할 수 있어 언제 어디서나 이용할 수 있고 팩홀더에 팩을 끼워 간편하게 먹일 수 있어요.</p>
                             </div>
                             <div class="col-md-8 mt40m bg_y center">
@@ -132,11 +128,11 @@
                                         <tr>
                                             <td class="b_line">6~12개월</td>
                                             <td class="b_line">
-                                                <p class="pd_p01"><img th:src="@{/img/vegemilBaby/p_05_02_01.png}" alt="인펀트 프리미엄 1단계"/></p>
+                                                <p class="pd_p01"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_01.png}" alt="인펀트 프리미엄 1단계"/></p>
                                                 <p>인펀트 프리미엄 1단계</p>
                                             </td>
                                             <td class="r_line b_line">
-                                                <p class="pd_p02"><img th:src="@{/img/vegemilBaby/p_05_02_02.png}" alt="인펀트 우리콩 1단계"/></p>
+                                                <p class="pd_p02"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_02.png}" alt="인펀트 우리콩 1단계"/></p>
                                                 <p>인펀트 우리콩 1단계</p>
                                             </td>
                                             <td rowspan="3" class="b_line">190ml</td>
@@ -145,22 +141,22 @@
                                         <tr>
                                             <td class="b_line">12~24개월</td>
                                             <td class="b_line">
-                                                <p class="pd_p03"><img th:src="@{/img/vegemilBaby/p_05_02_03.png}" alt="토들러 프리미엄 2단계"/></p>
+                                                <p class="pd_p03"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_03.png}" alt="토들러 프리미엄 2단계"/></p>
                                                 <p>토들러 프리미엄 2단계</p>
                                             </td>
                                             <td class="r_line b_line">
-                                                <p class="pd_p04"><img th:src="@{/img/vegemilBaby/p_05_02_04.png}" alt="토들러 우리콩 2단계"/></p>
+                                                <p class="pd_p04"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_04.png}" alt="토들러 우리콩 2단계"/></p>
                                                 <p>토들러 우리콩 2단계</p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="b_line">24~36개월</td>
                                             <td class="b_line">
-                                                <p class="pd_p05"><img th:src="@{/img/vegemilBaby/p_05_02_05.png}" alt="토들러 프리미엄 3단계"/></p>
+                                                <p class="pd_p05"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_05.png}" alt="토들러 프리미엄 3단계"/></p>
                                                 <p>토들러 프리미엄 3단계</p>
                                             </td>
                                             <td class="r_line b_line">
-                                                <p class="pd_p06"><img th:src="@{/img/vegemilBaby/p_05_02_06.png}" alt="토들러 우리콩 3단계"/></p>
+                                                <p class="pd_p06"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_06.png}" alt="토들러 우리콩 3단계"/></p>
                                                 <p>토들러 우리콩 3단계</p>
                                             </td>
                                         </tr>
@@ -220,7 +216,7 @@
                             <div class="mt70 inb">
                                 <div class="col-md-6">
                                     <div class="bg_g">
-                                        <p class="img100"><img th:src="@{/img/vegemilBaby/p_05_02_07.jpg}" alt="모유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
+                                        <p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_07.jpg}" alt="모유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
                                         <div class="whiteBox">
                                             <p class="f45_6">모유에서 베지밀 영&middot;유아식으로<br> 바꿔 먹이기</p>
                                             <p class="f17_4 mt50">모유수유를 하고 계시다면 모유를 먹이기 전에 약 20ml 정도 베지밀 영&middot;유아식을 먼저 먹이신 뒤 나머지 양을 모유로 채워 주시면 됩니다.<br>
@@ -230,7 +226,7 @@
                                 </div>
                                 <div class="col-md-6 mt30m">
                                     <div class="bg_g">
-                                        <p class="img100"><img th:src="@{/img/vegemilBaby/p_05_02_08.jpg}" alt="분유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
+                                        <p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_08.jpg}" alt="분유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
                                         <div class="whiteBox">
                                             <p class="f45_6">분유에서 베지밀 영&middot;유아식으로<br> 바꿔 먹이기</p>
                                             <p class="f17_4 mt50">

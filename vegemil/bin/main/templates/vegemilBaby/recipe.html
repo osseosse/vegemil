@@ -1,0 +1,155 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<title>정식품 레시피</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+	
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG04_03 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">영&middot;유아식 레시피</p>
+								<p class="f20_4 mt20">정식품 베지밀과 함께하는<br>간편 레시피</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="#">Community</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="#">영&middot;유아식 레시피</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/e_magazine?p=1}">육아정보</a></li>
+															<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담 Q&amp;A</a></li>
+															<li><a th:href="@{/vegemilBaby/recipe?p=1}">영&middot;유아식 레시피</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+								    <!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+            <!-- //container100 -->
+			<!-- 탭 -->
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#tab_brand').basicTabs();/* 영양탭 */
+				});
+			</script>
+            <div class="container100 ">
+                <div class="row mg0 pd0">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt ">
+                            <p class="f24_4_bg">Recipe</p>
+                            <p class="f55_6 mt30">영&middot;유아식 레시피</p>
+                            <p class="f24_4 mt10">아래 레시피를 활용하여 다양한 요리를 만들어보세요!</p>
+                        </div>
+						<div class="col-md-12  mt120">
+							<ul class="tabs2 btn_ch19">
+								<li class="li_icoBG01"><a href="#">영&middot;유아식 레시피</a></li>
+								<li class="li_icoBG02"><a th:href="@{https://www.vegemil.co.kr/main/community/recipeList.aspx?c=&cur=1&page_code=CNC}">정식품 기타 레시피</a></li>
+							</ul>
+						</div>
+                        <!--<div class="col-md-12">
+                            <div class="recipe">
+                                <div class="recipe_line"></div>
+                            </div>
+                        </div>-->
+                        <!-- 위쪽 레시피 -->
+					    <div class="col-md-12 mt50 new_listBox mg0 pd0 mb80">
+                                <ul class="new_list thumb-over ">
+                               
+									<div th:each="recipe : ${recipeList}">                                          
+									
+										 <a th:with="var=${recipe.cIdx}" th:href="@{/vegemilBaby/recipe/detail/}+${var}">         
+											<li>
+												<div class="list_thumb">
+													<p class="t_img">
+													
+													
+														<!-- <span class="t_img_span youtube-link" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +');  background-position:center;-webkit-background-size: cover; background-size: cover" alt="레시피 썸네일"></span> -->
+														<strong><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></strong>		
+													</p>													
+													<p class="f20_4 mt30 txtHide3" th:text="${recipe.cSubject}"></p>
+													<p class="f14_4_1 txtHide4"></p>		
+												</div>
+													
+												<p class="list_day" th:text="${recipe.cWritedate}"></p>						
+												
+												<input type="hidden" th:value="${recipe.cIdx}"/>
+											</li>
+										</a>
+									</div>
+										
+                                </ul>
+                            </div> 
+                        
+              
+                    <!-- //container -->
+                </div><!-- //row-->
+            </div>
+            <!-- //container100 -->
+         
+	    </div> <!-- //content -->
+				
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>
