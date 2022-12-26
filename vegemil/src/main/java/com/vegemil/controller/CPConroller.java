@@ -34,12 +34,12 @@ public class CPConroller extends UiUtils{
 	
 	@GetMapping("/communication/cp")
 	public String getCpPage() {
-		return "/communication/cp/cp";
+		return "communication/cp/cp";
 	}
 
 	@GetMapping("/communication/cp/cpHandbook")
 	public String getCpManual() {
-		return "/communication/cp/cpHandbook";
+		return "communication/cp/cpHandbook";
 	}
 	
 	@GetMapping("/communication/cp/cpProgram")
@@ -55,7 +55,7 @@ public class CPConroller extends UiUtils{
 	@GetMapping("/communication/cp/cpEbookView")
 	public String getCpEbookView(Model model, String fileName) {
 		model.addAttribute("fileName", fileName);
-		return "/communication/cp/cpEbookView";
+		return "communication/cp/cpEbookView";
 	}
 	
 	@PostMapping("/cp/cIdCheck")
@@ -64,13 +64,13 @@ public class CPConroller extends UiUtils{
 		if (cpService.checkCompId(cId) <= 0) {
 			model.addAttribute("msg","사번 조회에 실패했습니다.");
 			model.addAttribute("validation","0");
-			return "/communication/cp/cpEbookView";
+			return "communication/cp/cpEbookView";
 		}
 		
 		model.addAttribute("validation","1");
 		model.addAttribute("msg","");
 		
-		return "/communication/cp/cpEbookView";
+		return "communication/cp/cpEbookView";
 	}
 
 	// 자율준수 편람 파일 다운 코드

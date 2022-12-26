@@ -2,15 +2,11 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
 <title>정식품 공정거래(CP)</title>
     <head th:replace="fragments/head :: headFragment"></head>
-	<link rel='stylesheet' href='/common/css/swiper-bundle.min.css' th:href="@{/common/css/swiper-bundle.min.css"><!-- swiper(카테고리별제품 메뉴) -->
-	<script src='/common/js/swiper-bundle.min.js' src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
-	<script src='/common/js/swiper.js' src="/common/js/swiper.js"></script><!-- swiper(카테고리별제품 메뉴) -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
-	<script type="text/javascript" src="/common/js/jquery-1.7.2.min.js"></script>
-</head>
+	<link rel='stylesheet' href="/common/css/swiper-bundle.min.css"><!-- swiper(카테고리별제품 메뉴) -->
+	<script src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
+	<script src="/common/js/swiper.js"></script><!-- swiper(카테고리별제품 메뉴) -->
 <body>
 <!-- ================================ 
 		Header
@@ -153,6 +149,5 @@ function changeText(){
 	$("#declaration").load("/cp/html/"+txtId+".html");
 }
 </script>
-
 </body>
 </html>

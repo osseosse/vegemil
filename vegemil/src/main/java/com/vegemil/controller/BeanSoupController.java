@@ -61,7 +61,7 @@ public class BeanSoupController extends UiUtils {
 		model.addAttribute("searchList",beansoupSearchList);
 		model.addAttribute("beansoupList",beansoupList);
 		
-		return "/beansoup/list";
+		return "beansoup/list";
 	}
 	
 	//간단 레시피 검색
@@ -78,7 +78,7 @@ public class BeanSoupController extends UiUtils {
 		model.addAttribute("searchList",beansoupSearchList);
 		model.addAttribute("beansoupList", beansoupList);
 		
-		return "/beansoup/list";
+		return "beansoup/list";
 	}
 	
 	//간단레시피 상세 
@@ -91,7 +91,7 @@ public class BeanSoupController extends UiUtils {
 		model.addAttribute("recipe", recipe);
 		model.addAttribute("beansoupList", beansoupList);
 		
-		return "/beansoup/detail";
+		return "beansoup/detail";
 	}
 	
 	//[소식]영상
@@ -103,7 +103,7 @@ public class BeanSoupController extends UiUtils {
 		
 		model.addAttribute("beansoupVideoList",beansoupVideoList);
 		
-		return "/beansoup/video";
+		return "beansoup/video";
 	}
 	
 	//[소식]뉴스
@@ -122,7 +122,7 @@ public class BeanSoupController extends UiUtils {
 		
 		model.addAttribute("beansoupNewsList",beansoupNewsList);
 		
-		return "/beansoup/news";
+		return "beansoup/news";
 	}
 	
 	//[소식]생생후기
@@ -132,13 +132,13 @@ public class BeanSoupController extends UiUtils {
 		params.setRecordsPerPage(9);
 		model.addAttribute("beansoupEventList",beansoupService.selectBeansoupEventList(params));
 		
-		return "/beansoup/event";
+		return "beansoup/event";
 	}
 	
 	//구매처
 	@GetMapping("/beanSoup/mall")
 	public String beanSoupMall() {
 		
-		return "/beansoup/mall";
+		return "beansoup/mall";
 	}
 }

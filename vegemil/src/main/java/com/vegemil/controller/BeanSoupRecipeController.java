@@ -13,7 +13,13 @@ public class BeanSoupRecipeController {
 		if(beansoupRecipe.contains(".")) {
 			beansoupRecipe = beansoupRecipe.substring(0, beansoupRecipe.lastIndexOf("."));
 		}
-		return "/beanSoupRecipe/" + beansoupRecipe;
+		return "beanSoupRecipe/" + beansoupRecipe;
+	}
+	
+	@GetMapping("/beanSoupRecipe/index")
+	public String getBeanSoupRecipeIndex() {
+		
+		return "beanSoupRecipe/index";
 	}
 
 }
