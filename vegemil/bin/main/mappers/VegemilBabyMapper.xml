@@ -77,6 +77,18 @@
 		 	1;			
 	</select>
 	
+	<!-- 육아정보 - 육아정보 상세조회 -->	
+	<select id="selectMagazineDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDetailDTO" >			
+		SELECT 
+			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category, mbs_ange, mbs_ange_html 
+		FROM 
+			m_edit_brandbaby
+		WHERE 
+			mbs_idx = #{mbs_idx}
+		AND 
+			mbs_active = '1'			
+	</select>
+	
 	
 	<!-- 영유아식레시피 - 레시피 리스트 -->	
 	<select id="selectRecipeList"  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO" >			
@@ -91,9 +103,9 @@
 	</select>
 	
 	<!-- 영유아식레시피 - 레시피 상세  -->	
-	<select id="selectRecipe"  parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO" >			
+	<select id="selectRecipeDetail"  parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO" >			
 		SELECT 
- 			c_idx,c_writedate,c_cate,right(c_code,4) as c_code, c_code as c_code_full ,c_subject,c_content,c_with 
+ 			c_idx,c_writedate,substring_index(c_code, '_', -1)c_code ,c_subject,c_content,c_with 
  		FROM 
  			m_recipe
  		WHERE 
@@ -101,6 +113,38 @@
  		AND 
  			c_idx= #{idx};
 	</select>
+	
+	
+	<!-- 영유아식레시피 - 레시피 상세  -->		
+	<insert id ="insertSampleForm" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" useGeneratedKeys="true" keyProperty="sIdx"  >	
+		<!-- INSERT INTO 
+				m_sample_baby (s_id, s_mname, s_year)
+		SELECT 
+				m_id, m_name, m_year
+		FROM 
+			m_member 
+		WHERE 
+			m_id= 'gojkhan13'; -->
+		<!-- VALUES(
+				#{sIdx}, #{sId}, #{sMname}) select m_year from m_member where m_id= 'gojkhan13'
+		) -->
+		
+		INSERT INTO 
+			m_sample_baby
+				(s_id, s_mname, s_year, s_hp, s_tel, s_zipcode, s_addr1, s_addr2, s_email, s_item, s_babycnt 
+				,s_name, s_sex, s_materdate, s_feedmethod
+				,s_name2, s_sex2, s_materdate2, s_feedmethod2
+				,s_name3, s_sex3, s_materdate3, s_feedmethod3 
+				,s_writedate, s_foodplan, s_sabo, s_before, s_deliver, s_deliverdate
+		)VALUES(
+				#{sId}, #{sMname}, #{sYear}, #{sHp}, #{sTel}, #{sZipcode}, #{sAddr1}, #{sAddr2}, #{sEmail}, #{sItem}, #{sBabycnt}
+				,#{sName}, #{sSex}, #{sMaterdate}, #{sFeedmethod}  
+				,#{sName2}, #{sSex2}, #{sMaterdate2}, #{sFeedmethod2}
+				,#{sName3}, #{sSex3}, #{sMaterdate3}, #{sFeedmethod3}    
+				,CURDATE(), #{sFoodplan}, #{sSabo}, #{sBefore}, #{sDeliver}, #{sDeliverdate}
+		)
+	</insert>
+	
 	
 
 	<!-- 육아정보 - 임신출산 게시글수 -->
@@ -333,17 +377,7 @@
 		
 	
 		
-	<!-- 게시물 검색(리뉴얼) -->	
-	<select id="magazineDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDetailDTO" >			
-		SELECT 
-			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category, mbs_ange, mbs_ange_html 
-		FROM 
-			m_edit_brandbaby
-		WHERE 
-			mbs_idx = #{mbs_idx}
-		AND 
-			mbs_active = '1'			
-	</select>
+	
 	
 	
 	

@@ -1,20 +1,28 @@
 package com.vegemil.controller;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.vegemil.domain.SearchDTO;
-import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO;
+import com.vegemil.constant.Method;
+import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
+import com.vegemil.util.UiUtils;
 
+
+@CrossOrigin(origins="*", allowedHeaders = "*")
 @Controller
 @RequestMapping("/vegemilBaby")
 public class VegemilBabyController {
@@ -47,7 +55,7 @@ public class VegemilBabyController {
 	// 육아정보 상세
 	@GetMapping(value = { "/magazine/detail/{idx}" })
 	public String moveMagazineDetail(@PathVariable("idx") Long idx, Model model) {
-		model.addAttribute("magazineDetail", vegemilBabyCommunityService.magazineDetail(idx));
+		model.addAttribute("magazineDetail", vegemilBabyCommunityService.selectMagazineDetail(idx));
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazineDetail";
 	}
@@ -61,9 +69,33 @@ public class VegemilBabyController {
 
 	// 영유아식 레시피 상세
 	@GetMapping("/recipe/detail/{idx}")
-	public String recipe(@PathVariable("idx") Long idx, Model model) {
-		model.addAttribute("recipe", vegemilBabyCommunityService.selectRecipe(idx));
+	public String moveRecipeDetail(@PathVariable("idx") Long idx, Model model) {
+		model.addAttribute("recipeList", vegemilBabyCommunityService.selectRecipeList());
+		model.addAttribute("recipe", vegemilBabyCommunityService.selectRecipeDetail(idx));
 		return "vegemilBaby/recipeDetail";
+	}
+	
+	//@ModelAttribute("member") final @Valid MemberDTO member
+	/* Event */
+	@GetMapping("/sample/form")
+	public String moveSampleForm(Authentication authentication, Model model) {
+		
+	        MemberDTO member = (MemberDTO) authentication.getPrincipal();  
+	        System.out.println(member.toString());
+			
+	        model.addAttribute("member", member);		
+		return "vegemilBaby/sampleForm";
+	}
+	
+	//샘플 신청 등록
+	@PostMapping("/sample/form")
+	public String submitSampleForm(@ModelAttribute("sample") VegemilBabySampleDTO sample, 
+								HttpServletRequest request,
+								Model model) {
+		vegemilBabyCommunityService.insertSampleForm(sample);
+		System.out.println(sample);
+	        		
+		return "redirect:/vegemilBaby/sample";
 	}
 
 	// 육아 정보
