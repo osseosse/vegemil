@@ -1,37 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:fragment="headFragment">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta name="description" content="정식품 간단요리사에서 빠른요리 정보와 유용한 컨텐츠를 만나 보세요">
     <meta name="Keywords" content="간단요리사, 요리용 육수, 간단해지는 요리, 고민없이, 물없이, 실패없이, 시원한 채소육수, 담백한 채소육수, 냉요리용" />
     <meta property="og:title" content="정식품 간단요리사"> 
-    <meta property="og:url" content="https://www.vegemil.co.kr/Main/beanSoup/"> 
-    <meta property="og:image" content="https://www.vegemil.co.kr/Main/beanSoup/beansoup/img/og.jpg" /> 
+    <meta property="og:url" content="https://www.vegemil.co.kr/main/beanSoup/"> 
+    <meta property="og:image" content="https://www.vegemil.co.kr/beanSoup/beansoup/img/og.jpg" /> 
     <meta property="og:description" content="간단요리사는 소비자의 건강을 최우선으로 하는 정식품의 새로운 브랜드입니다. 누구나 간단요리사와 함께 간단하고 맛있는 요리를 경험해 보세요."/> 
     <meta name="author" content="OSSE">
     <title>정식품 간단요리사</title>
-    <link href="./beansoup/css/reset.css" th:href="@{/beansoup/css/reset.css}" rel="stylesheet">
+    <link th:href="@{/beansoup/css/reset.css}" rel="stylesheet">
     <!-- 추천렛피 -->
     <link rel='stylesheet' href='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.css'>
     <!-- 리뷰슬라이드 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
-    <link href="./beansoup/css/review.css" th:href="@{/beansoup/css/review.css}" rel="stylesheet">
+    <link th:href="@{/beansoup/css/review.css}" rel="stylesheet">
     <!-- //리뷰슬라이드 -->
-    <script src="./beansoup/js/jquery.1.11.1.min.js" th:src="@{/beansoup/js/jquery.1.11.1.min.js}"></script>
-    <script src="./beansoup/js/jquery.touchSwipe.1.6.min.js" th:src="@{/beansoup/js/jquery.touchSwipe.1.6.min.js}"></script>
-    <script src="./beansoup/js/prrple.slider.js" th:src="@{/beansoup/js/prrple.slider.js}"></script>
-    <script src="./beansoup/js/design.js" th:src="@{/beansoup/js/design.js}"></script>
-	<script src="./beansoup/js/grid.js" th:src="@{/beansoup/js/grid.js}"></script>
-	<script src="./beansoup/js/plugins.min.js" th:src="@{/beansoup/js/plugins.min.js}"></script>
-
+    <script th:src="@{/beansoup/js/jquery.1.11.1.min.js}"></script>
+    <script th:src="@{/beansoup/js/jquery.touchSwipe.1.6.min.js}"></script>
+    <script th:src="@{/beansoup/js/prrple.slider.js}"></script>
+    <script th:src="@{/beansoup/js/design.js}"></script>
+	<script th:src="@{/beansoup/js/grid.js}"></script>
+	<script th:src="@{/beansoup/js/plugins.min.js}"></script>
     <!-- Bootstrap core CSS -->
-    <link href="./beansoup/css/bootstrap.css" th:href="@{/beansoup/css/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/beansoup/css/bootstrap.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="./beansoup/css/style.css" th:href="@{/beansoup/css/style.css}" rel="stylesheet">
-
-
+    <link th:href="@{/beansoup/css/style.css}" rel="stylesheet">
 </head>
-
 <script type="text/x-javascript">
 (function(w, d, a){
     w.__beusablerumclient__ = {
@@ -43,10 +41,4 @@
     };w.__beusablerumclient__.load(a);
 })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-<script>
-/* 로드방식 local 크롬에서 노출되지 않음.
-  $( document ).ready( function() {
-    $( 'header' ).load( './mainHeader.html' );
-  } );
-</script>
- */
+</html>

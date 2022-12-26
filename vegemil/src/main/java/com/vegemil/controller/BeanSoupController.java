@@ -26,21 +26,25 @@ public class BeanSoupController extends UiUtils {
 	@Autowired
 	BeansoupService beansoupService;
 
-	// 메인
 	@GetMapping("/beanSoup")
 	public String beanSoupMain(Model model) {
 		
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
 		model.addAttribute("beansoupList",beansoupList);
 	
-		return "/beansoup/index";
+		return "beansoup/index";
 	}
 	
-	// 브랜드 소개
 	@GetMapping("/beanSoup/brand")
 	public String beanSoupBrand(Model model) {
 		
-		return "/beansoup/brand";
+		return "beansoup/brand";
+	}
+	
+	@GetMapping("/Main/beanSoup/intro.aspx")
+	public String beanSoupIntro(Model model) {
+		
+		return "beansoup/intro";
 	}
 	
 	//간단레시피

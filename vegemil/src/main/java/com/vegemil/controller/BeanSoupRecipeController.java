@@ -3,7 +3,6 @@ package com.vegemil.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BeanSoupRecipeController {
@@ -16,10 +15,10 @@ public class BeanSoupRecipeController {
 		return "beanSoupRecipe/" + beansoupRecipe;
 	}
 	
-	@GetMapping("/beanSoupRecipe/index")
-	public String getBeanSoupRecipeIndex() {
+	@GetMapping("/beanSoupRecipe/{viewName}")
+	public String moveBeanSoupRecipe(@PathVariable(value = "viewName", required = false) String viewName) {
 		
-		return "beanSoupRecipe/index";
+		return "beanSoupRecipe/" + viewName;
 	}
-
+	
 }

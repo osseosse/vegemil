@@ -12,1340 +12,1305 @@
 	<meta property="og:url" content="https://www.vegemil.co.kr:10001/Main/beanSoupRecipe/index.html"> 
 	<meta property="og:image" content="https://www.vegemil.co.kr:10001/Main/beanSoupRecipe/assets/img/project/mainVisual04.jpg"> 
 	<meta property="og:description" content="깨끗하게 손질하여 부드럽게 갈아낸, 정식품이 만든 진한 콩국물이에요. 입맛이 살아나는 콩국물을 찾고 계셨다면 정식품 진한 콩국물로 요리해보세요. 사계절 어느때나 편하고 맛있게 식물성 영양을 더할 수 있어요."/> 
-
     <!--  Title -->
      <title>정식품 진한 콩국물</title>
-
     <!-- Font Google -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"></noscript>
 
-    <link rel="shortcut icon" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico}" type="image/x-icon" />
-    <link rel="icon" href="assets/img/favicon.ico" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico}"type="image/x-icon" />
+    <link rel="shortcut icon" href="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico"type="image/x-icon" />
 
-    <link rel="preload" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/circle-dotted.png}" as="image" />
+    <link rel="preload" href="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/circle-dotted.png" as="image" />
 	
 
     <!-- custom styles (optional) -->
-    <link rel="stylesheet" th:href="@{/beansoupRecipe/css/plugins.css}" />
-    <link rel="stylesheet" th:href="@{/beansoupRecipe/css/style.css}">
+    <link rel="stylesheet" href="/beansoupRecipe/css/plugins.css" />
+    <link rel="stylesheet" href="/beansoupRecipe/css/style.css">
+    <script src="/beansoupRecipe/js/jquery.1.11.1.min.js"></script>
 </head>
-
-
 <body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
 
-
-    <!-- ========== Loading Page ==========
-    <div class="preloader">
-        <span class="percent ">0</span>
-        <span class="loading-text text-uppercase">Loading ...</span>
-        <div class="preloader-bar">
-            <div class="preloader-progress"></div>
-        </div>
-
-        <h1 class="title v-middle">
-            <span class="text-strok">콩국물</span>
-            <span class="text-fill">콩국물</span>
-        </h1>
-    </div>
-    <!-- ========== End Loading Page ========== -->
-
-
-   <!-- ========== Menu ========== -->
-	<div class="site-header dsn-container dsn-load-animate">
-        <div class="extend-container w-100 align-items-baseline justify-content-between align-items-end">
-            <div class="inner-header p-relative">
-                <div class="main-logo w_view">
-                    <a href="/Main/beanSoupRecipe/index.html" data-dsn="parallax">
-                        <img class="light-logo "
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            th:data-dsn-src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo.png}" alt="" />
-                    </a>
-                </div>
-				<div class="main-logo m_view">
-                    <a href="/Main/beanSoupRecipe/index.html" data-dsn="parallax">
-						<img class="light-logo m_view"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            th:data-dsn-src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo_mobile.png}" alt="" />
-                    </a>
-                </div>
-            </div>
-            <div class="menu-icon d-flex align-items-baseline">
-                <div class="text-menu p-relative  font-heading text-transform-upper">
-                    <div class="p-absolute text-button">Menu</div>
-                    <div class="p-absolute text-open">Open</div>
-                    <div class="p-absolute text-close">Close</div>
-                </div>
-                <div class="icon-m" data-dsn="parallax" data-dsn-move="10">
-                    <span class="menu-icon-line p-relative d-inline-block icon-top"></span>
-                    <span class="menu-icon-line p-relative d-inline-block icon-center"></span>
-                    <span class="menu-icon-line p-relative d-block icon-bottom"></span>
-                </div>
-            </div>
-            <nav class="accent-menu dsn-container main-navigation p-absolute  w-100  d-flex align-items-baseline ">
-                <div class="menu-cover-title">콩국물</div>
-                <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
-					<li class="dsn-active dsn-drop-down"><a href="/Main/beanSoupRecipe/index.html" class="user-no-selection"><span class="dsn-title-menu">메인</span></a></li>
-                    <li class=" dsn-drop-down"><a href="./sub_list.html" class="user-no-selection"><span class="dsn-title-menu">콩국물 레시피</span></a></li>
-                    <li class="dsn-drop-down"><a href="./sub_product.html" class="user-no-selection"><span class="dsn-title-menu">제품의 특장점</span></a></li>
-                    <li class="dsn-drop-down"><a href="./sub_onair.html" class="user-no-selection"><span class="dsn-title-menu">미디어</span></a></li>
-                    <li class="dsn-drop-down"><a href="./sub_event.html" class="user-no-selection"><span class="dsn-title-menu">이벤트</span></a></li>
-                    <li><a href="./sub_store.html"><span class="dsn-title-menu">구매처</span></a></li>
-                </ul>
-				
-                <div class="container-content  p-absolute h-100 left-60 d-flex flex-column justify-content-center">
-                    <div class="nav__info">
-                        <div class="nav-content">
-                            <p class="title-line">(주)정식품</p>
-							<p>서울특별시 중구 퇴계로 6길 3-30 (우)04634,<br>충청북도 청주시 흥덕구 산단로 124 (우)28446</p>
-                        </div>
-                        <div class="nav-content">
-                            <p class="title-line">Contact</p>
-                            <p class="links over-hidden">대표전화 02 3484 9300</p>
-                            <p class="links  over-hidden">고객상담 080 930 8888</p>
-							<p class="links  over-hidden">상담메일 cs@vegemil.co.kr</p>
-                        </div>
-                    </div>
-                    <div class="nav-social nav-content">
-                        <div class="nav-social-inner p-relative">
-                            <p class="title-line">구매하기</p>
-                             <li>
-								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank" rel="nofollow">진한 콩국물 플레인
-									<div class="icon-circle"></div>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259952" target="_blank" rel="nofollow">진한 콩국물 검은콩
-									<div class="icon-circle"></div>
-								</a>
-							</li>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-	<div id="quick_menu"></div>
-	<script src="./assets/js/jquery.1.11.1.min.js"></script>
-	<script>
-      $( document ).ready( function() {
-	    $( '#quick_menu' ).load( './quickMenu.html' );
-      } );
-    </script>
-    <!-- ========== End Menu ========== -->
-
-
-    <main class="main-root ">
-
-        <div id="dsn-scrollbar">
-            <div class="main-content">
-                <div class="wrapper over-hidden">
-                    <!-- ========== Slider Parallax ========== -->
-					<div class="">
-						<div class="row ">
-							<div class="col-lg-12 center"> 
-								<div class="sub_list_top h452"></div>
-							</div>
+  <!-- ========== Menu ========== -->
+<div class="site-header dsn-container dsn-load-animate">
+       <div class="extend-container w-100 align-items-baseline justify-content-between align-items-end">
+           <div class="inner-header p-relative">
+               <div class="main-logo w_view">
+                   <a href="/Main/beanSoupRecipe/index.html" data-dsn="parallax">
+                       <img class="light-logo "
+                           src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                           th:data-dsn-src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo.png" alt="" />
+                   </a>
+               </div>
+			<div class="main-logo m_view">
+                   <a href="/Main/beanSoupRecipe/index.html" data-dsn="parallax">
+					<img class="light-logo m_view"
+                           src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                           th:data-dsn-src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo_mobile.png" alt="" />
+                   </a>
+               </div>
+           </div>
+           <div class="menu-icon d-flex align-items-baseline">
+               <div class="text-menu p-relative  font-heading text-transform-upper">
+                   <div class="p-absolute text-button">Menu</div>
+                   <div class="p-absolute text-open">Open</div>
+                   <div class="p-absolute text-close">Close</div>
+               </div>
+               <div class="icon-m" data-dsn="parallax" data-dsn-move="10">
+                   <span class="menu-icon-line p-relative d-inline-block icon-top"></span>
+                   <span class="menu-icon-line p-relative d-inline-block icon-center"></span>
+                   <span class="menu-icon-line p-relative d-block icon-bottom"></span>
+               </div>
+           </div>
+           <nav class="accent-menu dsn-container main-navigation p-absolute  w-100  d-flex align-items-baseline ">
+               <div class="menu-cover-title">콩국물</div>
+               <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
+				<li class="dsn-active dsn-drop-down"><a href="/Main/beanSoupRecipe/index.html" class="user-no-selection"><span class="dsn-title-menu">메인</span></a></li>
+                   <li class=" dsn-drop-down"><a href="./sub_list.html" class="user-no-selection"><span class="dsn-title-menu">콩국물 레시피</span></a></li>
+                   <li class="dsn-drop-down"><a href="./sub_product.html" class="user-no-selection"><span class="dsn-title-menu">제품의 특장점</span></a></li>
+                   <li class="dsn-drop-down"><a href="./sub_onair.html" class="user-no-selection"><span class="dsn-title-menu">미디어</span></a></li>
+                   <li class="dsn-drop-down"><a href="./sub_event.html" class="user-no-selection"><span class="dsn-title-menu">이벤트</span></a></li>
+                   <li><a href="./sub_store.html"><span class="dsn-title-menu">구매처</span></a></li>
+               </ul>
+			
+               <div class="container-content  p-absolute h-100 left-60 d-flex flex-column justify-content-center">
+                   <div class="nav__info">
+                       <div class="nav-content">
+                           <p class="title-line">(주)정식품</p>
+						<p>서울특별시 중구 퇴계로 6길 3-30 (우)04634,<br>충청북도 청주시 흥덕구 산단로 124 (우)28446</p>
+                       </div>
+                       <div class="nav-content">
+                           <p class="title-line">Contact</p>
+                           <p class="links over-hidden">대표전화 02 3484 9300</p>
+                           <p class="links  over-hidden">고객상담 080 930 8888</p>
+						<p class="links  over-hidden">상담메일 cs@vegemil.co.kr</p>
+                       </div>
+                   </div>
+                   <div class="nav-social nav-content">
+                       <div class="nav-social-inner p-relative">
+                           <p class="title-line">구매하기</p>
+                            <li>
+							<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank" rel="nofollow">진한 콩국물 플레인
+								<div class="icon-circle"></div>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.edaymall.com/display/goods.do?goods_code=10259952" target="_blank" rel="nofollow">진한 콩국물 검은콩
+								<div class="icon-circle"></div>
+							</a>
+						</li>
+                       </div>
+                   </div>
+               </div>
+           </nav>
+       </div>
+   </div>
+   <!-- ========== End Menu ========== -->
+       <div id="dsn-scrollbar">
+           <div class="main-content">
+               <div class="wrapper over-hidden">
+                   <!-- ========== Slider Parallax ========== -->
+				<div class="">
+					<div class="row ">
+						<div class="col-lg-12 center"> 
+							<div class="sub_list_top h452"></div>
 						</div>
 					</div>
-					
-                    <!-- ========== End Slider Parallax ========== -->
+				</div>
+				
+                   <!-- ========== End Slider Parallax ========== -->
 
-                    <!-- ========== Work Section ========== -->
-                    <section class="work section-margin dsn-col dsn-col-space  dsn-filter not-filter over-hidden"
-                        data-dsn-title="진한 콩국물 레시피">
-                        <div class="container d-flex text-center flex-column align-items-center">
-                            <p class="f44_6">진한 콩국물 레시피</p>
-							<p class="f28_4 mt-20">콩을 통째로 갈아 만든 진한 콩국물로 식탁을 건강하게 바꿔보세요.</p>
-                        </div>
+                   <!-- ========== Work Section ========== -->
+                   <section class="work section-margin dsn-col dsn-col-space  dsn-filter not-filter over-hidden"
+                       data-dsn-title="진한 콩국물 레시피">
+                       <div class="container d-flex text-center flex-column align-items-center">
+                           <p class="f44_6">진한 콩국물 레시피</p>
+						<p class="f28_4 mt-20">콩을 통째로 갈아 만든 진한 콩국물로 식탁을 건강하게 바꿔보세요.</p>
+                       </div>
 
-                        <div class="container100">
-                            <div class="filtering-t mt-100 ">
-                                <div class="filtering-wrap d-flex  text-left  menu_list" >
-                                    <div class="filtering pl-30">
-                                        <button type="button" data-filter="*" class="active"><span class="f18_4">All</span></button>
-                                        <button type="button" data-filter=".Recipe01"><span class="f18_4">초간단 뚝딱</span></button>
-                                        <button type="button" data-filter=".Recipe02"><span class="f18_4">제철 재료를 넣은</span></button>
-                                        <button type="button" data-filter=".Recipe03"><span class="f18_4">든든한 메인 메뉴</span></button>
-                                        <button type="button" data-filter=".Recipe04"><span class="f18_4">함께 하기 좋은</span></button>
-										<button type="button" data-filter=".Recipe05"><span class="f18_4">디저트도 건강하게</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter  align-items-center"><!-- 주석처리 dsn-isotope -->
-								<!-- 37번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe37.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_37_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<!-- <li><img src="assets/img/lable06.png" alt="TV이슈"/></li> -->
-												</ul>
-												<p class="tvlist"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable07.png}"alt="편스토랑"/></p>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 40분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"/></li>
+                       <div class="container100">
+                           <div class="filtering-t mt-100 ">
+                               <div class="filtering-wrap d-flex  text-left  menu_list" >
+                                   <div class="filtering pl-30">
+                                       <button type="button" data-filter="*" class="active"><span class="f18_4">All</span></button>
+                                       <button type="button" data-filter=".Recipe01"><span class="f18_4">초간단 뚝딱</span></button>
+                                       <button type="button" data-filter=".Recipe02"><span class="f18_4">제철 재료를 넣은</span></button>
+                                       <button type="button" data-filter=".Recipe03"><span class="f18_4">든든한 메인 메뉴</span></button>
+                                       <button type="button" data-filter=".Recipe04"><span class="f18_4">함께 하기 좋은</span></button>
+									<button type="button" data-filter=".Recipe05"><span class="f18_4">디저트도 건강하게</span></button>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter  align-items-center"><!-- 주석처리 dsn-isotope -->
+							<!-- 37번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe37.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_37_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<!-- <li><img src="assets/img/lable06.png" alt="TV이슈"/></li> -->
 											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩깨면</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#별미</span> <span>#근사하게</span> </li>
+											<p class="tvlist"><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable07.png"alt="편스토랑"/></p>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 40분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩깨면</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#별미</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 38번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe38.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_38_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<!-- <li><img src="assets/img/lable06.png" alt="TV이슈"/></li> -->
 											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 38번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe38.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_38_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<!-- <li><img src="assets/img/lable06.png" alt="TV이슈"/></li> -->
-												</ul>
-												<p class="tvlist"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable07.png}" alt="편스토랑"/></p>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 40분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩비지 함박스테이크</li>
-												<li class="listType03 f18_4"><span>#따뜻함</span> <span>#양식</span> <span>#별미</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
+											<p class="tvlist"><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable07.png" alt="편스토랑"/></p>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 40분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩비지 함박스테이크</li>
+											<li class="listType03 f18_4"><span>#따뜻함</span> <span>#양식</span> <span>#별미</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
-								<!-- 43번 -->
-								<div class="work-item  p-relative Recipe05">
-                                    <a  href="./sub_recipe43.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_43_big h450_2">
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">콩국물 인절미</li>
-												<li class="listType03 f18_4"><span>#간식</span> <span>#고소함</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
+							<!-- 43번 -->
+							<div class="work-item  p-relative Recipe05">
+                                   <a  href="./sub_recipe43.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_43_big h450_2">
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">콩국물 인절미</li>
+											<li class="listType03 f18_4"><span>#간식</span> <span>#고소함</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
-								<!-- 44번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe44.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_44_big h450_2">
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인 메뉴</li>
-												<li class="listType02 f26_4 mt-10">콩국물 비지찌개</li>
-												<li class="listType03 f18_4"><span>#든든</span> <span>#단백</span> <span>#고소</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
+							<!-- 44번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe44.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_44_big h450_2">
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인 메뉴</li>
+											<li class="listType02 f26_4 mt-10">콩국물 비지찌개</li>
+											<li class="listType03 f18_4"><span>#든든</span> <span>#단백</span> <span>#고소</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
-								<!-- 45번 -->
-								<div class="work-item  p-relative Recipe05">
-                                    <a  href="./sub_recipe45.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_45_big h450_2">
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">콩국물 호떡</li>
-												<li class="listType03 f18_4"><span>#간식</span> <span>#고소함</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-
-								<!-- 46번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe46.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_46_big h450_2">
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 40분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인 메뉴</li>
-												<li class="listType02 f26_4 mt-10">콩국물 피자</li>
-												<li class="listType03 f18_4"><span>#단백</span> <span>#고소</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 47번 -->
-								<div class="work-item  p-relative Recipe05">
-                                    <a  href="./sub_recipe47.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_47_big h450_2">
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 40분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">체리베리 케이크</li>
-												<li class="listType03 f18_4"><span>#간식</span> <span>#고소함</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-
-								<!-- 42번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe42.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_42_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-												</ul>
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">제철 재료를 넣은</li>
-												<li class="listType02 f26_4 mt-10">콩국물 초계국수</li>
-												<li class="listType03 f18_4"><span>#한식</span> <span>#근사하게</span> <span>#별미</span> <span>#한그릇메뉴</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 41번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe41.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_41_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}"alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable06.png}"alt="TV이슈"/></li>
-												</ul>
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩 수프 & 콩 파스타</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#따뜻함</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 40번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe40.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_40_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable06.png}" alt="TV이슈"/></li>
-												</ul>
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"  /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">닭 연골 튀김</li>
-												<li class="listType03 f18_4"><span>#따뜻함</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-
-								<!-- 39번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe39.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_39_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}"  alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}"  alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩국물 타락죽</li>
-												<li class="listType03 f18_4"><span>#따뜻함</span> <span>#한식</span> <span>#별미</span> <span>#한그릇메뉴</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								
-								<!-- 1번 -->
-                                <div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe01.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_01_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">숙주대패삼겹국밥</li>
-												<li class="listType03 f18_4"><span>#삼겹국밥</span> <span>#한식</span> <span>#따뜻함</span> <span>#한그릇메뉴</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 2번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe02.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_02_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">치킨 콩국물 피카타</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#따뜻함</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 3번 -->
-								<div class="work-item  p-relative  Recipe03">
-                                    <a  href="./sub_recipe03.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_03_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>4인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인 메뉴</li>
-												<li class="listType02 f26_4 mt-10">버섯 들깨찜</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span></li>
-											</ul>
-
+							<!-- 45번 -->
+							<div class="work-item  p-relative Recipe05">
+                                   <a  href="./sub_recipe45.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_45_big h450_2">
 											
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 4번 -->
-								<div class="work-item  p-relative  Recipe03">
-                                    <a  href="./sub_recipe04.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_04_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인 메뉴</li>
-												<li class="listType02 f26_4 mt-10">콩스프 오리말이</li>
-												<li class="listType03 f18_4"><span>#한식</span> <span>#근사하게</span> <span>#별미</span> <span>#따뜻함</span> <span>#4인가족</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 5번 -->
-								<div class="work-item  p-relative  Recipe01">
-                                    <a  href="./sub_recipe05.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_05_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">콘치즈새우그라탕</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#혼밥</span> <span>#양식</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 6번 -->
-								<div class="work-item  p-relative  Recipe05">
-                                    <a  href="./sub_recipe06.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_06_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">고구마 찜 케이크 & 콩국물 커스터드 크림</li>
-												<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 7번 -->
-								<div class="work-item  p-relative  Recipe04">
-                                    <a  href="./sub_recipe07.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_07_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png}" alt="4인가족" /></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>4인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s3_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩국물 해물누룽지탕</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 8번 -->
-								<div class="work-item  p-relative Recipe01">
-                                    <a  href="./sub_recipe08.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_08_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">새우 콩쌀국수</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#따뜻함</span> <span>#혼밥</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 9번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe09.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_09_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩 무스 케이크</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#따뜻함</span> <span>#근사하게</span> <span>#디저트</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 10번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe10.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_10_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">키토 퐁듀 두부 버거</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#따뜻함</span>  <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 11번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe11.html">
-                                        <div class="work-item-inner">
-                                            <div class="recipe_11_big h450_2">
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">치킨텐더(Feat.콩마요소스)</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#별미</span>  <span>#아이들입맛</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 12번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe12.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_12_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable05.png}" alt="고난이도"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 120분</li> 
-												<li>6인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s3_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩국물 비건 허브와플</li>
-												<li class="listType03 f18_4"><span>#간식</span> <span>#디저트</span> <span>#채식</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 13번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe13.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_13_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable05.png}" alt="고난이도"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 120분</li> 
-												<li>4인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩묵</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#초간단</span> <span>#밥반찬</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 14번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe14.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_14_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">명란 리조또</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#혼밥</span> <span>#별미</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 15번 -->
-								<div class="work-item  p-relative Recipe02">
-                                    <a  href="./sub_recipe15.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_15_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">제철 재료를 넣은</li>
-												<li class="listType02 f26_4 mt-10">마 영양밥</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span> <span>#채식</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 16번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe16.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_16_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">감자옹심이</li>
-												<li class="listType03 f18_4"><span>#한식</span> <span>#별미</span> <span>#한그릇메뉴</span> <span>#따뜻함</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 17번 -->
-								<div class="work-item  p-relative Recipe01">
-                                    <a  href="./sub_recipe17.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_17_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">콩물 새우 계란찜</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#혼밥</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 18번 -->
-								<div class="work-item  p-relative Recipe05">
-                                    <a  href="./sub_recipe18.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_18_big h450_2">
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">콩국물 허니 찹쌀 당고</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#혼밥</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 19번 -->
-								<div class="work-item  p-relative Recipe01">
-                                    <a  href="./sub_recipe19.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_19_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">미역냉국</li>
-												<li class="listType03 f18_4"><span>#한식</span> <span>#차가움</span> <span>#초간단</span> <span>#밥반찬</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 20번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe20.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_20_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png}" alt="4인가족"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">콩 함박 스테이크</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#식사</span> <span>#4인가족</span> <span>#따뜻함</span> <span>#근사함</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 21번 -->
-								<div class="work-item  p-relative Recipe01">
-                                    <a  href="./sub_recipe21.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_21_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">통가래떡 화이트 떡볶이</li>
-												<li class="listType03 f18_4"><span>#혼밥</span> <span>#분식</span> <span>#별미</span> <span>#따뜻함</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 22번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe22.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_22_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable05.png}" alt="고난이도"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s3_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">차가운 냉삼계탕</li>
-												<li class="listType03 f18_4"><span>#차가움</span> <span>#한식</span> <span>#4인가족</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 23번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe23.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_23_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">양배추 고기말이 두유 크림소스 조림</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#밥반찬</span> <span>#한식</span> <span>#한그릇메뉴</span><span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 24번 -->
-								<div class="work-item  p-relative Recipe01">
-                                    <a  href="./sub_recipe24.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_24_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 120분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">쫀득콩국</li>
-												<li class="listType03 f18_4"><span>#초간단</span> <span>#별미</span> <span>#디저트</span> <span>#한그릇메뉴</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 25번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe25.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_25_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">명란순두부탕</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 26번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe26.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_26_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">크림카레우동</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#아이들입맛</span> <span>#혼밥</span> <span>#별미</span> <span>#따뜻함</span></li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 27번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe27.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_27_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}" alt="초보추천"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">콩크림잼을 곁들인 견과또띠아피자</li>
-												<li class="listType03 f18_4"><span>#양식</span> <span>#아이들입맛</span> <span>#따뜻함</span> <span>#간식</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 28번 -->
-								<div class="work-item  p-relative Recipe01">
-                                    <a  href="./sub_recipe28.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_28_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}"  alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 20분</li> 
-												<li>4인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">초간단 뚝딱</li>
-												<li class="listType02 f26_4 mt-10">단팥 콩물 푸딩</li>
-												<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> <span>#차가움</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">콩국물 호떡</li>
+											<li class="listType03 f18_4"><span>#간식</span> <span>#고소함</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
-								<!-- 29번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe29.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_29_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"  /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">짜지않은 콩국물 강된장</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 30번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe30.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_30_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">채식 비건만두스튜</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 31번 -->
-								<div class="work-item  p-relative Recipe05">
-                                    <a  href="./sub_recipe31.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_31_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png}" alt="빠른조리"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 10분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">콩국물 갈레트</li>
-												<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 32번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe32.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_32_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png}" alt="4인가족"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>4인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">황태김치찜</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 33번 -->
-								<div class="work-item  p-relative Recipe02">
-                                    <a  href="./sub_recipe33.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_33_big h450_2">
-												<ul class="lableBox">
-													<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png}" alt="4인가족"/></li>
-												</ul>
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 15분</li> 
-												<li>1인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">제철 재료를 넣은</li>
-												<li class="listType02 f26_4 mt-10">수란챗국</li>
-												<li class="listType03 f18_4"><span>#차가움</span> <span>#한식</span> <span>#근사하게</span> <span>#디저트</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 34번 -->
-								<div class="work-item  p-relative Recipe04">
-                                    <a  href="./sub_recipe34.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_34_big h450_2">
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">함께 하기 좋은</li>
-												<li class="listType02 f26_4 mt-10">누룽지 콩 들깨 잣죽</li>
-												<li class="listType03 f18_4"><span>#한식</span> <span>#따뜻함</span> <span>#근사하게</span> <span>#식사</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 35번 -->
-								<div class="work-item  p-relative Recipe03">
-                                    <a  href="./sub_recipe35.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_35_big h450_2">
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 30분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}" /></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">든든한 메인메뉴</li>
-												<li class="listType02 f26_4 mt-10">순두부탕</li>
-												<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-								<!-- 36번 -->
-								<div class="work-item  p-relative Recipe05">
-                                    <a  href="./sub_recipe36.html">
-                                        <div class="work-item-inner">
-											 <div class="recipe_36_big h450_2">
-												
-											</div>
-                                        </div>
-                                        <div class="box-content2">
-                                            <ul class="f16_4 list_info01">
-												<li>조리시간 60분</li> 
-												<li>2인분</li> 
-												<li>난이도 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png}"/></li>
-											</ul>
-											<ul class="list_info02">
-												<li class="listType01 f18_4">디저트도 건강하게</li>
-												<li class="listType02 f26_4 mt-10">츄러스</li>
-												<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> <span>#아이들입맛</span> </li>
-											</ul>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- ========== End Work Section ========== -->
-                </div>
-                <footer class="footer p-relative">
-                    <div class="container">
-                        <div class="footer-container">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="column-left">
-                                    <div class="footer-social p-relative">
-										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo_dcf.png}"/></p>
-                                    </div>
-                                </div>
+							<!-- 46번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe46.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_46_big h450_2">
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 40분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인 메뉴</li>
+											<li class="listType02 f26_4 mt-10">콩국물 피자</li>
+											<li class="listType03 f18_4"><span>#단백</span> <span>#고소</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 47번 -->
+							<div class="work-item  p-relative Recipe05">
+                                   <a  href="./sub_recipe47.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_47_big h450_2">
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 40분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">체리베리 케이크</li>
+											<li class="listType03 f18_4"><span>#간식</span> <span>#고소함</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
-                                <div class="scroll-top animation-rotate" data-dsn="parallax">
-                                    <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
-                                    <i class="fa fa-angle-up"></i>
-                                </div>
+							<!-- 42번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe42.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_42_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+											</ul>
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">제철 재료를 넣은</li>
+											<li class="listType02 f26_4 mt-10">콩국물 초계국수</li>
+											<li class="listType03 f18_4"><span>#한식</span> <span>#근사하게</span> <span>#별미</span> <span>#한그릇메뉴</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 41번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe41.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_41_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png"alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable06.png"alt="TV이슈"/></li>
+											</ul>
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩 수프 & 콩 파스타</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#따뜻함</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 40번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe40.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_40_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable06.png" alt="TV이슈"/></li>
+											</ul>
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"  /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">닭 연골 튀김</li>
+											<li class="listType03 f18_4"><span>#따뜻함</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
-                                <div class="column-right">
-                                    <h5>2021 © Dr.CHUNG’S FOOD Co.LTD All right Reserved.</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+							<!-- 39번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe39.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_39_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png"  alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png"  alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩국물 타락죽</li>
+											<li class="listType03 f18_4"><span>#따뜻함</span> <span>#한식</span> <span>#별미</span> <span>#한그릇메뉴</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							
+							<!-- 1번 -->
+                               <div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe01.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_01_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">숙주대패삼겹국밥</li>
+											<li class="listType03 f18_4"><span>#삼겹국밥</span> <span>#한식</span> <span>#따뜻함</span> <span>#한그릇메뉴</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 2번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe02.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_02_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">치킨 콩국물 피카타</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#따뜻함</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 3번 -->
+							<div class="work-item  p-relative  Recipe03">
+                                   <a  href="./sub_recipe03.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_03_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>4인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인 메뉴</li>
+											<li class="listType02 f26_4 mt-10">버섯 들깨찜</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span></li>
+										</ul>
 
-       
-    </main>
+										
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 4번 -->
+							<div class="work-item  p-relative  Recipe03">
+                                   <a  href="./sub_recipe04.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_04_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인 메뉴</li>
+											<li class="listType02 f26_4 mt-10">콩스프 오리말이</li>
+											<li class="listType03 f18_4"><span>#한식</span> <span>#근사하게</span> <span>#별미</span> <span>#따뜻함</span> <span>#4인가족</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 5번 -->
+							<div class="work-item  p-relative  Recipe01">
+                                   <a  href="./sub_recipe05.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_05_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">콘치즈새우그라탕</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#혼밥</span> <span>#양식</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 6번 -->
+							<div class="work-item  p-relative  Recipe05">
+                                   <a  href="./sub_recipe06.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_06_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png" alt="강력추천"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">고구마 찜 케이크 & 콩국물 커스터드 크림</li>
+											<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 7번 -->
+							<div class="work-item  p-relative  Recipe04">
+                                   <a  href="./sub_recipe07.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_07_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png" alt="4인가족" /></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>4인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s3_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩국물 해물누룽지탕</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 8번 -->
+							<div class="work-item  p-relative Recipe01">
+                                   <a  href="./sub_recipe08.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_08_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">새우 콩쌀국수</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#따뜻함</span> <span>#혼밥</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 9번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe09.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_09_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩 무스 케이크</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#따뜻함</span> <span>#근사하게</span> <span>#디저트</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 10번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe10.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_10_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">키토 퐁듀 두부 버거</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#따뜻함</span>  <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 11번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe11.html">
+                                       <div class="work-item-inner">
+                                           <div class="recipe_11_big h450_2">
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">치킨텐더(Feat.콩마요소스)</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#근사하게</span> <span>#별미</span>  <span>#아이들입맛</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 12번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe12.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_12_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable05.png" alt="고난이도"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 120분</li> 
+											<li>6인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s3_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩국물 비건 허브와플</li>
+											<li class="listType03 f18_4"><span>#간식</span> <span>#디저트</span> <span>#채식</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 13번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe13.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_13_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable05.png" alt="고난이도"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 120분</li> 
+											<li>4인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩묵</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#초간단</span> <span>#밥반찬</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 14번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe14.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_14_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">명란 리조또</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한그릇메뉴</span> <span>#혼밥</span> <span>#별미</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 15번 -->
+							<div class="work-item  p-relative Recipe02">
+                                   <a  href="./sub_recipe15.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_15_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">제철 재료를 넣은</li>
+											<li class="listType02 f26_4 mt-10">마 영양밥</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span> <span>#채식</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 16번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe16.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_16_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">감자옹심이</li>
+											<li class="listType03 f18_4"><span>#한식</span> <span>#별미</span> <span>#한그릇메뉴</span> <span>#따뜻함</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 17번 -->
+							<div class="work-item  p-relative Recipe01">
+                                   <a  href="./sub_recipe17.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_17_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">콩물 새우 계란찜</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#혼밥</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 18번 -->
+							<div class="work-item  p-relative Recipe05">
+                                   <a  href="./sub_recipe18.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_18_big h450_2">
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">콩국물 허니 찹쌀 당고</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#혼밥</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 19번 -->
+							<div class="work-item  p-relative Recipe01">
+                                   <a  href="./sub_recipe19.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_19_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">미역냉국</li>
+											<li class="listType03 f18_4"><span>#한식</span> <span>#차가움</span> <span>#초간단</span> <span>#밥반찬</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 20번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe20.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_20_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png" alt="4인가족"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">콩 함박 스테이크</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#식사</span> <span>#4인가족</span> <span>#따뜻함</span> <span>#근사함</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 21번 -->
+							<div class="work-item  p-relative Recipe01">
+                                   <a  href="./sub_recipe21.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_21_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">통가래떡 화이트 떡볶이</li>
+											<li class="listType03 f18_4"><span>#혼밥</span> <span>#분식</span> <span>#별미</span> <span>#따뜻함</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 22번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe22.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_22_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable05.png" alt="고난이도"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s3_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">차가운 냉삼계탕</li>
+											<li class="listType03 f18_4"><span>#차가움</span> <span>#한식</span> <span>#4인가족</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 23번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe23.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_23_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">양배추 고기말이 두유 크림소스 조림</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#밥반찬</span> <span>#한식</span> <span>#한그릇메뉴</span><span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 24번 -->
+							<div class="work-item  p-relative Recipe01">
+                                   <a  href="./sub_recipe24.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_24_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 120분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">쫀득콩국</li>
+											<li class="listType03 f18_4"><span>#초간단</span> <span>#별미</span> <span>#디저트</span> <span>#한그릇메뉴</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 25번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe25.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_25_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">명란순두부탕</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 26번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe26.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_26_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">크림카레우동</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#아이들입맛</span> <span>#혼밥</span> <span>#별미</span> <span>#따뜻함</span></li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 27번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe27.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_27_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png" alt="초보추천"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">콩크림잼을 곁들인 견과또띠아피자</li>
+											<li class="listType03 f18_4"><span>#양식</span> <span>#아이들입맛</span> <span>#따뜻함</span> <span>#간식</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 28번 -->
+							<div class="work-item  p-relative Recipe01">
+                                   <a  href="./sub_recipe28.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_28_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png"  alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 20분</li> 
+											<li>4인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">초간단 뚝딱</li>
+											<li class="listType02 f26_4 mt-10">단팥 콩물 푸딩</li>
+											<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> <span>#차가움</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
 
+							<!-- 29번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe29.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_29_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"  /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">짜지않은 콩국물 강된장</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 30번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe30.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_30_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/}" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">채식 비건만두스튜</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 31번 -->
+							<div class="work-item  p-relative Recipe05">
+                                   <a  href="./sub_recipe31.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_31_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable03.png" alt="빠른조리"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 10분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">콩국물 갈레트</li>
+											<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 32번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe32.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_32_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png" alt="4인가족"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>4인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">황태김치찜</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> <span>#4인가족</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 33번 -->
+							<div class="work-item  p-relative Recipe02">
+                                   <a  href="./sub_recipe33.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_33_big h450_2">
+											<ul class="lableBox">
+												<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable04.png" alt="4인가족"/></li>
+											</ul>
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 15분</li> 
+											<li>1인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">제철 재료를 넣은</li>
+											<li class="listType02 f26_4 mt-10">수란챗국</li>
+											<li class="listType03 f18_4"><span>#차가움</span> <span>#한식</span> <span>#근사하게</span> <span>#디저트</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 34번 -->
+							<div class="work-item  p-relative Recipe04">
+                                   <a  href="./sub_recipe34.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_34_big h450_2">
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">함께 하기 좋은</li>
+											<li class="listType02 f26_4 mt-10">누룽지 콩 들깨 잣죽</li>
+											<li class="listType03 f18_4"><span>#한식</span> <span>#따뜻함</span> <span>#근사하게</span> <span>#식사</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 35번 -->
+							<div class="work-item  p-relative Recipe03">
+                                   <a  href="./sub_recipe35.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_35_big h450_2">
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 30분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png" /></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">든든한 메인메뉴</li>
+											<li class="listType02 f26_4 mt-10">순두부탕</li>
+											<li class="listType03 f18_4"><span>#식사</span> <span>#한식</span> <span>#따뜻함</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+							<!-- 36번 -->
+							<div class="work-item  p-relative Recipe05">
+                                   <a  href="./sub_recipe36.html">
+                                       <div class="work-item-inner">
+										 <div class="recipe_36_big h450_2">
+											
+										</div>
+                                       </div>
+                                       <div class="box-content2">
+                                           <ul class="f16_4 list_info01">
+											<li>조리시간 60분</li> 
+											<li>2인분</li> 
+											<li>난이도 <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2_yellow.png"/></li>
+										</ul>
+										<ul class="list_info02">
+											<li class="listType01 f18_4">디저트도 건강하게</li>
+											<li class="listType02 f26_4 mt-10">츄러스</li>
+											<li class="listType03 f18_4"><span>#디저트</span> <span>#간식</span> <span>#별미</span> <span>#근사하게</span> <span>#아이들입맛</span> </li>
+										</ul>
+                                       </div>
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                   </section>
+                   <!-- ========== End Work Section ========== -->
+               </div>
+               <footer class="footer p-relative">
+                   <div class="container">
+                       <div class="footer-container">
+                           <div class="d-flex align-items-center h-100">
+                               <div class="column-left">
+                                   <div class="footer-social p-relative">
+									<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo_dcf.png"/></p>
+                                   </div>
+                               </div>
+
+                               <div class="scroll-top animation-rotate" data-dsn="parallax">
+                                   <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg" alt="">
+                                   <i class="fa fa-angle-up"></i>
+                               </div>
+
+                               <div class="column-right">
+                                   <h5>2021 © Dr.CHUNG’S FOOD Co.LTD All right Reserved.</h5>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </footer>
+           </div>
+       </div>
 
     <!-- ========== Scroll Right Page To Top Page ========== -->
     <div class="scroll-to-top">
-        <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}"alt="">
+        <img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg"alt="">
         <div class="box-numper">
             <span>10%</span>
         </div>
