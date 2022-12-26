@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 쿡앤쿡 레시피</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================  Header ================================ -->
+<th:block class="pinkHeader" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopCook h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Product</p>
+				<p class="white f45 fw600">쿡앤쿡 레시피</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 active"><a href="01_01_greetings.html"><span>베지밀 레시피</span></a></li>
+				<li class="f18 fw500"><a href="https://www.vegemil.co.kr/Main/beanSoup/index.aspx"><span>간단요리사 레시피</span></a></li>
+				<li class="f18 fw500 "><a href="https://www.vegemil.co.kr/Main/beanSoupRecipe/index.html"><span>콩국물 레시피</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+
+
+
+			<div class="row mt50">
+			    <div class="col-md-4">
+                   <div class="pr100">
+                        <p class="f55 fw600 black f_pp lh110">
+                            Cook &<br class="none">
+							Cook Recipe
+                        </p>
+                        <p class="f27 fw500 mt60 black">
+                           건강한 식재료로 보다 풍요롭고 <br>맛있는 식탁을 만들어보세요.
+                        </p>
+                        <p class="mt80">
+							정식품과 함께 콩닥콩닥 진한 설레임,<br class="wView">지금 바로 유튜브에서 확인하세요.
+                          
+                        </p>
+                        <p class="btnType21 mt60">
+                            <a href="https://www.youtube.com/@vegemilgood" target="_blank" class="f16">유튜브 채널 바로가기</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8 mt50m">
+                    <ul class="dcfMdiaBox01">
+                        <li class="col-md-8"><a href="https://www.youtube.com/@vegemilgood" target="_blank" class="f16"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/recipe/cook_01.jpg" alt="베지밀레시피"></a></li>
+                        <li class="grayBox3 col-md-4">
+                            <p class="f_pp f18 yellowDot">NEW Recipe</p>
+                            <p class="mt40 f23 fw500 mb20">
+                                레드 벨벳 케이크 레시피<br>
+                                with 담백한 베지밀 에이
+                            </p>
+                            <iframe src="https://www.youtube.com/embed/xJekf9wVZhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="dcfMediaCF"></iframe>
+                            <p class="gray04 f16 mt20">
+                                담백한 베지밀 에이로 만든 <br>레드 벨벳 케이크 레시피!
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+
+
+
+    </div>
+	
+	<div class="contant1460" >
+	    <div class="row mt150">
+			<p class="js">하드코딩으로 오픈 / 정식품레시피 > dB자료를 불러오기, 이미지경로 https://image.edaymall.com/images/dcf/vegemil/upload/ </p>
+            <div class="col-md-12 ">
+				<!-- tab -->
+				<div class="cpTab">
+					<div class="contant1460">
+						<ul class="tabs5 menu8 f14">
+							<li class="fw400"><a href="#cook01">전체보기</a></li>
+							<li class="fw400"><a href="#cook02">홈까페</a></li>
+							<li class="fw400"><a href="#cook03">브런치</a></li>
+							<li class="fw400"><a href="#cook04">디저트</a></li>
+							<li class="fw400"><a href="#cook05">영양간식</a></li>
+							<li class="fw400"><a href="#cook06">전통요리</a></li>
+							<li class="fw400"><a href="#cook07">계절요리</a></li>
+							<li class="fw400"><a href="#cook08">스페셜</a></li>
+						</ul>
+					</div>
+					<div class="tab_content5 ">
+						<div id="cook01">
+							<ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=-r4XFLqZ5UI&t=2s">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0140.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">건강식품</span><span class="key-gray f14 ml5">베지밀에이</span></p>
+												<p class="cook-name f18 mt10">채소 만두 레시피</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=xJekf9wVZhs">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0139.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">홈카페</span><span class="key-gray f14 ml5">베지밀에이</span></p>
+												<p class="cook-name f18 mt10">레드 벨벳 케이크 레시피</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=PhiI3P24OTs">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0138.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">영양간식</span><span class="key-gray f14 ml5">베지밀에이</span></p>
+												<p class="cook-name f18 mt10">딸기 찹쌀떡 레시피</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=j6cz5T9FnHc">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0137.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">베지밀 무첨가두유</span></p>
+												<p class="cook-name f18 mt10">스페니쉬 오믈렛</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=TUanTWvakqE">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0136.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">또우장</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=_KXO4gOrHCg">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0135.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">콩죽</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=dsv5pI8rtjQ">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0134.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">검은콩 두유</span></p>
+												<p class="cook-name f18 mt10">콜드파스타</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=AzQPYtWRReM">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0133.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">베지밀 비</span></p>
+												<p class="cook-name f18 mt10">두유 마요네즈로 만든 콥샐러드</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=XZSNJTyGZlA">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0132.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">베지밀 비</span></p>
+												<p class="cook-name f18 mt10">두유 요거트</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0131.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">베지밀 포카페</span></p>
+												<p class="cook-name f18 mt10">바나나 초코 쉐이크</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=XDy23uvr8CU">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0130.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">리얼 아몬드</span></p>
+												<p class="cook-name f18 mt10">딸기 타르트</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								
+								<li>
+									<a href="https://www.youtube.com/watch?v=MpcnbUJ6eC4">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0125.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">리얼 코코넛</span></p>
+												<p class="cook-name f18 mt10">코코넛 카레 파스타</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=BPUB13PDdF8">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0124.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">전툥요리</span><span class="key-gray f14 ml5">베지밀 에이</span></p>
+												<p class="cook-name f18 mt10">로랭이 알떡국</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=uCYG3W1Bi8k">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0123.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">녹차베지밀</span></p>
+												<p class="cook-name f18 mt10">녹차 티라미수</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=uba0gWz13Eg">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0122.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">베지밀무첨가 두유</span></p>
+												<p class="cook-name f18 mt10">가을채소 튀김</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=SVXKCpxCMZQ">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0121.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">베지밀무첨가 두유</span></p>
+												<p class="cook-name f18 mt10">두유 앙버터스콘</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=kINY0MOQliM">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0120.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">홈카페</span><span class="key-gray f14 ml5">17곡 한끼두유</span></p>
+												<p class="cook-name f18 mt10">홈카페 두유 라떼[3종</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=arsL689MckI">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0119.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">콩국 된장 수제비</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=RwFyGZUnksk">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0118.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">전통요리</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">두유 해물파전</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=oZZcYPN0rqs">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0112.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">초콜릿 케이크</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=9K6VBNtU6aw">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0111.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">브런치</span><span class="key-gray f14 ml5">국산콩두유</span></p>
+												<p class="cook-name f18 mt10">두유샐러드&쉐이크</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=82i3T94upuo">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0110.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">영양간식</span><span class="key-gray f14 ml5">무첨가두유</span></p>
+												<p class="cook-name f18 mt10">매운 까르보나라 떡볶이</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div id="cook02">
+							<ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=xJekf9wVZhs">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0139.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">홈카페</span><span class="key-gray f14 ml5">베지밀에이</span></p>
+												<p class="cook-name f18 mt10">레드 벨벳 케이크 레시피</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=kINY0MOQliM">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0120.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">홈카페</span><span class="key-gray f14 ml5">17곡 한끼두유</span></p>
+												<p class="cook-name f18 mt10">홈카페 두유 라떼[3종</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							 </ul>
+						</div>
+						<div id="cook03">
+							<ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=9K6VBNtU6aw">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0111.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">브런치</span><span class="key-gray f14 ml5">국산콩두유</span></p>
+												<p class="cook-name f18 mt10">두유샐러드&쉐이크</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div id="cook04">
+							 <ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=XZSNJTyGZlA">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0132.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">베지밀 비</span></p>
+												<p class="cook-name f18 mt10">두유 요거트</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0131.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">베지밀 포카페</span></p>
+												<p class="cook-name f18 mt10">바나나 초코 쉐이크</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=XDy23uvr8CU">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0130.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">디저트</span><span class="key-gray f14 ml5">리얼 아몬드</span></p>
+												<p class="cook-name f18 mt10">딸기 타르트</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							 </ul>
+						</div>
+						<div id="cook05">
+							<ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=PhiI3P24OTs">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0138.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">영양간식</span><span class="key-gray f14 ml5">베지밀에이</span></p>
+												<p class="cook-name f18 mt10">딸기 찹쌀떡 레시피</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=82i3T94upuo">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0110.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">영양간식</span><span class="key-gray f14 ml5">무첨가두유</span></p>
+												<p class="cook-name f18 mt10">매운 까르보나라 떡볶이</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								
+							</ul>
+						</div>
+						<div id="cook06">
+							   <ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=RwFyGZUnksk">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0118.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">전통요리</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">두유 해물파전</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							  </ul>
+						</div>
+						<div id="cook07">
+							  <ul class="cook-wrap">
+								
+							  </ul>
+						</div>
+						<div id="cook08">
+							   <ul class="cook-wrap">
+								<li>
+									<a href="https://www.youtube.com/watch?v=j6cz5T9FnHc">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0137.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">베지밀 무첨가두유</span></p>
+												<p class="cook-name f18 mt10">스페니쉬 오믈렛</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=TUanTWvakqE">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0136.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">또우장</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=_KXO4gOrHCg">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0135.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">콩죽</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=dsv5pI8rtjQ">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0134.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">검은콩 두유</span></p>
+												<p class="cook-name f18 mt10">콜드파스타</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=AzQPYtWRReM">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0133.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">베지밀 비</span></p>
+												<p class="cook-name f18 mt10">두유 마요네즈로 만든 콥샐러드</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=MpcnbUJ6eC4">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0125.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">리얼 코코넛</span></p>
+												<p class="cook-name f18 mt10">코코넛 카레 파스타</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.youtube.com/watch?v=arsL689MckI">
+										<div class="cookThumb">
+											<p class="cook-img " style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0119.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+											<div class="mt15">
+												<p class="cook-key"><span class="f14 key-black white">스페셜</span><span class="key-gray f14 ml5">진한 콩국물</span></p>
+												<p class="cook-name f18 mt10">콩국 된장 수제비</p>
+												<p class="cook-day f_pp mt30">2021.09.09</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							  </ul>
+						</div>
+						
+						
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('.cpTab').basicTabs5();/* basicTabs5 변경 */
+					});
+				</script>
+
+
+
+
+				<!--
+                <div class="historySubTab">
+                    <ul class="f14">
+                        <li class="active"><a href="#">제2도약기</a></li>
+                        <li class=""><a href="#">제1도약기</a></li>
+                        <li class=""><a href="#">확장기</a></li>
+                        <li class=""><a href="#">성장기</a></li>
+                        <li class=""><a href="#">태동기</a></li>
+                    </ul>
+                </div>
+				-->
+            </div>
+        </div>
+    </div>
+	<div class="contant1460">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="mt60 subMiddleCook h300">
+					<div class="centerR">
+						<div class="faqWbox">
+							<p class="f18 fw500 black "><span class="ico_q"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q.png"></span> 더 많은 레시피가 궁금하신가요?</p>
+							<p class="f16 fw400 gray04 mt20 lh150">지금 바로 정식품 유튜브를 방문해보세요!<br>다양한 요리 레시피가 가득합니다.</p>
+							<div class="btnType02 mt20"><a href="https://www.youtube.com/@vegemilgood" target="_blank"><span>정식품 유튜브 바로가기</span></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt150">
+			<div class="col-md-12 mb30"><p class="f_pp f30 fw500 black">Infant & Todler Recipe</p></div>
+			<div class="col-md-3">
+				<a href="https://www.vegemil.co.kr/main/brandVegemilBaby/recipe.aspx?p=1&c_code=0129&i=126&page_code=CNC">
+					<div class="cookThumb2">
+						<p class="cook-img h230" style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0129.jpg)no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+						<div class="mt15">
+							<p class="cook-name f18 mt10">애호박 당근 두유 아기전</p>
+							<p class="cook-day f_pp mt30">2020.03.17</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="https://www.vegemil.co.kr/main/brandVegemilBaby/recipe.aspx?p=1&c_code=0128&i=125&page_code=CNC">
+					<div class="cookThumb2">
+						<p class="cook-img h230" style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0128.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+						<div class="mt15">
+							<p class="cook-name f18 mt10">버섯 두유 아기 돈부리</p>
+							<p class="cook-day f_pp mt30">2021.09.09</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="https://www.vegemil.co.kr/main/brandVegemilBaby/recipe.aspx?p=1&c_code=0127&i=124&page_code=CNC">
+					<div class="cookThumb2">
+						<p class="cook-img h230" style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0127.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+						<div class="mt15">
+							<p class="cook-name f18 mt10">양파 감자 두유죽</p>
+							<p class="cook-day f_pp mt30">2021.09.09</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a href="https://www.vegemil.co.kr/main/brandVegemilBaby/recipe.aspx?p=1&c_code=0126&i=123&page_code=CNC">
+					<div class="cookThumb2">
+						<p class="cook-img h230" style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/COMMUNITY/RECIPE_0126.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;"></p>
+						<div class="mt15">
+							<p class="cook-name f18 mt10">단호박 당근 두유 무리죽</p>
+							<p class="cook-day f_pp mt30">2021.09.09</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+<!-- ================================  Footer ================================ -->
+<footer class="contant100" th:replace="fragments/mainFooter :: footerFragment"></footer>
+</body>
+</html>

@@ -26,10 +26,10 @@
 	3. 불러오기방식은 HTML에서 작동이 안됨. mainHeader.html에 다이렉트로 스크립트 적용
 --------------------------------------------------------------------------------------------- -->
 <!-- 모달팝업 -->
-<script th:src="@{/common/js/greenbia/modality.js}"></script>
+<script src="https://image.edaymall.com/images/dcf/vegemil/imgcommon/js/greenbia/modality.js}"></script>
 <div id="gnb" class="f_mw">
 	<div class="gnbBG"></div>
-	<div class="logo"><a th:href="@{/greenbia/index}"><img th:src="@{/img/greenbia/logo.png}" alt="로고"></a></div>
+	<div class="logo"><a th:href="@{/greenbia/index}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/logo.png" alt="로고"></a></div>
 	<ul>
 		<li class="first"><a th:href="@{/greenbia/newInfo}" class="dep01">그린비아 소개</a>
 			<ul>
@@ -70,15 +70,15 @@
 		</li>
 	</ul>
 	<dl>
-		<dd><a href="/" class="hvr-float"><img th:src="@{/img/greenbia/ico_home_h.gif}" alt="" /><p>정식품 홈페이지</p></a></dd>
-		<dd><a th:href="@{/greenbia/mall}" class="hvr-float"><img th:src="@{/img/greenbia/ico_cash_h.gif}" alt="" /><p>온라인 구매</p></a></dd>		
+		<dd><a href="/" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="" /><p>정식품 홈페이지</p></a></dd>
+		<dd><a th:href="@{/greenbia/mall}" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_cash_h.gif" alt="" /><p>온라인 구매</p></a></dd>		
 		<!-- 
 		<dd sec:authorize-expr="!isAuthenticated()" id="logIn">
-			<a href="#pop_Login" class="hvr-float"><img th:src="@{/img/greenbia/ico_peple_h.gif}" alt="" /><p>로그인</p></a>
+			<a href="#pop_Login" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_peple_h.gif" alt="" /><p>로그인</p></a>
 		</dd> 	
  		<dd sec:authorize-expr="isAuthenticated()" id="logOut" >
 	 		<a href="#" class="hvr-float">
-	 			<input type ="image" th:onclick="|location.href='@{/member/logout}'|"  th:src="@{/img/greenbia/ico_peple_h.gif}" id="logout1" alternatetext="로그아웃" />
+	 			<input type ="image" th:onclick="|location.href='@{/member/logout}'|"  src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_peple_h.gif" id="logout1" alternatetext="로그아웃" />
 	 			<p>로그아웃</p>
 	 		</a>
  		</dd>	
@@ -96,7 +96,7 @@
 		<tr>
 			<th>
 				<span class="f40_6">로그인</span>
-				<p class="btn_pop_close"><a href="#pop_Login"><img th:src="@{/img/greenbia/btn_popClose.gif}" alt="닫기" /></a></p>
+				<p class="btn_pop_close"><a href="#pop_Login"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_popClose.gif" alt="닫기" /></a></p>
 			</th>
 		</tr>
 		<tr>
@@ -118,7 +118,7 @@
 						</li>
 						<li class="f14_4 textRight"><a th:href="@{https://www.vegemil.co.kr/main/member/idPwSearch.aspx}">* 아이디 / 비밀번호찾기</a></li>
 						<li class="btn_in">
-							<input type="image" class="btn btn-secondary" th:src="@{/img/greenbia/btn_login.gif}" />						
+							<input type="image" class="btn btn-secondary" src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_login.gif" />						
 						</li>					
 					</form>
 				</ul>
@@ -130,7 +130,7 @@
 			<td>
 				<div class="tdLine2 mt30">
 					<ul class="popUL">
-						<li><span class="f17_4"><b class="blue">Stop! &nbsp;</b> 아직 회원이 아니신가요? &nbsp;&nbsp;<img class="pop_arr" th:src="@{https://www.vegemil.co.kr/Main/brandVegemilBaby/HTML/img/ico_popArrow.png}" alt="화살" /></span> </li>
+						<li><span class="f17_4"><b class="blue">Stop! &nbsp;</b> 아직 회원이 아니신가요? &nbsp;&nbsp;<img class="pop_arr" src="https://image.edaymall.com/images/dcf/vegemil/img/ico_popArrow.png" alt="화살" /></span> </li>
 						<li><a th:href="@{https://www.vegemil.co.kr/main/member/terms.aspx}"><p class="btn_member">회원가입</p></a></li>
 					</ul>
 				</div>
