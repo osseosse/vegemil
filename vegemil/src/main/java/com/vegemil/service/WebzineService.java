@@ -3,12 +3,17 @@ package com.vegemil.service;
 import java.util.List;
 
 import com.vegemil.domain.WebzineDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
 
 public interface WebzineService {
 
     public boolean saveWebzine(WebzineDTO params);
+    
+    public boolean isWebzineEvent(WebzineEventDTO params);
+    
+    public boolean saveWebzineEvent(WebzineEventDTO params);
     
     public boolean saveSubscribe(SubscribeDTO params);
     

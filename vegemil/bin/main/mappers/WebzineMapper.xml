@@ -16,6 +16,17 @@
 		, DATE_FORMAT(insert_date,'%Y-%m-%d') as insert_date
     </sql>
     
+    <sql id="webzineEventColumns">
+		  index_no
+		, cust_name
+		, cust_hp
+		, cust_email
+		, qrt
+		, remark
+		, answer
+		, DATE_FORMAT(apply_date,'%Y-%m-%d') as apply_date
+    </sql>
+    
     <sql id="subscribeColumns">
 		  s_idx
 		, s_name
@@ -73,6 +84,26 @@
             , #{snsTitle}
             , #{category}
             , #{remark} 
+            , NOW()
+        )
+    </insert>
+    
+    <insert id="webzineEventSave" parameterType="com.vegemil.domain.WebzineEventDTO" useGeneratedKeys="true" keyProperty="indexNo">
+        INSERT INTO m_webzine_event (
+              cust_name
+	        , cust_hp
+	        , cust_email
+	        , qrt
+	        , remark
+	        , answer
+	        , apply_date
+        ) VALUES (
+            #{custName}
+            , #{custHp}
+            , #{custEmail}
+            , #{qrt}
+            , #{remark}
+            , #{answer}
             , NOW()
         )
     </insert>
@@ -337,6 +368,19 @@
             m_webzine
         WHERE
             index_no = #{indexNo}
+    </select>
+    
+    <select id="webzineEventCountByQrt" parameterType="long" resultType="com.vegemil.domain.WebzineEventDTO">
+        SELECT
+            COUNT(*)
+        FROM
+            m_webzine_event
+        WHERE
+            qrt = #{qrt}
+         and
+         	cust_hp = #{custHp}
+         and 
+         	cust_email = #{custEmail}
     </select>
 
 </mapper>

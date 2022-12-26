@@ -1,6 +1,7 @@
 package com.vegemil.mapper;
 
 import com.vegemil.domain.WebzineDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
 
@@ -13,11 +14,15 @@ public interface WebzineMapper {
 
 	public int webzineSave(WebzineDTO params);
 	
+	public int webzineEventSave(WebzineEventDTO params);
+	
 	public int subscribeSave(SubscribeDTO params);
 
 	public WebzineDTO webzineFindByIdx(Long fIdx);
 	
 	public int webzineCountByIdx(Long fIdx);
+	
+	public int webzineEventCountByQrt(WebzineEventDTO eventDto);
 
 	public void webzineUpdate(WebzineDTO params);
 

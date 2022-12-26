@@ -22,6 +22,7 @@ import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
 import com.vegemil.domain.WebzineDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.service.WebzineService;
 import com.vegemil.util.UiUtils;
 
@@ -122,6 +123,43 @@ public class WebzineController extends UiUtils {
 		return showMessageWithRedirect("웹진 신청이 완료되었습니다.", "/webzine", Method.GET, null, model);
 	}
 	
+	@PostMapping(value = "/webzine/saveEvent")
+	public String saveWebzineEvent(
+			@ModelAttribute("webzineEvent") final @Valid WebzineEventDTO webzineEvent,
+			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		try {
+			
+			boolean isRegistered = webzineService.isWebzineEvent(webzineEvent);
+			if (isRegistered == true) {
+				out.println("<script>alert('고객님은 이미 이벤트 신청을 완료했습니다.'); history.go(-1);</script>");
+				out.flush();
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine/event", Method.GET, null, model);
+			}
+			isRegistered = webzineService.saveWebzineEvent(webzineEvent);
+			if (isRegistered == false) {
+				out.println("<script>alert('이벤트 신청이 실패했습니다.'); history.go(-1);</script>");
+				out.flush();
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine/event", Method.GET, null, model);
+			}
+			
+		} catch (DataAccessException e) {
+			out.println("<script>alert('데이터베이스 처리 과정에 문제가 발생하였습니다.'); history.back();</script>");
+			out.flush();
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine/event", Method.GET, null, model);
+
+		} catch (Exception e) {
+			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/webzine/event", Method.GET, null, model);
+		}
+
+		return showMessageWithRedirect("이벤트 응모가 완료되었습니다.", "/main/webzine", Method.GET, null, model);
+	}
+	
 	@GetMapping(value = "/main/webzine/special/sub{fileNo}.aspx")
 	public String openWebzineSpecial(Model model
 								, @PathVariable(value = "fileNo", required = false) String fileNo) {
@@ -213,6 +251,63 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("wYear", wYear);
 
 		return returnHtml;
+	}
+	
+	@GetMapping(value = "/main/webzine/event")
+	public String openWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
+									, Model model, HttpServletRequest request) {
+		
+		String wYear = "";
+		
+		if(!qrtYear.equals("")) {
+			wYear = qrtYear.substring(3, 7);
+		}
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		
+		model.addAttribute("qrtYear", qrtYear);
+		model.addAttribute("wYear", wYear);
+
+		return "webzine/event";
+	}
+	
+	@GetMapping(value = "/main/webzine/events/event_{qrtYear}.aspx")
+	public String openWebzineEventQY(@PathVariable(value = "qrtYear", required = false) String qrtYear
+									, Model model, HttpServletRequest request) {
+		
+		String wYear = "";
+		String returnHtml = "";
+		
+		if(!qrtYear.equals("")) {
+			wYear = qrtYear.substring(3, 7);
+		}
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		
+		/*
+		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
+			returnHtml = "webzine/oldEvent";
+		} else {
+			returnHtml = "webzine/event";
+		}
+		*/
+		
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		
+		model.addAttribute("qrtYear", qrtYear);
+		model.addAttribute("wYear", wYear);
+
+		return "webzine/event";
 	}
 	
 	@GetMapping(value = "/main/webzine/lastlistNew.aspx")
