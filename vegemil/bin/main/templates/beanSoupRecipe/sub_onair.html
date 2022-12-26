@@ -30,27 +30,7 @@
     <link rel="stylesheet" th:href="@{/beansoupRecipe/css/plugins.css}"/>
     <link rel="stylesheet" th:href="@{/beansoupRecipe/css/style.css}">
 </head>
-
-
 <body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
-
-
-    <!-- ========== Loading Page ==========
-    <div class="preloader">
-        <span class="percent ">0</span>
-        <span class="loading-text text-uppercase">Loading ...</span>
-        <div class="preloader-bar">
-            <div class="preloader-progress"></div>
-        </div>
-
-        <h1 class="title v-middle">
-            <span class="text-strok">콩국물</span>
-            <span class="text-fill">콩국물</span>
-        </h1>
-    </div>
-    <!-- ========== End Loading Page ========== -->
-
-
    <!-- ========== Menu ========== -->
 	<div class="site-header dsn-container dsn-load-animate">
         <div class="extend-container w-100 align-items-baseline justify-content-between align-items-end">
@@ -125,18 +105,8 @@
             </nav>
         </div>
     </div>
-	<div id="quick_menu"></div>
 	<script th:src="@{/beansoupRecipe/js/jquery.1.11.1.min.js}"></script>
-	<script>
-      $( document ).ready( function() {
-	    $( '#quick_menu' ).load( './quickMenu.html' );
-      } );
-    </script>
     <!-- ========== End Menu ========== -->
-
-
-    <main class="main-root ">
-
         <div id="dsn-scrollbar">
             <div class="main-content">
                 <div class="wrapper over-hidden">
@@ -235,7 +205,6 @@
                 </footer>
             </div>
         </div>
-    </main>
     <!-- ========== Scroll Right Page To Top Page ========== -->
     <div class="scroll-to-top">
         <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">

@@ -4,26 +4,7 @@
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <th:block class="white" th:replace="fragments/beansoupRecipe/head :: headFragment"></th:block>
 <body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
-
-
-    <!-- ========== Loading Page ==========
-    <div class="preloader">
-        <span class="percent ">0</span>
-        <span class="loading-text text-uppercase">Loading ...</span>
-        <div class="preloader-bar">
-            <div class="preloader-progress"></div>
-        </div>
-
-        <h1 class="title v-middle">
-            <span class="text-strok">콩국물</span>
-            <span class="text-fill">콩국물</span>
-        </h1>
-    </div>
-    <!-- ========== End Loading Page ========== -->
-
-
   <th:block class="white" th:replace="fragments/beansoupRecipe/mainMenu :: menuFragment"></th:block>
-    <main class="main-root">
         <div id="dsn-scrollbar">
             <div class="main-content">
                 <div class="wrapper">
@@ -373,7 +354,6 @@
                 <footer th:replace="fragments/beansoupRecipe/mainFooter :: footerFragment"></footer>
             </div>
         </div>
-    </main>
     <!-- ========== Scroll Right Page To Top Page ========== -->
     <div class="scroll-to-top">
         <img src="assets/img/scroll_top.svg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
