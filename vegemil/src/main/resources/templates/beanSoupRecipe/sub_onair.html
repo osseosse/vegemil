@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="discrption" content="parallax one page" />
+    <meta name="keyword" content="진한 콩국물, 진한 콩국물 검은콩, 정식품, 베지밀, 요리, 레시피, 950ml, 콩국수, 콩국, 콩물, 멸균팩, 정식품 오리지날, 식재료" />
+	<meta property="og:title" content="정식품 진한 콩국물"> 
+	<meta property="og:url" content="https://www.vegemil.co.kr:10001/Main/beanSoupRecipe/index.html"> 
+	<meta property="og:image" content="https://www.vegemil.co.kr:10001/Main/beanSoupRecipe/https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/mainVisual04.jpg"> 
+	<meta property="og:description" content="깨끗하게 손질하여 부드럽게 갈아낸, 정식품이 만든 진한 콩국물이에요. 입맛이 살아나는 콩국물을 찾고 계셨다면 정식품 진한 콩국물로 요리해보세요. 사계절 어느때나 편하고 맛있게 식물성 영양을 더할 수 있어요."/> 
+
+    <!--  Title -->
+     <title>정식품 진한 콩국물</title>
+
+    <!-- Font Google -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"></noscript>
+
+    <link rel="shortcut icon" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico}" type="image/x-icon" />
+    <link rel="icon" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico}" type="image/x-icon" />
+    <link rel="preload" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/circle-dotted.png}" as="image" />
+	
+
+    <!-- custom styles (optional) -->
+    <link rel="stylesheet" th:href="@{/beansoupRecipe/css/plugins.css}"/>
+    <link rel="stylesheet" th:href="@{/beansoupRecipe/css/style.css}">
+</head>
+
+
+<body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
+
+
+    <!-- ========== Loading Page ==========
+    <div class="preloader">
+        <span class="percent ">0</span>
+        <span class="loading-text text-uppercase">Loading ...</span>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+
+        <h1 class="title v-middle">
+            <span class="text-strok">콩국물</span>
+            <span class="text-fill">콩국물</span>
+        </h1>
+    </div>
+    <!-- ========== End Loading Page ========== -->
+
+
+   <!-- ========== Menu ========== -->
+	<div class="site-header dsn-container dsn-load-animate">
+        <div class="extend-container w-100 align-items-baseline justify-content-between align-items-end">
+            <div class="inner-header p-relative">
+                <div class="main-logo w_view">
+                    <a href="/Main/beanSoupRecipe/index.html" data-dsn="parallax">
+                        <img class="light-logo "
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            th:data-dsn-src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo.png}" alt="" />
+                    </a>
+                </div>
+				<div class="main-logo m_view">
+                    <a href="/Main/beanSoupRecipe/index.html" data-dsn="parallax">
+						<img class="light-logo m_view"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            th:data-dsn-src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo_mobile.png}" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="menu-icon d-flex align-items-baseline">
+                <div class="text-menu p-relative  font-heading text-transform-upper">
+                    <div class="p-absolute text-button">Menu</div>
+                    <div class="p-absolute text-open">Open</div>
+                    <div class="p-absolute text-close">Close</div>
+                </div>
+                <div class="icon-m" data-dsn="parallax" data-dsn-move="10">
+                    <span class="menu-icon-line p-relative d-inline-block icon-top"></span>
+                    <span class="menu-icon-line p-relative d-inline-block icon-center"></span>
+                    <span class="menu-icon-line p-relative d-block icon-bottom"></span>
+                </div>
+            </div>
+            <nav class="accent-menu dsn-container main-navigation p-absolute  w-100  d-flex align-items-baseline ">
+                <div class="menu-cover-title">콩국물</div>
+                <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
+					<li class="dsn-active dsn-drop-down"><a href="/Main/beanSoupRecipe/index.html" class="user-no-selection"><span class="dsn-title-menu">메인</span></a></li>
+                    <li class=" dsn-drop-down"><a href="./sub_list.html" class="user-no-selection"><span class="dsn-title-menu">콩국물 레시피</span></a></li>
+                    <li class="dsn-drop-down"><a href="./sub_product.html" class="user-no-selection"><span class="dsn-title-menu">제품의 특장점</span></a></li>
+                    <li class="dsn-drop-down"><a href="./sub_onair.html" class="user-no-selection"><span class="dsn-title-menu">미디어</span></a></li>
+                    <li class="dsn-drop-down"><a href="./sub_event.html" class="user-no-selection"><span class="dsn-title-menu">이벤트</span></a></li>
+                    <li><a href="./sub_store.html"><span class="dsn-title-menu">구매처</span></a></li>
+                </ul>
+				
+                <div class="container-content  p-absolute h-100 left-60 d-flex flex-column justify-content-center">
+                    <div class="nav__info">
+                        <div class="nav-content">
+                            <p class="title-line">(주)정식품</p>
+							<p>서울특별시 중구 퇴계로 6길 3-30 (우)04634,<br>충청북도 청주시 흥덕구 산단로 124 (우)28446</p>
+                        </div>
+                        <div class="nav-content">
+                            <p class="title-line">Contact</p>
+                            <p class="links over-hidden">대표전화 02 3484 9300</p>
+                            <p class="links  over-hidden">고객상담 080 930 8888</p>
+							<p class="links  over-hidden">상담메일 cs@vegemil.co.kr</p>
+                        </div>
+                    </div>
+                    <div class="nav-social nav-content">
+                        <div class="nav-social-inner p-relative">
+                            <p class="title-line">구매하기</p>
+                             <li>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank" rel="nofollow">진한 콩국물 플레인
+									<div class="icon-circle"></div>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259952" target="_blank" rel="nofollow">진한 콩국물 검은콩
+									<div class="icon-circle"></div>
+								</a>
+							</li>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+	<div id="quick_menu"></div>
+	<script th:src="@{/beansoupRecipe/js/jquery.1.11.1.min.js}"></script>
+	<script>
+      $( document ).ready( function() {
+	    $( '#quick_menu' ).load( './quickMenu.html' );
+      } );
+    </script>
+    <!-- ========== End Menu ========== -->
+
+
+    <main class="main-root ">
+
+        <div id="dsn-scrollbar">
+            <div class="main-content">
+                <div class="wrapper over-hidden">
+                    <!-- ========== Slider Parallax ========== -->
+					<div class="">
+						<div class="row ">
+							<div class="col-lg-12 center"> 
+								<div class="sub_onair_top h452"></div>
+							</div>
+						</div>
+					</div>
+					
+                    <!-- ========== End Slider Parallax ========== -->
+
+                    <!-- ========== Work Section ========== -->
+                    <section class="work section-margin dsn-col dsn-col-space  dsn-filter not-filter over-hidden"
+                        data-dsn-title="진한 콩국물 레시피">
+                        <div class="container d-flex text-center flex-column align-items-center">
+                            <p class="f44_6">진한 콩국물 <span class="f_pp">Media</span></p>
+                        </div>
+
+                        <div class="container100">
+							<div class="row mt-80 pt-50 mb-100 onair_line">
+                                <div class="col-lg-4">
+                                    <div class="work-item  p-relative ">
+										<p class="f36_5 mt-230" >TV 속 그 레시피!</p>
+										<p class="f28_4 mt-30 mb-50">편스토랑과 함께하는 정식품 진한 콩국물!<br>레시피를 통해 수상작을 만나보세요.</p>
+												
+									</div>
+                                </div>
+
+                                <div class="col-lg-4" >
+                                   <div class="work-item  p-relative ">
+										<a  href="https://www.youtube.com/watch?v=UADJrvBe3mo" target="_blank">
+											<div class="work-item-inner">
+												<div class="">
+													<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ret01.jpg}" alt="#"/></p>
+												</div>
+											</div>
+											<div class="box-content2">
+												<ul class="list_info02 mt-10">
+													<li class="listType01 f18_4">핫이슈! 편스토랑의 그 레시피</li>
+													<li class="listType02 f26_4 mt-10">콩깨면</li>
+													<li class="listType03 f18_4">매콤~하면서도 고소한 감칠맛! 콩국물로 즐기는 색다른 요리</li>
+												</ul>
+												<p class="btn_you mb-50">레시피 영상 보러가기 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_arrow_w.png}" alt="화살표"/></p>
+											</div>
+										</a>
+									</div>
+                                </div>
+								 <div class="col-lg-4" >
+                                   <div class="work-item  p-relative ">
+										<a  href="https://www.youtube.com/watch?v=tePdsZUA_o8" target="_blank">
+											<div class="work-item-inner">
+												<div class="">
+													<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ret02.jpg}" alt="#"/></p>
+												</div>
+											</div>
+											<div class="box-content2">
+												<ul class="list_info02 mt-10">
+													<li class="listType01 f18_4">핫이슈! 편스토랑의 그 레시피</li>
+													<li class="listType02 f26_4 mt-10">콩비지 함박스테이크</li>
+													<li class="listType03 f18_4">고소하고 든든한 특별요리! 아이들과 더 맛있게~</li>
+												</ul>
+												<p class="btn_you">레시피 영상 보러가기 <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_arrow_w.png}" alt="화살표"/></p>
+											</div>
+										</a>
+									</div>
+                                </div>
+                            </div> <!-- row -->
+                        </div>
+                    </section>
+                    <!-- ========== End Work Section ========== -->
+                </div>
+                <footer class="footer p-relative">
+                    <div class="container">
+                        <div class="footer-container">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="column-left">
+                                    <div class="footer-social p-relative">
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/logo_dcf.png}"/></p>
+                                    </div>
+                                </div>
+
+                                <div class="scroll-top animation-rotate" data-dsn="parallax">
+                                    <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+
+                                <div class="column-right">
+                                    <h5>2021 © Dr.CHUNG’S FOOD Co.LTD All right Reserved.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+    <!-- ========== Scroll Right Page To Top Page ========== -->
+    <div class="scroll-to-top">
+        <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
+        <div class="box-numper">
+            <span>10%</span>
+        </div>
+    </div>
+    <!-- ========== End Scroll Right Page To Top Page ========== -->
+
+
+    <!-- ========== Cursor Page ========== -->
+    <div class="cursor">
+
+        <div class="cursor-helper">
+            <span class="cursor-drag">Drag</span>
+            <span class="cursor-view">View</span>
+            <span class="cursor-open"><i class="fas fa-plus"></i></span>
+            <span class="cursor-close">Close</span>
+            <span class="cursor-play">play</span>
+            <span class="cursor-next"><i class="fas fa-chevron-right"></i></span>
+            <span class="cursor-prev"><i class="fas fa-chevron-left"></i></span>
+        </div>
+
+    </div>
+    <!-- ========== End Cursor Page ========== -->
+
+
+
+    <!-- ========== social network ========== -->
+    <div class="social-side social-network d-flex align-items-center ">
+        <div class="icon" data-dsn="parallax">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </div>
+        <ul class="socials d-flex flex-column p-absolute ">
+			
+			 <li>
+                <a href="https://blog.naver.com/vegemilstory" target="_blank">
+                    <i class="fab fa-blogger"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.instagram.com/vegemil.official/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>In</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.facebook.com/vegemilgood" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Fb</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- ========== End social network ========== -->
+
+    <!-- ========== paginate-right-page ========== -->
+    <div class="dsn-paginate-right-page"></div>
+
+    <!-- ========== Line left & right with creative page ========== -->
+    <div class="line-border-style w-100 h-100"></div>
+
+
+    <!-- Optional JavaScript -->
+    <script th:src="@{/beansoupRecipe/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/beansoupRecipe/js/plugins.min.js}"></script>
+    <script th:src="@{/beansoupRecipe/js/dsn-grid.min.js}"></script>
+    <script th:src="@{/beansoupRecipe/js/custom.js}"></script>
+	
+	<script type="text/javascript">
+	(function(w, d, a){
+		w.__beusablerumclient__ = {
+			load : function(src){
+				var b = d.createElement("script");
+				b.src = src; b.async=true; b.type = "text/javascript";
+				d.getElementsByTagName("head")[0].appendChild(b);
+			}
+		};w.__beusablerumclient__.load(a);
+	})(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+	</script>
+	<!-- 구글 추적로그 -->
+    <script type="text/javascript">
+	    var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-11500332-1']);_gaq.push(['_trackPageview']);
+	    (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+    </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141294099-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141294099-1');
+    </script>
+	<!-- End Google Tag Manager -->
+</body>
+
+</html>

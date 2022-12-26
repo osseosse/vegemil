@@ -1,0 +1,58 @@
+<head th:fragment="headFragment">
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="discrption" content="parallax one page" />
+    <meta name="keyword" content="진한 콩국물, 진한 콩국물 검은콩, 정식품, 베지밀, 요리, 레시피, 950ml, 콩국수, 콩국, 콩물, 멸균팩, 정식품 오리지날, 식재료" />
+	<meta property="og:title" content="정식품 진한 콩국물"> 
+	<meta property="og:url" content="https://www.vegemil.co.kr:10001/Main/beanSoupRecipe/index.html"> 
+	<meta property="og:image" content="https://www.vegemil.co.kr:10001/Main/beanSoupRecipe/assets/img/project/mainVisual04.jpg"> 
+	<meta property="og:description" content="깨끗하게 손질하여 부드럽게 갈아낸, 정식품이 만든 진한 콩국물이에요. 입맛이 살아나는 콩국물을 찾고 계셨다면 정식품 진한 콩국물로 요리해보세요. 사계절 어느때나 편하고 맛있게 식물성 영양을 더할 수 있어요."/> 
+    <!--  Title -->
+    <title>정식품 진한 콩국물</title>
+
+  <!-- Font Google -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"></noscript>
+
+    <link rel="shortcut icon" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico}" type="image/x-icon" />
+    <link rel="icon" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/favicon.ico}" type="image/x-icon" />
+    <link rel="preload" th:href="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/circle-dotted.png}" as="image" />
+	
+
+    <!-- custom styles (optional) -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" th:href="@{/beansoupRecipe/css/all.min.css}" /> -->
+    <link rel="stylesheet" th:href="@{/beansoupRecipe/css/plugins.css}" />
+    <link rel="stylesheet" th:href="@{/beansoupRecipe/css/style.css}">
+    <script>
+        
+        //익스플로러 접근 제한
+        document.addEventListener("DOMContentLoaded", function(){
+            var agent = navigator.userAgent.toLowerCase();
+            if(agent.indexOf('trident')>-1){
+	            location.href= "/main/beanSoupRecipe/ie.html";
+	            return;
+            }
+        });
+    
+	    //주소복사
+         function TourUrlCopy() {
+            
+		    var isIE = false;
+		    var agent = navigator.userAgent.toLowerCase();
+		    if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+			    isIE = true;
+		    }
+
+            if(isIE){
+            if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?"))
+                window.clipboardData.setData("Text",document.location.href);
+            }else{
+                temp = prompt("Ctrl+C를 눌러 주소를 클립보드로 복사하세요.",document.location.href);
+            }
+         }
+    </script>
+
+</head>

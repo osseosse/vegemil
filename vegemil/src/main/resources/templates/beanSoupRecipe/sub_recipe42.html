@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block class="white" th:replace="fragments/beansoupRecipe/head :: headFragment"></th:block>
+<body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
+
+
+    <!-- ========== Loading Page ==========
+    <div class="preloader">
+        <span class="percent ">0</span>
+        <span class="loading-text text-uppercase">Loading ...</span>
+        <div class="preloader-bar">
+            <div class="preloader-progress"></div>
+        </div>
+
+        <h1 class="title v-middle">
+            <span class="text-strok">콩국물</span>
+            <span class="text-fill">콩국물</span>
+        </h1>
+    </div>
+    <!-- ========== End Loading Page ========== -->
+
+
+ 	<th:block class="white" th:replace="fragments/beansoupRecipe/mainMenu :: menuFragment"></th:block>
+    <main class="main-root">
+
+        <div id="dsn-scrollbar">
+            <div class="main-content">
+                <div class="wrapper">
+					
+                    <!-- ========== Slider Parallax ==========  -->
+					<section data-dsn-title="레시피 TOP" class="over-hidden">
+						<div class="mt-50m header-project header-personal p-relative   ">
+							<div class="row  recipeTop h-100"> 
+
+								<div class="col-lg-6"> 
+
+									<div class="recipe_42_big h-100m">
+										<ul class="lableBox">
+											<li><img src="assets/img/lable01.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
+										</ul>
+									</div>
+								</div> 
+								
+								<div class="col-lg-6"> 
+									<div class="reBox01">
+										<p class="location-navi f17_3 wView">
+											<span ><a href="#">메인</a></span>
+											<span><a href="#">전체 레시피</a></span>
+											<span><a href="#">제철 재료를 넣은</a></span>
+											<span>콩국물 초계국수</span>
+										</p>
+										<p class="mt-140">&nbsp;</p>
+										<p class="f44_6 mt-60">콩국물 초계국수</p>
+										<p class="f20_4 mt-30">올 여름, 콩국물로 시원하게 만드는 별미 음식!</p>
+										<ul class="re_btn mt-50">
+											<li><a href="https://www.edaymall.com/search/totalSearch.do?prodAlignType=1&pCategory=&sCategory=&empGoodsYn=0&searchInput=%EC%A7%84%ED%95%9C+%EC%BD%A9%EA%B5%AD%EB%AC%BC" target="_blank" class="f18_4">
+												진한 콩국물 사러가기 <img src="assets/img/btn_arrow.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_arrow.png}" /></a></li>
+											<li><a href="#" onclick="javascript:TourUrlCopy(); return false;" class="f18_4" >레시피 URL 복사하기<img src="assets/img/btn_clip.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_clip.png}"/></a></li>
+											<input type="hidden" id="hidUrl" value=""/>
+										</ul>
+										<ul class="tag mt-80 f18_4">
+											<li class="f_pp">Tag</li>
+											<li>#한식</li>
+											<li>#근사하게</li>
+											<li>#별미</li>
+											<li>#한그릇메뉴</li>
+										</ul>
+										<ul class="mhs">
+											<li><p class="mhs_box"><img src="./assets/img/ico_year.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_year.png}" alt="" /></p><p class="f16_4 mt-5">사계절</p></li>
+											<li><p class="mhs_box"><span class="f44_6 f_pp">30</span><br><span class="f_16">min</span></p><p class="f16_4 mt-5">조리시간</p></li>
+											<li><p class="mhs_box"><img src="./assets/img/ico_m1.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_m1.png}" alt="" /></p><p class="f16_4 mt-5">분량</p></li>
+											<li><p class="mhs_box"><img src="./assets/img/ico_s2.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s2.png}" alt="" /></p><p class="f16_4 mt-5">난이도</p></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="container">
+							<div class="row ">
+								<div class="col-lg-12 center mt-80"> 
+									<ul class="reBox02 mt-50m"> 
+										<li class="f28_4  color_i">재료</li>
+										<li class="f20_4">
+											진한 콩국물 1팩, 닭가슴살 1팩, 오이 1개, 양배추, 적채, 당근, 동치미 냉면육수 1팩, 다진 마늘, 연겨자 1T, 설탕 1T, <br>
+											식초 4T, 진간장 1T, 미림 1T, 월계수잎, 통후추
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+                    <!-- ========== End Slider Parallax ========== -->
+
+
+					<!-- ========== Work Section ========== -->
+                    <section class="work  dsn-col dsn-col-space  dsn-filter not-filter" data-dsn-title="레시피 상세">
+						<div class="container100 reBox03">
+							<div class="container">
+								<div class="row ">
+									<div class="col-lg-12 center mt-80"> 
+										<iframe class="youtubeSize"  src="https://www.youtube.com/embed/Xwo8OhQNFp8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>
+								</div>
+								<div class="row ">
+									<div class="col-lg-12 center mt-80"> 
+										<p class="f40_6 color_g re_title">조리순서</p>
+									</div>
+								</div>
+								<div class="row reBox04">
+									<div class="col-lg-4"> 
+										<p><img src="assets/img/project/42/01.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/01.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>01</p></dt>
+											<dd class="f22_4 color_g">끓는 물에 월계수잎, 통후추, 미림을 넣고 깨끗하게 씻은 닭가슴살을 넣고 삶아주세요.</dd>
+										</dl>
+								    </div>
+									<div class="col-lg-4"> 
+										<p><img src="assets/img/project/42/02.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/02.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>02</p></dt>
+											<dd class="f22_4 color_g">양배추와 적채, 당근은 채 썰고 오이는 얇게 썰어주세요.</dd>
+										</dl>
+									</div>
+									<div class="col-lg-4">  
+										<p><img src="assets/img/project/42/03.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/03.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>03</p></dt>
+											<dd class="f22_4 color_g">진한콩국물 1팩에 동치미 냉면육수와 식초를 넣고 잘 섞은 후 살얼음이 생기도록 냉장고에서 차갑게 얼려주세요.</dd>
+										</dl>
+									</div>
+
+									<div class="col-lg-4"> 
+										<p><img src="assets/img/project/42/04.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/04.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>04</p></dt>
+											<dd class="f22_4 color_g">잘 삶은 닭가슴살은 잘게 찢어 다진 마늘과, 연겨자, 설탕, 간장, 식초를 넣고 잘 버무려주세요</dd>
+										</dl>
+									</div>
+									<div class="col-lg-4"> 
+										<p><img src="assets/img/project/42/05.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/05.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>05</p></dt>
+											<dd class="f22_4 color_g">메밀면을 끓는 물에 삶은 후 차가운 물에 헹궈 준비해 주세요.</dd>
+											
+										</dl>
+									</div>
+									<div class="col-lg-4"> 
+										<p><img src="assets/img/project/42/06.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/06.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>06</p></dt>
+											<dd class="f22_4 color_g">메밀면 위에 미리 준비한 채 썬 채소와 잘 버무린 닭가슴살 고명을 올려주세요.</dd>
+                                        </dl>
+									</div>
+									<div class="col-lg-4"> 
+										<p><img src="assets/img/project/42/07.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/42/07.jpg}"></p>
+										<dl class="reType01 mt-30">
+											<dt class="f_pp"><p>07</p></dt>
+											<dd class="f22_4 color_g">차가운 콩국물 육수를 부어주면 콩국물 초계국수 완성!</dd>
+										</dl>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</section>
+
+                       <!-- ========== view more ========== -->
+                    <section class="work-section our-blog our-blog-classic not-filter  p-relative dsn-swiper"
+                        data-dsn-animate="section" data-dsn-option='{"slidesPerView":3,"spaceBetween":30 }'
+                        data-dsn-title="You may also love" style="">
+
+                        <div class="container mb-70">
+							<div class="row">
+								 <div class="col-lg-9">
+									<p class="f36_5 color_o f_pp">You may also love</p>
+								 </div>
+								  <div class="col-lg-3">
+									<a href="sub_list.html" class="mt-50 dsn-button image-zoom color_o f_pp" data-dsn="parallax">
+										<span class="dsn-border  color_o f_pp"></span>
+										VIEW MORE <span class="color_o">⟶</span>
+									</a>
+								 </div>
+							</div>
+                        </div>
+                        <div class="container pb-100">
+                            <div class="swiper-container ">
+                                <div class="swiper-wrapper">
+									
+                                    <div class="swiper-slide blog-classic-item bg_white">
+										<a href="sub_recipe01.html" style="display:block">
+											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
+												<div class="box-img over-hidden">
+													<img class="cover-bg-img" src="assets/img/project/recipe_01_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_01_big.jpg}" alt="">
+												</div>
+												<div class="box-content p-relative text-center">
+													<div class="box-content-body">
+														<p class="f22_5 color_g zzz">숙주대패삼겹국밥</p>
+														<p class="f18_4 mt-5 color_g zzz">숙주 대패삼겹국밥 구수하면서 담백해요~! 숙주 대패삼겹국밥 구수하면서 담백해요~!</p>			
+													</div>
+												</div>
+											</div>
+										</a>
+                                    </div>
+									
+                                    <div class="swiper-slide blog-classic-item bg_white">
+										<a href="sub_recipe02.html" style="display:block">
+											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
+												<div class="box-img over-hidden">
+													<img class="cover-bg-img" src="assets/img/project/recipe_02_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_02_big.jpg}" alt="">
+												</div>
+												<div class="box-content p-relative text-center">
+													<div class="box-content-body">
+													   <p class="f22_5 color_g zzz">치킨 콩국물 피카타</p>
+													   <p class="f18_4 mt-5 color_g zzz">이탈리아 보양식을 콩국물로! 근사한 메뉴도 뚝딱</p>
+													</div>
+												</div>
+											</div>
+										</a>
+                                    </div>
+                                    <div class="swiper-slide blog-classic-item bg_white">
+										<a href="sub_recipe03.html" style="display:block">
+											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
+												<div class="box-img over-hidden">
+													<img class="cover-bg-img" src="assets/img/project/recipe_03_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_03_big.jpg}" alt="">
+												</div>
+												<div class="box-content p-relative text-center">
+													<div class="box-content-body">
+													   <p class="f22_5 color_g zzz">버섯 들깨찜</p>
+													   <p class="f18_4 mt-5 color_g zzz">육수 필요없이 고소하고 담백하게</p>
+													</div>
+												</div>
+											</div>
+										</a>
+                                    </div>
+									<div class="swiper-slide blog-classic-item bg_white">
+										<a href="sub_recipe04.html" style="display:block">
+											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
+												<div class="box-img over-hidden">
+													<img class="cover-bg-img" src="assets/img/project/recipe_04_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_04_big.jpg}" alt="">
+												</div>
+												<div class="box-content p-relative text-center">
+													<div class="box-content-body">
+													   <p class="f22_5 color_g zzz">콩스프 오리말이</p>
+													   <p class="f18_4 mt-5 color_g zzz">홈파티, 집들이 음식으로도 좋은 따뜻한 보양식을 간편하게!</p>
+													</div>
+												</div>
+											</div>
+										</a>
+                                    </div>
+									<div class="swiper-slide blog-classic-item bg_white">
+										<a href="sub_recipe05.html" style="display:block">
+											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
+												<div class="box-img over-hidden">
+													<img class="cover-bg-img" src="assets/img/project/recipe_05_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05_big.jpg}" alt="">
+												</div>
+												<div class="box-content p-relative text-center">
+													<div class="box-content-body">
+													   <p class="f22_5 color_g zzz">콘치즈새우그라탕</p>
+													   <p class="f18_4 mt-5 color_g zzz">콩국물과 쫄깃한 치즈의 환상 궁합!</p>
+													</div>
+												</div>
+											</div>
+										</a>
+                                    </div>
+									<div class="swiper-slide blog-classic-item bg_white">
+										<a href="sub_recipe06.html" style="display:block">
+											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
+												<div class="box-img over-hidden">
+													<img class="cover-bg-img" src="assets/img/project/recipe_06_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_06_big.jpg}" alt="">
+												</div>
+												<div class="box-content p-relative text-center">
+													<div class="box-content-body">
+													   <p class="f22_5 color_g zzz">고구마 찜 케이크 & 콩국물 커스터드 크림</p>
+													   <p class="f18_4 mt-5 color_g zzz">오븐 없이 간단하게 만드는 부드럽고 건강한 디저트</p>
+													</div>
+												</div>
+											</div>
+										</a>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="dsn-pagination mt-30 dsn-container d-flex justify-content-between borderType01">
+                                    <div class="swiper-next">
+                                        <div class="next-container">
+                                            <div class="container-inner">
+                                                <div class="triangle"></div>
+                                                <svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24">
+                                                    <g class="circle-wrap" fill="none" stroke-width="1"
+                                                        stroke-linejoin="round" stroke-miterlimit="10">
+                                                        <circle cx="12" cy="12" r="10.5"></circle>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-prev">
+                                        <div class="prev-container">
+                                            <div class="container-inner">
+                                                <div class="triangle"></div>
+                                                <svg class="circle" xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24">
+                                                    <g class="circle-wrap" fill="none" stroke-width="1"
+                                                        stroke-linejoin="round" stroke-miterlimit="10">
+                                                        <circle cx="12" cy="12" r="10.5"></circle>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- ========== End view more ========== -->
+                </div>
+                <footer th:replace="fragments/beansoupRecipe/mainFooter :: footerFragment"></footer>
+            </div>
+        </div>
+    </main>
+    <!-- ========== Scroll Right Page To Top Page ========== -->
+    <div class="scroll-to-top">
+        <img src="assets/img/scroll_top.svg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
+        <div class="box-numper">
+            <span>10%</span>
+        </div>
+    </div>
+    <!-- ========== End Scroll Right Page To Top Page ========== -->
+    <!-- ========== Cursor Page ========== -->
+    <div class="cursor">
+        <div class="cursor-helper">
+            <span class="cursor-drag">Drag</span>
+            <span class="cursor-view">View</span>
+            <span class="cursor-open"><i class="fas fa-plus"></i></span>
+            <span class="cursor-close">Close</span>
+            <span class="cursor-play">play</span>
+            <span class="cursor-next"><i class="fas fa-chevron-right"></i></span>
+            <span class="cursor-prev"><i class="fas fa-chevron-left"></i></span>
+        </div>
+    </div>
+    <!-- ========== End Cursor Page ========== -->
+    <!-- ========== social network ========== -->
+    <div class="social-side social-network d-flex align-items-center ">
+        <div class="icon" data-dsn="parallax">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </div>
+        <ul class="socials d-flex flex-column p-absolute ">
+			 <li>
+                <a href="https://blog.naver.com/vegemilstory" target="_blank">
+                    <i class="fab fa-blogger"></i>
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/vegemil.official/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>In</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/vegemilgood" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Fb</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- ========== End social network ========== -->
+
+    <!-- ========== paginate-right-page ========== -->
+    <div class="dsn-paginate-right-page"></div>
+
+    <!-- ========== Line left & right with creative page ========== -->
+    <div class="line-border-style w-100 h-100"></div>
+    <!-- Optional JavaScript -->
+    <script th:src="@{/beansoupRecipe/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/beansoupRecipe/js/plugins.min.js}"></script>
+    <script th:src="@{/beansoupRecipe/js/dsn-grid.min.js}"></script>
+    <script th:src="@{/beansoupRecipe/js/custom.js}"></script>
+	<script type="text/javascript">
+	(function(w, d, a){
+		w.__beusablerumclient__ = {
+			load : function(src){
+				var b = d.createElement("script");
+				b.src = src; b.async=true; b.type = "text/javascript";
+				d.getElementsByTagName("head")[0].appendChild(b);
+			}
+		};w.__beusablerumclient__.load(a);
+	})(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+	</script>
+	<!-- 구글 추적로그 -->
+    <script type="text/javascript">
+	    var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-11500332-1']);_gaq.push(['_trackPageview']);
+	    (function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+    </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141294099-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141294099-1');
+    </script>
+	<!-- End Google Tag Manager -->
+</body>
+
+</html>
