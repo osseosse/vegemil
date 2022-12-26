@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
@@ -15,6 +16,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDetailDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.mapper.VegemilBabyMapper;
 import com.vegemil.paging.PaginationInfo;
 
@@ -54,18 +56,36 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return categoryCount;
 	}
 	
-    //영유아식 레시피
+	//육아정보 상세
+	@Override
+	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx) {	
+		return vegemilBabyMapper.selectMagazineDetail(mbsIdx);
+	}
+	//영유아식 레시피
 	@Override
 	public List<VegemilBabyRecipeDTO> selectRecipeList() {
 		List<VegemilBabyRecipeDTO> recipeList = vegemilBabyMapper.selectRecipeList();
 		return recipeList;
 	}
-	
+	//영유아식 레시피 상세
 	@Override
-	public VegemilBabyRecipeDTO selectRecipe(Long idx) {
-		VegemilBabyRecipeDTO recipe = vegemilBabyMapper.selectRecipe(idx);
+	public VegemilBabyRecipeDTO selectRecipeDetail(Long idx) {
+		VegemilBabyRecipeDTO recipe = vegemilBabyMapper.selectRecipeDetail(idx);
 		return recipe;
 	}
+	
+	//샘플신청 등록
+	@Override
+	@Transactional
+	public int insertSampleForm(VegemilBabySampleDTO sample) {
+		
+		System.out.println("==========서비스 임플=========");
+		System.out.println("===========sample: "+ sample);
+		return vegemilBabyMapper.insertSampleForm(sample);
+	}
+
+
+	
 	
 	
 
@@ -213,10 +233,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	
 	
 
-	@Override
-	public VegemilBabyMagazineDetailDTO magazineDetail(Long mbsIdx) {	
-		return vegemilBabyMapper.magazineDetail(mbsIdx);
-	}
+	
 
 	
 	
@@ -239,8 +256,6 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public List<VegemilBabyBestReviewDTO> bestReviewList() {
 		return vegemilBabyMapper.bestReviewList();
 	}
-
-
 	
 
 	

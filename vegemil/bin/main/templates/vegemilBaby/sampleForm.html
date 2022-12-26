@@ -1,0 +1,541 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<title>샘플신청양식</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
+<body>
+<!-- ================================ Header ================================ -->
+<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+ <div id="wrap">	
+	<script>
+	 function modelSelNumSam(){	  
+	    if(jQuery('select[id=selCountChild]').val() == "1"){
+		$('#bg_y02').attr('style', 'display:none');
+		$('#bg_y03').attr('style', 'display:none');	
+		}
+		else if(jQuery('select[id=selCountChild]').val() == "2"){
+		$('#bg_y02').attr('style', 'display:block');	
+		$('#bg_y03').attr('style', 'display:none');	
+		}
+		else{
+		$('#').attr('style', 'display:block');	
+		$('#bg_y03').attr('style', 'display:block');	
+		}	   
+	 }
+	
+	 function mmmm_write(){	 
+	 }
+	 
+	
+	function getMaterDate() {
+			
+	 		var sMaterYear1 = document.getElementById("sMaterYear1").value;
+	   	 	var sMaterMonth1 = document.getElementById("sMaterMonth1").value;
+	   	 	var sMaterDate1 = document.getElementById("sMaterDate1").value;
+	   	 	var sMaterdate = sMaterYear1+"-"+sMaterMonth1+"-"+sMaterDate1; 
+	   	 
+	   	 	if(sMaterYear1 != '선택' && sMaterMonth1 != '선택' && sMaterDate1 != '선택'){
+		 	    document.getElementById('sMaterdate').value = sMaterdate;	   	 		
+	   	 	}
+	 	    
+	 	    var sMaterYear2 = document.getElementById("sMaterYear2").value;
+	   	 	var sMaterMonth2 = document.getElementById("sMaterMonth2").value;
+	   	 	var sMaterDate2 = document.getElementById("sMaterDate2").value;
+	   	 	var sMaterdate2 = sMaterYear2+"-"+sMaterMonth2+"-"+sMaterDate2;                                          
+	   	 	
+	   	 	if(sMaterYear2 != '선택' && sMaterMonth2 != '선택' && sMaterDate2 != '선택'){
+		 	    document.getElementById('sMaterdate2').value = sMaterdate2;	   	 		
+	   	 	}
+
+	   	 	
+	   	 	document.getElementById('sMaterdate2').value = sMaterdate2;
+	 	    
+	 	    var sMaterYear3 = document.getElementById("sMaterYear3").value;
+	   	 	var sMaterMonth3 = document.getElementById("sMaterMonth3").value;
+	   	 	var sMaterDate3 = document.getElementById("sMaterDate3").value;
+	   	 	var sMaterdate3 = sMaterYear3+"-"+sMaterMonth3+"-"+sMaterDate3;  
+	    
+	   	 	if(sMaterYear3 != '선택' && sMaterMonth3 != '선택' && sMaterDate3 != '선택'){
+		 	    document.getElementById('sMaterdate3').value = sMaterdate3;	   	 		
+	   	 	}
+
+	 	    
+	 	    
+	 	}
+		
+	</script>
+		
+   
+	<!-- ------------------- content ------------------- -->
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG03_04 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">샘플신청</p>
+								<p class="f20_4 mt20">베지밀 영&middot;유아식<br>우리 아이가 잘 먹을까 고민되시나요?</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+		<div class="container100 bg_b2">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu modelsubMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="javascript:void(0);">Event</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a href="brand.aspx">brand</a></li>
+														<li><a href="premium.aspx">Product</a></li>
+														<li><a href="bv_event.aspx"> Event</a></li>
+														<li><a href="e_magazine.aspx?p=1"> Cummunity</a></li>
+														<li><a href="faq2.aspx"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="javascript:void(0);">샘플신청</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a href="bv_event.aspx">진행 중 이벤트</a></li>
+															<li><a href="event_review_form2.aspx">후기이벤트</a></li>
+															<li><a href="event_model_form.aspx">아기모델선발대회</a></li>
+															<li><a href="sample2.aspx">샘플신청</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //container100 -->
+        <div class="container100">
+            <div class="row  pd0 mg0 ">
+                <dl id="con01">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt">
+                            <p class="f24_4_bg">무료 샘플 신청</p>
+                            <p class="f55_6 mt30">샘플신청</p>
+                            <p class="f24_4 mt10">회원정보 수정은 하단에 수정하기 버튼을 클릭 후, 정식품 기업 사이트 개인정보 변경 페이지에서 수정할 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="container pb150" th:object="${member}">
+                        <div class="row">
+                            <div class="col-md-12 mt120 sampleForm">
+                               <form role="form" onsubmit="getMaterDate();" th:action="@{/vegemilBaby/sample/form}" th:object="${sample}" method="post">
+                                    <fieldset>
+                                        <legend>입력 폼</legend>
+                                        <ul class="formBox">                                         
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>아이디</dd>
+													<dd class="f17_3_g">
+									            	<input type="text" name="sId" th:value="${member.mId}" maxlength="20"  readonly="readonly" style="border:none"/>
+													</dd>
+												</dl>
+                                            </li>
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>이름</dd>
+													<dd class="f17_3_g">
+													<input type="text"  name="sMname" th:value="${member.mName}"  maxlength="20" readonly="readonly" style="border:none" />
+													</dd>
+												</dl>
+                                            </li>                                            
+                                          	<li>
+												<dl class="divideType01 f17_4">
+													<dd>휴대전화</dd>
+													<dd class="linkType f17_3_g">
+													<input type="text"  name="sHp" th:value="${member.mHp}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="20"  readonly="readonly"style="border:none"/>
+													<p class="mt10 f14_3"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;이달의 모델 및 참가상 선정 시 상품 배송 정보로 사용됩니다. 신청 전 변경해야 하며 <a th:href="@{/mypage/myInfo}">[회원정보변경]</a>을 이용해주세요.</p>
+													</dd>
+												</dl>
+                                            </li>                                                                                    
+											<li>
+												<dl class="divideType01 f17_4">
+													<dd>주소</dd>
+													<dd class="linkType f17_3_g">
+													<input type="text"  name="sAddr1" th:value="|${member.mAddr1} ${member.mAddr2}|" readonly="readonly" maxlength="3" style="border:none"/>													
+													<p class="mt10 f14_3"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;이달의 모델 및 참가상 선정 시 상품 배송 정보로 사용됩니다. 신청 전 변경해야 하며 <a th:href="@{/mypage/myInfo}">[회원정보변경]</a>을 이용해주세요.</p></dd>
+												</dl>
+                                            </li>                                            
+											<li>
+												<dl class="divideType01 f17_4">
+													<dd>E-mail</dd>
+													<dd class="f17_3_g">
+													<input type="text" name= "sEmail" th:value="${member.mEmail}" readonly="readonly" maxlength="50" style="border:none"/>
+													</dd>
+												</dl>
+                                            </li>
+                                      		
+                                         <li class="radioBox02">
+	                                         <dl class="divideType04 f17_4">
+												<dd>샘플신청경로</dd>
+												<dd>
+												    <input type="radio" id="maternitysch" name="sampleWay" value="1" checked>
+	                                                <label for="maternitysch" class="f17_4">매터니티스쿨 행사참여</label>
+	                                                
+	                                                <input type="radio" id="momstory" name="sampleWay" value="2 행사참여">
+	                                                <label for="momstory" class="f17_4">맘스스토리 행사참여</label>
+													
+													<input type="radio" id="kclass" name="sampleWay" value="9">
+	                                                <label for="kclass" class="f17_4">K클래스 행사참여</label>
+													<!-- //추가2020-11-09 -->
+													<input type="radio" id="instagram" name="sampleWay" value="10">
+	                                                <label for="instagram" class="f17_4">영&middot;유아식 인스타그램</label>
+													<!-- //추가2020-11-09 -->
+                                                    <input type="radio" id="internetinfor" name="sampleWay" value="3">
+                                                 	<label for="internetinfor" class="f17_4">인터넷정보</label>
+                                                    
+                                                    <input type="radio" id="friend" name="sampleWay" value="4">
+                                                    <label for="friend" class="f17_4">지인추천</label>
+                                                    
+                                                    <input type="radio" id="maternity" name="sampleWay" value="5">
+                                                    <label for="maternity" class="f17_4">산부인과</label>
+                                                    
+                                                    <input type="radio" id="kakaostory" name="sampleWay" value="6">
+                                                    <label for="kakaostory" class="f17_4">카카오스토리</label>
+                                                    
+                                                    <input type="radio" id="lotte" name="sampleWay" value="7">
+                                                    <label for="lotte" class="f17_4">롯데마트 문화센터</label>
+                                                    
+                                                    <input type="radio" id="etc" name="sampleWay" value="8">
+                                                    <label for="etc" class="f17_4">기타</label>
+												</dd>
+											</dl>
+                                        </li>                                        
+										<li>
+											<dl class="divideType01 f17_4">
+												<dd>자녀수</dd>
+												<dd>
+													<div class="selectbox"> 
+														<label for="ex_select">선택</label> 
+															<select id="selCountChild" name="sBabycnt" onchange="modelSelNumSam()"> 
+																<option th:value="'0'">선택</option>
+																<option th:value="'1'" th:text="1명"></option> 
+																<option th:value="'2'" th:text="2명"></option> 
+																<option th:value="'3'" th:text="3명"></option> 																
+															</select> 
+													</div> 
+												</dd>
+											</dl>
+                                           </li> 
+                                           
+                                        
+											<li class="bg_y2">
+												<dl class="divideType01 f17_4">
+													<dd>첫째자녀 출생일(예정일)</dd>
+													<dd class="divideType02">
+														<div class="selectbox">
+															<label for="ex_select">년</label> 
+															<select id="sMaterYear1" >
+															    <option th:value="'선택'" th:text="선택"></option>															
+															    <option th:value="'2023'" th:text="2023"></option>
+															    <option th:value="'2022'" th:text="2022"></option>
+															    <option th:value="'2021'" th:text="2021"></option>
+															    <option th:value="'2020'" th:text="2020"></option>
+															    <option th:value="'2019'" th:text="2019"></option>
+															    <option th:value="'2018'" th:text="2018"></option>
+															    <option th:value="'2017'" th:text="2017"></option>
+															    <option th:value="'2016'" th:text="2016"></option>
+															    <option th:value="'2015'" th:text="2015"></option>
+															    <option th:value="'2014'" th:text="2014"></option>
+															    <option th:value="'2013'" th:text="2013"></option>
+															    <option th:value="'2012'" th:text="2012"></option>
+															</select>
+														</div> 
+														<div class="selectbox ml10">
+															<label for="ex_select">월</label> 
+																<select id="sMaterMonth1" name="sMaterMonth1">															
+																	<option th:value="선택"></option>
+																	<option th:value="'01'" th:text="01"></option>
+																	<option th:value="'02'" th:text="02"></option>
+																	<option th:value="'03'" th:text="03"></option>
+																	<option th:value="'04'" th:text="04"></option>
+																	<option th:value="'05'" th:text="05"></option>
+																	<option th:value="'06'" th:text="06"></option>
+																	<option th:value="'07'" th:text="07"></option>
+																	<option th:value="'08'" th:text="08"></option>
+																	<option th:value="'09'" th:text="09"></option>
+																	<option th:value="'10'" th:text="10"></option>
+																	<option th:value="'11'" th:text="11"></option>
+																	<option th:value="'12'" th:text="12"></option>
+																</select>
+														</div> 
+														<div class="selectbox ml10">
+															<label for="ex_select">일</label> 
+																<select id="sMaterDate1" name="sMaterDate1">															
+																	<option th:value="선택" th:text="선택">선택</option>
+																	<option th:value ="'01'" th:text="01"></option>
+																	<option th:value="'02'" th:text="02"></option>
+																	<option th:value="'03'" th:text="03"></option>
+																	<option th:value="'04'" th:text="04"></option>
+																	<option th:value="'05'" th:text="05"></option>
+																	<option th:value="'06'" th:text="06"></option>
+																	<option th:value="'07'" th:text="07"></option>
+																	<option th:value="'08'" th:text="08"></option>
+																	<option th:value="'09'" th:text="09"></option>
+																	<option th:value="'10'" th:text="10"></option>
+																	<option th:value="'11'" th:text="11"></option>
+																	<option th:value="'12'" th:text="12"></option>
+																	<option th:value="'13'" th:text="13"></option>
+																	<option th:value="'14'" th:text="14"></option>
+																	<option th:value="'15'" th:text="15"></option>
+																	<option th:value="'16'" th:text="16"></option>
+																	<option th:value="'17'" th:text="17"></option>
+																	<option th:value="'18'" th:text="18"></option>
+																	<option th:value="'19'" th:text="19"></option>
+																	<option th:value="'20'" th:text="20"></option>
+																	<option th:value="'21'" th:text="21"></option>
+																	<option th:value="'22'" th:text="22"></option>
+																	<option th:value="'23'" th:text="23"></option>
+																	<option th:value="'24'" th:text="24"></option>
+																	<option th:value="'25'" th:text="25"></option>
+																	<option th:value="'26'" th:text="26"></option>
+																	<option th:value="'27'" th:text="27"></option>
+																	<option th:value="'28'" th:text="28"></option>
+																	<option th:value="'29'" th:text="29"></option>
+																	<option th:value="'30'" th:text="30"></option>
+																	<option th:value="'31'" th:text="31"></option>
+																</select>
+														</div> 
+													</dd>
+												</dl>
+                                            </li>
+                                            
+											<li class="bg_y2" id="bg_y02">
+												<dl class="divideType01 f17_4" id="divideType02">
+													<dd>둘째자녀 출생일(예정일)</dd>
+													<dd class="divideType02">
+														<div class="selectbox">
+															<label for="ex_select">년</label> 
+															<select id="sMaterYear2" >
+															    <option th:value="'선택'" th:text="선택"></option>															
+															    <option th:value="'2023'" th:text="2023"></option>
+															    <option th:value="'2022'" th:text="2022"></option>
+															    <option th:value="'2021'" th:text="2021"></option>
+															    <option th:value="'2020'" th:text="2020"></option>
+															    <option th:value="'2019'" th:text="2019"></option>
+															    <option th:value="'2018'" th:text="2018"></option>
+															    <option th:value="'2017'" th:text="2017"></option>
+															    <option th:value="'2016'" th:text="2016"></option>
+															    <option th:value="'2015'" th:text="2015"></option>
+															    <option th:value="'2014'" th:text="2014"></option>
+															    <option th:value="'2013'" th:text="2013"></option>
+															    <option th:value="'2012'" th:text="2012"></option>
+															</select>
+														</div> 
+														<div class="selectbox ml10">
+															<label for="ex_select">월</label> 
+																<select id="sMaterMonth2" name="sMaterMonth2">															
+																	<option th:value="선택"></option>
+																	<option th:value="'01'" th:text="01"></option>
+																	<option th:value="'02'" th:text="02"></option>
+																	<option th:value="'03'" th:text="03"></option>
+																	<option th:value="'04'" th:text="04"></option>
+																	<option th:value="'05'" th:text="05"></option>
+																	<option th:value="'06'" th:text="06"></option>
+																	<option th:value="'07'" th:text="07"></option>
+																	<option th:value="'08'" th:text="08"></option>
+																	<option th:value="'09'" th:text="09"></option>
+																	<option th:value="'10'" th:text="10"></option>
+																	<option th:value="'11'" th:text="11"></option>
+																	<option th:value="'12'" th:text="12"></option>
+																</select>
+														</div> 
+														<div class="selectbox ml10">
+															<label for="ex_select">일</label> 
+																<select id="sMaterDate2" name="sMaterDate2">															
+																	<option th:value="선택" th:text="선택">선택</option>
+																	<option th:value ="'01'" th:text="01"></option>
+																	<option th:value="'02'" th:text="02"></option>
+																	<option th:value="'03'" th:text="03"></option>
+																	<option th:value="'04'" th:text="04"></option>
+																	<option th:value="'05'" th:text="05"></option>
+																	<option th:value="'06'" th:text="06"></option>
+																	<option th:value="'07'" th:text="07"></option>
+																	<option th:value="'08'" th:text="08"></option>
+																	<option th:value="'09'" th:text="09"></option>
+																	<option th:value="'10'" th:text="10"></option>
+																	<option th:value="'11'" th:text="11"></option>
+																	<option th:value="'12'" th:text="12"></option>
+																	<option th:value="'13'" th:text="13"></option>
+																	<option th:value="'14'" th:text="14"></option>
+																	<option th:value="'15'" th:text="15"></option>
+																	<option th:value="'16'" th:text="16"></option>
+																	<option th:value="'17'" th:text="17"></option>
+																	<option th:value="'18'" th:text="18"></option>
+																	<option th:value="'19'" th:text="19"></option>
+																	<option th:value="'20'" th:text="20"></option>
+																	<option th:value="'21'" th:text="21"></option>
+																	<option th:value="'22'" th:text="22"></option>
+																	<option th:value="'23'" th:text="23"></option>
+																	<option th:value="'24'" th:text="24"></option>
+																	<option th:value="'25'" th:text="25"></option>
+																	<option th:value="'26'" th:text="26"></option>
+																	<option th:value="'27'" th:text="27"></option>
+																	<option th:value="'28'" th:text="28"></option>
+																	<option th:value="'29'" th:text="29"></option>
+																	<option th:value="'30'" th:text="30"></option>
+																	<option th:value="'31'" th:text="31"></option>
+																</select>
+														</div> 
+													</dd>
+												</dl>
+                                            </li>
+                                            
+                                            <li class="bg_y3" id="bg_y03">
+												<dl class="divideType01 f17_4" id="divideType02">
+													<dd>셋째자녀 출생일(예정일)</dd>
+													<dd class="divideType02">
+														<div class="selectbox">
+															<label for="ex_select">년</label> 
+															<select id="sMaterYear3" >
+															    <option th:value="'선택'" th:text="선택"></option>															
+															    <option th:value="'2023'" th:text="2023"></option>
+															    <option th:value="'2022'" th:text="2022"></option>
+															    <option th:value="'2021'" th:text="2021"></option>
+															    <option th:value="'2020'" th:text="2020"></option>
+															    <option th:value="'2019'" th:text="2019"></option>
+															    <option th:value="'2018'" th:text="2018"></option>
+															    <option th:value="'2017'" th:text="2017"></option>
+															    <option th:value="'2016'" th:text="2016"></option>
+															    <option th:value="'2015'" th:text="2015"></option>
+															    <option th:value="'2014'" th:text="2014"></option>
+															    <option th:value="'2013'" th:text="2013"></option>
+															    <option th:value="'2012'" th:text="2012"></option>
+															</select>
+														</div> 
+														<div class="selectbox ml10">
+															<label for="ex_select">월</label> 
+																<select id="sMaterMonth3" name="sMaterMonth3">															
+																	<option th:value="선택"></option>
+																	<option th:value="'01'" th:text="01"></option>
+																	<option th:value="'02'" th:text="02"></option>
+																	<option th:value="'03'" th:text="03"></option>
+																	<option th:value="'04'" th:text="04"></option>
+																	<option th:value="'05'" th:text="05"></option>
+																	<option th:value="'06'" th:text="06"></option>
+																	<option th:value="'07'" th:text="07"></option>
+																	<option th:value="'08'" th:text="08"></option>
+																	<option th:value="'09'" th:text="09"></option>
+																	<option th:value="'10'" th:text="10"></option>
+																	<option th:value="'11'" th:text="11"></option>
+																	<option th:value="'12'" th:text="12"></option>
+																</select>
+														</div> 
+														<div class="selectbox ml10">
+															<label for="ex_select">일</label> 
+																<select id="sMaterDate3" name="sMaterDate3">															
+																	<option th:value="선택" th:text="선택">선택</option>
+																	<option th:value ="'01'" th:text="01"></option>
+																	<option th:value="'02'" th:text="02"></option>
+																	<option th:value="'03'" th:text="03"></option>
+																	<option th:value="'04'" th:text="04"></option>
+																	<option th:value="'05'" th:text="05"></option>
+																	<option th:value="'06'" th:text="06"></option>
+																	<option th:value="'07'" th:text="07"></option>
+																	<option th:value="'08'" th:text="08"></option>
+																	<option th:value="'09'" th:text="09"></option>
+																	<option th:value="'10'" th:text="10"></option>
+																	<option th:value="'11'" th:text="11"></option>
+																	<option th:value="'12'" th:text="12"></option>
+																	<option th:value="'13'" th:text="13"></option>
+																	<option th:value="'14'" th:text="14"></option>
+																	<option th:value="'15'" th:text="15"></option>
+																	<option th:value="'16'" th:text="16"></option>
+																	<option th:value="'17'" th:text="17"></option>
+																	<option th:value="'18'" th:text="18"></option>
+																	<option th:value="'19'" th:text="19"></option>
+																	<option th:value="'20'" th:text="20"></option>
+																	<option th:value="'21'" th:text="21"></option>
+																	<option th:value="'22'" th:text="22"></option>
+																	<option th:value="'23'" th:text="23"></option>
+																	<option th:value="'24'" th:text="24"></option>
+																	<option th:value="'25'" th:text="25"></option>
+																	<option th:value="'26'" th:text="26"></option>
+																	<option th:value="'27'" th:text="27"></option>
+																	<option th:value="'28'" th:text="28"></option>
+																	<option th:value="'29'" th:text="29"></option>
+																	<option th:value="'30'" th:text="30"></option>
+																	<option th:value="'31'" th:text="31"></option>
+																</select>
+														</div> 
+													</dd>
+												</dl>
+                                            </li>
+											
+											
+                            
+								          
+											<input type="text"  name="sYear" th:value="${#temporals.createDate(member.mYear, 'yyyyMMdd')}"  maxlength="20" style="display:none;"/>
+                                      		<input type="text"  name="sTel" value=""  maxlength="20" style="display:none;"/>
+                                      		<input type="text"  name="sZipcode" th:value="${member.mZipcode}"  maxlength="20" style="display:none;"/>                                      		
+                                      		<input type="text"  name="sAddr2" th:value="${member.mAddr2}"  maxlength="20" style="display:none;"/>                                      		
+                                      		<input type="text"  name="sName" value=""  maxlength="20" style="display:none;"/>                                         	
+                                      		<input type="text"  id ="sMaterdate" value="" name="sMaterdate" maxlength="20" style="display:none;"/>                                      		
+                                      		<input type="text"  id ="sMaterdate2" value="" name="sMaterdate2" maxlength="20" style="display:none;"/>                                      		
+                                      		<input type="text"  id ="sMaterdate3" value="" name="sMaterdate3" maxlength="20" style="display:none;"/>
+										
+                                        </ul>
+                                        <div class="col-md-12 center mt100">
+                                            <input type ="image" class="submitBtn f30_5" th:src=@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg}  alt="제출하기 버튼">
+                                      	</div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- //container-->
+                </dl><!-- //con01 -->
+            </div><!-- //row-->
+        </div><!-- //container100 -->
+
+    </div>
+	<!-- ------------------- // content ------------------- -->
+    <!-- ------------------- // content ------------------- -->
+				
+	</div>	
+    
+		
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

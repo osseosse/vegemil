@@ -12,6 +12,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDetailDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 
 @Mapper
@@ -28,10 +29,13 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate);
 	public VegemilBabyCategoryDTO selectCategoryCount(); 
 
+	//육아정보 상세
+	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx);
 
     //영유아식 레시피
 	public List<VegemilBabyRecipeDTO> selectRecipeList();	
-	public VegemilBabyRecipeDTO selectRecipe(Long idx);
+	//영유아식 레시피 상세
+	public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
 
 	
 	//육아정보 - 임신출산
@@ -47,6 +51,9 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyMagazineDTO> selectPeMagazine(SearchDTO params);
 
 
+	//===[샘플신청]===
+	public int insertSampleForm(VegemilBabySampleDTO sample);
+	
 	
 	//public List<VegemilBabyMagazineDTO> selectAllMagazine();
 	public List<VegemilBabyMagazineDTO> selectLhMagazine();
@@ -61,7 +68,6 @@ public interface VegemilBabyMapper {
 	
 
 
-	public VegemilBabyMagazineDetailDTO magazineDetail(Long mbsIdx);
 	
 	public List<VegemilBabyEventDTO> eventList();
 	
