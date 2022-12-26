@@ -31,27 +31,6 @@
 		    console.log(data);
 		    alert(data);
 
-/* 			$.ajax({
-				type: 'GET',
-				url : "/getSearchList",
-				data : $("form[name=search-form]").serialize(),
-				success : function(result){
-					//테이블 초기화
-					$('#boardtable > tbody').empty();
-					if(result.length>=1){
-						result.forEach(function(item){
-							str='<tr>'
-							str += "<td>"+item.idx+"</td>";
-							str+="<td>"+item.writer+"</td>";
-							str+="<td><a href = '/board/detail?idx=" + item.idx + "'>" + item.title + "</a></td>";
-							str+="<td>"+item.date+"</td>";
-							str+="<td>"+item.hit+"</td>";
-							str+="</tr>"
-							$('#boardtable').append(str);
-		        		})				 
-					}
-				}
-			}) */
 		}
 </script>	
 <header id="header" th:fragment="headerFragment"></header>
@@ -71,10 +50,10 @@
 		<div class="col-md-12 subNav">
 			<div class="subNavBox">
 				<ul>
-					<li><a href="#">제품소개</a></li>
-					<li><a href="#">제품검색</a></li>
+					<li><a href="/greenbia/product/list">제품소개</a></li>
+					<li><a href="/greenbia/search">제품검색</a></li>
 				</ul>
-				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
+				<div class="btn_back"><a href="javascript:history.back()"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_back.png" /></a></div>
 			</div>
 		</div>
 		
@@ -113,7 +92,7 @@
 				   			<input type="text"  class="search-input"  name="searchKeyword" id="searchKeyword" tabindex=1  placeholder="제품명을 입력해 주세요" autofocus />
 						</li>
 						<li>
-					   		<input type="image" id ="btnSearch" class="btn_search" th:src="@{/img/greenbia/btn_search.gif}" />																	
+					   		<input type="image" id ="btnSearch" class="btn_search" src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_search.gif" />																	
 						</li>
 					</form>
 					

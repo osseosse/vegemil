@@ -5,8 +5,8 @@
 <head>
 <title>정식품 공정거래(CP)</title>
     <head th:replace="fragments/head :: headFragment"></head>
-	<link rel='stylesheet' href='./common/css/swiper-bundle.min.css' th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
-	<script src='./common/js/swiper-bundle.min.js' th:src="@{/common/js/swiper-bundle.min.js}"></script><!-- swiper(카테고리별제품 메뉴) -->
+	<link rel='stylesheet' th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
+	<script src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
 </head>
 <body>
 <!-- ================================ 
@@ -30,12 +30,12 @@
 	</div>
 	<div class="contant1460">
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
-				<li class="f18 fw500"><a href="#"><span>CCM이란?</span></a></li>
-				<li class="f18 fw500 active"><a href="#"><span>공정거래(CP)</span></a></li>
+				<li class="f18 fw500"><a href="/communication/ccm"><span>CCM이란?</span></a></li>
+				<li class="f18 fw500 active"><a href="/communication/cp"><span>공정거래(CP)</span></a></li>
 			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
 		</div>
     </div>
      <div class="contant100 bg_Gray ">
@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-md-2 ">
 					 <p class="f14 fw400 black  btnType03 mt65 float-right wView">
-                        <a href="#"><img class="mr5" src="./img/ico/ico_share.png" th:src="@{/img/ico/ico_share.png}"alt="공유"/>공유</a>
+                        <a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png"alt="공유"/>공유</a>
                     </p>
 				</div>
 			</div>
@@ -163,7 +163,7 @@
                                         <option>064</option>
                                     </select>
                                     <!--<input readonly type="text" class="inp03 w120"  placeholder="010">-->
-                                    - <input type="text" name="tel02" id="tel02" class="inp03 w130" maxlength="4" placeholder="5412"> - <input type="text" name="tel03" id="tel03" class="inp03 w130" maxlength="4" placeholder="5412"> 
+                                    - <input type="text" name="tel02" id="tel02" class="inp03 w130" maxlength="4" placeholder="0000"> - <input type="text" name="tel03" id="tel03" class="inp03 w130" maxlength="4" placeholder="0000"> 
                                 </li>
                             </ul>
                             <ul>
@@ -178,7 +178,7 @@
                                         <option>019</option>
                                     </select>
                                     <!--<input readonly type="text" class="inp03 w120"  placeholder="010">-->
-                                    - <input type="text" name="hp02" id="hp02" class="inp03 w130" maxlength="4" placeholder="5412"> - <input  type="text" name="hp03" id="hp03" class="inp03 w130" maxlength="4" placeholder="5412"> 
+                                    - <input type="text" name="hp02" id="hp02" class="inp03 w130" maxlength="4" placeholder="0000"> - <input  type="text" name="hp03" id="hp03" class="inp03 w130" maxlength="4" placeholder="0000"> 
                                 </li>
                             </ul>
                             <ul>
@@ -235,89 +235,6 @@
 		Footer
 ================================ -->
 <th:block class="white" th:replace="fragments/mainFooter :: footerFragment"></th:block>
-<!-- <script type="text/javascript">
-	function submitFormCheck(){
-		
-		var cName = document.getElementById("cName");
-		var hp02 = document.getElementById("hp02");
-		var hp03 = document.getElementById("hp03");
-		var tel02 = document.getElementById("tel02");
-		var	tel03 = document.getElementById("tel03");
-		var email01 = document.getElementById("email01");
-		var cSubject = document.getElementById("cSubject");
-		var cContent = document.getElementById("cContent");
-		var cCheck = document.querySelector('input[name="cCheck"]:checked').value
-		
-		console.log(cCheck);
-		if(cCheck != '1'){
-			alert("개인정보 수집 및 이용에 동의하지 않으셨습니다.");
-			window.scrollTo({top:800, left:0, behavior:'auto'});
-			return false;
-		}
-		
-		if(cName.value == ''){
-			alert("성명을 기입해 주세요.");
-			cName.focus();
-			return false;
-		}
-		if(tel02.value == ''){
-			alert("전화번호 두 번째 자리를 기입해주세요.");
-			tel02.focus();
-			return false;
-		}
-		if(tel03.value == ''){
-			alert("전화번호 세 번째 자리를 기입해주세요.");
-			tel03.focus();
-			return false;
-		}
-		if(hp02.value == ''){
-			alert("휴대전화 두 번째 자리를 기입해주세요.");
-			hp02.focus();
-			return false;
-		}
-		if(hp03.value == ''){
-			alert("휴대전화 세 번째 자리를 기입해주세요.");
-			hp03.focus();
-			return false;
-		}
-		if(email01.value == ''){
-			alert("이메일 주소를 기입해 주세요.");
-			email01.focus();
-			return false;
-		}
-		if(email_check(email01)==false){
-			email01.focus();
-			return false;
-		}
-		if(cSubject.value == ''){
-			alert("제목을 입력해주세요.");
-			cSubject.focus();
-			return false;
-		}
-		if(cContent.value == ''){
-			alert("내용을 입력해주세요.");
-			cContent.focus();
-			return false;
-		}
-		
-		btnActive();
-		document.getElementById('frm').submit();
-	}
-	
-	function writeMailAddr(){
-		var addr = document.getElementById("selEmail02").value;
-		document.getElementById("email02").value = addr;
-	}
-	
-	function email_check(e) {
-		var regId = /^[A-Za-z0-9]{1,20}$/;
-		if(!regId.test(e.value)) {
-			alert('이메일 양식이 잘못되었습니다.');
-			return false;
-		}
-		return true;
-	}
-</script> -->
 <script>
 	function writeMailAddr(){
 		var addr = document.getElementById("selEmail02").value;
@@ -413,36 +330,5 @@
 	});
 
 </script>
-<script>
-	
-/*================================
- * 	 main > 자주묻는질문+SNS
- *================================ */
-$(".verticalType02").collapse({
-	  accordion: true, 
-	  open: function() {
-		this.addClass("open");
-		this.css({ height: this.children().outerHeight() });
-	  },
-	  close: function() {
-		this.css({ height: "0px" });
-		this.removeClass("open");
-	  }
-	});
-</script>
-<!-- //main > 자주묻는질문+SNS -->
-
-
-<script>
-  /* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'footer' ).load( './mainFooter.html' );
-  });
-</script>
-<!-- ================================ 
-		// Footer
-================================ -->
-
-
 </body>
 </html>

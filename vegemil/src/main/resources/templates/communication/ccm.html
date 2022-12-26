@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 CCM이란?</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopCcm h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Communication</p>
+				<p class="white f45 fw600">CCM이란?</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460">
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 active"><a href="/communication/ccm"><span>CCM이란?</span></a></li>
+				<li class="f18 fw500 "><a href="/communication/cp"><span>공정거래(CP)</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+        <p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+    </div>
+    <div class="contant1460">
+        <div class="row mt160">
+            <div class="col-md-12 center">
+                <p class="f45 fw600">CCM이란?</p>
+                <p class="mt100">
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccmLogo.png" alt="소비자중심공정거래위원회 로고">
+                </p>
+                <p class="gold f_pp f18 fw500 mt60">CCM : Consumer Centered Management</p>
+                <p class="f66 fw600 mt40">소비자중심경영</p>
+                <p class="f18 gray04 fw500 mt60">
+                    CCM(Consumer Centered Management, 소비자중심경영)은 기업이 수행하는 모든 활동을 소비자 관점에서<br class="wView">
+                    소비자 중심으로 재구성하고 관련 경영활동을 지속해서 개선하고 있는지를 평가하여 인증하는 제도로<br class="wView">
+                    정식품에서는 2009년부터 도입 및 운영하고 있습니다.
+                </p>
+                <div class="grayRoundBox f23 fw500 mt120">
+                    소비자의 소리(VOC)
+                </div>
+                <div class="mt40 centerMo">
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_01.jpg" alt="LSP이미지" class="wView">
+                    <div class="center mView"><img class="img100" src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_01M.jpg" alt="LSP이미지" ></div>
+                </div>
+            </div>
+        </div>
+        <!-- 소비자, 기업, 공공 탭 위치 -->
+        <div class="row mt250">
+            <div class="col-md-6 pr100">
+                <p class="underLineB f27 fw500">CCM 인증마크</p>
+                <div class="row mt50 centerMo">
+                    <div class="col-md-3">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_03.jpg" alt="소비자중심CCM마크">
+                    </div>
+                    <div class="col-md-9 f16 gray04 mt20m">
+                        공정거래위원회가 부여하는 CCM인증마크는 기업이 소비자 지향적 경영문화 확산과 소비자권익 증진 노력을 통해 소비자 후생증대에 기여한 기업에 부여하는 인증마크로, 소비자와 기업의 서로에 대한 신뢰를 상징화하고 인증마크의 성격을 보다 직관적으로 알릴 수 있게 ‘소비자중심’을 인증마크 중앙에 크게 표현함.
+                    </div>
+                </div>
+                <p class="underLineB f27 fw500 mt150">CCM 인증 및 운영기관</p>
+                <div class="row mt50">
+                    <div class="col-md-6 center">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_04.jpg" alt="공정거래위원회 인증기관">
+                        <p class="f18 mt10">인증기관</p>
+                    </div>
+                    <div class="col-md-6 center mt20m">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_05.jpg" alt="한국소비자원">
+                        <p class="f18 mt10">운영기관</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt100m">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_02.jpg" alt="엄마아이이미지" class="round20">
+            </div>
+        </div>
+        <div class="row mt200">
+            <div class="col-md-12">
+                <p class="underLineB f27 fw500">CCM 홍보동영상</p>
+            </div>
+            <!-- 영상 삽입 -->
+			<div class="col-md-12">
+				<div class="center ccmYouyube">
+				<iframe src="https://www.youtube.com/embed/DPyAZmkBfj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+        </div>
+        <div class="row mt200">
+            <div class="col-md-12">
+                <p class="underLineB f27 fw500">CCM 인증서</p>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2021년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2021_1.jpg" alt="2021년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2021_2.jpg" alt="2021년인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2019년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2019_1.jpg" alt="2019년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2017_2.jpg" alt="2019년인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2017년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2017_1.jpg" alt="2017년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2017_2.jpg" alt="2017년인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2015년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2015_1.jpg" alt="2015년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2015_2.jpg" alt="2015년인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2013년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2013_1.jpg" alt="2013년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2013_2.jpg" alt="2013년인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2011년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2011_1.jpg" alt="2011년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2011_2.jpg" alt="2011년인증서">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt80">
+                <p class="f20 fw500">2009년</p>
+                <div class="row mt20">
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2009_1.jpg" alt="2009년인증서">
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/ccm_2009_2.jpg" alt="2009년인증서">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--1460 끝-->
+    <br class="clear">
+		
+	</div><!-- //contant1760 -->
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

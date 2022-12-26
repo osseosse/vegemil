@@ -47,7 +47,7 @@
 				-->
 			</div>
 			<div class="col-md-4 mt50">
-				<p class="f14 fw400 black  float-right btnType18"><a href="#"><img  th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a></p><br class="clear">
+				<p class="f14 fw400 black  float-right btnType18"><a href="#"><img  src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
 			</div>
 		</div>
 		<div class="row pro-top-tab">
@@ -76,7 +76,7 @@
 							<span class="f14" th:text="${product.tag3}"></span>
 						</div>
 						<div class="prd-label">
-							<img th:if="${product.bestProduct == 1}" th:src="@{/img/ico/ico_list_best.png}" alt="베스트">
+							<img th:if="${product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
 						</div>
 					</div>
 					<div id="photo02">
@@ -97,19 +97,19 @@
 					<p class="mt10 gray04" th:text="${product.description}"></p>	
 					<ul class="info_ul mt40" th:if="${product.capacity1} != null">
 						<li th:if="${product.capacity1} != null">
-							<p><img th:src="@{/img/ico/ico_info01.png}" alt="용량" /></p>
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info01.png" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">용량1</span><span class="f16 f_pp fw400" th:text="${product.capacity1}"></span></p>
 						</li>
 						<li th:if="${product.capacity2} != null">
-							<p><img th:src="@{/img/ico/ico_info02.png}" alt="용량" /></p>
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info02.png" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">용량2</span><span class="f16 f_pp fw400" th:text="${product.capacity2}"></span></p>
 						</li>
 						<li th:if="${product.kcal1} != null">
-							<p><img th:src="@{/img/ico/ico_info03.png}" alt="용량" /></p>
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info03.png" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">칼로리1</span><span class="f16 f_pp fw400" th:text="${product.kcal1}"></span></p>
 						</li>
 						<li th:if="${product.kcal2} != null">
-							<p><img th:src="@{/img/ico/ico_info04.png}" alt="용량" /></p>
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info04.png" alt="용량" /></p>
 							<p><span class="f16 fw400 gray04">칼로리2</span><span class="f16 f_pp fw400" th:text="${product.kcal2}"></span></p>
 						</li>
 					</ul>

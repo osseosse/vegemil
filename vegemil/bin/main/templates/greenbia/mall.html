@@ -8,7 +8,6 @@
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-
 <!--------------------- 
 		content
 ------------------- -->
@@ -21,17 +20,14 @@
 		<div class="col-md-12 subNav">
 			<div class="subNavBox">
 				<ul>
-					<li><a href="#">Shopping</a></li>
-					<li><a href="#">온라인구매</a></li>
+					<li><a href="/greenbia/mall">Shopping</a></li>
+					<li><a href="/greenbia/mall">온라인구매</a></li>
 				</ul>
-				<div class="btn_back"><a href="javascript:history.back()"><img th:src="@{/img/greenbia/btn_back.png}" /></a></div>
+				<div class="btn_back"><a href="javascript:history.back()"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_back.png" /></a></div>
 			</div>
 		</div>
-		
 	</div>
 </div>
-
-
 <div class="container100 pb100">
 	<div class="container">
 		<div class="row ">
@@ -69,7 +65,7 @@
 <div class="container1660">
 	<div class="row ">
 		<div class="col-md-12" >
-			<a th:href="@{https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000034&pCateCode=20000002}" target="_blank"><img th:src="@{/img/greenbia/edaymall.jpg}" alt="이데이몰"/></a>
+			<a th:href="@{https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000034&pCateCode=20000002}" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/edaymall.jpg" alt="이데이몰"/></a>
 		</div>
 	</div>
 </div>
@@ -95,20 +91,19 @@
 <div class="container1660 mb200">
 	<div class="row ">
 		<div class="col-md-12 mt80" >
-			<a th:href="@{https://smartstore.naver.com/dcfwithedaymall}" target="_blank"><img th:src="@{/img/greenbia/vegemil.jpg}" alt="베지밀 공식 네이버스토어"/></a>
+			<a th:href="@{https://smartstore.naver.com/dcfwithedaymall}" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/vegemil.jpg" alt="베지밀 공식 네이버스토어"/></a>
 		</div>
 	</div>
 </div>
 <!--------------------- 
 		//content
 ------------------- -->
-
 <!-- Brook Slider -->
-<script src="./common/js/vendor.min.js"></script>
-<script src="./common/js/plugins.min.js"></script>
+<script src="/common/js/vendor.min.js"></script>
+<script src="/common/js/plugins.min.js"></script>
 <!-- Brook Slider -->
-<script src="./common/js/main.js"></script>
-<script src="./common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<script src="/common/js/main.js"></script>
+<script src="/common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
 <!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

@@ -5,24 +5,14 @@
 <head>
 <title>정식품 공정거래(CP)</title>
     <head th:replace="fragments/head :: headFragment"></head>
-	<link rel='stylesheet' href='./common/css/swiper-bundle.min.css' th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
-	<script type="text/javascript" src='./common/js/swiper-bundle.min.js' th:src="@{/common/js/swiper-bundle.min.js}"></script><!-- swiper(카테고리별제품 메뉴) -->
+	<link rel='stylesheet' th:href="@{/common/css/swiper-bundle.min.css"><!-- swiper(카테고리별제품 메뉴) -->
+	<script type="text/javascript" src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
 </head>
 <body>
 <!-- ================================ 
 		Header
 ================================ -->
 <th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
-<script>
-	/* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'header' ).load( './mainHeader.html' );
-  } );
-</script>
-<!-- ================================ 
-		// Header
-================================ -->
-
 <!-- ================================ 
 		Content
 ================================ -->
@@ -37,12 +27,12 @@
 	</div>
 	<div class="contant1460">
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
-				<li class="f18 fw500"><a href="#"><span>CCM이란?</span></a></li>
-				<li class="f18 fw500 active"><a href="#"><span>공정거래(CP)</span></a></li>
+				<li class="f18 fw500"><a href="/communication/ccm"><span>CCM이란?</span></a></li>
+				<li class="f18 fw500 active"><a href="/communication/cp"><span>공정거래(CP)</span></a></li>
 			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}" alt="왼쪽"/></a></p>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
 		</div>
     </div>
 	<div class="contant100 bg_Gray ">
@@ -63,7 +53,7 @@
 				</div>
 				<div class="col-md-2 ">
 					 <p class="f14 fw400 black  btnType03 mt65 float-right wView">
-                        <a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a>
+                        <a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a>
                     </p>
 				</div>
 			</div>
@@ -149,8 +139,8 @@
 									</div>
 									<div class="col-md-12 mt120">
 										<p class="f27 fw500">3. 구성 부분별 전문조직</p>
-										<img th:src="@{/img/communication/cpComposition_pc.jpg}" alt="구성 부분별 전문조직" class="wView mt50">
-										<img th:src="@{/img/communication/cpComposition_mo.jpg}" alt="구성 부분별 전문조직" class="mView mt50">
+										<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/cpComposition_pc.jpg" alt="구성 부분별 전문조직" class="wView mt50">
+										<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/cpComposition_mo.jpg" alt="구성 부분별 전문조직" class="mView mt50">
 										<p class="mt70 textRight">
 											<span class="f16">※ 실천리더 : 자율준수관리자가 선임</span><br><br>
 											<span class="gray04 f16">
@@ -443,8 +433,8 @@
 										<div class="col-md-12 mb50">
 											<p class="f27 fw500">보고 및 처리절차</p>
 											<div class="mt50">
-												<img th:src="@{/img/communication/cpProcedure_pc.jpg}" alt="보고 및 처리절차" class="wView">
-												<img th:src="@{/img/communication/cpProcedure_mo.jpg}" alt="보고 및 처리절차" class="mView">
+												<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/cpProcedure_pc.jpg" alt="보고 및 처리절차" class="wView">
+												<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/cpProcedure_mo.jpg" alt="보고 및 처리절차" class="mView">
 											</div>
 										</div>
 									</div>
@@ -522,8 +512,8 @@
 											<tbody>
 												<tr>
 													<td class="tableImg">
-														<img th:src="@{/img/communication/cpFlow_pc.jpg}" alt="시행 전 사전 모니터링 업무 FLOW" class="wView">
-														<img th:src="@{/img/communication/cpFlow_mo.jpg}" alt="시행 전 사전 모니터링 업무 FLOW" class="mView">
+														<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/cpFlow_pc.jpg" alt="시행 전 사전 모니터링 업무 FLOW" class="wView">
+														<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/cpFlow_mo.jpg" alt="시행 전 사전 모니터링 업무 FLOW" class="mView">
 													</td>
 												</tr>
 											</tbody>
@@ -582,35 +572,35 @@
 										   <ul class="center pr30 pl30 mt30">
 											   <li class="grayBox04">점검 세부계획 수립</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">해당부서 통보</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">자율점검 결과 CP 사무국 및 자율준수관리자에게 보고</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">자율준수 협의회 실천 리더 통보<br>해당부서/팀 점검</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">점검결과 해당 부서장 확인</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">자율준수관리자 결과 통보</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">자율준수관리자 위반 경/중 판단</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">1.현장 시정 또는 시정 계획서 수령<br>2.인사위원회 회부(경고 등)</li>
 											   <p class="center mt10">
-												   <img th:src="@{/img/ico/ic_arrow_down.jpg}" alt="아래 화살표">
+												   <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ic_arrow_down.jpg" alt="아래 화살표">
 											   </p>
 											   <li class="grayBox04 mt20">필요 시 재발 방지 대책 수립 및 전사 통보 공유</li>
 										   </ul>
@@ -762,46 +752,13 @@
         </div><!--1460 끝-->
     </div>
     <br class="clear">
-		
-	</div><!-- //contant1760 -->
 </div>
 <!-- ================================ 
 		// Content
 ================================ -->
-
-
 <!-- ================================ 
 		Footer
 ================================ -->
 <th:block class="white" th:replace="fragments/mainFooter :: footerFragment"></th:block>
-<script>
-/*================================
- * 	 main > 자주묻는질문+SNS
- *================================ */
-$(".verticalType02").collapse({
-	  accordion: true, 
-	  open: function() {
-		this.addClass("open");
-		this.css({ height: this.children().outerHeight() });
-	  },
-	  close: function() {
-		this.css({ height: "0px" });
-		this.removeClass("open");
-	  }
-	});
-</script>
-<!-- //main > 자주묻는질문+SNS -->
-
-
-<script>
-  /* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'footer' ).load( './mainFooter.html' );
-  });
-</script>
-<!-- ================================ 
-		// Footer
-================================ -->
-
-
 </body>
+</html>

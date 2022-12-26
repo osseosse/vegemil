@@ -5,9 +5,9 @@
 <head>
 <title>정식품 공정거래(CP)</title>
     <head th:replace="fragments/head :: headFragment"></head>
-	<link rel='stylesheet' href='./common/css/swiper-bundle.min.css' th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
-	<script src='./common/js/swiper-bundle.min.js' th:src="@{/common/js/swiper-bundle.min.js}"></script><!-- swiper(카테고리별제품 메뉴) -->
-	<script src='./common/js/swiper.js' th:src="@{/common/js/swiper.js}"></script><!-- swiper(카테고리별제품 메뉴) -->
+	<link rel='stylesheet' th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
+	<script src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
+	<script src="/common/js/swiper.js"></script><!-- swiper(카테고리별제품 메뉴) -->
 </head>
 <body>
 <!-- ================================ 
@@ -32,12 +32,12 @@
 	</div>
 	<div class="contant1460">
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img th:src="@{/img/ico/ico_grayLeft.png}" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
-				<li class="f18 fw500"><a href="#"><span>CCM이란?</span></a></li>
-				<li class="f18 fw500 active"><a href="#"><span>공정거래(CP)</span></a></li>
+				<li class="f18 fw500"><a href="/communication/ccm"><span>CCM이란?</span></a></li>
+				<li class="f18 fw500 active"><a href="/communication/cp"><span>공정거래(CP)</span></a></li>
 			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img th:src="@{/img/ico/ico_grayRight.png}"alt="왼쪽"/></a></p>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png"alt="왼쪽"/></a></p>
 		</div>
     </div>
     <div class="contant100 bg_Gray ">
@@ -58,7 +58,7 @@
 				</div>
 				<div class="col-md-2 ">
 					 <p class="f14 fw400 black  btnType03 mt65 float-right wView">
-                        <a href="#"><img class="mr5" th:src="@{/img/ico/ico_share.png}" alt="공유"/>공유</a>
+                        <a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a>
                     </p>
 				</div>
 			</div>
@@ -143,7 +143,6 @@
     </div>
     <br class="clear">
 		
-	</div><!-- //contant1760 -->
 </div>
 <!-- ================================ 
 		// Content
@@ -152,31 +151,6 @@
 		Footer
 ================================ -->
 <th:block class="white" th:replace="fragments/mainFooter :: footerFragment"></th:block>
-<script>
-/*================================
- * 	 main > 자주묻는질문+SNS
- *================================ */
-$(".verticalType02").collapse({
-	  accordion: true, 
-	  open: function() {
-		this.addClass("open");
-		this.css({ height: this.children().outerHeight() });
-	  },
-	  close: function() {
-		this.css({ height: "0px" });
-		this.removeClass("open");
-	  }
-	});
-</script>
-<!-- //main > 자주묻는질문+SNS -->
-
-
-<script>
-  /* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'footer' ).load( './mainFooter.html' );
-  });
-</script>
 <!-- ================================ 
 		// Footer
 ================================ -->
@@ -189,6 +163,5 @@ $(".verticalType02").collapse({
 		window.open("/communication/cp/cpEbookView?fileName=" + fileName,'pop',popupOption);
 	}
 </script>
-
 </body>
 </html>
