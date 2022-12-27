@@ -50,7 +50,7 @@
 <div class="container1400_15  hisBox">
 	<div class="row">
 		<div class="col-md-7 mt120" >
-				<p class="brand_logo"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/brand_logo02.gif}" alt="그린비아로고"/></p>		
+				<p class="brand_logo"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/greenbia/brand_logo02.gif}" alt="그린비아로고"/></p>		
 				<p class="f50_6 mt50">국내 최초 경장 영양식의 시작<span class="pupple">.</span></p>
 				<p class="f20_4 mt20">30년간의 전문화된 연구개발을 통해 더욱 발전해 온 그린비아의 발자취입니다.</p>
 		</div>
@@ -149,6 +149,8 @@
 											</li>
 										</ul>
 									</div>
+									<!-- 2022-12-27 [한종걸]
+									.timeline-content  display: none; 처리돼있으므로   구매하기 링크 작성안함 -->
 									<a href="#"><div class="btn_type04 mt50 ">구매하기</div></a>
 								</div>
 								<div class="col-md-6">
@@ -220,6 +222,8 @@
 											</li>
 										</ul>
 									</div>
+									<!-- 2022-12-27 [한종걸]
+									.timeline-content  display: none; 처리돼있으므로   구매하기 링크 작성안함 -->
 									<a href="#"><div class="btn_type04 mt50 ">구매하기</div></a>
 								</div>
 								<div class="col-md-6">
@@ -291,6 +295,8 @@
 											</li>
 										</ul>
 									</div>
+									<!-- 2022-12-27 [한종걸]
+									.timeline-content  display: none; 처리돼있으므로   구매하기 링크 작성안함 -->
 									<a href="#"><div class="btn_type04 mt50 ">구매하기</div></a>
 								</div>
 								<div class="col-md-6">
@@ -362,6 +368,8 @@
 											</li>
 										</ul>
 									</div>
+									<!-- 2022-12-27 [한종걸]
+									.timeline-content  display: none; 처리돼있으므로   구매하기 링크 작성안함 -->
 									<a href="#"><div class="btn_type04 mt50 ">구매하기</div></a>
 								</div>
 								<div class="col-md-6">
@@ -385,14 +393,7 @@
 <!--------------------- 
 		//content
 ------------------- -->
-<!-- Brook Slider -->
- <script src="/common/js/vendor.min.js"></script>
- <script src="/common/js/plugins.min.js"></script>
-<!-- Brook Slider -->
-<script src="/common/js/main.js"></script>
-<script src="/common/js/card-slider.js"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
 	AOS.init({
 		easing: 'ease-out-back',
