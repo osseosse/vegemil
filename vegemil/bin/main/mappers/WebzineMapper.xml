@@ -370,7 +370,7 @@
             index_no = #{indexNo}
     </select>
     
-    <select id="webzineEventCountByQrt" parameterType="long" resultType="com.vegemil.domain.WebzineEventDTO">
+    <select id="webzineEventCountByQrt" parameterType="com.vegemil.domain.WebzineEventDTO" resultType="int">
         SELECT
             COUNT(*)
         FROM

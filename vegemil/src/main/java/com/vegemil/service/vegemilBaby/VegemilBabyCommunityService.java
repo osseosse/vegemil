@@ -3,6 +3,7 @@ package com.vegemil.service.vegemilBaby;
 import java.util.List;
 
 import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
@@ -36,14 +37,11 @@ public interface VegemilBabyCommunityService {
     public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
 	
 	//샘플 신청 등록
-    public int insertSampleForm(VegemilBabySampleDTO sample);
+    public boolean insertSampleForm(VegemilBabySampleDTO sample);
     
-    
-    
-    
+    public boolean isSampleForm(VegemilBabySampleDTO params);
     
 	public List<VegemilBabyMagazineDTO> findMagazine(SearchDTO params);
-
 
     //육아정보 -임신출산
     public List<VegemilBabyMagazineDTO> findPbMagazine(SearchDTO params);
@@ -52,20 +50,15 @@ public interface VegemilBabyCommunityService {
     //육아정보 - 놀이/교육
     public List<VegemilBabyMagazineDTO> findPeMagazine(SearchDTO params);
 
-
 	/* public List<VegemilBabyMagazineDTO> findAllMagazine(); */
     public List<VegemilBabyMagazineDTO> findLhMagazine();
-
 	
     public List<VegemilBabyMagazineDTO> findAllMagazine2(SearchDTO params);
 
-    
     public List<Integer> magazineCountList(String cate);
-    
     
 	
 	public List<VegemilBabyEventDTO> eventList();
-	
 
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
 	

@@ -117,18 +117,6 @@
 	
 	<!-- 영유아식레시피 - 레시피 상세  -->		
 	<insert id ="insertSampleForm" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" useGeneratedKeys="true" keyProperty="sIdx"  >	
-		<!-- INSERT INTO 
-				m_sample_baby (s_id, s_mname, s_year)
-		SELECT 
-				m_id, m_name, m_year
-		FROM 
-			m_member 
-		WHERE 
-			m_id= 'gojkhan13'; -->
-		<!-- VALUES(
-				#{sIdx}, #{sId}, #{sMname}) select m_year from m_member where m_id= 'gojkhan13'
-		) -->
-		
 		INSERT INTO 
 			m_sample_baby
 				(s_id, s_mname, s_year, s_hp, s_tel, s_zipcode, s_addr1, s_addr2, s_email, s_item, s_babycnt 
@@ -145,7 +133,16 @@
 		)
 	</insert>
 	
-	
+	<select id ="sampleFormCountBySample" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" resultType="int" >	
+		SELECT
+			count(s_writedate)
+		FROM 
+			m_sample_baby
+		WHERE
+			s_id = #{sId}
+		AND 
+			s_item = #{sItem}
+	</select>
 
 	<!-- 육아정보 - 임신출산 게시글수 -->
 	<select id="pbMagazineCount" resultType="int" >			

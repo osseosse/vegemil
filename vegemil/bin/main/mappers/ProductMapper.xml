@@ -86,7 +86,7 @@
 		  <if test="searchKeyword != null and searchKeyword != ''">  
 		  and p_name = #{searchKeyword}
 		  </if>                 
-	    ORDER BY display_priority
+	    ORDER BY p_idx ASC
 	</select>
 	
 	<select id="selectRecProduct" parameterType="String" resultType="com.vegemil.domain.ProductDTO">

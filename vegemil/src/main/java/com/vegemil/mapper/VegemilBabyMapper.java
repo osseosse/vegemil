@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
@@ -54,6 +55,7 @@ public interface VegemilBabyMapper {
 	//===[샘플신청]===
 	public int insertSampleForm(VegemilBabySampleDTO sample);
 	
+	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
 	
 	//public List<VegemilBabyMagazineDTO> selectAllMagazine();
 	public List<VegemilBabyMagazineDTO> selectLhMagazine();

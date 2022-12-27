@@ -1,14 +1,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-
 <title>샘플신청</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <script type="text/javascript">
 	$(document).ready(function () {
 		
 		$('#btnInfant1, #btnInfant2, #btnInfant3').click(function() {
-			
 			
 			if(new Date().getDay() == '0'){
 				alert('일요일은 신청기간이 아닙니다. \n 월요일 오전 10시 이후로 신청해주세요.');
@@ -21,20 +19,6 @@
 		
 	});
 
-
-	function FIRST_SET(){
-		if("<%=FlagLogin%>" == "0"){
-			//alert("로그인이 되어있지 않습니다.");
-		}else{
-			if("<%=FlagSample%>" == "1"){
-				alert("샘플신청이 가능합니다.");
-			}else{
-				alert("[ <%=FlagSample%> ]일에 샘플신청을 하셨습니다.");
-				location.href="/main/brandVegemilBaby/";
-			}
-		}
-		//document.getElementById("txtSName").focus();
-	}
 	// 로그인
 	function MemberCheck(oName){
 		var topsize = GetXYTop(oName);
@@ -43,11 +27,6 @@
 		$("#MemberCheckDiv").css("top",eval(topsize) + 20);
 		$("#MemberCheckDiv").css("left",eval(leftsize));
 		$("#MemberCheckDiv").css("margin", "0")				
-		//document.getElementById("MemberCheckDiv").style.top = eval(topsize) + 22;
-		//document.getElementById("MemberCheckDiv").style.left = eval(leftsize) - 50;
-		
-		//document.getElementById("MemberCheckDiv").style.display = "block";
-		//document.getElementById("MemberCheckFrame").src = "/main/brandVegemilBaby/SampleCheck.aspx";
 		
 		$("#MemberCheckDiv").show();
 		$("#MemberCheckFrame").attr("src","/main/brandVegemilBaby/SampleCheck.aspx");
@@ -214,7 +193,7 @@
 											<p class="f20_4_b">6개월부터 첫돌까지</p>
 											<p class="f26_6_1 mt15">Infant Belief 1</p>
 											<p class="btn_sample mt40">
-												<a id="btnInfant1" class="hvr-float" th:href="@{/vegemilBaby/sample/form}"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_s_01.gif}" alt="1단계  신청하기"/></a>
+												<a id="btnInfant1" class="hvr-float" th:href="@{/vegemilBaby/sample/form?sItem=INF}"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_s_01.gif}" alt="1단계  신청하기"/></a>
 											</p>
 										</div>
 									</div>
@@ -224,7 +203,7 @@
 											<p class="f20_4_g">첫돌부터 24개월까지</p>
 											<p class="f26_6_1 mt15">Toddler Belief 2</p>
 											<p class="btn_sample mt40">
-												<a id="btnInfant2" class="hvr-float" th:href="@{/vegemilBaby/sample/form}"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_s_02.gif}" alt="2단계  신청하기"/></a>
+												<a id="btnInfant2" class="hvr-float" th:href="@{/vegemilBaby/sample/form?sItem=TO2}"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_s_02.gif}" alt="2단계  신청하기"/></a>
 											</p>
 										</div>
 									</div>
@@ -234,7 +213,7 @@
 											<p class="f20_4_o">24개월부터 36개월까지</p>
 											<p class="f26_6_1 mt15">Toddler Belief 3</p>
 											<p class="btn_sample mt40">												
-												<a id="btnInfant3" class="hvr-float" th:href="@{/vegemilBaby/sample/form}"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_s_03.gif}" alt="1단계  신청하기"/></a>											</p>
+												<a id="btnInfant3" class="hvr-float" th:href="@{/vegemilBaby/sample/form?sItem=TO3}"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_s_03.gif}" alt="1단계  신청하기"/></a>											</p>
 										</div>
 									</div>
 								</div>

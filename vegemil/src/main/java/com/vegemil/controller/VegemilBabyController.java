@@ -1,9 +1,12 @@
 package com.vegemil.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +28,7 @@ import com.vegemil.util.UiUtils;
 @CrossOrigin(origins="*", allowedHeaders = "*")
 @Controller
 @RequestMapping("/vegemilBaby")
-public class VegemilBabyController {
+public class VegemilBabyController extends UiUtils {
 
 	@Autowired
 	private VegemilBabyCommunityService vegemilBabyCommunityService;
@@ -35,7 +38,7 @@ public class VegemilBabyController {
 			throws Exception {
 		return "vegemilBaby/" + viewName;
 	}
-
+	
 	@GetMapping("/index")
 	public String index(Model model) {
 		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
@@ -78,24 +81,56 @@ public class VegemilBabyController {
 	//@ModelAttribute("member") final @Valid MemberDTO member
 	/* Event */
 	@GetMapping("/sample/form")
-	public String moveSampleForm(Authentication authentication, Model model) {
+	public String moveSampleForm(Authentication authentication, Model model,
+							@RequestParam(value = "sItem", required = false) String sItem) {
 		
-	        MemberDTO member = (MemberDTO) authentication.getPrincipal();  
-	        System.out.println(member.toString());
-			
-	        model.addAttribute("member", member);		
+		MemberDTO member = new MemberDTO();
+		if(authentication == null) {
+			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		} else {
+			member = (MemberDTO) authentication.getPrincipal();
+		}
+        model.addAttribute("member", member);
+        model.addAttribute("sItem", sItem);
+        
 		return "vegemilBaby/sampleForm";
 	}
 	
 	//샘플 신청 등록
-	@PostMapping("/sample/form")
+	@PostMapping("/sample/apply")
 	public String submitSampleForm(@ModelAttribute("sample") VegemilBabySampleDTO sample, 
-								HttpServletRequest request,
-								Model model) {
-		vegemilBabyCommunityService.insertSampleForm(sample);
-		System.out.println(sample);
-	        		
-		return "redirect:/vegemilBaby/sample";
+								HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		try {
+			
+			boolean isRegistered = vegemilBabyCommunityService.isSampleForm(sample);
+			if (isRegistered == true) {
+				out.println("<script>alert('고객님은 이미 샘플신청을 했습니다.'); history.go(-1);</script>");
+				out.flush();
+				return showMessageWithRedirect("고객님은 이미 샘플신청을 했습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
+			isRegistered = vegemilBabyCommunityService.insertSampleForm(sample);
+			if (isRegistered == false) {
+				out.println("<script>alert('샘플 신청이 실패했습니다.'); history.go(-1);</script>");
+				out.flush();
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine/event", Method.GET, null, model);
+			}
+		
+		} catch (DataAccessException e) {
+			out.println("<script>alert('데이터베이스 처리 과정에 문제가 발생하였습니다.'); history.back();</script>");
+			out.flush();
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			
+		} catch (Exception e) {
+			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		}
+		
+		return showMessageWithRedirect("샘플신청 완료되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 	}
 
 	// 육아 정보

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
@@ -77,19 +78,22 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	//샘플신청 등록
 	@Override
 	@Transactional
-	public int insertSampleForm(VegemilBabySampleDTO sample) {
+	public boolean insertSampleForm(VegemilBabySampleDTO sample) {
+			
+		int queryResult = 0;
+		queryResult = vegemilBabyMapper.insertSampleForm(sample);
 		
-		System.out.println("==========서비스 임플=========");
-		System.out.println("===========sample: "+ sample);
-		return vegemilBabyMapper.insertSampleForm(sample);
+		return (queryResult == 1) ? true : false;
 	}
 
+	@Override
+	public boolean isSampleForm(VegemilBabySampleDTO params) {
+		
+		int sampleCount = 0;
+		sampleCount = vegemilBabyMapper.sampleFormCountBySample(params);
 
-	
-	
-	
-
-	
+		return (sampleCount >= 1) ? true : false;
+	}
 
     //육아정보 -임신출산
 	@Override
