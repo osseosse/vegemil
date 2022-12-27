@@ -36,9 +36,26 @@
 	            return;
             }
         });
+        //주소복사
+        function TourUrlCopy() {
+           
+		    var isIE = false;
+		    var agent = navigator.userAgent.toLowerCase();
+		    if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+			    isIE = true;
+		    }
+
+           if(isIE){
+           if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?"))
+               window.clipboardData.setData("Text",document.location.href);
+           }else{
+               temp = prompt("Ctrl+C를 눌러 주소를 클립보드로 복사하세요.",document.location.href);
+           }
+        }
     </script>
 </head>
-<body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
+<body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 -->
+	<!-- 메뉴시작  --> 
   	<div class="site-header dsn-container dsn-load-animate">
         <div class="extend-container w-100 align-items-baseline justify-content-between align-items-end">
             <div class="inner-header p-relative">
@@ -113,6 +130,8 @@
         </div>
     </div>
 	<script th:src="@{/beansoupRecipe/js/jquery.1.11.1.min.js}"></script>
+	<!-- 메뉴 끝  --> 
+	
         <div id="dsn-scrollbar">
             <div class="main-content">
                 <div class="wrapper">
@@ -124,8 +143,8 @@
 								<div class="col-lg-6"> 
 									<div class="recipe_03_big h-100m">
 										<ul class="lableBox">
-											<li><img src="assets/img/lable01.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-											<li><img src="assets/img/lable02.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}"alt="초보추천" /></li>
+											<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
+											<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}"alt="초보추천" /></li>
 										</ul>
 									</div>
 								</div>
@@ -143,7 +162,7 @@
 										<p class="f20_4 mt-30">육수 필요없이 고소하고 담백하게</p>
 										<ul class="re_btn mt-50">
 											<li><a href="https://www.edaymall.com/search/totalSearch.do?prodAlignType=1&pCategory=&sCategory=&empGoodsYn=0&searchInput=%EC%A7%84%ED%95%9C+%EC%BD%A9%EA%B5%AD%EB%AC%BC" target="_blank" class="f18_4">진한 콩국물 사러가기 
-											<img src="assets/img/btn_arrow.png"th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_arrow.png}" /></a></li>
+											<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_arrow.png}" /></a></li>
 											<li><a href="#" onclick="javascript:TourUrlCopy(); return false;" class="f18_4" >레시피 URL 복사하기<img src="assets/img/btn_clip.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_clip.png}" /></a></li>
 											<input type="hidden" id="hidUrl" value=""/>
 										</ul>
@@ -155,10 +174,10 @@
 											<li>#4인가족</li>
 										</ul>
 										<ul class="mhs">
-											<li><p class="mhs_box"><img src="./assets/img/ico_winter.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_winter.png}" alt="" /></p><p class="f16_4 mt-5">겨울</p></li>
+											<li><p class="mhs_box"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_winter.png}" alt="" /></p><p class="f16_4 mt-5">겨울</p></li>
 											<li><p class="mhs_box"><span class="f44_6 f_pp">30</span><br><span class="f_16">min</span></p><p class="f16_4 mt-5">조리시간</p></li>
-											<li><p class="mhs_box"><img src="./assets/img/ico_m4.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_m4.png}" alt="" /></p><p class="f16_4 mt-5">분량</p></li>
-											<li><p class="mhs_box"><img src="./assets/img/ico_s1.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1.png}" alt="" /></p><p class="f16_4 mt-5">난이도</p></li>
+											<li><p class="mhs_box"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_m4.png}" alt="" /></p><p class="f16_4 mt-5">분량</p></li>
+											<li><p class="mhs_box"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1.png}" alt="" /></p><p class="f16_4 mt-5">난이도</p></li>
 										</ul>
 									</div>
 								</div>
@@ -185,7 +204,7 @@
 							<div class="container">
 								<div class="row ">
 									<div class="col-lg-12 center mt-80"> 
-										<iframe class="youtubeSize"  src="https://www.youtube.com/embed/c5rTL-oKsl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<iframe class="youtubeSize" src="https://www.youtube.com/embed/c5rTL-oKsl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									</div>
 								</div>
 								<div class="row ">
@@ -195,7 +214,7 @@
 								</div>
 								<div class="row reBox04">
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/01.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/01.jpg}"></p>
+										<p><img  th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/01.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>01</p></dt>
 											<dd class="f22_4 color_g">버섯은 한 가지만 종류별로 섞어 사용해도 좋습니다. 콩물도 반반 섞어 사용해도 좋아요.</dd>
@@ -203,35 +222,35 @@
 										
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/02.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/02.jpg}"></p>
+										<p><img  th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/02.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>02</p></dt>
 											<dd class="f22_4 color_g">새송이 버섯은 이등분해서 너무 두껍지 않게 썰어 주세요. 표고버섯은 밑둥을 떼어내고 채썰어 주세요. 느타리 버섯과 팽이버섯도 밑둥을 자르고 찢어 줍니다.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4">  
-										<p><img src="assets/img/project/03/03.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/03.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/03.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>03</p></dt>
 											<dd class="f22_4 color_g">양파도 적당한 두깨로 채썰어 주세요.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/04.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/04.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/04.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>04</p></dt>
 											<dd class="f22_4 color_g">대파는 어슷 썰어주세요</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/05.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/05.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/05.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>05</p></dt>
 											<dd class="f22_4 color_g">홍고추도 가늘게 어슷 썰어주세요.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/06.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/06.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/06.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>06</p></dt>
 											<dd class="f22_4 color_g">참나물은 잎부분만 떼어서 사용합니다.</dd>
@@ -239,35 +258,35 @@
 									</div>
 
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/07.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/07.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/07.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>07</p></dt>
 											<dd class="f22_4 color_g">들깨가루는 물 1컵에 미리 풀어서 준비해 주세요.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/08.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/08.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/08.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>08</p></dt>
 											<dd class="f22_4 color_g">진한 콩국물도 잘 흔들어 미리 준비해 둡니다</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/09.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/09.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/09.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>09</p></dt>
 											<dd class="f22_4 color_g">팬을 달구고 들기름을 둘러 양파를 먼저 볶아줍니다. 양파가 살짝 익었으면 버섯을 넣고 들기름 향이 배이도록 볶아줍니다.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/10.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/10.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/10.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>10</p></dt>
 											<dd class="f22_4 color_g">버섯이 부드러워 질때까지 볶아주세요</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/11.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/11.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/11.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>11</p></dt>
 											<dd class="f22_4 color_g">콩국물을 부어 줍니다.</dd>
@@ -275,28 +294,28 @@
 										<p class="reType02 mt-50">눌지 않도록 저어 주면서 계속 끓입니다</p>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/12.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/12.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/12.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>12</p></dt>
 											<dd class="f22_4 color_g">국간장으로 간을합니다</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/13.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/13.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/13.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>13</p></dt>
 											<dd class="f22_4 color_g">바글바글 끓어 오르면 대파 홍고추 넣고 한 번 더 끓이고 물에 풀어 놓은 들깨가루 넣어주세요.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/14.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/14.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/14.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>14</p></dt>
 											<dd class="f22_4 color_g">마지막으로 참나물 넣고 마무리하세요.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/03/15.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/15.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/03/15.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>15</p></dt>
 											<dd class="f22_4 color_g">고소하고 단백한 영양 만점 콩국물 버섯 들깨찜입니다!</dd>
@@ -307,7 +326,7 @@
 								<div class="row ">
 									<div class="col-lg-12 center mt-80"> 
 										<ul class="tip line_g">
-											<li><img src="assets/img/tip.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/tip.png}" alt="강력추천"/></li>
+											<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/tip.png}" alt="강력추천"/></li>
 											<li class="mt-30m">
 												<p class="color_g">농도는 물로 조절하시고 국물을 넉넉히 잡고 간을 추가해서 탕으로도 충분히 드실 수 있습니다. <br>검은콩국물로 만드셔도 좋습니다.</p>
 											</li>
@@ -344,7 +363,7 @@
 										<a href="sub_recipe01.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_01_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_01_big.jpg}"alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_01_big.jpg}"alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -360,7 +379,7 @@
 										<a href="sub_recipe02.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_02_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_02_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_02_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -375,7 +394,7 @@
 										<a href="sub_recipe03.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_03_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_03_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_03_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -390,7 +409,7 @@
 										<a href="sub_recipe04.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_04_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_04_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_04_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -405,7 +424,7 @@
 										<a href="sub_recipe05.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_05_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -420,7 +439,7 @@
 										<a href="sub_recipe06.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_06_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_06_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_06_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -476,7 +495,7 @@
         </div>
         <!-- ========== Scroll Right Page To Top Page ========== -->
     <div class="scroll-to-top">
-        <img src="assets/img/scroll_top.svg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
+        <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
         <div class="box-numper">
             <span>10%</span>
         </div>

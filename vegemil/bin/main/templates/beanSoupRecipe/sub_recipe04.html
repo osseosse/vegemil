@@ -36,6 +36,23 @@
 	            return;
             }
         });
+        
+        //주소복사
+        function TourUrlCopy() {
+           
+		    var isIE = false;
+		    var agent = navigator.userAgent.toLowerCase();
+		    if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+			    isIE = true;
+		    }
+
+           if(isIE){
+           if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?"))
+               window.clipboardData.setData("Text",document.location.href);
+           }else{
+               temp = prompt("Ctrl+C를 눌러 주소를 클립보드로 복사하세요.",document.location.href);
+           }
+        }
     </script>
 </head>
 <body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
