@@ -79,7 +79,6 @@ public class GreenbiaController extends UiUtils {
 	@GetMapping("/greenbia/search")
 	public String openGreenbiaSearch(Model model, String searchKeyword) {
 		
-		System.out.println("=====================ProductControllerGreenbia======================");
 				
 		List<GreenbiaProductDTO> searchList = greenbiaProductService.searchProduct(searchKeyword);
 		model.addAttribute("searchList", searchList);

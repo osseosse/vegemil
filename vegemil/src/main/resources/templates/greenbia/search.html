@@ -105,7 +105,7 @@
 			<div class="resizer" ></div>
 				<div class="portfolio portfolio_style--1 portfolio-33-33">	
 			      	<div  th:each="product : ${searchList}" > 
-				      	<a th:with="var=${product.gCode}" th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=}+${var}"> 
+				      	<a th:with="var=${product.gIdx}" th:href="@{/greenbia/product/detail/}+${var}"> 
 					        <div class="poss_relative">				
 								<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
 							        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
@@ -169,7 +169,7 @@
 						<!-- 수정후 -->	
 			            <div th:each="product : ${keywordProductList}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 " th:classappend="${product.gKeyword}">
 			                <div class="card border-0">	                
-			                    <a th:with="var=${product.gCode}" th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=}+${var}"> 
+			                	<a th:with="var=${product.gIdx}" th:href="@{/greenbia/product/detail/}+${var}"> 			                
 							        <div class="poss_relative">
 							       	 	<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
 									        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
