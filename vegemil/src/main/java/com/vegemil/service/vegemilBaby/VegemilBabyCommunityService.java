@@ -5,6 +5,7 @@ import java.util.List;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO;
@@ -38,6 +39,8 @@ public interface VegemilBabyCommunityService {
 	
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);
+    
+    public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);
     
     public boolean isSampleForm(VegemilBabySampleDTO params);
     

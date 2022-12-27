@@ -133,6 +133,36 @@
 		)
 	</insert>
 	
+	<insert id ="insertCalendarModel" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO" useGeneratedKeys="true" keyProperty="cIdx"  >
+	INSERT INTO
+		m_calendar_model
+		(	
+			c_name,
+			c_hp,
+			c_addr,
+			c_email,
+			c_image,
+			c_write_date,
+			c_baby_name,
+			c_route,
+			c_image2,
+			c_alived
+		)
+		VALUES
+		(
+			#{cName},
+			#{cHp},
+			#{cAddr},
+			#{cEmail},
+			#{cImage},
+			NOW(),
+			#{cBabyName},
+			#{cRoute},
+			#{cImage2},
+			#{cAlived}
+		)
+	</insert>
+	
 	<select id ="sampleFormCountBySample" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" resultType="int" >	
 		SELECT
 			count(s_writedate)

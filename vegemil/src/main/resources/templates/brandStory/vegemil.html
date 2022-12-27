@@ -499,25 +499,6 @@
 						<p class="f16 mt5 fw400 gray04">애플망고 과즙의 상큼함과 나타드코코의 씹는 재미가 느껴지는 과즙두유</p>
 					</div>
 				</a>
-				<!-- //과즙&차류 두유 > 신제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VFT' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="col-md-6 brand_thumb mt50 mt50m" >
 				<p class="f23 fw500">대표제품</p>
@@ -532,25 +513,6 @@
 						<p class="f16 mt5 fw400 gray04">달콤한 진짜 바나나 과즙과 고소한 두유의 만남</p>
 					</div>
 				</a>
-				<!-- //과즙&차 > 대표제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VFT' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<!-- // 과즙 차류 -->
@@ -728,7 +690,7 @@
 				<p class="f23 fw500 lh150 mt20">급찐 급빠를 위한 <br class="wView">체중조절이 필요할 때</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
-						<a href="#">
+						<a href="/product/detail/8">
 							<li><div class="VPL01_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">콩 이외에 아무것도 첨가<br>하지 않은 100% 두유</p>
@@ -737,7 +699,7 @@
 						</a>
 					</ul>
 					<ul class=" brandPrd mt30">
-						<a href="#">
+						<a href="/product/detail/30">
 							<li><div class="VGR05_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">기존 두유 대비 칼로리를<br class="wView">40% 낮춘 식사대용 두유</p>
@@ -752,7 +714,7 @@
 				<p class="f23 fw500 lh150 mt20">입맛 까다로운<br class="wView">우리 아이가 먹기 좋은</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
-						<a href="#">
+						<a href="/product/detail/37">
 							<li><div class="VBB01_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">우리 땅에서 재배한<br>우리 콩을 갈아 만든</p>
@@ -761,7 +723,7 @@
 						</a>
 					</ul>
 					<ul class=" brandPrd mt30">
-						<a href="#">
+						<a href="/product/detail/7">
 							<li><div class="VPL02_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">달콤한 땅콩향과 콩 본래의<br class="wView">담백한 맛의 조화!</p>
@@ -776,7 +738,7 @@
 				<p class="f23 fw500 lh150 mt20">나이 드신 부모님 신체활<br class="wView">건강증진에 도움되는</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
-						<a href="#">
+						<a href="/product/detail/1">
 							<li><div class="VPM01_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">신체활력과<br>건강증진에 필요한</p>
@@ -785,7 +747,7 @@
 						</a>
 					</ul>
 					<ul class=" brandPrd mt30">
-						<a href="#">
+						<a href="/product/detail/3">
 							<li><div class="VPM03_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">천천히 흡수되는 <br>당(糖)으로 담백하게</p>
@@ -800,7 +762,7 @@
 				<p class="f23 fw500 lh150 mt20">여름 맞이! 시원하고<br class="wView">맛있게 수분 충전</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
-						<a href="#">
+						<a href="/product/detail/31">
 							<li><div class="VFT01_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">상큼한 애플망고 과즙을<br>넣은 애플망고 두유</p>
@@ -809,7 +771,7 @@
 						</a>
 					</ul>
 					<ul class=" brandPrd mt30">
-						<a href="#">
+						<a href="/product/detail/32">
 							<li><div class="VFT02_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">달콤한 진짜 바나나 과즙과 <br>고소한 두유의 만남</p>
@@ -824,7 +786,7 @@
 				<p class="f23 fw500 lh150 mt20">고소하고 영양가 높은<br class="wView">곡물류가 들어간</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
-						<a href="#">
+						<a href="/product/detail/27">
 							<li><div class="VGR02_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">아침을 든든하게 채워주는<br>입자감이 살아 있는</p>
@@ -833,7 +795,7 @@
 						</a>
 					</ul>
 					<ul class=" brandPrd mt30">
-						<a href="#">
+						<a href="/product/detail/25">
 							<li><div class="VBL13_600_01 h120"></div></li>
 							<li>	
 								<p class="f14 fw400 gray04 mt10">100% 국산콩으로<br>만든 프리미엄 블랙 두유</p>

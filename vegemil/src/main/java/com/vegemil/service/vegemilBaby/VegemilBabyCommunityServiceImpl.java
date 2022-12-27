@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO;
@@ -82,6 +83,16 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 			
 		int queryResult = 0;
 		queryResult = vegemilBabyMapper.insertSampleForm(sample);
+		
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Override
+	@Transactional
+	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel) {
+			
+		int queryResult = 0;
+		queryResult = vegemilBabyMapper.insertCalendarModel(calModel);
 		
 		return (queryResult == 1) ? true : false;
 	}

@@ -1,6 +1,9 @@
 package com.vegemil.controller;
 
 import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +13,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,9 +21,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
 import com.vegemil.util.UiUtils;
@@ -78,7 +84,6 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/recipeDetail";
 	}
 	
-	//@ModelAttribute("member") final @Valid MemberDTO member
 	/* Event */
 	@GetMapping("/sample/form")
 	public String moveSampleForm(Authentication authentication, Model model,
@@ -94,6 +99,71 @@ public class VegemilBabyController extends UiUtils {
         model.addAttribute("sItem", sItem);
         
 		return "vegemilBaby/sampleForm";
+	}
+	
+	@GetMapping("/model/form")
+	public String moveModelForm(Authentication authentication, Model model) {
+		
+		MemberDTO member = new MemberDTO();
+		VegemilBabyCalendarModelDTO calModel = new VegemilBabyCalendarModelDTO();
+		
+		if(authentication == null) {
+			member.setMName("");
+			member.setMHp("");
+			member.setMEmail("");
+		} else {
+			member = (MemberDTO) authentication.getPrincipal();
+		}
+        model.addAttribute("member", member);
+        model.addAttribute("model", calModel);
+        
+		return "vegemilBaby/event_model_form";
+	}
+	
+	@PostMapping("/model/apply")
+	public String submitModelForm(@ModelAttribute("model") VegemilBabyCalendarModelDTO calModel,
+							BindingResult bindingResult,
+							HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		try {
+			/*
+			String originalName = fileName.getOriginalFilename();
+			if(!"".equals(originalName)) {
+				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+				String uuid = UUID.randomUUID().toString();
+				String savefileName = uuid + "_" + file;
+				//테스트경로
+				Path savePath = Paths.get("D:\\upload" + savefileName);
+				
+				//저장
+				fileName.transferTo(savePath);
+				//포트폴리오
+				calModel.setCImage(file);
+			}
+			*/
+			
+			boolean isRegistered = vegemilBabyCommunityService.insertModelForm(calModel);
+			if (isRegistered == false) {
+				out.println("<script>alert('샘플 신청이 실패했습니다.'); history.go(-1);</script>");
+				out.flush();
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
+			}
+		
+		} catch (DataAccessException e) {
+			out.println("<script>alert('데이터베이스 처리 과정에 문제가 발생하였습니다.'); history.back();</script>");
+			out.flush();
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
+			
+		} catch (Exception e) {
+			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
+		}
+		
+		return showMessageWithRedirect("아기달력모델 신청 완료되었습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
 	}
 	
 	//샘플 신청 등록

@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO;
@@ -54,6 +55,8 @@ public interface VegemilBabyMapper {
 
 	//===[샘플신청]===
 	public int insertSampleForm(VegemilBabySampleDTO sample);
+	
+	public int insertCalendarModel(VegemilBabyCalendarModelDTO sample);
 	
 	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
 	

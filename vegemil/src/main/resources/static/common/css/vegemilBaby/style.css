@@ -1472,14 +1472,14 @@ legend{ position: absolute; left: -999em; }
 .formBox li{ padding: 20px 50px; box-sizing: border-box; border-top: 1px solid #dcdcdc; overflow: hidden; }
 .formBox li label{ display: block; margin-bottom: 10px; }
 /* .formBox li input[type="text"]{ width: 48%; height: 3em; border: 1px solid #3c3c3c; padding: 0 10px; box-sizing: border-box;margin-top:10px } */
-.formBox li input[type="text"]{ width: 120%; border: 1px solid #3c3c3c; padding: 0 10px; box-sizing: border-box;margin-top:0px; height: 2.8em;  }
+.formBox li input[type="text"]{ width: 48%; border: 1px solid #3c3c3c; padding: 0 10px; box-sizing: border-box;margin-top:0px; height: 2.8em;  }
 .formBox li input.w250 {width:250px; }
 
 .formBox .phoneBox input[type="text"]{ width: 12%; }
 .formBox .phoneBox .s_line{ display: inline-block; position: relative; top: 0.3em; margin: 0 5px;}
 
 .filebox label { display: inline-block; width: 250px; padding: 10px 0px; color: #fff; background-color: #3c3c3c; cursor: pointer; text-align: center;  }/* 이미지첨부 */
-.filebox input[type="file"] { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+//.filebox input[type="file"] { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip:rect(0,0,0,0); border: 0; }
 input#calen_addr2 {width:100%}
 input#calen_addr3 {width:100%}
 input#calen_email {width:100%}
