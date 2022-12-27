@@ -36,6 +36,23 @@
 	            return;
             }
         });
+        
+        //주소복사
+        function TourUrlCopy() {
+           
+		    var isIE = false;
+		    var agent = navigator.userAgent.toLowerCase();
+		    if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+			    isIE = true;
+		    }
+
+           if(isIE){
+           if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?"))
+               window.clipboardData.setData("Text",document.location.href);
+           }else{
+               temp = prompt("Ctrl+C를 눌러 주소를 클립보드로 복사하세요.",document.location.href);
+           }
+        }
     </script>
 </head>
 <body class="v-dark dsn-line-style dsn-effect-scroll dsn-ajax " ><!-- dsn-cursor-effect 삭제 --> 
@@ -124,8 +141,8 @@
 								<div class="col-lg-6"> 
 									<div class="recipe_05_big h-100m">
 										<ul class="lableBox">
-											<li><img src="assets/img/lable01.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
-											<li><img src="assets/img/lable02.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}"alt="초보추천" /></li>
+											<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable01.png}" alt="강력추천"/></li>
+											<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/lable02.png}"alt="초보추천" /></li>
 										</ul>
 									</div>
 								</div>
@@ -143,9 +160,9 @@
 										<p class="f20_4 mt-30">콩국물과 쫄깃한 치즈의 환상 궁합! </p>
 										<ul class="re_btn mt-50">
 											<li><a href="https://www.edaymall.com/search/totalSearch.do?prodAlignType=1&pCategory=&sCategory=&empGoodsYn=0&searchInput=%EC%A7%84%ED%95%9C+%EC%BD%A9%EA%B5%AD%EB%AC%BC" target="_blank" class="f18_4">진한 콩국물 사러가기
-											<img src="assets/img/btn_arrow.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_arrow.png}"/></a></li>
+											<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_arrow.png}"/></a></li>
 											<li><a href="#" onclick="javascript:TourUrlCopy(); return false;" class="f18_4" >레시피 URL 복사하기
-											<img src="assets/img/btn_clip.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_clip.png}"/></a></li>
+											<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/btn_clip.png}"/></a></li>
 											<input type="hidden" id="hidUrl" value=""/>
 										</ul>
 										<ul class="tag mt-80 f18_4">
@@ -157,10 +174,10 @@
 											<li>#별미</li>
 										</ul>
 										<ul class="mhs">
-											<li><p class="mhs_box"><img src="./assets/img/ico_spring.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_spring.png}" alt="" /></p><p class="f16_4 mt-5">봄</p></li>
+											<li><p class="mhs_box"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_spring.png}" alt="" /></p><p class="f16_4 mt-5">봄</p></li>
 											<li><p class="mhs_box"><span class="f44_6 f_pp">30</span><br><span class="f_16">min</span></p><p class="f16_4 mt-5">조리시간</p></li>
-											<li><p class="mhs_box"><img src="./assets/img/ico_m1.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_m1.png}" alt="" /></p><p class="f16_4 mt-5">분량</p></li>
-											<li><p class="mhs_box"><img src="./assets/img/ico_s1.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1.png}" alt="" /></p><p class="f16_4 mt-5">난이도</p></li>
+											<li><p class="mhs_box"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_m1.png}" alt="" /></p><p class="f16_4 mt-5">분량</p></li>
+											<li><p class="mhs_box"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/ico_s1.png}" alt="" /></p><p class="f16_4 mt-5">난이도</p></li>
 										</ul>
 									</div>
 								</div>
@@ -200,7 +217,7 @@
 								</div>
 								<div class="row reBox04">
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/01.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/01.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/01.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>01</p></dt>
 											<dd class="f22_4 color_g">양파와 당근은 잘게 다져주세요.</dd>
@@ -209,28 +226,28 @@
 										
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/02.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/02.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/02.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>02</p></dt>
 											<dd class="f22_4 color_g">마늘도 다져서 한스푼정도 준비합니다.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4">  
-										<p><img src="assets/img/project/05/03.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/03.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/03.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>03</p></dt>
 											<dd class="f22_4 color_g">새우는 찬물에 여러번 헹구고 체에 받쳐 물기를 제거합니다</dd>
 										<dl> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/04.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/04.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/04.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>04</p></dt>
 											<dd class="f22_4 color_g">캔옥수수도 체에 받쳐 물기를 제거합니다.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/05.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/05.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/05.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>05</p></dt>
 											<dd class="f22_4 color_g">팬에 버터 한스푼을 넣어 약불에서 녹여주고 다진양파와 다진마늘 당근을 넣고 볶아줍니다.
@@ -240,7 +257,7 @@
 										</p> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/06.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/06.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/06.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>06</p></dt>
 											<dd class="f22_4 color_g">물기를 제거한 새우를 넣고 센불에서 반정도 익을때까지 볶아줍니다.</dd>
@@ -249,7 +266,7 @@
 									</div>
 
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/07.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/07.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/07.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>07</p></dt>
 											<dd class="f22_4 color_g">새우가 반정도 익으면 콩국물과 연유 2스푼을 넣어 주세요.</dd>
@@ -257,7 +274,7 @@
 										<p class="reType02 mt-50">[팁]연유가 없다면 꿀이나 설탕으로 대체 가능합니다.</p> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/08.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/08.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/08.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>08</p></dt>
 											<dd class="f22_4 color_g">마요네즈 2스푼~ 슬라이스 체다치즈 2장을 넣고 잘 풀어 섞어가며 끓여줍니다.</dd>
@@ -265,7 +282,7 @@
 										<p class="reType02 mt-50">[불]중불</p> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/09.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/09.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/09.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>09</p></dt>
 											<dd class="f22_4 color_g"> 파마산 치즈가루 한스푼~ 꽃소금을 넣어 간을 해주세요.</dd>
@@ -274,21 +291,21 @@
 										<p class="reType02 mt-50">[팁]소금간은 각자 입맛에 맞게 소금을 가감하여 넣어주세요 :)</p> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/10.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/10.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/10.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>10</p></dt>
 											<dd class="f22_4 color_g"> 소스가 자작자작 해질때까지 숟가락으로 2~3분정도 저어가며 끓여줍니다.</dd> 
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/11.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/11.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/11.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>11</p></dt>
 											<dd class="f22_4 color_g"> 캔옥수수를 모두 넣고 숟가락으로 저어가며 센불에서 3분정도 더 끓여줍니다.</dd>
 										<dl>
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/12.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/12.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/12.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>12</p></dt>
 											<dd class="f22_4 color_g"> 오븐용 용기에 완성된 내용물을 담아 모짜렐라치즈 듬~뿍 올리고 파슬리가루 솔솔뿌려 데코합니다.</dd>
@@ -297,7 +314,7 @@
 										<p class="reType02 mt-50">[팁] 모짜렐라만 넣으셔도 됩니다 :)</p> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/13.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/13.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/13.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>13</p></dt>
 											<dd class="f22_4 color_g"> 180도 예열된 오븐에서 10~12분정도 윗면이 노릇해질때까지 구워줍니다.</dd>
@@ -306,7 +323,7 @@
 										<p class="reType02 mt-50">만드시던 팬에 모짜렐라치즈 올리고 뚜껑을 닫아서 약불에서 치즈 녹여서 드셔도 됩니다 :)</p> 
 									</div>
 									<div class="col-lg-4"> 
-										<p><img src="assets/img/project/05/14.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/14.jpg}"></p>
+										<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/05/14.jpg}"></p>
 										<dl class="reType01 mt-30">
 											<dt class="f_pp"><p>14</p></dt>
 											<dd class="f22_4 color_g"> 따끈따끈 맛있는 콘치즈새우그라탕 완성 :)</dd>
@@ -319,7 +336,7 @@
 								<div class="row ">
 									<div class="col-lg-12 center mt-80"> 
 										<ul class="tip line_g">
-											<li><img src="assets/img/tip.png" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/tip.png}" alt="강력추천"/></li>
+											<li><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/tip.png}" alt="강력추천"/></li>
 											<li class="mt-30m">
 												<p class="color_g">갓 만들어서 먹으면 치즈도 쭈~~욱 늘어나고 넘넘 맛나요.<br>
 고소하면서 단짠단짠한 소스도 맛있지만<br>
@@ -359,7 +376,7 @@
 										<a href="sub_recipe01.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_01_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_01_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_01_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -375,7 +392,7 @@
 										<a href="sub_recipe02.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_02_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_02_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_02_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -390,7 +407,7 @@
 										<a href="sub_recipe03.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_03_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_03_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_03_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -405,7 +422,7 @@
 										<a href="sub_recipe04.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_04_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_04_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_04_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -420,7 +437,7 @@
 										<a href="sub_recipe05.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_05_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -435,7 +452,7 @@
 										<a href="sub_recipe06.html" style="display:block">
 											<div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
 												<div class="box-img over-hidden">
-													<img class="cover-bg-img" src="assets/img/project/recipe_06_big.jpg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_06_big.jpg}" alt="">
+													<img class="cover-bg-img" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_06_big.jpg}" alt="">
 												</div>
 												<div class="box-content p-relative text-center">
 													<div class="box-content-body">
@@ -488,7 +505,7 @@
         </div>
        <!-- ========== Scroll Right Page To Top Page ========== -->
     <div class="scroll-to-top">
-        <img src="assets/img/scroll_top.svg" th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
+        <img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/scroll_top.svg}" alt="">
         <div class="box-numper">
             <span>10%</span>
         </div>
