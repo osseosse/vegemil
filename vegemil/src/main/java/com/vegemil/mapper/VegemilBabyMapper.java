@@ -57,6 +57,9 @@ public interface VegemilBabyMapper {
     //진행중 이벤트
 	public List<VegemilBabyEventDTO> selectEventList();
 	
+	//사랑의 온도계 카운트
+	public int selectTemperature();
+
 	//샘플신청
 	public int insertSampleForm(VegemilBabySampleDTO sample);
 	

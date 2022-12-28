@@ -249,8 +249,17 @@ public class VegemilBabyController extends UiUtils {
 	
 	//이벤트 상세페이지 이동
 	@RequestMapping(value = "/event/{viewName}") 
-	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName) throws Exception { 
-		return "vegemilBaby/event/" + viewName; 
+	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName, Model model
+			) throws Exception { 
+		
+		model.addAttribute("temperature", vegemilBabyCommunityService.selectTemperature());
+		if(viewName.contains(".aspx")) {
+			return "vegemilBaby/event/"+viewName+".aspx"; 
+		}else {
+			return "vegemilBaby/event/" + viewName;			
+		}
+		
+
 	}
 
 }
