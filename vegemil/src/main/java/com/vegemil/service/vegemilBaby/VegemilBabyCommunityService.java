@@ -69,6 +69,8 @@ public interface VegemilBabyCommunityService {
   
 
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
+
+	public int selectTemperature();
 	
 	
 

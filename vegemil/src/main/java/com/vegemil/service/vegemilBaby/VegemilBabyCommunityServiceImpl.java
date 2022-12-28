@@ -81,6 +81,13 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public List<VegemilBabyEventDTO> selectEventList() {
 		return vegemilBabyMapper.selectEventList();
 	}
+	//사랑의 온도계 카운트
+	@Override
+	public int selectTemperature() {
+		return vegemilBabyMapper.selectTemperature();
+	}
+	
+
 	
 	//샘플신청 등록
 	@Override
@@ -275,7 +282,6 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return vegemilBabyMapper.bestReviewList();
 	}
 	
-
 	
 
 

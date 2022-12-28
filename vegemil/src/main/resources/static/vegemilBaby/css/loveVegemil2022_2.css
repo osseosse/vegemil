@@ -1,0 +1,283 @@
+
+
+/****************************************************** 기본 START  ******************************************************/
+
+/*-----------------------------------------------------------------------------
+ * (전체공통) 기본 셋팅
+ *-----------------------------------------------------------------------------*/
+html,body { /* color:#717171*/ margin:0; padding:0; font-size:12px } /* 폰트사이즈 삭제시 : 대리점장 게시판 폰트터짐 */
+html,body,form			{width:100%; height:100%; min-height: 100%; color:#000000;}
+table,tr,th,td			{border-collapse:collapse; empty-cells:show; border-spacing:0; margin:0; padding:0;}
+div						{border:none;  margin:0; padding:0; display:block;}
+input,select,textarea	{vertical-align:middle;}
+ol,ul,li 				{list-style:none; margin:0;padding:0; }
+img 					{border:none; margin:0; padding:0;}
+a						{}
+a:link					{text-decoration:none;}
+a:active				{text-decoration:none;}
+a:visited				{text-decoration:none;}
+a:hover					{text-decoration:none;}
+
+/*-----------------------------------------------------------------------------
+ * (전체공통) 추가 셋팅
+ *-----------------------------------------------------------------------------*/
+ol li,
+	ul li,
+	li ul li	{list-style:none; padding:0; line-height:1.5em;}
+ul li ul li	{list-style:none; padding:0; margin:0;}
+li			{list-style:none; padding:0; line-height:1.5em;}
+img			{ padding:0; margin:0;}
+a img		{border:none; padding:0; margin:0;}
+
+h1 { font-size:40px; color:#323232; padding:0; margin:0; font-weight:500; }
+h2 { font-size:25px}
+h3 { font-size:20px}
+h4 { font-size:15px}
+
+.h50 {margin-top:50px }
+
+
+
+/**************************************************
+	* 회사소개 리뉴얼 공통 2014-03-20
+**************************************************/
+
+
+
+.marginTop5 {margin-top:5px}
+.marginTop10 {margin-top:10px}
+.marginTop15 {margin-top:15px}
+.marginTop20 {margin-top:20px}
+.marginTop21 {margin-top:21px}
+.marginTop22 {margin-top:22px}
+.marginTop23 {margin-top:23px}
+.marginTop24 {margin-top:24px}
+.marginTop25 {margin-top:25px}
+.marginTop26 {margin-top:26px}
+.marginTop27 {margin-top:27px}
+.marginTop28 {margin-top:28px}
+.marginTop29 {margin-top:29px}
+.marginTop30 {margin-top:30px}
+.marginTop35 {margin-top:35px}
+.marginTop40 {margin-top:40px}
+.marginTop45 {margin-top:45px}
+.marginTop50 {margin-top:50px; }
+.marginTop60 {margin-top:60px}
+.marginTop70 {margin-top:70px}
+.marginTop80 {margin-top:80px}
+.marginTop90 {margin-top:90px}
+.marginTop100 {margin-top:100px}
+.marginTop110 {margin-top:110px}
+.marginTop120 {margin-top:120px}
+.marginTop130 {margin-top:130px}
+.marginTop150 {margin-top:150px}
+.marginbottom20 {margin-bottom:20px}
+.marginbottom26 {margin-bottom:26px}
+.marginbottom30 {margin-bottom:30px}
+.marginbottom40 {margin-bottom:40px}
+.marginbottom50 {margin-bottom:50px}
+
+.row {position:relative} /* 콘텐츠 공통영역 row */
+.col-md-1 {width:760px; line-height:23px; color:#5a5a5a}
+.col-md-2 {color:#363636; letter-spacing:-1px;} /*h2이하~ 소제목 */
+.fon12 {font-size:12px}
+.fon13 {font-size:13px}
+.fon14 {font-size:14px}
+.fon18 {font-size:18px;}
+.fon20 {font-size:20px;}
+.fon22 {font-size:22px;}
+.fon24 {font-size:24px;}
+.fon28 {font-size:28px;}
+.fon33 {font-size:33px;}
+.heg50 {height:50px}
+.heg100 {height:100px}
+.heg150 {height:150px}
+.heg200 {height:200px}
+.heg400 {height:400px}
+.heg500 {height:500px}
+.heg600 {height:600px}
+.heg700 {height:700px}
+.heg1700 {height:1700px}
+.heg3700 {height:3700px}
+.fonWeight {font-weight:bold}
+
+
+
+/* 2015-12-11 event*/
+div.loveVegemilBox {position:relative; }
+table.loveVegemil {width:34px; position:absolute; top:725px; left:486px; height:206px;} /* 온도계 높이 설정*/
+table.loveVegemil td.whiteColor {background-color:#fff}
+table.loveVegemil td.greenColor {background-color:#007e41; }
+table.loveVegemil2018 {width:34px; position:absolute; top:695px; left:485px; height:206px;} /* 온도계 높이 설정2018 */
+table.loveVegemil2018 td.whiteColor {background-color:#fff}
+table.loveVegemil2018 td.greenColor {background-color:#00834d; }
+
+table.loveVegemil2020 {width:34px; position:absolute; top:837px; left:689px; height:210px;} /* 온도계 높이 설정2020 */
+table.loveVegemil2020 td.whiteColor {background-color:#fff}
+table.loveVegemil2020 td.greenColor {background-color:#00834d; }
+
+
+.loveVegemil_Number {color:#b8051b; font-size:50px; font-family:'Nanum Gothic','나눔고딕'; position:absolute; top:748px; left:199px; font-weight:900; letter-spacing:-2px; width:150px;  text-align:right;  } /* 숫자 높이 설정*/
+.loveVegemil_Number2018 {color:#01775f; font-size:50px; font-family:'Nanum Gothic','나눔고딕'; position:absolute; top:622px; left:199px; font-weight:400; letter-spacing:-2px; width:150px;  text-align:right;  } /* 숫자 높이 설정*/
+.loveVegemil_Number2020 {color:#01775f; font-size:50px; font-family:'Nanum Gothic','나눔고딕'; position:absolute; top:782px; left:430px; font-weight:400; letter-spacing:-2px; width:150px;  text-align:right;  } /* 숫자 높이 설정*/
+.eveSNS {font-size:18px; margin-top:25px }
+.eveSNS {font-size:18px; margin-top:25px }
+.eveSNS span{font-size:18px; color:#777777;  }
+.eveSNS b{font-size:18px; color:#000;  }
+.eveSNS img {vertical-align:middle}
+.eveWriteBox{margin:10px 0px 0px 0;border:solid 7px #e7e7e7; width:786px; margin:0 auto; margin-top:25px} 
+.eveWriteBox .boxIn{border:solid 1px #c9c9c9;padding:15px;}
+.eveWrite {text-align:right; position:relative}
+.eveWrite b {display:inline-block;vertical-align:top; margin-top:10px; position:absolute; left:0px}
+.eveWrite input{width:458px;padding:8px;background:#f6f6f6;border:solid 1px #e1e1e1;color:#969696;float:left; margin-left:120px}
+.eveWrite01 .newyeartalk{display:block; float:left; margin:10px 15px 0 0} 
+.eveList{padding-top:10px;}
+.eveList table{width:100%;}
+.eveList table td{color:#969696;font-size:11px;font-family:'Verdana','dotum';   *padding:5px 0 }
+*+html .msgList table td{font-family:'dotum';}
+.eveList table td.eveId{width:110px; text-align:left; }
+.eveList table td.eveId p{width:110px; white-space: nowrap; text-overflow: ellipsis;overflow:hidden;}
+.eveList table td.eveDate{width:130px;text-align:center;}
+.eveList table td.eveTxt p{width:470px; white-space: nowrap; text-overflow: ellipsis;overflow:hidden; margin-left:12px;  text-align:left} 
+.eveList table td.eveTxt p a{color:#666666;}
+.sns2017 {width:758px; margin:0 auto; border-left:1px solid #e5e5e5; border-right:1px solid #e5e5e5;  display:inline-block ; text-align:center;}
+.sns2017 li {display:inline-block;*display:inline; zoom:1;  margin:0 auto; margin:0 20px; }
+.sns2018 {position:absolute;top:1385px; left:120px; width:758px; margin:0 auto;  display:inline-block ; text-align:center;}
+.sns2018 li {display:inline-block;*display:inline; zoom:1;  margin:0 auto; margin:0 20px; }
+/* Buzz */
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.hvr-buzz {
+  /* display: inline-block; 익스플로로에서 히든처리 */
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+
+/* 이벤트 */
+.eventIMG img{margin:0px 0;  position:relative }
+
+
+
+
+.bg_greenbia01 {background:url(/main/images/event/lovevegemil_2020_06.jpg) repeat-x; width:100%; overflow-x:hidden}
+.loveVegemilBox1400 { margin:0 auto }
+.bg_greenbia01 > #snow > {padding-top:0}
+.lovevegemil_2020_02 {position:absolute; left:-150px; top:600px; z-index:10000}
+.lovevegemil_2020_03 {position:absolute; right:-200px; top:600px; z-index:10000}
+.lovevegemil_2020_04 {position:absolute; right:60px; top:35px; z-index:10000}
+.lovevegemil_2020_logo {position:absolute; left:63px; top:35px; z-index:10000}
+.love2020{left:2px;}
+
+
+
+/* 2021-12-06 */
+@media (max-width: 3000px) {
+.webView {display:block}
+.moView {display:none !important}
+.center {margin:0 auto}
+.wrap-2021love { background:#f34841; width:100%; max-width:1920px; margin:0 auto;  }
+.w1140 {position:relative; width:1420px; margin:0 auto;  z-index:1000 }
+.top-2021love {background:url(/main/event/image/event/20221207/01.jpg) no-repeat; height:1510px; width:100%; position:relative;background-position:center 0; }
+.top01 {padding-top:0px; z-index:100 ;position:relative}
+.top02 {z-index:100; position:absolute; width:1140px; margin-top:440px; 
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+display: inline-block;
+
+
+}
+.top03 {position:absolute; left:183px; top:375px; z-index:1}
+.top04 {position:absolute; top:100px; right:140px; z-index:1}
+.logo-2021love01 {position:absolute; left:20px; top:20px;z-index:100}
+.logo-2021love02 {position:absolute; right:20px; top:20px}
+.count {position:absolute; font-size:63px; color:#fff; font-weight:600; z-index:1; right:845px; top:270px }
+table.loveVegemil2022 {width:35px; position:absolute; top:163px; left:555px; height:230px; } /* 온도계 높이 설정2022 */
+table.loveVegemil2022 td.whiteColor {background-color:#fff}
+table.loveVegemil2022 td.pinkColor {background-color:#fd7e7e; }
+.heart {position:absolute; left:559px; top:100px}
+.bean01 {position:absolute; right:278px; bottom:-12px}
+.bean02 {position:absolute; left:78px; bottom:120px}
+.bean03 {position:absolute; left:600px; bottom:30px}
+.bean04 {position:absolute; right:78px; bottom:140px; z-index:10}
+.footer-2021love {width:100%; background:#032224; height:215px;}
+.footer-2021love p {text-align:Center}
+ul.love2021UL {position:absolute; z-index:100; top:1330px; left:170px }
+ul.love2021UL li {width:260px; height:200px;  display:inline-block; }
+.graBar {
+ background: linear-gradient(-45deg, #ffb543, #ff7800  );
+ background-size: 400% 400%;
+ animation: gradient 0.8s ease infinite;
+ border-radius:15px 15px 20px 20px  ;
+ position:relative
+}
+	@keyframes gradient {
+	 0% {background-position: 0% 50%;}
+	 50% {background-position: 100% 50%;}
+	 100% {background-position: 0% 50%;}
+	}
+
+}
+.tome {background:#ffb543; border-radius:30px; padding:10px 15px; color:#fff; font-weight:600;font-size:25px; position:absolute; top:-27px; lefT:50px; line-height:120%; width:100px; z-index:1000}
+
+@media (max-width: 1200px) {
+	.graBar {position:relative}
+	body { overflow-x: hidden;}
+	.webView {display:none !important;}
+	.moView {display:block !important;}
+	.w1140 {position:relative; width:100%; margin:0 auto;  z-index:1000 }
+	.top-2021love {background:#fecace url(/main/event/image/event/20211206/m01.jpg) no-repeat; height:1900px; width:100%;  position:relative;background-position:center 0; ba }
+	.top01 {padding-top:70px; z-index:100 ;position:relative}
+	.bottle {margin-top:70px; position:relative; width:600px}
+	.bottle p { position:relative; z-index:1000}
+	.bottle img {width:600px}
+	.bottle .barBox {position:absolute; z-index:1000; left:286px; bottom:260px; }
+	table.loveVegemil2022 { z-index:1000; position:relative; left:0; top:0  }
+	.mo_count {margin:0 auto; position:relative}
+	.mo_count p {position:absolute; font-size:55px; color:#fd7e7e; font-weight:600; z-index:1; left:160px; top:200px;  width:200px; text-align:right}
+	.snsTable {width:100%}
+	.bg_heart {position:absolute; z-index:1;top:750px; width:100%; text-align:center }
+	.bg_heart img {width:90%; text-align:center; }
+	.rel  {position:relative; z-index:1000 }
+	p.tome {background:#fd7e7e; border-radius:30px; padding:10px 15px; color:#fff; font-weight:600;font-size:25px; position:absolute; top:-27px; lefT:50px; line-height:120%; width:100px; z-index:1000}
+}

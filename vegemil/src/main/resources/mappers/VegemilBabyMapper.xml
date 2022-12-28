@@ -153,6 +153,12 @@
 	</select>
 	
 	
+	<!-- 사랑의 온도계 카운트 -->
+	<select id="selectTemperature" resultType="int" >			
+		select * from m_ttemperature;
+	</select>
+	
+	
 	
 	
 	<insert id ="insertCalendarModel" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO" useGeneratedKeys="true" keyProperty="cIdx"  >
