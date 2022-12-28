@@ -50,12 +50,12 @@ public class AdminCustomerController extends UiUtils {
 	@Autowired
 	private AdminFaqService adminFaqService;
 
-	@RequestMapping(value = "/admin/customer/{viewName}")
+	@RequestMapping(value = "/admin/manage/customer/{viewName}")
     public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		return "admin/customer/"+viewName;
     }
 	
-	@RequestMapping(value = "/admin/customer/faq/table")
+	@RequestMapping(value = "/admin/manage/customer/faqList")
 	 public @ResponseBody DataTableDTO getFaqList(@ModelAttribute("params") FaqDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
 
@@ -63,7 +63,7 @@ public class AdminCustomerController extends UiUtils {
 		return dataTableDto;
 	 }
 	
-	@RequestMapping(value = "/admin/customer/faqAdd")
+	@RequestMapping(value = "/admin/manage/customer/faqAdd")
     public String openFaqAdd(@RequestParam(value = "fIdx", required = false) Long fIdx, HttpServletRequest req, Model model)throws Exception{
 
 		AdminFaqDTO faqDto = adminFaqService.getFaqDetail(fIdx);
@@ -72,7 +72,7 @@ public class AdminCustomerController extends UiUtils {
 		return "admin/customer/faqAdd";
     }
 	
-	@PostMapping(value = "/admin/customer/faq/fileUpload")
+	@PostMapping(value = "/admin/manage/customer/uploadFaq")
 	@ResponseBody
 	public Map<String, Object> UploadFaq(@ModelAttribute("params") final FaqDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
 			, HttpServletResponse response, HttpServletRequest request) {
@@ -99,7 +99,7 @@ public class AdminCustomerController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@PostMapping(value = "/admin/customer/faq/register")
+	@PostMapping(value = "/admin/manage/customer/saveFaq")
 	public String saveFaq(@ModelAttribute("params") final AdminFaqDTO params, Model model) {
 		Map<String, Object> pagingParams = getPagingParams(params);
 		try {
@@ -117,7 +117,7 @@ public class AdminCustomerController extends UiUtils {
 		return showMessageWithRedirect("게시글 등록이 완료되었습니다.", "/admin/customer/faq", Method.GET, null, model);
 	}
 	
-	@RequestMapping(value = "/admin/customer/faq/updateDisplay", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/customer/updateFaqDisplay", method = {RequestMethod.GET, RequestMethod.POST})
 	public String updateFaqDisplay(@ModelAttribute("params") final AdminFaqDTO params, Model model,
 			@RequestParam(value = "fIdx", required = false) Long fIdx, @RequestParam(value = "fView", required = false) Long fView) {
 		try {
@@ -138,7 +138,7 @@ public class AdminCustomerController extends UiUtils {
 		return "/admin/customer/faq";
 	}
 	
-	@RequestMapping("/admin/customer/faq/delete")
+	@RequestMapping("/admin/manage/customer/deleteFaq")
     public @ResponseBody boolean deleteFaqList(@ModelAttribute("params") AdminFaqDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
     	try {
     		String checkList[] = request.getParameterValues("checkList");
@@ -165,7 +165,7 @@ public class AdminCustomerController extends UiUtils {
     	return true;
     }
 	
-	@RequestMapping(value = "/admin/customer/faqScore/table")
+	@RequestMapping(value = "/admin/manage/customer/faqScoreList")
 	 public @ResponseBody JsonObject getFaqScoreList(@ModelAttribute("params") AdminFaqScoreDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
 
@@ -182,7 +182,7 @@ public class AdminCustomerController extends UiUtils {
 		return jsonObj;
 	 }
 	
-	@RequestMapping(value = "/admin/customer/support/table")
+	@RequestMapping(value = "/admin/manage/customer/support")
 	 public @ResponseBody JsonObject getSupportlList(@ModelAttribute("params") AdminFaqScoreDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
 
@@ -199,7 +199,7 @@ public class AdminCustomerController extends UiUtils {
 		return jsonObj;
 	 }
 	
-	@RequestMapping("/admin/customer/support/delete")
+	@RequestMapping("/admin/manage/customer/deleteSupport")
     public @ResponseBody boolean deleteSupportList(@ModelAttribute("params") AdminSupportDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
     	try {
     		String checkList[] = request.getParameterValues("checkList");
@@ -226,7 +226,7 @@ public class AdminCustomerController extends UiUtils {
     	return true;
     }
 	
-	@GetMapping(value = "/admin/customer/supportDetail")
+	@GetMapping(value = "/admin/manage/customer/supportDetail")
     public String getSupportDetail(@ModelAttribute("params") AdminSupportDTO params, HttpServletRequest req, Model model)throws Exception{
 		AdminSupportDTO supportDto = adminFaqService.getSupport(params);
 		
@@ -235,7 +235,7 @@ public class AdminCustomerController extends UiUtils {
 		return "admin/customer/supportDetail";
     }
 	
-	@PostMapping(value = "/admin/customer/registerSupportDetail")
+	@PostMapping(value = "/admin/manage/customer/saveSupportDetail")
 	public String saveSupportDetail(@ModelAttribute("params") final AdminSupportDTO params, Model model) {
 		Map<String, Object> pagingParams = getPagingParams(params);
 		try {

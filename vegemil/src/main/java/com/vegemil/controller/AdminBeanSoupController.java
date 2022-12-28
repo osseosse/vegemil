@@ -40,12 +40,12 @@ public class AdminBeanSoupController {
 	@Autowired
 	AdminBeanSoupService adminBeanSoupService;
 	
-	@RequestMapping(value = "/admin/beanSoup/{viewName}")
+	@RequestMapping(value = "/admin/manage/beanSoup/{viewName}")
     public String adminBeanSoup(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		return "admin/beanSoup/"+viewName;
     }
 	
-	@RequestMapping(value = "/admin/beanSoup/video/table")
+	@RequestMapping(value = "/admin/manage/beanSoup/videoList")
     public @ResponseBody JsonObject getBeanSoupVideo(@ModelAttribute("params") final AdminBeanSoupVideoDTO params, HttpServletRequest req, 
     		Map<String, Object> commandMap)throws Exception{
 		
@@ -60,7 +60,7 @@ public class AdminBeanSoupController {
 		return jsonObj;
     }
 	
-	@GetMapping(value = "/admin/beanSoup/displayBeanSoupVideo")
+	@GetMapping(value = "/admin/manage/beanSoup/displayBeanSoupVideo")
 	public @ResponseBody boolean displayBeanSoupVideo(@RequestParam(value = "mIdx", required = false) Long mIdx, 
 			@RequestParam(value = "mDisplay", required = false) Long mDisplay, HttpServletResponse response) throws Exception {
 		boolean isRegistered = true;
@@ -85,7 +85,7 @@ public class AdminBeanSoupController {
 		return isRegistered;
 	}
 	
-	@RequestMapping(value = "/admin/beanSoup/saveBeanSoupVideo")
+	@RequestMapping(value = "/admin/manage/saveBeanSoupVideo")
     public @ResponseBody Map<String, Object> saveBeanSoupVideo(@ModelAttribute("params") final AdminBeanSoupVideoDTO params)throws Exception{
 		
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
@@ -102,7 +102,7 @@ public class AdminBeanSoupController {
 		return rtnMsg;
     }
 	
-	@RequestMapping(value = "/admin/beanSoup/news/table")
+	@RequestMapping(value = "/admin/manage/beanSoup/newsList")
     public @ResponseBody JsonObject getBeanSoupNews(@ModelAttribute("params") final AdminBeanSoupNewsDTO params, HttpServletRequest req, 
     		Map<String, Object> commandMap)throws Exception{
 		
@@ -117,7 +117,7 @@ public class AdminBeanSoupController {
 		return jsonObj;
     }
 	
-	@GetMapping(value = "/admin/beanSoup/displayBeanSoupNews")
+	@GetMapping(value = "/admin/manage/beanSoup/displayBeanSoupNews")
 	public @ResponseBody boolean displayBeanSoupNews(@RequestParam(value = "mIdx", required = false) Long mIdx, 
 			@RequestParam(value = "mDisplay", required = false) Long mDisplay, @RequestParam(value = "mIng", required = false) Long mIng, 
 			HttpServletResponse response) throws Exception {
@@ -144,7 +144,7 @@ public class AdminBeanSoupController {
 		return isRegistered;
 	}
 	
-	@RequestMapping(value = "/admin/beanSoup/saveBeanSoupNews")
+	@RequestMapping(value = "/admin/manage/beanSoup/saveBeanSoupNews")
     public @ResponseBody Map<String, Object> saveBeanSoupNews(@ModelAttribute("params") final AdminBeanSoupNewsDTO params)throws Exception{
 		
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
@@ -161,7 +161,7 @@ public class AdminBeanSoupController {
 		return rtnMsg;
     }
 	
-	@RequestMapping(value = "/admin/beanSoup/event/table")
+	@RequestMapping(value = "/admin/manage/beanSoup/eventList")
     public @ResponseBody JsonObject getBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO params, HttpServletRequest req, 
     		Map<String, Object> commandMap)throws Exception{
 		
@@ -176,7 +176,7 @@ public class AdminBeanSoupController {
 		return jsonObj;
     }
 	
-	@RequestMapping(value = "/admin/beanSoup/saveBeanSoupEvent")
+	@RequestMapping(value = "/admin/manage/beanSoup/saveBeanSoupEvent")
     public @ResponseBody Map<String, Object> saveBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO params)throws Exception{
 		
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();

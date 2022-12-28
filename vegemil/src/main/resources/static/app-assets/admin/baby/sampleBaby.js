@@ -124,7 +124,7 @@ $(function () {
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
-			url : '/admin/baby/sampleBaby/delete',
+			url : '/admin/manage/baby/deleteSampleBaby',
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",
@@ -171,7 +171,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/baby/sampleBaby/table',
+        url : '/admin/manage/baby/sampleBabyList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   

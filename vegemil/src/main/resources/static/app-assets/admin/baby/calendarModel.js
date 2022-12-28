@@ -125,7 +125,7 @@ $(function () {
 	      
 	    if(confirm('삭제하시겠습니까?')){
 			$.ajax({
-				url : '/admin/baby/calendarmodel/delete',
+				url : '/admin/manage/baby/deleteCalendarModel',
 				type : "post",
 				data : $(form).serialize(),
 				dataType : "json",
@@ -178,7 +178,7 @@ var createTable = function() {
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/baby/calendarmodel/table',
+        url : '/admin/manage/baby/calendarModelList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -605,7 +605,7 @@ function btnSave(idx) {
 	    	   
 	    	   
     $.ajax({
-       url: '/admin/baby/calendarmodel/update',
+       url: '/admin/manage/baby/updateCalendarModel',
 	   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 	   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 	   data: $('#modalForm'+idx).serialize()
@@ -613,7 +613,6 @@ function btnSave(idx) {
 	   console.log('done', data)
 	   if(data.result) {
 	   	   alert('저장되었습니다.');
-	   	   //window.location.href = "/admin/baby/babyInfoList";
 	   }else{
 	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	   }
