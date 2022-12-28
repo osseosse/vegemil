@@ -57,7 +57,7 @@ dl,
 dd,ul {margin-bottom:0 !important;}
 label {margin-bottom:0 !important;}
 
-body {overflow-x: hidden;}
+body {overflow-x: hidden;word-break:keep-all;}
 
 /*
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
@@ -558,7 +558,7 @@ body {overflow-x: hidden;}
 	/* 폰트사이즈 30% 다운 */
 	.f45 {font-size:32px}
 	.f47 {font-size:33px}
-	.f52 {font-size:37px}
+	.f52 {font-size:33px}
 	.f55 {font-size:39px}
 	.f60 {font-size:42px}
 	.f66 {font-size:46px}
