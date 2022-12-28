@@ -1,23 +1,19 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <title>베스트 후기</title>
-    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<title>베스트 후기</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<script>  
+ $('li_icoBG01').click(function(e){
+ 
+     location.href = 'event_review_best.aspx';
+ 
+ });  
+</script>    
+<body>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-
-	<script>  
-	    $('li_icoBG01').click(function(e){
-	    
-	        location.href = 'event_review_best.aspx';
-	    
-	    });  
-  	</script>
-    </head>    
-    
-	<body style="padding-top: 90px;">
 	
 	<div id="content">
 		<div class="container100">

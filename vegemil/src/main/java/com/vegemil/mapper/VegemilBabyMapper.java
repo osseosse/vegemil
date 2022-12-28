@@ -53,7 +53,11 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyMagazineDTO> selectPeMagazine(SearchDTO params);
 
 
-	//===[샘플신청]===
+	//===[Event]===
+    //진행중 이벤트
+	public List<VegemilBabyEventDTO> selectEventList();
+	
+	//샘플신청
 	public int insertSampleForm(VegemilBabySampleDTO sample);
 	
 	public int insertCalendarModel(VegemilBabyCalendarModelDTO sample);
@@ -74,7 +78,7 @@ public interface VegemilBabyMapper {
 
 
 	
-	public List<VegemilBabyEventDTO> eventList();
+	
 	
 	
 
