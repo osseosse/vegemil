@@ -27,7 +27,6 @@
 				<!------------------
 				//개인정보 처리방침 
 				-------------------->
-				<p class="js">클릭시 버전별 노출. 버전정보 위 load에 있음</p>
 				<select class="sel01 w300 floatR mt20" id="selPrivacy">
 					<option value="Privacy_v60">개인정보 처리방침 Version</option>
 					<option value="Privacy_v50">2017.08.31 ~ 2021.02.02</option>
@@ -39,8 +38,6 @@
 			</div>		
 		</div>
 	</div><!-- //contant1460 -->
-	
-	
 </div>
 <!-- ================================  
 		// Content
@@ -52,17 +49,17 @@
 /* 로드방식 local 크롬에서 노출되지 않음. */
 $( document ).ready( function() {
 
-	$( '.person' ).load( './privacy/Privacy_v60.html' );
+	$( '.person' ).load( '/privacy/Privacy_v60.html' );
 
 	$("#selPrivacy").change(function(){
         if($(this).val() == "Privacy_v50"){
-        	$( '.person' ).load( './Privacy/Privacy_v50.html' );
+        	$( '.person' ).load( '/Privacy/Privacy_v50.html' );
         } else if($(this).val() == "Privacy_v40"){
-        	$( '.person' ).load( './Privacy/Privacy_v40.html' );
+        	$( '.person' ).load( '/Privacy/Privacy_v40.html' );
         } else if($(this).val() == "Privacy_v30"){
-        	$( '.person' ).load( './Privacy/Privacy_v30.html' );
+        	$( '.person' ).load( '/Privacy/Privacy_v30.html' );
         } else if($(this).val() == "Privacy_v20"){
-        	$( '.person' ).load( './Privacy/Privacy_v20.html' );
+        	$( '.person' ).load( '/Privacy/Privacy_v20.html' );
         }
     });
 	

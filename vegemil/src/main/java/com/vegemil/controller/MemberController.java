@@ -37,6 +37,12 @@ public class MemberController extends UiUtils {
 	@Autowired
 	private MailService mailService;
 	
+	@GetMapping(value = "/member/{viewName}")
+    public String moveMemberPages(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		
+		return "member/"+viewName;
+    }
+	
 	@GetMapping(value = "/member/login")
 	public String moveMemLogin(Model model, Authentication authentication) {
 		

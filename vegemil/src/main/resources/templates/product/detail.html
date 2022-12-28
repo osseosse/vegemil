@@ -98,19 +98,19 @@
 					<ul class="info_ul mt40" th:if="${product.capacity1} != null">
 						<li th:if="${product.capacity1} != null">
 							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info01.png" alt="용량" /></p>
-							<p><span class="f16 fw400 gray04">용량1</span><span class="f16 f_pp fw400" th:text="${product.capacity1}"></span></p>
+							<p><span class="f16 fw400 gray04">용량</span><span class="f16 f_pp fw400" th:text="${product.capacity1}"></span></p>
 						</li>
-						<li th:if="${product.capacity2} != null">
-							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info02.png" alt="용량" /></p>
-							<p><span class="f16 fw400 gray04">용량2</span><span class="f16 f_pp fw400" th:text="${product.capacity2}"></span></p>
+						<li th:if="${product.expirationMonth} != null">
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info02.png" alt="유통기한" /></p>
+							<p><span class="f16 fw400 gray04">유통기한</span><span class="f16 f_pp fw400" th:text="${product.expirationMonth}"></span></p>
 						</li>
 						<li th:if="${product.kcal1} != null">
-							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info03.png" alt="용량" /></p>
-							<p><span class="f16 fw400 gray04">칼로리1</span><span class="f16 f_pp fw400" th:text="${product.kcal1}"></span></p>
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info03.png" alt="칼로리" /></p>
+							<p><span class="f16 fw400 gray04">칼로리</span><span class="f16 f_pp fw400" th:text="${product.kcal1}"></span></p>
 						</li>
-						<li th:if="${product.kcal2} != null">
-							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info04.png" alt="용량" /></p>
-							<p><span class="f16 fw400 gray04">칼로리2</span><span class="f16 f_pp fw400" th:text="${product.kcal2}"></span></p>
+						<li th:if="${product.releaseYm} != null">
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info04.png" alt="출시년도" /></p>
+							<p><span class="f16 fw400 gray04">출시년도</span><span class="f16 f_pp fw400" th:text="${product.releaseYm}"></span></p>
 						</li>
 					</ul>
 					<ul class="info_ul_bottom mt30">

@@ -317,7 +317,19 @@
 						<div class="row" id="h_tab" th:if="${not #lists.isEmpty( productList )}" >
 							<div class="col-md-4 col-6" id="h_list" th:if="${product.categoryCode == 'H'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
 								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a th:if="${product.subCategoryCode} == 'CHP'" th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<a th:unless="${product.subCategoryCode} == 'CHP'" th:href="|/greenbia/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 										</div>
