@@ -15,7 +15,7 @@ $(function () {
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
-			url : '/admin/customer/support/delete',
+			url : '/admin/manage/customer/deleteSupport',
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",
@@ -292,7 +292,7 @@ function btnDisplay(idx) {
 	}
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
-			url : '/admin/customer/faq/updateDisplay?fIdx='+idx+'&fView='+fView,
+			url : '/admin/manage/customer/updateSupportDisplay?fIdx='+idx+'&fView='+fView,
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",

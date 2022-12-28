@@ -136,7 +136,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/beanSoup/video/table',
+        url : '/admin/manage/beanSoup/videoList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -332,7 +332,7 @@ function btnDisplay(idx) {
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
-			url : '/admin/beanSoup/displayBeanSoupVideo?mIdx='+idx+'&mDisplay='+mActive,
+			url : '/admin/manage/beanSoup/displayBeanSoupVideo?mIdx='+idx+'&mDisplay='+mActive,
 			type : "get",
 			dataType : "json",
 			success : function(data) {
@@ -382,7 +382,7 @@ function btnSave(idx, action) {
 	
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/beanSoup/saveBeanSoupVideo',
+	       url: '/admin/manage/saveBeanSoupVideo',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),

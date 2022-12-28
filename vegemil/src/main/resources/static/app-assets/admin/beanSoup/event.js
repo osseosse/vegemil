@@ -137,7 +137,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/beanSoup/event/table',
+        url : '/admin/manage/beanSoup/eventList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -444,10 +444,9 @@ function btnSave(idx, action) {
 	}
 	
 	console.log(form.serialize());
-	/*
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/beanSoup/saveBeanSoupEvent',
+	       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),
@@ -464,6 +463,5 @@ function btnSave(idx, action) {
 		   	   console.log('fail')
 		 })
 	}
-	*/
 }
 

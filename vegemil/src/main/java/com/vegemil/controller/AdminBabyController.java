@@ -54,12 +54,12 @@ public class AdminBabyController extends UiUtils {
 	@Autowired
 	private AdminBabyService adminBabyService;
 	
-	@RequestMapping(value = "/admin/baby/{viewName}")
+	@RequestMapping(value = "/admin/manage/baby/{viewName}")
     public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		return "admin/baby/"+viewName;
     }
 	
-	@RequestMapping(value = "/admin/baby/babyInfoList/table")
+	@RequestMapping(value = "/admin/manage/baby/babyInfoList")
 	public @ResponseBody DataTableDTO getBabyInfoList(@ModelAttribute("params") AdminBabyDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
 		
@@ -67,7 +67,7 @@ public class AdminBabyController extends UiUtils {
 		return dataTableDto;
 	}
 	
-	@PostMapping(value = "/admin/baby/registerBabyInfo")
+	@PostMapping(value = "/admin/manage/baby/registerBabyInfo")
 	@ResponseBody
 	public Map<String, Object> saveBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile, 
 			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
@@ -98,7 +98,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@GetMapping(value = "/admin/baby/babyInfoDetail")
+	@GetMapping(value = "/admin/manage/baby/babyInfoDetail")
 	public String openBabyInfoDetail(@ModelAttribute("params") AdminBabyDTO params, @RequestParam(value = "mbsIdx", required = false) Long mbsIdx, Model model, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -119,7 +119,7 @@ public class AdminBabyController extends UiUtils {
 		return "admin/baby/babyInfoDetail";
 	}
 	
-	@PostMapping(value = "/admin/baby/babyInfoUpdate")
+	@PostMapping(value = "/admin/manage/baby/babyInfoUpdate")
 	public String updateBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, @RequestParam("fileName") MultipartFile fileName, Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -156,7 +156,7 @@ public class AdminBabyController extends UiUtils {
 		return showMessageWithRedirect("게시글 수정이 완료되었습니다.", "/admin/baby/babyInfoList", Method.GET, null, model);
 	}
 	
-	@GetMapping(value = "/admin/baby/displayBabyInfo")
+	@GetMapping(value = "/admin/manage/baby/displayBabyInfo")
 	public @ResponseBody boolean displayBabyInfo(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, 
 			@RequestParam(value = "mbsActive", required = false) int mbsActive, @RequestParam(value = "mbsCheck", required = false) int mbsCheck,
 			HttpServletResponse response) throws Exception {
@@ -181,7 +181,7 @@ public class AdminBabyController extends UiUtils {
 		return isRegistered;
 	}
 	
-	@GetMapping(value = "/admin/baby/babyInfoCheck")
+	@GetMapping(value = "/admin/manage/baby/babyInfoCheck")
 	public void babyInfoCheck(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, @RequestParam(value = "display", required = false) int display, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -199,7 +199,7 @@ public class AdminBabyController extends UiUtils {
 		}
 	}
 	
-	@RequestMapping("/admin/baby/babyInfo/delete")
+	@RequestMapping("/admin/manage/baby/deleteBabyInfo")
     public @ResponseBody boolean deleteBabyInfo(@ModelAttribute("params") AdminBabyDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
     	try {
     		String checkList[] = request.getParameterValues("checkList");
@@ -226,7 +226,7 @@ public class AdminBabyController extends UiUtils {
     	return true;
     }
 	
-	@RequestMapping(value = "/admin/baby/babyInfoAdd")
+	@RequestMapping(value = "/admin/manage/baby/babyInfoAdd")
     public String openBabyInfoAdd(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, HttpServletRequest req, Model model)throws Exception{
 		AdminBabyDTO babyDto = adminBabyService.getBabyInfoDetail(mbsIdx);
 		
@@ -235,7 +235,7 @@ public class AdminBabyController extends UiUtils {
 		return "admin/baby/babyInfoAdd";
     }
 	
-	@PostMapping(value = "/admin/baby/babyInfo/fileUpload")
+	@PostMapping(value = "/admin/manage/baby/uploadBabyInfo")
 	@ResponseBody
 	public Map<String, Object> uploadBabyInfo(@ModelAttribute("params") final AdminFaqDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
 			, HttpServletResponse response, HttpServletRequest request) {
@@ -262,7 +262,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@RequestMapping(value = "/admin/baby/babyQnaList/table")
+	@RequestMapping(value = "/admin/manage/baby/babyQnaList")
 	public @ResponseBody JsonObject getBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
 		
@@ -277,7 +277,7 @@ public class AdminBabyController extends UiUtils {
 		return jsonObj;
 	}
 	
-	@GetMapping(value = "/admin/baby/displayBabyQna")
+	@GetMapping(value = "/admin/manage/baby/displayBabyQna")
 	public @ResponseBody boolean displayBabyQna(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, 
 			@RequestParam(value = "mbsActive", required = false) int mbsActive, @RequestParam(value = "mbsCheck", required = false) int mbsCheck,
 			HttpServletResponse response) throws Exception {
@@ -302,7 +302,7 @@ public class AdminBabyController extends UiUtils {
 		return isRegistered;
 	}
 	
-	@GetMapping(value = "/admin/baby/babyQnaList")
+	@GetMapping(value = "/admin/manage/baby/babyQnaList")
 	public String openBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model) {
 		List<AdminBabyDTO> babyQnaList = adminBabyService.getBabyQnaList(params);
 		model.addAttribute("babyQnaList", babyQnaList);
@@ -310,7 +310,7 @@ public class AdminBabyController extends UiUtils {
 		return "admin/baby/babyQnaList";
 	}
 	
-	@PostMapping(value = "/admin/baby/registerBabyQna")
+	@PostMapping(value = "/admin/manage/baby/registerBabyQna")
 	@ResponseBody
 	public Map<String, Object> saveBabyQna(@ModelAttribute("params") final AdminBabyDTO params, @RequestParam("uploadFile") MultipartFile uploadFile, 
 			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
@@ -342,7 +342,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@GetMapping(value = "/admin/baby/babyQnaDetail")
+	@GetMapping(value = "/admin/manage/baby/babyQnaDetail")
 	public String openBabyQnaDetail(@ModelAttribute("params") AdminBabyDTO params, @RequestParam(value = "mbsIdx", required = false) Long mbsIdx, Model model, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -363,7 +363,7 @@ public class AdminBabyController extends UiUtils {
 		return "admin/baby/babyQnaDetail";
 	}
 	
-	@PostMapping(value = "/admin/baby/babyQnaUpdate")
+	@PostMapping(value = "/admin/manage/baby/babyQnaUpdate")
 	public String updateBabyQna(@ModelAttribute("params") final AdminBabyDTO params, @RequestParam("fileName") MultipartFile fileName, 
 			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
 		
@@ -402,7 +402,7 @@ public class AdminBabyController extends UiUtils {
 		return showMessageWithRedirect("게시글 수정이 완료되었습니다.", "/admin/baby/babyQnaList", Method.GET, null, model);
 	}
 	
-	@GetMapping(value = "/admin/baby/babyQnaActive")
+	@GetMapping(value = "/admin/manage/baby/babyQnaActive")
 	public void updateQnaActive(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, 
 			@RequestParam(value = "display", required = false) int display, HttpServletResponse response) throws Exception {
 		
@@ -422,7 +422,7 @@ public class AdminBabyController extends UiUtils {
 		}
 	}
 	
-	@GetMapping(value = "/admin/baby/babyQnaCheck")
+	@GetMapping(value = "/admin/manage/baby/babyQnaCheck")
 	public void updateQnaCheck(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, 
 			@RequestParam(value = "display", required = false) int display, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
@@ -443,7 +443,7 @@ public class AdminBabyController extends UiUtils {
 	
 	
 	
-	@RequestMapping(value = "/admin/baby/calendarmodel/table")
+	@RequestMapping(value = "/admin/manage/baby/calendarModelList")
 	 public @ResponseBody DataTableDTO getCalenModelList(@ModelAttribute("params") AdminCalendarModelDTO params, Model model, 
 			 @RequestParam Map<String, Object> commandMap) {
 
@@ -451,7 +451,7 @@ public class AdminBabyController extends UiUtils {
 		return dataTableDto;
 	 }
 	
-	@RequestMapping(value = "/admin/baby/calendarmodel/update")
+	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")
 	public @ResponseBody Map<String, Object> updateCalendarModelList(@ModelAttribute("params") final AdminCalendarModelDTO params, 
 			Model model, HttpServletResponse response) {
 		
@@ -470,7 +470,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@RequestMapping(value = "/admin/baby/calendarmodel/delete", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/baby/deleteCalendarModel", method = {RequestMethod.GET, RequestMethod.POST})
     public @ResponseBody boolean deleteCalendarModelList(@ModelAttribute("params") AdminBestReviewDTO params, Model model, 
     		HttpServletResponse response, HttpServletRequest request) {
    	
@@ -499,14 +499,14 @@ public class AdminBabyController extends UiUtils {
    }
 	
 	
-	@RequestMapping(value = "/admin/baby/bestReview/table", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/baby/bestReviewList", method = {RequestMethod.GET, RequestMethod.POST})
 	 public @ResponseBody DataTableDTO getBestReviewList(@ModelAttribute("params") AdminBestReviewDTO params, Model model, @RequestParam Map<String, Object> commandMap) {
 
 		DataTableDTO dataTableDto = adminBabyService.getBestReviewList(commandMap);
 		return dataTableDto;
 	 }
 	
-	@RequestMapping(value = "/admin/baby/bestReview/update", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/baby/updateBestReview", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody Map<String, Object> updateBestReviewList(@ModelAttribute("params") final AdminBestReviewDTO params, Model model) {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
@@ -522,7 +522,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@RequestMapping(value = "/admin/baby/bestReview/delete", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/baby/deleteBestReview", method = {RequestMethod.GET, RequestMethod.POST})
     public @ResponseBody boolean deleteBetReviewList(@ModelAttribute("params") AdminBestReviewDTO params, Model model, 
     		HttpServletResponse response, HttpServletRequest request) {
 		try {
@@ -549,7 +549,7 @@ public class AdminBabyController extends UiUtils {
 		return true;
    }
 	
-	@RequestMapping(value = "/admin/baby/sampleBaby/table")
+	@RequestMapping(value = "/admin/manage/baby/sampleBabyList")
 	 public @ResponseBody JsonObject getSampleBabyList(@ModelAttribute("params") AdminSampleBabyDTO params, Model model
 			 , @RequestParam Map<String, Object> commandMap) {
 
@@ -564,7 +564,7 @@ public class AdminBabyController extends UiUtils {
 		return jsonObj;
 	 }
 	
-	@RequestMapping(value = "/admin/baby/sampleBaby/update", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/baby/updateSampleBaby", method = {RequestMethod.GET, RequestMethod.POST})
 	public String updateSampleBabyList(@ModelAttribute("params") final AdminSampleBabyDTO params, Model model) {
 		try {
 			boolean isUpdate = adminBabyService.registerSampleBaby(params);
@@ -581,7 +581,7 @@ public class AdminBabyController extends UiUtils {
 		return "/admin/event/sampleBaby";
 	}
 	
-	@RequestMapping(value = "/admin/baby/sampleBaby/delete", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/admin/manage/baby/deleteSampleBaby", method = {RequestMethod.GET, RequestMethod.POST})
     public @ResponseBody boolean deleteSampleBabyList(@ModelAttribute("params") AdminBestReviewDTO params, Model model, 
     		HttpServletResponse response, HttpServletRequest request) {
 		try {
@@ -608,7 +608,7 @@ public class AdminBabyController extends UiUtils {
 		return true;
     }
 	
-	@RequestMapping(value = "/admin/baby/babyQnaAdd")
+	@RequestMapping(value = "/admin/manage/baby/babyQnaAdd")
     public String openBabyQnaAdd(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, HttpServletRequest req, Model model)throws Exception{
 		AdminBabyDTO babyDto = adminBabyService.getBabyQnaDetail(mbsIdx);
 		

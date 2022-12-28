@@ -124,7 +124,7 @@ $(function () {
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
-			url : '/admin/baby/babyInfo/delete',
+			url : '/admin/manage/baby/deleteBabyInfo',
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",
@@ -171,7 +171,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/baby/babyQnaList/table',
+        url : '/admin/manage/baby/babyQnaList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -403,7 +403,7 @@ var createTable = function() {
 	} ).draw();
 	
     $('div.head-label').html('<h4 class="card-title">게시글 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-                             '<button type="button" onclick="location.href=\'/admin/baby/babyQnaAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
+                             '<button type="button" onclick="location.href=\'/admin/manage/baby/babyQnaAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
@@ -429,7 +429,7 @@ function btnDisplay(idx) {
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
-			url : '/admin/baby/displayBabyQna?mbsIdx='+idx+'&mbsActive='+mbsActive+'&mbsCheck='+mbsCheck,
+			url : '/admin/manage/baby/displayBabyQna?mbsIdx='+idx+'&mbsActive='+mbsActive+'&mbsCheck='+mbsCheck,
 			type : "get",
 			dataType : "json",
 			success : function(data) {

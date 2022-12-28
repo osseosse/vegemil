@@ -15,7 +15,7 @@ $(function () {
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
-			url : '/admin/customer/faq/delete',
+			url : '/admin/manage/customer/deleteFaq',
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",
@@ -70,7 +70,7 @@ var createTable = function() {
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/customer/faq/table',
+        url : '/admin/manage/customer/faqList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -299,7 +299,7 @@ var createTable = function() {
   } ).draw();
 	
   $('div.head-label').html('<h4 class="card-title">FAQ 글 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-                           '<button type="button" onclick="location.href=\'/admin/customer/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
+                           '<button type="button" onclick="location.href=\'/admin/manage/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
 
   // Delete Record
   $('.datatables-basic tbody').on('click', '.delete-record', function () {
@@ -319,7 +319,7 @@ function btnDisplay(idx) {
 	}
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
-			url : '/admin/customer/faq/updateDisplay?fIdx='+idx+'&fView='+fView,
+			url : '/admin/manage/customer/updateFaqDisplay?fIdx='+idx+'&fView='+fView,
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",

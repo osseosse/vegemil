@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http
-	        	.antMatcher("/admin/customer/**")
+	        	.antMatcher("/admin/manage/**/**")
 	            	.authorizeRequests().anyRequest().hasAuthority("ADMIN")
 	            .and()
 	            	.csrf().disable()
@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		                .loginPage("/admin/auth/login")
 		                .loginProcessingUrl("/member/loginProc")
 		                .failureUrl("/admin/auth/login?error=true")
-		                .defaultSuccessUrl("/")
+		                .defaultSuccessUrl("/admin/magage/faq")
 	            .and()
 	                .logout()
 		                .logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout")) // 로그아웃 시 URL 재정의

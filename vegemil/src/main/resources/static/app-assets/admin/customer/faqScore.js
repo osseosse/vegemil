@@ -27,7 +27,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/customer/faqScore/table',
+        url : '/admin/manage/customer/faqScoreList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
