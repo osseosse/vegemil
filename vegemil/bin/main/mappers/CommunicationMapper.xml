@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegemil.mapper.CommunicationMapper">
+	
+	<sql id="memberCp">
+		c_idx,
+		c_id,
+		c_name,
+		c_lastdate,
+		c_count
+	</sql>
+
+	<sql id="mClaim">
+		c_idx,
+		c_name,
+		c_hp,
+		c_email,
+		c_subject,
+		c_content,
+		c_writedate,
+		c_writetime,
+		c_check,
+		c_answer
+	</sql>
+	
+	<sql id="eventColumns">
+		e_idx,
+		e_subject,
+		e_content,
+		e_img,
+		DATE_FORMAT(e_start,'%Y-%m-%d') as e_start,
+		DATE_FORMAT(e_end,'%Y-%m-%d') as e_end,
+		e_uri,
+		e_active,
+		e_img2,
+		e_uri2,
+		mbs_check,
+		e_cate,
+		e_bvactive
+	</sql>
+	
+	<select id="selectOneMemberCP" resultType="int" parameterType="String">
+		select count(c_id)
+		From M_Member_Cp
+		where c_id = #{cId}
+	</select>
+	
+	<select id="selectEventList" resultType="com.vegemil.domain.EventDTO">
+		select 
+			<include refid="eventColumns" />
+		from
+			m_event
+		where
+			e_active = 1
+	</select>
+	
+	<select id="selectEvent" resultType="com.vegemil.domain.EventDTO">
+		select 
+			<include refid="eventColumns" />
+		from
+			m_event
+		where
+			e_active = 1
+		and
+			e_idx = #{eIdx}
+	</select>
+
+	<insert id="insertMclaim" parameterType="com.vegemil.domain.ClaimDTO">
+		insert into M_Claim (
+			c_idx,
+			c_name,
+			c_hp,
+			c_email,
+			c_subject,
+			c_content,
+			c_writedate,
+			c_writetime,
+			c_check,
+			c_answer,
+			c_tel
+		) values (
+			#{cIdx},
+			#{cName},
+			#{cHp},
+			#{cEmail},
+			#{cSubject},
+			#{cContent},
+			#{cWritedate},
+			#{cWritetime},
+			#{cCheck},
+			#{cAnswer},
+			#{cTel}
+		)
+	</insert>
+</mapper>

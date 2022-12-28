@@ -2,6 +2,7 @@ package com.vegemil.controller;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,17 +22,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.ClaimDTO;
-import com.vegemil.service.CpService;
+import com.vegemil.domain.EventDTO;
+import com.vegemil.domain.WebzineDTO;
+import com.vegemil.service.CommunicationService;
 import com.vegemil.util.UiUtils;
 
 @Controller
-public class CPConroller extends UiUtils{
+public class CommunicationConroller extends UiUtils{
 	
 	@Autowired
-	private CpService cpService;
+	private CommunicationService communicationService;
 
 	@Autowired
 	private ResourceLoader resourceLoader; 
+	
+	@RequestMapping(value = "/communication/{viewName}")
+    public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName) throws Exception {
+		
+		return "communication/"+viewName;
+    }
+	
 	
 	@GetMapping("/communication/cp")
 	public String getCpPage() {
@@ -58,10 +69,34 @@ public class CPConroller extends UiUtils{
 		return "communication/cp/cpEbookView";
 	}
 	
+	@RequestMapping(value = "/event/list")
+    public String moveEventList(@PathVariable(value = "viewName", required = false) String viewName, Model model)throws Exception{
+		
+		List<EventDTO> eventList = communicationService.getEnevetList();
+		if(eventList != null) {
+			model.addAttribute("eventList", eventList);
+		}
+		
+		return "communication/event/list";
+    }
+	
+	@RequestMapping(value = "/event/detail/{eIdx}")
+    public String moveEventDetail(@PathVariable(value = "eIdx", required = false) String eIdx , Model model) throws Exception {
+		
+		EventDTO event = new EventDTO();
+		
+		event = communicationService.getEvent(eIdx);
+		if(event != null) {
+			model.addAttribute("event", event);
+		}
+		
+		return "communication/event/detail";
+    }
+	
 	@PostMapping("/cp/cIdCheck")
 	public String cIdCheck(String cId, String fileName, Model model) {
 		model.addAttribute("fileName",fileName);
-		if (cpService.checkCompId(cId) <= 0) {
+		if (communicationService.checkCompId(cId) <= 0) {
 			model.addAttribute("msg","사번 조회에 실패했습니다.");
 			model.addAttribute("validation","0");
 			return "communication/cp/cpEbookView";
@@ -113,7 +148,7 @@ public class CPConroller extends UiUtils{
 	@PostMapping("/communication/cp/cpDeclaration")
 	public String postCpClaim(Model model, ClaimDTO claimDTO) {
 		
-		int result = cpService.insertMclaim(claimDTO);
+		int result = communicationService.insertMclaim(claimDTO);
 		
 		if(result > 0) {
 			return showMessageWithRedirect("신고가 정상적으로 접수되었습니다.", "/communication/cp", Method.GET, null, model);

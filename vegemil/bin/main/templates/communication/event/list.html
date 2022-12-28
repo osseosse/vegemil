@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 이벤트</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class=" pb100">
+	<div class="contant1460 mt90h">
+		<div class="center mt250 ">            
+            <p class="f45 fw600 mt50 lh140">이벤트</p>
+        </div>
+	   <div class="subTopEvent h300 mt100">
+			
+		</div>
+	</div>
+    <div class="contant1460 mt100" >
+		<div class="row mb80" th:each="event : ${eventList}" th:if="${not #lists.isEmpty( eventList )}">
+			<div class="col-md-6 mt50">
+				<p class="gray04 fw600 f15 f_pp" th:text="|${event.eStart} ~ ${event.eEnd}|"></p>
+				<p class="f38 fw600 black lh140 mt50 w500" th:text="${event.eSubject}"></p>
+				<p class="btnType06 hover mt50"><a th:href="${event.eUri}" target="_blank"><span>View more</span></a></p>
+			</div>
+			<div class="col-md-6 mt50">
+				<a th:href="${event.eUri}" target="_blank">
+					<div class="notice-img">
+					<p th:style="|position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/${event.eImg}) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;|" class="h380">
+					<img src="" alt=""/><span class="ing-end on f16">진행중인 이벤트</span></p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- 
+		<div class="row mb80">
+			<div class="col-md-6 mt50">
+				<p class="gray04 fw600 f15 f_pp">2022.02.06</p>
+				<p class="f38 fw600 black lh140 mt50 w500">종이팩 수거 이벤트</p>
+			</div>
+			<div class="col-md-6 mt50">
+				<a href="#">
+					<div class="notice-img"><p style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/EVENT_20220207.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; " class="h380"><img src="" alt=""/><span class="ing-end off f16">지난 이벤트</span></p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="row mb80">
+			<div class="col-md-6 mt50">
+				<p class="gray04 fw600 f15 f_pp">2021.04.30</p>
+				<p class="f38 fw600 black lh140 mt50 w500">라잇미닛 굿즈 이벤트</p>
+			</div>
+			<div class="col-md-6 mt50">
+					<div class="notice-img"><p style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/EVENT_20210503.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; " class="h380"><img src="" alt=""/><span class="ing-end off f16">지난 이벤트</span></p>
+					</div>
+			</div>
+		</div>
+		 -->
+		<!-- paging -->
+		<!-- 
+		<div class="row">
+			<div class="col-md-12 center">
+				
+				<div class="paging mt50 ">
+					<ol class="f_pp">
+						<li class="preEnd"><input type="image" name="btnFirst" id="btnFirst" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_preEnd.png" alt="처음" />
+						<li class="pre mr20"><input type="image" name="btnPrev" id="btnPrev" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_table_left.png" alt="이전" />
+						<li><span id="labPageList"><strong>1</strong></a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">6</a></span>
+						<li class="next ml20"><input type="image" name="btnNext" id="btnNext" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_table_right.png" alt="다음" />
+						<li class="nextEnd"><input type="image" name="btnLast" id="btnLast" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_nextEnd.png" alt="끝" /></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		 -->
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

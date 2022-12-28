@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 이벤트</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class=" pb100">
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="01_01_greetings.html"><span>보도자료</span></a></li>
+				<li class="f18 fw500 active"><a href="01_02_profile.html"><span>공지사항</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+    </div>
+    <div class="contant1460" >
+		<div class="row mb80">
+			<div class="col-md-12 mt50 center">
+				<p class="ing-endBox f16">진행중인 이벤트</p>
+				<p class="f38 fw600 black lh140 mt20">사랑의 베지밀 온도계 챌린지</p>
+				<p class="gray04 fw600 f15 f_pp mt40">2022.12.09</p>
+				<p class="blackLine2 mt40"></p>
+			</div>
+			<div class="col-md-12 mt50  grayLine2">
+				<div class="contant1160 pb100 pt50">
+					<p class="img100"><a href="/vegemilBaby/event/loveVegemil2022"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/photo/VPM05_860_01.jpg"></a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 ">
+				<ul class="paging-txt">
+					<li class="pg-list"><a href="/event/list"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_pg_list.png" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

@@ -109,12 +109,6 @@ public class MainController {
 		return "fragments/"+viewName;
     }
 	
-	@RequestMapping(value = "/communication/{viewName}")
-    public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
-		
-		return "communication/"+viewName;
-    }
-	
 	@RequestMapping(value = "/company/{viewName}")
     public String moveCompany(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		

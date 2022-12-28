@@ -177,7 +177,7 @@
 	<select id="selectSupportList" parameterType="hashMap" resultType="com.vegemil.domain.AdminSupportDTO">
 		SELECT /* selectSupportList by FaqMapper.xml */
 			<include refid="supportColumns" />
-	      FROM M_SupportFaq
+	      FROM m_support_faq
 		 WHERE 1=1
 		 <if test='sStartdate != "" '>
 	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
@@ -194,7 +194,7 @@
 	<delete id="deleteSupport" parameterType="hashMap">
 	    /* deleteSupport by FaqMapper.xml */
 		DELETE
-		  FROM M_SupportFaq
+		  FROM m_support_faq
 		 WHERE s_idx IN
 	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
 		 #{idx, jdbcType=VARCHAR}
@@ -205,13 +205,13 @@
 		SELECT /* selectSupport by FaqMapper.xml */
 			<include refid="supportColumns" />
 		FROM
-			M_SupportFaq
+			m_support_faq
 		WHERE
 			s_idx = #{sIdx}
 	</select>
 	
 	<update id="updateSupportDetail" parameterType="com.vegemil.domain.AdminSupportDTO">
-		UPDATE M_SupportFaq
+		UPDATE m_support_faq
 		   SET s_answer =  #{sAnswer, jdbcType=VARCHAR}, s_answer_yn = 'Y', s_answer_date = now()
 		 WHERE s_idx = #{sIdx, jdbcType=VARCHAR}
 	</update>
