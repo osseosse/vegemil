@@ -1,27 +1,23 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <title>베스트 후기</title>
-    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
-	<script>
-	 /* $(document).ready(function(){
-		 var element = document.getElementById('isLogin').value;
-		 if(element == 'anonymousUser'){
-			 $("a[id='reviewForm']").on("click", function(){
-				 alert("로그인 후 작성해주시기 바랍니다.");
-			     return false;
-			 	})
-		 	}			
-		}); */
-	</script>
+<title>베스트 후기</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<script>
+ /* $(document).ready(function(){
+	 var element = document.getElementById('isLogin').value;
+	 if(element == 'anonymousUser'){
+		 $("a[id='reviewForm']").on("click", function(){
+			 alert("로그인 후 작성해주시기 바랍니다.");
+		     return false;
+		 	})
+	 	}			
+	}); */
+</script>
+<body>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-    </head>    
-    
-	<body style="padding-top: 90px;">
-	
 	
 	<div id="content">
 		<div class="container100">
@@ -136,8 +132,8 @@
 										<div class="container pb120">
 											<div class="row">
 												<div class="col-md-12 mt120">
-													<p><img th:src= @{/img/vegemilBaby/best_info.jpg} alt="" /></p>
-													<div class="btn_best"><a id="reviewForm" th:href="@{/vegemilBaby/event_review_form}"><img th:src= @{/img/vegemilBaby/btn_best.png} alt="후기 이벤트 참여하기" /></a></div>
+													<p><img th:src= @{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/best_info.jpg} alt="" /></p>
+													<div class="btn_best"><a id="reviewForm" th:href="@{/vegemilBaby/event_review_form}"><img th:src= @{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_best.png} alt="후기 이벤트 참여하기" /></a></div>
 													<ul class="best_txt">
 														<li>* 주의사항</li>
 														<li>
