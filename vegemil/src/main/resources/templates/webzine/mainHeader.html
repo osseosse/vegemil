@@ -32,7 +32,7 @@
             <li th:each="webzine : ${webzineListQY}"><a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|" th:text="${webzine.snsTitle}"></a></li>
 		</ul>
 		<ul class="mnav-bottom">
-			<li><a href="/main/webzine/special/sub01.aspx">SPECIAL COLUMN</a></li>
+			<li><a href="/main/webzine/special/sub1.aspx">SPECIAL COLUMN</a></li>
 			<!-- <li><a href="#">검색</a></li> -->
 			<li><a href="/webzine/subscribe">정기구독</a></li>
 			<li><a href="/main/webzine/theme.aspx">TOP20</a></li>
@@ -56,7 +56,7 @@
 		<div class="w1140">
 			<div class="n-menu-middle">
 				<ul>
-				<li><a href="/main/webzine/special/sub01.aspx">SPECIAL COLUMN</a></li>
+				<li><a href="/main/webzine/special/sub1.aspx">SPECIAL COLUMN</a></li>
 				<li><a href="/main/webzine/special/sub1.aspx">임신&육아</a></li>
 				<li><a href="/main/webzine/special/sub3.aspx">레시피</a></li>
 				<li><a href="/main/webzine/special/sub4.aspx">국내여행</a></li>
@@ -82,6 +82,9 @@
 				<select id="contents" class="w450" onchange="javascript:goSub(this.value);" th:if="${not #lists.isEmpty( webzineLink )}">
 		            <option th:each="link : ${webzineLink}" th:value="${link.qrtYear}" th:text="${link.snsTitle}"></option>
 		        </select>
+		        
+		       
+		        
 				<script th:inline="javascript">
 				/*<![CDATA[*/
 				
@@ -133,7 +136,7 @@
                     }
                     
                     function goSub(sub){
-                        location.href = "/main/webzine/" + sub;
+	                	if(sub !='0') location.href = "/main/webzine/" + sub;
                     }
                     
                 /*]]>*/
