@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>육아 정보 관리</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/pages/app-ecommerce.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/pickers/form-pickadate.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-wizard.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/extensions/ext-component-toastr.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-number-input.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-quill-editor.css}">
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/katex.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/monokai-sublime.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.snow.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.bubble.css}">
+		<link rel="stylesheet" th:href="@{https://fonts.gstatic.com}">
+		<link rel="stylesheet" type="text/css" th:href="@{https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap}">
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script th:src="@{/app-assets/vendors/js/forms/wizard/bs-stepper.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/extensions/toastr.min.js}"></script>
+	    
+	    <script th:src="@{/app-assets/vendors/js/pagination/jquery.bootpag.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/pagination/jquery.twbsPagination.min.js}"></script>
+	    
+	    <script th:src="@{/app-assets/vendors/js/editors/quill/katex.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
+	    
+	    <script>
+			var Font = Quill.import('formats/font');
+			  Font.whitelist = ['sofia', 'slabo', 'roboto', 'inconsolata', 'ubuntu'];
+			  Quill.register(Font, true);
+			  
+		    var fullEditor = new Quill('#full-container .editor', {
+		        bounds: '#full-container .editor',
+		        modules: {
+		          formula: true,
+		          syntax: true,
+		          toolbar: [
+		            [
+		              {
+		                font: []
+		              },
+		              {
+		                size: []
+		              }
+		            ],
+		            ['bold', 'italic', 'underline', 'strike'],
+		            [
+		              {
+		                color: []
+		              },
+		              {
+		                background: []
+		              }
+		            ],
+		            [
+		              {
+		                script: 'super'
+		              },
+		              {
+		                script: 'sub'
+		              }
+		            ],
+		            [
+		              {
+		                header: '1'
+		              },
+		              {
+		                header: '2'
+		              },
+		              'blockquote',
+		              'code-block'
+		            ],
+		            [
+		              {
+		                list: 'ordered'
+		              },
+		              {
+		                list: 'bullet'
+		              },
+		              {
+		                indent: '-1'
+		              },
+		              {
+		                indent: '+1'
+		              }
+		            ],
+		            [
+		              'direction',
+		              {
+		                align: []
+		              }
+		            ],
+		            ['link', 'image', 'video', 'formula'],
+		            ['clean']
+		          ]
+		        },
+		        theme: 'snow'
+			});
+		    
+		    fullEditor.setHTML = (html) => {
+		    	fullEditor.root.innerHTML = html;
+		    };
+		    
+		    var content = '[[ ${babyInfo.mbsContent} ]]';
+		    
+		    function decodeHTML(str){
+		    	str = str.replace(/&lt;/g,'<');
+		    	str = str.replace(/&gt;/g,'>');
+		    	str = str.replace(/&quot;/g,'\"');
+		    	str = str.replace(/&#39;/g,'\'/');
+		    	
+		    	str = str.replace(/&amp;lt;/g,'<');
+		    	str = str.replace(/&amp;gt;/g,'>');
+		    	return str;
+		    }
+
+		    fullEditor.setHTML(decodeHTML(content));
+			
+		    $('input[name=mbsIdx]').attr('value','[[ ${babyInfo.mbsIdx} ]]');
+		    $('input[name=mbsTitle]').attr('value','[[ ${babyInfo.mbsTitle} ]]');
+		    $('input[name=mbsImage]').attr('value','[[ ${babyInfo.mbsImage} ]]');
+		    $('#mbsCategory').val('[[ ${babyInfo.mbsCategory} ]]').prop('selected',true);
+		    $('input:radio[name=mbsActive]:input[value="[[ ${babyInfo.mbsActive} ]]"]').attr('checked',true);
+		    $('input:radio[name=mbsCheck]:input[value="[[ ${babyInfo.mbsCheck} ]]"]').attr('checked',true);
+		    
+		    $("input[name=fileName]").off().on("change", function(){
+		    	if (this.files && this.files[0]) {
+		    		var maxSize = 5 * 1024 * 1024;
+		    		var fileSize = this.files[0].size;
+
+		    		if(fileSize > maxSize){
+		    			alert("첨부파일 사이즈는 5MB 이내로 등록 가능합니다.");
+		    			$(this).val('');
+		    			return false;
+		    		}
+		    	}
+		    });
+		    
+		    function registerBabyInfo(){
+				$('#mbsContent').attr("value",fullEditor.root.innerHTML);
+		    }
+	    </script>
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ecommerce-application">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+        	<div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">육아 정보 관리</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
+                    <div class="mb-1 breadcrumb-right">
+                        <div class="dropdown">
+                            <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
+                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="app-todo.html"><i class="me-1" data-feather="check-square"></i><span class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i class="me-1" data-feather="message-square"></i><span class="align-middle">Chat</span></a><a class="dropdown-item" href="app-email.html"><i class="me-1" data-feather="mail"></i><span class="align-middle">Email</span></a><a class="dropdown-item" href="app-calendar.html"><i class="me-1" data-feather="calendar"></i><span class="align-middle">Calendar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+    			<!-- full Editor start -->
+                <section class="full-editor">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                	<form th:object="${BabyInfoDTO}" th:action="@{/admin/baby/babyInfoUpdate}" method="post" enctype="multipart/form-data" onsubmit="return registerBabyInfo()">
+	                                	<label for="mbsTitle" class="form-label">타이틀</label>
+	                                	<input type="text" class="form-control" name="mbsTitle" id="mbsTitle" value=""/><br><br>
+	                                	<input type="hidden" class="form-control" name="mbsIdx" id="mbsIdx" value=""/>
+								        <input type="hidden" class="form-control" name="mbsContent" id="mbsContent" value=""/>
+	                                    <div class="row">
+	                                        <div class="col-sm-12">
+	                                            <div id="full-wrapper">
+	                                                <div id="full-container">
+	                                                    <div class="editor">
+	                                                   		
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+	                                    </div><br>
+	                                    <div class="col-lg-6 col-md-12 mb-1 mb-sm-0">
+						                    <label for="formFile" class="form-label">썸네일 사진 첨부</label>
+						                    <input class="form-control" type="file" accept=".jpg,.jpeg,.png" id="fileName" name="fileName"/>
+						                    <input type="hidden" class="form-control" name="mbsImage" id="mbsImage" value=""/>
+						                </div><br>
+	                                    <div class="mb-1">
+						                    <label class="form-label" for="mbsCategory">카테고리</label>
+						                    <select class="form-select" id="mbsCategory" name="mbsCategory">
+						                        <option value="성장">성장/건강</option>
+						                        <option value="임신">임신/출산</option>
+						                        <option value="놀이">놀이/교육</option>
+						                        <option value="리빙">리빙/헬스</option>
+						                    </select>
+						                </div><br>
+										육아정보 진열 여부&nbsp;&nbsp;
+						                <div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" name="mbsActive" id="mbsActive" value="1" checked />
+											<label class="form-check-label" for="babyActive">활성</label>
+										</div>
+										<div class="form-check form-check-inline">
+										    <input class="form-check-input" type="radio" name="mbsActive" id="mbsActive2" value="0" />
+										    <label class="form-check-label" for="babyActive2">비활성</label>
+										</div><br><br>
+										메인화면 진열 여부&nbsp;&nbsp;
+										<div class="form-check form-check-inline">
+										    <input class="form-check-input" type="radio" name="mbsCheck" id="mbsCheck" value="1" checked />
+										    <label class="form-check-label" for="mainActive">활성</label>
+										</div>
+										<div class="form-check form-check-inline">
+										    <input class="form-check-input" type="radio" name="mbsCheck" id="mbsCheck2" value="0" />
+										    <label class="form-check-label" for="mainActive2">비활성</label>
+										</div><br><br>
+										<input type="submit" class="btn btn-outline-primary" value="  등록   "></input>
+							        </form>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- full Editor end -->
+		    </div>
+		</div>            
+	</div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+    
+</html>

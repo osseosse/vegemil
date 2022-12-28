@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>고객상담 등록</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->		
+	    <link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/pages/app-ecommerce.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/pickers/form-pickadate.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-wizard.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/extensions/ext-component-toastr.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-number-input.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-quill-editor.css}">
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/katex.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/monokai-sublime.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.snow.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.bubble.css}">
+		<link rel="stylesheet" th:href="@{https://fonts.gstatic.com}">
+		<link rel="stylesheet" type="text/css" th:href="@{https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap}">
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script type="text/javascript" th:src="@{/scripts/jquery.serializeObject.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/katex.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
+	    
+	    <script th:inline="javascript">
+	    /*<![CDATA[*/
+	       function imageHandler(image, callback) {
+	    	   const fileInput = document.createElement('input');
+		       fileInput.setAttribute('type', 'file');
+
+		       fileInput.click();
+
+		       fileInput.addEventListener("change", function () {  // change 이벤트로 input 값이 바뀌면 실행
+		    	   const formData = new FormData();
+		           const file = fileInput.files[0];
+		           formData.append('uploadFile', file);
+		           console.log("input.type " + formData);
+
+		           $.ajax({
+		        	   type: 'post',
+		               enctype: 'multipart/form-data',
+		               url: '/admin/customer/faq/fileUpload',
+		               data: formData,
+		               processData: false,
+		               contentType: false,
+		               dataType: 'json',
+		               success: function (data) {
+		            	   console.log('success', data);
+		            	   console.log('data.uploadPath', data.uploadPath);
+		            	   const range = quill.getSelection(); // 사용자가 선택한 에디터 범위
+		            	   // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
+		                   const uploadPath = data.uploadPath.path.replace(/\\/g, '/').replace('data', '');
+		                   console.log('uploadPath', uploadPath);
+		                   quill.insertEmbed(range.index, 'image', uploadPath);
+		               },
+		               error: function (err) {
+		                   console.log('err',err);
+		               }
+		           }).done(function(dats){
+		    	       console.log('success')
+		           });
+		       });
+		   }
+
+	    
+	       var quill = new Quill('#editor', {
+	          modules: {
+	    	     formula: true,
+	    	     syntax: true,
+	    	     toolbar: {
+	    	         container: [
+	    	           [{ 'header': [1, 2, false] }],
+	    	           [{ color: [] }, { background: [] }],
+	    	           ['bold', 'italic', 'underline','strike', 'blockquote'],
+	    	           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+	    	           ['link', 'image'],
+	    	           ['clean']
+	    	         ],
+	    	         handlers: { image: imageHandler }
+	    	       }
+	    	  },
+	    	  placeholder: '게시물을 작성해주세요.',
+	    	  theme: 'snow'
+	       });
+	       console.log('quill', quill)
+	       
+	       const editContent = [[ ${support?.sAnswer} ]];
+	       if(editContent) {
+	    	   quill.clipboard.dangerouslyPasteHTML(0, editContent.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll("&quot;",""));
+	       }
+	       
+	       function btnSave(){
+	    	   const form = document.form;
+	    	   form.sAnswer.value = quill.root.innerHTML;
+	    	   
+	    	   if(form.sAnswer.value == "<p><br></p>") {
+	    		   alert('내용을 작성해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   
+	    	   form.submit();
+		   }
+	       
+	       $('#btnDown').click( function() {
+	    	   console.log('btnDown');
+	    	   window.open("https://www.vegemil.co.kr/Upload/CUSTOMER/"+[[${support.sFile}]], "_blank");
+	    	 } );
+	       /*]]>*/
+ 	    </script> 
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+	<!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">고객상담 등록</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">고객지원</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">고객상담 등록
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+
+
+
+            <div class="content-body">
+                <!-- Analytics card section -->
+                <section id="analytics-card">
+					
+					<div class="row" >
+						<div class="col-12">
+							<div class="card">								
+								<div class="card-body ">
+									<!-- 테이블 -->
+									<table class="table table-bordered  f13 paddingType">
+										<colgroup>
+											<col width="20%">
+											<col width="20%">
+											<col width="40%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>ID <span class="text-warning" th:text="${support.sId}"></span></th>
+												<th>작성자명 <span class="text-warning" th:text="${support.sName}"></span></th>
+												<th>연락처 <span class="text-warning" th:text="${support.sHp}"></span></th>
+											</tr>
+											<tr>
+												<th>상담분류 
+													<span class="text-warning" th:if="${support.sCate.toString().equals('제품일반')}">제품일반</span>
+													<span class="text-warning" th:if="${support.sCate.toString().equals('음료류')}">음료류</span>
+													<span class="text-warning" th:if="${support.sCate.toString().equals('유아용두유')}">유아용두유</span>
+													<span class="text-warning" th:if="${support.sCate.toString().equals('베지밀')}">베지밀</span>
+													<span class="text-warning" th:if="${support.sCate.toString().equals('그린비아')}">그린비아</span>
+												</th>
+												<th>등록일시 <span class="text-warning" th:text="${support.sWritedate}"></span></th>
+												<th>답변상태 <span class="text-warning"> 
+													<span class="badge rounded-pill badge-light-info" th:if="${support.sAnswerYn == 'Y'}">완료</span> 
+													<span class="badge rounded-pill badge-light-warning" th:unless="${support.sAnswerYn == 'Y'}">미완료</span> 
+												</th>
+											</tr>
+
+										</thead>
+									</table>
+									<!-- //테이블 -->
+									<!-- 고객의견 -->
+									<h4 class="mt-2">고객의견</h4>
+									<p class="mt-1">제목 <span class="text-warning" th:text="${support.sSubject}"></span></p>
+									<div class="row">
+										
+<!-- 										<div class="col-12"> -->
+<!-- 											<p>내용</p> -->
+<!-- 											<p>[[${support.sContent}]]</p> -->
+<!-- 										</div> -->
+										
+										<div class="col-7">
+											<p>내용</p>
+											<p>[[${support.sContent}]]</p>
+										</div>
+										<div class="col-5">
+											<!-- 사진없을때 -- 공백으로 해주세요~ <!-- // 사진없을때 -->
+											<!-- 사진있을때 -->
+											<p>사진 <button type="button" class="btn btn-secondary btn-sm2" id="btnDown">다운로드</button></p> 
+											<div class="scroll-h250">
+												<p class="img100">
+													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" />
+												</p>
+												
+											</div>
+											<!-- //사진있을때 -->
+										</div>
+										
+									</div>
+									<!-- //고객의견 -->
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+
+                </section>
+                <!--/ Analytics Card section -->
+
+				<!-- 답변하기 -->
+				<form name="form" th:action="@{/admin/customer/registerSupportDetail}" th:object="${support}" method="POST" class="form-horizontal" role="form">
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="card-body ">
+										<!-- Form -->
+	                                    <form action="javascript:;" class="mt-2">
+											<h4>답변하기</h4>
+											<div class="row mt-3">
+	                                            <div class="col-md-1"> 내용</div>
+												<div class="col-md-10 col-12 ">
+													<input type="hidden" id="sAnswer" name="sAnswer" class="form-control" value="" />
+	                                                <input type="hidden" id="sIdx" name="sIdx" class="form-control" th:value="${support.sIdx}" />
+													<div id="blog-editor-wrapper">
+														<div id="blog-editor-container">
+															<div class="editor h200" id="editor">
+																
+															</div>
+														</div>
+													</div>
+	                                            </div>
+	                                        </div>
+	                                    </form>
+	                                    <!--/ Form -->
+									</div>
+									<div class="card center">
+										<div class="card-body mb-2">
+											<div class="row">
+												 <div class="col-sm-12">
+													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">등록</button>
+													<button type="reset" class="btn btn-outline-secondary">취소</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+	                </section>
+                </form>
+				<!-- //답변하기 -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+    
+</html>

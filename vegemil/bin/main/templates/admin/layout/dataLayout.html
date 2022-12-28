@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="loading dark-layout" lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!--  Common head -->
+    <th:block th:replace="admin/fragments/dataHead :: dataHeadFragment"></th:block>
+</head>
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+ 	
+ 	<header th:replace="admin/fragments/header :: headerFragment"></header>
+ 	
+    <!-- Side Bar -->
+    <th:block th:replace="admin/fragments/sidebar :: sidebarFragment"></th:block>
+        
+    <!-- Main Content -->
+    <th:block layout:fragment="content"></th:block>
+    
+    <!-- Footer -->
+    <footer th:replace="admin/fragments/footer :: footerFragment"></footer>
+    
+    <!-- Common script -->
+    <th:block th:replace="admin/fragments/dataScript :: dataScriptFragment"></th:block>
+    
+</body>
+</html>

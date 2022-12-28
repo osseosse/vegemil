@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminBabyMapper">
+
+	<sql id="BabyColumns">
+		  mbs_title
+		, mbs_content
+		, mbs_summary
+		, mbs_image
+		, mbs_getdate
+		, mbs_active
+		, mbs_check
+		, mbs_category
+	</sql>
+	
+	<sql id="calendarModelColumns">
+		  c_idx
+		, c_mname
+		, c_hp
+		, c_addr
+		, c_email
+		, c_image
+		, c_writeDate
+		, c_rank
+		, c_updatetime
+		, c_bname
+		, c_route
+		, c_image2
+		, c_alived
+	</sql>
+	
+	<!-- 베스트후기선정 -->
+	<sql id="bestReviewColumns">
+		 s_idx
+		,s_url
+		,s_writedate
+		,s_writetime
+		,s_uid
+		,s_title
+		,s_edayId
+		,s_sns
+		,s_image
+		,s_rank
+	</sql>
+	
+	<sql id="sampleBabyColumns">
+		 s_idx
+		,s_id
+		,s_mname
+		,s_year
+		,s_hp
+		,s_tel
+		,s_zipcode
+		,s_addr1
+		,s_addr2
+		,s_email
+		,s_writedate
+		,s_name
+		,s_sex
+		,s_materdate
+		,s_foodplan
+		,s_sabo
+		,s_before
+		,s_deliver
+		,s_deliverdate
+		,s_item
+		,s_feedmethod
+		,s_babycnt
+		,s_materdate2
+		,s_name2
+		,s_sex2
+		,s_feedmethod2
+		,s_materdate3
+		,s_name3
+		,s_sex3
+		,s_feedmethod3
+	</sql>
+
+	<insert id="insertBabyInfo" parameterType="com.vegemil.domain.AdminBabyDTO">
+		/* insertBabyInfo by AdminBabyMapper.xml */
+		INSERT INTO M_editAdmin_brandBaby (
+			<include refid="BabyColumns" />
+		) VALUES (
+			  #{mbsTitle}
+			, #{mbsContent}
+			, ''
+			, #{mbsImage}
+			, NOW()
+			, #{mbsActive}
+			, #{mbsCheck}
+			, #{mbsCategory}
+		)
+	</insert>
+
+	<select id="selectBabyInfoDetail" parameterType="long" resultType="com.vegemil.domain.AdminBabyDTO">
+		SELECT /* selectBabyInfoDetail by AdminBabyMapper.xml */
+			<include refid="BabyColumns" />
+			, mbs_idx, mbs_ange_html, mbs_ange, mbs_m_category
+		FROM
+			M_editAdmin_brandBaby
+		WHERE
+			<!--delete_yn = 'N'
+		AND -->
+			mbs_idx = #{mbsIdx}
+	</select>
+
+	<update id="updateBabyInfo" parameterType="com.vegemil.domain.AdminBabyDTO">
+		/* updateBabyInfo by AdminBabyMapper.xml */
+		UPDATE M_editAdmin_brandBaby
+		SET
+			  mbs_title = #{mbsTitle}
+			, mbs_content = #{mbsContent}
+			, mbs_image = #{mbsImage}
+			, mbs_active = #{mbsActive}
+			, mbs_check = #{mbsCheck}
+			, mbs_category = #{mbsCategory}
+			, mbs_getdate = NOW()
+		WHERE
+			mbs_idx = #{mbsIdx}
+	</update>
+
+	<update id="deleteBabyInfo" parameterType="long">
+		/* deleteBabyInfo by AdminBabyMapper.xml */
+		DELETE 
+		  FROM M_editAdmin_brandBaby
+		 WHERE mbs_idx IN
+	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+
+	<select id="selectBabyInfoList" parameterType="hashMap" resultType="com.vegemil.domain.AdminBabyDTO">
+		SELECT /* selectBabyInfoList by AdminBabyMapper.xml */ 
+		       <include refid="BabyColumns" />
+		       , mbs_idx, mbs_ange_html, mbs_ange, mbs_m_category
+		  FROM M_editAdmin_brandBaby
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND mbs_getdate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND mbs_getdate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     
+	     <if test='mbsCategory != "" '>
+	       AND mbs_category &lt;= #{mbsCategory, jdbcType=VARCHAR}
+	     </if>
+	     <if test='mbsMCategory != "" '>
+	       AND mbs_m_category &lt;= #{mbsMCategory, jdbcType=VARCHAR}
+	     </if>
+	     <if test='mbsActive != "" and mbsActive != null '>
+	 	   AND mbs_active = #{mbsActive}
+	 	 </if>
+	 	 <if test='mbsCheck != "" and mbsCheck != null '>
+	 	   AND mbs_check = #{mbsCheck}
+	 	 </if>
+	     
+	     <if test='searchWord != "" '>
+		   AND (mbs_title like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or mbs_summary like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		 ORDER BY mbs_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectBabyInfoTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*) /* selectBabyInfoTotalCount by AdminBabyMapper.xml */
+		  FROM M_editAdmin_brandBaby
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND mbs_getdate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND mbs_getdate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     
+	     <if test='mbsCategory != "" '>
+	       AND mbs_category &lt;= #{mbsCategory, jdbcType=VARCHAR}
+	     </if>
+	     <if test='mbsMCategory != "" '>
+	       AND mbs_m_category &lt;= #{mbsMCategory, jdbcType=VARCHAR}
+	     </if>
+	     <if test='mbsActive != "" and mbsActive != null '>
+	 	   AND mbs_active = #{mbsActive}
+	     </if>
+	  	 <if test='mbsCheck != ""  and mbsCheck != null '>
+	 	   AND mbs_check = #{mbsCheck}
+	 	 </if>
+	     
+	     <if test='searchWord != "" '>
+		   AND (mbs_title like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or mbs_summary like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+	</select>
+	
+	<!--  -->
+	
+	<insert id="insertBabyQna" parameterType="com.vegemil.domain.AdminBabyDTO">
+		/* insertBabyQna by AdminBabyMapper.xml */
+		INSERT INTO M_editQnAdmin_brandBaby (
+			<include refid="BabyColumns" />
+			, cate_sk
+			, cate_di
+			, cate_gh
+			, cate_bo
+		) VALUES (
+			  #{mbsTitle}
+			, #{mbsContent}
+			, ''
+			, #{mbsImage}
+			, NOW()
+			, #{mbsActive}
+			, #{mbsCheck}
+			, ''
+			, #{cateSk}
+			, #{cateDi}
+			, #{cateGh}
+			, #{cateBo}
+		)
+	</insert>
+
+	<select id="selectBabyQnaDetail" parameterType="long" resultType="com.vegemil.domain.AdminBabyDTO">
+		SELECT /* selectBabyQnaDetail by AdminBabyMapper.xml */
+			<include refid="BabyColumns" />
+			, mbs_idx
+			, cate_Sk
+			, cate_Di
+			, cate_Gh
+			, cate_Bo
+		FROM
+			M_editQnAdmin_brandBaby
+		WHERE
+			mbs_idx = #{mbsIdx}
+	</select>
+
+	<update id="updateBabyQna" parameterType="com.vegemil.domain.AdminBabyDTO">
+		/* updateBabyQna by AdminBabyMapper.xml */
+		UPDATE M_editQnAdmin_brandBaby
+		SET
+			  mbs_title = #{mbsTitle}
+			, mbs_content = #{mbsContent}
+			, mbs_image = #{mbsImage}
+			, mbs_active = #{mbsActive}
+			, mbs_check = #{mbsCheck}
+			, mbs_category = ''
+			, mbs_getdate = NOW()
+			, cate_Sk = #{cateSk}
+			, cate_Di = #{cateDi}
+			, cate_Gh = #{cateGh}
+			, cate_Bo = #{cateBo}
+		WHERE
+			mbs_idx = #{mbsIdx}
+	</update>
+
+	<update id="deleteBabyQna" parameterType="long">
+		/* deleteBabyQna by AdminBabyMapper.xml */
+		UPDATE M_editQnAdmin_brandBaby
+		SET
+			  delete_yn = 'Y'
+			, delete_time = NOW()
+		WHERE
+			mbs_idx = #{mbsIdx}
+	</update>
+
+	<select id="selectBabyQnaList" parameterType="com.vegemil.domain.AdminBabyDTO" resultType="com.vegemil.domain.AdminBabyDTO">
+		SELECT /* selectBabyQnaList by AdminBabyMapper.xml */
+			mbs_idx
+			, <include refid="BabyColumns" />
+			, cate_sk
+			, cate_di
+			, cate_gh
+			, cate_bo
+		FROM
+			M_editQnAdmin_brandBaby
+		WHERE 1=1
+	 	<if test='(cateSk != "" and cateSk != null) or (cateDi != "" and cateDi != null) or (cateBo != "" and cateBo != null) or (cateGh != "" and cateGh != null) '>
+	 	  AND (cate_sk = #{cateSk} or cate_di = #{cateDi} or cate_bo = #{cateBo} or cate_gh = #{cateGh})     
+	 	</if>
+	 	<if test='mbsActive != "" '>
+	 	  AND mbs_active = #{mbsActive}
+	 	</if>
+	 	<if test='mbsCheck != "" '>
+	 	  AND mbs_check = #{mbsCheck}
+	 	</if>
+		ORDER BY
+			mbs_idx DESC
+	</select>
+
+	<select id="selectBabyQnaTotalCount" parameterType="com.vegemil.domain.AdminBabyDTO" resultType="int">
+		SELECT /* selectBabyQnaTotalCount by AdminBabyMapper.xml */
+			COUNT(*)
+		FROM
+			M_editQnAdmin_brandBaby
+	</select>
+	
+	
+	
+	<insert id="insertCalendarModel" parameterType="com.vegemil.domain.AdminCalendarModelDTO">
+		INSERT INTO m_calenregistpic (
+			c_mname
+			, c_hp
+			, c_addr
+			, c_email
+			, c_image
+			, c_writeDate
+			, c_rank
+			, c_updatetime
+			, c_bname
+			, c_route
+			, c_image2
+			, c_alived
+		) VALUES (
+			  #{cMname}
+			, #{cHp}
+			, #{cAddr}
+			, #{cEmail}
+			, #{cImage}
+			, NOW()
+			, #{cRank}
+			, #{cUpdatetime}
+			, #{cBname}
+			, #{cRoute}
+			, #{cImage2}
+			, #{cAlived}
+		)
+	</insert>
+
+	<select id="selectCalendarModelDetail" parameterType="long" resultType="com.vegemil.domain.AdminCalendarModelDTO">
+		SELECT
+			<include refid="calendarModelColumns" />
+		FROM
+			m_calenregistpic
+		WHERE
+			c_idx = #{cIdx}
+	</select>
+
+	<update id="updateCalendarModel" parameterType="com.vegemil.domain.AdminCalendarModelDTO">
+		UPDATE m_calenregistpic
+		SET
+			  c_updatetime = NOW()
+			, c_rank = #{cRank}
+		WHERE
+			c_idx = #{cIdx}
+	</update>
+
+	<update id="deleteCalendarModel" parameterType="hashMap">
+		DELETE FROM m_calenregistpic
+		 WHERE c_idx IN
+      <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+
+	<select id="selectCalendarModelList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCalendarModelDTO">
+		SELECT /* selectCalendarModelList by AdminEventMapper.xml */
+			<include refid="calendarModelColumns" />
+		  FROM m_calenregistpic
+	     WHERE 1=1
+	    <if test='sStartdate != "" '>
+	 	   AND c_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND c_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 	</if>
+	 	<if test='searchType == "mName" '>
+		AND c_mname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		<if test='searchType == "bName" '>
+		AND c_bname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		 ORDER BY c_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectCalendarModelTotalCount" parameterType="hashMap" resultType="int">
+		SELECT /* selectCalendarModelTotalCount by AdminEventMapper.xml */
+			COUNT(*)
+		FROM
+			m_calenregistpic
+		WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	   AND c_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND c_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 	</if>
+	 	<if test='searchType == "mName" '>
+		AND c_mname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		<if test='searchType == "bName" '>
+		AND c_bname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+	</select>
+	
+	
+	<insert id="insertBestReview" parameterType="com.vegemil.domain.AdminBestReviewDTO">
+		INSERT INTO M_SNSRegistURL (
+			<include refid="bestReviewColumns" />
+		) VALUES (
+		 	  #{sIdx}
+			, #{sUrl}
+			, DATE_FORMAT(now(), '%Y-%m-%d')
+			, DATE_FORMAT(now(), '%H:%i:%s')
+			, #{sUid}
+			, #{sTitle}
+			, #{sEdayId}
+			, #{sSns}
+			, #{sImage}
+			, #{sRank}
+		)
+	</insert>
+
+	<select id="selectBestReviewDetail" parameterType="long" resultType="com.vegemil.domain.AdminBestReviewDTO">
+		SELECT
+			<include refid="bestReviewColumns" />
+		FROM
+			M_SNSRegistURL
+		WHERE
+			s_idx = #{sIdx}
+	</select>
+
+	<update id="updateBestReview" parameterType="com.vegemil.domain.AdminBestReviewDTO">
+		UPDATE M_SNSRegistURL
+		SET
+			  s_desctime = NOW()
+			, s_rank = #{sRank}
+		WHERE
+			s_idx = #{sIdx}
+	</update>
+
+	<select id="selectBestReviewList" parameterType="hashMap" resultType="com.vegemil.domain.AdminBestReviewDTO">
+		SELECT 
+		<include refid="bestReviewColumns" />
+		  FROM M_SNSRegistURL
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	 	   AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 	</if>
+	 	<if test='searchType == "id" '>
+		AND s_uid LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		<if test='searchType == "edayId" '>
+		AND s_edayId LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		ORDER BY
+			s_idx DESC
+		LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectBestReviewTotalCount" parameterType="hashMap" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			M_SNSRegistURL
+	    WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	  AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	  AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 	</if>
+	 	<if test='searchType == "id" '>
+		  AND s_uid LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		<if test='searchType == "edayId" '>
+		  AND s_edayId LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+	</select>
+	
+	<delete id="deleteBestReview" parameterType="hashMap">
+		DELETE FROM M_SNSRegistURL
+		 WHERE s_idx IN 
+	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</delete>
+	
+	<insert id="insertSampleBaby" parameterType="com.vegemil.domain.AdminSampleBabyDTO">
+		/* insertSampleBaby by SampleBabyMapper.xml */
+		INSERT INTO M_SampleBaby (
+			<include refid="sampleBabyColumns" />
+		) VALUES (
+			  #{sIdx}
+			, #{sId}
+			, #{sMname}
+			, #{sYear}
+			, #{sHp}
+			, #{sTel}
+			, #{sZipcode}
+			, #{sAddr1}
+			, #{sAddr2}
+			, #{sEmail}
+			, DATE_FORMAT(now(), '%Y-%m-%d')
+			, #{sName}
+			, #{sSex}
+			, #{sMaterdate}
+			, #{sFoodplan}
+			, #{sSabo}
+			, #{sBefore}
+			, #{sDeliver}
+			, #{sDeliverdate}
+			, #{sItem}
+			, #{sFeedmethod}
+			, #{sBabycnt}
+			, #{sMaterdate2}
+			, #{sName2}
+			, #{sSex2}
+			, #{sFeedmethod2}
+			, #{sMaterdate3}
+			, #{sName3}
+			, #{sSex3}
+			, #{sFeedmethod3}
+		)
+	</insert>
+
+	<select id="selectSampleBabyDetail" parameterType="long" resultType="com.vegemil.domain.AdminSampleBabyDTO">
+		SELECT /* selectSampleBabyDetail by SampleBabyMapper.xml */
+			<include refid="sampleBabyColumns" />
+		FROM
+			M_SampleBaby
+		WHERE
+			s_idx = #{sIdx}
+	</select>
+
+	<update id="updateSampleBaby" parameterType="com.vegemil.domain.AdminSampleBabyDTO">
+		UPDATE M_SampleBaby
+		SET
+			  s_deliverdate = DATE_FORMAT(now(), '%Y-%m-%d')
+			, s_deliver = #{sDeliver}
+		WHERE
+			s_idx = #{sIdx}
+	</update>
+
+	<update id="deleteSampleBaby" parameterType="hashMap">
+		DELETE 
+		  FROM M_SampleBaby
+ 	     WHERE s_idx IN
+	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+
+	<select id="selectSampleBabyList" parameterType="hashMap" resultType="com.vegemil.domain.AdminSampleBabyDTO">
+		SELECT /* selectSampleBabyList by SampleBabyMapper.xml */
+			  <include refid="sampleBabyColumns" />
+		  FROM 	M_SampleBaby
+		 WHERE 1=1
+		 <if test='gubun != "" '>
+		   AND s_item = #{gubun, jdbcType=VARCHAR}
+		 </if>
+		 <if test='searchType == "mName" '>
+		   AND s_mname like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		 </if>
+		 <if test='searchType == "id" '>
+		   AND s_id like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		 </if>
+		 <if test='searchType == "hp" '>
+		   AND s_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		 </if>
+		 <if test='sStartdate != "" '>
+	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+		ORDER BY
+			s_idx DESC
+	</select>
+
+	<select id="selectSampleBabyTotalCount" parameterType="hashMap" resultType="int">
+		SELECT /* selectSampleBabyTotalCount by SampleBabyMapper.xml */
+			COUNT(*)
+		FROM
+			M_SampleBaby
+	</select>
+
+</mapper>

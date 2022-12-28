@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>고객상담</title>
+	</th:block>
+
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+<!-- 	    <link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}"> -->
+	    <!-- END: Page CSS-->
+	</th:block>
+    
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page JS-->
+	    <script th:src="@{/app-assets/admin/customer/support.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+	    <!-- END: Page JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">고객상담</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">고객지원</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">고객상담</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												등록일
+											</div>
+	
+											<div class="col-md-4 col-12">
+	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
+	                                            </div>
+											</div>
+											<div class="col-md-3 col-12">
+												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
+											</div>
+										</div>
+										<div class="row mb-1 ">
+											<div class="col-md-1 col-12">구분</div>
+											<div class="col-md-4 col-12">																										
+												<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio2" id="btnradio2-1" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-1">전체</label>
+	                                                <input type="radio" class="btn-check" name="btnradio2" id="btnradio2-2" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-2">공개</label>
+	                                                <input type="radio" class="btn-check" name="btnradio2" id="btnradio2-3" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-3">비공개</label>
+	                                            </div>
+											</div>
+											<div class="col-md-1 col-12">상담분류</div>
+											<div class="col-md-2 col-12">																										
+												<select class="form-select" id="#">
+													<option>선택</option>
+													<option>전체</option>
+													<option value="제품일반">제품일반</option>
+													<option value="음료류">음료류</option>
+													<option value="유아동두유">유아동두유</option>
+													<option value="베지밀">베지밀</option>
+													<option value="그린비아">그린비아</option>
+												</select>
+											</div>
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												상세검색
+											</div>
+											<div class="col-md-4 col-4">
+												<input type="text" id="searchWord" class="form-control" name="searchWord" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="sStartdate" id="sStartdate" value=""/>
+												<input type="hidden" class="form-control" name="sEnddate" id="sEnddate" value=""/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+
+				<form id="form" name="form" method="POST">
+					<!-- FAQ리스트 -->
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="table-responsive">
+										<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+											<colgroup>
+	
+												<col width="5%">
+												<col width="6%">
+												<col width="6%">
+												<col width="8%">
+												<col width="8%">
+												<col width="8%">
+												<col width="10%">
+												<col width="*%">
+												<col width="7%">
+												<col width="12%">
+												<col width="7%">
+	
+											</colgroup>
+											<thead>
+												<tr>
+													<th>No.</th>
+													<th>
+														<div class="form-check center-ck">
+	                                                        <input type="checkbox" class="form-check-input" id="customCheck1" />
+	                                                    </div>
+													</th>
+													<th>수정</th>
+													<th>상담분류</th>
+													<th>ID</th>
+													<th>작성자명</th>
+													<th>연락처</th>
+													<th>제목</th>
+													<th>첨부파일</th>
+													<th>등록일시</th>
+													<th>답변</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+	
+								</div>
+							</div>
+						</div>
+	                </section>
+					<!-- //FAQ리스트 -->
+				</form>
+
+				<!-- Modal Sizes start -->
+                <section id="modal-sizes">
+                     <div class="modal fade text-start" id="large" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h4 class="modal-title" id="myModalLabel17">고객상담</h4>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<!-- 테이블 -->
+								<table class="table table-bordered  f13 paddingType">
+									<colgroup>
+										<col width="20%">
+										<col width="20%">
+										<col width="40%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>ID <span class="text-warning"> {id}</span></th>
+											<th>작성자명 <span class="text-warning"> {이름}</span></th>
+											<th>연락처<span class="text-warning"> {010-9074-3076}</span></th>
+										</tr>
+										<tr>
+											<th>상담분류<span class="text-warning"> {제품문의}</span></th>
+											<th>등록일시<span class="text-warning"> {등록일시}</span></th>
+											<th>답변<span class="text-warning"> <button type="button" class="btn btn-outline-success btn-sm2">완료</button></span></th>
+										</tr>
+
+									</thead>
+								</table>
+								<!-- //테이블 -->
+								<div class="modal-body">
+									<h4>고객의견</h4>
+									<p class="mt-1">제목 <span class="text-warning"> {등록된텍스트}</span></p>
+									<div class="row">
+										<div class="col-7">
+											<p>내용</p>
+											<p><b>두유에 들어가는 칼슘, 비타민, 미네랄 등의 영양성분을 첨가물로 오해하는 경우가 있습니다.</b> 두유의 주 원료인 콩은 단백질, 탄수화물, 지방은 물론 올리고당, 철분 등 우리 몸에 유	익한 성분을 많이 포함하고 있습니다. 그러나 콩에는 칼슘과 같은 일부 영양성분이 부족할 수 있기 때문에 별도로 보충해 주는 것입니다. 이렇게 원료를 첨가하여 영양성분을 보강하는 것 외에도 곡물이나 과일 등을 첨가해 맛과 향을 새롭게 하기도 합니다.</p>
+										</div>
+										<div class="col-5">
+											<!-- 사진없을때 -- 공백으로 해주세요~ <!-- // 사진없을때 -->
+											<!-- 사진있을때 -->
+											<p>사진 <button type="button" class="btn btn-secondary btn-sm2 ">다운로드</button></p> 
+											<div class="scroll-h250">
+												<p class="img100"><img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/review_upload/2022614132996602547328929_bvbest.jpg" /></p>
+												<p class="img100"><img src="https://www.vegemil.co.kr/Main/BrandGreenbia/img/product/G01005_S.jpg" /></p>
+											</div>
+											<!-- //사진있을때 -->
+										</div>
+									</div>
+						
+									<h4 class="mt-2">답변등록</h4>
+									<!-- 에디터 -->
+									<div id="blog-editor-wrapper" class="mt-1">
+										<div id="blog-editor-container">
+											<div class="editor h200">
+												안녕하세요 **고개님, 제품을 이용해서 주셔서 감사드립니다.
+											</div>
+										</div>
+									</div>
+									<!-- //에디터 -->
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-bs-dismiss="modal">저장</button>
+								</div>
+							</div>
+						</div>
+					</div>
+                </section>
+                <!-- Modal Sizes end -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+
+</html>

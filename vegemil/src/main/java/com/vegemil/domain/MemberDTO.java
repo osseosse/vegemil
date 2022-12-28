@@ -56,6 +56,7 @@ public class MemberDTO implements UserDetails {
 	private String mIsIdle;
 	private String mDualYn;
 	private String mDi;
+	private String mLocation;
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

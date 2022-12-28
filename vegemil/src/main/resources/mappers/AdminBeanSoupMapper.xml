@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminBeanSoupMapper">
+
+	<!-- 간단요리사 영상 -->
+	<sql id="videoColumns">
+		  m_title
+		, m_display
+		, m_writeDate
+		, m_src
+	</sql>
+	
+	<!-- 간단요리사 뉴스 -->
+	<sql id="newsColumns">
+		  m_title
+		, m_url
+		, m_thum
+		, m_display
+		, m_writeDate
+		, m_start_date
+		, m_end_date
+		, m_ing
+	</sql>
+	
+	<!-- 간단요리사 이벤트 -->
+	<sql id="eventColumns">
+		  m_title
+		, m_startDate
+		, m_endDate
+		, m_ing
+		, m_display
+		, m_thum
+		, m_img
+		, m_eday_id
+		, m_content
+		, m_type
+		, m_product
+	</sql>
+
+	<insert id="insertBeanSoupVideo" parameterType="com.vegemil.domain.AdminBeanSoupVideoDTO">
+		INSERT INTO m_beansoup_video (
+			<include refid="videoColumns" />
+		) VALUES (
+			  #{mTitle}
+			, #{mDisplay}
+			, #{mWriteDate}
+			, #{mSrc}
+		)
+	</insert>
+
+	<update id="updateBeanSoupVideo" parameterType="com.vegemil.domain.AdminBeanSoupVideoDTO">
+		UPDATE m_beansoup_video
+		SET
+			  m_title = #{mTitle}
+			, m_display = #{mDisplay}
+			, m_writeDate = NOW()
+			, m_src = #{mSrc}
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+
+	<update id="deleteBeanSoupVideo" parameterType="com.vegemil.domain.AdminBeanSoupVideoDTO">
+		DELETE FROM m_beansoup_video
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+
+	<select id="selectBeanSoupVideoList" parameterType="com.vegemil.domain.AdminBeanSoupVideoDTO" resultType="com.vegemil.domain.AdminBeanSoupVideoDTO">
+		SELECT
+			m_idx
+		  , <include refid="videoColumns" />
+		FROM
+			m_beansoup_video
+		WHERE 1=1
+<!-- 		<if test='mbsActive != "" '> -->
+<!-- 		  AND m_display = #{mDisplay} -->
+<!-- 		</if> -->
+		ORDER BY
+			m_idx DESC
+			
+	</select>
+	
+	<select id="selectBeanSoupVideo" parameterType="Long" resultType="com.vegemil.domain.AdminBeanSoupVideoDTO">
+		SELECT
+			m_idx
+		  , <include refid="videoColumns" />
+		FROM
+			m_beansoup_video
+	    WHERE m_idx = #{mIdx}
+		ORDER BY
+			m_idx DESC
+			
+	</select>
+	
+	<select id="selectBeanSoupNewsList" parameterType="com.vegemil.domain.AdminBeanSoupNewsDTO" resultType="com.vegemil.domain.AdminBeanSoupNewsDTO">
+		SELECT
+			m_idx
+		  , <include refid="newsColumns" />
+		FROM
+			m_beansoup_news
+		WHERE 1=1
+		ORDER BY
+			m_idx DESC
+			
+	</select>
+	
+	<insert id="insertBeanSoupNews" parameterType="com.vegemil.domain.AdminBeanSoupNewsDTO">
+		INSERT INTO m_beansoup_news (
+			<include refid="newsColumns" />
+		) VALUES (
+			  #{mTitle}
+			, #{mUrl}
+			, #{mThum}
+			, #{mDisplay}
+			, #{mWriteDate}
+			, #{mStartDate}
+			, #{mEndDate}
+			, #{mIng}
+		)
+	</insert>
+
+	<update id="updateBeanSoupNews" parameterType="com.vegemil.domain.AdminBeanSoupNewsDTO">
+		UPDATE m_beansoup_news
+		SET
+			  m_title = #{mTitle}
+			, m_url = #{mUrl}
+			<if test='mThum != "" and mThum != null '>
+			, m_thum = #{mThum}
+			</if>
+			, m_display = #{mDisplay}
+			, m_ing = #{mIng}
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+
+	<update id="deleteBeanSoupNews" parameterType="com.vegemil.domain.AdminBeanSoupNewsDTO">
+		DELETE FROM m_beansoup_news
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+	
+	<select id="selectBeanSoupNews" parameterType="Long" resultType="com.vegemil.domain.AdminBeanSoupNewsDTO">
+		SELECT
+			m_idx
+		  , <include refid="newsColumns" />
+		FROM
+			m_beansoup_news
+	    WHERE m_idx = #{mIdx}
+		ORDER BY
+			m_idx DESC
+			
+	</select>
+	
+	<select id="selectBeanSoupEventList" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO" resultType="com.vegemil.domain.AdminBeanSoupEventDTO">
+		SELECT
+			m_idx
+		  , <include refid="eventColumns" />
+		FROM
+			m_beansoup_event
+		WHERE 1=1
+		ORDER BY
+			m_idx DESC
+			
+	</select>
+	
+	<insert id="insertBeanSoupEvent" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
+		INSERT INTO m_beansoup_event (
+			<include refid="eventColumns" />
+		) VALUES (
+			  #{mTitle}
+			, #{mUrl}
+			, #{mThum}
+			, #{mDisplay}
+			, #{mWriteDate}
+			, #{mStartDate}
+			, #{mEndDate}
+			, #{mIng}
+		)
+	</insert>
+
+	<update id="updateBeanSoupEvent" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
+		UPDATE m_beansoup_event
+		SET
+			  m_title = #{mTitle}
+			, m_url = #{mUrl}
+			<if test='mThum != "" and mThum != null '>
+			, m_thum = #{mThum}
+			</if>
+			, m_display = #{mDisplay}
+			, m_ing = #{mIng}
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+
+	<update id="deleteBeanSoupEvent" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
+		DELETE FROM m_beansoup_event
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+	
+</mapper>

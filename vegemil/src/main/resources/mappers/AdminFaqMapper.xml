@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminFaqMapper">
+
+	<sql id="faqColumns">
+		  f_idx
+		, f_cate
+		, f_question
+		, f_answer
+		, f_view
+		, f_hit
+		, f_editdate
+		, f_gory
+		, f_img
+	</sql>
+	
+	<sql id="faqScoreColumns">
+		  idx
+		, f_id
+		, f_score
+		, f_etcBox
+		, f_name
+		, faq_idx
+		, f_question
+		, f_insertdate
+	</sql>
+	
+	<sql id="supportColumns">
+		  s_idx
+		, s_cate
+		, s_id
+		, s_name
+		, s_hp
+		, s_email
+		, s_addr
+		, s_subject
+		, s_content
+		, s_file
+		, s_writedate
+		, s_activeuser
+		, s_hit
+		, s_active
+		, s_answer
+		, s_gory
+		, s_updatedate
+		, s_answer_yn
+		, s_answer_date
+	</sql>
+
+	<insert id="insertFaq" parameterType="com.vegemil.domain.AdminFaqDTO">
+		/* insertFaq by FaqMapper.xml */
+		INSERT INTO m_faq (
+			<include refid="faqColumns" />
+		) VALUES (
+			  #{fIdx}
+			, #{fCate}
+			, #{fQuestion}
+			, #{fAnswer}
+			, #{fView}
+			, 0
+			, IFNULL(#{fEditdate}, DATE_FORMAT(NOW(),'%Y-%m-%d'))
+			, #{fGory}
+			, #{fImg}
+		)
+	</insert>
+
+	<select id="selectFaqDetail" parameterType="long" resultType="com.vegemil.domain.AdminFaqDTO">
+		SELECT /* selectFaqDetail by FaqMapper.xml */
+			<include refid="faqColumns" />
+		FROM
+			m_faq
+		WHERE
+			f_idx = #{fIdx}
+	</select>
+
+	<update id="updateFaq" parameterType="com.vegemil.domain.AdminFaqDTO">
+		/* updateFaq by FaqMapper.xml */
+		UPDATE m_faq
+		SET
+			  f_editdate = DATE_FORMAT(NOW(),'%Y-%m-%d')
+			, f_question = IFNULL(#{fQuestion}, 'N')
+			, f_answer = IFNULL(#{fAnswer}, 'N')
+			, f_view = #{fView, jdbcType=VARCHAR}
+		WHERE f_idx = #{fIdx}
+	</update>
+
+	<delete id="deleteFaq" parameterType="hashMap">
+	    /* deleteFaq by FaqMapper.xml */
+		DELETE
+		  FROM m_faq
+		 WHERE f_idx IN
+	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</delete>
+
+	<select id="selectFaqList" parameterType="hashMap" resultType="com.vegemil.domain.AdminFaqDTO">
+		SELECT /* selectFaqList by FaqMapper.xml */
+			<include refid="faqColumns" />
+	      FROM m_faq
+		 WHERE 1=1
+	     <if test='gubun != "" '>
+		   AND f_view = #{gubun, jdbcType=VARCHAR}
+		 </if>
+		 <if test='sStartdate != "" '>
+	       AND f_editdate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND f_editdate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='fCate != "" '>
+		   AND f_cate = #{fCate, jdbcType=VARCHAR}
+		 </if>
+		 <if test='searchWord != "" '>
+		   AND (f_question like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or f_answer like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+<!-- 			<include refid="CommonMapper.search" /> -->
+		 ORDER BY
+			   f_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+<!-- 			<include refid="CommonMapper.paging" /> -->
+	</select>
+
+	<select id="selectFaqTotalCount" parameterType="hashMap" resultType="int">
+		SELECT /* selectFaqTotalCount by FaqMapper.xml */
+			COUNT(*)
+		FROM
+			m_faq
+		WHERE
+			f_view = '1'
+		 <if test='gubun != "" '>
+		  AND f_view = #{gubun, jdbcType=VARCHAR}
+		 </if>
+		 <if test='sStartdate != "" '>
+	      AND f_editdate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	      AND f_editdate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='fCate != "" '>
+		  AND f_cate = #{fCate, jdbcType=VARCHAR}
+		 </if>
+		 <if test='searchWord != "" '>
+		  AND (f_question like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or f_answer like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+	</select>
+	
+	<update id="updateDisplay" parameterType="hashMap">
+		UPDATE m_faq
+		   SET f_view = #{fView, jdbcType=VARCHAR} 
+		 WHERE f_idx = #{fIdx, jdbcType=VARCHAR}
+	</update>
+	
+	<select id="selectFaqScoreTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*) /* selectFaqScoreTotalCount by FaqMapper.xml */
+		  FROM M_faqSatisfaction
+	</select>
+
+	<select id="selectFaqScoreList" parameterType="hashMap" resultType="com.vegemil.domain.AdminFaqScoreDTO">
+		SELECT /* selectFaqScoreList by FaqMapper.xml */
+			<include refid="faqScoreColumns" />
+	      FROM M_faqSatisfaction
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND f_insertdate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND f_insertdate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+		 <if test='searchWord != "" '>
+		   AND (f_question like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or f_etcBox like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		ORDER BY idx DESC
+	</select>
+	
+	<select id="selectSupportList" parameterType="hashMap" resultType="com.vegemil.domain.AdminSupportDTO">
+		SELECT /* selectSupportList by FaqMapper.xml */
+			<include refid="supportColumns" />
+	      FROM M_SupportFaq
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+		 <if test='searchWord != "" '>
+		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		ORDER BY s_idx DESC
+	</select>
+	
+	<delete id="deleteSupport" parameterType="hashMap">
+	    /* deleteSupport by FaqMapper.xml */
+		DELETE
+		  FROM M_SupportFaq
+		 WHERE s_idx IN
+	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</delete>
+	
+	<select id="selectSupport" parameterType="long" resultType="com.vegemil.domain.AdminSupportDTO">
+		SELECT /* selectSupport by FaqMapper.xml */
+			<include refid="supportColumns" />
+		FROM
+			M_SupportFaq
+		WHERE
+			s_idx = #{sIdx}
+	</select>
+	
+	<update id="updateSupportDetail" parameterType="com.vegemil.domain.AdminSupportDTO">
+		UPDATE M_SupportFaq
+		   SET s_answer =  #{sAnswer, jdbcType=VARCHAR}, s_answer_yn = 'Y', s_answer_date = now()
+		 WHERE s_idx = #{sIdx, jdbcType=VARCHAR}
+	</update>
+	
+</mapper>

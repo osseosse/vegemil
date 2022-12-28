@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>육아정보 조회</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/baby/babyInfoList.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">육아정보 조회</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">영유아식</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">육아정보 조회
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												등록일
+											</div>
+	
+											<div class="col-md-4 col-12">
+	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
+	                                            </div>
+											</div>
+											<div class="col-md-3 col-12">
+												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
+											</div>
+										</div>
+										<div class="row mb-1 ">
+											<div class="col-md-1 col-12">
+												게시판구분
+											</div>
+	
+											<div class="col-md-2 col-12">
+												<select class="form-select" id="lCate" name="lCate">
+													<option value="육아정보">육아정보</option>
+												</select>
+											</div>
+											<div class="col-md-2 col-12">
+												<select class="form-select" id="mbsCategory" name="mbsCategory" onchange="changeItem(this.value)">
+													<option value="" selected>전체</option>
+													<option value="gh">성장/건강</option>
+													<option value="pb">임신/출산</option>
+													<option value="pe">놀이/교육</option>
+													<option value="lh">리빙/헬스/트렌드</option>
+												</select>
+											</div>
+											<div class="col-md-2 col-12">
+												<select class="form-select" id="mbsMCategory" name="mbsMCategory">
+													<option selected>전체</option>
+													<option value="pb01">임신초기</option>
+													<option value="pb02">임신중기</option>
+													<option value="pb03">임신후기</option>
+													<option value="pb04">임신기 건강관리</option>
+													<option value="pb05">임신 준비&태교</option>
+													<option value="pb06">출산 준비&용품</option>
+													<option value="pb07">산후 관리</option>
+												</select>
+											</div>
+										</div>
+										<!-- 메인진열 -->
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												진열 
+											</div>
+											<!--  -->
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">카테고리 진열
+													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" value="1" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">메인 진열
+													<input type="checkbox" class="form-check-input"  id="mbsCheck" name="mbsCheck" value="1"   />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											
+										</div>
+										<!-- //메인진열 -->
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												상세검색
+											</div>
+											<div class="col-md-4 col-4">
+												<input type="text" id="searchWord" class="form-control" name="searchWord" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="sStartdate" id="sStartdate" value=""/>
+												<input type="hidden" class="form-control" name="sEnddate" id="sEnddate" value=""/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+                </form>
+
+				<form id="form" name="form" method="POST">
+					<!-- 달력모델선정 -->
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="table-responsive">
+										<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+											<colgroup>
+												<col width="4%">
+												<col width="4%">
+												<col width="7%">
+												<col width="9%">
+												<col width="9%">
+												<col width="9%">
+												<col width="19%">
+												<col width="9%">
+												<col width="9%">
+												<col width="12%">
+												<col width="4%">
+												<col width="4%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th>No.</th>
+													<th>
+														<div class="form-check center-ck">
+	                                                        <input type="checkbox" class="form-check-input" id="customCheck1" />
+	                                                    </div>
+													</th>
+													<th>수정</th>
+													<th>게시판[대]</th>
+													<th>게시판[중]</th>
+													<th>게시판[소]</th>
+													<th>제목</th>
+													<th>썸네일</th>
+													<th>조회수</th>
+													<th>등록일시</th>
+													<th>육아전시</th>
+													<th>메인전시</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+	
+								</div>
+							</div>
+						</div>
+	                </section>
+					<!-- //달력모델선정 -->
+				</form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+    
+</html>

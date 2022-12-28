@@ -1,0 +1,111 @@
+
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+	html, body {margin:0; padding:0; font-family:"Noto Sans KR", sans-serif, Helvetica }
+
+.text-center {text-align:center}
+.center {margin:0 auto}
+.text-left{text-align:left}
+.text-right{text-align:right}
+table.listTable {width:100%}
+table.listTable th {font-weight:300; font-size:14px; letter-spacing:-1px }
+table.listTable td {font-size:13px }
+table.listTable th:first-child {padding-top:10px}
+table.listTable td:first-child {padding:10px 5px}
+table.listTable th,
+table.listTable td {padding:10px 2px}
+
+table.listTable .form-check {padding:0}
+table.listTable .form-check .form-check-input {margin:0}
+a.gray {color:#b4b7bd}
+a.gray:hover {color:#b4b7bd; text-decoration:underline}
+a .gray {color:#b4b7bd}
+a .gray:hover {color:#b4b7bd; text-decoration:underline}
+
+.vertical-top {vertical-align:top}
+.vertical-middle {vertical-align:middle}
+.vertical-bottom {vertical-align:bottom}
+.text-dcf {color:#28c76f}
+.text-nnp {color:#1fe2ff}
+.text-osse {color:#ff6305}
+.text-nel {color:#9d5c1d}
+.ml-10 {margin-lefT:10px}
+.ml-20 {margin-lefT:20px; }
+.ml-40 {margin-lefT:30px}
+.ml-40 {margin-lefT:40px}
+
+
+.mt-10 {margin-top:10px}
+.mt-20 {margin-top:20px}
+.mt-30 {margin-top:30px}
+.mt-40 {margin-top:40px}
+.mt-50 {margin-top:50px}
+
+
+.logo_50 img {width:50px}
+.logo_60 img {width:60px}
+ul.ul100 {position:relative; text-align:left; margin:0; padding:0}
+ul.ul100 li {list-style:none; display:inline-block; }
+ul.ul100 li:first-child {width:45%}
+ul.ul100 li:nth-child(2) {width:45%}
+ul.ul100-2 {position:relative; text-align:center}
+ul.ul100-2 li {list-style:none; display:inline-block; width:48%; }
+ul.ul100-2 li:first-child {text-align:right; width:52%}
+ul.ul100-2 li:nth-child(2) {text-align:left; width:40%}
+.text-hide p {overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width:100%; position:relative;  max-width:200px; margin:0px;  }
+.f11 {font-size:11px}
+.f12 {font-size:12px}
+.f13 {font-size:13px}
+.f14 {font-size:14px}
+.f15 {font-size:15px}
+.f16 {font-size:16px}
+.f17 {font-size:17px}
+.f18 {font-size:18px}
+.f19 {font-size:19px}
+.f20 {font-size:20px}
+table.table.paddingType > :not(caption) > * > * {
+  padding: 0.52rem 1rem;
+ }
+
+ table.table.paddingType tr:hover {background:#0c0c22; cursor:pointer}
+ table.table.paddingType tr:hover td {color:#fff; cursor:pointer}
+
+
+
+ul.in_half {position:relative; margin:0; padding:0}
+ul.in_half li {display:inline-block; vertical-align:top; position:relative} 
+ul.in_half li:first-child {padding-right:5px; width:120px;}
+ul.in_half li:nth-child(2) {width:390px; }
+ul.in_half p.info {padding:0; margin:0}
+.white {color:#fff;}
+
+.content-body .modal-slide-in .modal-dialog.sidebar-lg {width: 30%; } 
+dl.photoUL {position:relative;   margin:10px 0 0 0; padding:0;  display:inline-block; background:#343d55; padding:10px; width:100% }
+
+dl.photoUL dd {width:49%; display:inline-block;width:350px; height:auto; vertical-align:top; padding-top:5px ;  text-align:left} 
+dl.photoUL dd img {width:100%;border-radius:3px; }
+dl.in_dl dd {display:inline-block; margin-right:10px}
+.textline a{text-decoration:underline; color:#b4b7bd}
+.center-ck  {margin:0 auto; text-align:center; display:inline-block}
+.center-ck1  { text-align:center; display:inline-block; border:0; margin-top:5px}
+.editor.h500 {height:500px; }
+.ql-editor {font-family:'돋움'}
+.text-type {border:1px solid #3b4253;border-radius:10px; padding:15px 30px 15px 30px}
+textarea.cs_review {width:100%; height:150px}
+.h200 .ql-editor {height:200px}
+.scroll-h250 {position:relative; height:250px; overflow-y:scroll;   }
+.img100 img{width:100%; border-radius:5px}
+.modal-dialog.modal-dialog-centered.modal-lg {max-width:1050px}
+.btn-sm2 {padding:0.286rem 1rem; font-size:0.8em}
+.underline {text-decoration:underline}
+
+
+.scroll-h250{-ms-overflow-style: none;}
+::-webkit-scrollbar {display: none;}
+.scroll-h250{ -ms-overflow-style: none;}
+.scroll-h250::-webkit-scrollbar{display:none;}
+
+
+.table thead th {vertical-align: middle;}
+.form-control.small {padding:0.271rem 1rem}
+.w600 {position:relative; width:600px}

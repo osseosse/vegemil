@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>아기 달력 모델 선정</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page Vendor JS-->
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/jszip.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/pdfmake.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/vfs_fonts.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/buttons.html5.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/buttons.print.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js}"></script>
+	    <script th:src="@{/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js}"></script>
+		<script th:src="@{/app-assets/js/scripts/components/components-modals.js}"></script>
+	    <script th:src="@{/app-assets/admin/baby/sampleBaby.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+	    <!-- END: Page Vendor JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+        	<div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">샘플신청내역</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">영유아식</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">달력모델선정
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												등록일
+											</div>
+	
+											<div class="col-md-4 col-12">
+	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
+	                                            </div>
+											</div>
+											<div class="col-md-3 col-12">
+												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
+											</div>
+										</div>
+										<div class="row mb-1 ">
+											<div class="col-md-1 col-12">
+												구분
+											</div>
+	
+											<div class="col-md-4 col-12">
+												<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="gubun" id="btnradio2-1" value="" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-1">전체</label>
+	                                                
+	                                                <input type="radio" class="btn-check" name="gubun" id="btnradio2-2" value="INF" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-2">인펀트1</label>
+													
+													<input type="radio" class="btn-check" name="gubun" id="btnradio2-3" value="TO2" autocomplete="off" />
+													<label class="btn btn-outline-primary" for="btnradio2-3">토들러2</label>
+	
+													<input type="radio" class="btn-check" name="gubun" id="btnradio2-4" value="TO3" autocomplete="off" />
+													<label class="btn btn-outline-primary" for="btnradio2-4">토들러3</label>
+	                                            </div>
+											</div>
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												상세검색
+											</div>
+											<div class="col-md-2 col-2">
+												<select class="form-select" id="searchType" name="searchType">
+													<option selected>선택</option>
+													<option value="id">ID</option>
+													<option value="mName">작성자명</option>
+													<option value="hp">연락처</option>
+												</select>
+											</div>
+											<div class="col-md-3 col-3">
+												<input type="text" id="searchWord" class="form-control" name="searchWord" placeholder="ID, 작성자명, 연락처 검색" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="sStartdate" id="sStartdate" value=""/>
+												<input type="hidden" class="form-control" name="sEnddate" id="sEnddate" value=""/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+
+				<form id="form" name="form" method="POST">
+					<!-- 달력모델선정 -->
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="table-responsive">
+										<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+											<colgroup>
+												<col width="3%">
+												<col width="4%">
+												<col width="6%">
+												<col width="7%">
+												<col width="7%">
+												<col width="9%">
+												<col width="*">
+												<col width="7%">
+												<col width="7%">
+												<col width="7%">
+												<col width="10%">
+												<col width="7%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th rowspan="2">No.</th>
+													<th rowspan="2">
+														<div class="form-check center-ck">
+	                                                        <input type="checkbox" class="form-check-input" id="customCheck1" name="allCheck" />
+	                                                    </div>
+													</th>
+													<th rowspan="2">신청제품</th>
+													<th rowspan="2">ID</th>
+													<th rowspan="2">작성자명</th>
+													<th rowspan="2">연락처</th>
+													<th rowspan="2">주소</th>
+													<th colspan="3">출산일</th>
+													<th rowspan="2">등록일</th>
+													<th rowspan="2">신청경로</th>
+												</tr>
+												<tr>
+													<th>첫째</th>
+													<th>둘째</th>
+													<th>셋째</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+	
+	
+								</div>
+							</div>
+						</div>
+	                </section>
+					<!-- //달력모델선정 -->                
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+    
+</html>

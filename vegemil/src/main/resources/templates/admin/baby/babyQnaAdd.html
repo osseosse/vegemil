@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>육아상담 Q&A 등록</title>
+	</th:block>
+
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/pages/app-ecommerce.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/pickers/form-pickadate.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-wizard.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/extensions/ext-component-toastr.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-number-input.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-quill-editor.css}">
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/katex.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/monokai-sublime.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.snow.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.bubble.css}">
+		<link rel="stylesheet" th:href="@{https://fonts.gstatic.com}">
+		<link rel="stylesheet" type="text/css" th:href="@{https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap}">
+	    <!-- END: Page CSS-->
+	</th:block>
+    
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page JS-->
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/katex.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
+	    <script th:inline="javascript">
+	       /*<![CDATA[*/
+	    	$(function () {
+	    		console.log('function');
+	    		
+	    	});
+	    	   
+	       function imageHandler(image, callback) {
+	    	   const fileInput = document.createElement('input');
+		       fileInput.setAttribute('type', 'file');
+
+		       fileInput.click();
+
+		       fileInput.addEventListener("change", function () {  // change 이벤트로 input 값이 바뀌면 실행
+		    	   const formData = new FormData();
+		           const file = fileInput.files[0];
+		           formData.append('uploadFile', file);
+		           console.log("input.type " + formData);
+
+		           $.ajax({
+		        	   type: 'post',
+		               enctype: 'multipart/form-data',
+		               url: '/admin/baby/babyInfo/fileUpload',
+		               data: formData,
+		               processData: false,
+		               contentType: false,
+		               dataType: 'json',
+		               success: function (data) {
+		            	   console.log('success', data);
+		            	   console.log('data.uploadPath', data.uploadPath);
+		            	   const range = quill.getSelection(); // 사용자가 선택한 에디터 범위
+		            	   // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
+		                   const uploadPath = data.uploadPath.path.replace(/\\/g, '/').replace('data', '');
+		                   console.log('uploadPath', uploadPath);
+		                   quill.insertEmbed(range.index, 'image', uploadPath);
+		               },
+		               error: function (err) {
+		                   console.log('err',err);
+		               }
+		           }).done(function(dats){
+		    	       console.log('success')
+		           });
+		       });
+		   }
+
+	    
+	       var quill = new Quill('#editor', {
+	          modules: {
+	    	     formula: true,
+	    	     syntax: true,
+	    	     toolbar: {
+	    	         container: [
+	    	           [{ 'header': [1, 2, false] }],
+	    	           [{ color: [] }, { background: [] }],
+	    	           ['bold', 'italic', 'underline','strike', 'blockquote'],
+	    	           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+	    	           ['link', 'image'],
+	    	           ['clean']
+	    	         ],
+	    	         handlers: { image: imageHandler }
+	    	       }
+	    	  },
+	    	  placeholder: '게시물을 작성해주세요.',
+	    	  theme: 'snow'
+	       });
+	       console.log('quill', quill)
+	       
+	       const editContent = [[ ${babyQna?.mbsContent} ]];
+	       if(editContent) {
+	    	   quill.clipboard.dangerouslyPasteHTML(0, editContent.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll("&quot;",""));
+	       }
+	       
+	       function btnSave(){
+	    	   const form = document.form;
+	    	   form.mbsContent.value = quill.root.innerHTML;
+	    	   form.mbsActive.value = form.mbsActive.value == "on"?"1":"0";
+	    	   form.mbsCheck.value = form.mbsCheck.value == "on"?"1":"0";
+	    	   form.cateSk.value = form.cateSk.value == "on"?"1":"0";
+	    	   form.cateDi.value = form.cateDi.value == "on"?"1":"0";
+	    	   form.cateBo.value = form.cateBo.value == "on"?"1":"0";
+	    	   form.cateGh.value = form.cateGh.value == "on"?"1":"0";
+	    	   const formDate = new FormData(form);
+	    	   formDate.append('uploadFile', $('#uploadFile')[0].files[0])
+	    	   formDate.append('1', '2');
+	    	   
+	    	   if(form.mbsTitle.value == "") {
+	    		   alert('제목을 작성해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   if(form.mbsContent.value == "<p><br></p>") {
+	    		   alert('내용을 작성해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   console.log('form', formDate);
+// 	    	   form.submit();
+               $.ajax({
+            	   url: '/admin/baby/registerBabyQna',
+				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+				   data: formDate,  //위에서 선언한 fromdata
+				   type: 'POST'
+			   }).done(function(data){
+	    	       console.log('done', data)
+	    	       if(data.result) {
+	    	    	   alert('저장되었습니다.');
+	    	    	   window.location.href = "/admin/baby/babyQnaList";
+	    	       }else{
+	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+	    	       }
+	           }).fail(function() {
+	        	   console.log('fail')
+	           })
+				
+		   }
+	       /*]]>*/
+	    </script>
+	    <!-- END: Page JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">육아상담 Q&A 등록</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">영유아식</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">육아상담 Q&A 등록
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            
+            <div class="content-body">
+            	<form name="form" th:action="@{/admin/baby/registerbabyQna}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-body">
+										<!-- 메인진열 -->
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												진열 
+											</div>
+											<!--  -->
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">카테고리 진열
+													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyQna?.mbsActive}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">메인 진열
+													<input type="checkbox" class="form-check-input"  id="mbsCheck" name="mbsCheck" th:checked="${babyQna?.mbsCheck}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											
+										</div>
+										<!-- //메인진열 -->
+										<!-- 육아상담관리 -->
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												육아상담관리 
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">피부
+													<input type="checkbox" class="form-check-input"  id="cateSk" name="cateSk" th:checked="${babyQna?.cateSk eq '1'}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">성장&건강
+													<input type="checkbox" class="form-check-input"  id="cateGh" name="cateGh" th:checked="${babyQna?.cateGh eq '1'}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">체질
+													<input type="checkbox" class="form-check-input"  id="cateBo" name="cateBo" th:checked="${babyQna?.cateBo eq '1'}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">질병
+													<input type="checkbox" class="form-check-input"  id="cateDi" name="cateDi" th:checked="${babyQna?.cateDi eq '1'}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	
+					<!-- 달력모델선정 -->
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="card-body ">
+										<!-- Form -->
+	                                    <form action="javascript:;" class="mt-2" onsubmit>
+	                                        <div class="row">
+	                                            <div class="col-md-1 col-12">제목</div>
+	                                            <div class="col-md-5 col-12">
+	                                                <input type="text" id="mbsTitle" name="mbsTitle" class="form-control" th:value="${babyQna?.mbsTitle}" placeholder="제목을 작성해주세요" />
+	                                                <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" />
+	                                                <input type="hidden" id="mbsIdx" name="mbsIdx" class="form-control" th:value="${babyQna?.mbsIdx}" /> 
+	                                            </div>
+											</div>
+											<div class="row mt-1">
+												<div class="col-md-1 col-12">썸네일</div>
+												<div class="col-md-5 col-12">
+													<input class="form-control" type="file" id="uploadFile" name="uploadFile" accept="image/*" th:value="${babyQna?.mbsImage}" />
+													<input type="hidden" name="mbsImage" th:value="${babyQna?.mbsImage}" />
+												</div>
+											</div>
+											<div class="row mt-1">
+	                                            <div class="col-md-1"> 내용</div>
+												<div class="col-md-10 col-12 ">
+													<div id="blog-editor-wrapper">
+														<div id="editor">
+															<div class="editor h500">
+															</div>
+														</div>
+													</div>
+	                                            </div>
+	                                        </div>
+	                                    </form>
+	                                    <!--/ Form -->
+									</div>
+									<div class="card center">
+										<div class="card-body mb-2">
+											<div class="row">
+												 <div class="col-sm-12">
+													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">등록</button>
+													<button type="reset" class="btn btn-outline-secondary">취소</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+	                </section>
+					<!-- //달력모델선정 -->
+				</form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+
+</html>

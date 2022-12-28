@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>FAQ 등록</title>
+	</th:block>
+
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/pages/app-ecommerce.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/pickers/form-pickadate.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-wizard.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/extensions/ext-component-toastr.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-number-input.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-quill-editor.css}">
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/katex.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/monokai-sublime.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.snow.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.bubble.css}">
+		<link rel="stylesheet" th:href="@{https://fonts.gstatic.com}">
+		<link rel="stylesheet" type="text/css" th:href="@{https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap}">
+	    <!-- END: Page CSS-->
+	</th:block>
+    
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page JS-->
+	    <script type="text/javascript" th:src="@{/scripts/jquery.serializeObject.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/katex.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
+	    <script th:inline="javascript">
+	       /*<![CDATA[*/
+	       function imageHandler(image, callback) {
+	    	   const fileInput = document.createElement('input');
+		       fileInput.setAttribute('type', 'file');
+
+		       fileInput.click();
+
+		       fileInput.addEventListener("change", function () {  // change 이벤트로 input 값이 바뀌면 실행
+		    	   const formData = new FormData();
+		           const file = fileInput.files[0];
+		           formData.append('uploadFile', file);
+		           console.log("input.type " + formData);
+
+		           $.ajax({
+		        	   type: 'post',
+		               enctype: 'multipart/form-data',
+		               url: '/admin/customer/faq/fileUpload',
+		               data: formData,
+		               processData: false,
+		               contentType: false,
+		               dataType: 'json',
+		               success: function (data) {
+		            	   console.log('success', data);
+		            	   console.log('data.uploadPath', data.uploadPath);
+		            	   const range = quill.getSelection(); // 사용자가 선택한 에디터 범위
+		            	   // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
+		                   const uploadPath = data.uploadPath.path.replace(/\\/g, '/').replace('data', '');
+		                   console.log('uploadPath', uploadPath);
+		                   quill.insertEmbed(range.index, 'image', uploadPath);
+		               },
+		               error: function (err) {
+		                   console.log('err',err);
+		               }
+		           }).done(function(dats){
+		    	       console.log('success')
+		           });
+		       });
+		   }
+
+	    
+	       var quill = new Quill('#editor', {
+	          modules: {
+	    	     formula: true,
+	    	     syntax: true,
+	    	     toolbar: {
+	    	         container: [
+	    	           [{ 'header': [1, 2, false] }],
+	    	           [{ color: [] }, { background: [] }],
+	    	           ['bold', 'italic', 'underline','strike', 'blockquote'],
+	    	           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+	    	           ['link', 'image'],
+	    	           ['clean']
+	    	         ],
+	    	         handlers: { image: imageHandler }
+	    	       }
+	    	  },
+	    	  placeholder: '게시물을 작성해주세요.',
+	    	  theme: 'snow'
+	       });
+	       console.log('quill', quill)
+	       
+	       const editContent = [[ ${faq?.fAnswer} ]];
+	       if(editContent) {
+	    	   quill.clipboard.dangerouslyPasteHTML(0, editContent.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll("&quot;",""));
+	       }
+	       
+	       function btnSave(){
+	    	   const form = document.form;
+	    	   form.fAnswer.value = quill.root.innerHTML;
+	    	   form.fView.value = form.fView.value == "on"?"1":"0";
+	    	   
+	    	   if(form.fQuestion.value == "") {
+	    		   alert('제목을 작성해 주세요.');
+	    		   console.log('fCate', form.fCate.value);
+		    	   console.log('fQuestion', form.fAnswer.value);
+	    		   return false;
+	    	   }
+	    	   
+	    	   if(form.fAnswer.value == "<p><br></p>") {
+	    		   alert('내용을 작성해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   
+	    	   form.submit();
+		   }
+	       /*]]>*/
+	    </script>
+	    <!-- END: Page JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">FAQ 등록</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">고객지원</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">FAQ 새글등록
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            
+            <div class="content-body">
+            	<form name="form" th:action="@{/admin/customer/faq/register}" method="POST" class="form-horizontal" role="form">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row mb-1 ">
+											<div class="col-md-1 col-12">전시위치</div>
+											<div class="col-md-2 col-12">
+												<select class="form-select" id="fCate" name="fCate">
+													<option value="11" th:selected="'11' == ${faq?.fCate}">제품일반</option>
+													<option value="22" th:selected="'22' == ${faq?.fCate}">음료류</option>
+													<option value="33" th:selected="'33' == ${faq?.fCate}">유아동두유</option>
+													<option value="44" th:selected="'44' == ${faq?.fCate}">베지밀</option>
+													<option value="55" th:selected="'55' == ${faq?.fCate}">그린비아</option>
+												</select>
+											</div>
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												전시설정
+											</div>
+											<div class="col-md-4 col-4">
+												<div class="form-check form-switch">
+													<input type="checkbox" class="form-check-input"  id="fView" name="fView" th:checked="${faq?.fView}" />
+													<label class="form-check-label" for="fView"></label>
+												</div>
+											</div>
+										</div>
+	
+										
+									</div>
+								</div>
+							</div>
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	
+					<!-- 달력모델선정 -->
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="card-body ">
+										<!-- Form -->
+	                                    <form action="javascript:;" class="mt-2" onsubmit>
+	                                        <div class="row">
+	                                            <div class="col-md-1 col-12">제목</div>
+	                                            <div class="col-md-5 col-12">
+	                                                <input type="text" id="fQuestion" name="fQuestion" class="form-control" th:value="${faq?.fQuestion}" placeholder="제목을 작성해주세요" />
+	                                                <input type="hidden" id="fAnswer" name="fAnswer" class="form-control" value="" />
+	                                                <input type="hidden" id="fIdx" name="fIdx" class="form-control" th:value="${faq?.fIdx}" /> 
+	                                            </div>
+											</div>
+											
+											<div class="row mt-1">
+	                                            <div class="col-md-1"> 내용</div>
+												<div class="col-md-10 col-12 ">
+													<div id="blog-editor-wrapper">
+														<div id="editor">
+															<div class="editor h500">
+															</div>
+														</div>
+													</div>
+	                                            </div>
+	                                        </div>
+	                                    </form>
+	                                    <!--/ Form -->
+									</div>
+									<div class="card center">
+										<div class="card-body mb-2">
+											<div class="row">
+												 <div class="col-sm-12">
+													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">등록</button>
+													<button type="reset" class="btn btn-outline-secondary">취소</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+	                </section>
+					<!-- //달력모델선정 -->
+				</form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+
+</html>
