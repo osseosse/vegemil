@@ -253,12 +253,7 @@ public class VegemilBabyController extends UiUtils {
 			) throws Exception { 
 		
 		model.addAttribute("temperature", vegemilBabyCommunityService.selectTemperature());
-		if(viewName.contains(".aspx")) {
-			return "vegemilBaby/event/"+viewName+".aspx"; 
-		}else {
-			return "vegemilBaby/event/" + viewName;			
-		}
-		
+		return "vegemilBaby/event/" + viewName;			
 
 	}
 
