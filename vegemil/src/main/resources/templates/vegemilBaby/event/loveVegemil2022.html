@@ -1,0 +1,301 @@
+<%@ Page language="c#" Codebehind="loveVegemil2022.aspx.cs" AutoEventWireup="false" Inherits="Main._event.loveVegemil2022" %>
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html lang="ko">
+  <head>
+	<meta charset="utf-8">
+	<title>이벤트 - 정식품</title>
+		<%Response.WriteFile("/main/include/setHeader.htm");%>
+		<%Response.WriteFile("/main/include/setMain.htm");%>
+		<link rel=stylesheet type=text/css href="/Main/event/css/loveVegemil2022.css" >
+		<!--
+		<link rel=stylesheet type=text/css href="/Main/brandGreenbia/common/css/aos.css" />
+		<link rel=stylesheet type=text/css href="/Main/brandGreenbia/common/css/effect.css" />
+		-->
+		
+	<script language=javascript>
+			function TextDisappear(){
+	
+				var temp = document.getElementById('txtURL').value;
+				
+				if(temp == "공유한 URL을 남겨주세요."){
+					document.Form1.txtURL.value = "";		 
+					return;
+				}
+				else{
+					return;
+				}
+			}
+			
+			function checkNum(obj){
+			
+				var word= obj.value;
+				var str = "1234567890";
+				
+				for(i=0;i < word.length;i++){
+					if(str.indexOf(word.charAt(i)) < 0){
+						alert('숫자만 사용 가능합니다');
+						obj.value = "";
+						obj.focus();
+						return false;
+					}
+				}
+				
+			}
+			
+			function checkValue(){
+			
+				var phone = document.getElementById('phone_no');
+				var comment = document.getElementById('comments');
+				var url = document.getElementById('urlinfo');
+				var name = document.getElementById('name');
+				
+				if(name.value == ""){
+					alert('이름을 입력하세요');
+					document.Form1.name.value = "";
+					document.Form1.name.focus();
+					return false;
+				}
+				
+				if(phone.value == ""){
+					alert('전화번호를 입력하세요');
+					document.Form1.phone_no.value = "";
+					document.Form1.phone_no.focus();
+					return false;
+				}
+			
+				if(comment.value == ""){
+					alert('한줄 소감을 입력하세요');
+					document.Form1.comments.value = "";
+					document.Form1.comments.focus();
+					return false;
+				}
+				
+				if(url.value == ""){
+					alert('URL정보를 입력하세요');
+					document.Form1.urlinfo.value = "";
+					document.Form1.urlinfo.focus();
+					return false;
+				}
+					return true;	
+			}
+			
+			//트위터
+			function twitter(){
+				
+				var win = window.open("http://twitter.com/intent/tweet?text=" + encodeURIComponent('사랑의 베지밀 온도계(공유 1개당 베지밀두유 1개 기부)') + " " + encodeURIComponent('http://www.vegemil.co.kr/main/event/loveVegemil.aspx'), 'twitter', 'width=500,height=364,scrollbars=no,resizable=no');
+
+				if(win)
+				{
+					win.focus();
+				}
+			}
+			
+			function facebook() {
+
+					//var url = "http://www.vegemil.co.kr/main/event/loveVegemil.aspx";
+					//var image = "http://www.vegemil.co.kr/main/images/event/lovevegemil_2014.jpg";
+					//var image = "http://image.edaymall.com/images/goods/700/10155700_h.jpg";
+					//var title = '사랑의 베지밀 온도계';	
+					//var summary = '공유 1개당 베지밀제품 1개를 기부합니다.베지밀과 함께 따뜻한 세상을 만들어주셍요.';	
+					//var url2 = 'http://www.facebook.com/sharer.php?s=100&p[url]=' + url + '&p[images][0]=' + image + '&p[title]=' + title + '&p[summary]=' + summary;
+					
+					/* 주소만 연결되면 나머지 값들은 메타태그에서 읽어온다 위에 선언한 변수들에서 값을 가져오는게 아님 */
+					var url2 = 'http://www.facebook.com/sharer.php?u=http://www.vegemil.co.kr/main/event/loveVegemil2016.aspx';
+					//url2 = url2.split("#").join("%23");
+					url2 = encodeURI(url2);
+					window.open(url2);	
+			}
+			
+			
+			function copy_url()
+			{
+				var _img = document.getElementById('TmpDiv');
+				var content = document.body.createTextRange();
+				
+				content.moveToElementText(_img);
+				content.execCommand("copy");
+				window.alert('이미지가 복사되었습니다 \nCTRL V를 이용하여 붙여 넣으세요!.');
+				
+				//return false;
+			}
+			
+			
+			function copy_url2(){
+			
+			
+					var url = document.URL;
+					window.clipboardData.setData("Text", url);
+					alert("이벤트 페이지 URL이 클립보드에 복사되었습니다.\nCtrl + V 하시면 URL이 입력됩니다.");
+			}
+
+			
+			/*
+			
+			function copy_url()
+			{
+				//var _img = document.getElementById('TmpDiv');
+				var content = document.body.createControlRange();
+				
+				content.add(document.all('TmpDiv'));
+				//content.moveToElementText(_img);
+				content.execCommand("copy");
+				window.alert('이미지가 복사되었습니다 \nCTRL V를 이용하여 붙여 넣으세요!.');
+				http://image.edaymall.com/images/goods/700/10155700_h.jpg
+				//return false;
+			}
+			*/
+		</script>
+
+<meta content=website property="og:type">
+<meta content="사랑의 베지밀 온도계(공유 1개당 베지밀두유 1개를 기부합니다)" property="og:title">
+<meta content=http://www.vegemil.co.kr/main/event/loveVegemil2016.aspx property="og:url">
+<meta content="웹 페이지 내용" property="og:description">
+<meta content=http://www.vegemil.co.kr/main/images/event/lovevegemil_201412.jpg property="og:image">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57874316-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+ <link rel="stylesheet" href="/Main/webzine/css/jquery.fallingsnow.css"> 
+
+</head>
+<body>
+
+<form id=Form1 method=post runat="server"  class="snow-wrap"  style="overflow-x:hidden">
+<div id=pageEventE20140415 >
+	<!-- 2021-12-06 -->
+	<div class="wrap-2021love" id="snow">
+		<!-- pc -->
+		<div class="webView">
+			<div class="top-2021love">			
+				
+				<a href="https://www.vegemil.co.kr/Main/default.aspx"><p class="logo-2021love01"><img src="/main/event/image/event/20221207/10.png" alt="정식품"/></p></a>
+				<p class="logo-2021love02"><img src="/main/event/image/event/20221207/11.png" alt="사랑나눔 캠패인"/></p>
+				
+				
+
+				<div class="top02 center "  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="550">
+					<p class="heart"><img src="/main/event/image/event/20221207/01_01.gif" /></p>
+					<p class="count">23000</p>
+					<div><img src="/main/event/image/event/20221207/6-1.png" alt="병"/></div>
+					<table class="loveVegemil2022" cellspacing="0" summary="사랑의 베지밀 온도계"  >
+						<caption>온도계</caption>
+						<tr>
+							<td class="whiteColor" runat="server" id="tdWhitePc"></td> 
+						</tr>
+						<tr>
+							<td class="graBar" runat="server" id="tdGreenPc" ><p class="tome"><asp:label id="lblCountPc" runat="server"></asp:label>개</p></td> 
+						</tr>
+					</table>
+				
+				</div>
+				
+			</div>
+			<div class="w1140">
+				<p class="webView"><img src="/main/event/image/event/20221207/12.jpg" alt="콘텐츠" usemap="#Map"/></p>
+				 <map name="Map">
+				<area shape="rect" coords="421,1408,565,1605" href="https://www.facebook.com/vegemilgood/posts/6035786376454703" title="페이스북" target="_blank">
+				<area shape="rect" coords="655,1410,789,1603" href=" https://www.instagram.com/p/Cl7c-qJSzYd/?utm_source=ig_web_copy_link" title="인스타그" target="_blank">
+				<area shape="rect" coords="885,1408,1027,1603" href="https://blog.naver.com/vegemilstory/222950481830" title="블로그" target="_blank">
+				</map>
+				<!--
+				<ul class="love2021UL" style="border:10px solid green">
+					<a href="https://www.facebook.com/vegemilgood" target="_blank"><li class="p01"></li></a>
+					<a href="https://www.instagram.com/vegemil.official/" target="_blank"><li class="p02"></li></a>
+					<a href="https://blog.naver.com/vegemilstory" target="_blank"><li class="p03"></li></a>
+				</ul>
+				-->
+			</div>
+			<div class="footer-2021love webView">
+				<p><img src="/main/event/image/event/20221207/footer.jpg" alt="footer"/></p>
+			</div>
+		</div>
+		<!-- //pc -->
+		
+		<div class="moView">
+			<p class="img100"><img src="/main/event/image/event/20221207/mn01.jpg" alt="모바일"/></p>
+			<table cellspacing="0" border="0" class="snsTable">				
+				<tr>
+					<td class="img100"><a href="https://www.facebook.com/vegemilgood/posts/6035786376454703" target="_blank"><img src="/main/event/image/event/20221207/mn02.jpg" alt="페이스북" /></a></td>
+					<td class="img100"><a href="https://www.instagram.com/p/Cl7c-qJSzYd/?utm_source=ig_web_copy_link" target="_blank"><img src="/main/event/image/event/20221207/mn03.jpg" alt="인스타그램" /></a></td>
+					<td class="img100"><a href="https://blog.naver.com/vegemilstory/222950481830" target="_blank"><img src="/main/event/image/event/20221207/mn04.jpg" alt="네이버블로그" /></a></td>
+				</tr>
+			</table>
+			<p class="img100"><img src="/main/event/image/event/20221207/mn05.jpg" alt="모바일"/></p>
+		</div>
+		<!-- 모바일 
+		<div class="moView">
+			<div class="top-2021love">
+				<a href="https://www.vegemil.co.kr/Main/default.aspx"><p class="logo-2021love01"><img src="/main/event/image/event/20221207/10.png" alt="정식품"/></p></a>
+				<p class="logo-2021love02"><img src="/main/event/image/event/20221207/11.png" alt="사랑나눔 캠패인"/></p>
+				<p class="bg_heart"><img src="/main/event/image/event/20221207/m16.png" alt="사랑의 베지밀 온도계 챌린지"/></p>
+				<div class="center rel"><img src="/main/event/image/event/20221207/m02.png" alt="사랑의 베지밀 온도계 챌린지"/></div>
+				<div class="center bottle">
+					<p><img src="/main/event/image/event/20221207/m6-1.png" alt="사랑의 베지밀 온도계 챌린지"/></p>
+					<div class="barBox">
+						<table class="loveVegemil2022" cellspacing="0" summary="사랑의 베지밀 온도계"  >
+						<caption>온도계</caption>
+						<tr>
+							<td class="whiteColor" runat="server" id="tdWhiteMo"></td> 
+						</tr>
+						<tr>
+							<td class="graBar" runat="server"  id="tdGreenMo"><p class="tome"><asp:label id="lblCountMo" runat="server"></asp:label>개</p></td> 
+						</tr>
+						</table>
+					</div>
+				</div>
+				<div class="mo_count center"><p></p><img src="/main/event/image/event/20221207/m03.png" alt="목표 베지밀 카운트"/></div>
+				<div class="img100">
+					<img src="/main/event/image/event/20221207/m04.png" alt="목표 베지밀 카운트"/>
+				</div>
+				<table cellspacing="0" border="0" class="snsTable">				
+					<tr>
+						<td class="img100"><a href="https://www.facebook.com/vegemilgood" target="_blank"><img src="/main/event/image/event/20221207/m61.png" alt="페이스북" /></a></td>
+						<td class="img100"><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="/main/event/image/event/20221207/m062.png" alt="인스타그램" /></a></td>
+						<td class="img100"><a href="https://blog.naver.com/vegemilstory" target="_blank"><img src="/main/event/image/event/20221207/m063.png" alt="네이버블로그" /></a></td>
+					</tr>
+				</table>
+				<div class="img100">
+					<img src="/main/event/image/event/20221207/m05.png" alt="footer"/>
+				</div>
+			</div>
+		</div>
+		<!-- //모바일 -->
+
+
+
+
+
+
+
+
+	</div>
+	<!-- //2021-12-06 -->
+</div>
+
+
+<script src="/Main/webzine/js/jquery.fallingsnow.min.js"></script>
+<script>
+	$( "#snow" ).fallingSnow();
+</script>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="http://localhost:3002/dist/aos.js"></script>
+
+<script>
+	AOS.init({
+		easing: 'ease-out-back',
+		duration: 1000
+	});
+</script>
+-->
+
+</form>	
+</body>
+</html>

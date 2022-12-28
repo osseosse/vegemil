@@ -242,9 +242,15 @@ public class VegemilBabyController extends UiUtils {
 
 	/* Event */
 	@GetMapping("/bv_event")
-	public String bv_event(Model model) {
-		model.addAttribute("eventList", vegemilBabyCommunityService.eventList());
+	public String moveBvEvent(Model model) {
+		model.addAttribute("eventList", vegemilBabyCommunityService.selectEventList());
 		return "vegemilBaby/bv_event";
+	}
+	
+	//이벤트 상세페이지 이동
+	@RequestMapping(value = "/event/{viewName}") 
+	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName) throws Exception { 
+		return "vegemilBaby/event/" + viewName; 
 	}
 
 }

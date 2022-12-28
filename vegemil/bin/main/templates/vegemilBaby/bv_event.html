@@ -1,16 +1,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <title>진행 중 이벤트</title>
-    <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<title>진행 중 이벤트</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>    
+<body>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-    </head>    
-    
-	<body style="padding-top: 90px;">
-	
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
@@ -102,20 +98,18 @@
 					
 					<div th:if="${!#lists.isEmpty(eventList)}" class="col-md-12  eventBox">
 							<div class="col-md-4 hvr-float-shadow" th:each="event : ${eventList}">
-	<!-- 							<a href="<%# DataBinder.Eval(Container.DataItem, "e_uri") %>"> -->
+								<a th:href="${event.eUri}">
 									<div class="evBox">
 										<p class="e_img">
 											<span class="sign_" th:classappend="${event.eCate}" th:text=${event.eSubject}></span>
-<!-- 											<span class="e_img_span" style="background: url(/img/vegemilBaby/dummy/event.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" /></span> -->
-											<!-- 이거뭐지?? 질문 -->
-	<!-- 										<span class="e_winner"><img src="/Main/brandVegemilBaby/HTML/img/<%# DataBinder.Eval(Container.DataItem, "e_show") %>" /></span> -->
-											
+											<span class="e_img_span" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/'+ ${event.eImg}+');  background-position:center;-webkit-background-size: cover; background-size: cover;'" ></span>
+										<!-- <span class="e_winner"><img src="/Main/brandVegemilBaby/HTML/img/<%# DataBinder.Eval(Container.DataItem, "e_show") %>" /></span> -->
 										</p>
 										<p class="f17_4_b mt30w" th:text="|${event.eStart} ~ ${event.eEnd} |"  ></p>
 										<p class="f30_6 mt20 txtHide" th:text=${event.eSubject}></p>
 										<p class="f17_4 mt15 txtHide" th:text=${event.eContent}></p>
 									</div>
-								<!-- </a> -->
+								</a>
 							</div>	
 					</div>
 					

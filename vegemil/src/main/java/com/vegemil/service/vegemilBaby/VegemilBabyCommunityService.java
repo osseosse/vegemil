@@ -37,6 +37,12 @@ public interface VegemilBabyCommunityService {
 	//영유아식 레시피 상세
     public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
 	
+    
+    //===[Event]===
+    //진행중 이벤트
+  	public List<VegemilBabyEventDTO> selectEventList();
+  	
+  	
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);
     
@@ -60,12 +66,11 @@ public interface VegemilBabyCommunityService {
 
     public List<Integer> magazineCountList(String cate);
     
-	
-	public List<VegemilBabyEventDTO> eventList();
+  
 
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
 	
-	//베스트 리뷰 리스트
+	
 
 
 

@@ -40,8 +40,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return vegemilBabyMapper.selectQnAIndex();
 	}
 	
-	//===[Product]===
-	
+	//===[Product]===	
 	//육아정보	
 	@Override
 	public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate) {	  
@@ -74,6 +73,13 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public VegemilBabyRecipeDTO selectRecipeDetail(Long idx) {
 		VegemilBabyRecipeDTO recipe = vegemilBabyMapper.selectRecipeDetail(idx);
 		return recipe;
+	}
+	
+    //===[Event]===
+    //진행중 이벤트
+	@Override
+	public List<VegemilBabyEventDTO> selectEventList() {
+		return vegemilBabyMapper.selectEventList();
 	}
 	
 	//샘플신청 등록
@@ -255,10 +261,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	
 	
 
-	@Override
-	public List<VegemilBabyEventDTO> eventList() {
-		return vegemilBabyMapper.eventList();
-	}
+	
 
 
 	@Override
