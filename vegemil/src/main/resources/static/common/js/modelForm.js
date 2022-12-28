@@ -47,7 +47,6 @@ function btnAvtive() {
 	&& $.trim(cAddr).length > 1
 	&& $.trim(cEmail).length > 1) 
 	{
-		alert("해제");
 		$("#joinBtn").attr("disabled", false); //해제
 	} else {
 		$("#joinBtn").attr("disabled", true); //설정
@@ -62,7 +61,6 @@ $(function(){
 	});
 	$("#cAddr2").keyup(function () {
 		$("#cAddr").val($("#cAddr1").val()+" "+$("#cAddr2").val());
-		alert($("#cAddr").val());
 		btnAvtive();
 	});
 	

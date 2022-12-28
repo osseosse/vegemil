@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
@@ -38,6 +38,9 @@ public class VegemilBabyController extends UiUtils {
 
 	@Autowired
 	private VegemilBabyCommunityService vegemilBabyCommunityService;
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	@RequestMapping(value = "/{viewName}")
 	public String moveVegemilBabyPage(@PathVariable(value = "viewName", required = false) String viewName)
@@ -129,21 +132,32 @@ public class VegemilBabyController extends UiUtils {
 		PrintWriter out = response.getWriter();
 		
 		try {
-			/*
-			String originalName = fileName.getOriginalFilename();
-			if(!"".equals(originalName)) {
-				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + file;
-				//테스트경로
-				Path savePath = Paths.get("D:\\upload" + savefileName);
+			String uuid = UUID.randomUUID().toString();
+			
+			String originalName1 = calModel.getFileName1().getOriginalFilename();
+			String originalName2 = calModel.getFileName2().getOriginalFilename();
+			if(!"".equals(originalName1)) {
+				String file1 = originalName1.substring(originalName1.lastIndexOf("\\") + 1);
 				
+				String savefileName1 = uuid + "_" + file1;
+				//테스트경로
+				Path savePath = Paths.get(uploadPath + "/upload/" + savefileName1);
 				//저장
-				fileName.transferTo(savePath);
+				calModel.getFileName1().transferTo(savePath);
 				//포트폴리오
-				calModel.setCImage(file);
+				calModel.setCImage(savefileName1);
 			}
-			*/
+			if(!"".equals(originalName2)) {
+				String file2 = originalName2.substring(originalName2.lastIndexOf("\\") + 1);
+				
+				String savefileName2 = uuid + "_" + file2;
+				//테스트경로
+				Path savePath2 = Paths.get(uploadPath + "/upload/" + savefileName2);
+				//저장
+				calModel.getFileName2().transferTo(savePath2);
+				//포트폴리오
+				calModel.setCImage(savefileName2);
+			}
 			
 			boolean isRegistered = vegemilBabyCommunityService.insertModelForm(calModel);
 			if (isRegistered == false) {

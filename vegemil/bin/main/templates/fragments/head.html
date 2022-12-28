@@ -28,6 +28,21 @@
 	<script type="text/javascript" src="/common/js/prrple.slider.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/common/js/jquery.collapse.js"></script>
 	<script type="text/javascript" src="/common/js/jquery.touchSwipe.1.6.min.js"></script>
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+
+		$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+		
+	      function(json) {
+	        if(json.ip == '211.204.41.41' || json.ip == '115.88.198.133'|| json.ip == '192.168.26.40' || json.ip == '192.168.26.219') {
+	        } else {
+	        	location.href="/member/server";
+	        }
+	      }
+	    );
+	
+	/*]]>*/
+	</script>
 	
 	<th:block layout:fragment="add-script"></th:block>
 	<th:block layout:fragment="add-css"></th:block>
