@@ -181,10 +181,15 @@
 <!-- ================================ // Footer ================================ -->
 <script >
 $(document).ready(function(){
-	const html = "[[${recipe.cCode}]]";	  
+	const html = "[[${recipe.cCode}]]";	 
 	$('#lblContents').load("/vegemilBaby/html/recipe/cook_brunch_"+html+".html");
 	
 });
+/* $(document).ready(function(){
+	const html = "[[${recipe.cCode}]]";	  
+	$('#lblContents').load("/vegemilBaby/html/recipe/cook_brunch_"+html+".html");
+	
+}); */
 </script>
 	</body>
 </html>
