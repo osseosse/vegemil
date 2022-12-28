@@ -8,7 +8,6 @@
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 
-	<script th:src="@{/common/js/vegemilBaby/modality.js}"></script>	
 	 <script>
 	    /* $(document).ready(function(){
 	        if('<%=info1 %>' == '0') $('#info1').hide();
@@ -24,6 +23,7 @@
   <div id="content">
 		<div class="container100">
 			<div class="banner_special">
+				<!-- TODO:웹진 url 업데이트 -->
 				<p><a th:href="@{https://www.vegemil.co.kr/main/webzine/special/sub2.aspx}" target="_blank"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/banner_special.png}" alt="임출산 육아 쿨팁 대방출, 정식품 웹진 스페셜칼럼에서 확인하세요"/></a></p>
 			</div>
 
@@ -93,7 +93,8 @@
 			<div class="row pd0 mg0">
 				<!-- 2022-01-28 -->
 				<div class="container100 bg_blue3">
-					<a href="/Main/webzine/special/sub01.aspx" target="_blank"><p class="banner_special_mo"><img class="img100" th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBabybanner_special_mo.jpg}" alt=""/></p></a>
+				<!-- TODO:웹진 url 업데이트 -->
+					<a href="/Main/webzine/special/sub01.aspx" target="_blank"><p class="banner_special_mo"><img class="img100" th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/banner_special_mo.jpg}" alt=""/></p></a>
 				</div>
 				<!-- //2022-01-28 -->
 				<div class="col-md-12 m_rs">
@@ -250,7 +251,7 @@
 		<div class="container100 bestBG">
 			<div class="row pd0 mg0 flex-2">
 				<div class="col-md-2 hvr-float-shadow">
-					<a href="./event_best_review.aspx">
+					<a th:href="@{/vegemilBaby/event_best_review}">
 						<div class="be_box">
 							<p class="be_img" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/best/best_202002_01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
 							<p class="be_f01 mt30">
@@ -263,7 +264,7 @@
 					</a>
 				</div>
 				<div class="col-md-2 hvr-float-shadow">
-					<a href="./event_best_review.aspx">
+					<a th:href="@{/vegemilBaby/event_best_review}">
 						<div class="be_box mt50_be">
 							<p class="be_img" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/best/best_202002_02.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
 							<p class="be_f01 mt30">
@@ -276,7 +277,7 @@
 					</a>
 				</div>
 			    <div class="col-md-2 hvr-float-shadow">
-					<a href="./event_best_review.aspx">
+					<a th:href="@{/vegemilBaby/event_best_review}">
 						<div class="be_box">
 							<p class="be_img" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/best/best_202001_01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover"></p>
 							<p class="be_f01 mt30">

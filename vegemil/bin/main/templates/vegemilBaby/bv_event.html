@@ -5,7 +5,7 @@
     <title>진행 중 이벤트</title>
     <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <!-- ================================ Header ================================ -->
-	<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+	<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
     </head>    
     
@@ -49,7 +49,7 @@
 														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
 														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?p=1}"> Cummunity</a></li>
 														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
 													</ul>
 												</div>
@@ -106,7 +106,7 @@
 									<div class="evBox">
 										<p class="e_img">
 											<span class="sign_" th:classappend="${event.eCate}" th:text=${event.eSubject}></span>
-											<span class="e_img_span" style="background: url(/img/vegemilBaby/dummy/event.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" /></span>
+<!-- 											<span class="e_img_span" style="background: url(/img/vegemilBaby/dummy/event.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" /></span> -->
 											<!-- 이거뭐지?? 질문 -->
 	<!-- 										<span class="e_winner"><img src="/Main/brandVegemilBaby/HTML/img/<%# DataBinder.Eval(Container.DataItem, "e_show") %>" /></span> -->
 											
@@ -141,7 +141,7 @@
 	  </div>	
 
 	<!-- ================================ Footer ================================ -->
-	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<footer th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
 	</body>
 </html>

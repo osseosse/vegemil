@@ -5,7 +5,7 @@
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>    
 <body>
 <!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader.html :: headerFragment"></header>
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 	
 	<div id="content">
@@ -40,7 +40,7 @@
 										<div class="cate_sel_01">
 											<div class="option-list_01" >
 												<p class="view-btn_01" >
-													<a href="#">Cummunity</a>
+													<a>Cummunity</a>
 												</p>
 											</div>
 											<div class="list_open_01">
@@ -49,7 +49,7 @@
 														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
 														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-														<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?p=1}"> Cummunity</a></li>
 														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
 													</ul>
 												</div>
@@ -64,7 +64,7 @@
 											<div class="cate_sel_02">
 												<div class="option-list_02" >
 													<p class="view-btn_02" >
-														<a href="#">육아정보</a>
+														<a>육아정보</a>
 													</p>
 												</div>
 												<div class="list_open_02">
@@ -210,32 +210,7 @@
 									</script>
 									<!-- // Vetical -->
 								</div>
-								<!--
-                                <div class="inforBox">
-                                   <p class="f17_4">이런 정보는 어떠신가요?</p>
-                                    <ul class="mt20">
-                                     <asp:repeater id=DataList2 runat="server">			
-									   <itemtemplate>   
-                                        <li>
-										         			
-                                            <a href="e_magazine_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">
-                                                <p class="infor_img">
-                                                    <span class="inforIMG inforIMG_001" style="background: url(<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>); background-position:center;-webkit-background-size: cover; background-size: cover" alt="정보 썸네일"></span>
-                                                </p>
-                                                <div class="infor_txt">
-                                                    <p class="f14_4_1 txtHide6">
-                                                     <%# DataBinder.Eval(Container.DataItem, "mbs_title") %> </p>
-                                                </div>
-                                            </a>
-                                            
-                                         </li>    
-                                        </itemtemplate>
-                                    </asp:repeater> 
-                                                                    
-                                    </ul>
-								</div>
-								-->
-								
+																
                             </div>
                             <!--// col-md-4 -->
 

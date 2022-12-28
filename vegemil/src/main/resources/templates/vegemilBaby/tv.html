@@ -8,16 +8,12 @@
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 	
-	<script src="/Main/brandVegemilBaby/HTML/js/modality.js"></script>		
-  	<script type="text/javascript" src="/main/js/jptab.js"></script>
 	<script>
 		$(function(){
 			$('.tab').jptab();
 		});
 	</script>
-	<script>
-			$('header').load("./mainHeader.html");
-	</script>
+	
 	
 	<div id="content">
 		<div class="container100">
@@ -54,11 +50,11 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a href="brand.aspx">brand</a></li>
-														<li><a href="premium.aspx">Product</a></li>
-														<li><a href="bv_event.aspx"> Event</a></li>
-														<li><a href="e_magazine.aspx?p=1"> Cummunity</a></li>
-														<li><a href="faq.aspx"> Support</a></li>
+														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/product}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?p=1}"> Cummunity</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -78,10 +74,10 @@
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a href="brand.aspx">브랜드소개</a></li>
-															<li><a href="nutrition.aspx">영양</a></li>
-															<li><a href="safe.aspx"> 안심플러스</a></li>
-															<li><a href="tv.aspx"> TV광고</a></li>
+															<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
+															<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
+															<li><a th:href="@{/vegemilBaby/safe}"> 안심플러스</a></li>
+															<li><a th:href="@{/vegemilBaby/tv}"> TV광고</a></li>
 														</ul>
 													</div>
 												</div>
@@ -196,7 +192,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a>
 										<div class="tv_thumb">
 											<p class="t_img">
 												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/cf01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>

@@ -39,18 +39,17 @@
 									<div class="cate_sel_01">
 										<div class="option-list_01">
 											<p class="view-btn_01">
-												<a href="#">Community</a>
+												<a>Community</a>
 											</p>
 										</div>
 										<div class="list_open_01">
 											<div class="cate_content">
 												<ul class="cate_ul_list">
 													<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
-													<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-													<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-													<li><a th:href="@{/vegemilBaby/e_magazine}">
-															Community</a></li>
-													<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?p=1}"> Cummunity</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
 												</ul>
 											</div>
 										</div>
@@ -64,7 +63,7 @@
 									<div class="cate_sel_02">
 										<div class="option-list_02">
 											<p class="view-btn_02">
-												<a href="#">육아정보</a>
+												<a>육아정보</a>
 											</p>
 										</div>
 										<div class="list_open_02">
@@ -223,7 +222,7 @@
 					<p class="f35_6 center">죄송합니다. 해당 콘텐츠를 찾을 수 없습니다.</p>
 					<p class="f24_4 center mt20">대신 다른 콘텐츠를 살펴보시는 건 어떨까요?</p>
 					<p class="center mt100">
-						<a href="/main/brandVegemilBaby/e_magazine.aspx?p=1"><span
+						<a th:href="@{/vegemilBaby/magazine?p=1}"><span
 							class="f24_4 center  btn_round">육아정보 메인 바로가기</span></a>
 					</p>
 				</div>

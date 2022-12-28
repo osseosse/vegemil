@@ -6,7 +6,7 @@
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
+<header class="white" th:insert="fragments/greenbia/mainHeader_greenbia :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
@@ -40,7 +40,7 @@
 			
 			<div class="slick-slide slick-current slick-active slick-center" data-slick-index="0" aria-hidden="false" style="width: 25%;">
 				<div>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G01004}" tabindex="0" style="width: 100%; display: inline-block;">
+					<a th:href="@{/greenbia/product/detail/40}" tabindex="0" style="width: 100%; display: inline-block;">
 						<div class="single-vertical-slide fullscreen G01004_s  d-flex align-items-end">
 							<div class="slide-inner">
 								<div class="info">
@@ -61,7 +61,7 @@
 			
 			<div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 25%">
 				<div>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G01010}" tabindex="0" style="width: 100%; display: inline-block;">								
+					<a th:href="@{/greenbia/product/detail/55}" tabindex="0" style="width: 100%; display: inline-block;">								
 						<div class="single-vertical-slide fullscreen G01010_s d-flex align-items-end">
 							<div class="slide-inner">
 								<div class="info">
@@ -82,7 +82,7 @@
 			
 			<div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 25%;">
 				<div>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G02001}" tabindex="-1" style="width: 100%; display: inline-block;">
+					<a th:href="@{/greenbia/product/detail/44}" tabindex="-1" style="width: 100%; display: inline-block;">
 						<div class="single-vertical-slide fullscreen G02001_s d-flex align-items-end">
 							<div class="slide-inner">
 								<div class="info">
@@ -104,7 +104,7 @@
 			
 			<div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 25%;">
 				<div>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G06003}" tabindex="-1" style="width: 100%; display: inline-block;">
+					<a th:href="@{/greenbia/product/detail/67}" tabindex="-1" style="width: 100%; display: inline-block;">
 						<div class="single-vertical-slide fullscreen G06003_s  d-flex align-items-end">
 							<div class="slide-inner">
 								<div class="info">
@@ -241,7 +241,7 @@
 					  </li> 
 					</ul>
 					
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G06005}"><div class="btn_type02  f_ms mt30 mt40m">Read More</div></a>
+					<a th:href="@{/greenbia/product/detail/7}"><div class="btn_type02  f_ms mt30 mt40m">Read More</div></a>
 
 				</div>
 			</div>
@@ -336,11 +336,15 @@
 							<div>						
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_off.png" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="-1">
+										<img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_off.png" 
+										onmouseover="this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_on.png'" 
+										onmouseout="this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_off.png'" 
+										alt="일반영양식"></a></p>
 										<p class=" mt50 pc_line01">일반영양식</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=일반식사가" tabindex="-1"><li>일반영양식</li></a>
-											<a href="./search.aspx?contents=소아" tabindex="-1"><li>어린이 일반영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=일반식사가}" tabindex="-1"><li>일반영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=소아}" tabindex="-1"><li>어린이 일반영양식</li></a>
 										</ul>
 									</div>
 								</div>
@@ -351,16 +355,16 @@
 							<div>
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a href="./newProduct.aspx" tabindex="-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png" onmouseover="javascript:this.src'/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc02_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png" onmouseover="javascript:this.src'/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line02">전문영양식</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=당뇨" tabindex="-1"><li>당뇨 환자를 위한 전문영양식</li></a>
-											<a href="./search.aspx?contents=신장" tabindex="-1"><li>신장 질환자를 위한 전문영양식</li></a>
-											<a href="./search.aspx?contents=장이" tabindex="-1"><li>장이 민감한 환자를 위한 전문영양식</li></a>
-											<a href="./search.aspx?contents=고단백식" tabindex="-1"><li>고단백식</li></a>
-											<a href="./search.aspx?contents=외상 수술" tabindex="-1"><li>외상 및 수술 환자식</li></a>
-											<a href="./search.aspx?contents=단일영양식" tabindex="-1"><li>단일영양식</li></a>
-											<a href="./search.aspx?contents=알티에이치 TF" tabindex="-1"><li>TF/RTH</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=당뇨}" tabindex="-1"><li>당뇨 환자를 위한 전문영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=신장}" tabindex="-1"><li>신장 질환자를 위한 전문영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=장이}" tabindex="-1"><li>장이 민감한 환자를 위한 전문영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=고담백식}" tabindex="-1"><li>고단백식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=외상 수술}" tabindex="-1"><li>외상 및 수술 환자식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=단일영양식}" tabindex="-1"><li>단일영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=알티에이치TF}" tabindex="-1"><li>TF/RTH</li></a>
 										</ul>
 									</div>
 								</div>
@@ -371,10 +375,10 @@
 							<div>
 								<div class="single-vertical-slide  d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a href="./newProduct.aspx" tabindex="-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_off.png" onmouseover="javascript:this.src='/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc03_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line03">연하식</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=점도증진제" tabindex="-1"><li>점도증진제</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=점도증진제}" tabindex="-1"><li>점도증진제</li></a>
 										</ul>
 									</div>
 								</div>
@@ -385,11 +389,11 @@
 							<div>
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_off.png" onmouseover="javascript:this.src='/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
+										<p class="hvr-float-shadow"><a  tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc01_off.png'" alt="일반영양식"></a></p>
 										<p class=" mt50 pc_line01">일반영양식</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=일반식사가" tabindex="0"><li>일반영양식</li></a>
-											<a href="./search.aspx?contents=소아" tabindex="0"><li>어린이 일반영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=일반식사가}" tabindex="0"><li>일반영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=소아}" tabindex="0"><li>어린이 일반영양식</li></a>
 										</ul>
 									</div>
 								</div>
@@ -400,16 +404,16 @@
 							<div>
 								<div class="single-vertical-slide d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png" onmouseover="javascript:this.src='/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc02_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line02">전문영양식</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=당뇨" tabindex="0"><li>당뇨 환자를 위한 전문영양식</li></a>
-											<a href="./search.aspx?contents=신장" tabindex="0"><li>신장 질환자를 위한 전문영양식</li></a>
-											<a href="./search.aspx?contents=장이" tabindex="0"><li>장이 민감한 환자를 위한 전문영양식</li></a>
-											<a href="./search.aspx?contents=고단백식" tabindex="0"><li>고단백식</li></a>
-											<a href="./search.aspx?contents=외상 수술" tabindex="0"><li>외상 및 수술 환자식</li></a>
-											<a href="./search.aspx?contents=단일영양식" tabindex="0"><li>단일영양식</li></a>
-											<a href="./search.aspx?contents=알티에이치 TF" tabindex="0"><li>TF/RTH</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=당뇨}" tabindex="-1"><li>당뇨 환자를 위한 전문영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=신장}" tabindex="-1"><li>신장 질환자를 위한 전문영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=장이}" tabindex="-1"><li>장이 민감한 환자를 위한 전문영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=고담백식}" tabindex="-1"><li>고단백식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=외상 수술}" tabindex="-1"><li>외상 및 수술 환자식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=단일영양식}" tabindex="-1"><li>단일영양식</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=알티에이치TF}" tabindex="-1"><li>TF/RTH</li></a>
 										</ul>
 									</div>
 								</div>
@@ -420,10 +424,10 @@
 							<div>
 								<div class="single-vertical-slide  d-flex align-items-end" style="width: 100%; display: inline-block;">
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_off.png" onmouseover="javascript:this.src='/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc03_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc03_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line03">연하식</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=점도증진제" tabindex="-1"><li>점도증진제</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=점도증진제}" tabindex="-1"><li>점도증진제</li></a>
 										</ul>
 									</div>
 								</div>
@@ -434,11 +438,11 @@
 							<div>
 								<div class="single-vertical-slide   d-flex align-items-end" style="width: 100%; display: inline-block; text-align: center;" >
 									<div class="pcBox">
-										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc04_off.png" onmouseover="javascript:this.src='/img/greenbia/ico_pc04_on.png'" onmouseout="javascript:this.src='/img/greenbia/ico_pc04_off.png'" alt="전문영양식"></a></p>
+										<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" tabindex="0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc04_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc04_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc04_off.png'" alt="전문영양식"></a></p>
 										<p class=" mt50 pc_line04" >건강식품</p>
 										<ul class="pc mt50">
-											<a href="./search.aspx?contents=균형영양음료" tabindex="0"><li>균형영양음료</li></a>
-											<a href="./search.aspx?contents=건강기능식품" tabindex="0"><li>건강기능식품</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=균형영양음료}" tabindex="0"><li>균형영양음료</li></a>
+											<a th:href="@{/greenbia/search?searchKeyword=건강기능식품}" tabindex="0"><li>건강기능식품</li></a>
 										</ul>
 									</div>
 								</div>
@@ -456,11 +460,11 @@
 			<div class="center bestBox mt110">
 				<p class="f28_4">베스트판매 인기상품</p>
 				<ul class="mt30">
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G06003}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">1</span>프로틴밀 아몬드와 호두</li></a>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G06004}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">2</span>프로틴밀 검은참깨</li></a>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G01014}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">3</span>플러스 케어 화이바</li></a>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G02007}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">4</span>당뇨솔루션 RTH</li></a>
-					<a th:href="@{https://www.vegemil.co.kr/main/brandgreenbia/detail.aspx?p_code=G02010}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">5</span>이뮨 포르테</li></a>
+					<a th:href="@{/greenbia/product/detail/67}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">1</span>프로틴밀 아몬드와 호두</li></a>
+					<a th:href="@{/greenbia/product/detail/68}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">2</span>프로틴밀 검은참깨</li></a>
+					<a th:href="@{/greenbia/product/detail/54}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">3</span>플러스 케어 화이바</li></a>
+					<a th:href="@{/greenbia/product/detail/48}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">4</span>당뇨솔루션 RTH</li></a>
+					<a th:href="@{/greenbia/product/detail/61}" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">5</span>이뮨 포르테</li></a>
 				</ul>
 				
 			</div>
