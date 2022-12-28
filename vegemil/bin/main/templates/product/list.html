@@ -478,9 +478,9 @@
 						</div>
 					</div><!-- //floting-left_prd -->
 					<div class="floting-right_prd">
-						<div class="row" id="w_tab">
-							<div class="col-md-4 col-6" id="w_list" th:if="${not #lists.isEmpty( productList )}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" th:if="${product.categoryCode == 'W'}" >
+						<div class="row" id="w_tab" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" id="w_list" th:if="${product.categoryCode == 'W'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
+								<div class="prd-list">
 									<a th:href="|/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
