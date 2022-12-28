@@ -1,5 +1,7 @@
 package com.vegemil.controller;
 
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +24,62 @@ public class MainController {
 	private CompanyService companyService;
 	
 	@RequestMapping(value = "/")
-	public String index(Model model, Authentication authentication) {
-		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
+	public String moveIndex(Model model, Authentication authentication) throws Exception {
+		
 		MemberDTO member = new MemberDTO();
-		if(authentication != null) {
-	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-	        model.addAttribute("member",member);	//유저 정보
+		
+		try {
+			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
+			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133")) {
+			} else {
+				return "member/server";
+			}
+			
+			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
+			if(authentication != null) {
+		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		        model.addAttribute("member",member);	//유저 정보
+			}
+			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
+	        model.addAttribute("mediaNewsList", mediaNewsList);
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
 		}
-		List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
-        model.addAttribute("mediaNewsList", mediaNewsList);
         
         return "index";
+	}
+	
+	@RequestMapping(value = "/Main/default.aspx")
+	public String moveOldIndex(Model model, Authentication authentication) throws Exception {
+		
+		MemberDTO member = new MemberDTO();
+		
+		try {
+			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
+			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133")) {
+			} else {
+				return "member/server";
+			}
+			
+			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
+			if(authentication != null) {
+		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		        model.addAttribute("member",member);	//유저 정보
+			}
+			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
+	        model.addAttribute("mediaNewsList", mediaNewsList);
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+        
+        return "index";
+	}
+	
+	@RequestMapping(value = "/server")
+	public String moveServer(Model model) {
+        return "member/server";
 	}
 	
 	@RequestMapping(value = "/requestAuth")
@@ -42,7 +89,7 @@ public class MainController {
     }
 	
 	@RequestMapping(value = "/home")
-    public String main(Model model, Authentication authentication)throws Exception{
+    public String moveMain(Model model, Authentication authentication)throws Exception{
 		
 		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 		MemberDTO member = new MemberDTO();

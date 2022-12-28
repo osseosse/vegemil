@@ -59,11 +59,13 @@ label {margin-bottom:0 !important;}
 
 body {overflow-x: hidden;}
 
+/*
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+*/
 
-
+@import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 /*
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 */
@@ -746,7 +748,7 @@ body {overflow-x: hidden;}
 	.f34 {font-size:20px}
 	.f36 {font-size:21px}
 	.f38 {font-size:22px}
-	.f45 {font-size:27px}
+	.f45 {font-size:24px}
 	.f47 {font-size:28px}
 	.f52 {font-size:31px}
 	.f55 {font-size:33px}
