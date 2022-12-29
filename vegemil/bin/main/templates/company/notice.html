@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 공지사항</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ 
+		Header
+================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+		// Header
+================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class=" pb100">
+	<div class="content100 ">
+	   <div class="subTopNotice h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">공지사항</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/company/mediaNews"><span>보도자료</span></a></li>
+				<li class="f18 fw500 active"><a href="/company/notice"><span>공지사항</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+    </div>
+    <div class="contant1460" >
+    	<!-- 
+		<div class="row mb80">
+			<div class="col-md-6 mt50">
+				<p class="gray04 fw600 f15 f_pp">2022.12.09</p>
+				<p class="f38 fw600 black lh140 mt50 w500">정식품 2022년 상반기 신입사원 공채 모집</p>
+				<p class="f23 fw500 lh150 mt30 w500">지난 48년간 국내외 두유 산업을 이끌어 온 식품회사 정식품에서 2022년도 상반기 신입사원 공채 모집을 시작합니다.</p>
+				<p class="btnType06 hover mt50"><a href=""><span>View more</span></a></p>
+			</div>
+			<div class="col-md-6 mt50">
+				<a href="#">
+					<div class="notice-img"><p style="position:relative;  background: url(https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/photo/VPM05_860_01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;" class="h380"><img src="" alt=""/></p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<br class="clear">
+		 -->
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ 
+		Footer
+================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+		// Footer
+================================ -->
+</body>
+</html>

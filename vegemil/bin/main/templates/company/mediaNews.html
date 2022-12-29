@@ -12,7 +12,6 @@
 <!-- ================================ 
 		// Header
 ================================ -->
-
 <!-- ================================ 
 		Content
 ================================ -->
@@ -29,8 +28,8 @@
 		<div class="subMenu">
 			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
-				<li class="f18 fw500 active"><a href="01_01_greetings.html"><span>보도자료</span></a></li>
-				<li class="f18 fw500 "><a href="01_02_profile.html"><span>공지사항</span></a></li>
+				<li class="f18 fw500 active"><a href="/company/mediaNews"><span>보도자료</span></a></li>
+				<li class="f18 fw500 "><a href="/company/notice"><span>공지사항</span></a></li>
 			</ul>
 			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
 		</div>
@@ -41,9 +40,16 @@
     <div class="contant1460" >
 		<div class="row">
 			<div class="col-md-12">
-				<th:block layout:fragment="search">
-					<div th:replace="fragments/common :: search"></div>
-				</th:block>
+				<div id="adv-search" class="text-right mt70">
+					<div class="search-container w410  inline">
+						<form id="searchForm" th:action="@{/company/mediaNews}" method="get" th:onsubmit="return searchMediaNews(this)" class="form-horizontal" role="form">
+							<span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span>
+							<input type="text" placeholder="검색해 보세요 " id="mainSearchKeyword" th:value="${params.searchKeyword}">
+							<input type="hidden" name="searchKeyword" th:value="${params.searchKeyword}" />
+							<button type="submit" class="btn-search">검색</button>
+						</form>
+					</div>
+				</div>
 				<table cellspacing="0" border="0" class="press mt50" th:if="${not #lists.isEmpty( mediaNewsList )}">
 					<caption>보도자료</caption>
 					<tr th:each="mediaNews : ${mediaNewsList}">
