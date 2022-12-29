@@ -79,8 +79,8 @@
 								<span th:if="${mediaNews.mAduri9 != null and mediaNews.mAduri9 !=''}"><a href="${mediaNews.mAduri9}" th:text="${mediaNews.mAdname9}"></a></span>
 								<span th:if="${mediaNews.mAduri10 != null and mediaNews.mAduri10 !=''}"><a href="${mediaNews.mAduri10}" th:text="${mediaNews.mAdname10}"></a></span>
 							</div>
-							<a href="${mediaNews.mSubject}">
-							<div class="press-title f27 fw500 black"><p th:text="${mediaNews.mSubject}"></p></div></a>
+							<a th:href="${mediaNews.mAduri1}" target="_blank">
+							<div class="press-title f27 fw500 black"><p th:text="${mediaNews.mSubject}" ></p></div></a>
 						</td>
 					</tr>
 				</table>
