@@ -61,7 +61,7 @@ public class PaymentController extends UiUtils {
 		}catch (Exception e) {
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 		}
-		return "payment/login";
+		return "member/payLogin";
 	}
 	
 	@GetMapping(value = "/payment/join")
@@ -74,7 +74,7 @@ public class PaymentController extends UiUtils {
 		return "payment/join";
 	}
 	
-	@GetMapping(value = "/payment/list")
+	@GetMapping(value = "/comp/payment/list")
 	public String openPaymentList(Model model, HttpServletResponse response, Authentication authentication) {
 	    
 		response.setContentType("text/html; charset=UTF-8");
@@ -89,7 +89,7 @@ public class PaymentController extends UiUtils {
 				if (member == null) {
 					out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 					out.flush();
-					return showMessageWithRedirect("로그인 후 이용바랍니다.", "payment/login", Method.GET, null, model);
+					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 				}
 				
 				pay.setLgdBuyerid(member.getMId());
@@ -101,7 +101,7 @@ public class PaymentController extends UiUtils {
 			} else {
 				out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 				out.flush();
-				return showMessageWithRedirect("로그인 후 이용바랍니다.", "payment/login", Method.GET, null, model);
+				return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 			}
 			
 		} catch (Exception e) {
@@ -111,7 +111,7 @@ public class PaymentController extends UiUtils {
 		return "payment/list";
 	}
 	
-	@GetMapping(value = "/payment/pay")
+	@GetMapping(value = "/comp/payment/pay")
 	public String movePay(Model model, HttpServletResponse response, Authentication authentication) {
 		
 		response.setContentType("text/html; charset=UTF-8");
@@ -124,7 +124,7 @@ public class PaymentController extends UiUtils {
 				if (member == null) {
 					out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 					out.flush();
-					return showMessageWithRedirect("로그인 후 이용바랍니다.", "payment/login", Method.GET, null, model);
+					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 				}
 			}
 			model.addAttribute("member", member);
@@ -311,7 +311,7 @@ public class PaymentController extends UiUtils {
 			} else {
 				out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 				out.flush();
-				return showMessageWithRedirect("로그인 후 이용바랍니다.", "payment/login", Method.GET, null, model);
+				return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 			}
         	
 		} catch (Exception e) {
@@ -514,7 +514,7 @@ public class PaymentController extends UiUtils {
 			} else {
 				out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 				out.flush();
-				return showMessageWithRedirect("로그인 후 이용바랍니다.", "payment/login", Method.GET, null, model);
+				return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 			}
 		} catch (Exception e) {
 			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");

@@ -108,7 +108,7 @@ public class MemberService implements UserDetailsService  {
 		
 		memCount = memberMapper.selectMemberCount(member);
 		member.setMPwd(passwordEncoder.encode(member.getPassword()));
-		member.setMAuth("USER");
+		member.setMAuth("COMP");
 		
 		
 		if (memCount == 0) {

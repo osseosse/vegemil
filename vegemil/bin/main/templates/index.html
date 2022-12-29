@@ -10,6 +10,11 @@
 <!-- ================================ 
 		Content
 ================================ -->
+<!-- popup -->
+<div id="popup" style="position:absolute; top:110px; right:20px; z-index:1000; height:478px; display:none;">
+	<iframe th:src="@{/fragments/popup}" marginwidth="0" marginheight="0" width="350" height="478" frameborder="0" scrolling="no"></iframe>
+</div>
+<!-- popup -->
 <div id="content" class="pb200">
 	<div class="video" >
 		<div class="videoCopy">
@@ -23,7 +28,7 @@
 			<div class="wView">
 				<ul>
 					<li><a href="https://www.edaymall.com/index.do"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q01.png" alt="Shop" /><p class="f13 fw500 black">Shop</p></a></li>
-					<li><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q02.png" alt="Webzine" /><p class="f13 fw500 black">Webzine</p></a></li>
+					<li><a href="/main/webzine"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q02.png" alt="Webzine" /><p class="f13 fw500 black">Webzine</p></a></li>
 					<li><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q03.png" alt="Vegemil Story" /><p class="f13 fw500 black">Vegemil<br>Story</p></a></li>
 				</ul>
 				<p class="main-quick-scroll btn-scroll"><a href="#flotingPage"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q04.png" alt="스크롤" /></a></p>
@@ -138,14 +143,14 @@
 					<div class="col-md-3 col-6">
 						<!-- 자주 묻는 질문 -->
 						<div class="verticalType02" >
-							<div class="ver-title02"><p class="f14 fw400"><img class="wView" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_mic.png" alt="오른족" /> 자주 묻는 질뭇</p></div>
+							<div class="ver-title02"><p class="f14 fw400"><img class="wView" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_mic.png" alt="오른족" /> 자주 묻는 질문</p></div>
 							<div>
 								<div class="v_content">
-									<p><a href="/faq/list">제품일반</a></p>
-									<p><a href="/faq/list">음료류</a></p>
-									<p><a href="/faq/list">유아동두유</a></p>
-									<p><a href="/faq/list">베지밀</a></p>
-									<p><a href="/faq/list">그린비아</a></p>
+									<p><a href="/faq/list/#faq01">제품일반</a></p>
+									<p><a href="/faq/list/#faq02">음료류</a></p>
+									<p><a href="/faq/list/#faq03">유아동두유</a></p>
+									<p><a href="/faq/list/#faq04">베지밀</a></p>
+									<p><a href="/faq/list/#faq05">그린비아</a></p>
 								</div>
 							</div>
 						</div>
@@ -158,7 +163,7 @@
 							<li><a href="javascript:void(0);"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus01.png" alt="제품개발"/><p class="f18 mt10">제품 개발</p></a></li>
 							<li><a href="javascript:void(0);"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus02.png" alt="연구개발"/><p class="f18 mt10">연구 개발</p></a></li>
 							<li><a href="javascript:void(0);"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus03.png" alt="제품생산"/><p class="f18 mt10">제품 생산</p></a></li>
-							<li><a href="javascript:void(0);"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus04.png" alt="안전 및 분석"/><p class="f18 mt10">인잔 및 분석</p></a></li>
+							<li><a href="javascript:void(0);"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus04.png" alt="안전 및 분석"/><p class="f18 mt10">안전 및 분석</p></a></li>
 							<li><a href="javascript:void(0);"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus05.png" alt="기술 인증 및 특허"/><p class="f18 mt10">기술 인증 및 특허</p></a></li>
 						</ul>
 					</div>
@@ -839,7 +844,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="/brandStory/greenbia">
+								<a href="/greenbia/index">
 								<div class="bg02"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/GPL01_600_01.png" alt="그린비아"/><span class="count02">26</span>	</div>	
 								<p class="f16 fw400 glay04">그린비아</p>
 								</a>
@@ -884,6 +889,43 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script type="text/javascript">
+	function getCookie(name) {
+	    var cookie = document.cookie;
+	
+	    if (document.cookie != "") {
+	         var cookieArray = cookie.split("; ");
+	         for ( var index in cookieArray) {
+	             var cookieName = cookieArray[index].split("=");
+	             if (cookieName[0] == name) {
+	                  return cookieName[1];
+	             }
+	         }
+	    }
+	    return ;    
+	}
+	
+	$(document).ready(function(){
+		var popup = document.getElementById("popup");
+		/*
+		var cookieCheck = getCookie("b_popup");
+		if (cookieCheck != "done"){
+			popup.style.display = 'block';
+		}
+		*/
+		var cookieCheck = getCookie("popup");
+		if (cookieCheck != "done"){
+			popup.style.display = 'block';
+		}
+		
+		var cookieCheck = getCookie("popup");
+		if (cookieCheck != "done"){
+			popup.style.display = 'block';
+		}
+		
+		//$('#tabwrap2').basicTabs2();/* basicTabs2 변경 */
+	});
+</script>
 <script>
 /*================================
  * 	 main > 자주묻는질문+SNS

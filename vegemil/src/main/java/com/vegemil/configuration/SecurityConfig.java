@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http
-	        	.antMatcher("/payment/**")
+	        	.antMatcher("/comp/payment/**")
 	            	.authorizeRequests().anyRequest().hasAuthority("COMP")
 	            .and()
 	            	.csrf().disable()
@@ -109,6 +109,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	                .antMatchers("/sample/form").authenticated()
 	            .anyRequest()
 	            	.permitAll()
+	            .and().headers().frameOptions().sameOrigin()
 	            .and()
 	            	.csrf().disable()
 		            .formLogin()
