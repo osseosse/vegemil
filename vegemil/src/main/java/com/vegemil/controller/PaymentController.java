@@ -187,7 +187,7 @@ public class PaymentController extends UiUtils {
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/payment/success")
+	@RequestMapping(value = "/comp/payment/success")
 	public String  tossPaySuccess(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -320,7 +320,7 @@ public class PaymentController extends UiUtils {
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 		}
 
-		return showMessageWithRedirect("pay success", "/payment/list", Method.GET, null, model);
+		return showMessageWithRedirect("결제 성공했습니다.", "/comp/payment/list", Method.GET, null, model);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -393,7 +393,7 @@ public class PaymentController extends UiUtils {
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/payment/cancel/{paymentKey}")
+	@RequestMapping(value = "/comp/payment/cancel/{paymentKey}")
 	public String  tossPayCancelSave(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -522,7 +522,7 @@ public class PaymentController extends UiUtils {
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 		}
 
-		return showMessageWithRedirect("cancel success", "/payment/list", Method.GET, null, model);
+		return showMessageWithRedirect("결제 취소되었습니다.", "/comp/payment/list", Method.GET, null, model);
 	}
 	
 }
