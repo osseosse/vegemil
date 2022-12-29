@@ -145,7 +145,7 @@
         ORDER BY
             m_idx DESC
        	LIMIT
-		#{paginationInfo.firstRecordIndex}, 5
+		#{paginationInfo.firstRecordIndex}, 10
     </select>
 
 
