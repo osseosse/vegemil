@@ -28,14 +28,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.google.gson.JsonObject;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.PaymentDTO;
+import com.vegemil.domain.QnaDTO;
 import com.vegemil.service.MemberService;
 import com.vegemil.service.PaymentService;
+import com.vegemil.service.QnaService;
 import com.vegemil.util.UiUtils;
 
 @Controller
@@ -43,6 +42,9 @@ public class PaymentController extends UiUtils {
 
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private QnaService qnaService;
 	
 	@Autowired
 	private PaymentService paymentService;
@@ -80,6 +82,9 @@ public class PaymentController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		MemberDTO member = new MemberDTO();
 		PaymentDTO pay = new PaymentDTO();
+		List<PaymentDTO> payList = null;
+		int payCount = 0;
+		
 		try {
 			
 			PrintWriter out = response.getWriter();
@@ -93,7 +98,19 @@ public class PaymentController extends UiUtils {
 				}
 				
 				pay.setLgdBuyerid(member.getMId());
-				List<PaymentDTO> payList = paymentService.getPaymentList(pay);
+				payList = paymentService.getPaymentList(pay);
+				if(payList != null) {
+					payCount = payList.size();
+				}
+				
+				//1:1문의 리스트
+	    		QnaDTO qna = new QnaDTO();
+	    		qna.setSId(member.getMId());
+	    		List<QnaDTO> qnaList = qnaService.getQnaList(qna);
+	    		
+	    		model.addAttribute("qnaList", qnaList);
+	    		model.addAttribute("qnaCount", qnaList.size());
+				model.addAttribute("payCount", payCount);
 				model.addAttribute("payList", payList);
 				model.addAttribute("member", member);
 

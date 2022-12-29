@@ -1,121 +1,124 @@
 <!doctype html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<title>정식품 채용</title>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 그린비아 결제</title>
 <head th:replace="fragments/head :: headFragment"></head>
 <body>
-	<div class="wrap">
-		<!-- ================================ Header ================================ -->
-		<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
-		<!-- ================================ // Header ================================ -->
-		<!-- ================================ Content ================================ -->
-		<section>
-			<div class="container100">
-				<div class="nav">
-					<div class="container1300 center">
-						<a href="/"><span class="round">HOME</span></a><img class="arrow" th:src="@{/img/arrow.png}" alt="화살표" /><a href="#"><span class="round">마이페이지</span></a>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="bg_rightBlue pb100">
+	<div class="contant1460" >
+		<div class="row mt90h">&nbsp;</div>
+		<div class="w1460 center0 mt80">
+			<div class="row ">
+				<div class="col-md-4 my pr100">
+					<div class="myBox">
+						<p class="f14 fw400  mebOut gray04"><a href="/mypage/withdrawal">회원 탈퇴 신청</a></p>
+						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
+						<ul class="account_box mt40">
+							<li th:text="${member.mId}"></li>
+							<li th:if="${member.mCompName} != null">법인회원</li>
+							<li th:if="${member.mCompName} == null">일반회원</li>
+							<li th:text="${member.mCompName}"></li>
+						</ul>
+						<p class="f14 fw400 gray04 mt25">
+						개인정보를 수정, 변경하실 수 있습니다.<br>
+						모든 정보는 고객님의 동의없이 공개되지 않으며, 
+						개인 정보 보호 방침에 의해 보호받습니다.</p>
+						<a href="/mypage/myInfo"><p class="btnType12 mt30"><span class="lh140">개인정보 변경</span></p></a>
 					</div>
 				</div>
-				<div class="container1300 center" >
-					<div class="memberWrapBase">
-						<div class="sidebar fixedsticky w300 f-left">
-							<div class="myTitle">
-								<p class="f20 fw600">마이페이지</p>
-								<p class="f36 fw600 mt30" th:text="|${member.mName}님|"></p>
-								<p class="f16 fw300 ac mt20" th:text="${member.mCompName}"></p>
-								<p class="f16 fw300 ac mt20" th:text="${member.mHp}"></p>
-							</div>
-						</div>
-						<div class="wrap860 f-right" >
-							<!-- (1)제출완료 / 제출완료 없을때 -->
-							<p class="f23 fw600">결제내역<span class="abs-r f16 fw400  mr10 mt10 gray">
-								<a href="/recruit/list">지원하기 <img th:src="@{/img/ico_arrow_g.png}" /></a>
-								</span></p>
-								<div class="r-box mt20 bgHover" th:if="${not #lists.isEmpty( payList )}" th:each="pay, i : ${payList}">
-									<div class="info01" th:if="${pay.lgdRespcode.equals('DONE')}">
-										<span class="r-blue">결제완료</span>
-										<span class="f16">결제일</span>
-										<span class="ac f16 fw300 gray"  th:text="${pay.insertDate}"></span>
-									</div>
-									<div class="info01" th:if="${pay.lgdRespcode.equals('CANCELED')}">
-										<span class="r-blue">취소완료</span>
-										<span class="f16">취소일</span>
-										<span class="ac f16 fw300 gray"  th:text="${pay.insertDate}"></span>
-									</div>
-									<div class="info02" th:if="${pay.lgdRespcode.equals('DONE')} or ${pay.lgdRespcode.equals('CANCELED')}">
-										<dl class="mt20">
-											<dt>
-												<span class="f16" th:text="${pay.lgdMid}"></span>
-												<span class="f16" th:text="${pay.lgdAmount}"></span>
-												<span class="f16" th:text="${pay.lgdTid}"></span>
-												<span class="f16" th:text="${pay.lgdFinancename}"></span>
-												<span class="f16" th:text="${pay.lgdCardnum}"></span>
-												<span class="f16" th:text="${pay.lgdCardinstallmonth}"></span>
-												<a th:href="|${pay.lgdReceiptUrl}|">
-													<span class="f16">영수증 보기</span>
-												</a>
-											</dt>
-											<dd>
-												<button type="button" th:if="${pay.lgdRespcode.equals('DONE')}" class="btn_reviewBox mt20" th:onclick="'location.href=\'/payment/cancel/'+ @{${pay.lgdTid}} + '\''">
-													<ul>
-														<li class="btn_review ">결제취소</li>
-														<li class="btn_review_arrow ml10"></li>
-													</ul>
-												</button>
-											</dd>
-										</dl>
-									</div>
-								</div>
-							
-							<div class="r-box mt20" th:unless="${not #lists.isEmpty( payList )}">
-								<div class="tex-center f16 pt20 pb20 gray">결제내역이 없습니다.</div>
-							</div>
-							<!-- //(1)제출완료 / 제출완료없을때 -->
-							
-							<!-- (3)1:1문의 / 1:1문의 없을때 -->
-							<p class="f23 fw600 mt80">1:1문의 <span class="abs-r f16 fw400  mr10 mt10 gray">
-								<a href="/mypage/qna">문의하기 <img th:src="@{/img/ico_arrow_g.png}" /></a>
-								</span></p>
-								
-							<!--  
-							<div class="r-box mt20 bgHover" th:if="${not #lists.isEmpty( qnaList )}" th:each="qna : ${qnaList}">
-								<div class="info01">
-									<span class="r-blue-line" th:if="${qna.rAnswerYn} == 'N'" th:text="답변대기"></span> 
-									<span class="r-blue" th:unless="${qna.rAnswerYn} == 'N'" th:text="답변완료"></span>
-									<span class="ac f16 fw300 gray">2022.04.05</span>
-								</div>
-								<div class="info02">
-									<dl class="mt20">
-										<dt><span class="f20 fw600 mt20 line-height140" th:text="${qna.rTitle}"></span></dt>
-										<dd>
-											<a class="btn_reviewBox" th:href="|@{/mypage/qna}?qId=${qna.qId}|">
-												<ul>
-													<li class="btn_review ">문의 보기</li>
-													<li class="btn_review_arrow ml10"></li>
-												</ul>
-											</a>
-										</dd>
-									</dl>
-								</div>
-							</div>
-							
-							<div class="r-box mt20" th:unless="${not #lists.isEmpty( qnaList )}">
-								<div class="tex-center f16 pt20 pb20 gray">문의 내역이 없습니다.</div>
-							</div>
-							-->
-							<!-- (3)1:1문의 / 1:1문의 없을때-->
-							
-						</div><!-- //wrap860 -->
+				<div class="col-md-8 mt50m">
+					<ul class="my_subTitle">
+						<li><p class="f20 fw400">나의 결제내역</p></li>
+						<li><a href="/mypage/qna"><span class="gray04 f14"></span></a></li>
+					</ul><br class="clear">
+					<div class="myBox mt20">
+						<div class="myQus f16">지난 결제내역이 <span th:text="|${payCount}건|"></span> 있습니다.</div>
+						<table cellspacing="0" summary="나의상담" border="0" class="myT mt30">
+							<caption>지난 상담</caption>
+							<colgroup>
+								<col width="20%">
+								<col width="15%">
+								<col width="10%">
+								<col width="15%">
+								<col width="10%">
+								<col width="10%">
+							</colgroup>
+							<tr>
+								<th>카드번호</th>
+								<th>결제금액</th>
+								<th>카드사(은행)</th>
+								<th>결제일</th>
+								<th>영수증보기</th>
+								<th>결제취소</th>
+							</tr>
+							<tr th:if="${not #lists.isEmpty( payList )}" th:each="pay, i : ${payList}">
+								<td class="day f_pp" th:text="${pay.lgdCardnum}"></td>
+								<td class="day f_pp" th:text="|${pay.lgdAmount}원|"></td>
+								<td class="day f_pp" th:text="${pay.lgdFinancename}"></td>
+								<td class="day f_pp" th:text="${pay.insertDate}"></td>
+								<td class="day f_pp">
+									 <a th:href="|${pay.lgdReceiptUrl}|" target="_blank"><p class="cate">영수증</p></a>
+									 <input type="hidden" th:value="${pay.lgdTid}" name="tid">
+								</td>
+								<td class="day f_pp" th:if="${pay.lgdRespcode} == 'CANCELED'">취소완료</td>
+								<td class="day f_pp" th:unless="${pay.lgdRespcode} == 'CANCELED'">
+									 <a th:href="|/comp/payment/cancel/{${pay.lgdTid}|" ><p class="cate">취소</p></a>
+								</td>
+							</tr>
+						</table>
+						<p class="center mt20"><button type="text" class="btnType13" ><span class="f14 fw400 gray04">+ 더보기</span></button></p>
+					</div>
+					<br class="clear">
+					<br class="clear">
+					<ul class="my_subTitle">
+						<li><p class="f20 fw400">나의 상담내역</p></li>
+						<li><a href="/mypage/qna"><span class="gray04 f14">문의하기 &gt;</span></a></li>
+					</ul><br class="clear">
+					<div class="myBox mt20">
+						<div class="myQus f16">지난 상담내역이 <span th:text="|${qnaCount}건|"></span> 있습니다.</div>
+						<table cellspacing="0" summary="나의상담" border="0" class="myT mt30">
+							<caption>지난 상담</caption>
+							<colgroup>
+								<col width="20%">
+								<col width="60%">
+								<col width="20%">
+							</colgroup>
+							<tr>
+								<th>상담분류</th>
+								<th>질문내용</th>
+								<th>작성일</th>
+							</tr>
+							<tr th:if="${not #lists.isEmpty( qnaList )}" th:each="qna : ${qnaList}">
+								<td><p class="cate" th:text="${qna.sCate}"></p></td>
+								<td>
+									<a th:href="|/mypage/answer?sIdx=${qna.sIdx}|"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
+									<p class="ans" th:if="${qna.sAnswerYn} == 'Y'">답변</p>
+									<p class="ans" th:unless="${qna.sAnswerYn} == 'Y'">미답변</p>
+								</td>
+								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
+							</tr>
+						</table>
+						<p class="center mt20"><button type="text" class="btnType13" ><span class="f14 fw400 gray04">+ 더보기</span></button></p>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- ================================ 
-				// Content
-		================================ -->
-	</div><!-- //wrap bg_01 -->
-	
+			
+		</div><!-- // w1460 -->
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
 <!-- ================================ Footer ================================ -->
-<footer class="container100 center bgGray" th:replace="fragments/mainFooter :: footerFragment"></footer>
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
 </body>
 </html>
