@@ -200,8 +200,8 @@ public class PaymentController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		//request 데이터
-        String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        //String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+        //String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
+        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
         /* base64 encoding */
 		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
@@ -333,8 +333,8 @@ public class PaymentController extends UiUtils {
 		Boolean result = false;
 
 		//request 데이터
-		String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        //String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
+        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
 		/* base64 encoding */
 		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
@@ -405,8 +405,8 @@ public class PaymentController extends UiUtils {
 		PrintWriter out = response.getWriter();
 
 		//request 데이터
-		String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        //String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
+        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
 		/* base64 encoding */
 		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
