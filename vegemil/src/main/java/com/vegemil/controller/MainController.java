@@ -1,7 +1,5 @@
 package com.vegemil.controller;
 
-import java.net.Inet4Address;
-import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +27,11 @@ public class MainController {
 		MemberDTO member = new MemberDTO();
 		
 		try {
-			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
-			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133") || ipv4.equals("192.168.26.40")) {
-			} else {
-				return "member/server";
-			}
+//			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
+//			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133") || ipv4.equals("192.168.26.40")) {
+//			} else {
+//				return "member/server";
+//			}
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
@@ -43,7 +41,7 @@ public class MainController {
 			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
 	        model.addAttribute("mediaNewsList", mediaNewsList);
 			
-		} catch (UnknownHostException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
         
@@ -56,11 +54,11 @@ public class MainController {
 		MemberDTO member = new MemberDTO();
 		
 		try {
-			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
-			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133")) {
-			} else {
-				return "member/server";
-			}
+//			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
+//			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133")) {
+//			} else {
+//				return "member/server";
+//			}
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
@@ -70,7 +68,7 @@ public class MainController {
 			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
 	        model.addAttribute("mediaNewsList", mediaNewsList);
 			
-		} catch (UnknownHostException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
         

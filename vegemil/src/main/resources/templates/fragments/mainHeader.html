@@ -164,22 +164,12 @@
 			<ul class="sub_area">
 				<li sec:authorize="isAnonymous()"><a href="/member/login">로그인</a></li>
 				<li sec:authorize="isAnonymous()"><a href="/member/join">회원가입</a></li>
-				<li sec:authorize="hasAuthority('USER')">[일반회원]</li>
-				<li sec:authorize="hasAuthority('COMP')">[법인회원]</li>
-				<li sec:authorize="hasAuthority('ADMIN')">[관리자]</li>
+				<li sec:authorize="hasAuthority('USER')"><span class="level-01">[일반회원]</span></li>
+				<li sec:authorize="hasAuthority('COMP')"><span class="level-01">[법인회원]</span></li>
+				<li sec:authorize="hasAuthority('ADMIN')"><span class="level-01">[관리자]</span></li>
 			    <li sec:authorize="isAuthenticated()"><a sec:authorize="isAuthenticated()" href="/mypage/list">마이페이지</a></li>
 			    <li sec:authorize="isAuthenticated()"><a href="/member/logout" >로그아웃</a></li>
-			    <!-- 
-				<li>
-					<div class="custom-sel">
-					  <select>
-						<option value="KOR">KOR</option>
-						<option value="ENG">ENG</option>
-					  </select>
-					</div>
-				</li>
-				 -->
-				<li>
+			    <li>
 					<!-- fullMenu -->
 					<!-- 수정 --> <span class="btn_fullMenu" onclick="openNav()" ></span><!-- //수정 -->
 					<div id="myNav" class="overlay">
@@ -191,10 +181,7 @@
 									<ul class="full-header-right">
 										<li sec:authorize="isAnonymous()"><a href="/member/login">로그인</a></li>
 										<li sec:authorize="isAnonymous()"><a href="/member/join">회원가입</a></li>
-										<li sec:authorize="hasAuthority('USER')">[일반회원]</li>
-										<li sec:authorize="hasAuthority('COMP')">[법인회원]</li>
-										<li sec:authorize="hasAuthority('ADMIN')">[관리자]</li>
-									    <li sec:authorize="isAuthenticated()"><a sec:authorize="isAuthenticated()" href="/mypage/list">마이페이지</a></li>
+									    <li sec:authorize="isAuthenticated()"><a href="/mypage/list">마이페이지</a></li>
 									    <li sec:authorize="isAuthenticated()"><a href="/member/logout" >로그아웃</a></li>
 										 <!-- 
 										<li>
@@ -476,17 +463,14 @@
 			</div>
 			<!-- //vertical -->
 		</div>
-
 		<ul class="maBotton">
-			<li>
-				<span><a sec:authorize="isAnonymous()" href="/member/login">로그인</a></span>
-				<span><a sec:authorize="isAnonymous()" href="/member/join">회원가입</a></span>
-				<span sec:authorize="hasAuthority('USER')">[일반회원]</span>
-				<span sec:authorize="hasAuthority('COMP')">[법인회원]</span>
-				<span sec:authorize="hasAuthority('ADMIN')">[관리자]</span>
-			    <span sec:authorize="isAuthenticated()"><a href="/mypage/list">마이페이지</a></span>
-			    <span><a sec:authorize="isAuthenticated()" href="/member/logout" >로그아웃</a></span>
-			</li>
+			<li><span><a sec:authorize="isAnonymous()" href="/member/login">로그인</a></span></li>
+			<li><span><a sec:authorize="isAnonymous()" href="/member/join">회원가입</a></span></li>
+			<li><span sec:authorize="hasAuthority('USER')" class="level-01">[일반회원]</span></li>
+			<li><span sec:authorize="hasAuthority('COMP')" class="level-01">[법인회원]</span></li>
+			<li><span sec:authorize="hasAuthority('ADMIN')" class="level-01">[관리자]</span></li>
+		    <li><span sec:authorize="isAuthenticated()"><a href="/mypage/list">마이페이지</a></span></li>
+		    <li><span><a sec:authorize="isAuthenticated()" href="/member/logout" >로그아웃</a></span></li>
 		</ul>
 	</div>
 	
