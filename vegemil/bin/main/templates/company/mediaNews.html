@@ -40,18 +40,27 @@
     <div class="contant1460" >
 		<div class="row">
 			<div class="col-md-12">
-				<!-- 
 				<div id="adv-search" class="text-right mt70">
 					<div class="search-container w410  inline">
-						<form id="searchForm" th:action="@{/company/mediaNews}" method="get" th:onsubmit="return searchMediaNews(this)" class="form-horizontal" role="form">
-							<span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span>
-							<input type="text" placeholder="검색해 보세요 " id="mainSearchKeyword" th:value="${params.searchKeyword}">
-							<input type="hidden" name="searchKeyword" th:value="${params.searchKeyword}" />
+						<form th:action="@{/company/mediaNews}" method="get" th:onsubmit="return searchMediaNews(this)">
+							<span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span><input type="text" placeholder="검색해 보세요 " th:value="${params.searchKeyword}" id="mainSearchKeyword" name="searchKeyword">
 							<button type="submit" class="btn-search">검색</button>
 						</form>
 					</div>
+					<th:block th:if="${params.searchKeyword != null and params.searchKeyword != ''}">
+						<div class="count-box pl10">
+							<p>총 <span th:text="${newsCount}"></span>건</p>
+						</div>		
+					</th:block>
+					<div class="faqSearch" th:if="${params.searchKeyword != null and params.searchKeyword != ''}">
+						<th:block th:if="${params != null and params.paginationInfo.totalRecordCount > 0}">
+							<p class="mt80 center f23 fw500 gray04"><span class="f45 fw500 black" th:text='|"${params.searchKeyword}"|'></span> 검색 결과입니다.</p>
+						</th:block>
+						<th:block th:if="${params != null and params.paginationInfo.totalRecordCount == 0}">
+							<p class="mt80 center f23 fw500 gray04"><span class="f45 fw500 black" th:text='|"${params.searchKeyword}"|'></span> 검색 결과가 없습니다.</p>
+						</th:block>
+					</div>
 				</div>
-				 -->
 				<table cellspacing="0" border="0" class="press mt50" th:if="${not #lists.isEmpty( mediaNewsList )}">
 					<caption>보도자료</caption>
 					<tr th:each="mediaNews : ${mediaNewsList}">
@@ -119,22 +128,10 @@
 
 	function searchMediaNews(form) {
 		/*[- 드롭다운이 아닌 메인 검색 키워드로 검색했을 때 -]*/
-		if (isEmpty(form) == true) {
-			var searchKeyword = document.getElementById("mainSearchKeyword");
-			if (isEmpty(searchKeyword.value) == true) {
-				alert("키워드를 입력해 주세요.");
-				searchKeyword.focus();
-				return false;
-			}
-
-			form = document.getElementById("searchForm");
-			form.searchKeyword.value = searchKeyword.value;
-			form.submit();
-		}
-
-		if (isEmpty(form.searchKeyword.value) == true) {
+		const searchKeyword = $('#mainSearchKeyword').val();
+		if ($.trim(searchKeyword).length < 1) {
 			alert("키워드를 입력해 주세요.");
-			form.searchKeyword.focus();
+			searchKeyword.focus();
 			return false;
 		}
 	}

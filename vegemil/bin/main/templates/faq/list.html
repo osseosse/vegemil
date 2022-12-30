@@ -43,8 +43,12 @@
 				</form>
 			</div>
 			<div class="faqSearch" th:if="${params.searchKeyword != null and params.searchKeyword != ''}">
-				<p class="mt80 center f23 fw500 gray04" th:if="${params != null and params.paginationInfo.totalRecordCount >= 0}"><span class="f45 fw500 black" th:text='|"${params.searchKeyword}"|'></span> 검색 결과입니다.</p>
-				<!-- <p class="mt80 center f23 fw500 gray04" th:unless="${params != null and params.paginationInfo.totalRecordCount > 0}"><span class="f45 fw500 black" th:text="|${params.searchKeyword}|"></span> 검색 결과가 없습니다.</p> -->
+				<th:block th:if="${params != null and params.paginationInfo.totalRecordCount > 0}">
+					<p class="mt80 center f23 fw500 gray04"><span class="f45 fw500 black" th:text='|"${params.searchKeyword}"|'></span> 검색 결과입니다.</p>
+				</th:block>
+				<th:block th:if="${params != null and params.paginationInfo.totalRecordCount == 0}">
+					<p class="mt80 center f23 fw500 gray04"><span class="f45 fw500 black" th:text='|"${params.searchKeyword}"|'></span> 검색 결과가 없습니다.</p>
+				</th:block>
 			</div>
 		</div>
     </div>

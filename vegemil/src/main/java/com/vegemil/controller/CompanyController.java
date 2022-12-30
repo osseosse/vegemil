@@ -25,7 +25,7 @@ public class CompanyController {
     	
     	List<MediaNewsDTO> mediaNewsList = companyService.findAllMediaNews(params);
         model.addAttribute("mediaNewsList", mediaNewsList);
-        
+        model.addAttribute("newsCount", params.getPaginationInfo().getTotalRecordCount());
         return "company/mediaNews";
     }
     
