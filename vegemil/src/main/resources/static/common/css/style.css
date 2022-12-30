@@ -79,6 +79,10 @@
 	#header .header-right ul.sub_area > li {color:#787878; font-size:14px; }
 	#header .header-right ul.sub_area > li > a {text-decoration:none}
 	#header .header-right ul.sub_area > li > a:hover {text-decoration:none; color:#333}
+	li span.level-01 {background:#b63b22; padding:1px 10px;border-radius:10px; color:#fff; margin-right:5px; font-size:12px}
+	li span.level-02 {background:#007dc3; padding:1px 10px;border-radius:10px; color:#fff; margin-right:5px; font-size:12px}
+	li span.level-03 {background:#2b9b2e; padding:1px 10px;border-radius:10px; color:#fff; margin-right:5px; font-size:12px}
+
 	/* 3000 Default : Gnb */
 	#gnb{width: 100%; height: 90px; text-align: center;  position: relative;}
 	#gnb a{word-break: keep-all; text-decoration: none;}
@@ -122,12 +126,14 @@
 	.overlay a {text-decoration: none;display: block;transition: 0.3s; color: #fff }
 	.overlay a:hover, .overlay a:focus {color: #fff;}
 	.full_logo {top:20px;left:80px; position:absolute;}
-	ul.full-header-right {position:absolute;top:27px;right:80px; z-index: 100; clear:both; }
-	ul.full-header-right > li {vertical-align:middle}
+	ul.full-header-right {position:absolute;top:27px;right:80px; z-index: 100; clear:both;  }
+	ul.full-header-right > li {vertical-align:middle; }
 	ul.full-header-right > li:first-child {margin-left:0px}
 	ul.full-header-right > li {margin-left:20px; display:inline-block; color:#aeaeae}
-	ul.full-header-right > li a {color:#aeaeae;  text-decoration:none}
+	ul.full-header-right > li a {color:#aeaeae;  text-decoration:none;}
 	ul.full-header-right > li:last-child {margin-top:-4px;}
+
+
 	dl.full_box {position:relative; width:100%;  }
 	dl.full_box dd:first-child { height:90px; border-bottom:0px;}
 	dl.full_box dd.full_dep {border-bottom:1px solid #666666; position:relative; padding-left:12%; padding-bottom:45px; padding-top:20px; display:inline-block; width:100%;margin:0; } 
@@ -439,7 +445,7 @@
 	.btnType06.hover a:hover {color:#fff}
 	.btnType06.hover a:hover span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_white_arrow.png) no-repeat right 17px; background-size:7px; padding:9px 70px 9px 20px; display:inline-block;   }
 	.btnType06.hover a:hover { color:#fff}
-
+	
 
 
 	button.btnType07 { background:#222222; border-radius:5px; color:#fff;display:inline-block;  ; border-radius:5px; width:100%; padding:21px 0 }
@@ -495,7 +501,15 @@
     .btnType24 a:hover{color: #222;}
 	.btnType25 {max-width:200px;width:80%;  margin:0 auto}
 	button.btnType26 { background:#222; border-radius:5px; color:#fff;display:inline-block;   border-radius:5px;  padding:7px 0px ; border:1px solid #222222; vertical-align:top; font-size:16px; max-width:100px; width:50%}
-	
+	.btn-admin {background:#000; padding:1px 15px; border-radius:10px}
+	.btn-admin a{color:#fff} 
+
+	ul.foot-btn-box {position:relative}
+	ul.foot-btn-box li {display:inline-block; margin-left:5px}
+
+	ul.header-btn-box {position:relative}
+	ul.header-btn-box li {display:inline-block; margin-left:5px}
+
 	
 	/* 3000 개인정보,약관 */
 	div.person {position:relative; width:100%; border:1px solid #DCDCDC; padding:150px 100px; text-align:left; height:500px; overflow-y:scroll}
@@ -1213,7 +1227,7 @@
 	.snsUL li a {color:#222; }
 	.snsUL li.sli a {padding:9px 0; width:100%; display:inline-block}
 	.fcFamily {position:relative; width:100%; border:1px solid #DCDCDC; border-radius:20px; padding:19px 0}
-	.fcFamily li {width:33%;  text-align:center; display:inline-block;}
+	.fcFamily li {width:32%;  text-align:center; display:inline-block;}
 	.fcFamily li { background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed.png") right 0px repeat-y;}
 	.fcFamily li:last-child {background:none}
 	.fcFamily li a { padding:13px 0;display:inline-block; width:100%; color:#222}
@@ -1319,6 +1333,90 @@
 		
 	}
 
+	/* 3000 404 페이지 추가 */
+    .beigeBg{background-color: #F6F2E7;}
+    #header02 {position:relative; top:0; left:0; width:100%; z-index: 1000; height: 90px; overflow: hidden; }
+	#header02 h1.logo {position:absolute;top:20px;left:80px; z-index: 100;}
+	#header02 h1.logo a {display:block;width:86px;height:56px;background:url(../../img/ico/logo_w.png) no-repeat 0 0;background-size:86px 50px;}
+    #header02.beige {background-color: #F6F2E7;}
+	#header02.beige h1.logo a {background-image:url(../../img/ico/logo.png); background-size:86px 50px }
+    .errorBox{
+        display: flex;
+        height: 90vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .errorBox .returnBtn{
+        width: 560px; height: 70px; background-color: #222222; border-radius: 5px;
+        text-align: center;
+        line-height: 70px;
+    }
+    .errorBox .returnBtn a{
+        width: 100%; height: 100%;
+        display: block;
+        color: #fff; font-size: 20px; font-weight: 500;
+    }
+    .waveContent{
+        width: 100%;
+        height: 180px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .waveContent h2{
+        width: 900px;
+        height:170px;
+        text-align: center;
+        /* background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/common/waveBg.png); */
+        background-repeat: no-repeat;
+        background-position: left 25px;
+        font-size: 170px;
+        line-height: 170px;
+        position: absolute;
+    
+    }
+    .waveContent h2:nth-child(1) {
+        color: transparent;
+        -webkit-text-stroke: 2px #E3A62C;
+    }
+    .waveContent h2:nth-child(2) {
+        color: #E3A62C;
+        animation: animate 4s ease-in-out infinite;
+    }
+    @keyframes animate {
+        0%,
+        100% {
+            clip-path: polygon(
+                0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%
+            );
+        }
+
+        50% {
+            clip-path: polygon(
+                0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%
+            );
+        }
+    }
+    
 
 
 	
@@ -1488,7 +1586,26 @@
 	.tabs3 li.current a {color: #fff;}
 	.tabs3 li p {display:inline-block; width:110px; height:110px; padding-top:75px; }
 	.tab_content3 {position:relative; padding:0px 0 100px 0 ;} 
-	.tab_content3 > div {clear: both;line-height: 19px;color: #666; display: none;  width:100% }
+	.tab_content3 > div {clear: both;line-height: 19px;color: #666; display: none;  width:100%;  display:inline-block }
+	
+	.tab_content3 > div#VM {display:none; }
+	.tab_content3 > div#VB {display:none; }
+	.tab_content3 > div#GE {display:none; }
+	.tab_content3 > div#GH {display:none; }
+	.tab_content3 > div#SC {display:none; }
+	.tab_content3 > div#CV {display:none; }
+	.tab_content3 > div#CD {display:none; }
+	.tab_content3 > div#CW {display:none; }
+	/*전산 ID*/
+	.tab_content3 > div#P {display:none; }
+	.tab_content3 > div#B {display:none; }
+	.tab_content3 > div#G {display:none; }
+	.tab_content3 > div#H {display:none; }
+	.tab_content3 > div#F {display:none; }
+	.tab_content3 > div#M {display:none; }
+	.tab_content3 > div#S {display:none; }
+	.tab_content3 > div#W {display:none; }
+
 	.tab_content3 .current { display: block; }
 	.tab_content3 #home.first { display: block; }
 	.tabs3 li .ico_VE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_cate01.png") center 25px no-repeat; background-size:45px}
@@ -2733,7 +2850,7 @@
 	  text-decoration: none;
 	 
 	  color: #818181;
-	  display: block;
+	  display: inline-block;
 	  transition: 0.3s;
 	}
 	/*
@@ -2752,10 +2869,12 @@
 	.mAside .m_closebtn img {width:32px}
 	.mAside .maTop {position:relative; padding:10px 0 0 0}
 	.mAside ul.maBotton {margin-left:20px; width:100%}
-	.mAside ul.maBotton li {display:block; font-size:13px; margin-right:0px }
+	.mAside ul.maBotton li {display:inline-block; font-size:13px; margin-right:0px;  }
 	.mAside ul.maBotton li span a {color:#fff}
 	.mAside ul.maBotton li span a:hover {text-decoration:none}
-	.mAside ul.maBotton li span {margin-right:10px; display:inline-block}
+	.mAside ul.maBotton li span {margin-right:5px; display:inline-block}
+	.mAside ul.maBotton li:nth-child(2) {margin-left:12px}
+	.mAside ul.maBotton li.white a {color:#fff}
 	.mAside-content {position: relative;width: 100%;text-align: left;margin-top: 50px; padding:0 0px 20px 0px}
 	
 	.scrollNone{-ms-overflow-style: none;}
@@ -3073,6 +3192,26 @@
 	/* footer */
 	.footWrap .col-md-5 {width:100% !important; flex:100%; max-width:100% }
 
+
+	/* 992 404 페이지 sh 추가 */
+    #header02 {position:relative; top:0; left:0; width:100%; z-index: 1000; height: 90px; overflow: hidden; }
+	#header02 h1.logo {left:15px; top:15px;}
+	#header02 h1.logo a {background-size:80%;}
+	#header02.beige h1.logo a { background-size:80%; }
+    .errorBox .returnBtn{ width: 300px; height: 60px; line-height: 60px; }
+    .errorBox .returnBtn a{ font-size: 16px;  }
+    .waveContent{ width: 100%; height: 180px; }
+    .waveContent h2{
+        width: 600px;
+        height: 125px;
+        text-align: center;
+        background-position: -10px bottom;
+        background-size: contain;
+        font-size: 100px;
+        line-height: 125px;
+    
+    }
+
 	
 
 
@@ -3354,6 +3493,20 @@
 	.cook-wrap {position:relative; width:100%}
 	.cook-wrap li {width:47.6% !important;  }
 
+
+	/* 768 404 페이지 추가 */
+    .errorBox .returnBtn{ width: 250px;}
+    .waveContent{ width: 90%; height: 180px; }
+    .waveContent h2{
+        width: 500px;
+        height: 130px;
+        background-position: -10px 30px;
+        background-size: contain;
+        font-size: 90px;
+        line-height: 135px;
+    
+    }
+
 	
 
 }
@@ -3379,8 +3532,21 @@
     .cpHandBook a:hover .btnType12{padding: 0px 0px 0px 0px; }
     .cpHandBook a:hover .btnType12 span{padding: 4px 30px 4px 10px; background-position: right 10px center;}
 
-	 /* 460 연혁 sh추가 */
+	 /* 460 연혁  */
     .historyInfo02 table th{font-size: 12px;}
+
+	 /* 460 404 페이지 */
+    .errorBox{ height: 85vh; }
+    .waveContent{ width: 90%; height: 180px; }
+    .waveContent h2{
+        width: 550px;
+        height: 150px;
+        background-position: -13px 35px;
+        background-size: contain;
+        font-size: 100px;
+        line-height: 155px;
+    
+    }
 	
 }
 
