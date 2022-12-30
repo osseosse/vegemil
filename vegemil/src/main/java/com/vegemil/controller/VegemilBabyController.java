@@ -27,6 +27,7 @@ import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
 import com.vegemil.util.UiUtils;
 
@@ -57,12 +58,59 @@ public class VegemilBabyController extends UiUtils {
 
 	/* Community */
 	// 육아정보
+	// 원본
+	
 	@GetMapping("/magazine")
-	public String moveMagazineList(@RequestParam(required = false, defaultValue = "all") String category, Model model) {
-		model.addAttribute("magazineList", vegemilBabyCommunityService.selectAllMagazine(category));
-		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
+	public String NEWmoveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
+		
+		
+		
+		  model.addAttribute("magazineList",vegemilBabyCommunityService.NEWselectMagazine(params));
+		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
+		 
 		return "vegemilBaby/magazine";
 	}
+	
+	
+	
+	
+	
+//	@GetMapping("/magazine")
+//	public String moveMagazineList(@RequestParam(required = false, defaultValue = "all") String category, Model model) {
+//		model.addAttribute("magazineList", vegemilBabyCommunityService.selectAllMagazine(category));
+//		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
+//		return "vegemilBaby/magazine";
+//	}
+
+	
+//	  @GetMapping("/magazine") 
+//	  public String moveMagazineList(@ModelAttribute("params") final SearchDTO params, Model model) { 
+//		  String category = params.getCategory();
+//		  
+//		  if(category.equals("pb")) {
+//			  List<VegemilBabyMagazineDTO> magazineList = vegemilBabyCommunityService.findPbMagazine(params);
+//			  model.addAttribute("magazineList", magazineList);
+//			  //model.addAttribute("category", category);
+//		  }else if(category.equals("gh")) {
+//			  List<VegemilBabyMagazineDTO> magazineList = vegemilBabyCommunityService.findGhMagazine(params);
+//			  model.addAttribute("magazineList", magazineList);			  
+//		  }else {
+//			  List<VegemilBabyMagazineDTO> magazineList = vegemilBabyCommunityService.findPbMagazine(params);
+//			  model.addAttribute("magazineList", magazineList);
+//		  }
+//		  
+//		 // model.addAttribute("magazineList", vegemilBabyCommunityService.selectAllMagazine(category));
+//		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount()); 
+//		  return "vegemilBaby/magazine"; 
+//	  }
+//	 
+	
+	
+	
+	
+	
+	
+	
 
 	// 육아정보 상세
 	@GetMapping(value = { "/magazine/detail/{idx}" })

@@ -52,17 +52,19 @@ $(document).ready(function(){
 			        $(".pb06pb").css('display','block');
 			        $(".pb07pb").css('display','block');
 		        });			
-								
-			 $('#pb01').click(function(){  
+					
+			 //임신 초기 눌렀을때 
+			/* $('#pb01').click(function(){  				 	
 				 
-					$(this).addClass('active');
+					$(this).addClass('active');					
 					$('#pb00').removeClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb05').removeClass('active');
 					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');					
+					$('#pb07').removeClass('active');	
+					
 			        $(".pb01pb").css('display','block');
 			        $(".pb02pb").css('display','none');
 			        $(".pb03pb").css('display','none');
@@ -70,10 +72,9 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','none');
 			        $(".pb06pb").css('display','none');
 			        $(".pb07pb").css('display','none');
-
-		        });
+		        });*/
 			 
-			 $('#pb02').click(function(){  	 	 			
+			 /*$('#pb02').click(function(){  	 	 			
 					$(this).addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
@@ -90,8 +91,8 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','none');
 			        $(".pb06pb").css('display','none');
 			        $(".pb07pb").css('display','none');
-		        });
-			 $('#pb03').click(function(){
+		        });*/
+			 /*$('#pb03').click(function(){
 					$(this).addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
@@ -108,8 +109,8 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','none');
 			        $(".pb06pb").css('display','none');
 			        $(".pb07pb").css('display','none');
-		        });
-			 $('#pb04').click(function(){   
+		        });*/
+			 /*$('#pb04').click(function(){   
 					$(this).addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
@@ -126,8 +127,8 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','none');
 			        $(".pb06pb").css('display','none');
 			        $(".pb07pb").css('display','none');
-		        });
-			 $('#pb05').click(function(){   
+		        });*/
+			 /*$('#pb05').click(function(){   
 					$(this).addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
@@ -144,8 +145,8 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','block');
 			        $(".pb06pb").css('display','none');
 			        $(".pb07pb").css('display','none');
-		        });
-			 $('#pb06').click(function(){   
+		        });*/
+			 /*$('#pb06').click(function(){   
 	      			$(this).addClass('active');
 	      			$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
@@ -162,8 +163,8 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','none');
 			        $(".pb06pb").css('display','block');
 			        $(".pb07pb").css('display','none');
-		        });
-			 $('#pb07').click(function(){
+		        });*/
+			/* $('#pb07').click(function(){
 				 	$(this).addClass('active');
 				 	$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
@@ -180,7 +181,7 @@ $(document).ready(function(){
 			        $(".pb05pb").css('display','none');
 			        $(".pb06pb").css('display','none');
 			        $(".pb07pb").css('display','block');
-		        });
+		        });*/
 			 
 			 
 			 $('#gh00').click(function(){   //전체 선택시				 
