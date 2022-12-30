@@ -8,14 +8,17 @@ import java.util.UUID;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import com.vegemil.domain.AdminDTO;
 import com.vegemil.domain.MailDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.mapper.AdminMapper;
 import com.vegemil.util.RedisUtil;
 
 import javassist.NotFoundException;
@@ -28,6 +31,9 @@ public class MailService {
     private final SpringTemplateEngine templateEngine;
     private final RedisUtil redisUtil;
     private static final String FROM_ADDRESS = "정식품 <dcfrecruit@vegemil.co.kr>";
+    
+    @Autowired
+	private AdminMapper adminMapper;
 
     public void mailSend(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -37,6 +43,33 @@ public class MailService {
         message.setText(mailDto.getMessage());
 
         mailSender.send(message);
+    }
+    
+    public void mailSend(MemberDTO member) {
+    	
+    	try {
+	    	MimeMessage message = mailSender.createMimeMessage();
+	    	message.setFrom(MailService.FROM_ADDRESS);
+			message.addRecipients(MimeMessage.RecipientType.TO, "ys9331@vegemil.co.kr");
+	        message.setSubject("관리자 회원인증");
+	        message.setText(setAuthContext(member), "utf-8", "html");
+	        mailSender.send(message);
+    	}catch(MessagingException e) {
+    		e.printStackTrace();
+    	}
+    }
+    
+    public String setAuthContext(MemberDTO member) {
+    	Context context = new Context();
+    	try {
+			
+    		UUID uuid = UUID.randomUUID();
+            context.setVariable("member", member);
+    		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	return templateEngine.process("admin/email/confirmMail", context);
     }
     
 public String sendPwResetEmail(MemberDTO member) {
@@ -86,5 +119,16 @@ public String verifyMemberIdx(String key) throws NotFoundException {
     
     return mIdx;
 }
+
+	public boolean verifyEmail(MemberDTO member) throws NotFoundException {
+		int queryResult = adminMapper.selectAdminCount(member);
+			
+		if (queryResult != 0) {
+			queryResult = adminMapper.activeAdmin(member);
+		}
+	
+		return (queryResult == 1) ? true : false;
+	    
+	}
     
 }
