@@ -1,17 +1,20 @@
 package com.vegemil.controller;
 
-import lombok.RequiredArgsConstructor;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vegemil.domain.FaqDTO;
 import com.vegemil.domain.FaqFeedbackDTO;
-import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.service.CustomerService;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
@@ -21,7 +24,7 @@ public class CustomerController {
 
     @GetMapping("/faq/list")
     public String openFaqList(@ModelAttribute("params") final SearchDTO params, Model model) {
-    	
+    
     	params.setCategory("11");
     	List<FaqDTO> faqList11 = customerService.findAllFaq(params);
     	params.setCategory("22");
@@ -37,6 +40,10 @@ public class CustomerController {
         model.addAttribute("faqList33", faqList33);
         model.addAttribute("faqList44", faqList44);
         model.addAttribute("faqList55", faqList55);
+        model.addAttribute("searchKeyword", params.getSearchKeyword());
+        
+        model.addAttribute("params", params);
+        
         
         return "faq/list";
     }

@@ -138,6 +138,18 @@
             </if>
             <include refid="search" />
     </select>
+<!--     <select id="faqCount" parameterType="com.vegemil.domain.SearchDTO" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            m_faq
+        WHERE
+            delete_yn = 0
+            <if test="category != null and category != ''">
+            	and f_gory = #{category}
+            </if>
+            <include refid="search" />
+    </select> -->
     
     <select id="faqCountByIdx" parameterType="long" resultType="com.vegemil.domain.FaqDTO">
         SELECT

@@ -35,9 +35,18 @@
 				</div>
 			</div>
 		</div>
-		<th:block layout:fragment="search">
-			<div th:replace="fragments/common :: search"></div>
-		</th:block>
+		<div id="adv-search" class="text-right mt70">
+			<div class="search-container w410  inline">
+				<form th:action="@{/faq/list}" method="get" th:onsubmit="return searchFaq(this)">
+					<span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span><input type="text" placeholder="검색해 보세요 " id="mainSearchKeyword" name="searchKeyword">
+					<button type="submit" class="btn-search">검색</button>
+				</form>
+			</div>
+			<div class="faqSearch" th:if="${params.searchKeyword != null and params.searchKeyword != ''}">
+				<p class="mt80 center f23 fw500 gray04" th:if="${params != null and params.paginationInfo.totalRecordCount >= 0}"><span class="f45 fw500 black" th:text='|"${params.searchKeyword}"|'></span> 검색 결과입니다.</p>
+				<!-- <p class="mt80 center f23 fw500 gray04" th:unless="${params != null and params.paginationInfo.totalRecordCount > 0}"><span class="f45 fw500 black" th:text="|${params.searchKeyword}|"></span> 검색 결과가 없습니다.</p> -->
+			</div>
+		</div>
     </div>
 	<div class="contant100" >
 	    <div class="row mt30">
@@ -446,24 +455,13 @@
 
 	function searchFaq(form) {
 		/*[- 드롭다운이 아닌 메인 검색 키워드로 검색했을 때 -]*/
-		if (isEmpty(form) == true) {
-			var searchKeyword = document.getElementById("mainSearchKeyword");
-			if (isEmpty(searchKeyword.value) == true) {
-				alert("키워드를 입력해 주세요.");
-				searchKeyword.focus();
-				return false;
-			}
-
-			form = document.getElementById("searchForm");
-			form.searchKeyword.value = searchKeyword.value;
-			form.submit();
-		}
-
-		if (isEmpty(form.searchKeyword.value) == true) {
+		const searchKeyword = $('#mainSearchKeyword').val();
+		if ($.trim(searchKeyword).length < 1) {
 			alert("키워드를 입력해 주세요.");
-			form.searchKeyword.focus();
+			searchKeyword.focus();
 			return false;
 		}
+
 	}
 	
 	function saveFaqFeedback(idx){
