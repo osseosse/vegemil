@@ -171,7 +171,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/manage/baby/babyQnaList',
+        url : '/admin/manage/baby/babyQnaListData',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
