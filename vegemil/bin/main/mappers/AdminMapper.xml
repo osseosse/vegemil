@@ -50,45 +50,15 @@
 		   m_pwd,
 		   m_auth,
 		   m_name,
-		   m_year,
-		   m_sex,
-		   m_tel,
-		   m_zipcode,
-		   m_addr1,
-		   m_addr2,
-		   m_email,
-		   m_smssend,
-		   m_emailsend,
 		   m_joindate,
-		   m_logincount,
-		   m_ip,
-		   m_active,
-		   m_comp_name,
-		   m_bizno,
-		   m_is_idle,
-		   m_di
+		   m_location
 		) VALUES (
 		   #{mId},
 		   #{mPwd},
 		   #{mAuth},
 		   #{mName},
-		   #{mYear},
-		   #{mSex},
-		   #{mTel},
-		   #{mZipcode},
-		   #{mAddr1},
-		   #{mAddr2},
-		   #{mEmail},
-		   #{mSmssend},
-		   #{mEmailsend},
 		   NOW(),
-		   0,
-		   #{mIp},
-		   #{mActive},
-		   #{mCompName},
-		   #{mBizno},
-		   '0',
-		   #{mDi}
+		   #{mLocation}
 		)
 	</insert>
 
