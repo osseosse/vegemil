@@ -16,15 +16,14 @@
 	
 	<sql id="calendarModelColumns">
 		  c_idx
-		, c_mname
+		, c_name
 		, c_hp
 		, c_addr
 		, c_email
 		, c_image
-		, c_writeDate
-		, c_rank
-		, c_updatetime
-		, c_bname
+		, c_write_date
+		, c_update_time
+		, c_baby_name
 		, c_route
 		, c_image2
 		, c_alived

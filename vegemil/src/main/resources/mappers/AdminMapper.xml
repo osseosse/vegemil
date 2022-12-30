@@ -43,56 +43,26 @@
 	   m_di
 	</sql>
 
-	<insert id="insertAdmin" parameterType="com.vegemil.domain.AdminDTO">
+	<insert id="insertAdmin" parameterType="com.vegemil.domain.MemberDTO">
 		/* insertAdmin by AdminMapper.xml */
 		INSERT INTO m_member (
 		   m_id,
 		   m_pwd,
 		   m_auth,
 		   m_name,
-		   m_year,
-		   m_sex,
-		   m_tel,
-		   m_zipcode,
-		   m_addr1,
-		   m_addr2,
-		   m_email,
-		   m_smssend,
-		   m_emailsend,
 		   m_joindate,
-		   m_logincount,
-		   m_ip,
-		   m_active,
-		   m_comp_name,
-		   m_bizno,
-		   m_is_idle,
-		   m_di
+		   m_location
 		) VALUES (
 		   #{mId},
 		   #{mPwd},
 		   #{mAuth},
 		   #{mName},
-		   #{mYear},
-		   #{mSex},
-		   #{mTel},
-		   #{mZipcode},
-		   #{mAddr1},
-		   #{mAddr2},
-		   #{mEmail},
-		   #{mSmssend},
-		   #{mEmailsend},
 		   NOW(),
-		   0,
-		   #{mIp},
-		   #{mActive},
-		   #{mCompName},
-		   #{mBizno},
-		   '0',
-		   #{mDi}
+		   #{mLocation}
 		)
 	</insert>
 
-	<select id="findAdminById" parameterType="string" resultType="com.vegemil.domain.AdminDTO">
+	<select id="findAdminById" parameterType="string" resultType="com.vegemil.domain.MemberDTO">
 		/* findAdminById by AdminMapper.xml */
 		SELECT 
 			<include refid="memberColumns" />
@@ -101,7 +71,7 @@
 		   AND m_active = 1
 	</select>
 
-	<update id="updateAdminPwd" parameterType="com.vegemil.domain.AdminDTO">
+	<update id="updateAdminPwd" parameterType="com.vegemil.domain.MemberDTO">
 		/* updateAdminPwd by AdminMapper.xml */
 		UPDATE m_member
 		SET
@@ -119,7 +89,7 @@
 		WHERE
 	</select>
 	
-	<select id="selectAdminCount" parameterType="com.vegemil.domain.AdminDTO" resultType="int">
+	<select id="selectAdminCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
@@ -130,7 +100,7 @@
 		    m_name = #{mName, jdbcType=VARCHAR}
 	</select>
 
-	<select id="selectAdminTotalCount" parameterType="com.vegemil.domain.AdminDTO" resultType="int">
+	<select id="selectAdminTotalCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
 		/* selectAdminTotalCount by AdminMapper.xml */
 		SELECT
 			COUNT(*)
@@ -140,7 +110,7 @@
 		<include refid="CommonMapper.search" />
 	</select>
 	
-	<select id="checkMember" parameterType="com.vegemil.domain.AdminDTO" resultType="int">
+	<select id="checkMember" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
 		/* checkMember by AdminMapper.xml */
 		SELECT COUNT(*)
 		  FROM m_member
@@ -150,7 +120,8 @@
 	<update id="activeAdmin" parameterType="com.vegemil.domain.MemberDTO">
 		UPDATE m_member
 		SET
-			 m_active 	  = 1
+			 m_active 	  = 1,
+			 m_auth		  = 'ADMIN'
 		WHERE
 			m_id = #{mId, jdbcType=VARCHAR}
 	    AND

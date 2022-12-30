@@ -39,7 +39,7 @@
                         <th:block th:each="item : ${beansoupNewsList}">
                             <div class="col-lg-4">
 			                    <div class="thumbBox">
-				                    <a href="#" th:href="${item.mUrl}" target="_blank">
+				                    <a th:href="${item.mUrl}" target="_blank">
 				                    		<div th:if="${item.ingStr == '진행중'}">
 							                    <div class="round">
 							                    	<p class='event_ing'>진행중</p>

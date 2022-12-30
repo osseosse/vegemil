@@ -182,7 +182,7 @@ public class AdminCustomerController extends UiUtils {
 		return jsonObj;
 	 }
 	
-	@RequestMapping(value = "/admin/manage/customer/support")
+	@RequestMapping(value = "/admin/manage/customer/supportList")
 	 public @ResponseBody JsonObject getSupportlList(@ModelAttribute("params") AdminFaqScoreDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
 

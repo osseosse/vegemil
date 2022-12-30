@@ -94,7 +94,7 @@ public class AdminController extends UiUtils {
 				return showMessageWithRedirect("회원 가입 실패하였습니다.", "/admin/auth/register", Method.GET, null, model);
 			}
 			
-//			mailService.mailSend(adminDto);
+			mailService.mailSend(params);
 			
     	} catch (DataAccessException e) {
 			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/admin/auth/register", Method.GET, null, model);
@@ -159,8 +159,8 @@ public class AdminController extends UiUtils {
     
     //회원 활성화
   	@GetMapping(value = "/admin/email/active")
-  	public void changeActive(@RequestParam(value="aId", required=true) String mId, 
-  			@RequestParam(value="aName", required=true) String mName, Model model, HttpServletResponse response) throws Exception {
+  	public void changeActive(@RequestParam(value="mId", required=true) String mId, 
+  			@RequestParam(value="mName", required=true) String mName, Model model, HttpServletResponse response) throws Exception {
   		response.setContentType("text/html; charset=UTF-8");
   		PrintWriter out = response.getWriter();
   		MemberDTO params = new MemberDTO();
@@ -171,11 +171,11 @@ public class AdminController extends UiUtils {
   		params.setMId(mId);
   		params.setMName(mName);
   		
-//  		boolean isActived = mailService.verifyEmail(adminDto);
-//  		if (!isActived) {
-//  			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
-//  			out.flush();
-//  		}
+  		boolean isActived = mailService.verifyEmail(params);
+  		if (!isActived) {
+  			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
+  			out.flush();
+  		}
   		boolean isRegistered = adminService.activeMember(params);
   		if (isRegistered == false) {
   			out.println("<script>alert('이메일인증에 실패하였습니다.'); window.location='/';</script>");

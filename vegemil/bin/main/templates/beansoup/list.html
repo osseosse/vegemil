@@ -156,7 +156,7 @@
 							<div class="portfolio portfolio_style--1 portfolio-25"
 								th:classappend="${item.filter}">
 								<div class="thumbBox">
-									<a href="#" th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
+									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 										<!--pk:fileNo -->
 										<div class="h220 round" th:classappend="${item.cssClass}">
 											<th:block th:if="${item.mCate == '온요리'}">
@@ -188,8 +188,7 @@
 							<div class="portfolio portfolio_style--1 portfolio-25"
 								th:classappend="${item.filter}">
 								<div class="thumbBox">
-									<a href="#"
-										th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
+									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 										<!--pk:fileNo -->
 										<div class="h220 round" th:classappend="${item.cssClass}">
 											<th:block th:if="${item.mCate == '온요리'}">

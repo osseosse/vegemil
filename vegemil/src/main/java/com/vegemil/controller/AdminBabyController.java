@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,12 +55,15 @@ public class AdminBabyController extends UiUtils {
 	@Autowired
 	private AdminBabyService adminBabyService;
 	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
+	
 	@RequestMapping(value = "/admin/manage/baby/{viewName}")
     public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		return "admin/baby/"+viewName;
     }
 	
-	@RequestMapping(value = "/admin/manage/baby/babyInfoList")
+	@RequestMapping(value = "/admin/manage/baby/babyInfoListData")
 	public @ResponseBody DataTableDTO getBabyInfoList(@ModelAttribute("params") AdminBabyDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
 		
@@ -78,11 +82,8 @@ public class AdminBabyController extends UiUtils {
 				String ext = originalName.substring(originalName.lastIndexOf("\\") + 1);
 				String uuid = UUID.randomUUID().toString();
 				String savefileName = uuid + "_" + ext;
-				String dirPath = "\\\\211.233.87.7\\data\\images\\mail\\news\\dcf\\dcf2022\\temp_img\\";//"D:/data/dcf/";
-	//			Path savePath = Paths.get(dirPath + savefileName);
-				File f1 = new File(dirPath + savefileName);
-				
-				uploadFile.transferTo(f1);
+				Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
+				params.getFileName1().transferTo(savePath);
 				params.setMbsImage(savefileName);
 			}
 			
@@ -237,7 +238,7 @@ public class AdminBabyController extends UiUtils {
 	
 	@PostMapping(value = "/admin/manage/baby/uploadBabyInfo")
 	@ResponseBody
-	public Map<String, Object> uploadBabyInfo(@ModelAttribute("params") final AdminFaqDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
+	public Map<String, Object> uploadBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
 			, HttpServletResponse response, HttpServletRequest request) {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
@@ -245,13 +246,11 @@ public class AdminBabyController extends UiUtils {
 			String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
 			String uuid = UUID.randomUUID().toString();
 			String savefileName = uuid + "_" + file;
-			String dirPath = "\\\\211.233.87.7\\data\\images\\mail\\news\\dcf\\dcf2022\\temp_img\\";//"D:/data/dcf/";
-//			Path savePath = Paths.get(dirPath + savefileName);
-			File f1 = new File(dirPath + savefileName);
-			
-			uploadFile.transferTo(f1);
+			Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
+			params.getFileName1().transferTo(savePath);
+			params.setMbsImage(savefileName);
 
-			rtnMap.put("uploadPath", f1);
+			rtnMap.put("uploadPath", savePath);
 			rtnMap.put("uuid", uuid);
 			rtnMap.put("fileName", originalName);
 		} catch(IOException e) {
@@ -262,7 +261,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@RequestMapping(value = "/admin/manage/baby/babyQnaList")
+	@RequestMapping(value = "/admin/manage/baby/babyQnaListData")
 	public @ResponseBody JsonObject getBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
 		
@@ -302,13 +301,13 @@ public class AdminBabyController extends UiUtils {
 		return isRegistered;
 	}
 	
-	@GetMapping(value = "/admin/manage/baby/babyQnaList")
-	public String openBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model) {
-		List<AdminBabyDTO> babyQnaList = adminBabyService.getBabyQnaList(params);
-		model.addAttribute("babyQnaList", babyQnaList);
-
-		return "admin/baby/babyQnaList";
-	}
+//	@GetMapping(value = "/admin/manage/baby/babyQnaList")
+//	public String openBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model) {
+//		List<AdminBabyDTO> babyQnaList = adminBabyService.getBabyQnaList(params);
+//		model.addAttribute("babyQnaList", babyQnaList);
+//
+//		return "admin/baby/babyQnaList";
+//	}
 	
 	@PostMapping(value = "/admin/manage/baby/registerBabyQna")
 	@ResponseBody
@@ -322,13 +321,9 @@ public class AdminBabyController extends UiUtils {
 				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
 				String uuid = UUID.randomUUID().toString();
 				String savefileName = uuid + "_" + file;
-	//			Path savePath = "\\\\211.233.87.7\\data\\images\\mail\\news\\dcf\\dcf2022\\temp_img\\";
-	//			uploadFile.transferTo(savePath);
-				String dirPath = "\\\\211.233.87.7\\data\\images\\mail\\news\\dcf\\dcf2022\\temp_img\\";//"D:/data/dcf/";
-	//			Path savePath = Paths.get(dirPath + savefileName);
-				File f1 = new File(dirPath + savefileName);
-				uploadFile.transferTo(f1);
 				
+				Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
+				params.getFileName1().transferTo(savePath);
 				params.setMbsImage(savefileName);
 			}
 			boolean isRegistered = adminBabyService.registerBabyQna(params);
