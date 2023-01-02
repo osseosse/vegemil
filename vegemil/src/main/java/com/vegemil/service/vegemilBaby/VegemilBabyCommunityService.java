@@ -26,7 +26,7 @@ public interface VegemilBabyCommunityService {
 	
 	//======[Community]======	
 	// 육아정보 
-	public List<VegemilBabyMagazineDTO> NEWselectMagazine(VegemilBabySearchDTO params);  
+	public List<VegemilBabyMagazineDTO> selectMagazine(VegemilBabySearchDTO params);  
 	// 육아정보 - 카테고리별 숫자
 	public VegemilBabyCategoryDTO selectCategoryCount();
     //육아정보 상세

@@ -68,7 +68,7 @@ public class VegemilBabyController extends UiUtils {
 	@GetMapping("/vegemilBaby/magazine")
 	public String moveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		
-		  model.addAttribute("magazineList",vegemilBabyCommunityService.NEWselectMagazine(params));
+		  model.addAttribute("magazineList",vegemilBabyCommunityService.selectMagazine(params));
 		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazine";
 	}
@@ -78,7 +78,7 @@ public class VegemilBabyController extends UiUtils {
 		
 		VegemilBabySearchDTO params = new VegemilBabySearchDTO();
 		params.setCategory("all");
-		model.addAttribute("magazineList",vegemilBabyCommunityService.NEWselectMagazine(params));
+		model.addAttribute("magazineList",vegemilBabyCommunityService.selectMagazine(params));
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		 
 		return "vegemilBaby/magazine";

@@ -44,7 +44,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	// ======[Community]======
 	// 육아정보
 	@Override
-	public List<VegemilBabyMagazineDTO> NEWselectMagazine(VegemilBabySearchDTO params) {
+	public List<VegemilBabyMagazineDTO> selectMagazine(VegemilBabySearchDTO params) {
 
 		String category = params.getCategory();
 		String subCategory = params.getSubCategory();

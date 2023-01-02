@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 제품소개</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="contant100 mt90h" >
+		<div class="row">
+			<!-- 슬라이드 -->
+			<div  id="slider3">
+				<div class="slider" >
+					<div class="slider_area">
+						<div class="slides ">
+							<div class="slide">
+								<a href="/product/detail/72">
+									<div class="slidetitle SCI01_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 구수한 사골육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 구수한 사골육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/73">
+									<div class="slidetitle SCI02_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 담백한 채소육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/74">
+									<div class="slidetitle SCI03_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 시원한 채소육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 시원한 채소육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/5">
+									<div class="slidetitle VPM05_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 고단백 두유 검은콩</p>
+										<p class="f13 fw400 gray04 mt10">국산 검은콩으로 든든하고 고소한<br>고단백 두유 검은콩</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/4">
+									<div class="slidetitle VPM04_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 프리바이오틱스 두유</p>
+										<p class="f13 fw400 gray04 mt10">가볍게 비우고, 건강하게 채우자<br>프리바이오틱스</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/75">
+									<div class="slidetitle SCI04_860_01  h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">진한 콩국물</p>
+										<p class="f13 fw400 gray04 mt10">콩을 통째로 갈아 만든<br>진한 콩국물</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/76">
+									<div class="slidetitle SCI05_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">진한 콩국물 검은콩</p>
+										<p class="f13 fw400 gray04 mt10">콩을 통째로 갈아 만든<br>진한 콩국물 검은콩</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/67">
+									<div class="slidetitle CHD02_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">그린비아 프로틴밀 2종</p>
+										<p class="f13 fw400 gray04 mt10">간편하게 챙기는<br>18g의 고단백 균형 건강 </p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/2">
+									<div class="slidetitle VPM02_860_02 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 루테인 두유 검은콩</p>
+										<p class="f13 fw400 gray04 mt10">루테인이 두유 속으로!<br>루테인 두유</p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<a class="slider_left"></a>
+					<a class="slider_right"></a>
+				</div>
+			</div>  
+			<!-- //슬라이드 -->
+		</div>
+	</div>
+		<div id="flotingPage" class="mt110">
+			<!-- tabs3 content -->
+			<div class="tab_content3">
+				<div>
+					<div class="faqSearch mb-5" th:if="${searchKeyword != null and searchKeyword != ''}">
+						<th:block th:if="${productCount > 0}">
+							<p class="mt80 center">
+								<span class="f45 fw500 black" th:text='|"${searchKeyword}"|'></span><span class=" f23 fw500 gray04">검색 결과입니다.</span> 
+								<span class="count-box pl10">총 <span th:text="${productCount}"></span>건</span>
+							</p>
+						</th:block>
+						<th:block th:if="${productCount == 0}">
+							<p class="mt80 center f23 fw500 gray04"><span class="f45 fw500 black" th:text='|"${searchKeyword}"|'></span> 검색 결과가 없습니다.</p>
+						</th:block>
+				
+					</div>
+					<div class="floting-right_prd" style="float: none;" th:if="${not #lists.isEmpty( productList )}">
+						<div class="row">
+							<div class="col-md-4 col-6" th:each="product, i : ${productList}" >
+								<div class="prd-list" >
+									<a th:href="|/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+											<span class="f14" th:text="${product.tag2}"></span>
+											<span class="f14" th:text="${product.tag3}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br class="clear">
+				</div>
+			</div><!-- //tabs3 content -->
+		</div><!-- //flotingPage -->
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+$(document).ready(function(){
+	
+	var link = document.location.href;  //현재 접속 url  
+	var tab = link.split('/').pop();   //배열의 맨 마지막 요소를 삭제하고 삭제된 해당 값을 반환함
+	$('a[href$='+tab+']').trigger("click"); //해당 앵커 트리거를이용 클릭 이벤트
+	
+	var offset = $("#topTap").offset(); //해당 위치 반환
+
+	//카테고리 필터링
+	$("input[name='vv']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#v_tab #v_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#v_tab #v_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".vv").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='pp']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#p_tab #p_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#p_tab #p_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".pp").removeClass("active");
+		$(this).parent().addClass("active");
+	});
+	
+	$("input[name='bb']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#b_tab #b_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#b_tab #b_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".bb").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='gg']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#g_tab #g_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#g_tab #g_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".gg").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='hh']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#h_tab #h_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#h_tab #h_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".hh").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='ff']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#f_tab #f_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#f_tab #f_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ff").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='mm']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#m_tab #m_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#m_tab #m_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".mm").removeClass("active");
+		$(this).parent().addClass("active");
+	});
+	
+	$("input[name='ss']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#s_tab #s_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#s_tab #s_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ss").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='ww']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#w_tab #w_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#w_tab #w_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ww").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+});
+</script>
+</body>
+</html>

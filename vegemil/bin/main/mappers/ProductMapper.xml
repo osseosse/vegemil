@@ -84,7 +84,8 @@
 			 m_product           
 		WHERE p_active = 1
 		  <if test="searchKeyword != null and searchKeyword != ''">  
-		  and p_name = #{searchKeyword}
+		  AND p_name like CONCAT('%',#{searchKeyword},'%')
+		  OR description like CONCAT('%',#{searchKeyword},'%')
 		  </if>                 
 	    ORDER BY p_idx ASC
 	</select>
