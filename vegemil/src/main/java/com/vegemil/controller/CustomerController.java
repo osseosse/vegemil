@@ -1,6 +1,5 @@
 package com.vegemil.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -43,7 +42,7 @@ public class CustomerController {
         model.addAttribute("searchKeyword", params.getSearchKeyword());
         
         model.addAttribute("params", params);
-        
+        model.addAttribute("dataCount",faqList11.size()+faqList22.size()+faqList33.size()+faqList44.size()+faqList55.size());
         
         return "faq/list";
     }
