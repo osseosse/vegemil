@@ -4,7 +4,6 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<title>그린비아 주의사항</title>
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>	
-<header id="header" th:fragment="headerFragment"></header>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia :: headerFragment"></header>
@@ -20,8 +19,8 @@
 		<div class="col-md-12 subNav">
 			<div class="subNavBox">
 				<ul>
-					<li><a href="/greenbia/newFaq">고객지원</a></li>
-					<li><a href="/greenbia/newFaq">FAQ</a></li>
+					<li><a th:href="@{/greenbia/newFaq}">고객지원</a></li>
+					<li><a th:href="@{/greenbia/newFaq}">FAQ</a></li>
 				</ul>
 				<div class="btn_back"><a href="javascript:history.back()"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_back.png" /></a></div>
 			</div>
