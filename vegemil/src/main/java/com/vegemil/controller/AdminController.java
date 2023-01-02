@@ -154,7 +154,7 @@ public class AdminController extends UiUtils {
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/admin/auth/login", Method.GET, null, model);
 		}
 		
-		return showMessageWithRedirect("변경되었습니다.", "/admin/event/calendarModel", Method.GET, null, model);
+		return showMessageWithRedirect("변경되었습니다.", "/admin/manage/customer/faq", Method.GET, null, model);
     }
     
     //회원 활성화

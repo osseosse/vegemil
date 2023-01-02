@@ -43,7 +43,7 @@
 	   m_di
 	</sql>
 
-	<insert id="insertAdmin" parameterType="com.vegemil.domain.MemberDTO">
+	<insert id="insertAdmin" parameterType="com.vegemil.domain.MemberDTO"  useGeneratedKeys="true" keyProperty="mIdx">
 		/* insertAdmin by AdminMapper.xml */
 		INSERT INTO m_member (
 		   m_id,

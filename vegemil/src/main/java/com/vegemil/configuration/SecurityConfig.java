@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		                .loginPage("/admin/auth/login")
 		                .loginProcessingUrl("/member/loginProc")
 		                .failureUrl("/admin/auth/login?error=true")
-		                .defaultSuccessUrl("/admin/magage/faq")
+		                .defaultSuccessUrl("/admin/manage/customer/faq")
 	            .and()
 	                .logout()
 		                .logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout")) // 로그아웃 시 URL 재정의

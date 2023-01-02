@@ -27,12 +27,12 @@ $(function () {
         $(element).valid();
       }, */
       rules: {
-        'aPwd': {
+        'mPwd': {
           required: true
         },
-        'aPwd2': {
+        'mPwd2': {
           required: true,
-          equalTo: '#aPwd'
+          equalTo: '#mPwd'
         }
       }
     });
