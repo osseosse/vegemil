@@ -28,8 +28,8 @@
 		  orderId: bizNum+'_'+now.getMonth()+now.getDate()+now.getHours()+now.getMinutes()+now.getSeconds(),
 		  orderName: '그린비아 결제',
 		  customerName: bizNum,
-		  successUrl: '/comp/payment/success',
-		  failUrl: '/comp/payment/fail',
+		  successUrl: '/payment/success',
+		  failUrl: '/payment/fail',
 		})
 		.catch(function (error) {
 		    if (error.code === 'USER_CANCEL') {

@@ -116,7 +116,7 @@
 	#header.white h1.logo a {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png); background-size:86px 50px }
 	#header.white #gnb > ul > li > a{color: #333;}
 	/* 3000 Default : open */
-	#header.open {height: 90px; border-bottom: none; background-color: #fff; background-image: url('../images/common/ic_menu_bg_1.png'); background-repeat: no-repeat; background-position: right bottom; overflow: hidden; border-bottom: 1px solid #ddd; box-shadow: 0 5px 5px rgba(100,100,100,.05); z-index: 1500;}
+	#header.open {height: 90px; border-bottom: none; background-color: #fff; background-repeat: no-repeat; background-position: right bottom; overflow: hidden; border-bottom: 1px solid #ddd; box-shadow: 0 5px 5px rgba(100,100,100,.05); z-index: 1500;}
 	#header.open .bg{width: 100%; height: 91px; position: absolute; left: 0; top: 0; background: #fff; border-bottom: 1px solid #ddd;}
 	#header.open h1.logo a {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png) ;  background-size:86px 50px}
 	#header.open #gnb > ul > li > a{color: #333;}
@@ -1979,7 +1979,7 @@
       -webkit-align-items: center;
       align-items: center;
     }
-    .Rnd-swi .swiper-slide:nth-child(1) { border:1px solid red}
+    .Rnd-swi .swiper-slide:nth-child(1) {}
     .Rnd-swi .swiper-slide:nth-child(2) {}
 	.Rnd-img img {width:100% ; border-radius:20px}
 

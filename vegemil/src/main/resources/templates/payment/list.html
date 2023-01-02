@@ -69,7 +69,7 @@
 								</td>
 								<td class="day f_pp" th:if="${pay.lgdRespcode} == 'CANCELED'">취소완료</td>
 								<td class="day f_pp" th:unless="${pay.lgdRespcode} == 'CANCELED'">
-									 <a th:href="|/comp/payment/cancel/{${pay.lgdTid}|" ><p class="cate">취소</p></a>
+									 <a th:href="|/payment/cancel/{${pay.lgdTid}|" ><p class="cate">취소</p></a>
 								</td>
 							</tr>
 						</table>

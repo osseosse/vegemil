@@ -195,6 +195,12 @@ public class PaymentController extends UiUtils {
 		return "payment/joinOk";
 	}
 	
+	@GetMapping(value = "/payment/fail")
+	public String movePayFail(Model model, HttpServletResponse response) {
+		
+		return showMessageWithRedirect("결제 실패했습니다. 다시시도바랍니다.", "/comp/payment/list", Method.GET, null, model);
+	}
+	
 	/**
 	 * 토스 결제승인 요청 2022.11 김명환
 	 * @param request
@@ -204,7 +210,7 @@ public class PaymentController extends UiUtils {
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/comp/payment/success")
+	@RequestMapping(value = "/payment/success")
 	public String  tossPaySuccess(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -410,7 +416,7 @@ public class PaymentController extends UiUtils {
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/comp/payment/cancel/{paymentKey}")
+	@RequestMapping(value = "/payment/cancel/{paymentKey}")
 	public String  tossPayCancelSave(
 			HttpServletRequest request,
 			HttpServletResponse response,
