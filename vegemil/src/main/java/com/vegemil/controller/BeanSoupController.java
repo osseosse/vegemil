@@ -47,6 +47,18 @@ public class BeanSoupController extends UiUtils {
 		return "beansoup/intro";
 	}
 	
+	@GetMapping("/Main/event/recipeLanding.aspx")
+	public String beanSoupQR(Model model) {
+		
+		return "beansoup/intro";
+	}
+	
+	@GetMapping("/main/event/recipeLanding.aspx")
+	public String beanSoupQR2(Model model) {
+		
+		return "beansoup/intro";
+	}
+	
 	//간단레시피
 	@GetMapping("/beanSoup/list")
 	public String beanSoupRecipe(Model model, @RequestParam(required  = false) String tag) {
