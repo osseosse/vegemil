@@ -27,7 +27,6 @@ public class ProductController extends UiUtils {
 		
 		if(searchKeyword != null) {
 			model.addAttribute("searchKeyword", searchKeyword);
-			model.addAttribute("dataCount", productList.size());
 			return "product/list_searched";
 		}
 		return "product/list";
