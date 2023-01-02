@@ -77,6 +77,20 @@ public class MainController {
         return "redirect:/communication/voc";
 	}
 	
+	@RequestMapping(value = "/main/product/list.aspx")
+	public String redirectVegemil(Model model, @RequestParam(value = "category_code", required = false) String category_code) {
+		
+		String redirectUrl = "";
+		
+		if(category_code.equals("V00")) {
+			redirectUrl = "redirect:/brandStory/vegemil";
+		} else if(category_code.equals("G00")) {
+			redirectUrl = "redirect:/brandStory/greenbia";
+		}
+		
+        return redirectUrl;
+	}
+	
 	@RequestMapping(value = "/requestAuth")
     public ModelAndView jspTest()throws Exception{
 		ModelAndView mav = new ModelAndView("input_seed");

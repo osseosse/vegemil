@@ -43,8 +43,12 @@ public class BeanSoupController extends UiUtils {
 	
 	@GetMapping("/Main/beanSoup/intro.aspx")
 	public String beanSoupIntro(Model model) {
-		
 		return "beansoup/intro";
+	}
+	
+	@GetMapping("/Main/beanSoup/index.aspx")
+	public String beanSoupIndex(Model model) {
+		return "redirect:/beanSoup";
 	}
 	
 	@GetMapping("/Main/event/recipeLanding.aspx")
