@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.vegemil.domain.MediaNewsDTO;
@@ -54,11 +55,6 @@ public class MainController {
 		MemberDTO member = new MemberDTO();
 		
 		try {
-//			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
-//			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133")) {
-//			} else {
-//				return "member/server";
-//			}
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
@@ -75,9 +71,10 @@ public class MainController {
         return "index";
 	}
 	
-	@RequestMapping(value = "/server")
-	public String moveServer(Model model) {
-        return "member/server";
+	@RequestMapping(value = "/main/customer/supportFlow.aspx")
+	public String moveSupportFlow(Model model, @RequestParam(value = "page_code", required = false) String page_code) {
+		
+        return "redirect:/communication/voc";
 	}
 	
 	@RequestMapping(value = "/requestAuth")
