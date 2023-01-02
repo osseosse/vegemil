@@ -221,7 +221,7 @@
             </div>
             
             <div class="content-body">
-            	<form name="form" th:action="@{/admin/baby/registerBabyInfo}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+            	<form name="form" th:action="@{/admin/baby/registerBabyInfo}" th:object="${model}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
 	                <!-- Analytics card section -->
 	                <section id="analytics-card">
 						 <div class="row">
