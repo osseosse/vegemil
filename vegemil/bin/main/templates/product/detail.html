@@ -225,15 +225,17 @@
 							<script type="text/javascript" src="/common/js/floating-menu-position.js"></script>
 						</div>
 					</div>
-					<!-- 
+					<!-- 상세 페이지 내 제품 검색 창  -->
 					<div class="flotingContent mt20">
 						<p class="f23 fw500 lh150 black">안녕하세요 고객님,<br>찾으시는 제품이 있으신가요?</p>
 						 <div class="search-container mt30">
-							 <span class="search-img"><img src="/img/ico/ico_search.png" alt="검색" /></span><input type="text" placeholder="제품을 검색해 보세요 " name="search">
-							<button type="submit" class="btn-search">검색</button>
+							 <form action="/product/list" method="get">
+							 	<span class="search-img"><img src="/img/ico/ico_search.png" alt="검색" /></span><input type="text" placeholder="제품을 검색해 보세요 " name="searchKeyword">
+								<button type="submit" class="btn-search">검색</button>
+							 </form>
 						</div>
 					</div>
-					 -->
+					
 					<div class="flotingContent-bnr mt60">
 						<p class="f18"><img class="mr5" src="/img/ico/ico_youtube.png" />유튜브에서 확인하세요</p>
 						<div class="bnr-y-box mt20">

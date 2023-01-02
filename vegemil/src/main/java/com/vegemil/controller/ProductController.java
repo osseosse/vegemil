@@ -20,11 +20,16 @@ public class ProductController extends UiUtils {
 	
 	@GetMapping(value = "/product/list")
 	public String openProductList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
-	        	
+	    
 		List<ProductDTO> productList = productService.getProductList(searchKeyword);
 		model.addAttribute("productList", productList);
 		model.addAttribute("productCount", productList.size());
-
+		
+		if(searchKeyword != null) {
+			model.addAttribute("searchKeyword", searchKeyword);
+			model.addAttribute("dataCount", productList.size());
+			return "product/list_searched";
+		}
 		return "product/list";
 	}
 	

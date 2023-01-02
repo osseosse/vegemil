@@ -47,7 +47,6 @@ public class CustomerController {
         return "faq/list";
     }
 
-    
     @ResponseBody
     @GetMapping(value="/faq/saveFaqFeedback")
 	public boolean saveFaqFeedback(FaqFeedbackDTO params) throws Exception{
