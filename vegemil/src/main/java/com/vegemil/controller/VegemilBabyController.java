@@ -238,27 +238,7 @@ public class VegemilBabyController extends UiUtils {
 	}
 
 	// 육아 정보
-	/*
-	 * @GetMapping("/e_magazine") public String eMagazine(@ModelAttribute("params")
-	 * final SearchDTO params, Model model) {
-	 * 
-	 * model.addAttribute("categoryCount",
-	 * vegemilBabyCommunityService.categoryCount()); String category =
-	 * params.getCategory(); model.addAttribute("category", category);
-	 * 
-	 * List<VegemilBabyMagazineDTO> pbMagazineList =
-	 * vegemilBabyCommunityService.findPbMagazine(params);
-	 * model.addAttribute("pbMagazineList", pbMagazineList);
-	 * List<VegemilBabyMagazineDTO> ghMagazineList =
-	 * vegemilBabyCommunityService.findGhMagazine(params);
-	 * model.addAttribute("ghMagazineList", ghMagazineList);
-	 * List<VegemilBabyMagazineDTO> peMagazineList =
-	 * vegemilBabyCommunityService.findPeMagazine(params);
-	 * model.addAttribute("peMagazineList", peMagazineList); return
-	 * "vegemilBaby/e_magazine";
-	 * 
-	 * }
-	 */
+	
 
 	/* Event */
 	@GetMapping("/vegemilBaby/bv_event")

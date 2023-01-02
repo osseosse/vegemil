@@ -15,6 +15,8 @@ public interface MemberMapper {
 	public int deleteMember(MemberDTO params);
 	
 	public int activeMember(MemberDTO params);
+	
+	public int updateLastLogin(MemberDTO params);
 
 	public MemberDTO getMemberAccount(String mId);
 

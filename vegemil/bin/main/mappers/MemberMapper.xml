@@ -182,6 +182,14 @@
 		WHERE
 			m_idx = #{mIdx}
 	</update>
+	
+	<update id="updateLastLogin" parameterType="com.vegemil.domain.MemberDTO">
+		UPDATE m_member
+		SET
+			  m_last_logindate = NOW()
+		WHERE
+			m_idx = #{mIdx}
+	</update>
 
 	<select id="selectMemberList" parameterType="com.vegemil.domain.MemberDTO" resultType="com.vegemil.domain.MemberDTO">
 		SELECT
