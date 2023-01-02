@@ -34,7 +34,6 @@ import com.vegemil.util.UiUtils;
 
 @CrossOrigin(origins="*", allowedHeaders = "*")
 @Controller
-@RequestMapping("/vegemilBaby")
 public class VegemilBabyController extends UiUtils {
 
 	@Autowired
@@ -43,13 +42,21 @@ public class VegemilBabyController extends UiUtils {
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
 
-	@RequestMapping(value = "/{viewName}")
+	@RequestMapping(value = "/vegemilBaby/{viewName}")
 	public String moveVegemilBabyPage(@PathVariable(value = "viewName", required = false) String viewName)
 			throws Exception {
 		return "vegemilBaby/" + viewName;
 	}
 	
-	@GetMapping("/index")
+	@GetMapping("/Main/brandVegemilBaby/{vegemilBabyAspx}")
+	public String vegemilBabyRedirect(@PathVariable("vegemilBabyAspx") String vegemilBabyAspx) {
+		if(vegemilBabyAspx.contains(".")) {
+			vegemilBabyAspx = vegemilBabyAspx.substring(0, vegemilBabyAspx.lastIndexOf("."));
+		}
+		return "vegemilBaby/" + vegemilBabyAspx;
+	}
+	
+	@GetMapping("/vegemilBaby/index")
 	public String index(Model model) {
 		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
 		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());
@@ -60,10 +67,8 @@ public class VegemilBabyController extends UiUtils {
 	// 육아정보
 	// 원본
 	
-	@GetMapping("/magazine")
-	public String NEWmoveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
-		
-		
+	@GetMapping("/vegemilBaby/magazine")
+	public String moveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		
 		  model.addAttribute("magazineList",vegemilBabyCommunityService.NEWselectMagazine(params));
 		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
@@ -71,49 +76,19 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/magazine";
 	}
 	
+	@GetMapping("/Main/brandVegemilBaby/e_magazine.aspx")
+	public String moveNewMagazineList(Model model) {
+		
+		VegemilBabySearchDTO params = new VegemilBabySearchDTO();
+		params.setCategory("all");
+		model.addAttribute("magazineList",vegemilBabyCommunityService.NEWselectMagazine(params));
+		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
+		 
+		return "vegemilBaby/magazine";
+	}
 	
-	
-	
-	
-//	@GetMapping("/magazine")
-//	public String moveMagazineList(@RequestParam(required = false, defaultValue = "all") String category, Model model) {
-//		model.addAttribute("magazineList", vegemilBabyCommunityService.selectAllMagazine(category));
-//		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
-//		return "vegemilBaby/magazine";
-//	}
-
-	
-//	  @GetMapping("/magazine") 
-//	  public String moveMagazineList(@ModelAttribute("params") final SearchDTO params, Model model) { 
-//		  String category = params.getCategory();
-//		  
-//		  if(category.equals("pb")) {
-//			  List<VegemilBabyMagazineDTO> magazineList = vegemilBabyCommunityService.findPbMagazine(params);
-//			  model.addAttribute("magazineList", magazineList);
-//			  //model.addAttribute("category", category);
-//		  }else if(category.equals("gh")) {
-//			  List<VegemilBabyMagazineDTO> magazineList = vegemilBabyCommunityService.findGhMagazine(params);
-//			  model.addAttribute("magazineList", magazineList);			  
-//		  }else {
-//			  List<VegemilBabyMagazineDTO> magazineList = vegemilBabyCommunityService.findPbMagazine(params);
-//			  model.addAttribute("magazineList", magazineList);
-//		  }
-//		  
-//		 // model.addAttribute("magazineList", vegemilBabyCommunityService.selectAllMagazine(category));
-//		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount()); 
-//		  return "vegemilBaby/magazine"; 
-//	  }
-//	 
-	
-	
-	
-	
-	
-	
-	
-
 	// 육아정보 상세
-	@GetMapping(value = { "/magazine/detail/{idx}" })
+	@GetMapping(value = { "/vegemilBaby/magazine/detail/{idx}" })
 	public String moveMagazineDetail(@PathVariable("idx") Long idx, Model model) {
 		model.addAttribute("magazineDetail", vegemilBabyCommunityService.selectMagazineDetail(idx));
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
@@ -121,14 +96,14 @@ public class VegemilBabyController extends UiUtils {
 	}
 
 	// 영유아식 레시피
-	@GetMapping("/recipe")
+	@GetMapping("/vegemilBaby/recipe")
 	public String moveRecipeList(Model model) {
 		model.addAttribute("recipeList", vegemilBabyCommunityService.selectRecipeList());
 		return "vegemilBaby/recipe";
 	}
 
 	// 영유아식 레시피 상세
-	@GetMapping("/recipe/detail/{idx}")
+	@GetMapping("/vegemilBaby/recipe/detail/{idx}")
 	public String moveRecipeDetail(@PathVariable("idx") Long idx, Model model) {
 		model.addAttribute("recipeList", vegemilBabyCommunityService.selectRecipeList());
 		model.addAttribute("recipe", vegemilBabyCommunityService.selectRecipeDetail(idx));
@@ -136,7 +111,7 @@ public class VegemilBabyController extends UiUtils {
 	}
 	
 	/* Event */
-	@GetMapping("/sample/form")
+	@GetMapping("/vegemilBaby/sample/form")
 	public String moveSampleForm(Authentication authentication, Model model,
 							@RequestParam(value = "sItem", required = false) String sItem) {
 		
@@ -152,7 +127,7 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/sampleForm";
 	}
 	
-	@GetMapping("/model/form")
+	@GetMapping("/vegemilBaby/model/form")
 	public String moveModelForm(Authentication authentication, Model model) {
 		
 		MemberDTO member = new MemberDTO();
@@ -171,7 +146,7 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/event_model_form";
 	}
 	
-	@PostMapping("/model/apply")
+	@PostMapping("/vegemilBaby/model/apply")
 	public String submitModelForm(@ModelAttribute("model") VegemilBabyCalendarModelDTO calModel,
 							BindingResult bindingResult,
 							HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
@@ -229,7 +204,7 @@ public class VegemilBabyController extends UiUtils {
 	}
 	
 	//샘플 신청 등록
-	@PostMapping("/sample/apply")
+	@PostMapping("/vegemilBaby/sample/apply")
 	public String submitSampleForm(@ModelAttribute("sample") VegemilBabySampleDTO sample, 
 								HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
 		
@@ -289,14 +264,14 @@ public class VegemilBabyController extends UiUtils {
 	 */
 
 	/* Event */
-	@GetMapping("/bv_event")
+	@GetMapping("/vegemilBaby/bv_event")
 	public String moveBvEvent(Model model) {
 		model.addAttribute("eventList", vegemilBabyCommunityService.selectEventList());
 		return "vegemilBaby/bv_event";
 	}
 	
 	//이벤트 상세페이지 이동
-	@RequestMapping(value = "/event/{viewName}") 
+	@RequestMapping(value = "/vegemilBaby/event/{viewName}") 
 	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName, Model model
 			) throws Exception { 
 		

@@ -27,6 +27,14 @@ public class GreenbiaController extends UiUtils {
 		return "greenbia/"+viewName;
     }
 	
+	@GetMapping("/Main/BrandGreenbia/{greenbiaAspx}")
+	public String greenbiaRedirect(@PathVariable("greenbiaAspx") String greenbiaAspx) {
+		if(greenbiaAspx.contains(".")) {
+			greenbiaAspx = greenbiaAspx.substring(0, greenbiaAspx.lastIndexOf("."));
+		}
+		return "greenbia/" + greenbiaAspx;
+	}
+	
 	@GetMapping("/greenbia/product/list")
 	public String moveGreenbiaProductList(Model model, @RequestParam(required = false) String category) {
 		
