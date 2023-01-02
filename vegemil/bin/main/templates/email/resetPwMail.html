@@ -14,18 +14,17 @@
 		  <table width="800" style="border:0px solid #ccc; border-radius:5px; background:#fff ; " cellspacing="0">
 			<tr><td style="text-align:right; padding:20px 15px"><a href="index.html"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/logo.png" alt="정식품 Career" style="width:70px; "/></a></td></tr>
 			<tr>
-				<td style="font-size:36px; font-weight:600; letter-spacing:-4px; padding:0 60px; color:#333333">안녕하세요?<span th:text="${mName}"></span>님<br>정식품 고객지원센터에서 알려드립니다.</td>
+				<td style="font-size:36px; font-weight:600; letter-spacing:-4px; padding:0 60px; color:#333333">안녕하세요 고객님<br>정식품 고객지원센터에서 알려드립니다.</td>
 			</tr>
 			<tr>
 				<td style="font-size:14px; color:#333333; padding:50px 60px 30px 60px; line-height:150%; letter-spacing:-1px">
-				안녕하세요. 고객님<br>
 				본 메일은 정식품 홈페이지 비밀번호 재설정을 위한 인증메일입니다.<br><br>
 				아래 버튼을 누르시면 비밀번호 재설정 페이지로 이동합니다.
 				</td>
 			</tr>
 			<tr >
 				<td style="text-align:center; padding-top:40px; padding-bottom:70px">
-					<a th:href="|http://localhost:8080/email/pwReset?authToken=${authToken}|" target="_blank" style="padding:0; margin:0; border:0; background:none; cursor:pointer; color:#fff; font-size:16px; background:#0F93E1; padding:18px 70px; line-height:120%"; >재설정하기</a>	
+					<a th:href="|https://www.vegemil.co.kr/email/pwReset?authToken=${authToken}|" target="_blank" style="padding:0; margin:0; border:0; background:none; cursor:pointer; color:#fff; font-size:16px; background:#0F93E1; padding:18px 70px; line-height:120%"; >재설정하기</a>	
 				</td>
 			</tr>
 			<tr>
