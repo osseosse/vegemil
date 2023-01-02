@@ -364,13 +364,13 @@
 					<div class="row">
 						<div class="col-lg-12 wView">
 							<p class="plus  more">
-								<a href="/main/beanSoup/list.aspx" th:href="@{/beanSoup/list}">MORE </a>
+								<a th:href="@{/beanSoup/list}">MORE </a>
 							</p>
 						</div>
 						<th:block th:each="item : ${beansoupList}">
 							<div class="col-lg-4 col-sm-6" id="reco04" th:id="${item.filter}">
 								<div class="thumbBox">
-									<a href="#" th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
+									<a th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
 										<div class="big h220 round" th:classappend="${item.cssClass}">
 											<th:block th:if="${item.mCate == '온요리'}">
 												<ul class="labelBox">

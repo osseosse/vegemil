@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,5 +49,7 @@ public class AdminBabyDTO extends AdminCommonDTO {
 	private String cateDi;
 	
 	private String cateGh;
+	
+	private MultipartFile fileName1;
 
 }

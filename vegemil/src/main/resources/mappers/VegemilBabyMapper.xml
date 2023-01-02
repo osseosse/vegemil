@@ -25,7 +25,7 @@
 	</select>
 	
 	<!--육아정보 - 육아정보 검색 -->	
-	<select id="selectAllMagazine" parameterType ="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectAllMagazine2" parameterType ="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -203,30 +203,35 @@
 	</select>
 
 	<!-- 육아정보 - 임신출산 게시글수 -->
-	<select id="pbMagazineCount" resultType="int" >			
+	<select id="pbMagazineCount" parameterType="String" resultType="int" >			
 		SELECT 
 			count(*)
 		FROM 
 			m_edit_brandbaby
 		WHERE 
 			mbs_category = 'pb'
+		<if test="subCategory != null">
+	    	AND mbs_m_category =#{subCategory}
+	    </if>			
 		AND 
-			mbs_active = '1';			
+			mbs_active = '1';				
 	</select>
 	
 	<!-- 1. 육아정보 - 임신/출산 -->	
-	<select id="selectPbMagazine" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectPbMagazine" parameterType="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
 			m_edit_brandbaby
 		WHERE 
 			mbs_category = 'pb'
+		<if test="subCategory != null">
+	    	AND mbs_m_category = #{subCategory}
+	    </if>	
 		AND 
 			mbs_active = '1'
 		Order By 
-			mbs_getdate DESC
-		<include refid="CommonMapper.paging" />		
+			mbs_idx DESC		
 	</select>
 	
 	<!-- 2. 육아정보 - 성장/건강 게시글수 -->
@@ -237,12 +242,15 @@
 			m_edit_brandbaby
 		WHERE 
 			mbs_category = 'gh'
+		<if test="subCategory != null">
+	    	AND mbs_m_category =#{subCategory}
+	    </if>
 		AND 
 			mbs_active = '1';			
 	</select>
 	
 	<!-- 2. 육아정보 - 성장/건강 -->	
-	<select id="selectGhMagazine" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectGhMagazine" parameterType="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -251,9 +259,11 @@
 			mbs_category = 'gh'
 		AND 
 			mbs_active = '1'
+		<if test="subCategory != null">
+	    	AND mbs_m_category = #{subCategory}
+	    </if>		
 		Order By 
 			mbs_getdate DESC
-		<include refid="CommonMapper.paging" />		
 	</select>
 	
 	<!-- 3. 육아정보 - 놀이/교육 게시글수 -->
@@ -279,15 +289,16 @@
 		AND 
 			mbs_active = '1'
 		Order By 
-			mbs_getdate DESC
-		<include refid="CommonMapper.paging" />		
+			mbs_getdate DESC		
+			
+		<!-- <include refid="CommonMapper.paging" />		 -->
 	</select>
 	
 
 
 
 	<!-- 육아정보 - 전체 -->	
-	<!-- <select id="selectAllMagazine" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectAllMagazine" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -296,7 +307,9 @@
 			mbs_active = '1'
 		Order By 
 			mbs_getdate DESC
-	</select> -->
+		<!-- <include refid="CommonMapper.paging" />	 -->	
+			
+	</select>
 	
 	
 		

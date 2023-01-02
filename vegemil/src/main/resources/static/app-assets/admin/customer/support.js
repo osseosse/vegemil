@@ -66,7 +66,7 @@ var createTable = function() {
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/customer/support/table',
+        url : '/admin/manage/customer/supportList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   

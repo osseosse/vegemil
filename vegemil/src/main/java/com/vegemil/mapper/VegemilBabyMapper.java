@@ -28,7 +28,11 @@ public interface VegemilBabyMapper {
 
 	//===[Product]===	
 	//육아정보	
+	//구버전
 	public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate);
+
+	//신버전
+//	public List<VegemilBabyMagazineDTO> selectAllMagazine(SearchDTO params);
 	public VegemilBabyCategoryDTO selectCategoryCount(); 
 
 	//육아정보 상세
@@ -41,12 +45,12 @@ public interface VegemilBabyMapper {
 
 	
 	//육아정보 - 임신출산
-	public int pbMagazineCount();	
-	public List<VegemilBabyMagazineDTO> selectPbMagazine(SearchDTO params);
+	public int pbMagazineCount(String subCategory);	
+	public List<VegemilBabyMagazineDTO> selectPbMagazine(String subCategory);
 
     //육아정보 - 성장/건강
-	public int ghMagazineCount();
-	public List<VegemilBabyMagazineDTO> selectGhMagazine(SearchDTO params);
+	public int ghMagazineCount(String subCategory);
+	public List<VegemilBabyMagazineDTO> selectGhMagazine(String subCategory);
 
     //육아정보 - 놀이/교육
 	public int peMagazineCount();

@@ -18,6 +18,10 @@ import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 public interface VegemilBabyCommunityService {
 	
 	//===[Index]===
+	
+	// 영유아식 이게 레알 최종 
+	public List<VegemilBabyMagazineDTO> NEWselectMagazine(VegemilBabySearchDTO params);
+	
 	//육아정보
 	public List<VegemilBabyMagazineDTO> selectMagazineIndex();
 
@@ -28,6 +32,8 @@ public interface VegemilBabyCommunityService {
 	//육아정보	
     public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate);
     public VegemilBabyCategoryDTO selectCategoryCount();
+    
+    public List<VegemilBabyMagazineDTO> findAllMagazine(SearchDTO params); 
 
     //육아정보 상세
     public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx);
@@ -54,13 +60,16 @@ public interface VegemilBabyCommunityService {
 
     //육아정보 -임신출산
     public List<VegemilBabyMagazineDTO> findPbMagazine(SearchDTO params);
+   
     //육아정보 - 성장/건강
     public List<VegemilBabyMagazineDTO> findGhMagazine(SearchDTO params);
     //육아정보 - 놀이/교육
     public List<VegemilBabyMagazineDTO> findPeMagazine(SearchDTO params);
 
-	/* public List<VegemilBabyMagazineDTO> findAllMagazine(); */
-    public List<VegemilBabyMagazineDTO> findLhMagazine();
+	
+    
+	
+	public List<VegemilBabyMagazineDTO> findLhMagazine();
 	
     public List<VegemilBabyMagazineDTO> findAllMagazine2(SearchDTO params);
 
@@ -71,6 +80,8 @@ public interface VegemilBabyCommunityService {
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
 
 	public int selectTemperature();
+
+	
 	
 	
 
