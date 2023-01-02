@@ -64,15 +64,12 @@ public class VegemilBabyController extends UiUtils {
 	}
 
 	/* Community */
-	// 육아정보
-	// 원본
 	
 	@GetMapping("/vegemilBaby/magazine")
 	public String moveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		
 		  model.addAttribute("magazineList",vegemilBabyCommunityService.NEWselectMagazine(params));
 		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
-		 
 		return "vegemilBaby/magazine";
 	}
 	

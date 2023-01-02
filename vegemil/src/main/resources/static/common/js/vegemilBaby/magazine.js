@@ -7,7 +7,8 @@ $(document).ready(function(){
 			    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 			}			
 			var cate = getParameterByName('category');
-			
+			var subCate = getParameterByName('subCategory');
+
 			
 				$("#pb").css('display','none');
 			    $("#gh").css('display','none');
@@ -16,7 +17,7 @@ $(document).ready(function(){
 			 
 			    if(cate =="pb"){
 			        $("#pb").css('display','block'); /* 하위카테고리 */
-			        $("#LcatePb").addClass('active'); /* 카테고리이미지 */   
+			        $("#LcatePb").addClass('active'); /* 카테고리이미지 */   			       
 			    }
 			    else if(cate =="gh"){
 			        $("#gh").css('display','block');
@@ -33,374 +34,174 @@ $(document).ready(function(){
 			    else{
 			        $("#LcateAll").addClass('active');
 			    }
-			
-			 $('#pb00').click(function(){   //전체 선택시
-				 
-					$(this).addClass('active');
-					$('#pb01').removeClass('active');
+			    
+			    
+			    if(subCate =="pb01"){
+			    	$('#pb00').removeClass('active');
+					$('#pb01').addClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb05').removeClass('active');
 					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');					
-			        $(".pb01pb").css('display','block');
-			        $(".pb02pb").css('display','block');
-			        $(".pb03pb").css('display','block');
-			        $(".pb04pb").css('display','block');
-			        $(".pb05pb").css('display','block');
-			        $(".pb06pb").css('display','block');
-			        $(".pb07pb").css('display','block');
-		        });			
-					
-			 //임신 초기 눌렀을때 
-			/* $('#pb01').click(function(){  				 	
-				 
-					$(this).addClass('active');					
-					$('#pb00').removeClass('active');
-					$('#pb02').removeClass('active');
-					$('#pb03').removeClass('active');
-					$('#pb04').removeClass('active');
-					$('#pb05').removeClass('active');
-					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');	
-					
-			        $(".pb01pb").css('display','block');
-			        $(".pb02pb").css('display','none');
-			        $(".pb03pb").css('display','none');
-			        $(".pb04pb").css('display','none');
-			        $(".pb05pb").css('display','none');
-			        $(".pb06pb").css('display','none');
-			        $(".pb07pb").css('display','none');
-		        });*/
-			 
-			 /*$('#pb02').click(function(){  	 	 			
-					$(this).addClass('active');
+					$('#pb07').removeClass('active');				    	
+			    }else if(subCate =="pb02"){
+			    	$('#pb02').addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb05').removeClass('active');
 					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');
-
-			        $(".pb01pb").css('display','none');
-			        $(".pb02pb").css('display','block');
-			        $(".pb03pb").css('display','none');
-			        $(".pb04pb").css('display','none');
-			        $(".pb05pb").css('display','none');
-			        $(".pb06pb").css('display','none');
-			        $(".pb07pb").css('display','none');
-		        });*/
-			 /*$('#pb03').click(function(){
-					$(this).addClass('active');
+					$('#pb07').removeClass('active');			    	
+			    }else if(subCate =="pb03"){
+			    	$('#pb03').addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb05').removeClass('active');
 					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');
-				 				 
-			        $(".pb01pb").css('display','none');
-			        $(".pb02pb").css('display','none');
-			        $(".pb03pb").css('display','block');
-			        $(".pb04pb").css('display','none');
-			        $(".pb05pb").css('display','none');
-			        $(".pb06pb").css('display','none');
-			        $(".pb07pb").css('display','none');
-		        });*/
-			 /*$('#pb04').click(function(){   
-					$(this).addClass('active');
+					$('#pb07').removeClass('active');			    	
+			    }else if(subCate =="pb04"){
+			    	$('#pb04').addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb05').removeClass('active');
 					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');
-					
-			        $(".pb01pb").css('display','none');
-			        $(".pb02pb").css('display','none');
-			        $(".pb03pb").css('display','none');
-			        $(".pb04pb").css('display','block');
-			        $(".pb05pb").css('display','none');
-			        $(".pb06pb").css('display','none');
-			        $(".pb07pb").css('display','none');
-		        });*/
-			 /*$('#pb05').click(function(){   
-					$(this).addClass('active');
+					$('#pb07').removeClass('active');			    	
+			    }else if(subCate =="pb05"){
+			    	$('#pb05').addClass('active');
 					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb06').removeClass('active');
-					$('#pb07').removeClass('active');				 
-				 
-			        $(".pb01pb").css('display','none');
-			        $(".pb02pb").css('display','none');
-			        $(".pb03pb").css('display','none');
-			        $(".pb04pb").css('display','none');
-			        $(".pb05pb").css('display','block');
-			        $(".pb06pb").css('display','none');
-			        $(".pb07pb").css('display','none');
-		        });*/
-			 /*$('#pb06').click(function(){   
-	      			$(this).addClass('active');
-	      			$('#pb00').removeClass('active');
+					$('#pb07').removeClass('active');			    	
+			    }else if(subCate =="pb06"){
+			    	$('#pb06').addClass('active');
+					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb05').removeClass('active');
-					$('#pb07').removeClass('active');
-				 
-			        $(".pb01pb").css('display','none');
-			        $(".pb02pb").css('display','none');
-			        $(".pb03pb").css('display','none');
-			        $(".pb04pb").css('display','none');
-			        $(".pb05pb").css('display','none');
-			        $(".pb06pb").css('display','block');
-			        $(".pb07pb").css('display','none');
-		        });*/
-			/* $('#pb07').click(function(){
-				 	$(this).addClass('active');
-				 	$('#pb00').removeClass('active');
+					$('#pb07').removeClass('active');			    	
+			    }else if(subCate =="pb07"){
+			    	$('#pb07').addClass('active');
+					$('#pb00').removeClass('active');
 					$('#pb01').removeClass('active');
 					$('#pb02').removeClass('active');
 					$('#pb03').removeClass('active');
 					$('#pb04').removeClass('active');
 					$('#pb05').removeClass('active');
-					$('#pb06').removeClass('active');
-					
-			        $(".pb01pb").css('display','none');
-			        $(".pb02pb").css('display','none');
-			        $(".pb03pb").css('display','none');
-			        $(".pb04pb").css('display','none');
-			        $(".pb05pb").css('display','none');
-			        $(".pb06pb").css('display','none');
-			        $(".pb07pb").css('display','block');
-		        });*/
-			 
-			 
-			 $('#gh00').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#gh01').removeClass('active');
+					$('#pb06').removeClass('active');			    	
+			    }
+			    
+			    if(subCate =="gh01"){
+			    	$('#gh00').removeClass('active');
+					$('#gh01').addClass('active');
 					$('#gh02').removeClass('active');
 					$('#gh03').removeClass('active');
 					$('#gh04').removeClass('active');
 					$('#gh05').removeClass('active');
 					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','block');
-			        $(".gh02gh").css('display','block');
-			        $(".gh03gh").css('display','block');
-			        $(".gh04gh").css('display','block');
-			        $(".gh05gh").css('display','block');
-			        $(".gh06gh").css('display','block');
-			        $(".gh07gh").css('display','block');
-			        $(".gh08gh").css('display','block');
-		        });	
-			 $('#gh01').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#gh00').removeClass('active');
-					$('#gh02').removeClass('active');
-					$('#gh03').removeClass('active');
-					$('#gh04').removeClass('active');
-					$('#gh05').removeClass('active');
-					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','block');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh02').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh02"){
+			    	$('#gh02').addClass('active');
 					$('#gh00').removeClass('active');
 					$('#gh01').removeClass('active');
 					$('#gh03').removeClass('active');
 					$('#gh04').removeClass('active');
 					$('#gh05').removeClass('active');
 					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','block');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh03').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh03"){
+			    	$('#gh03').addClass('active');
 					$('#gh00').removeClass('active');
 					$('#gh01').removeClass('active');
 					$('#gh02').removeClass('active');
 					$('#gh04').removeClass('active');
 					$('#gh05').removeClass('active');
 					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','block');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh04').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh04"){
+			    	$('#gh04').addClass('active');
 					$('#gh00').removeClass('active');
 					$('#gh01').removeClass('active');
 					$('#gh02').removeClass('active');
 					$('#gh03').removeClass('active');
 					$('#gh05').removeClass('active');
 					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','block');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh05').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh05"){
+			    	$('#gh05').addClass('active');
 					$('#gh00').removeClass('active');
 					$('#gh01').removeClass('active');
 					$('#gh02').removeClass('active');
 					$('#gh03').removeClass('active');
 					$('#gh04').removeClass('active');
 					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','block');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh06').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh06"){
+			    	$('#gh06').addClass('active');
 					$('#gh00').removeClass('active');
 					$('#gh01').removeClass('active');
 					$('#gh02').removeClass('active');
 					$('#gh03').removeClass('active');
 					$('#gh04').removeClass('active');
 					$('#gh05').removeClass('active');
-					$('#gh07').removeClass('active');					
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','block');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh07').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh07"){
+			    	$('#gh07').addClass('active');
 					$('#gh00').removeClass('active');
-					$('#gh01').removeClass('active');					
+					$('#gh01').removeClass('active');
+					$('#gh02').removeClass('active');
+					$('#gh03').removeClass('active');
+					$('#gh04').removeClass('active');
+					$('#gh05').removeClass('active');
+					$('#gh06').removeClass('active');	
+					$('#gh08').removeClass('active');
+			    }else if(subCate =="gh08"){
+			    	$('#gh08').addClass('active');
+					$('#gh00').removeClass('active');
+					$('#gh01').removeClass('active');
 					$('#gh02').removeClass('active');
 					$('#gh03').removeClass('active');
 					$('#gh04').removeClass('active');
 					$('#gh05').removeClass('active');
 					$('#gh06').removeClass('active');
-					$('#gh08').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','block');
-			        $(".gh08gh").css('display','none');
-		        });
-			 $('#gh08').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#gh00').removeClass('active');
-					$('#gh01').removeClass('active');					
-					$('#gh02').removeClass('active');
-					$('#gh03').removeClass('active');
-					$('#gh04').removeClass('active');
-					$('#gh05').removeClass('active');
-					$('#gh06').removeClass('active');
-					$('#gh07').removeClass('active');					
-			        $(".gh01gh").css('display','none');
-			        $(".gh02gh").css('display','none');
-			        $(".gh03gh").css('display','none');
-			        $(".gh04gh").css('display','none');
-			        $(".gh05gh").css('display','none');
-			        $(".gh06gh").css('display','none');
-			        $(".gh07gh").css('display','none');
-			        $(".gh08gh").css('display','block');
-		        });
-			 
-			 
-			 $('#pe00').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#pe01').removeClass('active');
-					$('#pe02').removeClass('active');										
-			        $(".pe01pe").css('display','block');
-			        $(".pe02pe").css('display','block');			        			       
-		        });			
-			 $('#pe01').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#gh07').removeClass('active');
+			    }			    
+			    if(subCate =="pe01"){
+					$('#pe01').addClass('active');
+			    	$('#pe00').removeClass('active');
+					$('#pe02').removeClass('active');					
+			    }else if(subCate =="pe02"){
+			    	$('#pe02').addClass('active');
 					$('#pe00').removeClass('active');
-					$('#pe02').removeClass('active');										
-			        $(".pe01pe").css('display','block');
-			        $(".pe02pe").css('display','none');
-		        });
-			 $('#pe02').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#pe00').removeClass('active');
-					$('#pe01').removeClass('active');										
-			        $(".pe01pe").css('display','none');
-			        $(".pe02pe").css('display','block');
-		        });
-			 
-			 
-			 $('#lh00').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#lh01').removeClass('active');
-					$('#lh02').removeClass('active');										
-			        $(".lh01lh").css('display','block');
-			        $(".lh02lh").css('display','block');			        			       
-		        });			
-			 $('#lh01').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
+					$('#pe01').removeClass('active');					
+			    }
+			    
+			    if(subCate =="lh01"){
+					$('#lh01').addClass('active');
+			    	$('#lh00').removeClass('active');
+					$('#lh02').removeClass('active');					
+			    }else if(subCate =="lh02"){
+			    	$('#lh02').addClass('active');
 					$('#lh00').removeClass('active');
-					$('#lh02').removeClass('active');										
-			        $(".lh01lh").css('display','block');
-			        $(".lh02lh").css('display','none');
-		        });
-			 $('#lh02').click(function(){   //전체 선택시				 
-					$(this).addClass('active');
-					$('#lh00').removeClass('active');
-					$('#lh01').removeClass('active');										
-			        $(".lh01lh").css('display','none');
-			        $(".lh02lh").css('display','block');
-		        });
+					$('#lh01').removeClass('active');					
+			    }
+			 
 			
 			
 		    // Slicknav menu

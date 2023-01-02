@@ -17,24 +17,18 @@ import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 
 public interface VegemilBabyCommunityService {
 	
-	//===[Index]===
-	
-	// 영유아식 이게 레알 최종 
-	public List<VegemilBabyMagazineDTO> NEWselectMagazine(VegemilBabySearchDTO params);
-	
+	//======[Index]======	
 	//육아정보
 	public List<VegemilBabyMagazineDTO> selectMagazineIndex();
-
 	//육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
 	
-	//===[Product]===
-	//육아정보	
-    public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate);
-    public VegemilBabyCategoryDTO selectCategoryCount();
-    
-    public List<VegemilBabyMagazineDTO> findAllMagazine(SearchDTO params); 
-
+	
+	//======[Community]======	
+	// 육아정보 
+	public List<VegemilBabyMagazineDTO> NEWselectMagazine(VegemilBabySearchDTO params);  
+	// 육아정보 - 카테고리별 숫자
+	public VegemilBabyCategoryDTO selectCategoryCount();
     //육아정보 상세
     public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx);
 
@@ -44,7 +38,7 @@ public interface VegemilBabyCommunityService {
     public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
 	
     
-    //===[Event]===
+    //======[Event]======
     //진행중 이벤트
   	public List<VegemilBabyEventDTO> selectEventList();
   	
@@ -56,22 +50,9 @@ public interface VegemilBabyCommunityService {
     
     public boolean isSampleForm(VegemilBabySampleDTO params);
     
-	public List<VegemilBabyMagazineDTO> findMagazine(SearchDTO params);
-
-    //육아정보 -임신출산
-    public List<VegemilBabyMagazineDTO> findPbMagazine(SearchDTO params);
-   
-    //육아정보 - 성장/건강
-    public List<VegemilBabyMagazineDTO> findGhMagazine(SearchDTO params);
-    //육아정보 - 놀이/교육
-    public List<VegemilBabyMagazineDTO> findPeMagazine(SearchDTO params);
+	
 
 	
-    
-	
-	public List<VegemilBabyMagazineDTO> findLhMagazine();
-	
-    public List<VegemilBabyMagazineDTO> findAllMagazine2(SearchDTO params);
 
     public List<Integer> magazineCountList(String cate);
     

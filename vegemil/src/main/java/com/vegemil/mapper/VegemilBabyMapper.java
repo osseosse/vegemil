@@ -20,44 +20,52 @@ import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 @Mapper
 public interface VegemilBabyMapper {
 	
-	//===[Index]===
+	//======[Index]======
 	//육아정보
 	public List<VegemilBabyMagazineDTO> selectMagazineIndex();
 	//육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
 
-	//===[Product]===	
-	//육아정보	
-	//구버전
-	public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate);
-
-	//신버전
-//	public List<VegemilBabyMagazineDTO> selectAllMagazine(SearchDTO params);
+	//======[Community]======	
+	//육아정보
+	// 육아정보 - 카테고리별 숫자
 	public VegemilBabyCategoryDTO selectCategoryCount(); 
+	
+	//육아정보 - 전체
+	public int allMagazineCount();
+	public List<VegemilBabyMagazineDTO> selectAllMagazine(VegemilBabySearchDTO params);	
+	
+	//육아정보 - 임신출산
+	public int pbMagazineCount(String subCategory);	
+	public List<VegemilBabyMagazineDTO> selectPbMagazine(VegemilBabySearchDTO params);
+
+    //육아정보 - 성장/건강
+	public int ghMagazineCount(String subCategory);
+	public List<VegemilBabyMagazineDTO> selectGhMagazine(VegemilBabySearchDTO params);
+
+    //육아정보 - 놀이/교육
+	public int peMagazineCount(String subCategory);
+	public List<VegemilBabyMagazineDTO> selectPeMagazine(VegemilBabySearchDTO params);
+	
+	//육아정보 -리빙/헬스/트랜드
+	public int lhMagazineCount(String subCategory);
+	public List<VegemilBabyMagazineDTO> selectLhMagazine(VegemilBabySearchDTO params);
+
+		
 
 	//육아정보 상세
 	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx);
-
-    //영유아식 레시피
+	
+	//영유아식 레시피
 	public List<VegemilBabyRecipeDTO> selectRecipeList();	
 	//영유아식 레시피 상세
 	public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
 
 	
-	//육아정보 - 임신출산
-	public int pbMagazineCount(String subCategory);	
-	public List<VegemilBabyMagazineDTO> selectPbMagazine(String subCategory);
-
-    //육아정보 - 성장/건강
-	public int ghMagazineCount(String subCategory);
-	public List<VegemilBabyMagazineDTO> selectGhMagazine(String subCategory);
-
-    //육아정보 - 놀이/교육
-	public int peMagazineCount();
-	public List<VegemilBabyMagazineDTO> selectPeMagazine(SearchDTO params);
-
-
-	//===[Event]===
+	
+	
+	
+	//======[Event]======
     //진행중 이벤트
 	public List<VegemilBabyEventDTO> selectEventList();
 	
@@ -71,8 +79,13 @@ public interface VegemilBabyMapper {
 	
 	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
 	
-	//public List<VegemilBabyMagazineDTO> selectAllMagazine();
-	public List<VegemilBabyMagazineDTO> selectLhMagazine();
+
+	public List<VegemilBabyBestReviewDTO> bestReviewList();
+
+
+
+	
+	//======삭제예정======
 
 	public List<VegemilBabyMagazineDTO> selectMagazine(VegemilBabySearchDTO params);
 	public int magazineCount(VegemilBabySearchDTO params); 
@@ -82,16 +95,10 @@ public interface VegemilBabyMapper {
 	public int magazineCountPe(String cate); 
 	public int magazineCountLh(String cate); 
 	
-
+	//======삭제예정======
 
 	
 	
-	
-	
-
-	public List<VegemilBabyBestReviewDTO> bestReviewList();
-
-
 
 
 

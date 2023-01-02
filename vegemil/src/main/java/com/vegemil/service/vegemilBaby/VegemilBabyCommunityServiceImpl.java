@@ -24,346 +24,177 @@ import com.vegemil.paging.PaginationInfo;
 
 @Service
 public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityService {
-	
+
 	@Autowired
 	private VegemilBabyMapper vegemilBabyMapper;
-	
-	//===[Index]===
-	//육아정보
+
+	// ======[Index]======
+	// 육아정보
 	@Override
 	public List<VegemilBabyMagazineDTO> selectMagazineIndex() {
 		return vegemilBabyMapper.selectMagazineIndex();
 	}
-	//육아상담 QnA
+	// 육아상담 QnA
 	@Override
 	public List<VegemilBabyQnADTO> selectQnAIndex() {
 		return vegemilBabyMapper.selectQnAIndex();
 	}
+
 	
-	//===[Community]===	
-	//육아정보
-	
+	// ======[Community]======
+	// 육아정보
 	@Override
 	public List<VegemilBabyMagazineDTO> NEWselectMagazine(VegemilBabySearchDTO params) {
-		
-		System.out.println("params: "+ params.getCategory());
-		System.out.println("params- sub: "+ params.getSubCategory());
-		
+
 		String category = params.getCategory();
 		String subCategory = params.getSubCategory();
-		
-		List<VegemilBabyMagazineDTO> magazineList = Collections.emptyList();
-		
-		int count = 0;
-		
-		if(category.equals("pb")) {
-			count = vegemilBabyMapper.pbMagazineCount(subCategory);
-		}else if(category.equals("gh")) {
-			count = vegemilBabyMapper.ghMagazineCount(subCategory);
-		}
-      
-		PaginationInfo paginationInfo = new PaginationInfo(params);
-        paginationInfo.setTotalRecordCount(count);
-        
-        params.setPaginationInfo(paginationInfo);
-        
-        System.out.println("========pbMagazine 정보========");
-        System.out.println("페이지네이션 정보 - 마지막페이지: " +params.getPaginationInfo().getLastPage());
-        System.out.println("페이지네이션 정보 - 전페 페이지수: " +params.getPaginationInfo().getTotalPageCount());
-        System.out.println("페이지네이션 정보 - 총 개수: " +params.getPaginationInfo().getTotalRecordCount());
-        
-        if(count > 0) {
-    		if(category.equals("pb")) {
-    			magazineList = vegemilBabyMapper.selectPbMagazine(subCategory);	
-    		}else if(category.equals("gh")) {
-    			magazineList = vegemilBabyMapper.selectGhMagazine(subCategory);
-    		}
 
-        	
+		List<VegemilBabyMagazineDTO> magazineList = Collections.emptyList();
+
+		int count = 0;
+
+		if (category.equals("pb")) {
+			count = vegemilBabyMapper.pbMagazineCount(subCategory);
+		} else if (category.equals("gh")) {
+			count = vegemilBabyMapper.ghMagazineCount(subCategory);
+		} else if (category.equals("pe")) {
+			count = vegemilBabyMapper.peMagazineCount(subCategory);
+		} else if (category.equals("lh")) {
+			count = vegemilBabyMapper.lhMagazineCount(subCategory);
+		} else {
+			count = vegemilBabyMapper.allMagazineCount();
 		}
-		
+
+		PaginationInfo paginationInfo = new PaginationInfo(params);
+		paginationInfo.setTotalRecordCount(count);
+
+		params.setPaginationInfo(paginationInfo);
+
+		if (count > 0) {
+			if (category.equals("pb")) {
+				magazineList = vegemilBabyMapper.selectPbMagazine(params);
+			} else if (category.equals("gh")) {
+				magazineList = vegemilBabyMapper.selectGhMagazine(params);
+			} else if (category.equals("pe")) {
+				magazineList = vegemilBabyMapper.selectPeMagazine(params);
+			} else if (category.equals("lh")) {
+				magazineList = vegemilBabyMapper.selectLhMagazine(params);
+			} else {
+				magazineList = vegemilBabyMapper.selectAllMagazine(params);
+			}
+		}
+
 		return magazineList;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	@Override
-	public List<VegemilBabyMagazineDTO> selectAllMagazine(String cate) {	  
-		  //1. 카테고리별 게시글 조회
-		  List<VegemilBabyMagazineDTO> magazineList = Collections.emptyList();	  
-		  magazineList= vegemilBabyMapper.selectAllMagazine(cate);	  
-		  //2. 카테고리별 게시글 수 조회	  
-	  	return magazineList;
-	}	
-	
+	// 육아정보 - 카테고리별 숫자
 	@Override
 	public VegemilBabyCategoryDTO selectCategoryCount() {
 		VegemilBabyCategoryDTO categoryCount = vegemilBabyMapper.selectCategoryCount();
 		return categoryCount;
 	}
-	
-	//육아정보 상세
+	// 육아정보 상세
 	@Override
-	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx) {	
+	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx) {
 		return vegemilBabyMapper.selectMagazineDetail(mbsIdx);
 	}
-	//영유아식 레시피
+
+	// 영유아식 레시피 리스트
 	@Override
 	public List<VegemilBabyRecipeDTO> selectRecipeList() {
 		List<VegemilBabyRecipeDTO> recipeList = vegemilBabyMapper.selectRecipeList();
 		return recipeList;
 	}
-	//영유아식 레시피 상세
+	// 영유아식 레시피 상세
 	@Override
 	public VegemilBabyRecipeDTO selectRecipeDetail(Long idx) {
 		VegemilBabyRecipeDTO recipe = vegemilBabyMapper.selectRecipeDetail(idx);
 		return recipe;
 	}
-	
-    //===[Event]===
-    //진행중 이벤트
+
+	// ======[Event]======
+	// 진행중 이벤트
 	@Override
 	public List<VegemilBabyEventDTO> selectEventList() {
 		return vegemilBabyMapper.selectEventList();
 	}
-	//사랑의 온도계 카운트
+
+	// 사랑의 온도계 카운트
 	@Override
 	public int selectTemperature() {
 		return vegemilBabyMapper.selectTemperature();
 	}
-	
 
-	
-	//샘플신청 등록
+	// 샘플신청 등록
 	@Override
 	@Transactional
 	public boolean insertSampleForm(VegemilBabySampleDTO sample) {
-			
+
 		int queryResult = 0;
 		queryResult = vegemilBabyMapper.insertSampleForm(sample);
-		
+
 		return (queryResult == 1) ? true : false;
 	}
-	
+
 	@Override
 	@Transactional
 	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel) {
-			
+
 		int queryResult = 0;
 		queryResult = vegemilBabyMapper.insertCalendarModel(calModel);
-		
+
 		return (queryResult == 1) ? true : false;
 	}
 
 	@Override
 	public boolean isSampleForm(VegemilBabySampleDTO params) {
-		
+
 		int sampleCount = 0;
 		sampleCount = vegemilBabyMapper.sampleFormCountBySample(params);
 
 		return (sampleCount >= 1) ? true : false;
 	}
 
-    //육아정보 -임신출산
-	/*
-	 * @Override public List<VegemilBabyMagazineDTO> findPbMagazine(SearchDTO
-	 * params) {
-	 * 
-	 * List<VegemilBabyMagazineDTO> pbMagazineList = Collections.emptyList();
-	 * 
-	 * int count = vegemilBabyMapper.pbMagazineCount();
-	 * 
-	 * PaginationInfo paginationInfo = new PaginationInfo(params);
-	 * paginationInfo.setTotalRecordCount(count);
-	 * 
-	 * params.setPaginationInfo(paginationInfo);
-	 * 
-	 * System.out.println("========pbMagazine 정보========");
-	 * System.out.println("페이지네이션 정보 - 마지막페이지: "
-	 * +params.getPaginationInfo().getLastPage());
-	 * System.out.println("페이지네이션 정보 - 전페 페이지수: "
-	 * +params.getPaginationInfo().getTotalPageCount());
-	 * System.out.println("페이지네이션 정보 - 총 개수: "
-	 * +params.getPaginationInfo().getTotalRecordCount());
-	 * 
-	 * if(count > 0) { pbMagazineList = vegemilBabyMapper.selectPbMagazine(params);
-	 * }
-	 * 
-	 * return pbMagazineList; } //육아정보 - 성장/건강
-	 * 
-	 * @Override public List<VegemilBabyMagazineDTO> findGhMagazine(SearchDTO
-	 * params) {
-	 * 
-	 * List<VegemilBabyMagazineDTO> ghMagazineList = Collections.emptyList();
-	 * 
-	 * int count = vegemilBabyMapper.ghMagazineCount();
-	 * 
-	 * PaginationInfo paginationInfo = new PaginationInfo(params);
-	 * paginationInfo.setTotalRecordCount(count);
-	 * 
-	 * params.setPaginationInfo(paginationInfo);
-	 * 
-	 * System.out.println("========ghMagazine 정보========");
-	 * System.out.println("페이지네이션 정보 - 마지막페이지: "
-	 * +params.getPaginationInfo().getLastPage());
-	 * System.out.println("페이지네이션 정보 - 전페 페이지수: "
-	 * +params.getPaginationInfo().getTotalPageCount());
-	 * System.out.println("페이지네이션 정보 - 총 개수: "
-	 * +params.getPaginationInfo().getTotalRecordCount());
-	 * 
-	 * if(count > 0) { ghMagazineList = vegemilBabyMapper.selectGhMagazine(); }
-	 * 
-	 * return ghMagazineList; }
-	 */
-	
-	@Override
-	public List<VegemilBabyMagazineDTO> findPeMagazine(SearchDTO params) {
-		List<VegemilBabyMagazineDTO> peMagazineList = Collections.emptyList();
-	       
-		int count = vegemilBabyMapper.peMagazineCount();
-		      
-		PaginationInfo paginationInfo = new PaginationInfo(params);
-        paginationInfo.setTotalRecordCount(count);
-        
-        params.setPaginationInfo(paginationInfo);
-        
-        if(count > 0) {
-        	peMagazineList = vegemilBabyMapper.selectPeMagazine(params);
-		}
-		
-		return peMagazineList;	
-	}
-	
-	
-	
-	
-	/*
-	 * @Override public List<VegemilBabyMagazineDTO> findAllMagazine(SearchDTO
-	 * params) { return vegemilBabyMapper.selectAllMagazine(params); }
-	 */
-	 
-
 	
 
-	
-
-	
-	@Override
-	public List<VegemilBabyMagazineDTO> findLhMagazine() {
-		return vegemilBabyMapper.selectLhMagazine();
-	}
-
-	
-	@Override 
-	public List<VegemilBabyMagazineDTO> findAllMagazine2(SearchDTO params) {
-	  
-		System.out.println(params);
-	  List<VegemilBabyMagazineDTO> magazineList = Collections.emptyList();
-	  
-		/*
-		 * int count = vegemilBabyMapper.magazineCount(params); //세부 메뉴별 게시글 수 카운트
-		 * System.out.println("=====================게시글카운트======================");
-		 * System.out.println(count);
-		 * 
-		 * PaginationInfo paginationInfo = new PaginationInfo(params);
-		 * paginationInfo.setTotalRecordCount(count);
-		 * 
-		 * params.setPaginationInfo(paginationInfo);
-		 * 
-		 * 
-		 * if(count > 0 ) { magazineList= vegemilBabyMapper.selectMagazine(params); }
-		 */
-	  
-	  return null; 
-	}
-	
-
-	
 	@Override
 	public List<Integer> magazineCountList(String cate) {
-		
-		System.out.println("서비스 임플 실행============");
-		
-		List<Integer>magazineCountList = new ArrayList<>();	
 
-		if(cate.equals("pb")) {		
+		System.out.println("서비스 임플 실행============");
+
+		List<Integer> magazineCountList = new ArrayList<>();
+
+		if (cate.equals("pb")) {
 			System.out.println("서비스 임플 실행============");
 
-			for(int i = 1; i<= 7; i++) {						   
-				magazineCountList.add( vegemilBabyMapper.magazineCountPb(cate+"0"+i));				 				
+			for (int i = 1; i <= 7; i++) {
+				magazineCountList.add(vegemilBabyMapper.magazineCountPb(cate + "0" + i));
 			}
-		}else if(cate.equals("gh")) {
-			for(int i = 1; i<= 8; i++) {						   
-				magazineCountList.add( vegemilBabyMapper.magazineCountGh(cate+"0"+i));				 				
+		} else if (cate.equals("gh")) {
+			for (int i = 1; i <= 8; i++) {
+				magazineCountList.add(vegemilBabyMapper.magazineCountGh(cate + "0" + i));
 			}
-		}else if(cate.equals("pe")) {
-			for(int i = 1; i<= 2; i++) {						   
-				magazineCountList.add( vegemilBabyMapper.magazineCountPe(cate+"0"+i));				 				
+		} else if (cate.equals("pe")) {
+			for (int i = 1; i <= 2; i++) {
+				magazineCountList.add(vegemilBabyMapper.magazineCountPe(cate + "0" + i));
 			}
-		}else if(cate.equals("lh")) {
-			for(int i = 1; i<= 2; i++) {						   
-				magazineCountList.add( vegemilBabyMapper.magazineCountLh(cate+"0"+i));				 				
+		} else if (cate.equals("lh")) {
+			for (int i = 1; i <= 2; i++) {
+				magazineCountList.add(vegemilBabyMapper.magazineCountLh(cate + "0" + i));
 			}
 		}
-		
+
 		return magazineCountList;
 	}
 
 	
-	
-	
-	
-	
-
-	
-
-	
-	
-	
-	
-
-	
-
-
-	@Override
-	public List<VegemilBabyMagazineDTO> findMagazine(SearchDTO params) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public List<VegemilBabyBestReviewDTO> bestReviewList() {
 		return vegemilBabyMapper.bestReviewList();
 	}
-	@Override
-	public List<VegemilBabyMagazineDTO> findAllMagazine(SearchDTO params) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<VegemilBabyMagazineDTO> findPbMagazine(SearchDTO params) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<VegemilBabyMagazineDTO> findGhMagazine(SearchDTO params) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	
 	
 
 
-
-
-	
-	
-	
 }
