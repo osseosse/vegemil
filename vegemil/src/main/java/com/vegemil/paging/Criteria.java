@@ -27,7 +27,7 @@ public class Criteria {
 
 	public Criteria() {
 		this.currentPageNo = 1;
-		this.recordsPerPage = 16;
+		this.recordsPerPage = 10;
 		//수정필요
 		this.pageSize = 10;
 	}

@@ -182,36 +182,36 @@
 									th:text="|(${categoryCount.pb07})|"></span></a></li>
 						</ul>
 						<ul class=" btn_ch20 menu09" id="gh" style="display: none">
-							<li id="gh00" class="active"><a>전체</a></li>
-							<li id="gh01"><a>1~3개월<span
+							<li id="gh00" class="active"><a th:href="@{/vegemilBaby/magazine?category=gh}">전체</a></li>
+							<li id="gh01"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh01}">1~3개월<span
 									th:text="|(${categoryCount.gh01})|"></span></a></li>
-							<li id="gh02"><a>4~6개월<span
+							<li id="gh02"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh02}">4~6개월<span
 									th:text="|(${categoryCount.gh02})|"></span></a></li>
-							<li id="gh03"><a>7~12개월<span
+							<li id="gh03"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh03}">7~12개월<span
 									th:text="|(${categoryCount.gh03})|"></span></a></li>
-							<li id="gh04"><a>13~18개월<span
+							<li id="gh04"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh04}">13~18개월<span
 									th:text="|(${categoryCount.gh04})|"></span></a></li>
-							<li id="gh05"><a>19~24개월 <span
+							<li id="gh05"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh05}">19~24개월 <span
 									th:text="|(${categoryCount.gh05})|"></span></a></li>
-							<li id="gh06"><a>25~36개월<span
+							<li id="gh06"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh06}">25~36개월<span
 									th:text="|(${categoryCount.gh06})|"></span></a></li>
-							<li id="gh07"><a>3세 이상<span
+							<li id="gh07"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh07}">3세 이상<span
 									th:text="|(${categoryCount.gh07})|"></span></a></li>
-							<li id="gh08"><a>영유아 건강관리<span
+							<li id="gh08"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh08}">영유아 건강관리<span
 									th:text="|(${categoryCount.gh08})|"></span></a></li>
 						</ul>
 						<ul class=" btn_ch20 menu03" id="pe" style="display: none">
-							<li id="pe00" class="active"><a>전체</a></li>
-							<li id="pe01"><a>DIY&놀이법<span
+							<li id="pe00" class="active"><a th:href="@{/vegemilBaby/magazine?category=pe}">전체</a></li>
+							<li id="pe01"><a th:href="@{/vegemilBaby/magazine?category=pe&subCategory=pe01}">DIY&놀이법<span
 									th:text="|(${categoryCount.pe01})|"></span></a></li>
-							<li id="pe02"><a>교육/훈육 노하우<span
+							<li id="pe02"><a th:href="@{/vegemilBaby/magazine?category=pe&subCategory=pe02}">교육/훈육 노하우<span
 									th:text="|(${categoryCount.pe02})|"></span></a></li>
 						</ul>
 						<ul class=" btn_ch20 menu03" id="lh" style="display: none">
-							<li id="lh00" class="active"><a>전체</a></li>
-							<li id="lh01"><a>리빙/헬스<span
+							<li id="lh00" class="active"><a th:href="@{/vegemilBaby/magazine?category=lh}">전체</a></li>
+							<li id="lh01"><a th:href="@{/vegemilBaby/magazine?category=lh&subCategory=lh01}">리빙/헬스<span
 									th:text="|(${categoryCount.lh01})|"></span></a></li>
-							<li id="lh02"><a>트렌드<span
+							<li id="lh02"><a th:href="@{/vegemilBaby/magazine?category=lh&subCategory=lh02}">트렌드<span
 									th:text="|(${categoryCount.lh02})|"></span></a></li>
 						</ul>
 					</div>
@@ -229,7 +229,6 @@
 				<!-- //내용없음 404 -->
 				<!-- 위쪽 정보 일단 위쪽정보만 -->
 								
-			<div class="entire">
 				<div class="col-md-12 mt50 new_listBox mg0 pd0">
 					<ul class="thumb-over new_list">
 <!-- 					<p class="wz_img" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" >
@@ -254,7 +253,6 @@
 
 
 					</ul>
-
 				</div>
 				<!-- //container -->
 				
@@ -262,75 +260,44 @@
 			<!-- //row-->
 		
 		<!-- //container100 -->
-		<!-- paging -->
+		
 		<link href="https://image.edaymall.com/images/dcf/vegemil/common/css/style.css" rel="stylesheet">
-		<div class="row">
-			<div class="col-md-12">	
-				<div class="paging3 mt50">
-            		<ol class="f_pp">
-				        
-				        
-				        
-				        <li class="preEnd"><input type="image" name="btnFirst" id="btnFirst" img=""
-				                src="http://image.edaymall.com/images/btn/btn_preEnd.gif" alt="처음"></li>
-				        <li class="pre"><input type="image" name="btnPrev" id="btnPrev" img=""
-				                src="http://image.edaymall.com/images/btn/btn_pre.gif" alt="이전"></li>
-				        <li><span id="labPageList"><strong>1</strong> <a
-				                    href="/main/brandVegemilBaby/e_magazine.aspx?p=2&amp;cate=all&amp;mCate=pb00#contentDetail">2</a> <a
-				                    href="/main/brandVegemilBaby/e_magazine.aspx?p=3&amp;cate=all&amp;mCate=pb00#contentDetail">3</a> <a
-				                    href="/main/brandVegemilBaby/e_magazine.aspx?p=4&amp;cate=all&amp;mCate=pb00#contentDetail">4</a> <a
-				                    href="/main/brandVegemilBaby/e_magazine.aspx?p=5&amp;cate=all&amp;mCate=pb00#contentDetail">5</a> <a
-				                    href="/main/brandVegemilBaby/e_magazine.aspx?p=6&amp;cate=all&amp;mCate=pb00#contentDetail">6</a></span>
-				        </li>
-				        <li class="next"><input type="image" name="btnNext" id="btnNext" img=""
-				                src="http://image.edaymall.com/images/btn/btn_next.gif" alt="다음"></li>
-				        <li class="nextEnd"><input type="image" name="btnLast" id="btnLast" img=""
-				                src="http://image.edaymall.com/images/btn/btn_nextEnd.gif" alt="끝"></li>
-				                
-				                
-				                
-				    </ol>
-				</div>
-			</div>
-		</div>
 		
+		<!-- paging -->
+			<div class="paging3 mt30">
+         		<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+				    <div class="paging mt50">
+				        <ol class="f_pp">
+				            <li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
+				                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+				            </li>
+				            <li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+				                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+				            </li>
+				            <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" th:class="${pageNo == params.currentPageNo} ? 'active'">
+				                <a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+				            </li>
+				            <li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+				                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+				            </li>
+				            <li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
+				                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+				            </li>
+				        </ol>
+				    </div>
+				</nav>               
+        	</div>
+		<!-- //paging -->
 		
-		<div class="row">
-			<div class="col-md-12">			
-			<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
-				<div class="paging mt50">
-					<ol class="f_pp">
-						
-						<li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
-							<a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-						</li>
-						<li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
-							<a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
-						</li>
-						<li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" th:class="${pageNo == params.currentPageNo} ? 'active'">
-							<a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
-						</li>
-						<li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
-							<a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
-						</li>
-						<li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
-							<a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-						</li>
-					</ol>
-					
-					
-					</div>
-				</nav>
-			</div>
-		</div>
+	
+	
 
-		<!-- paging //-->
-		</div>
 		
-		</div>
 		
-		 
+		
 
+		
+		</div>
 	</div>
 	<!-- //content -->
 
@@ -341,10 +308,18 @@
 	<script th:inline="javascript">
 	/*<![CDATA[*/	
 	    function movePage(uri, queryString) {
+		
+	    	location.href = uri + queryString;
 			
-			let category = [[${params.category}]];				
-			queryString = queryString.substring(1, queryString.indexOf('&'));	
-			location.href = uri +'?category='+category +'&'+ queryString;
+			let category = [[${params.category}]];
+			let subCategory = [[${params.subCategory}]];				
+
+			queryString = queryString.substring(1, queryString.indexOf('&'));
+			if(subCategory != null){
+				location.href = uri +'?category='+category +'&subCategory='+subCategory+'&'+queryString; 
+			}else{
+				location.href = uri +'?category='+category+'&'+queryString;
+			}
 		}	
 	/*]]>*/
 	</script>
