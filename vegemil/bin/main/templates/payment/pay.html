@@ -28,8 +28,8 @@
 		  orderId: bizNum+'_'+now.getMonth()+now.getDate()+now.getHours()+now.getMinutes()+now.getSeconds(),
 		  orderName: '그린비아 결제',
 		  customerName: bizNum,
-		  successUrl: '/payment/success',
-		  failUrl: '/payment/fail',
+		  successUrl: 'https://www.vegemil.co.kr/payment/success', // 로컬에서는 localhost:8080 으로 수정해야함
+		  failUrl: 'https://www.vegemil.co.kr/payment/fail',
 		})
 		.catch(function (error) {
 		    if (error.code === 'USER_CANCEL') {
