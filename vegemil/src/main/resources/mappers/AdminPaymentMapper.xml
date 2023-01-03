@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminPaymentMapper">
+
+	<sql id="paymentColumns">
+	    ROW_INDEX,
+		LGD_RESPCODE,
+		LGD_RESPMSG,
+		LGD_MID,
+		LGD_OID,
+		LGD_AMOUNT,
+		LGD_TID,
+		LGD_PAYTYPE,
+		LGD_PAYDATE,
+		LGD_FINANCECODE,
+		LGD_FINANCENAME,
+		LGD_BUYER,
+		LGD_BUYERID,
+		LGD_BUYERMAIL,
+		LGD_PRODUCTINFO,
+		LGD_CARDNUM,
+		LGD_CARDINSTALLMONTH,
+		LGD_CARDNOINTYN,
+		LGD_FINANCEAUTHNUM,
+		DATE_FORMAT(INSERT_DATE,'%Y.%m.%d. %r') as INSERT_DATE,
+		LGD_STATUS_CODE,
+		LGD_STATUS,
+		LGD_IP,
+		LGD_CANCEL_DATE,
+		CANCEL_DATE,
+		CANCEL_REQ_DATE,
+		LGD_MD5,
+		LGD_RECEIPT_URL
+	</sql>
+
+	<select id="selectPaymentList" parameterType="hashMap" resultType="com.vegemil.domain.AdminPaymentDTO">
+		SELECT /* selectBabyInfoList by AdminPaymentMapper.xml */ 
+		       ROW_INDEX, LGD_BUYER, LGD_OID, LGD_AMOUNT, LGD_PAYDATE, LGD_CANCEL_DATE,
+		       LGD_FINANCENAME, LGD_CARDNUM, LGD_RESPCODE, LGD_RECEIPT_URL, CANCEL_REQ,
+		       LGD_TID
+		  FROM m_payment
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND INSERT_DATE &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND INSERT_DATE &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND LGD_BUYER like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')  
+		 </if>
+		 ORDER BY ROW_INDEX DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectPaymentTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*) /* selectBabyInfoTotalCount by AdminPaymentMapper.xml */
+		  FROM m_payment
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND INSERT_DATE &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND INSERT_DATE &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND LGD_BUYER like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')  
+		 </if>
+	</select>
+	
+	
+
+</mapper>
