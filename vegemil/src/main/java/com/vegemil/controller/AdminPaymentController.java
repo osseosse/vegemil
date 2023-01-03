@@ -61,7 +61,7 @@ public class AdminPaymentController extends UiUtils {
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "admin/payment/cancel/{paymentKey}")
+	@RequestMapping(value = "/admin/payment/cancel/{paymentKey}")
 	public String  tossPayCancelSave(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -74,7 +74,7 @@ public class AdminPaymentController extends UiUtils {
 
 		//request 데이터
 		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+		String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
 		/* base64 encoding */
 		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
@@ -152,7 +152,7 @@ public class AdminPaymentController extends UiUtils {
 		            		pay.setLgdRespcode(result.get("status").toString());
 		            		pay.setLgdRespmsg("취소성공");
 		            		pay.setLgdPaydate(result.get("requestedAt").toString());
-		            		pay.setLgdBuyer(member.getMCompName());
+		            		pay.setLgdBuyer(member.getMName());
 		        			pay.setLgdBuyerid(member.getMId());
 		            		
 			        		if(result.get("card") != null) {

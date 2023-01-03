@@ -239,7 +239,7 @@ var createTable = function() {
       		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				if(full['cancelReq']==1) {
+				if(full['cancelReq']==1 && full['lgdRespcode']!='CANCELED') {
 					return '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'/admin/payment/cancel/'+full['lgdTid']+ '\'">취소</button>'
 				}else {
 					return '-';

@@ -69,6 +69,69 @@
 		 </if>
 	</select>
 	
+	<insert id="savePayment" parameterType="com.vegemil.domain.AdminPaymentDTO" useGeneratedKeys="true" keyProperty="memNo">
+		INSERT INTO m_payment (
+		    LGD_RESPCODE,
+			LGD_RESPMSG,
+			LGD_MID,
+			LGD_OID,
+			LGD_AMOUNT,
+			LGD_TID,
+			LGD_PAYTYPE,
+			LGD_PAYDATE,
+			LGD_FINANCECODE,
+			LGD_FINANCENAME,
+			LGD_BUYER,
+			LGD_BUYERID,
+			LGD_BUYERMAIL,
+			LGD_PRODUCTINFO,
+			LGD_CARDNUM,
+			LGD_CARDINSTALLMONTH,
+			LGD_CARDNOINTYN,
+			LGD_FINANCEAUTHNUM,
+			INSERT_DATE,
+			LGD_STATUS_CODE,
+			LGD_STATUS,
+			LGD_IP,
+			LGD_CANCEL_DATE,
+			CANCEL_DATE,
+			CANCEL_REQ_DATE,
+			LGD_MD5,
+			LGD_RECEIPT_URL
+		) VALUES (
+			#{lgdRespcode},
+			#{lgdRespmsg},
+			#{lgdMid},
+			#{lgdOid},
+			#{lgdAmount},
+			#{lgdTid},
+			#{lgdPaytype},
+			#{lgdPaydate},
+			#{lgdFinancecode},
+			#{lgdFinancename},
+			#{lgdBuyer},
+			#{lgdBuyerid},
+			#{lgdBuyermail},
+			#{lgdProductinfo},
+			#{lgdCardnum},
+			#{lgdCardinstallmonth},
+			#{lgdCardnointyn},
+			#{lgdFinanceauthnum},
+			NOW(),
+			#{lgdStatusCode},
+			#{lgdStatus},
+			#{lgdIp},
+			#{lgdCancelDate},
+			#{cancelDate},
+			#{cancelReqDate},
+			#{lgdMd5},
+			#{lgdReceiptUrl}
+		)
+		<selectKey keyProperty="rowIndex" keyColumn="ROW_INDEX" resultType="long" >
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
 	
 
 </mapper>
