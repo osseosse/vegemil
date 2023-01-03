@@ -1,0 +1,209 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<title>육아상담  QnA상세</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>    
+<body>
+<!-- ================================ Header ================================ -->
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+	
+	<div id="content">
+		<div class="container100">
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG04_01 subIMG">
+						<div class="container h640">
+							<div class="subTxt">
+								<p class="f40_6">육아QnA</p>
+								<p class="f20_4 mt20">일상 속 육아공감 스토리와<br>알아두면 유용할 알찬 정보를 전합니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row pd0 mg0 -->
+		</div>
+			<div class="container100 bg_b">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="#">Cummunity</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a href="brand.aspx">brand</a></li>
+														<li><a href="premium.aspx">Product</a></li>
+														<li><a href="bv_event.aspx"> Event</a></li>
+														<li><a href="e_magazine.aspx?p=1"> Cummunity</a></li>
+														<li><a href="faq2.aspx"> Support</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02" >
+													<p class="view-btn_02" >
+														<a href="#">육아정보</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a href="e_magazine.aspx?p=1">육아정보</a></li>
+															<li><a href="qna.aspx?p=1">육아상담 Q&amp;A</a></li>
+															<li><a href="recipe_list.aspx?p=1">베지밀 레시피</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+								    <!-- // cate_sel_02 -->
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
+					</div>
+				</div>
+			</div>
+		</div>
+            <!-- //container100 -->
+            <div class="container100">
+                <div class="row mg0 pd0">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt">
+                            <p class="f24_4_bg">E-Magazine</p>
+                            <p class="f55_6 mt30">육아QnA</p>
+                            <p class="f24_4 mt10">아래 카테고리를 선택하시면 원하시 는 정보를 더 정확하게 확인할 수 있습니다.</p>
+                        </div>
+                        <!-- col-md-12 -->
+                        <div class="col-md-12 mt120 pd0 detailBox">
+                            <!-- detailTable -->
+                            <div class="detailTable mb80">
+                                <ul class="detail_lineT">
+                                    <li class="detail_left">
+                                        <a href="qna.aspx?p=1">
+                                            <div class="listMenu">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <p class="f17_4">목록으로 돌아가기</p>
+                                        </a>
+                                    </li>
+                                    <asp:repeater id=DataList3 runat="server">
+									<itemtemplate>  
+                                    <li class="detail_right">
+                                        <a href="qna_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx_pr") %>" class="f17_4">이전</a>
+                                        <a href="qna_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx_nt") %>" class="f17_4">다음</a>
+                                    </li>
+                                    </itemtemplate>
+                                    </asp:repeater> 
+                                </ul>
+                                <ul class="detail_lineB">
+                                    <asp:repeater id=DataList4 runat="server">
+									<itemtemplate>
+                                    <li class="detail_left">
+                                        <p class="f20_4_w"><%# DataBinder.Eval(Container.DataItem, "mbs_title") %></p>
+                                    </li>
+                                  
+                                    <li class="detail_right">
+                                        <p class="f20_4_w"><%# DataBinder.Eval(Container.DataItem, "mbs_date") %></p>
+                                    </li>
+                                     </itemtemplate>
+                                    </asp:repeater>
+                                </ul>
+                            </div>
+                            <!--//detailTable -->
+                            <!-- col-md-8 이부분에 리스트 삽입-->
+							<div class="col-md-8 underlineBox02 mb150">
+                                 <asp:repeater id=DataList1 runat="server">
+								
+								  <itemtemplate>          
+				 
+								 <!-- <p class="f45_6 mt80"><%# DataBinder.Eval(Container.DataItem, "mbs_title") %></p>
+                                  <p class="f17_4 mt40">
+                                    대한소아과학회에서는 최소한 4~6개월까지는 모유만 먹이고, 6개월 이후에서는
+                                    모유와 함께 아기의 발달에 맞추어 다양한 영양식품을 보충식으로 제공할 것을 권고하고 있습니다.
+                                    col-md-8 이부분에 리스트 삽입 [육아 권고 칼럼 삽입]
+                                  </p>
+                                  <span class="mt70 magazineIMG" style="background: url(/Admin/summerNote/uploadQna/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>); background-position:center;-webkit-background-size: cover; background-size: cover"></span>
+                                  
+                                  
+                                  <span class="mt70 magazineIMG" style="background: url(http://www.vegemil.co.kr/Admin/summerNote/uploadQna/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>); background-position:center;-webkit-background-size: cover; background-size: cover"></span>
+                                 
+                                    
+								  <p class="f17_4 mt60 mb100">		
+								    <%# DataBinder.Eval(Container.DataItem, "mbs_summary") %>
+								  </p> -->
+								  <%# DataBinder.Eval(Container.DataItem, "mbs_content") %>
+                                 </itemtemplate>
+                                </asp:repeater>   
+                           </div>  
+                          
+                           
+                            <!--// col-md-8 -->
+                            <!-- col-md-4 -->
+                            <div class="col-md-4">
+                                <div class="inforBox">
+                                   <p class="f17_4">이런 정보는 어떠신가요?</p>
+                                    <ul class="mt20">
+                                      <asp:repeater id=DataList2 runat="server">			
+									   <itemtemplate>   
+                                        <li>
+										         			
+                                            <a href="qna_detail.aspx?num=<%# DataBinder.Eval(Container.DataItem, "mbs_idx") %>">
+                                                <p class="infor_img">
+                                                    <span class="inforIMG inforIMG_001" style="background: url(/Admin/summerNote/uploadQna/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>); background-position:center;-webkit-background-size: cover; background-size: cover" alt="정보 썸네일"></span>
+                                                </p>
+                                                <div class="infor_txt">
+                                                    <p class="f14_4_1 txtHide6">
+                                                     <%# DataBinder.Eval(Container.DataItem, "mbs_title") %>
+                                                    </p>
+                                                </div>
+                                            </a>
+                                            
+                                         </li>    
+                                        </itemtemplate>
+                                      </asp:repeater> 
+                                    </ul>
+                                </div>
+								<!--
+                                <a href="#" class="shareBtn" title="공유하기">
+                                    <img src="img/p_04_03_02.png" alt="공유아이콘버튼">
+                                </a>
+								-->
+                            </div>
+                            <!--// col-md-4 -->
+                        </div>
+                        <!-- //col-md-12 -->
+					</div>
+                        <!-- //container -->
+                </div><!-- //row-->
+            </div>
+            <!-- //container100 -->
+	    </div> <!-- //content -->
+	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

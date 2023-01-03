@@ -98,6 +98,27 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx) {
 		return vegemilBabyMapper.selectMagazineDetail(mbsIdx);
 	}
+	
+	//육아상담 Q&A
+	@Override
+	public List<VegemilBabyMagazineDTO> selectQna(VegemilBabySearchDTO params) {
+		
+		String category = params.getCategory();
+		
+		List<VegemilBabyMagazineDTO> qnaList = Collections.emptyList();
+		
+		int count = vegemilBabyMapper.qnaCount(category);
+		
+		PaginationInfo paginationInfo = new PaginationInfo(params);
+		paginationInfo.setTotalRecordCount(count);
+		
+		if (count > 0) {
+			qnaList = vegemilBabyMapper.selectQna(params);
+		}
+
+		return qnaList;
+	}
+
 
 	// 영유아식 레시피 리스트
 	@Override
@@ -193,7 +214,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public List<VegemilBabyBestReviewDTO> bestReviewList() {
 		return vegemilBabyMapper.bestReviewList();
 	}
-
+	
 	
 
 

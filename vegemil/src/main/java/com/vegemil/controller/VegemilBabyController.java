@@ -56,11 +56,6 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/" + vegemilBabyAspx;
 	}
 	
-	@GetMapping("/Main/BrandVegemilBaby/event_best_review.aspx")
-	public String vegemilBabyEventBestReview() {
-		return "vegemilBaby/event_best_review";
-	}
-	
 	@GetMapping("/vegemilBaby/index")
 	public String index(Model model) {
 		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
@@ -96,6 +91,28 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazineDetail";
 	}
+	
+	
+	//====================== 0103작업 [한종걸] ===========================
+	//육아상담 QnA
+	@GetMapping("/vegemilBaby/qna")
+	public String moveQnaList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
+		model.addAttribute("qnaList",vegemilBabyCommunityService.selectQna(params));			
+		return "vegemilBaby/qna";
+	}
+	
+	//육아상담 상세
+	@GetMapping(value = { "/vegemilBaby/qna/detail/{idx}"})
+	public String moveQnaDetail(@PathVariable("idx") Long idx, Model model) {
+		model.addAttribute("magazineDetail", vegemilBabyCommunityService.selectMagazineDetail(idx));
+		return "vegemilBaby/qnaDetail";
+	}
+	
+	
+	
+	
+	
+	
 
 	// 영유아식 레시피
 	@GetMapping("/vegemilBaby/recipe")
@@ -111,6 +128,7 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("recipe", vegemilBabyCommunityService.selectRecipeDetail(idx));
 		return "vegemilBaby/recipeDetail";
 	}
+	
 	
 	/* Event */
 	@GetMapping("/vegemilBaby/sample/form")

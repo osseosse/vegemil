@@ -223,6 +223,43 @@
 			mbs_active = '1'			
 	</select>	
 	
+	
+	<!-- 육아상담 Q&A - 카테고리별 게시글수 -->
+	<select id="qnaCount" parameterType ="String" resultType="int" >
+		SELECT 
+			COUNT(*) 
+		FROM 
+			m_editQnA_brandBaby 
+		WHERE 
+			mbs_category is not null
+		AND mbs_check != 1
+		<if test="category != null">	
+		AND 
+			mbs_category = #{category}			
+		</if>	
+	</select>
+	
+	<!-- 육아상담 Q&A - 카테고리별 조회 -->
+	<select id="selectQna" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+		SELECT 
+       		mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category  
+       	FROM 
+       		m_editQnA_brandBaby 
+		WHERE 
+			mbs_category is not null
+		AND mbs_check != 1
+		<if test="category != null">
+        	AND mbs_category = #{category}
+    	</if>
+    	Order By 
+			mbs_getdate DESC
+		<!-- LIMIT
+        	#{paginationInfo.firstRecordIndex}, 10       --> 	
+	</select>
+	
+	
+	
+	
 	<!-- 영유아식레시피 - 레시피 리스트 -->	
 	<select id="selectRecipeList"  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO" >			
 		SELECT 

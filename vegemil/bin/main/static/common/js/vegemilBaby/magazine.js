@@ -35,7 +35,6 @@ $(document).ready(function(){
 			        $("#LcateAll").addClass('active');
 			    }
 			    
-			    
 			    if(subCate =="pb01"){
 			    	$('#pb00').removeClass('active');
 					$('#pb01').addClass('active');

@@ -36,6 +36,9 @@ public interface VegemilBabyCommunityService {
     public List<VegemilBabyRecipeDTO> selectRecipeList();
 	//영유아식 레시피 상세
     public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
+    
+    // 육아상담 Q&A
+	public List<VegemilBabyMagazineDTO> selectQna(VegemilBabySearchDTO params);  
 	
     
     //======[Event]======

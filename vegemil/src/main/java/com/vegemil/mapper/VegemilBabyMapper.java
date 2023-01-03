@@ -51,10 +51,21 @@ public interface VegemilBabyMapper {
 	public int lhMagazineCount(String subCategory);
 	public List<VegemilBabyMagazineDTO> selectLhMagazine(VegemilBabySearchDTO params);
 
-		
-
 	//육아정보 상세
 	public VegemilBabyMagazineDetailDTO selectMagazineDetail(Long mbsIdx);
+
+	//육아상담 Q&A - 카테고리별 게시글수
+	public int qnaCount(String category);	
+	
+	//육아상담 Q&A - 카테고리별 조회
+	public List<VegemilBabyMagazineDTO> selectQna(VegemilBabySearchDTO params);	
+
+	
+	
+	
+	
+	
+	
 	
 	//영유아식 레시피
 	public List<VegemilBabyRecipeDTO> selectRecipeList();	
