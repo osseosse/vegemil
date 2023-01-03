@@ -469,7 +469,7 @@
 	.btnType16 a {color:#222}
 	.btnType16 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat right 18px; background-size:5px; padding:11px 0px 11px 20px; display:inline-block; width:180px }
 	button.btnType17 { background:#DCDCDC; border-radius:5px; color:#fff;display:inline-block;  ; border-radius:5px; width:100%; padding:21px 0 }
-	button.btnType17.active { background:#222222; border-radius:5px; color:#fff;display:inline-block;  ; border-radius:5px; width:100%; padding:21px 0 }
+	button.btnType17.active { background:#222222; border-radius:5px; color:#fff;display:inline-block;  ; border-radius:5px; width:100%;  }
 	
 	.btnType18 { background:#fff; border-radius:5px; color:#000;display:inline-block; font-size:16px; padding-right:20px; border:1px solid #DCDCDC; padding:6px 20px }
 	.btnType18 a {color:#222}
@@ -1490,12 +1490,17 @@
 	.boxType { padding:0px 0; line-height:140%}
 	
 	
+	.joinbtnFoot_1 {width:100%}
+	.joinbtnFoot li {width:100%}
 	.joinbtnFoot {width:100%}
 	.joinbtnFoot li{float:left}
 	.joinbtnFoot li:first-child {width:35%}
 	.joinbtnFoot li:nth-child(2) {width:62%}
 
-
+	.memberCopy {border:1px solid #999; background:#DCDCDC; color:#000; border-radius:20px; padding:2px 12px}
+	.memberbox {border:1px solid #DCDCDC; padding:30px; border-radius:20px; background:#F1F4F5}
+	a.deco {text-decoration:underline; }
+	a.deco:hover {text-decoration:underline; }
 	/* 3000 ÆË¾÷ */
 	caption {display:none}
 	#pop_dropOut {background:#fff; padding:70px 40px;}
