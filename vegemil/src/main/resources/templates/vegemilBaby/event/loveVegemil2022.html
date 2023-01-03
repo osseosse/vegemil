@@ -30,7 +30,7 @@
 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/google.js"></script>
 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/select.js"></script>
 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/lnb.js"></script>
-	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/design.js"></script>
+<!-- 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/design.js"></script> -->
 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/jptab.js"></script>
 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/jquery.insetborder.js"></script>
 	<script type="text/javascript" charset="utf-8" src="/common/js/vegemilBaby/jquery.Floater.js"></script><!-- 퀵메뉴 :  design.js 같이적용 -->
@@ -52,7 +52,7 @@
 	}
 	</script>
 	<link rel=stylesheet type=text/css href="/common/css/vegemilBaby/loveVegemil2022.css" >
-	<script language=javascript>
+	<script type="text/javascript" >
 			function TextDisappear(){
 	
 				var temp = document.getElementById('txtURL').value;
@@ -131,32 +131,22 @@
 			}
 			
 			function facebook() {
-
-					
 					/* 주소만 연결되면 나머지 값들은 메타태그에서 읽어온다 위에 선언한 변수들에서 값을 가져오는게 아님 */
 					var url2 = 'http://www.facebook.com/sharer.php?u=http://www.vegemil.co.kr/main/event/loveVegemil2016.aspx';
-					//url2 = url2.split("#").join("%23");
 					url2 = encodeURI(url2);
 					window.open(url2);	
 			}
-			
 			
 			function copy_url()
 			{
 				var _img = document.getElementById('TmpDiv');
 				var content = document.body.createTextRange();
-				
 				content.moveToElementText(_img);
 				content.execCommand("copy");
 				window.alert('이미지가 복사되었습니다 \nCTRL V를 이용하여 붙여 넣으세요!.');
-				
-				//return false;
 			}
 			
-			
 			function copy_url2(){
-			
-			
 					var url = document.URL;
 					window.clipboardData.setData("Text", url);
 					alert("이벤트 페이지 URL이 클립보드에 복사되었습니다.\nCtrl + V 하시면 URL이 입력됩니다.");
@@ -183,27 +173,21 @@
 		<!-- pc -->
 		<div class="webView">
 			<div class="top-2021love">			
-				
 				<a href="https://www.vegemil.co.kr/"><p class="logo-2021love01"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/20221207/10.png" alt="정식품"/></p></a>
 				<p class="logo-2021love02"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/20221207/11.png" alt="사랑나눔 캠패인"/></p>
-				
-				
-
 				<div class="top02 center"  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="550">
 					<p class="heart"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/20221207/01_01.gif" /></p>
 					<p class="count">23000</p>
 					<div><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/20221207/6-1.png" alt="병"/></div>
 					<table class="loveVegemil2022" cellspacing="0" summary="사랑의 베지밀 온도계"  >
 						<tr>
-							<td class="whiteColor" runat="server" id="tdWhitePc"></td> 
+							<td class="whiteColor" id="tdWhitePc"></td> 
 						</tr>
 						<tr>
-							<td class="graBar" runat="server" id="tdGreenPc" ><p class="tome" th:text="|${temperature}개|"></p></td> 
+							<td class="graBar" id="tdGreenPc" height="230px"><p class="tome" th:text="|${temperature}개|"></p></td> 
 						</tr>
 					</table>
-				
 				</div>
-				
 			</div>
 			<div class="w1140">
 				<p class="webView"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/20221207/12.jpg" alt="콘텐츠" usemap="#Map"/></p>
