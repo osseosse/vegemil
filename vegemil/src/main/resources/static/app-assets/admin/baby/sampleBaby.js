@@ -189,6 +189,7 @@ var createTable = function() {
       	{ data: 'sIdx' },
         { data: 'sItem' },
         { data: 'sMname' },
+        { data: 'sEamil' },
         { data: 'sId' },
         { data: 'sHp' },
         { data: 'sAddr1' },
@@ -249,13 +250,22 @@ var createTable = function() {
       		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
+      			if(full['sEmail']==null)	return '';
+      			else	return full['sEmail'];
+      		}	
+      		
+      	},
+      	{
+      		targets: 6,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
       			if(full['sHp']==null)	return '';
       			else	return full['sHp'];
       			
       		}
       	},
       	{
-      		targets: 6,
+      		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sAddr1']==null && full['sAddr2']==null)	return '';
@@ -264,7 +274,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 7,
+      		targets: 8,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sMaterdate']==null)	return '';
@@ -273,7 +283,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 8,
+      		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sMaterdate2']==null)	return '';
@@ -283,7 +293,7 @@ var createTable = function() {
       		
       	},
       	{
-      		targets: 9,
+      		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sMaterdate3']==null)	return '';
@@ -292,15 +302,15 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 10,
+      		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sWritedate']==null)	return '';
-      			else 	return full['sWritedate'];
+      			else 	return full['sWritedate'].substr(0, 10);
       		}
       	},
       	{
-          targets: 11,
+          targets: 12,
           orderable: false,
           render: function (data, type, full, meta) {
       			if(full['sBefore']==null)	return '미선택';
@@ -316,26 +326,6 @@ var createTable = function() {
       			else	return '기타';
       		}
         }
-//        {
-//      		targets: 12,
-//      		render: function (data, type, full, meta) {
-//      			return(
-//					'<div class="d-inline-flex">' +
-//					'<a class="pr-1 dropdown-toggle hide-arrow text-primary" data-toggle="dropdown">' +
-//					feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
-//					'</a>' +
-//					'<div class="dropdown-menu dropdown-menu-right">' +
-//					'<form action="/admin/event/sampleBaby/update?sIdx=' + full['sIdx'] + '&sDeliver=1" method="post" enctype="multipart/form-data">' + 
-//					'<input type="submit" class="btn btn-outline-primary" value="       배송         "></input>' +
-//					'</form>' + 
-//					'<form action="/admin/event/sampleBaby/update?sIdx=' + full['sIdx'] + '&sDeliver=0" method="post" enctype="multipart/form-data">' + 
-//					'<input type="submit" class="btn btn-outline-primary" value="       준비        "></input>' +
-//					'</form>' + 
-//					'</div>' 
-//					
-//      			);
-//      		}
-//      	},
       ],
       order: [[0, 'desc']],
       dom:
@@ -352,31 +342,31 @@ var createTable = function() {
               extend: 'print',
               text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12] }
             },
             {
               extend: 'csv',
               text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12] }
             },
             {
               extend: 'excel',
               text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12] }
             },
             {
               extend: 'pdf',
               text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12] }
             },
             {
               extend: 'copy',
               text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12] }
             }
           ],
           init: function (api, node, config) {
