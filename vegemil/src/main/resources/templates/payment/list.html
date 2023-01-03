@@ -43,10 +43,11 @@
 						<table cellspacing="0" summary="나의상담" border="0" class="myT mt30">
 							<caption>지난 상담</caption>
 							<colgroup>
-								<col width="20%">
 								<col width="15%">
 								<col width="10%">
+								<col width="10%">
 								<col width="15%">
+								<col width="10%">
 								<col width="10%">
 								<col width="10%">
 							</colgroup>
@@ -56,7 +57,8 @@
 								<th>카드사(은행)</th>
 								<th>결제일</th>
 								<th>영수증보기</th>
-								<th>결제취소</th>
+								<th>결제결과</th>
+								<th>취소</th>
 							</tr>
 							<tr th:if="${not #lists.isEmpty( payList )}" th:each="pay, i : ${payList}">
 								<td class="day f_pp" th:text="${pay.lgdCardnum}"></td>
@@ -67,9 +69,11 @@
 									 <a th:href="|${pay.lgdReceiptUrl}|" target="_blank"><p class="cate">영수증</p></a>
 									 <input type="hidden" th:value="${pay.lgdTid}" name="tid">
 								</td>
-								<td class="day f_pp" th:if="${pay.lgdRespcode} == 'CANCELED'">취소완료</td>
-								<td class="day f_pp" th:unless="${pay.lgdRespcode} == 'CANCELED'">
-									 <a th:href="|/payment/cancel/${pay.lgdTid}|" ><p class="cate">취소</p></a>
+								<td class="day f_pp" th:text="${pay.lgdRespmsg}"></td>
+								<td class="day f_pp" th:if="${pay.cancelReq} == 1 and ${pay.lgdRespcode} !='CANCELED'">취소요청중</td>
+								<td class="day f_pp" th:if="${pay.cancelReq} == 1 and ${pay.lgdRespcode} =='CANCELED'">취소완료</td>
+								<td class="day f_pp" th:if="${pay.cancelReq} == 0 and ${pay.lgdRespcode} !='CANCELED'">
+									 <a th:href="|/payment/cancelRequest?lgdTid=${pay.lgdTid}|" ><p class="cate">취소요청</p></a>
 								</td>
 							</tr>
 						</table>

@@ -14,5 +14,7 @@ public interface PaymentService {
 	public List<PaymentDTO> getPaymentList(PaymentDTO params);
 	
 	public boolean registerPayment(PaymentDTO Payment);
+	
+	public boolean requestPaymentCancel(String lgdTid);
 
 }

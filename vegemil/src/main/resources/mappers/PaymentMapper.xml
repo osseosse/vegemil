@@ -29,6 +29,7 @@
 		LGD_IP,
 		LGD_CANCEL_DATE,
 		CANCEL_DATE,
+		CANCEL_REQ,
 		CANCEL_REQ_DATE,
 		LGD_MD5,
 		LGD_RECEIPT_URL
@@ -96,6 +97,15 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 	</insert>
+	
+	<update id="updatePaymentCancel" parameterType="String">
+		UPDATE m_payment
+		SET
+			CANCEL_REQ = 1,
+			CANCEL_REQ_DATE = NOW()
+		WHERE
+			LGD_TID = #{lgdTid}
+	</update>
 
 	<select id="getPayment" parameterType="long" resultType="com.vegemil.domain.PaymentDTO">
 		SELECT
@@ -116,7 +126,7 @@
 		                    FROM m_payment p2
 		                    WHERE p2.LGD_TID = p1.LGD_TID)
 		 and p1.LGD_BUYERID = #{lgdBuyerid}
-	ORDER BY p1.LGD_TID;
+	ORDER BY p1.LGD_PAYDATE DESC;
 	</select>
 	
 	<select id="selectPaymentCount" parameterType="com.vegemil.domain.PaymentDTO" resultType="int">

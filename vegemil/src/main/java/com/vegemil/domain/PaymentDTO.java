@@ -32,6 +32,7 @@ public class PaymentDTO {
 	private String lgdIp;
 	private String lgdCancelDate;
 	private String cancelDate;
+	private String cancelReq;
 	private String cancelReqDate;
 	private String lgdReceiptUrl;
 	private String lgdMd5;

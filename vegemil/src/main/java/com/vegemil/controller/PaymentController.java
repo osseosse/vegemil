@@ -407,6 +407,25 @@ public class PaymentController extends UiUtils {
 		return result;
 	}
 	
+	@GetMapping(value = "/payment/cancelRequest")
+	public String cancelRequest(@RequestParam(value = "lgdTid", required = false) String lgdTid, HttpServletResponse response, Model model) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		if (lgdTid == null) {
+			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
+			out.flush();
+		}
+		boolean isRegistered = paymentService.requestPaymentCancel(lgdTid);
+		if (isRegistered == false) {
+			out.println("<script>alert('취쇼 요청이 실패했습니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("취쇼 요청이 실패했습니다.", "/comp/payment/list", Method.GET, null, model);
+		}
+		
+		return showMessageWithRedirect("결제 취소 요청되었습니다.\n관리자가 확인후 취소처리 해드리겠습니다.", "/comp/payment/list", Method.GET, null, model);
+		
+	}
+	
 	/**
 	 * 토스 커넥트페이 결제 취소 요청 2021.11 김명환
 	 * @param request

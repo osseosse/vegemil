@@ -51,5 +51,15 @@ public class PaymentServiceImpl implements PaymentService {
 		return (queryResult == 1) ? true : false;
 	}
 	
+	@Override
+	public boolean requestPaymentCancel(String lgdTid) {
+		
+		int queryResult = 0;
+		
+		queryResult = paymentMapper.updatePaymentCancel(lgdTid);
+
+		return (queryResult == 1) ? true : false;
+	}
+	
 	
 }
