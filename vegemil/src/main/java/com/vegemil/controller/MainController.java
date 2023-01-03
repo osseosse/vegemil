@@ -49,8 +49,30 @@ public class MainController {
         return "index";
 	}
 	
+	@RequestMapping(value = "/main/default.aspx")
+	public String moveOldIndex1(Model model, Authentication authentication) throws Exception {
+		
+		MemberDTO member = new MemberDTO();
+		
+		try {
+			
+			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
+			if(authentication != null) {
+		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		        model.addAttribute("member",member);	//유저 정보
+			}
+			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
+	        model.addAttribute("mediaNewsList", mediaNewsList);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
+        return "index";
+	}
+	
 	@RequestMapping(value = "/Main/default.aspx")
-	public String moveOldIndex(Model model, Authentication authentication) throws Exception {
+	public String moveOldIndex2(Model model, Authentication authentication) throws Exception {
 		
 		MemberDTO member = new MemberDTO();
 		

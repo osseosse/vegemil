@@ -60,6 +60,12 @@ public class WebzineController extends UiUtils {
 		return "webzine/default";
 	}
 	
+	@GetMapping(value = "/main/publicCenter/webzine.aspx")
+	public String moveWebzineSubs(@RequestParam(required = false) String page_code, Model model, HttpServletRequest request) {
+
+		return "redirect:/webzine/subscribe";
+	}
+	
 	@GetMapping(value = "/webzine/subscribe")
 	public String openSubscribe(Model model, Authentication authentication) {
 		

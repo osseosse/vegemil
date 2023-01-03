@@ -228,11 +228,8 @@
 				</div>
 				<!-- //내용없음 404 -->
 				<!-- 위쪽 정보 일단 위쪽정보만 -->
-								
 				<div class="col-md-12 mt50 new_listBox mg0 pd0">
 					<ul class="thumb-over new_list">
-<!-- 					<p class="wz_img" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" >
- -->	
 						<div th:each="magazine : ${magazineList}">
 							<li class="" th:classappend="|${magazine.mbsMCategory}${magazine.mbsCategory}|">
 								<a th:with="var=${magazine.mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var}">
@@ -247,22 +244,14 @@
 										<input type="hidden" th:value="${magazine.mbsIdx}">
 									</div>
 									<p class="list_day" th:text="${magazine.mbsGetdate}">날짜</p>
-							</a>
+								</a>
 							</li>
 						</div>
-
-
 					</ul>
 				</div>
 				<!-- //container -->
-				
-				
 			<!-- //row-->
-		
 		<!-- //container100 -->
-		
-		<link href="https://image.edaymall.com/images/dcf/vegemil/common/css/style.css" rel="stylesheet">
-		
 		<!-- paging -->
 			<div class="paging3 mt50">
          		<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
@@ -273,8 +262,8 @@
 			            <li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
 			                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
 			            </li>
-			            <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" th:class="${pageNo == params.currentPageNo} ? 'active'">
-			                <a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+			            <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" >
+			                <a href="javascript:void(0)" th:class="${pageNo == params.currentPageNo} ? 'active'" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
 			            </li>
 			            <li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
 			                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>

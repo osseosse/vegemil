@@ -56,6 +56,11 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/" + vegemilBabyAspx;
 	}
 	
+	@GetMapping("/Main/BrandVegemilBaby/event_best_review.aspx")
+	public String vegemilBabyEventBestReview() {
+		return "vegemilBaby/event_best_review";
+	}
+	
 	@GetMapping("/vegemilBaby/index")
 	public String index(Model model) {
 		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
