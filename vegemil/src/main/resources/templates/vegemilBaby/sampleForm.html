@@ -151,7 +151,7 @@
                    <div class="container pb150" th:object="${member}">
                        <div class="row">
                            <div class="col-md-12 mt120 sampleForm">
-                              <form role="form" onsubmit="getMaterDate();" th:action="@{/vegemilBaby/sample/apply}" th:object="${sample}" method="post">
+                              <form role="form" onsubmit="getMaterDate()" th:action="@{/vegemilBaby/sample/apply}" th:object="${sample}" method="post">
                                    <fieldset>
                                        <legend>입력 폼</legend>
                                        <ul class="formBox">                                         
@@ -201,35 +201,35 @@
                                          <dl class="divideType04 f17_4">
 											<dd>샘플신청경로</dd>
 											<dd>
-											    <input type="radio" id="maternitysch" name="sampleWay" value="1" checked>
+											    <input type="radio" id="maternitysch" name="sBefore" value="1" checked>
                                                 <label for="maternitysch" class="f17_4">매터니티스쿨 행사참여</label>
                                                 
-                                                <input type="radio" id="momstory" name="sampleWay" value="2 행사참여">
+                                                <input type="radio" id="momstory" name="sBefore" value="2 행사참여">
                                                 <label for="momstory" class="f17_4">맘스스토리 행사참여</label>
 												
-												<input type="radio" id="kclass" name="sampleWay" value="9">
+												<input type="radio" id="kclass" name="sBefore" value="9">
                                                 <label for="kclass" class="f17_4">K클래스 행사참여</label>
 												<!-- //추가2020-11-09 -->
-												<input type="radio" id="instagram" name="sampleWay" value="10">
+												<input type="radio" id="instagram" name="sBefore" value="10">
                                                 <label for="instagram" class="f17_4">영&middot;유아식 인스타그램</label>
 												<!-- //추가2020-11-09 -->
-                                                   <input type="radio" id="internetinfor" name="sampleWay" value="3">
-                                                	<label for="internetinfor" class="f17_4">인터넷정보</label>
+                                                <input type="radio" id="internetinfor" name="sBefore" value="3">
+                                               	<label for="internetinfor" class="f17_4">인터넷정보</label>
                                                    
-                                                   <input type="radio" id="friend" name="sampleWay" value="4">
-                                                   <label for="friend" class="f17_4">지인추천</label>
-                                                   
-                                                   <input type="radio" id="maternity" name="sampleWay" value="5">
-                                                   <label for="maternity" class="f17_4">산부인과</label>
-                                                   
-                                                   <input type="radio" id="kakaostory" name="sampleWay" value="6">
-                                                   <label for="kakaostory" class="f17_4">카카오스토리</label>
-                                                   
-                                                   <input type="radio" id="lotte" name="sampleWay" value="7">
-                                                   <label for="lotte" class="f17_4">롯데마트 문화센터</label>
-                                                   
-                                                   <input type="radio" id="etc" name="sampleWay" value="8">
-                                                   <label for="etc" class="f17_4">기타</label>
+                                                <input type="radio" id="friend" name="sBefore" value="4">
+                                                <label for="friend" class="f17_4">지인추천</label>
+                                                
+                                                <input type="radio" id="maternity" name="sBefore" value="5">
+                                                <label for="maternity" class="f17_4">산부인과</label>
+                                                
+                                                <input type="radio" id="kakaostory" name="sBefore" value="6">
+                                                <label for="kakaostory" class="f17_4">카카오스토리</label>
+                                                
+                                                <input type="radio" id="lotte" name="sBefore" value="7">
+                                                <label for="lotte" class="f17_4">롯데마트 문화센터</label>
+                                                
+                                                <input type="radio" id="etc" name="sBefore" value="8">
+                                                <label for="etc" class="f17_4">기타</label>
 											</dd>
 										</dl>
                                        </li>                                        
