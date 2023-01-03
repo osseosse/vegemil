@@ -43,8 +43,8 @@
 							<li>이메일</li>
 							<li>
 								<input type="hidden" th:field="*{mEmail}">
-								<input name="txtEmail" type="text" value="" maxlength="30" id="txtEmail" class="inp06 w180">
-								@<input name="txtEmail2" type="text" value="" maxlength="30" id="txtEmail2" placeholder="직접입력" class="inp06 ml10 w200 mr10" disabled >
+								<input name="txtEmail" type="text" value="" maxlength="20" id="txtEmail" class="inp06 w180">
+								@<input name="txtEmail2" type="text" value="" maxlength="40" id="txtEmail2" placeholder="직접입력" class="inp06 ml10 w200 mr10" disabled >
 								<select name="selEmail" id="selEmail" class="sel02 w200 mt10m">
 									<option value="">선택하세요</option>
 									<option value="naver.com">naver.com</option>
@@ -138,11 +138,17 @@ $('#mId').keyup(function (event) {
 
 $('#txtEmail').keyup(function (event) {
 
-	//한글입력 안되게 처리
-	if (!(event.keyCode >=37 && event.keyCode<=40)) {
-		var inputVal = $(this).val();
-		$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+	const is_valid = true;
+	var pattern_email = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+	pattern_email = new RegExp(pattern_email);
+	const email = $('txtEmail').val();
+	
+	
+	if (pattern_email.test(email) == false) {
+		$('txtEmail').focus();
+		return is_valid = false;
 	}
+	
 	btnAvtive();
 
 });

@@ -150,10 +150,7 @@ $('#selEmail').change(function(){
 });
 
 $('#mAddr2').keyup(function () {
-
 	btnAvtive();
-	return;
-
 });
 
 $('#txtEmail').keyup(function () {
@@ -161,7 +158,7 @@ $('#txtEmail').keyup(function () {
 });
 
 $('#txtEmail2').keyup(function () {
-	$("#mEmail").val($("#txtEmail").val()+$("#txtEmail2").val());
+	$("#mEmail").val($("#txtEmail").val()+"@"+ $("#txtEmail2").val());
 	btnAvtive();
 });
 
