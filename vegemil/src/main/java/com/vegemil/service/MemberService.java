@@ -2,23 +2,15 @@ package com.vegemil.service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
-import com.vegemil.domain.QnaDTO;
 import com.vegemil.mapper.MemberMapper;
 
 @Service
@@ -101,6 +93,27 @@ public class MemberService implements UserDetailsService  {
 	
 	@Transactional
 	public boolean registerMember(MemberDTO member) {
+		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		int queryResult = 0;
+		int memCount = 0;
+		
+		memCount = memberMapper.selectMemberCount(member);
+		member.setMPwd(passwordEncoder.encode(member.getPassword()));
+		member.setMAuth("USER");
+		
+		
+		if (memCount == 0) {
+			queryResult = memberMapper.saveMember(member);
+		} else {
+			queryResult = memberMapper.updateMember(member);
+		}
+
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Transactional
+	public boolean registerComp(MemberDTO member) {
 		
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		int queryResult = 0;
