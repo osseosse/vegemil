@@ -173,7 +173,7 @@ public class PaymentController extends UiUtils {
 		
 		try {
 			
-			boolean isRegistered = memberService.registerMember(member);
+			boolean isRegistered = memberService.registerComp(member);
 			if (isRegistered == false) {
 				out.println("<script>alert('이미 가입된 회원입니다.'); history.go(-1);</script>");
 				out.flush();
