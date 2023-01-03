@@ -10,11 +10,11 @@
 <!-- ================================ 
 		Content
 ================================ -->
-<!-- popup -->
+<!-- popup 
 <div id="popup" style="position:absolute; top:110px; right:20px; z-index:1000; height:478px; display:none;">
 	<iframe th:src="@{/fragments/popup}" marginwidth="0" marginheight="0" width="350" height="478" frameborder="0" scrolling="no"></iframe>
 </div>
-<!-- popup -->
+ popup -->
 <div id="content" class="pb200">
 	<div class="video" >
 		<div class="videoCopy">
@@ -905,15 +905,11 @@
 	    return ;    
 	}
 	
+	/*
 	$(document).ready(function(){
 		var popup = document.getElementById("popup");
-		/*
-		var cookieCheck = getCookie("b_popup");
-		if (cookieCheck != "done"){
-			popup.style.display = 'block';
-		}
-		*/
 		var cookieCheck = getCookie("popup");
+		
 		if (cookieCheck != "done"){
 			popup.style.display = 'block';
 		}
@@ -923,8 +919,9 @@
 			popup.style.display = 'block';
 		}
 		
-		//$('#tabwrap2').basicTabs2();/* basicTabs2 변경 */
 	});
+	*/
+	
 </script>
 <script>
 /*================================
