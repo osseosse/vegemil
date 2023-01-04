@@ -104,7 +104,7 @@
 						<ul>
 							<li>이메일</li>
 							<li>
-								<input  th:field="*{txtEmail}" type="text" maxlength="30" class="inp03 w200"><input name="txtEmail2" placeholder="직접입력" type="text" disabled maxlength="30" id="txtEmail2" class="inp03 ml10 w220 mr10">
+								<input  th:field="*{txtEmail}" type="text" maxlength="30" class="inp03 w200"><input name="txtEmail2" th:value="*{selEmail}" placeholder="직접입력" type="text" disabled maxlength="30" id="txtEmail2" class="inp03 ml10 w220 mr10">
 								<select th:field="*{selEmail}" class="sel02 w200 mt10m">
 									 <option value="1">직접 입력</option>
 									 <option value="naver.com">naver.com</option>
