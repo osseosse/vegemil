@@ -41,6 +41,7 @@
 		,s_sns
 		,s_image
 		,s_rank
+		,s_desctime
 	</sql>
 	
 	<sql id="sampleBabyColumns">
@@ -413,7 +414,7 @@
 	</insert>
 
 	<select id="selectBestReviewDetail" parameterType="long" resultType="com.vegemil.domain.AdminBestReviewDTO">
-		SELECT
+		SELECT /* selectBestReviewDetail by AdminBabyMapper.xml */ 
 			<include refid="bestReviewColumns" />
 		FROM
 			m_sns
@@ -422,6 +423,7 @@
 	</select>
 
 	<update id="updateBestReview" parameterType="com.vegemil.domain.AdminBestReviewDTO">
+		/* updateBestReview by AdminBabyMapper.xml */ 
 		UPDATE m_sns
 		SET
 			  s_desctime = NOW()
@@ -431,10 +433,11 @@
 	</update>
 
 	<select id="selectBestReviewList" parameterType="hashMap" resultType="com.vegemil.domain.AdminBestReviewDTO">
-		SELECT 
+		SELECT /* selectBestReviewList by AdminBabyMapper.xml */
 		<include refid="bestReviewColumns" />
-		  FROM m_sns
-		 WHERE 1=1
+			   , m.m_name
+		  FROM m_sns s, m_member m
+		 WHERE s.s_uid = m.m_id
 		 <if test='sStartdate != "" '>
 	 	   AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
 	 	</if>
@@ -455,7 +458,7 @@
 	</select>
 
 	<select id="selectBestReviewTotalCount" parameterType="hashMap" resultType="int">
-		SELECT
+		SELECT /* selectBestReviewTotalCount by AdminBabyMapper.xml */
 			COUNT(*)
 		FROM
 			m_sns
@@ -477,6 +480,7 @@
 	</select>
 	
 	<delete id="deleteBestReview" parameterType="hashMap">
+		/* deleteBestReview by AdminBabyMapper.xml */
 		DELETE FROM m_sns
 		 WHERE s_idx IN 
 	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
@@ -532,6 +536,7 @@
 	</select>
 
 	<update id="updateSampleBaby" parameterType="com.vegemil.domain.AdminSampleBabyDTO">
+		/* updateSampleBaby by AdminBabyMapper.xml */
 		UPDATE m_sample_baby
 		SET
 			  s_deliverdate = DATE_FORMAT(now(), '%Y-%m-%d')
@@ -541,6 +546,7 @@
 	</update>
 
 	<update id="deleteSampleBaby" parameterType="hashMap">
+		/* deleteSampleBaby by AdminBabyMapper.xml */
 		DELETE 
 		  FROM m_sample_baby
  	     WHERE s_idx IN

@@ -196,15 +196,16 @@ var createTable = function() {
       columns: [
       	{ data: 'sIdx' },
       	{ data: 'sIdx' },
+      	{ data: 'sIdx' },
       	{ data: 'sUid' },
         { data: 'sEdayId' },
-        { data: 'sName' },
+        { data: 'mName' },
         { data: 'sTitle'  },
         { data: 'sUrl' },
         { data: 'sImage' },
         { data: 'sWritedate' },
         { data: 'sRank' },
-        { data: 'sRankDate' }
+        { data: 'sDesctime' }
       ],
       columnDefs: [
       	{
@@ -255,8 +256,8 @@ var createTable = function() {
       		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sNmae']==null)	return '';
-      			else	return full['sName'];
+      			if(full['mName']==null)	return '';
+      			else	return full['mName'];
       		}
       	},
       	{
@@ -308,8 +309,8 @@ var createTable = function() {
       		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			//return getModal(full);
-      			
+      			if(full['sDesctime']==null)	return '-';
+      			else	return full['sDesctime'].substr(0, 7);
       		}
       	}
       ],
@@ -328,31 +329,31 @@ var createTable = function() {
               extend: 'print',
               text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
               className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5, 6, 7, 8, 10] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
             },
             {
               extend: 'csv',
               text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
               className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5, 6, 7, 8, 10] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
             },
             {
               extend: 'excel',
               text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
               className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5, 6, 7, 8, 10] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
             },
             {
               extend: 'pdf',
               text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
               className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5, 6, 7, 8, 10] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
             },
             {
               extend: 'copy',
               text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
               className: 'dropdown-item',
-              exportOptions: { columns: [1, 2, 3, 4, 5, 6, 7, 8, 10] }
+              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
             }
           ],
           init: function (api, node, config) {
@@ -414,16 +415,16 @@ function getModal(obj) {
 	modal +=						'<tr>'
 	modal +=							'<th>ID <span class="text-warning">'+obj.sUid+'</span></th>'
 	modal +=							'<th>이데이몰ID <span class="text-warning">'+obj.sEdayId+'</span></th>'
-	modal +=							'<th colspan="2">작성자명<span class="text-warning"> {이름}</span></th>'
+	modal +=							'<th colspan="2">작성자명<span class="text-warning"> '+obj.mName+'</span></th>'
 	modal +=						'</tr>'
 	modal +=						'<tr>'
-	modal +=							'<th>등록일시<span class="text-warning">'+obj.sWritedate + obj.sWritetime+'</span></th>'
+	modal +=							'<th>등록일시<span class="text-warning"> '+obj.sWritedate + obj.sWritetime+'</span></th>'
 									if(obj.sRank != null) {
 	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-success">Y</span></th>'
 									}else{
 	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-danger">N</span></th>'									
 									}
-	modal +=							'<th>선정연월 <span class="text-warning">{2022.05}</span></th>'
+	modal +=							'<th>선정연월 <span class="text-warning">'+obj.sDesctime+'</span></th>'
 	modal +=							'<th>선정처리일시 <span class="text-warning">'+obj.sDesctime+'</span></th>'
 	modal +=						'</tr>'
 	modal +=					'</thead>'
@@ -442,7 +443,7 @@ function getModal(obj) {
 	modal +=										'<div class="mt-1 photoBox1">'
 	modal +=											'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=											'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=											'<p class="mt-1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HumGrYcZJo5OLZkpb3v12fTiEZTtqk602MfQo-ax3BDYoWli3XksaNZwdSPiD1azcHI&usqp=CAU" /></p>'
+	modal +=											'<p class="mt-1"><img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/review_upload/'+obj.sImage+'" class="rounded"></p>'
 	modal +=										'</div>'
 	modal +=									'</div>'
 	modal +=								'</dd>'
