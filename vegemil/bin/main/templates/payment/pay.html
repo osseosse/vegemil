@@ -17,6 +17,7 @@
 	  var bizNum = $("#bizNum").val();
 	  var companyName = $("#companyName").val();
 	  var now = new Date();
+	  var requestUrl = window.location.protocol+"//"+window.location.host;
 	  
 	  if(amount == '' || amount == 0) {
 		  alert("결제 금액을 입력해 주세요.");  
@@ -28,14 +29,13 @@
 		  orderId: bizNum+'_'+now.getMonth()+now.getDate()+now.getHours()+now.getMinutes()+now.getSeconds(),
 		  orderName: '그린비아 결제',
 		  customerName: bizNum,
-		  //successUrl: 'https://www.vegemil.co.kr/payment/success', // 로컬에서는 localhost:8080 으로 수정해야함
-		  //failUrl: 'https://www.vegemil.co.kr/payment/fail',
-		  successUrl: 'http://localhost:8080/payment/success', // 로컬에서는 localhost:8080 으로 수정해야함
-		  failUrl: 'http://localhost:8080/payment/fail',
+		  successUrl: requestUrl+'/payment/success', // 로컬에서는 localhost:8080 으로 수정해야함
+		  failUrl: requestUrl+'/comp/payment/pay',
 		})
 		.catch(function (error) {
 		    if (error.code === 'USER_CANCEL') {
 		      // 결제 고객이 결제창을 닫았을 때 에러 처리
+		      alert("결제창이 닫혔습니다.");
 		    } else if (error.code === 'INVALID_CARD_COMPANY') {
 		      // 유효하지 않은 카드 코드에 대한 에러 처리
 		      alert("유효하지 않은 카드 입니다.");

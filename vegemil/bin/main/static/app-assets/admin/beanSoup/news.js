@@ -198,7 +198,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['mThum']==null)	return '-';
-      			else	return '<img src="https://www.vegemil.co.kr/main/beanSoup/assets/news/'+full['mThum']+ '" width="80" />';
+      			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/img/beanSoup/assets/news/'+full['mThum']+ '" width="80" />';
           }
           
         },

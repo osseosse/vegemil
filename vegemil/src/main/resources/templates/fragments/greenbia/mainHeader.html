@@ -78,7 +78,7 @@
 		</li>
 	</ul>
 	<dl>	
-		<dd><a th:href="@{https://www.vegemil.co.kr/main/}" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="" /><p>정식품 홈페이지</p></a></dd>
+		<dd><a href="/" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="" /><p>정식품 홈페이지</p></a></dd>
 		<dd><a th:href="@{/greenbia/mall}" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_cash_h.gif" alt="" /><p>온라인 구매</p></a></dd>		
 		<dd sec:authorize="!isAuthenticated()" id="logIn">
 			<a th:href="@{/member/login}" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_peple_h.gif" alt="" /><p>로그인</p></a>
@@ -147,7 +147,7 @@
 				<div class="tdLine2 mt30">
 					<ul class="popUL">
 						<li><span class="f17_4"><b class="blue">Stop! &nbsp;</b> 아직 회원이 아니신가요? &nbsp;&nbsp;<img class="pop_arr" src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_popArrow.png" alt="화살" /></span> </li>
-						<li><a th:href="@{https://www.vegemil.co.kr/main/member/terms.aspx}"><p class="btn_member">회원가입</p></a></li>
+						<li><a href="/member/join"><p class="btn_member">회원가입</p></a></li>
 					</ul>
 				</div>
 			</td>
