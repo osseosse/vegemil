@@ -37,6 +37,18 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
     <!-- END: Custom CSS-->
+    <script type="text/javascript" src="/common/js/jquery-1.7.2.min.js"></script>
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+
+		if (window.location.protocol == "http:") {
+			if(window.location.hostname == 'vegemil.co.kr' || window.location.hostname == "www.vegemil.co.kr") {
+				window.location.href = window.location.href.replace('http:', 'https:');
+			}
+		}
+	
+	/*]]>*/
+	</script>
 
 </head>
 <body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
@@ -91,16 +103,12 @@
                                     </div>
                                     <button class="btn btn-primary w-100" tabindex="4">로그인</button>
                                 </form>
-
                                <p class="text-center mt-2">
                                     <span>로그인 페이지</span>
                                     <a th:href="@{/admin/auth/register}">
                                         <span>가입하기</span>
                                     </a>
                                 </p>
-                               
-
-                               
                             </div>
                         </div>
                         <!-- /Login v1 -->

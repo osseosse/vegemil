@@ -40,6 +40,19 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}">
     <!-- END: Custom CSS-->
+    <script type="text/javascript" src="/common/js/jquery-1.7.2.min.js"></script>
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+
+		if (window.location.protocol == "http:") {
+			if(window.location.hostname == 'vegemil.co.kr' || window.location.hostname == "www.vegemil.co.kr") {
+				window.location.href = window.location.href.replace('http:', 'https:');
+			}
+		}
+	
+	/*]]>*/
+	</script>
+    
 </head>
 </th:block>
 </html>
