@@ -195,8 +195,8 @@ var createTable = function() {
       columns: [
       	{ data: 'cIdx' },
       	{ data: 'cIdx' },
-      	{ data: 'cMname' },
-        { data: 'cBname' },
+      	{ data: 'cName' },
+        { data: 'cBabyName' },
         { data: 'cAlived' },
         { data: 'cHp' },
         { data: 'cAddr' },
@@ -224,8 +224,8 @@ var createTable = function() {
       		targets: 2,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['cMname']==null)	return '';
-      			else	return full['cMname'];
+      			if(full['cName']==null)	return '';
+      			else	return full['cName'];
       			
       		}
       	},
@@ -236,117 +236,6 @@ var createTable = function() {
       			return (
               	 '<a data-bs-toggle="modal" data-bs-target="#large'+full['cIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'+
               	 getModal(full)
-              	 /*
-				 '<form name="modalForm'+full['cIdx']+'" id="modalForm'+full['cIdx']+'" method="post">'+
-              	 '<section id="modal-sizes">'+
-                     '<div class="modal fade text-start" id="large'+full['cIdx']+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'+
-						'<div class="modal-dialog modal-dialog-centered modal-lg">'+
-							'<div class="modal-content">'+
-								'<div class="modal-header">'+
-									'<h4 class="modal-title" id="myModalLabel17">신청 내용 상세보기</h4>'+
-									'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'+
-								'</div>'+
-								'<table class="table table-bordered  f13 paddingType">'+
-									'<colgroup>'+
-										'<col width="25%">'+
-										'<col width="25%">'+
-										'<col width="25%">'+
-										'<col width="25%">'+
-									'</colgroup>'+
-									'<thead>'+
-										'<tr>'+
-											'<th>ID <span class="text-warning"> {id}</span></th>'+
-											'<th>이데이몰ID <span class="text-warning"> {이데이몰ID}</span></th>'+
-											'<th colspan="2">개월수<span class="text-warning">'+full['cAlived']+'</span></th>'+
-										'</tr>'+
-										'<tr>'+
-											'<th>휴대전화<span class="text-warning">'+full['cHp']+'</span></th>'+
-											'<th colspan="3">주소 <span class="text-warning">'+full['cAddr']+'</span></th>'+
-										'</tr>'+
-										'<tr>'+
-											'<th>E-mail <span class="text-warning">'+full['cEmail']+'</span></th>'+
-											'<th colspan="3">유입경로 <span class="text-warning">'+full['cRoute']+'</span></th>'+
-										'</tr>'+
-										'<tr>'+
-											'<th>등록일시 <span class="text-warning">'+full['cWritetime']+'</span></th>'+
-											'<th>선정여부 '+getRankYn(full['cRank'])+'</th>'+
-											'<th>선정연월 <span class="text-warning">{연월}</span></th>'+
-											'<th>선정처리일시 <span class="text-warning">'+full['cUpdatetime']+'</span></th>'+
-										'</tr>'+
-
-									'</thead>'+
-								'</table>'+
-								'<div class="modal-body">'+
-									'<div class="row">'+
-										'<div class="col-12">'+
-											'<dl class="photoUL">'+
-												'<dd>'+
-													'<div class="form-check">'+
-														'<input type="radio" id="photoSelection" name="photoSelection" class="form-check-input" checked />'+
-														'<label class="form-check-label" for="#">대표이미지로 선택</label>'+
-														'<div class="mt-1 photoBox1">'+
-															'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'+
-															'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'+
-															'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+full['cImage']+'" /></p>'+
-														'</div>'+
-													'</div>'+
-												'</dd>'+
-												'<dd>'+
-													' <div class="form-check">'+
-														'<input type="radio" id="photoSelection" name="photoSelection" class="form-check-input" />'+
-														'<label class="form-check-label" for="#">대표이미지로 선택</label>'+
-														'<div class="mt-1 photoBox2">'+
-															'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'+
-															'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'+
-															'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+full['cImage2']+'" /></p>'+
-														'</div>'+
-													'</div>'+
-												'</dd>'+					
-											'</dl>'+
-										'</div>'+
-									'</div>'+
-						
-									'<h4 class="mt-2">달력모델 선정</h4>'+
-									'<table class="table table-bordered  f13 paddingType mt-1">'+
-										'<thead>'+
-											'<tr>'+
-												'<th>'+
-													'<div class="row">'+
-														'<div class="col-1"><p>선정등수</p></div>'+
-														'<div class="col-4">'+
-															'<dl class="in_dl">'+
-																'<dd>'+
-																	'<div class="form-check">'+
-																		'<input type="radio" name="cRank" class="form-check-input" value="1"'+getRank(1, full['cRank'])+' />'+
-																		'<label class="form-check-label" name="cRank" for="#">Best</label>'+
-																	'</div>'+
-																'</dd>'+
-																'<dd>'+
-																	'<div class="form-check">'+
-																		'<input type="hidden" name="cIdx" value="'+full['cIdx']+'">'+
-																		'<input type="radio" id="#" name="cRank" class="form-check-input" value="2"'+getRank(2, full['cRank'])+' />'+
-																		'<label class="form-check-label" name="cRank" for="#">참가상</label>'+
-																	'</div>'+
-																'</dd>'+
-															'</dl>'+
-														'</div>'+
-													'</div>'+
-												'</th>'+
-											'</tr>'+
-										'</thead>'+
-									'</table>'+
-									
-								'</div>'+
-
-								'<div class="modal-footer">'+
-									'<button type="button" onclick="btnSave('+full['cIdx']+');" class="btn btn-primary" >저장</button>'+
-								'</div>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-                '</section>'+
-                '</form>'
-                */
           	    );
       			
       		}
@@ -355,8 +244,8 @@ var createTable = function() {
       		targets: 4,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['cBname']==null)	return '';
-      			else	return full['cBname'];
+      			if(full['cBabyName']==null)	return '';
+      			else	return full['cBabyName'];
       			
       		}
       	},
@@ -374,7 +263,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['cHp']==null)	return '';
-      			else	return '0'+full['cHp'];
+      			else	return full['cHp'];
       			
       		}
       	},
@@ -411,50 +300,7 @@ var createTable = function() {
           className: 'my_modal',
           render: function (data, type, full, meta) {
 			  if(full['cImage']==null)	return '';
-      		  else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/review_upload/'+full['cImage']+'" height="40" width="40" class="rounded">';
-//            return (
-//              '<div class="d-inline-flex">' +
-//              '<a href="#modal1" class="dropdown-item" data-toggle="modal">' +
-//              feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + '</a>' +
-//              
-//              '<div class="modal fade text-start" id="modal1" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">' +
-//              '<div class="modal-dialog modal-dialog-centered modal-lg">' +
-//              '<div class="modal-content">' +
-//              '<div class="modal-header">' +
-//              '<h4 class="modal-title" id="myModalLabel17">아기사진1</h4>' +
-//              '<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>' +
-//              '</div>' +
-//              '<div class="modal-body">' +
-//              '<img src="https://unsplash.it/600.jpg?image=251">' +
-//              '</div>' +
-//              '<div class="modal-footer">' +
-//              '<button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>' +
-//              '</div>' +
-//              '</div>' +
-//              '</div>' +
-//              '</div>' +
-//              
-//              '<a href="#modal2" class="dropdown-item" data-toggle="modal">' +
-//              feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + '</a>' +
-//              '</div>' +
-//              
-//              '<div class="modal fade text-start" id="modal2" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">' +
-//              '<div class="modal-dialog modal-dialog-centered modal-lg">' +
-//              '<div class="modal-content">' +
-//              '<div class="modal-header">' +
-//              '<h4 class="modal-title" id="myModalLabel17">아기사진2</h4>' +
-//              '<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>' +
-//              '</div>' +
-//              '<div class="modal-body">' +
-//              '<img src="https://unsplash.it/600.jpg?image=252">' +
-//              '</div>' +
-//              '<div class="modal-footer">' +
-//              '<button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>' +
-//              '</div>' +
-//              '</div>' +
-//              '</div>' +
-//              '</div>'
-//            );
+      		  else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+full['cImage']+'" height="40" width="40" class="rounded">';
           }
         },
         {
@@ -465,26 +311,6 @@ var createTable = function() {
       			
       			if(full['cWriteDate']==null)	return '';
       		    else	return full['cWriteDate'];
-      			/*
-      			return(
-					rank +
-					'<div class="d-inline-flex">' +
-					'<a class="pr-1 dropdown-toggle hide-arrow text-primary" data-toggle="dropdown">' +
-					feather.icons['more-vertical'].toSvg({ class: 'font-small-4' }) +
-					'</a>' +
-					'<div class="dropdown-menu dropdown-menu-right">' +
-					'<form action="/admin/event/calendarmodel/update?cIdx=' + full['cIdx'] + '&cRank=1" method="post" enctype="multipart/form-data">' + 
-					'<input type="submit" class="btn btn-outline-primary" value="       1 등         "></input>' +
-					'</form>' + 
-					'<form action="/admin/event/calendarmodel/update?cIdx=' + full['cIdx'] + '&cRank=2" method="post" enctype="multipart/form-data">' + 
-					'<input type="submit" class="btn btn-outline-primary" value="       2 등        "></input>' +
-					'</form>' + 
-					'<form action="/admin/event/calendarmodel/update?cIdx=' + full['cIdx'] + '&cRank=" method="post" enctype="multipart/form-data">' + 
-					'<input type="submit" class="btn btn-outline-primary" value="      후 보        "></input>' +
-					'</form>' + 
-					'</div>' 
-      			);
-      			*/
       		}
       	},
       	{
@@ -659,12 +485,12 @@ function getModal(obj) {
 	modal +=							'</colgroup>'
 	modal +=							'<thead>'
 	modal +=								'<tr>'
-	modal +=									'<th>ID <span class="text-warning"> {id}</span></th>'
+	modal +=									'<th>ID <span class="text-warning">'+obj.mId+'</span></th>'
 	modal +=									'<th>이데이몰ID <span class="text-warning"> {이데이몰ID}</span></th>'
-	modal +=									'<th colspan="2">개월수<span class="text-warning">'+obj.cAlived+'</span></th>'
+	modal +=									'<th colspan="2">개월수 <span class="text-warning">'+obj.cAlived+'</span></th>'
 	modal +=								'</tr>'
 	modal +=								'<tr>'
-	modal +=									'<th>휴대전화<span class="text-warning">'+obj.cHp+'</span></th>'
+	modal +=									'<th>휴대전화 <span class="text-warning">'+obj.cHp+'</span></th>'
 	modal +=									'<th colspan="3">주소 <span class="text-warning">'+obj.cAddr+'</span></th>'
 	modal +=								'</tr>'
 	modal +=								'<tr>'
@@ -695,7 +521,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox1">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+obj.cImage+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+obj.cImage+'" /></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -708,7 +534,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox2">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+obj.cImage2+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+obj.cImage2+'" /></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
