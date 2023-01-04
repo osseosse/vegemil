@@ -107,6 +107,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	            .authorizeRequests()
 	                .antMatchers("/mypage/**").authenticated()
 	                .antMatchers("/sample/form").authenticated()
+	                .antMatchers("/rnd/factoryTour").authenticated()
 	            .anyRequest()
 	            	.permitAll()
 	            .and().headers().frameOptions().sameOrigin()

@@ -501,6 +501,8 @@
     .btnType24 a:hover{color: #222;}
 	.btnType25 {max-width:200px;width:80%;  margin:0 auto}
 	button.btnType26 { background:#222; border-radius:5px; color:#fff;display:inline-block;   border-radius:5px;  padding:7px 0px ; border:1px solid #222222; vertical-align:top; font-size:16px; max-width:100px; width:50%}
+	.btnType27 { background:#222; border-radius:5px; color:#fff;display:inline-block; font-size:16px; border:1px solid #DCDCDC;  }
+	.btnType27 a {color:#fff; display:inline-block; padding:6px 20px}
 	.btn-admin {background:#000; padding:1px 15px; border-radius:10px}
 	.btn-admin a{color:#fff} 
 
@@ -855,7 +857,7 @@
     .grayBox06 tr td:nth-child(2){padding-right: 150px;}
     .grayBox06 .whiteBox{background-color: #fff; padding: 5px 8px; border-radius: 5px; line-height: 250%;}
     .grayBox06 .whiteBox02{background-color: #fff; padding: 15px; border-radius: 5px;}
-
+	.grayRound {background:#F1F4F5; border-radius:10px; display:inline-block; padding:5px 10px}
     
     .underLineG{border-bottom: 1px solid #DCDCDC;}
     
@@ -868,8 +870,18 @@
     .exTable .exIng{background-color: #fff; border: 1px solid #dcdcdc; border-radius: 5px; color: #000; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
     .exTable .exEnd{background-color: #F1F4F5; border: 1px solid #dcdcdc; border-radius: 5px; color: #787878; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
     
-    
-    /* 3000 연구소 소개 */
+	table.fac {position:relative; width:100%; border:1px solid red; margin:0 auto}
+    dl.fac_people {position:relative; }
+	dl.fac_people dd {display:inline-block}
+	dl.fac_people dd .pr5 {padding-right:5px}
+	dl.fac_people dd input.w70 {width:70px !important;}
+	.fac-textarea {width:100%; background:#F1F4F5; border-radius:5px; padding:5px; border:0; text-align:left; padding:5px 30px}
+	.fac-txt {bordeR:1px solid #DCDCDC; padding:20px; border-radius:10px }
+    .fac-txt-hidden {position:relative; overflow:hidden;text-overflow: ellipsis;white-space: nowrap;max-width:800px; width:70%}
+	.fac-text-left {position:absolute; left:0; top:0}
+	.fac-title {bordeR-bottom:1px solid #ccc}
+	.fac-snsBox {background:#F1F4F5; padding:15px 20px; border-radius:10px}
+	/* 3000 연구소 소개 */
     .rndIntroduceBg{position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/R&D/rndIntroduceBg.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover; background-size: cover;z-index:1; padding: 200px 50px; }
     .rndIntroduceBg ul li{background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_circleChk.png); background-repeat: no-repeat; background-size: 22px; background-position: 0 center; padding-left: 30px;}
     .rndIntroduceInfo02 > div:first-child{padding-right: 170px;}
@@ -1436,6 +1448,7 @@
 	input.inp05:focus {outline:none}
 	input.inp06 {position:relative; background:#fff; border-radius:5px; bordeR:1px solid #DCDCDC; font-size:15px; padding:5px 30px; width:100%; height:50px; letter-spacing:2px}
 	select.sel01 {position:relative; border-radius:5px; width:120px; height:48px; padding:0 10px; font-size:16px; border:1px solid #DCDCDC}
+	select.sel01.error { border:1px solid #E35234}
 	select.sel02 {position:relative; border-radius:5px;  height:50px; padding:0 10px; font-size:16px; border:1px solid #DCDCDC; background:#fff}
 	select.sel03 {position:relative; border-radius:5px; height:40px; padding:0 10px; font-size:16px; border:1px solid #DCDCDC; color:#222}
 	select.sel04 {position:relative; border-radius:5px; width:120px; height:48px; padding:0 10px; font-size:16px; border:2px solid #222222}
@@ -2827,6 +2840,8 @@
 	.text-centerM {text-align:center}
 	.centerHM {position:absolute; top:50%;left:50%;color:#fff;transform:translate(-50%,-50%);}
 	.snsUL li.sli {font-size:12px}
+	.fac-txt-hidden {display:none}
+	.fac-text-left {position:relative; width:100%; text-align:center; padding-bottom:50px}
 
 	
 	/* 모바일 header */
@@ -2957,6 +2972,13 @@
 
 	.floting-right {display:none}
 	.floting-right .floting{ display:none}	
+	
+	/* 992 가로 */
+	.w120 {max-width:80px; width:100%}
+	.w130 {max-width:80px; width:100%}
+	.w200 {max-width:120px; width:100%}
+	.w220 {max-width:120px; width:100%}
+
 
 	/* 992 main > 컨택트 */
 	.contactBox {position:relative}

@@ -4,6 +4,7 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 견학신청</title>
 <head th:replace="fragments/head :: headFragment"></head>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
@@ -11,158 +12,389 @@
 <!-- ================================ 
 		Content
 ================================ -->
-<div id="content" class="pb100">
-	<div class="content100 ">
-	   <div class="subTopExcursions h440 mt90h">
-			<div class="centerH">
-				<p class="f_pp white f18 fw400">R&amp;D</p>
-				<p class="white f45 fw600">견학신청</p>
-			</div>
-		</div>
-	</div>
-	<div class="contant1460" >
-		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
-			<ul class="submenuUL">
-				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
-				<li class="f18 fw500 active"><a href="/rnd/factoryTour"><span>견학신청</span></a></li>
-				<!-- <li class="f18 fw500"><a href="/rnd/factoryReview"><span>견학 후기</span></a></li> -->
-			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
-		</div>
-		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
-        <div class="center mt50">            
-            <p class="f45 fw600 mt50">정식품 청주공장<br class="mView"> 오프라인 견학</p>
+    <div id="content" class="pb100">
+        <div class="content100 ">
+            <div class="subTopExcursions h440 mt90h">
+                <div class="centerH">
+                    <p class="f_pp white f18 fw400">R&amp;D</p>
+                    <p class="white f45 fw600">견학신청</p>
+                </div>
+            </div>
         </div>
-    </div><!--//contant1460-->
-    <div class="contant1160 mt80">
-	    <div>
-            <div class="col-md-12 underLineG">
-                <p class="underLineB f27 fw500">공장견학 안내</p>
-                <p class="gray04 f18 mt80 center">
-                    견학신청은 아래 정보를 잘 숙지 하시어 신청하시기 바라며 늦어도 견학 희망일 10일 이전에 가능 여부를 알려 드립니다.<br class="none">
-                    학생의 경우 학교측의 인솔하에 견학이 가능합니다. 혹한기(12, 1, 2월)와 혹서기(7, 8월)에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.
-                </p>
-                <table class="mt50 round20 grayBox06 mb60">
-                    <caption>공장견학 안내</caption>
-                    <colgroup>
-                        <col style="width: 30%;">
-                        <col style="width: 70%;">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <td class="f18">견학 대상 및 인원</td>
-                            <td class="f16">
-                               견학을 희망하는 단체 (초등학교 고학년 이상) 최소 20명 ~ 최대 40명 입니다.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">견학 신청 안내</td>
-                            <td class="f16">
-                               매월 15일 이전 신청 시 다음달 공장견학 가능, 매월 16일 이후 신청 시 다음 다음달 공장견학 가능<br>
-                               <span class="gray04 f14">
-                                   예) 2017년 1월 16일~2월 15일 신청시 &gt; 3월 견학가능 / 2017년 2월 16일~3월 15일 신청시 &gt; 4월 견학가능
-                               </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">견학 일정 안내</td>
-                            <td class="f16">
-                                <span class="whiteBox f14">10:30~12:00 견학</span>
-                                <span class="gray04">
-                                    오전에 견학을 희망하시는 경우 청주 공장에 <u class="black">AM10:30 까지</u> 도착하셔야 합니다.
-                                </span><br>
-                                <span class="whiteBox f14">13:00~14:30 견학</span>
-                                <span class="gray04">
-                                    오후에 견학을 희망하시는 경우 청주 공장에 <u class="black">PM13:00 까지</u> 도착하셔야 합니다.
-                                </span><br>
-                                <span class="gray04 f14">
-                                   ※ 차량 및 식사는 제공하지 않으며 견학자에 대해 선물증정이 있습니다.
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">문의처</td>
-                            <td class="f16">
-                                <span class="whiteBox02">정식품 고객지원팀 <span class="f_pp">02-553-8888</span></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">견학 후기 안내</td>
-                            <td class="f16">
-                                견학후기를 남겨주시면 추첨하여, 소정의 제품을 드립니다.
-                            </td>
-                        </tr>
-                    </tbody>
-               </table>
+        <div class="contant1460">
+            <div class="subMenu">
+                <p class="btnSubLeft"><a href=""><img
+                            src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png"
+                            alt="왼쪽" /><span class="f13 fw400 gray04">Back</span></a></p>
+                <ul class="submenuUL">
+                    <li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
+                    <li class="f18 fw500 active"><a href="/rnd/factoryTour"><span>견학신청</span></a></li>
+                    <!-- <li class="f18 fw500"><a href="/rnd/factoryReview"><span>견학 후기</span></a></li> -->
+                </ul>
+                <p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img
+                            src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png"
+                            alt="왼쪽" /></a></p>
             </div>
-			<!--
-            <div class="col-md-12 mt120">
-                <p class="f27 fw500 underLineB">
-                    <span class="gold">2022년 8월</span> 공장견학 확정 일정표입니다.
-                </p>
-                <table class="center exTable">
-                    <caption>공장견학 확정 일정표</caption>
-                    <colgroup>
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
-                        <col style="width: 20%;">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th class="f18">견학<br class="mView">일자</th>
-                            <th class="f18">오전<br class="mView">/오후</th>
-                            <th class="f18">단체 <br class="mView">및 모임</th>
-                            <th class="f18">최대 <br class="mView">인원</th>
-                            <th class="f18">상태</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="f_pp gray03 exDate f14">2022-12-25</span>
-                            </td>
-                            <td class="f18">오전</td>
-                            <td class="f18">단체</td>
-                            <td class="f18">최대 <br class="mView">15명</td>
-                            <td class="f16">
-                                <span class="exStart">신청가능</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="f_pp gray03 exDate f14">2022-12-25</span>
-                            </td>
-                            <td class="f18">오전</td>
-                            <td class="f18">단체</td>
-                            <td class="f18">최대 <br class="mView">15명</td>
-                            <td class="f16">
-                                <span class="exIng">신청중</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="f_pp gray03 exDate f14">2022-12-25</span>
-                            </td>
-                            <td class="f18">오전</td>
-                            <td class="f18">단체</td>
-                            <td class="f18">최대 <br class="mView">15명</td>
-                            <td class="f16">
-                                <span class="exEnd">신청마감</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5"
+                        src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유" />공유</a></p>
+            <br class="clear">
+            <div class="center mt50">
+                <p class="f45 fw600 mt50">정식품 청주공장<br class="mView"> 오프라인 견학</p>
             </div>
-			-->
-		</div>
-	</div><!--//contant1160-->
-</div>
-<!-- ================================ 
+        </div><!--//contant1460-->
+        <div class="contant1160 mt80">
+            <div>
+                <div class="col-md-12 underLineG">
+                    <p class="underLineB f27 fw500">공장견학 안내</p>
+                    <p class="gray04 f18 mt80 center">
+                        견학신청은 아래 정보를 잘 숙지 하시어 신청하시기 바라며 늦어도 견학 희망일 10일 이전에 가능 여부를 알려 드립니다.<br class="none">
+                        학생의 경우 학교측의 인솔하에 견학이 가능합니다. 혹한기(12, 1, 2월)와 혹서기(7, 8월)에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.
+                    </p>
+                    <table class="mt50 round20 grayBox06 mb60">
+                        <caption>공장견학 안내</caption>
+                        <colgroup>
+                            <col style="width: 30%;">
+                            <col style="width: 70%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="f18">견학 대상 및 인원</td>
+                                <td class="f16">
+                                   	 견학을 희망하는 단체 (초등학교 고학년 이상) 최소 20명 ~ 최대 40명 입니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="f18">견학 신청 안내</td>
+                                <td class="f16">
+                                   	 매월 15일 이전 신청 시 다음달 공장견학 가능, 매월 16일 이후 신청 시 다음 다음달 공장견학 가능<br>
+                                    <span class="gray04 f14">
+                                        예) 2017년 1월 16일~2월 15일 신청시 &gt; 3월 견학가능 / 2017년 2월 16일~3월 15일 신청시 &gt; 4월 견학가능
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="f18">견학 일정 안내</td>
+                                <td class="f16">
+                                    <span class="whiteBox f14">10:30~12:00 견학</span>
+                                    <span class="gray04">
+                                        오전에 견학을 희망하시는 경우 청주 공장에 <u class="black">AM10:30 까지</u> 도착하셔야 합니다.
+                                    </span><br>
+                                    <span class="whiteBox f14">13:00~14:30 견학</span>
+                                    <span class="gray04">
+                                        오후에 견학을 희망하시는 경우 청주 공장에 <u class="black">PM13:00 까지</u> 도착하셔야 합니다.
+                                    </span><br>
+                                    <span class="gray04 f14">
+                                        ※ 차량 및 식사는 제공하지 않으며 견학자에 대해 선물증정이 있습니다.
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="f18">문의처</td>
+                                <td class="f16">
+                                    <span class="whiteBox02">정식품 고객지원팀 <span class="f_pp">02-553-8888</span></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="f18">견학 후기 안내</td>
+                                <td class="f16">
+                                    견학후기를 남겨주시면 추첨하여, 소정의 제품을 드립니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="contant100_01 whiteBg">
+                   
+                    <div class="contant1460">
+                        <form th:action="@{/rnd/factoryTour}" method="post" id="frm">
+                        <input type="hidden" name="vWritedate" th:value="${#calendars.format(#calendars.createNow(),'yyyy-MM-dd')}">
+                        <input type="hidden" name="vIdx" th:value="${#calendars.format(#calendars.createNow(),'HHmmssMMdd')}">
+                        <input id="vEmail" name="vEmail" type="hidden" maxlength="60">
+                        <input id="vTel" name="vTel"  type="hidden">
+                        <input id="vHp" name="vHp"  type="hidden">
+                        <input id="vAddr" name="vAddr"  type="hidden">
+                            <div class="col-md-12 mt50">
+                                <div class="w860 center0 mt80">
+                                    <div cellspacing="0" border="0" class="joinT">
+                                        <ul>
+                                            <li><span>견학희망날짜</span></li>
+                                            <li><input type="date" class="inp02 w330" name="vAppdate" id="vAppdate"
+                                                    maxlength="20" placeholder="">
+                                        </ul>
+                                        <ul>
+                                            <li><span>시간대</span></li>
+                                            <li>
+                                            	<input type="radio" class="vApptime" name="vApptime" value="1" checked>오전
+                                            	<input type="radio" class="vApptime" name="vApptime" value="2">오후
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><span>신청인명</span></li>
+                                            <li><input type="text" class="inp02 w330" name="vName" id="vName"
+                                                    maxlength="20" placeholder="" th:value="${member.mName}">
+                                        </ul>
+                                        <ul>
+                                            <li><span>단체/모임</span></li>
+                                            <li><input type="text" class="inp02 w330" name="vOrg" id="vOrg"
+                                                    maxlength="20" placeholder="">
+                                        </ul>
+                                        <ul>
+                                            <li><span>견학인원</span></li>
+                                            <li><input type="text" class="inp02 w330" name="vPcount" id="vPcount"
+                                                    maxlength="20" placeholder="">
+                                        </ul>
+                                        <ul>
+                                            <li>휴대전화</li>
+											<input readonly type="text" class="inp03 w120"  id="hp01" th:value="${#strings.substring(member.mHp, 0, 3)}">
+											- <input readonly type="text" class="inp03 w130" id="hp02" th:value="${#strings.substring(member.mHp, 3, 7)}">
+											- <input readonly type="text" class="inp03 w130" id="hp03" th:value="${#strings.substring(member.mHp, 7, 11)}">
+                                        </ul>
+                                        <ul>
+                                            <li>이메일</li>
+                                            <li>
+                                                <input name="" type="text" maxlength="40" id="email01" class="inp03 w200" th:value="${#strings.substringBefore(member.mEmail,'@')}">
+                                                <input name="" id="email02" type="text" maxlength="20" class="inp03 ml10 w220 mr10" th:value="|@${#strings.substringAfter(member.mEmail,'@')}|">
+                                                <p class="error" id="idCheack" style="display: none;">메일 주소에는 영문과 숫자만 들어갈 수 있습니다. </p>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>지역</li>
+                                            <li>
+                                                <select name="vArea" id="vArea" class="sel01">
+                                                    <option value="강원">강원</option>
+                                                    <option value="경기">경기</option>
+                                                    <option value="경남">경남</option>
+                                                    <option value="경북">경북</option>
+                                                    <option value="광주">광주</option>
+                                                    <option value="대구">대구</option>
+                                                    <option value="대전">대전</option>
+                                                    <option value="부산">부산</option>
+                                                    <option value="서울">서울</option>
+                                                    <option value="울산">울산</option>
+                                                    <option value="인천">인천</option>
+                                                    <option value="전남">전남</option>
+                                                    <option value="전북">전북</option>
+                                                    <option value="제주">제주</option>
+                                                    <option value="충남">충남</option>
+                                                    <option value="충북">충북</option>
+
+                                                </select>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>주소</li>
+                                            <li>
+                                                <dl class="divideType01 f17_4">
+                                                    <dd class="linkType f17_3_g mt10m">
+                                                        <input class="inp02 w330" name="" id="cZipcode"
+                                                            type="text" value="" maxlength="5"
+                                                            onclick="javascript:execPostcode();" readonly />&nbsp
+                                                        <img id=imgZipcode class="veM" name="imgZipcode"
+                                                            onclick=javascript:execPostcode(); alt="우편번호검색" align="top"
+                                                            src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_zip.jpg"><br>
+                                                        <input class="inp02 w330 mb-1" name="" id="cAddr1"
+                                                            type="text" value="" maxlength="150" readonly /><br>
+                                                        <input class="inp02 w330" name="" id="cAddr2"
+                                                            type="text" value="" maxlength="30" />
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul> 
+                                        <ul>
+                                            <li>메모</li>
+                                            <li class="cpDeclareBox03">
+                                                <p>
+                                                    <textarea cols="50" rows="10" class="h280" name="vMemo"  id="vMemo"></textarea>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        
+                                        <ul>
+                                        	<div class="mt70 cpDeclareBox02">
+						                       <p class="f27 fw500 underLineB">개인정보의 수집 및 이용에 대한 안내</p>
+						                       <table class="mt40">
+						                           <colgroup>
+						                                <col style="width: 15%">
+						                                <col style="width: 85%;">
+						                            </colgroup>
+						                            <tr>
+						                                <th class="f16 fw500 center">수집<br class="mView">항목</th>
+						                                <td class="f16 gray04">
+						                                    성명, 이메일주소, 홈페이지주소, 주소, 전화번호, 휴대폰번호(SMS 알림요청 시 선택) 문의/신고접수 및 결과 회신
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <th class="f16 fw500 center">수집<br class="mView">목적</th>
+						                                <td class="f16 gray04">
+						                                    원칙적으로 개인정보 수집 및 이용목적이 달성된 후에 해당 정보를 지체없이 파기합니다.
+						                                </td>
+						                            </tr>
+						                            <tr>
+						                                <th class="f16 fw500 center">이용<br class="mView">기간</th>
+						                                <td class="f16 gray04">
+						                                    단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 일정기간 동안 개인정보를 보관할 수 있습니다.
+						                                </td>
+						                            </tr>
+						                        </table>
+						                        <div class="cpCheckBox mt20">
+						                            <span class="f18">개인정보 수집 및 이용에 동의합니다.</span>
+													
+													<div class="boxType floatR mt10m">
+														<div class="baseRadioBox2"> <!-- ?? -->
+															<input type="radio" id="snsAgree1" name="cCheck" value="1" /><label for="snsAgree1"><span></span>네</label>
+															<input type="radio" id="snsAgree2" name="cCheck" value="0" checked/><label for="snsAgree2"><span></span>아니오</label>
+														</div>
+													</div>
+						                        </div>
+						                   </div>
+                                        </ul>
+                                    </div><!-- //joinT -->
+                                    <div class="w1160 center0 grayLine mt70">
+                                        <div class="w560 center0 mb200">
+                                            <ul class="joinbtnFoot mt50">
+                                                <li class="mr10"><button type="text" class="btnType10 f20 fw500 lh140"
+                                                        onclick="return false;">이전</button></li>
+                                                <li>
+                                                    <button type="button" class="btnType17 f20 fw500 lh140"
+                                                        id="submitClaim" disabled
+                                                        onclick="submitFormCheck();">신청하기</button>
+                                                    <!-- <button type="text" class="btnType07 f20 fw500 lh140" id="submitClaim" onclick="document.getElementById('frm').submit();">신고하기</button> -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><!-- // w860 center0 mt80 -->
+                            </div> <!-- //col-md-12 -->
+                        </form>
+                    </div><!-- //row -->
+                    <br class="clear">
+                </div>
+            </div>
+        </div>
+        <!-- ================================ 
 		// Content
 ================================ -->
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<script th:src="@{/common/js/modelForm.js}"></script>
+<script>
+
+	function btnAvtive() {
+		const vAppdate = $('#vAppdate').val();
+		const vName = $('#vName').val();
+		const vOrg = $('#vOrg').val();
+		const vPcount = $('#vPcount').val();
+		
+		
+		const vArea = $('#vArea').val();
+		const cZipcode = $('#cZipcode').val();
+		const cAddr1 = $('#cAddr1').val();
+		const cAddr2 = $('#cAddr2').val();
+		const vMemo = $('#vMemo').val();
+		
+		if($.trim(vAppdate).length > 1
+		&& $.trim(vName).length > 1
+		&& $.trim(vOrg).length > 1
+		&& $.trim(vPcount).length > 1
+		&& $.trim(vArea).length > 1
+		&& $.trim(cZipcode).length > 1
+		&& $.trim(cAddr1).length > 1
+		&& $.trim(cAddr2).length > 1
+		&& $.trim(vMemo).length > 1
+		) 
+		{
+			$("#submitClaim").attr("disabled", false); //해제
+			$("#submitClaim").addClass('active');
+		} else {
+			$("#submitClaim").attr("disabled", true); //설정
+			$("#submitClaim").removeClass('active');		
+		}
+	}
+	
+	$('#vName').keyup(function () {
+		btnAvtive();
+	});
+	
+	$('#hp02').keyup(function () {
+		btnAvtive();
+	});
+	
+	$('#hp03').keyup(function () {
+		btnAvtive();
+	});
+	
+	$('#email01').keyup(function () {
+		var retVal = false;
+		const vId = $("#email01").val();
+		if (!/^[A-Za-z0-9]{1,20}$/i.test(vId) && vId.length > 0) {
+			$("#idCheack").css('display', 'inline-block');
+		} else {
+			$("#idCheack").css('display', 'none');
+		    retVal = true;
+		    btnAvtive();
+		}
+		
+		return retVal;
+	});
+	
+	$('#vPcount').keyup(function () {
+		btnAvtive();
+	});
+	
+	$('#vMemo').keyup(function () {
+		btnAvtive();
+		buildData();
+	});
+
+</script> 
+<script>
+	function writeMailAddr(){
+		var addr = document.getElementById("selEmail02").value;
+		document.getElementById("email02").value = addr;
+	}
+	function submitFormCheck(){
+		
+		var cCheck = document.querySelector('input[name="cCheck"]:checked').value;
+		if(cCheck != '1'){
+			alert("개인정보 수집 및 이용에 동의하지 않으셨습니다.");
+			return false;
+		}
+		
+		var email01 = document.getElementById("email01");
+		if(email_check(email01)==false){
+			email01.focus();
+			return false;
+		}
+	
+		buildData();
+		document.getElementById('frm').submit();
+	}
+	
+	function buildData(){
+		
+        var email = $('#email01').val() + $('#email02').val();
+        $('input[name=vEmail').attr('value',email);
+        
+		var hp = $("#hp01").val()  + "-" +  $('#hp02').val() + "-" + $('#hp03').val();
+		$('input[name=vHp]').attr('value',hp);
+        
+		var addr = $("#cZipcode").val()  + ")" +  $('#cAddr1').val() + " " + $('#cAddr2').val();
+		$('input[name=vAddr]').attr('value',addr);
+        
+	}
+	
+	function email_check(e) {
+		var regId = /^[A-Za-z0-9]{1,20}$/;
+		if(!regId.test(e.value)) {
+			alert('이메일 양식이 잘못되었습니다.');
+			return false;
+		}
+		return true;
+	}
+</script>
+
 <!-- ================================ // Footer ================================ -->
 </body>
 </html>

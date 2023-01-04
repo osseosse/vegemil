@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegemil.mapper.RndMapper">
+	
+	<sql id="visitColumns">
+		v_idx,
+		v_writedate,
+		v_name,
+		v_tel, 
+		v_hp, 
+		v_email, 
+		v_area, 
+		v_addr, 
+		v_org, 
+		v_pcount, 
+		v_appdate, 
+		v_apptime, 
+		v_memo, 
+		v_confstat, 
+		v_confdate, 
+		v_conftime, 
+		v_adminmemo
+		
+	</sql>
+	
+	<insert id="insertMvisit" parameterType="com.vegemil.domain.VisitDTO" useGeneratedKeys="true" keyProperty="vIdx">
+		insert into m_visit (
+			v_writedate,
+			v_name,
+			v_tel, 
+			v_hp, 
+			v_email, 
+			v_area, 
+			v_addr, 
+			v_org, 
+			v_pcount, 
+			v_appdate, 
+			v_apptime, 
+			v_memo, 
+			v_confstat, 
+			v_confdate, 
+			v_conftime,
+			v_adminmemo 
+		) values (
+			#{vWritedate},
+			#{vName},
+			#{vTel},
+			#{vHp},
+			#{vEmail},
+			#{vArea},
+			#{vAddr},
+			#{vOrg},
+			#{vPcount},
+			NOW(),
+			#{vApptime},
+			#{vMemo},
+			'',
+			NOW(),
+			'',
+			''
+		)
+	</insert>
+</mapper>

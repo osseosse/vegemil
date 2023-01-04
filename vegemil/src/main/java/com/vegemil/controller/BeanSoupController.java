@@ -25,6 +25,7 @@ public class BeanSoupController extends UiUtils {
 	
 	@Autowired
 	BeansoupService beansoupService;
+	
 
 	@GetMapping("/beanSoup")
 	public String beanSoupMain(Model model) {
