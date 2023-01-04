@@ -11,7 +11,7 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	private Long cIdx;
 
 	/** 이름 */
-	private String cMname;
+	private String cName;
 
 	/** 전화번호 */
 	private String cHp;
@@ -35,7 +35,7 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	private String cUpdatetime;
 	
 	/** 아기이름 */
-	private String cBname;
+	private String cBabyName;
 	
 	/** 유입 경로 */
 	private String cRoute;
@@ -45,5 +45,8 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	
 	/** 개월 수 */
 	private String cAlived;
+	
+	/** 회원ID */
+	private String mId;
 
 }
