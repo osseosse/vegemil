@@ -121,7 +121,6 @@
 						<li ><a href="#G"><p class="ico_GE">특수영양식</p></a></li>
 						<li ><a href="#H"><p class="ico_GH">건강식품</p></a></li>
 						<li ><a href="#F"><p class="ico_SC">식재료</p></a></li>
-						<li ><a href="#M"><p class="ico_CV">식물성음료</p></a></li>
 						<li ><a href="#S"><p class="ico_CD">음료</p></a></li>
 						<li ><a href="#W"><p class="ico_CW">생수</p></a></li>
 					</ul>
@@ -402,46 +401,6 @@
 					</div>
 					<br class="clear">
 				</div><!-- //floting-right_prd -->
-				<div id="M"><!-- 식물성음료 -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="mm active"><input type="radio" name="mm" id="#18" value="" > <label for="#18"><span></span>전체보기</label></li>
-									<li class="mm"><input type="radio" name="mm" id="#19" value="CVD" > <label for="#19"><span></span>코코넛&아몬드</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="m_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="m_list" th:if="${product.categoryCode == 'M'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="${product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
-									</dl>
-								</div>
-							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
 				<div id="S"><!-- 음료 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
@@ -666,26 +625,6 @@ $(document).ready(function(){
 		$(".ff").removeClass("active");
 		$(this).parent().addClass("active");
 		
-	});
-	
-	$("input[name='mm']").on("click", function () {
-		const value = $(this).val();
-		
-		if(!$(this).is(":checked")) {
-			$(this).prop("checked", false);
-			$("#m_tab #m_list").filter(function() {
-				$(this).toggle()
-			});
-		} else {
-			$(this).prop("checked", true);
-			$("#m_tab #m_list").filter(function() {
-				$(this).toggle($(this).attr('name').indexOf(value) > -1)
-			});
-		}
-		
-		$("html, body").animate({scrollTop: offset.top},600);
-		$(".mm").removeClass("active");
-		$(this).parent().addClass("active");
 	});
 	
 	$("input[name='ss']").on("click", function () {
