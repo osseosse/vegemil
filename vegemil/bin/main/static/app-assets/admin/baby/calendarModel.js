@@ -287,7 +287,7 @@ var createTable = function() {
 														'<div class="mt-1 photoBox1">'+
 															'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'+
 															'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'+
-															'<p class="mt-1"><img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/model_upload/'+full['cImage']+'" /></p>'+
+															'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+full['cImage']+'" /></p>'+
 														'</div>'+
 													'</div>'+
 												'</dd>'+
@@ -298,7 +298,7 @@ var createTable = function() {
 														'<div class="mt-1 photoBox2">'+
 															'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'+
 															'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'+
-															'<p class="mt-1"><img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/model_upload/'+full['cImage2']+'" /></p>'+
+															'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+full['cImage2']+'" /></p>'+
 														'</div>'+
 													'</div>'+
 												'</dd>'+					
@@ -411,7 +411,7 @@ var createTable = function() {
           className: 'my_modal',
           render: function (data, type, full, meta) {
 			  if(full['cImage']==null)	return '';
-      		  else	return '<img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/review_upload/'+full['cImage']+'" height="40" width="40" class="rounded">';
+      		  else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/review_upload/'+full['cImage']+'" height="40" width="40" class="rounded">';
 //            return (
 //              '<div class="d-inline-flex">' +
 //              '<a href="#modal1" class="dropdown-item" data-toggle="modal">' +
@@ -695,7 +695,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox1">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/model_upload/'+obj.cImage+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+obj.cImage+'" /></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -708,7 +708,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox2">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="https://www.vegemil.co.kr/Main/brandVegemilBaby/model_upload/'+obj.cImage2+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/vegemilBaby/model_upload/'+obj.cImage2+'" /></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
