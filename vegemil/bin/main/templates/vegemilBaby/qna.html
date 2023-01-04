@@ -47,7 +47,7 @@
 														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
 														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?p=1}"> Cummunity</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?p=1}"> Community</a></li>
 														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
 													</ul>
 												</div>
@@ -152,11 +152,10 @@
                       <div class="col-md-12 mt50 new_listBox mg0 pd0">
 	                      <ul class="thumb-over new_list">
 							<li th:each="qna : ${qnaList}">								                         
-	                              <a th:href="@{/vegemilBaby/qna/datail/}+${qna.mbsIdx}">  
+	                              <a th:href="@{/vegemilBaby/qna/detail/}+${qna.mbsIdx}">  
 	                                  <div class="list_thumb">
 		                                  	<p class="t_img">
 	                                          <span class="t_img_span youtube-link" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/uploadQna/'+ ${qna.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" ></span>
-	<!-- 	                                          <p class="wz_img" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" > -->
 	                                          <strong><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif" alt="상세보기" /></strong>
 	                                   	</p>
 	                                    <p class="f20_4 mt30 txtHide3" th:text="${qna.mbsTitle}">제목</p>
@@ -173,7 +172,27 @@
             </div>
             <!-- //container100 -->
             <!-- paging -->
-            
+            <div class="paging3 mt50">
+         		<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+			        <ol class="f_pp">
+			            <li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
+			                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+			            </li>
+			            <li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+			                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+			            </li>
+			            <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" >
+			                <a href="javascript:void(0)" th:class="${pageNo == params.currentPageNo} ? 'active'" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+			            </li>
+			            <li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+			                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+			            </li>
+			            <li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
+			                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+			            </li>
+			        </ol>
+				</nav>               
+        	</div>
             <!-- paging //-->
 	    </div> <!-- //content -->
 	
@@ -181,5 +200,22 @@
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	<script th:inline="javascript">
+	/*<![CDATA[*/	
+	    function movePage(uri, queryString) {
+					
+			let category = [[${params.category}]];
+			
+
+			queryString = queryString.substring(1, queryString.indexOf('&'));
+			if(category == null) {
+				location.href = uri +'?'+queryString;	
+			}else{
+				location.href = uri +'?category='+category+'&'+queryString;				
+			}
+
+		}	
+	/*]]>*/
+	</script>
 	</body>
 </html>
