@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class VegemilBabyMagazineDTO extends CommonDTO {
+public class VegemilBabyCommunityDTO extends CommonDTO {
 
 	private Long mbsIdx;
 	private String mbsMCategory; 
@@ -15,6 +15,10 @@ public class VegemilBabyMagazineDTO extends CommonDTO {
 	private String mbsImage; 
 	private String mbsTitle; 
 	private String mbsGetdate; 	
+	private String mbsContent; 
+	private String mbsSummary; 
+	private String mbsAnge; 
+	private String mbsAngehtml; 
 	
 }
 

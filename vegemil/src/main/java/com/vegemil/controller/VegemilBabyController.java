@@ -104,14 +104,11 @@ public class VegemilBabyController extends UiUtils {
 	//육아상담 상세
 	@GetMapping(value = { "/vegemilBaby/qna/detail/{idx}"})
 	public String moveQnaDetail(@PathVariable("idx") Long idx, Model model) {
-		model.addAttribute("magazineDetail", vegemilBabyCommunityService.selectMagazineDetail(idx));
+		model.addAttribute("qnaDetail", vegemilBabyCommunityService.selectQnaDetail(idx));		
+		model.addAttribute("qnaList",vegemilBabyCommunityService.selectQnaList());				 
 		return "vegemilBaby/qnaDetail";
+				
 	}
-	
-	
-	
-	
-	
 	
 
 	// 영유아식 레시피

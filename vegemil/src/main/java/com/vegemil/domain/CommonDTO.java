@@ -1,6 +1,7 @@
 package com.vegemil.domain;
 
 import java.time.LocalDate;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.vegemil.paging.Criteria;
@@ -15,7 +16,7 @@ public class CommonDTO extends Criteria {
 
 	/** 페이징 정보 */
 	private PaginationInfo paginationInfo;
-
+	
 	/** 삭제 여부 */
 	private String deleteYn;
 

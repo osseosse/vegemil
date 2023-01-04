@@ -149,7 +149,7 @@
                                   <p class="f17_4">이런 정보는 어떠신가요?</p>
                                    <ul class="mt20">
                                       <li class="hvr-float-shadow" th:each="recipe : ${recipeList}">
-                                             <a th:href='@{http://localhost:8080/vegemilBaby/recipe/detail/}+${recipe.cIdx}'>  
+                                             <a th:href='@{/vegemilBaby/recipe/detail/}+${recipe.cIdx}'>  
                                                <p class="infor_img">
                                                    <span class="inforIMG inforIMG_001" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/COMMUNITY/'+ ${recipe.cCode}+.jpg +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></span>
                                                </p>

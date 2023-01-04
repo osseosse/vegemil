@@ -5,7 +5,7 @@
 	
 	<!-- ======[Index]====== -->
 	<!-- index - 육아정보 -->
-	<select id="selectMagazineIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectMagazineIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			* 
 		FROM 
@@ -15,7 +15,7 @@
 		LIMIT 1;
 	</select>
 	<!-- index - 육아상담 QnA -->	
-	<select id="selectQnAIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectQnAIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_content, mbs_image, mbs_summary, mbs_title, mbs_getdate, mbs_category
 		FROM 
@@ -65,7 +65,7 @@
 			mbs_active = '1'				
 	</select>	
 	<!-- 육아정보 - 전체 -->	
-	<select id="selectAllMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectAllMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -93,7 +93,7 @@
 			mbs_active = '1';				
 	</select>
 	<!--  육아정보 - 임신/출산 -->	
-	<select id="selectPbMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectPbMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -126,7 +126,7 @@
 			mbs_active = '1';			
 	</select>	
 	<!-- 육아정보 - 성장/건강 -->	
-	<select id="selectGhMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectGhMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -159,7 +159,7 @@
 			mbs_active = '1';			
 	</select>	
 	<!-- 육아정보 - 놀이/교육 -->	
-	<select id="selectPeMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectPeMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -192,7 +192,7 @@
 			mbs_active = '1';			
 	</select>
 	<!-- 육아정보 - 놀이/교육 -->	
-	<select id="selectLhMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectLhMagazine" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		FROM 
@@ -212,13 +212,13 @@
 	
 		
 	<!-- 육아정보 - 육아정보 상세조회 -->	
-	<select id="selectMagazineDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDetailDTO" >			
+	<select id="selectMagazineDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category, mbs_ange, mbs_ange_html 
 		FROM 
 			m_edit_brandbaby
 		WHERE 
-			mbs_idx = #{mbs_idx}
+			mbs_idx = #{idx}
 		AND 
 			mbs_active = '1'			
 	</select>	
@@ -231,8 +231,7 @@
 		FROM 
 			m_editQnA_brandBaby 
 		WHERE 
-			mbs_category is not null
-		AND mbs_check != 1
+			mbs_active != 0	
 		<if test="category != null">	
 		AND 
 			mbs_category = #{category}			
@@ -240,22 +239,49 @@
 	</select>
 	
 	<!-- 육아상담 Q&A - 카테고리별 조회 -->
-	<select id="selectQna" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectQna" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
        		mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category  
        	FROM 
        		m_editQnA_brandBaby 
 		WHERE 
-			mbs_category is not null
-		AND mbs_check != 1
+			mbs_active != 0		
 		<if test="category != null">
         	AND mbs_category = #{category}
     	</if>
     	Order By 
 			mbs_getdate DESC
-		<!-- LIMIT
-        	#{paginationInfo.firstRecordIndex}, 10       --> 	
+		LIMIT
+        	#{paginationInfo.firstRecordIndex}, 10      	
 	</select>
+	
+	<!-- 육아상담 Q&A - QnA 상세조회 -->	
+	<select id="selectQnaDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
+		SELECT 
+			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category
+		FROM 
+			m_editQnA_brandBaby
+		WHERE 
+			mbs_idx = #{idx}	
+		AND
+			mbs_active != 0			
+	</select>
+	
+	<!-- 육아상담 Q&A - 추천리스트 -->	
+	<select id="selectQnaList" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
+		SELECT 
+			*
+	    FROM(
+			SELECT mbs_idx, mbs_title, mbs_image
+			FROM m_editQnA_brandBaby
+			WHERE mbs_active != 0			
+			ORDER BY RAND() LIMIT 4
+			) qna
+		ORDER BY
+			mbs_idx DESC;	
+	</select>		
+	
+
 	
 	
 	
@@ -289,7 +315,7 @@
 	<insert id ="insertSampleForm" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" useGeneratedKeys="true" keyProperty="sIdx"  >	
 		INSERT INTO 
 			m_sample_baby
-				(s_id, s_mname, s_year, s_hp, s_tel, s_zipcode, s_addr1, s_addr2, s_email, s_item, s_babycnt 
+				(s_id, s_mname, s_year, s_hp, s_tel, s_zipcode, s_addr1, s_addr2, s_email, s_item, s_babycnt
 				,s_name, s_sex, s_materdate, s_feedmethod
 				,s_name2, s_sex2, s_materdate2, s_feedmethod2
 				,s_name3, s_sex3, s_materdate3, s_feedmethod3 
@@ -408,7 +434,7 @@
 	
 	
 	<!-- 게시물 검색(리뉴얼) -->	
-	<select id="selectMagazine" parameterType ="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyMagazineDTO" >			
+	<select id="selectMagazine" parameterType ="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
 		
