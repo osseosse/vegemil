@@ -17,6 +17,7 @@ public class AdminBestReviewDTO extends AdminCommonDTO {
 	private String 	sDesctime;	/** 업데이트시간 */
 	private String 	sSns;	/** SNS */
 	private String 	sImage;/** 파일명 */
-	private String 	sRank;/** 개월 수 */
+	private String 	sRank; /** 개월 수 */
+	private String  mName; /** 이름 */
 
 }
