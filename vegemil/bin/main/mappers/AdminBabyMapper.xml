@@ -27,6 +27,7 @@
 		, c_route
 		, c_image2
 		, c_alived
+		, c_rank
 	</sql>
 	
 	<!-- 베스트후기선정 -->
@@ -353,8 +354,8 @@
 	<select id="selectCalendarModelList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCalendarModelDTO">
 		SELECT /* selectCalendarModelList by AdminEventMapper.xml */
 			<include refid="calendarModelColumns" />
-		  FROM m_calendar_model
-	     WHERE 1=1
+			, m.m_id
+		  FROM m_calendar_model c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp
 	    <if test='sStartdate != "" '>
 	 	   AND c_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
 	 	</if>
