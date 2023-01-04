@@ -107,13 +107,22 @@
 			LGD_TID = #{lgdTid}
 	</update>
 
-	<select id="getPayment" parameterType="long" resultType="com.vegemil.domain.PaymentDTO">
+	<select id="selectPayment" parameterType="long" resultType="com.vegemil.domain.PaymentDTO">
 		SELECT
 			<include refid="paymentColumns" />
 		FROM
 			m_payment
 		WHERE
 			ROW_INDEX = #{rowIndex}
+	</select>
+	
+	<select id="selectPaymentByTid" parameterType="String" resultType="com.vegemil.domain.PaymentDTO">
+		SELECT
+			<include refid="paymentColumns" />
+		FROM
+			m_payment
+		WHERE
+			LGD_TID = #{lgdTid}
 	</select>
 	
 	<select id="selectPaymentList" parameterType="com.vegemil.domain.PaymentDTO" resultType="com.vegemil.domain.PaymentDTO">
@@ -126,7 +135,7 @@
 		                    FROM m_payment p2
 		                    WHERE p2.LGD_TID = p1.LGD_TID)
 		 and p1.LGD_BUYERID = #{lgdBuyerid}
-	ORDER BY p1.LGD_PAYDATE DESC;
+	ORDER BY p1.LGD_PAYDATE DESC
 	</select>
 	
 	<select id="selectPaymentCount" parameterType="com.vegemil.domain.PaymentDTO" resultType="int">

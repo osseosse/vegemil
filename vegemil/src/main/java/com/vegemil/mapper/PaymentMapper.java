@@ -13,7 +13,9 @@ public interface PaymentMapper {
 	
 	public int updatePaymentCancel(String lgdTid);
 	
-	public PaymentDTO getPayment(PaymentDTO params);
+	public PaymentDTO selectPayment(PaymentDTO params);
+	
+	public PaymentDTO selectPaymentByTid(String lgdTid);
 
 	public List<PaymentDTO> selectPaymentList(PaymentDTO params);
 

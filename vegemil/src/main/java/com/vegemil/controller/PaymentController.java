@@ -32,6 +32,7 @@ import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.PaymentDTO;
 import com.vegemil.domain.QnaDTO;
+import com.vegemil.service.MailService;
 import com.vegemil.service.MemberService;
 import com.vegemil.service.PaymentService;
 import com.vegemil.service.QnaService;
@@ -48,6 +49,9 @@ public class PaymentController extends UiUtils {
 	
 	@Autowired
 	private PaymentService paymentService;
+	
+	@Autowired
+	private MailService emailService;
 	
 	@GetMapping(value = "/payment/login")
 	public String movePayLogin(Model model, Authentication authentication, HttpServletResponse response) {
@@ -409,17 +413,29 @@ public class PaymentController extends UiUtils {
 	
 	@GetMapping(value = "/payment/cancelRequest")
 	public String cancelRequest(@RequestParam(value = "lgdTid", required = false) String lgdTid, HttpServletResponse response, Model model) throws Exception {
+		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		if (lgdTid == null) {
-			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
-			out.flush();
-		}
-		boolean isRegistered = paymentService.requestPaymentCancel(lgdTid);
-		if (isRegistered == false) {
-			out.println("<script>alert('취쇼 요청이 실패했습니다.'); history.go(-1);</script>");
-			out.flush();
-			return showMessageWithRedirect("취쇼 요청이 실패했습니다.", "/comp/payment/list", Method.GET, null, model);
+		PaymentDTO payment;
+		
+		try {
+		
+			if (lgdTid == null) {
+				out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
+				out.flush();
+			}
+			boolean isRegistered = paymentService.requestPaymentCancel(lgdTid);
+			if (isRegistered == false) {
+				out.println("<script>alert('취쇼 요청이 실패했습니다.'); history.go(-1);</script>");
+				out.flush();
+				return showMessageWithRedirect("취쇼 요청이 실패했습니다.", "/comp/payment/list", Method.GET, null, model);
+			}
+			payment = paymentService.getPayment(lgdTid);
+			if(payment != null) {
+				emailService.mailSendGreenbiaCancel(payment);	//취소요청시 그린비아팀에 메일 발송
+			}
+		
+		} catch (Exception e) {
 		}
 		
 		return showMessageWithRedirect("결제 취소 요청되었습니다.\n관리자가 확인후 취소처리 해드리겠습니다.", "/comp/payment/list", Method.GET, null, model);

@@ -152,7 +152,7 @@ public class AdminPaymentController extends UiUtils {
 		            		pay.setLgdRespcode(result.get("status").toString());
 		            		pay.setLgdRespmsg("취소성공");
 		            		pay.setLgdPaydate(result.get("requestedAt").toString());
-		            		pay.setLgdBuyer(member.getMName());
+		            		pay.setLgdBuyer("관리자(결제취소)");
 		        			pay.setLgdBuyerid(member.getMId());
 		            		
 			        		if(result.get("card") != null) {

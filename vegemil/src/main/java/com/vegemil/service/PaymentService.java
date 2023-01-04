@@ -10,6 +10,8 @@ import com.vegemil.domain.PaymentDTO;
 public interface PaymentService {
 
 	public PaymentDTO getPayment(PaymentDTO Payment);
+	
+	public PaymentDTO getPayment(String lgdTid);
 
 	public List<PaymentDTO> getPaymentList(PaymentDTO params);
 	

@@ -35,12 +35,16 @@
 	</sql>
 
 	<select id="selectPaymentList" parameterType="hashMap" resultType="com.vegemil.domain.AdminPaymentDTO">
-		SELECT /* selectBabyInfoList by AdminPaymentMapper.xml */ 
+		SELECT /* selectPaymentList by AdminPaymentMapper.xml */ 
 		       ROW_INDEX, LGD_BUYER, LGD_OID, LGD_AMOUNT, LGD_PAYDATE, LGD_CANCEL_DATE,
 		       LGD_FINANCENAME, LGD_CARDNUM, LGD_RESPCODE, LGD_RECEIPT_URL, CANCEL_REQ,
 		       LGD_TID
-		  FROM m_payment
-		 WHERE 1=1
+		  FROM
+			 m_payment p1
+	    WHERE 
+			 p1.row_index = (SELECT MAX(p2.row_index)
+		                    FROM m_payment p2
+		                    WHERE p2.LGD_TID = p1.LGD_TID)
 		 <if test='sStartdate != "" '>
 	       AND INSERT_DATE &gt;= #{sStartdate, jdbcType=VARCHAR} 
 	     </if>
@@ -55,7 +59,7 @@
 	</select>
 
 	<select id="selectPaymentTotalCount" parameterType="hashMap" resultType="int">
-		SELECT COUNT(*) /* selectBabyInfoTotalCount by AdminPaymentMapper.xml */
+		SELECT COUNT(*) /* selectPaymentTotalCount by AdminPaymentMapper.xml */
 		  FROM m_payment
 		 WHERE 1=1
 		 <if test='sStartdate != "" '>
