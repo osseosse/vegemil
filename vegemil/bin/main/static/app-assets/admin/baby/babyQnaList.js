@@ -273,7 +273,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['mbsImage']==null)	return '';
-      			else	return '<img src="https://www.vegemil.co.kr/Admin/summerNote/uploadQna/' + full['mbsImage'] + '" width="105" height="65">';
+      			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/uploadQna/' + full['mbsImage'] + '" width="105" height="65">';
           }
           
         },
