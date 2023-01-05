@@ -65,7 +65,7 @@
 					<caption>보도자료</caption>
 					<tr th:each="mediaNews : ${mediaNewsList}">
 						<td>
-							<a href="${mediaNews.mAduri1}">
+							<a th:href="${mediaNews.mAduri1}">
 								<div class="t-day">
 									<p class="f_pp  f55 fw700 lh120" th:text="${mediaNews.mDay}"></p><!-- 일 -->
 									<p class="f_pp  f15 fw700 lh130" th:text="${mediaNews.mYearMonth}"></p><!-- 년,월 -->
@@ -73,22 +73,22 @@
 							</a>
 						</td>
 						<td>
-							<a href="${mediaNews.mAduri1}">
+							<a th:href="${mediaNews.mAduri1}">
 								<p class="t-bo">보도자료</p>
 							</a>
 						</td>
 						<td>
 							<div class="press-tag f14">
-								<span th:if="${mediaNews.mAduri1 != null and mediaNews.mAduri1 !=''}"><a href="${mediaNews.mAduri1}" th:text="${mediaNews.mAdname1}"></a></span>
-								<span th:if="${mediaNews.mAduri2 != null and mediaNews.mAduri2 !=''}"><a href="${mediaNews.mAduri2}" th:text="${mediaNews.mAdname2}"></a></span>
-								<span th:if="${mediaNews.mAduri3 != null and mediaNews.mAduri3 !=''}"><a href="${mediaNews.mAduri3}" th:text="${mediaNews.mAdname3}"></a></span>
-								<span th:if="${mediaNews.mAduri4 != null and mediaNews.mAduri4 !=''}"><a href="${mediaNews.mAduri4}" th:text="${mediaNews.mAdname4}"></a></span>
-								<span th:if="${mediaNews.mAduri5 != null and mediaNews.mAduri5 !=''}"><a href="${mediaNews.mAduri5}" th:text="${mediaNews.mAdname5}"></a></span>
-								<span th:if="${mediaNews.mAduri6 != null and mediaNews.mAduri6 !=''}"><a href="${mediaNews.mAduri6}" th:text="${mediaNews.mAdname6}"></a></span>
-								<span th:if="${mediaNews.mAduri7 != null and mediaNews.mAduri7 !=''}"><a href="${mediaNews.mAduri7}" th:text="${mediaNews.mAdname7}"></a></span>
-								<span th:if="${mediaNews.mAduri8 != null and mediaNews.mAduri8 !=''}"><a href="${mediaNews.mAduri8}" th:text="${mediaNews.mAdname8}"></a></span>
-								<span th:if="${mediaNews.mAduri9 != null and mediaNews.mAduri9 !=''}"><a href="${mediaNews.mAduri9}" th:text="${mediaNews.mAdname9}"></a></span>
-								<span th:if="${mediaNews.mAduri10 != null and mediaNews.mAduri10 !=''}"><a href="${mediaNews.mAduri10}" th:text="${mediaNews.mAdname10}"></a></span>
+								<span th:if="${mediaNews.mAduri1 != null and mediaNews.mAduri1 !=''}"><a th:href="${mediaNews.mAduri1}" th:text="${mediaNews.mAdname1}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri2 != null and mediaNews.mAduri2 !=''}"><a th:href="${mediaNews.mAduri2}" th:text="${mediaNews.mAdname2}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri3 != null and mediaNews.mAduri3 !=''}"><a th:href="${mediaNews.mAduri3}" th:text="${mediaNews.mAdname3}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri4 != null and mediaNews.mAduri4 !=''}"><a th:href="${mediaNews.mAduri4}" th:text="${mediaNews.mAdname4}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri5 != null and mediaNews.mAduri5 !=''}"><a th:href="${mediaNews.mAduri5}" th:text="${mediaNews.mAdname5}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri6 != null and mediaNews.mAduri6 !=''}"><a th:href="${mediaNews.mAduri6}" th:text="${mediaNews.mAdname6}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri7 != null and mediaNews.mAduri7 !=''}"><a th:href="${mediaNews.mAduri7}" th:text="${mediaNews.mAdname7}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri8 != null and mediaNews.mAduri8 !=''}"><a th:href="${mediaNews.mAduri8}" th:text="${mediaNews.mAdname8}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri9 != null and mediaNews.mAduri9 !=''}"><a th:href="${mediaNews.mAduri9}" th:text="${mediaNews.mAdname9}" target="_blank"></a></span>
+								<span th:if="${mediaNews.mAduri10 != null and mediaNews.mAduri10 !=''}"><a th:href="${mediaNews.mAduri10}" th:text="${mediaNews.mAdname10}" target="_blank"></a></span>
 							</div>
 							<a th:href="${mediaNews.mAduri1}" target="_blank">
 							<div class="press-title f27 fw500 black"><p th:text="${mediaNews.mSubject}" ></p></div></a>
