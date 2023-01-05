@@ -13,14 +13,21 @@
 		v_addr, 
 		v_org, 
 		v_pcount, 
-		v_appdate, 
+		DATE_FORMAT(v_appdate, '%Y-%m-%d') as v_appdate, 
 		v_apptime, 
 		v_memo, 
 		v_confstat, 
-		v_confdate, 
+		DATE_FORMAT(v_confdate, '%Y-%m-%d') as v_confdate,
 		v_conftime, 
 		v_adminmemo
-		
+	</sql>
+	
+	<sql id="tourSceduleColumns">
+		v_idx as id,
+		CONCAT( if(v_apptime = '1','(오전)','(오후)'),' ',v_org) as title,
+		v_memo as content,
+		DATE_FORMAT(v_appdate, '%Y-%m-%d') as start
+<!-- 		DATE_FORMAT(DATE_ADD(v_appdate, INTERVAL 1 DAY), '%Y-%m-%d 00:00:00') as end -->
 	</sql>
 	
 	<insert id="insertMvisit" parameterType="com.vegemil.domain.VisitDTO" useGeneratedKeys="true" keyProperty="vIdx">
@@ -60,4 +67,29 @@
 			''
 		)
 	</insert>
+	
+	<select id="selectVisitList" resultType="com.vegemil.domain.VisitDTO">
+		select
+			<include refid="visitColumns" />
+		from
+			m_visit
+		where
+		<![CDATA[
+			v_confstat = '2'
+		and
+			v_appdate >= (LAST_DAY(NOW() - interval 1 month) + interval 1 DAY)
+		and
+			v_appdate <= LAST_DAY(NOW())
+		]]>
+	</select>
+	
+	<select id="selectTourScheduleList" resultType="com.vegemil.domain.ScheduleDTO">
+		select
+			<include refid="tourSceduleColumns" />
+		from
+			m_visit
+		where
+			v_appdate >= MAKEDATE(YEAR(NOW()),1)
+	</select>
+	
 </mapper>
