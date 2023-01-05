@@ -42,7 +42,7 @@
 			v_conftime,
 			v_adminmemo 
 		) values (
-			#{vWritedate},
+			NOW(),
 			#{vName},
 			#{vTel},
 			#{vHp},
@@ -51,7 +51,7 @@
 			#{vAddr},
 			#{vOrg},
 			#{vPcount},
-			NOW(),
+			#{vAppdate},
 			#{vApptime},
 			#{vMemo},
 			'',

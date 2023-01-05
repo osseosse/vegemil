@@ -52,7 +52,7 @@ public class RndController extends UiUtils {
 
 
 	@PostMapping(value="/rnd/factoryTour")
-	public String postVisitForm(VisitDTO visitDto, Model model, Authentication authentication) throws Exception {
+	public String postVisitForm(VisitDTO visitDto, Model model, Authentication authentication)  {
 		
 		try {
 		
