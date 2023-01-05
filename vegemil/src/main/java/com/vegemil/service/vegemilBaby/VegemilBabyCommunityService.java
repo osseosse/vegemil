@@ -2,6 +2,8 @@ package com.vegemil.service.vegemilBaby;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -51,7 +53,13 @@ public interface VegemilBabyCommunityService {
     //진행중 이벤트
   	public List<VegemilBabyEventDTO> selectEventList();
   	
-  	
+  	//후기이벤트- 이벤트 참여내역 조회
+  	public List<VegemilBabyBestReviewDTO> selectReviewList(String loggedId);
+  	//후기이벤트 - 이벤트 등록
+  	public int insertReviewEvent (VegemilBabyBestReviewDTO review, HttpServletResponse response) throws Exception;
+  	//후기이벤트
+	public List<VegemilBabyBestReviewDTO> bestReviewList();
+
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);
     
@@ -62,7 +70,6 @@ public interface VegemilBabyCommunityService {
 	
   
 
-	public List<VegemilBabyBestReviewDTO> bestReviewList();
 
 	public int selectTemperature();
 
