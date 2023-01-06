@@ -89,8 +89,7 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("magazineDetail", vegemilBabyCommunityService.selectMagazineDetail(idx));
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazineDetail";
-	}	
-	
+	}
 	//육아상담 QnA
 	@GetMapping("/vegemilBaby/qna")
 	public String moveQnaList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {

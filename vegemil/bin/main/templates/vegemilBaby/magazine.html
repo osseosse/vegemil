@@ -46,10 +46,10 @@
 											<div class="cate_content">
 												<ul class="cate_ul_list">
 													<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
-														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine}"> Cummunity</a></li>
-														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+													<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
+													<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+													<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 												</ul>
 											</div>
 										</div>
@@ -70,9 +70,9 @@
 											<div class="cate_content">
 												<ul class="cate_ul_list2">
 													<li><a th:href="@{/vegemilBaby/magazine}">육아정보</a></li>
-													<li><a th:href="@{/vegemilBaby/qna?p=1}">육아상담
+													<li><a th:href="@{/vegemilBaby/qna}">육아상담
 															Q&amp;A</a></li>
-													<li><a th:href="@{/vegemilBaby/recipe?p=1}">영&middot;유아식
+													<li><a th:href="@{/vegemilBaby/recipe}">영&middot;유아식
 															레시피</a></li>
 												</ul>
 											</div>
@@ -137,7 +137,7 @@
 								<p class="f26_5 mt20">성장/건강</p>
 						</a></li>
 						<li class="icon_04"><a
-							th:href="@{/vegemilBaby/magazine?category=pe&p=1}" title="놀이/교육">
+							th:href="@{/vegemilBaby/magazine?category=pe}" title="놀이/교육">
 								<div class="imgHover" id="LcatePe">
 									<p class="off">
 										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_play_off.png}" />
@@ -149,7 +149,7 @@
 								<p class="f26_5 mt20">놀이/교육</p>
 						</a></li>
 						<li class="icon_05 last"><a
-							th:href="@{/vegemilBaby/magazine?category=lh&p=1}" title="리빙/헬스">
+							th:href="@{/vegemilBaby/magazine?category=lh}" title="리빙/헬스">
 								<div class="imgHover" id="LcateLh">
 									<p class="off">
 										<img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_living_off.png}" />
