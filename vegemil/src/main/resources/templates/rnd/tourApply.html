@@ -114,8 +114,7 @@
 							<ul>
 								<li>견학 희망일자</li>
 								<li>
-									<input type="date" class="inp02 w200 error" name="vAppdate" id="vAppdate" >
-									<p >견학희망일자를 입력해 주세요</p>
+									<input type="date" class="inp02 w200" name="vAppdate" id="vAppdate" th:value="${date}" readonly>
 								</li>
 							</ul>
 							<ul>
@@ -127,20 +126,19 @@
 											<input type="radio" id="time2" name="vApptime" value="2"/><label for="time2"><span></span>오후</label>
 										</div>
 									</div>
-									<p class="error">시간대를 입력해 주세요</p>
+									<p class="error" id="vApptimeCheck" style="display: none;">시간대를 입력해 주세요</p>
 								</li>
 							</ul>
 							<ul>
 								<li>신청자명</li>
 								<li>
-									<input type="text" class="inp02 error" name="vName" id="vName" maxlength="20" th:value="${member.mName}" readonly>
-									<p class="error">신정자명을 입력해 주세요</p></li>
+									<input type="text" class="inp02 " name="vName" id="vName" maxlength="10" th:value="${member.mName}" readonly>
 								</li>
 							</ul>
 							<ul>
 								<li>단체 및 모임</li>
-								<li><input type="text" class="inp02 error" name="vOrg" id="vOrg" maxlength="20">
-								<p class="error">단체 및 모임을 입력해 주세요</p>
+								<li><input type="text" class="inp02 " name="vOrg" id="vOrg" maxlength="15">
+								<p class="error" id="vOrgCheck" style="display: none;">단체 및 모임을 입력해 주세요</p>
 								</li>
 							</ul>
 							<ul>
@@ -148,8 +146,8 @@
 								<li>
 									<dl class="fac_people">
 										<dd>
-											<input type="text" class="inp02 pr5  w70 text-right error" name="vPcount" id="vPcount" maxlength="20"> <span>명</span>
-											<p class="error">인원을 입력해 주세요</p>
+											<input type="text" class="inp02 pr5  w70 text-right " name="vPcount" id="vPcount" maxlength="3"> <span>명</span>
+											<p class="error" id="vPcountCheck" style="display: none;">인원을 입력해 주세요</p>
 	
 										</dd>
 									</dl>
@@ -158,32 +156,31 @@
 							<ul>
 								<li>휴대전화</li>
 								<li>
-									<input  type="text" class="inp03 w120 error" id="hp01" th:value="${#strings.substring(member.mHp, 0, 3)}">
-									- <input  type="text" class="inp03 w130 error"  id="hp02" th:value="${#strings.substring(member.mHp, 3, 7)}">
-									 - <input  type="text" class="inp03 w130 error" id="hp03" th:value="${#strings.substring(member.mHp, 7, 11)}"> 
-									<p class="error">전화번호를 입력해 주세요</p>
+									<input  type="text" class="inp03 w120 " id="hp01" th:value="${#strings.substring(member.mHp, 0, 3)}" readonly>
+									- <input  type="text" class="inp03 w130 "  id="hp02" th:value="${#strings.substring(member.mHp, 3, 7)}" readonly>
+									 - <input  type="text" class="inp03 w130 " id="hp03" th:value="${#strings.substring(member.mHp, 7, 11)}" readonly> 
 								</li>
 							</ul>
 							<ul>
 								<li>이메일</li>
 								<li>
-									<input id="email01" type="text" th:value="${#strings.substringBefore(member.mEmail,'@')}" maxlength="50" class="inp03 w200 error"><input id="email02" type="text" th:value="|@${#strings.substringAfter(member.mEmail,'@')}|" maxlength="50" class="inp03 ml10 w220 mr10">
-									<select name="selEmail" id="selEmail" onchange="writeMailAddr();" class="sel02 w200 mt10m">
+									<input id="email01" type="text" th:value="${#strings.substringBefore(member.mEmail,'@')}" maxlength="50" class="inp03 w180 " >
+									<input id="email02" type="text" th:value="|@${#strings.substringAfter(member.mEmail,'@')}|" maxlength="50" class="inp03 ml10 w220 mr10">
+									<select name="selEmail" id="selEmail" class="sel02 w200 mt10m">
 										<option value="선택하세요">선택하세요</option>
-										<option selected="selected" value="naver.com">naver.com</option>
-										<option value="nate.com">nate.com</option>
-										<option value="gmail.com">gmail.com</option>
-										<option value="hanmail.net">hanmail.net</option>
-										<option value="self">직접 입력</option>
+										<option value="@naver.com">naver.com</option>
+										<option value="@nate.com">nate.com</option>
+										<option value="@gmail.com">gmail.com</option>
+										<option value="@hanmail.net">hanmail.net</option>
+										<option value="1">직접 입력</option>
 									</select>
-									<p class="error" id="idCheack" style="display: none;">메일 주소에는 영문과 숫자만 들어갈 수 있습니다. </p>
-									<p class="error">이메일을 입력해 주세요</p>
+									<input type="hidden" name="vEmail">
 								</li>
 							</ul>
 							<ul>
 								<li>지역</li>
 								<li>
-									<select class="sel01 error" id="vArea" name="vArea">
+									<select class="sel01" id="vArea" name="vArea">
 										<option>선택</option>
 										<option value="강원">강원</option>
 										<option value="경기">경기</option>
@@ -202,27 +199,27 @@
 										<option value="충남">충남</option>
 										<option value="충북">충북</option>
 									</select>
-									<p class="error">지역을 선택해 주세요</p>
+									<p class="error" id="vAreaCheck" style="display: none;">지역을 선택해 주세요</p>
 								</li>
 							</ul>
 							<ul>
 								<li>주소</li>
 								<li>
-									<input name="txtZipcode" class="inp03 gray03 error" type="text" th:value="${member.mZipcode}" maxlength="5" id="cZipcode"  onclick="javascript:execPostcode();" readonly="readonly" placeholder="우편번호입력">
+									<input name="txtZipcode" class="inp03 " type="text" th:value="${member.mZipcode}" maxlength="5" id="cZipcode"  onclick="javascript:execPostcode();" readonly="readonly" placeholder="우편번호입력">
 									<button type="button" class="btnType09 ml10"  onclick="javascript:execPostcode();" id=imgZipcode >우편번호검색</button>
 									<!--<img style="CURSOR:pointer" id="imgZipcode" class="veM" name="imgZipcode" onclick="javascript:EditZipcodeNew();" alt="우편번호검색" align="top" src="../images/btn/btn_zip.gif">
 									--><br>
 	
-									<input name="txtAddr1" id="cAddr1" class="inp02 mt10 gray03 w700 error" type="text" th:value="${member.mAddr1}" maxlength="150" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
-									<input name="txtAddr2" id="cAddr2" class="inp02 mt10 w700 error" type="text" th:value="${member.mAddr2}" maxlength="150" placeholder="상세주소를 입력해 주세요"  >
-									<p class="error">주소를 입력해 주세요</p>
+									<input name="txtAddr1" id="cAddr1" class="inp02 mt10 w700 " type="text" th:value="${member.mAddr1}" maxlength="150" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다." readonly>
+									<input name="txtAddr2" id="cAddr2" class="inp02 mt10 w700 " type="text" th:value="${member.mAddr2}" maxlength="150" placeholder="상세주소를 입력해 주세요"  >
+									<p class="error" id="cAddrCheack" style="display: none;">주소를 입력해 주세요</p>
 								</li>
 							</ul>
 							
 							<ul>
 								<li>메모</li>
 								<li>
-									<textarea class="fac-textarea f16 h200" placeholder="견학신청관련 내용을 작성해 주세요." name="vMemo"  id="vMemo"></textarea>
+									<textarea class="fac-textarea f16 h200" placeholder="견학신청관련 내용을 작성해 주세요." name="vMemo"  id="vMemo" maxlength="50"></textarea>
 								</li>
 							</ul>
 							<ul>
@@ -292,6 +289,24 @@
 		}
 	}
 	
+	//이메일 입력방식 선택
+	$('#selEmail').change(function(){
+	   $("#selEmail option:selected").each(function () {
+			
+			if($(this).val()== '1'){ //직접입력일 경우
+				 $("#email02").val('');                        //값 초기화
+				 $("#email02").attr("disabled",false); //활성화
+			}else{ //직접입력이 아닐경우
+				 $("#email02").val($(this).text());      //선택값 입력
+				 $("#email02").attr("disabled",true); //비활성화
+			}
+			
+			$("#vEmail").val($("#email01").val()+ $("#email02").val());
+	   });
+	   btnAvtive();
+	   
+	});
+	
 	$('#vAppdate').change(function () {
 		btnActive();
 	});
@@ -349,11 +364,6 @@
 
 </script> 
 <script>
-	function writeMailAddr(){
-		var addr = document.getElementById("selEmail02").value;
-		document.getElementById("email02").value = addr;
-	}
-	
 	function submitFormCheck(){
 	
 		buildData();

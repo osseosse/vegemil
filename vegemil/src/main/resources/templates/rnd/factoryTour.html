@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 selectMirror: true,
                 locale: 'ko',
                 dateClick: function(info) {
-                    alert('a day has been clicked!'+ info.dateStr);
                     location.href = '/rnd/tourApply?date='+ info.dateStr;
                 },
                 events: response.data

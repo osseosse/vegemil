@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -52,10 +53,15 @@ public class RndController extends UiUtils {
 	 }
 	
 	@GetMapping(value = "/rnd/tourApply")
-    public String moveTourApply(Model model, Authentication authentication)throws Exception{
+    public String moveTourApply(Model model, Authentication authentication, @RequestParam(value = "date", required = false) String date)throws Exception{
 		
 		MemberDTO member = new MemberDTO();
 		
+		if(!date.equals("")) {
+			model.addAttribute("date",date);
+		} else {
+			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/rnd/factory", Method.GET, null, model);
+		}
 		if(authentication != null) {
 	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
 	        model.addAttribute("member",member);	//유저 정보
