@@ -3,22 +3,11 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
 <title>메인 화면</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
-<body style="  padding-top: 90px;">  
+<body>  
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 
-	 <script>
-	    /* $(document).ready(function(){
-	        if('<%=info1 %>' == '0') $('#info1').hide();
-	        if('<%=info2 %>' == '0') $('#info2').hide();
-	        if('<%=qna1 %>' == '0') $('#qna1').hide();
-	        if('<%=qna2 %>' == '0') $('#qna2').hide();
-	    }); */
-	 </script>
-
-<!--   <div id="wrap"> -->
- 
  
   <div id="content">
 		<div class="container100">
@@ -326,7 +315,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<p class="btn_arrow">
-							<a th:href="@{/vegemilBaby/e_magazine?p=1}" class="hvr-wobble-horizontal"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_viewmore.png}" alt="view more"/></a>
+							<a th:href="@{/vegemilBaby/magazine?category=all}" class="hvr-wobble-horizontal"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_viewmore.png}" alt="view more"/></a>
 						</p>
 					</div>
 				</div>
@@ -336,13 +325,11 @@
 					<div class="col-md-4 hvr-float-shadow" id="info1">
 						<div th:each="magazine : ${magazineList}">
 							<div class="wz_box mt90">
-							<a th:with="var=${magazine.mbsIdx}" th:href="@{/vegemilBaby/e_magazine_detail?num=}+${var}">
+							<a th:with="var=${magazine.mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var}">
 								<p class="wz_img" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" >
-<!-- 								<p class="wz_img" style="background: url(/admin/summernote/upload/<%# DataBinder.Eval(Container.DataItem, "mbs_image") %>);  "> -->
 								</p>
 								<p class="wz_f01">육아정보</p>
 							    <p class="wz_f02 txtHide" th:text="${magazine.mbsTitle}">제목</p>
-								<!-- <p class="wz_f03 txtHide"th:text="${magazine.mbsSummary}"></p></div> -->
 							</a>
 							</div>
 						</div>
@@ -354,13 +341,12 @@
 					2. 이미지 원본 찾아서 연결 -->
 					<div th:each="qna : ${qnaList}" class="col-md-4 hvr-float-shadow" id="qna1">					
 						<div >
-							<a th:with="var=${qna.mbsIdx}" th:href="@{/vegemilBaby/qna_detail?num=}+${var}">
+							<a th:with="var=${qna.mbsIdx}" th:href="@{/vegemilBaby/qna/detail/}+${var}">
 							<div class="wz_box mt90">
 								<p class="wz_img" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/GettyImages-1178985493.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover">
 								</p>
 								<p class="wz_f01">육아상담 Q&amp;A</p>
 							    <p class="wz_f02 txtHide" th:text="${qna.mbsTitle}">제목</p>
-								<!-- <p class="wz_f03 txtHide"><%# DataBinder.Eval(Container.DataItem, "mbs_summary") %></p> -->
 							
 							</div>
 							</a>
