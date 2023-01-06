@@ -398,6 +398,36 @@
 	</insert>
 	
 	
+	<!-- 아기모델센발대회 - 이달의모델 조회 -->
+	<select id='selectModelList'  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO">	
+		SELECT 
+			RANK() OVER(ORDER BY c_update_time) AS ROWNUM, 
+			MONTH(c_write_date) AS c_month, 
+			SUBSTRING(c_name,2,2) AS c_name, 
+			c_image, 
+			c_rank,
+			(CASE WHEN c_rank = '1' THEN '이달의 베지밀 달력 아기모델' 
+			  WHEN c_rank = '3' THEN '이달의 베지밀 달력 아기모델' 
+			 ELSE '참여상' END) AS c_honor 
+		FROM 
+			m_calendar_model
+		where 
+			c_rank between 1 and 3
+		ORDER BY 
+			c_update_time desc;
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<insert id ="insertCalendarModel" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO" useGeneratedKeys="true" keyProperty="cIdx"  >
 	INSERT INTO
 		m_calendar_model

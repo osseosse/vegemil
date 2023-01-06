@@ -177,12 +177,9 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	@Transactional
 	public int insertReviewEvent(@ModelAttribute("review")VegemilBabyBestReviewDTO review, HttpServletResponse response) throws Exception {
 			
-		
 		  response.setContentType("text/html; charset=UTF-8"); PrintWriter out =
 		  response.getWriter();
-		 
-		
-		
+		  
 			String uuid = UUID.randomUUID().toString();
 			String originalName = review.getFileName().getOriginalFilename();	
 					
@@ -243,14 +240,17 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return (sampleCount >= 1) ? true : false;
 	}
 
-	
-	
-
-	
+		
 
 	@Override
 	public List<VegemilBabyBestReviewDTO> bestReviewList() {
 		return vegemilBabyMapper.bestReviewList();
+	}
+	
+	//아기모델센발대회 - 이달의모델 조회
+	@Override
+	public List<VegemilBabyCalendarModelDTO> selectModelList() {
+		return vegemilBabyMapper.selectModelList();
 	}
 	
 	

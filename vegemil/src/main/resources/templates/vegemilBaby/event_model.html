@@ -69,8 +69,8 @@
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
 															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_review_best}">후기이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_model}">아기모델선발대회</a></li>
+															<li><a th:href="@{/vegemilBaby/event/review_best}">후기이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event/model}">아기모델선발대회</a></li>
 															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
 														</ul>
 													</div>
@@ -159,17 +159,16 @@
 												<div class="col-md-12 mt80 ">
 													<div class="col-md-12">
 														<ul class="model_ul">
-														<asp:repeater id="DataList" runat=server>
-														<itemtemplate>
-															<li class="md<%# DataBinder.Eval(Container.DataItem, "ROWNUM") %>"> 
+														
+															<li th:each="model : ${modelList}"  th:with="var=${model.ROWNUM}" th:class="md+${var}"> 
 																<div class="model_month">
-																	<p class="model_box<%# DataBinder.Eval(Container.DataItem, "S_RANK") %>" style="background: url(/main/brandvegemilbaby/model_upload_resize/<%# DataBinder.Eval(Container.DataItem, "C_IMAGE") %>);  background-position:center;-webkit-background-size: cover; background-size: cover;"></p>
-																	<p class="f17_4 mt50"><%# DataBinder.Eval(Container.DataItem, "C_HONOR") %></p>
-																	<p class="f26_4">*<%# DataBinder.Eval(Container.DataItem, "bname") %>님</p>
+																	<p  th:with="var=${model.cRank}" th:class="model_box+${var}"  
+																		th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload_resize/' + ${model.cImage} +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></p>
+																	<p class="f17_4 mt50" th:text="${model.cHonor}"></p>
+																	<p class="f26_4" th:text="|*${model.cName}님|">이름</p>
 																</div>
 															</li>
-														</itemtemplate>
-														</asp:repeater>	
+												
 														
 														
 															 <div style="clear:both"></div> 

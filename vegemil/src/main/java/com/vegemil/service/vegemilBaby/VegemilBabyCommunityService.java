@@ -45,14 +45,12 @@ public interface VegemilBabyCommunityService {
     public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
     
    
-	
-
-	
-    
-    //======[Event]======
+	//======[Event]======
     //진행중 이벤트
   	public List<VegemilBabyEventDTO> selectEventList();
-  	
+	//사랑의온도계
+  	public int selectTemperature();
+
   	//후기이벤트- 이벤트 참여내역 조회
   	public List<VegemilBabyBestReviewDTO> selectReviewList(String loggedId);
   	//후기이벤트 - 이벤트 등록
@@ -60,28 +58,15 @@ public interface VegemilBabyCommunityService {
   	//후기이벤트
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
 
+	//아기모델 - 이달의모델 조회
+	public List<VegemilBabyCalendarModelDTO> selectModelList();
+	//아기모델 - 신청하기
+	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);
+	
 	//샘플 신청 등록
-    public boolean insertSampleForm(VegemilBabySampleDTO sample);
-    
-    public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);
-    
+    public boolean insertSampleForm(VegemilBabySampleDTO sample);    
     public boolean isSampleForm(VegemilBabySampleDTO params);
-    
-	
-  
-
-
-	public int selectTemperature();
-
-	
-	
-	
-
-
-
-
-   
-    
+       
     
     
 }

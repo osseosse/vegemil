@@ -173,6 +173,15 @@ public class VegemilBabyController extends UiUtils {
 		return showMessageWithRedirect("후기 이벤트 참여가 완료되었습니다.", "/vegemilBaby/event_review_best", Method.GET, null, model);
 	}
 	
+	
+	//달력아기모델 
+	@GetMapping("/vegemilBaby/event/model")
+	public String moveEventModelPage(Model model) {
+		model.addAttribute("modelList", vegemilBabyCommunityService.selectModelList());		
+		return "/vegemilBaby/event_model";
+	}
+	
+	
 	//달력아기모델 신청 페이지
 	@GetMapping("/vegemilBaby/model/form")
 	public String moveModelForm(Authentication authentication, Model model) {
@@ -190,9 +199,7 @@ public class VegemilBabyController extends UiUtils {
         model.addAttribute("member", member);
         model.addAttribute("model", calModel);
         
-		return "vegemilBaby/modelForm";
-		
-		//event_model_form
+		return "vegemilBaby/modelForm";		
 	}
 	
 	//달력아기모델 등록	
