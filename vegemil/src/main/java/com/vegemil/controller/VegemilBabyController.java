@@ -3,6 +3,7 @@ package com.vegemil.controller;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
@@ -63,16 +65,14 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/index";
 	}
 
-	/* Community */
-	
+	/* Community */	
 	@GetMapping("/vegemilBaby/magazine")
 	public String moveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		
 		  model.addAttribute("magazineList",vegemilBabyCommunityService.selectMagazine(params));
 		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazine";
-	}
-	
+	}	
 	@GetMapping("/Main/brandVegemilBaby/e_magazine.aspx")
 	public String moveNewMagazineList(Model model) {
 		
@@ -82,34 +82,28 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		 
 		return "vegemilBaby/magazine";
-	}
-	
+	}	
 	// 육아정보 상세
 	@GetMapping(value = { "/vegemilBaby/magazine/detail/{idx}" })
 	public String moveMagazineDetail(@PathVariable("idx") Long idx, Model model) {
 		model.addAttribute("magazineDetail", vegemilBabyCommunityService.selectMagazineDetail(idx));
 		model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazineDetail";
-	}
+	}	
 	
-	
-	//====================== 0103작업 [한종걸] ===========================
 	//육아상담 QnA
 	@GetMapping("/vegemilBaby/qna")
 	public String moveQnaList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		model.addAttribute("qnaList",vegemilBabyCommunityService.selectQna(params));			
 		return "vegemilBaby/qna";
-	}
-	
-	//육아상담 상세
+	}	
+	//육아상담  QnA상세
 	@GetMapping(value = { "/vegemilBaby/qna/detail/{idx}"})
 	public String moveQnaDetail(@PathVariable("idx") Long idx, Model model) {
 		model.addAttribute("qnaDetail", vegemilBabyCommunityService.selectQnaDetail(idx));		
 		model.addAttribute("qnaList",vegemilBabyCommunityService.selectQnaList());				 
-		return "vegemilBaby/qnaDetail";
-				
-	}
-	
+		return "vegemilBaby/qnaDetail";				
+	}	
 
 	// 영유아식 레시피
 	@GetMapping("/vegemilBaby/recipe")
@@ -117,7 +111,6 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("recipeList", vegemilBabyCommunityService.selectRecipeList());
 		return "vegemilBaby/recipe";
 	}
-
 	// 영유아식 레시피 상세
 	@GetMapping("/vegemilBaby/recipe/detail/{idx}")
 	public String moveRecipeDetail(@PathVariable("idx") Long idx, Model model) {
@@ -127,23 +120,61 @@ public class VegemilBabyController extends UiUtils {
 	}
 	
 	
-	/* Event */
-	@GetMapping("/vegemilBaby/sample/form")
-	public String moveSampleForm(Authentication authentication, Model model,
-							@RequestParam(value = "sItem", required = false) String sItem) {
+	/* ======== Event ======== */
+	//진행 중 이벤트
+	@GetMapping("/vegemilBaby/bv_event")
+	public String moveBvEvent(Model model) {
+		model.addAttribute("eventList", vegemilBabyCommunityService.selectEventList());
+		return "vegemilBaby/bv_event";
+	}	
+	//사랑의 온도계 상세페이지 이동
+	@RequestMapping(value = "/vegemilBaby/event/{viewName}") 
+	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName, Model model
+			) throws Exception { 
 		
-		MemberDTO member = new MemberDTO();
-		if(authentication == null) {
-			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
-		} else {
-			member = (MemberDTO) authentication.getPrincipal();
-		}
-        model.addAttribute("member", member);
-        model.addAttribute("sItem", sItem);
-        
-		return "vegemilBaby/sampleForm";
+		model.addAttribute("temperature", vegemilBabyCommunityService.selectTemperature());
+		return "vegemilBaby/event/" + viewName;	
 	}
 	
+	//후기 이벤트  신청 페이지
+	@GetMapping("/vegemilBaby/review/form")
+	public String moveReviewForm(Principal principal, Model model) {
+		int beginIdx = principal.toString().indexOf("mId=");
+		int EndIdx = principal.toString().indexOf(", mName");
+		String loggedId = principal.toString().substring(beginIdx+4, EndIdx);
+		
+		model.addAttribute("reviewList", vegemilBabyCommunityService.selectReviewList(loggedId));
+		model.addAttribute("loggedId", principal.toString().substring(beginIdx+4, EndIdx));		
+		
+		return "vegemilBaby/reviewForm";
+	}
+	
+	@PostMapping("/vegemil/review/apply")
+	public String submitReviewForm(@ModelAttribute("review") VegemilBabyBestReviewDTO review,
+									BindingResult bindingResult,
+									HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();		
+		try {
+			vegemilBabyCommunityService.insertReviewEvent(review, response);
+			
+		}catch (DataAccessException e) {
+			out.println("<script>alert('데이터베이스 처리 과정에 문제가 발생하였습니다.'); history.back();</script>");
+			out.flush();			
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/event_review_best", Method.GET, null, model);			
+		} catch (Exception e) {			
+			System.out.println(e);
+			System.out.println(e.getMessage());
+			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/vegemilBaby/event_review_best", Method.GET, null, model);
+		}		
+		
+		return showMessageWithRedirect("후기 이벤트 참여가 완료되었습니다.", "/vegemilBaby/event_review_best", Method.GET, null, model);
+	}
+	
+	//달력아기모델 신청 페이지
 	@GetMapping("/vegemilBaby/model/form")
 	public String moveModelForm(Authentication authentication, Model model) {
 		
@@ -160,9 +191,12 @@ public class VegemilBabyController extends UiUtils {
         model.addAttribute("member", member);
         model.addAttribute("model", calModel);
         
-		return "vegemilBaby/event_model_form";
+		return "vegemilBaby/modelForm";
+		
+		//event_model_form
 	}
 	
+	//달력아기모델 등록	
 	@PostMapping("/vegemilBaby/model/apply")
 	public String submitModelForm(@ModelAttribute("model") VegemilBabyCalendarModelDTO calModel,
 							BindingResult bindingResult,
@@ -220,6 +254,21 @@ public class VegemilBabyController extends UiUtils {
 		return showMessageWithRedirect("아기달력모델 신청 완료되었습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
 	}
 	
+	//샘플 신청 페이지
+	@GetMapping("/vegemilBaby/sample/form")
+	public String moveSampleForm(Authentication authentication, Model model,
+							@RequestParam(value = "sItem", required = false) String sItem) {		
+		MemberDTO member = new MemberDTO();
+		if(authentication == null) {
+			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		} else {
+			member = (MemberDTO) authentication.getPrincipal();
+		}
+        model.addAttribute("member", member);
+        model.addAttribute("sItem", sItem);
+        
+		return "vegemilBaby/sampleForm";
+	}
 	//샘플 신청 등록
 	@PostMapping("/vegemilBaby/sample/apply")
 	public String submitSampleForm(@ModelAttribute("sample") VegemilBabySampleDTO sample, 
@@ -257,24 +306,6 @@ public class VegemilBabyController extends UiUtils {
 		return showMessageWithRedirect("샘플신청 완료되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 	}
 
-	// 육아 정보
-	
 
-	/* Event */
-	@GetMapping("/vegemilBaby/bv_event")
-	public String moveBvEvent(Model model) {
-		model.addAttribute("eventList", vegemilBabyCommunityService.selectEventList());
-		return "vegemilBaby/bv_event";
-	}
-	
-	//이벤트 상세페이지 이동
-	@RequestMapping(value = "/vegemilBaby/event/{viewName}") 
-	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName, Model model
-			) throws Exception { 
-		
-		model.addAttribute("temperature", vegemilBabyCommunityService.selectTemperature());
-		return "vegemilBaby/event/" + viewName;			
-
-	}
 
 }

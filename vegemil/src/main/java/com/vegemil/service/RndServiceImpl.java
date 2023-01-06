@@ -18,6 +18,9 @@ public class RndServiceImpl implements RndService {
 
 	@Override
 	public int insertMvisit(VisitDTO visitDTO) {
+		if(visitDTO.getVTel() == null || "".equals(visitDTO.getVTel())) {
+			visitDTO.setVTel(visitDTO.getVHp());
+		}
 		return rndMapper.insertMvisit(visitDTO);
 	}
 	

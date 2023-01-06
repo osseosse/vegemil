@@ -4,7 +4,7 @@
 <title>베스트 후기</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <script>
- /* $(document).ready(function(){
+  $(document).ready(function(){
 	 var element = document.getElementById('isLogin').value;
 	 if(element == 'anonymousUser'){
 		 $("a[id='reviewForm']").on("click", function(){
@@ -12,13 +12,12 @@
 		     return false;
 		 	})
 	 	}			
-	}); */
+	}); 
 </script>
 <body>
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-	
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
@@ -132,8 +131,9 @@
 										<div class="container pb120">
 											<div class="row">
 												<div class="col-md-12 mt120">
+													<input id="isLogin"  th:value="${#authentication.principal}" style="display:none";/>
 													<p><img th:src= @{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/best_info.jpg} alt="" /></p>
-													<div class="btn_best"><a id="reviewForm" th:href="@{/vegemilBaby/event_review_form}"><img th:src= @{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_best.png} alt="후기 이벤트 참여하기" /></a></div>
+													<div class="btn_best"><a id="reviewForm" th:href="@{/vegemilBaby/review/form}"><img th:src= @{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_best.png} alt="후기 이벤트 참여하기" /></a></div>
 													<ul class="best_txt">
 														<li>* 주의사항</li>
 														<li>

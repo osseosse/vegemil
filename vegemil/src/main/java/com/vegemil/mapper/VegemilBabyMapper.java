@@ -43,7 +43,6 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyCommunityDTO> selectLhMagazine(VegemilBabySearchDTO params);
 	//육아정보 상세
 	public VegemilBabyCommunityDTO selectMagazineDetail(Long idx);
-
 	
 	//육아상담 Q&A - 카테고리별 게시글수
 	public int qnaCount(String category);	
@@ -53,25 +52,24 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyCommunityDTO> selectQna(VegemilBabySearchDTO params);	
     // 육아상담 Q&A 추천리스트
 	public List<VegemilBabyCommunityDTO> selectQnaList();
-	
-	
-	
-	
+		
 	//영유아식 레시피
 	public List<VegemilBabyRecipeDTO> selectRecipeList();	
 	//영유아식 레시피 상세
 	public VegemilBabyRecipeDTO selectRecipeDetail(Long idx);
 
-	
-	
-	
-	
+		
 	//======[Event]======
     //진행중 이벤트
-	public List<VegemilBabyEventDTO> selectEventList();
-	
+	public List<VegemilBabyEventDTO> selectEventList();	
 	//사랑의 온도계 카운트
 	public int selectTemperature();
+	
+	//후기이벤트 - 이벤트 참여내역 조회
+	public List<VegemilBabyBestReviewDTO> selectReviewList(String loggedId);
+	//후기이벤트 - 이벤트 등록
+	public int insertReviewEvent(VegemilBabyBestReviewDTO review);
+	
 
 	//샘플신청
 	public int insertSampleForm(VegemilBabySampleDTO sample);

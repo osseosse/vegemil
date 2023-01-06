@@ -31,21 +31,4 @@ public class VisitDTO {
 	private String vConftime;
 	private String vAdminmemo;
 	
-	/*
-	private String hp01;
-	private String hp02;
-	private String hp03;
-	
-	private String tel01;
-	private String tel02;
-	private String tel03;
-	
-	private String email01;
-	private String email02;
-	
-	private String vZipcode;
-	private String vAddr1;
-	private String vAddr2;
-	*/
-	
 }

@@ -1,11 +1,20 @@
 package com.vegemil.service.vegemilBaby;
 
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
@@ -21,6 +30,9 @@ import com.vegemil.paging.PaginationInfo;
 
 @Service
 public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityService {
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	@Autowired
 	private VegemilBabyMapper vegemilBabyMapper;
@@ -149,12 +161,57 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public List<VegemilBabyEventDTO> selectEventList() {
 		return vegemilBabyMapper.selectEventList();
 	}
-
 	// 사랑의 온도계 카운트
 	@Override
 	public int selectTemperature() {
 		return vegemilBabyMapper.selectTemperature();
 	}
+	
+	//후기이벤트- 이벤트 참여내역 조회
+	@Override
+	public List<VegemilBabyBestReviewDTO> selectReviewList(String loggedId){
+		return vegemilBabyMapper.selectReviewList(loggedId);
+	}
+  	//후기이벤트 - 이벤트 등록
+	@Override
+	@Transactional
+	public int insertReviewEvent(@ModelAttribute("review")VegemilBabyBestReviewDTO review, HttpServletResponse response) throws Exception {
+			
+		
+		  response.setContentType("text/html; charset=UTF-8"); PrintWriter out =
+		  response.getWriter();
+		 
+		
+		
+			String uuid = UUID.randomUUID().toString();
+			String originalName = review.getFileName().getOriginalFilename();	
+					
+			if(!"".equals(originalName)) {
+				String file = originalName.substring(originalName.lastIndexOf("\\")+1);
+				
+				String savefileName = uuid + "_" +file;
+				
+				//저장 - 실제경로
+				Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);
+				//저장 - Test로컬경로
+				//Path savePath = Paths.get("D:/upload/vegemilBaby/" + savefileName);
+												
+				//저장
+				review.getFileName().transferTo(savePath);				
+				review.setSImage(savefileName);
+				
+				long filesize = Files.size(savePath); 			
+				if(filesize > 3145728) {
+					out.println("<script>alert('3M이하 이미지를 등록해주세요'); history.back();</script>");
+					out.flush();	
+					return 0;
+				}			
+			}
+		
+		return vegemilBabyMapper.insertReviewEvent(review);
+	}
+
+
 
 	// 샘플신청 등록
 	@Override

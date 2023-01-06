@@ -281,10 +281,6 @@
 			mbs_idx DESC;	
 	</select>		
 	
-
-	
-	
-	
 	
 	<!-- 영유아식레시피 - 레시피 리스트 -->	
 	<select id="selectRecipeList"  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO" >			
@@ -347,14 +343,59 @@
 	 	 <!-- 		 WHERE 
 		 	e_bvactive !='0'  and curdate()   <= e_end 	 --> 
 	</select>
-	
-	
+		
 	<!-- 사랑의 온도계 카운트 -->
 	<select id="selectTemperature" resultType="int" >			
 		select * from m_ttemperature;
 	</select>
 	
 	
+	<!-- 후기이벤트- 이벤트 참여내역 조회 -->
+	<select id='selectReviewList' parameterType ="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO">	
+		SELECT 
+			CAST(@curRank := @curRank +1 AS SIGNED INTEGER) AS s_rank, s_idx, s_url, s_uid, DATE_FORMAT(s_writedate, '%Y-%m-%d') as s_writedate 
+		FROM 
+			m_sns, (SELECT @curRank := 0) r 
+		WHERE 
+			s_uid= #{loggedId}
+		ORDER BY 
+			s_idx DESC; 
+	</select>
+	
+	
+	<!-- 후기이벤트 - 이벤트 등록 -->
+	<insert id= 'insertReviewEvent' parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO" useGeneratedKeys="true" keyProperty="sIdx">
+	INSERT INTO
+		m_sns
+		(	
+			s_url,
+			s_writetime,			
+			s_uid, 
+			s_title, 
+			s_edayId, 
+			s_sns, 
+			s_image, 
+			s_rank
+		)
+		VALUES
+		(
+			#{sUrl},
+			(SELECT REPLACE(
+			  REPLACE(
+			    DATE_FORMAT(CURTIME(), '%p %l:%i'),
+			    'AM', '오전'
+			  ),
+			  'PM', '오후'
+			)),
+			#{sUid},			
+			#{sTitle},
+			#{sEdayId},
+			#{sSns},
+			#{sImage},
+			""
+		)
+	
+	</insert>
 	
 	
 	<insert id ="insertCalendarModel" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO" useGeneratedKeys="true" keyProperty="cIdx"  >
@@ -433,7 +474,7 @@
 	</select>
 	
 	
-	<!-- 게시물 검색(리뉴얼) -->	
+	<!-- 게시물 검색 -->	
 	<select id="selectMagazine" parameterType ="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_title, mbs_image, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category    
@@ -462,7 +503,6 @@
 	
 	
 	<!-- 카테코리별 게시물 수 검색 -->	
-	
 	<select id ="magazineCountPb" parameterType ="String" resultType="int">
 		SELECT 
 			count(*)		
@@ -519,31 +559,6 @@
 	
 	
 	
-	
-		
-	
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!-- 본인이쓴 리뷰 조회 -->
-	<select id='reviewCheck'>	
-		SELECT 
-			@curRank := @curRank +1 AS rank, s_idx, s_url, s_uid, s_writedate 
-		FROM 
-			M_SNSRegistURL, (SELECT @curRank := 0) r 
-		WHERE 
-			s_uid= '81happyjh'
-		ORDER BY 
-			s_idx DESC; 
-	
-	</select>
 	<!-- 베스트 리뷰 조회 -->
 	<select id='bestReviewList' resultType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO">	
 		SELECT 
@@ -557,7 +572,6 @@
 		ORDER BY 
 			s_year desc, s_month desc, s_rank asc;				
 	</select>
-	
 	
 	
 	
