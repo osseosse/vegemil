@@ -175,6 +175,15 @@ public class WebzineController extends UiUtils {
 		return "webzine/special";
 	}
 	
+	@GetMapping(value = "/webzine/special/sub{fileNo}")
+	public String moveWebzineSpecial(Model model
+								, @PathVariable(value = "fileNo", required = false) String fileNo) {
+		
+		model.addAttribute("fileNo", fileNo);
+		
+		return "webzine/special";
+	}
+	
 	@GetMapping(value = "/main/webzine/{qrtYear}/sub{fileNo}.aspx")
 	public String openWebzineSubQY(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, @PathVariable(value = "fileNo", required = false) String fileNo
@@ -431,7 +440,7 @@ public class WebzineController extends UiUtils {
 		}
 		
 	
-	@GetMapping(value = "/main/webzine/event")
+	@GetMapping(value = "/webzine/event/{qrtYear}")
 	public String openWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, Model model, HttpServletRequest request) {
 		
@@ -534,11 +543,90 @@ public class WebzineController extends UiUtils {
 
 		return "webzine/lastlistNew";
 	}
+	
+	@GetMapping(value = "/webzine/lastlistNew")
+	public String moveLastlistNew(@RequestParam(value = "year", required = false, defaultValue = "2022") String year
+									, @RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
+		
+		String q1 = "0";
+		String q2 = "0";
+		String q3 = "0";
+		String q4 = "0";
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		
+		List<WebzineDTO> webzineQ1 = webzineService.getWebzineQ("Q1_"+year);
+		if(webzineQ1.size() > 0) {
+			model.addAttribute("webzineListQ1", webzineQ1);
+			q1 = "1";
+		}
+		List<WebzineDTO> webzineQ2 = webzineService.getWebzineQ("Q2_"+year);
+		if(webzineQ2.size() > 0) {
+			model.addAttribute("webzineListQ2", webzineQ2);
+			q2 = "1";
+		}
+		List<WebzineDTO> webzineQ3 = webzineService.getWebzineQ("Q3_"+year);
+		if(webzineQ3.size() > 0) {
+			model.addAttribute("webzineListQ3", webzineQ3);
+			q3 = "1";
+		}
+		List<WebzineDTO> webzineQ4 = webzineService.getWebzineQ("Q4_"+year);
+		if(webzineQ4.size() > 0) {
+			model.addAttribute("webzineListQ4", webzineQ4);
+			q4 = "1";
+		}
+		
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		model.addAttribute("year", year);
+		model.addAttribute("q1", q1);
+		model.addAttribute("q2", q2);
+		model.addAttribute("q3", q3);
+		model.addAttribute("q4", q4);
+
+		return "webzine/lastlistNew";
+	}
 
 	@GetMapping(value = "/main/webzine/theme.aspx")
 	public String openLastlistNew(@RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
 		
-		String returnHtml = "";
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		
+		List<WebzineDTO> webzine02 = webzineService.getWebzine02();
+		if(webzine02.size() > 0) {
+			model.addAttribute("webzineList02", webzine02);
+		}
+		List<WebzineDTO> webzine03 = webzineService.getWebzine03();
+		if(webzine03.size() > 0) {
+			model.addAttribute("webzineList03", webzine03);
+		}
+		List<WebzineDTO> webzine04 = webzineService.getWebzine04();
+		if(webzine04.size() > 0) {
+			model.addAttribute("webzineList04", webzine04);
+		}
+		List<WebzineDTO> webzine05 = webzineService.getWebzine05();
+		if(webzine05.size() > 0) {
+			model.addAttribute("webzineList05", webzine05);
+		}
+		List<WebzineDTO> webzine06 = webzineService.getWebzine06();
+		if(webzine06.size() > 0) {
+			model.addAttribute("webzineList06", webzine06);
+		}
+		
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+
+		return "webzine/theme";
+	}
+	
+	@GetMapping(value = "/webzine/theme")
+	public String moveTheme(@RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
