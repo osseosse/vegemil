@@ -1,15 +1,19 @@
 package com.vegemil.controller;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
@@ -39,6 +43,9 @@ public class AdminBeanSoupController {
 	
 	@Autowired
 	AdminBeanSoupService adminBeanSoupService;
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/{viewName}")
     public String adminBeanSoup(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
@@ -145,11 +152,25 @@ public class AdminBeanSoupController {
 	}
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/saveBeanSoupNews")
-    public @ResponseBody Map<String, Object> saveBeanSoupNews(@ModelAttribute("params") final AdminBeanSoupNewsDTO params)throws Exception{
+    public @ResponseBody Map<String, Object> saveBeanSoupNews(@ModelAttribute("params") final AdminBeanSoupNewsDTO beanSoupNews)throws Exception{
 		
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		try {
-			boolean isResulted = adminBeanSoupService.saveBeanSoupNews(params);
+			
+			if("I".equals(beanSoupNews.getAction())) {
+				String uuid = UUID.randomUUID().toString();
+				String originalName = beanSoupNews.getFileName().getOriginalFilename();
+				if(!"".equals(originalName)) {
+					String file1 = originalName.substring(originalName.lastIndexOf("\\") + 1);
+					
+					String savefileName1 = uuid + "_" + file1;
+					Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/news/" + savefileName1);
+					beanSoupNews.getFileName().transferTo(savePath);
+					beanSoupNews.setMThum(savefileName1);
+				}
+			}
+			
+			boolean isResulted = adminBeanSoupService.saveBeanSoupNews(beanSoupNews);
 			rtnMsg.put("result", isResulted);
 		}catch (DataAccessException e) {
     		e.printStackTrace();
@@ -177,11 +198,25 @@ public class AdminBeanSoupController {
     }
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/saveBeanSoupEvent")
-    public @ResponseBody Map<String, Object> saveBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO params)throws Exception{
+    public @ResponseBody Map<String, Object> saveBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO beanSoupEvent)throws Exception{
 		
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		try {
-			boolean isResulted = adminBeanSoupService.saveBeanSoupEvent(params);
+			
+			if("I".equals(beanSoupEvent.getAction())) {
+				String uuid = UUID.randomUUID().toString();
+				String originalName = beanSoupEvent.getFileName().getOriginalFilename();
+				if(!"".equals(originalName)) {
+					String file1 = originalName.substring(originalName.lastIndexOf("\\") + 1);
+					
+					String savefileName1 = uuid + "_" + file1;
+					Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/event/" + savefileName1);
+					beanSoupEvent.getFileName().transferTo(savePath);
+					beanSoupEvent.setMThum(savefileName1);
+				}
+			}
+			
+			boolean isResulted = adminBeanSoupService.saveBeanSoupEvent(beanSoupEvent);
 			rtnMsg.put("result", isResulted);
 		}catch (DataAccessException e) {
     		e.printStackTrace();

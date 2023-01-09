@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,4 +19,5 @@ public class AdminBeanSoupEventDTO extends AdminCommonDTO {
 	private String mContent;
 	private Long mType;
 	private String mProduct;
+	private MultipartFile fileName;
 }

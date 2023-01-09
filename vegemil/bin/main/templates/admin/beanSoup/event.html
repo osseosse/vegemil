@@ -86,14 +86,6 @@
 												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
 											</div>
 										</div>
-										<!-- 메인진열 -->
-										<div class="row mb-1">
-											<div class="col-md-1 col-3">
-												진열 
-											</div>
-											
-										</div>
-										<!-- //메인진열 -->
 										<div class="row mb-1">
 											<div class="col-md-1 col-3">
 												상세검색
@@ -117,26 +109,33 @@
 											<h4 class="card-title">등록</h4>
 										</div>
 										<div class="row mb-1">
+											<div class="col-md-2 col-3">
+												<input type="text" class="form-control" id="product" placeholder="제품명" />
+											</div>
+											<div class="col-md-2 col-3">
+												<input type="text" class="form-control" id="content" placeholder="내용" />
+											</div>
+											<div class="col-md-2 col-3">
+												<input type="text" class="form-control" id="edayId" placeholder="이데이몰ID" />
+											</div>
+											<div class="col-md-2 col-3">
+												<input type="text" class="form-control"  id="startDate" placeholder="날짜 ex) 2022-12-29" />
+											</div>
+											<div class="col-md-1 col-4">
+												<select class="form-select" id="type">
+													<option value="1">시원한</option>
+													<option value="2">담백한</option>
+													<option value="3">구수한</option>
+												</select>
+											</div>
 											<div class="col-md-1 col-3">
-												제목
-											</div>
-											<div class="col-md-3 col-3">
-												<input type="text" class="form-control" id="title" placeholder="제목" />
-											</div>
-											<div class="col-md-3 col-3">
-												<input type="text" class="form-control" id="url" placeholder="주소" />
-											</div>
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">진열여부
-													<input type="checkbox" class="form-check-input"  id="display" name="display" />
+												<div class="form-check form-switch">진열
+													<input type="checkbox" class="form-check-input"  id="display"  />
 													<label class="form-check-label" for="listOn"></label>
 												</div>
 											</div>
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">진행
-													<input type="checkbox" class="form-check-input"  id="ing" name="ing" />
-													<label class="form-check-label" for="listOn"></label>
-												</div>
+											<div class="col-md-2 col-3">
+												<input id="frm_Photo_i2"  type="file" accept=".png,.gif,.jpg" name="fileName">
 											</div>
 										</div>
 										<div class="row">
@@ -166,15 +165,15 @@
 										<colgroup>
 											<col width="5%">
 											<col width="15%">
-											<col width="9%">
+											<col width="7%">
 											<col width="19%">
 											<col width="10%">
-											<col width="5%">
+											<col width="10%">
 											<col width="10%">
 											<col width="6%">
 											<col width="6%">
-											<col width="7%">
-											<col width="7%">
+											<col width="6%">
+											<col width="6%">
 										</colgroup>
 										<thead>
 											<tr>

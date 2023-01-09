@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,4 +17,5 @@ public class AdminBeanSoupNewsDTO extends AdminCommonDTO {
 	private String mStartDate;
 	private String mEndDate;
 	private Long mIng;
+	private MultipartFile fileName;
 }
