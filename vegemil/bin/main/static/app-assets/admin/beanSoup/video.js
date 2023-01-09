@@ -192,7 +192,13 @@ var createTable = function() {
           targets: 3,
           orderable: false,
           render: function (data, type, full, meta) {
-            return '영상';
+            //return '영상';
+            return (
+					'<iframe '+ 
+						'width="200" height="150" src="'+full['mSrc']+'"' + 'title="YouTube video player" frameborder="0" '+
+						'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'+
+					'</iframe>'		
+					)
           }
           
         },
