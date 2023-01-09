@@ -19,8 +19,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
+import com.vegemil.domain.FactpostDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.ScheduleDTO;
+import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.VisitDTO;
 import com.vegemil.service.RndService;
 import com.vegemil.util.UiUtils;
@@ -92,5 +94,17 @@ public class RndController extends UiUtils {
 		}
 		return "rnd/factoryTour";
 	}
+	
+	
+	@GetMapping("/rnd/tourRivew")
+	public String getFactoryRevList(Model model, SearchDTO params) {
+		
+		System.out.println(params);
+		List<FactpostDTO> list = rndService.getFactReviewList(params);
+		model.addAttribute("list",list);
+		model.addAttribute("params",params);
+		return "rnd/tourRivew";
+	}
+	
 	
 }

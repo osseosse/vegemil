@@ -22,6 +22,39 @@
 		v_adminmemo
 	</sql>
 	
+	<sql id="reviewColumns">
+	
+		s_idx,
+		s_cate, 
+		s_id, 
+		s_name, 
+		s_hp, 
+		s_email, 
+		s_addr, 
+		s_subject, 
+		s_content, 
+		s_file, 
+		s_writedate,
+		DATE_FORMAT(s_writedate,'%Y-%m') as s_year_month,
+		DATE_FORMAT(s_writedate,'%d') as s_day, 
+		s_writetime, 
+		s_activeuser, 
+		s_hit, 
+		s_active, 
+		s_file2, 
+		s_url, 
+		s_icon
+	
+	</sql>
+	
+	<sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != ''">
+            AND s_subject LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR s_content LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
+    </sql>
+	
 	<sql id="tourSceduleColumns">
 		v_idx as id,
 		CONCAT( if(v_apptime = '1','(오전)','(오후)'),' ',v_org) as title,
@@ -91,5 +124,31 @@
 		where
 			v_appdate >= MAKEDATE(YEAR(NOW()),1)
 	</select>
+	
+	
+	<select id="selectTourReview" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.FactpostDTO" >
+	
+		SELECT
+            <include refid="reviewColumns" />
+        FROM
+            m_factpost
+        WHERE
+        	1=1
+            <include refid="search" />
+        ORDER BY
+            s_idx DESC
+       	LIMIT
+		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	<select id="selectTourReviewCount" parameterType="com.vegemil.domain.SearchDTO" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            m_factpost
+        WHERE
+        	1=1
+            <include refid="search" />
+    </select>
 	
 </mapper>
