@@ -14,7 +14,7 @@
 		<section>
 			<div class="wrap-inner41" >
 				<div class="container2">
-					<div class="project-detail-wrap fl-wrap container-sub160" >
+					<div class="project-detail-wrap fl-wrap" >
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="center mt120">WEBZINE THEME PAGE</h3>
@@ -311,25 +311,24 @@
 </div>
 <!-- ================================ //Content ================================ -->
 <script type="text/javascript">
-    $(document).ready(function() {
+$(document).ready(function() {
 
-        $(".tab_content").hide(); //Hide all content
-        $("ul.theme_ul li:first").addClass("active").show(); //Activate first tab
-        $(".tab_content:first").show(); //Show first tab content
+    $(".tab_content").hide(); //Hide all content
+    $("ul.theme_ul li:first").addClass("active").show(); //Activate first tab
+    $(".tab_content:first").show(); //Show first tab content
 
-        $("ul.theme_ul li").click(function() {
+    $("ul.theme_ul li").click(function() {
 
-            $("ul.theme_ul li").removeClass("active"); //Remove any "active" class
-            $(this).addClass("active"); //Add "active" class to selected tab
-            $(".tab_content").hide(); //Hide all tab content
+        $("ul.theme_ul li").removeClass("active"); //Remove any "active" class
+        $(this).addClass("active"); //Add "active" class to selected tab
+        $(".tab_content").hide(); //Hide all tab content
 
-            var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
-            $(activeTab).fadeIn(); //Fade in the active ID content
-            return false;
-        });
-
+        var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+        $(activeTab).fadeIn(); //Fade in the active ID content
+        return false;
     });
+
+});
 </script>
-<script type="text/javascript" src="/webzine/js/scripts2019.js"></script>
 </body>
 </html>
