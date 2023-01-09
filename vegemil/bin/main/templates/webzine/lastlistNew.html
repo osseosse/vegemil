@@ -91,7 +91,7 @@
 								<div class="col-md-8 mt50-m"> 
 									<div class="row">
 										<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ4 )}" th:each="webzine : ${webzineListQ4}">
-											<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+											<a th:href="|/webzine/${webzine.qrtYear}/sub${webzine.fileNo}|">
 												<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
 												<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
 											</a>
@@ -107,7 +107,7 @@
 								<div class="col-md-8 mt50-m"> 
 									<div class="row">
 										<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ3 )}" th:each="webzine : ${webzineListQ3}">
-											<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+											<a th:href="|/webzine/${webzine.qrtYear}/sub${webzine.fileNo}|">
 												<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
 												<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
 											</a>
@@ -123,7 +123,7 @@
 								<div class="col-md-8 mt50-m"> 
 									<div class="row">
 										<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ2 )}" th:each="webzine : ${webzineListQ2}">
-											<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+											<a th:href="|/webzine/${webzine.qrtYear}/sub${webzine.fileNo}|">
 												<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
 												<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
 											</a>
@@ -138,7 +138,7 @@
 							<div class="col-md-8 mt50-m"> 
 								<div class="row">
 									<div class="col-md-3 mb30 " th:if="${not #lists.isEmpty( webzineListQ1 )}" th:each="webzine : ${webzineListQ1}">
-										<a th:href="|/main/webzine/${webzine.qrtYear}/${webzine.fileNo}|">
+										<a th:href="|/webzine/${webzine.qrtYear}/sub${webzine.fileNo}|">
 											<div th:class="|${webzine.qrtYear}_${webzine.fileNo} h110-200|"></div>
 											<p class="type01-2 hvr-overline-from-left" th:text="${webzine.snsTitle}"></p>
 										</a>

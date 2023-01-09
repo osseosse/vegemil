@@ -32,7 +32,7 @@ public interface WebzineMapper {
 	
 	public List<SubscribeDTO> selectSubscibeAll();
 	
-	public List<WebzineDTO> selectWebzineRandom();
+	public List<WebzineDTO> selectWebzineRandom(String qrtYear);
 	
 	public List<WebzineDTO> selectWebzineByQrtYear(String qrtYear);
 

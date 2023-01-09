@@ -27,7 +27,7 @@ public interface WebzineService {
     
     public List<SubscribeDTO> findAllWebzine();
     
-    public List<WebzineDTO> getRecommandWebzine();
+    public List<WebzineDTO> getRecommandWebzine(String qrtYear);
     
     public List<WebzineDTO> getWebzineQrtYear(String qrtYear);
     
