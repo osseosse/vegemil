@@ -4,18 +4,26 @@
 	<title>정식품</title>
     <head th:replace="webzine/head :: headFragment"></head>
     <meta property="og:site_name" content="신뢰와 믿음의 기업 (주)정식품입니다." > <!--페이스북 내용-->
-    <meta property="og:title" th:attr="content=${title}"> 
-	<!-- <meta property="og:image" th:attr="|content=https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${fileNo}/_sns.png|" > -->
+    <meta property="og:title" th:attr="content=${snsTitle}">
+    <div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
 <body>
-<div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
+<div id="wrap">
 <!-- ******************* header ******************* -->
 <th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
 <!-- ******************* // header ******************* -->
 <section class="slider-450">
     <div data-velocity="-.4" th:class="|slide-bg-sub${num}_${sortYear}${qrt}|"></div>
 </section>
+ <div class="col-md-12">
+	<div class="subTop-SNS">
+		<span><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_insta.gif" alt="인스타그램" ></a></span>
+	    <span><a href="javascript:facebook();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_facebook.gif" alt="페이스북" ></a></span>
+	    <span><a href="javascript:blog();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_blog.gif" alt="블로그" ></a></span>
+	    <span><a href="javascript:kakaostory();"><img src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png"/></a></span>
+	</div>
+</div>
 <!-- ******************* main-content ******************* -->
-<div id="result"></div>
+<div th:insert="|webzine/html/sub${wYear}/${qrtYear}_${fileNo}|"></div>
 <!-- ******************* //main-content ******************* -->
 <!-- 페지넘김, Top, 목록 -->
 <div class="col-md-12 text-right topList">
@@ -29,22 +37,21 @@
 				<!--  Mobile Btn -->
 				<ul class="topList fleft btnM">
 					<li>
-						<input type="image" id="btnBeforeM" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_beforeS.gif">
-						<input type="image" id="btnNextM" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_afterS.gif">
+						<input type="image" id="btnBeforeM" src="https://image.edaymall.com/images/dcf/webzine/common/btn_beforeS.gif">
+						<input type="image" id="btnNextM" src="https://image.edaymall.com/images/dcf/webzine/common/btn_afterS.gif">
 					</li>
 				</ul>
-				<!--  PC Btn -->
 				<ul class="topList fleft btnPC">
 					<li>
-						<input type="image" id="btnBeforePC" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_before.gif">
-						<input type="image" id="btnNextPC" src="/https://image.edaymall.com/images/dcf/webzine/common/btn_after.gif">
+						<input type="image" id="btnBeforePC" src="https://image.edaymall.com/images/dcf/webzine/common/btn_before.gif">
+						<input type="image" id="btnNextPC" src="https://image.edaymall.com/images/dcf/webzine/common/btn_after.gif">
 					</li>
 				</ul>
 			</td>
 			<td class="ptRight">
 				<ul class="topList fright">
-					<li><a th:href="|/main/webzine/${qrtYear}/index.aspx|"><img src="/https://image.edaymall.com/images/dcf/webzine/common/btn_list.gif" alt="목록으로" ></a></li> 
-					<li><div class="scroll-to-top"><a href="#"><img src="/https://image.edaymall.com/images/dcf/webzine/common/btn_top.gif" alt="top" ></a></div></li> 
+					<li><a th:href="|/main/webzine/${qrtYear}/index.aspx|"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_list.gif" alt="목록으로" ></a></li> 
+					<li><div class="scroll-to-top"><a href="#"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_top.gif" alt="top" ></a></div></li> 
 				</ul>
 			</td>
 		</tr>
@@ -53,21 +60,84 @@
 <!-- ******************* footer ******************* -->
 <footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
 <!-- ******************* // footer ******************* -->
+</div>
 <script type="text/javascript">
 //<![CDATA[
-$(function(){
-	//html 파일 로드
-	var qrtYear = "[[ ${qrtYear} ]]";
-	var wYear = "[[ ${wYear} ]]";
-	var filNo = "[[ ${fileNo} ]]";
-	var loadHtml = qrtYear + "_" + filNo;
-    $("#result").load("/webzine/html/"+wYear+"/"+loadHtml+".html");
-    
-    function moveUrl(str1, str2){
-        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+
+	var num = '[[${num}]]';
+	var qrter = '[[${qrtYear}]]';
+	var fileNum = parseInt(num);
+	var beforeNo = fileNum - 1;
+	var afterNo = fileNum + 1;
+
+	$('#btnBeforeM').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else if(fileNum == '11') {
+			alert("마지막 기사입니다.");
+			return false;
+		} else {
+			if(beforeNo <= 9) {
+				document.location.href="/main/webzine/"+qrter+"/sub0"+beforeNo+".aspx";
+			} else {
+				document.location.href="/main/webzine/"+qrter+"/sub"+beforeNo+".aspx";
+			}
+		}
+    });
+	
+	$('#btnNextM').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else if(fileNum == '14') {
+			alert("마지막 기사입니다.");
+			return false;
+		} else {
+			if(afterNo <= 9) {
+				document.location.href="/main/webzine/"+qrter+"/sub0"+afterNo+".aspx";
+			} else {
+				document.location.href="/main/webzine/"+qrter+"/sub"+afterNo+".aspx";
+			}
+		}
+    });
+	
+	$('#btnBeforePC').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else if(fileNum == '11') {
+			alert("마지막 기사입니다.");
+			return false;
+		} else {
+			if(beforeNo <= 9) {
+				document.location.href="/main/webzine/"+qrter+"/sub0"+beforeNo+".aspx";
+			} else {
+				document.location.href="/main/webzine/"+qrter+"/sub"+beforeNo+".aspx";
+			}
+		}
+    });
+	
+	$('#btnNextPC').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else if(fileNum == '14') {
+			alert("마지막 기사입니다.");
+			return false;
+		} else {
+			if(afterNo <= 9) {
+				document.location.href="/main/webzine/"+qrter+"/sub0"+afterNo+".aspx";
+			} else {
+				document.location.href="/main/webzine/"+qrter+"/sub"+afterNo+".aspx";
+			}
+		}
+    });
+	
+	function moveUrl(str1, str2){
+	    document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
 	}
-    
-});
+
 //]]>
 </script>
 </body>

@@ -211,6 +211,8 @@
 			, sns_title
         FROM
             m_webzine
+        WHERE
+			file_no !='index.aspx' 
         Order by
         	rand()
 		Limit

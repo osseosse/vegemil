@@ -82,12 +82,49 @@
 </div>
 <script type="text/javascript">
 //<![CDATA[
-$(function(){
-    function moveUrl(str1, str2){
-        document.location.href="/main/webzine/"+str1+"/sub"+str2+".aspx" ;
+	
+	var num = '[[${num}]]';
+	var qrter = '[[${qrtYear}]]';
+	var fileNum = parseInt(num);
+	var beforeNo = fileNum - 1;
+	var afterNo = fileNum + 1;
+
+	$('#btnBefore').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else if(fileNum == '14') {
+			alert("마지막 기사입니다.");
+			return false;
+		} else {
+			if(beforeNo <= 9) {
+				document.location.href="/main/webzine/"+qrter+"/sub0"+beforeNo+".aspx";
+			} else {
+				document.location.href="/main/webzine/"+qrter+"/sub"+beforeNo+".aspx";
+			}
+		}
+    });
+	
+	$('#btnNext').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else if(fileNum == '14') {
+			alert("마지막 기사입니다.");
+			return false;
+		} else {
+			if(afterNo <= 9) {
+				document.location.href="/main/webzine/"+qrter+"/sub0"+afterNo+".aspx";
+			} else {
+				document.location.href="/main/webzine/"+qrter+"/sub"+afterNo+".aspx";
+			}
+		}
+    });
+	
+	function moveUrl(str1, str2){
+	    document.location.href="/main/webzine/"+str1+"/"+str2;
 	}
     
-});
 //]]>
 </script>
 </body>
