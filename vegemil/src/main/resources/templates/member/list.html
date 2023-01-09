@@ -33,9 +33,9 @@
 						<a href="/mypage/myInfo"><p class="btnType12 mt30"><span class="lh140">개인정보 변경</span></p></a>
 					</div>
 					<ul class="mt30 myBoxFoot">
-						<li class="f18"><a href="#">1:1 문의</a></li>
+						<li class="f18"><a href="/mypage/qna">1:1 문의</a></li>
 						<!-- <li class="f18"><a href="#">공장견학 신청</a></li> -->
-						<li class="f18"><a href="#">샘플신청</a></li>
+						<li class="f18"><a href="/vegemilBaby/sample">샘플신청</a></li>
 					</ul>
 					
 				</div>
@@ -71,7 +71,6 @@
 						<p class="center mt20"><button type="text" class="btnType13" ><span class="f14 fw400 gray04">+ 더보기</span></button></p>
 					</div>
 					<!-- 생플신청 내역 -->
-					<!-- 
 					<p class="f20 fw400 mt50">샘플 신청내역</p>
 					<div class="sampleWrap mt20">
 						<ul>
@@ -79,14 +78,14 @@
 								<div class="myBox">
 									<p class="f23 fw500 ">영&middot;유아식 우리콩</p>
 									<dl class="mt20 sampleList">
-										<p class="js">영유아식 샘플신청으로 링크, 버튼노출 문제있을시 "신청하기"로 변경</p>
-										<dd><p >베지밀 인펀트 우리콩 1단계</p><span class="stype01"><a href="#">신청가능</a></span></dd>
-										<dd><p >베지밀 인펀트 우리콩 2단계</p><span class="stype02"><a href="#">신청마감</a></span></dd>
-										<dd><p >베지밀 인펀트 우리콩 3단계</p><span class="stype03"><a href="#">신청중</a></span></dd>
+										<dd><p >베지밀 인펀트 우리콩 1단계</p><span class="stype01"><a href="/vegemilBaby/sample/form?sItem=INF" th:text="${isSample1 == false ? '신청가능': '신청완료'}"></a></span></dd>
+										<dd><p >베지밀 인펀트 우리콩 2단계</p><span class="stype02"><a href="/vegemilBaby/sample/form?sItem=TO2" th:text="${isSample2 == false ? '신청가능': '신청완료'}"></a></span></dd>
+										<dd><p >베지밀 인펀트 우리콩 3단계</p><span class="stype03"><a href="/vegemilBaby/sample/form?sItem=TO3" th:text="${isSample3 == false ? '신청가능': '신청완료'}"></a></span></dd>
 									</dl>
 								</div>
 
 							</li>
+							<!-- 
 							<li class="mt30">
 								<p class="js">현재 서비스중이 아님. 향후 서비스시 오픈할 예정</p>
 								<div class="myBox">
@@ -100,9 +99,9 @@
 									</dl>
 								</div>
 							</li>
+							 -->
 						</ul>
 					</div>
-					-->
 				</div>
 			</div>
 			

@@ -26,8 +26,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.QnaDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.service.MemberService;
 import com.vegemil.service.QnaService;
+import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
 import com.vegemil.util.UiUtils;
 
 @Controller
@@ -38,6 +40,9 @@ public class MypageController extends UiUtils {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private VegemilBabyCommunityService vegemilBabyCommunityService;
 	
 	//@Value("${spring.servlet.multipart.location}")
     //private String uploadPath;
@@ -174,6 +179,19 @@ public class MypageController extends UiUtils {
     		QnaDTO qna = new QnaDTO();
     		qna.setSId(member.getMId());
     		List<QnaDTO> qnaList = qnaService.getQnaList(qna);
+    		
+    		VegemilBabySampleDTO sample = new VegemilBabySampleDTO();
+    		sample.setSId(member.getMId());
+    		sample.setSItem("INF");
+    		boolean isSample1 = vegemilBabyCommunityService.isSampleForm(sample);
+    		model.addAttribute("isSample1", isSample1);
+    		sample.setSItem("TO2");
+    		boolean isSample2 = vegemilBabyCommunityService.isSampleForm(sample);
+    		model.addAttribute("isSample2", isSample2);
+    		sample.setSItem("TO3");
+    		boolean isSample3 = vegemilBabyCommunityService.isSampleForm(sample);
+    		model.addAttribute("isSample3", isSample3);
+    		
     		model.addAttribute("qnaList", qnaList);
     		model.addAttribute("qnaCount", qnaList.size());
 	        model.addAttribute("member", member);
