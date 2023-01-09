@@ -494,7 +494,8 @@
 											</dl>
                                            </li>
                                        </ul>
-                                       <input type="hidden"  name="sYear" th:value="${#temporals.createDate(member.mYear, 'yyyyMMdd')}"  />
+                                       
+                                       <input type="hidden" name="sYear" th:value="${#strings.substring(member.mYear, 0,10)}" />
                                   		<input type="hidden"  name="sTel" value=""  />
                                   		<input type="hidden"  name="sZipcode" th:value="${member.mZipcode}"/>                                      		
                                   		<input type="hidden"  name="sAddr2" th:value="${member.mAddr2}"  />                                      		

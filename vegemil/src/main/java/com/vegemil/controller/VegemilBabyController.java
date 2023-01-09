@@ -127,14 +127,14 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/bv_event";
 	}	
 	//사랑의 온도계 상세페이지 이동
-	@RequestMapping(value = "/vegemilBaby/event/{viewName}") 
+	@RequestMapping(value = "/vegemilBaby/event/loveVegemil2022") 
 	public String moveVegemilBabyEventPage(@PathVariable(value = "viewName", required = false) String viewName, Model model
 			) throws Exception { 
 		
 		model.addAttribute("temperature", vegemilBabyCommunityService.selectTemperature());
-		return "vegemilBaby/event/" + viewName;	
+		return "vegemilBaby/event/loveVegemil2022";	
 	}
-	
+
 	//후기 이벤트  신청 페이지
 	@GetMapping("/vegemilBaby/review/form")
 	public String moveReviewForm(Principal principal, Model model) {
@@ -270,9 +270,9 @@ public class VegemilBabyController extends UiUtils {
 		} else {
 			member = (MemberDTO) authentication.getPrincipal();
 		}
-        model.addAttribute("member", member);
+
+        model.addAttribute("member", member);		
         model.addAttribute("sItem", sItem);
-        
 		return "vegemilBaby/sampleForm";
 	}
 	//샘플 신청 등록
