@@ -63,4 +63,13 @@ public class RndServiceImpl implements RndService {
 		return reviewList;
 	}
 	
+	@Override
+	public int saveReview(FactpostDTO review) {
+
+		int result = 0;
+		result = rndMapper.insertReview(review);
+
+		return result;
+	}
+	
 }

@@ -62,12 +62,12 @@
 						<ul>
 							<li>SNS URL</li>
 							<li>
-								<input type="text" class="inp02" placeholder="블로그 또는 SNS에 업로드한 링크를 남겨주세요.">
+								<input type="text" class="inp02" placeholder="블로그 또는 SNS에 업로드한 링크를 남겨주세요." id="sUrl" name="sUrl">
 							</li>
 						</ul>
 					</div>
 						<div class="w560 center0 mt20  text-right" >
-						<p class="mt50 center"><button type="submit" class="btnType07  f20 fw500 lh140" id="formBtn" onclick = "location.href = '' ">작성완료</button></p>
+						<p class="mt50 center"><button type="button" class="btnType07  f20 fw500 lh140" id="formBtn" onclick = "savePost();">작성완료</button></p>
 					</div>
 				</div><!-- //w860 -->
 			</div>
@@ -96,27 +96,40 @@ smartEditor = function() {
 	})
 }
 
-submitPost = function() {
-	
-	const title = $("#sSubject").val();
-	
-	oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", [])
-	const content = document.getElementById("sContent").value
-	
-	if(title == '') {
-		alert("제목을 입력해주세요.")
-		$("#sSubject").focus();
-		return
-	}
-	
-	if(content == '') {
-		alert("내용을 입력해주세요.")
-		oEditors.getById["sContent"].exec("FOCUS")
-		return
-	} else {
-		console.log(content)
-	}
-}
+savePost = function() {
+    oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", [])
+    let content = document.getElementById("sContent").value
+
+    if(content == '') {
+      alert("내용을 입력해주세요.")
+      oEditors.getById["sContent"].exec("FOCUS")
+      return
+    } else {
+
+      let post = {
+    	sSubject: $("#sSubject").val()
+        , sContent: content
+        , sUrl: $("#sUrl").val() 
+      }
+
+      $.ajax({
+        url: "/rnd/saveReview"
+        , data: post
+        , success: function(data) {
+        	if(data.success == '1') {
+                alert('저장하였습니다.')
+                location.href = '/rnd/tourReview';
+        	} else {
+        		alert(data.message);
+        	}
+        }
+        , error: function(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR)
+          alert('오류가 발생하였습니다.')
+        }
+      })
+    }
+  }
    
 $(document).ready(function() {
     smartEditor()

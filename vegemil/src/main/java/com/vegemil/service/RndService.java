@@ -17,4 +17,5 @@ public interface RndService {
 	
 	public List<FactpostDTO> getFactReviewList(SearchDTO params);
 	
+	public int saveReview(FactpostDTO review);
 }
