@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminCustomerMapper">
+
+	<select id="selectGreenbiaMemberList" parameterType="hashMap" resultType="com.vegemil.domain.MemberDTO">
+		SELECT /* selectGreenbiaMemberList by AdminCustomerMapper.xml */ 
+		       m_idx, m_id, m_name, m_year, m_sex, m_hp, m_email, m_joindate, m_logincount,
+		       m_comp_name, m_bizno, m_greenbia_pay
+		  FROM m_member
+		 WHERE m_type = 3
+		 <if test='sStartdate != "" '>
+	       AND m_joindate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND m_joindate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND (m_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or m_id like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   	 or	m_email like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or m_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   	 or m_comp_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		 ORDER BY m_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectGreenbiaMemberTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*) /* selectGreenbiaMemberTotalCount by AdminCustomerMapper.xml */
+		  FROM m_member
+		 WHERE m_type = 3
+		 <if test='sStartdate != "" '>
+	       AND m_joindate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND m_joindate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND (m_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or m_id like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   	 or	m_email like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or m_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   	 or m_comp_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+	</select>
+	
+	<delete id="deleteGreenbiaMember" parameterType="Long">
+		DELETE FROM m_member
+		WHERE
+			m_idx = #{mIdx}
+		AND 
+		    m_type = 3
+		AND 
+		    m_auth = 'COMP'
+	</delete>
+	
+	<select id="selectGreenbiaMember" parameterType="com.vegemil.domain.MemberDTO" resultType="com.vegemil.domain.MemberDTO">
+		SELECT /* selectGreenbiaMember by AdminCustomerMapper.xml */ 
+		       m_idx, m_id, m_name, m_year, m_sex, m_hp, m_email, m_joindate, m_logincount,
+		       m_comp_name, m_bizno, m_greenbia_pay, m_smssend, m_emailsend, m_active,
+		       m_dual_yn
+		  FROM m_member
+		 WHERE m_idx = #{mIdx}
+<!-- 		   AND m_type = 3 -->
+	</select>
+	
+	<update id="updateGreenbiaMember" parameterType="com.vegemil.domain.MemberDTO">
+		 /* updateGreenbiaMember by AdminCustomerMapper.xml */ 
+		<if test='mActive == "0" '>
+		UPDATE m_member 
+		SET 
+		    m_sex = #{mSex},
+		    m_hp = #{mHp},
+		    m_email = #{mEmail},
+		    m_emailsend = #{mEmailsend},
+		    m_type = #{mType},
+		    m_greenbia_pay = #{mGreenbiaPay},
+		    m_smsend = #{mSmsend},
+		    m_active = #{mActive},
+		    m_leavedate = NOW(),
+		    m_leavememo = #{mLeavememo}
+		WHERE
+		    m_idx = #{mIdx}
+		</if>
+		<if test='mActive == "1" '>
+		UPDATE m_member 
+		SET 
+		    m_sex = null,
+		    m_year = null,
+		    m_pwd = null,
+		    m_hp = null,
+		    m_tel = null,
+		    m_zipcode = null,
+		    m_addr1 = null,
+		    m_addr2 = null,
+		    m_email = null,
+		    m_emailsend = null,
+		    m_type = null,
+		    m_greenbia_pay = null,
+		    m_smsend = null,
+		    m_active = 0,
+		    m_leavedate = NOW(),
+		    m_leavememo = #{mLeavememo}
+		WHERE
+		    m_idx = #{mIdx}
+		</if>
+	</update>
+	
+</mapper>
