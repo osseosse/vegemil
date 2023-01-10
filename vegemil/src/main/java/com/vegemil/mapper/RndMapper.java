@@ -22,4 +22,6 @@ public interface RndMapper {
 	
 	public int selectTourReviewCount(SearchDTO params);
 	
+	public int insertReview(FactpostDTO review);
+	
 }

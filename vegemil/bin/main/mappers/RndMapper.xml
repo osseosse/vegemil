@@ -141,6 +141,31 @@
 		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
 	</select>
 	
+	<insert id="insertReview" parameterType="com.vegemil.domain.FactpostDTO" useGeneratedKeys="true" keyProperty="sIdx">
+		INSERT INTO m_factpost (
+			s_cate,
+			s_id,
+			s_name,
+			s_hp,
+			s_email,
+			s_addr,
+			s_subject,
+			s_content,
+			s_url
+			)
+		VALUES (
+			'기타',
+			#{sId},
+			#{sName},
+			#{sHp},
+			#{sEmail},
+			#{sAddr},
+			#{sSubject},
+			#{sContent},
+			#{sUrl}
+			)
+	</insert>
+	
 	<select id="selectTourReviewCount" parameterType="com.vegemil.domain.SearchDTO" resultType="int">
         SELECT
             COUNT(*)

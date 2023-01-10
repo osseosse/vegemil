@@ -79,6 +79,10 @@ var createTable = function() {
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
+			console.log('json', json);
+
+			console.log("params", params);
+
 		},
 		error : function(xhr, ajaxSettings, thrownError) { 
 			console.log('error');

@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-	<title>정식품</title>
-    <head th:replace="webzine/head :: headFragment"></head>
+	<title th:text="${snsTitle}"></title>
+    <head th:replace="webzine/oldHead :: headFragment"></head>
     <meta property="og:site_name" content="신뢰와 믿음의 기업 (주)정식품입니다." > <!--페이스북 내용-->
     <meta property="og:title" th:attr="content=${snsTitle}">
     <div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
@@ -90,7 +90,7 @@
 		if(fileNum == '01') {
 			alert("첫번째 기사입니다.");
 			return false;
-		} else if(fileNum == '14') {
+		} else if(fileNum == '11') {
 			alert("마지막 기사입니다.");
 			return false;
 		} else {
@@ -122,7 +122,7 @@
 		if(fileNum == '01') {
 			alert("첫번째 기사입니다.");
 			return false;
-		} else if(fileNum == '14') {
+		} else if(fileNum == '11') {
 			alert("마지막 기사입니다.");
 			return false;
 		} else {

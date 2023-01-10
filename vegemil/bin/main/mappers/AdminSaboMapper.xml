@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminSaboMapper">
+
+	<select id="selectSaboSubscribeTotalCount" parameterType="hashMap" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM
+			m_sabo
+		WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	   AND s_writedate &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND s_writedate &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 		AND s_active = 1
+	 	</if>
+	 	<if test='gubun == "2" '>
+	 		AND s_active = 0
+	 	</if>
+	 	<if test='searchType == "sName" '>
+			AND s_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		<if test='searchType == "sEmail" '>
+			AND s_email LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+	</select>
+		
+	<select id="selectSaboSubscribeList"  parameterType="hashMap" resultType="com.vegemil.domain.AdminSaboDTO">
+		SELECT
+			s_idx, s_name, s_hp, s_memo, s_active, DATE_FORMAT(s_writedate, "%Y-%m-%d") s_writedate, s_email, m_sabocol 
+			
+		  FROM m_sabo
+		  WHERE 1 = 1
+	    <if test='sStartdate != "" '>
+	 	   AND s_writedate &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND s_writedate &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 		AND s_active = 1
+	 	</if>
+	 	<if test='gubun == "2" '>
+	 		AND s_active = 0
+	 	</if>
+	 	<if test='searchType == "sName" '>
+		AND s_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		<if test='searchType == "sEmail" '>
+		AND s_email LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		 ORDER BY s_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	
+	<update id="deleteSaboSubscribe" parameterType="hashMap">
+		DELETE FROM m_sabo
+		 WHERE s_idx IN
+      <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+	
+	
+
+</mapper>

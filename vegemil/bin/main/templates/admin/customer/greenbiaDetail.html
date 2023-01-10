@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>육아상담 Q&A 등록</title>
+	</th:block>
+
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+    
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page JS-->
+	    <script th:inline="javascript">
+	    	/*<![CDATA[*/
+	    	function btnSave() {
+	    	   const form = document.form;
+	    	   $('#email').val($('#email').is(':checked')==true?1:0)
+	    	   $('#sms').val($('#sms').is(':checked')==true?1:0)
+	    	   form.submit();
+	    	}
+	       /*]]>*/
+	    </script>
+	    <!-- END: Page JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">그린비아 회원관리 수정</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">그린비아</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">그린비아 회원관리 수정
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            
+            <div class="content-body">
+            	<form name="form" th:action="@{/admin/manage/customer/saveGreenbia}" th:object="${member}" method="POST" class="form-horizontal" role="form">
+					<!-- Basic table -->
+	                <section id="basic-horizontal-layouts">
+	                    <div class="row">
+	                        <div class="col-12">
+	                            <div class="card">
+									<div class="card-body">
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												가입일자
+											</div>
+											<div class="col-md-2 col-4">
+												<input type="input" id="mJoindate" class="form-control" name="mJoindate" th:value="${#strings.substring(member.mJoindate, 0,10)}" readonly />
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												이름
+											</div>
+											<div class="col-md-2 col-4">
+												<input type="input" id="mName" class="form-control" name="mName" th:value="${member.mName}" readonly />
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												아이디
+											</div>
+											<div class="col-md-2 col-4">
+												<input type="input" id="mId" class="form-control" name="mId" th:value="${member.mId}" readonly />
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												성별
+											</div>
+											<div class="col-md-11 col-3">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mSex"  id="sex1" value="1" th:checked="${member?.mSex eq '1'}" />
+													<label class="form-check-label" for="sex1">남</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mSex"  id="sex2" value="2" th:checked="${member?.mSex eq '2'}" />
+													<label class="form-check-label" for="sex2">여</label>
+												</div>
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												이데이몰<br>동시가입
+											</div>
+											<div class="col-md-2 col-4">
+												<span th:if="${member.mDualYn == '1'}">Y</span>
+												<span th:unless="${member.mDualYn == '0'}">N</span>
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												이메일
+											</div>
+											<div class="col-md-2 col-4">
+												<input type="input" id="mEmail" class="form-control" name="mEmail" th:value="${member.mEmail}" />
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">정보 이메일 수신동의
+													<input type="checkbox" class="form-check-input" id="email" name="mEmailsend" th:checked="${member.mEmailsend eq '1'}">
+													<label class="form-check-label" for="email"></label>
+												</div>
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												휴대폰
+											</div>
+											<div class="col-md-2 col-4">
+												<input type="input" id="mHp" class="form-control" name="mHp" th:value="${member.mHp}" />
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">정보 SMS 수신동의
+													<input type="checkbox" class="form-check-input" id="sms" name="mSmssend"  th:checked="${member.mSmssend eq '1'}">
+													<label class="form-check-label" for="sms"></label>
+												</div>
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												회원구분
+											</div>
+											<div class="col-md-11 col-3">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mActive" id="active1" value="1" th:checked="${member.mActive eq '1'}" />
+													<label class="form-check-label" for="active1">정회원</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mActive" id="active2" value="0" th:checked="${member.mActive eq '0'}" />
+													<label class="form-check-label" for="active2">탈퇴회원</label>
+												</div>
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												그린비아<br>카드결제
+											</div>
+											<div class="col-md-11 col-3">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mGreenbiaPay" id="mGreenbiaPay1" value="1" th:checked="${member?.mGreenbiaPay eq '1'}" />
+													<label class="form-check-label" for="mGreenbiaPay1">승인</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="mGreenbiaPay" id="mGreenbiaPay2" value="0" th:checked="${member?.mGreenbiaPay eq '0'}" />
+													<label class="form-check-label" for="mGreenbiaPay2">불가</label>
+												</div>
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												법인명<br>(사업자번호)
+											</div>
+											<div class="col-md-4 col-4">
+												<input type="input" id="searchWord" class="form-control" name="searchWord" th:value="|${member.mCompName}(${member.mBizno})|" readonly />
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												탈퇴일자
+											</div>
+											<div class="col-md-2 col-4">
+												<input type="input" id="mLeaveDate" class="form-control" name="mLeaveDate" readonly />
+											</div>
+										</div>
+		                            	<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												탈퇴사유
+											</div>
+											<div class="col-md-4 col-4">
+												<textarea name="txtLeaveMemo" id="mLeaveMemo" class="form-control"></textarea>
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+											 	<input type="hidden" name="mIdx" th:value="${member.mIdx}" />
+											 	<input type="hidden" name="action" id="action"/>
+												<button type="reset" class="btn btn-primary me-1">취소</button>
+												<button type="button" onclick="btnSave();" class="btn btn-primary me-1">저장</button>
+												<button type="button" onclick="btnSave();" class="btn btn-primary me-1">삭제</button>
+											</div>
+										</div>
+									</div>
+									
+		                             </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </section>
+	                <!--/ Basic table -->
+				</form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+
+</html>

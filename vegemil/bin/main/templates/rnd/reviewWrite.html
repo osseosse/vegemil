@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 견학후기</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<script type="text/javascript" src="/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopExcursions h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">견학 신청 글쓰기</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/factoryTour"><span>공장견학</span></a></li>
+				<li class="f18 fw500 active"><a href="/rnd/tourReview"><span>견학후기</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil//img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+<!-- 		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+    </div><!--//contant1460-->
+	 <div class="contant1160" >
+		<div class="row mb80">
+			<div class="col-md-12 mt50 center">
+				<p class="f45 fw600 black lh140 mt20">공장 견학 후기 글쓰기</p>
+				<p class="blackLine2 mt40"></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 ">
+				<div class=" center0 ">
+					<div cellspacing="0" border="0" class="joinT">
+						<ul>
+							<li>제목</li>
+							<li>
+								<input type="text" class="inp02" id="sSubject" name="sSubject" placeholder="제목을 입력해 주세요.">
+<!-- 								<p class="error">제목을 입력해 주세요</p> -->
+							</li>
+						</ul>
+						
+						<ul>
+							<li>내용</li>
+							<li>
+								<textarea class="fac-textarea f16 h500" rows="20" cols="10" id="sContent" name="sContent"></textarea>
+<!-- 								<p class="error">견학후기를 작성해 주세요.</p> -->
+							</li>
+						</ul>
+						<ul>
+							<li>SNS URL</li>
+							<li>
+								<input type="text" class="inp02" placeholder="블로그 또는 SNS에 업로드한 링크를 남겨주세요." id="sUrl" name="sUrl">
+							</li>
+						</ul>
+					</div>
+						<div class="w560 center0 mt20  text-right" >
+						<p class="mt50 center"><button type="button" class="btnType07  f20 fw500 lh140" id="formBtn" onclick = "savePost();">작성완료</button></p>
+					</div>
+				</div><!-- //w860 -->
+			</div>
+		</div>
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+//스마트 에디터2
+let oEditors = []
+
+smartEditor = function() {
+	nhn.husky.EZCreator.createInIFrame({
+		oAppRef: oEditors,
+		elPlaceHolder: "sContent",
+		sSkinURI: "/smarteditor2/SmartEditor2Skin.html",
+		fCreator: "createSEditor2"
+	})
+}
+
+savePost = function() {
+    oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", [])
+    let content = document.getElementById("sContent").value
+
+    if(content == '') {
+      alert("내용을 입력해주세요.")
+      oEditors.getById["sContent"].exec("FOCUS")
+      return
+    } else {
+
+      let post = {
+    	sSubject: $("#sSubject").val()
+        , sContent: content
+        , sUrl: $("#sUrl").val() 
+      }
+
+      $.ajax({
+        url: "/rnd/saveReview"
+        , data: post
+        , success: function(data) {
+        	if(data.success == '1') {
+                alert('저장하였습니다.')
+                location.href = '/rnd/tourReview';
+        	} else {
+        		alert(data.message);
+        	}
+        }
+        , error: function(jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR)
+          alert('오류가 발생하였습니다.')
+        }
+      })
+    }
+  }
+   
+$(document).ready(function() {
+    smartEditor()
+})
+	
+/*]]>*/
+</script>
+</body>
+</html>
