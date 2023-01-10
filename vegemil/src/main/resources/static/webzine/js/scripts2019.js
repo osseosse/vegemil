@@ -462,7 +462,7 @@ $(function () {
 });
 
 
-// ¸Þ´º½½¶óÀÌµå ------------------
+// ë©”ë‰´ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	var duration = 300;
 	var $aside = $('.page-main > aside');
@@ -471,12 +471,12 @@ $(function(){
 			$aside.toggleClass('open');
 			if($aside.hasClass('open')) {
 				$aside.stop(true).animate({left:'0px'}, duration, 'swing'); /* right*/
-				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ÀÌ¹ÌÁö·Î on,off Á¦¾î°¡´É
-				$('button.list').css('background','#f15c5c'); //on ¹è°æ
+				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ì´ë¯¸ì§€ë¡œ on,off ì œì–´ê°€ëŠ¥
+				$('button.list').css('background','#f15c5c'); //on ë°°ê²½
 			} else{
 				$aside.stop(true).animate({left:'-190px'}, duration, 'swing'); /* right*/
-				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ÀÌ¹ÌÁö·Î on,off Á¦¾î°¡´É
-				$('button.list').css('background','none'); //off ¹è°æ 
+				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ì´ë¯¸ì§€ë¡œ on,off ì œì–´ê°€ëŠ¥
+				$('button.list').css('background','none'); //off ë°°ê²½ 
 			};
 		});
 });
@@ -488,14 +488,14 @@ $(function(){
 //	})
 //});
 
-// ¸ÞÀÎ > ½æ³×ÀÏ¿À¹ö  ------------------
+// ë©”ì¸ > ì¸ë„¤ì¼ì˜¤ë²„  ------------------
 $(function(){
 	// 
 	var duration = 300;
 
 	// images ----------------------------------------
 	 var $images = $('.hover-effect p');
-	// images ¼¼¹øÂ° ÀÌ¹ÌÁö
+	// images ì„¸ë²ˆì§¸ ì´ë¯¸ì§€
 	 $images.filter('p')
 		.on('mouseover', function(){
 			$(this).find('strong').stop(true).animate({bottom: '0px'}, duration);
@@ -511,20 +511,20 @@ $(function(){
 
 
 
-// Q4_2019/sub05 ½½¶óÀÌµå ------------------
+// Q4_2019/sub05 ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	$('#slider3 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// Q1_2020/sub07 ½½¶óÀÌµå ------------------
+// Q1_2020/sub07 ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	$('#slider4 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -532,10 +532,10 @@ $(function(){
 });
 
 
-// Q3_2020/ÀÎµ¦½º ½½¶óÀÌµå ------------------
+// Q3_2020/ì¸ë±ìŠ¤ ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	$('#slider5 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -543,20 +543,20 @@ $(function(){
 });
 
 
-// Q1_2021/sub01 ½½¶óÀÌµå ------------------
+// Q1_2021/sub01 ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	$('#slider6 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ¸ÞÀÎ ¸®´º¾ó > °Ç°­·¹½ÃÇÇ ½½¶óÀÌµå ------------------
+// 2022 ë©”ì¸ ë¦¬ë‰´ì–¼ > ê±´ê°•ë ˆì‹œí”¼ ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	$('.slider8 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -564,44 +564,44 @@ $(function(){
 });
 
 
-// 2022 ¸ÞÀÎ ¸®´º¾ó > ¿©Çà ½½¶óÀÌµå ------------------
+// 2022 ë©”ì¸ ë¦¬ë‰´ì–¼ > ì—¬í–‰ ìŠ¬ë¼ì´ë“œ ------------------
 $(function(){
 	$('#slider9 .slider').prrpleSlider({
 		multiple:2,
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ½ºÆä¼È > ·¹½ÃÇÇ ------------------
+// 2022 ìŠ¤íŽ˜ì…œ > ë ˆì‹œí”¼ ------------------
 $(function(){
 	$('#slider10 .slider').prrpleSlider({
 		multiple:1,
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ½ºÆä¼È > ¿©Çà ------------------
+// 2022 ìŠ¤íŽ˜ì…œ > ì—¬í–‰ ------------------
 $(function(){
 	$('#slider11 .slider').prrpleSlider({
 		multiple:4,
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ½ºÆä¼È > ¿©Çà(»ç°èÀý) ------------------
+// 2022 ìŠ¤íŽ˜ì…œ > ì—¬í–‰(ì‚¬ê³„ì ˆ) ------------------
 $(function(){
 	$('#slider12 .slider').prrpleSlider({
 		multiple:1,
-		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -610,7 +610,7 @@ $(function(){
 });
 
 
-// ½ºÆä¼ÈÆäÀÌÁö PC~¸ð¹ÙÀÏ ÀüÃ¼ 
+// ìŠ¤íŽ˜ì…œíŽ˜ì´ì§€ PC~ëª¨ë°”ì¼ ì „ì²´ 
 $(function(){
 	let multiple
 		function isMobile(){
@@ -627,9 +627,9 @@ $(function(){
 	
 
 	if(isMobile()){
-			multiple=2; //MO¿ë ÆäÀÌÁö
+			multiple=2; //MOìš© íŽ˜ì´ì§€
 	}else{
-			multiple=4; //PC¿ë ÆäÀÌÁö
+			multiple=4; //PCìš© íŽ˜ì´ì§€
 	}
  $('#slider7 .slider').prrpleSlider({
 		loop:true,
@@ -645,7 +645,7 @@ $(function(){
 
 
 /* ------------------------------------------------------
-		***** ½ºÆä¼ÈÆäÀÌÁö tab  *****
+		***** ìŠ¤íŽ˜ì…œíŽ˜ì´ì§€ tab  *****
 --------------------------------------------------------*/
 
 
@@ -654,7 +654,7 @@ $(function(){
 
 
 /* ------------------------------------------------------
-		***** ¸ÞÀÎºñÁê¾ó > TV ±¤°í  *****
+		***** ë©”ì¸ë¹„ì¥¬ì–¼ > TV ê´‘ê³   *****
 --------------------------------------------------------*/
 (function ( $ ) {
 
@@ -711,12 +711,12 @@ $(function(){
 
 
 
-/* ½ºÆä¼È ÅÇ  */
+/* ìŠ¤íŽ˜ì…œ íƒ­  */
 (function( $ ) {
-  $.fn.basicTabs2 = function(options){ /* basicTabs2 º¯°æ */
+  $.fn.basicTabs2 = function(options){ /* basicTabs2 ë³€ê²½ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs2", /* tabe2 º¯°æ*/
+      list_class: "tabs2", /* tabe2 ë³€ê²½*/
       content_class: "tab_content2", /* tab_content2 */
       starting_tab: 1
     }, options );
@@ -741,10 +741,10 @@ $(function(){
 
 
 (function( $ ) {
-	$.fn.basicTabs3 = function(options){ /* basicTabs3 º¯°æ */
+	$.fn.basicTabs3 = function(options){ /* basicTabs3 ë³€ê²½ */
 		var settings = $.extend({
 		  active_class: "current",
-		  list_class: "tabs3", /* tabe3 º¯°æ*/
+		  list_class: "tabs3", /* tabe3 ë³€ê²½*/
 		  content_class: "tab_content3", /* tab_content3 */
 		  starting_tab: 1
 		}, options );
@@ -767,11 +767,37 @@ $(function(){
 
 
 (function( $ ) {
-	$.fn.basicTabs4 = function(options){ /* basicTabs4 º¯°æ */
+	$.fn.basicTabs4 = function(options){ /* basicTabs4 ë³€ê²½ */
 		var settings = $.extend({
 		  active_class: "current",
-		  list_class: "tabs4", /* tabe4 º¯°æ*/
+		  list_class: "tabs4", /* tabe4 ë³€ê²½*/
 		  content_class: "tab_content4", /* tab_content4 */
+		  starting_tab: 1
+		}, options );
+		var $content = $('.' + settings.content_class);
+		var $list = $('.' + settings.list_class);
+		$content.find('div').hide();
+		$content.find("div:nth-child(" + settings.starting_tab + ")").show();
+		$list.find("li:nth-child(" + settings.starting_tab + ")").addClass(settings.active_class);
+
+		$("." + settings.list_class + ' li a').click(function(e){
+			$list.find("li").removeClass(settings.active_class);
+			$("." + settings.content_class + " > div").hide();
+			$(this).parent().addClass(settings.active_class);
+			var currentTab = $(this).attr('href');
+			$(currentTab).show();
+			e.preventDefault();
+		});
+	  };
+}( jQuery ));
+
+
+(function( $ ) {
+	$.fn.basicTabs5 = function(options){ /* basicTabs5 ë³€ê²½ */
+		var settings = $.extend({
+		  active_class: "current",
+		  list_class: "tabs5", /* tabe5 ë³€ê²½*/
+		  content_class: "tab_content5", /* tab_content5 */
 		  starting_tab: 1
 		}, options );
 		var $content = $('.' + settings.content_class);

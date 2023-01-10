@@ -96,14 +96,23 @@ public class RndController extends UiUtils {
 	}
 	
 	
-	@GetMapping("/rnd/tourRivew")
-	public String getFactoryRevList(Model model, SearchDTO params) {
+	@GetMapping("/rnd/tourReview")
+	public String getFactoryReviewList(Model model, SearchDTO params) {
 		
 		System.out.println(params);
 		List<FactpostDTO> list = rndService.getFactReviewList(params);
 		model.addAttribute("list",list);
 		model.addAttribute("params",params);
-		return "rnd/tourRivew";
+		return "rnd/tourReview";
+	}
+	
+	@GetMapping("/rnd/reviewWrite")
+	public String moveReviewWrite(Model model, SearchDTO params) {
+		
+		FactpostDTO review = new FactpostDTO();
+		model.addAttribute("review", review);
+		
+		return "rnd/reviewWrite";
 	}
 	
 	
