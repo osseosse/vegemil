@@ -38,12 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
 	public boolean saveFaqFeedback(FaqFeedbackDTO params) {
 		
 		int queryResult = 0;
-		
-		int applicationCount = customerMapper.faqCountByIdx(params.getFaqIdx());
-
-		if (applicationCount != 0) {
-			queryResult = customerMapper.faqFeedbackSave(params);
-		}
+		queryResult = customerMapper.faqFeedbackSave(params);
 
 		return (queryResult == 1) ? true : false;
 	}

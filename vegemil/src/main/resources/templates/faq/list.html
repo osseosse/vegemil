@@ -470,18 +470,19 @@
 	
 	function saveFaqFeedback(idx){
 		
-		const fEtcbox = $("#fEtcbox"+idx).val();
-		const fScore = $('input[name=rating'+idx+']:checked').val();
+		const etcbox = $("#fEtcbox"+idx).val();
+		const score = $('input[name=rating'+idx+']:checked').val();
 		
 		$.ajax({
 			url: "/faq/saveFaqFeedback",
-			data: {idx: idx, fEtcbox: fEtcbox, fScore: fScore},
+			data: {fIdx: idx, fEtcbox: etcbox, fScore: score},
 			success: function (response) {
-				if (response.result == false) {
+				if (response.result) {
+					alert("저장되었습니다. 소중한의견 감사합니다.");
+				} else {
 					alert("저장에 실패하였습니다.");
 					return false;
 				}
-				alert("저장되었습니다.");
 			}
 		})
 		return;

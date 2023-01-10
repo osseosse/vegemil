@@ -2,14 +2,18 @@ package com.vegemil.controller;
 
 import java.util.List;
 
+import org.springframework.dao.DataAccessException;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.JsonObject;
 import com.vegemil.domain.FaqDTO;
 import com.vegemil.domain.FaqFeedbackDTO;
+import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.service.CustomerService;
 
@@ -47,11 +51,33 @@ public class CustomerController {
         return "faq/list";
     }
 
-    @ResponseBody
     @GetMapping(value="/faq/saveFaqFeedback")
-	public boolean saveFaqFeedback(FaqFeedbackDTO params) throws Exception{
-		boolean result = customerService.saveFaqFeedback(params); // 중복확인한 값을 int로 받음
-		return result;
+	public @ResponseBody JsonObject saveFaqFeedback(FaqFeedbackDTO params, Authentication authentication) throws Exception{
+
+    	JsonObject jsonObj = new JsonObject();
+    	Boolean result = false;
+    	
+    	try {
+    		if(authentication != null) {
+				MemberDTO member = new MemberDTO();
+				member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+				
+				params.setFName(member.getMName());
+				params.setFId(member.getMId());
+	    		result = customerService.saveFaqFeedback(params);
+    		}
+    		jsonObj.addProperty("result", result);
+		
+		} catch (DataAccessException e) {
+			jsonObj.addProperty("message", "데이터베이스 처리 과정에 문제가 발생하였습니다.");
+
+		} catch (Exception e) {
+			jsonObj.addProperty("message", "시스템에 문제가 발생하였습니다.");
+		}
+
+		return jsonObj;
+    	
+    	
 	}
 
 }

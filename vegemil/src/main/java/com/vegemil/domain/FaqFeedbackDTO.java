@@ -8,12 +8,12 @@ import lombok.Setter;
 @Setter
 public class FaqFeedbackDTO {
 
-    private Long idx;              
+	private Long idx;
+    private Long fIdx;          
     private String fId;               
     private String fScore;         
     private String fEtcbox;          
     private String fName;
-    private Long faqIdx;
     private String fQuestion;
     private String fInsertdate;  
 
