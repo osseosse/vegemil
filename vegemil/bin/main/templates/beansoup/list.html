@@ -181,13 +181,13 @@
 						<!-- </div> -->
 					</div>
 					<!-- 메인 전체리스트 -->
-					<div class="portfolio-grid-metro4 mesonry-list" id="originList" style="display: block;">
+					<div class="portfolio-grid-metro4 mesonry-list" id="originList" style="display: block; ">
 						<div class="resizer"></div>
 						<!--나중에 th:block -> div로 바꿔보기 -->
 						<th:block th:each="item : ${beansoupList}">
 							<div class="portfolio portfolio_style--1 portfolio-25"
 								th:classappend="${item.filter}">
-								<div class="thumbBox">
+								<div class="thumbBox" style="height:350px;">
 									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 										<!--pk:fileNo -->
 										<div class="h220 round" th:classappend="${item.cssClass}">
