@@ -17,7 +17,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class MemberDTO implements UserDetails {
+public class MemberDTO extends AdminCommonDTO implements UserDetails {
 
 	private Long   mIdx;
 	private String mId;

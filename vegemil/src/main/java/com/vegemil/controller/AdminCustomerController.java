@@ -38,6 +38,8 @@ import com.vegemil.domain.AdminFaqScoreDTO;
 import com.vegemil.domain.AdminSupportDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.FaqDTO;
+import com.vegemil.domain.MemberDTO;
+import com.vegemil.service.AdminCustomerService;
 import com.vegemil.service.AdminFaqService;
 import com.vegemil.util.UiUtils;
 
@@ -49,6 +51,9 @@ public class AdminCustomerController extends UiUtils {
 	
 	@Autowired
 	private AdminFaqService adminFaqService;
+	
+	@Autowired
+	private AdminCustomerService adminCustomerService;
 
 	@RequestMapping(value = "/admin/manage/customer/{viewName}")
     public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
@@ -250,6 +255,57 @@ public class AdminCustomerController extends UiUtils {
 		}
 
 		return showMessageWithRedirect("게시글 등록이 완료되었습니다.", "/admin/customer/support", Method.GET, null, model);
+	}
+	
+	@RequestMapping(value = "/admin/manage/customer/greenbiaList")
+	public @ResponseBody DataTableDTO getBabyInfoList(@ModelAttribute("params") MemberDTO params, Model model,
+			@RequestParam Map<String, Object> commandMap) {
+		
+		DataTableDTO dataTableDto = adminCustomerService.getGreenbiaList(commandMap);
+		return dataTableDto;
+	}
+	
+	@RequestMapping(value = "/admin/manage/customer/deleteGreenBia", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody Map<String, Object> deleteGreenBia(@RequestParam(required = false) final Long mIdx, Model model) throws Exception {
+		
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		
+		try {
+			boolean isdeleted = adminCustomerService.deleteGreenbia(mIdx);
+			rtnMap.put("result", isdeleted);
+		} catch (DataAccessException e) {
+			throw new IOException("저장에 실패하였습니다.");
+		} catch (Exception e) {
+			throw new IOException("저장에 실패하였습니다.");
+		}
+		return rtnMap;
+	}
+	
+	@GetMapping(value = "/admin/manage/customer/greenbiaDetail")
+    public String getGreenbiaDetail(@ModelAttribute("params") MemberDTO params, HttpServletRequest req, Model model)throws Exception{
+		//@RequestParam(value = "mbsIdx", required = false) Long mbsIdx
+		MemberDTO memberDto = adminCustomerService.getGreenbia(params);
+		
+		model.addAttribute("member", memberDto);
+		
+		return "admin/customer/greenbiaDetail";
+    }
+	
+	@PostMapping(value = "/admin/manage/customer/saveGreenbia")
+	public String saveGreenbia(@ModelAttribute("params") final MemberDTO params, Model model) {
+		try {
+			boolean isRegistered = adminCustomerService.saveGreenbia(params);
+			if (isRegistered == false) {
+				return showMessageWithRedirect("그린비아회원관리 저장에 실패하였습니다.", "/admin/manage/customer/greenbia", Method.GET, null, model);
+			}
+		} catch (DataAccessException e) {
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/admin/manage/customer/greenbia", Method.GET, null, model);
+
+		} catch (Exception e) {
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/admin/manage/customer/greenbia", Method.GET, null, model);
+		}
+
+		return showMessageWithRedirect("수정되었습니다.", "/admin/manage/customer/greenbia", Method.GET, null, model);
 	}
 	
 }
