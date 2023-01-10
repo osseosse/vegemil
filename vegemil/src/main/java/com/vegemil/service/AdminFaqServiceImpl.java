@@ -52,8 +52,9 @@ public class AdminFaqServiceImpl implements AdminFaqService {
 	public DataTableDTO getFaqList(Map<String, Object> paramMap) {
 		List<AdminFaqDTO> faqList = Collections.emptyList();
 		DataTableDTO dataTableDto = new DataTableDTO();
-
+		System.out.println("=====paramMap: " + paramMap);
 		int faqTotalCount = adminFaqMapper.selectFaqTotalCount(paramMap);
+		System.out.println("paramMap: "+ paramMap);
 
 		if (faqTotalCount > 0) {
 			int start = Integer.parseInt(paramMap.get("start").toString());

@@ -175,6 +175,8 @@ var createTable = function() {
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
+        	  console.log('data',data);
+        	  console.log('full',full)
             if(full['mTitle']==null)	return '';
       			else	return '<input type="text" class="form-control" id="mTitle'+full['mIdx']+'" value="'+full['mTitle']+'">';
           }

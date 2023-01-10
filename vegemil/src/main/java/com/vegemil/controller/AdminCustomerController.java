@@ -58,7 +58,6 @@ public class AdminCustomerController extends UiUtils {
 	@RequestMapping(value = "/admin/manage/customer/faqList")
 	 public @ResponseBody DataTableDTO getFaqList(@ModelAttribute("params") FaqDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
-
 		DataTableDTO dataTableDto = adminFaqService.getFaqList(commandMap);
 		return dataTableDto;
 	 }

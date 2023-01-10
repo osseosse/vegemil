@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>사보 신청자관리</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+<!-- 		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css}"> -->
+<!-- 		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css}"> -->
+<!-- 		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css}"> -->
+<!-- 		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css}"> -->
+<!-- 		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css}"> -->
+		
+<!-- 	    <link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}"> -->
+<!-- 	    <link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/pickers/form-flat-pickr.css}"> -->
+
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+		
+	    <script th:src="@{/app-assets/admin/sabo/sabo.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+	    
+	    
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+        	<div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">사보 신청자관리</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">사보 신청자관리
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Basic table -->
+	                <section id="basic-datatable">
+	                    <div class="row">
+	                        <div class="col-12">
+	                            <div class="card">
+	                            	<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												등록일
+											</div>
+	
+											<div class="col-md-4 col-12">
+	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
+	                                            </div>
+											</div>
+											<div class="col-md-3 col-12">
+												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
+											</div>
+										</div>
+										<div class="row mb-1 ">
+											<div class="col-md-1 col-12">
+												구분
+											</div>
+	
+											<div class="col-md-4 col-12">
+												<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="gubun" id="btnradio2-1" value="0" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-1">전체</label>
+	                                                <input type="radio" class="btn-check" name="gubun" id="btnradio2-2" value="1" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-2">신청</label>
+	                                                <input type="radio" class="btn-check" name="gubun" id="btnradio2-3" value="2" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-3">중지</label>
+	                                            </div>
+											</div>
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												상세검색
+											</div>
+											<div class="col-md-2 col-2">
+												<select class="form-select" id="searchType" name="searchType">
+													<option selected value="">선택</option>
+													<option value="sName">신청자명</option>
+													<option value="sEmail">신청자 이메일</option>
+												</select>
+											</div>
+											<div class="col-md-3 col-3">
+												<input type="input" id="searchWord" class="form-control" name="searchWord" placeholder="신청자명, 신청자 이메일 검색" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="sStartdate" id="sStartdate" value=""/>
+												<input type="hidden" class="form-control" name="sEnddate" id="sEnddate" value=""/>
+												<!-- <input type="hidden" class="form-control" name="start" id="start" value=0 />
+												<input type="hidden" class="form-control" name="length" id="length" value=10 /> -->
+											</div>
+										</div>
+									</div>
+	                            	
+	                            </div>
+	                        </div>
+	                    </div>
+	                </section>
+	                <!--/ Basic table -->
+	            </form>
+                
+				<section id="basic-horizontal-layouts">
+					<div class="row" >
+						<div class="col-12">
+							<div class="card">		
+								<form id="form" name="form" method="POST">
+									<div class="table-responsive">
+										<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+											<colgroup>
+												<col width="4%">
+												<col width="4%">
+												<col width="10%"> 
+												<col width="10%">
+												<col width="15%">
+												<col width="15%">
+												<col width="42">
+											</colgroup>
+											<thead>
+												<tr>
+													<th>No.</th>
+													<th>
+														<div class="form-check center-ck">
+	                                                        <input type="checkbox" class="form-check-input" id="customCheck1" name="allCheck" />
+	                                                    </div>
+													</th>
+													<th>접수일자</th>												
+													<th>이름</th>
+													<th>휴대전화</th>
+													<th>이메일</th>
+													<th>메모</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+    
+</html>
