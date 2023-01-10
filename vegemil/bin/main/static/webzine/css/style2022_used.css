@@ -140,7 +140,7 @@ ul.list__itmenu li:last-child{padding-right:0}
 .n_list ul.column20 li a{padding:4px 0 4px 40px; font-size:14px;}
 
 .MonBox {background:#d03000; padding:2px 15px; color:#fff; font-weight:400; display:inline-block; border-radius:10px}
-h2.MonBox_title {font-size:60px; font-weight:500; color:#fff; line-height:120%; }
+h2.MonBox_title {font-size:60px; font-weight:500; color:#fff; line-height:120%; display:block }
 
 
 
@@ -966,10 +966,10 @@ ul.sns-bnt-box li img {width:100%; padding:0 5px}
 		.rnBox {position:relative; border-radius:10px;  overflow:hidden}
 		.rn-txtBox {position:relative;top:-15px; left:0px; ; padding:0px;  width:100%; padding:0 8% 0 8%; text-align:left;  height:155px }
 		.rnTitle { bottom:33px; left:30px;  background:#d03000; color:#FFF; font-size:16px; display:inline-block; border-radius:5px; line-height:120%; padding:5px 10px }
-		.rnTitle.green {background:#2fb26b}
-		.rnTitle.mint { background:#00aeab}
-		.rnTitle.gold { background:#b78620}
-		.rnTitle.blue { background:#007cc3}
+		.rnTitle.green {background:#2fb26b;color:#FFF !important}
+		.rnTitle.mint { background:#00aeab;color:#FFF !important}
+		.rnTitle.gold { background:#b78620;color:#FFF !important}
+		.rnTitle.blue { background:#007cc3;color:#FFF !important}
 		.btn_rType01 {color:#fff; padding:14px 50px; background:#232323; border-radius:30px;  font-size:16px; font-weight:500 }
 		.btn_rType03 {color:#00aeab; padding:12px 30px; background:#fff; border-radius:30px;  font-size:18px; font-weight:500; border-radius:10px; text-align:center;display:inline-block}
 		.recipe-top-290 {position:relative; top:-290px}
@@ -1019,6 +1019,35 @@ ul.sns-bnt-box li img {width:100%; padding:0 5px}
 		.btn01 a:hover {background:#f05d5d; color:#fff}
 		.btn02 {background:#000; color:#fff; padding:5px 20px; border-radius:20px; display:inline-block; float:right}
 		.btn02 a {color:#fff}
+
+
+
+		
+
+		#tabwrap5 {background: #eaf9e6;overflow: hidden;width: 100%;margin:0px auto; border:1px solid #eaf9e6; padding:80px 80px 80px 80px} 
+		/* tabe2 ����*/
+		.tabs5 {background:#eaf9e6; } 
+		.tabs5 li { list-style:none;  display:block;  width:20%; margin:0 21px; float:left;  border-radius:100px;  }
+		.tabs5 li:first-child {width:0px; padding:0; margin-left:0}
+		.tabs5 li:last-child { margin-right:0}
+		
+		.tabs5 li a  { font-size:18px; padding:50px 0px; display:inline-block;line-height:120%; background:#7ad665; width:100%; border-radius:80px }
+		.tabs5 li:first-child  { margin-right:3px  }
+		.tabs5 li.n3 {margin-left:3px}
+		.tabs5 li.current a {color: #5498e3;}
+		.tabs5 li.current a {color:#c4e1ff; font-size:18px; }
+		.tabs5 li.current {}
+		/* tab_content5 */
+		.tab_content5 { margin-bottom:2px; text-align:center; padding:50px 0 10px 0} 
+		.tab_content5 > div {clear:both;line-height: 19px;color: #666;display: none;}
+		.tab_content5 .current { display: block; }
+		.tab_content5 #home.first { display: block; }
+		.tab_content5 p { text-align:center}
+		.tabs5 li a {color:#fff}
+		.tabs5 li.current a {background:#21b583; color:#fff}
+		.tabs5 li.current a {background:#21b583; }
+
+
 				
 
 
@@ -2735,7 +2764,8 @@ box-shadow: 18px 18px 21px 4px rgba(0,0,0,0.17); }
 	.hvr-float-shadow:hover{
 		transform:translateY(-15px);
 	}
-	.btn-event-sm {background:#f05d5d; color:#fff; font-size:20px; font-weight:500; padding:15px 0 ;width:100%; max-width:350px; border-radius:10px; cursor:pointer }
+	.mt90.center {display:block !important}
+	input.btn-event-sm {background:#f05d5d !important; color:#fff; font-size:20px; font-weight:500; padding:15px 0 ;width:100%; max-width:350px; border-radius:10px; cursor:pointer }
 
 	/* //�����������3000 ������*/
 
@@ -3148,7 +3178,6 @@ width:65px; padding:3px 0; margin-top:0  }
   right: 35px;
   }
 }
-
 
 
 

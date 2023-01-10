@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-	<title>정식품</title>
+	<title th:text="${snsTitle}"></title>
     <head th:replace="webzine/head :: headFragment"></head>
     <meta property="og:site_name" content="신뢰와 믿음의 기업 (주)정식품입니다." > <!--페이스북 내용-->
     <meta property="og:title" th:attr="content=${snsTitle}">
