@@ -16,6 +16,7 @@ public class FactpostDTO extends SearchDTO{
 	private String sHp; 
 	private String sEmail; 
 	private String sAddr; 
+	private String sBest;
 	private String sSubject; 
 	private String sContent; 
 	private String sFile; 

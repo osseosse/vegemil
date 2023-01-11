@@ -125,11 +125,28 @@ public class RndController extends UiUtils {
 	@GetMapping("/rnd/tourReview")
 	public String getFactoryReviewList(Model model, SearchDTO params) {
 		
-		System.out.println(params);
-		List<FactpostDTO> list = rndService.getFactReviewList(params);
-		model.addAttribute("list",list);
+		List<FactpostDTO> list;
+		list = rndService.getFactReviewList(params);
+		int listCount = 0;
+		
+		if(list != null) {
+			listCount = list.size();
+		}
+		
+		model.addAttribute("list", list);
+		model.addAttribute("listCount", listCount);
 		model.addAttribute("params",params);
+		
 		return "rnd/tourReview";
+	}
+	
+	@GetMapping("/rnd/reviewDetail/{sIdx}")
+	public String getFactoryReviewList(Model model, @PathVariable(value = "sIdx", required = false) String sIdx) {
+		
+		FactpostDTO review = rndService.getTourReview(sIdx);
+		model.addAttribute("review",review);
+		
+		return "rnd/reviewDetail";
 	}
 	
 	@GetMapping("/rnd/reviewWrite")
@@ -178,8 +195,9 @@ public class RndController extends UiUtils {
     }
 	
 	//정적 이미지 불러오기
-	@GetMapping("/web/upload/tourReview/{filename}")
-	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
+	@GetMapping("/web/upload/{viewname}/{filename}")
+	public ResponseEntity<Resource> display(@PathVariable(value = "viewname", required = false) String viewname,
+											@PathVariable(value = "filename", required = false) String filename) {
 		Resource resource = new FileSystemResource(uploadPath + "/upload/tourReview/" + filename);
 		if(!resource.exists()) 
 			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);

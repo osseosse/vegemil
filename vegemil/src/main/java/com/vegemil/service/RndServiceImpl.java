@@ -58,9 +58,17 @@ public class RndServiceImpl implements RndService {
 		params.setPaginationInfo(paginationInfo);
 		
 		if(count > 0) {
-			reviewList = rndMapper.selectTourReview(params);
+			reviewList = rndMapper.selectTourReviewList(params);
 		}
 		return reviewList;
+	}
+	
+	@Override
+	public FactpostDTO getTourReview(String sIdx) {
+		
+		FactpostDTO review = rndMapper.selectTourReviewByIdx(sIdx);
+		
+		return review;
 	}
 	
 	@Override

@@ -17,5 +17,7 @@ public interface RndService {
 	
 	public List<FactpostDTO> getFactReviewList(SearchDTO params);
 	
+	public FactpostDTO getTourReview(String sIdx);
+	
 	public int saveReview(FactpostDTO review);
 }

@@ -23,7 +23,6 @@
 	</sql>
 	
 	<sql id="reviewColumns">
-	
 		s_idx,
 		s_cate, 
 		s_id, 
@@ -31,20 +30,18 @@
 		s_hp, 
 		s_email, 
 		s_addr, 
+		s_best,
 		s_subject, 
-		s_content, 
-		s_file, 
-		s_writedate,
+		s_content,
+		s_file,
+		DATE_FORMAT(s_writedate,'%Y-%m-%d') as s_writedate,
 		DATE_FORMAT(s_writedate,'%Y-%m') as s_year_month,
 		DATE_FORMAT(s_writedate,'%d') as s_day, 
-		s_writetime, 
 		s_activeuser, 
 		s_hit, 
 		s_active, 
-		s_file2, 
 		s_url, 
 		s_icon
-	
 	</sql>
 	
 	<sql id="search">
@@ -126,7 +123,7 @@
 	</select>
 	
 	
-	<select id="selectTourReview" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.FactpostDTO" >
+	<select id="selectTourReviewList" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.FactpostDTO" >
 	
 		SELECT
             <include refid="reviewColumns" />
@@ -139,6 +136,16 @@
             s_idx DESC
        	LIMIT
 		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	<select id="selectTourReviewByIdx" parameterType="String" resultType="com.vegemil.domain.FactpostDTO" >
+	
+		SELECT
+            <include refid="reviewColumns" />
+        FROM
+            m_factpost
+        WHERE
+        	s_idx = #{sIdx}
 	</select>
 	
 	<insert id="insertReview" parameterType="com.vegemil.domain.FactpostDTO" useGeneratedKeys="true" keyProperty="sIdx">

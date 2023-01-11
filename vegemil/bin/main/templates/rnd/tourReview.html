@@ -22,7 +22,7 @@
 	</div>
 	<div class="contant1460" >
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href="/rnd/factoryTour"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
 				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
 				<li class="f18 fw500"><a href="/rnd/factoryTour"><span>공장견학</span></a></li>
@@ -42,24 +42,23 @@
 			<div class="col-md-12">
 			
 				<div class="text-right mt50">
-					<div class="fac-text-left mt60 ml10"><p class="btnType27"><a href="">새글쓰기</a></p></div>
+					<div class="fac-text-left mt60 ml10"><p class="btnType27"><a href="/rnd/reviewWrite">새글쓰기</a></p></div>
 					<div class="search-container w410  inline">
 						 <form action="/rnd/tourRivew" method="get">
 						 	<span class="search-img"><img th:src="@{/img/ico/ico_search.png}" alt="검색" /></span><input type="text" placeholder="후기를 검색해 보세요 " name="searchKeyword">
 							<button type="submit" class="btn-search">검색</button>
 						 </form>
 					</div>
-					<!-- <div class="count-box pl10">
-						<p>총 <span>15</span>건</p>
-					</div>	 -->				
+					<div class="count-box pl10">
+						<p>총 <span th:text="${listCount}"></span>건</p>
+					</div>			
 				</div>
-				
 				<table cellspacing="0" border="0" class="press mt50">
 					<caption>견학후기</caption>
 					<th:blcok th:each="item:${list}">
 					<tr>
 						<td>
-							<a href="#">
+							<a th:href="|/rnd/reviewDetail/${item.sIdx}|">
 								<div class="t-day">
 									<p class="f_pp  f55 fw700 lh120" th:text="${item.sDay}"></p>
 									<p class="f_pp  f15 fw700 lh130" th:text="${item.sYearMonth}"></p>
@@ -67,21 +66,19 @@
 							</a>
 						</td>
 						<td>
-							<a href="#">
-								<p class="t-bo">베스트</p>
+							<a th:href="|/rnd/reviewDetail/${item.sIdx}|">
+								<p class="t-bo" th:if="${item.sBest} == 1">베스트</p>
 							</a>
 						</td>
 						<td>
-							<a href="#">
-								<div class="press-title f27 fw500 black"><p th:text="${item.sSubject}" onclick="location.href=''"></p></div>
-								<div class="f16 gray04 fac-txt-hidden"><span th:text="${item.sContent}"></span></div>
+							<a th:href="|/rnd/reviewDetail/${item.sIdx}|">
+								<div class="press-title f27 fw500 black"><p th:text="${item.sSubject}" ></p></div>
+								<div class="f16 gray04 fac-txt-hidden"><span th:utext="${item.sContent}"></span></div>
 							</a>
 						</td>
 					</tr>
 					</th:blcok>
-					
 				</table>
-
 				<!--paging -->
 				<th:block layout:fragment="paging">
 					<nav th:replace="fragments/common :: pagination"></nav>

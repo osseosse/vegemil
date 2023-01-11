@@ -18,7 +18,9 @@ public interface RndMapper {
 	
 	public List<VisitDTO> selectVisitList();
 	
-	public List<FactpostDTO> selectTourReview(SearchDTO params);
+	public List<FactpostDTO> selectTourReviewList(SearchDTO params);
+	
+	public FactpostDTO selectTourReviewByIdx(String sIdx);
 	
 	public int selectTourReviewCount(SearchDTO params);
 	
