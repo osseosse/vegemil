@@ -245,20 +245,20 @@ public class AdminCustomerController extends UiUtils {
 		try {
 			boolean isRegistered = adminFaqService.registerSupportDetail(params);
 			if (isRegistered == false) {
-				return showMessageWithRedirect("게시글 등록에 실패하였습니다.", "/admin/customer/support", Method.GET, pagingParams, model);
+				return showMessageWithRedirect("게시글 등록에 실패하였습니다.", "/admin/manage/customer/support", Method.GET, pagingParams, model);
 			}
 		} catch (DataAccessException e) {
-			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/admin/customer/support", Method.GET, pagingParams, model);
+			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/admin/manage/customer/support", Method.GET, pagingParams, model);
 
 		} catch (Exception e) {
-			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/admin/customer/support", Method.GET, pagingParams, model);
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/admin/manage/customer/support", Method.GET, pagingParams, model);
 		}
 
-		return showMessageWithRedirect("게시글 등록이 완료되었습니다.", "/admin/customer/support", Method.GET, null, model);
+		return showMessageWithRedirect("게시글 등록이 완료되었습니다.", "/admin/manage/customer/support", Method.GET, null, model);
 	}
 	
 	@RequestMapping(value = "/admin/manage/customer/greenbiaList")
-	public @ResponseBody DataTableDTO getBabyInfoList(@ModelAttribute("params") MemberDTO params, Model model,
+	public @ResponseBody DataTableDTO getGreenbiaList(@ModelAttribute("params") MemberDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
 		
 		DataTableDTO dataTableDto = adminCustomerService.getGreenbiaList(commandMap);
@@ -282,9 +282,8 @@ public class AdminCustomerController extends UiUtils {
 	}
 	
 	@GetMapping(value = "/admin/manage/customer/greenbiaDetail")
-    public String getGreenbiaDetail(@ModelAttribute("params") MemberDTO params, HttpServletRequest req, Model model)throws Exception{
-		//@RequestParam(value = "mbsIdx", required = false) Long mbsIdx
-		MemberDTO memberDto = adminCustomerService.getGreenbia(params);
+    public String getGreenbiaDetail(@RequestParam(value = "mIdx", required = false) Long mIdx, HttpServletRequest req, Model model)throws Exception{
+		MemberDTO memberDto = adminCustomerService.getGreenbia(mIdx);
 		
 		model.addAttribute("member", memberDto);
 		
@@ -307,5 +306,6 @@ public class AdminCustomerController extends UiUtils {
 
 		return showMessageWithRedirect("수정되었습니다.", "/admin/manage/customer/greenbia", Method.GET, null, model);
 	}
+	
 	
 }
