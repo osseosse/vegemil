@@ -174,11 +174,17 @@ var createTable = function() {
       		targets: 2,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				const url = full['lgdReceiptUrl'];
+				let url = "";
 				const name = "popup";
 				const option = "width = 500, height = 500, top = 100, left = 200, location = no";
 				if(full['lgdOid']==null)	return '-';
-      			else	return '<a href="javascript:window.open(\''+url+'\', \''+name+'\', \''+option+'\')" >'+full['lgdOid']+'</a>';
+				else if(full['lgdRespcode'] != 0) {
+					url = full['lgdReceiptUrl'];
+					return '<a href="javascript:window.open(\''+url+'\', \''+name+'\', \''+option+'\')" >'+full['lgdOid']+'</a>';
+				}else{
+					url = 'https://dashboard.tosspayments.com/receipt/sales-slip?transactionId='+full['lgdTid'];
+					return '<a href="javascript:window.open(\''+url+'\', \''+name+'\', \''+option+'\')" >'+full['lgdOid']+'</a>';
+				}	
 							
 							
       		}
@@ -198,7 +204,7 @@ var createTable = function() {
 				console.log(full)
       			if(full['lgdRespcode']=='DONE') return '결제완료';
       			else if(full['lgdRespcode']=='CANCELED') return '결제취소';
-      			else return '-';
+      			else return full['lgdRespmsg'];
       		}
       	},
       	{

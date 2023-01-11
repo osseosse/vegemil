@@ -38,7 +38,7 @@
 		SELECT /* selectPaymentList by AdminPaymentMapper.xml */ 
 		       ROW_INDEX, LGD_BUYER, LGD_OID, LGD_AMOUNT, LGD_PAYDATE, LGD_CANCEL_DATE,
 		       LGD_FINANCENAME, LGD_CARDNUM, LGD_RESPCODE, LGD_RECEIPT_URL, CANCEL_REQ,
-		       LGD_TID
+		       LGD_TID, LGD_RESPMSG, LGD_MD5
 		  FROM
 			 m_payment p1
 	    WHERE 
