@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         request.done(function (response) {
-            console.log(response.data);
+            //console.log(response.data);
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 // Tool Bar 목록 document : https://fullcalendar.io/docs/toolbar
@@ -30,7 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 selectMirror: true,
                 locale: 'ko',
                 dateClick: function(info) {
-                    location.href = '/rnd/tourApply?date='+ info.dateStr;
+                	var dal = info.dateStr.substr(5, 2);
+                	if(dal == '07' || dal == '08') {
+                		alert("혹서기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
+                		return;
+                	} else if(dal == '01' || dal == '02' || dal == '12') {
+                		alert("혹한기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
+                		return;
+                	} else {
+                		location.href = '/rnd/tourApply?date='+ info.dateStr;
+                	}
                 },
                 events: response.data
             });
