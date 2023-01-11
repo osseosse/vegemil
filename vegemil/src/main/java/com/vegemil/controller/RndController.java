@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -44,6 +45,9 @@ public class RndController extends UiUtils {
 
 	@Autowired
 	RndService rndService;
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 	
 	@GetMapping(value="/rnd/factory")
 	public String getFactory() {
@@ -196,7 +200,8 @@ public class RndController extends UiUtils {
 				//디렉토리 설정 및 업로드	
 				
 				//파일경로
-				String filePath = "D:/upload/";
+				//String filePath = "D:/upload/";
+				String filePath = uploadPath + "/upload/tourReview/";
 				File file = new File(filePath);
 				
 				if(!file.exists()) {
@@ -228,7 +233,8 @@ public class RndController extends UiUtils {
 				sFileInfo += "&bNewLine=true";
 				// img 태그의 title 속성을 원본파일명으로 적용시켜주기 위함
 				sFileInfo += "&sFileName="+ sFilename;
-				sFileInfo += "&sFileURL="+"D:/upload/"+sRealFileNm;
+				//sFileInfo += "&sFileURL="+"D:/upload/"+sRealFileNm;
+				sFileInfo += "&sFileURL="+ uploadPath + "/upload/tourReview/"+sRealFileNm;
 				PrintWriter printWriter = response.getWriter();
 				printWriter.print(sFileInfo);
 				printWriter.flush();

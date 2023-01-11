@@ -62,8 +62,8 @@
 								<td><p class="cate" th:text="${qna.sCate}"></p></td>
 								<td>
 									<a th:href="|/mypage/answer?sIdx=${qna.sIdx}|"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
-									<p class="ans" th:if="${qna.sAnswerYn} == 'Y'">답변</p>
-									<p class="ans" th:unless="${qna.sAnswerYn} == 'Y'">미답변</p>
+									<p class="ans" th:if="${qna.sAnswerYn} == 'Y' and ${#strings.length(qna.sAnswer)} > 8">답변</p>
+									<p class="ans" th:if="${qna.sAnswerYn} == 'N' or ${#strings.length(qna.sAnswer)} <= 8">미답변</p>
 								</td>
 								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
 							</tr>

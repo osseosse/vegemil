@@ -61,7 +61,7 @@
 							<tr>
 								<td><p class="cate" th:text="${qna.sCate}"></p></td>
 								<td>
-									<a href="#"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
+									<div class="titletxt" th:text="${qna.sSubject}"></div>
 								</td>
 								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
 							</tr>
@@ -69,7 +69,7 @@
 								<td colspan="3" class="q_box lh180 " th:text="${qna.sContent}"></td>
 							</tr>
 						</table>
-						<div class="ansBox  lh180" th:if="${qna.sAnswerYn} == 'Y'" th:text="${qna.sAnswer}">
+						<div class="ansBox  lh180" th:if="${qna.sAnswerYn} == 'Y'" th:utext="${qna.sAnswer}">
 						</div>
 					</div>
 				</div>
