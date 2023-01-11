@@ -15,6 +15,17 @@
     <script th:src="@{/app-assets/js/core/app-menu.js}"></script>
     <script th:src="@{/app-assets/js/core/app.js}"></script>
     <!-- END: Theme JS-->
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+
+		if (window.location.protocol == "http:") {
+			if(window.location.hostname == 'vegemil.co.kr' || window.location.hostname == "www.vegemil.co.kr") {
+				window.location.href = window.location.href.replace('http:', 'https:');
+			}
+		}
+	
+	/*]]>*/
+	</script>
     
     <!-- BEGIN: Page JS-->
     <th:block layout:fragment="add-script"></th:block>
