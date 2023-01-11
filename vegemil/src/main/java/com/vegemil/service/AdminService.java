@@ -38,7 +38,7 @@ public class AdminService implements UserDetailsService {
         MemberDTO loginUser = adminMapper.findAdminById(member.getMId());
         
         if(loginUser == null) {
-        	member.setMAuth("USER");
+        	member.setMAuth("ADMIN");
         	queryResult = adminMapper.insertAdmin(member);
     		if(queryResult == 1) {
     			return 1;
