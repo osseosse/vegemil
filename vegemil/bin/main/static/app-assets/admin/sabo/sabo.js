@@ -175,8 +175,8 @@ var createTable = function() {
 	  lengthChange: false,
       bPaginate: true,
       pageLength: 10,
-	 serverSide: true,
-	   processing: true,
+	  serverSide: true,
+	  processing: true,
       ajax: {
         url : '/admin/manage/sabo/subscribeList',
         dataType : 'json',

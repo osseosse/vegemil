@@ -39,7 +39,7 @@ public class AdminSaboServiceImpl implements AdminSaboService {
 			 
 			  saboSubscriberList = adminSaboMapper.selectSaboSubscribeList(paramMap);
 			  
-			  System.out.println("paramMap: "+ paramMap);
+			  
 
 			 
 		}

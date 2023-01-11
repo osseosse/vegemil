@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminPublicCenterMapper">
+
+	<!-- 보도자료 수 -->
+	<select id="selectMediaNewsTotalCount" parameterType="hashMap" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM
+			m_media_news
+		WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	   AND m_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND m_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 		AND m_display = 1
+	 	</if>
+	 	<if test='gubun == "2" '>
+	 		AND m_display = 2
+	 	</if>
+	 	<if test='searchWord'>
+			AND m_subject LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%') OR m_content LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+	</select>
+		
+	<select id="selectMediaNewsList"  parameterType="hashMap" resultType="com.vegemil.domain.AdminMediaNewsDTO">
+		SELECT
+			m_idx, m_subject, 
+			CONCAT(m_adname1," " ,m_adname2," " ,m_adname3," " ,m_adname4," " ,m_adname5," " ,m_adname6," " ,m_adname7," " ,m_adname8," " ,m_adname9," " ,m_adname10) AS m_adname,
+			DATE_FORMAT(m_date, "%Y-%m-%d") m_date, m_hit	
+		FROM 
+			m_media_news
+		WHERE 1 = 1
+	    <if test='sStartdate != "" '>
+	 	   AND m_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND m_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 		AND m_display = 1
+	 	</if>
+	 	<if test='gubun == "2" '>
+	 		AND m_display = 2
+	 	</if>
+	 	<if test='searchWord != null and !searchWord.equals("")'>
+			AND m_subject LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%') OR m_content LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		 ORDER BY m_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	
+	<update id="deleteMediaNews" parameterType="hashMap">
+		DELETE FROM m_media_news
+		 WHERE m_idx IN
+      <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+	
+	
+	<!-- <resultMap type="com.vegemil.mapper.AdminPublicCenterMapper" id="selectMediaNewsList">
+        <result property="mHit" column="m_hit"/>
+        
+    </resultMap> -->
+	
+	
+
+</mapper>
