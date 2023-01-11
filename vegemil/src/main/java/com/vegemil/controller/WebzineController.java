@@ -506,7 +506,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineYear", webzineYear);
@@ -533,7 +533,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		/*
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
@@ -555,7 +555,7 @@ public class WebzineController extends UiUtils {
 	}
 	
 	@GetMapping(value = "/main/webzine/lastlistNew.aspx")
-	public String openLastlistNew(@RequestParam(value = "year", required = false, defaultValue = "2022") String year
+	public String openLastlistNew(@RequestParam(value = "year", required = false, defaultValue = "2023") String year
 									, @RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
 		
 		String returnHtml = "";
@@ -567,7 +567,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		List<WebzineDTO> webzineQ1 = webzineService.getWebzineQ("Q1_"+year);
 		if(webzineQ1.size() > 0) {
@@ -590,7 +590,7 @@ public class WebzineController extends UiUtils {
 			q4 = "1";
 		}
 		
-		model.addAttribute("qrtYear", "Q4_2022");
+		model.addAttribute("qrtYear", "Q1_2023");
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
@@ -605,7 +605,7 @@ public class WebzineController extends UiUtils {
 	}
 	
 	@GetMapping(value = "/webzine/lastlistNew")
-	public String moveLastlistNew(@RequestParam(value = "year", required = false, defaultValue = "2022") String year
+	public String moveLastlistNew(@RequestParam(value = "year", required = false, defaultValue = "2023") String year
 									, @RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
 		
 		String q1 = "0";
@@ -616,7 +616,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		List<WebzineDTO> webzineQ1 = webzineService.getWebzineQ("Q1_"+year);
 		if(webzineQ1.size() > 0) {
@@ -639,7 +639,7 @@ public class WebzineController extends UiUtils {
 			q4 = "1";
 		}
 		
-		model.addAttribute("qrtYear", "Q4_2022");
+		model.addAttribute("qrtYear", "Q1_2023");
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
@@ -659,7 +659,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		List<WebzineDTO> webzine02 = webzineService.getWebzine02();
 		if(webzine02.size() > 0) {
@@ -682,7 +682,7 @@ public class WebzineController extends UiUtils {
 			model.addAttribute("webzineList06", webzine06);
 		}
 		
-		model.addAttribute("qrtYear", "Q4_2022");
+		model.addAttribute("qrtYear", "Q1_2023");
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineQrt", webzineQrt);
@@ -697,7 +697,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		List<WebzineDTO> webzine02 = webzineService.getWebzine02();
 		if(webzine02.size() > 0) {
@@ -720,7 +720,7 @@ public class WebzineController extends UiUtils {
 			model.addAttribute("webzineList06", webzine06);
 		}
 		
-		model.addAttribute("qrtYear", "Q4_2022");
+		model.addAttribute("qrtYear", "Q1_2023");
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineQrt", webzineQrt);
@@ -735,7 +735,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
 		List<WebzineDTO> webzine02 = webzineService.getWebzine02();
 		if(webzine02.size() > 0) {
@@ -758,7 +758,7 @@ public class WebzineController extends UiUtils {
 			model.addAttribute("webzineList06", webzine06);
 		}
 		
-		model.addAttribute("qrtYear", "Q4_2022");
+		model.addAttribute("qrtYear", "Q1_2023");
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
