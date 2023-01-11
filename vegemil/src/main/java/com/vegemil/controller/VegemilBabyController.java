@@ -73,6 +73,13 @@ public class VegemilBabyController extends UiUtils {
 		  model.addAttribute("categoryCount", vegemilBabyCommunityService.selectCategoryCount());
 		return "vegemilBaby/magazine";
 	}	
+	
+	@RequestMapping(value = "/main/brandVegemilBaby/e_magazine.aspx")
+    public String moveOldGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		
+		return "redirect:/vegemilBaby/magazine?category=all";
+    }
+	
 	@GetMapping("/Main/brandVegemilBaby/e_magazine.aspx")
 	public String moveNewMagazineList(Model model) {
 		
