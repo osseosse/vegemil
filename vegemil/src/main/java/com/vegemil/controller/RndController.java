@@ -2,9 +2,13 @@ package com.vegemil.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,12 +20,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -166,6 +176,23 @@ public class RndController extends UiUtils {
 
 		return jsonObj;
     }
+	
+	//정적 이미지 불러오기
+	@GetMapping("/web/upload/tourReview/{filename}")
+	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/tourReview/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/tourReview/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
 	
 	@RequestMapping(value="/rnd/multiImageUpload")
 	public void smarteditorMultiImageUpload(HttpServletRequest request, HttpServletResponse response){
