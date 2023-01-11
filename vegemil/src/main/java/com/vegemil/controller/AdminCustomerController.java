@@ -307,5 +307,20 @@ public class AdminCustomerController extends UiUtils {
 		return showMessageWithRedirect("수정되었습니다.", "/admin/manage/customer/greenbia", Method.GET, null, model);
 	}
 	
+	@RequestMapping(value = "/admin/manage/customer/memberList")
+	public @ResponseBody DataTableDTO getMemberList(@ModelAttribute("params") MemberDTO params, Model model,
+			@RequestParam Map<String, Object> commandMap) {
+		
+		DataTableDTO dataTableDto = adminCustomerService.getMemberList(commandMap);
+		return dataTableDto;
+	}
 	
+	@GetMapping(value = "/admin/manage/customer/memberDetail")
+    public String getMemberDetail(@RequestParam(value = "mIdx", required = false) Long mIdx, HttpServletRequest req, Model model)throws Exception{
+		MemberDTO memberDto = adminCustomerService.getMember(mIdx);
+		
+		model.addAttribute("member", memberDto);
+		
+		return "admin/customer/memberDetail";
+    }
 }

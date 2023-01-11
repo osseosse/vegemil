@@ -51,8 +51,8 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 	}
 	
 	@Override
-	public MemberDTO getGreenbia(MemberDTO params) {
-		return adminCustomerMapper.selectGreenbiaMember(params);
+	public MemberDTO getGreenbia(Long mIdx) {
+		return adminCustomerMapper.selectGreenbiaMember(mIdx);
 	}
 	
 	@Override
@@ -62,5 +62,34 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		queryResult = adminCustomerMapper.updateGreenbiaMember(params);
 		
 		return (queryResult == 1) ? true : false;
+	}
+	
+	@Override
+	public DataTableDTO getMemberList(Map<String, Object> paramMap) {
+		List<MemberDTO> memberList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
+
+		int memberTotalCount = adminCustomerMapper.selectMemberTotalCount(paramMap);
+
+		if (memberTotalCount > 0) {
+			int start = Integer.parseInt(paramMap.get("start").toString());
+			int length = Integer.parseInt(paramMap.get("length").toString());
+			
+			paramMap.put("start", start);
+			paramMap.put("length", length);
+			memberList = adminCustomerMapper.selectMemberList(paramMap);
+		}
+		
+		dataTableDto.setData(memberList);
+		dataTableDto.setRecordsTotal(memberTotalCount);
+		dataTableDto.setRecordsFiltered(memberTotalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
+
+		return dataTableDto;
+	}
+	
+	@Override
+	public MemberDTO getMember(Long mIdx) {
+		return adminCustomerMapper.selectMember(mIdx);
 	}
 }

@@ -11,7 +11,11 @@ public interface AdminCustomerService {
 	
 	public boolean deleteGreenbia(Long mIdx);
 	
-	public MemberDTO getGreenbia(MemberDTO params);
+	public MemberDTO getGreenbia(Long mIdx);
 	
 	public boolean saveGreenbia(MemberDTO params);
+	
+	public DataTableDTO getMemberList(Map<String, Object> paramMap);
+	
+	public MemberDTO getMember(Long mIdx);
 }
