@@ -108,6 +108,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	                .antMatchers("/mypage/**").authenticated()
 	                .antMatchers("/sample/form").authenticated()
 	                .antMatchers("/rnd/tourApply").authenticated()
+	                .antMatchers("/rnd/reviewWrite").authenticated()
 	            .anyRequest()
 	            	.permitAll()
 	            .and().headers().frameOptions().sameOrigin()

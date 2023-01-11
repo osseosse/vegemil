@@ -27,6 +27,18 @@ public class GreenbiaController extends UiUtils {
 		return "greenbia/"+viewName;
     }
 	
+	@RequestMapping(value = "/greenbia")
+    public String moveGreenbiaIndex(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		
+		return "greenbia/index";
+    }
+	
+	@RequestMapping(value = "/main/brandgreenbia/index.aspx")
+    public String moveOldGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		
+		return "redirect:/greenbia";
+    }
+	
 	@GetMapping("/Main/BrandGreenbia/{greenbiaAspx}")
 	public String greenbiaRedirect(@PathVariable("greenbiaAspx") String greenbiaAspx) {
 		if(greenbiaAspx.contains(".")) {

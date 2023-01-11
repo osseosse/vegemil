@@ -23,7 +23,7 @@
 	</div>
 	<div class="contant1460" >
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href="/rnd/factoryTour"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
 				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
 				<li class="f18 fw500"><a href="/rnd/factoryTour"><span>공장견학</span></a></li>
@@ -97,9 +97,10 @@ smartEditor = function() {
 }
 
 savePost = function() {
-    oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", [])
+    oEditors.getById["sContent"].exec("UPDATE_CONTENTS_FIELD", [])
     let content = document.getElementById("sContent").value
 
+    alert("진입");
     if(content == '') {
       alert("내용을 입력해주세요.")
       oEditors.getById["sContent"].exec("FOCUS")
@@ -112,6 +113,7 @@ savePost = function() {
         , sUrl: $("#sUrl").val() 
       }
 
+      alert("ajax실행");
       $.ajax({
         url: "/rnd/saveReview"
         , data: post

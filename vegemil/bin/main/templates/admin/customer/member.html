@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>회원관리</title>
+	</th:block>
+
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+<!-- 	    <link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}"> -->
+	    <!-- END: Page CSS-->
+	</th:block>
+    
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page JS-->
+	    <script th:src="@{/app-assets/admin/customer/member.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+	    <!-- END: Page JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">회원관리</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">회원</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">회원관리</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	            	<!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												등록일
+											</div>
+	
+											<div class="col-md-4 col-12">
+	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
+	                                            </div>
+											</div>
+											<div class="col-md-3 col-12">
+												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
+											</div>
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												상세검색
+											</div>
+											<div class="col-md-4 col-4">
+												<input type="input" id="searchWord" class="form-control" name="searchWord" placeholder="아이디, 이름/법인명, 이메일, 휴대폰에 포함된 된어를 입력하세요" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="sStartdate" id="sStartdate" value=""/>
+												<input type="hidden" class="form-control" name="sEnddate" id="sEnddate" value=""/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+                
+                <form id="form" name="form" method="POST">
+	                <!-- Basic table -->
+	                <section id="basic-horizontal-layouts">
+	                    <div class="row">
+	                        <div class="col-12">
+	                            <div class="card">
+	                            	<div class="table-responsive">
+		                                <table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+		                                	<colgroup>
+
+												<col width="4%">
+												<col width="6%">
+												<col width="8%">
+												<col width="10%">
+												<col width="5%">
+												<col width="5%">
+												<col width="7%">
+												<col width="10%">
+												<col width="10%">
+												<col width="16%">
+												<col width="5%">
+												<col width="7%">
+												<col width="7%">
+	
+											</colgroup>
+		                                    <thead>
+		                                        <tr>
+		                                            <th>NO</th>
+		                                            <th>가입일</th>
+		                                            <th>아이디</th>
+		                                            <th>이름/법인명</th>
+		                                            <th>성별</th>
+		                                            <th>생년월일</th>
+		                                            <th>이데이몰<br>동시가입</th>
+		                                            <th>휴대폰</th>
+		                                            <th>이메일</th>
+		                                            <th>주소</th>
+		                                            <th>로그인</th>
+		                                            <th>수정</th>
+		                                            <th>삭제</th>
+		                                        </tr>
+		                                    </thead>
+		                                </table>
+		                             </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </section>
+	                <!--/ Basic table -->
+	            </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+
+</html>

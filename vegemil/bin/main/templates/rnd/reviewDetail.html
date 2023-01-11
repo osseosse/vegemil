@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 견학후기</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopExcursions h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">견학 신청</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/rnd/factoryTour"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/factoryTour"><span>공장견학</span></a></li>
+				<li class="f18 fw500 active"><a href="/rnd/tourReview"><span>견학후기</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil//img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+<!-- 		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+    </div><!--//contant1460-->
+	 <div class="contant1460" >
+		<div class="row mb80">
+			<div class="col-md-12 mt50 center">
+				<p class="f16 grayRound" th:if="${review.sBest} == 1">베스트</p>
+				<p class="f45 fw600 black lh140 mt20">정식품 청주 베지밀 공장 견학 후기</p>
+				<p class="gray04 fw600 f15 f_pp mt40" th:text="${review.sWritedate}"> <span th:text="|${review.sName}님|"></span></p>
+				<p class="blackLine2 mt40"></p>
+			</div>
+			<div class="col-md-12 mt50  grayLine2">
+				<div class="contant1160 pb100 pt50" >
+					<p class="f27 fw500 pb20 fac-title" th:text="${review.sSubject}"></p>
+					<!-- 내용 -->
+					<th:block th:if="${#strings.length(review.sFile)} <= 1" th:utext="${review.sContent}"></th:block>
+					<th:block th:if="${#strings.length(review.sFile)} > 1">
+						<p class="mt30 lh170 f18" th:text="${review.sContent}"></p>
+						<p class="mt30"><img th:src="|/web/upload/CUSTOMER/${review.sFile}|"></p>
+					</th:block>
+					<!-- 내용 -->
+					<div class="fac-snsBox mt30 f18 gray04" th:text="${review.sUrl}"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 ">
+				<ul class="paging-txt">
+					<li class="f23 fw500 mt20">
+						<dl class="pg-left">
+<!-- 							<a href=""> -->
+<!-- 								<dd class="ico_notice_left mr10"></dd> -->
+<!-- 								<dd>두유가 이렇게 만들어지는지 처음알게되어 너무나 기쁘고 </dd> -->
+<!-- 							</a> -->
+						</dl>
+					</li>
+					<li class="pg-list"><a href="/rnd/tourReview"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_pg_list.png" /></a></li>
+					<li class="f23 fw500 mt20">
+						<dl class="pg-right">
+<!-- 							<a href=""> -->
+<!-- 								<dd>두유가 이렇게 만들어지는지 처음알게되어 너무나 기쁘고</dd> -->
+<!-- 								<dd class="ico_notice_right ml10"></dd> -->
+<!-- 							</a> -->
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<br class="clear">
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+/*<![CDATA[*/
+	
+/*]]>*/
+</script>
+</body>
+</html>

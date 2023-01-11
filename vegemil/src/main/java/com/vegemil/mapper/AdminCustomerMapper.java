@@ -16,7 +16,13 @@ public interface AdminCustomerMapper {
 	
 	public int deleteGreenbiaMember(Long mIdx);
 	
-	public MemberDTO selectGreenbiaMember(MemberDTO params);
+	public MemberDTO selectGreenbiaMember(Long mIdx);
 	
 	public int updateGreenbiaMember(MemberDTO params);
+	
+	public int selectMemberTotalCount(Map<String, Object> paramMap);
+	
+	public List<MemberDTO> selectMemberList(Map<String, Object> paramMap);
+	
+	public MemberDTO selectMember(Long mIdx);
 }

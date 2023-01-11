@@ -16,11 +16,19 @@
 		<!-- BEGIN: Page JS-->
 	    <script th:inline="javascript">
 	    	/*<![CDATA[*/
-	    	function btnSave() {
+	    	function btnSave(action) {
 	    	   const form = document.form;
 	    	   $('#email').val($('#email').is(':checked')==true?1:0)
 	    	   $('#sms').val($('#sms').is(':checked')==true?1:0)
-	    	   form.submit();
+	    	   
+	    	   if(action == "U") {
+	    		   msg = "수정하시겠습니까?";	
+			   }else {
+				   msg = "삭제하시겠습니까?";	
+				}
+	    	   if(confirm(msg)){
+	    		   form.submit();
+	    	   }
 	    	}
 	       /*]]>*/
 	    </script>
@@ -107,7 +115,7 @@
 											</div>
 											<div class="col-md-2 col-4">
 												<span th:if="${member.mDualYn == '1'}">Y</span>
-												<span th:unless="${member.mDualYn == '0'}">N</span>
+												<span th:unless="${member.mDualYn == '1'}">N</span>
 											</div>
 										</div>
 		                            	<div class="row mb-1">
@@ -198,8 +206,8 @@
 											 	<input type="hidden" name="mIdx" th:value="${member.mIdx}" />
 											 	<input type="hidden" name="action" id="action"/>
 												<button type="reset" class="btn btn-primary me-1">취소</button>
-												<button type="button" onclick="btnSave();" class="btn btn-primary me-1">저장</button>
-												<button type="button" onclick="btnSave();" class="btn btn-primary me-1">삭제</button>
+												<button type="button" onclick="btnSave('U');" class="btn btn-primary me-1">저장</button>
+												<button type="button" onclick="btnSave('D');" class="btn btn-primary me-1">삭제</button>
 											</div>
 										</div>
 									</div>

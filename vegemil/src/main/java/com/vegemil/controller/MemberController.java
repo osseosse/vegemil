@@ -144,7 +144,7 @@ public class MemberController extends UiUtils {
 			mIdx = memberService.getMemberIdx(member);
 			//해당 회원 없음
 			if(mIdx == 0) {
-				member = new MemberDTO();
+				return showMessageWithRedirect("해당하는 회원이 존재하지 않습니다. 아이디이메일을 다시 확인 바랍니다.", "/member/pwSearch", Method.GET, null, model);
 			} else {
 				//재설정메일 발송
 				member.setMIdx(mIdx);

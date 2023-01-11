@@ -22,9 +22,10 @@
 						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
 						<ul class="account_box mt40">
 							<li th:text="${member.mId}"></li>
-							<li th:if="${member.mCompName} != null">대리점</li>
-							<li th:if="${member.mCompName} == null">일반회원</li>
-							<li th:if="${member.mDi} != null">본인인증완료</li><!-- "본인인증이 되지 않은 고객일경우" <li>본인인증필요</li> -->
+							<li th:if="${member.mAuth} == 'USER'">일반회원</li>
+							<li th:if="${member.mAuth} == 'COMP'">법인회원</li>
+							<li th:if="${#strings.length(member.mDi)} > 1" >본인인증완료</li>
+							<li th:if="${#strings.length(member.mDi)} <= 1" >본인인증필요</li>
 						</ul>
 						<p class="f14 fw400 gray04 mt25">
 						개인정보를 수정, 변경하실 수 있습니다.<br>
@@ -62,8 +63,8 @@
 								<td><p class="cate" th:text="${qna.sCate}"></p></td>
 								<td>
 									<a th:href="|/mypage/answer?sIdx=${qna.sIdx}|"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
-									<p class="ans" th:if="${qna.sAnswerYn} == 'Y'">답변</p>
-									<p class="ans" th:unless="${qna.sAnswerYn} == 'Y'">미답변</p>
+									<p class="ans" th:if="${qna.sAnswerYn} == 'Y' and ${#strings.length(qna.sAnswer)} > 8">답변</p>
+									<p class="ans" th:if="${qna.sAnswerYn} == 'N' or ${#strings.length(qna.sAnswer)} <= 8">미답변</p>
 								</td>
 								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
 							</tr>

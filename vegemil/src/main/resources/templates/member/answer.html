@@ -22,8 +22,10 @@
 						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
 						<ul class="account_box mt40">
 							<li th:text="${member.mId}"></li>
-							<li>정회원</li><!-- "대리점장이 회원가입시" <li>대리점</li> -->
-							<li>본인인증완료</li><!-- "본인인증이 되지 않은 고객일경우" <li>본인인증필요</li> -->
+							<li th:if="${member.mAuth} == 'USER'">일반회원</li>
+							<li th:if="${member.mAuth} == 'COMP'">법인회원</li>
+							<li th:if="${#strings.length(member.mDi)} > 1" >본인인증완료</li>
+							<li th:if="${#strings.length(member.mDi)} <= 1" >본인인증필요</li>
 						</ul>
 						<p class="f14 fw400 gray04 mt25">
 						개인정보를 수정, 변경하실 수 있습니다.<br>
@@ -61,7 +63,7 @@
 							<tr>
 								<td><p class="cate" th:text="${qna.sCate}"></p></td>
 								<td>
-									<a href="#"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
+									<div class="titletxt" th:text="${qna.sSubject}"></div>
 								</td>
 								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
 							</tr>
@@ -69,7 +71,7 @@
 								<td colspan="3" class="q_box lh180 " th:text="${qna.sContent}"></td>
 							</tr>
 						</table>
-						<div class="ansBox  lh180" th:if="${qna.sAnswerYn} == 'Y'" th:text="${qna.sAnswer}">
+						<div class="ansBox  lh180" th:if="${qna.sAnswerYn} == 'Y'" th:utext="${qna.sAnswer}">
 						</div>
 					</div>
 				</div>
