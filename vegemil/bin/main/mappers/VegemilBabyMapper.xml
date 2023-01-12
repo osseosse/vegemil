@@ -254,7 +254,7 @@
     	Order By 
 			mbs_getdate DESC
 		LIMIT
-        	#{paginationInfo.firstRecordIndex}, 10      	
+        	#{paginationInfo.firstRecordIndex}, 16      	
 	</select>
 	
 	<!-- 육아상담 Q&A - QnA 상세조회 -->	
