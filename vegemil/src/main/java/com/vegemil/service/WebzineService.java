@@ -46,4 +46,6 @@ public interface WebzineService {
     public List<WebzineDTO> getWebzine04();
     public List<WebzineDTO> getWebzine05();
     public List<WebzineDTO> getWebzine06();
+    
+    public List<WebzineDTO> getWebzineSearchList(SearchDTO params);
 }

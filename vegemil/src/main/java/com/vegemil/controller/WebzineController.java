@@ -767,4 +767,40 @@ public class WebzineController extends UiUtils {
 		return "webzine/theme";
 	}
 	
+	@GetMapping("/webzine/searchNew")
+	public String getSearchNewPage(Model model) {
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		
+		model.addAttribute("webzineListQY", webzineListQY);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		model.addAttribute("webzineYear", webzineYear);
+		
+		return "webzine/searchNew";
+	}
+	
+	@PostMapping("/webzine/searchNew")
+	public String getSearchNewList(Model model, SearchDTO params) {
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+		
+		model.addAttribute("webzineListQY", webzineListQY);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		model.addAttribute("webzineYear", webzineYear);
+		
+		List<WebzineDTO> webzineListSearch = webzineService.getWebzineSearchList(params);
+		model.addAttribute("searchKeyword", params.getSearchKeyword());
+		model.addAttribute("webzineListSearch", webzineListSearch);
+		
+		return "webzine/searchNew";
+	}
+	
 }

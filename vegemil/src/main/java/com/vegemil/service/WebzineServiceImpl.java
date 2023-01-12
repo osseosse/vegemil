@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.vegemil.paging.PaginationInfo;
 import com.vegemil.domain.WebzineDTO;
 import com.vegemil.domain.WebzineEventDTO;
+import com.vegemil.domain.FactpostDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
 import com.vegemil.mapper.CustomerMapper;
@@ -209,6 +210,23 @@ public class WebzineServiceImpl implements WebzineService {
 		webzineList = webzineMapper.selectWebzine06();
         return webzineList;
     }
-	
+
+	@Override
+	public List<WebzineDTO> getWebzineSearchList(SearchDTO params) {
+		
+		List<WebzineDTO> webzineList = Collections.emptyList();
+		
+		int count = webzineMapper.selectWebzineSearchCount(params);
+		
+		PaginationInfo paginationInfo = new PaginationInfo(params);
+		paginationInfo.setTotalRecordCount(count);
+		params.setPaginationInfo(paginationInfo);
+		
+		if(count>0) {
+			webzineList = webzineMapper.selectWebzineSearchList(params);
+		}
+        return webzineList;
+	}
+
 
 }

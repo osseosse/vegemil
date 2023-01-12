@@ -58,4 +58,8 @@ public interface WebzineMapper {
 	public List<WebzineDTO> selectWebzine05();
 	public List<WebzineDTO> selectWebzine06();
 	
+	public List<WebzineDTO> selectWebzineSearchList(SearchDTO params);
+	public int selectWebzineSearchCount(SearchDTO params);
+	
+	
 }

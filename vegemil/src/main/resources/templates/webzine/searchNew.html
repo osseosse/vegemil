@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title>정식품</title>
+<head th:replace="webzine/head :: headFragment"></head>
+<script type="text/javascript">	
+//<![CDATA[
+	
+	function onselChanged(){
+
+		var selectedValue = $('#selectYear option:selected').val();
+		$('#selectYear option:selected').attr("selected");	
+		location.href="lastlistNew?year="+selectedValue;							
+			
+	}	
+	
+	$(function(){
+		var q1 = "[[ ${q1} ]]";
+		var q2 = "[[ ${q2} ]]";
+		var q3 = "[[ ${q3} ]]";
+		var q4 = "[[ ${q4} ]]";
+		
+	    if(q1 == '0'){
+               $('#q1').hide();
+           }
+           if(q2 == '0'){
+               $('#q2').hide();
+           }
+           if(q3 == '0'){
+               $('#q3').hide();
+           }
+           if(q4 == '0'){
+               $('#q4').hide();
+           }
+	});
+//]]>
+</script>
+<body>
+<!-- ================================ Header ================================ --> 
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+	<!-- ================================ Content ================================ -->
+	<div id="wrapper">
+		<!-- content-holder -->
+		<div class="content-holder1">
+			<!--Content -->
+			<div class="content h550-3 home-content">
+				<!-- hero-content -->
+				<div class="hero-content fl-wrap h550-3">
+					<!-- IMG -->
+					<div class="bg-search" />
+				</div>
+			</div>
+			<!-- hero-content end-->
+		</div>
+		<!-- content  end -->
+
+
+		<div class="content">
+			<section>
+				<div class="wrap-inner2">
+					<div class="container">
+						<div class="project-detail-wrap fl-wrap bg-pink3 container-sub80p">
+							<div class="row ">
+								<div class="col-md-12">
+									<div class="mt50-m mb50-m searchBoxp">
+										<form th:action="@{/webzine/searchNew}" method="post">
+											<img id="btnSearch" class="btn_search" alt="검색"
+												src="https://image.edaymall.com/images/dcf/webzine/common/btn_search_p2.gif"/> 
+											<input name="searchKeyword" type="text" id="searchKeyword" class="search-p" placeholder="찾으시는 검색어를 입력하세요" th:value="${searchKeyword}"> 
+											<input type="submit" hidden="hidden" >
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="row ">
+								<div class="col-md-12 bg-g ">
+									<th:block th:if="${not #strings.isEmpty(searchKeyword)}">
+										<p class="type26 center" th:text='|"${searchKeyword}"|' ></p>
+										<p class="type27 center mt20-m">
+											검색하신 결과는 총 <span th:text="${#lists.size(webzineListSearch)}"></span>건입니다.
+										</p>
+									</th:block>
+									<th:block th:if="${#strings.isEmpty(searchKeyword)}">
+										<p class="type26 center"></p>
+										<p class="type27 center mt20-m"></p>
+									</th:block>
+									<!-- 디폴트 내용없이 클래스는 유지 -->
+									<!-- <p class="type27 center mt20-m">검색하신 결과는 총 3건입니다.</p><!-- 디폴트 내용없이 클래스는 유지 -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //container -->
+					<div class="container">
+						<div class="project-detail-wrap fl-wrap bg-w2 container-sub ">
+							<div class="row intxt">
+								<div class="col-md-12 mt50-m ">
+										<table>
+											<th:blcok th:each="item:${webzineListSearch}">
+												<dl class="search_txt mb50-m">
+													<dt class="search_title">
+														<a href="#" th:href="|/webzine/${item.qrtYear}/${item.fileNo}|"> 
+															<font color=mediumblue style='FONT-SIZE: 10pt' face='굴림'>
+																<u><b th:text="${item.title}"></b></u>
+															</font> 
+														</a>&nbsp;&nbsp;
+														<font color=gray th:text="|[${#strings.substringAfter(item.qrtYear,'_')}년 ${#strings.substring(item.qrtYear,1,2)}분기]|" ></font>
+													</dt>
+													<dd class="search_content">
+														<font color=black th:text="${item.remark}">
+														</font>
+													</dd>
+												</dl>
+											</th:block>
+										</table>
+								</div>
+							</div>
+							<!--//row-->
+						</div>
+					</div>
+					<!-- //container -->
+				</div>
+				<!-- //wrap-inner2 -->
+			</section>
+		</div>
+		<!-- ================================ Footer ================================ -->
+		<footer th:replace="webzine/mainFooter :: footerFragment"></footer>
+		<!-- ================================ // Footer ================================ -->
+	</div>
+	<!-- ================================ //Content ================================ -->
+</body>
+</html>

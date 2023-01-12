@@ -386,5 +386,33 @@
          and 
          	cust_email = #{custEmail}
     </select>
-
+	
+	<select id="selectWebzineSearchList" resultType="com.vegemil.domain.WebzineDTO" parameterType="com.vegemil.domain.SearchDTO" >
+		SELECT
+			<include refid="webzineColumns" />
+		FROM 
+			m_webzine
+		<if test="searchKeyword != null and searchKeyword != ''">
+		WHERE 
+           <!-- 전체 검색일 때 때 -->
+       		title LIKE CONCAT('%', #{searchKeyword}, '%')
+           	OR sns_title LIKE CONCAT('%', #{searchKeyword}, '%')
+           	OR remark LIKE CONCAT('%', #{searchKeyword}, '%')
+		</if>
+		ORDER BY 
+			index_no desc
+	</select>
+	<select id="selectWebzineSearchCount" resultType="int" parameterType="com.vegemil.domain.SearchDTO" >
+		SELECT
+			COUNT(*)
+		FROM 
+			m_webzine
+		<if test="searchKeyword != null and searchKeyword != ''">
+		WHERE 
+           <!-- 전체 검색일 때 때 -->
+       		title LIKE CONCAT('%', #{searchKeyword}, '%')
+           	OR sns_title LIKE CONCAT('%', #{searchKeyword}, '%')
+           	OR remark LIKE CONCAT('%', #{searchKeyword}, '%')
+		</if>
+	</select>
 </mapper>
