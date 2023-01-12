@@ -45,10 +45,10 @@
 										<div class="list_open_01">
 											<div class="cate_content">
 												<ul class="cate_ul_list">
-													<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+													<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 													<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-													<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
 													<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+													<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
 													<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 												</ul>
 											</div>
@@ -69,7 +69,7 @@
 										<div class="list_open_02">
 											<div class="cate_content">
 												<ul class="cate_ul_list2">
-													<li><a th:href="@{/vegemilBaby/magazine}">육아정보</a></li>
+													<li><a th:href="@{/vegemilBaby/magazine?category=all}">육아정보</a></li>
 													<li><a th:href="@{/vegemilBaby/qna}">육아상담
 															Q&amp;A</a></li>
 													<li><a th:href="@{/vegemilBaby/recipe}">영&middot;유아식
@@ -181,7 +181,7 @@
 							<li id="pb07"><a th:href="@{/vegemilBaby/magazine?category=pb&subCategory=pb07}">산후 관리<span
 									th:text="|(${categoryCount.pb07})|"></span></a></li>
 						</ul>
-						<ul class=" btn_ch20 menu09" id="gh" style="display: none">
+						<ul class=" btn_ch20 menu09" id="gh" style="display: none;">
 							<li id="gh00" class="active"><a th:href="@{/vegemilBaby/magazine?category=gh}">전체</a></li>
 							<li id="gh01"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh01}">1~3개월<span
 									th:text="|(${categoryCount.gh01})|"></span></a></li>
@@ -197,8 +197,7 @@
 									th:text="|(${categoryCount.gh06})|"></span></a></li>
 							<li id="gh07"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh07}">3세 이상<span
 									th:text="|(${categoryCount.gh07})|"></span></a></li>
-							<li id="gh08"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh08}">영유아 건강관리<span
-									th:text="|(${categoryCount.gh08})|"></span></a></li>
+							<li id="gh08"><a th:href="@{/vegemilBaby/magazine?category=gh&subCategory=gh08}" th:text="|영유아 건강관리 (${categoryCount.gh08})|"></a></li>
 						</ul>
 						<ul class=" btn_ch20 menu03" id="pe" style="display: none">
 							<li id="pe00" class="active"><a th:href="@{/vegemilBaby/magazine?category=pe}">전체</a></li>

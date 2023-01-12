@@ -10,6 +10,7 @@ import lombok.Setter;
 public class VegemilBabyCommunityDTO extends CommonDTO {
 
 	private Long mbsIdx;
+	private Long mbsLastidx;
 	private String mbsMCategory; 
 	private String mbsCategory; 
 	private String mbsImage; 

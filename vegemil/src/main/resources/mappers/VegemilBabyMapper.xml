@@ -214,7 +214,8 @@
 	<!-- 육아정보 - 육아정보 상세조회 -->	
 	<select id="selectMagazineDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
-			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category, mbs_ange, mbs_ange_html 
+			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category, mbs_ange, mbs_ange_html,
+			(select MAX(mbs_idx) mbs_idx from m_edit_brandbaby) mbs_lastidx 
 		FROM 
 			m_edit_brandbaby
 		WHERE 

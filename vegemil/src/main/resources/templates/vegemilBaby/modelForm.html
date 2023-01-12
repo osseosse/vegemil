@@ -48,11 +48,11 @@
 										<div class="list_open_01">
 											<div class="cate_content">
 												<ul class="cate_ul_list">
-													<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+													<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 													<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-													<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-													<li><a th:href="@{/vegemilBaby/e_magazine}"> Community</a></li>
-													<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+													<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+													<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
+													<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 												</ul>
 											</div>
 										</div>
@@ -71,8 +71,8 @@
 											<div class="cate_content">
 												<ul class="cate_ul_list2">
 													<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-													<li><a th:href="@{/vegemilBaby/event_review_best}">후기이벤트</a></li>
-													<li><a th:href="@{/vegemilBaby/event_model}">아기모델선발대회</a></li>
+													<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+													<li><a th:href="@{/vegemilBaby/event_model}">아기모델 선발대회</a></li>
 													<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
 												</ul>
 											</div>
@@ -138,7 +138,7 @@
                                          <li class="f17_4">매월 1일 부터 매월 22일 까지 접수 가능합니다.</li>
                                          <li>
 										    <dl class="divideType01 f17_4">
-											    <dd>이름</dd>
+											    <dd>이름 <span class="red_dot">*</span></dd>
 											    <dd class="mt10"><input type="text" id="cName" name="cName" th:value="${member.mName}"></dd>
 										    </dl>
                                         </li>
@@ -154,7 +154,7 @@
                                         </li>
                                         <li>
 				                            <dl class="divideType01 f17_4">
-					                            <dd>주소</dd>
+					                            <dd>주소 <span class="red_dot">*</span></dd>
 					                            <dd class="linkType f17_3_g mt10m">
 						                            <input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" readonly/>&nbsp
 						                            <img id=imgZipcode class="veM" name="imgZipcode"  onclick=javascript:execPostcode(); alt="우편번호검색" align="top" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_zip.jpg"><br>
@@ -166,14 +166,14 @@
 		                            	</li>
 								    	<li>
 										    <dl class="divideType01 f17_4">
-											    <dd>E-mail</dd>
-											    <dd class="mt10m"><input type="text" id="cEmail" name="cEmail" th:value="${member.mEmail}"></dd>
+											    <dd>E-mail <span class="red_dot">*</span></dd>
+											    <dd class="mt10m"><input type="text" id="cEmail" name="cEmail" th:value="${member.mEmail}" required></dd>
 										    </dl>
                                         </li>
                                         
                                         	<li class="fileBox">
                                                 <p class="f17_3">달력모델 지원사진을 첨부해주세요. (베지밀 제품 노출 필수! 2000px이상) <span class="red_dot">*</span><br>베지밀과 함께한 우리아이 사진을 올려주세요. 제품이 포함되지 않으면 당첨자 선정에 제외될 수 있습니다.</p>
-												<input id="frm_Photo_i" type="file" accept=".png,.gif,.jpg" name="fileName1">
+												<input id="frm_Photo_i" type="file" accept=".png,.gif,.jpg" name="fileName1" required>
 												<p class="mt10 f14_3"></p>
                                             </li>
                                             

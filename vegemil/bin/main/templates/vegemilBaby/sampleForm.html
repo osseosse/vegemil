@@ -9,27 +9,39 @@
 <!-- ================================ // Header ================================ -->
  <div id="wrap">	
 <script>
-	 function modelSelNumSam(){	  
+	 function modelSelNumSam(){	 
+		if(jQuery('select[id=selCountChild]').val() == "0"){
+		$('#bg_y01').attr('style', 'display:none');
+		$('#bg_y02').attr('style', 'display:none');
+		$('#bg_y03').attr('style', 'display:none');					
+		}
 	    if(jQuery('select[id=selCountChild]').val() == "1"){
+		$('#bg_y01').attr('style', 'display:block');
 		$('#bg_y02').attr('style', 'display:none');
 		$('#bg_y03').attr('style', 'display:none');	
 		}
 		else if(jQuery('select[id=selCountChild]').val() == "2"){
+		$('#bg_y01').attr('style', 'display:block');
 		$('#bg_y02').attr('style', 'display:block');	
 		$('#bg_y03').attr('style', 'display:none');	
 		}
-		else{
-		$('#').attr('style', 'display:block');	
+		else if(jQuery('select[id=selCountChild]').val() == "3"){
+		$('#bg_y01').attr('style', 'display:block');
+		$('#bg_y02').attr('style', 'display:block');	
 		$('#bg_y03').attr('style', 'display:block');	
-		}	   
+		}
 	 }
 	
 	 function mmmm_write(){	 
 	 }
 	 
 	
-	function getMaterDate() {
-			
+	function getMaterDate() {		
+			if(jQuery('select[id=selCountChild]').val() == "0"){
+				alert("자녀 출생정보를 입력해주세요!");
+				event.preventDefault();
+				return false;
+			}	
 	 		var sMaterYear1 = document.getElementById("sMaterYear1").value;
 	   	 	var sMaterMonth1 = document.getElementById("sMaterMonth1").value;
 	   	 	var sMaterDate1 = document.getElementById("sMaterDate1").value;
@@ -120,8 +132,8 @@
 												<div class="cate_content">
 													<ul class="cate_ul_list2">
 														<li><a href="/vegemilBaby/bv_event">진행 중 이벤트</a></li>
-														<li><a href="/vegemilBaby/event_review_form2">후기이벤트</a></li>
-														<li><a href="/vegemilBaby/event_model">아기모델선발대회</a></li>
+														<li><a href="/vegemilBaby/event_review_form2">후기 이벤트</a></li>
+														<li><a href="/vegemilBaby/event_model">아기모델 선발대회</a></li>
 														<li><a href="/vegemilBaby/sample2">샘플신청</a></li>
 													</ul>
 												</div>
@@ -184,7 +196,7 @@
 											<dl class="divideType01 f17_4">
 												<dd>주소</dd>
 												<dd class="linkType f17_3_g">
-												<input type="text" name="sAddr1" th:value="|${member.mAddr1} ${member.mAddr2}|" readonly="readonly" maxlength="30" style="border:none"/>													
+												<input type="text" name="sAddr1" th:value="|${member.mAddr1} ${member.mAddr2}|" readonly="readonly" maxlength="30" style="border:none; width:100%"/>													
 												<p class="mt10 f14_3"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;이달의 모델 및 참가상 선정 시 상품 배송 정보로 사용됩니다. 신청 전 변경해야 하며 <a th:href="@{/mypage/myInfo}">[회원정보변경]</a>을 이용해주세요.</p></dd>
 											</dl>
                                            </li>                                            
@@ -251,7 +263,7 @@
                                           </li> 
                                           
                                        
-										<li class="bg_y2">
+										<li class="bg_y1" id="bg_y01" style="display:none">
 											<dl class="divideType01 f17_4">
 												<dd>첫째자녀 출생일(예정일)</dd>
 												<dd class="divideType02">
@@ -332,7 +344,7 @@
 											</dl>
                                            </li>
                                            
-										<li class="bg_y2" id="bg_y02">
+										<li class="bg_y2" id="bg_y02" style="display:none">
 											<dl class="divideType01 f17_4" id="divideType02">
 												<dd>둘째자녀 출생일(예정일)</dd>
 												<dd class="divideType02">
@@ -413,7 +425,7 @@
 											</dl>
                                            </li>
                                            
-                                           <li class="bg_y3" id="bg_y03">
+                                           <li class="bg_y3" id="bg_y03" style="display:none">
 											<dl class="divideType01 f17_4" id="divideType02">
 												<dd>셋째자녀 출생일(예정일)</dd>
 												<dd class="divideType02">
@@ -495,7 +507,8 @@
                                            </li>
                                        </ul>
                                        
-                                       <input type="hidden" name="sYear" th:value="${#strings.substring(member.mYear, 0,10)}" />
+                                        <!-- <input  name="sYear" th:value="${member.mYear}" /> -->
+                                        <input input type="hidden" name="sYear" th:value="${#temporals.createDate(member.mYear, 'yyyyMMdd')}" /> 
                                   		<input type="hidden"  name="sTel" value=""  />
                                   		<input type="hidden"  name="sZipcode" th:value="${member.mZipcode}"/>                                      		
                                   		<input type="hidden"  name="sAddr2" th:value="${member.mAddr2}"  />                                      		
@@ -506,8 +519,8 @@
                                   		<input type="hidden"  id ="sMaterdate3" value="" name="sMaterdate3" />
                                   		
                                        <div class="col-md-12 center mt100">
-                                           <input type="image" class="submitBtn f30_5" th:src=@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg}  alt="제출하기 버튼">
                                      	</div>
+                                           <input type="image" class="submitBtn f30_5" th:src=@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg}  alt="제출하기 버튼">
                                    </fieldset>
                                </form>
                            </div>

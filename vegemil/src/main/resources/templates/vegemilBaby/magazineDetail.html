@@ -44,11 +44,11 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine}"> Community</a></li>
-														<li><a th:href="@{/vegemilBaby/faq}"> Support</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
+														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -101,7 +101,7 @@
                             <div class="detailTable mb80">
                                 <ul class="detail_lineT" id="detail_Position">
                                     <li class="detail_left">
-                                        <a th:href="@{/vegemilBaby/magazine?p=1}">
+                                        <a th:href="@{/vegemilBaby/magazine?category=all}">
                                             <div class="listMenu">
                                                 <span></span>
                                                 <span></span>
@@ -112,9 +112,24 @@
                                     </li>
                                     <li class="detail_right">
                                         <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var-1}" class="f17_4">이전</a>
-                                        <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var+1}" class="f17_4">다음</a>
+                                        <a th:with ="var=*{mbsIdx}" onclick='btnClick();' th:href="@{/vegemilBaby/magazine/detail/}+${var+1}" class="f17_4">다음</a>
+                                        
+                                        <th:block th:if="${magazineDetail.mbsIdx} != ${magazineDetail.mbsLastidx}">
+										<th:block>
                                     </li>
                                 </ul>
+                                <script>
+                                function btnClick(){
+                                	const curIdx = [[*{mbsIdx}]];
+                                	const lastIdx = [[*{mbsLastidx}]];
+                                	/* alert(curIdx);
+                                	alert(lastIdx); */
+                                	if(curIdx == lastIdx){
+                                		alert("마지막 게시글입니다!");
+                        				/* event.preventDefault();  */                               		
+                                	}
+                                }
+                                </script>
                                 <ul class="detail_lineB">
                                     <li class="detail_left">
                                         <p class="f20_4_w" th:text="*{mbsTitle}"></p>

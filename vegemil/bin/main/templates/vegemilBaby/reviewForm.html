@@ -56,10 +56,10 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
+														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
 														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
 														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 													</ul>
 												</div>
@@ -80,10 +80,10 @@
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a href="bv_event.aspx">진행 중 이벤트</a></li>
-															<li><a href="event_review_best.aspx">후기이벤트</a></li>
-															<li><a href="event_model.aspx">아기모델선발대회</a></li>
-															<li><a href="sample2.aspx">샘플신청</a></li>
+															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event_model}">아기모델 선발대회</a></li>
+															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
 														</ul>
 													</div>
 												</div>
@@ -140,17 +140,17 @@
                                            <input style="display:none" type="text" name="sUid" th:value="${loggedId}">
                                            <li>
 												<dl class="divideType01 f17_4">
-													<dd>소개글</dd>
+													<dd>소개글 <span class="red_dot">*</span></dd>
 													<dd class="mt10m">
-														<input type="text" name="sTitle">													
+														<input type="text" name="sTitle" required>													
 													</dd>
 												</dl>
                                             </li>
                                             <li>
 												<dl class="divideType01 f17_4">
-													<dd>공유 SNS</dd>
+													<dd>공유 SNS <span class="red_dot">*</span></dd>
 													<dd>														
-														<select id=sSns name="sSns">
+														<select id=sSns name="sSns" required>
 														<option value="">선택하세요</option>
 														<option value="카카오 스토리">카카오 스토리</option>
 														<option value="인스타그램">인스타그램</option>
@@ -163,14 +163,10 @@
                                             </li>
                                             <li class="fileBox">
 												<dl class="divideType01 f17_4">
-													<dd>대표사진</dd>
+													<dd>대표사진 <span class="red_dot">*</span></dd>
 													<dd>
-														 <p class="f17_3 mt10m">우리아이 대표사진1장을 등록해주세요. (3M이하 이미지를 등록)</p>
-		
-		 <!-- <input id="frm_Photo_i" class="mt10" maxlength="255" id=btn_Photo onclick=javascript:photo_link(); value="이미지 첨부" type=button name=btn_Photo> -->
-														 <!-- <input id="frm_Photo_i" class="mt10" maxlength="255" th:onclick=photo_link(); value="이미지 첨부" type=button name=btn_Photo> -->
-													    <!-- // 2020-01-17 -->
-													    <input id="frm_Photo_i"  class="mt10" type="file"  accept=".png,.gif,.jpg" name="fileName"/>
+														 <p class="f17_3 mt10m">우리아이 대표사진1장을 등록해주세요. (3M이하 이미지를 등록)</p>		
+													    <input id="frm_Photo_i"  class="mt10" type="file"  accept=".png,.gif,.jpg" name="fileName" required/>
 													    
 													</dd>
 												</dl>
@@ -180,9 +176,9 @@
                                            
                                             <li>
 												<dl class="divideType01 f17_4">
-													<dd>URL</dd>
+													<dd>URL <span class="red_dot">*</span></dd>
 													<dd class="mt10m">
-														 <input type="text" name="sUrl" id="sUrl">
+														 <input type="text" name="sUrl" id="sUrl" required>
 														 <p class="f17_3_g mt10">
 														- 영&middot;유아식과 함께하는 모습의 사진<br>
 														- 제품 이용후기<br>
@@ -195,9 +191,9 @@
                                             </li>
                                             <li>
 												<dl class="divideType01 f17_4">
-													<dd>이데이몰 ID</dd>
+													<dd>이데이몰 ID <span class="red_dot">*</span></dd>
 													<dd class="mt10m">
-													 <input type="text" name="sEdayId" id="sEdayId">
+													 <input type="text" name="sEdayId" id="sEdayId" required>
 													
 														<p class="f17_3 mt10"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;SNS 후기 참여 선물은 담당자 확인 후 입력하신 이데이몰 ID로 자동 지급됩니다. <br>
 												정식품 회원가입 시 통합 가입에 동의하지 않으신 분은 별도 가입 후 이데이몰 ID를 입력해주세요. <a href="https://www.edaymall.com/customer/memberChoice.do?joinType_flag=generalMem"> [회원가입]</a></p>
