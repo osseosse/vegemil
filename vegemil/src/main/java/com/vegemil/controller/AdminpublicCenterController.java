@@ -1,8 +1,11 @@
 package com.vegemil.controller;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,9 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminMediaNewsDTO;
-import com.vegemil.domain.AdminSaboDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminPublicCenterService;
 import com.vegemil.util.UiUtils;
@@ -38,12 +42,24 @@ public class AdminpublicCenterController extends UiUtils{
 		return "admin/publicCenter/mediaNewsAdd";
 	}
 	
-	/*
-	 * @PostMapping("/publicCenter/mediaNewsAdd")
-	 * 
-	 * @R public String moveMediaNewsAddPage() { return
-	 * "admin/publicCenter/mediaNewsAdd"; }
-	 */
+	
+	  @PostMapping("/publicCenter/mediaNewsAdd")	  
+	  @ResponseBody
+	  public Map<String, Object> saveMediaNews(@ModelAttribute("params") final AdminMediaNewsDTO params, 
+			  									Model model, HttpServletResponse response, HttpServletRequest request) throws Exception { 
+		  
+		  Map<String, Object> rtnMap = new HashMap<String, Object>();
+		  
+		  try {
+			  boolean isRegistered = adminPublicCenterService.registerMediaNews(params);
+			  rtnMap.put("result", isRegistered);
+		  } catch (DataAccessException e) {
+		  } catch (Exception e) {			
+		  }		
+		  
+		  return rtnMap;	  
+		  }
+	 
 	
 	
 	//보도자료 조회

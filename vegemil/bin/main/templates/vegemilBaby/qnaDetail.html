@@ -109,10 +109,29 @@
                                         </a>
                                     </li>                                   
                                     <li class="detail_right">
-                                        <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/qna/detail/}+${var-1}" class="f17_4">이전</a>
-                                        <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/qna/detail/}+${var+1}" class="f17_4">다음</a>
+                                        <a th:with ="var=*{mbsIdx}"  onclick='prevClick();' th:href="@{/vegemilBaby/qna/detail/}+${var-1}" class="f17_4">이전</a>
+                                        <a th:with ="var=*{mbsIdx}" onclick='nextClick();' th:href="@{/vegemilBaby/qna/detail/}+${var+1}" class="f17_4">다음</a>
                                     </li> 
-                                </ul> 
+                                </ul>
+                                <script>
+								      function nextClick(){
+								      	const curIdx = [[*{mbsIdx}]];
+								      	const lastIdx = [[*{mbsLastidx}]];                                	
+								      	if(curIdx == lastIdx){
+								      		alert("마지막 게시글입니다!");
+											event.preventDefault();                             		
+								      	}
+								      }
+								      function prevClick(){
+								      	const curIdx = [[*{mbsIdx}]];
+								      	const firstIdx = [[*{mbsFirstidx}]];                                	
+								      	if(curIdx == firstIdx){
+								      		alert("첫번째 게시글입니다!");
+											event.preventDefault();                             		
+								      	}
+								      }
+							      </script>
+                                 
                                 <ul class="detail_lineB">
                                     <li class="detail_left">
                                         <p class="f20_4_w" th:text="*{mbsTitle}"></p>

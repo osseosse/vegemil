@@ -11,6 +11,7 @@ public class VegemilBabyCommunityDTO extends CommonDTO {
 
 	private Long mbsIdx;
 	private Long mbsLastidx;
+	private Long mbsFirstidx;
 	private String mbsMCategory; 
 	private String mbsCategory; 
 	private String mbsImage; 

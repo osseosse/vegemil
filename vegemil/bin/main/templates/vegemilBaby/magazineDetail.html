@@ -9,6 +9,7 @@
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
@@ -111,25 +112,29 @@
                                         </a>
                                     </li>
                                     <li class="detail_right">
-                                        <a th:with ="var=*{mbsIdx}" th:href="@{/vegemilBaby/magazine/detail/}+${var-1}" class="f17_4">이전</a>
-                                        <a th:with ="var=*{mbsIdx}" onclick='btnClick();' th:href="@{/vegemilBaby/magazine/detail/}+${var+1}" class="f17_4">다음</a>
-                                        
-                                        <th:block th:if="${magazineDetail.mbsIdx} != ${magazineDetail.mbsLastidx}">
-										<th:block>
+                                        <a th:with ="var=*{mbsIdx}" onclick='prevClick();'th:href="@{/vegemilBaby/magazine/detail/}+${var-1}" class="f17_4">이전</a>
+                                        <a th:with ="var=*{mbsIdx}" onclick='nextClick();' th:href="@{/vegemilBaby/magazine/detail/}+${var+1}" class="f17_4">다음</a>                                                                              
                                     </li>
                                 </ul>
                                 <script>
-                                function btnClick(){
-                                	const curIdx = [[*{mbsIdx}]];
-                                	const lastIdx = [[*{mbsLastidx}]];
-                                	/* alert(curIdx);
-                                	alert(lastIdx); */
-                                	if(curIdx == lastIdx){
-                                		alert("마지막 게시글입니다!");
-                        				/* event.preventDefault();  */                               		
-                                	}
-                                }
-                                </script>
+								      function nextClick(){
+								      	const curIdx = [[*{mbsIdx}]];
+								      	const lastIdx = [[*{mbsLastidx}]];                                	
+								      	if(curIdx == lastIdx){
+								      		alert("마지막 게시글입니다!");
+											event.preventDefault();                             		
+								      	}
+								      }
+								      function prevClick(){
+								      	const curIdx = [[*{mbsIdx}]];
+								      	const firstIdx = [[*{mbsFirstidx}]];                                	
+								      	if(curIdx == firstIdx){
+								      		alert("첫번째 게시글입니다!");
+											event.preventDefault();                             		
+								      	}
+								      }
+							      </script>
+                               
                                 <ul class="detail_lineB">
                                     <li class="detail_left">
                                         <p class="f20_4_w" th:text="*{mbsTitle}"></p>
@@ -239,9 +244,31 @@
             </div>
             <!-- //container100 -->
 	    </div> <!-- //content -->
+	    
+	    
+	    
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	
+	 <!-- <script>
+	      function nextClick(){
+	      	const curIdx = [[*{mbsIdx}]];
+	      	const lastIdx = [[*{mbsLastidx}]];                                	
+	      	if(curIdx == lastIdx){
+	      		alert("마지막 게시글입니다!");
+			event.preventDefault();                             		
+	      	}
+	      }
+	      function prevClick(){
+	      	const curIdx = [[*{mbsIdx}]];
+	      	const firstIdx = [[*{mbsFirstidx}]];                                	
+	      	if(curIdx == firstIdx){
+	      		alert("첫번째 게시글입니다!");
+			event.preventDefault();                             		
+	      	}
+	      }
+      </script> -->
 	</body>
 </html>
 
