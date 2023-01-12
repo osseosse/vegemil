@@ -106,13 +106,13 @@ public class RndController extends UiUtils {
 		try {
 		
 			if(authentication == null) {
-				return showMessageWithRedirect("로그인후 이용바랍니다.", "/rnd/factory", Method.GET, null, model);
+				return showMessageWithRedirect("로그인후 이용바랍니다.", "/rnd/factoryTour", Method.GET, null, model);
 			} else {
 			
 				int result = rndService.insertMvisit(visitDto); 
 		
 				if(result > 0) {
-					return showMessageWithRedirect("견학 신청이 정상적으로 접수되었습니다.", "/rnd/factory", Method.GET, null, model);
+					return showMessageWithRedirect("견학 신청이 정상적으로 접수되었습니다.", "/rnd/factoryTour", Method.GET, null, model);
 				}
 			}
 		
