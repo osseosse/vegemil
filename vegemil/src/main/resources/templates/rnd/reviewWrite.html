@@ -97,10 +97,10 @@ smartEditor = function() {
 }
 
 savePost = function() {
+	
     oEditors.getById["sContent"].exec("UPDATE_CONTENTS_FIELD", [])
     let content = document.getElementById("sContent").value
 
-    alert("진입");
     if(content == '') {
       alert("내용을 입력해주세요.")
       oEditors.getById["sContent"].exec("FOCUS")
@@ -113,13 +113,12 @@ savePost = function() {
         , sUrl: $("#sUrl").val() 
       }
 
-      alert("ajax실행");
       $.ajax({
         url: "/rnd/saveReview"
         , data: post
         , success: function(data) {
         	if(data.success == '1') {
-                alert('저장하였습니다.')
+                alert('저장되었습니다.')
                 location.href = '/rnd/tourReview';
         	} else {
         		alert(data.message);
