@@ -20,6 +20,14 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 	private AdminPublicCenterMapper adminPublicCenterMapper;
 	
 	//보도자료 등록
+	@Override
+	public boolean registerMediaNews(AdminMediaNewsDTO params) {
+		int queryResult = 0;
+		
+		//adminPublicCenterMapper.insertMediaNews(params);
+		
+		return false;
+	}
 	
 	//보도자료 조회
 	@Override
@@ -61,4 +69,6 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 		
 		return (queryResult > 0)?  true : false;
 	}
+
+
 }

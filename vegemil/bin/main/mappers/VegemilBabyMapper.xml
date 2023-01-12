@@ -215,7 +215,8 @@
 	<select id="selectMagazineDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
 			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category, mbs_m_category, mbs_ange, mbs_ange_html,
-			(select MAX(mbs_idx) mbs_idx from m_edit_brandbaby) mbs_lastidx 
+			(select MAX(mbs_idx) mbs_idx from m_edit_brandbaby WHERE mbs_active = '1') mbs_lastidx, 
+			(select MIN(mbs_idx) mbs_idx from m_edit_brandbaby WHERE mbs_active = '1') mbs_firstidx 
 		FROM 
 			m_edit_brandbaby
 		WHERE 
@@ -253,13 +254,15 @@
     	Order By 
 			mbs_getdate DESC
 		LIMIT
-        	#{paginationInfo.firstRecordIndex}, 10      	
+        	#{paginationInfo.firstRecordIndex}, 16      	
 	</select>
 	
 	<!-- 육아상담 Q&A - QnA 상세조회 -->	
 	<select id="selectQnaDetail" parameterType ="Long" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
 		SELECT 
-			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category
+			mbs_idx, mbs_content, mbs_image, mbs_title, mbs_summary, DATE_FORMAT(mbs_getdate, '%Y-%m-%d') AS mbs_getdate, mbs_category,
+			(select MAX(mbs_idx) mbs_idx from m_editQnA_brandBaby WHERE mbs_active = '1') mbs_lastidx, 
+			(select MIN(mbs_idx) mbs_idx from m_editQnA_brandBaby WHERE mbs_active = '1') mbs_firstidx 
 		FROM 
 			m_editQnA_brandBaby
 		WHERE 
