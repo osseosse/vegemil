@@ -25,4 +25,6 @@ public interface AdminCustomerMapper {
 	public List<MemberDTO> selectMemberList(Map<String, Object> paramMap);
 	
 	public MemberDTO selectMember(Long mIdx);
+	
+	public int updateMember(MemberDTO params);
 }

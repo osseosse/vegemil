@@ -92,4 +92,13 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 	public MemberDTO getMember(Long mIdx) {
 		return adminCustomerMapper.selectMember(mIdx);
 	}
+	
+	@Override
+	public boolean saveMember(MemberDTO params) {
+		int queryResult = 0;
+		
+		queryResult = adminCustomerMapper.updateMember(params);
+		
+		return (queryResult == 1) ? true : false;
+	}
 }
