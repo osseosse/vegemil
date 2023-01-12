@@ -2,6 +2,9 @@ package com.vegemil.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
@@ -54,6 +63,9 @@ public class AdminCustomerController extends UiUtils {
 	
 	@Autowired
 	private AdminCustomerService adminCustomerService;
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	@RequestMapping(value = "/admin/manage/customer/{viewName}")
     public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
@@ -340,4 +352,22 @@ public class AdminCustomerController extends UiUtils {
 
 		return showMessageWithRedirect("수정되었습니다.", "/admin/manage/customer/member", Method.GET, null, model);
 	}
+	
+	//정적 이미지 불러오기
+	@GetMapping("/web/upload/{filename}")
+	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/CUSTOMER/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
+	
 }

@@ -302,7 +302,7 @@ var createTable = function() {
 	} );
   } ).draw();
 	
-  $('div.head-label').html('<h4 class="card-title">그린비아 회원목록 </h4>');
+  $('div.head-label').html('<h4 class="card-title">회원목록 </h4>');
 
   // Delete Record
   $('.datatables-basic tbody').on('click', '.delete-record', function () {

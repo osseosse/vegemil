@@ -177,7 +177,8 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['sFile']==null)	return '-';
-      			else	return '<img src="https://www.vegemil.co.kr/Upload/CUSTOMER/'+full['sFile']+'"  + height="40" width="40" class="rounded">';
+      			else	return '<img src="/web/upload/'+full['sFile']+'"  + height="40" width="40" class="rounded">';
+      			
           }
           
         },

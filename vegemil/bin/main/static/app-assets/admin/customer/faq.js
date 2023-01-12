@@ -128,7 +128,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'faqAdd?fIdx='+full['fIdx']+ '\'">수정</button>'
+              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'/admin/manage/customer/faqAdd?fIdx='+full['fIdx']+ '\'">수정</button>'
             );
           }
           
@@ -303,7 +303,7 @@ var createTable = function() {
   } ).draw();
 	
   $('div.head-label').html('<h4 class="card-title">FAQ 글 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-                           '<button type="button" onclick="location.href=\'/admin/manage/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
+                           '<button type="button" onclick="location.href=\'/admin/manage/customer/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
 
   // Delete Record
   $('.datatables-basic tbody').on('click', '.delete-record', function () {

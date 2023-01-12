@@ -187,6 +187,10 @@
 													<span class="badge rounded-pill badge-light-warning" th:unless="${support.sAnswerYn == 'Y'}">미완료</span> 
 												</th>
 											</tr>
+											<tr>
+												<th>이메일 <span class="text-warning" th:text="${#strings.toLowerCase(support.sEmail)}"></span></th>
+												<th colspan="2">주소 <span class="text-warning" th:text="${support.sAddr}"></span></th>
+											</tr>
 
 										</thead>
 									</table>
@@ -211,7 +215,8 @@
 											<p>사진 <button type="button" class="btn btn-secondary btn-sm2" id="btnDown">다운로드</button></p> 
 											<div class="scroll-h250">
 												<p class="img100">
-													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" />
+<!-- 													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" /> -->
+													<img th:if="*{support.sFile != null}" th:src="|/web/upload/${support.sFile}|">
 												</p>
 												
 											</div>
