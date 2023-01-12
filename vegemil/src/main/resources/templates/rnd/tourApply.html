@@ -205,11 +205,9 @@
 		&& $("input:checkbox[name='agree']").is(":checked") == true
 		) 
 		{
-			alert("활성");
 			$("#submitForm").attr("disabled", false); //해제
 			$("#submitForm").addClass('active');
 		} else {
-			alert("비활");
 			$("#submitForm").attr("disabled", true); //설정
 			$("#submitForm").removeClass('active');		
 		}
