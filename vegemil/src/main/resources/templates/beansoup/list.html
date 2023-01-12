@@ -147,15 +147,14 @@
 						</div>
 						<div id="resultWord"><div class='mt50'><p class='f38 fw600 tcenter'><span class='green' th:text="${search_result_html}">'#채소'</span> 검색결과</p></div></div>
 					</th:block>
-					<div class="portfolio-grid-metro4 mesonry-list" id="searchList"
-						style="display: none;">
+					<div class="portfolio-grid-metro4 mesonry-list" id="searchList" style="display: none;">
 						<div class="resizer"></div>
 						<!-- <div id="DataList1"> -->
-						<div th:each="item : ${searchList}">
+						<th:block th:each="item : ${searchList}">
 							<div class="portfolio portfolio_style--1 portfolio-25"
 								th:classappend="${item.filter}">
 								<div class="thumbBox">
-									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
+									<a href="#" th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
 										<!--pk:fileNo -->
 										<div class="h220 round" th:classappend="${item.cssClass}">
 											<th:block th:if="${item.mCate == '온요리'}">
@@ -176,7 +175,7 @@
 									</a>
 								</div>
 							</div>
-						</div>
+						</th:block>
 						<!-- </div> -->
 					</div>
 					<!-- 메인 전체리스트 -->
