@@ -29,7 +29,7 @@
 			<ul class="submenuUL">
 				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
 				<li class="f18 fw500 active"><a href="/rnd/factoryTour"><span>견학신청</span></a></li>
-				<li class="f18 fw500"><a href="/rnd/factoryReview"><span>견학 후기</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/tourReview"><span>견학 후기</span></a></li>
 			</ul>
 			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
 		</div>
@@ -40,66 +40,6 @@
     </div><!--//contant1460-->
     <div class="contant1160 mt80">
 	    <div>
-            <div class="col-md-12 underLineG">
-                <p class="underLineB f27 fw500">공장견학 안내</p>
-                <p class="gray04 f18 mt80 center">
-                    견학신청은 아래 정보를 잘 숙지 하시어 신청하시기 바라며 늦어도 견학 희망일 10일 이전에 가능 여부를 알려 드립니다.<br class="none">
-                    학생의 경우 학교측의 인솔하에 견학이 가능합니다. 혹한기(12, 1, 2월)와 혹서기(7, 8월)에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.
-                </p>
-                <table class="mt50 round20 grayBox06 mb60">
-                    <caption>공장견학 안내</caption>
-                    <colgroup>
-                        <col style="width: 30%;">
-                        <col style="width: 70%;">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <td class="f18">견학 대상 및 인원</td>
-                            <td class="f16">
-                               견학을 희망하는 단체 (초등학교 고학년 이상) 최소 20명 ~ 최대 40명 입니다.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">견학 신청 안내</td>
-                            <td class="f16">
-                               매월 15일 이전 신청 시 다음달 공장견학 가능, 매월 16일 이후 신청 시 다음 다음달 공장견학 가능<br>
-                               <span class="gray04 f14">
-                                   예) 2017년 1월 16일~2월 15일 신청시 &gt; 3월 견학가능 / 2017년 2월 16일~3월 15일 신청시 &gt; 4월 견학가능
-                               </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">견학 일정 안내</td>
-                            <td class="f16">
-                                <span class="whiteBox f14">10:30~12:00 견학</span>
-                                <span class="gray04">
-                                    오전에 견학을 희망하시는 경우 청주 공장에 <u class="black">AM10:30 까지</u> 도착하셔야 합니다.
-                                </span><br>
-                                <span class="whiteBox f14">13:00~14:30 견학</span>
-                                <span class="gray04">
-                                    오후에 견학을 희망하시는 경우 청주 공장에 <u class="black">PM13:00 까지</u> 도착하셔야 합니다.
-                                </span><br>
-                                <span class="gray04 f14">
-                                   ※ 차량 및 식사는 제공하지 않으며 견학자에 대해 선물증정이 있습니다.
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">문의처</td>
-                            <td class="f16">
-                                <span class="whiteBox02">정식품 고객지원팀 <span class="f_pp">02-553-8888</span></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="f18">견학 후기 안내</td>
-                            <td class="f16">
-                                <a href="" class="deco">견학후기</a>를 남겨주시면 추첨하여, 소정의 제품을 드립니다.
-                            </td>
-                        </tr>
-                    </tbody>
-               </table>
-            </div>
-			<!-- 2023-01-03 견학신청폼 -->
 			<div class="col-md-12 mt100">
 				<p class="f27 fw500">견학 신청</p>
 				<div class="grayLine mt10"></div>
@@ -207,15 +147,13 @@
 								<li>
 									<input name="txtZipcode" class="inp03 " type="text" th:value="${member.mZipcode}" maxlength="5" id="cZipcode"  onclick="javascript:execPostcode();" readonly="readonly" placeholder="우편번호입력">
 									<button type="button" class="btnType09 ml10"  onclick="javascript:execPostcode();" id=imgZipcode >우편번호검색</button>
-									<!--<img style="CURSOR:pointer" id="imgZipcode" class="veM" name="imgZipcode" onclick="javascript:EditZipcodeNew();" alt="우편번호검색" align="top" src="../images/btn/btn_zip.gif">
-									--><br>
-	
+									<!--<img style="CURSOR:pointer" id="imgZipcode" class="veM" name="imgZipcode" onclick="javascript:EditZipcodeNew();" alt="우편번호검색" align="top" src="../images/btn/btn_zip.gif">-->
+									<br>
 									<input name="txtAddr1" id="cAddr1" class="inp02 mt10 w700 " type="text" th:value="${member.mAddr1}" maxlength="150" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다." readonly>
 									<input name="txtAddr2" id="cAddr2" class="inp02 mt10 w700 " type="text" th:value="${member.mAddr2}" maxlength="150" placeholder="상세주소를 입력해 주세요"  >
 									<p class="error" id="cAddrCheack" style="display: none;">주소를 입력해 주세요</p>
 								</li>
 							</ul>
-							
 							<ul>
 								<li>메모</li>
 								<li>
@@ -241,9 +179,6 @@
 					</div>
 				</div><!-- //w860 -->
 			</div>
-			<!-- //2023-01-03 견학신청폼 -->
-			
-		
 		</div>
 	</div><!--//contant1160-->
 </div>
