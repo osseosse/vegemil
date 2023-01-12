@@ -274,23 +274,26 @@ public class MypageController extends UiUtils {
 				diKey = pccDi;
 			}
 			//-----------------------pcc 결과값--------------------------
-			
-			member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-			if(step == 1) {
-				diKey = memberService.getDiKey(member.getMIdx());
-				model.addAttribute("mDi", diKey);
-				model.addAttribute("step", 1);
-			} else if(step == 2) {
-				member.setMName(pccName);
-				member.setMSex(pccSex);
-				member.setMYear(pccBirymd);
-				member.setMHp(pccCellno);
-				member.setMDi(diKey);
-				model.addAttribute("step", 2);
-			} else {
-				out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
-				out.flush();
-				return showMessageWithRedirect("올바르지 않은 접근입니다.", "/mypage/list", Method.GET, null, model);
+			if(authentication != null) {
+				member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+				member = memberService.getMember(member.getMIdx());
+				if(step == 1) {
+					diKey = memberService.getDiKey(member.getMIdx());
+					model.addAttribute("mDi", diKey);
+					model.addAttribute("step", 1);
+				} else if(step == 2) {
+					member.setMName(pccName);
+					member.setMSex(pccSex);
+					member.setMYear(pccBirymd);
+					member.setMHp(pccCellno);
+					member.setMDi(diKey);
+					model.addAttribute("step", 2);
+				} else {
+					out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
+					out.flush();
+					return showMessageWithRedirect("올바르지 않은 접근입니다.", "/mypage/list", Method.GET, null, model);
+				}
+				
 			}
 			
 			model.addAttribute("member", member);

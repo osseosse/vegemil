@@ -190,6 +190,15 @@
 		WHERE
 			m_idx = #{mIdx}
 	</update>
+	
+	<select id="selectMember" parameterType="Long" resultType="com.vegemil.domain.MemberDTO">
+		SELECT
+			<include refid="memberColumns" />
+		FROM
+			m_member
+		WHERE
+			m_idx = #{mIdx}
+	</select>
 
 	<select id="selectMemberList" parameterType="com.vegemil.domain.MemberDTO" resultType="com.vegemil.domain.MemberDTO">
 		SELECT

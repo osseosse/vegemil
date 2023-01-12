@@ -4,6 +4,9 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품</title>
 <head th:replace="fragments/head :: headFragment"></head>
+<style>
+	.tr { display:none; }
+</style>
 <body>
 <!-- ================================ Header ================================ -->
 <th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
@@ -38,7 +41,6 @@
 						<!-- <li class="f18"><a href="#">공장견학 신청</a></li> -->
 						<li class="f18"><a href="/vegemilBaby/sample">샘플신청</a></li>
 					</ul>
-					
 				</div>
 				<div class="col-md-8 mt50m">
 					<ul class="my_subTitle">
@@ -59,7 +61,7 @@
 								<th>질문내용</th>
 								<th>작성일</th>
 							</tr>
-							<tr th:if="${not #lists.isEmpty( qnaList )}" th:each="qna : ${qnaList}">
+							<tr class="tr" th:if="${not #lists.isEmpty( qnaList )}" th:each="qna, i : ${qnaList}">
 								<td><p class="cate" th:text="${qna.sCate}"></p></td>
 								<td>
 									<a th:href="|/mypage/answer?sIdx=${qna.sIdx}|"><div class="titletxt" th:text="${qna.sSubject}"></div></a>
@@ -69,7 +71,7 @@
 								<td class="day f_pp" th:text="${qna.sWritedate}"></td>
 							</tr>
 						</table>
-						<p class="center mt20"><button type="text" class="btnType13" ><span class="f14 fw400 gray04">+ 더보기</span></button></p>
+						<p class="center mt20"><button type="button" class="btnType13" id="load" ><span class="f14 fw400 gray04">+ 더보기</span></button></p>
 					</div>
 					<!-- 생플신청 내역 -->
 					<p class="f20 fw400 mt50">샘플 신청내역</p>
@@ -84,7 +86,6 @@
 										<dd><p >베지밀 인펀트 우리콩 3단계</p><span class="stype03"><a href="/vegemilBaby/sample/form?sItem=TO3" th:text="${isSample3 == false ? '신청가능': '신청완료'}"></a></span></dd>
 									</dl>
 								</div>
-
 							</li>
 							<!-- 
 							<li class="mt30">
@@ -116,5 +117,17 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script>
+$(function(){
+    $(".tr").slice(0, 3).show(); // 초기갯수
+    $("#load").click(function(e){ // 클릭시 more
+        e.preventDefault();
+        $("tr:hidden").slice(0, 3).show(); // 클릭시 more 갯수 지저정
+        if($("tr:hidden").length == 0){ // 컨텐츠 남아있는지 확인
+            alert("게시물의 끝입니다."); // 컨텐츠 없을시 alert 창 띄우기 
+        }
+    });
+});
+</script>
 </body>
 </html>

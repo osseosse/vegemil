@@ -93,9 +93,6 @@
 		if(fileNum == '01') {
 			alert("첫번째 기사입니다.");
 			return false;
-		} else if(fileNum == '14') {
-			alert("마지막 기사입니다.");
-			return false;
 		} else {
 			if(beforeNo <= 9) {
 				document.location.href="/webzine/"+qrter+"/sub0"+beforeNo;
@@ -106,10 +103,7 @@
     });
 	
 	$('#btnNext').on("click", function() {
-		if(fileNum == '01') {
-			alert("첫번째 기사입니다.");
-			return false;
-		} else if(fileNum == '15') {
+		if(fileNum == '15') {
 			document.location.href="/webzine/event/"+qrter;
 		} else {
 			if(afterNo <= 9) {

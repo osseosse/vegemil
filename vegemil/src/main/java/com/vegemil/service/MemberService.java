@@ -62,6 +62,14 @@ public class MemberService implements UserDetailsService  {
 		return mId;
 	}
 	
+	public MemberDTO getMember(Long mIdx) {
+		
+		MemberDTO member;;
+		member = memberMapper.selectMember(mIdx);
+
+		return member;
+	}
+	
 	public List<MemberDTO> getMemberList(MemberDTO params) {
 		List<MemberDTO> memberList = Collections.emptyList();
 

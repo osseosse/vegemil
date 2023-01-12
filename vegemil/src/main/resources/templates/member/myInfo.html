@@ -65,19 +65,19 @@
 						</ul>
 						<ul>
 							<li>성별</li>
-							<li><input type="text" readonly id="mSex" name="mSex" th:value="*{mSex == 'M' ? '남' : '여'}" class="inp02 w200"></li>
+							<li><input type="text" readonly id="mSex" name="mSex" th:value="*{mSex}" class="inp02 w200"></li>
 						</ul>
 						<ul>
 							<li>생년월일</li>
 							<li><input readonly type="text" th:field="*{mYear}" class="inp02 w200" placeholder="0000-00-00"></li>
 						</ul>
 						<ul>
-							<li>휴대전화</li>
+							<li></li>
 							<li>
 								<input type="hidden" class="inp03 w200" th:field="*{mHp}">
 								<input readonly type="text" class="inp03 w120" th:value="${#strings.substring(member.mHp, 0, 3)}">
 								- <input readonly type="text" class="inp03 w130" th:value="${#strings.substring(member.mHp, 3, 7)}">
-								- <input readonly type="text" class="inp03 w130" th:value="${#strings.substring(member.mHp, 7, 11)}"><button type="button" onclick="joinHPCheck()" class="btnType09 ml10">휴대번호 번경</button>
+								- <input readonly type="text" class="inp03 w130" th:value="${#strings.substring(member.mHp, 7, 11)}"><button type="button" onclick="joinHPCheck()" class="btnType09 ml10">번호 변경</button>
 							</li>
 						</ul>
 						<ul>
@@ -96,7 +96,7 @@
 						<ul>
 							<li>주소</li>
 							<li>
-								<input name="txtZipcode" class="inp03" type="text" readonly th:field="*{mZipcode}" maxlength="5" placeholder="우편번호"><button type="button" onclick="execPostcode()" class="btnType09 ml10">우편번호검색</button><br>
+								<input name="txtZipcode" class="inp03" type="text" readonly th:field="*{mZipcode}" maxlength="5" placeholder="우편번호"><button type="button" onclick="execPostcode()" class="btnType09 ml10">우편번호 검색</button><br>
 								<input name="txtAddr1" class="inp02 mt10 w700" type="text" th:field="*{mAddr1}" maxlength="50" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
 								<input name="txtAddr2" class="inp02 mt10 w700" type="text" th:field="*{mAddr2}" placeholder="상세주소를 입력해 주세요" maxlength="30">
 							</li>

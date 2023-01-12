@@ -26,6 +26,8 @@ public interface MemberMapper {
 
 	public String selectMemDiKey(Long mIdx);
 	
+	public MemberDTO selectMember(Long mIdx);
+	
 	public List<MemberDTO> selectMemberList(MemberDTO params);
 
 	public int selectMemberTotalCount(MemberDTO params);
