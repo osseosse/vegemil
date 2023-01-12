@@ -118,24 +118,24 @@
 				sns-menu -->
 				<ul class="tools" id="buttons2">
 					<li class="shop" ><a href="http://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000029&pCateCode=20000002" class="hvr-float"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_shop2.png" alt="샵"/><p>SHOP</p></a></li>
-					<li class="login" sec:authorize="isAnonymous()">
-							<a th:href="@{/member/login}" class="hvr-float">
-							<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png"/>		
-							<p>LOGIN</p>
-							</a>							
-					</li>										
+<!-- 					<li class="login" sec:authorize="isAnonymous()"> -->
+<!-- 							<a th:href="@{/member/login}" class="hvr-float"> -->
+<!-- 							<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png"/>		 -->
+<!-- 							<p>LOGIN</p> -->
+<!-- 							</a>							 -->
+<!-- 					</li>										 -->
 					<li sec:authorize="isAnonymous()">
 						<a th:href="@{/member/join}" class="hvr-float">
 							<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_love2.png" alt="조인"/>
 							<p>JOIN</p>						
 						</a>					
 					</li>				
-				    <li sec:authorize="isAuthenticated()">
-				    	<a th:href="@{/member/logout}" class="hvr-float">
-				    		<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png" alt="로그아웃"/>				    	
-				    		<p>LOGOUT</p>
-				    	</a>
-			    	</li>
+<!-- 				    <li sec:authorize="isAuthenticated()"> -->
+<!-- 				    	<a th:href="@{/member/logout}" class="hvr-float"> -->
+<!-- 				    		<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png" alt="로그아웃"/>				    	 -->
+<!-- 				    		<p>LOGOUT</p> -->
+<!-- 				    	</a> -->
+<!-- 			    	</li> -->
 			    	 <!-- <li><a sec:authorize="isAuthenticated()" th:href="@{/mypage/list}">마이페이지</a></li> -->						
 					<li class="sns"><a href="https://www.facebook.com/vegemilgood" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/snsBtn_01_off.png" alt="페이스북"/></a></li>
 					<li class="sns"><a href="https://blog.naver.com/PostList.nhn?blogId=vegemilstory" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/snsBtn_02_off.png" alt="블로그"/></a></li>
