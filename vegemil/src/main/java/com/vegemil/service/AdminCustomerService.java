@@ -18,4 +18,6 @@ public interface AdminCustomerService {
 	public DataTableDTO getMemberList(Map<String, Object> paramMap);
 	
 	public MemberDTO getMember(Long mIdx);
+	
+	public boolean saveMember(MemberDTO params);
 }

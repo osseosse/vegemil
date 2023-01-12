@@ -63,7 +63,7 @@
 	
 	<update id="updateGreenbiaMember" parameterType="com.vegemil.domain.MemberDTO">
 		 /* updateGreenbiaMember by AdminCustomerMapper.xml */ 
-		<if test='mActive == "0" '>
+		<if test='mActive == "1" '>
 		UPDATE m_member 
 		SET 
 		    m_sex = #{mSex},
@@ -72,14 +72,14 @@
 		    m_emailsend = #{mEmailsend},
 		    m_type = #{mType},
 		    m_greenbia_pay = #{mGreenbiaPay},
-		    m_smsend = #{mSmsend},
+		    m_smssend = #{mSmssend},
 		    m_active = #{mActive},
 		    m_leavedate = NOW(),
 		    m_leavememo = #{mLeavememo}
 		WHERE
 		    m_idx = #{mIdx}
 		</if>
-		<if test='mActive == "1" '>
+		<if test='mActive == "0" '>
 		UPDATE m_member 
 		SET 
 		    m_sex = null,
@@ -94,7 +94,7 @@
 		    m_emailsend = null,
 		    m_type = null,
 		    m_greenbia_pay = null,
-		    m_smsend = null,
+		    m_smssend = null,
 		    m_active = 0,
 		    m_leavedate = NOW(),
 		    m_leavememo = #{mLeavememo}
@@ -149,5 +149,48 @@
 		  FROM m_member
 		 WHERE m_idx = #{mIdx}
 	</select>
+	
+	<update id="updateMember" parameterType="com.vegemil.domain.MemberDTO">
+		 /* updateMember by AdminCustomerMapper.xml */ 
+		<if test='action == "U" '>
+		UPDATE m_member 
+		SET 
+		    m_sex = #{mSex},
+		    m_year = #{mYear},
+		    m_addr1 = #{mAddr1},
+		    m_addr2 = #{mAddr2},
+		    m_hp = #{mHp},
+		    m_email = #{mEmail},
+		    m_emailsend = #{mEmailsend},
+		    m_greenbia_pay = #{mGreenbiaPay},
+		    m_smssend = #{mSmssend},
+		    m_leavedate = NOW(),
+		    m_leavememo = #{mLeavememo}
+		WHERE
+		    m_idx = #{mIdx}
+		</if>
+		<if test='action == "D" '>
+		UPDATE m_member 
+		SET 
+		    m_sex = null,
+		    m_year = null,
+		    m_pwd = null,
+		    m_hp = null,
+		    m_tel = null,
+		    m_zipcode = null,
+		    m_addr1 = null,
+		    m_addr2 = null,
+		    m_email = null,
+		    m_emailsend = null,
+		    m_type = null,
+		    m_greenbia_pay = null,
+		    m_smssend = null,
+		    m_active = 0,
+		    m_leavedate = NOW(),
+		    m_leavememo = #{mLeavememo}
+		WHERE
+		    m_idx = #{mIdx}
+		</if>
+	</update>
 
 </mapper>
