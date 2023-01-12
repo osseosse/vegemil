@@ -86,7 +86,7 @@
 								<li>
 									<dl class="fac_people">
 										<dd>
-											<input type="text" class="inp02 pr5  w70 text-right " name="vPcount" id="vPcount" maxlength="3"> <span>명</span>
+											<input type="text" class="inp02 pr5  w70 text-right " name="vPcount" id="vPcount" maxlength="2"> <span>명</span>
 											<p class="error" id="vPcountCheck" style="display: none;">인원을 입력해 주세요</p>
 	
 										</dd>
@@ -168,7 +168,7 @@
 										<p class="f14">2. 개인정보의 수집 및 이용 목적 - 개인 식별, 견학 안내 및 확정 통보, 무분별한 중복접수 방지</p>
 										<p class="f14">3. 개인정보의 보유 및 이용 기간 - “정식품” 개인정보처리방침에 따름</p>
 									</div>
-									<p class="checkStyle f14 mt10"><input type="checkbox" id="agree" name="check" /><label for="agree"><span></span> 개인정보 수집 및 이용에 동의합니다.</label> </p>
+									<p class="checkStyle f14 mt10"><input type="checkbox" id="agree" name="agree" /><label for="agree"><span></span> 개인정보 수집 및 이용에 동의합니다.</label> </p>
 								</li>
 								
 							</ul>
@@ -193,36 +193,31 @@
 	function btnActive() {
 		
 		const vAppdate = $('#vAppdate').val();
-		const vName = $('#vName').val();
 		const vOrg = $('#vOrg').val();
 		const vPcount = $('#vPcount').val();
-		
 		const vArea = $("#vArea option:selected").val();
-		const cZipcode = $('#cZipcode').val();
-		const cAddr1 = $('#cAddr1').val();
-		const cAddr2 = $('#cAddr2').val();
-		const vMemo = $('#vMemo').val();
 		
-		if($.trim(vAppdate).length > 1
-		&& $.trim(vName).length > 1
-		&& $.trim(vOrg).length > 1
-		&& $.trim(vPcount).length > 1
-		&& $.trim(vArea).length > 1 
- 		&& $.trim(cZipcode).length > 1
-		&& $.trim(cAddr1).length > 1
-		&& $.trim(cAddr2).length > 1
-		&& $.trim(vMemo).length > 1
-		&& $('input:radio[name=vApptime]').is(":checked") == true
-		&& $('input:checkbox[id="agree"]').is(":checked") == true
+		if($.trim(vAppdate).length > 0
+		&& $.trim(vOrg).length > 0
+		&& $.trim(vPcount).length > 0
+		&& $.trim(vArea).length > 0 
+		&& $("input:radio[name='vApptime']").is(":checked") == true
+		&& $("input:checkbox[name='agree']").is(":checked") == true
 		) 
 		{
+			alert("활성");
 			$("#submitForm").attr("disabled", false); //해제
 			$("#submitForm").addClass('active');
 		} else {
+			alert("비활");
 			$("#submitForm").attr("disabled", true); //설정
 			$("#submitForm").removeClass('active');		
 		}
 	}
+	
+	$("input:text[vPcount]").on("keyup", function() {
+		$(this).val($(this).val().replace(/[^0-9]/g,""));
+	});
 	
 	//이메일 입력방식 선택
 	$('#selEmail').change(function(){
@@ -246,20 +241,15 @@
 		btnActive();
 	});
 	
-	$('#vName').keyup(function () {
-		if ($('#vName').length < 2 ) {
-		    $("#vNameCheack").css('display', 'inline-block');
-		} else {
-			btnActive();
-		}
+	$('#vArea').change(function () {
+		btnActive();
 	});
 	
 	$('#vOrg').keyup(function () {
 		if ($('#vOrg').length < 2 ) {
 		    $("#vOrgCheack").css('display', 'inline-block');
-		} else {
-			btnActive();
 		}
+		btnActive();
 	});
 	
 	$('input:radio[name=vApptime]').change(function(){
@@ -283,18 +273,16 @@
 	$('#vPcount').keyup(function () {
 		if ($('#vPcount').length < 1 ) {
 		    $("#vPcountCheack").css('display', 'inline-block');
-		} else {
-			btnActive();
 		}
+		btnActive();
 	});
 	
 	$('#agree').change(function(){
 		
 		if($("input:radio[name='check']").is(":checked") != true) {
 			$("#agreeCheack").css('display', 'inline-block');
-		} else {
-			btnActive();
 		}
+		btnActive();
 	});
 
 </script> 

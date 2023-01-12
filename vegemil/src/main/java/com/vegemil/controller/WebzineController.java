@@ -775,6 +775,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
 		
+		model.addAttribute("qrtYear", "Q1_2023");
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
