@@ -3210,11 +3210,13 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
     
     /* 리스트 - 성희 1209 */
     .new_list li:nth-child(even){ margin-right: 0px;}
-    .new_list li{ margin-top: 0; margin-bottom: 20px; }
+    .new_list li{ margin-top: 0; margin-bottom: 10px;  }
     .new_list li:nth-child(4){ margin-bottom: 0px; }
+    /*
     .new_list li:nth-child(4),.new_list li:nth-child(8){ margin-right:0px; }
     .new_list li:nth-child(1),.new_list li:nth-child(2){ margin-top: 0px; }
-    .new_list li:nth-child(odd){ margin-right: 2%; }
+    */
+    .new_list li:nth-child(odd){ margin-right: 1%; }
     .new_list li:nth-child(even){ margin-left: 0; }
     
     
