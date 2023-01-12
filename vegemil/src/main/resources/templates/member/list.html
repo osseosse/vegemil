@@ -81,9 +81,18 @@
 								<div class="myBox">
 									<p class="f23 fw500 ">영&middot;유아식 우리콩</p>
 									<dl class="mt20 sampleList">
-										<dd><p >베지밀 인펀트 우리콩 1단계</p><span class="stype01"><a href="/vegemilBaby/sample/form?sItem=INF" th:text="${isSample1 == false ? '신청가능': '신청완료'}"></a></span></dd>
-										<dd><p >베지밀 인펀트 우리콩 2단계</p><span class="stype02"><a href="/vegemilBaby/sample/form?sItem=TO2" th:text="${isSample2 == false ? '신청가능': '신청완료'}"></a></span></dd>
-										<dd><p >베지밀 인펀트 우리콩 3단계</p><span class="stype03"><a href="/vegemilBaby/sample/form?sItem=TO3" th:text="${isSample3 == false ? '신청가능': '신청완료'}"></a></span></dd>
+										<dd><p >베지밀 인펀트 우리콩 1단계</p>
+											<span class="stype03" th:if="${isSample1 == false}"><a href="/vegemilBaby/sample/form?sItem=INF" >신청가능</a></span>
+											<span class="stype01" th:if="${isSample1 == true}">신청완료</span>
+										</dd>
+										<dd><p >베지밀 인펀트 우리콩 2단계</p>
+											<span class="stype03" th:if="${isSample2 == false}"><a href="/vegemilBaby/sample/form?sItem=TO2" >신청가능</a></span>
+											<span class="stype01" th:if="${isSample2 == true}">신청완료</span>
+										</dd>
+										<dd><p >베지밀 인펀트 우리콩 3단계</p>
+											<span class="stype03" th:if="${isSample3 == false}"><a href="/vegemilBaby/sample/form?sItem=TO3" >신청가능</a></span>
+											<span class="stype01" th:if="${isSample3 == true}">신청완료</span>
+										</dd>
 									</dl>
 								</div>
 							</li>

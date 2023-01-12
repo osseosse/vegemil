@@ -75,6 +75,13 @@
 <!-- ================================ // Footer ================================ -->
 <script th:inline="javascript">
 /*<![CDATA[*/
+
+$(function(){
+	if($('#txtId').val() > 1 && $("#txtPw").val() > 1) {
+		$("#loginBtn").attr("disabled", false); //해제
+		$("#loginBtn").addClass('active');
+	}
+});
 	
 //이메일 정규식
 $('#txtId').keyup(function () {
