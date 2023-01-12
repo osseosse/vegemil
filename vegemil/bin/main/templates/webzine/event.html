@@ -124,8 +124,8 @@
 										</p>
 									</div>
 									<div class="col-md-3">
-										<p class="right hidden768"><a href="/main/customer/offlineNews.aspx?page_code=OLN"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_subscribe.jpg" /></a></p>
-										<a href="/main/customer/offlineNews.aspx?page_code=OLN"><div class="hidden1069 center "><p class="btnEvent"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_sub.gif" /> 정식품 웹진 구독 신청하기</p></div></a>
+										<p class="right hidden768"><a href="/webzine/subscribe"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_subscribe.jpg" /></a></p>
+										<a href="/webzine/subscribe"><div class="hidden1069 center "><p class="btnEvent"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_sub.gif" /> 정식품 웹진 구독 신청하기</p></div></a>
 									</div>
 								</div>
 						</div>
@@ -144,7 +144,7 @@
 						<div class="col-md-12">
 							<p class="type25-1" >1. 이름 <span class="red2">*(필수)</span></p>
 								<div class="mt30-m">
-									<input class="evebase05" name="custName" maxlength="5">
+									<input class="evebase05" name="custName" id="custName" maxlength="5">
 								</div>
 						</div>
 						<div class="col-md-6 mt80-m">
@@ -158,13 +158,13 @@
 								</select>&nbsp; - &nbsp;
 								<input class="evebase04" id="hp2" maxlength="4"> &nbsp; - &nbsp; <input class="evebase04" id="hp3" maxlength="4">
 								<p class="mt30-m">※ 원활한 상품 발송을 위해 휴대전화 번호를 정확하게 기입해 주시길 바랍니다.</p>
-								<input type="hidden" name="custHp">
+								<input type="hidden" name="custHp" id="custHp">
 							</div>
 						</div>
 						<div class="col-md-6 mt80-m">
 							<p class="type25-1" >3. 이메일 <span class="red2">*(필수)</span></p>
 								<div class="mt30-m">	
-									<input class="evebase03" name="custEmail">
+									<input class="evebase03" name="custEmail" id="custEmail">
 								</div>
 						</div>
 						<div class="col-md-12">
@@ -255,10 +255,10 @@
 		const sHp = $('#custHp').val();
 		const sEmail = $('#custEmail').val();
 		
-		if($.trim(sName).length > 1
+		if($.trim(sName).length > 0
 		&& $("input:radio[name='chk_privacy']:checked'").val() == '1'
-		&& $.trim(sHp).length > 1
-		&& $.trim(sEmail).length > 1) {
+		&& $.trim(sHp).length > 0
+		&& $.trim(sEmail).length > 0) {
 			return true;
 		} else {
 			alert("필수 값을 입력해주세요");
