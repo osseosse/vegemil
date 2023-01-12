@@ -13,7 +13,7 @@
 ================================ -->
 <div id="content" class="pb100">
 	<div class="contant1160" >
-		<form th:action="|@{/webzine/saveSabo}|" th:object="${subscribe}" method="post">
+		<form th:action="|@{/webzine/saveSabo}|" th:object="${subscribe}" method="post" onsubmit="return btnActive()">
 		<div class="row mt90h">
 			<div class=" col-md-12">
 				<p class="f52 fw600 mt130 black center">정식품웹진 신청 및 변경</p>
@@ -42,7 +42,7 @@
 					</table>
 					<p class="mt10 gray04 f14 fw400"><span class="mr20">* 위 개인정보수집 방법에 동의하십니까?(필수) </span>
 						<input id="radioStip1" type="radio" name="gStip" value="1" /> <label for="radioStip1">동의합니다</label>&nbsp;&nbsp;
-						<input id="radioStip2" type="radio" name="gStip" value="0" /> <label for="radioStip2">동의하지 않습니다</label>
+						<input id="radioStip2" type="radio" name="gStip" value="0" checked /> <label for="radioStip2">동의하지 않습니다</label>
 					</p>
 					<p class="f18 fw500 black mt100">정식품웹진 신청서</p>
 					<table cellspacing="0" border="0" class="int f14 gray04 mt10">
@@ -53,7 +53,7 @@
 						<tr>
 							<th>구독</th>
 							<td>
-								<input id="radioActive1" type="radio" name="sActive" value="1" /><label for="radioActive1" class="mr10">신청</label>&nbsp;
+								<input id="radioActive1" type="radio" name="sActive" value="1" checked/><label for="radioActive1" class="mr10">신청</label>&nbsp;
 								<input id="radioActive0" type="radio" name="sActive" value="0"/><label for="radioActive0">중지</label>
 							</td>
 						</tr>
@@ -113,6 +113,27 @@
 <script th:src="@{/common/js/subscribe.js}"></script>
 <script type="text/javascript">
 //<![CDATA[
+	
+	function btnActive() {
+	
+		var mName = "[[ ${mName} ]]";
+		var mHp = "[[ ${mHp} ]]";
+		var txtEmail = "[[ ${txtEmail} ]]";
+		
+		if($.trim(mName).length > 0
+		&& $("input:radio[name='gStip']:checked'").val() == '1'
+		&& $("input:radio[name='sActive']:checked'").val() == '1'
+		&& $.trim(mHp).length > 0
+		&& $.trim(txtEmail).length > 0)
+		{
+			$("#submitBtn").attr("disabled", false); //해제
+			$("#submitBtn").addClass('active');
+		} else {
+			$("#submitBtn").attr("disabled", true); //설정
+			$("#submitBtn").removeClass('active');		
+		}
+	}
+	
 $(function(){
 	
 	var mName = "[[ ${mName} ]]";
