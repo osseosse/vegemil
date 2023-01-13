@@ -55,7 +55,7 @@
 				</div>
 				<div class="mt50">
 					<ul class="btnBox_sample2" >
-						<li><a th:href="@{https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=4&cateCode=20000034&pCateCode=20000002}"><div class="btn_type11">제품 구매하기</div></a></li>
+						<li><a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=4&cateCode=20000034&pCateCode=20000002"><div class="btn_type11">제품 구매하기</div></a></li>
 					</ul>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 <div class="container1660">
 	<div class="row ">
 		<div class="col-md-12" >
-			<a th:href="@{https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000034&pCateCode=20000002}" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/edaymall.jpg" alt="이데이몰"/></a>
+			<a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000034&pCateCode=20000002" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/edaymall.jpg" alt="이데이몰"/></a>
 		</div>
 	</div>
 </div>
@@ -91,13 +91,16 @@
 <div class="container1660 mb200">
 	<div class="row ">
 		<div class="col-md-12 mt80" >
-			<a th:href="@{https://smartstore.naver.com/dcfwithedaymall}" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/vegemil.jpg" alt="베지밀 공식 네이버스토어"/></a>
+			<a href="https://smartstore.naver.com/dcfwithedaymall" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/vegemil.jpg" alt="베지밀 공식 네이버스토어"/></a>
 		</div>
 	</div>
 </div>
 <!--------------------- 
 		//content
 ------------------- -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
 <script>
 	AOS.init({
 		easing: 'ease-out-back',
@@ -116,8 +119,5 @@
     };w.__beusablerumclient__.load(a);
     })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
-<!-- ================================ // Footer ================================ -->
 </body>
 </html>

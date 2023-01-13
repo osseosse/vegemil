@@ -4,7 +4,6 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<title>그린비아 브랜드소개</title>
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
-<header id="header" th:fragment="headerFragment"></header>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
@@ -173,11 +172,9 @@
 <!--------------------- 
 		//content
 ------------------- -->
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-
-
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
 <script>
 	AOS.init({
 		easing: 'ease-out-back',
@@ -188,7 +185,6 @@
 <script>
 $('.counter').countUp();
 </script>
-
 <script type="text/javascript">
     (function(w, d, a){
     w.__beusablerumclient__ = {
@@ -200,8 +196,5 @@ $('.counter').countUp();
     };w.__beusablerumclient__.load(a);
     })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
-<!-- ================================ // Footer ================================ -->
 </body>
 </html>

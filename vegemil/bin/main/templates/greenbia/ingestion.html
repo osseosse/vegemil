@@ -4,7 +4,6 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<title>그린비아 섭취방법</title>
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
-<header id="header" th:fragment="headerFragment"></header>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia.html :: headerFragment"></header>
@@ -190,7 +189,9 @@
 <!--------------------- 
 		//content
 ------------------- -->
-
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
 <script>
 	AOS.init({
 		easing: 'ease-out-back',
@@ -208,8 +209,5 @@
     };w.__beusablerumclient__.load(a);
     })(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
 </script>
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/greenbia/mainFooter_greenbia :: footerFragment"></footer>
-<!-- ================================ // Footer ================================ -->
 </body>
 </html>
