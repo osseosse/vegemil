@@ -2,6 +2,7 @@ package com.vegemil.service;
 
 import java.util.Map;
 
+import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.MemberDTO;
 
@@ -20,4 +21,11 @@ public interface AdminCustomerService {
 	public MemberDTO getMember(Long mIdx);
 	
 	public boolean saveMember(MemberDTO params);
+	
+	public DataTableDTO getVisitList(Map<String, Object> paramMap);
+	
+	public boolean saveVisit(AdminVisitDTO params);
+	
+	public boolean deleteVisit(Map<String, Object> paramMap);
+
 }

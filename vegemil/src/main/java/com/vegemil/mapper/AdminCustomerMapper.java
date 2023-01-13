@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.MemberDTO;
 
 @Mapper
@@ -27,4 +28,12 @@ public interface AdminCustomerMapper {
 	public MemberDTO selectMember(Long mIdx);
 	
 	public int updateMember(MemberDTO params);
+	
+	public int selectVisitTotalCount(Map<String, Object> paramMap);
+	
+	public List<AdminVisitDTO> selectVisitList(Map<String, Object> paramMap);
+	
+	public int updateVisit(AdminVisitDTO params);
+	
+	public int deleteVisit(Map<String, Object> paramMap);
 }
