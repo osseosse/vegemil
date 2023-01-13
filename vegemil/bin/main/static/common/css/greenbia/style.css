@@ -10,13 +10,13 @@
 	
 	- Description -
 
-	01. font	:	폰트설정
-	02. common			:	공통사항, 레이아웃
+	01. font	:	��Ʈ����
+	02. common			:	�������, ���̾ƿ�
 	
-	03. nav			:	메뉴
-	05. content		:	콘텐츠
-	06. responsive	:	미디어쿼리
-	07. popup		:   팝업
+	03. nav			:	�޴�
+	05. content		:	������
+	06. responsive	:	�̵������
+	07. popup		:   �˾�
 
 
 ==============================================*/
@@ -37,7 +37,7 @@
 .f20_3 {font-size:20px;color:#646464;  font-weight:300; line-height:150%}
 .f20_5 {font-size:20px;color:#323232;  font-weight:500; line-height:150%; border-bottom:2px solid #323232; padding-bottom:3px; }
 .f20_51 {font-size:20px;color:#323232;  font-weight:500; line-height:150%; }
-.f22_41 {font-size:22px;color:#646464; font-weight:400; line-height:150%; letter-spacing:-1px} /* 브랜드 Core Value */
+.f22_41 {font-size:22px;color:#646464; font-weight:400; line-height:150%; letter-spacing:-1px} /* �귣�� Core Value */
 .f22_4 {font-size:22px;color:#282828;  font-weight:400; line-height:150%}
 .f22_5 {font-size:22px;color:#282828;  font-weight:500; line-height:150%}
 .f22_7 {font-size:22px;color:#282828;  font-weight:700; line-height:150%; letter-spacing:2px}
@@ -96,13 +96,13 @@
 /* ----------------------------------------------- */
 /* common
 -------------------------------------------------- */
-html, body {margin:0; padding:0; font-family:"Noto Sans KR", sans-serif, Helve버블경고tica; overflow-x:hidden }
+html, body {margin:0; padding:0; font-family:"Noto Sans KR", sans-serif, Helve������tica; overflow-x:hidden }
 .f_ms {font-family: 'Montserrat', sans-serif;}
 a:hover {text-decoration:none}
 #wrap {position:relative; width:100%} 
 #contant {overflow:hidden; padding-bottom:200px}
 .container100 {position:relative; width:100%; ;padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;}
-.container100_15 {padding:0 15px; width:100%} /* 가로 패딩적용 */
+.container100_15 {padding:0 15px; width:100%} /* ���� �е����� */
 .container1250_15 {padding:0 15px;width:100%;  max-width:1280px; margin-right: auto;margin-left: auto;}
 .container1400 {padding:0 0px; width:100%; max-width:1400px;  margin-right: auto;margin-left: auto;} 
 .container1400_15 {padding:0 15px;width:100%;  max-width:1430px; margin-right: auto;margin-left: auto;} 
@@ -117,28 +117,28 @@ ul li {list-style:none}
 img.img100 {width:100%;}
 .img100 {width:100%} 
 .bgGray {background:#eff0f2}
-.bgDark {background:#9d9d9d; color:#fff;  padding:1px 5px; border:0; display:inline-block} /* 대두,유유 함유*/
+.bgDark {background:#9d9d9d; color:#fff;  padding:1px 5px; border:0; display:inline-block} /* ���,���� ����*/
 .bgPupple {background:#7f99e2}
 .bgWhite {background:#fff; position:relative}
 .row {position:relative}
 .pupple{color:#7f99e2}
-.gray01{color:#646464} /* 연회색 */
-.gray02{color:#323232} /* 짙은회색 */
+.gray01{color:#646464} /* ��ȸ�� */
+.gray02{color:#323232} /* £��ȸ�� */
 /* ----------------------------------------------- */
 /* Nav
 -------------------------------------------------- */
 .logo {position:relative; margin-top:30px; margin-left:70px;float:left}
-header {position:relative; top:0; width:100%;} /*  min-width는 브라우저 줄였을 시 오류방지 2017-06-07 */
-.gnbBG {background:#fff;display:none; position:absolute; width:100%; top:80px; left:0; height:360px; border-top:1px solid #dadada} /* 서브메뉴 배경포함 */
+header {position:relative; top:0; width:100%;} /*  min-width�� ������ �ٿ��� �� �������� 2017-06-07 */
+.gnbBG {background:#fff;display:none; position:absolute; width:100%; top:80px; left:0; height:360px; border-top:1px solid #dadada} /* ����޴� ������� */
 #gnb {left: 0px; top: 0px; width: 100%; /*position: fixed;*/ z-index:10; background-color:#fff; height:80px; z-index:100;  }
 #gnb ul {max-width:800px; margin:0 auto}
 #gnb ul > li > a{}
 #gnb {position:relative;height:80px; width:100%; margin:0 auto;  }
 #gnb:after {display:block; content:"";clear:both;}
 #gnb li {position:relative;float:left; top:0; }
-#gnb li a.dep01{font-size:17px;font-weight:500;color:#323232;display:block;padding:32px 50px 28px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1뎁 */
+#gnb li a.dep01{font-size:17px;font-weight:500;color:#323232;display:block;padding:32px 50px 28px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 #gnb li.last a.dep01 {width:110px; }
-#gnb ul li ul {display:none; width:100%;height:360px;position:absolute; top:80px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* 오픈위치조절 */
+#gnb ul li ul {display:none; width:100%;height:360px;position:absolute; top:80px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ������ġ���� */
 #gnb ul li.last ul {width:110px;margin-right:1px;}
 #gnb ul li.active > a {color:#6584dc}
 #gnb ul li.active > ul { background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bar_line.gif) no-repeat center 0px; }
@@ -214,7 +214,7 @@ table.p_info th,
 table.p_info td {font-size:14px; border-bottom:1px solid #d1d3dc; padding:10px 10px;line-height:22px}
 table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
 /* -------------------------
-	메인 > Product Categories 
+	���� > Product Categories 
 -------------------------- */
 .pcBox {text-align:center; width:100%; padding:0 10px}
 .pc_line01 {border-bottom:2px solid #d52c15; padding-bottom:15px; font-size:20px ; font-weight:400}
@@ -226,7 +226,7 @@ table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
 .pc a li {font-size:16px; margin-bottom:10px; padding:9px 20px; border-radius:15px; text-align:center; display:inline-block}
 .pc a:hover li {background:#fff;  color:#1c34b0; padding:9px 20px; border-radius:15px }
 /* -------------------------
-	그린비아소개 > 그린비아는?
+	�׸���ƼҰ� > �׸���ƴ�?
 -------------------------- */
 .tabMenu {position:relative; border-left:1px solid #d1d3dc; border-top:1px solid #d1d3dc; display:inline-block; width:100%; top:-30px  }
 .tabMenu li {width:100%;   border-right:1px solid #d1d3dc; border-bottom:1px solid #d1d3dc; text-align:center; background:#eef0f2 }
@@ -256,7 +256,7 @@ table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
 .tabMenu4 li a {padding:20px 0; font-size:20px; color:#a0a0a0; display:inline-block; width:100%}
 
 /* -------------------------
-	메인 > Product Choice guide
+	���� > Product Choice guide
 -------------------------- */
 .slider-wrap {
   height: 100%;
@@ -330,7 +330,7 @@ table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
   font-weight: 500;
   text-transform: uppercase;
 }
-/* 크롬 */
+/* ũ�� */
 @media screen and (-webkit-min-device-pixel-ratio:0){ 
   .ieView { display:none; } 
 }
@@ -368,52 +368,52 @@ body {overflow-x:hidden}
 .vertical-bg-4 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/d.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }
 .vertical-bg-5 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/e.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .thumb {background-repeat:no-repeat;background-size: cover;background-position:center 10%;}
-.G01004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_S.jpg)}/* 마일드케어 구수한맛 */
-.G01005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01005_S.jpg)}/* 마일드케어 검은참깨 */
+.G01004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_S.jpg)}/* ���ϵ��ɾ� �����Ѹ� */
+.G01005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01005_S.jpg)}/* ���ϵ��ɾ� �������� */
 /* */
-.G01015_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_S.jpg)}/* 마일드케어 오트 */
-.G01009_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_S.jpg)}/* 키즈 */
-.G01012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_S.jpg)}/* 플러스케어 */
+.G01015_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_S.jpg)}/* ���ϵ��ɾ� ��Ʈ */
+.G01009_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_S.jpg)}/* Ű�� */
+.G01012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_S.jpg)}/* �÷����ɾ� */
 /* */
-.G01001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_S.jpg)}/* 티에프 */
-.G02003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_S.jpg)}/* 알디플러스 */
-.G01010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01010_S.jpg)}/* 장솔루션 */
+.G01001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_S.jpg)}/* Ƽ���� */
+.G02003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_S.jpg)}/* �˵��÷��� */
+.G01010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01010_S.jpg)}/* ��ַ�� */
 .G02001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02001_S.jpg)}/* DM */
 .G01007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01007_S.jpg)}/* 1.5 */
-.G02006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_S.jpg)}/* 당뇨솔루션 */
-.G01002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_S.jpg)}/* 화이바 */
-.G02002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02002_S.jpg)}/* 알디 */
+.G02006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_S.jpg)}/* �索�ַ�� */
+.G01002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_S.jpg)}/* ȭ�̹� */
+.G02002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02002_S.jpg)}/* �˵� */
 /* */
-.G02008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_S.jpg)}/* 고단백솔루션 */
-.G02012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_S.jpg)}/* 플러스케어당뇨식 */
-.G01014_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01014_S.jpg)}/* 플러스케어화이바 */
+.G02008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_S.jpg)}/* ��ܹ�ַ�� */
+.G02012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_S.jpg)}/* �÷����ɾ�索�� */
+.G01014_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01014_S.jpg)}/* �÷����ɾ�ȭ�̹� */
 .G01008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01008_S.jpg)}/* RTH */
-.G01011_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_S.jpg)}/* 장솔루션 RTH */
-.G02010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_S.jpg)}/* 이뮨포르테 RTH */
-.G02013_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_S.jpg)}/* 알디플러스 RTH */
-.G02007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_S.jpg)}/* 당뇨솔루션 RTH */
-.G02005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_S.jpg)}/* 연하 */
-.G05001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_S.jpg)}/* 프로틴플러스 */
-.G06001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_S.jpg)}/* 멀티밸런스 */
-.G06002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_S.jpg)}/* 프로틴밸런스 */
-.G06003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_S.jpg)}/* 프로틴밀 아몬드와호두 */
-.G06004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_S.jpg)}/* 프로틴밀 검은참깨 */
+.G01011_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_S.jpg)}/* ��ַ�� RTH */
+.G02010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_S.jpg)}/* �̹������� RTH */
+.G02013_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_S.jpg)}/* �˵��÷��� RTH */
+.G02007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_S.jpg)}/* �索�ַ�� RTH */
+.G02005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_S.jpg)}/* ���� */
+.G05001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_S.jpg)}/* ����ƾ�÷��� */
+.G06001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_S.jpg)}/* ��Ƽ�뷱�� */
+.G06002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_S.jpg)}/* ����ƾ�뷱�� */
+.G06003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_S.jpg)}/* ����ƾ�� �Ƹ���ȣ�� */
+.G06004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_S.jpg)}/* ����ƾ�� �������� */
 /* */
-.G07001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_S.jpg)}/* 멀티케어프로틴 */
-.G01901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_S.jpg)}/* 티에프1000 */
-.G01911_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_S.jpg)}/* 장솔루션1000 */
-.G01902_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_S.jpg)}/* 화이바1000 */
-.G02901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02901_S.jpg)}/* 디엠1000 */
+.G07001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_S.jpg)}/* ��Ƽ�ɾ�����ƾ */
+.G01901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_S.jpg)}/* Ƽ����1000 */
+.G01911_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_S.jpg)}/* ��ַ��1000 */
+.G01902_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_S.jpg)}/* ȭ�̹�1000 */
+.G02901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02901_S.jpg)}/* ��1000 */
 .G08001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G08001_S.jpg)}/* HP */
-.G02021_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_S.jpg)}/* 하이컴팩트  */
-.G06005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_S.jpg)}/* 하이키즈 */
+.G02021_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_S.jpg)}/* ��������Ʈ  */
+.G06005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_S.jpg)}/* ����Ű�� */
 
 .bg_plate {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/plate.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .bg_bigbanner {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_bigbanner.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .bg_pcg {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_ProductChoiceGuide.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center;}
 .bg_info {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_subTopInfo.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }
 .bg_brand {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/brand03.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
-.bg_history {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/history.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	/*https://image.edaymall.com/images/dcf/vegemil/img/greenbia/history.jpg*/
+.bg_history {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/history.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .bg_history_01 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_history_01.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; /*height:100% */  }	
 .bg_history_02 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_history_02.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; /*height:100% */    }	
 .bg_history_03 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_history_03.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; /*height:100% */   }	
@@ -468,31 +468,31 @@ body {overflow-x:hidden}
 .slide-inner {position:relative; width:100%}
 .slide-inner ul { bottom:0;  z-index:1000} 
 /* -------------------------
-	공통칼로리 > 상단배너, 진열 
+	����Į�θ� > ��ܹ��, ���� 
 -------------------------- */
-ul.mlk {text-align:right; position:absolute; right:0; bottom:0; max-width:120px; }
+ul.mlk {text-align:right; position:absolute; right:0; bottom:0; max-width:110px; }
 ul.mlk li {color:#fff; font-size:18px; font-weight:400; padding:16px 13px; text-align:left}
 /* -------------------------
-	메인 > 상단배너 칼로리 컬러박스
+	���� > ��ܹ�� Į�θ� �÷��ڽ�
 --------------------------
-ul.mkg li:first-child {background:#f17a59}  /* 메인배너 마일드케어 구수한맛 */
-ul.mkg li:nth-child(2) {background:#b42700} /* 메인배너 마일드케어 구수한맛 */
+ul.mkg li:first-child {background:#f17a59}  /* ���ι�� ���ϵ��ɾ� �����Ѹ� */
+ul.mkg li:nth-child(2) {background:#b42700} /* ���ι�� ���ϵ��ɾ� �����Ѹ� */
 /* ------------------------------------
-	빅배너 > 배경/칼로리
+	���� > ���/Į�θ�
 --------------------------------------- */
 ul.mlk2 {text-align:right;  right:0; bottom:0;  width:280px}
 ul.mlk2 li {color:#fff; font-size:25px; font-weight:600; padding:22px 0px; text-align:center; float:left; width:140px;}
 .kcalBox {position:absolute; left:48px; bottom:0; }
 
-/* 마일드케어 구수한맛 */
+/* ���ϵ��ɾ� �����Ѹ� */
 .h850-2.G01004 {background:none} 
 .G01004 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center}	
 .col-md-4.G01004_top {background:none}
 .col-md-4.G01004_top .round {background:#b42700}
 .col-md-4.G01004_bottom {background:none;}
-ul.G01004_kcal li:first-child {background:#f17a59}  /* 빅배너 제품칼로리 마일드케어 구수한맛  */
-ul.G01004_kcal li:nth-child(2) {background:#b42700} /* 빅배너 제품칼로리 마일드케어 구수한맛  */
-/* 마일드케어 검은참깨 
+ul.G01004_kcal li:first-child {background:#f17a59}  /* ���� ��ǰĮ�θ� ���ϵ��ɾ� �����Ѹ�  */
+ul.G01004_kcal li:nth-child(2) {background:#b42700} /* ���� ��ǰĮ�θ� ���ϵ��ɾ� �����Ѹ�  */
+/* ���ϵ��ɾ� �������� 
 
 
 */
@@ -504,88 +504,88 @@ ul.G01004_kcal li:nth-child(2) {background:#b42700} /* 빅배너 제품칼로리
 ul.G01005_kcal li:first-child {background:#4cbced}  
 ul.G01005_kcal li:nth-child(2) {background:#033865}
 
-/* 마일드케어 오트 */
+/* ���ϵ��ɾ� ��Ʈ */
 .h850-2.G01015 {background:none} 
 .G01015 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01015_top {background:none; }
 .col-md-4.G01015_top .round {background:#81392f}
 .col-md-4.G01015_bottom {background:none;}
-ul.G01015_kcal li:first-child {background:#e59883}  /* 빅배너 제품칼로리 마일드케어 오트  */
-ul.G01015_kcal li:nth-child(2) {background:#81392f} /* 빅배너 제품칼로리 마일드케어 오트  */
-/* 키즈 */
+ul.G01015_kcal li:first-child {background:#e59883}  /* ���� ��ǰĮ�θ� ���ϵ��ɾ� ��Ʈ  */
+ul.G01015_kcal li:nth-child(2) {background:#81392f} /* ���� ��ǰĮ�θ� ���ϵ��ɾ� ��Ʈ  */
+/* Ű�� */
 .h850-2.G01009 {background:none} 
 .G01009 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01009_top {background:none; }
 .col-md-4.G01009_top .round {background:#354598}
 .col-md-4.G01009_bottom {background:none;}
-ul.G01009_kcal li:first-child {background:#9ee129}  /* 빅배너 제품칼로리 키즈  */
-ul.G01009_kcal li:nth-child(2) {background:#354598} /* 빅배너 제품칼로리 키즈  */
-/* 플러스케어 
+ul.G01009_kcal li:first-child {background:#9ee129}  /* ���� ��ǰĮ�θ� Ű��  */
+ul.G01009_kcal li:nth-child(2) {background:#354598} /* ���� ��ǰĮ�θ� Ű��  */
+/* �÷����ɾ� 
 */
 .h850-2.G01012 {background:none} 
 .G01012 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01012_top {background:none; }
 .col-md-4.G01012_top .round {background:#1e1e64}
 .col-md-4.G01012_bottom {background:none;}
-ul.G01012_kcal li:first-child {background:#4cab35}  /* 빅배너 제품칼로리 플러스케어  */
-ul.G01012_kcal li:nth-child(2) {background:#1e1e64} /* 빅배너 제품칼로리 플러스케어  */
-/* 티에프 */
+ul.G01012_kcal li:first-child {background:#4cab35}  /* ���� ��ǰĮ�θ� �÷����ɾ�  */
+ul.G01012_kcal li:nth-child(2) {background:#1e1e64} /* ���� ��ǰĮ�θ� �÷����ɾ�  */
+/* Ƽ���� */
 .h850-2.G01001 {background:none} 
 .G01001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01001_top {background:none; }
 .col-md-4.G01001_top .round {background:#128fb2}
 .col-md-4.G01001_bottom {background:none;}
-ul.G01001_kcal li:first-child {background:#77d9f4}  /* 빅배너 제품칼로리 티에프  */
-ul.G01001_kcal li:nth-child(2) {background:#128fb2} /* 빅배너 제품칼로리 티에프 */
-/* 알디플러스 */
+ul.G01001_kcal li:first-child {background:#77d9f4}  /* ���� ��ǰĮ�θ� Ƽ����  */
+ul.G01001_kcal li:nth-child(2) {background:#128fb2} /* ���� ��ǰĮ�θ� Ƽ���� */
+/* �˵��÷��� */
 .h850-2.G02003 {background:none} 
 .G02003 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02003_top {background:none; }
 .col-md-4.G02003_top .round {background:#e98917}
 .col-md-4.G02003_bottom {background:none;}
-ul.G02003_kcal li:first-child {background:#f9cb5c}  /* 빅배너 제품칼로리 알디플러스 */
-ul.G02003_kcal li:nth-child(2) {background:#e98917} /* 빅배너 제품칼로리 알디플러스 */
-/* 장솔루션 */
+ul.G02003_kcal li:first-child {background:#f9cb5c}  /* ���� ��ǰĮ�θ� �˵��÷��� */
+ul.G02003_kcal li:nth-child(2) {background:#e98917} /* ���� ��ǰĮ�θ� �˵��÷��� */
+/* ��ַ�� */
 .h850-2.G01010 {background:none} 
 .G01010 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01010_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01010_top {background:none; }
 .col-md-4.G01010_top .round {background:#5b2c8c}
 .col-md-4.G01010_bottom {background:none;}
-ul.G01010_kcal li:first-child {background:#bf91ef}  /* 빅배너 제품칼로리 장솔루션 */
-ul.G01010_kcal li:nth-child(2) {background:#5b2c8c} /* 빅배너 제품칼로리 장솔루션 */
+ul.G01010_kcal li:first-child {background:#bf91ef}  /* ���� ��ǰĮ�θ� ��ַ�� */
+ul.G01010_kcal li:nth-child(2) {background:#5b2c8c} /* ���� ��ǰĮ�θ� ��ַ�� */
 /* DM */
 .h850-2.G02001 {background:none} 
 .G02001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02001_top {background:none; }
 .col-md-4.G02001_top .round {background:#4c7c00}
 .col-md-4.G02001_bottom {background:none;}
-ul.G02001_kcal li:first-child {background:#c9e558}  /* 빅배너 제품칼로리 DM */
-ul.G02001_kcal li:nth-child(2) {background:#4c7c00} /* 빅배너 제품칼로리 DM */
+ul.G02001_kcal li:first-child {background:#c9e558}  /* ���� ��ǰĮ�θ� DM */
+ul.G02001_kcal li:nth-child(2) {background:#4c7c00} /* ���� ��ǰĮ�θ� DM */
 /* 1.5 */
 .h850-2.G01007 {background:none} 
 .G01007 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01007_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01007_top {background:none; }
 .col-md-4.G01007_top .round {background:#245ca7}
 .col-md-4.G01007_bottom {background:none;}
-ul.G01007_kcal li:first-child {background:#78bcff}  /* 빅배너 제품칼로리 1.5 */
-ul.G01007_kcal li:nth-child(2) {background:#245ca7} /* 빅배너 제품칼로리 1.5 */
-/* 당뇨솔루션 */
+ul.G01007_kcal li:first-child {background:#78bcff}  /* ���� ��ǰĮ�θ� 1.5 */
+ul.G01007_kcal li:nth-child(2) {background:#245ca7} /* ���� ��ǰĮ�θ� 1.5 */
+/* �索�ַ�� */
 .h850-2.G02006 {background:none} 
 .G02006 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02006_top {background:none; }
 .col-md-4.G02006_top .round {background:#009350}
 .col-md-4.G02006_bottom {background:none;}
-ul.G02006_kcal li:first-child {background:#aae83f}  /* 빅배너 제품칼로리 당뇨솔루션 */
-ul.G02006_kcal li:nth-child(2) {background:#009350} /* 빅배너 제품칼로리 당뇨솔루션 */
-/* 화이바 */
+ul.G02006_kcal li:first-child {background:#aae83f}  /* ���� ��ǰĮ�θ� �索�ַ�� */
+ul.G02006_kcal li:nth-child(2) {background:#009350} /* ���� ��ǰĮ�θ� �索�ַ�� */
+/* ȭ�̹� */
 .h850-2.G01002 {background:none} 
 .G01002 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01002_top {background:none; }
 .col-md-4.G01002_top .round {background:#d06200}
 .col-md-4.G01002_bottom {background:none;}
-ul.G01002_kcal li:first-child {background:#f9cb5c}  /* 빅배너 제품칼로리 화이바 */
-ul.G01002_kcal li:nth-child(2) {background:#d06200} /* 빅배너 제품칼로리 화이바 */
-/* 알디 
+ul.G01002_kcal li:first-child {background:#f9cb5c}  /* ���� ��ǰĮ�θ� ȭ�̹� */
+ul.G01002_kcal li:nth-child(2) {background:#d06200} /* ���� ��ǰĮ�θ� ȭ�̹� */
+/* �˵� 
 
 */
 .h850-2.G02002 {background:none} 
@@ -593,114 +593,114 @@ ul.G01002_kcal li:nth-child(2) {background:#d06200} /* 빅배너 제품칼로리
 .col-md-4.G02002_top {background:none; }
 .col-md-4.G01002_top .round {background:#d06200}
 .col-md-4.G02002_bottom {background:none;}
-ul.G02002_kcal li:first-child {background:#ffe036}  /* 빅배너 제품칼로리 알디 */
-ul.G02002_kcal li:nth-child(2) {background:#d59100} /* 빅배너 제품칼로리 알디 */
-/* 고단백솔루션 */
+ul.G02002_kcal li:first-child {background:#ffe036}  /* ���� ��ǰĮ�θ� �˵� */
+ul.G02002_kcal li:nth-child(2) {background:#d59100} /* ���� ��ǰĮ�θ� �˵� */
+/* ��ܹ�ַ�� */
 .h850-2.G02008 {background:none} 
 .G02008 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02008_top {background:none; }
 .col-md-4.G02008_top .round {background:#9d4e00}
 .col-md-4.G02008_bottom {background:none;}
-ul.G02008_kcal li:first-child {background:#edcd4b}  /* 빅배너 제품칼로리 고단백솔루션 */
-ul.G02008_kcal li:nth-child(2) {background:#9d4e00} /* 빅배너 제품칼로리 고단백솔루션 */
-/* 플러스케어당뇨식 */
+ul.G02008_kcal li:first-child {background:#edcd4b}  /* ���� ��ǰĮ�θ� ��ܹ�ַ�� */
+ul.G02008_kcal li:nth-child(2) {background:#9d4e00} /* ���� ��ǰĮ�θ� ��ܹ�ַ�� */
+/* �÷����ɾ�索�� */
 .h850-2.G02012 {background:none} 
 .G02012 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02012_top {background:none; }
 .col-md-4.G02012_top .round {background:#767676}
 .col-md-4.G02012_bottom {background:none;}
-ul.G02012_kcal li:first-child {background:#f28d2d}  /* 빅배너 제품칼로리 플러스케어당뇨식 */
-ul.G02012_kcal li:nth-child(2) {background:#767676} /* 빅배너 제품칼로리 플러스케어당뇨식 */
-/* 플러스케어화이바 */
+ul.G02012_kcal li:first-child {background:#f28d2d}  /* ���� ��ǰĮ�θ� �÷����ɾ�索�� */
+ul.G02012_kcal li:nth-child(2) {background:#767676} /* ���� ��ǰĮ�θ� �÷����ɾ�索�� */
+/* �÷����ɾ�ȭ�̹� */
 .h850-2.G01014 {background:none} 
 .G01014 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01014_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01014_top {background:none; }
 .col-md-4.G01014_top .round {background:#91331d}
 .col-md-4.G01014_bottom {background:none;} 
-ul.G01014_kcal li:first-child {background:#757575}  /* 빅배너 제품칼로리 플러스케어화이바 */
-ul.G01014_kcal li:nth-child(2) {background:#91331d} /* 빅배너 제품칼로리 플러스케어화이바 */
+ul.G01014_kcal li:first-child {background:#757575}  /* ���� ��ǰĮ�θ� �÷����ɾ�ȭ�̹� */
+ul.G01014_kcal li:nth-child(2) {background:#91331d} /* ���� ��ǰĮ�θ� �÷����ɾ�ȭ�̹� */
 /* RTH */
 .h850-2.G01008 {background:none} 
 .G01008 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01008_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01008_top {background:none; }
 .col-md-4.G01008_top .round {background:#3b47a0}
 .col-md-4.G01008_bottom {background:none;}
-ul.G01008_kcal li:first-child {background:#9ba4eb}  /* 빅배너 제품칼로리 RTH */
-ul.G01008_kcal li:nth-child(2) {background:#3b47a0} /* 빅배너 제품칼로리 RTH */
-/* 장솔루션 RTH */
+ul.G01008_kcal li:first-child {background:#9ba4eb}  /* ���� ��ǰĮ�θ� RTH */
+ul.G01008_kcal li:nth-child(2) {background:#3b47a0} /* ���� ��ǰĮ�θ� RTH */
+/* ��ַ�� RTH */
 .h850-2.G01011 {background:none} 
 .G01011 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01011_top {background:none; }
 .col-md-4.G01011_top .round {background:#5b2c8c}
 .col-md-4.G01011_bottom {background:none;}
-ul.G01011_kcal li:first-child {background:#bf91ef}  /* 빅배너 제품칼로리 장솔루션 RTH */
-ul.G01011_kcal li:nth-child(2) {background:#5b2c8c} /* 빅배너 제품칼로리 장솔루션 RTH */
-/* 이뮨포르테 RTH */
+ul.G01011_kcal li:first-child {background:#bf91ef}  /* ���� ��ǰĮ�θ� ��ַ�� RTH */
+ul.G01011_kcal li:nth-child(2) {background:#5b2c8c} /* ���� ��ǰĮ�θ� ��ַ�� RTH */
+/* �̹������� RTH */
 .h850-2.G02010 {background:none} 
 .G02010 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02010_top {background:none; }
 .col-md-4.G02010_top .round {background:#329ce5}
 .col-md-4.G02010_bottom {background:none;}
-ul.G02010_kcal li:first-child {background:#9acf00}  /* 빅배너 제품칼로리 이뮨포르테 RTH */
-ul.G02010_kcal li:nth-child(2) {background:#329ce5 } /* 빅배너 제품칼로리 이뮨포르테 RTH */
-/* 알디플러스 RTH */
+ul.G02010_kcal li:first-child {background:#9acf00}  /* ���� ��ǰĮ�θ� �̹������� RTH */
+ul.G02010_kcal li:nth-child(2) {background:#329ce5 } /* ���� ��ǰĮ�θ� �̹������� RTH */
+/* �˵��÷��� RTH */
 .h850-2.G02013 {background:none} 
 .G02013 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02013_top {background:none; }
 .col-md-4.G02013_top .round {background:#e98917}
 .col-md-4.G02013_bottom {background:none;}
-ul.G02013_kcal li:first-child {background:#f9cb5c}  /* 빅배너 제품칼로리 이뮨포르테 RTH */
-ul.G02013_kcal li:nth-child(2) {background:#e98917} /* 빅배너 제품칼로리 이뮨포르테 RTH */
-/* 당뇨솔루션 RTH */
+ul.G02013_kcal li:first-child {background:#f9cb5c}  /* ���� ��ǰĮ�θ� �̹������� RTH */
+ul.G02013_kcal li:nth-child(2) {background:#e98917} /* ���� ��ǰĮ�θ� �̹������� RTH */
+/* �索�ַ�� RTH */
 .h850-2.G02007 {background:none} 
 .G02007 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02007_top {background:none; }
 .col-md-4.G02007_top .round {background:#009350}
 .col-md-4.G02007_bottom {background:none;}
-ul.G02007_kcal li:first-child {background:#aae83f}  /* 빅배너 제품칼로리 당뇨솔루션 RTH */
-ul.G02007_kcal li:nth-child(2) {background:#009350} /* 빅배너 제품칼로리 당뇨솔루션 RTH */
-/* 연하 */
+ul.G02007_kcal li:first-child {background:#aae83f}  /* ���� ��ǰĮ�θ� �索�ַ�� RTH */
+ul.G02007_kcal li:nth-child(2) {background:#009350} /* ���� ��ǰĮ�θ� �索�ַ�� RTH */
+/* ���� */
 .h850-2.G02005 {background:none} 
 .G02005 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02005_top {background:none; }
 .col-md-4.G02005_top .round {background:#c00c77}
 .col-md-4.G02005_bottom {background:none;}
-ul.G02005_kcal li:first-child {background:#ff96d1}  /* 빅배너 제품칼로리 연하솔루션 */
-ul.G02005_kcal li:nth-child(2) {background:#c00c77} /* 빅배너 제품칼로리 연하솔루션 */
-/* 프로틴플러스 */
+ul.G02005_kcal li:first-child {background:#ff96d1}  /* ���� ��ǰĮ�θ� ���ϼַ�� */
+ul.G02005_kcal li:nth-child(2) {background:#c00c77} /* ���� ��ǰĮ�θ� ���ϼַ�� */
+/* ����ƾ�÷��� */
 .h850-2.G05001{background:none} 
 .G05001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G05001_top {background:none; }
 .col-md-4.G05001_top .round {background:#9d4e00}
 .col-md-4.G05001_bottom {background:none;}
-ul.G05001_kcal li:first-child {background:#edcd4b}  /* 빅배너 제품칼로리 프로틴플러스 */
-ul.G05001_kcal li:nth-child(2) {background:#9d4e00} /* 빅배너 제품칼로리 프로틴플러스 */
-/* 멀티밸런스 */
+ul.G05001_kcal li:first-child {background:#edcd4b}  /* ���� ��ǰĮ�θ� ����ƾ�÷��� */
+ul.G05001_kcal li:nth-child(2) {background:#9d4e00} /* ���� ��ǰĮ�θ� ����ƾ�÷��� */
+/* ��Ƽ�뷱�� */
 .h850-2.G06001{background:none} 
 .G06001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06001_top {background:none; }
 .col-md-4.G06001_top .round {background:#00206c}
 .col-md-4.G06001_bottom {background:none;}
-ul.G06001_kcal li:first-child {background:#f7aa15}  /* 빅배너 제품칼로리 멀티밸런스 */
-ul.G06001_kcal li:nth-child(2) {background:#00206c} /* 빅배너 제품칼로리 멀티밸런스 */
-/* 프로틴밸런스 */
+ul.G06001_kcal li:first-child {background:#f7aa15}  /* ���� ��ǰĮ�θ� ��Ƽ�뷱�� */
+ul.G06001_kcal li:nth-child(2) {background:#00206c} /* ���� ��ǰĮ�θ� ��Ƽ�뷱�� */
+/* ����ƾ�뷱�� */
 .h850-2.G06002{background:none} 
 .G06002 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06002_top {background:none; }
 .col-md-4.G06002_top .round {background:#880033}
 .col-md-4.G06002_bottom {background:none;}
-ul.G06002_kcal li:first-child {background:#b6d10e}  /* 빅배너 제품칼로리 프로틴밸런스 */
-ul.G06002_kcal li:nth-child(2) {background:#880033} /* 빅배너 제품칼로리 프로틴밸런스 */
-/* 프로틴밀 아몬드와호두 */
+ul.G06002_kcal li:first-child {background:#b6d10e}  /* ���� ��ǰĮ�θ� ����ƾ�뷱�� */
+ul.G06002_kcal li:nth-child(2) {background:#880033} /* ���� ��ǰĮ�θ� ����ƾ�뷱�� */
+/* ����ƾ�� �Ƹ���ȣ�� */
 .h850-2.G06003{background:none} 
 .G06003 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06003_top {background:none; }
 .col-md-4.G06003_top .round {background:#c94c00}
 .col-md-4.G06003_bottom {background:none;}
-ul.G06003_kcal li:first-child {background:#ffc052}  /* 빅배너 제품칼로리 프로틴밀 아몬드와호두 */
-ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* 빅배너 제품칼로리 프로틴밀 아몬드와호두 */
+ul.G06003_kcal li:first-child {background:#ffc052}  /* ���� ��ǰĮ�θ� ����ƾ�� �Ƹ���ȣ�� */
+ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* ���� ��ǰĮ�θ� ����ƾ�� �Ƹ���ȣ�� */
 
-/* 프로틴밀 검은참깨 
+/* ����ƾ�� �������� 
 
 /*  */
 .h850-2.G06004{background:none} 
@@ -708,48 +708,48 @@ ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* 빅배너 제품칼로리
 .col-md-4.G06004_top {background:none; }
 .col-md-4.G06004_top .round {background:#700069}
 .col-md-4.G06004_bottom {background:none;}
-ul.G06004_kcal li:first-child {background:#ffc052}  /* 빅배너 제품칼로리 프로틴밀 검은참깨 */
-ul.G06004_kcal li:nth-child(2) {background:#700069} /* 빅배너 제품칼로리 프로틴밀 검은참깨 */
-/* 멀티케어프로틴 */
+ul.G06004_kcal li:first-child {background:#ffc052}  /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+ul.G06004_kcal li:nth-child(2) {background:#700069} /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+/* ��Ƽ�ɾ�����ƾ */
 .h850-2.G07001{background:none} 
 .G07001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G07001_top {background:none; }
 .col-md-4.G07001_top .round {background:#161270}
 .col-md-4.G07001_bottom {background:none;}
-ul.G07001_kcal li:first-child {background:#85d22c}  /* 빅배너 제품칼로리 프로틴밀 검은참깨 */
-ul.G07001_kcal li:nth-child(2) {background:#161270} /* 빅배너 제품칼로리 프로틴밀 검은참깨 */
-/* 티에프1000 */
+ul.G07001_kcal li:first-child {background:#85d22c}  /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+ul.G07001_kcal li:nth-child(2) {background:#161270} /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+/* Ƽ����1000 */
 .h850-2.G01901{background:none} 
 .G01901 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01901_top {background:none; }
 .col-md-4.G01901_top .round {background:#128fb2}
 .col-md-4.G01901_bottom {background:none;}
-ul.G01901_kcal li:first-child {background:#77d9f4}  /* 빅배너 제품칼로리 프로틴밀 티에프1000 */
-ul.G01901_kcal li:nth-child(2) {background:#128fb2} /* 빅배너 제품칼로리 프로틴밀 티에프1000 */
-/* 장솔루션1000 */
+ul.G01901_kcal li:first-child {background:#77d9f4}  /* ���� ��ǰĮ�θ� ����ƾ�� Ƽ����1000 */
+ul.G01901_kcal li:nth-child(2) {background:#128fb2} /* ���� ��ǰĮ�θ� ����ƾ�� Ƽ����1000 */
+/* ��ַ��1000 */
 .h850-2.G01911{background:none} 
 .G01911 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01911_top {background:none; }
 .col-md-4.G01911_top .round {background:#5b2c8c}
 .col-md-4.G01911_bottom {background:none;}
-ul.G01911_kcal li:first-child {background:#bf91ef}  /* 빅배너 제품칼로리 프로틴밀 장솔루션1000 */
-ul.G01911_kcal li:nth-child(2) {background:#5b2c8c} /* 빅배너 제품칼로리 프로틴밀 장솔루션1000 */
-/* 화이바1000 */
+ul.G01911_kcal li:first-child {background:#bf91ef}  /* ���� ��ǰĮ�θ� ����ƾ�� ��ַ��1000 */
+ul.G01911_kcal li:nth-child(2) {background:#5b2c8c} /* ���� ��ǰĮ�θ� ����ƾ�� ��ַ��1000 */
+/* ȭ�̹�1000 */
 .h850-2.G01902{background:none} 
 .G01902 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01902_top {background:none; }
 .col-md-4.G01902_top .round {background:#d06200}
 .col-md-4.G01902_bottom {background:none;}
-ul.G01902_kcal li:first-child {background:#f9b85c}  /* 빅배너 제품칼로리 프로틴밀 화이바1000 */
-ul.G01902_kcal li:nth-child(2) {background:#d06200} /* 빅배너 제품칼로리 프로틴밀 화이바1000 */
-/* 디엠1000 */
+ul.G01902_kcal li:first-child {background:#f9b85c}  /* ���� ��ǰĮ�θ� ����ƾ�� ȭ�̹�1000 */
+ul.G01902_kcal li:nth-child(2) {background:#d06200} /* ���� ��ǰĮ�θ� ����ƾ�� ȭ�̹�1000 */
+/* ��1000 */
 .h850-2.G02901{background:none} 
 .G02901 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02901_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02901_top {background:none; }
 .col-md-4.G02901_top .round {background:#4c7c00}
 .col-md-4.G02901_bottom {background:none;}
-ul.G02901_kcal li:first-child {background:#c9e558}  /* 빅배너 제품칼로리 프로틴밀 디엠1000 */
-ul.G02901_kcal li:nth-child(2) {background:#4c7c00} /* 빅배너 제품칼로리 프로틴밀 디엠1000 */
+ul.G02901_kcal li:first-child {background:#c9e558}  /* ���� ��ǰĮ�θ� ����ƾ�� ��1000 */
+ul.G02901_kcal li:nth-child(2) {background:#4c7c00} /* ���� ��ǰĮ�θ� ����ƾ�� ��1000 */
 
 /* HP */
 .h850-2.G08001{background:none} 
@@ -757,29 +757,29 @@ ul.G02901_kcal li:nth-child(2) {background:#4c7c00} /* 빅배너 제품칼로리
 .col-md-4.G08001_top {background:none; }
 .col-md-4.G08001_top .round {background:#245ca7}
 .col-md-4.G08001_bottom {background:none;}
-ul.G08001_kcal li:first-child {background:#78bcff}  /* 빅배너 제품칼로리 프로틴밀 HP */
-ul.G08001_kcal li:nth-child(2) {background:#245ca7} /* 빅배너 제품칼로리 프로틴밀 HP */
+ul.G08001_kcal li:first-child {background:#78bcff}  /* ���� ��ǰĮ�θ� ����ƾ�� HP */
+ul.G08001_kcal li:nth-child(2) {background:#245ca7} /* ���� ��ǰĮ�θ� ����ƾ�� HP */
 
 
-/* 하이컴팩트 */
+/* ��������Ʈ */
 .h850-2.G02021{background:none} 
 .G02021 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02021_top {background:none; }
 .col-md-4.G02021_top .round {background:#1d5031}
 .col-md-4.G02021_bottom {background:none;}
-ul.G02021_kcal li:first-child {background:#85d22c}  /* 빅배너 제품칼로리 하이컴팩트 */
-ul.G02021_kcal li:nth-child(2) {background:#1d5031} /* 빅배너 제품칼로리 하이컴팩트 */
+ul.G02021_kcal li:first-child {background:#85d22c}  /* ���� ��ǰĮ�θ� ��������Ʈ */
+ul.G02021_kcal li:nth-child(2) {background:#1d5031} /* ���� ��ǰĮ�θ� ��������Ʈ */
 
-/* 하이키즈 */
+/* ����Ű�� */
 .h850-2.G06005{background:none} 
 .G06005 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06005_top {background:none; }
 .col-md-4.G06005_top .round {background:#d90051}
 .col-md-4.G06005_bottom {background:none;}
-ul.G06005_kcal li:first-child {background:#77c126}  /* 빅배너 제품칼로리 하이키즈 */
-ul.G06005_kcal li:nth-child(2) {background:#d90051} /* 빅배너 제품칼로리 하이키즈 */
+ul.G06005_kcal li:first-child {background:#77c126}  /* ���� ��ǰĮ�θ� ����Ű�� */
+ul.G06005_kcal li:nth-child(2) {background:#d90051} /* ���� ��ǰĮ�θ� ����Ű�� */
 /* -------------------------
-	빅배너 > BAR-GRAPH 
+	���� > BAR-GRAPH 
 -------------------------- */
 @keyframes bar-fill {
   0% {width: 0;}
@@ -826,7 +826,7 @@ ul.G06005_kcal li:nth-child(2) {background:#d90051} /* 빅배너 제품칼로리
 }
 
 /* ------------------------------------
-	빅배너 > loader ani
+	���� > loader ani
 --------------------------------------- */
 .relative {position: relative;}
 .loader-ring {}
@@ -874,7 +874,7 @@ ul.G06005_kcal li:nth-child(2) {background:#d90051} /* 빅배너 제품칼로리
 .mview {display:none}
 }
 /* -----------------
-	메인 > bestBox
+	���� > bestBox
 -------------------- */
 .bestBox {position:relative; width:100%;  padding:40px 0; background:#fff}
 .bestBox ul a {border:2px dotted #393939; border-radius:30px; padding:6px 30px; display:inline-block; margin:0 15px 10px 15px ; overflow:hidden}
@@ -891,7 +891,7 @@ ul.bottomInfo li:first-child {float:left}
 ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 
 /* -------------------------
-	제품상세 > 빅배너 > sibNav
+	��ǰ�� > ���� > sibNav
 -------------------------- */
 .subNav {position:absolute; left:0; top:0;   border-bottom:1px solid rgba(255, 255, 255, .5); z-index:10}
 .subNav .subNavBox {width:100%; max-width:1400px;margin:0 auto; position:relative}
@@ -909,7 +909,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 #yeon a,
 #health a{ background:none}
 /* -------------------------
-	제품상세 > 상세,영양,구매
+	��ǰ�� > ��,����,����
 -------------------------- */
 .infoMenuLine {border-top:1px solid #d1d3dc;border-bottom:1px solid #d1d3dc;  }
 #info01.infoMenuLine {border-top:0px ;border-bottom:1px solid #d1d3dc;  }
@@ -921,7 +921,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 .info_img {position:relative; text-align:center; margin-top:120px; margin-bottom:120px}
 .info_img img {width:100%; max-width:1000px}
 /* -------------------------
-	제품상세 > 제품추천 
+	��ǰ�� > ��ǰ��õ 
 -------------------------- */
 .also {position:relative; padding:100px 0}
 .also .vertical-bg-1 {background-position:center 15%;  }
@@ -947,7 +947,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 
 
 /* -------------------------
-	선택가이드 > 제품추천 
+	���ð��̵� > ��ǰ��õ 
 -------------------------- */
 .result .also {position:relative; border-top:2px solid #323232; padding-top:60px; padding-bottom:0px}
 .result p.also_title {
@@ -962,7 +962,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 .result .also .bg_point {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_point.png) no-repeat left 15px; padding-left:20px; margin-top:60px; margin-bottom:35px; background-size:10px 10px  }
 .result .also .col-md-12 {padding:0}
 /* -------------------------
-	브랜드 / 연혁 / 논문
+	�귣�� / ���� / ��
 -------------------------- */
 .brand_type01{padding-left:100px}
 .bradnVideType {background:#7f99e3; color:#fff; font-size:60px; font-weighT:700; display:inline-block; padding:10px 20px }
@@ -1000,7 +1000,7 @@ a:hover .jn .btn_type06 {background:#7f99e3; color:#fff}
 
 
 /* -------------------------
-	선택가이드
+	���ð��̵�
 -------------------------- */
 .guide {position:relative; margin-top:-50px; padding-bottom:100px}
 ul.guide_nav {background:#fff;display:inline-block; width:100%;  border-bottom:1px solid #d1d3dc}
@@ -1046,7 +1046,7 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
   to { -webkit-transform: rotate(360deg); }
 }
 /* ------------------------------------
-		제품소개 > Grid
+		��ǰ�Ұ� > Grid
 --------------------------------------- */
 /* Metro Grid Style 3 */
 .portfolio-grid-metro4 {margin: 0 -15px;  margin-top:70px}
@@ -1063,8 +1063,9 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
 
 
 
+
 /* ------------------------------------
-		제품소개 버튼
+		��ǰ�Ұ� ��ư
 --------------------------------------- */
 .messonry-button button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:5%}
 .messonry-button button:last-child {margin-right:0}
@@ -1160,11 +1161,11 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
 .thumb_line b {font-weight:400}
 .thumb b { padding:12px 13px; font-size:13px; font-weight:400; position:absolute; left:13px; top:13px; background:#7f99e3; color:#fff; border-radius:40px}
 /* ------------------------------------
-		제품검색
+		��ǰ�˻�
 --------------------------------------- */
 .searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:70px 200px }
 .searchBox input.search-input {max-width:786px; width:100%; bordeR:0; font-size:25px; outline:0; padding:17px 0;  }
-.searchBox input.btn_search {position:absolute; right:0; top:0px; outline:0; background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_search.gif) no-repeat }
+.searchBox input.btn_search {position:absolute; right:0; top:0px; outline:0 }
 ul.search_in_box {position:relative;  border-bottom:2px solid #323232; width:100%; }
 ul.search_in_box li {display:inline-block}
 ul.search_in_box li:nth-child(1) {width:75%; }
@@ -1238,7 +1239,7 @@ button.tag_search {background:#fff}
 
 
 
-/*제품소개분류 체크박스*/
+/*��ǰ�Ұ��з� üũ�ڽ�*/
 .prd_checkbox {border-top:1px solid #d1d3dc; border-bottom:2px solid #323232; padding:20px 0}
 .cateBox input[type="checkbox"] {display:none;}
 
@@ -1249,17 +1250,17 @@ button.tag_search {background:#fff}
     height:20px;
     margin:-4px 10px 0 0;
     vertical-align:middle;
-    background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_product_off.gif) left top no-repeat;
+    background:url(/main/brandgreenbia/img/ico_product_off.gif) left top no-repeat;
     cursor:pointer;
 }
 .cateBox input[type="checkbox"]:checked + label span {
-background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_product.gif) left top no-repeat;
+background:url(/main/brandgreenbia/img/ico_product.gif) left top no-repeat;
 }
 
 
 
 /* ------------------------------------
-		경장영양식이란
+		���念����̶�
 --------------------------------------- */
 .entBG {background:#fff; position:relative; padding:0 130px 70px 130px }
 .entBox {position:relative; padding-top:30px; border-top:2px solid #323232; width:100%}
@@ -1295,27 +1296,27 @@ ul.ent_img li:first-child{margin-right:15px}
 .tabs2 li a {display:inline-block;color: #fff; width:100%;text-decoration: none;text-align:left;  padding-top:110px; padding-left:40px; height:100%; }
 .tabs2 li:last-child {border-right:0}
 .tab_content2 .current { display: block; }
-.tabs2 li.li_icoBG01 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent01.png) 40px 10px no-repeat; z-index:100 }
-.tabs2 li.li_icoBG02 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent02.png) 40px 10px no-repeat; z-index:100 }
-.tabs2 li.li_icoBG03 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent03.png) 40px 10px no-repeat; z-index:100 }
-.tabs2 li.li_icoBG04 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent04.png) 40px 10px no-repeat; z-index:100 }
-.tabs2 li.li_icoBG05 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent05.png) 40px 10px no-repeat; z-index:100 }
+.tabs2 li.li_icoBG01 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent01.png') 40px 10px no-repeat; z-index:100 }
+.tabs2 li.li_icoBG02 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent02.png') 40px 10px no-repeat; z-index:100 }
+.tabs2 li.li_icoBG03 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent03.png') 40px 10px no-repeat; z-index:100 }
+.tabs2 li.li_icoBG04 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent04.png') 40px 10px no-repeat; z-index:100 }
+.tabs2 li.li_icoBG05 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent05.png') 40px 10px no-repeat; z-index:100 }
 .tabs2 li span {padding:120px 0 0 40px}
-.source{font-size:16px; color:#646464; text-align:right; line-height:140%;} /* 이성희 추가 */
+.source{font-size:16px; color:#646464; text-align:right; line-height:140%;} /* �̼��� �߰� */
 br.noneM {display:none}
 
 
 /* ------------------------------------
-		주의사항
+		���ǻ���
 --------------------------------------- */
 .check img {vertical-align:middle}
 ul.safety_info li.backgroundNone {background:none; padding-left:0; display:inline-block}
 ul.safety_info {position:relative;  width:100%; padding:40px 50px}
 ul.safety_info li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dot_gray.png)no-repeat 0px 13px ; padding-left:20px; margin-top:25px}
 ul.safety_info li:first-child {margin-top:0}
-.grayBox{width:100%; background-color:#eef0f2; padding: 30px 50px;} /* 이성희 추가 */
+.grayBox{width:100%; background-color:#eef0f2; padding: 30px 50px;} /* �̼��� �߰� */
 /* ------------------------------------
-		섭취방법
+		������
 --------------------------------------- */
 .entBG.bgGray {background:#eef0f2;  }
 .igs .col-md-4 { text-align:center; margin-bottom:50px}
@@ -1323,7 +1324,7 @@ ul.safety_info li:first-child {margin-top:0}
 .igs .col-md-4 img {width:100%}
 .igs .col-md-8 {background:#7f99e3; max-height:335px; text-align:left; padding:10% 0 10% 10%;} 
 
-.container1400_15 .col-md-12 .bgPupple {background:#7f99e3; max-height:335px; text-align:left; padding:10% 0 10% 10%; overflow:hidden;} /* 이성희 추가 */
+.container1400_15 .col-md-12 .bgPupple {background:#7f99e3; max-height:335px; text-align:left; padding:10% 0 10% 10%; overflow:hidden;} /* �̼��� �߰� */
 .container1400_15 .col-md-12 .bgPupple p{display: inline-block; float:left; }
 .container1400_15 .col-md-12 .bgPupple p:first-child{margin-right:15%;}
 
@@ -1335,7 +1336,7 @@ ul.safety_info li:first-child {margin-top:0}
 .igs_number {background:#7f99e3; font-size:20px; color:#fff; font-weight:400; padding:4px 10px; border-radius:20px;  min-width:30px; display:inline-block; text-align:center}
 
 /* ------------------------------------
-		고객상담
+		�����
 --------------------------------------- */
 ul.faq {position:relative; width:100%}
 ul.faq li {margin-bottom:80px}
@@ -1346,7 +1347,7 @@ ul.faq li dd {background:#eef0f2; padding:40px 50px 40px 50px; border-top:2px so
 }
 
 /* ------------------------------------
-		샘플신청
+		���ý�û
 --------------------------------------- */
 .sam_box {position:relative; }
 .sam_box div.sam_left {float:left; width:350px;}
@@ -1374,7 +1375,7 @@ button:active {bordeR:0}
 
 
 /* ------------------------------------
-		팝업
+		�˾�
 --------------------------------------- */
 caption {display:none}
 table.popBaby {width:100%; position:relative; border:9px solid #eef0f2;}
@@ -1407,7 +1408,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 		1600 GNB
 	-------------------------- */
 	#gnb ul {width:700px; margin:0 auto;}
-	#gnb li a.dep01{padding:32px 35px 28px 35px; } /* 1뎁 */
+	#gnb li a.dep01{padding:32px 35px 28px 35px; } /* 1�� */
 	#gnb li.last a.dep01 {width:110px; }
 	#gnb ul li ul li dl {margin-left:30px; }
 	#gnb > dl {display:inline-block; float:right; margin-right:10px; }
@@ -1424,7 +1425,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.f50_5_w {font-size:45px;}
 	.f50_6_w {font-size:45px;color:#fff;  font-weight:700; line-height:100%; height:50px; }
 	/* -------------------------
-		1600 빅배너 > BAR-GRAPH 
+		1600 ���� > BAR-GRAPH 
 	-------------------------- */
 	.bar-graph li dl {width:100%; margin:0; padding:0}
 	.bar-graph li dl dd {width:100%; display:inline-block; margin:0; padding:0; vertical-align:middle;  margin-bottom:20px}
@@ -1432,7 +1433,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.bar-graph li dl dd:nth-child(2) {width:190px}
 	.bar-graph li dl dd:nth-child(3) {max-width:55px; padding-left:10px; line-height:120%; vertical-align:top; color:#fff; font-size:14px}
 	/* -------------------------
-		1600 선택가이드
+		1600 ���ð��̵�
 	-------------------------- */
 	.qBox {padding:80px 20px; }
 	.qOX li:nth-child(2){ width:480px; height:480px}
@@ -1444,7 +1445,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.btn_no, 
 	.btn_no:hover { background-size:170px}
 	/* -------------------------
-		1600 제품소개 버튼
+		1600 ��ǰ�Ұ� ��ư
 	-------------------------- */
 	.messonry-button button span.filter-text {background:#eef0f2; padding:37px;  border-radius:250px; height:160px; width:160px; position:relative}
 	.messonry-button button span.filter-text b {position:absolute;bottom:5%;left:50%; transform: translate(-50%, -50%); font-size:17px; font-weighT:400; color:#323232 }
@@ -1458,7 +1459,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.messonry-button button.ico_pc_05.is-checked span.filter-text {background-size:70px 70px  }
 	.messonry-button button.ico_pc_05 span.filter-text {background-size:70px 70px  }
 	/* -------------------------
-		1600 섭취방법
+		1600 ������
 	-------------------------- */
 	.entBG {background:#fff; position:relative; padding:0 40px 70px 40px }
 	.igs_number {background:#7f99e3; font-size:15px; color:#fff; font-weight:400; padding:7px 12px; border-radius:20px;}
@@ -1476,7 +1477,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 		1200 GNB
 	-------------------------- */
 	#gnb ul {width:600px; margin:0 auto;}
-	#gnb li a.dep01{padding:32px 25px 28px 25px; } /* 1뎁 */
+	#gnb li a.dep01{padding:32px 25px 28px 25px; } /* 1�� */
 	#gnb li.last a.dep01 {width:110px; }
 	#gnb ul li ul li dl {margin-left:20px; }
 	#gnb > dl {display:inline-block; float:right; margin-right:10px; }
@@ -1486,7 +1487,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	#gnb ul li ul li dl dd a:focus,
 	#gnb ul li ul li dl dd a:hover {color:#fff; background:#8999db url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/arrow_left2.png) no-repeat 10px 14px; border-radius:20px; max-width:140px; padding:10px 0; padding-left:20px;}
 	/* -------------------------
-		1200 영양성분
+		1200 ���缺��
 	-------------------------- */
 	.yys_title {background:#fff; font-size:12px;color:#282828; font-weight:300; line-height:200%; padding:10px ; border-top:1px solid #282828; border-right:1px solid #d1d3dc }
 	.yys dl dt.in {padding-left:10px; }
@@ -1497,7 +1498,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.yys_subtop dd{float:right; text-align:right; line-height:150%; font-size:11px}
 	.single-vertical-slide .slide-inner .info {padding: 30px 25px 80px 25px; }	
 	/* -------------------------
-	메인 > 상단배너 칼로리 컬러박스
+	���� > ��ܹ�� Į�θ� �÷��ڽ�
 	-------------------------- */
 	ul.mlk li {color:#fff; font-size:13px; font-weight:400; padding:7px 7px; text-align:left}
 	ul.mlk2 li {color:#fff; font-size:13px; font-weight:400; padding:7px 7px; text-align:left}
@@ -1523,7 +1524,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
     
     
 	/* -------------------------
-		1200 빅배너 > BAR-GRAPH 
+		1200 ���� > BAR-GRAPH 
 	-------------------------- */
 	.bar-graph li dl {width:100%; margin:0; padding:0}
 	.bar-graph li dl dd {width:100%; display:inline-block; margin:0; padding:0; vertical-align:middle;  margin-bottom:20px}
@@ -1595,7 +1596,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	  border-radius: 50px; 
 	}
 	/* ---------------------------------
-		1200 메인 > Product Choice guide
+		1200 ���� > Product Choice guide
 	---------------------------------- */
 	.slider-wrap .slider {
 	  position: absolute;
@@ -1633,7 +1634,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	ul.bottomInfo li:first-child {clear:both}
 	ul.bottomInfo li:nth-child(2){clear:both; margin-right:0px}
 	/* -------------------------
-	제품상세 > 빅배너 > sibNav
+	��ǰ�� > ���� > sibNav
 	-------------------------- */
 	.subNav .subNavBox {width:100%; max-width:1400px;margin:0 auto; position:relative; padding-left:20px}
 	.subNav .subNavBox ul li {display:inline-block; padding:15px 10px 15px 0; }
@@ -1641,27 +1642,27 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.subNav .subNavBox .btn_back {position:absolute; right:0; top:0px; border-left:1px solid rgba(255, 255, 255, .5); padding-left:20px; padding-right:15px; height:47px}
 	.subNav .subNavBox .btn_back img {margin-top:18px; width:22px}
 	/* -------------------------
-	1200 브랜드 / 연혁 / 논문
+	1200 �귣�� / ���� / ��
 	-------------------------- */
 	.tab li { margin:0 7px}
 	.tab li p {border-radius:30px; padding:15px 35px; font-size:15px}
 	.bg_brand_sky{padding: 0 40px;}
 	/* -------------------------
-	1200 선택가이드
+	1200 ���ð��̵�
 	-------------------------- */
 	.result ul.result_icon {width:100%; text-align:center;  }
 	.result li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/guide5.png)no-repeat center center ;background-size:cover;  height:95px; width:100px;  position:relative;  text-align:center; padding-top:26px; margin:0 auto; display:inline-block; margin:5px 7px}
 	.result li p {margin-top:5px}
 	.result li img {max-width:30px}
 	/* ------------------------------------
-	1200 제품검색
+	1200 ��ǰ�˻�
 	--------------------------------------- */
 	.searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:30px 50px }
 	.messonry-search {padding:35px 0; text-align:center}
 	.messonry-search button span.filter-text {padding:9px 0;  border-radius:50px;   position:relative; width:180px;}
 	.messonry-search button span.filter-text b { font-size:16px; font-weighT:500; color:#323232 }
 	/* ------------------------------------
-	1200 경장영양식이란
+	1200 ���念����̶�
 	--------------------------------------- */
 	.entBox {position:relative; padding-top:30px; border-top:2px solid #323232; width:100%}
 	.entBox ul {bordeR:1px solid #d1d3dc; padding:20px 15px; background:#eef0f2}
@@ -1671,25 +1672,25 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	ul.ent_info li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dot_pupple.png)no-repeat 0px 8px ; padding-left:15px; margin-top:20px}
 	
 	.tabs2 li a {display:inline-block;color: #fff; width:100%;text-decoration: none;text-align:left;  padding-top:50px; padding-left:10px; height:100%; font-size:16px; line-height:160%}
-	.tabs2 li.li_icoBG01 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent01.png) 10px 10px no-repeat; z-index:100; background-size:40px }
-	.tabs2 li.li_icoBG02 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent02.png) 10px 10px no-repeat; z-index:100; background-size:30px  }
-	.tabs2 li.li_icoBG03 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent03.png) 10px 10px no-repeat; z-index:100; background-size:40px  }
-	.tabs2 li.li_icoBG04 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent04.png) 10px 10px no-repeat; z-index:100; background-size:40px  }
-	.tabs2 li.li_icoBG05 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent05.png) 10px 10px no-repeat; z-index:100; background-size:40px  }
+	.tabs2 li.li_icoBG01 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent01.png') 10px 10px no-repeat; z-index:100; background-size:40px }
+	.tabs2 li.li_icoBG02 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent02.png') 10px 10px no-repeat; z-index:100; background-size:30px  }
+	.tabs2 li.li_icoBG03 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent03.png') 10px 10px no-repeat; z-index:100; background-size:40px  }
+	.tabs2 li.li_icoBG04 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent04.png') 10px 10px no-repeat; z-index:100; background-size:40px  }
+	.tabs2 li.li_icoBG05 span{background:url('https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent05.png') 10px 10px no-repeat; z-index:100; background-size:40px  }
 	.tabs2 li span {padding:60px 0 0 10px}
 	/* ------------------------------------
-	1200 주의사항
+	1200 ���ǻ���
 	--------------------------------------- */
 	ul.safety_info {position:relative;  width:100%; padding:20px 10px}
 	ul.safety_info li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dot_gray.png)no-repeat 0px 8px ; padding-left:15px; margin-top:20px}
-	.grayBox{padding: 20px 20px;} /* 이성희 추가 */
+	.grayBox{padding: 20px 20px;} /* �̼��� �߰� */
 	/* ------------------------------------
-	1200 그린비아는
+	1200 �׸���ƴ�
 	--------------------------------------- */
 	.brand_txt {position:relative; background:#fff url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_line_p.gif) no-repeat center 72px; }
 
 	/* ------------------------------------
-	1200 샘플신청
+	1200 ���ý�û
 	--------------------------------------- */
 	.sam_box div.sam_left {clear:both; display:block; width:100%;  text-align:Center}
 	.sam_box div.sam_right {clear:both; display:block; width:100%;  margin:0 auto; margin-top:50px }
@@ -1707,7 +1708,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.sam_info_box li {font-size:15px; font-weight:400; color:#646464; margin-top:24px; line-height:160%; background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dotGray.png) no-repeat 10px 10px; padding-left:30px}
 
 	/* ------------------------------------
-	1200 팝업
+	1200 �˾�
 	--------------------------------------- */
 	caption {display:none}
 	table.popBaby {width:100%; position:relative; border:9px solid #eef0f2;}
@@ -1751,7 +1752,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 	.hcenter_right { position:absolute;top: 50%;left: 50%; padding-left:20px}
 	/* ----------------
-		992 모바일메뉴
+		992 ����ϸ޴�
 	------------------- */
 	.wview {display:none}
 	.overlay_m {
@@ -1811,7 +1812,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	ul.m_ov_center li dl dd a {display:block; }
 	.m_line {border-top:2px solid #343434; width:26px; border-radius:5px; margin:5.5px 0; display:block}
 	/* ----------------
-		// 992 모바일메뉴
+		// 992 ����ϸ޴�
 	------------------- */
 	.h500 {height:450px}
 	.h550 {height:350px}
@@ -1822,43 +1823,43 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-3 {height:730px}
 	.h850-2 {height:530px}
 	/* ------------------------------------
-		992 빅배너 
+		992 ���� 
 	--------------------------------------- */
-	.h850-2.G01004 {display:block}/* 마일드케어 구수한맛*/
-	.h850-2.G01005 {display:block}/* 마일드케어 검은참깨 */
-	.h850-2.G01015 {display:block}/* 마일드케어 오트 */
-	.h850-2.G01009 {display:block}/* 키즈 */
-	.h850-2.G01012 {display:block}/* 플러스케어 */
-	.h850-2.G01001 {display:block}/* 티에프 */
-	.h850-2.G02003 {display:block}/* 알디플러스 */
-	.h850-2.G01010 {display:block}/* 장솔루션 */
+	.h850-2.G01004 {display:block}/* ���ϵ��ɾ� �����Ѹ�*/
+	.h850-2.G01005 {display:block}/* ���ϵ��ɾ� �������� */
+	.h850-2.G01015 {display:block}/* ���ϵ��ɾ� ��Ʈ */
+	.h850-2.G01009 {display:block}/* Ű�� */
+	.h850-2.G01012 {display:block}/* �÷����ɾ� */
+	.h850-2.G01001 {display:block}/* Ƽ���� */
+	.h850-2.G02003 {display:block}/* �˵��÷��� */
+	.h850-2.G01010 {display:block}/* ��ַ�� */
 	.h850-2.G02001 {display:block}/* DM */
 	.h850-2.G01007 {display:block}/* 1.5 */
-	.h850-2.G02006 {display:block}/* 당뇨솔루션 */
-	.h850-2.G01002 {display:block}/* 화이바 */
-	.h850-2.G02002 {display:block}/* 알디 */
-	.h850-2.G02008 {display:block}/* 고단백솔루션 */
-	.h850-2.G02012 {display:block}/* 플러스케어당뇨식 */
-	.h850-2.G01014 {display:block}/* 플러스케어화이바 */
+	.h850-2.G02006 {display:block}/* �索�ַ�� */
+	.h850-2.G01002 {display:block}/* ȭ�̹� */
+	.h850-2.G02002 {display:block}/* �˵� */
+	.h850-2.G02008 {display:block}/* ��ܹ�ַ�� */
+	.h850-2.G02012 {display:block}/* �÷����ɾ�索�� */
+	.h850-2.G01014 {display:block}/* �÷����ɾ�ȭ�̹� */
 	.h850-2.G01008 {display:block}/* RTH */
-	.h850-2.G01011 {display:block}/* 장솔루션 RTH */
-	.h850-2.G02010 {display:block}/* 이뮨포르테 RTH */
-	.h850-2.G02013 {display:block}/* 알디플러스 RTH */
-	.h850-2.G02007 {display:block}/* 당뇨솔루션 RTH */
-	.h850-2.G02005 {display:block}/* 연하 */
-	.h850-2.G05001 {display:block}/* 프로틴플러스 */
-	.h850-2.G06001 {display:block}/* 멀티밸런스 */
-	.h850-2.G06002 {display:block}/* 프로틴밸런스 */
-	.h850-2.G06003 {display:block}/* 프로틴밀 아몬드와호두 */
-	.h850-2.G06004 {display:block}/* 프로틴밀 검은참깨 */
-	.h850-2.G07001 {display:block}/* 멀티케어프로틴 */
-	.h850-2.G01901 {display:block}/* 티에프1000 */
-	.h850-2.G01911 {display:block}/* 장솔루션1000 */
-	.h850-2.G01902 {display:block}/* 화이바1000 */
-	.h850-2.G02901 {display:block}/* 디엠1000 */
+	.h850-2.G01011 {display:block}/* ��ַ�� RTH */
+	.h850-2.G02010 {display:block}/* �̹������� RTH */
+	.h850-2.G02013 {display:block}/* �˵��÷��� RTH */
+	.h850-2.G02007 {display:block}/* �索�ַ�� RTH */
+	.h850-2.G02005 {display:block}/* ���� */
+	.h850-2.G05001 {display:block}/* ����ƾ�÷��� */
+	.h850-2.G06001 {display:block}/* ��Ƽ�뷱�� */
+	.h850-2.G06002 {display:block}/* ����ƾ�뷱�� */
+	.h850-2.G06003 {display:block}/* ����ƾ�� �Ƹ���ȣ�� */
+	.h850-2.G06004 {display:block}/* ����ƾ�� �������� */
+	.h850-2.G07001 {display:block}/* ��Ƽ�ɾ�����ƾ */
+	.h850-2.G01901 {display:block}/* Ƽ����1000 */
+	.h850-2.G01911 {display:block}/* ��ַ��1000 */
+	.h850-2.G01902 {display:block}/* ȭ�̹�1000 */
+	.h850-2.G02901 {display:block}/* ��1000 */
 	.h850-2.G08001 {display:block}/* HP */
-	.h850-2.G02021 {display:block}/* 하이컴팩트  */
-	.h850-2.G06005 {display:block}/* 하이키즈 */
+	.h850-2.G02021 {display:block}/* ��������Ʈ  */
+	.h850-2.G06005 {display:block}/* ����Ű�� */
 
 
 	
@@ -1866,7 +1867,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 
 	/* ------------------------------------
-		// 992 빅배너 
+		// 992 ���� 
 	--------------------------------------- */
 	.plate_logo {max-width:183px}
 	.single-vertical-slide .slide-inner .info {padding:30px 30px 30px 30px}
@@ -1910,7 +1911,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	}
 
 	/* -------------------------
-		992 제품상세 > 제품추천
+		992 ��ǰ�� > ��ǰ��õ
 	-------------------------- */
 	.also {position:relative; padding:70px 0;}
 	.also .col-md-3 .h380 {margin-top:0px; text-align:center; height:230px; border-radius:15px}
@@ -1924,7 +1925,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 	/* .cateBox input[type="checkbox"] + label span {display:inline-block;background-size:15px 15px;} */
 
-	/*제품소개분류 체크박스*/
+	/*��ǰ�Ұ��з� üũ�ڽ�*/
 	.prd_checkbox {border-top:1px solid #d1d3dc; border-bottom:2px solid #323232; padding:15px 0}
 	.cateBox input[type="checkbox"] {display:none;}
 
@@ -1935,7 +1936,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 		height:15px;
 		margin:-2px 6px 0 0;
 		vertical-align:middle;
-		background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/ico_product_off.gif) left top no-repeat;
+		background:url(/main/brandgreenbia/img/ico_product_off.gif) left top no-repeat;
 		cursor:pointer;
 		background-size:15px 
 	}
@@ -1950,7 +1951,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 
 	/* -------------------------
-		992 그린비아소개 > 그린비아는?
+		992 �׸���ƼҰ� > �׸���ƴ�?
 	-------------------------- */
 	.tabMenu3 { top:-25px  }
 	.tabMenu3 li.active a {padding:16px 0; font-size:14px; }
@@ -1963,7 +1964,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	
 
 	/* -------------------------
-		992 브랜드 / 연혁 / 논문
+		992 �귣�� / ���� / ��
 	-------------------------- */
 	.brand_type01{padding-left:0px}
 	.bradnVideType {background:#7f99e3; color:#fff; font-size:30px; font-weighT:700; display:inline-block; padding:5px 10px }
@@ -1980,7 +1981,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.ttt {pointer-events: none; border:10px solid red; display:none}
 	
 	/* -------------------------
-		992 선택가이드
+		992 ���ð��̵�
 	-------------------------- */
 	.qBox {padding:40px 20px; }
 	ul.guide_nav a:first-child li {padding:15px 20px; }
@@ -2007,7 +2008,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.result .also .bg_point {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_point.png) no-repeat left 11px; padding-left:13px; margin-bottom:0px; margin-top:40px; background-size:6px 6px  }
 	.result .also .col-md-12 {padding:0}
 	/* -------------------------
-		992 제품소개 버튼
+		992 ��ǰ�Ұ� ��ư
 	-------------------------- */
 	.messonry-button button span.filter-counter {font-size:13px}
 	.messonry-button button span.filter-text {background:#eef0f2; padding:0px;  border-radius:250px; height:90px; width:90px; position:relative}
@@ -2031,17 +2032,17 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.thumb b { padding:12px 15px; font-size:11px; font-weight:400; position:absolute; left:7px; top:7px; background:#7f99e3; color:#fff; }
 	
 	/* ------------------------------------
-		992 제품검색
+		992 ��ǰ�˻�
 	--------------------------------------- */
 	.searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:20px 20px }
 	.searchBox input.search-input {max-width:786px; width:100%; bordeR:0; font-size:17px; outline:0; padding:15px 0;  }
-	.searchBox input.btn_search {position:absolute; right:0; top:5px; outline:0;  }
+	.searchBox input.btn_search {position:absolute; right:0; top:5px; outline:0 }
 	ul.search_in_box li {display:inline-block; position:relative;  vertical-align:top;}
 	ul.search_in_box li:nth-child(1) {width:73%; }
-	ul.search_in_box li:nth-child(2) {width:26%; vertical-align:top; position: absolute; top: 0;} /* 검색 떨어지는거 수정 */
+	ul.search_in_box li:nth-child(2) {width:26%; vertical-align:top; position: absolute; top: 0;} /* �˻� �������°� ���� */
 	ul.search_in_box li:nth-child(2) input {padding:0px 13px; border-radius:3px; max-width:80px;}
 	/* ------------------------------------
-		992 경장영양식이란
+		992 ���念����̶�
 	--------------------------------------- */
 	.entBG {padding:0 10px 70px 10px }
 	.ebtTitle {border-bottom:2px solid #323232; width:100%; padding-bottom:10px }
@@ -2066,19 +2067,19 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.tabs2 li.li_icoBG04 span{background:none; padding:0 }
 	.tabs2 li.li_icoBG05 span{background:none; padding:0 }
 	.tabs2 li .hcenter { font-size:12px; line-height:170%; }
-	br.noneM {display:block} /* 모바일사이즈에서 <br>생성 */
+	br.noneM {display:block} /* ����ϻ������ <br>���� */
 	/* ------------------------------------
-		992 주의사항
+		992 ���ǻ���
 	--------------------------------------- */
 	.check img {max-width:23px; }
-	.grayBox{padding: 10px 10px;} /* 이성희 추가 */
+	.grayBox{padding: 10px 10px;} /* �̼��� �߰� */
 	/* ------------------------------------
-		992 섭취방법
+		992 ������
 	--------------------------------------- */
 	.igsType li:first-child {width:16%; padding-top:0px}
 	.igsType li:nth-child(2) {width:84%; }
 	/* ------------------------------------
-		고객상담
+		�����
 	--------------------------------------- */
 	ul.faq {position:relative; width:100%}
 	ul.faq li {margin-bottom:40px}
@@ -2159,13 +2160,13 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-2 {height:400px; }
 	.h850-1 {height:460px; }
 	
-	.BU01 .col-md-4 {width:100%; flex:100%; max-width:100%} /* main > 제품빅배너 */
+	.BU01 .col-md-4 {width:100%; flex:100%; max-width:100%} /* main > ��ǰ���� */
 	.BU01 .col-md-3 {width:100%; flex:100%; max-width:100%; } /* main > Product Choice guide */
 	.BU01 .col-md-9 {width:100%; flex:100%; max-width:100%} /* main > Product Choice guide */	
 	.thumb_line b  {display:none}
 	.thumb_line span  {display:none}
 	/* ------------------------------------
-		768 섭취방법
+		768 ������
 	--------------------------------------- */
 	.igsType li:first-child {width:18%; padding-top:2px}
 	.igsType li:nth-child(2) {width:82%; }
@@ -2174,51 +2175,51 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.igs .col-md-8.mt50m {width:100%}
 	.igs .col-md-8.mt50m .bgPupple  {width:95%; padding:20px }
 	/* ------------------------------------
-		768 빅배너 
+		768 ���� 
 	--------------------------------------- */
-	/* 마일드케어 구수한맛*/
+	/* ���ϵ��ɾ� �����Ѹ�*/
 	.row.G01004 {background:none;  }
 	.h850-1.G01004_top {background:#e05a35; }
 	.h850-1.G01004_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01004 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01004_bottom {background:#d1483d }
-	/* 마일드케어 검은참깨 */
+	/* ���ϵ��ɾ� �������� */
 	.row.G01005 {background:none;  }
 	.h850-1.G01005_top {background:#128ec4; }
 	.h850-1.G01005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01005 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01005_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01005_bottom {background:#286099 }	
-	/* 마일드케어 오트 */
+	/* ���ϵ��ɾ� ��Ʈ */
 	.row.G01015 {background:none;  }
 	.h850-1.G01015_top {background:#c78370; }
 	.h850-1.G01015_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01015 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01015_bottom {background:#a56c5b }	
-	/* 키즈 */
+	/* Ű�� */
 	.row.G01009 {background:none;  }
 	.h850-1.G01009_top {background:#74e0e2; }
 	.h850-1.G01009_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01009 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01009_bottom {background:#3fbcd8}	
-	/* 플러스케어 */
+	/* �÷����ɾ� */
 	.row.G01012 {background:none;  }
 	.h850-1.G01012_top {background:#a6a6a6; }
 	.h850-1.G01012_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01012 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01012_bottom {background:#767676;}	
-	/* 티에프 */
+	/* Ƽ���� */
 	.row.G01001 {background:none;  }
 	.h850-1.G01001_top {background:#7cd6ee; }
 	.h850-1.G01001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01001_bottom {background:#5ac3e3 }	
-	/* 알디플러스 */
+	/* �˵��÷��� */
 	.row.G02003 {background:none;  }
 	.h850-1.G02003_top {background:#fab25d; }
 	.h850-1.G02003_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02003 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02003_bottom {background:#eab16c }
-	/* 장솔루션 */
+	/* ��ַ�� */
 	.row.G01010 {background:none;  }
 	.h850-1.G01010_top {background:#7867d9; }
 	.h850-1.G01010_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2236,37 +2237,37 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G01007_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01007 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01007_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01007_bottom {background:#4c8cca }	
-	/* 당뇨솔루션 */
+	/* �索�ַ�� */
 	.row.G02006 {background:none;  }
 	.h850-1.G02006_top {background:#589adb; }
 	.h850-1.G02006_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02006 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02006_bottom {background:#3f83c4 }	
-	/* 화이바 */
+	/* ȭ�̹� */
 	.row.G01002 {background:none;  }
 	.h850-1.G01002_top {background:#fa9f1b; }
 	.h850-1.G01002_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01002 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01002_bottom {background:#dc953d }	
-	/* 알디 */
+	/* �˵� */
 	.row.G02002 {background:none;  }
 	.h850-1.G02002_top {background:#f2d345; }
 	.h850-1.G02002_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02002 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02002_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02002_bottom {background:#e3ca49 }	
-	/* 고단백솔루션 */
+	/* ��ܹ�ַ�� */
 	.row.G02008 {background:none;  }
 	.h850-1.G02008_top {background:#d1a658; }
 	.h850-1.G02008_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02008 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02008_bottom {background:#d3a162 }	
-	/* 플러스케어당뇨식 */
+	/* �÷����ɾ�索�� */
 	.row.G02012 {background:none;  }
 	.h850-1.G02012_top {background:#74cd65; }
 	.h850-1.G02012_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02012 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02012_bottom {background:#61b64f }	
-	/* 플러스케어화이바 */
+	/* �÷����ɾ�ȭ�̹� */
 	.row.G01014 {background:none;  }
 	.h850-1.G01014_top {background:#f3b761; }
 	.h850-1.G01014_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2278,79 +2279,79 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G01008_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01008 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01008_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01008_bottom {background:#5b68ac }	
-	/* 장솔루션 RTH */
+	/* ��ַ�� RTH */
 	.row.G01011 {background:none;  }
 	.h850-1.G01011_top {background:#7765d1; }
 	.h850-1.G01011_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01011 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01011_bottom {background:#a386da }	
-	/* 이뮨포르테 RTH */
+	/* �̹������� RTH */
 	.row.G02010 {background:none;  }
 	.h850-1.G02010_top {background:#6c6354; }
 	.h850-1.G02010_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02010 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02010_bottom {background:#77796d }	
-	/* 알디플러스 RTH */
+	/* �˵��÷��� RTH */
 	.row.G02013 {background:none;  }
 	.h850-1.G02013_top {background:#fab25d; }
 	.h850-1.G02013_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02013 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02013_bottom {background:#ebb06a }	
-	/* 당뇨솔루션 RTH */
+	/* �索�ַ�� RTH */
 	.row.G02007 {background:none;  }
 	.h850-1.G02007_top {background:#36cabc; }
 	.h850-1.G02007_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02007 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02007_bottom {background:#9cd56e }	
-	/* 연하 */
+	/* ���� */
 	.row.G02005 {background:none;  }
 	.h850-1.G02005_top {background:#e89ec3; }
 	.h850-1.G02005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02005 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02005_bottom {background:#d682b4 }
-	/* 프로틴플러스 */
+	/* ����ƾ�÷��� */
 	.row.G05001 {background:none;  }
 	.h850-1.G05001_top {background:#c5986f; }
 	.h850-1.G05001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G05001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G05001_bottom {background:#8b6c58 }
-    /* 멀티밸런스 */
+    /* ��Ƽ�뷱�� */
 	.row.G06001 {background:none;  }
 	.h850-1.G06001_top {background:#678bd7; }
 	.h850-1.G06001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06001_bottom {background:#5b62d7 }
-    /* 프로틴밸런스 */
+    /* ����ƾ�뷱�� */
 	.row.G06002 {background:none;  }
 	.h850-1.G06002_top {background:#d4537a; }
 	.h850-1.G06002_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06002 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06002_bottom {background:#cf577d }
-	/* 프로틴밀 아몬드와호두 */
+	/* ����ƾ�� �Ƹ���ȣ�� */
 	.row.G06003 {background:none;  }
 	.h850-1.G06003_top {background:#e4944d; }
 	.h850-1.G06003_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06003 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06003_bottom {background:#de8c5c }
-	/* 프로틴밀 검은참깨 */
+	/* ����ƾ�� �������� */
 	.row.G06004 {background:none;  }
 	.h850-1.G06004_top {background:#a3669f; }
 	.h850-1.G06004_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06004 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06004_bottom {background:#9a6198 }
-	/* 멀티케어프로틴 */
+	/* ��Ƽ�ɾ�����ƾ */
 	.row.G07001 {background:none;  }
 	.h850-1.G07001_top {background:#7caa16; }
 	.h850-1.G07001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G07001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G07001_bottom {background:#8dad4a }
-	/* 하이컴팩트 */
+	/* ��������Ʈ */
 	.row.G02021 {background:none;  }
 	.h850-1.G02021_top {background:#67cd8c; }
 	.h850-1.G02021_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02021 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02021_bottom {background:#11a87b }
-	/* 하이키즈 */
+	/* ����Ű�� */
 	.row.G06005 {background:none;  }
 	.h850-1.G06005_top {background:#e96364; }
 	.h850-1.G06005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2358,25 +2359,25 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-3.G06005_bottom {background:#f9bd67 }
 
 
-	/* 티에프1000 */
+	/* Ƽ����1000 */
 	.row.G01901 {background:none;  }
 	.h850-1.G01901_top {background:#7cd6ee; }
 	.h850-1.G01901_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01901 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01901_bottom {background:#5bc4e4 }
-	/* 장솔루션1000 */
+	/* ��ַ��1000 */
 	.row.G01911 {background:none;  }
 	.h850-1.G01911_top {background:#696cd3; }
 	.h850-1.G01911_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01911 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01911_bottom {background:#a386da }
-	/* 화이바1000 */
+	/* ȭ�̹�1000 */
 	.row.G01902 {background:none;  }
 	.h850-1.G01902_top {background:#f99f1b; }
 	.h850-1.G01902_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01902 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01902_bottom {background:#dc953c }
-	/* 디엠1000 */
+	/* ��1000 */
 	.row.G02901 {background:none;  }
 	.h850-1.G02901_top {background:#9ed256; }
 	.h850-1.G02901_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2386,21 +2387,21 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	
 	
 	/* ------------------------------------
-		// 768 빅배너 
+		// 768 ���� 
 	--------------------------------------- */
 	.bar-graph li dl dd {width:100%; display:inline-block; margin:0; padding:0; vertical-align:middle;  margin-bottom:20px}
 	.bottomBox .col-md-6:first-child {border-bottom:1px solid #fff; border-right:0; }
 	.bottomBox .col-md-6 {margin:0px 0; padding-bottom:30px}
 	/* ------------------------------------
-		768 빅배너 > loader ani
+		768 ���� > loader ani
 	--------------------------------------- */
 	.loader-ring.list1 {width:100%; padding-left:0px; }
-	/*.loader-ring.list1 ul {display:inline-block; width:49%} 기존설정*/
+	/*.loader-ring.list1 ul {display:inline-block; width:49%} ��������*/
     .loader-ring.list1 ul {display:inline-table; width:49%}
 	.loader-ring.list1 ul li:nth-child(1) {text-align:center; margin:0 auto; display:table}
 	.loader-ring.list1 ul li:nth-child(2) {display:block; text-align:center;  margin-top:10px; margin-bottom:30px}
 	.loader-ring.list2 {width:100%; padding-left:0px; }
-	/*.loader-ring.list2 ul {display:inline-block; width:32%} 기존설정*/
+	/*.loader-ring.list2 ul {display:inline-block; width:32%} ��������*/
     .loader-ring.list2 ul {display:inline-table; width:32%}
 	.loader-ring.list2 ul li:nth-child(1) {text-align:center; margin:0 auto; display:table}
 	.loader-ring.list2 ul li:nth-child(2) {display:block; text-align:center;  margin-top:10px; margin-bottom:30px}
@@ -2427,7 +2428,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	  border-radius: 80px; 
 	}
 	/* ------------------------------------
-		768 메인 > bestBox
+		768 ���� > bestBox
 	--------------------------------------- */
 	.bestBox {position:relative; width:100%;  padding:40px 0; background:#fff}
 	.bestBox ul {margin-top:30px}
@@ -2438,7 +2439,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.bestBox ul a:nth-child(6) {display:none}
 	.bestBox ul a:nth-child(7) {display:none}
 	/* ------------------------------------
-		768 메인 > Product Choice guide
+		768 ���� > Product Choice guide
 	--------------------------------------- */
 	.slider-wrap .slider {
 	  position: absolute;
@@ -2447,7 +2448,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	  top: 0px;
 	}
 	/* -------------------------
-		768 제품상세 > 상세,영양,구매
+		768 ��ǰ�� > ��,����,����
 	-------------------------- */
 	.info_img {margin-top:50px; margin-bottom:50px}
 	.infoMenu li a {color:#a0a0a0; font-size:13px; padding:18px 0;  display:inline-block; width:100%;  }
@@ -2455,7 +2456,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.subBigBnr .row .h850-1 {height:350px}
 
 	/* -------------------------
-		768 제품상세 > 제품추천
+		768 ��ǰ�� > ��ǰ��õ
 	-------------------------- */
 	.also {position:relative; padding:70px 0;}
 	.also .col-md-3 .h380 {margin-top:40px; text-align:center; height:330px; position:relative; background-position:center 0%; }
@@ -2469,7 +2470,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.also_mark img {max-width:35px}
 
 	/* -------------------------
-		768 브랜드 / 연혁 / 논문
+		768 �귣�� / ���� / ��
 	-------------------------- */
 	.brand_cv p.cvimg { height:300px; overflow-y:hidden}
 	.corebox {margin-bottom:20px}
@@ -2484,7 +2485,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.ht02 {display:none}
 	.hisR {display:none}
 	/* -------------------------
-		768 선택가이드
+		768 ���ð��̵�
 	-------------------------- */
 	.guide {margin:0}
 	.result { padding:100px 15px 70px 15px}
@@ -2493,21 +2494,21 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.result .also .h380 { border-radius:0px; margin-top:20px; }
 	.bgGrayM {background:#eef0f2}
 	/* ------------------------------------
-		768 제품검색
+		768 ��ǰ�˻�
 	--------------------------------------- */
 	.searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:30px 15px }
 	.messonry-search {padding:35px 0; text-align:center}
 	.messonry-search button span.filter-text {padding:9px 15px;  border-radius:50px;   position:relative; width:auto;}
 	.messonry-search button span.filter-text b { font-size:14px; font-weighT:500; color:#323232 }
 	/* ------------------------------------
-		768 섭취방법
+		768 ������
 	--------------------------------------- */
 	.igs .col-md-4 { width:50%}
 	.container1400_15 .col-md-12 .bgPupple p:first-child{margin-right:12%;}
 	.container1400_15 .col-md-12 .bgPupple .mt20m{margin-top:0px;}
 
-	/* 경장 영양식이란? */
-	.source{font-size:12px; color:#646464; text-align:right; line-height:140%;} /* 이성희 추가 */
+	/* ���� ������̶�? */
+	.source{font-size:12px; color:#646464; text-align:right; line-height:140%;} /* �̼��� �߰� */
 }
 
 

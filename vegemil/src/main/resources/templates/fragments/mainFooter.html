@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <footer id="footer" th:fragment="footerFragment">
 <div class=" grayLine">
 	<div class="contant1760 mt100 mb100">
@@ -37,7 +37,7 @@
 					<li><a href="/main/webzine">정식품 웹진</a></li>
 					<li><a href="/communication/ccm">CCM / CP</a></li>
 					<li><a href="https://www.instagram.com/vegemil.official/">SNS</a></li>
-					<!-- <li><a href="/communication/event">이벤트</a></li> -->
+					<li><a href="/event/list">이벤트</a></li>
 				</ul>
 			</div>
 			<div class="col-md-5 text-right">
@@ -45,9 +45,9 @@
 				<p class="f14 fw400 gray04 mt10">사업자등록번호: 315-81-19977</p> 
 				<p class="f14 fw400 gray04 mt10">업태 : 제조(기타 비알콜성 음료) 대표이사 정연호 대표전화 02 3484 9300</p> 
 				<ul class="foot-btn-box">
-					<li><p class="f14 fw400 gray04 mt10"><b  id="adminLink" style="display:none;"><span class="f13 btn-admin"><a href="/admin/manage/customer/faq">관리자</a></span></b></li>
-					<li><p class="f14 fw400 gray04 mt10"><b><span class="f13 btn-admin"><a href="/comp/payment/list">그린비아 결제</a></span></b></p></li>
-					<li><p class="f14 fw400 gray04 mt10"><a href="/member/privacy"><b><span class="gray04 f13">개인정보취급방침</span></b></a></li>
+					<li sec:authorize="!hasAuthority('USER')"><p class="f14 fw400 gray04 mt10"><b  id="adminLink" style="display:none;"><span class="f13 btn-admin"><a href="/admin/manage/customer/faq">관리자</a></span></b></li>
+					<li sec:authorize="!hasAuthority('USER')" ><p class="f14 fw400 gray04 mt10"><b><span class="f13 btn-admin"><a href="/comp/payment/list">그린비아 결제</a></span></b></p></li>
+					<li><p class="f14 fw400 gray04 mt10"><a href="/member/privacy"><b><span class="gray04 f13">개인정보처리방침</span></b></a></li>
 					<li><p class="f14 fw400 gray04 mt10"><a href="/member/policy"><span class="gray04 f13 ml10">이용약관</span></a></p> </li>
 				</ul>
 				<p class="f13 fw600 f_pp mt60">ⓒ 2023 Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved.</p>
