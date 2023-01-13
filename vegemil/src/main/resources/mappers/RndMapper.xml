@@ -73,11 +73,7 @@
 			v_pcount, 
 			v_appdate, 
 			v_apptime, 
-			v_memo, 
-			v_confstat, 
-			v_confdate, 
-			v_conftime,
-			v_adminmemo 
+			v_memo
 		) values (
 			NOW(),
 			#{vName},
@@ -90,11 +86,7 @@
 			#{vPcount},
 			#{vAppdate},
 			#{vApptime},
-			#{vMemo},
-			'',
-			'0000-00-00 00:00:00',
-			'',
-			''
+			#{vMemo}
 		)
 	</insert>
 	
