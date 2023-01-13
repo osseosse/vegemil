@@ -38,7 +38,7 @@ $(function(){
 });
 
 
-// ëª¨ë°”ì¼ GNB
+// ¸ğ¹ÙÀÏ GNB
 function openNav() {
   document.getElementById("myNav").style.width = "100%";
 }
@@ -48,21 +48,21 @@ function closeNav() {
 }
 
 
-// ê·¸ë˜í”„ ìœ„ì¹˜ì´ë™
+// ±×·¡ÇÁ À§Ä¡ÀÌµ¿
 $(document).ready(function(){
       
 	function example(){
 		var w = $(window).width();
 
-		if(w<752){ //tablet&ëª¨ë°”ì¼ì´ë¼ë©´
+		if(w<752){ //tablet&¸ğ¹ÙÀÏÀÌ¶ó¸é
 		   $('.bar-graph-m').after( $('.move_contents'));
 
-		}else{ //pcë¼ë©´
+		}else{ //pc¶ó¸é
 			$('.bar-graph-web').after( $('.move_contents'));
 		}
 	}
 
-	//ì´ˆê¸°ì‹¤í–‰
+	//ÃÊ±â½ÇÇà
 	example();
 
 
@@ -222,10 +222,12 @@ $(document).ready(function(){
 
  
     /*=====================================
-    	25. Portfolio Masonry Activation // ì „ì²´ì œí’ˆ
+    	25. Portfolio Masonry Activation // ÀüÃ¼Á¦Ç°
     =========================================*/
 
-  /*  $(window).load(function () {
+    $(window).load(function () {
+        var selector= '';
+        
         $('.bk-masonary-wrapper').imagesLoaded(function () {
 
             // filter items on button click
@@ -236,8 +238,146 @@ $(document).ready(function(){
                 $grid.isotope({
                     filter: filterValue
                 });
+                selector='';
             });
-
+            
+            
+            function filter(category,idx,cnt){
+                selector='';
+                
+                if(idx != '0'){
+                    if($('#' + category + idx).is(":checked")){
+                        $('#' + category + '0').prop('checked',false);
+                        for(var i=1; i<=cnt; i++){
+                            if(!$('#' + category + i).is(":checked")){
+                                $('.' + category + i).css('display','none');
+                            }
+                        }
+                        $('.' + category + idx).css('display','block');
+                    }else{
+                        var tmp = 0;
+                        
+                        for(var i=1; i<=cnt; i++){
+                            if($('#' + category + i).is(":checked")){
+                                tmp++
+                            }
+                        }
+                        if(tmp==0){
+                            $('#' + category + idx).prop('checked',true);
+                        }
+                        else{
+                            $('.' + category + idx).css('display','none');
+                        }
+                    }
+                }
+                
+                for(var i=0; i<=cnt; i++){
+                    $('#' + category + i).each(function(){
+                        if($('#' + category + i).prop('checked')){
+                            if(selector != '') selector += ',';
+                            selector += $('#' + category + i).data('category');
+                        }
+                  
+                    });
+                }
+                
+                if(selector){
+                  $grid.isotope({
+                    filter: selector
+                  });
+                }
+            }
+            
+            function selectAll(category, cnt){
+                selector='';
+                if($('#' + category + '0').is(":checked")){
+                    for(var i=1; i<=cnt; i++){
+                        $('#' + category + i).prop('checked',false);
+                        $('.' + category + i).css('display','block');
+                    }
+                    for(var i=1; i<=cnt; i++){
+                        $('#' + category + i).each(function(){
+                            
+                            if(selector != '') selector += ',';
+                            selector += $('#' + category + i).data('category');
+                        });
+                    }
+              
+                    if(selector){
+                        $grid.isotope({
+                            filter: selector
+                        });
+                    }
+                }
+                else{
+                    $('#' + category + '0').prop('checked',true);
+                }       
+            }
+            
+            $('#normal0').change(function(){
+                selectAll('normal',2);
+            });
+            
+            $('#normal1').change(function(){
+                filter('normal','1',2);           
+            });
+            
+            $('#normal2').change(function(){
+                filter('normal','2',2);
+            });
+            
+            $('#expert0').change(function(){
+                selectAll('expert',7);
+            });
+            
+            $('#expert1').change(function(){
+                filter('expert','1',7);
+            });
+            
+            $('#expert2').change(function(){
+                filter('expert','2',7);
+            });
+            
+            $('#expert3').change(function(){
+                filter('expert','3',7);
+            });
+            
+            $('#expert4').change(function(){
+                filter('expert','4',7);
+            });
+            
+            $('#expert5').change(function(){
+                filter('expert','5',7);
+            });
+            
+            $('#expert6').change(function(){
+                filter('expert','6',7);
+            });
+            
+            $('#expert7').change(function(){
+                filter('expert','7',7);
+            });
+            
+            $('#soft0').change(function(){
+                selectAll('soft',1);
+            });
+            
+            $('#soft1').change(function(){
+                filter('soft','1',1);
+            });
+            
+            $('#health0').change(function(){
+                selectAll('health',2);
+            });
+            
+            $('#health1').change(function(){
+                filter('health','1',2);
+            });
+            
+            $('#health2').change(function(){
+                filter('health','2',2);
+            });
+            
             // init Isotope
             var $grid = $('.mesonry-list').isotope({
                 percentPosition: true,
@@ -248,12 +388,12 @@ $(document).ready(function(){
                 }
             });
         });
-    });*/
+    })
 
 	 /*=====================================
-    	25. Portfolio Masonry Activation // ì œí’ˆê²€ìƒ‰
+    	25. Portfolio Masonry Activation // Á¦Ç°°Ë»ö
     =========================================*/
-/*
+
     $(window).load(function () {
         $('.bk-masonary-wrapper').imagesLoaded(function () {
 
@@ -277,7 +417,7 @@ $(document).ready(function(){
                 }
             });
         });
-    });
+    })
 
 
 
@@ -285,14 +425,14 @@ $(document).ready(function(){
 
 
 	
-})(jQuery);*/
+})(jQuery);
 /*====================================================== 
 	// BROOK > main.js
 =======================================================*/
 
 
 /*====================================================== 
-	ì „ì²´ì œí’ˆ 
+	ÀüÃ¼Á¦Ç° 
 =======================================================*/
 $(function(){
 	$('.ico_pc_01').on('click',function(){
@@ -330,7 +470,7 @@ $(function(){
 
 
 /*====================================================== 
-	ê²½ì¥ì˜ì–‘ì‹ì´ë€ 
+	°æÀå¿µ¾ç½ÄÀÌ¶õ 
 =======================================================*/
 $(function(){
 	$('.ent001').on('mouseover',function(){
@@ -356,34 +496,31 @@ $(function(){
 
 
 /*====================================================== 
-	ê²½ì¥ì˜ì–‘ì‹ì´ë€ > slide
+	°æÀå¿µ¾ç½ÄÀÌ¶õ > slide
 =======================================================*/
 
+$.fn.basicTabs2 = function(options){ /* basicTabs2 º¯°æ */
+var settings = $.extend({
+  active_class: "current",
+  list_class: "tabs2", /* tabe2 º¯°æ*/
+  content_class: "tab_content2", /* tab_content2 */
+  starting_tab: 1
+}, options );
+var $content = $('.' + settings.content_class);
+var $list = $('.' + settings.list_class);
+$content.find('div').hide();
+$content.find("div:nth-child(" + settings.starting_tab + ")").show();
+$list.find("li:nth-child(" + settings.starting_tab + ")").addClass(settings.active_class);
 
-$.fn.basicTabs2 = function(options){ /* basicTabs2 ë³€ê²½ */
-	var settings = $.extend({
-	active_class: "current",
-	list_class: "tabs2", /* tabe2 ë³€ê²½*/
-	content_class: "tab_content2", /* tab_content2 */
-	starting_tab: 1
-	}, options );
-	var $content = $('.' + settings.content_class);
-	var $list = $('.' + settings.list_class);
-	$content.find('div').hide();
-	$content.find("div:nth-child(" + settings.starting_tab + ")").show();
-	$list.find("li:nth-child(" + settings.starting_tab + ")").addClass(settings.active_class);
-
-	$("." + settings.list_class + ' li a').click(function(e){
+$("." + settings.list_class + ' li a').mouseover(function(e){
 	$list.find("li").removeClass(settings.active_class);
 	$("." + settings.content_class + " > div").hide();
 	$(this).parent().addClass(settings.active_class);
 	var currentTab = $(this).attr('href');
 	$(currentTab).show();
 	e.preventDefault();
-	});
+});
+};
 
-	};
-   
-    })
 
 

@@ -3,33 +3,7 @@
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>그린비아브랜드사이트</title>
-<head>
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-	<meta name="description" content="그린비아 사이트에서 나에게 맞는 제품을 찾아보세요"/> 
-	<meta name="Keywords" content="그린비아, 정식품, 환자식, 일반영양식, 전문영양식, 연하식, 건강식품, 경구급식용, 섭취주의사항, 섭취방법, 알티에이치, RTH " />
-	<meta property="og:description" content="그린비아는 국내기술력으로 탄생한 경장영양식 선도 브랜드입니다."/> 
-	<title>그린비아브랜드사이트</title>
-	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<!-- countup -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-	<script src="/common/js/greenbia/jquery.countup.js"></script>
-	<!-- Bootstrap core CSS -->
-	<link href="/common/css/greenbia/bootstrap.css" rel="stylesheet">
-	<link href="/common/css/greenbia/reset.css" rel="stylesheet">
-	<link href="/common/css/greenbia/style.css" rel="stylesheet">
-	<!-- brook Slide -->
-	<link rel="stylesheet" href="/common/css/greenbia/plugins.min.css" >
-	<link rel="stylesheet" href="/common/css/greenbia/brook.css">
-	<!-- aos / effect -->
-	<link rel="stylesheet" href="/common/css/greenbia/aos.css" />
-	<link rel="stylesheet" href="/common/css/greenbia/effect.css" />
-	<!-- loader Ani -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-	
-	
-</head>
+<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>
 <body>
 <header class="white" th:insert="fragments/greenbia/mainHeader_greenbia :: headerFragment"></header>
 <!--------------------- 
@@ -123,168 +97,6 @@
 						</div>
 						<ul class="G06003_kcal mlk">
 							<li class="f_ms">250ml</li>
-							<li class="f_ms">200kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!--
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G06005">
-				<div class="single-vertical-slide fullscreen G06005_s  d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms">Hi-Kids</p>
-							<p class="f17_4_w f_ms mt30">CBP 성분을 함유한 성장기 어린이용 혼합음료</p>
-							<p class="f22_4_w mt60">하이키즈</p>						
-						</div>
-						<ul class="G01004_kcal mlk">
-							<li class="f_ms">150ml</li>
-							<li class="f_ms">150kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G06003">
-				<div class="single-vertical-slide fullscreen G06003_s  d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms">Protein Meal</p>
-							<p class="f17_4_w f_ms mt30">간편하게 챙기는 18g의 고단백 균형 영양</p>
-							<p class="f22_4_w mt60">프로틴밀 아몬드와 호두</p>						
-						</div>
-						<ul class="G06003_kcal mlk">
-							<li class="f_ms">250ml</li>
-							<li class="f_ms">200kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G06004">
-				<div class="single-vertical-slide fullscreen G06004_s  d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms">Protein Meal </p>
-							<p class="f17_4_w f_ms mt30">간편하게 챙기는 18g의 고단백 균형 영양</p>
-							<p class="f22_4_w mt60">프로틴밀 검은참깨</p>						
-						</div>
-						<ul class="G06004_kcal mlk">
-							<li class="f_ms">250ml</li>
-							<li class="f_ms">200kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!-- 마일드케어 Start Single Slide 
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G01004">
-				<div class="single-vertical-slide fullscreen G01004_s  d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms">Mild Care</p>
-							<p class="f17_4_w f_ms mt30">Balanced Nutrional Supplement</p>
-							<p class="f22_4_w mt60">마일드케어</p>						
-						</div>
-						<ul class="G01004_kcal mlk">
-							<li class="f_ms">200ml</li>
-							<li class="f_ms">200kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!-- End Single Slide -->
-
-			<!-- 알디플러스 Start Single Slide 
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G02003">
-				<div class="single-vertical-slide fullscreen G02013_s d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms mt10">RD Plus</p>
-							<p class="f17_4_w f_ms mt30">For Renal Patients Requiring Electrolytes <br>And Fluide Restrictions</p>
-							<p class="f22_4_w mt50">알디 플러스</p>
-						</div>
-						<ul class="G01902_kcal mlk">
-							<li class="f_ms">200ml</li>
-							<li class="f_ms">400kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!-- End Single Slide -->
-
-			<!-- 티에프 캔 Start Single Slide 
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G01001">
-				<div class="single-vertical-slide fullscreen G01001_s d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms mt10">TF</p>
-							<p class="f17_4_w f_ms mt30">Isotonic Nutrition<br>For Tube Feeding</p>
-							<p class="f22_4_w mt50">티에프</p>
-						</div>
-						<ul class="G01001_kcal mlk">
-							<li class="f_ms">200ml</li>
-							<li class="f_ms">200kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!-- End Single Slide -->
-
-			<!-- RTH Start Single Slide 
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G01008">
-				<div class="single-vertical-slide fullscreen G01008_s d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms mt10">RTH</p>
-							<p class="f17_4_w f_ms mt30">Closed system / <br>Ready-to-Hang for Tube Feeding</p>
-							<p class="f22_4_w mt50">알티에이치</p>
-						</div>
-						<ul class="G01008_kcal mlk">
-							<li class="f_ms">400ml</li>
-							<li class="f_ms">400kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!-- End Single Slide -->
-
-			<!-- 화이바1000 Start Single Slide 
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G01902">
-				<div class="single-vertical-slide fullscreen G01902_s d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f40_6_w f_ms mt10">화이바1000</p>
-							<p class="f17_4_w f_ms mt30">Balanced Nutrional Supplement</p>
-							<p class="f22_4_w mt50">화이바1000</p>
-						</div>
-						<ul class="G01902_kcal mlk">
-							<li class="f_ms">1000ml</li>
-							<li class="f_ms">1000kcal</li>
-						</ul>
-					</div>
-				</div>
-			</a>
-			<!-- End Single Slide -->
-
-			<!-- 티에프 캔 Start Single Slide 
-			<a href="/main/brandgreenbia/detail.aspx?p_code=G01001">
-				<div class="single-vertical-slide fullscreen G01001_s d-flex align-items-end">
-					<div class="slide-inner">
-						<div class="info">
-							<p class="f30_6_w f_ms">Greenbia</p>
-							<p class="f50_6_w f_ms mt10">TF</p>
-							<p class="f17_4_w f_ms mt30">Balanced Nutrional Supplement</p>
-							<p class="f22_4_w mt50">마일드케어</p>
-						</div>
-						<ul class="G01001_kcal mlk">
-							<li class="f_ms">200ml</li>
 							<li class="f_ms">200kcal</li>
 						</ul>
 					</div>
@@ -454,7 +266,6 @@
 			</div>
 		</div>
 	</div>
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">

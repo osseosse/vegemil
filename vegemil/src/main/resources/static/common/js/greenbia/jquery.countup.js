@@ -1,7 +1,7 @@
 /*!
 * jquery.countup.js 1.0.3
 *
-* Copyright 2016, Adri찼n Guerra Marrero http://agmstudio.io @AGMStudio_io
+* Copyright 2016, Adrián Guerra Marrero http://agmstudio.io @AGMStudio_io
 * Released under the MIT License
 *
 * Date: Oct 27, 2016
