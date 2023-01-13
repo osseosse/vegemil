@@ -42,6 +42,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
+import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminFaqDTO;
 import com.vegemil.domain.AdminFaqScoreDTO;
@@ -424,5 +425,28 @@ public class AdminCustomerController extends UiUtils {
 		}
 		return true;
    }
+	
+	@GetMapping(value = "/admin/manage/customer/displayVisit")
+	public @ResponseBody boolean displayVisit(@RequestParam(value = "vIdx", required = false) Long vIdx, 
+			@RequestParam(value = "vDisplay", required = false) String vDisplay, HttpServletResponse response) throws Exception {
+		boolean isRegistered = true;
+		try {
+			if (vIdx == null) {
+				return false;
+			}
+			AdminVisitDTO visitDto = adminCustomerService.getVisitDetail(vIdx);
+			visitDto.setVIdx(vIdx);
+			visitDto.setVDisplay(vDisplay);
+			isRegistered = adminCustomerService.saveDisplayVisit(visitDto);
+			if (!isRegistered) {
+				throw new IOException("저장에 실패하였습니다.");
+			}
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isRegistered;
+	}
 	
 }

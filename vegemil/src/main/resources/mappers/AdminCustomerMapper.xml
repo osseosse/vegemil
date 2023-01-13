@@ -196,7 +196,8 @@
 	<select id="selectVisitList" parameterType="hashMap" resultType="com.vegemil.domain.AdminVisitDTO">
 		SELECT /* selectVisitList by AdminCustomerMapper.xml */ 
 		       v_idx, v_writedate, v_name, v_tel, v_hp, v_email, v_area, v_addr, v_org, v_pcount,
-		       v_appdate, v_apptime, v_memo, v_confstat, v_confdate, v_conftime, v_adminmemo
+		       v_appdate, v_apptime, v_memo, v_confstat, v_confdate, v_conftime, v_adminmemo,
+		       v_area, v_display
 		  FROM m_visit
 		 WHERE 1=1
 		 <if test='sStartdate != "" '>
@@ -248,6 +249,22 @@
 	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
 		 #{idx, jdbcType=VARCHAR}
 	  </foreach>
+	</update>
+	
+	<select id="selectVisitDetail" parameterType="Long" resultType="com.vegemil.domain.AdminVisitDTO">
+		SELECT /* selectVisitDetail by AdminCustomerMapper.xml */ 
+		       v_idx, v_display
+		  FROM m_visit
+		 WHERE v_idx = #{vIdx}
+	</select>
+	
+	<update id="updateDisplayVisit" parameterType="com.vegemil.domain.AdminVisitDTO">
+		 /* updateDisplayVisit by AdminCustomerMapper.xml */ 
+		UPDATE m_visit 
+		SET 
+		    v_display = #{vDisplay}
+		WHERE
+		    v_idx = #{vIdx}
 	</update>
 
 </mapper>

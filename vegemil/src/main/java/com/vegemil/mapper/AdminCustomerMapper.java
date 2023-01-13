@@ -36,4 +36,8 @@ public interface AdminCustomerMapper {
 	public int updateVisit(AdminVisitDTO params);
 	
 	public int deleteVisit(Map<String, Object> paramMap);
+	
+	public AdminVisitDTO selectVisitDetail(Long vIdx);
+	
+	public int updateDisplayVisit(AdminVisitDTO params);
 }

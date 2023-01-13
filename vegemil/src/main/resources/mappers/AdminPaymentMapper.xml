@@ -57,6 +57,15 @@
 		 ORDER BY ROW_INDEX DESC
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
+	
+	<select id="selectPayment" parameterType="String" resultType="com.vegemil.domain.PaymentDTO">
+		SELECT 
+			<include refid="paymentColumns" />
+		  FROM
+			 m_payment
+	    WHERE 
+	    	LGD_TID = #{lgdTid}
+	</select>
 
 	<select id="selectPaymentTotalCount" parameterType="hashMap" resultType="int">
 		SELECT COUNT(*) /* selectPaymentTotalCount by AdminPaymentMapper.xml */

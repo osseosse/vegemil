@@ -27,5 +27,11 @@ public interface AdminCustomerService {
 	public boolean saveVisit(AdminVisitDTO params);
 	
 	public boolean deleteVisit(Map<String, Object> paramMap);
+	
+	public AdminVisitDTO getVisitDetail(Long vIdx); 
+	
+	public boolean saveDisplayVisit(AdminVisitDTO params); 
+	
+	
 
 }

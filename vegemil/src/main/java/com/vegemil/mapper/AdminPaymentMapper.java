@@ -16,6 +16,8 @@ public interface AdminPaymentMapper {
 	
 	public List<PaymentDTO> selectPaymentList(Map<String, Object> paramMap);
 	
+	public PaymentDTO selectPayment(String lgdTid);
+	
 	public int selectPaymentTotalCount(Map<String, Object> paramMap);
 	
 	public int savePayment(PaymentDTO params);

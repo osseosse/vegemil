@@ -12,5 +12,7 @@ public interface AdminPaymentService {
 
 	public DataTableDTO getPaymentList(Map<String, Object> paramMap);
 	
+	public PaymentDTO getPayment(String lgdTid);
+	
 	public boolean registerPayment(PaymentDTO Payment);
 }
