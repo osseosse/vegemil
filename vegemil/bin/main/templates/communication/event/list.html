@@ -36,30 +36,11 @@
 				</a>
 			</div>
 		</div>
-		<!-- 
-		<div class="row mb80">
-			<div class="col-md-6 mt50">
-				<p class="gray04 fw600 f15 f_pp">2022.02.06</p>
-				<p class="f38 fw600 black lh140 mt50 w500">종이팩 수거 이벤트</p>
-			</div>
-			<div class="col-md-6 mt50">
-				<a href="#">
-					<div class="notice-img"><p style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/EVENT_20220207.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; " class="h380"><img src="" alt=""/><span class="ing-end off f16">지난 이벤트</span></p>
-					</div>
-				</a>
+		<div class="row mb80" th:unless="${not #lists.isEmpty( eventList )}">
+			<div class="col-md-12 mt50">
+				<p class="f38 fw600 black lh140 mt50 w1000">현재 진행중인 이벤트가 없습니다.</p>
 			</div>
 		</div>
-		<div class="row mb80">
-			<div class="col-md-6 mt50">
-				<p class="gray04 fw600 f15 f_pp">2021.04.30</p>
-				<p class="f38 fw600 black lh140 mt50 w500">라잇미닛 굿즈 이벤트</p>
-			</div>
-			<div class="col-md-6 mt50">
-					<div class="notice-img"><p style="position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/EVENT_20210503.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; " class="h380"><img src="" alt=""/><span class="ing-end off f16">지난 이벤트</span></p>
-					</div>
-			</div>
-		</div>
-		 -->
 		<!-- paging -->
 		<!-- 
 		<div class="row">

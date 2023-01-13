@@ -28,7 +28,7 @@
 				//개인정보 처리방침 
 				-------------------->
 				<select class="sel01 w300 floatR mt20" id="selPrivacy">
-					<option value="Privacy_v60">개인정보 처리방침 Version</option>
+					<option value="Privacy_v60">개인정보 처리방침 2021-02-03</option>
 					<option value="Privacy_v50">2017.08.31 ~ 2021.02.02</option>
 					<option value="Privacy_v40">2013.12.19 ~ 2017.08.31</option>
 					<option value="Privacy_v40">2013.07.01 ~ 2013.12.18</option>
@@ -53,13 +53,13 @@ $( document ).ready( function() {
 
 	$("#selPrivacy").change(function(){
         if($(this).val() == "Privacy_v50"){
-        	$( '.person' ).load( '/Privacy/Privacy_v50.html' );
+        	$( '.person' ).load( '/privacy/Privacy_v50.html' );
         } else if($(this).val() == "Privacy_v40"){
-        	$( '.person' ).load( '/Privacy/Privacy_v40.html' );
+        	$( '.person' ).load( '/privacy/Privacy_v40.html' );
         } else if($(this).val() == "Privacy_v30"){
-        	$( '.person' ).load( '/Privacy/Privacy_v30.html' );
+        	$( '.person' ).load( '/privacy/Privacy_v30.html' );
         } else if($(this).val() == "Privacy_v20"){
-        	$( '.person' ).load( '/Privacy/Privacy_v20.html' );
+        	$( '.person' ).load( '/privacy/Privacy_v20.html' );
         }
     });
 	
