@@ -96,13 +96,11 @@
 		from
 			m_visit
 		where
-		<![CDATA[
 			v_confstat = '1'
 		and
-			v_appdate >= (LAST_DAY(NOW() - interval 1 month) + interval 1 DAY)
+			v_email = #{vEmail}
 		and
-			v_appdate <= LAST_DAY(NOW())
-		]]>
+			v_appdate >= MAKEDATE(YEAR(NOW()),1)
 	</select>
 	
 	<select id="selectTourScheduleList" resultType="com.vegemil.domain.ScheduleDTO">

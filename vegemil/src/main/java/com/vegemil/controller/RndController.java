@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -99,6 +100,35 @@ public class RndController extends UiUtils {
 		return "rnd/tourApply";
     }
 
+	@GetMapping("/rnd/factoryTour")
+	public String getFactoryVisit(Model model, Authentication authentication) {
+		
+		List<VisitDTO> visitList;
+		MemberDTO member = new MemberDTO();
+		String vEmail = "";
+		
+		// 현재 날짜 구하기 (시스템 시계, 시스템 타임존)
+        LocalDate now = LocalDate.now();
+        int year = now.getYear();
+		
+		if(authentication != null) {
+	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        vEmail = member.getMEmail();
+	        
+		}
+		visitList = rndService.getVisitList(vEmail);
+		int listCount = 0;
+		
+		if(visitList != null) {
+			listCount = visitList.size();
+		}
+        
+		model.addAttribute("yyyy", year);
+		model.addAttribute("visitList", visitList);
+		model.addAttribute("listCount", listCount);
+		
+		return "rnd/factoryTour";
+	}
 	
 	@PostMapping(value="/rnd/factoryTour")
 	public String postVisitForm(VisitDTO visitDto, Model model, Authentication authentication)  {

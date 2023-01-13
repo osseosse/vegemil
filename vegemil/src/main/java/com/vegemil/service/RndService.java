@@ -13,7 +13,7 @@ public interface RndService {
 	
 	public List<ScheduleDTO> getTourScheduleList();
 	
-	public List<VisitDTO> getVisitList();
+	public List<VisitDTO> getVisitList(String vEmail);
 	
 	public List<FactpostDTO> getFactReviewList(SearchDTO params);
 	

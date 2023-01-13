@@ -29,10 +29,10 @@ public class RndServiceImpl implements RndService {
 	}
 	
 	@Override
-    public List<VisitDTO> getVisitList() {
+    public List<VisitDTO> getVisitList(String vEmail) {
 		
 		List<VisitDTO> visitList = Collections.emptyList();
-		visitList = rndMapper.selectVisitList();
+		visitList = rndMapper.selectVisitList(vEmail);
 		
         return visitList;
     }

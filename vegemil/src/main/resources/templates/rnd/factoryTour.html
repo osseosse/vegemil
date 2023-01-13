@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			 -->
             <div class="col-md-12 mt120">
                 <p class="f27 fw500 underLineB">
-                    <span class="gold" th:text="${yyyymm}"></span> 공장견학 확정 일정표입니다.
+                    <span class="gold" th:text="|${yyyy}년도 |"></span>공장견학 확정 일정표입니다.
                 </p>
                 <table class="center exTable">
                     <caption>공장견학 확정 일정표</caption>
@@ -190,8 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <td class="f18" th:text="${visit.vOrg}"></td>
                             <td class="f18"><br class="mView" th:text="|${visit.vPcount}명|"></td>
                             <td class="f16">
-                                <span class="exStart" th:if="${visit.vConfstat} == '2'">견학확정</span>
-                                <span class="exEnd" th:unless="${visit.vConfstat} == '2'">신청중</span>
+                                <span class="exStart" th:if="${visit.vConfstat} == '1'">견학확정</span>
+<!--                                 <span class="exEnd" th:unless="${visit.vConfstat} == '0'">신청중</span> -->
                             </td>
                         </tr>
                     </tbody>

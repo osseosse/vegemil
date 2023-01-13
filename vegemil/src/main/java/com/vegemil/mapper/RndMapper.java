@@ -16,7 +16,7 @@ public interface RndMapper {
 
 	public List<ScheduleDTO> selectTourScheduleList();
 	
-	public List<VisitDTO> selectVisitList();
+	public List<VisitDTO> selectVisitList(String vEmail);
 	
 	public List<FactpostDTO> selectTourReviewList(SearchDTO params);
 	
