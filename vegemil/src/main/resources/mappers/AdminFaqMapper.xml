@@ -154,13 +154,13 @@
 	
 	<select id="selectFaqScoreTotalCount" parameterType="hashMap" resultType="int">
 		SELECT COUNT(*) /* selectFaqScoreTotalCount by FaqMapper.xml */
-		  FROM M_faqSatisfaction
+		  FROM m_faq_satisfaction
 	</select>
 
 	<select id="selectFaqScoreList" parameterType="hashMap" resultType="com.vegemil.domain.AdminFaqScoreDTO">
 		SELECT /* selectFaqScoreList by FaqMapper.xml */
 			<include refid="faqScoreColumns" />
-	      FROM M_faqSatisfaction
+	      FROM m_faq_satisfaction
 		 WHERE 1=1
 		 <if test='sStartdate != "" '>
 	       AND f_insertdate &gt;= #{sStartdate, jdbcType=VARCHAR} 
