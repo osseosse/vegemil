@@ -128,7 +128,7 @@ $(function () {
 	      
 	    if(confirm('삭제하시겠습니까?')){
 			$.ajax({
-				url : '/admin/event/bestReview/delete',
+				url : '/admin/manage/baby/deleteBestReview',
 				type : "post",
 				data : $(form).serialize(),
 				dataType : "json",

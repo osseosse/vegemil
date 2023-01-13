@@ -192,5 +192,62 @@
 		    m_idx = #{mIdx}
 		</if>
 	</update>
+	
+	<select id="selectVisitList" parameterType="hashMap" resultType="com.vegemil.domain.AdminVisitDTO">
+		SELECT /* selectVisitList by AdminCustomerMapper.xml */ 
+		       v_idx, v_writedate, v_name, v_tel, v_hp, v_email, v_area, v_addr, v_org, v_pcount,
+		       v_appdate, v_apptime, v_memo, v_confstat, v_confdate, v_conftime, v_adminmemo
+		  FROM m_visit
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND v_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND v_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND (v_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or v_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		 ORDER BY v_writedate DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectVisitTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*) /* selectVisitTotalCount by AdminCustomerMapper.xml */
+		  FROM m_visit
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND v_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND v_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND (v_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or v_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+	</select>
+	
+	<update id="updateVisit" parameterType="com.vegemil.domain.AdminVisitDTO">
+		 /* updateVisit by AdminCustomerMapper.xml */ 
+		UPDATE m_visit 
+		SET 
+		    v_apptime = #{vApptime},
+		    v_confstat = #{vConfstat},
+		    v_confdate = #{vConfdate},
+		    v_conftime = #{vConftime},
+		    v_adminmemo = #{vAdminmemo}
+		WHERE
+		    v_idx = #{vIdx}
+	</update>
+	
+	<update id="deleteVisit" parameterType="hashMap">
+		/* deleteVisit by AdminCustomerMapper.xml */
+		DELETE 
+		  FROM m_visit
+		 WHERE v_idx IN
+	  <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
 
 </mapper>

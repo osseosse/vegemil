@@ -106,34 +106,23 @@ var normalizeDate = function (dateString) {
 $(function () {
 	createTable();
 	
-	// 전체 체크 하는 부분
-	$("[type=checkbox][name=allCheck]").on("change", function(){ //0
-        var check = $(this).prop("checked"); //1
-        //전체 체크
-        if($(this).hasClass("form-check-input")){ //2
-            $("[type=checkbox][name=checkList]").prop("checked", check);
-     	}
-    });
-    
-    //선택삭제
+	$(".flatpickr").flatpickr({});
+	
+	//선택삭제
     $('#btnDel').click(function(e){
 		console.log('e', e)
 	    var form = document.form;
-	    var table = $('#bestReview').DataTable();
-	    console.log('table', table)
-	
 	      
 	    // Output form data to a console
 	    console.log("Form submission", decodeURIComponent($(form).serialize())); 
 	      
 	    if(confirm('삭제하시겠습니까?')){
 			$.ajax({
-				url : '/admin/manage/baby/deleteBestReview',
+				url : '/admin/manage/customer/deleteVisit',
 				type : "post",
 				data : $(form).serialize(),
 				dataType : "json",
 				success : function(data) {
-					console.log('data============',data);
 					if(data){
 						alert("삭제되었습니다.");
 						//window.location.reload();
@@ -148,19 +137,16 @@ $(function () {
 				}
 			});
 		}
-	      
-	       
-	      // Prevent actual form submission
-	      e.preventDefault();
+		// Prevent actual form submission
+	    e.preventDefault();
 	});
 });
+
 
 var createTable = function() {
 	console.log('carateTable')
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
-    const table = $('#bestReview').DataTable();
-    table.destroy();
 
   // DataTable with buttons
   // --------------------------------------------------------------------
@@ -172,19 +158,18 @@ var createTable = function() {
 	$('#sStartdate').attr("value",startdate);
 	$('#sEnddate').attr("value",enddate);
     var dt_basic = dt_basic_table.DataTable({
+	  destroy: true,
 	  lengthChange: false,
       bPaginate: true,
 	  pageLength: 10,
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/manage/baby/bestReviewList',
+        url : '/admin/manage/customer/visitList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
-//			params.sTh = $('#sIdx').val();
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
@@ -194,18 +179,21 @@ var createTable = function() {
 		}
 	  },
       columns: [
-      	{ data: 'sIdx' },
-      	{ data: 'sIdx' },
-      	{ data: 'sIdx' },
-      	{ data: 'sUid' },
-        { data: 'sEdayId' },
-        { data: 'mName' },
-        { data: 'sTitle'  },
-        { data: 'sUrl' },
-        { data: 'sImage' },
-        { data: 'sWritedate' },
-        { data: 'sRank' },
-        { data: 'sDesctime' }
+      	{ data: 'vIdx' },
+      	{ data: 'vIdx' },
+      	{ data: 'vIdx' },
+      	{ data: 'vName' },
+        { data: 'vPcount' },
+        { data: 'vOrg' },
+        { data: 'vHp' },
+        { data: 'vTel' },
+        { data: 'vEmail'  },
+        { data: 'vWritedate' },
+        { data: 'vAddr' },
+        { data: 'vAppdate' },
+        { data: 'vConfdate' },
+        { data: 'vConfstat' }
+        
       ],
       columnDefs: [
       	{
@@ -217,11 +205,16 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 	            return (
-	              '<div class="form-check">' +
-		              '<input type="checkbox" class="form-check-input" id="customCheck2" name="checkList" value="'+full['sIdx']+'" />' +
-		              '<label class="form-check-label" for="customCheck2"></label>' +
-	              '</div>'
+	              '<div class="form-check center-ck"> <input class="form-check-input dt-checkboxes" type="checkbox" name="checkList" value="'+data+'" id="checkbox' +
+	              data +
+	              '" /><label class="form-check-label" for="checkbox' +
+	              data +
+	              '"></label></div>'
 	            );
+	        },
+	        checkboxes: {
+	          selectAllRender:
+	            '<div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="checkboxSelectAll" /><label class="form-check-label" for="checkboxSelectAll"></label></div>'
 	        }
       	},
       	{
@@ -229,8 +222,8 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				return (
-					'<a data-bs-toggle="modal" data-bs-target="#large'+full['sIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
-					+ getModal(full)
+					'<a data-bs-toggle="modal" data-bs-target="#large'+full['vIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
+					+getModal(full)
       			)
       		}
       	},
@@ -238,61 +231,58 @@ var createTable = function() {
       		targets: 3,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sUid']==null)	return '';
-      			else	return full['sUid'];
-      			
+				if(data==null)	return '-';
+      			else	return data;
+							
+							
       		}
       	},
       	{
       		targets: 4,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sEdayId']==null)	return '';
-      			else	return full['sEdayId'];
-      			
+      			if(data==null)	return '-';
+      			else	return data;
       		}
       	},
       	{
       		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['mName']==null)	return '';
-      			else	return full['mName'];
+				if(data==null)	return '-';
+      			else	return data;
       		}
       	},
       	{
       		targets: 6,
       		orderable: false,
       		render: function (data, type, full, meta) {
-            return (
-				'<div class="todo-task-list-wrapper"><div class="todo-item textline"><a href="#large" data-bs-toggle="modal" data-bs-target="#large">'+full['sTitle']+'</a></div></div>'
-            );
-          }
+				if(data==null)	return '-';
+      			else	return data;
+      		}
       	},
       	{
       		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sUrl']==null)	return '';
-      			else	return '<a href="'+full['sUrl']+'" target="_blank">'+full['sUrl']+'</a>';
-      			
+      			if(data==null)	return '-';
+      			else	return data;
       		}
       	},
-      	
       	{
-			targets: 8,
-	        orderable: false,
-	        render: function (data, type, full, meta) {
-				if(full['sImage']==null)	return '';
-	  			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+full['sImage']+'" height="40" width="40" class="rounded">';
-	  		}
-        },
-        {
+      		targets: 8,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+	            if(data==null)	return '-';
+      			else	return data;
+          }
+      	},
+      	{
       		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sWritedate']==null)	return '';
-      			else	return full['sWritedate'] +' '+ full['sWritetime'];
+      			if(data==null)	return '-';
+      			else	return data;
       			
       		}
       	},
@@ -300,8 +290,8 @@ var createTable = function() {
       		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sRank']==null || full['sRank'] == 0)	return '<span class="badge rounded-pill bg-danger">N</span>';
-      			else return '<span class="badge rounded-pill bg-success">Y</span>';
+				if(data==null)	return '-';
+      			else	return data;
       			
       		}
       	},
@@ -309,8 +299,29 @@ var createTable = function() {
       		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sDesctime']==null)	return '-';
-      			else	return full['sDesctime'].substr(0, 7);
+				if(data==null)	return '-';
+      			else	return data.substr(0, 10);
+      			
+      		}
+      	},
+      	{
+      		targets: 12,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+				if(data==null || data == "0000-00-00 00:00:00")	return '-';
+      			else	return data.substr(0, 10);
+      			
+      		}
+      	},
+      	{
+      		targets: 13,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+				if(data==null)	return '-';
+				else if(data==0) return '신청'
+				else if(data==1) return '확정'
+      			else if(data==2) return '취소';
+      			
       		}
       	}
       ],
@@ -329,31 +340,31 @@ var createTable = function() {
               extend: 'print',
               text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
             },
             {
               extend: 'csv',
               text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
             },
             {
               extend: 'excel',
               text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
             },
             {
               extend: 'pdf',
               text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
             },
             {
               extend: 'copy',
               text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
             }
           ],
           init: function (api, node, config) {
@@ -385,7 +396,7 @@ var createTable = function() {
 		} );
 	} ).draw();
     
-    $('div.head-label').html('<h4 class="card-title">등록 후기 목록 <button id="btnDel" class="btn btn-outline-danger text-nowrap px-1 btn-sm" data-repeater-delete type="button"><span>선택삭제</span></button></h4>');
+    $('div.head-label').html('<h4 class="card-title">신청목록 <button id="btnDel" class="btn btn-outline-danger text-nowrap px-1 btn-sm" data-repeater-delete type="button"><span>선택삭제</span></button></h4>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
@@ -393,142 +404,156 @@ var createTable = function() {
 }
 
 function getModal(obj) {
-	console.log('obj---------------',obj)
+	let vConfdate = "";
+	if(obj.vConfdate != null & obj.vConfdate != "0000-00-00 00:00:00") {
+		vConfdate = obj.vConfdate.substr(0, 10); 
+	}
 	let modal = "";
-	modal += '<form name="modalForm'+obj.sIdx+'" id="modalForm'+obj.sIdx+'" method="post">'
+	modal += '<form name="modalForm'+obj.vIdx+'" id="modalForm'+obj.vIdx+'" method="post">'
 	modal +=  '<section id="modal-sizes">'
-	modal +=     '<div class="modal fade text-start" id="large'+obj.sIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
+	modal +=     '<div class="modal fade text-start" id="large'+obj.vIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
 	modal +=		'<div class="modal-dialog modal-dialog-centered modal-lg">'
 	modal +=			'<div class="modal-content">'
 	modal +=				'<div class="modal-header">'
-	modal +=					'<h4 class="modal-title" id="myModalLabel17">등록 후기 상세보기</h4>'
+	modal +=					'<h4 class="modal-title" id="myModalLabel17">견학신청</h4>'
 	modal +=					'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'
 	modal +=				'</div>'
 	modal +=				'<table class="table table-bordered  f13 paddingType">'
 	modal +=					'<colgroup>'
-	modal +=						'<col width="25%">'
-	modal +=						'<col width="25%">'
-	modal +=						'<col width="25%">'
-	modal +=						'<col width="25%">'
+	modal +=						'<col width="22%">'
+	modal +=						'<col width="22%">'
+	modal +=						'<col width="22%">'
+	modal +=						'<col width="34%">'
 	modal +=					'</colgroup>'
 	modal +=					'<thead>'
 	modal +=						'<tr>'
-	modal +=							'<th>ID <span class="text-warning">'+obj.sUid+'</span></th>'
-	modal +=							'<th>이데이몰ID <span class="text-warning">'+obj.sEdayId+'</span></th>'
-	modal +=							'<th colspan="2">작성자명<span class="text-warning"> '+obj.mName+'</span></th>'
+	modal +=							'<th>신청자명 <span class="text-warning"> '+obj.vName+'</span></th>'
+	modal +=							'<th>신청인원 <span class="text-warning"> '+obj.vPcount+'</span></th>'
+	modal +=							'<th colspan="2">단체명<span class="text-warning"> '+obj.vOrg+'</span></th>'
 	modal +=						'</tr>'
 	modal +=						'<tr>'
-	modal +=							'<th>등록일시<span class="text-warning"> '+obj.sWritedate + obj.sWritetime+'</span></th>'
-									if(obj.sRank != null) {
-	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-success">Y</span></th>'
-									}else{
-	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-danger">N</span></th>'									
-									}
-	modal +=							'<th>선정연월 <span class="text-warning">'+obj.sDesctime+'</span></th>'
-	modal +=							'<th>선정처리일시 <span class="text-warning">'+obj.sDesctime+'</span></th>'
+	modal +=							'<th>H.P<span class="text-warning"> '+obj.vHp+'</span></th>'
+	modal +=							'<th>TEL<span class="text-warning"> '+obj.vTel+'</span></th>'
+	modal +=							'<th>E-mail<span class="text-warning"> '+obj.vEmail+'</span></th>'									
+	modal +=							'<th>주소<span class="text-warning"> '+obj.vAddr+'</span></th>'
+	modal +=						'</tr>'
+	modal +=						'<tr>'
+	modal +=							'<th>신청일<span class="text-warning"> '+obj.vWritedate+'</span></th>'
+	modal +=							'<th colspan="3">'
+	modal +=								'<div class="form-check form-check-inline">'									
+	modal +=									'<input class="form-check-input" type="radio" name="vApptime" id="#" value="1" '
+																if(obj.vApptime == 1) {
+    modal +=														'checked />'
+																}else {
+	modal +=														' />'
+																}
+	modal +=									'<label class="form-check-label" for="#">오전</label>'
+	modal +=								'</div>'
+	modal +=								'<div class="form-check form-check-inline">'
+	modal +=									'<input class="form-check-input" type="radio" name="vApptime" id="#" value="2" '
+																if(obj.vApptime == 2) {
+    modal +=														'checked />'
+																}else {
+	modal +=														' />'
+																}
+	modal +=									'<label class="form-check-label" for="#">오후</label>'							
+	modal +=								'</div>'
+	modal +=							'</th>'																
 	modal +=						'</tr>'
 	modal +=					'</thead>'
 	modal +=				'</table>'
 	modal +=				'<div class="modal-body">'
-	modal +=					'<p>URL <a href="#"><span class="text-warning underline"> '+obj.sUrl+'</span></a></p>'
-	modal +=					'<p class="mt-1">제목 <span class="text-warning">'+obj.sTitle+'</span></p>'
+	modal +=					'<h4>고객메모</h4>'
 	modal +=					'<div class="row">'
 	modal +=						'<div class="col-12">'
-	modal +=							'<dl class="photoUL">'
-										if(obj.sImage != null) {
-	modal +=								'<dd>'
-	modal +=									'<div class="form-check">'
-	modal +=										'<input type="radio" id="#" name="photoSelection" class="form-check-input" checked />'
-	modal +=										'<label class="form-check-label" for="#">대표이미지로 선택</label>'
-	modal +=										'<div class="mt-1 photoBox1">'
-	modal +=											'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
-	modal +=											'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=											'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+obj.sImage+'" class="rounded"></p>'
-	modal +=										'</div>'
-	modal +=									'</div>'
-	modal +=								'</dd>'
-										}
-	modal +=							'</dl>'
+	modal +=							'<p class="txt-base">'+obj.vMemo+'</p>'
 	modal +=						'</div>'
 	modal +=					'</div>'
-	modal +=					'<h4 class="mt-2">베스트 후기 선정</h4>'
-	modal +=					'<table class="table table-bordered  f13 paddingType mt-1">'
-	modal +=						'<thead>'
-	modal +=							'<tr>'
-	modal +=								'<th>'
-	modal +=									'<div class="row">'
-	modal +=										'<div class="col-1"><p>선정등수</p></div>'
-	modal +=										'<div class="col-4">'
-	modal +=											'<dl class="in_dl">'
-	modal +=												'<dd>'
-	modal +=													'<div class="form-check">'
-	modal +=                                                        '<input type="hidden" name="sIdx" value="'+obj.sIdx+'">'
-	modal +=														'<input type="radio" id="#" name="sRank" class="form-check-input" value="1" '
-																if(obj.sRank == 1) {
-    modal +=														'checked />'
-																}else {
-	modal +=														' />'
-																}
-	modal +=														'<label class="form-check-label" for="#">1등</label>'
-	modal +=													'</div>'
-	modal +=												'</dd>'
-	modal +=												'<dd>'
-	modal +=													'<div class="form-check">'
-	modal +=														'<input type="radio" id="#" name="sRank" class="form-check-input" value="2" '
-																if(obj.sRank == 2) {
-    modal +=														'checked />'
-																}else {
-	modal +=														' />'
-																}
-	modal +=														'<label class="form-check-label" for="#">2등</label>'
-	modal +=													'</div>'
-	modal +=												'</dd>'
-	modal +=											'</dl>'
-	modal +=										'</div>'
-	modal +=									'</div>'
-	modal +=								'</th>'
-	modal +=							'</tr>'
-	modal +=						'</thead>'
-	modal +=					'</table>'
+	modal +=					'<h4 class="mt-50">처리내용</h4>'
+	modal +=					'<div class="row">'
+	modal +=						'<div class="col-1"><p>신청처리</p></div>'
+	modal +=						'<div class="col-2">'
+	modal +=							'<select class="form-select" name="vConfstat" id="vConfstat'+obj.vIdx+'">'
+	modal +=								'<option value="0"'
+												if(obj.vConfstat == 0) {  
+    modal += 												'selected '
+														}
+	modal +=                                            '>신청</option>'
+	modal +=								'<option value="1"'
+														if(obj.vConfstat == 1) {
+    modal += 												'selected '
+														}
+	modal +=                                            '>확정</option>'
+	modal +=								'<option value="2"'
+														if(obj.vConfstat == 2) {
+	modal +=                                                'selected '	
+														}														
+	modal +=                                            '>취소</option>'
+	modal +=							'</select>'
+	modal +=						'</div>'
+	modal +=						'<div class="col-1"><p>확정일자</p></div>'
+	modal +=						'<div class="col-2">'
+	modal +=                            '<input type="hidden" name="vIdx" value="'+obj.vIdx+'">'
+	modal +=                            '<input type="text" id="vConfdate'+obj.vIdx+'" class="form-control flatpickr" name="vConfdate" placeholder="YYYY-MM-DD" maxlength="10" '  
+														if(vConfdate != "") {
+    modal +=                                             	'value="'+vConfdate+'"/>'
+														}else{
+	modal +=												' />'													
+														}
+	modal +=						'</div>'
+	modal +=						'<div class="col-3">'
+	modal +=							'<div class="form-check form-check-inline">'
+	modal +=								'<input class="form-check-input" type="radio" name="vConftime" id="inlineRadio1" value="1"'
+												if(obj.vConftime == 1) {
+    modal +=                                        ' checked />'													
+												}else{
+	modal +=                                          '/>'
+												}
+	modal +=								'<label class="form-check-label" for="inlineRadio1">오전</label>'
+	modal +=							'</div>'
+	modal +=							'<div class="form-check form-check-inline">'
+	modal +=								'<input class="form-check-input" type="radio" name="vConftime" id="inlineRadio2" value="2"' 
+												if(obj.vConftime == 2) {
+    modal +=                                        ' checked />'													
+												}else{
+	modal +=                                          '/>'
+												}
+	modal +=								'<label class="form-check-label" for="inlineRadio2">오후</label>'
+	modal +=							'</div>'
+	modal +=						'</div>'
+	modal +=					'</div>'
+	modal +=					'<hr>'
+	modal +=					'<h4 class="mt-2">답변등록</h4>'
+	modal +=					'<textarea name="vAdminmemo" id="vAdminmemo'+obj.vIdx+'" class="form-control" >'+obj.vAdminmemo+'</textarea>'
 	modal +=				'</div>'
 	modal +=				'<div class="modal-footer">'
-	modal +=					'<button type="button" onclick="btnSave('+obj.sIdx+');" class="btn btn-primary" ">저장</button>'
+	modal +=					'<button type="button" onclick="btnSave('+obj.vIdx+');" class="btn btn-primary" >저장</button>'
 	modal +=				'</div>'
 	modal +=			'</div>'
 	modal +=		'</div>'
 	modal +=	'</div>'
-	modal += '</section>'
-	modal +='</form>'
+	modal +=  '</section>'
+	modal += '</form>'
 	
 	return modal;
 }
 
 function btnSave(idx) {
-	console.log('data', idx)
-	
 	const form = $('#modalForm'+idx).serializeArray();
-	//const formData = new FormData(form);
-	let sRank = false;
+	let check = false;
 	for(var i=0; i<form.length; i++) {
-		console.log('name----------',form[i].name)
-		if(form[i].name == "sRank") {
-			sRank = true;
+		if(form[i].value.length < 1) {
+			alert('처리내용을 입력해주세요');
+			return false;
 		}
 	}
 	
-	if(!sRank) {
-		alert("선정등수를 선택해주세요.")
-		return false;
-	}
-	    	   
-	    	   
     $.ajax({
-       url: '/admin/manage/baby/updateBestReview',
+       url: '/admin/manage/customer/saveVisit',
 	   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 	   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 	   data: $('#modalForm'+idx).serialize()
 	}).done(function(data){
-	   console.log('done', data)
 	   if(data.result) {
 	   	   alert('저장되었습니다.');
 	   	   //$('.datatables-basic').DataTable().ajax.reload();
@@ -536,6 +561,6 @@ function btnSave(idx) {
 	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	   }
 	 }).fail(function() {
-	   	   console.log('fail')
+			alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	 })
 }

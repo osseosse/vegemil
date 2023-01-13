@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.mapper.AdminCustomerMapper;
@@ -100,5 +101,48 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		queryResult = adminCustomerMapper.updateMember(params);
 		
 		return (queryResult == 1) ? true : false;
+	}
+	
+	@Override
+	public DataTableDTO getVisitList(Map<String, Object> paramMap) {
+		List<AdminVisitDTO> visitList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
+
+		int visitTotalCount = adminCustomerMapper.selectVisitTotalCount(paramMap);
+
+		if (visitTotalCount > 0) {
+			int start = Integer.parseInt(paramMap.get("start").toString());
+			int length = Integer.parseInt(paramMap.get("length").toString());
+			
+			paramMap.put("start", start);
+			paramMap.put("length", length);
+			visitList = adminCustomerMapper.selectVisitList(paramMap);
+		}
+		
+		dataTableDto.setData(visitList);
+		dataTableDto.setRecordsTotal(visitTotalCount);
+		dataTableDto.setRecordsFiltered(visitTotalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
+
+		return dataTableDto;
+	}
+	
+	@Override
+	public boolean saveVisit(AdminVisitDTO params) {
+		int queryResult = 0;
+		
+		queryResult = adminCustomerMapper.updateVisit(params);
+		
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Override
+	public boolean deleteVisit(Map<String, Object> paramMap) {
+		int queryResult = 0;
+
+
+		queryResult = adminCustomerMapper.deleteVisit(paramMap);
+
+		return (queryResult > 0) ? true : false;
 	}
 }

@@ -42,9 +42,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
+import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminFaqDTO;
 import com.vegemil.domain.AdminFaqScoreDTO;
 import com.vegemil.domain.AdminSupportDTO;
+import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.FaqDTO;
 import com.vegemil.domain.MemberDTO;
@@ -369,5 +371,58 @@ public class AdminCustomerController extends UiUtils {
 		}
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/admin/manage/customer/visitList")
+	public @ResponseBody DataTableDTO getVisitList(@ModelAttribute("params") AdminVisitDTO params, Model model,
+			@RequestParam Map<String, Object> commandMap) {
+
+		DataTableDTO dataTableDto = adminCustomerService.getVisitList(commandMap);
+		return dataTableDto;
+	}
+	
+	@RequestMapping(value = "/admin/manage/customer/saveVisit", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody Map<String, Object> saveVisit(@ModelAttribute("params") final AdminVisitDTO params, Model model) throws Exception {
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		try {
+			boolean isUpdate = adminCustomerService.saveVisit(params);
+			rtnMap.put("result", isUpdate);
+		} catch (DataAccessException e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		} catch (Exception e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		}
+
+		return rtnMap;
+	}
+	
+	@RequestMapping(value = "/admin/manage/customer/deleteVisit", method = {RequestMethod.GET, RequestMethod.POST})
+    public @ResponseBody boolean deleteVisit(@ModelAttribute("params") AdminVisitDTO params, Model model, 
+    		HttpServletResponse response, HttpServletRequest request) throws Exception {
+		try {
+	   		String checkList[] = request.getParameterValues("checkList");
+	   		ArrayList<String> list = new ArrayList<>();
+    		for(int i=0; i<checkList.length; i++) {
+   			list.add(checkList[i]);
+   		}
+   		
+   		Map<String, Object> paramMap = new HashMap<String, Object>();
+   		paramMap.put("list", list);
+   		
+   		boolean isDeleted = adminCustomerService.deleteVisit(paramMap);
+   		if (!isDeleted) {
+			return false;
+		}
+   		
+		} catch (DataAccessException e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		} catch (Exception e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		}
+		return true;
+   }
 	
 }
