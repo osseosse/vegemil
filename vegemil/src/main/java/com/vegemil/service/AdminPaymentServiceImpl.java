@@ -42,6 +42,19 @@ public class AdminPaymentServiceImpl implements AdminPaymentService {
 	}
 	
 	@Override
+	public PaymentDTO getPayment(String lgdTid) {
+		
+		PaymentDTO payment = new PaymentDTO();
+		payment = adminPaymentMapper.selectPayment(lgdTid);
+		if(payment == null) {
+			payment = new PaymentDTO();
+		}
+		
+		return payment;
+	}
+	
+	
+	@Override
 	public boolean registerPayment(PaymentDTO payment) {
 		
 		int queryResult = 0;
