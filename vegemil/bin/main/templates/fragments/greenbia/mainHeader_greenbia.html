@@ -3,11 +3,7 @@
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <header id="header" th:fragment="headerFragment">
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
 <script async th:src="@{https://www.googletagmanager.com/gtag/js?id=UA-141294099-1}"></script>
-
 <script>
 
     window.dataLayer = window.dataLayer || [];
@@ -19,14 +15,12 @@
     gtag('config', 'UA-141294099-1');
 
 </script>
-
 <!-- ---------------------------------------------------------------------------------------------
 	1. 모바일 GNB스크립트 모바일 메뉴 스크립트 입니다. 개발시 아래 JS삭제해주세요.
 	2. common.js에 있는 gnb, 모바일gnb와 동일한 스크립트입니다.
 	3. 불러오기방식은 HTML에서 작동이 안됨. mainHeader.html에 다이렉트로 스크립트 적용
 --------------------------------------------------------------------------------------------- -->
 <!-- 모달팝업 -->
-
 <div id="gnb" class="f_mw">
 	<div class="gnbBG"></div>
 	<div class="logo"><a th:href="@{/greenbia/index}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/logo.png" alt="로고"></a></div>
@@ -86,15 +80,14 @@
 	</dl>
 </div>
 
-
 <div id="gnbM">
 	<ul class="m_menuBox">
 		<li><div class="logo"><a href="./index.aspx"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/logo500.png" alt="로고"></a></li>
 		<li>
 			<dl>
-				<dd><a href="./index.aspx"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="홈"></a></dd>
-				<dd><a href="./mall.aspx"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_cash_h.gif" alt="구매"></a></dd>
-				<dd><a href="#pop_Login"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_peple_h.gif" alt="기업회원"></a></dd>
+				<dd><a href="./index"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="홈"></a></dd>
+				<dd><a href="./mall"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_cash_h.gif" alt="구매"></a></dd>
+<!-- 				<dd><a href="#pop_Login"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_peple_h.gif" alt="기업회원"></a></dd> -->
 				<dd><p onclick="openNav()">
 					<span class="m_line"></span>
 					<span class="m_line"></span>
@@ -115,10 +108,10 @@
 			
 	
 		<ul class="m_ov_top">
-			<li><a href="/main">정식품 홈페이지</a></li>
+			<li><a href="/">정식품 홈페이지</a></li>
 			<li><a href="./mall.aspx">온라인구매</a></li>
-			<li id="logIn2"><a href="#pop_Login">로그인</a></li>
-			<li id="logOut2"><a href="#">로그아웃</a></li>
+<!-- 			<li id="logIn2"><a href="#pop_Login">로그인</a></li> -->
+<!-- 			<li id="logOut2"><a href="#">로그아웃</a></li> -->
 			<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
 		</ul>
 		<ul class="m_ov_center">
@@ -167,58 +160,5 @@
 	</div>
 </div>
 <div style="clear:both"></div> 
-
-<!-- popup -->
-<script th:src="@{https://www.vegemil.co.kr/Main/brandVegemilBaby/HTML/js/modality.js}"></script>
-<div id="pop_Login"  style="display:none;">
-	<table class="popBaby" cellspacing="0"  summary="로그인">
-        <caption>로그인팝업</caption>
-		<colgroup>
-		</colgroup>
-		<tr>
-			<th>
-				<span class="f40_6">로그인</span>
-				<p class="btn_pop_close"><a href="#pop_Login"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_popClose.gif" alt="닫기" /></a></p>
-			</th>
-		</tr>
-		<tr>
-			<td>
-				<p class="f20_4 mt40 tdLine">
-					정식품 기업사이트 회원가입 후 이용 가능합니다.<br>미회원이실 경우, 회원가입 후 신청 부탁드립니다. 
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<ul class="pop_style01 mt40 pop_line">
-					<form th:action= "@{/member/login}" method="POST">
-						<li class="mt40">
-						    <input type="text" id="txtId" name="txtId" tabindex=1 placeholder="아이디" style="IME-MODE: disabled; MARGIN-LEFT: 6px" />					
-						</li>
-						<li>
-						   <input type="password" id="txtPwd" name="password" tabindex=2 placeholder="비밀번호" style="IME-MODE: disabled; MARGIN-LEFT: 6px" />					
-						</li>
-						<li class="f14_4 textRight"><a href="/member/idSearch">* 아이디 / 비밀번호찾기</a></li>
-						<li class="btn_in">
-							<input type="image" class="btn btn-secondary" src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn_login.gif" />						
-						</li>					
-					</form>
-				</ul>
-				
-			</td>
-		</tr>
-
-		<tr>
-			<td>
-				<div class="tdLine2 mt30">
-					<ul class="popUL">
-						<li><span class="f17_4"><b class="blue">Stop! &nbsp;</b> 아직 회원이 아니신가요? &nbsp;&nbsp;<img class="pop_arr" src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_popArrow.png" alt="화살" /></span> </li>
-						<li><a th:href="@{https://www.vegemil.co.kr/main/member/terms.aspx}"><p class="btn_member">회원가입</p></a></li>
-					</ul>
-				</div>
-			</td>
-		</tr>
-	</table>
-</div>
 </header>
 </html>	

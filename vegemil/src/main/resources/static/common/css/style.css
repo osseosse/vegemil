@@ -1321,7 +1321,7 @@
 	.f14.fw400.black.btnType03.mt65.float-right.wView {display:none} 
 
 	.subMenu ul {position:relative; margin:0 auto; text-align:center}
-	.subMenu p.btnSubLeft {position:absolute; top:30px; left:110px}
+	.subMenu p.btnSubLeft {position:absolute; top:30px; left:110px; z-index:100}
 	.subMenu p.btnSubRight {position:absolute; top:30px; right:110px}
 	.subMenu p img {width:6px}
 	.subMenu p.btnSubLeft span {margin-left:20px; }
