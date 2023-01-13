@@ -162,34 +162,27 @@
 	<div class="row pb200">
 		<div class="col-lg-12">
 			<div class="portfolio-grid-metro4 mesonry-list">
+				<!-- 수정후 -->	
 				<div class="resizer"></div>
-				
-				<div class="container">
-			        <div class="row g-3">						
-						<!-- 수정후 -->	
-			            <div th:each="product : ${keywordProductList}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 " th:classappend="${product.gKeyword}">
-			                <div class="card border-0">	                
-			                	<a th:with="var=${product.gIdx}" th:href="@{/greenbia/product/detail/}+${var}"> 			                
-							        <div class="poss_relative">
-							       	 	<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
-									        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
-										        <li class="f_ms" th:text="${product.gCapacity}">용량</li> 
-										        <li class="f_ms" th:text="${product.gCal}">칼로리</li> 
-									        </ul>
-								        </div>
-								        <div class="thumb_txt" style="text-align: left;">
-									        <p class="f14_41 thumb_line"><b th:text="${product.gLcate}"></b><span></span><b th:text="${product.gMcate}"></b></p>        
-									        <p class="f28_4 mt20" th:text="${product.gName}" style="font-weight: bold">제품명</p> 
-									        <p class="f16_4 mt10 gray01" th:text="${product.gContents}">제품설명</p> 
-								        </div>
-							        </div>
-					    		</a>	                    
-			                </div>
-			            </div>
-					</div>
-				</div>
-					
-				
+	            <div th:each="product : ${keywordProductList}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 " th:classappend="${product.gKeyword}">
+	                <div class="card border-0">	                
+	                	<a th:with="var=${product.gIdx}" th:href="@{/greenbia/product/detail/}+${var}"> 			                
+					        <div class="poss_relative">
+					       	 	<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
+							        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
+								        <li class="f_ms" th:text="${product.gCapacity}">용량</li> 
+								        <li class="f_ms" th:text="${product.gCal}">칼로리</li> 
+							        </ul>
+						        </div>
+						        <div class="thumb_txt" style="text-align: left;">
+							        <p class="f14_41 thumb_line"><b th:text="${product.gLcate}"></b><span></span><b th:text="${product.gMcate}"></b></p>        
+							        <p class="f28_4 mt20" th:text="${product.gName}" style="font-weight: bold">제품명</p> 
+							        <p class="f16_4 mt10 gray01" th:text="${product.gContents}">제품설명</p> 
+						        </div>
+					        </div>
+			    		</a>	                    
+	                </div>
+	            </div>
 			</div>
 		</div>
 	</div>

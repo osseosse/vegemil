@@ -1,18 +1,28 @@
 $(document).ready(function(){	
 	 		
-	 	 	$('button').click(function(){	 	 		
+			$("#btnTest").click(function(){	
+				$(".portfolio-33-33").attr('style', "display:none");
+				$('[id="s8 s3"]').attr('style', "display:block");
+	 			$('[id="s2 s13"]').attr('style', "display:block");
+			});
+	
+	 	 	$('.button').click(function(){	 	 		
 	 	 		$('button[type="button"]').removeClass('is-checked')
 	 		    $(this).addClass('is-checked');
 	 	 		
 		 		var filter = $(this).attr('data-filter');
+		 		alert(filter);
 				
 		 		if(filter == '*') {
 		 			$(".portfolio-33-33").attr('style', "display:block");
 		 		} else if(filter == '.s1') { /* 베스트 */
 		 			$(".portfolio-33-33").attr('style', "display:none");
-		 			$('[id="s1 s3"]').attr('style', "display:block");	
+		 			/*$(".s1 s3").attr('style', "display:block");*/
+		 			$(".col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33  s1 s3").show();
+		 			/*$(".portfolio-33-33").attr('style', "display:none");
+		 			$('[id="s1 s3"]').attr('style', "display:block");	*/
 		 		}else if(filter == '.s2') { /* 추천 */		 			
-		 			$(".portfolio-33-33").attr('style', "display:none");
+		 			$(".ggg").attr('style', "display:none");
 		 			$('[id="s8 s3"]').attr('style', "display:block");
 		 			$('[id="s2 s13"]').attr('style', "display:block");
 		 		}else if(filter == '.s3') { /* 일반영양식 */
