@@ -145,4 +145,18 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 
 		return (queryResult > 0) ? true : false;
 	}
+	
+	@Override
+	public AdminVisitDTO getVisitDetail(Long mIdx) {
+		return adminCustomerMapper.selectVisitDetail(mIdx);
+	}
+	
+	@Override
+	public boolean saveDisplayVisit(AdminVisitDTO params) {
+		int queryResult = 0;
+		
+		queryResult = adminCustomerMapper.updateDisplayVisit(params);
+		
+		return (queryResult == 1) ? true : false;
+	}
 }

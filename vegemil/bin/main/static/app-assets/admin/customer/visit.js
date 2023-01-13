@@ -192,6 +192,7 @@ var createTable = function() {
         { data: 'vAddr' },
         { data: 'vAppdate' },
         { data: 'vConfdate' },
+        { data: 'vDisplay' },
         { data: 'vConfstat' }
         
       ],
@@ -317,6 +318,22 @@ var createTable = function() {
       		targets: 13,
       		orderable: false,
       		render: function (data, type, full, meta) {
+				let checked = '';
+				if(full['vDisplay'] == 1) {
+					checked = 'checked';
+				}
+	            return (
+	              '<div class="form-check form-switch center-ck">'+
+	                '<input type="checkbox" class="form-check-input" '+checked+' id="vDisplay'+full['vIdx']+ '" name="listOn"'+ 'value="'+full['vIdx']+ '" onclick="javascript:btnDisplay('+full['vIdx']+')" >'+
+					'<label class="form-check-label" for="listOn"></label>'+
+			      '</div>'
+	            );
+      		}
+      	},
+      	{
+      		targets: 14,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
 				else if(data==0) return '신청'
 				else if(data==1) return '확정'
@@ -439,7 +456,8 @@ function getModal(obj) {
 	modal +=						'</tr>'
 	modal +=						'<tr>'
 	modal +=							'<th>신청일<span class="text-warning"> '+obj.vWritedate+'</span></th>'
-	modal +=							'<th colspan="3">'
+	modal +=							'<th>지역<span class="text-warning"> '+obj.vArea+'</span></th>'
+	modal +=							'<th colspan="2">'
 	modal +=								'<div class="form-check form-check-inline">'									
 	modal +=									'<input class="form-check-input" type="radio" name="vApptime" id="#" value="1" '
 																if(obj.vApptime == 1) {
@@ -527,7 +545,7 @@ function getModal(obj) {
 	modal +=					'<textarea name="vAdminmemo" id="vAdminmemo'+obj.vIdx+'" class="form-control" >'+obj.vAdminmemo+'</textarea>'
 	modal +=				'</div>'
 	modal +=				'<div class="modal-footer">'
-	modal +=					'<button type="button" onclick="btnSave('+obj.vIdx+');" class="btn btn-primary" >저장</button>'
+	modal +=					'<button type="button" onclick="btnSave('+obj.vIdx+');" class="btn btn-primary" data-bs-dismiss="modal">저장</button>'
 	modal +=				'</div>'
 	modal +=			'</div>'
 	modal +=		'</div>'
@@ -556,11 +574,39 @@ function btnSave(idx) {
 	}).done(function(data){
 	   if(data.result) {
 	   	   alert('저장되었습니다.');
-	   	   //$('.datatables-basic').DataTable().ajax.reload();
+	   	   $('.datatables-basic').DataTable().ajax.reload();
 	   }else{
 	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	   }
 	 }).fail(function() {
 			alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	 })
+}
+
+function btnDisplay(idx) {
+	let vDisplay;
+	if($('#vDisplay'+idx).is(":checked")){
+		vDisplay = 1;
+	}else{
+		vDisplay = 0;
+	}
+	
+	$.ajax({
+		url : '/admin/manage/customer/displayVisit?vIdx='+idx+'&vDisplay='+vDisplay,
+		type : "get",
+		dataType : "json",
+		success : function(data) {
+			console.log('data============',data);
+			if(data){
+				alert("수정되었습니다.");
+				$('.datatables-basic').DataTable().ajax.reload();
+			}
+			else{
+				alert("실패했습니다.");
+			}
+			
+		},
+		error : function(){
+		}
+	});
 }

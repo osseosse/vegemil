@@ -24,4 +24,5 @@ public class AdminVisitDTO {
 	private String vConfdate;
 	private String vConftime;
 	private String vAdminmemo;
+	private String vDisplay;
 }
