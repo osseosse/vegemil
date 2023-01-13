@@ -105,13 +105,13 @@
 								<li>이메일</li>
 								<li>
 									<input id="email01" type="text" th:value="${#strings.substringBefore(member.mEmail,'@')}" maxlength="50" class="inp03 w180 " >
-									<input id="email02" type="text" th:value="|@${#strings.substringAfter(member.mEmail,'@')}|" maxlength="50" class="inp03 ml10 w220 mr10">
+									@<input id="email02" type="text" th:value="|${#strings.substringAfter(member.mEmail,'@')}|" maxlength="50" class="inp03 ml10 w220 mr10" disabled>
 									<select name="selEmail" id="selEmail" class="sel02 w200 mt10m">
 										<option value="선택하세요">선택하세요</option>
-										<option value="@naver.com">naver.com</option>
-										<option value="@nate.com">nate.com</option>
-										<option value="@gmail.com">gmail.com</option>
-										<option value="@hanmail.net">hanmail.net</option>
+										<option value="naver.com">naver.com</option>
+										<option value="nate.com">nate.com</option>
+										<option value="gmail.com">gmail.com</option>
+										<option value="hanmail.net">hanmail.net</option>
 										<option value="1">직접 입력</option>
 									</select>
 								</li>
@@ -188,6 +188,11 @@
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <script th:src="@{/common/js/modelForm.js}"></script>
 <script>
+
+	$(function(){
+		var txtEmail = "[[ ${member.selEmail} ]]";
+		$("#selEmail").val(txtEmail).prop("selected", true);
+	});
 
 	function btnActive() {
 		
@@ -279,18 +284,16 @@
 		}
 		btnActive();
 	});
-
-</script> 
-<script>
-	function submitFormCheck(){
 	
+	function submitFormCheck(){
+		
 		buildData();
 		document.getElementById('frm').submit();
 	}
 	
 	function buildData(){
 		
-        var email = $('#email01').val() + $('#email02').val();
+        var email = $('#email01').val() +'@'+ $('#email02').val();
         $('input[name=vEmail').attr('value',email);
         
 		var hp = $("#hp01").val()  + "-" +  $('#hp02').val() + "-" + $('#hp03').val();
@@ -299,9 +302,8 @@
 		var addr = $("#cZipcode").val()  + ")" +  $('#cAddr1').val() + " " + $('#cAddr2').val();
 		$('input[name=vAddr]').attr('value',addr);
 	}
-	
-</script>
 
+</script> 
 <!-- ================================ // Footer ================================ -->
 </body>
 </html>
