@@ -141,11 +141,11 @@ $(".view-btn_02").click(function(){  //클릭시
 			if($aside.hasClass('open')) {
 		
 				$aside.stop(true).animate({left:'-70px'}, duration, 'swing');
-				$asideButton.find('img').attr('src','./HTML/img/btn_close.png');
+				$asideButton.find('img').attr('src','https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn/btn_close.png');
 					//alert('hi');
 			} else{
 				$aside.stop(true).animate({left:'-350px'}, duration, 'swing');
-				$asideButton.find('img').attr('src','./HTML/img/btn_open.png');
+				$asideButton.find('img').attr('src','https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn/btn_open.png');
 			};
 
 		});

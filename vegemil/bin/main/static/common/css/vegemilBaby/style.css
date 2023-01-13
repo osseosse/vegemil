@@ -3210,11 +3210,18 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
     
     /* 리스트 - 성희 1209 */
     .new_list li:nth-child(even){ margin-right: 0px;}
-    .new_list li{ margin-top: 0; margin-bottom: 20px; }
+    .new_list li{ margin-top: 0; margin-bottom: 10px;  }
     .new_list li:nth-child(4){ margin-bottom: 0px; }
+    /*
     .new_list li:nth-child(4),.new_list li:nth-child(8){ margin-right:0px; }
     .new_list li:nth-child(1),.new_list li:nth-child(2){ margin-top: 0px; }
-    .new_list li:nth-child(odd){ margin-right: 2%; }
+<<<<<<< HEAD
+    .new_list li:nth-child(odd){ }
+/*     .new_list li:nth-child(odd){ margin-right: 2%; } */
+=======
+    */
+    .new_list li:nth-child(odd){ margin-right: 1%; }
+>>>>>>> branch 'master' of https://github.com/osseosse/vegemil.git
     .new_list li:nth-child(even){ margin-left: 0; }
     
     
@@ -3327,10 +3334,10 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
     .cookYouyube iframe{ width: 100%; height: 310px; margin-bottom: 50px; }
 
     .cookBox04 ul{ width: 100%; overflow: hidden; }
-    .cookBox04 li{ height: 100%; }
+    .cookBox04 li{ height: 100%; height:auto; }
     .cookBox04 li:nth-child(odd), .cookBox04 li:nth-child(even){ float: none; max-width: 100%; margin-bottom: 25px;  }
     .cookBox04 li img:nth-child(1){ float: left; width: 48%; margin-bottom: 0px; }
-    .cookBox04 li:nth-child(even){ padding-bottom: 0px; }
+    .cookBox04 li:nth-child(even){ padding-bottom: 0px;  }
     .cookType06::before{ font-size: 14px; }
     .cookType06, .cookType07{ float: left; width: 52%; padding-left: 10px; font-size: 14px;}
     .infor_txt{ padding: 25px 0px; } 

@@ -424,6 +424,7 @@ public class WebzineController extends UiUtils {
 		
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "index");
 
 		return returnHtml;
 	}
@@ -455,6 +456,7 @@ public class WebzineController extends UiUtils {
 		
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "index");
 
 		return returnHtml;
 	}
@@ -486,6 +488,7 @@ public class WebzineController extends UiUtils {
 		
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "index");
 
 		return returnHtml;
 	}
@@ -518,6 +521,7 @@ public class WebzineController extends UiUtils {
 			
 			model.addAttribute("qrtYear", qrtYear);
 			model.addAttribute("wYear", wYear);
+			model.addAttribute("fileNo", "index");
 			
 			return returnHtml;
 		}
@@ -545,6 +549,7 @@ public class WebzineController extends UiUtils {
 		
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "event");
 
 		return "webzine/event";
 	}
@@ -580,6 +585,7 @@ public class WebzineController extends UiUtils {
 		
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "event");
 
 		return "webzine/event";
 	}
@@ -630,6 +636,7 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("q2", q2);
 		model.addAttribute("q3", q3);
 		model.addAttribute("q4", q4);
+		model.addAttribute("fileNo", "lastlistNew");
 
 		return "webzine/lastlistNew";
 	}
@@ -679,6 +686,7 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("q2", q2);
 		model.addAttribute("q3", q3);
 		model.addAttribute("q4", q4);
+		model.addAttribute("fileNo", "lastlistNew");
 
 		return "webzine/lastlistNew";
 	}

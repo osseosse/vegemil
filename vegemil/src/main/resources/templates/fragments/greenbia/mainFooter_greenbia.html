@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <footer id="footer" th:fragment="footerFragment">
-
-
 <div class="container footer">
 	<div class="row">
 		<div class="col-md-12">
@@ -42,8 +40,13 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 </script>
+<!-- Brook Slider -->
+<script type="text/javascript" th:src="@{/common/js/greenbia/vendor.min.js}"></script> 
+<script type="text/javascript" th:src="@{/common/js/greenbia/plugins.min.js}"></script>
+<!-- Brook Slider -->
 
-
-
+<script type="text/javascript" th:src="@{/common/js/greenbia/card-slider.js}"></script><!-- card-slider.js를 main.js에 취합시 상단 슬라이드 IE에서 오류로 분리시킴 -->
+<!-- AOS -->
+<script type="text/javascript" th:src="@{https://unpkg.com/aos@2.3.1/dist/aos.js}"></script>
 </footer>
 </html>
