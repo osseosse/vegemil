@@ -86,7 +86,7 @@
                                     <span class="f16 gray04">편람</span>
                                 </th>
                                 <td class="">
-                                    <a href="void(0);" onclick="CpOpenEbook('test01');return false;">
+                                    <a href="void(0);" onclick="alertNot();return false;">
                                         <p class="btnType12"><span class="lh140 gray04">E-Book 바로가기</span></p>
                                     </a>
                                 </td>
@@ -97,7 +97,7 @@
                                     <span class="f16 gray04">공통부분</span>
                                 </th>
                                 <td class="">
-                                    <a href="void(0);" onclick="CpOpenEbook('test02');return false;">
+                                    <a href="void(0);" onclick="alertNot(); return false;">
                                         <p class="btnType12"><span class="lh140 gray04">E-Book 바로가기</span></p>
                                     </a>
                                 </td>
@@ -108,7 +108,7 @@
                                     <span class="f16 gray04">영업/구매부문</span>
                                 </th>
                                 <td class="">
-                                     <a href="void(0);" onclick="CpOpenEbook('test03');return false;">
+                                     <a href="void(0);" onclick="alertNot(); return false;">
                                         <p class="btnType12"><span class="lh140 gray04">E-Book 바로가기</span></p>
                                     </a>
                                 </td>
@@ -119,7 +119,7 @@
                                     <span class="f16 gray04">하도급부문</span>
                                 </th>
                                 <td class="">
-                                     <a href="void(0);" onclick="CpOpenEbook('test04');return false;">
+                                     <a href="void(0);" onclick="alertNot(); return false;">
                                         <p class="btnType12"><span class="lh140 gray04">E-Book 바로가기</span></p>
                                     </a>
                                 </td>
@@ -130,7 +130,7 @@
                                     <span class="f16 gray04">표시,광고/약관/온라인</span>
                                 </th>
                                 <td class="">
-                                     <a href="void(0);" onclick="CpOpenEbook('test05');return false;">
+                                     <a href="void(0);" onclick="alertNot(); return false;">
                                         <p class="btnType12"><span class="lh140 gray04">E-Book 바로가기</span></p>
                                     </a>
                                 </td>
@@ -155,12 +155,18 @@
 		// Footer
 ================================ -->
 <script>
-//EBook 스크립트
+	//EBook 스크립트
 	function CpOpenEbook(fileName){
 		var winWidth = 400;
 	    var winHeight = 300;
 	    var popupOption= "width="+winWidth+", height="+winHeight;  
 		window.open("/communication/cp/cpEbookView?fileName=" + fileName,'pop',popupOption);
+	}
+	
+	// 준비중
+	
+	function alertNot(){
+		alert("준비중입니다.");
 	}
 </script>
 </body>
