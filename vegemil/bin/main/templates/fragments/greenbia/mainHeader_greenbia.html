@@ -89,11 +89,11 @@
 
 <div id="gnbM">
 	<ul class="m_menuBox">
-		<li><div class="logo"><a href="./index.aspx"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/logo500.png" alt="로고"></a></li>
+		<li><div class="logo"><a th:href="@{/greenbia/index}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/logo500.png" alt="로고"></a></li>
 		<li>
 			<dl>
-				<dd><a href="./index.aspx"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="홈"></a></dd>
-				<dd><a href="./mall.aspx"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_cash_h.gif" alt="구매"></a></dd>
+				<dd><a th:href="@{/greenbia/index}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_home_h.gif" alt="홈"></a></dd>
+				<dd><a th:href="@{/greenbia/mall}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_cash_h.gif" alt="구매"></a></dd>
 				<dd><a href="#pop_Login"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_peple_h.gif" alt="기업회원"></a></dd>
 				<dd><p onclick="openNav()">
 					<span class="m_line"></span>
@@ -115,8 +115,8 @@
 			
 	
 		<ul class="m_ov_top">
-			<li><a href="/main">정식품 홈페이지</a></li>
-			<li><a href="./mall.aspx">온라인구매</a></li>
+			<li><a th:href="@{/}">정식품 홈페이지</a></li>
+			<li><a th:href="@{/greenbia/mall}">온라인구매</a></li>
 			<li id="logIn2"><a href="#pop_Login">로그인</a></li>
 			<li id="logOut2"><a href="#">로그아웃</a></li>
 			<li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
@@ -125,37 +125,37 @@
 			<li>
 				<dl>
 					<dt>그린비아 소개</dt>
-					<dd><a href="./newInfo.aspx">그린비아는 ?</a></dd>
-					<dd><a href="./features.aspx">특징</a></dd>
-					<dd><a href="./history01.aspx">연혁</a></dd>
-					<dd><a href="./thesis.aspx">논문</a></dd>
+					<dd><a th:href="@{/greenbia/newInfo}">그린비아는?</a></dd>
+					<dd><a th:href="@{/greenbia/features}">특징</a></dd>
+					<dd><a th:href="@{/greenbia/history01}">연혁</a></dd>
+					<dd><a th:href="@{/greenbia/thesis}">논문</a></dd>
 				</dl>
 			</li>
 			<li>
 				<dl>
 					<dt>제품소개</dt>
-					<dd><a href="./guide.aspx">선택가이드</a></dd>
-					<dd><a href="./newProduct.aspx">전체제품</a></dd>
-					<dd><a href="./newProduct.aspx?category=02">- 일반영양식</a></dd>
-					<dd><a href="./newProduct.aspx?category=03">- 전문영양식</a></dd>
-					<dd><a href="./newProduct.aspx?category=04">- 연하식</a></dd>
-					<dd><a href="./newProduct.aspx?category=05">- 건강식품</a></dd>
-					<dd><a href="./search.aspx">제품검색</a></dd>
+					<dd><a th:href="@{/greenbia/guide}">선택가이드</a></dd>
+					<dd><a th:href="@{/greenbia/product/list}">전체제품</a></dd>
+					<dd><a th:href="@{/greenbia/product/list/#02}">일반영양식</a></dd>
+					<dd><a th:href="@{/greenbia/product/list/#03}">전문영양식</a></dd>
+					<dd><a th:href="@{/greenbia/product/list/#04}">연하식</a></dd>
+					<dd><a th:href="@{/greenbia/product/list/#05}">건강식품</a></dd>
+					<dd><a th:href="@{/greenbia/search}">제품검색</a></dd>
 				</dl>
 			</li>
 			<li>
 				<dl>
 					<dt>섭취방법/주의사항</dt>
-					<dd><a href="./enteral.aspx">경장영양식<br><span>(환자용 식품)이란?</span></a></dd>
-					<dd><a href="./ingestion.aspx">경관 급식 사용 방법</a></dd>
-					<dd><a href="./safety.aspx">주의사항</a></dd>
+					<dd><a th:href="@{/greenbia/enteral}">경장영양식<br><span>(환자용 식품)이란?</span></a></dd>
+					<dd><a th:href="@{/greenbia/ingestion}">경관 급식 사용 방법</a></dd>
+					<dd><a th:href="@{/greenbia/safety}">주의사항</a></dd>
 				</dl>
 			</li>
 			<li>
 				<dl>
 					<dt>고객지원</dt>
-					<dd><a href="./newFaq.aspx">FAQ</a></dd>
-					<dd><a href="./mall.aspx">온라인 구매</a></dd>
+					<dd><a  th:href="@{/greenbia/newFaq}">FAQ</a></dd>
+					<dd><a th:href="@{/greenbia/mall}">온라인 구매</a></dd>
 					<!-- <dd><a href="./sampleKidsmore.aspx">샘플신청</a></dd> -->
 					<br><br><br><br><br><br><br><br>
 				</dl>
