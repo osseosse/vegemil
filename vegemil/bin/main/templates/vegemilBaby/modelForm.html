@@ -101,7 +101,7 @@
                  <div class="container pb150">
                      <div class="row">
                          <div class="col-md-12 mt120 modelForm">
-                            <form th:action="@{/vegemilBaby/model/apply}" th:object="${model}" method="post" enctype="multipart/form-data">
+                            <form onchange="inputCheck()" th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data">
                                 <fieldset>
                                     <legend>개인 정보 수집 및 이용에 관한 안내</legend>
                                      <div class="gray_lineBox">
@@ -126,7 +126,7 @@
                                          <span>
                                              <input type="radio" id="agree_b" name="agree_radio" value="1" >
                                              <label for="agree_b" class="f17_3">동의</label>
-                                             <input type="radio" id="agree_b_n" name="agree_radio" value="0" checked>
+                                             <input type="radio" id="agree_b_n" name="agree_radio" value="0" checked required>
                                              <label for="agree_b_n" class="f17_3">비동의</label>
                                          </span>
                                      </div>
@@ -139,7 +139,7 @@
                                          <li>
 										    <dl class="divideType01 f17_4">
 											    <dd>이름 <span class="red_dot">*</span></dd>
-											    <dd class="mt10"><input type="text" id="cName" name="cName" th:value="${member.mName}"></dd>
+											    <dd class="mt10"><input type="text" id="cName" name="cName" th:value="${member.mName}" required></dd>
 										    </dl>
                                         </li>
                                         <li>
@@ -156,7 +156,7 @@
 				                            <dl class="divideType01 f17_4">
 					                            <dd>주소 <span class="red_dot">*</span></dd>
 					                            <dd class="linkType f17_3_g mt10m">
-						                            <input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" readonly/>&nbsp
+						                            <input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" readonly required/>&nbsp
 						                            <img id=imgZipcode class="veM" name="imgZipcode"  onclick=javascript:execPostcode(); alt="우편번호검색" align="top" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_zip.jpg"><br>
 						                            <input class="inType03 mt15" name="cAddr1" id="cAddr1" type="text" value="" maxlength="150" readonly/><br >
 						                            <input class="inType03 mt15" name="cAddr2" id="cAddr2" type="text" value="" maxlength="30" />
@@ -224,10 +224,12 @@
                                          </li>
                                      </ul>
                                      <div class="col-md-12 center mt100">
-                                         <input type="submit" disabled="disabled" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> <!-- input type="image --> 
+                                         <input style="background:gray;" type="submit" disabled="disabled" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> <!-- input type="image --> 
                                      </div>
                                  </fieldset>
                              </form>
+                             
+                             
                          </div>
                      </div>
                  </div><!-- //container-->
@@ -240,5 +242,21 @@
 <footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
 <script th:src="@{/common/js/modelForm.js}"></script>
+ 
+<script>
+	
+  function inputCheck(){	
+	 var name = document.forms["modelForm"]["cName"].value;
+	 var address = document.forms["modelForm"]["cZipcode"].value;
+	 var cEmail = document.forms["modelForm"]["cEmail"].value;
+	 var fileName1 = document.forms["modelForm"]["fileName1"].value;
+		if (name != null && name != "" && address != null && address != "" && cEmail != null && cEmail != "" && fileName1 != null && fileName1 != "") {
+		 document.getElementById('joinBtn').style.background = 'black';
+	 	}else{
+	 		document.getElementById('joinBtn').style.background = 'gray';	 		
+	 	}		 
+	} 	
+ 
+</script>
 </body>
 </html>
