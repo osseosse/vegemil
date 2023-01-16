@@ -309,6 +309,8 @@
           	title not like '%DCF 뉴스%'
           and
           	title not like '%넬보스코%'
+          and
+          	title not like '%CF%'
           or
           	category = '레시피'
         Order by
