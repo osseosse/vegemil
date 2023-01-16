@@ -236,8 +236,8 @@ var createTable = function() {
       		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				if(data==null)	return '-';
-      			else	return data;
+				if($.trim(data).length==0)	return '-';
+      			else	return '<img src="/web/upload/'+data+'height="40" width="40" class="rounded">';
       		}
       	},
       	{
