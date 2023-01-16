@@ -66,6 +66,37 @@ public class WebzineController extends UiUtils {
 		return "redirect:/webzine/subscribe";
 	}
 	
+	@GetMapping(value = "/webzine/emaildeny")
+	public String moveEmaildeny(@RequestParam(required = false) String emailaddr, Model model) {
+
+		model.addAttribute("emailaddr", emailaddr);
+		return "webzine/emaildeny";
+	}
+	
+	@GetMapping(value = "/webzine/reject")
+	public String saveReject(
+			@RequestParam(required = false) String emailaddr,
+			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		try {
+			
+			boolean isRegistered = webzineService.saveSendYn(emailaddr);
+			if (isRegistered == false) {
+				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/webzine", Method.GET, null, model);
+			}
+
+		} catch (Exception e) {
+			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/webzine", Method.GET, null, model);
+		}
+
+		return showMessageWithRedirect("수신거부 완료되었습니다.", "/", Method.GET, null, model);
+	}
+	
 	@GetMapping(value = "/webzine/subscribe")
 	public String openSubscribe(Model model, Authentication authentication) {
 		
@@ -526,6 +557,32 @@ public class WebzineController extends UiUtils {
 			return returnHtml;
 		}
 		
+		@GetMapping(value = "/Main/webzine/events/event_{qrtYear}.aspx")
+		public String moveOldWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
+										, Model model, HttpServletRequest request) {
+			
+			String wYear = "";
+			
+			if(!qrtYear.equals("")) {
+				wYear = qrtYear.substring(3, 7);
+			}
+			
+			List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+			List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q4_2022");
+			
+			model.addAttribute("webzineListQY", webzineListQY);
+			model.addAttribute("webzineYear", webzineYear);
+			model.addAttribute("webzineQrt", webzineQrt);
+			model.addAttribute("webzineLink", webzineLink);
+			
+			model.addAttribute("qrtYear", qrtYear);
+			model.addAttribute("wYear", wYear);
+			model.addAttribute("fileNo", "event");
+
+			return "webzine/event";
+		}
 	
 	@GetMapping(value = "/webzine/event/{qrtYear}")
 	public String openWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear

@@ -88,6 +88,16 @@
         )
     </insert>
     
+    <insert id="insertSendYn" parameterType="String" useGeneratedKeys="true" >
+        INSERT INTO m_webzine_sendyn (
+              m_email
+	        , m_insert_date
+        ) VALUES (
+            #{mEmail}
+            , NOW()
+        )
+    </insert>
+    
     <insert id="webzineEventSave" parameterType="com.vegemil.domain.WebzineEventDTO" useGeneratedKeys="true" keyProperty="indexNo">
         INSERT INTO m_webzine_event (
               cust_name

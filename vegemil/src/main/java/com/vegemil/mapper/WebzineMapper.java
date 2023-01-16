@@ -14,6 +14,8 @@ public interface WebzineMapper {
 
 	public int webzineSave(WebzineDTO params);
 	
+	public int insertSendYn(String mEmail);
+	
 	public int webzineEventSave(WebzineEventDTO params);
 	
 	public int subscribeSave(SubscribeDTO params);

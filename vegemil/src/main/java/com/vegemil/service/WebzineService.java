@@ -11,6 +11,8 @@ public interface WebzineService {
 
     public boolean saveWebzine(WebzineDTO params);
     
+    public boolean saveSendYn(String mEmail);
+    
     public boolean isWebzineEvent(WebzineEventDTO params);
     
     public boolean saveWebzineEvent(WebzineEventDTO params);
