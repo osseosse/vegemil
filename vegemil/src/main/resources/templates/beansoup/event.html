@@ -60,14 +60,14 @@
 	            <!-- //row -->
 
 	            <!-- paging -->
-				<div class="paging mt50" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" 
+				<div class="paging text-center" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" 
 	            		th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}">
             		<ol class="f_pp">
-		                <li class="pre" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
+		                <li class="pre m-3 d-inline" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
 							<img name="btnPrev" id="btnPrev" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/page_left.png}">
 						</li>
-					    <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}">
-					    	<span id="labPageList">
+					    <li class="d-inline" th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}">
+					    	<span id="labPageList" class="m-3">
 						    	<th:block th:if="${pageNo == params.currentPageNo}">
 						    		<strong th:text="${pageNo}"></strong>
 						    	</th:block>
@@ -76,7 +76,7 @@
 						    	</th:block>
 							</span>
 						</li>
-					    <li class="next" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
+					    <li class="next m-3 d-inline" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
 							<img name="btnNext" id="btnNext" th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/page_right.png}">
 						</li>
 					</ol>
