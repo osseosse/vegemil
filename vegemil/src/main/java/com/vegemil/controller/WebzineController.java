@@ -442,6 +442,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
@@ -452,7 +453,7 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
-		
+		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
 		model.addAttribute("fileNo", "index");
@@ -474,6 +475,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
@@ -484,7 +486,7 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
-		
+		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
 		model.addAttribute("fileNo", "index");
@@ -506,6 +508,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
@@ -516,7 +519,7 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
-		
+		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("qrtYear", qrtYear);
 		model.addAttribute("wYear", wYear);
 		model.addAttribute("fileNo", "index");
@@ -539,6 +542,7 @@ public class WebzineController extends UiUtils {
 			List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
 			List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
 			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 			
 			if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 				returnHtml = "webzine/oldIndex";
@@ -549,7 +553,7 @@ public class WebzineController extends UiUtils {
 			model.addAttribute("webzineYear", webzineYear);
 			model.addAttribute("webzineQrt", webzineQrt);
 			model.addAttribute("webzineLink", webzineLink);
-			
+			model.addAttribute("webzineListQY", webzineListQY);
 			model.addAttribute("qrtYear", qrtYear);
 			model.addAttribute("wYear", wYear);
 			model.addAttribute("fileNo", "index");
