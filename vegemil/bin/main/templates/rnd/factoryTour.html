@@ -5,6 +5,23 @@
 <title>정식품 견학신청</title>
 <head th:replace="fragments/head :: headFragment"></head>
 <script src="/fullcalendar/dist/index.global.js"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+	$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+	
+      function(json) {
+        if(json.ip == '211.204.41.41' || json.ip == '115.88.198.133') {
+        } else {
+        	alert("준비중 입니다.");
+        	window.location.href = "/rnd/factory";
+        }
+      }
+    );
+	
+
+/*]]>*/
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     $(function () {
@@ -186,9 +203,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             <td class="f18" th:if="${visit.vApptime} == '2'">오후</td>
                             <td class="f18" th:text="${visit.vOrg}"></td>
                             <td class="f18"><br class="mView" th:text="|${visit.vPcount}명|"></td>
-                            <td class="f16">
-                                <span class="exStart" th:if="${visit.vConfstat} == '1'">견학확정</span>
-<!--                                 <span class="exEnd" th:unless="${visit.vConfstat} == '0'">신청중</span> -->
+                            <td class="f14" th:if="${visit.vConfstat} == '1'">
+                                <div class="exEnd">신청완료 <br class="mView">(담당자 확인중)</div>
+                            </td>
+                            <td class="f14" th:if="${visit.vConfstat} == '2'">
+                                <span class="exStart" >견학확정</span>
                             </td>
                         </tr>
                     </tbody>

@@ -29,6 +29,15 @@ public class RndServiceImpl implements RndService {
 	}
 	
 	@Override
+	public int getApplyCount(VisitDTO visitDTO) {
+
+		int result = 0;
+		result = rndMapper.selectApplyCount(visitDTO);
+
+		return result;
+	}
+	
+	@Override
     public List<VisitDTO> getVisitList(String vEmail) {
 		
 		List<VisitDTO> visitList = Collections.emptyList();

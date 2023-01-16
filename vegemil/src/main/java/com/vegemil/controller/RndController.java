@@ -133,14 +133,23 @@ public class RndController extends UiUtils {
 	@PostMapping(value="/rnd/factoryTour")
 	public String postVisitForm(VisitDTO visitDto, Model model, Authentication authentication)  {
 		
+		MemberDTO member = new MemberDTO();
+		
 		try {
 		
 			if(authentication == null) {
 				return showMessageWithRedirect("로그인후 이용바랍니다.", "/rnd/factoryTour", Method.GET, null, model);
 			} else {
 			
+				member = (MemberDTO) authentication.getPrincipal();
+				VisitDTO tempDto = new VisitDTO();
+				tempDto.setVEmail(visitDto.getVEmail());
+				tempDto.setVAppdate(visitDto.getVAppdate().substring(0, 7));
+				int applyCnt = rndService.getApplyCount(tempDto);
+				if(applyCnt > 0) {
+					return showMessageWithRedirect("해당 월에는 이미 신청하신 이력이 있습니다.", "/rnd/factoryTour", Method.GET, null, model);
+				}
 				int result = rndService.insertMvisit(visitDto); 
-		
 				if(result > 0) {
 					return showMessageWithRedirect("견학 신청이 정상적으로 접수되었습니다.", "/rnd/factoryTour", Method.GET, null, model);
 				}

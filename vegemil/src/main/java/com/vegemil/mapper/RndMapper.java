@@ -13,6 +13,8 @@ import com.vegemil.domain.VisitDTO;
 public interface RndMapper {
 	
 	public int insertMvisit(VisitDTO visitDTO);
+	
+	public int selectApplyCount(VisitDTO visitDTO);
 
 	public List<ScheduleDTO> selectTourScheduleList();
 	

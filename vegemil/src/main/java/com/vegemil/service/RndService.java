@@ -11,6 +11,8 @@ public interface RndService {
 	
 	public int insertMvisit(VisitDTO visitDTO);
 	
+	public int getApplyCount(VisitDTO visitDTO);
+	
 	public List<ScheduleDTO> getTourScheduleList();
 	
 	public List<VisitDTO> getVisitList(String vEmail);
