@@ -7,7 +7,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.AdminVisitDTO;
+import com.vegemil.domain.AdminVisitSetupDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.mapper.AdminCustomerMapper;
@@ -159,4 +161,44 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		
 		return (queryResult == 1) ? true : false;
 	}
+	
+	@Override
+	public DataTableDTO getFactoryTourReviewList(Map<String, Object> paramMap) {
+		List<AdminFactpostDTO> factoryTourReviewList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
+
+		int totalCount = adminCustomerMapper.selectFactoryTourReviewTotalCount(paramMap);
+
+		if (totalCount > 0) {
+			int start = Integer.parseInt(paramMap.get("start").toString());
+			int length = Integer.parseInt(paramMap.get("length").toString());
+			
+			paramMap.put("start", start);
+			paramMap.put("length", length);
+			factoryTourReviewList = adminCustomerMapper.selectFactoryTourReviewList(paramMap);
+		}
+		
+		dataTableDto.setData(factoryTourReviewList);
+		dataTableDto.setRecordsTotal(totalCount);
+		dataTableDto.setRecordsFiltered(totalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
+
+		return dataTableDto;
+	}
+	
+	@Override
+	public AdminVisitSetupDTO getVisitSetup() {
+		return adminCustomerMapper.selectVisitSetup();
+	}
+	
+	@Override
+	public boolean saveVisitSetup(AdminVisitSetupDTO params) {
+		int queryResult = 0;
+		
+		queryResult = adminCustomerMapper.updateVisitSetup(params);
+		
+		return (queryResult == 1) ? true : false;
+	}
+	
+	
 }

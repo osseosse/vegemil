@@ -14,7 +14,7 @@
 	
 	<!-- BEGIN: Page Vendor JS-->
 	<th:block layout:fragment="add-script">
-	    <script th:src="@{/app-assets/admin/customer/visit.js}"></script>
+	    <script th:src="@{/app-assets/admin/customer/factoryTourReview.js}"></script>
 	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
 	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
 	    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css}">
@@ -94,7 +94,7 @@
 												상세검색
 											</div>
 											<div class="col-md-4 col-4">
-												<input type="text" id="searchWord" class="form-control" name="searchWord" placeholder="이름, 연락처에 포함된 된어를 입력하세요" />
+												<input type="text" id="searchWord" class="form-control" name="searchWord" placeholder="제목, 내용, 이름에 포함된 단어를 입력하세요" />
 											</div>
 										</div>
 										<hr />
@@ -123,27 +123,24 @@
 										<table class="datatables-basic table table-bordered text-center f13 paddingType">
 											<colgroup>
 												<col width="1%">
-												<col width="1%">
-												<col width="7%">
-												<col width="7%">
-												<col width="7%">
+												<col width="10%">
+												<col width="8%">
+												<col width="22%">
+												<col width="8%">
+												<col width="8%">
 												<col width="8%">
 	
-												<col width="9%">
-												<col width="9%">
+												<col width="10%">
 												<col width="6%">
-												<col width="8%">
 												<col width="12%">
-	
-												<col width="8%">
-												<col width="8%">
-												<col width="7%">
+												<col width="9%">
 	
 												
 											</colgroup>
 											<thead>
 												<tr>
 													<th>No.</th>
+													<th>작성일자</th>
 													<th>베스트후기여부</th>
 													<th>제목</th>
 													<th>작성자</th>
@@ -151,7 +148,7 @@
 													<th>아이디</th>
 													<th>연락처</th>
 													<th>조회</th>
-													<th>수정</th>
+													<th>후기선정</th>
 													<th>삭제</th>
 												</tr>
 											</thead>

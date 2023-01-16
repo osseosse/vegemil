@@ -165,7 +165,7 @@ var createTable = function() {
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/manage/customer/visitList',
+        url : '/admin/manage/customer/factoryTourReviewList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -179,21 +179,17 @@ var createTable = function() {
 		}
 	  },
       columns: [
-      	{ data: 'vIdx' },
-      	{ data: 'vIdx' },
-      	{ data: 'vIdx' },
-      	{ data: 'vName' },
-        { data: 'vPcount' },
-        { data: 'vOrg' },
-        { data: 'vHp' },
-        { data: 'vTel' },
-        { data: 'vEmail'  },
-        { data: 'vWritedate' },
-        { data: 'vAddr' },
-        { data: 'vAppdate' },
-        { data: 'vConfdate' },
-        { data: 'vDisplay' },
-        { data: 'vConfstat' }
+      	{ data: 'sIdx' },
+      	{ data: 'sWritedate' },
+      	{ data: 'sBest' },
+      	{ data: 'sSubject' },
+      	{ data: 'sName' },
+        { data: 'sFile' },
+        { data: 'sId' },
+        { data: 'sHp' },
+        { data: 'sHit' },
+        { data: 'sBest'  },
+        { data: 'sIdx' }
         
       ],
       columnDefs: [
@@ -205,27 +201,17 @@ var createTable = function() {
       		targets: 1,
       		orderable: false,
       		render: function (data, type, full, meta) {
-	            return (
-	              '<div class="form-check center-ck"> <input class="form-check-input dt-checkboxes" type="checkbox" name="checkList" value="'+data+'" id="checkbox' +
-	              data +
-	              '" /><label class="form-check-label" for="checkbox' +
-	              data +
-	              '"></label></div>'
-	            );
-	        },
-	        checkboxes: {
-	          selectAllRender:
-	            '<div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="checkboxSelectAll" /><label class="form-check-label" for="checkboxSelectAll"></label></div>'
-	        }
+      			if(data==null)	return '-';
+      			else	return data.substr(0, 10);;
+      		}
       	},
       	{
       		targets: 2,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				return (
-					'<a data-bs-toggle="modal" data-bs-target="#large'+full['vIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
-					+getModal(full)
-      			)
+      			if(data==null)	return '-';
+      			else if(data == 0) return '일반후기';
+      			else	return '베스트후기';
       		}
       	},
       	{
@@ -282,8 +268,17 @@ var createTable = function() {
       		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '-';
-      			else	return data;
+				let checked;
+				return (
+				'<div class="form-check form-check-inline">'+
+				'<input class="form-check-input" type="radio" name="sBest'+full['sIdx']+'" id="inlineRadio1" value="0" '+getCheck(0, full['sBest'])+'/>'+													
+				'<label class="form-check-label" for="inlineRadio1">일반</label>'+
+				'</div>'+
+				'<div class="form-check form-check-inline">'+
+				'<input class="form-check-input" type="radio" name="sBest'+full['sIdx']+'" id="inlineRadio1" value="1" '+getCheck(1, full['sBest'])+'/>'+													
+				'<label class="form-check-label" for="inlineRadio1">베스트</label>'+
+				'</div>'
+				)
       			
       		}
       	},
@@ -291,53 +286,8 @@ var createTable = function() {
       		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				if(data==null)	return '-';
-      			else	return data;
+      			return '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'D\')">삭제</button>'
       			
-      		}
-      	},
-      	{
-      		targets: 11,
-      		orderable: false,
-      		render: function (data, type, full, meta) {
-				if(data==null)	return '-';
-      			else	return data.substr(0, 10);
-      			
-      		}
-      	},
-      	{
-      		targets: 12,
-      		orderable: false,
-      		render: function (data, type, full, meta) {
-				if(data==null || data == "0000-00-00 00:00:00")	return '-';
-      			else	return data.substr(0, 10);
-      			
-      		}
-      	},
-      	{
-      		targets: 13,
-      		orderable: false,
-      		render: function (data, type, full, meta) {
-				let checked = '';
-				if(full['vDisplay'] == 1) {
-					checked = 'checked';
-				}
-	            return (
-	              '<div class="form-check form-switch center-ck">'+
-	                '<input type="checkbox" class="form-check-input" '+checked+' id="vDisplay'+full['vIdx']+ '" name="listOn"'+ 'value="'+full['vIdx']+ '" onclick="javascript:btnDisplay('+full['vIdx']+')" >'+
-					'<label class="form-check-label" for="listOn"></label>'+
-			      '</div>'
-	            );
-      		}
-      	},
-      	{
-      		targets: 14,
-      		orderable: false,
-      		render: function (data, type, full, meta) {
-				if(data==null)	return '-';
-				else if(full['vCancel']==1) return '취소';
-				else if(data==0 || data==1) return '신청'
-				else if(data==2) return '확정'
       		}
       	}
       ],
@@ -412,151 +362,13 @@ var createTable = function() {
 		} );
 	} ).draw();
     
-    $('div.head-label').html('<h4 class="card-title">신청목록 <button id="btnDel" class="btn btn-outline-danger text-nowrap px-1 btn-sm" data-repeater-delete type="button"><span>선택삭제</span></button></h4>');
+    $('div.head-label').html('<h4 class="card-title">후기목록</h4>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
   }
 }
 
-function getModal(obj) {
-	let vConfdate = "";
-	if(obj.vConfdate != null & obj.vConfdate != "0000-00-00 00:00:00") {
-		vConfdate = obj.vConfdate.substr(0, 10); 
-	}
-	let modal = "";
-	modal += '<form name="modalForm'+obj.vIdx+'" id="modalForm'+obj.vIdx+'" method="post">'
-	modal +=  '<section id="modal-sizes">'
-	modal +=     '<div class="modal fade text-start" id="large'+obj.vIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
-	modal +=		'<div class="modal-dialog modal-dialog-centered modal-lg">'
-	modal +=			'<div class="modal-content">'
-	modal +=				'<div class="modal-header">'
-	modal +=					'<h4 class="modal-title" id="myModalLabel17">견학신청</h4>'
-	modal +=					'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'
-	modal +=				'</div>'
-	modal +=				'<table class="table table-bordered  f13 paddingType">'
-	modal +=					'<colgroup>'
-	modal +=						'<col width="22%">'
-	modal +=						'<col width="22%">'
-	modal +=						'<col width="22%">'
-	modal +=						'<col width="34%">'
-	modal +=					'</colgroup>'
-	modal +=					'<thead>'
-	modal +=						'<tr>'
-	modal +=							'<th>신청자명 <span class="text-warning"> '+obj.vName+'</span></th>'
-	modal +=							'<th>신청인원 <span class="text-warning"> '+obj.vPcount+'</span></th>'
-	modal +=							'<th colspan="2">단체명<span class="text-warning"> '+obj.vOrg+'</span></th>'
-	modal +=						'</tr>'
-	modal +=						'<tr>'
-	modal +=							'<th>H.P<span class="text-warning"> '+obj.vHp+'</span></th>'
-	modal +=							'<th>TEL<span class="text-warning"> '+obj.vTel+'</span></th>'
-	modal +=							'<th>E-mail<span class="text-warning"> '+obj.vEmail+'</span></th>'									
-	modal +=							'<th>주소<span class="text-warning"> '+obj.vAddr+'</span></th>'
-	modal +=						'</tr>'
-	modal +=						'<tr>'
-	modal +=							'<th>신청일<span class="text-warning"> '+obj.vWritedate+'</span></th>'
-	modal +=							'<th>지역<span class="text-warning"> '+obj.vArea+'</span></th>'
-	modal +=							'<th colspan="2">'
-	modal +=								'<div class="form-check form-check-inline">'									
-	modal +=									'<input class="form-check-input" type="radio" name="vApptime" id="#" value="1" '
-																if(obj.vApptime == 1) {
-    modal +=														'checked />'
-																}else {
-	modal +=														' />'
-																}
-	modal +=									'<label class="form-check-label" for="#">오전</label>'
-	modal +=								'</div>'
-	modal +=								'<div class="form-check form-check-inline">'
-	modal +=									'<input class="form-check-input" type="radio" name="vApptime" id="#" value="2" '
-																if(obj.vApptime == 2) {
-    modal +=														'checked />'
-																}else {
-	modal +=														' />'
-																}
-	modal +=									'<label class="form-check-label" for="#">오후</label>'							
-	modal +=								'</div>'
-	modal +=							'</th>'																
-	modal +=						'</tr>'
-	modal +=					'</thead>'
-	modal +=				'</table>'
-	modal +=				'<div class="modal-body">'
-	modal +=					'<h4>고객메모</h4>'
-	modal +=					'<div class="row">'
-	modal +=						'<div class="col-12">'
-	modal +=							'<p class="txt-base">'+obj.vMemo+'</p>'
-	modal +=						'</div>'
-	modal +=					'</div>'
-	modal +=					'<h4 class="mt-50">처리내용</h4>'
-	modal +=					'<div class="row">'
-	modal +=						'<div class="col-1"><p>신청처리</p></div>'
-	modal +=						'<div class="col-2">'
-	modal +=							'<select class="form-select" name="vConfstat" id="vConfstat'+obj.vIdx+'">'
-	modal +=								'<option value="1"'
-												if(obj.vConfstat == 1) {  
-    modal += 												'selected '
-														}
-	modal +=                                            '>신청</option>'
-	modal +=								'<option value="2"'
-														if(obj.vConfstat == 2) {
-    modal += 												'selected '
-														}
-	modal +=                                            '>확정</option>'
-	modal +=								'<option value="3"'
-														if(obj.vCancel == 1) {
-	modal +=                                                'selected '	
-														}														
-	modal +=                                            '>취소</option>'
-	modal +=							'</select>'
-	modal +=						'</div>'
-	modal +=						'<div class="col-1"><p>확정일자</p></div>'
-	modal +=						'<div class="col-2">'
-	modal +=                            '<input type="hidden" name="vIdx" value="'+obj.vIdx+'">'
-	modal +=                            '<input type="text" id="vConfdate'+obj.vIdx+'" class="form-control flatpickr" name="vConfdate" placeholder="YYYY-MM-DD" maxlength="10" '  
-														if(vConfdate != "") {
-    modal +=                                             	'value="'+vConfdate+'"/>'
-														}else{
-	modal +=												' />'													
-														}
-	modal +=						'</div>'
-	modal +=						'<div class="col-3">'
-	modal +=							'<div class="form-check form-check-inline">'
-	modal +=								'<input class="form-check-input" type="radio" name="vConftime" id="inlineRadio1" value="1"'
-												if(obj.vConftime == 1) {
-    modal +=                                        ' checked />'													
-												}else{
-	modal +=                                          '/>'
-												}
-	modal +=								'<label class="form-check-label" for="inlineRadio1">오전</label>'
-	modal +=							'</div>'
-	modal +=							'<div class="form-check form-check-inline">'
-	modal +=								'<input class="form-check-input" type="radio" name="vConftime" id="inlineRadio2" value="2"' 
-												if(obj.vConftime == 2) {
-    modal +=                                        ' checked />'													
-												}else{
-	modal +=                                          '/>'
-												}
-	modal +=								'<label class="form-check-label" for="inlineRadio2">오후</label>'
-	modal +=							'</div>'
-	modal +=						'</div>'
-	modal +=					'</div>'
-	modal +=					'<hr>'
-	modal +=					'<h4 class="mt-2">답변등록</h4>'
-	modal +=					'<textarea name="vAdminmemo" id="vAdminmemo'+obj.vIdx+'" class="form-control" >'
-							     if(typeof obj.vAdminmemo != "undefined") 
-    modal +=  					     obj.vAdminmemo
-	modal +=                     '</textarea>'
-	modal +=				'</div>'
-	modal +=				'<div class="modal-footer">'
-	modal +=					'<button type="button" onclick="btnSave('+obj.vIdx+');" class="btn btn-primary" data-bs-dismiss="modal">저장</button>'
-	modal +=				'</div>'
-	modal +=			'</div>'
-	modal +=		'</div>'
-	modal +=	'</div>'
-	modal +=  '</section>'
-	modal += '</form>'
-	
-	return modal;
-}
 
 function btnSave(idx) {
 	const form = $('#modalForm'+idx).serializeArray();
@@ -585,60 +397,41 @@ function btnSave(idx) {
 	 })
 }
 
-function btnDisplay(idx) {
-	let vDisplay;
-	if($('#vDisplay'+idx).is(":checked")){
-		vDisplay = 1;
-	}else{
-		vDisplay = 0;
-	}
-	
-	$.ajax({
-		url : '/admin/manage/customer/displayVisit?vIdx='+idx+'&vDisplay='+vDisplay,
-		type : "get",
-		dataType : "json",
-		success : function(data) {
-			console.log('data============',data);
-			if(data){
-				alert("수정되었습니다.");
-				$('.datatables-basic').DataTable().ajax.reload();
-			}
-			else{
-				alert("실패했습니다.");
-			}
-			
-		},
-		error : function(){
-		}
-	});
+function getCheck(val1, val2) {
+	console.log('val1', val1)
+	console.log('val2', val2)
+	if(val1 == val2) return 'checked';
 }
 
-function btnSetupSave() {
-	const form = $('#frm').serialize()
-	console.log('form', decodeURI(form))
-	let sMonth1Arr = [];
-	let sMonth2Arr = [];
+function btnSave(idx, action) {
+	let msg;
 	
-	$('input[name=sMonth1]:checked').each(function(){
-		sMonth1Arr.push($(this).val())
-	});
-	$('input[name=sMonth2]:checked').each(function(){
-		sMonth2Arr.push($(this).val())
-	});
+	if(action == "I") {
+		msg = "등록하시겠습니까?";
+	}else{
+		if(action == "U") {
+			msg = "수정하시겠습니까?";	
+		}else {
+			msg = "삭제하시겠습니까?";	
+		}
+	}
 	
-    $.ajax({
-       url: '/admin/manage/customer/saveVisitSetup',
-	   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
-	   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-	   data: form
-	}).done(function(data){
-	   if(data.result) {
-	   	   alert('저장되었습니다.');
-	   	   $('.datatables-basic').DataTable().ajax.reload();
-	   }else{
-	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-	   }
-	 }).fail(function() {
-			alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-	 })
+	if(confirm("삭제하시겠습니까?")) {
+		$.ajax({
+	       url: '/admin/manage/customer/deleteFactoryTourReview?sIdx='+idx,
+		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+		   dataType : 'json',
+		}).done(function(data){
+		   console.log('done', data)
+		   if(data.result) {
+		   	   alert('삭제되었습니다.');
+		   	   $('.datatables-basic').DataTable().ajax.reload();
+		   }else{
+		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+		   }
+		 }).fail(function() {
+		   	   console.log('fail')
+		 })
+	}
 }
