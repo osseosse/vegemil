@@ -43,9 +43,9 @@
         });
         $('.ico_pc_03').click(function(){ //전문영양식
         	$(".cat--1").css('display','none');
-            $(".cat--2").css('display','none');
+            $(".cat--2").css('display','block');
             $(".cat--3").css('display','none');
-            $(".cat--4").css('display','block');
+            $(".cat--4").css('display','none');
             
             $(".ico_pc_01").removeClass(' is-checked');
             $(".ico_pc_02").removeClass(' is-checked');
@@ -59,8 +59,8 @@
         });
         $('.ico_pc_04').on("click",function(){ //연하식
         	$(".cat--1").css('display','none');
-            $(".cat--2").css('display','block');
-            $(".cat--3").css('display','none');
+            $(".cat--2").css('display','none');
+            $(".cat--3").css('display','block');
             $(".cat--4").css('display','none');
             
             $(".ico_pc_01").removeClass(' is-checked');
@@ -76,8 +76,8 @@
         $('.ico_pc_05').on("click",function(){ //건강제품
         	$(".cat--1").css('display','none');
             $(".cat--2").css('display','none');
-            $(".cat--3").css('display','block');
-            $(".cat--4").css('display','none');
+            $(".cat--3").css('display','none');
+            $(".cat--4").css('display','block');
             
             $(".ico_pc_01").removeClass(' is-checked');
             $(".ico_pc_02").removeClass(' is-checked');
@@ -324,7 +324,8 @@
 			</div>					
 			<div class="portfolio-grid-metro4 mesonry-list" >
 				<div class="resizer" ></div>
-				<!-- cat--1 -->	
+				
+				<!-- cat--1  일반-->	
 	            <div th:each="product : ${commonProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--1" th:classappend="${product.gCheck}">
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
@@ -345,8 +346,8 @@
 	                </div>
 	            </div>
 	            
-	      			<!-- cat--4 -->
-	            <div th:each="product : ${proProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--4" th:classappend="${product.gCheck}">
+	      		<!-- cat--2 전문 -->
+	            <div th:each="product : ${proProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--2" th:classappend="${product.gCheck}">
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
 					        <div class="poss_relative">
@@ -367,8 +368,8 @@
 	            </div>
 	            
 	            
-	      			<!-- cat--2 -->
-	            <div th:each="product : ${yeonhaProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--2" th:classappend="${product.gCheck}">
+	      		<!-- cat--3  연하-->
+	            <div th:each="product : ${yeonhaProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--3" th:classappend="${product.gCheck}">
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
 					        <div class="poss_relative">
@@ -388,8 +389,8 @@
 	                </div>
 	            </div>
 	            
-	      			<!-- cat--3 -->
-	            <div th:each="product : ${healthProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--3" th:classappend="${product.gCheck}">
+	      		<!-- cat--4 건강 -->
+	            <div th:each="product : ${healthProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--4" th:classappend="${product.gCheck}">
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
 					        <div class="poss_relative">

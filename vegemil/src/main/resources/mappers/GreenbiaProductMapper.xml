@@ -78,6 +78,7 @@
 		FROM (
 			SELECT IFNULL(g_lcate, '전체') g_lcate, COUNT(*) as total 
 			FROM m_greenbia_product 
+			WHERE g_active = 1
 			GROUP BY g_lcate WITH ROLLUP
 		) test
 		ORDER BY 
@@ -97,6 +98,8 @@
 	       		m_greenbia_product 
 	       WHERE 
 	       		g_lcate = '일반영양식'  
+	       AND 
+	       		g_active = 1
 	       ORDER BY 
 	       		g_mcate DESC
 		]]>
@@ -108,16 +111,17 @@
 	<![CDATA[
 		 SELECT g_idx, g_name, g_code, g_lcate, substring(g_mcate,2, LENGTH(g_mcate)) AS Mcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,
 		  CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
-		  CASE WHEN g_mcate = 'ㄱ당뇨 환자를 위한 전문영양식'  THEN 'expert1'
-		       WHEN g_mcate = 'ㄴ신장 질환자를 위한 전문영양식'  THEN 'expert2'
-		       WHEN g_mcate = 'ㄷ장이 민감한 환자를 위한 전문영양식'  THEN 'expert3'
-		       WHEN g_mcate = 'ㄹ외상 및 수술환자식'  THEN 'expert4'
-		       WHEN g_mcate = 'ㅁ단일영양식'  THEN 'expert5'
-		       WHEN g_mcate = 'ㅂTF/RTH'  THEN 'expert6'
-		       WHEN g_mcate = 'ㅅ고단백식'  THEN 'expert7'
+		  CASE WHEN g_mcate = '당뇨 환자를 위한 전문영양식'  THEN 'expert1'
+		       WHEN g_mcate = '신장 질환자를 위한 전문영양식'  THEN 'expert2'
+		       WHEN g_mcate = '장이 민감한 환자를 위한 전문영양식'  THEN 'expert3'
+		       WHEN g_mcate = '외상 및 수술환자식'  THEN 'expert4'
+		       WHEN g_mcate = '단일영양식'  THEN 'expert5'
+		       WHEN g_mcate = 'TF/RTH'  THEN 'expert6'
+		       WHEN g_mcate = '고단백식'  THEN 'expert7'
 		       END AS g_check
 		  FROM  m_greenbia_product
-		  WHERE g_lcate = '전문영양식' 
+		  WHERE g_lcate = '전문영양식'
+		  AND   g_active = 1 
 		  ORDER BY g_mcate;
 		]]>
 	</select>
@@ -132,6 +136,7 @@
 		      END AS g_check
 		 FROM m_greenbia_product
 		 WHERE g_lcate = '연하식' 
+		 AND   g_active = 1
 		 ORDER BY g_idx DESC
 		]]>		
 	</select>
@@ -145,7 +150,8 @@
 		      WHEN g_mcate = '건강기능식품'  THEN 'health2'
 		      END AS g_check
 		 FROM m_greenbia_product
-		 WHERE g_lcate = '건강식품' 
+		 WHERE g_lcate = '건강식품'
+		 AND   g_active = 1 
 		 ORDER BY g_idx DESC
 		]]>	
 	</select>
@@ -164,6 +170,7 @@
 			OR g_lcate like CONCAT('%',#{searchKeyword},'%') 
 			OR g_mcate like CONCAT('%',#{searchKeyword},'%') 
 			OR g_contents like CONCAT('%',#{searchKeyword},'%') 
+		AND  g_active = 1
 	</select>
 	
 	<!-- 카테고리별 조회 -->	
