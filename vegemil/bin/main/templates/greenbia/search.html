@@ -103,8 +103,8 @@
   			<div class="portfolio-grid-metro4 mesonry-list"> 
 			
 			<div class="resizer" ></div>
-				<div class="portfolio portfolio_style--1 portfolio-33-33">	
-			      	<div  th:each="product : ${searchList}" > 
+				<div th:each="product : ${searchList}" class="portfolio portfolio_style--1 portfolio-33-33">	
+			      	
 				      	<a th:with="var=${product.gIdx}" th:href="@{/greenbia/product/detail/}+${var}"> 
 					        <div class="poss_relative">				
 								<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
@@ -120,8 +120,7 @@
 						        </div>
 					        </div>
 				        </a>
-			        </div>	
-			        
+			      	
 			       </div>
 	        </div>  
 		</div>
