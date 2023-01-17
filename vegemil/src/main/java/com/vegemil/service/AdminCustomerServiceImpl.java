@@ -200,5 +200,19 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		return (queryResult == 1) ? true : false;
 	}
 	
+	@Override
+	public boolean saveFactoryTourReview(AdminFactpostDTO params) {
+		int queryResult = 0;
+		
+		if("U".equals(params.getAction())) {
+			queryResult = adminCustomerMapper.updateFactoryTourReview(params);
+		}else if("D".equals(params.getAction())) {
+			queryResult = adminCustomerMapper.deleteFactoryTourReview(params);
+		}
+		
+		return (queryResult == 1) ? true : false;
+	}
+	
+	
 	
 }

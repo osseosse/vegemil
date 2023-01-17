@@ -106,40 +106,6 @@ var normalizeDate = function (dateString) {
 $(function () {
 	createTable();
 	
-	$(".flatpickr").flatpickr({});
-	
-	//선택삭제
-    $('#btnDel').click(function(e){
-		console.log('e', e)
-	    var form = document.form;
-	      
-	    // Output form data to a console
-	    console.log("Form submission", decodeURIComponent($(form).serialize())); 
-	      
-	    if(confirm('삭제하시겠습니까?')){
-			$.ajax({
-				url : '/admin/manage/customer/deleteVisit',
-				type : "post",
-				data : $(form).serialize(),
-				dataType : "json",
-				success : function(data) {
-					if(data){
-						alert("삭제되었습니다.");
-						//window.location.reload();
-						$('.datatables-basic').DataTable().ajax.reload();
-					}
-					else{
-						alert("실패했습니다.");
-					}
-					
-				},
-				error : function(){
-				}
-			});
-		}
-		// Prevent actual form submission
-	    e.preventDefault();
-	});
 });
 
 
@@ -180,6 +146,7 @@ var createTable = function() {
 	  },
       columns: [
       	{ data: 'sIdx' },
+      	{ data: 'sIdx' },
       	{ data: 'sWritedate' },
       	{ data: 'sBest' },
       	{ data: 'sSubject' },
@@ -201,12 +168,22 @@ var createTable = function() {
       		targets: 1,
       		orderable: false,
       		render: function (data, type, full, meta) {
+				return (
+					'<a data-bs-toggle="modal" data-bs-target="#large'+full['sIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
+					+getModal(full)
+      			)
+      		}
+      	},
+      	{
+      		targets: 2,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
       			if(data==null)	return '-';
       			else	return data.substr(0, 10);;
       		}
       	},
       	{
-      		targets: 2,
+      		targets: 3,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(data==null)	return '-';
@@ -215,7 +192,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 3,
+      		targets: 4,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
@@ -225,7 +202,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 4,
+      		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(data==null)	return '-';
@@ -233,7 +210,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 5,
+      		targets: 6,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if($.trim(data).length==0)	return '-';
@@ -241,7 +218,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 6,
+      		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
@@ -249,7 +226,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 7,
+      		targets: 8,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(data==null)	return '-';
@@ -257,7 +234,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 8,
+      		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
 	            if(data==null)	return '-';
@@ -265,17 +242,17 @@ var createTable = function() {
           }
       	},
       	{
-      		targets: 9,
+      		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				let checked;
 				return (
 				'<div class="form-check form-check-inline">'+
-				'<input class="form-check-input" type="radio" name="sBest'+full['sIdx']+'" id="inlineRadio1" value="0" '+getCheck(0, full['sBest'])+'/>'+													
+				'<input class="form-check-input" type="radio" name="sBest'+full['sIdx']+'" id="inlineRadio1" value="0" '+getCheck(0, full['sBest'])+' onclick="btnSave('+full['sIdx']+',\'U\')" />'+													
 				'<label class="form-check-label" for="inlineRadio1">일반</label>'+
 				'</div>'+
 				'<div class="form-check form-check-inline">'+
-				'<input class="form-check-input" type="radio" name="sBest'+full['sIdx']+'" id="inlineRadio1" value="1" '+getCheck(1, full['sBest'])+'/>'+													
+				'<input class="form-check-input" type="radio" name="sBest'+full['sIdx']+'" id="inlineRadio1" value="1" '+getCheck(1, full['sBest'])+' onclick="btnSave('+full['sIdx']+',\'U\')" />'+													
 				'<label class="form-check-label" for="inlineRadio1">베스트</label>'+
 				'</div>'
 				)
@@ -283,10 +260,10 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 10,
+      		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			return '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'D\')">삭제</button>'
+      			return '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['sIdx']+',\'D\')">삭제</button>'
       			
       		}
       	}
@@ -370,62 +347,44 @@ var createTable = function() {
 }
 
 
-function btnSave(idx) {
-	const form = $('#modalForm'+idx).serializeArray();
-	let check = false;
-	for(var i=0; i<form.length; i++) {
-		if(form[i].value.length < 1) {
-			alert('처리내용을 입력해주세요');
-			return false;
-		}
-	}
-	
-    $.ajax({
-       url: '/admin/manage/customer/saveVisit',
-	   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
-	   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-	   data: $('#modalForm'+idx).serialize()
-	}).done(function(data){
-	   if(data.result) {
-	   	   alert('저장되었습니다.');
-	   	   $('.datatables-basic').DataTable().ajax.reload();
-	   }else{
-	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-	   }
-	 }).fail(function() {
-			alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-	 })
-}
-
 function getCheck(val1, val2) {
-	console.log('val1', val1)
-	console.log('val2', val2)
 	if(val1 == val2) return 'checked';
 }
 
 function btnSave(idx, action) {
+	const form = $('#factPostForm');
 	let msg;
+	let preVal = $('input[name=sBest'+idx+']:checked').val();
 	
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
 	}else{
 		if(action == "U") {
-			msg = "수정하시겠습니까?";	
+			msg = "수정하시겠습니까?";
+			if($('input[name=sBest'+idx+']:checked').val() == 1) {
+				preVal = 0;
+			}else{
+				preVal = 1;
+			}
+			$('#sBest').val($('input[name=sBest'+idx+']:checked').val());
 		}else {
 			msg = "삭제하시겠습니까?";	
 		}
 	}
+	$('#sIdx').val(idx);
+	$('#action').val(action);
 	
-	if(confirm("삭제하시겠습니까?")) {
+	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/customer/deleteFactoryTourReview?sIdx='+idx,
+	       url: '/admin/manage/customer/saveFactoryTourReview',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+		   data: form.serialize(),
 		   dataType : 'json',
 		}).done(function(data){
 		   console.log('done', data)
 		   if(data.result) {
-		   	   alert('삭제되었습니다.');
+		   	   alert('수정되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();
 		   }else{
 		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
@@ -433,5 +392,107 @@ function btnSave(idx, action) {
 		 }).fail(function() {
 		   	   console.log('fail')
 		 })
+	}else {
+		//이전 라디오버튼 체크
+		$("input[name=sBest"+idx+"]:radio[value='" + preVal + "']").prop('checked', true);
+		return;
 	}
+}
+
+function getModal(obj) {
+	console.log('obj', obj)
+	/*
+	let modal = "";
+	modal +=  '<section id="modal-sizes">'
+	modal +=     '<div class="modal fade text-start" id="large'+obj.sIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
+	modal +=		'<div class="row" >'
+	modal +=			'<div class="col-12">'
+	modal +=				'<div class="card">	'
+	modal +=					'<div class="card-body ">'
+	modal +=						'<table class="table table-bordered  f13 paddingType">'
+	modal +=							'<colgroup>'
+	modal +=								'<col width="20%">'
+	modal +=								'<col width="20%">'
+	modal +=								'<col width="40%">'
+	modal +=							'</colgroup>'
+	modal +=							'<thead>'
+	modal +=								'<tr>'
+	modal +=									'<th>신청자명 <span class="text-warning"> '+obj.sName+'</span></th>'
+	modal +=								'</tr>'
+	modal +=								'<tr>'
+	modal +=									'<th>H.P<span class="text-warning"> '+obj.sHp+'</span></th>'
+	modal +=									'<th>E-mail<span class="text-warning"> '+obj.sEmail+'</span></th>'									
+	modal +=									'<th>주소<span class="text-warning"> '+obj.sAddr+'</span></th>'
+	modal +=								'</tr>'
+	modal +=							'</thead>'
+	modal +=						'</table>'
+	modal +=						'<h4 class="mt-2">고객의견</h4>'
+	modal +=						'<p class="mt-1">제목 <span class="text-warning" ></span></p>'
+	modal +=						'<div class="row">'
+	modal +=							'<div class="col-7">'
+	modal +=								'내용123'
+	modal +=							'</div>'
+	modal +=							'<div class="col-5">'
+	modal +=								'<p>사진 <button type="button" class="btn btn-secondary btn-sm2" id="btnDown">다운로드</button></p>'
+	modal +=								'<div class="scroll-h250">'
+	modal +=									'<p class="img100">'
+	modal +=										'<img  src="/web/upload/">'
+	modal +=									'</p>'
+	modal +=								'</div>'
+	modal +=							'</div>'
+	modal +=						'</div>'
+	modal +=					'</div>'
+	modal +=				'</div>'
+	modal +=			'</div>'
+	modal +=		'</div>'
+	modal +=	'</div>'
+	modal +=  '</section>'
+	*/
+	let modal = "";
+	modal +=  '<section id="modal-sizes">'
+	modal +=     '<div class="modal fade text-start" id="large'+obj.sIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
+	modal +=		'<div class="modal-dialog modal-dialog-centered modal-lg">'
+	modal +=			'<div class="modal-content">'
+	modal +=				'<div class="modal-header">'
+	modal +=					'<h4 class="modal-title" id="myModalLabel17">견학신청</h4>'
+	modal +=					'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'
+	modal +=				'</div>'
+	modal +=				'<table class="table table-bordered  f13 paddingType">'
+	modal +=					'<colgroup>'
+	modal +=						'<col width="20%">'
+	modal +=						'<col width="20%">'
+	modal +=						'<col width="40%">'
+	modal +=					'</colgroup>'
+	modal +=					'<thead>'
+	modal +=						'<tr>'
+	modal +=							'<th>신청자명 <span class="text-warning">'+obj.sName+' </span></th>'
+	modal +=							'<th>아이디 <span class="text-warning">'+obj.sId+' </span></th>'
+	modal +=							'<th colspan="2">H.P<span class="text-warning"> '+obj.sHp+' </span></th>'
+	modal +=						'</tr>'
+	modal +=					'</thead>'
+	modal +=				'</table>'
+	modal +=                '<h4 class="mt-2">고객의견</h4>'
+	modal +=                '<p class="mt-1">제목 <span class="text-warning">'+obj.sSubject+'</span></p>'
+	modal +=				'<div class="row">'
+	modal +=					'<div class="col-7">'
+	modal +=						'<p>내용</p>'
+	modal +=						'<p>'+obj.sContent+'</p>'
+	modal +=					'</div>'
+	modal +=					'<div class="col-5">'
+	modal +=						'<p>사진 <button type="button" class="btn btn-secondary btn-sm2" id="btnDown">다운로드</button></p>'
+	modal +=                        '<div class="scroll-h250">'
+	modal +=                        	'<p class="img100">'
+	modal +=                            	'<img src="/web/upload/CUSTOMER/'+obj.sFile+'" />'
+	modal +=                            '</p>'
+	modal +=						'</div>'
+	modal +=					'</div>'
+	modal +=				'</div>'
+	modal +=			'</div>'
+	modal +=		'</div>'
+	modal +=	'</div>'
+	modal +=  '</section>'
+	
+	return modal;
+	
+	return modal;
 }

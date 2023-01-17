@@ -287,8 +287,8 @@
 	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
 	     </if>
 	     <if test='searchWord != "" '>
-		   AND (v_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or v_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
-		   		v_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or
+		   		s_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
 		 </if>
 		 ORDER BY s_writedate DESC
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
@@ -305,8 +305,8 @@
 	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
 	     </if>
 	     <if test='searchWord != "" '>
-		   AND (v_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or v_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
-		   		v_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or
+		   		s_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
 		 </if>
 	</select>
 	
@@ -316,15 +316,20 @@
 		  FROM m_visit_setup
 	</select>
 	
-	<update id="updateVisitSetup" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
+	<update id="updateFactoryTourReview" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
 		 /* updateVisitSetup by AdminCustomerMapper.xml */ 
-		UPDATE m_visit_setup
+		UPDATE m_factpost
 		SET 
-		    s_closedate = #{sClosedate},
-		    s_month1 = #{sMonth1},
-		    s_month2 = #{sMonth2},
-		    s_msg1 = #{sMsg1},
-		    s_msg2 = #{sMsg2}
+		    s_best = #{sBest}
+		WHERE
+		    s_idx = #{sIdx}
 	</update>
+	
+	<delete id="deleteFactoryTourReview" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
+		 /* updateVisitSetup by AdminCustomerMapper.xml */ 
+		DELETE FROM m_factpost
+		WHERE
+		    s_idx = #{sIdx}
+	</delete>
 
 </mapper>

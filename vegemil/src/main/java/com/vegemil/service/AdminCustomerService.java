@@ -2,6 +2,7 @@ package com.vegemil.service;
 
 import java.util.Map;
 
+import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.AdminVisitSetupDTO;
 import com.vegemil.domain.DataTableDTO;
@@ -38,6 +39,8 @@ public interface AdminCustomerService {
 	public AdminVisitSetupDTO getVisitSetup();
 	
 	public boolean saveVisitSetup(AdminVisitSetupDTO params);
+	
+	public boolean saveFactoryTourReview(AdminFactpostDTO params);
 	
 
 }

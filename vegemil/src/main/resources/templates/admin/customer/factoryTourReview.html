@@ -123,9 +123,10 @@
 										<table class="datatables-basic table table-bordered text-center f13 paddingType">
 											<colgroup>
 												<col width="1%">
-												<col width="10%">
+												<col width="6%">
 												<col width="8%">
-												<col width="22%">
+												<col width="8%">
+												<col width="17%">
 												<col width="8%">
 												<col width="8%">
 												<col width="8%">
@@ -140,6 +141,7 @@
 											<thead>
 												<tr>
 													<th>No.</th>
+													<th>상세보기</th>
 													<th>작성일자</th>
 													<th>베스트후기여부</th>
 													<th>제목</th>
@@ -168,6 +170,11 @@
     
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
+    <form id="factPostForm" method="POST">
+    	<input type="hidden" id="sIdx" name="sIdx" />
+    	<input type="hidden" id="sBest" name="sBest" />
+    	<input type="hidden" id="action" name="action" />
+    </form>
     
     </th:block>
     

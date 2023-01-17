@@ -484,4 +484,21 @@ public class AdminCustomerController extends UiUtils {
 
 		return rtnMap;
 	}
+	
+	@RequestMapping(value = "/admin/manage/customer/saveFactoryTourReview", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody Map<String, Object> saveFactoryTourReview(@ModelAttribute("params") final AdminFactpostDTO params, Model model) throws Exception {
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		try {
+			boolean isUpdate = adminCustomerService.saveFactoryTourReview(params);
+			rtnMap.put("result", isUpdate);
+		} catch (DataAccessException e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		} catch (Exception e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		}
+
+		return rtnMap;
+	}
 }
