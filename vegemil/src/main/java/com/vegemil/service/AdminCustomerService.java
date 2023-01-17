@@ -3,6 +3,7 @@ package com.vegemil.service;
 import java.util.Map;
 
 import com.vegemil.domain.AdminVisitDTO;
+import com.vegemil.domain.AdminVisitSetupDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.MemberDTO;
 
@@ -32,6 +33,11 @@ public interface AdminCustomerService {
 	
 	public boolean saveDisplayVisit(AdminVisitDTO params); 
 	
+	public DataTableDTO getFactoryTourReviewList(Map<String, Object> paramMap);
+	
+	public AdminVisitSetupDTO getVisitSetup();
+	
+	public boolean saveVisitSetup(AdminVisitSetupDTO params);
 	
 
 }

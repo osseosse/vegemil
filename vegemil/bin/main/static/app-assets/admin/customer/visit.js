@@ -335,10 +335,9 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
-				else if(data==0) return '신청'
-				else if(data==1) return '확정'
-      			else if(data==2) return '취소';
-      			
+				else if(full['vCancel']==1) return '취소';
+				else if(data==0 || data==1) return '신청'
+				else if(data==2) return '확정'
       		}
       	}
       ],
@@ -492,18 +491,18 @@ function getModal(obj) {
 	modal +=						'<div class="col-1"><p>신청처리</p></div>'
 	modal +=						'<div class="col-2">'
 	modal +=							'<select class="form-select" name="vConfstat" id="vConfstat'+obj.vIdx+'">'
-	modal +=								'<option value="0"'
-												if(obj.vConfstat == 0) {  
+	modal +=								'<option value="1"'
+												if(obj.vConfstat == 1) {  
     modal += 												'selected '
 														}
 	modal +=                                            '>신청</option>'
-	modal +=								'<option value="1"'
-														if(obj.vConfstat == 1) {
+	modal +=								'<option value="2"'
+														if(obj.vConfstat == 2) {
     modal += 												'selected '
 														}
 	modal +=                                            '>확정</option>'
-	modal +=								'<option value="2"'
-														if(obj.vConfstat == 2) {
+	modal +=								'<option value="3"'
+														if(obj.vCancel == 1) {
 	modal +=                                                'selected '	
 														}														
 	modal +=                                            '>취소</option>'
@@ -542,7 +541,10 @@ function getModal(obj) {
 	modal +=					'</div>'
 	modal +=					'<hr>'
 	modal +=					'<h4 class="mt-2">답변등록</h4>'
-	modal +=					'<textarea name="vAdminmemo" id="vAdminmemo'+obj.vIdx+'" class="form-control" >'+obj.vAdminmemo+'</textarea>'
+	modal +=					'<textarea name="vAdminmemo" id="vAdminmemo'+obj.vIdx+'" class="form-control" >'
+							     if(typeof obj.vAdminmemo != "undefined") 
+    modal +=  					     obj.vAdminmemo
+	modal +=                     '</textarea>'
 	modal +=				'</div>'
 	modal +=				'<div class="modal-footer">'
 	modal +=					'<button type="button" onclick="btnSave('+obj.vIdx+');" class="btn btn-primary" data-bs-dismiss="modal">저장</button>'
@@ -609,4 +611,34 @@ function btnDisplay(idx) {
 		error : function(){
 		}
 	});
+}
+
+function btnSetupSave() {
+	const form = $('#frm').serialize()
+	console.log('form', decodeURI(form))
+	let sMonth1Arr = [];
+	let sMonth2Arr = [];
+	
+	$('input[name=sMonth1]:checked').each(function(){
+		sMonth1Arr.push($(this).val())
+	});
+	$('input[name=sMonth2]:checked').each(function(){
+		sMonth2Arr.push($(this).val())
+	});
+	
+    $.ajax({
+       url: '/admin/manage/customer/saveVisitSetup',
+	   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+	   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+	   data: form
+	}).done(function(data){
+	   if(data.result) {
+	   	   alert('저장되었습니다.');
+	   	   $('.datatables-basic').DataTable().ajax.reload();
+	   }else{
+	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+	   }
+	 }).fail(function() {
+			alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+	 })
 }

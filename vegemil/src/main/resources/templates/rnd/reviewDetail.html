@@ -44,7 +44,9 @@
 				<div class="contant1160 pb100 pt50" >
 					<p class="f27 fw500 pb20 fac-title" th:text="${review.sSubject}"></p>
 					<!-- 내용 -->
-					<th:block th:if="${#strings.length(review.sFile)} <= 1" th:utext="${review.sContent}"></th:block>
+					<th:block th:if="${#strings.length(review.sFile)} <= 1">
+						<p class="mt30 lh170 f18" th:utext="${review.sContent}"></p>
+					</th:block>
 					<th:block th:if="${#strings.length(review.sFile)} > 1">
 						<p class="mt30 lh170 f18" th:text="${review.sContent}"></p>
 						<p class="mt30"><img th:src="|/web/upload/CUSTOMER/${review.sFile}|"></p>

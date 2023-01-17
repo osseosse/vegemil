@@ -15,8 +15,7 @@
         <div class="content h550-3 home-content">
             <div class="hero-content fl-wrap h550-3">
 				<!-- IMG -->
-                <div class="Q2_2022_14"></div>
-                <!-- <div th:class="|${qrtYear}_${num}|"></div> -->
+                <div th:class="|${qrtYear}_event|"></div>
             </div>
         </div>
     </div>
@@ -231,17 +230,6 @@
 	</section>
 </div>
 <!-- ******************* //main-content ******************* -->
-<div class="content">
-	<div class="wrap-inner5">
-		<div class="container">
-			<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
-				<!-- ******************* navi ******************* -->
-				<th:block th:replace="webzine/subNewNavy :: navyFragment"></th:block>
-				<!-- ******************* // navi ******************* -->
-			</div>
-		</div>
-	</div>
-</div>
 </div>
 <!-- ******************* footer ******************* -->
 <footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
@@ -278,6 +266,5 @@ $(function(){
 });
 //]]>
 </script>
- */
 </body>
 </html>

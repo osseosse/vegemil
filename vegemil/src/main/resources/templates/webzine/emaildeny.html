@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<title>정식품 이메일 수신거부 동의 확인</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="contant1760" >
+		<div class="row mt90h mt180">
+			<div class="col-md-12 center">
+			    <p class="f45 fw700 mt80">
+			        이메일 수신거부 동의 확인
+			    </p>
+			    <p class="f18 mt40 gray04 fw500">
+			        수신거부로 설정하시면 정식품웹진에서 발송하는<br class="wView">
+			        이메일 전용 혜택을 받아보실 수 없습니다.<br class="wView">
+			        메일 <span class="red" th:id="emailAddr" th:text="${emailaddr}"></span>에 대해서 수신거부를 하시겠습니까?
+			    </p>
+			    <ul class="mt100 emailBtn center">
+			        <li class="">
+			            <a href="javascript:void(0);" th:onclick="emaildeny();" class="f20 fw700">예</a>
+			        </li>
+			        <li class="">
+			            <a href="/webzine" class="f20 fw700">아니오</a>
+			        </li>
+			    </ul>
+			</div>
+        </div>
+
+	</div><!-- //contant1460 -->
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<script type="text/javascript">
+//<![CDATA[
+
+	function emaildeny() {
+	
+		const email = $('#emailAddr').text();
+		if($.trim(email).length > 1) {
+			location.href = "/webzine/reject?emailaddr="+email;
+		} else {
+			alert("이메일주소가 없습니다.");
+			return false;
+		}
+	}
+
+//]]>
+</script>
+</body>
+</html>

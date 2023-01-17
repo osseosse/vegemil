@@ -88,7 +88,7 @@
 	#gnb a{word-break: keep-all; text-decoration: none;}
 	#gnb > ul{display: inline-block; float: none; height: 100%;}
 	#gnb > ul > li{display: inline-block; float: left; height: 100%; padding: 0 60px; min-width: 140px; letter-spacing: 0;}
-	#gnb > ul > li > a{height: 100%; line-height: 90px; font-size: 18px; color: #fff; font-weight: 500; padding-top: 0px; display: block; position: relative; }
+	#gnb > ul > li > a{height: 100%; line-height: 90px; font-size: 18px; color: #fff; font-weight:500; padding-top: 0px; display: block; position: relative; }
 	#gnb > ul > li > a::before{content: ""; display: block; position: absolute; left: 0; bottom: 0px; width: 0; height: 3px; background-color: transparent; transition: all .3s ease;}
 	#gnb > ul > li.on > a::before{width: 100%; background-color: #E3A62C;}
 	#gnb > ul > li.on > .depth02_menu_wrap{display: block; z-index: 99; opacity: 1;}
@@ -926,8 +926,8 @@
     .exTable tr{border-bottom: 1px solid #dcdcdc;}
     .exTable .exDate{border: 1px solid #dcdcdc; border-radius: 5px; display: inline-block; width: 180px; height: 50px; line-height: 50px;}
     .exTable .exStart{background-color: #000; border-radius: 5px; color: #fff; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
-    .exTable .exIng{background-color: #fff; border: 1px solid #dcdcdc; border-radius: 5px; color: #000; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
-    .exTable .exEnd{background-color: #F1F4F5; border: 1px solid #dcdcdc; border-radius: 5px; color: #787878; display: inline-block; width: 150px; height: 50px; line-height: 50px;}
+    .exTable .exIng{background-color: #fff; border: 1px solid #dcdcdc; border-radius: 5px; color: #000; display: inline-block; width:auto; height: 50px; line-height: 50px; padding:0 15px}
+    .exTable .exEnd{background-color: #F1F4F5; border: 1px solid #dcdcdc; border-radius: 5px; color: #787878; display: inline-block; width:auto; height: 50px; line-height: 50px; padding:0 15px}
     
 	table.fac {position:relative; width:100%; border:1px solid red; margin:0 auto}
     dl.fac_people {position:relative; }
@@ -1027,7 +1027,7 @@
 	.news-line {border-top:2px solid #222222; width:100%; text-align:right; padding-top:10px}
 	table.press {background:#fff; width:100%; position:relative; border-top:2px solid #222222}
 	table.press tr {border-bottom:1px solid #DCDCDC}
-	table.press td {text-align:center; padding:50px 10px; position:relative;   }
+	table.press td {text-align:center; padding:30px 10px; position:relative;   }
 	table.press td:nth-child(1) {width:10%}
 	table.press td:nth-child(2) {width:10%}
 	table.press td:nth-child(3) {text-align:left; padding:0 25px; width:80%  }
@@ -1384,7 +1384,7 @@
 	article {background-color:#ffe;box-shadow:0 0 1em 1px rgba(0,0,0,.25);color:#006;font-family:cursive;font-style:italic;margin:4em;max-width:30em;padding:2em;}
 	.ver-title04 {border:1px solid #cacfd5; border-top:0; vertical-align:top; }
 	.ver-title04 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 40px no-repeat;display: block; padding:29px 30px  35px 30px;margin: 0; }
-	.ver-title04.open a { background-position: right -62px;font-weight:500}
+	.ver-title04.open a { background-position: right -97px;font-weight:500}
 	.ver-title04 + div { padding: 0px; }
 	.ver-title04 span {vertical-align:middle}
 	.FaqStyle {border-top:1px solid #cacfd5}
@@ -1887,8 +1887,16 @@
 	table.dataTable td {border-bottom:1px solid #d2d2d2; text-align:left; padding-left:15px;  font-size:13px; height:30px; } 
 	table.dataTable .in {padding-left:30px;}
 
+    /* 3000 20230116 sh 추가 */
 
-
+    .emailBtn{display: flex; align-content: center; justify-content: center;}
+    .emailBtn li{width: 200px; height: 70px; margin: 0 5px; border-radius: 5px;}
+    .emailBtn li:first-child{background-color: #222;}
+    .emailBtn li:nth-child(2){border: 1px solid #dcdcdc;}
+    .emailBtn li:first-child a{color: #fff; width: 100%; height: 100%; display: block; line-height:70px;}
+    .emailBtn li:nth-child(2) a{color: #787878; width: 100%; height: 100%; display: block; line-height:70px; }
+ 
+    /* 3000 20230116 sh 추가 */
 
 	
 	/* 3000 제품상세 > 브랜드 배너 */
@@ -2746,7 +2754,7 @@
 	.simBox li {display:inline-block; width:30%; text-align:center; max-width:180px; margin:0 30px}
 	
 	/* 1200 보도자료 */
-	table.press td {padding:30px 0}
+	table.press td {padding:20px 0}
 	table.press td:nth-child(1) {width:13%}
 	table.press td:nth-child(2) {width:13%; display:none}
 	table.press td:nth-child(3) {text-align:left; padding:0 25px; width:80%; padding:5px 10px  }
@@ -2905,7 +2913,7 @@
 	.eval-ul li:nth-child(1) {width:100%}
 	.eval-ul li:nth-child(2) {width:100%; margin-top:10px}
 	.ver-title04 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 16px no-repeat;display: block; padding:10px 15px 12px 15px ;margin: 0; font-size:16px; background-size:27px }
-	.ver-title04.open a { background-position: right -50px;font-weight:500}
+	.ver-title04.open a { background-position: right -74px;font-weight:500}
 	.FaqStyle .v_content {padding: 35px  35px;font-size:14px; font-weight:400;}
 
 	/* 1200 연구소 소개 */
@@ -2935,6 +2943,10 @@
 	table.dataTable th:first-child {border-left:0px solid #d2d2d2}
 	table.dataTable td {border-bottom:1px solid #d2d2d2; text-align:left; padding-left:0px;  font-size:11px; height:30px; } 
 	table.dataTable .in {padding-left:20px;}
+
+	/* 1200 오프라인 견학 */
+	.exTable .exIng{ line-height: 40px;}
+    .exTable .exEnd{  line-height: 120%; display:inline-block ;  padding:10px 10px}
 
 
 
@@ -3168,9 +3180,10 @@
 	.mt90h {margin-top:0px}
 
 	/* 992 faq */
-	.txt-box {width:75%; }
+	.ver-title04 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 20px no-repeat;display: block; padding:10px 15px 12px 15px ;margin: 0; font-size:16px; background-size:27px }
+	.txt-box {width:94%; margin-top:10px; overflow:hidden }
 	.ver-title04 a {font-size:14px}
-	.ver-title04.open a { background-position: right -52px;font-weight:500}
+	.ver-title04.open a { background-position: right -75px;font-weight:500}
 
 
 
@@ -3618,8 +3631,7 @@
     .exTable td{padding: 10px 5px;}
     .exTable .exDate{width: 80px; height: 40px; line-height: 40px;}
     .exTable .exStart{ width: 80px; height: 40px; line-height: 40px;}
-    .exTable .exIng{ width: 80px; height: 40px; line-height: 40px;}
-    .exTable .exEnd{ width: 80px; height: 40px; line-height: 40px;}
+  
     
     
     /* 768 연구소 소개 */
@@ -3691,6 +3703,14 @@
         line-height: 135px;
     
     }
+    
+    /* 768 20230116 sh 추가 */
+    
+    .emailBtn li{width: 120px; height: 50px;}
+    .emailBtn li:first-child a{line-height:50px;}
+    .emailBtn li:nth-child(2) a{line-height:50px; }
+ 
+    /* 768 20230116 sh 추가 */
 
 	
 

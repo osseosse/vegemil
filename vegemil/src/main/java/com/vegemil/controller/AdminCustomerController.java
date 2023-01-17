@@ -42,12 +42,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
-import com.vegemil.domain.AdminBabyDTO;
-import com.vegemil.domain.AdminBestReviewDTO;
+import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.AdminFaqDTO;
 import com.vegemil.domain.AdminFaqScoreDTO;
 import com.vegemil.domain.AdminSupportDTO;
 import com.vegemil.domain.AdminVisitDTO;
+import com.vegemil.domain.AdminVisitSetupDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.FaqDTO;
 import com.vegemil.domain.MemberDTO;
@@ -373,6 +373,15 @@ public class AdminCustomerController extends UiUtils {
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
 	
+	@RequestMapping(value = "/admin/manage/customer/visit")
+	public String openVisit(@ModelAttribute("params") AdminVisitSetupDTO params, Model model,
+			@RequestParam Map<String, Object> commandMap) {
+
+		AdminVisitSetupDTO setupDto = adminCustomerService.getVisitSetup();
+		model.addAttribute("visitSetup", setupDto);
+		return "admin/customer/visit";
+	}
+	
 	@RequestMapping(value = "/admin/manage/customer/visitList")
 	public @ResponseBody DataTableDTO getVisitList(@ModelAttribute("params") AdminVisitDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
@@ -427,8 +436,8 @@ public class AdminCustomerController extends UiUtils {
    }
 	
 	@GetMapping(value = "/admin/manage/customer/displayVisit")
-	public @ResponseBody boolean displayVisit(@RequestParam(value = "vIdx", required = false) Long vIdx, 
-			@RequestParam(value = "vDisplay", required = false) String vDisplay, HttpServletResponse response) throws Exception {
+	public @ResponseBody boolean displayVisit(@RequestParam(value = "vIdx", required = true) Long vIdx, 
+			@RequestParam(value = "vDisplay", required = true) int vDisplay, HttpServletResponse response) throws Exception {
 		boolean isRegistered = true;
 		try {
 			if (vIdx == null) {
@@ -449,4 +458,30 @@ public class AdminCustomerController extends UiUtils {
 		return isRegistered;
 	}
 	
+	@RequestMapping(value = "/admin/manage/customer/factoryTourReviewList")
+	public @ResponseBody DataTableDTO getFactoryTourReviewList(@ModelAttribute("params") AdminFactpostDTO params, Model model,
+			@RequestParam Map<String, Object> commandMap) {
+		
+		DataTableDTO dataTableDto = adminCustomerService.getFactoryTourReviewList(commandMap);
+		return dataTableDto;
+	}
+	
+	@RequestMapping(value = "/admin/manage/customer/saveVisitSetup", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody Map<String, Object> saveVisitSetup(@ModelAttribute("params") final AdminVisitSetupDTO params, Model model) throws Exception {
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		try {
+			params.setSMonth1(params.getSMonth1().replaceAll(",", "/"));
+			params.setSMonth2(params.getSMonth2().replaceAll(",", "/"));
+			boolean isUpdate = adminCustomerService.saveVisitSetup(params);
+			rtnMap.put("result", isUpdate);
+		} catch (DataAccessException e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		} catch (Exception e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		}
+
+		return rtnMap;
+	}
 }

@@ -197,7 +197,7 @@
 		SELECT /* selectVisitList by AdminCustomerMapper.xml */ 
 		       v_idx, v_writedate, v_name, v_tel, v_hp, v_email, v_area, v_addr, v_org, v_pcount,
 		       v_appdate, v_apptime, v_memo, v_confstat, v_confdate, v_conftime, v_adminmemo,
-		       v_area, v_display
+		       v_area, v_display, v_cancel
 		  FROM m_visit
 		 WHERE 1=1
 		 <if test='sStartdate != "" '>
@@ -232,11 +232,18 @@
 		 /* updateVisit by AdminCustomerMapper.xml */ 
 		UPDATE m_visit 
 		SET 
-		    v_apptime = #{vApptime},
+		    <if test='vConfstat == "1" or vConfstat =="2" '>
 		    v_confstat = #{vConfstat},
+		    </if>
+		    <if test='vConfstat == "3"  '>
+		    v_cancel = 1,
+		    </if>
+		    v_apptime = #{vApptime},
 		    v_confdate = #{vConfdate},
 		    v_conftime = #{vConftime},
 		    v_adminmemo = #{vAdminmemo}
+		    
+		    
 		WHERE
 		    v_idx = #{vIdx}
 	</update>
@@ -265,6 +272,59 @@
 		    v_display = #{vDisplay}
 		WHERE
 		    v_idx = #{vIdx}
+	</update>
+	
+	<select id="selectFactoryTourReviewList" parameterType="hashMap" resultType="com.vegemil.domain.AdminFactpostDTO">
+		SELECT /* selectFactoryTourReviewList by AdminCustomerMapper.xml */ 
+		       s_idx, s_cate, s_id, s_name, s_email, s_addr, s_best, s_subject, s_content, s_file,
+		       s_writedate, s_writetime, s_activeuser, s_hit, s_active, s_file2, s_url, s_hp
+		  FROM m_factpost
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND (v_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or v_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   		v_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		 ORDER BY s_writedate DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+
+	<select id="selectFactoryTourReviewTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*) /* selectFactoryTourReviewTotalCount by AdminCustomerMapper.xml */
+		  FROM m_factpost
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='searchWord != "" '>
+		   AND (v_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or v_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   		v_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+	</select>
+	
+	<select id="selectVisitSetup" resultType="com.vegemil.domain.AdminVisitSetupDTO">
+		SELECT /* selectVisitSetup by AdminCustomerMapper.xml */ 
+		       s_closedate, s_month1, s_month2, s_msg1, s_msg2
+		  FROM m_visit_setup
+	</select>
+	
+	<update id="updateVisitSetup" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
+		 /* updateVisitSetup by AdminCustomerMapper.xml */ 
+		UPDATE m_visit_setup
+		SET 
+		    s_closedate = #{sClosedate},
+		    s_month1 = #{sMonth1},
+		    s_month2 = #{sMonth2},
+		    s_msg1 = #{sMsg1},
+		    s_msg2 = #{sMsg2}
 	</update>
 
 </mapper>

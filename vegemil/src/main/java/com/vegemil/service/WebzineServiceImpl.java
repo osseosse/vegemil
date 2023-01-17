@@ -39,6 +39,14 @@ public class WebzineServiceImpl implements WebzineService {
 	}
 	
 	@Override
+	public boolean saveSendYn(String mEmail) {
+		
+		int queryResult = webzineMapper.insertSendYn(mEmail);
+
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Override
 	public boolean isWebzineEvent(WebzineEventDTO params) {
 		
 		int webzineCount = 0;

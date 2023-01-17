@@ -18,11 +18,12 @@ public class AdminVisitDTO {
 	private String vOrg;
 	private int vPcount;
 	private String vAppdate;
-	private String vApptime;
+	private int vApptime;
 	private String vMemo;
-	private String vConfstat;
+	private int vConfstat;
 	private String vConfdate;
-	private String vConftime;
+	private int vConftime;
 	private String vAdminmemo;
-	private String vDisplay;
+	private int vDisplay;
+	private int vCancel;
 }
