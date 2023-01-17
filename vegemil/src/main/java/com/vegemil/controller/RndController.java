@@ -148,12 +148,21 @@ public class RndController extends UiUtils {
 			
 				member = (MemberDTO) authentication.getPrincipal();
 				VisitDTO tempDto = new VisitDTO();
+				
+				tempDto.setVAppdate(visitDto.getVAppdate().substring(0, 10));
+				tempDto.setVApptime(visitDto.getVApptime());
+				int applyTimeCnt = rndService.getApplyTimeCount(tempDto);
+				if(applyTimeCnt > 0) {
+					return showMessageWithRedirect("해당 시간대는 마감되었습니다.", "/rnd/factoryTour", Method.GET, null, model);
+				}
+				
 				tempDto.setVEmail(visitDto.getVEmail());
 				tempDto.setVAppdate(visitDto.getVAppdate().substring(0, 7));
 				int applyCnt = rndService.getApplyCount(tempDto);
 				if(applyCnt > 0) {
 					return showMessageWithRedirect("해당 월에는 이미 신청하신 이력이 있습니다.", "/rnd/factoryTour", Method.GET, null, model);
 				}
+				
 				int result = rndService.insertMvisit(visitDto); 
 				if(result > 0) {
 					return showMessageWithRedirect("견학 신청이 정상적으로 접수되었습니다.", "/rnd/factoryTour", Method.GET, null, model);

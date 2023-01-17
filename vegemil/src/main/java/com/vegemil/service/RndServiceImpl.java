@@ -38,6 +38,15 @@ public class RndServiceImpl implements RndService {
 	}
 	
 	@Override
+	public int getApplyTimeCount(VisitDTO visitDTO) {
+
+		int result = 0;
+		result = rndMapper.selectApplyTimeCount(visitDTO);
+
+		return result;
+	}
+	
+	@Override
 	public int getApplyCount(String date) {
 
 		int result = 0;

@@ -109,6 +109,19 @@
 			DATE_FORMAT(v_appdate,'%Y-%m') = #{vAppdate}
 	</select>
 	
+	<select id="selectApplyTimeCount" parameterType="com.vegemil.domain.VisitDTO" resultType="int">
+		select
+			count(*)
+		from
+			m_visit
+		where
+			v_confstat = 2
+		and
+			DATE_FORMAT(v_appdate,'%Y-%m-%d') = #{vAppdate}
+		and
+			v_apptime = #{vApptime}
+	</select>
+	
 	<select id="selectConfirmApplyCount" parameterType="String" resultType="int">
 		select
 			count(*)

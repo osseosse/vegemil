@@ -16,6 +16,8 @@ public interface RndMapper {
 	
 	public int selectApplyCount(VisitDTO visitDTO);
 	
+	public int selectApplyTimeCount(VisitDTO visitDTO);
+	
 	public int selectConfirmApplyCount(String date);
 
 	public List<ScheduleDTO> selectTourScheduleList();
