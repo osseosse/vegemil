@@ -13,6 +13,8 @@ public interface RndService {
 	
 	public int getApplyCount(VisitDTO visitDTO);
 	
+	public int getApplyCount(String date);
+	
 	public List<ScheduleDTO> getTourScheduleList();
 	
 	public List<VisitDTO> getVisitList(String vEmail);

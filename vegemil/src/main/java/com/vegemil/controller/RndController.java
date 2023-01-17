@@ -89,6 +89,11 @@ public class RndController extends UiUtils {
 		
 		if(!date.equals("")) {
 			model.addAttribute("date",date);
+			int applyCnt = rndService.getApplyCount(date);
+			if(applyCnt > 1) {
+				return showMessageWithRedirect("해당 날짜는 견학신청이 마감되었습니다.", "/rnd/factoryTour", Method.GET, null, model);
+			}
+			
 		} else {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/rnd/factory", Method.GET, null, model);
 		}

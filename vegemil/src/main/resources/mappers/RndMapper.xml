@@ -54,7 +54,13 @@
 	
 	<sql id="tourSceduleColumns">
 		v_idx as id,
-		CONCAT( if(v_apptime = '1','(오전)','(오후)'),' ',v_org) as title,
+		CONCAT( if(v_apptime = '1','(오전)','(오후)'),' ',v_org, CASE
+																	WHEN v_confstat = 1
+																	THEN ' [신청중]'
+																	WHEN v_confstat = 2
+																	THEN ' [확정]'
+																	ELSE ''
+																END) as title, 
 		v_memo as content,
 		DATE_FORMAT(v_appdate, '%Y-%m-%d') as start
 <!-- 		DATE_FORMAT(DATE_ADD(v_appdate, INTERVAL 1 DAY), '%Y-%m-%d 00:00:00') as end -->
@@ -103,6 +109,17 @@
 			DATE_FORMAT(v_appdate,'%Y-%m') = #{vAppdate}
 	</select>
 	
+	<select id="selectConfirmApplyCount" parameterType="String" resultType="int">
+		select
+			count(*)
+		from
+			m_visit
+		where
+			v_confstat = 2
+		and
+			DATE_FORMAT(v_appdate,'%Y-%m-%d') = #{date}
+	</select>
+	
 	<select id="selectVisitList" resultType="com.vegemil.domain.VisitDTO">
 		select
 			<include refid="visitColumns" />
@@ -122,7 +139,7 @@
 		from
 			m_visit
 		where
-			v_confstat = 2
+			v_confstat != 0
 		and
 			v_appdate >= MAKEDATE(YEAR(NOW()),1)
 	</select>

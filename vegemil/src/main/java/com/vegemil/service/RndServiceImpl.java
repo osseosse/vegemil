@@ -38,6 +38,15 @@ public class RndServiceImpl implements RndService {
 	}
 	
 	@Override
+	public int getApplyCount(String date) {
+
+		int result = 0;
+		result = rndMapper.selectConfirmApplyCount(date);
+
+		return result;
+	}
+	
+	@Override
     public List<VisitDTO> getVisitList(String vEmail) {
 		
 		List<VisitDTO> visitList = Collections.emptyList();
