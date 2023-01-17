@@ -214,7 +214,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if($.trim(data).length==0)	return '-';
-      			else	return '<img src="/web/upload/'+data+'height="40" width="40" class="rounded">';
+      			else	return '<img src="/web/upload/CUSTOMER/'+data+'height="40" width="40" class="rounded">';
       		}
       	},
       	{
@@ -400,61 +400,13 @@ function btnSave(idx, action) {
 }
 
 function getModal(obj) {
-	console.log('obj', obj)
-	/*
-	let modal = "";
-	modal +=  '<section id="modal-sizes">'
-	modal +=     '<div class="modal fade text-start" id="large'+obj.sIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
-	modal +=		'<div class="row" >'
-	modal +=			'<div class="col-12">'
-	modal +=				'<div class="card">	'
-	modal +=					'<div class="card-body ">'
-	modal +=						'<table class="table table-bordered  f13 paddingType">'
-	modal +=							'<colgroup>'
-	modal +=								'<col width="20%">'
-	modal +=								'<col width="20%">'
-	modal +=								'<col width="40%">'
-	modal +=							'</colgroup>'
-	modal +=							'<thead>'
-	modal +=								'<tr>'
-	modal +=									'<th>신청자명 <span class="text-warning"> '+obj.sName+'</span></th>'
-	modal +=								'</tr>'
-	modal +=								'<tr>'
-	modal +=									'<th>H.P<span class="text-warning"> '+obj.sHp+'</span></th>'
-	modal +=									'<th>E-mail<span class="text-warning"> '+obj.sEmail+'</span></th>'									
-	modal +=									'<th>주소<span class="text-warning"> '+obj.sAddr+'</span></th>'
-	modal +=								'</tr>'
-	modal +=							'</thead>'
-	modal +=						'</table>'
-	modal +=						'<h4 class="mt-2">고객의견</h4>'
-	modal +=						'<p class="mt-1">제목 <span class="text-warning" ></span></p>'
-	modal +=						'<div class="row">'
-	modal +=							'<div class="col-7">'
-	modal +=								'내용123'
-	modal +=							'</div>'
-	modal +=							'<div class="col-5">'
-	modal +=								'<p>사진 <button type="button" class="btn btn-secondary btn-sm2" id="btnDown">다운로드</button></p>'
-	modal +=								'<div class="scroll-h250">'
-	modal +=									'<p class="img100">'
-	modal +=										'<img  src="/web/upload/">'
-	modal +=									'</p>'
-	modal +=								'</div>'
-	modal +=							'</div>'
-	modal +=						'</div>'
-	modal +=					'</div>'
-	modal +=				'</div>'
-	modal +=			'</div>'
-	modal +=		'</div>'
-	modal +=	'</div>'
-	modal +=  '</section>'
-	*/
 	let modal = "";
 	modal +=  '<section id="modal-sizes">'
 	modal +=     '<div class="modal fade text-start" id="large'+obj.sIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
 	modal +=		'<div class="modal-dialog modal-dialog-centered modal-lg">'
 	modal +=			'<div class="modal-content">'
 	modal +=				'<div class="modal-header">'
-	modal +=					'<h4 class="modal-title" id="myModalLabel17">견학신청</h4>'
+	modal +=					'<h4 class="modal-title" id="myModalLabel17">견학신청후기</h4>'
 	modal +=					'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'
 	modal +=				'</div>'
 	modal +=				'<table class="table table-bordered  f13 paddingType">'
