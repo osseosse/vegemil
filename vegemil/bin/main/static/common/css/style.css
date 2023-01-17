@@ -1027,7 +1027,7 @@
 	.news-line {border-top:2px solid #222222; width:100%; text-align:right; padding-top:10px}
 	table.press {background:#fff; width:100%; position:relative; border-top:2px solid #222222}
 	table.press tr {border-bottom:1px solid #DCDCDC}
-	table.press td {text-align:center; padding:50px 10px; position:relative;   }
+	table.press td {text-align:center; padding:30px 10px; position:relative;   }
 	table.press td:nth-child(1) {width:10%}
 	table.press td:nth-child(2) {width:10%}
 	table.press td:nth-child(3) {text-align:left; padding:0 25px; width:80%  }
@@ -1384,7 +1384,7 @@
 	article {background-color:#ffe;box-shadow:0 0 1em 1px rgba(0,0,0,.25);color:#006;font-family:cursive;font-style:italic;margin:4em;max-width:30em;padding:2em;}
 	.ver-title04 {border:1px solid #cacfd5; border-top:0; vertical-align:top; }
 	.ver-title04 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 40px no-repeat;display: block; padding:29px 30px  35px 30px;margin: 0; }
-	.ver-title04.open a { background-position: right -62px;font-weight:500}
+	.ver-title04.open a { background-position: right -97px;font-weight:500}
 	.ver-title04 + div { padding: 0px; }
 	.ver-title04 span {vertical-align:middle}
 	.FaqStyle {border-top:1px solid #cacfd5}
@@ -2754,7 +2754,7 @@
 	.simBox li {display:inline-block; width:30%; text-align:center; max-width:180px; margin:0 30px}
 	
 	/* 1200 보도자료 */
-	table.press td {padding:30px 0}
+	table.press td {padding:20px 0}
 	table.press td:nth-child(1) {width:13%}
 	table.press td:nth-child(2) {width:13%; display:none}
 	table.press td:nth-child(3) {text-align:left; padding:0 25px; width:80%; padding:5px 10px  }
@@ -2913,7 +2913,7 @@
 	.eval-ul li:nth-child(1) {width:100%}
 	.eval-ul li:nth-child(2) {width:100%; margin-top:10px}
 	.ver-title04 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 16px no-repeat;display: block; padding:10px 15px 12px 15px ;margin: 0; font-size:16px; background-size:27px }
-	.ver-title04.open a { background-position: right -50px;font-weight:500}
+	.ver-title04.open a { background-position: right -74px;font-weight:500}
 	.FaqStyle .v_content {padding: 35px  35px;font-size:14px; font-weight:400;}
 
 	/* 1200 연구소 소개 */
@@ -3180,9 +3180,10 @@
 	.mt90h {margin-top:0px}
 
 	/* 992 faq */
-	.txt-box {width:75%; }
+	.ver-title04 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 20px no-repeat;display: block; padding:10px 15px 12px 15px ;margin: 0; font-size:16px; background-size:27px }
+	.txt-box {width:94%; margin-top:10px; overflow:hidden }
 	.ver-title04 a {font-size:14px}
-	.ver-title04.open a { background-position: right -52px;font-weight:500}
+	.ver-title04.open a { background-position: right -75px;font-weight:500}
 
 
 
