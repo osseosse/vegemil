@@ -37,7 +37,7 @@ function btnAvtive() {
 	
 	const cName = $('#cName').val();
 	const cEmail = $('#cEmail').val();
-	const cHp = $('#cEmail').val();
+//	const cHp = $('#cHp').val();
 	const cAddr = $('#cAddr').val();
 	const cAddr2 = $('#cAddr2').val();
 	//const cFileName = $('#fileName1').val();

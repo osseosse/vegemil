@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,20 +9,19 @@ import lombok.Setter;
 @Setter
 public class AdminMediaNewsDTO extends AdminCommonDTO {
 
+	private MultipartFile fileName;
+	
 	/** 번호 (PK) */
 	private Long mIdx;
 
 	/** 제목 */
 	private String mSubject;
-
-	/** 내용 */
-	private String mContent;
-
-	/** 이미지*/
-	private String mImg;
 	
 	/** 날짜 */
 	private String mDate;
+
+	/** 이미지 */
+	private String mImg;
 	
 	/** 조회수*/
 	private int mHit;

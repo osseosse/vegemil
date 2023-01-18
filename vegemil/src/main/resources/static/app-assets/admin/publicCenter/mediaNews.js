@@ -136,7 +136,7 @@ $(function () {
 					$('.datatables-basic').DataTable().ajax.reload();
 				}
 				else{
-					alert("실패했습니다.");
+					alert("실패했습니다!.");
 				}
 				
 			},
@@ -205,33 +205,30 @@ var createTable = function() {
           targets: 0
         },
         {
-          // For Checkboxes
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
-            return (
-              '<div class="form-check">'+
-              	'<input class="form-check-input dt-checkboxes" type="checkbox" name="checkList" value="'+data+'" id="checkbox' +
+        	 console.log('data',data);
+        	 console.log('full',full);
+			 return (
+              '<div class="form-check center-ck"> <input class="form-check-input dt-checkboxes" type="checkbox" name="checkList" value="'+data+'" id="checkbox' +
               data +
               '" /><label class="form-check-label" for="checkbox' +
               data +
               '"></label></div>'
-              
-              
-              
             );
           },
           checkboxes: {
             selectAllRender:
               '<div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="checkboxSelectAll" /><label class="form-check-label" for="checkboxSelectAll"></label></div>'
           }
-        },
-        {
+		 },
+		 {
           targets: 2,
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'babyQnaAdd?mbsIdx='+full['mIdx']+ '\'">수정</button>'
+              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'mediaNewsUpdate?mIdx='+full['mIdx']+ '\'">수정</button>'
             );
           }
           

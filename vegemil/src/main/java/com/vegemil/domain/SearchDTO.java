@@ -13,6 +13,7 @@ public class SearchDTO extends CommonDTO {
     private String keyword;           // 검색 키워드
     private String searchType;        // 검색 유형
     private String category;        // 검색 유형
+    private String subCategory;
 
     public SearchDTO() {
         this.page = 1;

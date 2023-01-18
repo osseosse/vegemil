@@ -15,6 +15,7 @@
 	
 	<!-- BEGIN: Page Vendor JS-->
 	<th:block layout:fragment="add-script">
+<!-- 	    <script th:src="@{/app-assets/admin/publicCenter/mediaNews.js}"></script> -->
 	    <script th:src="@{/app-assets/admin/publicCenter/mediaNews.js}"></script>
 	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
 	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
@@ -117,6 +118,7 @@
 												<input type="hidden" class="form-control" name="sEnddate" id="sEnddate" value=""/>
 												<button type="button" onclick="createTable();" class="btn btn-primary me-1">조회</button>
 												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												
 											</div>
 										</div>
 									</div>
@@ -128,6 +130,7 @@
 	                <!--/ Analytics Card section -->
 	            </form>
 
+				<form id="form" name="form" method="POST">	
 				<!-- 달력모델선정 -->
 				<section id="basic-horizontal-layouts">
 					<div class="row" >
@@ -169,6 +172,7 @@
 					</div>
                 </section>
 				<!-- //달력모델선정 -->
+				</form>
 
             </div>
         </div>

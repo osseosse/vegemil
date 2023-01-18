@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>육아상담 Q&A 등록</title>
+		<title>보도자료 등록</title>
 	</th:block>
 
 	<th:block layout:fragment="add-css">
@@ -34,88 +34,10 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
-	    	$(function () {
-	    		console.log('function');
-	    		
-	    	});
-	    	   
-	       function imageHandler(image, callback) {
-	    	   const fileInput = document.createElement('input');
-		       fileInput.setAttribute('type', 'file');
-
-		       fileInput.click();
-
-		       fileInput.addEventListener("change", function () {  // change 이벤트로 input 값이 바뀌면 실행
-		    	   const formData = new FormData();
-		           const file = fileInput.files[0];
-		           formData.append('uploadFile', file);
-		           console.log("input.type " + formData);
-
-		           $.ajax({
-		        	   type: 'post',
-		               enctype: 'multipart/form-data',
-		               url: '/admin/baby/babyInfo/fileUpload',
-		               data: formData,
-		               processData: false,
-		               contentType: false,
-		               dataType: 'json',
-		               success: function (data) {
-		            	   console.log('success', data);
-		            	   console.log('data.uploadPath', data.uploadPath);
-		            	   const range = quill.getSelection(); // 사용자가 선택한 에디터 범위
-		            	   // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
-		                   const uploadPath = data.uploadPath.path.replace(/\\/g, '/').replace('data', '');
-		                   console.log('uploadPath', uploadPath);
-		                   quill.insertEmbed(range.index, 'image', uploadPath);
-		               },
-		               error: function (err) {
-		                   console.log('err',err);
-		               }
-		           }).done(function(dats){
-		    	       console.log('success')
-		           });
-		       });
-		   }
-
-	    
-	       var quill = new Quill('#editor', {
-	          modules: {
-	    	     formula: true,
-	    	     syntax: true,
-	    	     toolbar: {
-	    	         container: [
-	    	           [{ 'header': [1, 2, false] }],
-	    	           [{ color: [] }, { background: [] }],
-	    	           ['bold', 'italic', 'underline','strike', 'blockquote'],
-	    	           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-	    	           ['link', 'image'],
-	    	           ['clean']
-	    	         ],
-	    	         handlers: { image: imageHandler }
-	    	       }
-	    	  },
-	    	  placeholder: '게시물을 작성해주세요.',
-	    	  theme: 'snow'
-	       });
-	       console.log('quill', quill)
-	       
-	       const editContent = [[ ${babyQna?.mbsContent} ]];
-	       if(editContent) {
-	    	   quill.clipboard.dangerouslyPasteHTML(0, editContent.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll("&quot;",""));
-	       }
-	       
-	       function btnSave(){
-	    	   const form = document.form;
-	    	  /*  form.mbsContent.value = quill.root.innerHTML;
-	    	   form.mbsActive.value = form.mbsActive.value == "on"?"1":"0";
-	    	   form.mbsCheck.value = form.mbsCheck.value == "on"?"1":"0";
-	    	   form.cateSk.value = form.cateSk.value == "on"?"1":"0";
-	    	   form.cateDi.value = form.cateDi.value == "on"?"1":"0";
-	    	   form.cateBo.value = form.cateBo.value == "on"?"1":"0";
-	    	   form.cateGh.value = form.cateGh.value == "on"?"1":"0";
-	    	   const formDate = new FormData(form);
-	    	   formDate.append('uploadFile', $('#uploadFile')[0].files[0])
-	    	   formDate.append('1', '2'); */
+	    		       
+	        function btnSave(){
+	    	   const form = document.form;	    	
+	    	   const formData = new FormData(form);
 	    	   
 	    	   if(form.mSubject.value == "") {
 	    		   alert('제목을 작성해 주세요.');
@@ -126,19 +48,20 @@
 	    		   return false;
 	    	   }
 	    	   
-	    	   console.log('form', formDate);
-// 	    	   form.submit();
+	    	   console.log('form', formData);
                $.ajax({
-            	   url: '/admin/publicCenter/registerMediaNews',
+            	   url: '/admin/manage/publicCenter/mediaNewsAdd',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-				   data: formDate,  //위에서 선언한 fromdata
+				   data: formData,  //위에서 선언한 fromdata
 				   type: 'POST'
 			   }).done(function(data){
+		    	   console.log('form', formData);
+
 	    	       console.log('done', data)
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/publicCenter/mediaNews";
+	    	    	   window.location.href = "/admin/manage/publicCenter/mediaNews";
 	    	       }else{
 	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }
@@ -146,7 +69,7 @@
 	        	   console.log('fail')
 	           })
 				
-		   }
+		   } 
 	       /*]]>*/
 	    </script>
 	    <!-- END: Page JS-->
@@ -179,8 +102,8 @@
               
             </div>
             
-            <div class="content-body">
-            	<form name="form" th:action="@{/admin/publicCenter/mediaNewsAdd}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+            <div class="content-body" th:object="${mediaNewsDto}">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/mediaNewsAdd}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
 	               	
 					<!-- 보도자료 등록 -->
 					<section id="basic-horizontal-layouts">
@@ -189,91 +112,97 @@
 								<div class="card">								
 									<div class="card-body ">
 										<!-- Form -->
-	                                    <form action="javascript:;" class="mt-2" onsubmit>
-	                                        <div class="row">
+	                                    <form action="javascript:;" class="mt-2" onsubmit>                                 
+	                                       
+	                                        <div class="row">	                                            
 	                                            <div class="col-md-1 col-12">제목</div>
 	                                            <div class="col-md-5 col-12">
-	                                                <input type="text" id="mSubject" name="mSubject" class="form-control" placeholder="제목을 작성해주세요" />
+	                                                <input type="text" id="mSubject" name="mSubject" class="form-control" placeholder="제목을 작성해주세요"  th:value="${mediaNewsDto?.mSubject}"/>
 	                                                <!-- <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" />
 	                                                <input type="hidden" id="mbsIdx" name="mbsIdx" class="form-control" th:value="${babyQna?.mbsIdx}" /> --> 
 	                                            </div>
-											</div>
-											
+											</div>											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">일자</div>
 												<div class="col-md-5 col-12">
-												<input type="date" id="mDate" name="mDate" max="2033-01-11" min="2021-01-11" >	                                                
+												<input type="date" class="form-control" id="mDate" name="mDate" max="2033-01-11" min="2021-01-11" th:value="${mediaNewsDto?.mDate}" >	                                                
+												</div>
+											</div>
+											<div class="row mt-1">
+												<div class="col-md-1 col-12">이미지</div>
+												<div class="col-md-5 col-12">
+												<input type="file" class="form-control" id="fileName" name="fileName" accept=".png,.gif,.jpg">	                                                
 												</div>
 											</div>
 	                                        											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 01</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname1" name="mAdname1" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri1" name="mAduri1" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname1" name="mAdname1" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname1}"/>
+	                                                <input type="text" id="mAduri1" name="mAduri1" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri1}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 02</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname2" name="mAdname2" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri2" name="mAduri2" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname2" name="mAdname2" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname2}"/>
+	                                                <input type="text" id="mAduri2" name="mAduri2" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri2}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 03</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname3" name="mAdname3" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri3" name="mAduri3" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname3" name="mAdname3" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname3}"/>
+	                                                <input type="text" id="mAduri3" name="mAduri3" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri3}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 04</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname4" name="mAdname4" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri4" name="mAduri4" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname4" name="mAdname4" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname4}" />
+	                                                <input type="text" id="mAduri4" name="mAduri4" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri4}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 05</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname5" name="mAdname5" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri5" name="mAduri5" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname5" name="mAdname5" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname5}"/>
+	                                                <input type="text" id="mAduri5" name="mAduri5" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri5}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 06</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname6" name="mAdname6" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri6" name="mAduri6" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname6" name="mAdname6" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname6}"/>
+	                                                <input type="text" id="mAduri6" name="mAduri6" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri6}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 07</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname7" name="mAdname7" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri7" name="mAduri7" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname7" name="mAdname7" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname7}"/>
+	                                                <input type="text" id="mAduri7" name="mAduri7" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri7}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 08</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname8" name="mAdname8" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri8" name="mAduri8" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname8" name="mAdname8" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname8}"/>
+	                                                <input type="text" id="mAduri8" name="mAduri8" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri8}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 09</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname9" name="mAdname9" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri9" name="mAduri9" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname9" name="mAdname9" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mAdname9}"/>
+	                                                <input type="text" id="mAduri9" name="mAduri9" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mAduri9}"/>
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 10</div>
 												<div class="col-md-5 col-12" style="display: flex">
-	                                                <input type="text" id="mAdname10" name="mAdname10" class="form-control"  placeholder="매체 이름을 작성해주세요" />
-	                                                <input type="text" id="mAduri10" name="mAduri10" class="form-control"  placeholder="매체 uri를 작성해주세요" />
+	                                                <input type="text" id="mAdname10" name="mAdname10" class="form-control"  placeholder="매체 이름을 작성해주세요" th:value="${mediaNewsDto?.mAdname10}"/>
+	                                                <input type="text" id="mAduri10" name="mAduri10" class="form-control"  placeholder="매체 uri를 작성해주세요" th:value="${mediaNewsDto?.mAduri10}"/>
 												</div>
 											</div>
 											

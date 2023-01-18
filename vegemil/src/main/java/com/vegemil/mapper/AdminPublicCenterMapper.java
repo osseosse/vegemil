@@ -11,6 +11,7 @@ import com.vegemil.domain.AdminMediaNewsDTO;
 public interface AdminPublicCenterMapper {
 
 	//보도자료 등록
+	public int insertMediaNews(AdminMediaNewsDTO params);
 	
 	//보도자료 수
 	public int selectMediaNewsTotalCount(Map<String, Object> paramMap);
@@ -22,4 +23,9 @@ public interface AdminPublicCenterMapper {
 	
 	//보도자료 삭제
 	public int deleteMediaNews(Map<String, Object> paramMap);
+
+	//보도자료 조회
+	public AdminMediaNewsDTO selectMediaNews(Long mIdx);
+
+	
 }
