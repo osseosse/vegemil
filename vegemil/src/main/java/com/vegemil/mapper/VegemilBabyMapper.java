@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
-import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
@@ -28,19 +29,19 @@ public interface VegemilBabyMapper {
 	public VegemilBabyCategoryDTO selectCategoryCount(); 	
 	//육아정보 - 전체
 	public int allMagazineCount();
-	public List<VegemilBabyCommunityDTO> selectAllMagazine(VegemilBabySearchDTO params);		
+	public List<VegemilBabyCommunityDTO> selectAllMagazine(SearchDTO params);		
 	//육아정보 - 임신출산
 	public int pbMagazineCount(String subCategory);	
-	public List<VegemilBabyCommunityDTO> selectPbMagazine(VegemilBabySearchDTO params);
+	public List<VegemilBabyCommunityDTO> selectPbMagazine(SearchDTO params);
     //육아정보 - 성장/건강
 	public int ghMagazineCount(String subCategory);
-	public List<VegemilBabyCommunityDTO> selectGhMagazine(VegemilBabySearchDTO params);
+	public List<VegemilBabyCommunityDTO> selectGhMagazine(SearchDTO params);
     //육아정보 - 놀이/교육
 	public int peMagazineCount(String subCategory);
-	public List<VegemilBabyCommunityDTO> selectPeMagazine(VegemilBabySearchDTO params);	
+	public List<VegemilBabyCommunityDTO> selectPeMagazine(SearchDTO params);	
 	//육아정보 -리빙/헬스/트랜드
 	public int lhMagazineCount(String subCategory);
-	public List<VegemilBabyCommunityDTO> selectLhMagazine(VegemilBabySearchDTO params);
+	public List<VegemilBabyCommunityDTO> selectLhMagazine(SearchDTO params);
 	//육아정보 상세
 	public VegemilBabyCommunityDTO selectMagazineDetail(Long idx);
 	

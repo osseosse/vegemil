@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>보도자료 등록</title>
+		<title>보도자료 수정</title>
 	</th:block>
 
 	<th:block layout:fragment="add-css">
@@ -85,14 +85,14 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">보도자료 등록</h2>
+                            <h2 class="content-header-title float-start mb-0">보도자료 수정</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">홍보</a>
                                     </li>
-                                    <li class="breadcrumb-item active">보도자료 등록
+                                    <li class="breadcrumb-item active">보도자료 수정
                                     </li>
                                 </ol>
                             </div>
@@ -103,7 +103,7 @@
             </div>
             
             <div class="content-body" th:object="${mediaNewsDto}">
-            	<form name="form" th:action="@{/admin/manage/publicCenter/mediaNewsAdd}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/mediaNewsAdd}" method="POST" class="form-horizontal" role="form">
 	               	
 					<!-- 보도자료 등록 -->
 					<section id="basic-horizontal-layouts">
@@ -112,7 +112,7 @@
 								<div class="card">								
 									<div class="card-body ">
 										<!-- Form -->
-	                                    <form action="javascript:;" class="mt-2" onsubmit>                                 
+	                                    <form action="javascript:;" class="mt-2" onsubmit>
 	                                       
 	                                        <div class="row">	                                            
 	                                            <div class="col-md-1 col-12">제목</div>
@@ -121,17 +121,12 @@
 	                                                <!-- <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" />
 	                                                <input type="hidden" id="mbsIdx" name="mbsIdx" class="form-control" th:value="${babyQna?.mbsIdx}" /> --> 
 	                                            </div>
-											</div>											
+											</div>
+											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">일자</div>
 												<div class="col-md-5 col-12">
 												<input type="date" class="form-control" id="mDate" name="mDate" max="2033-01-11" min="2021-01-11" th:value="${mediaNewsDto?.mDate}" >	                                                
-												</div>
-											</div>
-											<div class="row mt-1">
-												<div class="col-md-1 col-12">이미지</div>
-												<div class="col-md-5 col-12">
-												<input type="file" class="form-control" id="fileName" name="fileName" accept=".png,.gif,.jpg">	                                                
 												</div>
 											</div>
 	                                        											

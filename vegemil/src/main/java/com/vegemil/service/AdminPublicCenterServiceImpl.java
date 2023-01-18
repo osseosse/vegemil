@@ -1,10 +1,14 @@
 package com.vegemil.service;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,18 +19,38 @@ import com.vegemil.mapper.AdminPublicCenterMapper;
 @Service
 @Transactional
 public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	@Autowired
 	private AdminPublicCenterMapper adminPublicCenterMapper;
 	
 	//보도자료 등록
 	@Override
-	public boolean registerMediaNews(AdminMediaNewsDTO params) {
-		int queryResult = 0;
+	public boolean registerMediaNews(AdminMediaNewsDTO params) throws Exception {
 		
-		//adminPublicCenterMapper.insertMediaNews(params);
+		String uuid = UUID.randomUUID().toString();
+		String originalName = params.getFileName().getOriginalFilename();
 		
-		return false;
+		if(!"".equals(originalName)) {
+			String file = originalName.substring(originalName.lastIndexOf("\\")+1);			
+			String savefileName = uuid + "_" +file;			
+			
+			//저장 - 실제경로
+			//Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);
+			
+			//저장 - Test로컬경로
+			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+		
+			params.getFileName().transferTo(savePath);				
+			params.setMImg(savefileName);		
+		}	
+		
+		int queryResult = 0;		
+		queryResult = adminPublicCenterMapper.insertMediaNews(params);
+		
+		return (queryResult == 1)? true : false;
 	}
 	
 	//보도자료 조회
@@ -58,7 +82,12 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 	}
 	
 	
-	//보도자료 수정		
+	//보도자료 수정
+	@Override
+	public boolean updateMediaNews(AdminMediaNewsDTO params) {
+
+		return false;
+	}
 		
 	//보도자료 삭제
 	@Override
@@ -69,6 +98,15 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 		
 		return (queryResult > 0)?  true : false;
 	}
+
+	
+	//보도자료 조회
+	@Override
+	public AdminMediaNewsDTO getMediaNewsDetail(Long mIdx) {
+		return adminPublicCenterMapper.selectMediaNews(mIdx);
+	}
+
+	
 
 
 }

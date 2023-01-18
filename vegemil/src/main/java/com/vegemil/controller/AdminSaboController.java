@@ -54,9 +54,10 @@ public class AdminSaboController extends UiUtils{
 			for(int i=0; i<checkList.length; i++) {
 				list.add(checkList[i]);
 			}
+			System.out.println(checkList);
 			Map<String, Object> paramMap = new HashMap<String, Object>();
 			paramMap.put("list", list);
-		
+			
 			boolean isDeleted = adminSaboService.deleteSaboSubscribe(paramMap);
 			
 			System.out.println("isDeleted: "+isDeleted);
