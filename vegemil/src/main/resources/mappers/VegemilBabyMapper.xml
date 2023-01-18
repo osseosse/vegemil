@@ -321,7 +321,7 @@
 				,s_name3, s_sex3, s_materdate3, s_feedmethod3 
 				,s_writedate, s_foodplan, s_sabo, s_before, s_deliver, s_deliverdate
 		)VALUES(
-				#{sId}, #{sMname}, #{sYear}, #{sHp}, #{sTel}, #{sZipcode}, #{sAddr1}, #{sAddr2}, #{sEmail}, #{sItem}, #{sBabycnt}
+				#{sId}, #{sMname}, DATE_FORMAT(STR_TO_DATE(#{sYear}, '%Y%m%d'),'%Y-%m-%d '), #{sHp}, #{sTel}, #{sZipcode}, #{sAddr1}, #{sAddr2}, #{sEmail}, #{sItem}, #{sBabycnt}
 				,#{sName}, #{sSex}, #{sMaterdate}, #{sFeedmethod}  
 				,#{sName2}, #{sSex2}, #{sMaterdate2}, #{sFeedmethod2}
 				,#{sName3}, #{sSex3}, #{sMaterdate3}, #{sFeedmethod3}    
