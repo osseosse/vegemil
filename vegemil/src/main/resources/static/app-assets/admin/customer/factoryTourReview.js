@@ -214,7 +214,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if($.trim(data).length==0)	return '-';
-      			else	return '<img src="/web/upload/CUSTOMER/'+data+'height="40" width="40" class="rounded">';
+      			else	return '<img src="/web/upload/CUSTOMER/'+data+'" height="40" width="40" class="rounded">';
       		}
       	},
       	{

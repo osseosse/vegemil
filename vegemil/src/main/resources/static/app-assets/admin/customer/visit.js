@@ -511,7 +511,7 @@ function getModal(obj) {
 	modal +=						'<div class="col-1"><p>확정일자</p></div>'
 	modal +=						'<div class="col-2">'
 	modal +=                            '<input type="hidden" name="vIdx" value="'+obj.vIdx+'">'
-	modal +=                            '<input type="text" id="vConfdate'+obj.vIdx+'" class="form-control flatpickr" name="vConfdate" placeholder="YYYY-MM-DD" maxlength="10" '  
+	modal +=                            '<input type="date" id="vConfdate'+obj.vIdx+'" class="form-control flatpickr" name="vConfdate" placeholder="YYYY-MM-DD" maxlength="10" '  
 														if(vConfdate != "") {
     modal +=                                             	'value="'+vConfdate+'"/>'
 														}else{
