@@ -166,11 +166,14 @@
 	   		 CASE WHEN g_tube = '1'  THEN '경관급식' ELSE '' END AS g_tubeMark
 		FROM 
 			m_greenbia_product	
-		WHERE g_name like CONCAT('%',#{searchKeyword},'%') 
+		WHERE 
+			g_active = 1		
+		AND 	
+			g_name like CONCAT('%',#{searchKeyword},'%') 
 			OR g_lcate like CONCAT('%',#{searchKeyword},'%') 
 			OR g_mcate like CONCAT('%',#{searchKeyword},'%') 
 			OR g_contents like CONCAT('%',#{searchKeyword},'%') 
-		AND  g_active = 1
+		
 	</select>
 	
 	<!-- 카테고리별 조회 -->	
