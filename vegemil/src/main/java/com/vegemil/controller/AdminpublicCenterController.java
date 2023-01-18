@@ -7,8 +7,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
@@ -138,44 +136,5 @@ public class AdminpublicCenterController extends UiUtils{
 		}
     	return true;
     }
-		
-		
-//		String test = request.getParameter("checkbox");
-//		System.out.println(test);
-//		String checkList[] = request.getParameterValues("checkList");
-//		System.out.println(checkList);
-//		
-//		try {
-////			String checkList[] = request.getParameterValues("checkList");
-//			ArrayList<String> list = new ArrayList<>();
-//			for(int i=0; i<checkList.length; i++) {
-//				list.add(checkList[i]);
-//			}
-//			System.out.println(checkList);
-//			Map<String, Object> paramMap = new HashMap<String, Object>();
-//			paramMap.put("list", list);
-//			
-//			
-//			boolean isDeleted = adminPublicCenterService.deleteMediaNews(paramMap);
-//			
-//			System.out.println("isDeleted: "+isDeleted);
-//			if(!isDeleted) {
-//				return false;
-//			}	
-//		
-//		}catch (DataAccessException e) {
-//	   		return false;
-//		} catch (Exception e) {
-//			return false;
-//		}	
-//	
-//		return true;
-//	
-//	}
-	
-	
-	
-	
-	
 	
 }
