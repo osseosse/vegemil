@@ -1,5 +1,6 @@
 package com.vegemil.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -269,8 +270,8 @@ public class VegemilBabyController extends UiUtils {
 	
 	//샘플 신청 페이지
 	@GetMapping("/vegemilBaby/sample/form")
-	public String moveSampleForm(Authentication authentication, Model model,
-							@RequestParam(value = "sItem", required = false) String sItem) {		
+	public String moveSampleForm(Authentication authentication, Model model, HttpServletResponse response,
+							@RequestParam(value = "sItem", required = false) String sItem) {			
 		MemberDTO member = new MemberDTO();
 		if(authentication == null) {
 			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
@@ -282,6 +283,7 @@ public class VegemilBabyController extends UiUtils {
         model.addAttribute("sItem", sItem);
 		return "vegemilBaby/sampleForm";
 	}
+	
 	//샘플 신청 등록
 	@PostMapping("/vegemilBaby/sample/apply")
 	public String submitSampleForm(@ModelAttribute("sample") VegemilBabySampleDTO sample, 

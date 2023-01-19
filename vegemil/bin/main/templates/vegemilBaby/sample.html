@@ -15,9 +15,25 @@
 				alert('오전 10시 이후로 신청해주세요 \n 감사합니다."');
 				event.preventDefault();
 			}
+			
+			
+			let isLogin = document.getElementById('isLogin').value;
+			if(isLogin == 'anonymousUser'){				 
+					 alert("로그인 후 작성해주시기 바랍니다.");				  
+			 	}	
 	    });
-		
 	});
+	
+	
+	 var element = document.getElementById('isLogin').value;
+	 if(element == 'anonymousUser'){
+		 $("a[id='reviewForm']").on("click", function(){
+			 alert("로그인 후 작성해주시기 바랍니다.");
+		     return false;
+		 	})
+	 	}	
+	
+	
 
 	// 로그인
 	function MemberCheck(oName){
@@ -71,8 +87,8 @@
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-	
 	<div id="content">
+		<input style="display:none;" id="isLogin" name="isLogin" th:value="${#authentication.principal}"/>
 		<div class="container100">
 			<div class="banner_special">
 				<p><a th:href="@{/main/webzine/special/sub1.aspx}" target="_blank"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/banner_special.png}" alt="임출산 육아 쿨팁 대방출, 정식품 웹진 스페셜칼럼에서 확인하세요"/></a></p>
