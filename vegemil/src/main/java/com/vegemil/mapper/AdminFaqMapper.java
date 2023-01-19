@@ -30,6 +30,8 @@ public interface AdminFaqMapper {
 	
 	public List<AdminFaqScoreDTO> selectFaqScoreList(Map<String, Object> paramMap);
 	
+	public int selectSupportTotalCount(Map<String, Object> paramMap);
+	
 	public List<AdminSupportDTO> selectSupportList(Map<String, Object> paramMap);
 	
 	public int deleteSupport(Map<String, Object> paramMap);

@@ -95,14 +95,27 @@ public class AdminFaqServiceImpl implements AdminFaqService {
 	}
 	
 	@Override
-	public List<AdminSupportDTO> getSupportList(Map<String, Object> paramMap) {
-		List<AdminSupportDTO> supportList = adminFaqMapper.selectSupportList(paramMap);
+	public DataTableDTO getSupportList(Map<String, Object> paramMap) {
+		List<AdminSupportDTO> supportList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
 
-		if(supportList == null) {
-			supportList = Collections.emptyList();
+		int totalCount = adminFaqMapper.selectSupportTotalCount(paramMap);
+
+		if (totalCount > 0) {
+			int start = Integer.parseInt(paramMap.get("start").toString());
+			int length = Integer.parseInt(paramMap.get("length").toString());
+			
+			paramMap.put("start", start);
+			paramMap.put("length", length);
+			supportList = adminFaqMapper.selectSupportList(paramMap);
 		}
+		
+		dataTableDto.setData(supportList);
+		dataTableDto.setRecordsTotal(totalCount);
+		dataTableDto.setRecordsFiltered(totalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
 
-		return supportList;
+		return dataTableDto;
 	}
 	
 	@Override

@@ -202,20 +202,12 @@ public class AdminCustomerController extends UiUtils {
 	 }
 	
 	@RequestMapping(value = "/admin/manage/customer/supportList")
-	 public @ResponseBody JsonObject getSupportlList(@ModelAttribute("params") AdminFaqScoreDTO params, Model model,
+	 public @ResponseBody DataTableDTO getSupportlList(@ModelAttribute("params") AdminFaqScoreDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
 
-		JsonObject jsonObj = new JsonObject();
-		List<AdminSupportDTO> supportList = adminFaqService.getSupportList(commandMap);
-		if (CollectionUtils.isEmpty(supportList ) == false) {
-			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
-			JsonArray jsonArr = gson.toJsonTree(supportList ).getAsJsonArray();
-			jsonObj.add("data", jsonArr);
-		}
-		
-		model.addAttribute("supportList ", supportList);
+		DataTableDTO dataTableDto = adminFaqService.getSupportList(commandMap);
+		return dataTableDto;
 
-		return jsonObj;
 	 }
 	
 	@RequestMapping("/admin/manage/customer/deleteSupport")
