@@ -158,10 +158,14 @@ public class RndController extends UiUtils {
 				
 				tempDto.setVEmail(visitDto.getVEmail());
 				tempDto.setVAppdate(visitDto.getVAppdate().substring(0, 7));
+				/*
+				 * 홍보팀 황소연씨 요청 
+				 * 월 1회 신청 제한 해제
 				int applyCnt = rndService.getApplyCount(tempDto);
 				if(applyCnt > 0) {
 					return showMessageWithRedirect("해당 월에는 이미 신청하신 이력이 있습니다.", "/rnd/factoryTour", Method.GET, null, model);
 				}
+				*/
 				
 				int result = rndService.insertMvisit(visitDto); 
 				if(result > 0) {
