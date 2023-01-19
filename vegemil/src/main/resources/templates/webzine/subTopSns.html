@@ -6,6 +6,7 @@
 	var uri = window.location.href;
 	var title = "[[ ${snsTtitle} ]]";
 	var image = "https://image.edaymall.com/images/dcf/webzine/dcf_logo.jpg";
+	var url = 'https://image.edaymall.com/images/dcf/webzine/'+"[[ ${qrtYear} ]]"+'/01_sns.png';
 	
     //트위터
 	function twitter(){
@@ -30,6 +31,10 @@
 	function blog() {
 	    window.open("http://blog.naver.com/openapi/share?url=" + encodeURIComponent(uri) + "&title=" + encodeURIComponent(title));
 	}
+	
+	$("meta[property='og\\:image']").attr("content", url );
+	$("meta[property='og\\:url']").attr("content", window.location.href );   
+// 	$("meta[property='og\\:description']").attr("content", remark.substr(0, 50) + '...' );
 	
 //]]>
 </script>
