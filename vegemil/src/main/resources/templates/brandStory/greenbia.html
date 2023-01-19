@@ -106,291 +106,7 @@
 			<!-- //brand_big -->
 		</div>
 	</div>
-	<div class="contant100 bg_Gray line_bottom_gray">
-		<div class="contant1460" >
-			<div class="row">
-				<div class="col-md-12">
-					<p class="f38 fw600 ">카테고리별 제품보기</p>
-					<!-- 스크롤 -->
-					<div class="swiper-box mt30 mt30m">
-					  <div class="swiper-container" id="scroll-tags">
-						<ul class="swiper-wrapper">
-						  <li class="swiper-slide active"><a href="#tab1">전체보기</a></li>
-						  <li class="swiper-slide"><a href="#tab2">일반영양식</a></li>
-						  <li class="swiper-slide"><a href="#tab3">전문영양식</a></li>
-						  <li class="swiper-slide"><a href="#tab4">연하식</a></li>
-						  <li class="swiper-slide"><a href="#tab5">건강식품</a></li>
-						</ul>
-					  </div>
-					</div>
-					<!-- //스크롤 -->
-				</div>
-			</div>
-		</div><!-- //contant1460 -->
-	</div>
-<div class="contant1460">
-		<div class="row mt50 line_bottom_gray pb100" id="tab1">
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">신제품</p>
-				<!-- 전체보기 > 신제품 -->
-				<a th:href="@{/greenbia/product/detail/40}">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GPL01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>일반영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#저잔자식</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">마일드케어 구수한맛</p>
-						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반 식사가 힘들거나,소화기능이 약하신 분들을 위한 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //전체보기 > 신제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'G' and ${brandStroy.newProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">대표제품</p>
-				<!-- 전체보기 > 대표제품 -->
-				<a th:href="@{/greenbia/product/detail/41}">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GPL02_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>일반영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#고소한검은참깨</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 마일드케어 검은참깨</p>
-						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반식사가 힘들거나, 소화기능이 약하신 분들을 위한 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //전체보기 > 대표제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if=" ${brandStroy.categoryCode} == 'G' and ${brandStroy.repProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row mt50 line_bottom_gray pb100" id="tab2">
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">신제품</p>
-				<!-- 일반영양식 > 신제품 -->
-				<a href="/greenbia/product/detail/40">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GPL01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>일반영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#저잔자식</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">마일드케어 구수한맛</p>
-						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반 식사가 힘들거나,소화기능이 약하신 분들을 위한 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //일반영양식 > 신제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GPL' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">대표제품</p>
-				<!-- 일반영양식 > 대표제품 -->
-				<a href="/greenbia/product/detail/43">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GPL04_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>일반영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#편리성</span></p><p><span>#중쇄지방산함유</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 플러스 케어</p>
-						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반식사가 힘들거나, 소화기능이 약하신 분들을 위한 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //일반영양식 > 대표제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'GPL' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row mt50 line_bottom_gray pb100" id="tab3">
-		
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">신제품</p>
-				<!-- 전문영양식 > 신제품 -->
-				<a href="/greenbia/product/detail/47">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GED04_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>전문영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#당뇨식</span></p><p><span>#발효성당류제한</span></p><p><span>#식이섬유</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 당뇨솔루션</p>
-						<p class="f16 mt5 fw400 gray04">장관계 민감도가 높은 당뇨환자를 위한 전문영양식</p>
-					</div>
-				</a>
-				<!-- //전문영양식 > 신제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEI' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">대표제품</p>
-				<!-- 전문영양식 > 대표제품 -->
-				<a href="/greenbia/product/detail/57">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GEI06_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>전문영양식</span></p></div>
-							<div class="bottom_tag"><p><span>#발효성당류제한</span></p><p><span>#가수분해유청단백</span></p><p><span>#경관급식</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 알티에이치</p>
-						<p class="f16 mt5 fw400 gray04">장을 자극하는 '발효성 당류'를 제한한 전문영양식</p>
-					</div>
-				</a>
-				<!-- //전문영양식 > 대표제품 -->
-				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEK' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
-						<div class="recom">
-							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
-								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
-								<div class="recomTxt mt30">
-									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
-									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
-									<div class="key02 f14 gray04 mt20">
-										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
-										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
-										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
-									</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row mt50 line_bottom_gray pb100" id="tab4">
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">신제품</p>
-				<!-- 연하식 > 신제품 -->
-				<a href="/greenbia/product/detail/66">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 GDY01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>연하식</span></p></div>
-							<div class="bottom_tag"><p><span>#자유로운점도조절</span></p><p><span>#간편한사용</span></p><p><span>#무미무취무색</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 연하솔루션</p>
-						<p class="f16 mt5 fw400 gray04">음식물을 삼키는데 어려움을 겪는 분들을 위한</p>
-					</div>
-				</a>
-				<!-- //연하식 > 신제품 -->
-			</div>
-		</div>
-		
-		<div class="row mt50 line_bottom_gray pb100" id="tab5">
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">신제품</p>
-				<!-- 건강식품 > 신제품 -->
-				<a href="/greenbia/product/detail/67">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 CHD01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>건강식품</span></p></div>
-							<div class="bottom_tag"><p><span>#동식물성균형단백질</span></p><p><span>#필수아미노산</span></p><p><span>#아몬드와호두</span></p></div>
-						</div>
-						<p class="f27 mt40 fw500">그린비아 프로틴밀 아몬드와 호두</p>
-						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
-					</div>
-				</a>
-				<!-- //건강식품 > 신제품 -->
-			</div>
-			<div class="col-md-6 brand_thumb mt50 mt50m">
-				<p class="f23 fw500">대표제품</p>
-				<!-- 건강식품 > 대표제품 -->
-				<a href="/product/detail/71">
-					<div class="line_bottom_gray pb60">
-						<div class="h370 CHP01_860_01 mt20  brand_thumb_img">
-							<div class="top_tag"><p><span>건강식품</span></p></div>
-							<div class="bottom_tag"><p><span>#47가지국내산100</span></p><p><span>#컬러푸드</span></p><p><span>#간편한섭취</span></p></div>
-						</div>
 
-						<p class="f27 mt40 fw500">정식품 오색채움 한끼생식</p>
-						<p class="f16 mt5 fw400 gray04">47가지 국내산 100% 컬러푸드</p>
-					</div>
-				</a>
-				<!-- //건강식품 > 대표제품 -->
-			</div>
-		</div>
-		
-	</div><!-- //contant1460 -->
 	<div class="contant100">
 		<div class="row">
 			<div class="col-md-12 center">
@@ -680,6 +396,282 @@
 			<div class="col-md-1"></div>
 		</div>
 	</div>
+		<div class="contant100 bg_Gray line_bottom_gray mt100 pt30">
+		<div class="contant1460" >
+			<div class="row">
+				<div class="col-md-12">
+					<p class="f38 fw600 ">카테고리별 제품보기</p>
+					<!-- 스크롤 -->
+					<div class="swiper-box mt30 mt30m">
+					  <div class="swiper-container" id="scroll-tags">
+						<ul class="swiper-wrapper">
+						  <li class="swiper-slide active"><a href="#tab1">전체보기</a></li>
+						  <li class="swiper-slide"><a href="#tab2">일반영양식</a></li>
+						  <li class="swiper-slide"><a href="#tab3">전문영양식</a></li>
+						  <li class="swiper-slide"><a href="#tab4">연하식</a></li>
+						  <li class="swiper-slide"><a href="#tab5">건강식품</a></li>
+						</ul>
+					  </div>
+					</div>
+					<!-- //스크롤 -->
+				</div>
+			</div>
+		</div><!-- //contant1460 -->
+	</div>
+	<div class="contant1460">
+		<div class="row mt50 line_bottom_gray pb100" id="tab1">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 전체보기 > 신제품 -->
+				<a th:href="@{/greenbia/product/detail/40}">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#저잔자식</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">마일드케어 구수한맛</p>
+						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반 식사가 힘들거나,소화기능이 약하신 분들을 위한 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //전체보기 > 신제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'G' and ${brandStroy.newProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 전체보기 > 대표제품 -->
+				<a th:href="@{/greenbia/product/detail/41}">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL02_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#고소한검은참깨</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 마일드케어 검은참깨</p>
+						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반식사가 힘들거나, 소화기능이 약하신 분들을 위한 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //전체보기 > 대표제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if=" ${brandStroy.categoryCode} == 'G' and ${brandStroy.repProductAll} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab2">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 일반영양식 > 신제품 -->
+				<a href="/greenbia/product/detail/40">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#5대영양소함유</span></p><p><span>#저잔자식</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">마일드케어 구수한맛</p>
+						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반 식사가 힘들거나,소화기능이 약하신 분들을 위한 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //일반영양식 > 신제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GPL' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 일반영양식 > 대표제품 -->
+				<a href="/greenbia/product/detail/43">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GPL04_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>일반영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#액상균형영양식</span></p><p><span>#편리성</span></p><p><span>#중쇄지방산함유</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 플러스 케어</p>
+						<p class="f16 mt5 fw400 gray04">씹기 어려워 일반식사가 힘들거나, 소화기능이 약하신 분들을 위한 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //일반영양식 > 대표제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.categoryCode} == 'GPL' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab3">
+		
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 전문영양식 > 신제품 -->
+				<a href="/greenbia/product/detail/47">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GED04_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>전문영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#당뇨식</span></p><p><span>#발효성당류제한</span></p><p><span>#식이섬유</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 당뇨솔루션</p>
+						<p class="f16 mt5 fw400 gray04">장관계 민감도가 높은 당뇨환자를 위한 전문영양식</p>
+					</div>
+				</a>
+				<!-- //전문영양식 > 신제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEI' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 전문영양식 > 대표제품 -->
+				<a href="/greenbia/product/detail/57">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GEI06_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>전문영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#발효성당류제한</span></p><p><span>#가수분해유청단백</span></p><p><span>#경관급식</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 알티에이치</p>
+						<p class="f16 mt5 fw400 gray04">장을 자극하는 '발효성 당류'를 제한한 전문영양식</p>
+					</div>
+				</a>
+				<!-- //전문영양식 > 대표제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEK' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+						<div class="recom">
+							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+								<div class="recomTxt mt30">
+									<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+									<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+									<div class="key02 f14 gray04 mt20">
+										<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+										<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+										<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab4">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 연하식 > 신제품 -->
+				<a href="/greenbia/product/detail/66">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 GDY01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>연하식</span></p></div>
+							<div class="bottom_tag"><p><span>#자유로운점도조절</span></p><p><span>#간편한사용</span></p><p><span>#무미무취무색</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 연하솔루션</p>
+						<p class="f16 mt5 fw400 gray04">음식물을 삼키는데 어려움을 겪는 분들을 위한</p>
+					</div>
+				</a>
+				<!-- //연하식 > 신제품 -->
+			</div>
+		</div>
+		
+		<div class="row mt50 line_bottom_gray pb100" id="tab5">
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 건강식품 > 신제품 -->
+				<a href="/greenbia/product/detail/67">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 CHD01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>건강식품</span></p></div>
+							<div class="bottom_tag"><p><span>#동식물성균형단백질</span></p><p><span>#필수아미노산</span></p><p><span>#아몬드와호두</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 프로틴밀 아몬드와 호두</p>
+						<p class="f16 mt5 fw400 gray04">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+					</div>
+				</a>
+				<!-- //건강식품 > 신제품 -->
+			</div>
+			<div class="col-md-6 brand_thumb mt50 mt50m">
+				<!-- 건강식품 > 대표제품 -->
+				<a href="/product/detail/71">
+					<div class="line_bottom_gray pb60">
+						<div class="h370 CHP01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>건강식품</span></p></div>
+							<div class="bottom_tag"><p><span>#47가지국내산100</span></p><p><span>#컬러푸드</span></p><p><span>#간편한섭취</span></p></div>
+						</div>
+
+						<p class="f27 mt40 fw500">정식품 오색채움 한끼생식</p>
+						<p class="f16 mt5 fw400 gray04">47가지 국내산 100% 컬러푸드</p>
+					</div>
+				</a>
+				<!-- //건강식품 > 대표제품 -->
+			</div>
+		</div>
+		
+	</div><!-- //contant1460 -->
 	<div class="contant100_1 bg_Blue mt250">
 		<div class="row">
 			<div class="col-md-12 pt50 pb50">
