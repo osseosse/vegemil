@@ -28,8 +28,7 @@ public class AdminSaboServiceImpl implements AdminSaboService {
 
 		int saboSubscriberTotalCount = adminSaboMapper.selectSaboSubscribeTotalCount(paramMap);
 
-		if (saboSubscriberTotalCount > 0) {
-			
+		if (saboSubscriberTotalCount > 0) {			
 			
 			  int start = Integer.parseInt(paramMap.get("start").toString()); 
 			  int length = Integer.parseInt(paramMap.get("length").toString());
@@ -38,10 +37,7 @@ public class AdminSaboServiceImpl implements AdminSaboService {
 			  paramMap.put("length", length);
 			 
 			  saboSubscriberList = adminSaboMapper.selectSaboSubscribeList(paramMap);
-			  
-			  
-
-			 
+			  			 
 		}
 		
 		dataTableDto.setData(saboSubscriberList);

@@ -115,7 +115,7 @@
 		from
 			m_visit
 		where
-			v_confstat = 2
+			v_confstat IN (1, 2)
 		and
 			DATE_FORMAT(v_appdate,'%Y-%m-%d') = #{vAppdate}
 		and

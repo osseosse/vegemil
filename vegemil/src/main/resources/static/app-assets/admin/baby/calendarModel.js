@@ -156,7 +156,7 @@ $(function () {
 
 
 var createTable = function() {
-	console.log('carateTable')
+	console.log('createTable')
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -208,6 +208,11 @@ var createTable = function() {
         { data: 'cUpdatetime' }
       ],
       columnDefs: [
+    	{
+          // For Responsive
+          orderable: false,
+          targets: 0
+        },
 		{
       		targets: 1,
       		orderable: false,

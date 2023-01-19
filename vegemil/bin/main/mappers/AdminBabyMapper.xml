@@ -297,7 +297,7 @@
 	
 	<insert id="insertCalendarModel" parameterType="com.vegemil.domain.AdminCalendarModelDTO">
 		INSERT INTO m_calendar_model (
-			c_mname
+			c_name
 			, c_hp
 			, c_addr
 			, c_email
@@ -305,12 +305,12 @@
 			, c_writeDate
 			, c_rank
 			, c_updatetime
-			, c_bname
+			, c_baby_name
 			, c_route
 			, c_image2
 			, c_alived
 		) VALUES (
-			  #{cMname}
+			  #{cName}
 			, #{cHp}
 			, #{cAddr}
 			, #{cEmail}
@@ -351,25 +351,32 @@
 	  </foreach>
 	</update>
 
+
 	<select id="selectCalendarModelList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCalendarModelDTO">
-		SELECT /* selectCalendarModelList by AdminEventMapper.xml */
-			<include refid="calendarModelColumns" />
-			, m.m_id
-		  FROM m_calendar_model c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp
-	    <if test='sStartdate != "" '>
-	 	   AND c_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
-	 	</if>
-	 	<if test='sEnddate != "" '>
-	 	   AND c_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
-	 	</if>
-	 	<if test='gubun == "1" '>
-	 	</if>
-	 	<if test='searchType == "mName" '>
-		AND c_mname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
-		</if>
-		<if test='searchType == "bName" '>
-		AND c_bname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
-		</if>
+		SELECT * /* selectCalendarModelList by AdminEventMapper.xml */
+		FROM
+			(SELECT 
+				<include refid="calendarModelColumns" />
+				, m.m_id
+			  FROM m_calendar_model c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp) subQuery
+			  
+			  WHERE 1 =1
+			  
+			  <if test='sStartdate != "" '>
+			  	AND c_write_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+			  </if>
+			  <if test='sEnddate != "" '>
+			  	AND c_write_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+			  </if>
+			  <if test='gubun == "1" '>
+			  </if>
+			  <if test='searchType == "mName" '> <!-- 작성자명 -->
+			  	AND c_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+			  </if>
+			  <if test='searchType == "bName" '> <!-- 아기이름 -->
+			  	AND c_baby_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+			  </if>
+			  
 		 ORDER BY c_idx DESC
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
@@ -381,18 +388,18 @@
 			m_calendar_model
 		WHERE 1=1
 		<if test='sStartdate != "" '>
-	 	   AND c_writedate &gt;= #{sStartdate, jdbcType=VARCHAR}
+	 	   AND c_write_date &gt;= #{sStartdate, jdbcType=VARCHAR}
 	 	</if>
 	 	<if test='sEnddate != "" '>
-	 	   AND c_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	 	   AND c_write_date &lt;= #{sEnddate, jdbcType=VARCHAR}
 	 	</if>
 	 	<if test='gubun == "1" '>
 	 	</if>
 	 	<if test='searchType == "mName" '>
-		AND c_mname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		AND c_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
 		</if>
 		<if test='searchType == "bName" '>
-		AND c_bname LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		AND c_baby_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
 		</if>
 	</select>
 	

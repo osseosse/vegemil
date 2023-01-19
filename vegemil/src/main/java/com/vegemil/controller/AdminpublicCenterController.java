@@ -136,8 +136,11 @@ public class AdminpublicCenterController extends UiUtils{
 		}
     	return true;
     }
+<<<<<<< HEAD
 		
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/osseosse/vegemil.git
 	
 }
