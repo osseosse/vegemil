@@ -65,6 +65,10 @@ var createTable = function() {
 	$('#sEnddate').attr("value",enddate);
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
+	  bPaginate: true,
+	  pageLength: 10,
+	  serverSide: true,
+	  processing: true,
       ajax: {
         url : '/admin/manage/customer/supportList',
         dataType : 'json',

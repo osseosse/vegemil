@@ -45,19 +45,16 @@
 			<if test="sGory != null and sGory != ''"> 
 			   <choose>
 			      <when test="sGory.equalsIgnoreCase('11')">
-		          	'제품일반',
+		          	'제품 관련 문의',
 			      </when>
 			      <when test="sGory.equalsIgnoreCase('22')">
-		          	'음료류',
+		          	'고객의 소리',
 			      </when> 
 			      <when test="sGory.equalsIgnoreCase('33')">
-		          	'유아동두유',
+		          	'불편 사항 접수',
 			      </when> 
 			      <when test="sGory.equalsIgnoreCase('44')">
-		          	'베지밀',
-			      </when> 
-			      <when test="sGory.equalsIgnoreCase('55')">
-		          	'그린비아',
+		          	'기타 무의',
 			      </when> 
 			   </choose> 
 			</if>

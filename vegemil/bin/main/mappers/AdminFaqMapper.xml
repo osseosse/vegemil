@@ -174,6 +174,26 @@
 		ORDER BY idx DESC
 	</select>
 	
+	<select id="selectSupportTotalCount" parameterType="hashMap" resultType="int">
+		SELECT /* selectSupportTotalCount by FaqMapper.xml */
+			COUNT(*)
+		FROM 
+		    m_support_faq
+		WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+		 <if test='searchWord != "" '>
+		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		 </if>
+		 <if test='sCate != "" '>
+		   AND s_cate = #{sCate, jdbcType=VARCHAR}
+		 </if>
+	</select>
+	
 	<select id="selectSupportList" parameterType="hashMap" resultType="com.vegemil.domain.AdminSupportDTO">
 		SELECT /* selectSupportList by FaqMapper.xml */
 			<include refid="supportColumns" />
@@ -188,7 +208,11 @@
 		 <if test='searchWord != "" '>
 		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
 		 </if>
-		ORDER BY s_idx DESC
+		 <if test='sCate != "" '>
+		   AND s_cate = #{sCate, jdbcType=VARCHAR}
+		 </if>
+		ORDER BY s_writedate DESC
+		LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
 	
 	<delete id="deleteSupport" parameterType="hashMap">
