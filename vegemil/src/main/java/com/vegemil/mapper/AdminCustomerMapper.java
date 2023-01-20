@@ -54,4 +54,6 @@ public interface AdminCustomerMapper {
 	public int updateFactoryTourReview(AdminFactpostDTO params);
 	
 	public int deleteFactoryTourReview(AdminFactpostDTO params);
+	
+	public int updatePassword(MemberDTO params);
 }

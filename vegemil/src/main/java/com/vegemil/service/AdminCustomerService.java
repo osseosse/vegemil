@@ -42,5 +42,7 @@ public interface AdminCustomerService {
 	
 	public boolean saveFactoryTourReview(AdminFactpostDTO params);
 	
+	public boolean savePassword(MemberDTO params);
+	
 
 }

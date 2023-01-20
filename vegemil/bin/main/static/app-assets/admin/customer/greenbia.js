@@ -94,8 +94,8 @@ var createTable = function() {
         { data: 'mEmail' },
         { data: 'mLogincount' },
         { data: 'mIdx' },
-        { data: 'mIdx' }
-        
+        { data: 'mIdx' },
+        { data: 'mIdx' },
       ],
       columnDefs: [
         {
@@ -202,6 +202,16 @@ var createTable = function() {
           render: function (data, type, full, meta) {
             return (
               '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'D\')">삭제</button>'
+            );
+          }
+          
+        },
+        {
+          targets: 12,
+          orderable: false,
+          render: function (data, type, full, meta) {
+            return (
+              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnInitPw('+full['mIdx']+',\'D\')">초기화</button>'
             );
           }
           
@@ -326,6 +336,28 @@ function btnSave(idx, action) {
 		   console.log('done', data)
 		   if(data.result) {
 		   	   alert('삭제되었습니다.');
+		   	   $('.datatables-basic').DataTable().ajax.reload();
+		   }else{
+		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+		   }
+		 }).fail(function() {
+		   	   console.log('fail')
+		 })
+	}
+}
+
+function btnInitPw(idx) {
+	console.log('idx', idx);
+	if(confirm("초기화하시겠습니까?")) {
+		$.ajax({
+	       url: '/admin/manage/customer/savePassword?mIdx='+idx,
+		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+		   dataType : 'json',
+		}).done(function(data){
+		   console.log('done', data)
+		   if(data.result) {
+		   	   alert('abcd1234로 초기화되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();
 		   }else{
 		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');

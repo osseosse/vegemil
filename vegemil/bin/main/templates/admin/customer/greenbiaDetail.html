@@ -100,11 +100,11 @@
 											</div>
 											<div class="col-md-11 col-3">
 												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="mSex"  id="sex1" value="1" th:checked="${member?.mSex eq '1'}" />
+													<input class="form-check-input" type="radio" name="mSex"  id="sex1" value="1" th:checked="${member?.mSex eq '1' or member?.mSex eq '남'}" />
 													<label class="form-check-label" for="sex1">남</label>
 												</div>
 												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="mSex"  id="sex2" value="2" th:checked="${member?.mSex eq '2'}" />
+													<input class="form-check-input" type="radio" name="mSex"  id="sex2" value="2" th:checked="${member?.mSex eq '2' or member?.mSex eq '여'}" />
 													<label class="form-check-label" for="sex2">여</label>
 												</div>
 											</div>
