@@ -205,7 +205,7 @@ var createTable = function() {
         { data: 'cImage' },
         { data: 'cWriteDate' },
         { data: 'cRank' },
-        { data: 'cUpdatetime' }
+        { data: 'cUpdateTime' }
       ],
       columnDefs: [
     	{
@@ -330,9 +330,10 @@ var createTable = function() {
       	{
       		targets: 13,
       		orderable: false,
-      		render: function (data, type, full, meta) {
-      			if(full['cUpdatetime']==null)	return '';
-      			else	return full['cUpdatetime'].substring(2,4)+'.'+full['cUpdatetime'].substring(5,7);
+      		render: function (data, type, full, meta) { 
+      			if(full['cUpdateTime']==null || full['cUpdateTime']== "" || full['cUpdateTime']== "null" )	return '';
+      			else 
+      				return full['cUpdateTime'].substring(2,4)+'.'+full['cUpdateTime'].substring(5,7);
       			
       		}
       	}
@@ -510,7 +511,7 @@ function getModal(obj) {
 	modal +=									'<th>선정여부 <span class="badge rounded-pill bg-danger">N</span></th>'											
 											}
 	modal +=									'<th>선정연월 <span class="text-warning">{연월}</span></th>'
-	modal +=									'<th>선정처리일시 <span class="text-warning">'+obj.cUpdatetime+'</span></th>'
+	modal +=									'<th>선정처리일시 <span class="text-warning">'+obj.cUpdateTime+'</span></th>'
 	modal +=								'</tr>'
 	modal +=							'</thead>'
 	modal +=						'</table>'

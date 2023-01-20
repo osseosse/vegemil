@@ -32,7 +32,7 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	private String cRank;
 	
 	/** 업데이트 시간 */
-	private String cUpdatetime;
+	private String cUpdateTime;
 	
 	/** 아기이름 */
 	private String cBabyName;

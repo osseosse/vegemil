@@ -22,7 +22,7 @@
 		, c_email
 		, c_image
 		, c_write_date
-		, c_update_time
+		, (CASE WHEN c_rank IS NULL THEN "" ELSE c_update_time END) as c_update_time
 		, c_baby_name
 		, c_route
 		, c_image2
