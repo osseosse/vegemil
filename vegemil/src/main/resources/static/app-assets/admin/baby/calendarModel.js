@@ -305,7 +305,7 @@ var createTable = function() {
           className: 'my_modal',
           render: function (data, type, full, meta) {
 			  if(full['cImage']==null)	return '';
-      		  else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+full['cImage']+'" height="40" width="40" class="rounded">';
+      		  else	return '<img src="/web/upload/vegemilBaby/'+full['cImage']+'" height="40" width="40" class="rounded">';
           }
         },
         {
