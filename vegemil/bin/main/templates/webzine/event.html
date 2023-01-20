@@ -135,7 +135,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive()">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
 					<input type="hidden" name="qrt" th:value="${qrtYear}">
 					<div class="row intxt mt80-m">
 					</div>
@@ -181,10 +181,10 @@
 							</p>
 							<ul class="ins_radio">
 								<li><input type="radio" name="chk_privacy" value="1"> 예 &nbsp;&nbsp;&nbsp;
-								<li><input type="radio" name="chk_privacy" value="0"> 아니오</li>
+								<li><input type="radio" name="chk_privacy" value="0" checked> 아니오</li>
 							</ul>
 							<div class="mt90 center">
-								<input  class="btn-event-sm center" type="submit" alt="응모하기">
+								<input  class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기">
 							</div>
 						</div>
 						<div class="col-md-12 mt100-m2" >
@@ -238,32 +238,44 @@
 //<![CDATA[
 
 	function btnActive() {
-	
+		
+		buildData();
 		const sName = $('#custName').val();
 		const sHp = $('#custHp').val();
 		const sEmail = $('#custEmail').val();
 		
 		if($.trim(sName).length > 0
-		&& $("input:radio[name='chk_privacy']:checked'").val() == '1'
 		&& $.trim(sHp).length > 0
 		&& $.trim(sEmail).length > 0) {
+			
+			if(($("input[type=radio][name=chk_privacy]:checked").val() == '1') == false){
+				alert("개인정보취급에 동의하셔야 이벤트 응모가 가능합니다.");
+				return false;
+			}
 			return true;
 		} else {
 			alert("필수 값을 입력해주세요");
 			return false;
 		}
 	}
-
-$(function(){
 	
-	//이메일 입력방식 선택
-	$('#hp1').change(function(){
-	   $("#hp1 option:selected").each(function () {
-			$("#custHp").val($("#hp1").val()+$("#hp2").val()+$("#hp3").val());
-	   });
+	function buildData(){
+		
+		var hp = $("#hp1").val()  + "-" +  $('#hp2').val() + "-" + $('#hp3').val();
+		$('input[name=custHp]').attr('value',hp);
+        console.log(hp);
+	}
+	
+	$(function(){
+		
+		//이메일 입력방식 선택
+		$('#hp1').change(function(){
+		   $("#hp1 option:selected").each(function () {
+				$("#custHp").val($("#hp1").val()+$("#hp2").val()+$("#hp3").val());
+		   });
+		});
+		
 	});
-	
-});
 //]]>
 </script>
 </body>
