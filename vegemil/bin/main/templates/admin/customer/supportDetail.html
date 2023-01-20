@@ -175,10 +175,7 @@
 											</tr>
 											<tr>
 												<th>상담분류 
-													<span class="text-warning" th:if="${support.sCate.toString().equals('제품 관련 문의')}">제품 관련 문의</span>
-													<span class="text-warning" th:if="${support.sCate.toString().equals('고객의 소리')}">고객의 소리</span>
-													<span class="text-warning" th:if="${support.sCate.toString().equals('불편 사항 접수')}">불편 사항 접수</span>
-													<span class="text-warning" th:if="${support.sCate.toString().equals('기타 문의')}">기타 문의</span>
+													<span class="text-warning" th:text="${support.sCate}"></span>
 												</th>
 												<th>등록일시 <span class="text-warning" th:text="${support.sWritedate}"></span></th>
 												<th>답변상태 <span class="text-warning"> 
