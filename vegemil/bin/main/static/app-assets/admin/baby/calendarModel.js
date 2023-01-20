@@ -305,7 +305,7 @@ var createTable = function() {
           className: 'my_modal',
           render: function (data, type, full, meta) {
 			  if(full['cImage']==null)	return '';
-      		  else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+full['cImage']+'" height="40" width="40" class="rounded">';
+      		  else	return '<img src="/web/upload/vegemilBaby/'+full['cImage']+'" height="40" width="40" class="rounded">';
           }
         },
         {
@@ -322,7 +322,7 @@ var createTable = function() {
       		targets: 12,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['cRank']==null || full['cRank'] == 0)	return '<span class="badge rounded-pill bg-danger">N</span>';
+      			if(full['cRank']==null || full['cRank'] == 0 || full['cRank'] == 'NU')	return '<span class="badge rounded-pill bg-danger">N</span>';
       			else return '<span class="badge rounded-pill bg-success">Y</span>';
       			
       		}

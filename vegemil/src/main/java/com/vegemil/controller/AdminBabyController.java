@@ -2,6 +2,7 @@ package com.vegemil.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
@@ -16,7 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
@@ -443,6 +449,26 @@ public class AdminBabyController extends UiUtils {
 		DataTableDTO dataTableDto = adminBabyService.getCalendarModelList(commandMap);
 		return dataTableDto;
 	 }
+	
+	
+	//정적 이미지 불러오기
+	@GetMapping("/web/upload/vegemilBaby/{filename}")
+	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/" + filename);
+		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + filename);
+			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
 	
 	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")
 	public @ResponseBody Map<String, Object> updateCalendarModelList(@ModelAttribute("params") final AdminCalendarModelDTO params, 

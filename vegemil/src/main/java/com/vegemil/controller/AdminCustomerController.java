@@ -23,6 +23,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
@@ -493,4 +494,17 @@ public class AdminCustomerController extends UiUtils {
 
 		return rtnMap;
 	}
+	@GetMapping("/admin/manage/customer/savePassword")
+    public @ResponseBody Map<String, Object> initPw(MemberDTO params, Model model) throws Exception {
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+    	boolean isUpdate;
+    	
+    	try {
+    		isUpdate = adminCustomerService.savePassword(params);
+    		rtnMap.put("result", isUpdate);
+    	}catch(Exception e) {
+    		throw new IOException("저장에 실패하였습니다.");
+    	}
+        return rtnMap;
+    }
 }

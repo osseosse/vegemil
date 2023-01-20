@@ -331,5 +331,14 @@
 		WHERE
 		    s_idx = #{sIdx}
 	</delete>
+	
+	<update id="updatePassword" parameterType="com.vegemil.domain.MemberDTO">
+		 /* updatePassword by AdminCustomerMapper.xml */ 
+		UPDATE m_member
+		SET 
+		    m_pwd = #{mPwd}
+		WHERE
+		    m_idx = #{mIdx}
+	</update>
 
 </mapper>

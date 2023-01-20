@@ -375,9 +375,8 @@
 			  </if>
 			  <if test='searchType == "bName" '> <!-- 아기이름 -->
 			  	AND c_baby_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
-			  </if>
-			  
-		 ORDER BY c_idx DESC
+			  </if>			  
+		 ORDER BY c_write_date DESC		 
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
 

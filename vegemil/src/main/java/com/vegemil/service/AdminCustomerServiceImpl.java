@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.vegemil.domain.AdminFactpostDTO;
@@ -19,6 +20,9 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 
 	@Autowired
 	private AdminCustomerMapper adminCustomerMapper;
+	
+	@Autowired
+    private PasswordEncoder passwordEncoder;
 	
 	@Override
 	public DataTableDTO getGreenbiaList(Map<String, Object> paramMap) {
@@ -209,6 +213,18 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		}else if("D".equals(params.getAction())) {
 			queryResult = adminCustomerMapper.deleteFactoryTourReview(params);
 		}
+		
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Override
+	public boolean savePassword(MemberDTO params) {
+		int queryResult = 0;
+		
+		String password = "abcd1234";
+		params.setMPwd(passwordEncoder.encode(password));
+		
+		queryResult = adminCustomerMapper.updatePassword(params);
 		
 		return (queryResult == 1) ? true : false;
 	}
