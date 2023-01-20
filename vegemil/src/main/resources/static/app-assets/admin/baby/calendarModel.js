@@ -322,7 +322,7 @@ var createTable = function() {
       		targets: 12,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['cRank']==null || full['cRank'] == 0)	return '<span class="badge rounded-pill bg-danger">N</span>';
+      			if(full['cRank']==null || full['cRank'] == 0 || full['cRank'] == 'NU')	return '<span class="badge rounded-pill bg-danger">N</span>';
       			else return '<span class="badge rounded-pill bg-success">Y</span>';
       			
       		}
