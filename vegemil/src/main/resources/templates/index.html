@@ -902,10 +902,16 @@
 	
 	$(document).ready(function(){
 		var popup = document.getElementById("popup");
+		var popup2 = document.getElementById("popup2");
 		var cookieCheck = getCookie("popup");
+		var cookieCheck2 = getCookie("popup2");
 		
 		if (cookieCheck != "done"){
 			popup.style.display = 'block';
+		}
+		
+		if (cookieCheck2 != "done"){
+			popup2.style.display = 'block';
 		}
 		
 		var cookieCheck = getCookie("popup");
@@ -913,6 +919,10 @@
 			popup.style.display = 'block';
 		}
 		
+		var cookieCheck2 = getCookie("popup");
+		if (cookieCheck2 != "done"){
+			popup2.style.display = 'block';
+		}
 	});
 	
 </script>
