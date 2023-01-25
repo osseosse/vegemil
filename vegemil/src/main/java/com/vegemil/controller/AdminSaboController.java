@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,6 +31,11 @@ public class AdminSaboController extends UiUtils{
 	@Autowired
 	private AdminSaboService adminSaboService;
 	
+	@RequestMapping(value = "/{viewName}")
+    public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		return "admin/sabo/"+viewName;
+    }
+	
 	@GetMapping("/subscriber")
 	public String moveSubscriberList() {
 		return "admin/sabo/sabo";
@@ -43,6 +49,7 @@ public class AdminSaboController extends UiUtils{
 		DataTableDTO dataTableDto = adminSaboService.getSaboSubscribeList(commandMap);
 		return dataTableDto;
 	 }
+	
 	
 	@RequestMapping(value = "/deleteSaboSubscribe", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody boolean deleteSaboSubscribeList(@ModelAttribute("params") AdminSaboDTO params, Model model, 
@@ -74,4 +81,20 @@ public class AdminSaboController extends UiUtils{
 		return true;
 	
 	}
+	
+	/**
+	 * 웹진이벤트관리
+	 * @param params
+	 * @param model
+	 * @param commandMap
+	 * @return
+	 */
+	@RequestMapping(value = "/eventList")
+	public @ResponseBody DataTableDTO getWebzineEventList(
+			 			@ModelAttribute("params") AdminSaboDTO params, Model model, 
+			 			@RequestParam Map<String, Object> commandMap) {
+
+		DataTableDTO dataTableDto = adminSaboService.getWebzineEventList(commandMap);
+		return dataTableDto;
+	 }
 }

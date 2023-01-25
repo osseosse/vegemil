@@ -4,6 +4,7 @@
 <mapper namespace="com.vegemil.mapper.AdminSaboMapper">
 
 	<select id="selectSaboSubscribeTotalCount" parameterType="hashMap" resultType="int">
+		/* selectSaboSubscribeTotalCount by AdminSaboMapper.xml */
 		SELECT 
 			COUNT(*)
 		FROM
@@ -30,6 +31,7 @@
 	</select>
 		
 	<select id="selectSaboSubscribeList"  parameterType="hashMap" resultType="com.vegemil.domain.AdminSaboDTO">
+		/* selectSaboSubscribeList by AdminSaboMapper.xml */
 		SELECT
 			s_idx, s_name, s_hp, s_memo, s_active, DATE_FORMAT(s_writedate, "%Y-%m-%d") s_writedate, s_email, m_sabocol 
 			
@@ -59,12 +61,51 @@
 	
 	
 	<update id="deleteSaboSubscribe" parameterType="hashMap">
+		/* deleteSaboSubscribe by AdminSaboMapper.xml */
 		DELETE FROM m_sabo
 		 WHERE s_idx IN
       <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
 		 #{idx, jdbcType=VARCHAR}
 	  </foreach>
 	</update>
+	
+	<select id="selectWebzineEventTotalCount" parameterType="hashMap" resultType="int">
+		/* selectWebzineEventTotalCount by AdminSaboMapper.xml */
+		SELECT 
+			COUNT(*)
+		FROM
+			m_webzine_event
+		WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	   AND apply_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND apply_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='searchWord != "" '>
+		AND cust_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+	</select>
+	
+	<select id="selectWebzineEventList"  parameterType="hashMap" resultType="com.vegemil.domain.AdminWebzineEventDTO">
+		/* selectWebzineEventList by AdminSaboMapper.xml */
+		SELECT
+			index_no, cust_name, cust_hp, cust_email,
+			qrt, remark, answer, apply_date 
+		  FROM m_webzine_event
+		  WHERE 1 = 1
+	    <if test='sStartdate != "" '>
+	 	   AND apply_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND apply_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+		<if test='searchWord != "" '>
+		AND cust_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		 ORDER BY apply_date DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
 	
 	
 

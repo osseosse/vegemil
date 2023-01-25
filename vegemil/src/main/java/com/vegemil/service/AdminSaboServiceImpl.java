@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.AdminSaboDTO;
+import com.vegemil.domain.AdminWebzineEventDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.mapper.AdminSaboMapper;
 
@@ -56,5 +57,35 @@ public class AdminSaboServiceImpl implements AdminSaboService {
 		queryResult = adminSaboMapper.deleteSaboSubscribe(paramMap);
 		
 		return (queryResult > 0)?  true : false;
+	}
+	
+	/**
+	 * 웹진이벤트관리
+	 */
+	@Override
+	public DataTableDTO getWebzineEventList(Map<String, Object> paramMap) {
+		List<AdminWebzineEventDTO> webzineEventList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
+
+		int totalCount = adminSaboMapper.selectWebzineEventTotalCount(paramMap);
+
+		if (totalCount > 0) {			
+			
+			  int start = Integer.parseInt(paramMap.get("start").toString()); 
+			  int length = Integer.parseInt(paramMap.get("length").toString());
+			  
+			  paramMap.put("start", start);
+			  paramMap.put("length", length);
+			 
+			  webzineEventList = adminSaboMapper.selectWebzineEventList(paramMap);
+			  			 
+		}
+		
+		dataTableDto.setData(webzineEventList);
+		dataTableDto.setRecordsTotal(totalCount);
+		dataTableDto.setRecordsFiltered(totalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
+
+		return dataTableDto;
 	}
 }
