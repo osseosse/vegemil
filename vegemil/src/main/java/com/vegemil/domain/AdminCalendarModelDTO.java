@@ -43,6 +43,9 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	/** 파일명2 */
 	private String cImage2;
 	
+	/** 메인이미지 */
+	private String cMainImage;
+		
 	/** 개월 수 */
 	private String cAlived;
 	

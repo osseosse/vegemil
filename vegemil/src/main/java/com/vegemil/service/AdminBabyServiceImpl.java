@@ -115,6 +115,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	@Override
 	public boolean registerCalendarModel(AdminCalendarModelDTO params) {
 		int queryResult = 0;
+		System.out.println("이미지 선택" + params.getCMainImage());
 
 		if (params.getCIdx() == null) {
 			queryResult = adminBabyMapper.insertCalendarModel(params);

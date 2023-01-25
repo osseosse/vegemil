@@ -421,9 +421,10 @@ function btnSave(idx) {
 	console.log('data', idx)
 	
 	const form = $('#modalForm'+idx).serializeArray();
-	//const formData = new FormData(form);
+	
 	let cRank = false;
 	for(var i=0; i<form.length; i++) {
+		console.log('i: ', i)
 		console.log('name----------',form[i].name)
 		if(form[i].name == "cRank") {
 			cRank = true;
@@ -523,7 +524,7 @@ function getModal(obj) {
 												if(obj.cImage != null) {
 	modal +=										'<dd>'
 	modal +=											'<div class="form-check">'
-	modal +=												'<input type="radio" id="photoSelection" name="photoSelection" class="form-check-input" checked />'
+	modal +=												'<input type="radio" id="photoSelection1" name="cMainImage" value='+obj.cImage+' class="form-check-input" checked />'
 	modal +=												'<label class="form-check-label" for="#">대표이미지로 선택</label>'
 	modal +=												'<div class="mt-1 photoBox1">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
@@ -536,7 +537,7 @@ function getModal(obj) {
 												if(obj.cImage2 != null) {
 	modal +=										'<dd>'
 	modal +=											' <div class="form-check">'
-	modal +=												'<input type="radio" id="photoSelection" name="photoSelection" class="form-check-input" />'
+	modal +=												'<input type="radio" id="photoSelection2" name="cMainImage" value='+obj.cImage2+' class="form-check-input" />'
 	modal +=												'<label class="form-check-label" for="#">대표이미지로 선택</label>'
 	modal +=												'<div class="mt-1 photoBox2">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'

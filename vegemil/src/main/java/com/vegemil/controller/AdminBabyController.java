@@ -477,6 +477,7 @@ public class AdminBabyController extends UiUtils {
 		
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		
+		
 		try {
 			boolean isUpdate = adminBabyService.registerCalendarModel(params);
 			rtnMap.put("result", isUpdate);
@@ -486,7 +487,6 @@ public class AdminBabyController extends UiUtils {
 		} catch (Exception e) {
 			log.error("fail to process file", e);
 		}
-		System.out.println(params);
 		System.out.println(rtnMap);
 
 		return rtnMap;

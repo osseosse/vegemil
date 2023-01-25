@@ -344,10 +344,9 @@
 			  <otherwise>
 				c_update_time = ''			  
 			  </otherwise>			
-			</choose>
-			
-			  
+			</choose>	
 			, c_rank = #{cRank}
+			, c_main_image = #{cMainImage}
 		WHERE
 			c_idx = #{cIdx}
 	</update>

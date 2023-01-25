@@ -407,8 +407,8 @@
 		SELECT 
 			RANK() OVER(ORDER BY c_update_time) AS ROWNUM, 
 			MONTH(c_write_date) AS c_month, 
-			SUBSTRING(c_baby_name,2,2) AS c_name, 
-			c_image, 
+			SUBSTRING(c_baby_name,2,2) AS c_name, 			
+			IFNULL(c_main_image, c_image) AS c_image,
 			c_rank,
 			(CASE WHEN c_rank = '1' THEN '이달의 베지밀 달력 아기모델' 
 			  WHEN c_rank = '3' THEN '이달의 베지밀 달력 아기모델' 
