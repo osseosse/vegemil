@@ -374,7 +374,7 @@
 			  	AND c_write_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
 			  </if>
 			  <if test='sEnddate != "" '>
-			  	AND c_write_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+			  	AND c_write_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})
 			  </if>
 			  <if test='gubun == "1" '>
 			  </if>
