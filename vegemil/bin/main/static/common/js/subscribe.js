@@ -41,7 +41,7 @@ $(function(){
 				 $("#txtEmail2").attr("disabled",true); //비활성화
 			}
 			
-			$("#sEmail").val($("#txtEmail").val()+$("#txtEmail2").val());
+			$("#sEmail").val($("#txtEmail").val()+'@'+$("#txtEmail2").val());
 			btnAvtive();
 	   });
 	});
