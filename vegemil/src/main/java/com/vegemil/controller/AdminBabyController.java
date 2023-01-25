@@ -1,5 +1,6 @@
 package com.vegemil.controller;
 
+import java.io.Console;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -485,6 +486,8 @@ public class AdminBabyController extends UiUtils {
 		} catch (Exception e) {
 			log.error("fail to process file", e);
 		}
+		System.out.println(params);
+		System.out.println(rtnMap);
 
 		return rtnMap;
 	}

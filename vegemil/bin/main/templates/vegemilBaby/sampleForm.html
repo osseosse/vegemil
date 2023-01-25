@@ -37,7 +37,8 @@
 	 }
 	 
 	
-	function getMaterDate() {		
+	function getMaterDate() {	
+			
 			if(jQuery('select[id=selCountChild]').val() == "0"){
 				alert("자녀 출생정보를 입력해주세요!");
 				event.preventDefault();
@@ -50,6 +51,9 @@
 	   	 
 	   	 	if(sMaterYear1 != '선택' && sMaterMonth1 != '선택' && sMaterDate1 != '선택'){
 		 	    document.getElementById('sMaterdate').value = sMaterdate;	   	 		
+	   	 	}else{
+		   	 	alert("자녀 출생정보를 입력해주세요!");
+				event.preventDefault();
 	   	 	}
 	 	    
 	 	    var sMaterYear2 = document.getElementById("sMaterYear2").value;
@@ -60,7 +64,7 @@
 	   	 	if(sMaterYear2 != '선택' && sMaterMonth2 != '선택' && sMaterDate2 != '선택'){
 		 	    document.getElementById('sMaterdate2').value = sMaterdate2;	   	 		
 	   	 	}
-	   	 	document.getElementById('sMaterdate2').value = sMaterdate2;
+	   	 	
 	 	    
 	 	    var sMaterYear3 = document.getElementById("sMaterYear3").value;
 	   	 	var sMaterMonth3 = document.getElementById("sMaterMonth3").value;
@@ -70,6 +74,12 @@
 	   	 	if(sMaterYear3 != '선택' && sMaterMonth3 != '선택' && sMaterDate3 != '선택'){
 		 	    document.getElementById('sMaterdate3').value = sMaterdate3;	   	 		
 	   	 	}
+	   	 	
+	   
+		
+	   	 	
+	   	 	
+	   	 	
 	 	}
 </script>
 <!-- ------------------- content ------------------- -->

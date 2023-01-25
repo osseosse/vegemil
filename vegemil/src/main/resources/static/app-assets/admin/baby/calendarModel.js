@@ -445,6 +445,7 @@ function btnSave(idx) {
 	   console.log('done', data)
 	   if(data.result) {
 	   	   alert('저장되었습니다.');
+	   	   location.reload();
 	   }else{
 	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	   }
@@ -491,11 +492,7 @@ function getModal(obj) {
 	modal +=							'</colgroup>'
 	modal +=							'<thead>'
 	modal +=								'<tr>'
-	modal +=									'<th>ID <span class="text-warning">'+obj.mId+'</span></th>'
-	modal +=									'<th>이데이몰ID <span class="text-warning"> {이데이몰ID}</span></th>'
-	modal +=									'<th colspan="2">개월수 <span class="text-warning">'+obj.cAlived+'</span></th>'
-	modal +=								'</tr>'
-	modal +=								'<tr>'
+	modal +=									'<th>개월수 <span class="text-warning">' +obj.cAlived+'</span></th>'		
 	modal +=									'<th>휴대전화 <span class="text-warning">'+obj.cHp+'</span></th>'
 	modal +=									'<th colspan="3">주소 <span class="text-warning">'+obj.cAddr+'</span></th>'
 	modal +=								'</tr>'
@@ -505,12 +502,16 @@ function getModal(obj) {
 	modal +=								'</tr>'
 	modal +=								'<tr>'
 	modal +=									'<th>등록일시 <span class="text-warning">'+obj.cWriteDate+'</span></th>'
-											if(obj.cRank != null) {
+											if(obj.cRank != null && obj.cRank != "") {
 	modal +=									'<th>선정여부 <span class="badge rounded-pill bg-success">Y</span></th>'
 											}else{
 	modal +=									'<th>선정여부 <span class="badge rounded-pill bg-danger">N</span></th>'											
+											}	
+											if(obj.cUpdateTime != null && obj.cUpdateTime != "") {
+	modal +=									'<th>선정연월 <span class="text-warning">'+obj.cUpdateTime.substring(2,4)+'.'+obj.cUpdateTime.substring(5,7)+'</span></th>'
+											}else{
+	modal +=									'<th>선정연월 <span class="text-warning"></span></th>'											
 											}
-	modal +=									'<th>선정연월 <span class="text-warning">{연월}</span></th>'
 	modal +=									'<th>선정처리일시 <span class="text-warning">'+obj.cUpdateTime+'</span></th>'
 	modal +=								'</tr>'
 	modal +=							'</thead>'
@@ -527,7 +528,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox1">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+obj.cImage+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage+'" /></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -540,7 +541,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox2">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload/'+obj.cImage2+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage2+'" /></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -557,6 +558,7 @@ function getModal(obj) {
 	modal +=												'<div class="col-1"><p>선정등수</p></div>'
 	modal +=													'<div class="col-4">'
 	modal +=														'<dl class="in_dl">'
+		
 	modal +=															'<dd>'
 	modal +=																'<div class="form-check">'
 	modal +=																	'<input type="radio" name="cRank" class="form-check-input" value="1" '
@@ -568,6 +570,7 @@ function getModal(obj) {
 	modal +=																	'<label class="form-check-label" name="cRank" for="#">Best</label>'
 	modal +=																'</div>'
 	modal +=															'</dd>'
+		
 	modal +=															'<dd>'
 	modal +=																'<div class="form-check">'
 	modal +=																	'<input type="hidden" name="cIdx" value="'+obj.cIdx+'">'
@@ -580,6 +583,23 @@ function getModal(obj) {
 	modal +=																	'<label class="form-check-label" name="cRank" for="#">참가상</label>'
 	modal +=																'</div>'
 	modal +=															'</dd>'
+		
+		
+	modal +=															'<dd>'
+	modal +=																'<div class="form-check">'
+	modal +=																	'<input type="hidden" name="cIdx" value="'+obj.cIdx+'">'
+	modal +=																	'<input type="radio" id="#" name="cRank" class="form-check-input" value="" '
+																			if(!obj.cRank)  {
+	modal +=																	'checked />'
+																			}else {
+	modal +=																	' />'
+																			}
+	modal +=																	'<label class="form-check-label" name="cRank" for="#">미선정</label>'
+	modal +=																'</div>'
+	modal +=															'</dd>'
+		
+		
+		
 	modal +=														'</dl>'
 	modal +=													'</div>'
 	modal +=												'</div>'

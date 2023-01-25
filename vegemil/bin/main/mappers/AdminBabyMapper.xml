@@ -337,7 +337,16 @@
 	<update id="updateCalendarModel" parameterType="com.vegemil.domain.AdminCalendarModelDTO">
 		UPDATE m_calendar_model
 		SET
-			  c_updatetime = NOW()
+			<choose>
+			  <when test='cRank == "1" or cRank == "2" '>
+			  	c_update_time = NOW()
+			  </when>
+			  <otherwise>
+				c_update_time = ''			  
+			  </otherwise>			
+			</choose>
+			
+			  
 			, c_rank = #{cRank}
 		WHERE
 			c_idx = #{cIdx}
