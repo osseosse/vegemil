@@ -58,7 +58,7 @@
 								</li>
 							</ul>
 							<ul>
-								<li>시간대</li>
+								<li><span class="red">*</span>시간대</li>
 								<li>
 									<div class="boxType">
 										<div class="baseRadioBox">
@@ -76,13 +76,13 @@
 								</li>
 							</ul>
 							<ul>
-								<li>단체 및 모임</li>
+								<li><span class="red">*</span>단체 및 모임</li>
 								<li><input type="text" class="inp02 " name="vOrg" id="vOrg" maxlength="15">
 								<p class="error" id="vOrgCheck" style="display: none;">단체 및 모임을 입력해 주세요</p>
 								</li>
 							</ul>
 							<ul>
-								<li>인원</li>
+								<li><span class="red">*</span>인원</li>
 								<li>
 									<dl class="fac_people">
 										<dd>
@@ -102,7 +102,7 @@
 								</li>
 							</ul>
 							<ul>
-								<li>이메일</li>
+								<li><span class="red">*</span>이메일</li>
 								<li>
 									<input id="email01" type="text" th:value="${#strings.substringBefore(member.mEmail,'@')}" maxlength="50" class="inp03 w180 " >
 									@<input id="email02" type="text" th:value="|${#strings.substringAfter(member.mEmail,'@')}|" maxlength="50" class="inp03 ml10 w220 mr10" disabled>
@@ -117,7 +117,7 @@
 								</li>
 							</ul>
 							<ul>
-								<li>지역</li>
+								<li><span class="red">*</span>지역</li>
 								<li>
 									<select class="sel01" id="vArea" name="vArea">
 										<option>선택</option>
@@ -160,7 +160,7 @@
 								</li>
 							</ul>
 							<ul>
-								<li>개인정보 수집 및<br>이용 동의</li>
+								<li><span class="red">*</span>개인정보 수집 및<br> 이용 동의</li>
 								<li class="gray04 mt10 ">
 									<div class="fac-txt">
 										<p class="f14">1. 수집하는 개인정보 항목 - 이름, 성별, 연령대, 연락처, 이메일, 주소, 직업, 단체 및 모임 정보</p>
