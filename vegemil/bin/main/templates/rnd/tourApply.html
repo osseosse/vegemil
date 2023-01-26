@@ -200,10 +200,12 @@
 		const vOrg = $('#vOrg').val();
 		const vPcount = $('#vPcount').val();
 		const vArea = $("#vArea option:selected").val();
+		const vEmail = $('#vEmail').val();
 		
 		if($.trim(vAppdate).length > 0
 		&& $.trim(vOrg).length > 0
 		&& $.trim(vPcount).length > 0
+		&& $.trim(vEmail).length > 0
 		&& $.trim(vArea).length > 0 
 		&& $("input:radio[name='vApptime']").is(":checked") == true
 		&& $("input:checkbox[name='agree']").is(":checked") == true

@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Tool Bar 목록 document : https://fullcalendar.io/docs/toolbar
                 headerToolbar: {
                     left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth'
+                    center: 'title'
+//                     right: 'dayGridMonth'
                 },
                 //initialDate: '2023-03-01',
                 weekends: false,
@@ -31,8 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 locale: 'ko',
                 dateClick: function(info) {
                 	var dal = info.dateStr.substr(5, 2);
-                	if(dal != '03') {
-                		alert("혹한기/혹서기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
+                	if(dal == '07' || dal == '08') {
+                		alert("혹서기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
+                		return;
+                	} else if(dal == '01' || dal == '02' || dal == '12') {
+                		alert("혹한기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
                 		return;
                 	} else {
                 		location.href = '/rnd/tourApply?date='+ info.dateStr;
@@ -70,13 +73,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	</div>
 	<div class="contant1460" >
 		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<p class="btnSubLeft"><a href="/rnd/factory"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
 			<ul class="submenuUL">
 				<li class="f18 fw500"><a href="/rnd/factory"><span>청주공장 소개</span></a></li>
 				<li class="f18 fw500 active"><a href="/rnd/factoryTour"><span>공장견학</span></a></li>
 				<li class="f18 fw500"><a href="/rnd/tourReview"><span>견학후기</span></a></li>
 			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+			<p class="btnSubRight"><a href="/rnd/tourReview"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
 		</div>
 <!-- 		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
         <div class="center mt50">            
