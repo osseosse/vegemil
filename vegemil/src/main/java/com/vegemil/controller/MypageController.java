@@ -1,16 +1,21 @@
 package com.vegemil.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -22,6 +27,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
@@ -44,8 +51,8 @@ public class MypageController extends UiUtils {
 	@Autowired
 	private VegemilBabyCommunityService vegemilBabyCommunityService;
 	
-	//@Value("${spring.servlet.multipart.location}")
-    //private String uploadPath;
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 	
 	@GetMapping(value = "/mypage/qna")
 	public String openQnaWrite(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "sIdx", required = false) Long sIdx, Model model , Authentication authentication) {
@@ -111,30 +118,28 @@ public class MypageController extends UiUtils {
 	}
 
 	@PostMapping(value = "/mypage/registerQna")
-	public String registerQna(@ModelAttribute("params") final QnaDTO params,
-			//BindingResult bindingResult, @RequestParam("fileName") MultipartFile fileName, Model model,
-			BindingResult bindingResult, Model model,
-			HttpServletResponse response, HttpServletRequest request, Authentication authentication) {
+	@ResponseBody
+	public Map<String, Object> registerQna(@ModelAttribute("params") final QnaDTO params,
+			BindingResult bindingResult, @RequestParam(value="fileName", required=false) MultipartFile fileName, Model model,
+			HttpServletResponse response, HttpServletRequest request, Authentication authentication) throws Exception {
 		
+		Map<String, Object> rtnMap = new HashMap<>();
 		try {
 			
 			if(authentication != null) {
-			
-				/*
-				String originalName = fileName.getOriginalFilename();
+				String originalName = fileName==null?"":fileName.getOriginalFilename();
 				if(!"".equals(originalName)) {
 					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
 					String uuid = UUID.randomUUID().toString();
 					String savefileName = uuid + "_" + file;
 					//테스트경로
-					//Path savePath = Paths.get(uploadPath + "/qna/" + savefileName);
-					Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
+					Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
+//					Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
 					
 					//저장
 					fileName.transferTo(savePath);
-					params.setSFile(file);
+					params.setSFile(savefileName);
 				}
-				*/
 			
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();
 				if(member != null) {
@@ -144,24 +149,20 @@ public class MypageController extends UiUtils {
 		        	params.setSEmail(member.getMEmail());
 		        	params.setSAddr(member.getMAddr1()+member.getMAddr2());
 					boolean isRegistered = qnaService.registerQna(params);
-					if (isRegistered == false) {
-						return showMessageWithRedirect("1:1문의 등록에 실패하였습니다.", "/mypage/list", Method.GET, null, model);
-					}
-				} else {
-					return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/mypage/list", Method.GET, null, model);
-				}
+					rtnMap.put("result", isRegistered);
+				} 
 			} else {
 				//비회원일 때 저장
 			}
 		
 		} catch (DataAccessException e) {
-			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/mypage/list", Method.GET, null, model);
+			throw new Exception("데이터베이스 처리 과정에 문제가 발생하였습니다");
 
 		} catch (Exception e) {
-			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/mypage/list", Method.GET, null, model);
+			throw new Exception("시스템에 문제가 발생하였습니다");
 		}
 
-		return showMessageWithRedirect("1:1문의 등록이 완료되었습니다.", "/mypage/list", Method.GET, null, model);
+		return rtnMap;
 	}
 
 	@GetMapping(value = "/mypage/list")

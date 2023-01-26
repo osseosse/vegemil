@@ -46,7 +46,8 @@
 					</ul><br class="clear">
 					
 					<div class="myBox mt20">
-					<form  th:action="@{/mypage/registerQna}" th:object="${qna}" method="post" >
+<!-- 					<form  th:action="@{/mypage/registerQna}" th:object="${qna}" method="post" > -->
+					<form id="form" th:object="${qna}" method="post" onSubmit="return false;">
 					<input type="hidden" th:field="*{sIdx}" />
 						<table cellspacing="0" summary="나의상담" border="0" class="myQ">
 							<caption>지난 상담</caption>
@@ -81,6 +82,12 @@
 									<p class="error" id="contentCheck" style="display: none;"><img src="https://image.edaymall.com/images/dcf/vegemil/img/error.png">내용을 입력해 주세요</p>
 								</td>
 							</tr>
+							<tr>
+								<th><p class="cate">첨부이미지</p></th>
+								<td>
+									<div class="dropzone" id="fileDropzone"></div>
+								</td>
+							</tr>
 							<!-- 
 							<tr>
 								<th><p class="cate">첨부파일</p></th>
@@ -91,6 +98,7 @@
 						<div class="faqBtnbox mt30">
 							<button type="submit" disabled="disabled" class="btnType14" id="saveBtn">등록하기</button>
 							<button type="button" class="btnType15 ml5" onclick="history.back()">취소하기</button>
+     						 
 						</div>
 						</form>
 					</div>
@@ -110,6 +118,8 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>    
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
 <script type="text/javascript">
 //<![CDATA[
 $(document).ready(function() {
@@ -186,6 +196,72 @@ $('#sContent').keyup(function () {
 	btnAvtive();
 	
 });
+
+//fileDropzone dropzone 설정할 태그의 id로 지정
+Dropzone.options.fileDropzone = {
+    url: '/mypage/registerQna', //업로드할 url (ex)컨트롤러)
+    params: {'param_1':'xyz','para_2':'aaa'},
+    init: function () {
+    	const form = $('#form');
+    	form.attr("action", "/mypage/registerQna");
+        /* 최초 dropzone 설정시 init을 통해 호출 */
+        var myDropzone = this; //closure
+        this.on("sending", function(file, xhr, formData){
+        	formData.append("sIdx", $('#sIdx').val());
+            formData.append("sGory", $('#sGory').val());
+            formData.append("sSubject", $('#sSubject').val());
+            formData.append("sContent", $('#sContent').val());
+    	});
+        $('#saveBtn').click(() => {
+        	//tell Dropzone to process all queued files
+        	if(myDropzone.files.length > 0) { 
+        		myDropzone.processQueue();
+        		this.on("success", function(file, response) {
+        			console.log(response.result);
+        			if(response.result) {
+        				alert("1:1문의 등록이 완료되었습니다.");
+        			}else{
+        				alert("1:1문의 등록에 실패하였습니다.");
+        			}
+        			location.href= "/mypage/list";
+                });
+        	}else{
+        		//이미지없이 등록
+        		$.ajax({
+        			url : '/mypage/registerQna',
+        			type : "post",
+        			data : $(form).serialize(),
+        			dataType : "json",
+        			success : function(data) {
+        				console.log('data', data);
+        				if(data.result){
+        					alert("1:1문의 등록이 완료되었습니다.");
+        				}
+        				else{
+        					alert("1:1문의 등록에 실패하였습니다.");
+        				}
+        				location.href= "/mypage/list";
+        			},
+        			error : function(){
+        				console.log('error');
+        			}
+        		});
+        	}
+        });
+    },
+    autoProcessQueue: false, // 자동업로드 여부 (true일 경우, 바로 업로드 되어지며, false일 경우, 서버에는 올라가지 않은 상태임 processQueue() 호출시 올라간다.)
+    clickable: true, // 클릭가능여부
+    thumbnailHeight: 100, // Upload icon size
+    thumbnailWidth: 100, // Upload icon size
+    maxFiles: 1, // 업로드 파일수
+    maxFilesize: 10, // 최대업로드용량 : 10MB
+    paramName: 'fileName', // formdata 이름 설정
+    parallelUploads: 1, // 동시파일업로드 수(이걸 지정한 수 만큼 여러파일을 한번에 컨트롤러에 넘긴다.)
+    addRemoveLinks: true, // 삭제버튼 표시 여부
+    dictCancelUpload: '삭제', // 삭제버튼 표시 텍스트
+    uploadMultiple: false, // 다중업로드 기능
+    acceptedFiles: 'image/*'
+};
 
 
 //]]>
