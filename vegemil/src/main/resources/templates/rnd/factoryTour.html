@@ -5,23 +5,6 @@
 <title>정식품 견학신청</title>
 <head th:replace="fragments/head :: headFragment"></head>
 <script src="/fullcalendar/dist/index.global.js"></script>
-<script th:inline="javascript">
-/*<![CDATA[*/
-
-	$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-	
-      function(json) {
-        if(json.ip == '211.204.41.41' || json.ip == '115.88.198.133') {
-        } else {
-        	alert("준비중 입니다.");
-        	window.location.href = "/rnd/factory";
-        }
-      }
-    );
-	
-
-/*]]>*/
-</script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     $(function () {

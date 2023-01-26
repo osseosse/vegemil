@@ -64,6 +64,12 @@ public class BeanSoupController extends UiUtils {
 		return "beansoup/intro";
 	}
 	
+	@GetMapping("/beansoup/intro")
+	public String moveBeanSoupIntro(Model model) {
+		
+		return "beansoup/intro";
+	}
+	
 	//간단레시피
 	@GetMapping("/beanSoup/list")
 	public String beanSoupRecipe(Model model, @RequestParam(required  = false) String tag) {
