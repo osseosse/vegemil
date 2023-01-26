@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         request.done(function (response) {
-            //console.log(response.data);
+        	var today = new Date();            
+        	var month = today.getMonth() + 1;  // 월
+        	var date = today.getDate();  // 날짜
+        	var mmdd = month +"-"+ date;
+        	
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 // Tool Bar 목록 document : https://fullcalendar.io/docs/toolbar
@@ -31,14 +35,59 @@ document.addEventListener('DOMContentLoaded', function () {
                 locale: 'ko',
                 dateClick: function(info) {
                 	var dal = info.dateStr.substr(5, 2);
-                	if(dal == '07' || dal == '08') {
+                	var apllyMMDD = info.dateStr.substr(5, 5);
+                	
+                	if(dal == '03') {
+                		if(mmdd > '1-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
+                	} else if(dal == '04') {
+                		if(mmdd > '2-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
+                	} else if(dal == '05') {
+                		if(mmdd > '3-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
+                	} else if(dal == '06') {
+                		if(mmdd > '4-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
+                	} else if(dal == '07' || dal == '08') {
                 		alert("혹서기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
                 		return;
                 	} else if(dal == '01' || dal == '02' || dal == '12') {
                 		alert("혹한기에는 고객의 안전을 위하여 공장견학을 제한하고 있습니다.");
                 		return;
+                	} else if(dal == '09') {
+                		if(mmdd > '7-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
+               		} else if(dal == '10') {
+                   		if(mmdd > '8-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
+               		} else if(dal == '11') {
+                  		if(mmdd > '9-16') {
+                			location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		} else {
+                			alert("신청기간을  확인 바랍니다.");
+                		}
                 	} else {
-                		location.href = '/rnd/tourApply?date='+ info.dateStr;
+                		alert("신청 기간을 확인 바랍니다.");
+                		return;
                 	}
                 },
                 events: response.data
