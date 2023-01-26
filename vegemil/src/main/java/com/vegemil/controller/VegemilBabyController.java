@@ -125,6 +125,11 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/recipeDetail";
 	}
 	
+	@RequestMapping(value = "/main/brandVegemilBaby/reviewInfo.aspx")
+    public String moveOldBvEvent()throws Exception{
+		
+		return "redirect:/vegemilBaby/bv_event";
+    }
 	
 	/* ======== Event ======== */
 	//진행 중 이벤트

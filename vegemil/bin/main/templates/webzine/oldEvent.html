@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<title>정식품 웹진 이벤트</title>
+    <head th:replace="webzine/head :: headFragment"></head>
+    <meta property="og:title" content="정식품 웹진 이벤트"> 
+	<!-- <meta property="og:url" th:attr="content=${webPath}" > -->
+<body>
+<div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
+<!-- ******************* header ******************* -->
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ******************* // header ******************* -->	
+<div id="wrapper"> 
+   <div class="content-holder1">
+       <div class="content h550-3 home-content">
+           <div class="hero-content fl-wrap h550-3">
+			<!-- IMG -->
+               <div th:class="|${qrtYear}_event|"></div>
+           </div>
+       </div>
+   </div>
+   <div class="content">
+	<div class="wrap-inner5">
+		<div class="container">
+			<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+				<!-- <th:block th:replace="webzine/subTopSns :: topSnsFragment"></th:block>-->
+				<div class="subTopSNS">
+				    <span><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_insta.gif" alt="인스타그램" ></a></span>
+				    <span><a href="javascript:facebook();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_facebook.gif" alt="페이스북" ></a></span>
+				    <span><a href="javascript:blog();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_blog.gif" alt="블로그" ></a></span>
+				    <span><a href="javascript:kakaostory();"><img src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png"/></a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ******************* main-content ******************* -->
+<div th:insert="|webzine/html/event/event_${qrtYear}|"></div>
+<!-- ******************* //main-content ******************* -->
+</div>
+<!-- ******************* footer ******************* -->
+<footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
+<!-- ******************* // footer ******************* -->
+<script type="text/javascript">
+//<![CDATA[
+
+	function btnActive() {
+		
+		buildData();
+		const sName = $('#custName').val();
+		const sHp = $('#custHp').val();
+		const sEmail = $('#custEmail').val();
+		
+		if($.trim(sName).length > 0
+		&& $.trim(sHp).length > 0
+		&& $.trim(sEmail).length > 0) {
+			
+			if(($("input[type=radio][name=chk_privacy]:checked").val() == '1') == false){
+				alert("개인정보취급에 동의하셔야 이벤트 응모가 가능합니다.");
+				return false;
+			}
+			return true;
+		} else {
+			alert("필수 값을 입력해주세요");
+			return false;
+		}
+	}
+	
+	function buildData(){
+		
+		var hp = $("#hp1").val()  + "-" +  $('#hp2').val() + "-" + $('#hp3').val();
+		$('input[name=custHp]').attr('value',hp);
+        console.log(hp);
+	}
+	
+	$(function(){
+		
+		//이메일 입력방식 선택
+		$('#hp1').change(function(){
+		   $("#hp1 option:selected").each(function () {
+				$("#custHp").val($("#hp1").val()+$("#hp2").val()+$("#hp3").val());
+		   });
+		});
+		
+	});
+//]]>
+</script>
+</body>
+</html>
