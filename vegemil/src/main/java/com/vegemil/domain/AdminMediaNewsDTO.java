@@ -22,6 +22,9 @@ public class AdminMediaNewsDTO extends AdminCommonDTO {
 
 	/** 이미지 */
 	private String mImg;
+
+	/** 이미지 -원본명*/
+	private String mImgOriginal;
 	
 	/** 조회수*/
 	private int mHit;

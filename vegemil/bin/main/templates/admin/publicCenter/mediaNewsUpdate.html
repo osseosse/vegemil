@@ -35,7 +35,7 @@
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
 	    		       
-	        function btnSave(){
+	        function btnUpdate(){
 	    	   const form = document.form;	    	
 	    	   const formData = new FormData(form);
 	    	   
@@ -48,9 +48,12 @@
 	    		   return false;
 	    	   }
 	    	   
+	    	   let yn = confirm("게시글을 수정하시겠습니까?"); 
+	    	   
+	    	   
 	    	   console.log('form', formData);
                $.ajax({
-            	   url: '/admin/manage/publicCenter/mediaNewsAdd',
+            	   url: '/admin/manage/publicCenter/mediaNewsUpdate',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
@@ -103,7 +106,7 @@
             </div>
             
             <div class="content-body" th:object="${mediaNewsDto}">
-            	<form name="form" th:action="@{/admin/manage/publicCenter/mediaNewsAdd}" method="POST" class="form-horizontal" role="form">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/mediaNewsUpdate}" method="POST" class="form-horizontal" role="form">
 	               	
 					<!-- 보도자료 등록 -->
 					<section id="basic-horizontal-layouts">
@@ -118,17 +121,25 @@
 	                                            <div class="col-md-1 col-12">제목</div>
 	                                            <div class="col-md-5 col-12">
 	                                                <input type="text" id="mSubject" name="mSubject" class="form-control" placeholder="제목을 작성해주세요"  th:value="${mediaNewsDto?.mSubject}"/>
-	                                                <!-- <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" />
-	                                                <input type="hidden" id="mbsIdx" name="mbsIdx" class="form-control" th:value="${babyQna?.mbsIdx}" /> --> 
+	                                               	<input type="hidden" id="mIdx" name="mIdx" class="form-control" th:value="${mediaNewsDto?.mIdx}" /> 
 	                                            </div>
 											</div>
 											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">일자</div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="mDate" name="mDate" max="2033-01-11" min="2021-01-11" th:value="${mediaNewsDto?.mDate}" >	                                                
+													<input type="date" class="form-control" id="mDate" name="mDate" max="2033-01-11" min="2021-01-11" th:value="${#strings.substring(mediaNewsDto?.mDate, 0, 10)}" > 
 												</div>
 											</div>
+											
+											<div class="row mt-1">
+												<div class="col-md-1 col-12">이미지</div>
+												<div class="col-md-5 col-12">
+												<input type="file" class="form-control" id="fileName" name="fileName" th:value="${mediaNewsDto?.fileName}" accept=".png,.gif,.jpg">	                                                
+												<input type="text" class="form-control" id="fileName2" name="fileName2" th:value="|기존 이미지: ${mediaNewsDto?.mImgOriginal}|">
+												</div>
+											</div>
+											
 	                                        											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">매체 01</div>
@@ -210,8 +221,8 @@
 											<div class="row">
 												 <div class="col-sm-12">
 													<!-- <button type="button"  class="btn btn-primary me-1">등록</button> -->
-													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">등록</button>
-													<button type="reset" class="btn btn-outline-secondary">취소</button>
+													<button type="button" onclick="btnUpdate();" class="btn btn-primary me-1">등록</button>
+													<button type="reset"  onclick="history.back()" class="btn btn-outline-secondary">취소</button>
 												</div>
 											</div>
 										</div>

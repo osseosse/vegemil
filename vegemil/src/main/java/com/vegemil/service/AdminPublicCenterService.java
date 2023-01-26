@@ -14,7 +14,8 @@ public interface AdminPublicCenterService {
 	public DataTableDTO getMediaNewsList(Map<String, Object> paramMap);
 		
 	//보도자료 수정
-	public boolean updateMediaNews(AdminMediaNewsDTO params);	
+	boolean updateMediaNews(AdminMediaNewsDTO params) throws Exception;
+//	public boolean updateMediaNews(AdminMediaNewsDTO params) throws Exception;	
 
 	
 	//보도자료 삭제
@@ -22,6 +23,9 @@ public interface AdminPublicCenterService {
 
 	// 보도자료 조회
 	public AdminMediaNewsDTO getMediaNewsDetail(Long mIdx);
+
+
+
 
 	
 	

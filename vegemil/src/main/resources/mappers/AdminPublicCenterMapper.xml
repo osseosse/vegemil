@@ -8,6 +8,7 @@
 		m_subject,
 		m_date,
 		m_img,
+		m_img_original,
 		m_adname1, m_aduri1,
 		m_adname2, m_aduri2,
 		m_adname3, m_aduri3,
@@ -22,6 +23,7 @@
 		#{mSubject},
 		#{mDate},
 		#{mImg},
+		#{mImgOriginal},
 		#{mAdname1}, #{mAduri1},
 		#{mAdname2}, #{mAduri2},
 		#{mAdname3}, #{mAduri3},
@@ -63,7 +65,7 @@
 		
 	<select id="selectMediaNewsList"  parameterType="hashMap" resultType="com.vegemil.domain.AdminMediaNewsDTO">
 		SELECT
-			m_idx, m_subject, 
+			m_idx, m_subject, m_img,
 			CONCAT(m_adname1," " ,m_adname2," " ,m_adname3," " ,m_adname4," " ,m_adname5," " ,m_adname6," " ,m_adname7," " ,m_adname8," " ,m_adname9," " ,m_adname10) AS m_adname,
 			DATE_FORMAT(m_date, "%Y-%m-%d") m_date, m_hit	
 		FROM 
@@ -101,9 +103,11 @@
 	
 	<select id="selectMediaNews" parameterType="long" resultType="com.vegemil.domain.AdminMediaNewsDTO">
 		SELECT 
+			m_idx,
 			m_subject,
 			m_date,
 			m_img,
+			m_img_original,
 			m_adname1, m_aduri1,
 			m_adname2, m_aduri2,
 			m_adname3, m_aduri3,
@@ -119,6 +123,64 @@
 		WHERE
 			m_idx = #{mIdx}
 	</select>
+	
+	<!-- 첨부파일 조회 - 원본명 -->
+	<select id="selectImgFileOriginal" parameterType="long" resultType="String">
+		SELECT 
+			m_img_original 
+		FROM 
+			m_media_news 			
+		WHERE
+			m_idx = #{mIdx}
+	</select>
+	
+	<!-- 첨부파일 조회 - 변환명 -->
+	<select id="selectImgFile" parameterType="long" resultType="String">
+		SELECT 
+			m_img 
+		FROM 
+			m_media_news 			
+		WHERE
+			m_idx = #{mIdx}
+	</select>
+	
+	<update id="updateFileInfo" parameterType="long">
+		UPDATE 
+			m_media_news 
+		SET 
+			m_img = DEFAULT, m_img_original = DEFAULT
+		WHERE 
+			m_idx = #{mIdx}  	
+	</update>
+	
+	<update id="updateMediaNews" parameterType="com.vegemil.domain.AdminMediaNewsDTO">
+		UPDATE 
+			m_media_news 
+		SET 
+			m_subject = #{mSubject},
+			m_date = #{mDate},
+			<if test='mImg!=null and !mImg.equals("")'>
+	 	   		m_img = #{mImg},
+	 		</if>	
+	 		<if test='mImgOriginal!=null and !mImgOriginal.equals("")'>
+	 	   		m_img_original = #{mImgOriginal},
+	 		</if>	
+			m_adname1 = #{mAdname1}, m_aduri1 = #{mAduri1},
+			m_adname2 = #{mAdname2}, m_aduri2 = #{mAduri2},
+			m_adname3 = #{mAdname3}, m_aduri3 = #{mAduri3},
+			m_adname4 = #{mAdname4}, m_aduri4 = #{mAduri4},
+			m_adname5 = #{mAdname5}, m_aduri5 = #{mAduri5},
+			m_adname6 = #{mAdname6}, m_aduri6 = #{mAduri6},
+			m_adname7 = #{mAdname7}, m_aduri7 = #{mAduri7},
+			m_adname8 = #{mAdname8}, m_aduri8 = #{mAduri8},
+			m_adname9 = #{mAdname9}, m_aduri9 = #{mAduri9},
+			m_adname10 = #{mAdname10}, m_aduri10 = #{mAduri10}				
+		WHERE 
+			m_idx = #{mIdx}  	
+	</update>
+	
+	
+	
 	
 	<!-- <resultMap type="com.vegemil.mapper.AdminPublicCenterMapper" id="selectMediaNewsList">
         <result property="mHit" column="m_hit"/>

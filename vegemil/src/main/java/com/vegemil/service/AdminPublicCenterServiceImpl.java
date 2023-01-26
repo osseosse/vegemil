@@ -1,5 +1,6 @@
 package com.vegemil.service;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -44,7 +45,9 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 		
 			params.getFileName().transferTo(savePath);				
-			params.setMImg(savefileName);		
+			params.setMImg(savefileName);	
+			params.setMImgOriginal(originalName);
+			
 		}	
 		
 		int queryResult = 0;		
@@ -81,21 +84,97 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 		return dataTableDto;
 	}
 	
-	
+
 	//보도자료 수정
 	@Override
-	public boolean updateMediaNews(AdminMediaNewsDTO params) {
+	public boolean updateMediaNews(AdminMediaNewsDTO params) throws Exception {
+		
+		
 
-		return false;
+		//DB에 저장된 파일 불러오기
+		String storedImgOriginal = adminPublicCenterMapper.selectImgFileOriginal(params.getMIdx());
+		String storedImg = adminPublicCenterMapper.selectImgFile(params.getMIdx());
+		
+		//전달된 파일
+		String originalName = params.getFileName().getOriginalFilename();
+		String uuid = UUID.randomUUID().toString();
+
+		
+		if(storedImgOriginal == null || storedImgOriginal.equals("") ) { // 1. DB에 첨부 파일 존재X
+			System.out.println("=============DB에  파일이 없습니다.==============");
+			if(originalName != null && !"".equals(originalName)) { //   1 -1 :전달되어온 파일이 존재
+				System.out.println("=============새로 입력되는 파일이 있습니다.==============");
+				String file = originalName.substring(originalName.lastIndexOf("\\")+1);			
+				String savefileName = uuid + "_" +file;			
+				
+				//저장 - 실제경로
+				Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);				
+				//저장 - Test로컬경로
+				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+			
+				params.getFileName().transferTo(savePath);				
+				params.setMImg(savefileName);
+				params.setMImgOriginal(originalName);
+			}else {
+				System.out.println("=============새로 입력되는 파일이 없습니다.==============");
+			}
+			
+		}else {														 // 2. DB에  첨부 파일 존재
+			System.out.println("=============DB에  파일이 있습니다.==============");
+			if(originalName != null && !"".equals(originalName)) {  //전달된 파일이 존재
+				System.out.println("=============새로 입력되는 파일이 있습니다.==============");
+				System.out.println("기존 파일명:" + storedImgOriginal);
+				System.out.println("새로 등록 파일명:" + originalName);
+				if(!originalName.equals(storedImgOriginal)) { //전달된 파일과 기존 파일이 다르면 		
+					System.out.println("=============전달될 파일과 기존 파일이 다릅니다..==============");
+					
+					
+					String file = originalName.substring(originalName.lastIndexOf("\\")+1);			
+					String savefileName = uuid + "_" +file;			
+									
+
+					//저장 - 실제경로
+					Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);					
+					//저장 - Test로컬경로					
+					//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+				
+					params.getFileName().transferTo(savePath);				
+					params.setMImg(savefileName);
+					params.setMImgOriginal(originalName);
+					
+					
+					//삭제 - 실제경로
+					String storedfilePath = uploadPath+ "/upload/vegemilBaby/" + storedImg;
+					//Path storedfile = Paths.get(uploadPath+ "/upload/vegemilBaby/" + storedImg);
+					//삭제 - Test로컬경로						
+					//String storedfilePath = "D:/upload/admin/" + storedImg;
+					
+			        File deleteFile = new File(storedfilePath);
+			        if(deleteFile.exists()) {			            
+			            deleteFile.delete(); 			            
+			            System.out.println("파일을 삭제하였습니다.");			            
+			        } else {
+			            System.out.println("파일이 존재하지 않습니다.");
+			        }
+				}				
+			}else {
+				System.out.println("=============새로 입력되는 파일이 없습니다.==============");
+			}
+			
+		}
+		
+
+		int queryResult = 0;		
+		queryResult = adminPublicCenterMapper.updateMediaNews(params);
+		
+		return (queryResult == 1)? true : false;		
 	}
 		
 	//보도자료 삭제
 	@Override
 	public boolean deleteMediaNews(Map<String, Object> paramMap) {
-		int queryResult = 0;
-		
-		queryResult = adminPublicCenterMapper.deleteMediaNews(paramMap);
-		
+		int queryResult = 0;		
+		queryResult = adminPublicCenterMapper.deleteMediaNews(paramMap);		
 		return (queryResult > 0)?  true : false;
 	}
 
@@ -105,6 +184,8 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 	public AdminMediaNewsDTO getMediaNewsDetail(Long mIdx) {
 		return adminPublicCenterMapper.selectMediaNews(mIdx);
 	}
+
+	
 
 	
 

@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vegemil.domain.AdminMediaNewsDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.mapper.AdminPublicCenterMapper;
 import com.vegemil.service.AdminPublicCenterService;
 import com.vegemil.util.UiUtils;
 
@@ -33,6 +35,7 @@ public class AdminpublicCenterController extends UiUtils{
 	
 	@Autowired
 	private AdminPublicCenterService adminPublicCenterService;
+	
 	
 	//보도자료 등록 페이지
 	@GetMapping("/publicCenter/mediaNewsAdd")
@@ -70,12 +73,16 @@ public class AdminpublicCenterController extends UiUtils{
 		
 		return "admin/publicCenter/mediaNewsUpdate";
 	}
+	
 	//보도자료 수정
 	@PostMapping("/publicCenter/mediaNewsUpdate")	  
 	@ResponseBody
 	public Map<String, Object> updateMediaNews(@ModelAttribute("params") final AdminMediaNewsDTO params, 
 		  									Model model, HttpServletResponse response, HttpServletRequest request) throws Exception { 
 	  
+		//MultipartFile deleteFile = params.getFileName();
+		String deleteFile = params.getMImg();
+		
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 	  
 		try {
