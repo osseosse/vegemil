@@ -95,7 +95,6 @@ public class AdminpublicCenterController extends UiUtils{
 		return rtnMap;	  
 	}
 		
-		
 	
 	//보도자료 조회
 	@GetMapping("/publicCenter/mediaNews")
@@ -115,10 +114,7 @@ public class AdminpublicCenterController extends UiUtils{
 	@RequestMapping(value = "/publicCenter/deleteMediaNews", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody boolean deleteMediaNews(@ModelAttribute("params") AdminMediaNewsDTO params, Model model, 
 															HttpServletResponse response, HttpServletRequest request) {
-		
-		System.out.println("컨트롤러 타니?");
-		System.out.println(request.getParameter("test"));
-		
+						
 		try {
     		String checkList[] = request.getParameterValues("checkList");
     		log.info("check==========="+checkList);

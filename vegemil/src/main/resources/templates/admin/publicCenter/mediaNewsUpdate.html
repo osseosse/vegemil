@@ -135,10 +135,12 @@
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">이미지</div>
 												<div class="col-md-5 col-12">
-												<input type="file" class="form-control" id="fileName" name="fileName" th:value="${mediaNewsDto?.fileName}" accept=".png,.gif,.jpg">	                                                
-												<input type="text" class="form-control" id="fileName2" name="fileName2" th:value="|기존 이미지: ${mediaNewsDto?.mImgOriginal}|">
+													<input type="file" class="form-control" id="fileName" name="fileName" th:value="${mediaNewsDto?.fileName}" accept=".png,.gif,.jpg">
+													<input th:if="${mediaNewsDto.mImgOriginal}" type="text" class="form-control" id="fileName2" name="fileName2" th:value="|업로드된 이미지:  ${mediaNewsDto.mImgOriginal}|" readonly>
+													<input th:unless="${mediaNewsDto.mImgOriginal}" type="text" class="form-control" id="fileName2" name="fileName2" value="업로드된 이미지: 업로드된 이미지가 없습니다." readonly>
 												</div>
 											</div>
+										
 											
 	                                        											
 											<div class="row mt-1">
