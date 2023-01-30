@@ -11,17 +11,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.JsonObject;
+import com.vegemil.constant.Method;
 import com.vegemil.domain.FaqDTO;
 import com.vegemil.domain.FaqFeedbackDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.service.CustomerService;
+import com.vegemil.util.UiUtils;
 
 import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class CustomerController {
+public class CustomerController extends UiUtils{
 
     private final CustomerService customerService;
 
@@ -61,7 +63,7 @@ public class CustomerController {
     		if(authentication != null) {
 				MemberDTO member = new MemberDTO();
 				member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-				
+						
 				params.setFName(member.getMName());
 				params.setFId(member.getMId());
 	    		result = customerService.saveFaqFeedback(params);

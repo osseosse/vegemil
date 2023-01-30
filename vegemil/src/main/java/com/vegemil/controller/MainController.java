@@ -10,14 +10,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.vegemil.constant.Method;
 import com.vegemil.domain.MediaNewsDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.service.CompanyService;
+import com.vegemil.service.MemberService;
+import com.vegemil.util.UiUtils;
 
 @Controller
-public class MainController {
+public class MainController extends UiUtils {
 	
 	@Autowired
 	private CompanyService companyService;
@@ -37,6 +41,11 @@ public class MainController {
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
 		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		        
+		        if("1".equals(member.getMIsIdle())){
+		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+		        }
+		        
 		        model.addAttribute("member",member);	//유저 정보
 			}
 			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
@@ -48,7 +57,7 @@ public class MainController {
         
         return "index";
 	}
-	
+
 	@RequestMapping(value = "/main/default.aspx")
 	public String moveOldIndex1(Model model, Authentication authentication) throws Exception {
 		
@@ -59,6 +68,11 @@ public class MainController {
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
 		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		        
+		        if("1".equals(member.getMIsIdle())){
+		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+		        }
+		        
 		        model.addAttribute("member",member);	//유저 정보
 			}
 			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
@@ -81,6 +95,11 @@ public class MainController {
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
 		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		        
+		        if("1".equals(member.getMIsIdle())){
+		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+		        }
+		        
 		        model.addAttribute("member",member);	//유저 정보
 			}
 			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
@@ -126,6 +145,11 @@ public class MainController {
 		MemberDTO member = new MemberDTO();
 		if(authentication != null) {
 	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        
+	        if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+	        
 	        model.addAttribute("member",member);	//유저 정보
 		}
 		List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();

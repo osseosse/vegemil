@@ -99,6 +99,11 @@ public class RndController extends UiUtils {
 		}
 		if(authentication != null) {
 	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	    	
+			if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+			
 	        model.addAttribute("member",member);	//유저 정보
 		}
 		
@@ -118,6 +123,11 @@ public class RndController extends UiUtils {
 		
 		if(authentication != null) {
 	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	    	
+			if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+			
 	        vEmail = member.getMEmail();
 	        
 		}
@@ -209,9 +219,18 @@ public class RndController extends UiUtils {
 	}
 	
 	@GetMapping("/rnd/reviewWrite")
-	public String moveReviewWrite(Model model, SearchDTO params) {
+	public String moveReviewWrite(Model model, SearchDTO params, Authentication authentication) {
 		
 		FactpostDTO review = new FactpostDTO();
+		MemberDTO member = new MemberDTO();
+		
+		if(authentication != null) {
+	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+	        model.addAttribute("member",member);	//유저 정보
+		}
 		model.addAttribute("review", review);
 		
 		return "rnd/reviewWrite";

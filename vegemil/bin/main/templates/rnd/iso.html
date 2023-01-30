@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 ISO 45001 인증</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="content100 ">
+	   <div class="subTopISO h440 mt90h">
+			<!-- 2023-01-10 -->
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&D</p>
+				<p class="white f45 fw600">ISO 45001 인증</p>
+			</div>
+			<!-- //2023-01-10 -->
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/rnd/epd"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 "><a href="/rnd/ccm"><span>CCM 인증</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/epd"><span>환경성적표지 인증</span></a></li>
+				<li class="f18 fw500 active"><a href="/rnd/iso"><span>ISO 45001 인증</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href="/webzine"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<!-- <p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+        <div class="center mt50 HaccpInfo01">
+            <p class="f45 fw600">ISO 45001 이란?</p>
+            <p class="mt100">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_05.png" alt="iso이미지" class="iso_05">
+            </p>
+            <p class="f45 fw600 mt50">안전보건관리에 대한 국제표준</p>
+            <p class="f18 mt30 fw400 gray04">
+				사업장에서 발생할 수 있는 각종 위험을 사전 예측 및 예방하기 위해 <br class="none">
+				안전보건을 체계적으로 관리/규정하는 국제표준입니다.
+            </p>
+        </div>
+    </div><!--//contant1460-->
+   
+	<div class="contant1460 mt200">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="f23 fw500">
+                   당사는 2022년 12월 22일 ISO 45001(안전보건경영시스템) <br class="none">
+				   인증을 획득하여 <span class="gold">국제적으로 인증된 안전보건계획을 <br class="none">
+				   체계적으로 수립하고 있습니다.</span>
+                </p>
+                <p class="f14 gray04 mt40">
+                   - ISO 45001 인증 로고
+                </p>
+                <p class="centerMo mt20 iso_02 ">
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_02.png" alt="해썹로고">
+                </p>
+            </div>
+            <div class="col-md-6 mt50m">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_01.jpg" alt="베지밀공정이미지">
+            </div>
+        </div>
+		<div class="row">
+            <div class="col-md-6 mt150">
+                <p class="f38 fw500">
+					국제적으로 인증된 안전보건경영<br>
+					ISO 45001 인증 완료
+                </p>
+                <p class="f14 gray04 mt20">
+                   ISO 45001 인증 일자 : 2022년 12월 22일
+                </p>
+				<p class="f27  mt60 centerMo">안전보건경영시스템 인증서</p>
+                <p class="centerMo mt20 iso_02 ">
+                    <img class="centerMo" src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_03.jpg" alt="해썹로고">
+                </p>
+            </div>
+            <div class="col-md-6 mt150">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_04.jpg" alt="베지밀공정이미지">
+            </div>
+        </div>
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>
