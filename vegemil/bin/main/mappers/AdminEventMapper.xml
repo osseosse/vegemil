@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminEventMapper">
+
+	<sql id="vegemilEventList">
+		  e_idx
+		, e_subject
+		, e_content
+		, e_img
+		, DATE_FORMAT(e_start,'%Y-%m-%d') e_start
+		, DATE_FORMAT(e_end,'%Y-%m-%d') e_end
+		, e_uri
+		, e_active
+		, e_bvactive
+	</sql>	
+	
+	<!-- 베지밀 이벤트 갯수  조회-->
+	<select id="selectVegemilEventTotalCount" parameterType="com.vegemil.domain.AdminEventDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_event
+	</select>
+	
+	<!-- 베지밀 이벤트 조회 -->
+	<select id="selectVegemilEventList" parameterType="com.vegemil.domain.AdminEventDTO" resultType="com.vegemil.domain.AdminEventDTO">
+		SELECT 			
+			<include refid="vegemilEventList" />			
+		FROM
+			m_event
+		WHERE 1=1
+		
+		 <choose>			
+			<when test='gubun == "on" '>
+			   AND (e_active = '0' or e_bvactive = '0' or 
+			   		e_active = '1' or e_bvactive = '1')
+			</when>
+			<when test='gubun == "1" '>
+			   AND (e_active = #{gubun, jdbcType=VARCHAR} or e_bvactive = #{gubun, jdbcType=VARCHAR} )
+			</when>
+			<when test='gubun == "0" '>
+			   AND (e_active = #{gubun, jdbcType=VARCHAR} or e_bvactive = #{gubun, jdbcType=VARCHAR} )
+			</when>     	
+			<otherwise></otherwise>
+		</choose> 
+		
+		<if test='searchWord != "" '>
+		   AND e_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')  
+		 </if>	 	
+		ORDER BY
+			e_idx DESC
+		LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	
+	<!-- 베지밀 이벤트  등록 -->
+	<insert id= "insertEvent" parameterType="com.vegemil.domain.AdminEventDTO">
+		INSERT INTO m_event(
+			e_subject,
+			e_content,
+			e_uri,
+			e_img,
+			e_img_original,
+			e_start,
+			e_end,
+			e_active,
+			e_bvactive
+		)VALUES(
+			#{eSubject},
+			#{eContent},
+			#{eUri},
+			#{eImg},
+			#{eImgOriginal},
+			#{eStart},
+			#{eEnd},
+			#{eActive},
+			#{eBvactive}	
+		)	
+	</insert>
+
+		
+	
+	
+	
+
+</mapper>
