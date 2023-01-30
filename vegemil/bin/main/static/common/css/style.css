@@ -87,7 +87,7 @@
 	li span.level-03 {background:#2b9b2e; padding:1px 10px;border-radius:10px; color:#fff; margin-right:5px; font-size:12px}
 
 	/* 3000 Default : Gnb */
-	#gnb{width: 100%; height: 90px; text-align: center;  position: relative;}
+	#gnb{width: 100%; height: 90px; text-align: center;  position: relative; }
 	#gnb a{word-break: keep-all; text-decoration: none;}
 	#gnb > ul{display: inline-block; float: none; height: 100%;}
 	#gnb > ul > li{display: inline-block; float: left; height: 100%; padding: 0 60px; min-width: 140px; letter-spacing: 0;}
@@ -102,9 +102,9 @@
 	#gnb > ul > li:nth-of-type(2) .depth02_menu_wrap .inner{width:750px; }
 	#gnb > ul > li:nth-of-type(2) .depth02_menu_wrap .inner .gnb_depth2 > li:nth-of-type(4)::after{display:none;}
 	#gnb > ul > li:nth-of-type(2) .depth02_menu_wrap .inner .gnb_depth2 > li{width:24%;}
-	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner{width:1050px; }
+	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner{width:850px;}
 	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner .gnb_depth2 > li:nth-of-type(4)::after{display:none;}
-	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner .gnb_depth2 > li{width:19%;}
+	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner .gnb_depth2 > li{width:24%;}
 	.depth02_menu_wrap .inner .gnb_depth2 > li{width: 16.5%; text-align: left; padding: 5px 10px 5px 20px; margin-bottom: 20px;  text-align:center}
 	.depth02_menu_wrap .inner .gnb_depth2 > li::after{content: ""; position: absolute; top: 0; width: 1px; height: 100%; background-color: transparent;}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > a{display: block;  font-weight: 500; color:#222; margin-bottom: 15px; font-size:16px}
@@ -115,6 +115,17 @@
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li > a:hover,
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li > a:focus{color: #E3A62C; font-weight: 500; border-bottom:1px solid #E3A62C}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li img {max-width:10px; margin-left:1px; margin-top:-1px }
+
+	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li a .ico_arrow_gray {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_arrow_gray.png) no-repeat 0 0;  
+	display:inline-block; vertical-align:middle; background-size:9px 9px; height:9px; width:9px}
+	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li a:hover .ico_arrow_gray {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_arrow_gold.png) no-repeat 0 0;  
+	display:inline-block; vertical-align:middle; background-size:9px 9px; height:9px; width:9px}
+
+	.full_dep ul li .ico_arrow_gray {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_arrow_gray.png) no-repeat 0 0;  
+	display:inline-block; vertical-align:middle; background-size:9px 9px; height:9px; width:9px}
+	.full_dep ul li:hover .ico_arrow_gray {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_arrow_gold.png) no-repeat 0 0;  
+	display:inline-block; vertical-align:middle; background-size:9px 9px; height:9px; width:9px}
+
 	/* 3000 Default : white */
 	#header.white {background-color: #fff;}
 	#header.white h1.logo a {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png); background-size:86px 50px }
@@ -398,7 +409,8 @@
 	.subMiddleHeri01{position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subMiddleHeri01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subMiddleHeri02{position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subMiddleHeri02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subMiddleHeri03{position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subMiddleHeri03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.subTopEvent {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/communication/subTopEvent.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}}
+	.subTopEvent {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/communication/subTopEvent.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subTopISO {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/R&D/subTopISO.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	
 	.bnr_login {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/bnr/bnr_login.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bg_rightBlue {background:#F1F4F5}
@@ -737,6 +749,9 @@
     .epdBg .row img{max-width: 80px;}
     .epdBg ul li{padding: 10px;}
     .epdBg ul li div{border: 1px solid #fff; border-radius: 10px; padding: 40px 5px;}
+	/* 3000 RnD ISO 45001 */
+	.iso_05 {max-width:345px; width:50%}
+	.iso_02 {max-width:308px; width:80%}
 
     /* 3000 company (연구소장 인사말) */
     .greetingsPhDBg ul{
@@ -1097,6 +1112,8 @@
 
 	
 	/* //보도자료 */
+	
+	
 
 
 	/* map */
@@ -1319,7 +1336,7 @@
 	/* 3000 커뮤니케이션 */
 	.mt90h {margin-top:90px}
 	.subMenu {position:relative; margin-top:-46px; background:#fff; border-radius:10px;width:100%; 
-	z-index:1;  -webkit-box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.26); box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.10); margin-bottom:80px}/* 공유기능 히든처리 마진추가 */
+	z-index:1;  -webkit-box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.26); box-shadow: 5px 7px 24px 6px rgba(0,0,0,0.10); margin-bottom:150px}/* 공유기능 히든처리 마진추가 */
 
 	.f14.fw400.black.mt70.float-right.btnType03 {display:none} /* 공유기능 히든처리 */
 	.f14.fw400.black.btnType03.mt65.float-right.wView {display:none} 
@@ -2735,6 +2752,14 @@
 
 	/* 1200 브랜드 */
 	.bg_Green.h530 {height:380px} 
+	.bg_Pupple.h530 {height:380px} 
+	.bg_Pink.h530 {height:380px} 
+	.bg_Blue.h530 {height:380px} 
+
+
+
+
+
 	.brand-recom-box .col-md-1{display:none}
 	.brand-recom-box .col-md-2{-ms-flex: 0 0 50%;flex: 0 0 50%;max-width: 50%;}
 	.brand-recom-box .col-md-2 .brandPrd  {width:49%;display:inline-block; vertical-align:top }
@@ -3104,6 +3129,10 @@
 		
 	}
 	#verticalType01 .ver-title01.close {opacity:1; }
+
+	#verticalType01 .v_content .v_con_ul li dl.v_con_dl dd .ico_arrow_gray {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_arrow_gray.png) no-repeat 0 0;  
+	display:inline-block; vertical-align:middle; background-size:9px 9px; height:9px; width:9px}
+	
 	/* //모바일aside */
 
 
@@ -3195,7 +3224,9 @@
 	.txt-box {width:94%; margin-top:10px; overflow:hidden }
 	.ver-title04 a {font-size:14px}
 	.ver-title04.open a { background-position: right -75px;font-weight:500}
-
+	
+	/* 992 RnD ISO 45001 */
+	.iso_02 {max-width:100%; width:100%}
 
 
 	/* 992 처리절차 */

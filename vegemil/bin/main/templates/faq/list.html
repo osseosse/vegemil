@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<title>정식품 FAQ</title>
+<title>정식품 자주 묻는 질문</title>
 <head th:replace="fragments/head :: headFragment"></head>
 <body>
 <!-- ================================ 
@@ -17,15 +17,24 @@
 		Content
 ================================ -->
 <div id="content" class="pb100">
-	<div class="content100 ">
-	   <div class="mt90h">
-			<div class="center">
-				<p class="f45 fw600 mt210">베지밀 FAQ</p>
-				<p class="f_pp f18 fw500 mt20 gray04">자주 묻는 질문과 답변을 모았습니다.</p>
+	<div class="content100">
+	   <div class="subTopCommunication h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Communication</p>
+				<p class="white f45 fw600">자주 묻는 질문</p>
 			</div>
 		</div>
 	</div>
 	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/communication/voc"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/communication/voc"><span>고객의 소리</span></a></li>
+				<li class="f18 fw500 active"><a href="/faq/list"><span>자주 묻는 질문</span></a></li>
+				<li class="f18 fw500"><a href="/communication/ask"><span>1:1문의</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href="/communication/ask"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
 		<div class="mt60 subFaq h300">
 			<div class="centerR">
 				<div class="faqWbox">

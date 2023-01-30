@@ -21,57 +21,78 @@
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">영유아식</span></a>
                     <ul class="menu-content">
-                    	<li><a class="d-flex align-items-center" th:href="@{/admin/manage/baby/calendarModel}"><i data-feather="circle"></i><span class="menu-item text-truncate">아기 달력 모델 선정</span></a>
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/baby/calendarModel')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/calendarModel}"><i data-feather="circle"></i><span class="menu-item text-truncate">아기 달력 모델 선정</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/baby/bestReview}"><i data-feather="circle"></i><span class="menu-item text-truncate">베스트후기선정</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/baby/bestReview')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/bestReview}"><i data-feather="circle"></i><span class="menu-item text-truncate">베스트후기선정</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/baby/sampleBaby}"><i data-feather="circle"></i><span class="menu-item text-truncate">샘플신청내역</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/baby/sampleBaby')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/sampleBaby}"><i data-feather="circle"></i><span class="menu-item text-truncate">샘플신청내역</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/baby/babyInfoList}"><i data-feather="circle"></i><span class="menu-item text-truncate">육아 정보 관리</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/baby/babyInfoList')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/babyInfoList}"><i data-feather="circle"></i><span class="menu-item text-truncate">육아 정보 관리</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/baby/babyQnaList}"><i data-feather="circle"></i><span class="menu-item text-truncate">육아 상담 관리</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/baby/babyQnaList')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/babyQnaList}"><i data-feather="circle"></i><span class="menu-item text-truncate">육아 상담 관리</span></a>
                         </li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="phone-call"></i><span class="menu-title text-truncate" data-i18n="User">고객지원</span></a>
                     <ul class="menu-content">
-                    	<li><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faq}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 리스트</span></a>
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faq')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faq}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 리스트</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqScore}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 점수확인</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faqScore')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqScore}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 점수확인</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqAdd}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 새글등록</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faqAdd')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqAdd}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 새글등록</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/support}"><i data-feather="circle"></i><span class="menu-item text-truncate">고객상담</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/support')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/support}"><i data-feather="circle"></i><span class="menu-item text-truncate">고객상담</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/visit}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학신청</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/visit')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/visit}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학신청</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/factoryTourReview}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학후기관리</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/factoryTourReview')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/factoryTourReview}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학후기관리</span></a>
                         </li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="phone-call"></i><span class="menu-title text-truncate" data-i18n="User">간단요리사</span></a>
                     <ul class="menu-content">
-                    	<li><a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/video}"><i data-feather="circle"></i><span class="menu-item text-truncate">영상</span></a>
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/beanSoup/video')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/video}"><i data-feather="circle"></i><span class="menu-item text-truncate">영상</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/news}"><i data-feather="circle"></i><span class="menu-item text-truncate">새소식</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/beanSoup/news')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/news}"><i data-feather="circle"></i><span class="menu-item text-truncate">새소식</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/event}"><i data-feather="circle"></i><span class="menu-item text-truncate">생생후기</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/beanSoup/event')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/event}"><i data-feather="circle"></i><span class="menu-item text-truncate">생생후기</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" th:href="@{/admin/manage/payment/list}"></i><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">그린비아 결제내역관리</span></a>
+                <li class=" nav-item" th:classappend="${#request.requestURI.equals('/admin/manage/payment/list')}? 'active': ''">
+                	<a class="d-flex align-items-center" th:href="@{/admin/manage/payment/list}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">그린비아 결제내역관리</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/greenbia}"></i><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">그린비아회원관리</span></a>
+                <li class=" nav-item" th:classappend="${#request.requestURI.equals('/admin/manage/customer/greenbia')}? 'active': ''">
+                	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/greenbia}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">그린비아회원관리</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" th:href="@{/admin/manage/customer/member}"></i><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">회원관리</span></a>
+                <li class=" nav-item" th:classappend="${#request.requestURI.equals('/admin/manage/customer/member')}? 'active': ''">
+                	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/member}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">회원관리</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" th:href="@{/admin/manage/sabo/subscriber}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">사보 신청자관리</span></a>
+                <li class=" nav-item" th:classappend="${#request.requestURI.equals('/admin/manage/sabo/subscriber')}? 'active': ''">
+                	<a class="d-flex align-items-center" th:href="@{/admin/manage/sabo/subscriber}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">사보 신청자관리</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" th:href="@{/admin/manage/sabo/event}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">웹진이벤트관리</span></a>
+                <li class=" nav-item" th:classappend="${#request.requestURI.equals('/admin/manage/sabo/event')}? 'active': ''">
+                	<a class="d-flex align-items-center" th:href="@{/admin/manage/sabo/event}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">웹진이벤트관리</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="phone-call"></i><span class="menu-title text-truncate" data-i18n="User">홍보</span></a>
+                <li class=" nav-item">
+                	<a class="d-flex align-items-center" href="#"><i data-feather="phone-call"></i><span class="menu-title text-truncate" data-i18n="User">홍보</span></a>
                     <ul class="menu-content">
-                    	<li><a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/mediaNews}"><i data-feather="circle"></i><span class="menu-item text-truncate">보도자료</span></a>
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/mediaNews')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/mediaNews}"><i data-feather="circle"></i><span class="menu-item text-truncate">보도자료</span></a>
                         </li>                        
                     </ul>
                 </li>
