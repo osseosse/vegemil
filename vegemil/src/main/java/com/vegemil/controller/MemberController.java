@@ -10,7 +10,10 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -349,4 +352,56 @@ public class MemberController extends UiUtils {
 		}
 	}
 	
+	//휴면해제
+	@GetMapping(value="/member/di")
+	public String checkDi(Model model, Authentication authentication) throws Exception{
+		
+		MemberDTO member = new MemberDTO();
+		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
+		
+		if(authentication != null) {
+			
+	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        
+	        if("1".equals(member.getMIsIdle()) == false) {
+	        	return showMessageWithRedirect("잘못된 접근입니다", "/", Method.GET, null, model);
+	        }
+	        
+		} else {
+			return showMessageWithRedirect("잘못된 접근입니다", "/", Method.GET, null, model);
+		}
+		
+		try {
+		        
+	        if(memberService.wakeUpSleepMember(member.getMId())) {
+	        	
+	        	member = memberService.loadUserByUsername(member.getUsername()); 
+	        	
+	        	if(member != null) {
+	        		SecurityContextHolder.getContext().setAuthentication(createNewAuthentication(authentication,member));
+	        	} else {
+	        		return showMessageWithRedirect("회원 조회에 실패했습니다 다시 로그인 해주세요.", "/member/logout", Method.GET, null, model);
+	        	}
+	        	
+	        	if(member.getMDi() == null || "".equals(member.getMDi()) || member.getMDi().length() < 1) {
+	        		return showMessageWithRedirect("휴면이 해제되었습니다.", "/mypage/myInfo", Method.GET, null, model);
+	        	} else {
+	        		return showMessageWithRedirect("휴면이 해제되었습니다.", "/", Method.GET, null, model);
+	        	}
+	        }
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return showMessageWithRedirect("휴면 해제에 실패하였습니다.", "/", Method.GET, null, model);		
+		}
+		
+		return showMessageWithRedirect("휴면 해제에 실패하였습니다.", "/", Method.GET, null, model);		
+	}
+	
+	protected Authentication createNewAuthentication(Authentication currentAuth, MemberDTO member) {
+	    UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(member, currentAuth.getCredentials(), member.getAuthorities());
+	    newAuth.setDetails(currentAuth.getDetails());
+	    return newAuth;
+	}
+
 }

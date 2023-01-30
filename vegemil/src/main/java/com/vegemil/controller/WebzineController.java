@@ -109,6 +109,11 @@ public class WebzineController extends UiUtils {
 		
 		if(authentication != null) {
 			MemberDTO member = (MemberDTO) authentication.getPrincipal();
+			
+			if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+			
 			if(member != null) {
 				mName = member.getMName();
 				mHp = member.getMHp();

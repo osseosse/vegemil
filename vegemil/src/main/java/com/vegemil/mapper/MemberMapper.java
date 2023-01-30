@@ -37,5 +37,11 @@ public interface MemberMapper {
 	public int getMemberIdx(MemberDTO params);
 	
 	public int overlappedID(MemberDTO member) throws Exception;
+	
+	public int updateSleepMemberToMemberTB(String mId);
+	
+	public int deleteFromMemberSleep(String mId);
+	
+	public MemberDTO selectFromMemberSleep(String mId);
 
 }

@@ -72,7 +72,9 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
     // -> 따라서 얘는 인증할 때 id를 봄
     @Override
     public String getUsername() {
-        return this.mEmail;
+    	
+        //return this.mEmail;
+    	return this.mId;
     }
 
     // Vo의 userName !

@@ -64,7 +64,7 @@ public class MemberService implements UserDetailsService  {
 	
 	public MemberDTO getMember(Long mIdx) {
 		
-		MemberDTO member;;
+		MemberDTO member;
 		member = memberMapper.selectMember(mIdx);
 
 		return member;
@@ -185,4 +185,20 @@ public class MemberService implements UserDetailsService  {
         return member;
     }
 	
+	@Transactional
+	public boolean wakeUpSleepMember(String mId) {
+		
+		int queryResult = 0;
+		
+		queryResult = memberMapper.updateSleepMemberToMemberTB(mId);
+		
+		if(queryResult != 0) {
+			queryResult = memberMapper.deleteFromMemberSleep(mId);
+		}
+		return (queryResult == 1) ? true : false;
+	}
+	
+	public MemberDTO getMemberSleepInfo(String mId) {
+		return memberMapper.selectFromMemberSleep(mId);
+	}
 }

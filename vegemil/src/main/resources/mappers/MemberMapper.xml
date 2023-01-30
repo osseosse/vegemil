@@ -153,8 +153,9 @@
 		From m_member 
 		where m_id = #{mId}
 	</select>
-
-	<select id="getMemberAccount" parameterType="String" resultType="com.vegemil.domain.MemberDTO">
+	
+	<!-- 원본 -->
+	<!-- <select id="getMemberAccount" parameterType="String" resultType="com.vegemil.domain.MemberDTO">
 		SELECT
 			<include refid="memberColumns" />
 		FROM
@@ -162,6 +163,15 @@
 		WHERE
 			m_is_idle != '1'
 		AND
+			m_id = #{mId}
+	</select> -->
+	
+	<select id="getMemberAccount" parameterType="String" resultType="com.vegemil.domain.MemberDTO">
+		SELECT
+			<include refid="memberColumns" />
+		FROM
+			m_member
+		WHERE
 			m_id = #{mId}
 	</select>
 	
@@ -249,7 +259,7 @@
 			m_id = #{mId} and m_email = #{mEmail}
 	</select>
 
-	<select id="selectMemberTotalCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
+	<select id="selectMemberTotalCount" parameterType="com.vegemil.domain.MemberDTO">
 		SELECT
 			COUNT(*)
 		FROM
@@ -257,6 +267,84 @@
 		WHERE
 			m_is_idle != '1'
 		<include refid="CommonMapper.search" />
+	</select>
+	
+	
+	<update id="updateSleepMemberToMemberTB" parameterType="String">
+		UPDATE
+	    	m_member M, (SELECT *  FROM m_member_sleep WHERE m_id = #{mId}) S
+		SET
+		    M.m_name = S.m_name,
+			M.m_year = S.m_year,  
+			M.m_sex	=  S.m_sex,
+		    M.m_hp	=  S.m_hp,  
+		    M.m_tel	=  S.m_tel,  
+		    M.m_zipcode	=  S.m_zipcode,  
+		    M.m_addr1 = S.m_addr1,  
+		    M.m_addr2 =	S.m_addr2,
+			M.m_email =	S.m_email,  
+			M.m_smssend = S.m_smssend,  
+			M.m_emailsend =	S.m_emailsend, 
+			M.m_logincount =  S.m_logincount, 
+			M.m_ip = S.m_ip,
+		    M.m_active = S.m_active,  
+		    M.m_leavedate =	S.m_leavedate,  
+		    M.m_cybermonitor =	S.m_cybermonitor,  
+		    M.m_stipver =	S.m_stipver,
+			M.m_comp_name =	 S.m_comp_name,  
+			M.m_bizno =	 S.m_bizno,  
+			M.m_type =	'1',  
+			M.m_greenbia_pay =	S.m_greenbia_pay,  
+			M.m_terms_ok = '1',
+			M.m_receive_modifydate = S.m_receive_modifydate,     
+			M.m_leavememo = '복귀',     
+			M.m_is_idle = '0',     
+			M.m_dual_yn	= S.m_dual_yn    
+		WHERE
+			M.m_id = S.m_id;
+	</update>
+	
+	<delete id="deleteFromMemberSleep" parameterType="String">
+		DELETE 
+		FROM
+			m_member_sleep
+		WHERE 
+			m_id = #{mId}
+	</delete>
+	
+	<select id="selectFromMemberSleep" parameterType="String" resultType="com.vegemil.domain.MemberDTO">
+		SELECT
+			m_id				   ,
+			m_name			       ,
+			m_year			       ,
+			m_sex			       ,
+			m_hp			       ,
+			m_tel			       ,
+			m_zipcode		       ,
+			m_addr1			       ,
+			m_addr2			       ,
+			m_email			       ,
+			m_smssend		       ,
+			m_emailsend		       ,
+			m_logincount	       ,
+			m_ip			       ,
+			m_active		       ,
+			m_leavedate		       ,
+			m_cybermonitor	       ,
+			m_stipver		       ,
+			m_comp_name		       ,
+			m_bizno			       ,
+			m_type			       ,
+			m_greenbia_pay	       ,
+			m_terms_ok		       ,
+			m_receive_modifydate   ,
+			m_leavememo			   ,
+			m_di				   ,
+			m_is_idle			
+		FROM 
+			m_member_sleep
+		WHERE 
+			m_id = #{mId}
 	</select>
 
 </mapper>

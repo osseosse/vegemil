@@ -62,6 +62,11 @@ public class MypageController extends UiUtils {
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 	        MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        
+	        if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+	        
 	        if(member != null) {
 		        
 		        if (sIdx == null) {
@@ -127,6 +132,8 @@ public class MypageController extends UiUtils {
 		try {
 			
 			if(authentication != null) {
+			
+				
 				String originalName = fileName==null?"":fileName.getOriginalFilename();
 				if(!"".equals(originalName)) {
 					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
@@ -142,6 +149,7 @@ public class MypageController extends UiUtils {
 				}
 			
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();
+			    
 				if(member != null) {
 		        	params.setSId(member.getMId());
 		        	params.setSHp(member.getMHp());
@@ -170,6 +178,10 @@ public class MypageController extends UiUtils {
 		
 		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
         MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+        
+        if("1".equals(member.getMIsIdle())){
+        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+        }
         
         if(member != null) {
 	        	
@@ -209,6 +221,11 @@ public class MypageController extends UiUtils {
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 	        MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+	        
+	        if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
+	        
 	        if(member != null) {
 		        model.addAttribute("member", member);
 	        }

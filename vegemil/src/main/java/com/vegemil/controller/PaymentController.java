@@ -95,11 +95,16 @@ public class PaymentController extends UiUtils {
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
 				member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+			
 				if (member == null) {
 					out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 					out.flush();
 					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 				}
+				
+				if("1".equals(member.getMIsIdle())){
+		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+		        }
 				
 				pay.setLgdBuyerid(member.getMId());
 				payList = paymentService.getPaymentList(pay);
@@ -147,6 +152,10 @@ public class PaymentController extends UiUtils {
 					out.flush();
 					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 				}
+				
+				if("1".equals(member.getMIsIdle())){
+		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+		        }
 			}
 			model.addAttribute("member", member);
 			

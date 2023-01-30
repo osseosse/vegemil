@@ -207,6 +207,9 @@ public class VegemilBabyController extends UiUtils {
 			member.setMEmail("");
 		} else {
 			member = (MemberDTO) authentication.getPrincipal();
+			if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
 		}
         model.addAttribute("member", member);
         model.addAttribute("model", calModel);
@@ -281,6 +284,9 @@ public class VegemilBabyController extends UiUtils {
 			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
 		} else {
 			member = (MemberDTO) authentication.getPrincipal();
+			if("1".equals(member.getMIsIdle())){
+	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
+	        }
 		}
 
         model.addAttribute("member", member);		

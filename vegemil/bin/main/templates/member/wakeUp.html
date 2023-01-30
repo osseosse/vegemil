@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<title>정식품</title>
+    <head th:replace="fragments/head :: headFragment"></head>
+</head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+    <div class="contant1460">
+        <div class="row mt90h">
+            <div class=" col-md-12">
+                <p class="f52 fw600 mt130 black center">휴면 해제</p>
+                <p class="f18 fw400 mt10 gray04 center">(주)정식품 웹사이트에 오신 것을 환영합니다.<br>휴면해제를 하시면(주)정식품 웹사이트의 다양한 서비스를 이용하실
+                    수 있습니다.</p>
+                <div class="center memberbox mt50 w560 center0">
+                    <a href="/member/di">
+                        <p class="f20 fw600 black lh170" id="wakeBtn"> 휴면 해제 신청</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="w1160 center0 grayLine mt70">
+            <p class="f20 fw500 lh140 center mt50">휴면해제를 원하지 않는 고객님들께서는<br>아래의 CS 메일로 문의를 주시면, 
+           		<br class="mView">당사 고객지원팀에서 신속하게 응대하여 드리겠습니다.
+            </p>
+            <div class="w560 center0">
+                <ul class="dv2 mt50">
+                    <li>
+                        <p class="btnType08"><a href="/communication/voc"><img class="mr5"
+                                    src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_mic.png"
+                                    alt="마이크" />고객상담 <span class="f_pp f14">080-930-8888</span></a>
+                    </li>
+                    <li>
+                        <p class="btnType08"><a href="mailto:cs@vegemil.co.kr"><img class="mr5"
+                                    src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_mail.png"
+                                    alt="메일" />상담메일 <span class="f_pp f14">cs@vegemil.co.kr</span></a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br class="clear">
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer class="contant100" th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+
+</script>
+</body>
+</html>
