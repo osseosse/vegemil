@@ -3,6 +3,7 @@ package com.vegemil.service;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -39,10 +40,10 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 			String savefileName = uuid + "_" +file;			
 			
 			//저장 - 실제경로
-			Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);
+			//Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);
 			
 			//저장 - Test로컬경로
-			//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 		
 			params.getFileName().transferTo(savePath);				
 			params.setMImg(savefileName);	
@@ -164,30 +165,34 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 	//보도자료 삭제
 	@Override
 	public boolean deleteMediaNews(Map<String, Object> paramMap) {
-		String paramMapInfo = paramMap.get("list").toString();
-		String idxInfo = paramMapInfo.substring(1, paramMapInfo.length() - 1);
-		String storedImg = adminPublicCenterMapper.selectImgFile(Long.parseLong(idxInfo));
 		
-
-		if(storedImg == null || storedImg.equals("") ) { // DB에 첨부 파일 존재			
-			System.out.println("DB에  파일이 없습니다");
-		}else {
-			//삭제 - 실제경로
-			String storedfilePath = uploadPath+ "/upload/MediaNews/" + storedImg;			
-			//삭제 - Test로컬경로						
-			//String storedfilePath = "D:/upload/admin/" + storedImg;
+		ArrayList<String> newsList = (ArrayList<String>) paramMap.get("list");
+		
+		for(int i = 0; i< newsList.size(); i++) {
+			Long idx = Long.parseLong(newsList.get(i));
+			String storedImg = adminPublicCenterMapper.selectImgFile(idx);
 			
-	        File deleteFile = new File(storedfilePath);
-	        if(deleteFile.exists()) {			            
-	            deleteFile.delete(); 			            
-	            System.out.println("파일을 삭제하였습니다.");			            
-	        } else {
-	            System.out.println("파일이 존재하지 않습니다.");
-	        }		
-		}		
+			if(storedImg == null || storedImg.equals("") ) { // DB에 첨부 파일 존재			
+				System.out.println("DB에  파일이 없습니다");
+			}else {
+				//삭제 - 실제경로
+				String storedfilePath = uploadPath+ "/upload/MediaNews/" + storedImg;			
+				//삭제 - Test로컬경로						
+				//String storedfilePath = "D:/upload/admin/" + storedImg;
+				
+		        File deleteFile = new File(storedfilePath);
+		        if(deleteFile.exists()) {			            
+		            deleteFile.delete(); 			            
+		            System.out.println("파일을 삭제하였습니다.");			            
+		        } else {
+		            System.out.println("파일이 존재하지 않습니다.");
+		        }
+			}	
+		}	
 		int queryResult = 0;		
 		queryResult = adminPublicCenterMapper.deleteMediaNews(paramMap);		
 		return (queryResult > 0)?  true : false;
+	
 	}
 
 	
