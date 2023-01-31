@@ -21,6 +21,19 @@
 			COUNT(*)
 		FROM
 			m_event
+		WHERE 1=1
+		<choose>
+			<when test='gubun == "1" '>
+			   AND (e_active = 1 or e_bvactive = 1 )
+			</when>
+			<when test='gubun == "0" '>
+			   AND (e_active = 0 and e_bvactive = 0 )
+			</when>     	
+			<otherwise></otherwise>
+		</choose>
+		<if test='searchWord != "" '>
+		   AND e_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')  
+		 </if>			
 	</select>
 	
 	<!-- 베지밀 이벤트 조회 -->
@@ -29,9 +42,8 @@
 			<include refid="vegemilEventList" />			
 		FROM
 			m_event
-		WHERE 1=1
-				
-		 <choose>	
+		WHERE 1=1				
+		<choose>
 			<when test='gubun == "1" '>
 			   AND (e_active = 1 or e_bvactive = 1 )
 			</when>
@@ -39,8 +51,7 @@
 			   AND (e_active = 0 and e_bvactive = 0 )
 			</when>     	
 			<otherwise></otherwise>
-		</choose> 
-		
+		</choose> 		
 		<if test='searchWord != "" '>
 		   AND e_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')  
 		 </if>	 	
@@ -75,6 +86,30 @@
 		)	
 	</insert>
 	
+	<!-- 베지밀 이벤트  등록 -->
+	<update id="updateEvent" parameterType="com.vegemil.domain.AdminEventDTO">
+		UPDATE 
+			m_event 
+		SET 
+			e_subject = #{eSubject},
+			e_content = #{eContent},
+			e_uri = #{eUri},
+			e_active = #{eActive},
+			e_bvactive = #{eBvactive},
+			<if test='eImg!=null and !eImg.equals("")'>
+	 	   		e_img = #{eImg},
+	 		</if>	
+	 		<if test='eImgOriginal!=null and !eImgOriginal.equals("")'>
+	 	   		e_img_original = #{eImgOriginal},
+	 		</if>	
+			e_start = #{eStart},
+			e_end = #{eEnd}
+		WHERE 
+			e_idx = #{eIdx}  	
+	</update>
+	
+	
+	
 	<!-- 베지밀 이벤트 삭제 -->
 	<update id="deleteVegemilEvent" parameterType="hashMap">		
 		DELETE FROM m_event
@@ -84,7 +119,16 @@
 	  </foreach>
 	</update>
 	
-	
+	<!-- 첨부파일 조회 - 원본명 -->
+	<select id="selectImgFileOriginal" parameterType="long" resultType="String">
+		SELECT 
+			e_img_original 
+		FROM 
+			m_event 			
+		WHERE
+			e_idx = #{eIdx}
+	</select>
+		
 	<!-- 첨부파일 조회 - 변환명 -->
 	<select id="selectImgFile" parameterType="long" resultType="String">
 		SELECT 
@@ -95,6 +139,14 @@
 			e_idx = #{eIdx}
 	</select>
 
+ 	<!-- 베지밀 이벤트 상세 조회 --> 
+ 	<select id="selectEventInfoDetail" parameterType="long" resultType="com.vegemil.domain.AdminEventDTO">
+		SELECT *
+		FROM
+			m_event
+		WHERE		
+			e_idx = #{eIdx}
+	</select>
 		
 	
 	

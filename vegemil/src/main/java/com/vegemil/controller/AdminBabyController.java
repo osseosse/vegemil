@@ -1,6 +1,5 @@
 package com.vegemil.controller;
 
-import java.io.Console;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;

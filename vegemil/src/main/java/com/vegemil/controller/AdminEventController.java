@@ -1,5 +1,6 @@
 package com.vegemil.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,12 +35,47 @@ public class AdminEventController {
 	@Autowired
 	private AdminEventService adminEventService;
 	
-	
 	//이벤트 등록 페이지
 	@GetMapping("/event/eventAdd")
-	public String moveEventAddPage() throws Exception {
+	public String moveEventAddPage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
+		
+		AdminEventDTO eventDto = adminEventService.getEventDetail(eIdx);
+		model.addAttribute("eventInfo", eventDto);
+		
 		return "admin/event/eventAdd";
 	}
+	
+	//이벤트 수정 페이지
+	@GetMapping("/event/eventUpdate")
+	public String moveEventUpdatePage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
+		
+		AdminEventDTO eventDto = adminEventService.getEventDetail(eIdx);
+		model.addAttribute("eventInfo", eventDto);
+		
+		return "admin/event/eventUpdate";
+	}
+	
+	//이벤트 수정
+	@PostMapping("/event/eventUpdate")
+	@ResponseBody
+	public Map<String, Object> updateEvent(@ModelAttribute("params") final AdminEventDTO params, Model model,
+			HttpServletResponse response, HttpServletRequest request) throws Exception {
+
+		//String deleteFile = params.getMImg();
+
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+
+		try {
+			boolean isUpdated = adminEventService.updateEvent(params);
+			rtnMap.put("result", isUpdated);
+		} catch (DataAccessException e) {
+		} catch (Exception e) {
+		}
+
+		return rtnMap;
+		}
+	
+	
 	
 	//이벤트 등록 - 베지밀
 	@PostMapping("/event/eventAdd")
@@ -104,6 +140,32 @@ public class AdminEventController {
 		return true;
 	}
 	
+	//메인페이지 진열정보 수정
+	@GetMapping(value = "/event/displayEventInfo")
+	public @ResponseBody boolean displayEventInfo(@RequestParam(value = "eIdx", required = false) Long eIdx,			
+			@RequestParam(value = "eActive", required = false) int eActive, @RequestParam(value = "eBvactive", required = false) int eBvactive,
+			HttpServletResponse response) throws Exception {
+		boolean isRegistered = true;
+		try {
+			if (eIdx == null) {
+				return false;
+			}
+			AdminEventDTO eventInfo = adminEventService.getEventDetail(eIdx);
+			System.out.println(eventInfo.toString());
+			eventInfo.setEIdx(eIdx);
+			eventInfo.setEActive(eActive);
+			eventInfo.setEBvactive(eBvactive);
+			isRegistered = adminEventService.registerEvent(eventInfo);
+			if (!isRegistered) {
+				throw new IOException("저장에 실패하였습니다.");
+			}
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isRegistered;
+	}
 	
 	
 

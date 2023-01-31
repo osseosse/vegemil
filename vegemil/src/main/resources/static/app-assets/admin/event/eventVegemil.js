@@ -234,7 +234,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'babyInfoAdd?mbsIdx='+full['eIdx']+ '\'">수정</button>'
+              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'eventUpdate?eIdx='+full['eIdx']+ '\'">수정</button>'
             );
           }
           
@@ -283,7 +283,7 @@ var createTable = function() {
 	    	  }
 		       return (
 		         '<div class="form-check form-switch center-ck">'+
-		           '<input type="checkbox" class="form-check-input" '+checked+' id="mbsActive'+full['eActive']+ '" name="listOn"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eActive']+')" >'+
+		           '<input type="checkbox" class="form-check-input" '+checked+' id="eActive'+full['eActive']+ '" name="listOn"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eActive']+')" >'+
 				'<label class="form-check-label" for="listOn"></label>'+
 		      '</div>'
 		       );
@@ -299,7 +299,7 @@ var createTable = function() {
  			}
              return (
                '<div class="form-check form-switch center-ck">'+
-                 '<input type="checkbox" class="form-check-input" '+checked+' id="mbsActive'+full['eBvactive']+ '" name="listOn"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eBvactive']+')" >'+
+                 '<input type="checkbox" class="form-check-input" '+checked+' id="eBvactive'+full['eBvactive']+ '" name="listOn"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eBvactive']+')" >'+
  				'<label class="form-check-label" for="listOn"></label>'+
  		      '</div>'
              );
@@ -391,23 +391,30 @@ var createTable = function() {
 
 function btnDisplay(idx) {
 	console.log('btnDisplay', idx)
-	let mbsActive;
-	let mbsCheck;
-	if($('#mbsActive'+idx).is(":checked")){
-		mbsActive = 1;
+	
+	/*let mbsActive;
+	let mbsCheck;*/
+	
+	let eActive;
+	let eBvactive;
+	
+	
+	if($('#eActive'+idx).is(":checked")){
+		eActive = 1;
 	}else{
-		mbsActive = 0;
+		eActive = 0;
 	}
 	
-	if($('#mbsCheck'+idx).is(":checked")){
-		mbsCheck = 1;
+	if($('#eBvactive'+idx).is(":checked")){
+		eBvactive = 1;
 	}else{
-		mbsCheck = 0;
+		eBvactive = 0;
 	}
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
-			url : '/admin/manage/baby/displayBabyInfo?mbsIdx='+idx+'&mbsActive='+mbsActive+'&mbsCheck='+mbsCheck,
+			url : '/admin/manage/baby/event/displayEventInfo?eIdx='+idx+'&eActive='+eActive+'&eBvactive='+eBvactive,
+			/*url : '/admin/manage/baby/displayBabyInfo?mbsIdx='+idx+'&mbsActive='+mbsActive+'&mbsCheck='+mbsCheck,*/
 			type : "get",
 			dataType : "json",
 			success : function(data) {

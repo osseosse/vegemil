@@ -34,7 +34,7 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
-	       $(function () {
+	       /* $(function () {
       	       console.log('function');
       	       let htmlString;
       	       let mbsCategory = [[${babyInfo?.mbsCategory}]];
@@ -81,8 +81,8 @@
       	      }
 	  	                  
       	      
-	       });
-	       /* function imageHandler(image, callback) {
+	       }); */
+	        /* function imageHandler(image, callback) {
 	    	   const fileInput = document.createElement('input');
 		       fileInput.setAttribute('type', 'file');
 
@@ -118,7 +118,7 @@
 		    	       console.log('success')
 		           });
 		       });
-		   } */
+		   }  */
 
 	    /* 
 	       var quill = new Quill('#editor', {
@@ -230,7 +230,7 @@
               
             </div>
             
-            <div class="content-body">
+            <div class="content-body" th:object="${eventInfo}">
             	<form name="form" th:action="@{/admin/manage/event/eventAdd}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
 	                <!-- Analytics card section -->
 	                <section id="analytics-card">
@@ -275,75 +275,31 @@
 								<div class="card">								
 									<div class="card-body ">
 										<!-- Form -->
-	                                    <form action="javascript:;" class="mt-2" onsubmit>
-	                                    	
-	                                    
-	              <!--                       <div class="col-md-12 col-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row mb-1 ">
-											
-										<div class="row mb-1">
-											<div class="col-md-1 col-3">
-												진열 
-											</div>
-											
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">육아 전시
-													<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
-													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" />
-													<label class="form-check-label" for="listOn"></label>
-												</div>
-											</div>
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">메인 전시
-													<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
-													<label class="form-check-label" for="listOn"></label>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-	                    </div> -->
-	                                    
-	                                    
-	                                 
+	                                    <form action="javascript:;" class="mt-2" onsubmit>	                                    	
 	                                    
 		                                    <div class="row">
 													
 												<div class="col-md-1 col-12">진열</div>
 											
 												<div class="col-md-2 col-4">
-													<div class="form-check form-switch" >육아 전시
-														<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
-	<!-- 													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" /> -->
+													<div class="form-check form-switch" >메인 전시
+														<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" th:checked="*{eActive}" >
 														<label class="form-check-label" for="listOn"></label>
 													</div>
 												</div>
 												<div class="col-md-2 col-4">
-													<div class="form-check form-switch">메인 전시
-														<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
+													<div class="form-check form-switch">육아 전시
+														<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive" th:checked="*{eBvactive}"/>
 														<label class="form-check-label" for="listOn"></label>
 													</div>
 												</div>
-												
-												
-												
 											</div>
-	                                    
-	                                    
-	                                    
-	                                    
-	                                    
 	                                    
 	                                        <div class="row mt-1">
 	                                            <div class="col-md-1 col-12">제목<span class="red_dot">*</span></div>
 	                                            <div class="col-md-5 col-12">
-	                                                <input type="text" id="eSubject" name="eSubject" class="form-control" th:value="${babyInfo?.eSubject}" placeholder="제목을 작성해주세요" required />
-	                                                <!-- <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" /> -->
-	                                                <input type="hidden" id="eIdx" name="eIdx" class="form-control" th:value="${babyInfo?.eIdx}" /> 
+	                                                <input type="text" id="eSubject" name="eSubject" class="form-control" th:value="*{eSubject}" placeholder="제목을 작성해주세요" required />
+	                                                <input type="hidden" id="eIdx" name="eIdx" class="form-control" th:value="*{eIdx}" /> 
 	                                            </div>
 											</div>
 											
@@ -351,26 +307,26 @@
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">내용</div>
 												<div class="col-md-5 col-12">
-												<input type="text" class="form-control" id="eContent" name="eContent">	                                                
+												<input type="text" class="form-control" id="eContent" name="eContent" th:value="*{eContent}">	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">uri<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="text" class="form-control" id="eUri" name="eUri">	                                                
+												<input type="text" class="form-control" id="eUri" name="eUri" th:value="*{eUri}">	                                                
 												</div>
 											</div>
 											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">시작일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="eStart" name="eStart" max="2033-01-11" min="2021-01-11" required>	                                                
+												<input type="date" class="form-control" id="eStart" name="eStart" th:value="*{eStart}" max="2033-01-11" min="2021-01-11" required>	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">종료일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="eEnd" name="eEnd" max="2033-01-11" min="2021-01-11" required>	                                                
+												<input type="date" class="form-control" id="eEnd" name="eEnd" th:value="*{eEnd}" max="2033-01-11" min="2021-01-11" required>	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
