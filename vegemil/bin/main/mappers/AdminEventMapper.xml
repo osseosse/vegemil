@@ -30,17 +30,13 @@
 		FROM
 			m_event
 		WHERE 1=1
-		
-		 <choose>			
-			<when test='gubun == "on" '>
-			   AND (e_active = '0' or e_bvactive = '0' or 
-			   		e_active = '1' or e_bvactive = '1')
-			</when>
+				
+		 <choose>	
 			<when test='gubun == "1" '>
-			   AND (e_active = #{gubun, jdbcType=VARCHAR} or e_bvactive = #{gubun, jdbcType=VARCHAR} )
+			   AND (e_active = 1 or e_bvactive = 1 )
 			</when>
 			<when test='gubun == "0" '>
-			   AND (e_active = #{gubun, jdbcType=VARCHAR} or e_bvactive = #{gubun, jdbcType=VARCHAR} )
+			   AND (e_active = 0 and e_bvactive = 0 )
 			</when>     	
 			<otherwise></otherwise>
 		</choose> 
