@@ -1,11 +1,9 @@
 package com.vegemil.service;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -70,10 +68,10 @@ public class AdminEventServiceImpl implements AdminEventService {
 			String savefileName = uuid + "_" +file;			
 						
 			//저장 - 실제경로
-			//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
+			Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
 			
 			//저장 - Test로컬경로
-			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+			//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 		
 			params.getFileName().transferTo(savePath);				
 			params.setEImg(savefileName);	
@@ -109,9 +107,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 				String savefileName = uuid + "_" +file;			
 				
 				//저장 - 실제경로
-				//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);				
+				Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);				
 				//저장 - Test로컬경로
-				Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
 				params.getFileName().transferTo(savePath);				
 				params.setEImg(savefileName);
@@ -133,20 +131,19 @@ public class AdminEventServiceImpl implements AdminEventService {
 					String savefileName = uuid + "_" +file;			
 									
 					//저장 - 실제경로
-					//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);					
+					Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);					
 					//저장 - Test로컬경로					
-					Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+					//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 				
 					params.getFileName().transferTo(savePath);				
 					params.setEImg(savefileName);
 					params.setEImgOriginal(originalName);
 										
 					//삭제 - 실제경로
-					//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;
+					String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;
 					//삭제 - Test로컬경로						
-					String storedfilePath = "D:/upload/admin/" + storedImg;
-					System.out.println("storedfilePath: " + storedfilePath);
-					
+					//String storedfilePath = "D:/upload/admin/" + storedImg;
+										
 			        File deleteFile = new File(storedfilePath);
 			        if(deleteFile.exists()) {			            
 			            deleteFile.delete(); 			            
