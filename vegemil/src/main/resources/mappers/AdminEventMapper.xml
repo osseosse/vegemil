@@ -74,6 +74,26 @@
 			#{eBvactive}	
 		)	
 	</insert>
+	
+	<!-- 베지밀 이벤트 삭제 -->
+	<update id="deleteVegemilEvent" parameterType="hashMap">		
+		DELETE FROM m_event
+		 WHERE e_idx IN
+      <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+	
+	
+	<!-- 첨부파일 조회 - 변환명 -->
+	<select id="selectImgFile" parameterType="long" resultType="String">
+		SELECT 
+			e_img 
+		FROM 
+			m_event			
+		WHERE
+			e_idx = #{eIdx}
+	</select>
 
 		
 	

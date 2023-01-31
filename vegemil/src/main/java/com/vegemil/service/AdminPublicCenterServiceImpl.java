@@ -39,10 +39,10 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 			String savefileName = uuid + "_" +file;			
 			
 			//저장 - 실제경로
-			//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
+			Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);
 			
 			//저장 - Test로컬경로
-			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+			//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 		
 			params.getFileName().transferTo(savePath);				
 			params.setMImg(savefileName);	
@@ -106,7 +106,7 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 				String savefileName = uuid + "_" +file;			
 				
 				//저장 - 실제경로
-				Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);				
+				Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);				
 				//저장 - Test로컬경로
 				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
@@ -130,7 +130,7 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 					String savefileName = uuid + "_" +file;			
 									
 					//저장 - 실제경로
-					Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);					
+					Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);					
 					//저장 - Test로컬경로					
 					//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 				
@@ -139,7 +139,7 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 					params.setMImgOriginal(originalName);
 										
 					//삭제 - 실제경로
-					String storedfilePath = uploadPath+ "/upload/vegemilBaby/" + storedImg;
+					String storedfilePath = uploadPath+ "/upload/MediaNews/" + storedImg;
 					//삭제 - Test로컬경로						
 					//String storedfilePath = "D:/upload/admin/" + storedImg;
 					
@@ -173,7 +173,7 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 			System.out.println("DB에  파일이 없습니다");
 		}else {
 			//삭제 - 실제경로
-			String storedfilePath = uploadPath+ "/upload/vegemilBaby/" + storedImg;			
+			String storedfilePath = uploadPath+ "/upload/MediaNews/" + storedImg;			
 			//삭제 - Test로컬경로						
 			//String storedfilePath = "D:/upload/admin/" + storedImg;
 			
