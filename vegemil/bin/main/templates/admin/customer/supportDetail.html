@@ -208,7 +208,7 @@
 										<div class="col-5">
 											<!-- 사진없을때 -- 공백으로 해주세요~ <!-- // 사진없을때 -->
 											<!-- 사진있을때 -->
-											<p>사진 <a th:if="*{support.sFile != null}" download class="btn btn-secondary btn-sm2" th:href="|/web/upload/${support.sFile}|">다운로드</a></p> 
+											<p>사진 <a th:if="*{support.sFile != null}" download class="btn btn-secondary btn-sm2" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFile}|">다운로드</a></p> 
 											<div class="scroll-h250">
 												<p class="img100" th:if="*{support.sFile != null}">
 <!-- 													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" /> -->
