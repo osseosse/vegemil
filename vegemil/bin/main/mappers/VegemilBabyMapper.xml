@@ -338,7 +338,7 @@
 			e_idx,e_subject,e_content,e_img,e_start,e_end,e_uri,e_active,e_cate,
 		 	(CASE WHEN e_active = '2' THEN 'winner.png' WHEN (e_active = '1') THEN 'event_img.png' ELSE '' END) AS e_show 
 		 FROM 
-		 	m_eventList
+		 	m_event_brandBaby
 		 WHERE 
 			(e_bvactive !='0' or e_active !='0')  and curdate()   <= e_end 	 	
 		 ORDER BY 
