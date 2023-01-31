@@ -124,7 +124,7 @@ $(function () {
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
-			url : '/admin/manage/baby/deleteBabyInfo',
+			url : '/admin/manage/event/deleteVegemilEvent',
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",

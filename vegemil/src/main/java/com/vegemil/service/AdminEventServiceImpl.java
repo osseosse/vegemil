@@ -1,7 +1,10 @@
 package com.vegemil.service;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +31,7 @@ public class AdminEventServiceImpl implements AdminEventService {
 	
 	//이벤트 조회 - 베지밀
 	@Override
-	public DataTableDTO getEventVegemilList(Map<String, Object> paramMap) {
+	public DataTableDTO getVegemilEventList(Map<String, Object> paramMap) {
 		List<AdminEventDTO> vegemilEventList = Collections.emptyList();
 		DataTableDTO dataTableDto = new DataTableDTO();
 
@@ -66,7 +69,7 @@ public class AdminEventServiceImpl implements AdminEventService {
 			String savefileName = uuid + "_" +file;			
 						
 			//저장 - 실제경로
-			//Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);
+			//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
 			
 			//저장 - Test로컬경로
 			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
@@ -82,6 +85,38 @@ public class AdminEventServiceImpl implements AdminEventService {
 		
 		return (queryResult == 1)? true : false;
 
+	}
+
+	@Override
+	public boolean deleteVegemilEvent(Map<String, Object> paramMap) {
+				
+		ArrayList<String> eventList = (ArrayList<String>) paramMap.get("list");
+		
+		for(int i = 0; i< eventList.size(); i++) {
+			Long idx = Long.parseLong(eventList.get(i));
+			String storedImg = adminEventMapper.selectImgFile(idx);
+			
+			if(storedImg == null || storedImg.equals("") ) { // DB에 첨부 파일 존재			
+				System.out.println("DB에  파일이 없습니다");
+			}else {
+				//삭제 - 실제경로
+				String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
+				//삭제 - Test로컬경로						
+				//String storedfilePath = "D:/upload/admin/" + storedImg;
+				
+		        File deleteFile = new File(storedfilePath);
+		        if(deleteFile.exists()) {			            
+		            deleteFile.delete(); 			            
+		            System.out.println("파일을 삭제하였습니다.");			            
+		        } else {
+		            System.out.println("파일이 존재하지 않습니다.");
+		        }
+			}	
+		}
+
+		int queryResult = 0;		
+		queryResult = adminEventMapper.deleteVegemilEvent(paramMap);		
+		return (queryResult > 0)?  true : false;
 	}
 	
 

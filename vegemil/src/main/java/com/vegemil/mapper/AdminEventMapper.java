@@ -19,6 +19,11 @@ public interface AdminEventMapper {
 	/* 베지밀 이벤트  등록*/
 	public int insertEvent(AdminEventDTO params);
 	
+	/* 베지밀 이벤트  삭제*/
+	public int deleteVegemilEvent(Map<String, Object> paramMap);
+	
+	/* 첨부파일 조회 - 변환명 */
+	public String selectImgFile(Long mIdx);
 	
 	
 }
