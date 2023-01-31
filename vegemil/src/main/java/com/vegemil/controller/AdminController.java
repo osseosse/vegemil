@@ -1,6 +1,8 @@
 package com.vegemil.controller;
 
 import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,15 +21,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vegemil.constant.Method;
+import com.vegemil.domain.AdminSupportDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.service.AdminFaqService;
 import com.vegemil.service.AdminService;
 import com.vegemil.service.MailService;
 import com.vegemil.util.UiUtils;
 
 @Controller
 public class AdminController extends UiUtils {
+	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private AdminFaqService adminFaqService;
 	
 	@Autowired
 	private MailService mailService;
@@ -35,6 +43,10 @@ public class AdminController extends UiUtils {
 	@RequestMapping(value = "/admin/index")
 	public String adminIndex(HttpServletRequest req, Model model) {
 		
+		List<AdminSupportDTO> supportList = Collections.emptyList();
+		supportList = adminFaqService.getSupportList();
+		
+		model.addAttribute("supportList", supportList);
 		// View attribute
 	    return "admin/index";
 	}

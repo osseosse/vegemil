@@ -118,6 +118,14 @@ public class AdminFaqServiceImpl implements AdminFaqService {
 		return dataTableDto;
 	}
 	
+	public List<AdminSupportDTO> getSupportList() {
+		
+		List<AdminSupportDTO> supportList = Collections.emptyList();
+		supportList = adminFaqMapper.selectSupportListIndex();
+		
+		return supportList;
+	}
+	
 	@Override
 	public boolean deleteSupport(Map<String, Object> paramMap) {
 		int queryResult = 0;

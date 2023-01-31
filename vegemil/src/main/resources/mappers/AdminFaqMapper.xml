@@ -215,6 +215,16 @@
 		LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
 	
+	<select id="selectSupportListIndex" resultType="com.vegemil.domain.AdminSupportDTO">
+		SELECT /* selectSupportListIndex by AdminFaqMapper.xml */
+			<include refid="supportColumns" />
+	      FROM m_support_faq
+		 WHERE
+		 	s_answer_yn = 'N'
+		ORDER BY s_writedate DESC
+		LIMIT 10
+	</select>
+	
 	<delete id="deleteSupport" parameterType="hashMap">
 	    /* deleteSupport by FaqMapper.xml */
 		DELETE

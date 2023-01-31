@@ -23,6 +23,8 @@ public interface AdminFaqService {
 	public List<AdminFaqScoreDTO> getFaqScoreList(Map<String, Object> paramMap);
 	
 	public DataTableDTO getSupportList(Map<String, Object> paramMap);
+	
+	public List<AdminSupportDTO> getSupportList();
 
 	public boolean deleteSupport(Map<String, Object> paramMap);
 	

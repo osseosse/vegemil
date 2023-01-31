@@ -34,6 +34,8 @@ public interface AdminFaqMapper {
 	
 	public List<AdminSupportDTO> selectSupportList(Map<String, Object> paramMap);
 	
+	public List<AdminSupportDTO> selectSupportListIndex();
+	
 	public int deleteSupport(Map<String, Object> paramMap);
 	
 	public AdminSupportDTO selectSupport(AdminSupportDTO params);
