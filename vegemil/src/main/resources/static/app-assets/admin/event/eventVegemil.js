@@ -269,8 +269,8 @@ var createTable = function() {
          orderable: false,
          render: function (data, type, full, meta) {
         	 if(full['eImg']==null)	return '-';
-    		//	else	return '<img src="/web/upload/'+full['eImg']+  '" height="60" width="100" class="rounded">';
- 				else	return '<img src="D:/upload/admin/'+full['eImg']+  '" height="60" width="100" class="rounded">';
+    			else	return '<img src="/web/upload/EVENT/'+full['eImg']+  '" height="60" width="100" class="rounded">';
+ 			//	else	return '<img src="D:/upload/admin/'+full['eImg']+  '" height="60" width="100" class="rounded">';
          	}            
          },
          {
@@ -283,7 +283,7 @@ var createTable = function() {
 	    	  }
 		       return (
 		         '<div class="form-check form-switch center-ck">'+
-		           '<input type="checkbox" class="form-check-input" '+checked+' id="eActive'+full['eActive']+ '" name="listOn"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eActive']+')" >'+
+		           '<input type="checkbox" class="form-check-input " '+checked+' id="eActive'+full['eActive']+ '" name="listOn1"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
 				'<label class="form-check-label" for="listOn"></label>'+
 		      '</div>'
 		       );
@@ -299,7 +299,7 @@ var createTable = function() {
  			}
              return (
                '<div class="form-check form-switch center-ck">'+
-                 '<input type="checkbox" class="form-check-input" '+checked+' id="eBvactive'+full['eBvactive']+ '" name="listOn"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eBvactive']+')" >'+
+                 '<input type="checkbox" class="form-check-input" '+checked+' id="eBvactive'+full['eBvactive']+ '" name="listOn2"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
  				'<label class="form-check-label" for="listOn"></label>'+
  		      '</div>'
              );
@@ -389,32 +389,32 @@ var createTable = function() {
 	
 }
 
-function btnDisplay(idx) {
-	console.log('btnDisplay', idx)
+
+
+
+function btnDisplay(idx, idx1, idx2) {
+	console.log('btnDisplay', idx1, idx2)
 	
-	/*let mbsActive;
-	let mbsCheck;*/
-	
+	let eIdx = idx;
 	let eActive;
-	let eBvactive;
+	let eBvactive;	
 	
-	
-	if($('#eActive'+idx).is(":checked")){
+	if($('#eActive'+idx1).is(":checked")){
 		eActive = 1;
 	}else{
 		eActive = 0;
 	}
-	
-	if($('#eBvactive'+idx).is(":checked")){
+	if($('#eBvactive'+idx2).is(":checked")){
 		eBvactive = 1;
 	}else{
 		eBvactive = 0;
 	}
 	
 	if(confirm('진열을 수정하시겠습니까?')){
+		alert(eActive);
+		alert(eBvactive);
 		$.ajax({
-			url : '/admin/manage/baby/event/displayEventInfo?eIdx='+idx+'&eActive='+eActive+'&eBvactive='+eBvactive,
-			/*url : '/admin/manage/baby/displayBabyInfo?mbsIdx='+idx+'&mbsActive='+mbsActive+'&mbsCheck='+mbsCheck,*/
+			url : '/admin/manage/event/displayEventInfo?eIdx='+eIdx+'&eActive='+eActive+'&eBvactive='+eBvactive,			
 			type : "get",
 			dataType : "json",
 			success : function(data) {
@@ -425,8 +425,7 @@ function btnDisplay(idx) {
 				}
 				else{
 					alert("실패했습니다.");
-				}
-				
+				}				
 			},
 			error : function(){
 			}

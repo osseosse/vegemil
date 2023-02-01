@@ -41,5 +41,14 @@ public class AdminEventDTO extends AdminCommonDTO {
 	/** 게시여부 - 영유아식*/
 	private int eBvactive;
 
+	@Override
+	public String toString() {
+		return "AdminEventDTO [fileName=" + fileName + ", eIdx=" + eIdx + ", eSubject=" + eSubject + ", eContent="
+				+ eContent + ", eImg=" + eImg + ", eImgOriginal=" + eImgOriginal + ", eUri=" + eUri + ", eStart="
+				+ eStart + ", eEnd=" + eEnd + ", eActive=" + eActive + ", eBvactive=" + eBvactive + "]";
+	}
+	
+			
+
 
 }

@@ -55,35 +55,38 @@ public class AdminEventServiceImpl implements AdminEventService {
 		return dataTableDto;
 	}
 
-	//이벤트 등록 - 베지밀
+	//이벤트 등록 및 리스트화면에서 전시여부 수정 - 베지밀
 	@Override
 	public boolean registerEvent(AdminEventDTO params) throws Exception {
-		
-		String uuid = UUID.randomUUID().toString();
-		String originalName = params.getFileName().getOriginalFilename();
-		
-		if(!"".equals(originalName)) {
+
+		if (params.getEIdx() == null) { 
+			String uuid = UUID.randomUUID().toString();
+			String originalName = params.getFileName().getOriginalFilename();
 			
-			String file = originalName.substring(originalName.lastIndexOf("\\")+1);			
-			String savefileName = uuid + "_" +file;			
-						
-			//저장 - 실제경로
-			Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
+			if(originalName != null && !"".equals(originalName)) {
+				
+				String file = originalName.substring(originalName.lastIndexOf("\\")+1);			
+				String savefileName = uuid + "_" +file;			
+							
+				//저장 - 실제경로
+				Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
+				
+				//저장 - Test로컬경로
+				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
-			//저장 - Test로컬경로
-			//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
-		
-			params.getFileName().transferTo(savePath);				
-			params.setEImg(savefileName);	
-			params.setEImgOriginal(originalName);
-			
-		}	
+				params.getFileName().transferTo(savePath);				
+				params.setEImg(savefileName);	
+				params.setEImgOriginal(originalName);				
+			}	
+		}
 		
 		int queryResult = 0;
-		queryResult = adminEventMapper.insertEvent(params);
-		
+		if (params.getEIdx() == null) {
+			queryResult = adminEventMapper.insertEvent(params);
+		} else {
+			queryResult = adminEventMapper.updateEvent(params);
+		}
 		return (queryResult == 1)? true : false;
-
 	}
 	
 	//이벤트 수정
