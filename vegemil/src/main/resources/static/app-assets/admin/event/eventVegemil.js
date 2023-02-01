@@ -379,17 +379,13 @@ var createTable = function() {
 		} );
 	} ).draw();
 	
-    $('div.head-label').html('<h4 class="card-title">게시글 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-                             '<button type="button" onclick="location.href=\'/admin/manage/event/eventAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
-							 /*'<button type="button" onclick="location.href=\'/admin/manage/baby/babyInfoAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');*/
+    $('div.head-label').html('<h4 class="card-title">이벤트 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
+                             '<button type="button" onclick="location.href=\'/admin/manage/event/eventAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');							 
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
-  }
-	
+  }	
 }
-
-
 
 
 function btnDisplay(idx, idx1, idx2) {

@@ -219,7 +219,7 @@
 								<li th:if="${not #lists.isEmpty( mediaNewsList )}" th:each="mediaNews : ${mediaNewsList}" >
 									<dl>
 										<a th:href="${mediaNews.mAduri1}">
-											<dd class="newsImg"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/mediaNews/${mediaNews.mImg}|" alt="제품사진"/></dd>
+											<dd class="newsImg"><img th:src="|/web/upload/MediaNews/${mediaNews.mImg}|" alt="제품사진"/></dd>
 											<dd class="newsTxt f14" th:text="${mediaNews.mSubject}"></dd>
 										</a>
 									</dl>

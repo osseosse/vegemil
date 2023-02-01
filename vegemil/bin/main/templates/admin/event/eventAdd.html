@@ -34,119 +34,6 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
-	       /* $(function () {
-      	       console.log('function');
-      	       let htmlString;
-      	       let mbsCategory = [[${babyInfo?.mbsCategory}]];
-      	       let mbsMCategory = [[${babyInfo?.mbsMCategory}]];
-      	       let selected = 'selected';
-      	       
-      	       if(mbsCategory == 'pb') {
-	      	      htmlString = '<option value=\"pb01\"'+ getSelected('pb01', mbsMCategory) +'>임신초기</option>'
-	              			  + '<option value=\"pb02\"'+ getSelected('pb02', mbsMCategory) +' >임신중기</option>'
-	                          + '<option value=\"pb03\"'+ getSelected('pb03', mbsMCategory) +' >임신후기</option>'
-	              			  + '<option value=\"pb04\"'+ getSelected('pb04', mbsMCategory) +' >임신기 건강관리</option>'
-	              			  + '<option value=\"pb05\"'+ getSelected('pb05', mbsMCategory) +' >임신 준비&태교</option>'
-	              			  + '<option value=\"pb06\"'+ getSelected('pb06', mbsMCategory) +' >출산 준비&용품</option>'
-	              			  + '<option value=\"pb07\"'+ getSelected('pb07', mbsMCategory) +' >산후 관리</option>';
-      	       }else if(mbsCategory == 'gh') {
-	      	      htmlString = '<option value=\"gh01\"'+ getSelected('gh01', mbsMCategory) +' >1~3개월</option>'
-	      	                  + '<option value=\"gh02\"'+ getSelected('gh02', mbsMCategory) +' >4~6개월</option>'
-	      	                  + '<option value=\"gh03\"'+ getSelected('gh03', mbsMCategory) +' >7~12개월</option>'
-	      	                  + '<option value=\"gh04\"'+ getSelected('gh04', mbsMCategory) +' >13~18개월</option>'
-	      	                  + '<option value=\"gh05\"'+ getSelected('gh05', mbsMCategory) +' >19~24개월</option>'
-	      	                  + '<option value=\"gh06\"'+ getSelected('gh06', mbsMCategory) +' >25~36개월</option>'
-	      	                  + '<option value=\"gh07\"'+ getSelected('gh07', mbsMCategory) +' >3세 이상</option>'
-	      	                  + '<option value=\"gh08\"'+ getSelected('gh08', mbsMCategory) +' >영유아 건강관리</option>';
-      	      }else if(mbsCategory == 'pe') {
-	              htmlString = '<option value=\"pe01\"'+ getSelected('pe01', mbsMCategory) +' >DIY&놀이법</option>'
-		  	                  + '<option value=\"pe02\"'+ getSelected('pe02', mbsMCategory) +' >교육/훈육 노하우</option>';
-      	      }else if(mbsCategory == 'lh') {
-	  	          htmlString = '<option value=\"lh01\"'+ getSelected('lh01', mbsMCategory) +' >리빙/헬스</option>'
-		  	                  + '<option value=\"lh02\"'+ getSelected('lh02', mbsMCategory) +' >트렌드</option>';
-      	      }
-      	       
-      	      if(mbsCategory != null) {
-      	    	  $('#mbsMCategory').html(htmlString);  
-      	      }
-      	      
-      	      function getSelected(val, mCategory) {
-      	    	  if(val == mCategory) {
-      	    		return 'selected';  
-      	    	  }else{
-      	    		return '';
-      	    	  }
-      	    		  
-      	    	  
-      	      }
-	  	                  
-      	      
-	       }); */
-	        /* function imageHandler(image, callback) {
-	    	   const fileInput = document.createElement('input');
-		       fileInput.setAttribute('type', 'file');
-
-		       fileInput.click();
-
-		       fileInput.addEventListener("change", function () {  // change 이벤트로 input 값이 바뀌면 실행
-		    	   const formData = new FormData();
-		           const file = fileInput.files[0];
-		           formData.append('uploadFile', file);
-		           console.log("input.type " + formData);
-
-		           $.ajax({
-		        	   type: 'post',
-		               enctype: 'multipart/form-data',
-		               url: '/admin/baby/babyInfo/fileUpload',
-		               data: formData,
-		               processData: false,
-		               contentType: false,
-		               dataType: 'json',
-		               success: function (data) {
-		            	   console.log('success', data);
-		            	   console.log('data.uploadPath', data.uploadPath);
-		            	   const range = quill.getSelection(); // 사용자가 선택한 에디터 범위
-		            	   // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
-		                   const uploadPath = data.uploadPath.path.replace(/\\/g, '/').replace('data', '');
-		                   console.log('uploadPath', uploadPath);
-		                   quill.insertEmbed(range.index, 'image', uploadPath);
-		               },
-		               error: function (err) {
-		                   console.log('err',err);
-		               }
-		           }).done(function(dats){
-		    	       console.log('success')
-		           });
-		       });
-		   }  */
-
-	    /* 
-	       var quill = new Quill('#editor', {
-	          modules: {
-	    	     formula: true,
-	    	     syntax: true,
-	    	     toolbar: {
-	    	         container: [
-	    	           [{ 'header': [1, 2, false] }],
-	    	           [{ color: [] }, { background: [] }],
-	    	           ['bold', 'italic', 'underline','strike', 'blockquote'],
-	    	           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-	    	           ['link', 'image'],
-	    	           ['clean']
-	    	         ],
-	    	         handlers: { image: imageHandler }
-	    	       }
-	    	  },
-	    	  placeholder: '게시물을 작성해주세요.',
-	    	  theme: 'snow'
-	       });
-	       console.log('quill', quill)
-	       
-	       const editContent = [[ ${babyInfo?.mbsContent} ]];
-	       if(editContent) {
-	    	   quill.clipboard.dangerouslyPasteHTML(0, editContent.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll("&quot;",""));
-	       } */
-	       
 	       function btnSave(){
 	    	   const form = document.form;
 	    	   /* form.mbsContent.value = quill.root.innerHTML;*/
@@ -230,7 +117,7 @@
               
             </div>
             
-            <div class="content-body" th:object="${eventInfo}">
+            <div class="content-body">
             	<form name="form" th:action="@{/admin/manage/event/eventAdd}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
 	                <!-- Analytics card section -->
 	                <section id="analytics-card">
@@ -275,31 +162,75 @@
 								<div class="card">								
 									<div class="card-body ">
 										<!-- Form -->
-	                                    <form action="javascript:;" class="mt-2" onsubmit>	                                    	
+	                                    <form action="javascript:;" class="mt-2" onsubmit>
+	                                    	
+	                                    
+	              <!--                       <div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row mb-1 ">
+											
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												진열 
+											</div>
+											
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">육아 전시
+													<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
+													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">메인 전시
+													<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+	                    </div> -->
+	                                    
+	                                    
+	                                 
 	                                    
 		                                    <div class="row">
 													
 												<div class="col-md-1 col-12">진열</div>
 											
 												<div class="col-md-2 col-4">
-													<div class="form-check form-switch" >메인 전시
-														<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" th:checked="*{eActive}" >
+													<div class="form-check form-switch" >육아 전시
+														<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
+	<!-- 													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" /> -->
 														<label class="form-check-label" for="listOn"></label>
 													</div>
 												</div>
 												<div class="col-md-2 col-4">
-													<div class="form-check form-switch">육아 전시
-														<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive" th:checked="*{eBvactive}"/>
+													<div class="form-check form-switch">메인 전시
+														<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
 														<label class="form-check-label" for="listOn"></label>
 													</div>
 												</div>
+												
+												
+												
 											</div>
+	                                    
+	                                    
+	                                    
+	                                    
+	                                    
 	                                    
 	                                        <div class="row mt-1">
 	                                            <div class="col-md-1 col-12">제목<span class="red_dot">*</span></div>
 	                                            <div class="col-md-5 col-12">
-	                                                <input type="text" id="eSubject" name="eSubject" class="form-control" th:value="*{eSubject}" placeholder="제목을 작성해주세요" required />
-	                                                <input type="hidden" id="eIdx" name="eIdx" class="form-control" th:value="*{eIdx}" /> 
+	                                                <input type="text" id="eSubject" name="eSubject" class="form-control" th:value="${babyInfo?.eSubject}" placeholder="제목을 작성해주세요" required />
+	                                                <!-- <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" /> -->
+	                                                <input type="hidden" id="eIdx" name="eIdx" class="form-control" th:value="${babyInfo?.eIdx}" /> 
 	                                            </div>
 											</div>
 											
@@ -307,26 +238,26 @@
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">내용</div>
 												<div class="col-md-5 col-12">
-												<input type="text" class="form-control" id="eContent" name="eContent" th:value="*{eContent}">	                                                
+												<input type="text" class="form-control" id="eContent" name="eContent">	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">uri<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="text" class="form-control" id="eUri" name="eUri" th:value="*{eUri}">	                                                
+												<input type="text" class="form-control" id="eUri" name="eUri">	                                                
 												</div>
 											</div>
 											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">시작일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="eStart" name="eStart" th:value="*{eStart}" max="2033-01-11" min="2021-01-11" required>	                                                
+												<input type="date" class="form-control" id="eStart" name="eStart" max="2033-01-11" min="2021-01-11" required>	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">종료일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="eEnd" name="eEnd" th:value="*{eEnd}" max="2033-01-11" min="2021-01-11" required>	                                                
+												<input type="date" class="form-control" id="eEnd" name="eEnd" max="2033-01-11" min="2021-01-11" required>	                                                
 												</div>
 											</div>
 											<div class="row mt-1">

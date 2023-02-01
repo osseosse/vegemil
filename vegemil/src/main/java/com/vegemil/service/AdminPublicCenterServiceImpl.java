@@ -40,10 +40,9 @@ public class AdminPublicCenterServiceImpl implements AdminPublicCenterService {
 			String savefileName = uuid + "_" +file;			
 			
 			//저장 - 실제경로
-			//Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);
-			
+			Path savePath = Paths.get(uploadPath+ "/upload/MediaNews/" + savefileName);			
 			//저장 - Test로컬경로
-			Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+			//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 		
 			params.getFileName().transferTo(savePath);				
 			params.setMImg(savefileName);	
