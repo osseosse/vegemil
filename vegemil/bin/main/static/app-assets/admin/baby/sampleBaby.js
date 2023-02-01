@@ -268,11 +268,21 @@ var createTable = function() {
       		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
+      			if(full['sAddr1']==null)	return '';
+      			else	return full['sAddr1'];
+      			
+      		}
+      	},
+/*      	{
+      		targets: 7,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
       			if(full['sAddr1']==null && full['sAddr2']==null)	return '';
       			else	return full['sAddr1']+full['sAddr2'];
       			
       		}
       	},
+*/      	
       	{
       		targets: 8,
       		orderable: false,

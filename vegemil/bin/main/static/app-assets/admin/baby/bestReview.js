@@ -284,7 +284,8 @@ var createTable = function() {
 	        orderable: false,
 	        render: function (data, type, full, meta) {
 				if(full['sImage']==null)	return '';
-	  			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+full['sImage']+'" height="40" width="40" class="rounded">';
+/*	  			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+full['sImage']+'" height="40" width="40" class="rounded">';*/
+				else	return '<img src="/web/upload/vegemilBaby/'+full['sImage']+'" height="40" width="40" class="rounded">';
 	  		}
         },
         {
