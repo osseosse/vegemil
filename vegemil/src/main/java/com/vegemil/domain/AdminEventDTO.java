@@ -45,12 +45,13 @@ public class AdminEventDTO extends AdminCommonDTO {
 
 	@Override
 	public String toString() {
-		return "AdminEventDTO [fileName=" + fileName + ", eIdx=" + eIdx + ", eSubject=" + eSubject + ", eContent="
-				+ eContent + ", eImg=" + eImg + ", eImgOriginal=" + eImgOriginal + ", eUri=" + eUri + ", eStart="
-				+ eStart + ", eEnd=" + eEnd + ", eActive=" + eActive + ", eBvactive=" + eBvactive + "]";
+		return "AdminEventDTO [fileName=" + fileName + ", category=" + category + ", eIdx=" + eIdx + ", eSubject="
+				+ eSubject + ", eContent=" + eContent + ", eImg=" + eImg + ", eImgOriginal=" + eImgOriginal + ", eUri="
+				+ eUri + ", eStart=" + eStart + ", eEnd=" + eEnd + ", eActive=" + eActive + ", eBvactive=" + eBvactive
+				+ "]";
 	}
+
 	
-			
 
 
 }

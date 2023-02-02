@@ -1,5 +1,7 @@
 package com.vegemil.service;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -59,6 +61,8 @@ public class AdminEventServiceImpl implements AdminEventService {
 	//이벤트 등록 및 리스트화면에서 전시여부 수정 - 베지밀
 	@Override
 	public boolean registerEvent(AdminEventDTO params) throws Exception {
+		
+		
 
 		if (params.getEIdx() == null) { 
 			String uuid = UUID.randomUUID().toString();
@@ -70,10 +74,10 @@ public class AdminEventServiceImpl implements AdminEventService {
 				String savefileName = uuid + "_" +file;			
 							
 				//저장 - 실제경로
-				//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
+				Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
 				
 				//저장 - Test로컬경로
-				Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
 				params.getFileName().transferTo(savePath);				
 				params.setEImg(savefileName);	
@@ -94,9 +98,17 @@ public class AdminEventServiceImpl implements AdminEventService {
 	@Override
 	public boolean updateEvent(AdminEventDTO params) throws Exception {
 
+		String storedImgOriginal = null;
+		String storedImg = null;
+		
 		//DB에 저장된 파일 불러오기
-		String storedImgOriginal = adminEventMapper.selectImgFileOriginal(params.getEIdx());
-		String storedImg = adminEventMapper.selectImgFile(params.getEIdx());
+		if(params.getCategory().equals("vegemil")) {
+			storedImgOriginal = adminEventMapper.selectImgFileOriginal(params.getEIdx());	
+			storedImg = adminEventMapper.selectImgFile(params.getEIdx());			
+		}else if(params.getCategory().equals("vegemilBaby")) {
+			storedImgOriginal = adminEventMapper.selectImgFileOriginalVB(params.getEIdx());
+			storedImg = adminEventMapper.selectImgFileVB(params.getEIdx());
+		}
 		
 		//전달된 파일
 		String originalName = params.getFileName().getOriginalFilename();
@@ -111,9 +123,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 				String savefileName = uuid + "_" +file;			
 				
 				//저장 - 실제경로
-				//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);				
+				Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);				
 				//저장 - Test로컬경로
-				Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
 				params.getFileName().transferTo(savePath);				
 				params.setEImg(savefileName);
@@ -135,18 +147,18 @@ public class AdminEventServiceImpl implements AdminEventService {
 					String savefileName = uuid + "_" +file;			
 									
 					//저장 - 실제경로
-					//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);					
+					Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);					
 					//저장 - Test로컬경로					
-					Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+					//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 				
 					params.getFileName().transferTo(savePath);				
 					params.setEImg(savefileName);
 					params.setEImgOriginal(originalName);
 										
 					//삭제 - 실제경로
-					//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;
+					String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;
 					//삭제 - Test로컬경로						
-					String storedfilePath = "D:/upload/admin/" + storedImg;
+					//String storedfilePath = "D:/upload/admin/" + storedImg;
 										
 			        File deleteFile = new File(storedfilePath);
 			        if(deleteFile.exists()) {			            
@@ -182,9 +194,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 				System.out.println("DB에  파일이 없습니다");
 			}else {
 				//삭제 - 실제경로
-				//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
+				String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
 				//삭제 - Test로컬경로						
-				String storedfilePath = "D:/upload/admin/" + storedImg;
+				//String storedfilePath = "D:/upload/admin/" + storedImg;
 				
 		        File deleteFile = new File(storedfilePath);
 		        if(deleteFile.exists()) {			            
@@ -215,9 +227,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 				System.out.println("DB에  파일이 없습니다");
 			}else {
 				//삭제 - 실제경로
-				//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
+				String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
 				//삭제 - Test로컬경로						
-				String storedfilePath = "D:/upload/admin/" + storedImg;
+				//String storedfilePath = "D:/upload/admin/" + storedImg;
 				
 		        File deleteFile = new File(storedfilePath);
 		        if(deleteFile.exists()) {			            
@@ -240,10 +252,10 @@ public class AdminEventServiceImpl implements AdminEventService {
 		return adminEventMapper.selectEventInfoDetail(eIdx);
 	}
 
-	//영유아식 이벤트 상세조회
+	// 영유아식 이벤트 상세조회
 	@Override
-	public AdminEventDTO getEventDetailVegemilBaby(Long eIdx) {
-		return adminEventMapper.selectEventInfoDetailVegemilBaby(eIdx);
+	public AdminEventDTO getEventDetailVB(Long eIdx) {
+		return adminEventMapper.selectEventInfoDetailVB(eIdx);
 	}
 	
 	

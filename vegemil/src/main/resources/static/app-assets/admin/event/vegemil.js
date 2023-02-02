@@ -283,7 +283,7 @@ var createTable = function() {
 	    	  }
 		       return (
 		         '<div class="form-check form-switch center-ck">'+
-		           '<input type="checkbox" class="form-check-input " '+checked+' id="eActive'+full['eActive']+ '" name="listOn1"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
+		           '<input type="checkbox" class="form-check-input " '+checked+' id="eActive'+full['eIdx']+ '" name="listOn1"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
 				'<label class="form-check-label" for="listOn"></label>'+
 		      '</div>'
 		       );
@@ -299,7 +299,7 @@ var createTable = function() {
  			}
              return (
                '<div class="form-check form-switch center-ck">'+
-                 '<input type="checkbox" class="form-check-input" '+checked+' id="eBvactive'+full['eBvactive']+ '" name="listOn2"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
+                 '<input type="checkbox" class="form-check-input" '+checked+' id="eBvactive'+full['eIdx']+ '" name="listOn2"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
  				'<label class="form-check-label" for="listOn"></label>'+
  		      '</div>'
              );
@@ -394,21 +394,20 @@ function btnDisplay(idx, idx1, idx2) {
 	let eIdx = idx;
 	let eActive;
 	let eBvactive;	
-	
-	if($('#eActive'+idx1).is(":checked")){
+		
+
+	if($('#eActive'+eIdx).is(":checked")){
 		eActive = 1;
 	}else{
 		eActive = 0;
 	}
-	if($('#eBvactive'+idx2).is(":checked")){
+	if($('#eBvactive'+eIdx).is(":checked")){
 		eBvactive = 1;
 	}else{
 		eBvactive = 0;
 	}
 	
-	if(confirm('진열을 수정하시겠습니까?')){
-		alert(eActive);
-		alert(eBvactive);
+	if(confirm('진열을 수정하시겠습니까?')){		
 		$.ajax({
 			url : '/admin/manage/event/displayEventInfo?eIdx='+eIdx+'&eActive='+eActive+'&eBvactive='+eBvactive,			
 			type : "get",

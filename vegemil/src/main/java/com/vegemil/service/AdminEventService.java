@@ -26,7 +26,8 @@ public interface AdminEventService {
 	public AdminEventDTO getEventDetail(Long eIdx);
 
 	//이벤트 상세 조회 - 영유아식
-	public AdminEventDTO getEventDetailVegemilBaby(Long eIdx);
+	public AdminEventDTO getEventDetailVB(Long eIdx);
+
 
 	
 	

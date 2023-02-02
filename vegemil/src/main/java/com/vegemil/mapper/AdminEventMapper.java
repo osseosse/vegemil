@@ -42,7 +42,7 @@ public interface AdminEventMapper {
 	public AdminEventDTO selectEventInfoDetail(Long eIdx);
 
 	/* 영유아식 이벤트 상세 조회  */
-	public AdminEventDTO selectEventInfoDetailVegemilBaby(Long eIdx);
+	public AdminEventDTO selectEventInfoDetailVB(Long eIdx);
 
 	
 

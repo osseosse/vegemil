@@ -108,7 +108,7 @@ public class AdminEventController {
 	@GetMapping("/event/eventUpdateVegemilBaby")
 	public String moveEventUpdateVBPage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
 		
-		AdminEventDTO eventDto = adminEventService.getEventDetailVegemilBaby(eIdx);
+		AdminEventDTO eventDto = adminEventService.getEventDetailVB(eIdx);
 		model.addAttribute("eventInfo", eventDto);
 		
 		return "admin/event/eventUpdateVegemilBaby";
@@ -192,7 +192,7 @@ public class AdminEventController {
 		return true;
 	}
 	
-	//메인페이지 진열정보 수정
+	//메인페이지 진열정보 수정 - 베지밀
 	@GetMapping(value = "/event/displayEventInfo")
 	public @ResponseBody boolean displayEventInfo(@RequestParam(value = "eIdx", required = false) Long eIdx,			
 			@RequestParam(value = "eActive", required = false) int eActive, @RequestParam(value = "eBvactive", required = false) int eBvactive,
@@ -203,13 +203,10 @@ public class AdminEventController {
 				return false;
 			}
 			AdminEventDTO eventInfo = adminEventService.getEventDetail(eIdx);
-			System.out.println("eventInfo:" + eventInfo.toString());
 			eventInfo.setEIdx(eIdx);
 			eventInfo.setEActive(eActive);
 			eventInfo.setEBvactive(eBvactive);
-			
-			System.out.println("eventInfo:" + eventInfo.toString());
-
+			eventInfo.setCategory("vegemil");
 			
 			isRegistered = adminEventService.registerEvent(eventInfo);
 			if (!isRegistered) {
@@ -222,6 +219,33 @@ public class AdminEventController {
 		}
 		return isRegistered;
 	}
+	
+	//메인페이지 진열정보 수정 - 영유아식
+	@GetMapping(value = "/event/displayEventInfoVB")
+	public @ResponseBody boolean displayEventInfoVB(@RequestParam(value = "eIdx", required = false) Long eIdx,			
+			@RequestParam(value = "eActive", required = false) int eActive, @RequestParam(value = "eBvactive", required = false) int eBvactive,
+			HttpServletResponse response) throws Exception {
+		boolean isRegistered = true;
+		try {
+			if (eIdx == null) {
+				return false;
+			}
+			AdminEventDTO eventInfo = adminEventService.getEventDetailVB(eIdx);
+			eventInfo.setEIdx(eIdx);
+			eventInfo.setEActive(eActive);
+			eventInfo.setEBvactive(eBvactive);
+			eventInfo.setCategory("vegemilBaby");
+			isRegistered = adminEventService.registerEvent(eventInfo);
+			if (!isRegistered) {
+				throw new IOException("저장에 실패하였습니다.");
+			}
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isRegistered;
+		}
 	
 	//정적 이미지 불러오기
 	@GetMapping("/web/upload/EVENT/{filename}")

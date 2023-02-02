@@ -112,7 +112,7 @@
 			</if>
 			<if test='category == "vegemilBaby" '>
 				m_event_brandBaby
-			</if> 
+			</if>	
 		SET 
 			e_subject = #{eSubject},
 			e_content = #{eContent},
@@ -202,7 +202,7 @@
 	</select>
 	
 	<!-- 영유아식 이벤트 상세 조회 --> 	
-	<select id="selectEventInfoDetailVegemilBaby" parameterType="long" resultType="com.vegemil.domain.AdminEventDTO">
+	<select id="selectEventInfoDetailVB" parameterType="long" resultType="com.vegemil.domain.AdminEventDTO">
 		SELECT *
 		FROM
 			m_event_brandBaby
