@@ -397,9 +397,34 @@
 			#{sSns},
 			#{sImage},
 			""
-		)
-	
+		)	
 	</insert>
+	
+	<!-- 후기이벤트 - 베스트 후기 -->
+	<select id='selectBestReviewList' parameterType ="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO">	
+		SELECT 
+			dense_rank() OVER (PARTITION BY MONTH(s_writedate) ORDER BY s_rank asc) 등수,
+			s_uid,
+		    s_edayId,
+		    s_rank,
+			(CASE WHEN s_rank = '1' THEN '1등' 
+			  WHEN s_rank = '2' THEN '2등' END
+			) AS s_honor,
+		    s_title,
+		    s_writedate,
+			YEAR(s_writedate) AS s_year,
+		    MONTH(s_writedate) AS s_month,
+			s_image,
+		    s_url
+		FROM 
+			m_sns 		
+		WHERE 
+			s_rank between 1 and 2
+		ORDER BY DATE_FORMAT(s_writedate, '%Y-%m' ) DESC, 등수
+	</select>
+	
+	
+	
 	
 	
 	<!-- 아기모델센발대회 - 이달의모델 조회 -->
@@ -415,7 +440,7 @@
 			 ELSE '참여상' END) AS c_honor 
 		FROM 
 			m_calendar_model
-		where 
+		WHERE 
 			c_rank between 1 and 3
 		ORDER BY 
 			c_update_time desc;

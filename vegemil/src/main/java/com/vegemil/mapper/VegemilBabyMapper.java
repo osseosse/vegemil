@@ -70,6 +70,8 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyBestReviewDTO> selectReviewList(String loggedId);
 	//후기이벤트 - 이벤트 등록
 	public int insertReviewEvent(VegemilBabyBestReviewDTO review);
+	//후기이벤트 - 베스트 후기 조회
+	public List<VegemilBabyBestReviewDTO> selectBestReviewList();
 	
 	//아기모델센발대회 - 이달의모델 조회
 	public List<VegemilBabyCalendarModelDTO> selectModelList();

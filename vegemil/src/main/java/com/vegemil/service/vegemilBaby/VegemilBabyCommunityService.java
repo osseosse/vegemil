@@ -55,8 +55,8 @@ public interface VegemilBabyCommunityService {
   	public List<VegemilBabyBestReviewDTO> selectReviewList(String loggedId);
   	//후기이벤트 - 이벤트 등록
   	public int insertReviewEvent (VegemilBabyBestReviewDTO review, HttpServletResponse response) throws Exception;
-  	//후기이벤트
-	public List<VegemilBabyBestReviewDTO> bestReviewList();
+  	//후기이벤트 - 베스트후기 조회
+	public List<VegemilBabyBestReviewDTO> selectBestReviewList();
 
 	//아기모델 - 이달의모델 조회
 	public List<VegemilBabyCalendarModelDTO> selectModelList();
@@ -66,6 +66,7 @@ public interface VegemilBabyCommunityService {
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);    
     public boolean isSampleForm(VegemilBabySampleDTO params);
+	
        
     
     

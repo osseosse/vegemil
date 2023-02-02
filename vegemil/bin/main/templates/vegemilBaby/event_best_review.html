@@ -118,10 +118,8 @@
 								</ul>
 							</div>
 							
-							<div class="tab_content_brand ">
-									
+							<div class="tab_content_brand ">									
 									<dl id="con02" class="pb120">
-														
 										<div class="container">					
 											<div class="col-md-12 brandTxt">
 												<p class="f24_4_bg">Event</p>
@@ -133,12 +131,12 @@
 										 
                                        <div class="container100 center best_center">
                                             <ul class="best_thumb mt90 review2 bg_best">
-												
-													<li th:each="bestReview : ${bestReviewList}"class="hvr-float-shadow mb80 mi" th:classappend="|${bestReview.sYear}${bestReview.sMonth}${bestReview.sRank}|">
+													<li th:each="bestReview : ${bestReviewList}" th:class="|hvr-float-shadow mb80 mi${bestReview.sYear}${bestReview.sMonth}${bestReview.sRank}|">
 														 <a th:href="@{${bestReview.sUrl}}"  target="_blank">
 															<div class="best_r">
 																<p class="best_r_img">
-																	<img th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/'+${bestReview.sImage}+ '); background-position:center;-webkit-background-size: cover; background-size: cover'"   class="imgh">
+																	<!-- <img th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload_resize/'+${bestReview.sImage}+ '); background-position:center;-webkit-background-size: cover; background-size: cover'"   class="imgh"> -->
+																	<img th:style="'background: url(/web/upload/vegemilBaby/'+${bestReview.sImage}+ '); background-position:center;-webkit-background-size: cover; background-size: cover'"   class="imgh">
 																	<span th:class="|win${bestReview.sRank}|"  th:text="|${bestReview.sRank}등|"></span>
 																</p>
 																<p class="mt40">
@@ -152,51 +150,48 @@
 														</a>
 													</li>
 													
-													<!-- <li class="hvr-float-shadow mb80 mi<%# DataBinder.Eval(Container.DataItem, "s_year") %><%# DataBinder.Eval(Container.DataItem, "s_month") %><%# DataBinder.Eval(Container.DataItem, "s_rank") %>">
-														 <a href='<%# DataBinder.Eval(Container.DataItem, "s_url") %>'  target="_blank">
-															<div class="best_r">
-																<p class="best_r_img">
-																	<img  style="background: url(/Main/brandVegemilBaby/review_upload_resize/<%# DataBinder.Eval(Container.DataItem, "s_image") %>);  background-position:center;-webkit-background-size: cover; background-size: cover" class="imgh">
-																	<span class="win<%# DataBinder.Eval(Container.DataItem, "s_rank") %>"><%# DataBinder.Eval(Container.DataItem, "s_rank") %>등</span></p>
-																<p class="mt40">
-																	<span class="bestN_01"><%# DataBinder.Eval(Container.DataItem, "s_month") %></span> 
-																	<span class="bestN_02">22</span> 
-																	<span class="bestN_03"><%# DataBinder.Eval(Container.DataItem, "s_year") %></span>
-																</p>																			
-																<p class="f26_4 mt40 txtHide"><span>by</span> <%# DataBinder.Eval(Container.DataItem, "s_uid") %> </p>
-																<p class="f14_4_1 mt20 best_subTxt"><%# DataBinder.Eval(Container.DataItem, "s_title") %> </p>
-															</div>
-														</a>
-													</li> -->
+													
 
 
 												<script>
 												  $( document ).ready( function() {
+													$( '.mi2022102' ).before( '<br>' );
+													$( '.mi202291' ).before( '<br>' );
+													$( '.mi202271' ).before( '<br>' );
 												    $( '.mi2022041' ).before( '<br>' );
-												    $( '.mi2022031' ).before( '<br>' );
+													$( '.mi202241' ).before( '<br>' );
+													$( '.mi202231' ).before( '<br>' );
+													$( '.mi202211' ).before( '<br>' );
+												    $( '.mi2022031' ).before( '<br>' );													
 												    $( '.mi2022021' ).before( '<br>' );
 												    $( '.mi2022011' ).before( '<br>' );
                                                     $( '.mi2022006' ).before( '<br>' );
                                                     $( '.mi2022004' ).before( '<br>' );
                                                     $( '.mi2022002' ).before( '<br>' );
-                                                    $( '.mi2021121' ).before( '<br>' );
-                                                    $( '.mi2021112' ).before( '<br>' );
-                                                    //$( '.mi2021111' ).before( '<br>' );
-                                                    //$( '.mi2021101' ).before( '<br>' );
+                                                    
+                                                    $( '.mi2021121' ).before( '<br>' );                                                   
+                                                    $( '.mi2021101' ).before( '<br>' );
                                                     $( '.mi2021092' ).before( '<br>' );
-                                                    //$( '.mi2021081' ).before( '<br>' );
+													$( '.mi202181' ).before( '<br>' );
                                                     $( '.mi2021072' ).before( '<br>' );
-                                                    //$( '.mi2021061' ).before( '<br>' );
+													$( '.mi202161' ).before( '<br>' );
+													$( '.mi202151' ).before( '<br>' );
                                                     $( '.mi2021051' ).before( '<br>' );
                                                     $( '.mi2021041' ).before( '<br>' );
+													$( '.mi202141' ).before( '<br>' );													
                                                     $( '.mi2021031' ).before( '<br>' );
                                                     $( '.mi2021022' ).before( '<br>' );
-                                                    //$( '.mi2021011' ).before( '<br>' );
-
+												
                                                     $( '.mi2020121' ).before( '<br>' );
                                                     $( '.mi2020111' ).before( '<br>' );
                                                     $( '.mi2020101' ).before( '<br>' );
                                                     $( '.mi2020091' ).before( '<br>' );
+													$( '.mi202091' ).before( '<br>' );
+													$( '.mi202081' ).before( '<br>' );
+													$( '.mi202071' ).before( '<br>' );
+													$( '.mi202061' ).before( '<br>' );
+													$( '.mi202041' ).before( '<br>' );
+													$( '.mi202031' ).before( '<br>' );
                                                     $( '.mi2020081' ).before( '<br>' );
                                                     $( '.mi2020071' ).before( '<br>' );
                                                     $( '.mi2020061' ).before( '<br>' );

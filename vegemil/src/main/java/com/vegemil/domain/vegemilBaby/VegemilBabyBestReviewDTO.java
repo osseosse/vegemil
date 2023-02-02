@@ -23,6 +23,7 @@ public class VegemilBabyBestReviewDTO extends CommonDTO {
 	private String sSns; 	
 	private String sImage; 
 	private String sRank; 
+	private String sHonor; 
 	private String sYear; 
 	private String sMonth; 
  

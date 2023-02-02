@@ -1,6 +1,8 @@
 package com.vegemil.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
@@ -11,7 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -185,6 +192,14 @@ public class VegemilBabyController extends UiUtils {
 		return showMessageWithRedirect("후기 이벤트 참여가 완료되었습니다.", "/vegemilBaby/event_review_best", Method.GET, null, model);
 	}
 	
+	//베스트후기 페이지
+	@GetMapping("/vegemilBaby/event_best_review")
+	public String moveBestReviewPage(Model model) {
+		model.addAttribute("bestReviewList", vegemilBabyCommunityService.selectBestReviewList());
+		return "vegemilBaby/event_best_review";
+	}
+
+	
 	
 	//달력아기모델 
 	@GetMapping("/vegemilBaby/event/model")
@@ -329,6 +344,8 @@ public class VegemilBabyController extends UiUtils {
 		
 		return showMessageWithRedirect("샘플신청 완료되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 	}
+	
+	
 
 
 

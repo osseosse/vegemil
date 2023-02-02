@@ -208,8 +208,12 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		
 		return vegemilBabyMapper.insertReviewEvent(review);
 	}
-
-
+	
+	//후기이벤트 - 베스트 후기 조회
+	@Override
+	public List<VegemilBabyBestReviewDTO> selectBestReviewList() {
+		return vegemilBabyMapper.selectBestReviewList();
+	}
 
 	// 샘플신청 등록
 	@Override
@@ -239,20 +243,14 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		sampleCount = vegemilBabyMapper.sampleFormCountBySample(params);
 
 		return (sampleCount >= 1) ? true : false;
-	}
-
-		
-
-	@Override
-	public List<VegemilBabyBestReviewDTO> bestReviewList() {
-		return vegemilBabyMapper.bestReviewList();
-	}
+	}	
 	
 	//아기모델센발대회 - 이달의모델 조회
 	@Override
 	public List<VegemilBabyCalendarModelDTO> selectModelList() {
 		return vegemilBabyMapper.selectModelList();
 	}
+	
 	
 	
 	
