@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>베지밀 레시피</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script th:src="@{/app-assets/admin/recipe/recipeMain.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">베지밀 레시피</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                    	<a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                    	<a href="#">쿡앤쿡 레시피</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">베지밀 레시피
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-md-1 col-12">
+												등록일
+											</div>
+	
+											<div class="col-md-4 col-12">
+	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+	
+	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
+	
+													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
+	                                            </div>
+											</div>
+											<div class="col-md-3 col-12">
+												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
+											</div>
+										</div>
+										<!-- 메인진열 -->
+										<!-- 
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												진열 
+											</div>
+											<div class="col-md-2 col-4">
+												<div class="form-check form-switch">진열여부
+													<input type="checkbox" class="form-check-input"  id="mDisplay" name="mDisplay" value="1" />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											
+										</div>
+										 -->
+										<!-- //메인진열 -->
+										<div class="row mb-1">
+											<div class="col-md-1 col-3">
+												상세검색
+											</div>
+											<div class="col-md-4 col-4">
+												<input type="text" id="searchWord" class="form-control" name="searchKeyword" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="cStartdate" id="cStartdate" value=""/>
+												<input type="hidden" class="form-control" name="cEnddate" id="cEnddate" value=""/>
+												
+											</div>
+										</div>
+										<hr>
+										<div class="card-header">
+											<h4 class="card-title">등록</h4>
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-2 col-3">
+												<label class="form-check-label p-1" for="cate">카테고리</label>
+												<select class="form-select" id="cate" name="cate">
+													<option>카테고리</option>
+													<option value="계절요리">계절요리</option>
+													<option value="디저트">디저트</option>
+													<option value="브런치">브런치</option>
+													<option value="스페셜">스페셜</option>
+													<option value="영양간식">영양간식</option>
+													<option value="영유아식">영유아식</option>
+													<option value="전통요리">전통요리</option>
+													<option value="홈카페">홈카페</option>
+												</select>
+											</div>
+											
+											<div class="col-md-4 col-4">
+												<label class="form-check-label p-1" for="youtubeId">유튜브 url</label>
+												<input type="text" class="form-control" id="youtubeId" name="youtubeId" placeholder="영상주소" />
+											</div>
+											<div class="col-md-3 col-3">
+												<label class="form-check-label p-1" for="code">썸네일 이미지 코드</label>
+												<input type="text" class="form-control" id="code" name="code" value="RECIPE_0000"/>
+											</div>
+											<!-- <div class="col-md-2 col-3">
+												<input id="frm_Photo_i2"  type="file" accept=".png,.gif,.jpg" name="fileName" placeholder="이미지">
+											</div> -->
+											<div class="col-md-2 col-4">
+												<label class="form-check-label p-2" for="active"></label>
+												<div class="form-check form-switch">진열여부
+													<input type="checkbox" class="form-check-input"  id="active" name="active" value="1"/>
+													<label class="form-check-label" for="listOn"></label>
+												</div>
+											</div>
+											
+										</div>
+										<div class="row mb-1">
+											<div class="col-md-6 col-5">
+												<label class="form-check-label p-1" for="content">제목</label>
+												<input type="text" class="form-control" id="subject" name="subject" placeholder="레시피 제목" />
+											</div>
+											<div class="col-md-4">
+												<label class="form-check-label p-1" for="with">베지밀 제품</label>
+												<select class="form-select" id="with" name="with">
+													<option>제품</option>
+													<option value="베지밀 무첨가 두유">베지밀 무첨가 두유</option>
+													<option value="베지밀 검은콩">베지밀 검은콩</option>
+													<option value="무첨가 두유">무첨가 두유</option>
+													<option value="리얼 코코넛 밀크">리얼 코코넛 밀크</option>
+													<option value="리얼 코코넛">리얼 코코넛</option>
+													<option value="리얼 아몬드">리얼 아몬드</option>
+													<option value="레드빈 베지밀">레드빈 베지밀</option>
+													<option value="녹차 베지밀">녹차 베지밀</option>
+													<option value="녹차 베지밀 프레쉬">녹차 베지밀 프레쉬</option>
+													<option value="국산콩 진한 콩국">국산콩 진한 콩국</option>
+													<option value="국산콩 두유">국산콩 두유</option>
+													<option value="검은콩 두유">검은콩 두유</option>
+													<option value="17곡 한끼 두유">17곡 한끼 두유</option>
+												</select>
+											</div>
+										</div>
+										<div class="row mb-1">
+											<div class="col-sm-10">
+												<label class="form-check-label p-1" for="content">내용</label>
+												<textarea class="form-control" rows="4" cols="6" name="content" id="content"></textarea>
+											</div>
+										</div>
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:btnSave('', 'I');" class="btn btn-primary me-1">등록</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+                
+
+				<!-- 달력모델선정 -->
+				<section id="basic-horizontal-layouts">
+					<div class="row" >
+						<div class="col-12">
+							<div class="card">								
+								<div class="table-responsive">
+									<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+										<colgroup>
+											<col width="3%">
+											<col width="8%">
+											<col width="11%">
+											<col width="10%">
+											<col width="11%">
+											<col width="15%">
+											<col width="12%">
+											<col width="7%">
+											<col width="5%">
+											<col width="5%">
+											<col width="6%">
+											<col width="6%">
+										
+										</colgroup>
+										<thead>
+											<tr>
+												<th>No.</th>
+												<th>카테고리</th>
+												<th>코드</th>
+												<th>제품</th>
+												<th>제목</th>
+												<th>내용</th>
+												<th>영상</th>
+												<th>작성일</th>
+												<th>전시</th>
+												<th>조회</th>
+												<th>수정</th>
+												<th>삭제</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+                </section>
+				<!-- //달력모델선정 -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <form id="form" method="POST">
+    	<input type="hidden" id="cIdx" name="cIdx" />
+    	<input type="hidden" id="cCate" name="cCate" />
+    	<input type="hidden" id="cSubject" name="cSubject" />
+    	<input type="hidden" id="cYoutubeId" name="cYoutubeId" />
+    	<input type="hidden" id="cFilename" name="cFilename" />
+    	<input type="hidden" id="cVactive" name="cVactive" />
+    	<input type="hidden" id="cContent" name="cContent" />
+    	<input type="hidden" id="cWith" name="cWith" />
+    	<input type="hidden" id="cCode" name="cCode" />
+    	<input type="hidden" id="action" name="action" />
+    </form>
+    
+    </th:block>
+    
+</html>

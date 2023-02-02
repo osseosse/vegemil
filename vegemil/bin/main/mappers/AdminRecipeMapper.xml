@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminRecipeMapper">
+
+	<!-- m_recipe 레시피 칼럼  -->
+	<sql id="recipeColumns">
+		c_idx,
+		c_writedate,
+		c_cate,
+		c_code,
+		c_subject,
+		c_content,
+		c_hit, 
+		c_cur, 
+		c_has_mvp, 
+		c_with, 
+		mbs_check, 
+		c_bvactive, 
+		c_vactive, 
+		c_youtube_id
+	</sql>
+	
+	<!-- 베지밀 레시피 리스트  -->
+	
+	<select id="selectBeanSoupVideoList" resultType="com.vegemil.domain.AdminRecipeDTO" parameterType="com.vegemil.domain.AdminRecipeDTO">
+		SELECT
+		  <include refid="recipeColumns" />
+		FROM
+			<choose>
+				<when test='cStartdate != "" and cStartdate != null and cEnddate != "" and cEnddate != null'  >
+			 	   (select * 
+			 	   from dbvegemilcokr.m_recipe 
+			 	   where
+			 	   		c_writedate between DATE(#{cStartdate, jdbcType=VARCHAR})
+			 	   		AND DATE(#{cEnddate, jdbcType=VARCHAR})+1
+			 	   	) tb
+			 	</when>
+				<otherwise>
+					m_recipe
+				</otherwise>
+			</choose>
+		WHERE 
+			1=1
+			<if test='searchKeyword != "" and searchKeyword != null'>
+ 				AND c_subject like CONCAT('%',#{searchKeyword},'%')
+ 				OR c_content like CONCAT('%',#{searchKeyword},'%')
+ 				OR c_cate like CONCAT('%',#{searchKeyword},'%')
+			</if> 
+		ORDER BY
+			c_idx DESC
+	</select>
+	
+	<insert id="insertVegemilRecipe" parameterType="com.vegemil.domain.AdminRecipeDTO" useGeneratedKeys="true" keyProperty="cIdx">
+		INSERT INTO m_recipe (
+			c_writedate,
+			c_cate,
+			c_code,
+			c_subject,
+			c_content,
+			c_hit, 
+			c_cur, 
+			c_has_mvp, 
+			c_with, 
+			mbs_check, 
+			c_bvactive, 
+			c_vactive, 
+			c_youtube_id
+		) VALUES (
+			NOW()			  ,
+			#{cCate}  		  , 
+			#{cCode} 		  , 	
+			#{cSubject}       , 
+			#{cContent}       , 
+			0           	  ,
+			'N'		 		  ,
+			'N'				  , 
+			#{cWith}	      , 
+			0                 ,  
+			0                 ,  
+			#{cVactive}		  ,  
+			#{cYoutubeId}       
+		)
+	</insert>
+	
+	<delete id="deleteRecipeData" parameterType="String">
+		delete from m_recipe where c_idx = #{cIdx}
+	</delete>
+	
+	<update id="updateRecipeData" parameterType="com.vegemil.domain.AdminRecipeDTO">
+		update m_recipe
+		set
+			c_cate		= #{cCate},      
+			c_code		= #{cCode},      
+			c_subject	= #{cSubject},   
+			c_content	= #{cContent},   
+			c_with		= #{cWith},      
+			c_vactive	= #{cVactive},   
+			c_youtube_id= #{cYoutubeId}
+		where
+			c_idx = #{cIdx}
+	
+	</update>
+	
+	<update id="updatecVactiveStatus" parameterType="com.vegemil.domain.AdminRecipeDTO">
+		update m_recipe 
+		set	
+			c_vactive = #{cVactive}
+		where
+			c_idx = #{cIdx}
+	</update>
+	
+</mapper>
