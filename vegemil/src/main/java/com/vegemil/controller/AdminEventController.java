@@ -48,16 +48,53 @@ public class AdminEventController {
 	private AdminEventService adminEventService;
 	
 	//이벤트 등록 페이지
-	@GetMapping("/event/eventAdd")
-	public String moveEventAddPage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
+//	@GetMapping("/event/eventAdd")
+//	public String moveEventAddPage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
+//		
+//		/*
+//		 * AdminEventDTO eventDto = adminEventService.getEventDetail(eIdx);
+//		 * model.addAttribute("eventInfo", eventDto);
+//		 */
+//		
+//		return "admin/event/eventAdd";
+//	}
+	
+	//이벤트 등록 - 베지밀
+	@PostMapping("/event/eventAdd")
+	@ResponseBody
+	public Map<String, Object> saveVegemilEvent(@ModelAttribute("params") final AdminEventDTO params, Model model,
+			HttpServletResponse response, HttpServletRequest request) throws Exception {
+
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		
-		AdminEventDTO eventDto = adminEventService.getEventDetail(eIdx);
-		model.addAttribute("eventInfo", eventDto);
-		
-		return "admin/event/eventAdd";
+		try {			
+			boolean isRegistered = adminEventService.registerEvent(params);			
+			rtnMap.put("result", isRegistered);
+		} catch (DataAccessException e) {
+		} catch (Exception e) {
+		}
+		return rtnMap;
 	}
 	
-	//이벤트 수정 페이지
+	
+	//이벤트 조회페이지 
+	@GetMapping("/event/{viewName}")
+	public String moveEventListPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception {
+		return "admin/event/"+viewName;
+	}
+		
+	//이벤트 조회 - 베지밀
+	@GetMapping("/event/eventVegemilList")
+	public @ResponseBody DataTableDTO getVegemilEventList(
+						@ModelAttribute("params") AdminEventDTO params, Model model, 
+						@RequestParam Map<String, Object> commandMap) {
+		
+		DataTableDTO dataTableDto = adminEventService.getVegemilEventList(commandMap);
+		
+		return dataTableDto;
+	}
+	
+	//이벤트 수정 페이지 - 베지밀
 	@GetMapping("/event/eventUpdate")
 	public String moveEventUpdatePage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
 		
@@ -66,6 +103,17 @@ public class AdminEventController {
 		
 		return "admin/event/eventUpdate";
 	}
+	
+	//이벤트 수정 페이지 - 영유아식
+	@GetMapping("/event/eventUpdateVegemilBaby")
+	public String moveEventUpdateVBPage(@RequestParam(value = "eIdx", required = false) Long eIdx , Model model)throws Exception {
+		
+		AdminEventDTO eventDto = adminEventService.getEventDetailVegemilBaby(eIdx);
+		model.addAttribute("eventInfo", eventDto);
+		
+		return "admin/event/eventUpdateVegemilBaby";
+	}
+
 	
 	//이벤트 수정
 	@PostMapping("/event/eventUpdate")
@@ -88,41 +136,6 @@ public class AdminEventController {
 	
 	
 	
-	//이벤트 등록 - 베지밀
-	@PostMapping("/event/eventAdd")
-	@ResponseBody
-	public Map<String, Object> saveVegemilEvent(@ModelAttribute("params") final AdminEventDTO params, Model model,
-			HttpServletResponse response, HttpServletRequest request) throws Exception {
-
-		Map<String, Object> rtnMap = new HashMap<String, Object>();
-		
-		try {			
-			boolean isRegistered = adminEventService.registerEvent(params);			
-			rtnMap.put("result", isRegistered);
-		} catch (DataAccessException e) {
-		} catch (Exception e) {
-		}
-		return rtnMap;
-	}
-	
-	
-	//이벤트 조회페이지 - 베지밀
-	@GetMapping("/event/eventVegemil")
-	public String moveEventListPage() {
-		return "admin/event/eventVegemil";
-	}
-	
-	//이벤트 조회 - 베지밀
-	@GetMapping("/event/eventVegemilList")
-	public @ResponseBody DataTableDTO getVegemilEventList(
-						@ModelAttribute("params") AdminEventDTO params, Model model, 
-						@RequestParam Map<String, Object> commandMap) {
-		
-		DataTableDTO dataTableDto = adminEventService.getVegemilEventList(commandMap);
-		
-		return dataTableDto;
-	}
-	
 	//이벤트 삭제 - 베지밀
 	@RequestMapping(value = "/event/deleteVegemilEvent", method = { RequestMethod.GET, RequestMethod.POST })
 	public @ResponseBody boolean deleteVegemilEvent(@ModelAttribute("params") AdminEventDTO params, Model model,
@@ -139,6 +152,34 @@ public class AdminEventController {
 			paramMap.put("list", list);
 
 			boolean isDeleted = adminEventService.deleteVegemilEvent(paramMap);
+			if (!isDeleted) {
+				return false;
+			}
+
+		} catch (DataAccessException e) {
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	//이벤트 삭제 - 영유아식
+	@RequestMapping(value = "/event/deleteVegemilBabyEvent", method = { RequestMethod.GET, RequestMethod.POST })
+	public @ResponseBody boolean deleteVegemilBabyEvent(@ModelAttribute("params") AdminEventDTO params, Model model,
+			HttpServletResponse response, HttpServletRequest request) {
+		try {
+			String checkList[] = request.getParameterValues("checkList");
+			log.info("check===========" + checkList);
+			ArrayList<String> list = new ArrayList<>();
+			for (int i = 0; i < checkList.length; i++) {
+				list.add(checkList[i]);
+			}
+
+			Map<String, Object> paramMap = new HashMap<String, Object>();
+			paramMap.put("list", list);
+
+			boolean isDeleted = adminEventService.deleteVegemilBabyEvent(paramMap);
 			if (!isDeleted) {
 				return false;
 			}

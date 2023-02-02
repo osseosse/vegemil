@@ -31,6 +31,7 @@ public class AdminEventServiceImpl implements AdminEventService {
 	//이벤트 조회 - 베지밀
 	@Override
 	public DataTableDTO getVegemilEventList(Map<String, Object> paramMap) {
+		
 		List<AdminEventDTO> vegemilEventList = Collections.emptyList();
 		DataTableDTO dataTableDto = new DataTableDTO();
 
@@ -69,10 +70,10 @@ public class AdminEventServiceImpl implements AdminEventService {
 				String savefileName = uuid + "_" +file;			
 							
 				//저장 - 실제경로
-				Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
+				//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);
 				
 				//저장 - Test로컬경로
-				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+				Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
 				params.getFileName().transferTo(savePath);				
 				params.setEImg(savefileName);	
@@ -110,9 +111,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 				String savefileName = uuid + "_" +file;			
 				
 				//저장 - 실제경로
-				Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);				
+				//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);				
 				//저장 - Test로컬경로
-				//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+				Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 			
 				params.getFileName().transferTo(savePath);				
 				params.setEImg(savefileName);
@@ -134,18 +135,18 @@ public class AdminEventServiceImpl implements AdminEventService {
 					String savefileName = uuid + "_" +file;			
 									
 					//저장 - 실제경로
-					Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);					
+					//Path savePath = Paths.get(uploadPath+ "/upload/EVENT/" + savefileName);					
 					//저장 - Test로컬경로					
-					//Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
+					Path savePath = Paths.get("D:/upload/admin/" + savefileName);											
 				
 					params.getFileName().transferTo(savePath);				
 					params.setEImg(savefileName);
 					params.setEImgOriginal(originalName);
 										
 					//삭제 - 실제경로
-					String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;
+					//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;
 					//삭제 - Test로컬경로						
-					//String storedfilePath = "D:/upload/admin/" + storedImg;
+					String storedfilePath = "D:/upload/admin/" + storedImg;
 										
 			        File deleteFile = new File(storedfilePath);
 			        if(deleteFile.exists()) {			            
@@ -181,9 +182,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 				System.out.println("DB에  파일이 없습니다");
 			}else {
 				//삭제 - 실제경로
-				String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
+				//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
 				//삭제 - Test로컬경로						
-				//String storedfilePath = "D:/upload/admin/" + storedImg;
+				String storedfilePath = "D:/upload/admin/" + storedImg;
 				
 		        File deleteFile = new File(storedfilePath);
 		        if(deleteFile.exists()) {			            
@@ -199,10 +200,50 @@ public class AdminEventServiceImpl implements AdminEventService {
 		queryResult = adminEventMapper.deleteVegemilEvent(paramMap);		
 		return (queryResult > 0)?  true : false;
 	}
+	
+	//이벤트삭제 - 영유아식
+	@Override
+	public boolean deleteVegemilBabyEvent(Map<String, Object> paramMap) {
+				
+		ArrayList<String> eventList = (ArrayList<String>) paramMap.get("list");
+		
+		for(int i = 0; i< eventList.size(); i++) {
+			Long idx = Long.parseLong(eventList.get(i));
+			String storedImg = adminEventMapper.selectImgFileVB(idx);
+			
+			if(storedImg == null || storedImg.equals("") ) { // DB에 첨부 파일 존재			
+				System.out.println("DB에  파일이 없습니다");
+			}else {
+				//삭제 - 실제경로
+				//String storedfilePath = uploadPath+ "/upload/EVENT/" + storedImg;			
+				//삭제 - Test로컬경로						
+				String storedfilePath = "D:/upload/admin/" + storedImg;
+				
+		        File deleteFile = new File(storedfilePath);
+		        if(deleteFile.exists()) {			            
+		            deleteFile.delete(); 			            
+		            System.out.println("파일을 삭제하였습니다.");			            
+		        } else {
+		            System.out.println("파일이 존재하지 않습니다.");
+		        }
+			}	
+		}
 
+		int queryResult = 0;		
+		queryResult = adminEventMapper.deleteVegemilBabyEvent(paramMap);		
+		return (queryResult > 0)?  true : false;
+	}
+
+	// 베지밀 이벤트 상세조회
 	@Override
 	public AdminEventDTO getEventDetail(Long eIdx) {
 		return adminEventMapper.selectEventInfoDetail(eIdx);
+	}
+
+	//영유아식 이벤트 상세조회
+	@Override
+	public AdminEventDTO getEventDetailVegemilBaby(Long eIdx) {
+		return adminEventMapper.selectEventInfoDetailVegemilBaby(eIdx);
 	}
 	
 	

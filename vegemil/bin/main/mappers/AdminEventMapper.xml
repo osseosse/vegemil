@@ -16,11 +16,16 @@
 	</sql>	
 	
 	<!-- 베지밀 이벤트 갯수  조회-->
-	<select id="selectVegemilEventTotalCount" parameterType="com.vegemil.domain.AdminEventDTO" resultType="int">
+	<select id="selectVegemilEventTotalCount" parameterType="com.vegemil.domain.AdminEventDTO" resultType="int">		
 		SELECT
 			COUNT(*)
 		FROM
-			m_event
+			<if test='category == "vegemil" '>
+				m_event
+			</if>
+			<if test='category == "vegemilBaby" '>
+				m_event_brandBaby
+			</if>
 		WHERE 1=1
 		<choose>
 			<when test='gubun == "1" '>
@@ -38,10 +43,16 @@
 	
 	<!-- 베지밀 이벤트 조회 -->
 	<select id="selectVegemilEventList" parameterType="com.vegemil.domain.AdminEventDTO" resultType="com.vegemil.domain.AdminEventDTO">
+		
 		SELECT 			
 			<include refid="vegemilEventList" />			
 		FROM
-			m_event
+			<if test='category == "vegemil" '>
+				m_event
+			</if>
+			<if test='category == "vegemilBaby" '>
+				m_event_brandBaby
+			</if>
 		WHERE 1=1				
 		<choose>
 			<when test='gubun == "1" '>
@@ -63,7 +74,14 @@
 	
 	<!-- 베지밀 이벤트  등록 -->
 	<insert id= "insertEvent" parameterType="com.vegemil.domain.AdminEventDTO">
-		INSERT INTO m_event(
+		INSERT INTO 
+			<if test='category == "vegemil" '>
+				m_event
+			</if>
+			<if test='category == "vegemilBaby" '>
+				m_event_brandBaby
+			</if>			
+			(
 			e_subject,
 			e_content,
 			e_uri,
@@ -86,10 +104,15 @@
 		)	
 	</insert>
 	
-	<!-- 베지밀 이벤트  등록 -->
+	<!-- 베지밀 이벤트  수정 -->
 	<update id="updateEvent" parameterType="com.vegemil.domain.AdminEventDTO">
 		UPDATE 
-			m_event 
+			<if test='category == "vegemil" '>
+				m_event
+			</if>
+			<if test='category == "vegemilBaby" '>
+				m_event_brandBaby
+			</if> 
 		SET 
 			e_subject = #{eSubject},
 			e_content = #{eContent},
@@ -107,8 +130,7 @@
 		WHERE 
 			e_idx = #{eIdx}  	
 	</update>
-	
-	
+		
 	
 	<!-- 베지밀 이벤트 삭제 -->
 	<update id="deleteVegemilEvent" parameterType="hashMap">		
@@ -119,7 +141,16 @@
 	  </foreach>
 	</update>
 	
-	<!-- 첨부파일 조회 - 원본명 -->
+	<!-- 영유아식 이벤트 삭제 -->
+	<update id="deleteVegemilBabyEvent" parameterType="hashMap">		
+		DELETE FROM m_event_brandBaby
+		 WHERE e_idx IN
+      <foreach collection='list' index='index' item='idx' open='(' close=')' separator=','> 
+		 #{idx, jdbcType=VARCHAR}
+	  </foreach>
+	</update>
+	
+	<!-- 첨부파일 조회 (베지밀)- 원본명 -->
 	<select id="selectImgFileOriginal" parameterType="long" resultType="String">
 		SELECT 
 			e_img_original 
@@ -128,8 +159,18 @@
 		WHERE
 			e_idx = #{eIdx}
 	</select>
+
+	<!-- 첨부파일 조회 (영유아식)- 원본명 -->
+	<select id="selectImgFileOriginalVB" parameterType="long" resultType="String">
+		SELECT 
+			e_img_original 
+		FROM 
+			m_event_brandBaby 			
+		WHERE
+			e_idx = #{eIdx}
+	</select>
 		
-	<!-- 첨부파일 조회 - 변환명 -->
+	<!-- 첨부파일 조회(베지밀) - 변환명 -->
 	<select id="selectImgFile" parameterType="long" resultType="String">
 		SELECT 
 			e_img 
@@ -138,12 +179,33 @@
 		WHERE
 			e_idx = #{eIdx}
 	</select>
+	
+	<!-- 첨부파일 조회(영유아식) - 변환명 -->
+	<select id="selectImgFileVB" parameterType="long" resultType="String">
+		SELECT 
+			e_img 
+		FROM 
+			m_event_brandBaby			
+		WHERE
+			e_idx = #{eIdx}
+	</select>
+	
+	
 
  	<!-- 베지밀 이벤트 상세 조회 --> 
  	<select id="selectEventInfoDetail" parameterType="long" resultType="com.vegemil.domain.AdminEventDTO">
 		SELECT *
 		FROM
 			m_event
+		WHERE		
+			e_idx = #{eIdx}
+	</select>
+	
+	<!-- 영유아식 이벤트 상세 조회 --> 	
+	<select id="selectEventInfoDetailVegemilBaby" parameterType="long" resultType="com.vegemil.domain.AdminEventDTO">
+		SELECT *
+		FROM
+			m_event_brandBaby
 		WHERE		
 			e_idx = #{eIdx}
 	</select>

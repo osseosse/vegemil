@@ -18,9 +18,15 @@ public interface AdminEventService {
 	
 	//이벤트삭제 - 베지밀
 	public boolean deleteVegemilEvent(Map<String, Object> paramMap);
+
+	//이벤트삭제 - 영유아식
+	public boolean deleteVegemilBabyEvent(Map<String, Object> paramMap);
 	
 	//이벤트 상세 조회 - 베지밀
 	public AdminEventDTO getEventDetail(Long eIdx);
+
+	//이벤트 상세 조회 - 영유아식
+	public AdminEventDTO getEventDetailVegemilBaby(Long eIdx);
 
 	
 	

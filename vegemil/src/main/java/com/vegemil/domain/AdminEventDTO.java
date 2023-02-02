@@ -11,6 +11,8 @@ public class AdminEventDTO extends AdminCommonDTO {
 
 	private MultipartFile fileName;
 	
+	private String category;
+	
 	/** 번호 (PK) */
 	private Long eIdx;
 

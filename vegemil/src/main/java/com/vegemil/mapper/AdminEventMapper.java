@@ -25,15 +25,26 @@ public interface AdminEventMapper {
 	/* 베지밀 이벤트  삭제*/
 	public int deleteVegemilEvent(Map<String, Object> paramMap);
 	
+	/* 영유아식 이벤트  삭제*/
+	public int deleteVegemilBabyEvent(Map<String, Object> paramMap);
+	
 	/* 베지밀 이벤트 파일 조회 - 변환명 */
-	public String selectImgFile(Long eIdx);
+	public String selectImgFile(Long eIdx);	
+	/* 영유아식 이벤트 파일 조회 - 변환명 */
+	public String selectImgFileVB(Long idx);
 
 	/* 베지밀 이벤트 파일 조회 - 원본명 */
 	public String selectImgFileOriginal(Long eIdx);
+	/* 베지밀 이벤트 파일 조회 - 변환명 */
+	public String selectImgFileOriginalVB(Long eIdx);
 	
 	/* 베지밀 이벤트 상세 조회  */
 	public AdminEventDTO selectEventInfoDetail(Long eIdx);
 
+	/* 영유아식 이벤트 상세 조회  */
+	public AdminEventDTO selectEventInfoDetailVegemilBaby(Long eIdx);
+
+	
 
 
 	

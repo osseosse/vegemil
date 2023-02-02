@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>육아정보 수정</title>
+		<title>베지밀 이벤트 수정</title>
 	</th:block>
    
 	<th:block layout:fragment="add-css">
@@ -69,10 +69,10 @@
 			   }).done(function(data){
 	    	       console.log('done', data)
 	    	       if(data.result) {
-	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/manage/event/eventVegemil";
+	    	    	   alert('수정되었습니다.');
+	    	    	   window.location.href = "/admin/manage/event/vegemil";
 	    	       }else{
-	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+	    	    	   alert('수정 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }
 	           }).fail(function() {
 	        	   console.log('fail')
@@ -94,14 +94,14 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">육아정보 등록</h2>
+                            <h2 class="content-header-title float-start mb-0">베지밀 이벤트 수정</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">영유아식</a>
+                                    <li class="breadcrumb-item"><a href="#">이벤트관리</a>
                                     </li>
-                                    <li class="breadcrumb-item active">육아정보 등록
+                                    <li class="breadcrumb-item active">베지밀 이벤트 수정
                                     </li>
                                 </ol>
                             </div>
@@ -125,6 +125,7 @@
 		                                    <div class="row">
 													
 												<div class="col-md-1 col-12">진열</div>
+												<input type="hidden"  name="category"  value="vegemil"/>
 											
 												<div class="col-md-2 col-4">
 													<div class="form-check form-switch" >메인 전시

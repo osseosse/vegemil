@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>베지밀 이벤트 내역관리</title>
+		<title>영유아식 이벤트 내역관리</title>
 	</th:block>
 	
 	<th:block layout:fragment="add-css">
@@ -12,7 +12,7 @@
 	
 	<!-- BEGIN: Page Vendor JS-->
 	<th:block layout:fragment="add-script">		
-	    <script th:src="@{/app-assets/admin/event/eventVegemil.js}"></script>	    	       
+	    <script th:src="@{/app-assets/admin/event/vegemilBaby.js}"></script>	    	       
 	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
 	    <script th:src="@{/app-assets/admin/common/common.js}"></script>	    
     </th:block>
@@ -29,14 +29,14 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">베지밀 이벤트관리</h2>
+                            <h2 class="content-header-title float-start mb-0">영유아식 이벤트관리</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">이벤트관리
                                     </li>
-                                    <li class="breadcrumb-item active">베지밀 이벤트관리
+                                    <li class="breadcrumb-item active">영유아식 이벤트관리
                                     </li>
                                 </ol>
                             </div>
@@ -54,36 +54,10 @@
 	                            <div class="card">
 	                            	<div class="card-header">
 										<h4 class="card-title">조회</h4>
+										<input type="hidden"  name="category"  value="vegemilBaby"/>
+										
 									</div>
-									<div class="card-body">
-										<div class="row mb-1">
-											<!-- <div class="col-md-1 col-12">
-												등록일
-											</div> -->	
-											<!-- <div class="col-md-4 col-12">
-	                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" onclick="javascript:selInsertDate(0);" autocomplete="off" checked />
-	                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
-	
-	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" onclick="javascript:selInsertDate(1);" autocomplete="off" />
-	                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
-	
-	                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" onclick="javascript:selInsertDate(2);" autocomplete="off" />
-	                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
-	
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" onclick="javascript:selInsertDate(3);" autocomplete="off" />
-	                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
-	
-													<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" onclick="javascript:selInsertDate(4);" autocomplete="off" />
-	                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
-	                                            </div>
-											</div> -->
-											<!-- <div class="col-md-3 col-12">
-												<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
-											</div> -->
-										</div>
-										
-										
+									<div class="card-body">																				
 										<div class="row mb-1 ">
 											<div class="col-md-1 col-12">
 												구분

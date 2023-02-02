@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>이벤트 등록</title>
+		<title>영유아식 이벤트 수정</title>
 	</th:block>
    
 	<th:block layout:fragment="add-css">
@@ -33,15 +33,13 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
-	       /*<![CDATA[*/
-	       function btnSave(){
-	    	   const form = document.form;
-	    	   /* form.mbsContent.value = quill.root.innerHTML;*/
+	       
+	       
+	       function btnUpdate(){
+	    	   const form = document.form;	    	   
 	    	   form.eActive.value = form.eActive.value == "on"?"1":"0";
 	    	   form.eBvactive.value = form.eBvactive.value == "on"?"1":"0"; 
 	    	   const formData = new FormData(form);
-	    	  /*  formData.append('uploadFile', $('#uploadFile')[0].files[0])
-	    	   formData.append('1', '2'); */
 	    	   
 	    	   if(form.eSubject.value == "") {
 	    		   alert('제목을 작성해 주세요.');
@@ -59,15 +57,11 @@
 	    		   alert('종료일을 작성해 주세요.');
 	    		   return false;
 	    	   }	    	  
- 	    	   if(form.fileName.value == "") {
-	    		   alert('썸네일을 등록해주세요.');
-	    		   return false;
-	    	   } 
-	    	   
+ 	    	   
 	    	   console.log('form', formData);
 
                $.ajax({
-            	   url: '/admin/manage/event/eventAdd',
+            	   url: '/admin/manage/event/eventUpdate',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
@@ -75,10 +69,10 @@
 			   }).done(function(data){
 	    	       console.log('done', data)
 	    	       if(data.result) {
-	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/manage/event/vegemil";
+	    	    	   alert('수정되었습니다.');
+	    	    	   window.location.href = "/admin/manage/event/vegemilBaby";
 	    	       }else{
-	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+	    	    	   alert('수정 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }
 	           }).fail(function() {
 	        	   console.log('fail')
@@ -100,14 +94,14 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">베지밀 이벤트 등록</h2>
+                            <h2 class="content-header-title float-start mb-0">영유아식 이벤트 수정</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">이벤트관리</a>
                                     </li>
-                                    <li class="breadcrumb-item active">베지밀 이벤트 등록
+                                    <li class="breadcrumb-item active">영유아식 이벤트 수정
                                     </li>
                                 </ol>
                             </div>
@@ -117,121 +111,41 @@
               
             </div>
             
-            <div class="content-body">
+            <div class="content-body" th:object="${eventInfo}">
             	<form name="form" th:action="@{/admin/manage/event/eventAdd}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
-	                <!-- Analytics card section -->
-	                <section id="analytics-card">
-						 <!-- <div class="row">
-							<div class="col-md-12 col-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row mb-1 ">
-											
-										<div class="row mb-1">
-											<div class="col-md-1 col-3">
-												진열 
-											</div>
-											
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">육아 전시
-													<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
-													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" />
-													<label class="form-check-label" for="listOn"></label>
-												</div>
-											</div>
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">메인 전시
-													<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
-													<label class="form-check-label" for="listOn"></label>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-	                    	</div>
-	                    </div> -->
-	                </section>
-	                <!--/ Analytics Card section -->
-		
-
+	               
 					<section id="basic-horizontal-layouts">
 						<div class="row" >
 							<div class="col-12">
 								<div class="card">								
 									<div class="card-body ">
 										<!-- Form -->
-	                                    <form action="javascript:;" class="mt-2" onsubmit>
-	                                    	
-	                                    
-	              <!--                       <div class="col-md-12 col-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row mb-1 ">
-											
-										<div class="row mb-1">
-											<div class="col-md-1 col-3">
-												진열 
-											</div>
-											
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">육아 전시
-													<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
-													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" />
-													<label class="form-check-label" for="listOn"></label>
-												</div>
-											</div>
-											<div class="col-md-2 col-4">
-												<div class="form-check form-switch">메인 전시
-													<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
-													<label class="form-check-label" for="listOn"></label>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-	                    </div> -->
-	                                    
-	                                    
-	                                 
+	                                    <form action="javascript:;" class="mt-2" onsubmit>	                                    	
 	                                    
 		                                    <div class="row">
-		                                    <input type="hidden"  name="category"  value="vegemil"/>
 													
 												<div class="col-md-1 col-12">진열</div>
+												<input type="hidden"  name="category"  value="vegemilBaby"/>
 											
 												<div class="col-md-2 col-4">
-													<div class="form-check form-switch" >육아 전시
-														<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" >
-	<!-- 													<input type="checkbox" class="form-check-input"  id="mbsActive" name="mbsActive" th:checked="${babyInfo?.mbsActive}" /> -->
+													<div class="form-check form-switch" >메인 전시
+														<input type="checkbox" class="form-check-input"  id="eActive" name="eActive" th:checked="*{eActive}" >
 														<label class="form-check-label" for="listOn"></label>
 													</div>
 												</div>
 												<div class="col-md-2 col-4">
-													<div class="form-check form-switch">메인 전시
-														<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive"/>
+													<div class="form-check form-switch">육아 전시
+														<input type="checkbox" class="form-check-input"  id="eBvactive" name="eBvactive" th:checked="*{eBvactive}"/>
 														<label class="form-check-label" for="listOn"></label>
 													</div>
 												</div>
-												
-												
-												
 											</div>
-	                                    
-	                                    
-	                                    
-	                                    
-	                                    
 	                                    
 	                                        <div class="row mt-1">
 	                                            <div class="col-md-1 col-12">제목<span class="red_dot">*</span></div>
 	                                            <div class="col-md-5 col-12">
-	                                                <input type="text" id="eSubject" name="eSubject" class="form-control" th:value="${babyInfo?.eSubject}" placeholder="제목을 작성해주세요" required />
-	                                                <!-- <input type="hidden" id="mbsContent" name="mbsContent" class="form-control" value="" /> -->
-	                                                <input type="hidden" id="eIdx" name="eIdx" class="form-control" th:value="${babyInfo?.eIdx}" /> 
+	                                                <input type="text" id="eSubject" name="eSubject" class="form-control" th:value="*{eSubject}" placeholder="제목을 작성해주세요" required />
+	                                                <input type="hidden" id="eIdx" name="eIdx" class="form-control" th:value="*{eIdx}" /> 
 	                                            </div>
 											</div>
 											
@@ -239,32 +153,34 @@
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">내용</div>
 												<div class="col-md-5 col-12">
-												<input type="text" class="form-control" id="eContent" name="eContent">	                                                
+												<input type="text" class="form-control" id="eContent" name="eContent" th:value="*{eContent}">	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">uri<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="text" class="form-control" id="eUri" name="eUri">	                                                
+												<input type="text" class="form-control" id="eUri" name="eUri" th:value="*{eUri}">	                                                
 												</div>
 											</div>
 											
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">시작일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="eStart" name="eStart" max="2033-01-11" min="2021-01-11" required>	                                                
+												<input type="date" class="form-control" id="eStart" name="eStart" th:value="${#strings.substring(eventInfo.eStart, 0, 10)}" max="2033-01-11" min="2021-01-11" required>	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">종료일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
-												<input type="date" class="form-control" id="eEnd" name="eEnd" max="2033-01-11" min="2021-01-11" required>	                                                
+												<input type="date" class="form-control" id="eEnd" name="eEnd" th:value="${#strings.substring(eventInfo.eEnd, 0, 10)}" max="2033-01-11" min="2021-01-11" required>	                                                
 												</div>
 											</div>
 											<div class="row mt-1">
 												<div class="col-md-1 col-12">썸네일<span class="red_dot">*</span></div>
 												<div class="col-md-5 col-12">
 													<input class="form-control" type="file" id="fileName" name="fileName" accept=".png,.gif,.jpg"  required/>
+													<input th:if="*{eImgOriginal}" type="text" class="form-control" id="fileName2" name="fileName2" th:value="|업로드된 이미지:  *{eImgOriginal}|" readonly>
+													<input th:unless="*{eImgOriginal}" type="text" class="form-control" id="fileName2" name="fileName2" value="업로드된 이미지: 업로드된 이미지가 없습니다." readonly>
 												</div>
 											</div>											
 	                                    </form>
@@ -274,7 +190,7 @@
 										<div class="card-body mb-2">
 											<div class="row">
 												 <div class="col-sm-12">
-													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">등록</button>
+													<button type="button" onclick="btnUpdate();" class="btn btn-primary me-1">등록</button>
 													<button type="reset"  onclick="history.back()" class="btn btn-outline-secondary">취소</button>
 												</div>
 											</div>
