@@ -972,8 +972,9 @@ window.colors = {
       switchToLayout = 'dark-layout';
     } else {
       // Switch to light
-      switchToLayout = prevLayout ? prevLayout : 'light-layout';
+      switchToLayout = 'light-layout';
     }
+    
     // Set Previous skin in local db
     localStorage.setItem(dataLayout + '-prev-skin', currentLayout);
     // Set Current skin in local db
@@ -987,6 +988,7 @@ window.colors = {
       background: 'inherit',
       'box-shadow': 'inherit'
     });
+    
     $('.horizontal-menu .horizontal-menu-wrapper.header-navbar').css('background', 'inherit');
   });
 
