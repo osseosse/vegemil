@@ -40,7 +40,7 @@ public class AdminController extends UiUtils {
 	@Autowired
 	private MailService mailService;
 
-	@RequestMapping(value = "/admin/index")
+	@RequestMapping(value = "/admin/manage")
 	public String adminIndex(HttpServletRequest req, Model model) {
 		
 		List<AdminSupportDTO> supportList = Collections.emptyList();

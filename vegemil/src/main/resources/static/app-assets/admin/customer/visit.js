@@ -186,8 +186,8 @@ var createTable = function() {
         { data: 'vPcount' },
         { data: 'vOrg' },
         { data: 'vHp' },
-        { data: 'vEmail'  },
         { data: 'vMemo' },
+        { data: 'vAdminmemo'  },
         { data: 'vApptime' },
         { data: 'vAppdate' },
         { data: 'vConfdate' },
@@ -265,7 +265,7 @@ var createTable = function() {
       		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '-';
+      			if(data==null)	return '';
       			else	return data;
       		}
       	},
@@ -273,7 +273,7 @@ var createTable = function() {
       		targets: 8,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '-';
+      			if(data==null)	return '';
       			else	return data;
       			
       		}

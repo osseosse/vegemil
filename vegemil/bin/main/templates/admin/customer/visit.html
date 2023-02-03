@@ -53,130 +53,6 @@
             	<form id="frm" name="frm" method="POST">
                 	<!-- Analytics card section -->
 	                <section id="analytics-card">
-	                	<div class="row">
-						<!-- 설정 -->
-						<div class="col-md-12 col-12">
-							<div class="card">
-								<div class="card-header">
-									<h4 class="card-title">설정</h4>
-								</div>
-								<div class="card-body">
-									<div class="row mb-1 ">
-										<div class="col-md-1 col-12">신청마감</div>
-										<div class="col-md-1 text-right">매월</div>
-										<div class="col-md-1 col-4">		
-											<input type="text" id="sClosedate#" class="form-control" name="sClosedate" th:value="${visitSetup.sClosedate}"  />
-										</div>일
-									</div>
-									<div class="row mb-1 ">
-										<div class="col-md-1 col-12">혹한기설정</div>
-										<div class="col-md-11 col-12">		
-											<div class="form-check center-ck ">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="01" th:checked="${#strings.contains(visitSetup.sMonth2,'01')}"/>1월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="02" th:checked="${#strings.contains(visitSetup.sMonth2,'02')}" />2월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="03" th:checked="${#strings.contains(visitSetup.sMonth2,'03')}" />3월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="04" th:checked="${#strings.contains(visitSetup.sMonth2,'04')}" />4월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="05" th:checked="${#strings.contains(visitSetup.sMonth2,'05')}" />5월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="06" th:checked="${#strings.contains(visitSetup.sMonth2,'06')}"  />6월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="07" th:checked="${#strings.contains(visitSetup.sMonth2,'07')}"  />7월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="08" th:checked="${#strings.contains(visitSetup.sMonth2,'08')}"  />8월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="09" th:checked="${#strings.contains(visitSetup.sMonth2,'09')}"  />9월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="10" th:checked="${#strings.contains(visitSetup.sMonth2,'10')}"  />10월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="11" th:checked="${#strings.contains(visitSetup.sMonth2,'11')}"  />11월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth2" value="12" th:checked="${#strings.contains(visitSetup.sMonth2,'12')}"  />12월
-											</div>
-										</div>
-									</div>
-									<div class="row mb-1">
-										<div class="col-md-1 col-3">
-											혹한기 안내
-										</div>
-										<div class="col-md-5 col-4">
-											<input type="text" id="#" class="form-control" name="sMsg2" th:value="${visitSetup.sMsg2}" placeholder="ex)현재 가능한 견학일정이 없습니다." />
-										</div>
-									</div>
-									<div class="row mb-1 ">
-										<div class="col-md-1 col-12">혹서기설정</div>
-										<div class="col-md-11 col-12">		
-											<div class="form-check center-ck ">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="01" th:checked="${#strings.contains(visitSetup.sMonth1,'01')}" />1월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="02" th:checked="${#strings.contains(visitSetup.sMonth1,'02')}" />2월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="03" th:checked="${#strings.contains(visitSetup.sMonth1,'03')}" />3월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="04" th:checked="${#strings.contains(visitSetup.sMonth1,'04')}" />4월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="05" th:checked="${#strings.contains(visitSetup.sMonth1,'05')}" />5월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="06" th:checked="${#strings.contains(visitSetup.sMonth1,'06')}" />6월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="07" th:checked="${#strings.contains(visitSetup.sMonth1,'07')}" />7월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="08" th:checked="${#strings.contains(visitSetup.sMonth1,'08')}" />8월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="09" th:checked="${#strings.contains(visitSetup.sMonth1,'09')}" />9월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="10" th:checked="${#strings.contains(visitSetup.sMonth1,'10')}" />10월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="11" th:checked="${#strings.contains(visitSetup.sMonth1,'11')}" />11월
-											</div>
-											<div class="form-check center-ck ml-20">
-												<input type="checkbox" class="form-check-input" name="sMonth1" value="12" th:checked="${#strings.contains(visitSetup.sMonth1,'12')}" />12월
-											</div>
-										</div>
-									</div>
-									<div class="row mb-1">
-										<div class="col-md-1 col-3">
-											혹서기 안내
-										</div>
-										<div class="col-md-5 col-4">
-											<input type="text" id="#" class="form-control" name="sMsg1" th:value="${visitSetup.sMsg1}" placeholder="ex)현재 가능한 견학일정이 없습니다." />
-										</div>
-									</div>
-									<hr />
-									<div class="row">
-										 <div class="col-sm-12">
-											<button type="button" onclick="javascript:btnSetupSave();" class="btn btn-primary me-1">저장</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //설정 -->
-                    </div>
 						<div class="row">
 							<!-- 조회 -->
 							<div class="col-md-12 col-12">
@@ -253,13 +129,13 @@
 												<col width="4%">
 												<col width="7%">
 												<col width="9%">
-												<col width="9%">
+												<col width="15%">
 												<col width="15%">
 												<col width="4%">
-												<col width="6%">
-												<col width="6%">
-												<col width="6%">
 												<col width="5%">
+												<col width="5%">
+												<col width="5%">
+												<col width="4%">
 											</colgroup>
 											<thead>
 												<tr>
@@ -274,8 +150,8 @@
 													<th>인원</th>
 													<th>단체명</th>
 													<th>H.P</th>
-													<th>E-mail</th>
-													<th>메모</th>
+													<th>문의</th>
+													<th>답변</th>
 													<th>타임</th>
 													<th>신청일자</th>
 													<th>확정일자</th>

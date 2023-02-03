@@ -86,8 +86,8 @@
 								<li>
 									<dl class="fac_people">
 										<dd>
-											<input type="text" class="inp02 pr5  w70 text-right " name="vPcount" id="vPcount" maxlength="2"> <span>명(최대 40명)</span>
-											<p class="error" id="vPcountCheck" style="display: none;">인원을 확인해 주세요(최대 40명)</p>
+											<input type="text" class="inp02 pr5  w70 text-right " name="vPcount" id="vPcount" maxlength="2"> <span>명(최대 45명) </span>
+											<p class="error" id="vPcountCheck" style="display: none;"> 인원을 확인해 주세요</p>
 	
 										</dd>
 									</dl>
@@ -205,7 +205,7 @@
 		if($.trim(vAppdate).length > 0
 		&& $.trim(vOrg).length > 0
 		&& $.trim(vPcount).length > 0
-		&& $.trim(vPcount) <= '40'
+		&& $.trim(vPcount) <= '45'
 		&& $.trim(vEmail).length > 0
 		&& $.trim(vArea).length > 0 
 		&& $("input:radio[name='vApptime']").is(":checked") == true
@@ -222,7 +222,7 @@
 	
 	$('#vPcount').on("keyup", function() {
 		$(this).val($(this).val().replace(/[^0-9]/g,""));
-		if($('#vPcount').val() > '40') {
+		if($('#vPcount').val() > '45') {
 			$("#vPcountCheck").css('display', 'inline-block');
 		} else {
 			$("#vPcountCheck").css('display', 'none');
