@@ -182,6 +182,7 @@ var createTable = function() {
       	{ data: 'vIdx' },
       	{ data: 'vIdx' },
       	{ data: 'vIdx' },
+      	{ data: 'vWritedate' },
       	{ data: 'vName' },
         { data: 'vPcount' },
         { data: 'vOrg' },
@@ -191,7 +192,6 @@ var createTable = function() {
         { data: 'vApptime' },
         { data: 'vAppdate' },
         { data: 'vConfdate' },
-        { data: 'vDisplay' },
         { data: 'vConfstat' }
         
       ],
@@ -232,7 +232,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
-      			else	return data;
+      			else	return data.substr(0, 10);
 							
 							
       		}
@@ -241,15 +241,17 @@ var createTable = function() {
       		targets: 4,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '-';
+				if(data==null)	return '-';
       			else	return data;
+							
+							
       		}
       	},
       	{
       		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				if(data==null)	return '-';
+      			if(data==null)	return '-';
       			else	return data;
       		}
       	},
@@ -265,7 +267,7 @@ var createTable = function() {
       		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '';
+				if(data==null)	return '-';
       			else	return data;
       		}
       	},
@@ -275,11 +277,19 @@ var createTable = function() {
       		render: function (data, type, full, meta) {
       			if(data==null)	return '';
       			else	return data;
-      			
       		}
       	},
       	{
       		targets: 9,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+      			if(data==null)	return '';
+      			else	return data;
+      			
+      		}
+      	},
+      	{
+      		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
@@ -289,7 +299,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 10,
+      		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
@@ -298,28 +308,12 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 11,
+      		targets: 12,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null || data == "0000-00-00 00:00:00")	return '-';
       			else	return data.substr(5, 5);
       			
-      		}
-      	},
-      	{
-      		targets: 12,
-      		orderable: false,
-      		render: function (data, type, full, meta) {
-				let checked = '';
-				if(full['vDisplay'] == 1) {
-					checked = 'checked';
-				}
-	            return (
-	              '<div class="form-check form-switch center-ck">'+
-	                '<input type="checkbox" class="form-check-input" '+checked+' id="vDisplay'+full['vIdx']+ '" name="listOn"'+ 'value="'+full['vIdx']+ '" onclick="javascript:btnDisplay('+full['vIdx']+')" >'+
-					'<label class="form-check-label" for="listOn"></label>'+
-			      '</div>'
-	            );
       		}
       	},
       	{
@@ -446,7 +440,7 @@ function getModal(obj) {
 	modal +=							'<th>주소<span class="text-warning"> '+obj.vAddr+'</span></th>'
 	modal +=						'</tr>'
 	modal +=						'<tr>'
-	modal +=							'<th>신청일<span class="text-warning"> '+obj.vWritedate+'</span></th>'
+	modal +=							'<th>등록일자<span class="text-warning"> '+obj.vWritedate+'</span></th>'
 	modal +=							'<th>지역<span class="text-warning"> '+obj.vArea+'</span></th>'
 	modal +=							'<th colspan="2">'
 	modal +=								'<div class="form-check form-check-inline">'									
