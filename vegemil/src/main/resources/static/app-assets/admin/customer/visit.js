@@ -186,10 +186,9 @@ var createTable = function() {
         { data: 'vPcount' },
         { data: 'vOrg' },
         { data: 'vHp' },
-        { data: 'vTel' },
         { data: 'vEmail'  },
-        { data: 'vWritedate' },
-        { data: 'vAddr' },
+        { data: 'vMemo' },
+        { data: 'vApptime' },
         { data: 'vAppdate' },
         { data: 'vConfdate' },
         { data: 'vDisplay' },
@@ -223,7 +222,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				return (
-					'<a data-bs-toggle="modal" data-bs-target="#large'+full['vIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
+					'<a data-bs-toggle="modal" data-bs-target="#large'+full['vIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세</button></a>'
 					+getModal(full)
       			)
       		}
@@ -274,16 +273,18 @@ var createTable = function() {
       		targets: 8,
       		orderable: false,
       		render: function (data, type, full, meta) {
-	            if(data==null)	return '-';
+      			if(data==null)	return '-';
       			else	return data;
-          }
+      			
+      		}
       	},
       	{
       		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '-';
-      			else	return data;
+				if(data==null)	return '-';
+				else if(data==1) return '오전';
+				else if(data==2) return '오후';
       			
       		}
       	},
@@ -292,7 +293,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
-      			else	return data;
+      			else	return data.substr(5, 5);
       			
       		}
       	},
@@ -300,22 +301,13 @@ var createTable = function() {
       		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
-				if(data==null)	return '-';
-      			else	return data.substr(0, 10);
+				if(data==null || data == "0000-00-00 00:00:00")	return '-';
+      			else	return data.substr(5, 5);
       			
       		}
       	},
       	{
       		targets: 12,
-      		orderable: false,
-      		render: function (data, type, full, meta) {
-				if(data==null || data == "0000-00-00 00:00:00")	return '-';
-      			else	return data.substr(0, 10);
-      			
-      		}
-      	},
-      	{
-      		targets: 13,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				let checked = '';
@@ -331,12 +323,12 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 14,
+      		targets: 13,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
-				else if(full['vCancel']==1) return '취소';
-				else if(data==0 || data==1) return '신청'
+				else if(data==0) return '취소';
+				else if(data==1) return '신청'
 				else if(data==2) return '확정'
       		}
       	}
@@ -501,8 +493,8 @@ function getModal(obj) {
     modal += 												'selected '
 														}
 	modal +=                                            '>확정</option>'
-	modal +=								'<option value="3"'
-														if(obj.vCancel == 1) {
+	modal +=								'<option value="0"'
+														if(obj.vConfstat == 0) {
 	modal +=                                                'selected '	
 														}														
 	modal +=                                            '>취소</option>'

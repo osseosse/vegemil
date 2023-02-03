@@ -232,18 +232,11 @@
 		 /* updateVisit by AdminCustomerMapper.xml */ 
 		UPDATE m_visit 
 		SET 
-		    <if test='vConfstat == "1" or vConfstat =="2" '>
 		    v_confstat = #{vConfstat},
-		    </if>
-		    <if test='vConfstat == "3"  '>
-		    v_cancel = 1,
-		    </if>
 		    v_apptime = #{vApptime},
 		    v_confdate = #{vConfdate},
 		    v_conftime = #{vConftime},
 		    v_adminmemo = #{vAdminmemo}
-		    
-		    
 		WHERE
 		    v_idx = #{vIdx}
 	</update>
