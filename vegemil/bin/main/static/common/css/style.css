@@ -1017,7 +1017,57 @@
     .dcfMdiaBox02 li iframe{width: 100%;}
     .dcfMdiaBox02 li:nth-child(odd){ margin-bottom: 100px;}
     .dcfMdiaBox02 li:nth-child(even){ margin-bottom: 100px;}
-    
+	.youtube-8 {position:relative; height:540px}
+	.countGold {position:relative; background:#E3A62C; color:#fff; font-weight:600; border-radius:50px; padding:5px 6px; top:-20px}
+    ul.videoList {position:relative; width:620px; height:490px; overflow-y:scroll; background: #F5F5F5; padding:30px 20px; border-radius:20px 0 0 20px}
+	ul.videoList li {position:relative; cursor:pointer; display:inline-block; margin-left:9px; margin-right:9px; margin-bottom:30px; vertical-align:top; width:170px}
+	ul.videoList li img {overflow:hidden ; border-radius:15px; width:100% }
+	ul.videoList li.active img {border:2px solid #000}
+	ul.videoList li p {margin-top:15px; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;  width:170px;   overflow:hidden }
+	
+	ul.radioList {position:relative; width:620px; height:490px; overflow-y:scroll;border-top:3px solid #222   }
+	ul.radioList li {position:relative; cursor:pointer; display:inline-block;   vertical-align:top; border-bottom:1px solid #DCDCDC; width:100%;  }
+	ul.radioList li img {width:170px; height:120px;overflow:hidden ; border-radius:15px; }
+	ul.radioList li div {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;  width:170px;   overflow:hidden }
+	ul.radioList li div {display:inline-block;  vertical-align:top}
+	ul.radioList li div:first-child {max-width:150px; width:30%}
+	ul.radioList li div:nth-child(2) {max-width:550px; width:70%; }
+	ul.radioList li a {padding:17px 10px; display:inline-block; width:100% }
+	ul.radioList li:hover {background:#F5F5F5}
+	ul.radioList li.current {background:#F5F5F5 url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_media_arrow.png) no-repeat center right; background-size:30px  }
+	.youtube-7 {max-width:710px; width:100%; height:405px; }
+	.youtube-7 iframe {max-width:710px; width:100%; height:405px; }
+	.youtube-7 video {max-width:710px; width:100%; height:405px; }
+	.cfWrap {position:relative}
+	.scrollbar-3::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);background-color: #F5F5F5;}
+	.scrollbar-3::-webkit-scrollbar{width: 3px;background-color: #F5F5F5;}
+	.scrollbar-3::-webkit-scrollbar-thumb{background-color: #000000;}
+
+
+	.menu-style01 {background:none; position:relative; z-index:100;  width:100% ;overflow:hidden; }
+	.menu-style01 li.current img{ outline: 2px solid #000; }
+
+	
+	
+	
+
+
+
+
+
+	.content-style01 {position:relative; } 
+	.content-style01 > div {clear: both;display: none; }
+	.content-style01 .current { display: block; }
+
+
+
+
+
+
+	
+
+
+
     /* 3000 DCF 영상 공모전 */
     .dcfContestBg{width: 100%; height: 650px; background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/company/dcfContestBg.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center; position: relative; top: -40px;}
     .dcfContestBg > img{position: absolute; bottom: 0; right: 0;}
@@ -1182,7 +1232,7 @@
 
 	/* 3000 main > 일반 */
 	ul.baseList {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center}
-	ul.baseList li {display:inline-block; padding:10px 6.5%;  vertical-align:top; margin:30px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed.png") right 0px repeat-y; }
+	ul.baseList li {display:inline-block; padding:10px 6%;  vertical-align:top; margin:30px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed.png") right 0px repeat-y; }
 	ul.baseList li:last-child {background:none}
 	ul.baseList li a:hover {color:#000; text-decoration:none}
 	
@@ -1233,6 +1283,7 @@
 	.idenBG02 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/main/tab_company02.png) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.idenBG03 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/main/tab_company03.png) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.iden_txt {position:absolute; text-align:left; margin-left:50px; bottom:110px}
+	.iden_txt2 {position:absolute; text-align:left; margin-left:50px; top:60px}
 	
 	/* 3000 베스트 tab */
 	.tabs2 {background:none; position:relative; z-index:100;  width:100% ; border-radius:15px; overflow:hidden; border:1px solid #DCDCDC   } 
@@ -1787,7 +1838,7 @@
 	ul.prd_dCate li a:active {color:#000; font-size:17px; font-weight:500; background-image:#fff url("https://image.edaymall.com/images/dcf/vegemil/img/ico/sub_cate.png") right 7px no-repeat; height:30px; }
 
 
-
+	
 
 
 	
@@ -2423,6 +2474,10 @@
 	.cook-wrap li {width:22.6% !important; }
 	
 
+	/* 1760 미디어 */
+	ul.videoList {position:relative; width:570px; }
+	ul.videoList li { width:140px}
+	ul.radioList {position:relative; width:570px; }
 	
 
 
@@ -2564,6 +2619,7 @@
 	.tabs1 li { list-style:none;  display:block;  margin:0; float:left; width:100px;  background: rgba(0, 0, 0, 0.5);text-align:center }
 	.tabs1 li a {display:inline-block;padding:7px  0; color: #fff; width:100%;text-decoration:none;font-size: 13px;  font-weight:400; letter-spacing:-1px ;    }
 	.iden_txt {position:absolute; text-align:left; margin-left:30px; bottom:50px}
+	.iden_txt2 {position:absolute; text-align:left; margin-left:30px; top:30px}
 	
 	
 	/* 1200 news */
@@ -2606,6 +2662,7 @@
 
 
 	/* 1200 처리절차 */
+	.subMenu {margin-bottom:30px}
 	.subMenu p.btnSubLeft {position:absolute; top:30px; left:20px}
 	.subMenu p.btnSubRight {position:absolute; top:30px; right:20px}
 	.prs {position:relative;border-top:2px solid #222222; border-bottom:2px solid #222222; padding:37px 0; text-align:center}
@@ -2961,6 +3018,18 @@
     .dcfMdiaBox02 li{width: 50%; padding: 0 0px;}
     .dcfMdiaBox02 li:nth-child(odd){padding: 15px; margin-bottom: 30px;}
     .dcfMdiaBox02 li:nth-child(even){padding: 15px; margin-bottom: 30px;}
+	.youtube-8 {position:relative; height:400px; }
+	.youtube-7 {max-width:100%; width:100%; height:405px; }
+	.youtube-7 iframe {max-width:100%; width:100%; height:405px;}
+	.youtube-7 video {max-width:100%; width:100%; height:405px;}
+	.media .pr100 {padding-right:0 !important}
+	.cfWrap {position:relative}
+	.cfWrap .col-md-6 ul.videoList {width:100%; height:290px; }
+	.cfWrap .col-md-6 ul.radioList {width:100%; height:290px; }
+	.cfWrap .col-md-6 ul.videoList li {margin-right:10px; width:120px}
+	.cfWrap .col-md-6 ul.videoList li img {width:120px; height:85px}
+	.cfWrap .col-md-6 ul.videoList li p {width:120px}
+	.cfWrap .col-md-6 {flex:100%; max-width:100%}
 
 	/* 1200 웹진신청 */
 	table.int {width:100%; border:1px solid #ccc; border-radius:10px; }
@@ -3716,6 +3785,8 @@
     .grayBox3 iframe{height: 250px;}
     .dcfMdiaBox02 li{width: 50%;}
     .dcfMdiaBox02 li iframe{height: 110px;}
+	.youtube-8 {position:relative; height:250px; }
+	 ul.videoList {  padding:20px 10px; border-radius:20px 0 0 20px}
     
     
     /* 768 DCF 영상 공모전 */

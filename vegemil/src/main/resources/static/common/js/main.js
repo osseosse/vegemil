@@ -114,13 +114,13 @@ $(".verticalType02").collapse({
 	});
 
 /*================================
- * 	 Main > Floating
+ * 	 Main > Floatin
  *================================*/
 // jQuery Load
 (function($){
 	$(document).ready(function() {
 		
-		//2022-02-18 주문 > 결제금액 계산기
+
 		if (!$('#flotingPage').length){return false}; //#contents -> wrap으로 변경 
 		var limit =  $(window).height() - ($('.floting').height()+00);
 		//alert(limit);
@@ -136,7 +136,7 @@ $(".verticalType02").collapse({
 				targetTop: 40,  
 				snap: true  
 			});  
-		}	// end - 2022-02-18 주문 > 결제금액 계산기
+		}	// 
 
 
 	});
@@ -296,6 +296,7 @@ $(".verticalType02").collapse({
 
 /*================================
  * 	 커뮤니케이션 > 공정거래 > 자율준수 운영현황
+	 회사소개 > 연혁 
  *================================*/
 (function( $ ) {
   $.fn.basicTabs5 = function(options){ /* basicTabs5 변경 */
@@ -321,6 +322,38 @@ $(".verticalType02").collapse({
     });
   };
 }( jQuery ));
+
+
+/*================================
+ * 	 미디어 (TVCF, 인쇄, ETC, 라디오)
+ *================================*/
+(function( $ ) {
+  $.fn.basicTabs6 = function(options){ /* basicTabs6 변경 */
+    var settings = $.extend({
+      active_class: "current",
+      list_class: "tabs6", /* tabe6 변경*/
+      content_class: "tab_content6", /* tab_content6 */
+      starting_tab: 1
+    }, options );
+    var $content = $('.' + settings.content_class);
+    var $list = $('.' + settings.list_class);
+    $content.find('tab_content6 > div').hide();
+    $content.find("div:nth-child(" + settings.starting_tab + ")").show();
+    $list.find("li:nth-child(" + settings.starting_tab + ")").addClass(settings.active_class);
+
+    $("." + settings.list_class + ' li a').click(function(e){
+        $list.find("li").removeClass(settings.active_class);
+        $("." + settings.content_class + " > div").hide();
+        $(this).parent().addClass(settings.active_class);
+        var currentTab = $(this).attr('href');
+        $(currentTab).show();
+        e.preventDefault();
+    });
+  };
+}( jQuery ));
+
+
+
 
 
 /*================================
@@ -352,3 +385,8 @@ $(function() {
 			} else { $(this).removeClass('expand'); }
 		})
 })
+
+/*================================
+ * 	 FAQ 버티칼
+ *================================*/
+
