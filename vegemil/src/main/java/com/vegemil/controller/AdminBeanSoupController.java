@@ -16,11 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -33,8 +35,6 @@ import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBeanSoupNewsDTO;
 import com.vegemil.domain.AdminBeanSoupVideoDTO;
 import com.vegemil.service.AdminBeanSoupService;
-
-import lombok.extern.log4j.Log4j2;
 
 
 
@@ -203,19 +203,29 @@ public class AdminBeanSoupController {
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		try {
 			
-			if("I".equals(beanSoupEvent.getAction())) {
-				String uuid = UUID.randomUUID().toString();
-				String originalName = beanSoupEvent.getFileName().getOriginalFilename();
-				if(!"".equals(originalName)) {
-					String file1 = originalName.substring(originalName.lastIndexOf("\\") + 1);
-					
-					String savefileName1 = uuid + "_" + file1;
-					Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/event/" + savefileName1);
-					beanSoupEvent.getFileName().transferTo(savePath);
-					beanSoupEvent.setMThum(savefileName1);
-				}
-			}
+//			if("I".equals(beanSoupEvent.getAction())) {
+//				if(beanSoupEvent.getMIdx() == null) {
+//					System.out.println("이미지 등록로직 시작");
+//					String uuid = UUID.randomUUID().toString();
+//					String originalName = beanSoupEvent.getFileName().getOriginalFilename();
+//					System.out.println(beanSoupEvent.getFileName());
+//					
+//					if(!"".equals(originalName)) {
+//						String file1 = originalName.substring(originalName.lastIndexOf("\\") + 1);
+//						
+//						String savefileName1 = uuid + "_" + file1;
+//						//저장 - 실제경로
+//						//Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/event/" + savefileName1);
+//						//저장 - Test로컬경로
+//						Path savePath = Paths.get("D:/upload/admin/beanSoup" + savefileName1);		
+//						beanSoupEvent.getFileName().transferTo(savePath);
+//						beanSoupEvent.setMThum(savefileName1);
+//					}
+//					
+//				}
+//			}
 			
+			System.out.println("beanSoupEvent정보: " +beanSoupEvent.toString());
 			boolean isResulted = adminBeanSoupService.saveBeanSoupEvent(beanSoupEvent);
 			rtnMsg.put("result", isResulted);
 		}catch (DataAccessException e) {
@@ -227,4 +237,28 @@ public class AdminBeanSoupController {
 		}
 		return rtnMsg;
     }
+	
+	
+	//쎔네일 수정
+	@RequestMapping(value = "/admin/manage/beanSoup/editImg", method = { RequestMethod.GET, RequestMethod.POST })
+	public boolean updateBeanSoupEventImg(@ModelAttribute("params") AdminBeanSoupEventDTO params, Model model,
+			HttpServletResponse response, HttpServletRequest request) {
+		try {
+
+
+			boolean isEdited = adminBeanSoupService.updateBeanSoupEventImg(params);
+			if (!isEdited) {
+				return false;
+			}
+
+		} catch (DataAccessException e) {
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	
+	
 }

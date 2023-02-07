@@ -27,4 +27,6 @@ public interface AdminBeanSoupService {
 	public List<AdminBeanSoupEventDTO> getBeanSoupEventList(AdminBeanSoupEventDTO params);
 	
 	public boolean saveBeanSoupEvent(AdminBeanSoupEventDTO params);
+
+	public boolean updateBeanSoupEventImg(AdminBeanSoupEventDTO params);
 }

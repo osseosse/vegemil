@@ -125,5 +125,12 @@ public class AdminBeanSoupServiceImpl implements AdminBeanSoupService {
 
 		return (queryResult == 1) ? true : false;
 	}
+
+	@Override
+	public boolean updateBeanSoupEventImg(AdminBeanSoupEventDTO params) {
+
+		
+		return false;
+	}
 	
 }

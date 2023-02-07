@@ -20,4 +20,18 @@ public class AdminBeanSoupEventDTO extends AdminCommonDTO {
 	private Long mType;
 	private String mProduct;
 	private MultipartFile fileName;
+	
+	@Override
+	public String toString() {
+		return "AdminBeanSoupEventDTO [mIdx=" + mIdx + ", mTitle=" + mTitle + ", mStartDate=" + mStartDate
+				+ ", mEndDate=" + mEndDate + ", mIng=" + mIng + ", mDisplay=" + mDisplay + ", mThum=" + mThum
+				+ ", mEdayId=" + mEdayId + ", mContent=" + mContent + ", mType=" + mType + ", mProduct=" + mProduct
+				+ ", mfileName=" + fileName + "]";
+	}
+	
+	
+	
+	
+	
+	
 }

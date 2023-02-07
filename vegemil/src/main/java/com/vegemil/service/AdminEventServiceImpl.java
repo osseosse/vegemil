@@ -1,7 +1,5 @@
 package com.vegemil.service;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;

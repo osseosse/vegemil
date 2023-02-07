@@ -118,26 +118,38 @@
 											<div class="col-md-2 col-3">
 												<input type="text" class="form-control" id="edayId" placeholder="이데이몰ID" />
 											</div>
-											<div class="col-md-2 col-3">
-												<input type="text" class="form-control"  id="startDate" placeholder="날짜 ex) 2022-12-29" />
+											<div class="col-md-2 col-3">												
+												<input type="date" class="form-control" id="startDate" name="startDate" max="2033-01-11" min="2021-01-11" >	                                                
 											</div>
 											<div class="col-md-1 col-4">
-												<select class="form-select" id="type">
-													<option value="1">시원한</option>
-													<option value="2">담백한</option>
-													<option value="3">구수한</option>
+												<select class="form-select" id="type" name="type">
+													<option value=1 selected>시원한</option>
+													<option value=2>담백한</option>
+													<option value=3>구수한</option>
 												</select>
 											</div>
-											<div class="col-md-1 col-3">
-												<div class="form-check form-switch">진열
+										</div>
+										
+										<div class="row mb-1">
+											<div class="col-md-2 col-3">
+												<div class="form-check form-switch">메인진열
 													<input type="checkbox" class="form-check-input"  id="display"  />
 													<label class="form-check-label" for="listOn"></label>
 												</div>
 											</div>
 											<div class="col-md-2 col-3">
-												<input id="frm_Photo_i2"  type="file" accept=".png,.gif,.jpg" name="fileName">
+												<div class="form-check form-switch">생생후기진열
+													<input type="checkbox" class="form-check-input"  id="ing"  />
+													<label class="form-check-label" for="listOn"></label>
+												</div>
 											</div>
+											<div class="col-md-2 col-3">
+												<input type="file" accept=".png,.gif,.jpg" id="fileName1" name="fileName1" >
+											</div>
+											
 										</div>
+										
+										
 										<div class="row">
 											 <div class="col-sm-12">
 												<button type="button" onclick="javascript:btnSave('', 'I');" class="btn btn-primary me-1">등록</button>
@@ -167,11 +179,11 @@
 											<col width="15%">
 											<col width="7%">
 											<col width="19%">
+											<col width="8%">
+											<col width="8%">
 											<col width="10%">
-											<col width="10%">
-											<col width="10%">
-											<col width="6%">
-											<col width="6%">
+											<col width="8%">
+											<col width="8%">
 											<col width="6%">
 											<col width="6%">
 										</colgroup>
@@ -184,8 +196,8 @@
 												<th>이데이몰ID</th>
 												<th>타입</th>
 												<th>썸네일</th>
-												<th>진열</th>
-												<th>노출 여부</th>
+												<th>메인진열</th>
+												<th>생생후기 진열</th>
 												<th>수정</th>
 												<th>삭제</th>
 											</tr>
@@ -217,6 +229,7 @@
     	<input type="hidden" id="mDisplay" name="mDisplay" />
     	<input type="hidden" id="mIng" name="mIng" />
     	<input type="hidden" id="action" name="action" />
+    	<!-- <input type="hidden" id="fileName" name="fileName" /> -->
     </form>
     
     </th:block>

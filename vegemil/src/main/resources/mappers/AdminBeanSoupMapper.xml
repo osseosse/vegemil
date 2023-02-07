@@ -25,15 +25,12 @@
 	
 	<!-- 간단요리사 이벤트 -->
 	<sql id="eventColumns">
-		  m_title
-		, m_startDate
-		, m_endDate
+ 		  m_startDate
 		, m_ing
 		, m_display
 		, m_thum
-		, m_img
 		, m_eday_id
-		, m_content
+		, m_content		
 		, m_type
 		, m_product
 	</sql>
@@ -109,7 +106,7 @@
 		INSERT INTO m_beansoup_news (
 			<include refid="newsColumns" />
 		) VALUES (
-			  #{mTitle}
+			 , #{mTitle}
 			, #{mUrl}
 			, #{mThum}
 			, #{mDisplay}
@@ -168,14 +165,14 @@
 		INSERT INTO m_beansoup_event (
 			<include refid="eventColumns" />
 		) VALUES (
-			  #{mTitle}
-			, #{mUrl}
-			, #{mThum}
-			, #{mDisplay}
-			, #{mWriteDate}
-			, #{mStartDate}
-			, #{mEndDate}
+			  #{mStartDate}		
 			, #{mIng}
+			, #{mDisplay}			
+			, #{mThum}
+			, #{mEdayId} 
+			, #{mContent}
+			, #{mType}
+			, #{mProduct}
 		)
 	</insert>
 

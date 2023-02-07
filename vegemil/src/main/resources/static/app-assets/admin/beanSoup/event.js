@@ -119,7 +119,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('carateTable')
+	console.log('createTable')	
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -147,6 +147,7 @@ var createTable = function() {
 				params[e] = json[e];
 			});
 			console.log('length',params.length)
+
 		},
 		dataSrc: function(res) {
 			console.log('res', res.data)
@@ -210,21 +211,44 @@ var createTable = function() {
       			else	return '<input type="text" class="form-control" id="mEdayId'+full['mIdx']+'" value="'+full['mEdayId']+'">';
           }
           
-        },
-        {
+        },        
+        {        		
           targets: 5,
           orderable: false,
           render: function (data, type, full, meta) {
+        	  
             if(full['mType']==null)	return '-';
-      			else	return '<input type="text" class="form-control" id="mType'+full['mIdx']+'" value="'+full['mType']+'">';
+            	else if (full['mType']== '1')   
+            		return '<select id="type" class="form-select">'+
+									'<option value="1" selected >시원한</option>'+
+									'<option value="2" >담백한</option>'+
+									'<option value="3" >구수한</option>'+
+								'</select>';
+            	else if (full['mType']== '2')   
+            		return '<select id="type" class="form-select">'+
+									'<option value="1" >시원한</option>'+
+									'<option value="2" selected>담백한</option>'+
+									'<option value="3" >구수한</option>'+
+								'</select>';
+            	else if (full['mType']== '3')   
+            		return '<select id="type" class="form-select">'+
+									'<option value="1" selected >시원한</option>'+
+									'<option value="2" >담백한</option>'+
+									'<option value="3" selected>구수한</option>'+
+								'</select>';
           }
+        
         },
         {
           targets: 6,
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['mThum']==null)	return '-';
-      			else	return '<img src="https://image.edaymall.com/images/vegemil/beanSoup/event/'+full['mThum']+' " width="80" />';
+      			else	return '<img src="https://image.edaymall.com/images/vegemil/beanSoup/event/'+full['mThum']+' " width="80" />'+
+      			'</br>'+
+      			'</br>'+      			
+      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="altImg('+full['mIdx']+',\'D\')" style="margin-right: 3px;"/>수정</button>'+      			
+      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="deleteImg('+full['mIdx']+',\'D\')" />삭제</button>'
           }
           
         },
@@ -394,59 +418,12 @@ function btnDisplay(idx) {
 }
 */
 
-function btnSave(idx, action) {
-	console.log('action', action);
-	console.log('mtitle', $('#mTitle'+idx).val());
+function altImg(idx){
 	
-	const form = $('#form');
-	let msg;
-	let mDisplay;
-	let mIng;
-	
-	if($('#mDisplay'+idx).is(":checked")){
-		mDisplay = 1;
-	}else{
-		mDisplay = 0;
-	}
-	
-	if($('#mIng'+idx).is(":checked")){
-		mIng = 1;
-	}else{
-		mIng = 0;
-	}
-	console.log('mDisplay', mDisplay);
-	
-	if(action == "I") {
-		msg = "등록하시겠습니까?";
-		$('#mIdx').val("");
-		$('#mProduct').val($('#mProduct').val());
-		$('#mContent').val($('#mContent').val());
-		$('#mEdayId').val($('#mEdayId').val());
-		$('#mStartDate').val($('#mStartDate').val());
-		$('#mType').val();
-		$('#mDisplay').val();
-		$('#mIng').val($('#ing').val()); //=="on"?"1":"0"
-		$('#action').val(action);
-	}else{
-		if(action == "U") {
-			msg = "수정하시겠습니까?";	
-		}else {
-			msg = "삭제하시겠습니까?";	
-		}
-		$('#mIdx').val(idx);
-		$('#mProduct').val($('#mProduct'+idx).val());
-		$('#mContent').val($('#mContent'+idx).val());
-		$('#mEdayId').val($('#mEdayId'+idx).val());
-		$('#mType').val($('#mType'+idx).val());
-		$('#mDisplay').val(mDisplay);
-		$('#mIng').val(mIng);
-		$('#action').val(action);
-	}
-	
-	console.log(form.serialize());
-	if(confirm(msg)) {
+	if(confirm('썸네일을 변경 하시겠습니까?')) {
+		alert('변경승인');
 		$.ajax({
-	       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
+	       url: '/admin/manage/beanSoup/editImg',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),
@@ -464,4 +441,93 @@ function btnSave(idx, action) {
 		 })
 	}
 }
+
+function deleteImg(idx){
+	alert('썸네일을 삭제 하시겠습니까?');
+}
+
+function btnSave(idx, action) {
+	console.log('action', action);
+	console.log('mtitle', $('#mTitle'+idx).val());
+	
+	const form = $('#form');
+	let msg;
+	let mDisplay;
+	let mIng;
+		
+	if(action == "I") {
+		msg = "등록하시겠습니까?";
+		$('#mIdx').val("");
+		$('#mProduct').val($('#product').val());		
+		$('#mContent').val($('#content').val());
+		$('#mEdayId').val($('#edayId').val());
+		$('#mStartDate').val($('#startDate').val());	
+		$('#fileName').val($('#fileName1').val());	
+		$('#mType').val($('#type').val());
+		$('#action').val(action);
+		
+		var displayChecked = $('#display').is(':checked');	    
+		if(displayChecked){
+	        $('#mDisplay').val('1');	        
+	    }else{
+	        $('#mDisplay').val('0');
+	    }	    
+	    var ingChecked = $('#ing').is(':checked');
+	    if(ingChecked){
+	        $('#mIng').val('1');
+	    }else{
+	        $('#mIng').val('0');
+	    }		
+
+	}else{
+		if(action == "U") {
+			msg = "수정하시겠습니까?";	
+		}else {
+			msg = "삭제하시겠습니까?";	
+		}
+		$('#mIdx').val(idx);
+		$('#mProduct').val($('#mProduct'+idx).val());
+		$('#mContent').val($('#mContent'+idx).val());
+		$('#mEdayId').val($('#mEdayId'+idx).val());
+		$('#mType').val($('#mType'+idx).val());
+		$('#mDisplay').val(mDisplay);
+		$('#mIng').val(mIng);
+		$('#action').val(action);
+	}
+	
+	console.log(form.serialize());
+	
+	if(confirm(msg)) {
+		$.ajax({
+	       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
+		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+		   data: form.serialize(),
+		   dataType : 'json',
+		}).done(function(data){
+		   console.log('done', data)
+		   if(data.result) {
+			   console.log(data);
+			   if(action == "U") {
+				   alert('수정되었습니다.');
+			   	   $('.datatables-basic').DataTable().ajax.reload();
+			   }else if(action == "I") {
+					alert('저장되었습니다.');
+					$('.datatables-basic').DataTable().ajax.reload();		
+			   } else {
+					alert('삭제되었습니다.');
+					$('.datatables-basic').DataTable().ajax.reload();		
+				}
+		   	   
+		   }else{
+		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+		   }
+		 }).fail(function() {
+		   	   console.log('fail')
+		 })
+	}
+	
+}
+
+
 
