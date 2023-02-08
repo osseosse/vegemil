@@ -13,7 +13,7 @@
 <!-- ================================ 
 		Header
 ================================ -->
-<th:block class="greenHeader" th:replace="fragments/mainHeader :: headerFragment"></th:block>
+<header id="backHead" class="greenHeader" th:insert="fragments/mainHeader :: headerFragment"></header>
 <!-- ================================ 
 		// Header
 ================================ -->
@@ -22,7 +22,7 @@
 ================================ -->
 <div id="content">
 	<div class="mt90h" >
-		<div class="bg_Green h530" >
+		<div class="bg_Green h530" id="backGround">
 			<div class="contant1460">
 				<div class="row">
 					<div class="col-md-12 mt150">
@@ -102,6 +102,21 @@
 							},
 							spaceBetween: 152,
 							loop: true,
+						});
+						swiper1.on('activeIndexChange', function () {
+						  if(this.realIndex == '0') {
+							  $("#backHead").attr('class','greenHeader');
+							  $("#backGround").attr('class','bg_Green h530');
+						  }else if(this.realIndex == '1') {
+							  $("#backHead").attr('class','puppleHeader');
+							  $("#backGround").attr('class','bg_Pupple h530');
+						  }else if(this.realIndex == '2') {
+							  $("#backHead").attr('class','pinkHeader');
+							  $("#backGround").attr('class','bg_Pink h530');
+						  }else if(this.realIndex == '3') {
+							  $("#backHead").attr('class','blueHeader');
+							  $("#backGround").attr('class','bg_Blue2 h530');
+						  }
 						});
 						return;
 					})
