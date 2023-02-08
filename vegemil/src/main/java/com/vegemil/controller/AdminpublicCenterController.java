@@ -1,8 +1,12 @@
 package com.vegemil.controller;
 
+import java.io.File;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +25,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.vegemil.adapter.GsonLocalDateTimeAdapter;
+import com.vegemil.domain.AdminAdEctDTO;
 import com.vegemil.domain.AdminMediaNewsDTO;
+import com.vegemil.domain.AdminRecipeDTO;
 import com.vegemil.domain.DataTableDTO;
-import com.vegemil.mapper.AdminPublicCenterMapper;
+import com.vegemil.service.AdminAdEtcService;
 import com.vegemil.service.AdminPublicCenterService;
 import com.vegemil.util.UiUtils;
 
@@ -35,6 +47,10 @@ public class AdminpublicCenterController extends UiUtils {
 
 	@Autowired
 	private AdminPublicCenterService adminPublicCenterService;
+	
+	@Autowired
+	private AdminAdEtcService adminAdEtcService;
+	
 
 	// 보도자료 등록 페이지
 	@GetMapping("/publicCenter/mediaNewsAdd")
@@ -138,5 +154,103 @@ public class AdminpublicCenterController extends UiUtils {
 		}
 		return true;
 	}
-
+	
+	
+	//기타영상자료 메인
+	@GetMapping("/publicCenter/adEtcList")
+	public String getaAdEtcList(Model model) {
+		return "admin/publicCenter/adEtcList";
+	}
+	
+	//기타영상 리스트  
+	@RequestMapping(value = "/publicCenter/getAdEtcList")
+    public @ResponseBody JsonObject getAdEtcList(@ModelAttribute("params") final AdminAdEctDTO params, HttpServletRequest req, 
+    			Map<String, Object> commandMap)throws Exception{
+		List<AdminAdEctDTO> adEtcList = adminAdEtcService.getAdminAdEtcList(params);
+		JsonObject jsonObj = new JsonObject();
+		if (CollectionUtils.isEmpty(adEtcList) == false) {
+			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+			JsonArray jsonArr = gson.toJsonTree(adEtcList).getAsJsonArray();
+			jsonObj.add("data", jsonArr);
+		}
+		
+		return jsonObj;
+    }
+	
+	
+	//기타영상 자료 수정 삭제 
+	@RequestMapping(value="/publicCenter/saveAdEtc")
+    public @ResponseBody Map<String, Object> saveAdEtc(@ModelAttribute("params") final AdminAdEctDTO params,
+    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile )throws Exception{
+		
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminAdEtcService.saveAdEtc(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+    }
+	
+	//기타영상 노출여부 변경
+	@RequestMapping(value="/publicCenter/changeOnairStatus")
+    public @ResponseBody Map<String, Object> getChangeOnairStatus(@ModelAttribute("params") final AdminAdEctDTO params)throws Exception{
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminAdEtcService.changeOnairStatus(params);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		
+		return rtnMsg;
+    }
+	
+	// 기타 영상자료 등록 페이지 ㅇ동
+	@GetMapping("/publicCenter/postAdEtc")
+	public String getPostAdEtcView() {
+		return "admin/publicCenter/adEtcPost";
+	}
+	
+	// 새로운 기타홍보영상 등록
+	@PostMapping("/publicCenter/postAdEtc")
+    public @ResponseBody Map<String, Object> saveAdEtc22(@ModelAttribute("params") final AdminAdEctDTO params,
+    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminAdEtcService.saveAdEtc(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+			
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+	}
+	
+	// 기타홍보영상 수정 화면 이동
+	@GetMapping("/publicCenter/adEtcUpdate")
+	public String getUpdateAdEtcView(@RequestParam("tIdx") String tIdx, Model model) {
+		
+		model.addAttribute("adEtc", adminAdEtcService.getAdminEtcData(tIdx));
+		return "admin/publicCenter/adEtcUpdate";
+	}
+	
+	
+	
 }

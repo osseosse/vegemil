@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>기타홍보영상자료</title>
+	</th:block>
+
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/core/menu/menu-types/vertical-menu.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/pages/app-ecommerce.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/pickers/form-pickadate.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-wizard.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/extensions/ext-component-toastr.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-number-input.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/css/plugins/forms/form-quill-editor.css}">
+		
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/katex.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/monokai-sublime.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.snow.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/app-assets/vendors/css/editors/quill/quill.bubble.css}">
+		<link rel="stylesheet" th:href="@{https://fonts.gstatic.com}">
+		<link rel="stylesheet" type="text/css" th:href="@{https://fonts.googleapis.com/css2?family=Inconsolata&amp;family=Roboto+Slab&amp;family=Slabo+27px&amp;family=Sofia&amp;family=Ubuntu+Mono&amp;display=swap}">
+	    <!-- END: Page CSS-->
+	</th:block>
+    
+	<th:block layout:fragment="add-script">
+		<!-- BEGIN: Page JS-->
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/katex.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
+	    <script th:inline="javascript">
+	       /*<![CDATA[*/
+	        function btnSave(){
+	        	
+        		var checked = $('#tOnair').is(':checked');
+        		console.log("checked : " + checked);
+        		
+		   	    if(checked){
+		   	        $('#tOnair').val('1');
+		   	    }else{
+		   	        $('#tOnair').val('0');
+		   	    } 
+		   	    
+		   	   console.log("tOnair : " +  $('#tOnair').val());
+	    	   const form = document.form;	    	
+	    	   const formData = new FormData(form);
+		   	  	
+		   	  console.log("--------------------"+$('#tOnair').val());
+	    	  if(form.tSubject.value == "") {
+	    		   alert('제목을 작성해 주세요.');
+	    		   return false;
+	    	   }	    
+	    	  
+	    	   if(form.tFlv.value == "") {
+	    		   alert('유튜브 영상 url을 입력해 주세요.');
+	    		   return false;
+	    	   } 
+	    	  
+	    	   if(form.tContent.value == "") {
+	    		   alert('내용을 입력해 주세요.');
+	    		   return false;
+	    	   } 
+	    	   
+	    	   /* if(form.tImgNew.value == "") {
+	    		   alert('썸네일 이미지를 첨부해 주세요');
+	    		   return false;
+	    	   } */
+	    	   
+	    	   console.log('form', formData);
+               $.ajax({
+            	   url: '/admin/manage/publicCenter/saveAdEtc',
+				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+				   data: formData,  //위에서 선언한 fromdata
+				   type: 'POST'
+			   }).done(function(data){
+		    	   console.log('form', formData);
+
+	    	       console.log('done', data)
+	    	       if(data.result) {
+	    	    	   alert('저장되었습니다.');
+	    	    	   window.location.href = "/admin/manage/publicCenter/adEtcList";
+	    	       }else{
+	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+	    	       }
+	           }).fail(function() {
+	        	   console.log('fail')
+	           })
+				
+		   } 
+	       /*]]>*/
+	       
+	       
+	    </script>
+	    <!-- END: Page JS-->
+    </th:block>
+    
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">기타영상자료 등록</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">홍보</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">기타영상자료 수정
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            
+            <div class="content-body" th:object="${mediaNewsDto}">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/mediaNewsAdd}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
+	               	
+					<!-- 보도자료 등록 -->
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="card-body ">
+										<!-- Form -->
+	                                    <form action="javascript:;" class="mt-2" onsubmit>                                 
+	                                       
+	                                        <div class="row text-start mt-1">	
+	                                        	<div class="col-md-1">
+	                                        		<label class="form-check-label pb-1" for="tCate">카테고리</label>
+													<select class="form-select" id="tCate" name="tCate">
+														<option value="1" th:selected="'1' == ${adEtc.tCate}">1</option>
+														<option value="2" th:selected="'2' == ${adEtc.tCate}">2</option>
+													</select>
+		                                        </div>  
+	                                        	<div class="col-md-2">
+	                                        		<label class="form-check-label pb-1" for="tSubject">제목</label>
+													<input type="text" class="form-control" id="tSubject" name="tSubject" placeholder="제목" th:value="${adEtc.tSubject}"/>
+		                                        </div>  
+	                                        	<div class="col-md-3">
+	                                        		<label class="form-check-label pb-1" for="tFlv">Youtube url</label>
+												<input type="text" class="form-control" id="tFlv" name="tFlv" placeholder="영상url" th:value="${adEtc.tFlv}" />
+		                                        </div>  
+	                                        	<div class="col-md-3">
+		                                        	<label class="form-check-label pb-1" for="uploadFile">메인 이미지</label>
+													<input type="file" class="form-control" id="uploadFile" name="uploadFile"/>
+													<input type="text" th:value="${adEtc.tImgNew}" hidden="hidden"/>
+		                                        </div>  
+	                                        	<div class="col-md-1">
+		                                        	<label class="form-check-label pb-1" for="active">진열여부</label>
+												<div class="form-check form-switch">
+													<div th:if="${adEtc.tOnair}=='1'">
+														<input type="checkbox" class="form-check-input" id="tOnair" name="tOnair" checked />
+													</div>
+													<div th:unless="${adEtc.tOnair}=='1'">
+														<input type="checkbox" class="form-check-input" name="tOnair" id="tOnair"/>
+													</div>
+												</div>
+											</div>											
+	                                        <div class="row my-2">	
+	                                        	<div class="col-md-10">
+	                                        		<label class="form-check-label pb-1" for="tContent">내용</label>
+		                                        	<textarea class="form-control" id="tContent" name="tContent" rows="4" cols="" th:text="${adEtc.tContent}"></textarea>
+	                                        	</div>
+	                                        	<div class="col-md-2">
+			                                        <img id="img" width="100%" height="100%" th:src="|https://image.edaymall.com/images/dcf/vegemil/upload/OM/${adEtc.tImgNew}|"/>
+	                                        	</div>
+											</div>											
+	                                    </form>
+	                                    <!--/ Form -->
+									</div>
+									<div class="card center">
+										<div class="card-body">
+											<div class="row">
+												 <div class="col-sm-12">
+												 	<input type="text" id="tIdx" name="tIdx" hidden="hidden" th:value="${adEtc.tIdx}">
+												 	<input type="text" id="action" name="action" hidden="hidden" value="U">
+													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">수정</button>
+													<button type="reset"  onclick="history.back()" class="btn btn-outline-secondary">취소</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+	                </section>
+					<!-- 보도자료 등록 -->
+				</form>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+
+</html>

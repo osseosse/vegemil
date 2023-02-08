@@ -115,7 +115,6 @@ $(function () {
 	}
   });
   
-
 });
 
 var createTable = function() {
@@ -129,17 +128,20 @@ var createTable = function() {
   // --------------------------------------------------------------------
 
   if (dt_basic_table.length) {
-	const range = $('#fp-range').val().split(' to ');
-	const startdate = range[0];
-	const enddate = range[1];
-	$('#sStartdate').attr("value",startdate);
-	$('#sEnddate').attr("value",enddate);
+	//const range = $('#fp-range').val().split(' to ');
+	//const cStartdate = range[0];
+	//const cEnddate = range[1];
+	//$('#cStartdate').attr("value",cStartdate);
+	//$('#cEnddate').attr("value",cEnddate);
+	
+	//테이블 정보 불러와서 테이블로 만들기 ,,,
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
-        url : '/admin/manage/beanSoup/newsList',
+        url : '/admin/manage/publicCenter/getAdEtcList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
+        // 검색정보 말아서 보내기
         data:function(params){   
 			var json = $("#frm").serializeObject();
 			console.log('json', json);
@@ -157,17 +159,15 @@ var createTable = function() {
 		}
 	  },
       columns: [
-      	{ data: 'mIdx' },
-        { data: 'mTitle' },
-        { data: 'mUrl' },
-        { data: 'mThum' },
-        { data: 'mDisplay' },
-        { data: 'mModify' },
-        { data: 'mDelete' }, 
-        { data: 'mIng' },
-        { data: 'mStartDate' },
-        { data: 'mEndDate' },
-        { data: 'mWriteDate' }
+      	{ data: 'tIdx' },
+        { data: 'tCate' },
+        { data: 'tSubject' },
+        { data: 'tContent' },
+        { data: 'tFlv' },
+        { data: 'tOnair' }, 
+        { data: 'tImgNew' }, 
+        { data: 'tUpdate' },
+        { data: 'tDelete' }
       ],
       columnDefs: [
         {
@@ -180,16 +180,20 @@ var createTable = function() {
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mTitle']==null)	return '';
-      			else	return '<input type="text" class="form-control" id="mTitle'+full['mIdx']+'" value="'+full['mTitle']+'">';
+        	  console.log('data',data);
+        	  console.log('full',full)
+            if(full['tCate']==null)	return '';
+      			else return '<input hidden type="text" class="form-control text-center" id="tCate'+full['tIdx']+'" value="'+full['tCate']+'">'
+      							+'<p class="text-center">'+full["tCate"]+'</p>';
           }
         },
         {
           targets: 2,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mUrl']==null)	return '';
-      			else	return '<input type="text" class="form-control" id="mUrl'+full['mIdx']+'" value="'+full['mUrl']+'">';;
+            if(full['tSubject']==null)	return '';
+      			else	return '<input hidden type="text" class="form-control" id="tSubject'+full['tIdx']+'" value="'+full['tSubject']+'">'
+								+'<p class="text-start">'+full["tSubject"]+'</p>';
           }
           
         },
@@ -197,60 +201,69 @@ var createTable = function() {
           targets: 3,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mThum']==null)	return '-';
-      			else	return '<img src="https://image.edaymall.com/images/vegemil/beanSoup/news/'+full['mThum']+ '" width="80" />';
+            if(full['tContent']==null)	return '';
+      			else return '<textarea hidden rows="3" class="form-control" id="tContent'+full['tIdx']+'"/>'+full["tContent"]+'</textarea>'
+							+'<p class="text-start">'+full["tContent"]+'</p>';
           }
-          
         },
         {
           targets: 4,
           orderable: false,
           render: function (data, type, full, meta) {
-            let checked = '';
-			if(full['mDisplay'] == 1) {
-				checked = 'checked';
-			}
-            return (
-              '<div class="form-check form-switch center-ck">'+
-                '<input type="checkbox" class="form-check-input" '+checked+' id="mDisplay'+full['mIdx']+ '" name="listOn"'+ 'value="'+full['mDisplay']+ '" onclick="javascript:btnSave('+full['mIdx']+',\'U\')" >'+
-				'<label class="form-check-label" for="listOn"></label>'+
-		      '</div>'
-            );
+            if(full['tFlv']==null)	return '';
+            if(full['tFlv'].indexOf("youtube") < 0 ) return (
+              '<video class="text-center" controls id="myVieo" width="250" height="150" >'+
+              '<source src="'+'https://image.edaymall.com/images/dcf/vegemil/upload/OM/'+full["tFlv"]+'"type="video/mp4">'+
+              '</video>' + 
+              '<input hidden type="text" class="form-control" id="tFlv'+full['tIdx']+'" value="'+full['tFlv']+'"></input>'
+			  +'<p>'+full["tFlv"]+'</p>'
+            )
+  			else	
+  				return (
+				'<iframe '+ 
+					'width="250" height="150" src="'+full['tFlv']+'"' + 'title="YouTube video player" frameborder="0" '+
+					'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'+
+				'</iframe>'	+
+				'<input hidden type="text" class="form-control" id="tFlv'+full['tIdx']+'" value="'+full['tFlv']+'"></input>'
+				+'<p>'+full["tFlv"]+'</p>'
+				)
           }
-          
         },
         {
           targets: 5,
           orderable: false,
           render: function (data, type, full, meta) {
             let checked = '';
-			if(full['mIng'] == 1) {
+			if(full['tOnair'] == 1) {
 				checked = 'checked';
 			}
             return (
               '<div class="form-check form-switch center-ck">'+
-                '<input type="checkbox" class="form-check-input" '+checked+' id="mIng'+full['mIdx']+ '" name="listOn"'+ 'value="'+full['mIng']+ '" onclick="javascript:btnSave('+full['mIdx']+',\'U\')" >'+
+                '<input type="checkbox" class="form-check-input" '+checked+' id="tOnair'+full['tIdx']+ '" name="listOn" onclick="javascript:btnDisplay('+full['tIdx']+')" >'+
 				'<label class="form-check-label" for="listOn"></label>'+
 		      '</div>'
+		      +'<p hidden>'+full["tOnair"]+'</p>'
             );
           }
         },
+        
         {
           targets: 6,
           orderable: false,
           render: function (data, type, full, meta) {
-            return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'U\')" />수정</button>'
-            );
+            if(full['tImgNew']==null)	return '';
+      			else	return  '<img style="width:170px;height:120px; margin-bottom:8px;" src="'+'https://image.edaymall.com/images/dcf/vegemil/upload/OM/'+full["tImgNew"]+'"/>'
+      							+'<input hidden type="text" class="form-control" id="tImgNew'+full['tIdx']+'" value="'+full['tImgNew']+'">'
+      							+'<p> '+full["tImgNew"]+'</p>';
           }
-          
         },
+        
         {
           targets: 7,
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'D\')" />삭제</button>'
+              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'adEtcUpdate?tIdx='+full['tIdx']+ '\'">수정</button>'
             );
           }
           
@@ -259,30 +272,15 @@ var createTable = function() {
           targets: 8,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mStartDate']==null)	return '';
-      			else	return full['mStartDate'];
-          }
-          
-        },
-        {
-          targets: 9,
-          orderable: false,
-          render: function (data, type, full, meta) {
-            if(full['mEndDate']==null)	return '';
-      			else	return full['mEndDate'];
-          }
-          
-        },
-        {
-          targets: 10,
-          orderable: false,
-          render: function (data, type, full, meta) {
-            if(full['mWriteDate']==null)	return '';
-      			else	return full['mWriteDate'];
+            return (
+              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['tIdx']+',\'D\')" />삭제</button>'
+            );
           }
           
         }
       ],
+      
+      // 파일 다운로드 하는 부분 
       order: [[0, 'desc']],
       dom:
         '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-right"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
@@ -296,31 +294,31 @@ var createTable = function() {
               extend: 'print',
               text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6]  }
             },
             {
               extend: 'csv',
               text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6] }
             },
             {
               extend: 'excel',
               text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6] }
             },
             {
               extend: 'pdf',
               text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6] }
             },
             {
               extend: 'copy',
               text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6] }
             }
           ],
           init: function (api, node, config) {
@@ -352,29 +350,31 @@ var createTable = function() {
 			cell.innerHTML = i+1;
 		} );
 	} ).draw();
-	
-    $('div.head-label').html('<h4 class="card-title">간단요리사 목록 </h4> ');
+    $('div.head-label').html('<h4 class="card-title">기타홍보영상'+
+                             '<button type="button" onclick="location.href=\'/admin/manage/publicCenter/postAdEtc\'" class="btn btn-outline-info btn-sm ms-1">새글등록</button></h4>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
+	  
+	
   }
 	
 }
 
-/*
+// 진열 체크박스처리 
 function btnDisplay(idx) {
 	console.log('btnDisplay', idx)
-	let mDisplay;
-	if($('#mDisplay'+idx).is(":checked")){
-		mDisplay = 1;
+	let tOnair;
+	if($('#tOnair'+idx).is(":checked")){
+		tOnair = 1;
 	}else{
-		mDisplay = 0;
+		tOnair = 0;
 	}
-	console.log('============mDisplay',mDisplay)
+	console.log('============tOnair',tOnair)
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
-			url : '/admin/beanSoup/displayBeanSoupVideo?mIdx='+idx+'&mDisplay='+mDisplay,
+			url : '/admin/manage/publicCenter/changeOnairStatus?tIdx='+idx+'&tOnair='+tOnair,
 			type : "get",
 			dataType : "json",
 			success : function(data) {
@@ -386,67 +386,60 @@ function btnDisplay(idx) {
 				else{
 					alert("실패했습니다.");
 				}
-				
 			},
 			error : function(){
 			}
 		});
 	}
 }
-*/
 
+// 새로운 데이터 등록 부분 
 function btnSave(idx, action) {
 	console.log('action', action);
-	console.log('mtitle', $('#mTitle'+idx).val());
-	
+	console.log('idx', idx);
 	const form = $('#form');
 	let msg;
-	let mDisplay;
-	let mIng;
-	
-	if($('#mDisplay'+idx).is(":checked")){
-		mDisplay = 1;
-	}else{
-		mDisplay = 0;
-	}
-	
-	if($('#mIng'+idx).is(":checked")){
-		mIng = 1;
-	}else{
-		mIng = 0;
-	}
-	console.log('mDisplay', mDisplay);
 	
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
-		$('#mIdx').val("");
-		$('#mTitle').val($('#title').val());
-		$('#mUrl').val($('#url').val());
-		$('#mDisplay').val($('#display').val());
-		$('#mStartDate').val();
-		$('#mEndDate').val();
-		$('#mIng').val($('#ing').val()); //=="on"?"1":"0"
+		//$('#tIdx').val($('#').val());
+		$('#tCate').val($('#cate').val());
+		$('#tSubject').val($('#subject').val());
+		$('#tContent').val($('#content').val());
+		$('#tFlv').val($('#flv').val());
+		$('#tImgNew').val($('#imgNew').val());
 		$('#action').val(action);
+		
+		var checked = $('#active').is(':checked');
+	    if(checked){
+	        $('#tOnair').val('1');
+	    }else{
+	        $('#tOnair').val('0');
+	    }
+		
 	}else{
 		if(action == "U") {
 			msg = "수정하시겠습니까?";	
 		}else {
 			msg = "삭제하시겠습니까?";	
 		}
-		$('#mIdx').val(idx);
-		$('#mTitle').val($('#mTitle'+idx).val());
-		$('#mUrl').val($('#mUrl'+idx).val());
-		$('#mDisplay').val(mDisplay);
-		$('#mStartDate').val();
-		$('#mEndDate').val();
-		$('#mIng').val(mIng);
+		$('#tIdx').val(idx);
+		// 수정 선택시
+		
+		$('#tCate').val($('#tCate'+idx).val());
+		$('#tSubject').val($('#tSubject'+idx).val());
+		$('#tContent').val($('#tContent'+idx).val());
+		$('#tFlv').val($('#tFlv'+idx).val());
+		$('#tOnair').val($('#tOnair'+idx).val()=="on"?"1":"0");
+		$('#tImgNew').val($('#tImgNew'+idx).val());
 		$('#action').val(action);
+		
 	}
+	console.log('display', $('#cVactive').val())
 	
-	console.log(form.serialize());
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/beanSoup/saveBeanSoupNews',
+	       url: '/admin/manage/publicCenter/saveAdEtc',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),

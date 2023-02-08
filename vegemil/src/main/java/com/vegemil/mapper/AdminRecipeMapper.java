@@ -8,7 +8,7 @@ import com.vegemil.domain.AdminRecipeDTO;
 
 @Mapper
 public interface AdminRecipeMapper {
-	public List<AdminRecipeDTO> selectBeanSoupVideoList(AdminRecipeDTO params);
+	public List<AdminRecipeDTO> selectVegemilRecipeList(AdminRecipeDTO params);
 	
 	public int insertVegemilRecipe(AdminRecipeDTO params);
 	public int deleteRecipeData(String cIdx);

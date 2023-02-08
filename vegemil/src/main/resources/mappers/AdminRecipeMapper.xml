@@ -23,7 +23,7 @@
 	
 	<!-- 베지밀 레시피 리스트  -->
 	
-	<select id="selectBeanSoupVideoList" resultType="com.vegemil.domain.AdminRecipeDTO" parameterType="com.vegemil.domain.AdminRecipeDTO">
+	<select id="selectVegemilRecipeList" resultType="com.vegemil.domain.AdminRecipeDTO" parameterType="com.vegemil.domain.AdminRecipeDTO">
 		SELECT
 		  <include refid="recipeColumns" />
 		FROM

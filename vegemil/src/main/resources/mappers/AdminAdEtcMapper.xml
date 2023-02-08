@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminAdEtcMapper">
+
+	<sql id="aviAdColumns">
+		t_idx,
+		t_cate, 
+		t_subject, 
+		t_content, 
+		t_flv, 
+		t_onair,
+		t_img_new
+	</sql>
+	
+	
+	<select id="selectAviAdList" resultType="com.vegemil.domain.AdminAdEctDTO" parameterType="com.vegemil.domain.AdminAdEctDTO">
+		SELECT
+		  <include refid="aviAdColumns" />
+		FROM
+			M_AviAd
+		WHERE 
+			1=1
+			<if test='searchKeyword != "" and searchKeyword != null'>
+ 				AND t_subject like CONCAT('%',#{searchKeyword},'%')
+ 				OR t_content like CONCAT('%',#{searchKeyword},'%')
+ 				OR t_cate like CONCAT('%',#{searchKeyword},'%')
+			</if> 
+		ORDER BY
+			t_idx DESC
+	</select>
+	
+	<select id="selectAviData" parameterType="String" resultType="com.vegemil.domain.AdminAdEctDTO">
+		SELECT
+		  <include refid="aviAdColumns" />
+		FROM
+			M_AviAd
+		WHERE 
+			t_idx = #{tIdx}
+	</select>
+	
+	<insert id="insertAdEtc" parameterType="com.vegemil.domain.AdminAdEctDTO" useGeneratedKeys="true" keyProperty="tIdx">
+		INSERT INTO M_AviAd (
+			t_cate, 
+			t_subject, 
+			t_content, 
+			t_flv, 
+			t_onair,
+			t_img_new,
+			t_img
+		) VALUES (
+			#{tCate ,jdbcType=VARCHAR} 		  , 	
+			#{tSubject ,jdbcType=VARCHAR}     , 
+			#{tContent ,jdbcType=VARCHAR}     , 
+			#{tFlv ,jdbcType=VARCHAR}	      , 
+			#{tOnair ,jdbcType=VARCHAR}		  ,  
+			#{tImgNew ,jdbcType=VARCHAR}      ,
+			#{tImgNew ,jdbcType=VARCHAR}      
+		)
+	</insert>
+	 
+	<delete id="deleteAdEtcData" parameterType="String">
+		delete from M_AviAd where t_idx = #{tIdx}
+	</delete>
+	
+	
+	<update id="updateAdEtcData" parameterType="com.vegemil.domain.AdminAdEctDTO">
+		update M_AviAd
+		set
+			t_idx     = #{tIdx ,jdbcType=VARCHAR},      
+			t_cate    = #{tCate ,jdbcType=VARCHAR},      
+			t_subject = #{tSubject ,jdbcType=VARCHAR},   
+			t_content = #{tContent ,jdbcType=VARCHAR},   
+			t_flv     = #{tFlv ,jdbcType=VARCHAR},      
+			t_onair   = #{tOnair ,jdbcType=VARCHAR},   
+			t_img_new = #{tImgNew ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+	
+	<update id="updatetOnairStatus" parameterType="com.vegemil.domain.AdminAdEctDTO">
+		update M_AviAd 
+		set	
+			t_onair = #{tOnair ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+	
+</mapper>

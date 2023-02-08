@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>홍보센터 기타영상자료</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script th:src="@{/app-assets/admin/publicCenter/adEtcList.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+    </th:block>
+    <!-- END: Page Vendor JS-->
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">기타영상자료</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                    	<a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                    	<a href="#"> 홍보센터</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">기타영상자료
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 <div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									<div class="card-body">
+										<div class="row mb-1 text-center">
+											<div class="col-md-1 col-3 p-1">
+												상세검색
+											</div>
+											<div class="col-md-4 col-4">
+												<input type="text" id="searchWord" class="form-control" name="searchKeyword" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+												<input type="hidden" class="form-control" name="cStartdate" id="cStartdate" value=""/>
+												<input type="hidden" class="form-control" name="cEnddate" id="cEnddate" value=""/>
+												
+											</div>
+										</div>
+										<!-- <hr>
+										<div class="card-header">
+											<h4 class="card-title">등록</h4>
+										</div>
+										<div class="row mb-2">
+											<div class="col-md-1">
+												<label class="form-check-label pb-1" for="cate">카테고리</label>
+												<select class="form-select" id="cate" name="cate">
+													<option value="1">1</option>
+													<option value="2">2</option>
+												</select>
+											</div>
+											<div class="col-md-3">
+												<label class="form-check-label pb-1" for="subject">제목</label>
+												<input type="text" class="form-control" id="subject" name="subject" placeholder="제목" />
+											</div>
+											<div class="col-md-3">
+												<label class="form-check-label pb-1" for="content">내용</label>
+												<input type="text" class="form-control" id="content" name="content" placeholder="내용" />
+											</div>
+											<div class="col-md-2">
+												<label class="form-check-label pb-1" for="flv">영상</label>
+												<input type="text" class="form-control" id="flv" name="flv" placeholder="영상url" />
+											</div>
+											<div class="col-md-2">
+												<label class="form-check-label pb-1" for="imgNew">이미지 코드</label>
+												<input type="text" class="form-control" id="imgNew" name="imgNew" placeholder="이미지코드" />
+											</div>
+											<div class="col-md-1">
+												<label class="form-check-label pb-1" for="active">진열여부</label>
+												<div class="form-check form-switch">
+													<input type="checkbox" class="form-check-input"  id="active" name="active" value="1"/>
+												</div>
+											</div>
+											
+										</div>
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:btnSave('', 'I');" class="btn btn-primary me-1">등록</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>
+											</div>
+										</div> -->
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+	            
+				<!-- 기타영상자료 리스트 -->
+				<section id="basic-horizontal-layouts">
+					<div class="row" >
+						<div class="col-12">
+							<div class="card">								
+								<div class="table-responsive">
+									<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+										<colgroup>
+											<col width="3%">
+											<col width="6%">
+											<col width="15%">
+											<col width="15%">
+											<col width="15%">
+											<col width="4%">
+											<col width="5%">
+											<col width="6%">
+											<col width="6%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>No.</th>
+												<th>카테고리</th>
+												<th>제목</th>
+												<th>내용</th>
+												<th>영상</th>
+												<th>전시</th>
+												<th>이미지</th>
+												<th>수정</th>
+												<th>삭제</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+                </section>
+				<!-- //기타영상자료 리스트  -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <form id="form" method="POST" enctype="multipart/form-data">
+    	<input type="hidden" id="tIdx" name="tIdx" />
+    	<input type="hidden" id="tCate" name="tCate" />
+    	<input type="hidden" id="tSubject" name="tSubject" />
+    	<input type="hidden" id="tContent" name="tContent" />
+    	<input type="hidden" id="tFlv" name="tFlv" />
+    	<input type="hidden" id="tOnair" name="tOnair" />
+    	<input type="hidden" id="tImgNew" name="tImgNew" />
+    	<input type="hidden" id="action" name="action" />
+    </form>
+    
+    </th:block>
+    
+</html>

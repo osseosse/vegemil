@@ -134,7 +134,7 @@ var createTable = function() {
 	$('#cStartdate').attr("value",cStartdate);
 	$('#cEnddate').attr("value",cEnddate);
 	
-	//테이블 정보 불러와서 테이블로 만들기 ,,,
+	//테이블 정보 불러와서 테이블로 만들기 
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
@@ -373,12 +373,11 @@ var createTable = function() {
 	    filterColumn($(this).val());
 	  });
 	  
-	
   }
 	
 }
 
-// 진열 체크박스처리 ㅡㅡ
+// 진열 체크박스처리 
 function btnDisplay(idx) {
 	console.log('btnDisplay', idx)
 	let cVactive;

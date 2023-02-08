@@ -33,7 +33,7 @@ import lombok.extern.log4j.Log4j2;
 public class AdminRecipeController {
 	
 	@Autowired
-	AdminRecipeService adminRecipeService;
+	private AdminRecipeService adminRecipeService;
 	
 	@GetMapping("/recipe/vegemil")
 	public String getAdminRecipeMain(Model model) {
@@ -43,7 +43,6 @@ public class AdminRecipeController {
 	@RequestMapping(value = "/recipe/recipeList")
     public @ResponseBody JsonObject getBeanSoupVideo(@ModelAttribute("params") final AdminRecipeDTO params, HttpServletRequest req, 
     		Map<String, Object> commandMap)throws Exception{
-		System.out.println(params.toString());
 		List<AdminRecipeDTO> vegemilRecipeList = adminRecipeService.getVegemilRecipeLsit(params);
 		JsonObject jsonObj = new JsonObject();
 		if (CollectionUtils.isEmpty(vegemilRecipeList) == false) {

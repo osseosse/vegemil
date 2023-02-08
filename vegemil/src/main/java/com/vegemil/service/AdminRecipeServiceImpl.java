@@ -14,11 +14,11 @@ import com.vegemil.mapper.AdminRecipeMapper;
 public class AdminRecipeServiceImpl implements AdminRecipeService{
 
 	@Autowired
-	AdminRecipeMapper mapper;
+	private AdminRecipeMapper mapper;
 	
 	@Override
 	public List<AdminRecipeDTO> getVegemilRecipeLsit(AdminRecipeDTO params) {
-		return mapper.selectBeanSoupVideoList(params);
+		return mapper.selectVegemilRecipeList(params);
 	}
 
 	@Override
