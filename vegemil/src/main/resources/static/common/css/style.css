@@ -1043,28 +1043,23 @@
 	.scrollbar-3::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);background-color: #F5F5F5;}
 	.scrollbar-3::-webkit-scrollbar{width: 3px;background-color: #F5F5F5;}
 	.scrollbar-3::-webkit-scrollbar-thumb{background-color: #000000;}
-
-
 	.menu-style01 {background:none; position:relative; z-index:100;  width:100% ;overflow:hidden; }
 	.menu-style01 li.current img{ outline: 2px solid #000; }
-
-	
-	
-	
-
-
-
-
-
 	.content-style01 {position:relative; } 
 	.content-style01 > div {clear: both;display: none; }
 	.content-style01 .current { display: block; }
 
 
-
-
-
-
+	/* 3000 미디어 popup */
+	.overlay-pr {position: absolute;top: 0px;bottom: 0;left: 0;right: 0;background: rgba(0, 0, 0, 0.5);transition: opacity 200ms;visibility: hidden;opacity: 0; }
+	.overlay-pr .cancel {position: absolute;width: 100%;height: 100%;cursor: default;}
+	.overlay-pr:target {visibility: visible;opacity: 1;width:100%;height:100%;margin-top:-500px}
+	.popup-pr {margin: 75px auto;padding: 20px;background: #fff;border: 1px solid #666;max-width:550px;box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);position: relative;z-index:1000; border-radius:10px}
+	.popup-pr h2 {margin-top: 0;}
+	.popup-pr .close {position: absolute;width: 20px;height: 20px;top: 15px;right: 20px;opacity: 0.8;transition: all 200ms;font-size: 24px;font-weight: bold;text-decoration: none;color: #666;}
+	.popup-pr .close:hover {opacity: 1;}
+	.popup-pr .content { overflow: auto;}
+	.prWrap .pr-img {border-radius:5px; overflow:hidden}
 	
 
 
@@ -3245,6 +3240,9 @@
 	ul.baseList li {padding:10px 25px;}
 
 
+	/* 992 미디어 popup */
+	.prWrap .col-md-2 {flex:25%; max-width:25%}
+
 
 	/* 992 news */
 	ul.newsBox li {display:inline-block; width:100%; border-bottom:1px solid #DCDCDC; padding-bottom:10px; padding-top:10px; width:100%;  }
@@ -3495,6 +3493,10 @@
     
     }
 
+
+
+
+
 	
 
 
@@ -3616,6 +3618,11 @@
 	.yys_wrap {padding:50px 15px; }
 	.yys_wrap .col-md-6:nth-child(2) .col-sm-6:nth-child(2) dl dd:nth-child(3) {bordeR-right:0px }
 	.yys_wrap .col-md-6:nth-child(2) .col-sm-6:nth-child(2) .yys_subtop {border-right:0}
+
+	/* 768 미디어 popup */
+	.popup-pr .close {position: absolute;width: 20px;height: 20px;top: 5px;right: 20px;opacity: 0.8;transition: all 200ms;font-size: 24px;font-weight: bold;text-decoration: none;color: #666;}
+	.prWrap .col-md-2 {flex:50%; max-width:50%}
+
 
 
 	/* 768 company  */
