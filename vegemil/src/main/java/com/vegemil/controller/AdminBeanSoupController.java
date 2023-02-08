@@ -203,27 +203,26 @@ public class AdminBeanSoupController {
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		try {
 			
-//			if("I".equals(beanSoupEvent.getAction())) {
-//				if(beanSoupEvent.getMIdx() == null) {
-//					System.out.println("이미지 등록로직 시작");
-//					String uuid = UUID.randomUUID().toString();
-//					String originalName = beanSoupEvent.getFileName().getOriginalFilename();
-//					System.out.println(beanSoupEvent.getFileName());
-//					
-//					if(!"".equals(originalName)) {
-//						String file1 = originalName.substring(originalName.lastIndexOf("\\") + 1);
-//						
-//						String savefileName1 = uuid + "_" + file1;
-//						//저장 - 실제경로
-//						//Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/event/" + savefileName1);
-//						//저장 - Test로컬경로
-//						Path savePath = Paths.get("D:/upload/admin/beanSoup" + savefileName1);		
-//						beanSoupEvent.getFileName().transferTo(savePath);
-//						beanSoupEvent.setMThum(savefileName1);
-//					}
-//					
-//				}
-//			}
+			if("I".equals(beanSoupEvent.getAction())) {
+				if(beanSoupEvent.getMIdx() == null) {
+					System.out.println("이미지 등록로직 시작");
+					
+					String uuid = UUID.randomUUID().toString();
+					String originalName = beanSoupEvent.getFileName().getOriginalFilename();
+					
+					if(!"".equals(originalName)) {
+						String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
+						String savefileName = uuid + "_" + file;
+						//저장 - 실제경로
+						//Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/event/" + savefileName1);
+						//저장 - Test로컬경로
+						Path savePath = Paths.get("D:/upload/admin/beanSoup/" + savefileName);		
+						beanSoupEvent.getFileName().transferTo(savePath);
+						beanSoupEvent.setMThum(savefileName);
+						beanSoupEvent.setMThumOriginal(originalName);
+					}					
+				}
+			}
 			
 			System.out.println("beanSoupEvent정보: " +beanSoupEvent.toString());
 			boolean isResulted = adminBeanSoupService.saveBeanSoupEvent(beanSoupEvent);

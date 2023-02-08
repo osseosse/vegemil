@@ -29,6 +29,7 @@
 		, m_ing
 		, m_display
 		, m_thum
+		, m_thum_original
 		, m_eday_id
 		, m_content		
 		, m_type
@@ -169,6 +170,7 @@
 			, #{mIng}
 			, #{mDisplay}			
 			, #{mThum}
+			, #{mThumOriginal}
 			, #{mEdayId} 
 			, #{mContent}
 			, #{mType}
@@ -179,16 +181,35 @@
 	<update id="updateBeanSoupEvent" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
 		UPDATE m_beansoup_event
 		SET
-			  m_title = #{mTitle}
-			, m_url = #{mUrl}
+			  m_content = #{mContent}
+			, m_product = #{mProduct}
+			, m_eday_id = #{mEdayId}  
+			, m_type = #{mType}
+			, m_display = #{mDisplay}
+			, m_ing = #{mIng}											
 			<if test='mThum != "" and mThum != null '>
 			, m_thum = #{mThum}
-			</if>
-			, m_display = #{mDisplay}
-			, m_ing = #{mIng}
+			, m_thum_original = #{mThumOriginal}
+			</if>			
 		WHERE
 			m_idx = #{mIdx}
 	</update>
+	
+	<update id="updateBeanSoupFileInfo" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
+		UPDATE 
+			m_beansoup_event
+		SET
+			m_content = #{mContent}
+			, m_product = #{mProduct}
+			, m_eday_id = #{mEdayId}  
+			, m_type = #{mType}
+			, m_display = #{mDisplay}
+			, m_ing = #{mIng}	
+			, m_thum = DEFAULT, m_thum_original =DEFAULT 
+		WHERE 
+			m_idx = #{mIdx}; 	
+	</update>
+	
 
 	<update id="deleteBeanSoupEvent" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
 		DELETE FROM m_beansoup_event

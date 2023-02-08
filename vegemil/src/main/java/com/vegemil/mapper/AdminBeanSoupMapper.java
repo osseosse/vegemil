@@ -34,6 +34,8 @@ public interface AdminBeanSoupMapper {
 	public List<AdminBeanSoupEventDTO> selectBeanSoupEventList(AdminBeanSoupEventDTO params);
 	
 	public int updateBeanSoupEvent(AdminBeanSoupEventDTO params);
+
+	public int updateBeanSoupFileInfo(AdminBeanSoupEventDTO params);
 	
 	public int deleteBeanSoupEvent(AdminBeanSoupEventDTO params);
 	

@@ -15,6 +15,7 @@ public class AdminBeanSoupEventDTO extends AdminCommonDTO {
 	private Long mIng;
 	private Long mDisplay;
 	private String mThum;
+	private String mThumOriginal;
 	private String mEdayId;
 	private String mContent;
 	private Long mType;
@@ -25,9 +26,11 @@ public class AdminBeanSoupEventDTO extends AdminCommonDTO {
 	public String toString() {
 		return "AdminBeanSoupEventDTO [mIdx=" + mIdx + ", mTitle=" + mTitle + ", mStartDate=" + mStartDate
 				+ ", mEndDate=" + mEndDate + ", mIng=" + mIng + ", mDisplay=" + mDisplay + ", mThum=" + mThum
-				+ ", mEdayId=" + mEdayId + ", mContent=" + mContent + ", mType=" + mType + ", mProduct=" + mProduct
-				+ ", mfileName=" + fileName + "]";
+				+ ", mThumOriginal=" + mThumOriginal + ", mEdayId=" + mEdayId + ", mContent=" + mContent + ", mType="
+				+ mType + ", mProduct=" + mProduct + ", fileName=" + fileName + "]";
 	}
+	
+	
 	
 	
 	

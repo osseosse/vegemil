@@ -219,20 +219,20 @@ var createTable = function() {
         	  
             if(full['mType']==null)	return '-';
             	else if (full['mType']== '1')   
-            		return '<select id="type" class="form-select">'+
+            		return '<select id="mType'+full['mIdx']+'" class="form-select">'+
 									'<option value="1" selected >시원한</option>'+
 									'<option value="2" >담백한</option>'+
 									'<option value="3" >구수한</option>'+
 								'</select>';
             	else if (full['mType']== '2')   
-            		return '<select id="type" class="form-select">'+
+            		return '<select id="mType'+full['mIdx']+'" class="form-select">'+
 									'<option value="1" >시원한</option>'+
 									'<option value="2" selected>담백한</option>'+
 									'<option value="3" >구수한</option>'+
 								'</select>';
             	else if (full['mType']== '3')   
-            		return '<select id="type" class="form-select">'+
-									'<option value="1" selected >시원한</option>'+
+            		return '<select id="mType'+full['mIdx']+'" class="form-select">'+
+									'<option value="1" >시원한</option>'+
 									'<option value="2" >담백한</option>'+
 									'<option value="3" selected>구수한</option>'+
 								'</select>';
@@ -247,8 +247,8 @@ var createTable = function() {
       			else	return '<img src="https://image.edaymall.com/images/vegemil/beanSoup/event/'+full['mThum']+' " width="80" />'+
       			'</br>'+
       			'</br>'+      			
-      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="altImg('+full['mIdx']+',\'D\')" style="margin-right: 3px;"/>수정</button>'+      			
-      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="deleteImg('+full['mIdx']+',\'D\')" />삭제</button>'
+      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'UI\')" style="margin-right: 3px;"/>수정</button>'+      			
+      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'DI\')" />삭제</button>'
           }
           
         },
@@ -446,11 +446,15 @@ function deleteImg(idx){
 	alert('썸네일을 삭제 하시겠습니까?');
 }
 
+
+
+
+
 function btnSave(idx, action) {
 	console.log('action', action);
-	console.log('mtitle', $('#mTitle'+idx).val());
+	console.log('idx', idx);
 	
-	const form = $('#form');
+	
 	let msg;
 	let mDisplay;
 	let mIng;
@@ -461,8 +465,7 @@ function btnSave(idx, action) {
 		$('#mProduct').val($('#product').val());		
 		$('#mContent').val($('#content').val());
 		$('#mEdayId').val($('#edayId').val());
-		$('#mStartDate').val($('#startDate').val());	
-		$('#fileName').val($('#fileName1').val());	
+		$('#mStartDate').val($('#startDate').val());		
 		$('#mType').val($('#type').val());
 		$('#action').val(action);
 		
@@ -477,32 +480,118 @@ function btnSave(idx, action) {
 	        $('#mIng').val('1');
 	    }else{
 	        $('#mIng').val('0');
-	    }		
+	    }
+	    
+	    const form = $('#form')[0];
+		var formData = new FormData();
+	    
+	    formData.append("mProduct", $('#mProduct').val());
+	    formData.append("mContent", $('#mContent').val());
+	    formData.append("mDisplay", $('#mDisplay').val());
+	    formData.append("mIng", $('#mIng').val());
+	    formData.append("mEdayId", $('#mEdayId').val());
+	    formData.append("mStartDate", $('#mStartDate').val());
+	    formData.append("mType", $('#mType').val());
+	    formData.append("action", $('#action').val());
+	    formData.append('fileName', $('input[type=file]')[0].files[0]); 
+	    
+	    
+//	    if(confirm(msg)) {
+//			$.ajax({
+//		       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
+//			   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
+//			   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+//			   data: formData,
+//			   type: "POST",
+//	           enctype: 'multipart/form-data',
+//			   dataType : 'json',
+//			}).done(function(data){
+//			   console.log('done', data)
+//			   if(data.result) {
+//				   console.log(data);
+//				   if(action == "U") {
+//					   alert('수정되었습니다.');
+//				   	   $('.datatables-basic').DataTable().ajax.reload();
+//				   }else if(action == "I") {
+//						alert('저장되었습니다.');
+//						$('.datatables-basic').DataTable().ajax.reload();		
+//				   } else {
+//						alert('삭제되었습니다.');
+//						$('.datatables-basic').DataTable().ajax.reload();		
+//					}
+//			   	   
+//			   }else{
+//			  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+//			   }
+//			 }).fail(function() {
+//			   	   console.log('fail')
+//			 })
+//		}
+
 
 	}else{
-		if(action == "U") {
-			msg = "수정하시겠습니까?";	
-		}else {
+		const form = $('#form')[0];
+		var formData = new FormData();
+		
+		if(action == "U" || action =="UI") {
+			msg = "수정하시겠습니까??";
+		}else if(action == "DI"){			
+			msg = "썸네일을 삭제하시겠습니까??";	
+			
+
+		}else if(action == "D"){
 			msg = "삭제하시겠습니까?";	
+			console.log('삭제시작');
 		}
 		$('#mIdx').val(idx);
 		$('#mProduct').val($('#mProduct'+idx).val());
 		$('#mContent').val($('#mContent'+idx).val());
 		$('#mEdayId').val($('#mEdayId'+idx).val());
-		$('#mType').val($('#mType'+idx).val());
+		$('#mType').val($('#mType'+idx).val());		
 		$('#mDisplay').val(mDisplay);
 		$('#mIng').val(mIng);
 		$('#action').val(action);
-	}
-	
-	console.log(form.serialize());
+		
+    
+		console.log("mIdx: ", $('#mIdx').val());
+
+		var displayChecked = $('#mDisplay'+idx).is(':checked');	    
+		if(displayChecked){
+		    formData.append("mDisplay", '1');	        
+	    }else{
+		    formData.append("mDisplay", '0');
+	    }	    
+	    var ingChecked = $('#mIng'+idx).is(':checked');
+	    if(ingChecked){
+		    formData.append("mIng", '1');
+	    }else{
+	    	formData.append("mIng", '0');
+	    }
+		
+		formData.append("mIdx", $('#mIdx').val());
+	    formData.append("mProduct", $('#mProduct').val());
+	    formData.append("mContent", $('#mContent').val());
+	    formData.append("mEdayId", $('#mEdayId').val());
+	    formData.append("mStartDate", $('#mStartDate').val());
+	    formData.append("mType", $('#mType'+idx).val());
+	    formData.append("action", $('#action').val());
+	    
+	    console.log("formData", formData);
+		let entries = formData.entries();
+		for (const pair of entries) {
+		    console.log(pair[0]+ ', ' + pair[1]); 
+		}
+	    
+	}	
 	
 	if(confirm(msg)) {
 		$.ajax({
 	       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-		   data: form.serialize(),
+		   data: formData,
+		   type: "POST",
+           enctype: 'multipart/form-data',
 		   dataType : 'json',
 		}).done(function(data){
 		   console.log('done', data)

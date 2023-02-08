@@ -72,8 +72,10 @@ public class AdminBeanSoupServiceImpl implements AdminBeanSoupService {
 	@Override
 	public boolean saveBeanSoupNews(AdminBeanSoupNewsDTO params) {
 		int queryResult = 0;
+		
+		System.out.println("파람정보"+ params.getAction());
 
-		if ("U".equals(params.getAction())) {
+		if ("U".equals(params.getAction()) || "DI".equals(params.getAction())) {
 			queryResult = adminBeanSoupMapper.updateBeanSoupNews(params);
 		} else if("D".equals(params.getAction())) {
 			queryResult = adminBeanSoupMapper.deleteBeanSoupNews(params);
@@ -116,10 +118,18 @@ public class AdminBeanSoupServiceImpl implements AdminBeanSoupService {
 		int queryResult = 0;
 
 		if ("U".equals(params.getAction())) {
+			System.out.println("=======수정 시작========");			
 			queryResult = adminBeanSoupMapper.updateBeanSoupEvent(params);
-		} else if("D".equals(params.getAction())) {
+		}
+		else if("DI".equals(params.getAction())) {
+			System.out.println("=======이미지 수정 시작========");
+			queryResult = adminBeanSoupMapper.updateBeanSoupFileInfo(params);
+		} 
+		else if("D".equals(params.getAction())) {
+			System.out.println("=======삭제 시작========");
 			queryResult = adminBeanSoupMapper.deleteBeanSoupEvent(params);
 		}else {
+			System.out.println("=======입력 시작========");
 			queryResult = adminBeanSoupMapper.insertBeanSoupEvent(params);
 		}
 
