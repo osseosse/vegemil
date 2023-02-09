@@ -44,8 +44,9 @@ public class BeanSoupController extends UiUtils {
 	public String beanSoupMain(Model model) {
 		
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
+		List<BeansoupEventDTO> mainBeansoupEventList = beansoupService.selectMainBeansoupEventList();
 		model.addAttribute("beansoupList",beansoupList);
-	
+		model.addAttribute("mainBeansoupEventList",mainBeansoupEventList);		
 		return "beansoup/index";
 	}
 	

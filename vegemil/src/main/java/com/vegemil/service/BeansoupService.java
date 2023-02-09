@@ -19,6 +19,7 @@ public interface BeansoupService {
 	
 	//BeansoupEventDTO 
 	public List<BeansoupEventDTO> selectBeansoupEventList(BeansoupEventDTO params);
+	public List<BeansoupEventDTO> selectMainBeansoupEventList();
 	public int selectBeansoupEventCount(BeansoupEventDTO params);
 	
 	//BeansoupNewDTO

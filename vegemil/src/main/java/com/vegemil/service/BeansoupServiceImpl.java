@@ -107,6 +107,12 @@ public class BeansoupServiceImpl implements BeansoupService{
 
 		return beansoupEventList;
 	}
+	
+	@Override
+	public List<BeansoupEventDTO> selectMainBeansoupEventList() {
+		List<BeansoupEventDTO> mainBeansoupEventList = beansoupMapper.selectMainBeansoupEventList();
+		return mainBeansoupEventList;
+	}
 
 	@Override
 	public int selectBeansoupEventCount(BeansoupEventDTO params) {
@@ -157,5 +163,7 @@ public class BeansoupServiceImpl implements BeansoupService{
 	public int selectBeansoupVideoCount(BeansoupVideoDTO param) {
 		return beansoupMapper.selectBeansoupVideoCount(param);
 	}
+
+	
 	
 }

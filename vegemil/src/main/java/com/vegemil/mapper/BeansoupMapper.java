@@ -20,6 +20,7 @@ public interface BeansoupMapper {
 	
 	// m_beanSoup_event
 	public List<BeansoupEventDTO> selectBeansoupEventList(BeansoupEventDTO params);
+	public List<BeansoupEventDTO> selectMainBeansoupEventList();
 	public int selectBeansoupEventCount(BeansoupEventDTO params);
 	
 	//m_beanSoup_news

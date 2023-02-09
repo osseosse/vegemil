@@ -119,6 +119,24 @@
 			#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
 	</select>
 	
+	<select id="selectMainBeansoupEventList" resultType="com.vegemil.domain.BeansoupEventDTO">
+		SELECT
+			<include refid="beansoupEventColumns" />
+		FROM
+			m_beansoup_event
+		WHERE
+			m_ing = '1'
+		ORDER BY
+			m_idx DESC
+		<!-- LIMIT
+			#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex} -->
+	</select>
+	
+	
+	
+	
+	
+	
 	<select id="selectBeansoupEventCount" parameterType="com.vegemil.domain.BeansoupEventDTO" resultType="int">
 		SELECT
 			COUNT(*)
@@ -194,5 +212,28 @@
 		WHERE
 			m_display = '1'
 	</select>
+	
+	
+	<!-- <select id="selectBeanSoupEventList" parameterType="hashMap" resultType="com.vegemil.domain.AdminBeanSoupEventDTO">
+		SELECT
+			m_idx
+		    , m_startDate
+			, m_ing
+			, m_display
+			, m_thum
+			, m_thum_original
+			, m_eday_id
+			, m_content		
+			, m_type
+			, m_product
+		FROM
+			m_beansoup_event
+		WHERE 1=1
+			m_display = 1
+		ORDER BY
+			m_idx DESC
+			
+	</select> -->
+	
 
 </mapper>
