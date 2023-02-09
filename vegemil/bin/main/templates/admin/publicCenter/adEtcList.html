@@ -59,12 +59,28 @@
 										<h4 class="card-title">조회</h4>
 									</div>
 									<div class="card-body">
-										<div class="row mb-1 text-center">
-											<div class="col-md-1 col-3 p-1">
+										<div class="row mb-1">
+											<div class="col-md-1 col-3 ">
 												상세검색
 											</div>
-											<div class="col-md-4 col-4">
+											<div class="col-md-4 col-4 ">
 												<input type="text" id="searchWord" class="form-control" name="searchKeyword" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
+											</div>
+										</div>
+										
+										<div class="row mb-1 ">
+											<div class="col-md-1 col-12 ">
+												구분
+											</div>	
+											<div class="col-md-4 col-12">
+												<div class="btn-group" role="display" aria-label="Basic radio toggle button group">
+	                                                <input type="radio" class="btn-check" name="tOnair" id="btnradio2-1" value="" autocomplete="off" checked />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-1">전체</label>
+	                                                <input type="radio" class="btn-check" name="tOnair" id="btnradio2-2" value="1" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-2">공개</label>
+	                                                <input type="radio" class="btn-check" name="tOnair" id="btnradio2-3" value="0" autocomplete="off" />
+	                                                <label class="btn btn-outline-primary" for="btnradio2-3">비공개</label>
+	                                            </div>
 											</div>
 										</div>
 										<hr />
@@ -77,48 +93,6 @@
 												
 											</div>
 										</div>
-										<!-- <hr>
-										<div class="card-header">
-											<h4 class="card-title">등록</h4>
-										</div>
-										<div class="row mb-2">
-											<div class="col-md-1">
-												<label class="form-check-label pb-1" for="cate">카테고리</label>
-												<select class="form-select" id="cate" name="cate">
-													<option value="1">1</option>
-													<option value="2">2</option>
-												</select>
-											</div>
-											<div class="col-md-3">
-												<label class="form-check-label pb-1" for="subject">제목</label>
-												<input type="text" class="form-control" id="subject" name="subject" placeholder="제목" />
-											</div>
-											<div class="col-md-3">
-												<label class="form-check-label pb-1" for="content">내용</label>
-												<input type="text" class="form-control" id="content" name="content" placeholder="내용" />
-											</div>
-											<div class="col-md-2">
-												<label class="form-check-label pb-1" for="flv">영상</label>
-												<input type="text" class="form-control" id="flv" name="flv" placeholder="영상url" />
-											</div>
-											<div class="col-md-2">
-												<label class="form-check-label pb-1" for="imgNew">이미지 코드</label>
-												<input type="text" class="form-control" id="imgNew" name="imgNew" placeholder="이미지코드" />
-											</div>
-											<div class="col-md-1">
-												<label class="form-check-label pb-1" for="active">진열여부</label>
-												<div class="form-check form-switch">
-													<input type="checkbox" class="form-check-input"  id="active" name="active" value="1"/>
-												</div>
-											</div>
-											
-										</div>
-										<div class="row">
-											 <div class="col-sm-12">
-												<button type="button" onclick="javascript:btnSave('', 'I');" class="btn btn-primary me-1">등록</button>
-												<button type="reset" class="btn btn-outline-secondary">초기화</button>
-											</div>
-										</div> -->
 									</div>
 								</div>
 							</div>
@@ -173,17 +147,10 @@
     
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-    <form id="form" method="POST" enctype="multipart/form-data">
+ 	<form id="form" method="POST" enctype="multipart/form-data">
     	<input type="hidden" id="tIdx" name="tIdx" />
-    	<input type="hidden" id="tCate" name="tCate" />
-    	<input type="hidden" id="tSubject" name="tSubject" />
-    	<input type="hidden" id="tContent" name="tContent" />
-    	<input type="hidden" id="tFlv" name="tFlv" />
-    	<input type="hidden" id="tOnair" name="tOnair" />
-    	<input type="hidden" id="tImgNew" name="tImgNew" />
     	<input type="hidden" id="action" name="action" />
     </form>
-    
     </th:block>
     
 </html>

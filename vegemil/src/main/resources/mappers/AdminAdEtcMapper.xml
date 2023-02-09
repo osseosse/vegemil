@@ -18,7 +18,18 @@
 		SELECT
 		  <include refid="aviAdColumns" />
 		FROM
-			M_AviAd
+			<choose>
+				<when test='tOnair != "" and tOnair != null'  >
+			 	   (select * 
+			 	   from dbvegemilcokr.M_AviAd 
+			 	   where
+			 	   		t_onair = #{tOnair}
+			 	   	) tb
+			 	</when>
+				<otherwise>
+					M_AviAd
+				</otherwise>
+			</choose>
 		WHERE 
 			1=1
 			<if test='searchKeyword != "" and searchKeyword != null'>

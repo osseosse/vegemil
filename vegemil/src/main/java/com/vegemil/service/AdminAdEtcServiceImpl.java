@@ -1,10 +1,13 @@
 package com.vegemil.service;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +21,9 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 	
 	@Autowired
 	private AdminAdEtcMapper adminAdEtcMapper;
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 	
 	@Override
 	public List<AdminAdEctDTO> getAdminAdEtcList(AdminAdEctDTO params) {
@@ -83,11 +89,10 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 			
 			if(originalName.length() > 0) {
 				
-				String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\OM\\";//"D:/data/dcf/";
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;
-				
-				File file = new File(dirPath + originalName);
-				uploadFile.transferTo(file);
+				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;			
+								
+				Path savePath = Paths.get(uploadPath+ "/upload/OM/" + originalName);					
+				uploadFile.transferTo(savePath);
 				params.setTImgNew(originalName);
 				
 				return params;
@@ -100,10 +105,8 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 	}
 	public boolean deleteFile(String fileName) {
 		
-		String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\OM\\";//"D:/data/dcf/";
-		
 		try {
-			File file = new File(dirPath+fileName);
+			File file = new File(uploadPath+ "/upload/OM/" +fileName);
 			file.delete();
 			return true;
 		} catch(Exception e) {

@@ -133,7 +133,6 @@ var createTable = function() {
 	//const cEnddate = range[1];
 	//$('#cStartdate').attr("value",cStartdate);
 	//$('#cEnddate').attr("value",cEnddate);
-	
 	//테이블 정보 불러와서 테이블로 만들기 ,,,
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
@@ -213,7 +212,7 @@ var createTable = function() {
             if(full['tFlv']==null)	return '';
             if(full['tFlv'].indexOf("youtube") < 0 ) return (
               '<video class="text-center" controls id="myVieo" width="250" height="150" >'+
-              '<source src="'+'https://image.edaymall.com/images/dcf/vegemil/upload/OM/'+full["tFlv"]+'"type="video/mp4">'+
+              '<source src="'+'/web/upload/OM/'+full["tFlv"]+'"type="video/mp4">'+
               '</video>' + 
               '<input hidden type="text" class="form-control" id="tFlv'+full['tIdx']+'" value="'+full['tFlv']+'"></input>'
 			  +'<p>'+full["tFlv"]+'</p>'
@@ -252,7 +251,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['tImgNew']==null)	return '';
-      			else	return  '<img style="width:170px;height:120px; margin-bottom:8px;" src="'+'https://image.edaymall.com/images/dcf/vegemil/upload/OM/'+full["tImgNew"]+'"/>'
+      			else	return  '<img style="width:170px;height:120px; margin-bottom:8px;" src="'+'/web/upload/OM/'+full["tImgNew"]+'"/>'
       							+'<input hidden type="text" class="form-control" id="tImgNew'+full['tIdx']+'" value="'+full['tImgNew']+'">'
       							+'<p> '+full["tImgNew"]+'</p>';
           }

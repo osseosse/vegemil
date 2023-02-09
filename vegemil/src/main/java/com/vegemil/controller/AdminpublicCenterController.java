@@ -1,12 +1,10 @@
 package com.vegemil.controller;
 
-import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,7 +30,6 @@ import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.domain.AdminAdEctDTO;
 import com.vegemil.domain.AdminMediaNewsDTO;
-import com.vegemil.domain.AdminRecipeDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminAdEtcService;
 import com.vegemil.service.AdminPublicCenterService;
@@ -166,6 +163,7 @@ public class AdminpublicCenterController extends UiUtils {
 	@RequestMapping(value = "/publicCenter/getAdEtcList")
     public @ResponseBody JsonObject getAdEtcList(@ModelAttribute("params") final AdminAdEctDTO params, HttpServletRequest req, 
     			Map<String, Object> commandMap)throws Exception{
+		System.out.println("params::" + params);
 		List<AdminAdEctDTO> adEtcList = adminAdEtcService.getAdminAdEtcList(params);
 		JsonObject jsonObj = new JsonObject();
 		if (CollectionUtils.isEmpty(adEtcList) == false) {
