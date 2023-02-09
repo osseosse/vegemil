@@ -150,17 +150,73 @@
 			
 	</select>
 	
-	<select id="selectBeanSoupEventList" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO" resultType="com.vegemil.domain.AdminBeanSoupEventDTO">
+	<select id="selectBeanSoupEventList" parameterType="hashMap" resultType="com.vegemil.domain.AdminBeanSoupEventDTO">
 		SELECT
 			m_idx
 		  , <include refid="eventColumns" />
 		FROM
 			m_beansoup_event
 		WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	   AND m_startDate &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND m_startDate &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='searchWord != "" '>
+		   AND m_content LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%') OR m_product LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if> 
 		ORDER BY
 			m_idx DESC
 			
 	</select>
+	
+	
+	<select id="selectbeanSoupEventTotalCount" parameterType="hashMap" resultType="int">
+		/* selectWebzineEventTotalCount by AdminSaboMapper.xml */
+		SELECT 
+			COUNT(*)
+		FROM
+			m_beansoup_event	
+		WHERE 1=1
+		<if test='sStartdate != "" '>
+	 	   AND m_startDate &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND m_startDate &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='searchWord != "" '>
+		   AND m_content LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%') OR m_product LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+	</select>
+	
+	
+	<!-- <select id="selectMediaNewsList"  parameterType="hashMap" resultType="com.vegemil.domain.AdminMediaNewsDTO">
+		SELECT
+			m_idx, m_subject, m_img,
+			CONCAT(m_adname1," " ,m_adname2," " ,m_adname3," " ,m_adname4," " ,m_adname5," " ,m_adname6," " ,m_adname7," " ,m_adname8," " ,m_adname9," " ,m_adname10) AS m_adname,
+			DATE_FORMAT(m_date, "%Y-%m-%d") m_date, m_hit	
+		FROM 
+			m_media_news
+		WHERE 1 = 1
+	    <if test='sStartdate != "" '>
+	 	   AND m_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+	 	</if>
+	 	<if test='sEnddate != "" '>
+	 	   AND m_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})+1
+	 	</if>
+	 	<if test='gubun == "1" '>
+	 		AND m_display = 1
+	 	</if>
+	 	<if test='gubun == "2" '>
+	 		AND m_display = 2
+	 	</if>
+	 	<if test='searchWord != null and !searchWord.equals("")'>
+			AND m_subject LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%') OR m_content LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+		</if>
+		 ORDER BY m_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select> -->
 	
 	<insert id="insertBeanSoupEvent" parameterType="com.vegemil.domain.AdminBeanSoupEventDTO">
 		INSERT INTO m_beansoup_event (
@@ -216,5 +272,16 @@
 		WHERE
 			m_idx = #{mIdx}
 	</update>
+	
+	<!-- 썸네일 이미지 조회(변환명) -->
+	<select id="selectImgFile" parameterType="long" resultType="String">
+		SELECT 
+			m_thum 
+		FROM 
+			m_beansoup_event			
+		WHERE
+			m_idx = #{mIdx}
+	</select>
+	
 	
 </mapper>

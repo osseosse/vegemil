@@ -39,19 +39,23 @@
                     <th:block th:each="item : ${beansoupEventList}">
                     <div class="col-lg-4">
 	                    <div class="thumbBox">
-			                    <div class="round-review">
-			                        <ul>
-				                        <!--1-->
-				                        <li class="review-img"><img src="https://image.edaymall.com/images/vegemil/beansoup/event/test.JPG" th:src="'https://image.edaymall.com/images/vegemil/beansoup/event/'+${item.mThum}" alt="이벤트이미지" /></li>
-				                        <li>
-				                        <p class="f14 gray4" th:classappend="'pd'+${item.mType}" th:text="${item.mProduct}"></p>
-				                        <p class="f16 over-hidden mt10 mb10" th:text="${item.mContent}"></p>
-				                        <span class="f14 gray4" th:text="${item.mStartDate}"></span>
-				                        <span class="f14 gray4 ml20" th:text="${item.mEdayId}"></span>
+		                    <div class="round-review">
+		                        <ul>
+			                        <!--1-->
+			                        <li class="review-img">
+			                        <img src="https://image.edaymall.com/images/vegemil/beansoup/event/test.JPG" 				                        
+								                    			th:src="|/web/upload/BEANSOUP/event/${item.mThum}|"
+								                         		alt="이벤트이미지" />
 			                        </li>
-				                    </ul>
-			                    </div>
-		                    </a>
+			                        <li>
+			                        <p class="f14 gray4" th:classappend="'pd'+${item.mType}" th:text="${item.mProduct}"></p>
+			                        <p class="f16 over-hidden mt10 mb10" th:text="${item.mContent}"></p>
+			                        <span class="f14 gray4" th:text="${item.mStartDate}"></span>
+			                        <span class="f14 gray4 ml20" th:text="${item.mEdayId}"></span>
+		                        	</li>
+			                    </ul>
+		                    </div>
+		                   
 	                    </div>
                     </div>
                     </th:block>
