@@ -103,6 +103,41 @@
 		</if>
 	</update>
 	
+	<select id="selectIsMemberCount" parameterType="com.vegemil.domain.MemberDTO" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			m_member
+		WHERE
+			m_idx = #{mIdx}
+	</select>
+	
+	<update id="deleteMember" parameterType="Long" >
+		UPDATE m_member
+		SET
+			m_pwd = ''
+			, m_auth = ''
+			, m_name = ''
+			, m_year = ''
+			, m_sex = ''
+			, m_hp = ''
+			, m_tel = ''
+			, m_zipcode = ''
+			, m_addr1 = ''
+			, m_addr2 = ''
+			, m_email = ''
+			, m_smssend = '0'
+			, m_emailsend = '0'
+			, m_ip = ''
+			, m_comp_name = ''
+			, m_bizno = ''
+			, m_di = ''
+			, m_leavedate = NOW()
+			, m_leavememo = '관리자 수동 삭제'
+		WHERE
+			m_idx = #{mIdx}
+	</update>
+	
 	<select id="selectMemberTotalCount" parameterType="hashMap" resultType="int">
 		SELECT COUNT(*) /* selectMemberTotalCount by AdminCustomerMapper.xml */
 		  FROM m_member
@@ -126,6 +161,7 @@
 		       m_comp_name, m_bizno, m_dual_yn, m_addr1, m_addr2
 		  FROM m_member
 		 WHERE m_type IN ('0', '1', '3')
+		   AND m_leavedate is null
 		 <if test='sStartdate != "" '>
 	       AND m_joindate &gt;= #{sStartdate, jdbcType=VARCHAR} 
 	     </if>

@@ -22,6 +22,8 @@ public interface AdminCustomerService {
 	
 	public MemberDTO getMember(Long mIdx);
 	
+	public boolean withdrawalMember(Long mIdx);
+	
 	public boolean saveMember(MemberDTO params);
 	
 	public DataTableDTO getVisitList(Map<String, Object> paramMap);

@@ -23,6 +23,10 @@ public interface AdminCustomerMapper {
 	
 	public int updateGreenbiaMember(MemberDTO params);
 	
+	public int selectIsMemberCount(Long mIdx);
+	
+	public int deleteMember(Long mIdx);
+	
 	public int selectMemberTotalCount(Map<String, Object> paramMap);
 	
 	public List<MemberDTO> selectMemberList(Map<String, Object> paramMap);

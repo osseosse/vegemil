@@ -15,7 +15,7 @@ $(function () {
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
-			url : '/admin/manage/customer/deleteMember',
+			url : '/admin/manage/customer/withdrawalMember',
 			type : "post",
 			data : $(form).serialize(),
 			dataType : "json",
@@ -327,13 +327,13 @@ function btnSave(idx, action) {
 	
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/customer/deleteMember?mIdx='+idx,
+	       url: '/admin/manage/customer/withdrawalMember?mIdx='+idx,
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   dataType : 'json',
 		}).done(function(data){
 		   console.log('done', data)
-		   if(data.result) {
+		   if(data) {
 		   	   alert('삭제되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();
 		   }else{

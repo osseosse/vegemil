@@ -323,6 +323,27 @@ public class AdminCustomerController extends UiUtils {
 		return dataTableDto;
 	}
 	
+	@RequestMapping(value = "/admin/manage/customer/withdrawalMember", method = {RequestMethod.GET, RequestMethod.POST})
+    public @ResponseBody boolean withdrawalMember(@RequestParam(value = "mIdx", required = false) Long mIdx, Model model, 
+    		HttpServletResponse response, HttpServletRequest request) throws Exception {
+		
+		try {
+			
+			boolean isDeleted = adminCustomerService.withdrawalMember(mIdx);
+	   		if (!isDeleted) {
+				return false;
+			}
+   		
+		} catch (DataAccessException e) {
+			log.error("fail to process file", e);
+			throw new IOException("삭제 실패하였습니다.");
+		} catch (Exception e) {
+			log.error("fail to process file", e);
+			throw new IOException("삭제 실패하였습니다.");
+		}
+		return true;
+   }
+	
 	@GetMapping(value = "/admin/manage/customer/memberDetail")
     public String getMemberDetail(@RequestParam(value = "mIdx", required = false) Long mIdx, HttpServletRequest req, Model model)throws Exception{
 		MemberDTO memberDto = adminCustomerService.getMember(mIdx);
