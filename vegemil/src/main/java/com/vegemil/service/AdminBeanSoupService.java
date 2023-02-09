@@ -1,10 +1,12 @@
 package com.vegemil.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBeanSoupNewsDTO;
 import com.vegemil.domain.AdminBeanSoupVideoDTO;
+import com.vegemil.domain.DataTableDTO;
 
 public interface AdminBeanSoupService {
 
@@ -24,9 +26,10 @@ public interface AdminBeanSoupService {
 	
 	public boolean registerBeanSoupNews(AdminBeanSoupNewsDTO params);
 	
-	public List<AdminBeanSoupEventDTO> getBeanSoupEventList(AdminBeanSoupEventDTO params);
+//	public List<AdminBeanSoupEventDTO> getBeanSoupEventList(AdminBeanSoupEventDTO params);
+	public DataTableDTO getBeanSoupEventList(Map<String, Object> paramMap);
 	
-	public boolean saveBeanSoupEvent(AdminBeanSoupEventDTO params);
+	public boolean saveBeanSoupEvent(AdminBeanSoupEventDTO params) throws Exception;
 
 	public boolean updateBeanSoupEventImg(AdminBeanSoupEventDTO params);
 }

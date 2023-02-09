@@ -1,15 +1,26 @@
 package com.vegemil.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,16 +34,19 @@ import com.vegemil.util.UiUtils;
 @Controller
 public class BeanSoupController extends UiUtils {
 	
-	@Autowired
-	BeansoupService beansoupService;
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 	
+	@Autowired
+	BeansoupService beansoupService;	
 
 	@GetMapping("/beanSoup")
 	public String beanSoupMain(Model model) {
 		
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
+		List<BeansoupEventDTO> mainBeansoupEventList = beansoupService.selectMainBeansoupEventList();
 		model.addAttribute("beansoupList",beansoupList);
-	
+		model.addAttribute("mainBeansoupEventList",mainBeansoupEventList);		
 		return "beansoup/index";
 	}
 	
@@ -167,5 +181,24 @@ public class BeanSoupController extends UiUtils {
 	public String beanSoupMall() {
 		
 		return "beansoup/mall";
+	}
+	
+	//정적 이미지 불러오기
+	@GetMapping("/web/upload/BEANSOUP/event/{filename}")
+	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/BEANSOUP/event/" + filename);
+		//Resource resource = new FileSystemResource("D:/upload/admin/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/BEANSOUP/event/" + filename);
+			//filePath = Paths.get("D:/upload/admin/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
 }

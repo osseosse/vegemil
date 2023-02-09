@@ -34,6 +34,8 @@ import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBeanSoupNewsDTO;
 import com.vegemil.domain.AdminBeanSoupVideoDTO;
+import com.vegemil.domain.AdminSaboDTO;
+import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminBeanSoupService;
 
 
@@ -182,20 +184,29 @@ public class AdminBeanSoupController {
 		return rtnMsg;
     }
 	
+//	@RequestMapping(value = "/admin/manage/beanSoup/eventList")
+//    public @ResponseBody JsonObject getBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO params, HttpServletRequest req, 
+//    		Map<String, Object> commandMap)throws Exception{
+//		
+//		List<AdminBeanSoupEventDTO> beanSoupEventList = adminBeanSoupService.getBeanSoupEventList(params);
+//		JsonObject jsonObj = new JsonObject();
+//		if (CollectionUtils.isEmpty(beanSoupEventList) == false) {
+//			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+//			JsonArray jsonArr = gson.toJsonTree(beanSoupEventList).getAsJsonArray();
+//			jsonObj.add("data", jsonArr);
+//		}
+//		
+//		return jsonObj;
+//    }
+	
 	@RequestMapping(value = "/admin/manage/beanSoup/eventList")
-    public @ResponseBody JsonObject getBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO params, HttpServletRequest req, 
-    		Map<String, Object> commandMap)throws Exception{
-		
-		List<AdminBeanSoupEventDTO> beanSoupEventList = adminBeanSoupService.getBeanSoupEventList(params);
-		JsonObject jsonObj = new JsonObject();
-		if (CollectionUtils.isEmpty(beanSoupEventList) == false) {
-			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
-			JsonArray jsonArr = gson.toJsonTree(beanSoupEventList).getAsJsonArray();
-			jsonObj.add("data", jsonArr);
-		}
-		
-		return jsonObj;
-    }
+	public @ResponseBody DataTableDTO getBeanSoupEvent(
+			 			@ModelAttribute("params") AdminBeanSoupEventDTO params, Model model, 
+			 			@RequestParam Map<String, Object> commandMap) {
+
+		DataTableDTO dataTableDto = adminBeanSoupService.getBeanSoupEventList(commandMap);
+		return dataTableDto;
+	 }
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/saveBeanSoupEvent")
     public @ResponseBody Map<String, Object> saveBeanSoupEvent(@ModelAttribute("params") final AdminBeanSoupEventDTO beanSoupEvent)throws Exception{
@@ -214,9 +225,9 @@ public class AdminBeanSoupController {
 						String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
 						String savefileName = uuid + "_" + file;
 						//저장 - 실제경로
-						//Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/event/" + savefileName1);
+						Path savePath = Paths.get(uploadPath + "/upload/BEANSOUP/event/" + savefileName);
 						//저장 - Test로컬경로
-						Path savePath = Paths.get("D:/upload/admin/beanSoup/" + savefileName);		
+						//Path savePath = Paths.get("D:/upload/admin/beanSoup/" + savefileName);		
 						beanSoupEvent.getFileName().transferTo(savePath);
 						beanSoupEvent.setMThum(savefileName);
 						beanSoupEvent.setMThumOriginal(originalName);

@@ -136,6 +136,10 @@ var createTable = function() {
 	$('#sEnddate').attr("value",enddate);
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
+	  bPaginate: true,
+      pageLength: 10,
+	  serverSide: true,
+	  processing: true,
       ajax: {
         url : '/admin/manage/beanSoup/eventList',
         dataType : 'json',
@@ -146,7 +150,9 @@ var createTable = function() {
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
-			console.log('length',params.length)
+			console.log('length',params.length);
+			console.log('json', json);
+			console.log('params', params);
 
 		},
 		dataSrc: function(res) {
@@ -243,12 +249,13 @@ var createTable = function() {
           targets: 6,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mThum']==null)	return '-';
-      			else	return '<img src="https://image.edaymall.com/images/vegemil/beanSoup/event/'+full['mThum']+' " width="80" />'+
+            if(full['mThum']==null)	
+				return '<input type="file" accept=".png,.gif,.jpg" id="fileName2" name="fileName2" >';
+      			else	
+				return '<img src="https://image.edaymall.com/images/vegemil/beanSoup/event/'+full['mThum']+' " width="80" />'+
       			'</br>'+
-      			'</br>'+      			
-      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'UI\')" style="margin-right: 3px;"/>수정</button>'+      			
-      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'DI\')" />삭제</button>'
+      			'</br>'+      		      			      			
+      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'DI\')" style="display: inline-block;" />수정</button>'
           }
           
         },
@@ -453,8 +460,7 @@ function deleteImg(idx){
 function btnSave(idx, action) {
 	console.log('action', action);
 	console.log('idx', idx);
-	
-	
+		
 	let msg;
 	let mDisplay;
 	let mIng;
@@ -481,10 +487,13 @@ function btnSave(idx, action) {
 	    }else{
 	        $('#mIng').val('0');
 	    }
+		if($('input[type=file]')[0].files[0] === undefined){
+			alert('썸네일을 등록해주세요');
+			return false;
+		}
 	    
 	    const form = $('#form')[0];
-		var formData = new FormData();
-	    
+		var formData = new FormData();	    
 	    formData.append("mProduct", $('#mProduct').val());
 	    formData.append("mContent", $('#mContent').val());
 	    formData.append("mDisplay", $('#mDisplay').val());
@@ -495,39 +504,6 @@ function btnSave(idx, action) {
 	    formData.append("action", $('#action').val());
 	    formData.append('fileName', $('input[type=file]')[0].files[0]); 
 	    
-	    
-//	    if(confirm(msg)) {
-//			$.ajax({
-//		       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
-//			   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
-//			   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-//			   data: formData,
-//			   type: "POST",
-//	           enctype: 'multipart/form-data',
-//			   dataType : 'json',
-//			}).done(function(data){
-//			   console.log('done', data)
-//			   if(data.result) {
-//				   console.log(data);
-//				   if(action == "U") {
-//					   alert('수정되었습니다.');
-//				   	   $('.datatables-basic').DataTable().ajax.reload();
-//				   }else if(action == "I") {
-//						alert('저장되었습니다.');
-//						$('.datatables-basic').DataTable().ajax.reload();		
-//				   } else {
-//						alert('삭제되었습니다.');
-//						$('.datatables-basic').DataTable().ajax.reload();		
-//					}
-//			   	   
-//			   }else{
-//			  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-//			   }
-//			 }).fail(function() {
-//			   	   console.log('fail')
-//			 })
-//		}
-
 
 	}else{
 		const form = $('#form')[0];
@@ -535,10 +511,11 @@ function btnSave(idx, action) {
 		
 		if(action == "U" || action =="UI") {
 			msg = "수정하시겠습니까??";
+			if( $('#fileName2')[0] !== undefined){				
+				var fileInput = $('#fileName2')[0].files[0];				
+			}
 		}else if(action == "DI"){			
-			msg = "썸네일을 삭제하시겠습니까??";	
-			
-
+			msg = "썸네일을 수정하시겠습니까??";	
 		}else if(action == "D"){
 			msg = "삭제하시겠습니까?";	
 			console.log('삭제시작');
@@ -552,7 +529,6 @@ function btnSave(idx, action) {
 		$('#mIng').val(mIng);
 		$('#action').val(action);
 		
-    
 		console.log("mIdx: ", $('#mIdx').val());
 
 		var displayChecked = $('#mDisplay'+idx).is(':checked');	    
@@ -566,8 +542,13 @@ function btnSave(idx, action) {
 		    formData.append("mIng", '1');
 	    }else{
 	    	formData.append("mIng", '0');
-	    }
-		
+	    }	
+		if(fileInput){
+		console.log('파일 확인!');
+		 formData.append('fileName', fileInput); 
+		}else{
+			console.log('파일미확인');
+		}
 		formData.append("mIdx", $('#mIdx').val());
 	    formData.append("mProduct", $('#mProduct').val());
 	    formData.append("mContent", $('#mContent').val());
@@ -604,7 +585,6 @@ function btnSave(idx, action) {
 					alert('저장되었습니다.');
 					$('.datatables-basic').DataTable().ajax.reload();		
 			   } else {
-					alert('삭제되었습니다.');
 					$('.datatables-basic').DataTable().ajax.reload();		
 				}
 		   	   

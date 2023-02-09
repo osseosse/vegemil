@@ -20,5 +20,14 @@ public class BeansoupEventDTO extends CommonDTO {
 	private String mContent;
 	private String mType;
 	private String mProduct;
+	@Override
+	public String toString() {
+		return "BeansoupEventDTO [mIdx=" + mIdx + ", mTitle=" + mTitle + ", mStartDate=" + mStartDate + ", mEndDate="
+				+ mEndDate + ", mIng=" + mIng + ", mDisplay=" + mDisplay + ", mThum=" + mThum + ", mImg=" + mImg
+				+ ", mEdayId=" + mEdayId + ", mContent=" + mContent + ", mType=" + mType + ", mProduct=" + mProduct
+				+ "]";
+	}
+	
+	
 
 }

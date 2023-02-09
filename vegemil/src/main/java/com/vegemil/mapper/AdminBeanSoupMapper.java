@@ -1,6 +1,7 @@
 package com.vegemil.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -31,7 +32,7 @@ public interface AdminBeanSoupMapper {
 	
 	public AdminBeanSoupNewsDTO selectBeanSoupNews(Long mIdx);
 	
-	public List<AdminBeanSoupEventDTO> selectBeanSoupEventList(AdminBeanSoupEventDTO params);
+//	public List<AdminBeanSoupEventDTO> selectBeanSoupEventList(AdminBeanSoupEventDTO params);
 	
 	public int updateBeanSoupEvent(AdminBeanSoupEventDTO params);
 
@@ -40,4 +41,12 @@ public interface AdminBeanSoupMapper {
 	public int deleteBeanSoupEvent(AdminBeanSoupEventDTO params);
 	
 	public int insertBeanSoupEvent(AdminBeanSoupEventDTO params);
+
+	//썸네일 이미지 조회(변환명)
+	public String selectImgFile(Long mIdx);
+
+	//게시글 개수 조회
+	public int selectbeanSoupEventTotalCount(Map<String, Object> paramMap);
+
+	public List<AdminBeanSoupEventDTO> selectBeanSoupEventList(Map<String, Object> paramMap);
 }

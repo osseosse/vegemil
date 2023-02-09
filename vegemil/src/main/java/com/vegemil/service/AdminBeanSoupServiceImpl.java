@@ -1,18 +1,30 @@
 package com.vegemil.service;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBeanSoupNewsDTO;
 import com.vegemil.domain.AdminBeanSoupVideoDTO;
+import com.vegemil.domain.DataTableDTO;
 import com.vegemil.mapper.AdminBeanSoupMapper;
 
 @Service
+@Transactional
 public class AdminBeanSoupServiceImpl implements AdminBeanSoupService {
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	@Autowired
 	private AdminBeanSoupMapper adminBeanSoupMapper;
@@ -104,29 +116,107 @@ public class AdminBeanSoupServiceImpl implements AdminBeanSoupService {
 		return (queryResult == 1) ? true : false;
 	}
 	
+
 	@Override
-	public List<AdminBeanSoupEventDTO> getBeanSoupEventList(AdminBeanSoupEventDTO params) {
+	public DataTableDTO getBeanSoupEventList(Map<String, Object> paramMap) {
 		List<AdminBeanSoupEventDTO> beanSoupEventList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
+		
+		int beanSoupEventTotalCount = adminBeanSoupMapper.selectbeanSoupEventTotalCount(paramMap);				
+		//beanSoupEventList = adminBeanSoupMapper.selectBeanSoupEventList(paramMap);
+		if (beanSoupEventTotalCount > 0) {			
+			
+			  int start = Integer.parseInt(paramMap.get("start").toString()); 
+			  int length = Integer.parseInt(paramMap.get("length").toString());
+			  
+			  paramMap.put("start", start);
+			  paramMap.put("length", length);
+			 
+			  beanSoupEventList = adminBeanSoupMapper.selectBeanSoupEventList(paramMap);
+		}
+		
+		dataTableDto.setData(beanSoupEventList);
+		dataTableDto.setRecordsTotal(beanSoupEventTotalCount);
+		dataTableDto.setRecordsFiltered(beanSoupEventTotalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
 
-		beanSoupEventList = adminBeanSoupMapper.selectBeanSoupEventList(params);
+		return dataTableDto;
 
-		return beanSoupEventList;
+		
 	}
 	
 	@Override
-	public boolean saveBeanSoupEvent(AdminBeanSoupEventDTO params) {
+	public boolean saveBeanSoupEvent(AdminBeanSoupEventDTO params) throws Exception {
 		int queryResult = 0;
 
 		if ("U".equals(params.getAction())) {
-			System.out.println("=======수정 시작========");			
+			System.out.println("=======수정 시작========");
+			
+			if(params.getFileName() != null) {
+				System.out.println("이미지 등록로직 시작");
+				
+				String uuid = UUID.randomUUID().toString();
+				String originalName = params.getFileName().getOriginalFilename();
+				
+				if(!"".equals(originalName)) {
+					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
+					String savefileName = uuid + "_" + file;
+					//저장 - 실제경로
+					Path savePath = Paths.get(uploadPath + "/upload/BEANSOUP/event/" + savefileName);
+					//저장 - Test로컬경로
+					//Path savePath = Paths.get("D:/upload/admin/beanSoup/" + savefileName);		
+					params.getFileName().transferTo(savePath);
+					params.setMThum(savefileName);
+					params.setMThumOriginal(originalName);							
+				}
+			}
+			
 			queryResult = adminBeanSoupMapper.updateBeanSoupEvent(params);
 		}
 		else if("DI".equals(params.getAction())) {
-			System.out.println("=======이미지 수정 시작========");
+			System.out.println("=======썸네일 삭제 시작========");
+					
+			String storedImg = adminBeanSoupMapper.selectImgFile(params.getMIdx());
+			
+			//삭제 - 실제경로
+			String storedfilePath = uploadPath+ "/upload/BEANSOUP/event/" + storedImg;
+			//삭제 - Test로컬경로						
+			//String storedfilePath = "D:/upload/admin/beanSoup/" + storedImg;
+			
+			File deleteFile = new File(storedfilePath);
+			
+			if(deleteFile.exists()) {			            
+	            deleteFile.delete(); 			            
+	            System.out.println("파일을 삭제하였습니다.");			            
+	        } else {
+	            System.out.println("파일이 존재하지 않습니다.");
+	        }
+			
 			queryResult = adminBeanSoupMapper.updateBeanSoupFileInfo(params);
+			
+			
 		} 
 		else if("D".equals(params.getAction())) {
 			System.out.println("=======삭제 시작========");
+			
+			System.out.println("=======썸네일 삭제 시작========");			
+			String storedImg = adminBeanSoupMapper.selectImgFile(params.getMIdx());
+			
+			//삭제 - 실제경로
+			String storedfilePath = uploadPath+ "/upload/BEANSOUP/event/" + storedImg;
+			//삭제 - Test로컬경로						
+			//String storedfilePath = "D:/upload/admin/beanSoup/" + storedImg;
+			
+			File deleteFile = new File(storedfilePath);
+			
+			if(deleteFile.exists()) {			            
+	            deleteFile.delete(); 			            
+	            System.out.println("파일을 삭제하였습니다.");			            
+	        } else {
+	            System.out.println("파일이 존재하지 않습니다.");
+	        }
+			
+			
 			queryResult = adminBeanSoupMapper.deleteBeanSoupEvent(params);
 		}else {
 			System.out.println("=======입력 시작========");
