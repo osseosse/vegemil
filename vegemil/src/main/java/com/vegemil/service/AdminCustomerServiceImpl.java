@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.AdminVisitDTO;
@@ -98,6 +99,21 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 	@Override
 	public MemberDTO getMember(Long mIdx) {
 		return adminCustomerMapper.selectMember(mIdx);
+	}
+	
+	@Transactional
+	public boolean withdrawalMember(Long mIdx) {
+		
+		int queryResult = 0;
+		int memCount = 0;
+		
+		memCount = adminCustomerMapper.selectIsMemberCount(mIdx);
+		
+		if (memCount != 0) {
+			queryResult = adminCustomerMapper.deleteMember(mIdx);
+		}
+
+		return (queryResult == 1) ? true : false;
 	}
 	
 	@Override
