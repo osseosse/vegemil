@@ -431,7 +431,7 @@ function getModal(obj) {
 	modal +=						'<p>'+obj.sContent+'</p>'
 	modal +=					'</div>'
 	modal +=					'<div class="col-5">'
-	modal +=						'<p>사진 <button type="button" class="btn btn-secondary btn-sm2" id="btnDown">다운로드</button></p>'
+	modal +=						'<p>사진 <a download class="btn btn-secondary btn-sm2" target="_blank" href="https://www.vegemil.co.kr/web/upload/CUSTOMER/'+obj.sFile+'">다운로드</a></p>'
 	modal +=                        '<div class="scroll-h250">'
 	modal +=                        	'<p class="img100">'
 	modal +=                            	'<img src="/web/upload/CUSTOMER/'+obj.sFile+'" />'

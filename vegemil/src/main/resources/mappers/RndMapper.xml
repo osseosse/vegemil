@@ -168,7 +168,7 @@
         	1=1
             <include refid="search" />
         ORDER BY
-            s_idx DESC
+            FIELD(s_best, 1, 0), s_idx DESC
        	LIMIT
 		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
 	</select>
