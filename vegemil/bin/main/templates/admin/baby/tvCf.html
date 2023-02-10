@@ -111,13 +111,13 @@
 										</div>
 										<div class="row mb-1">
 											<div class="col-md-3 col-3">
-												<input type="text" class="form-control" id="product" placeholder="제목" />
+												<input type="text" class="form-control" id="title" placeholder="제목" />
 											</div>
 											<div class="col-md-3 col-3">
-												<input type="text" class="form-control" id="content" placeholder="영상주소" />
+												<input type="text" class="form-control" id="youtube" placeholder="영상주소" />
 											</div>											
 											<div class="col-md-2 col-3">												
-												<input type="date" class="form-control" id="startDate" name="startDate" max="2033-01-11" min="2021-01-11" >	                                                
+												<input type="date" class="form-control" id="date" name="date" max="2033-01-11" min="2021-01-11" >	                                                
 											</div>
 											<div class="col-md-2 col-3">
 												<div class="form-check form-switch">진열여부
@@ -137,7 +137,7 @@
 										
 										<div class="row">
 											 <div class="col-sm-12">
-												<button type="button" onclick="javascript:btnSave();" class="btn btn-primary me-1">등록</button>
+												<button type="button" onclick="javascript:btnSave('', 'I');" class="btn btn-primary me-1">등록</button>
 												<button type="reset" class="btn btn-outline-secondary">초기화</button>
 												
 											</div>
@@ -198,18 +198,16 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
     <form id="form" method="POST" enctype="multipart/form-data" >
-    	<input type="hidden" id="mIdx" name="mIdx" />
-    	<input type="hidden" id="mProduct" name="mProduct" />
-    	<input type="hidden" id="mStartDate" name="mStartDate" />
-    	<input type="hidden" id="mContent" name="mContent" />
-    	<input type="hidden" id="mEdayId" name="mEdayId" />
-    	<input type="hidden" id="mType" name="mType" />
-    	<input type="hidden" id="mThum" name="mThum" />
-    	<input type="hidden" id="mDisplay" name="mDisplay" />
-    	<input type="hidden" id="mIng" name="mIng" />
-    	<input type="hidden" id="action" name="action" />
+    	<input type="hidden" id="cIdx" name="cIdx" />
+    	<input type="hidden" id="cTitle" name="cTitle" />
+    	<input type="hidden" id="cImg" name="cImg" />
+    	<input type="hidden" id="cImgOriginal" name="cImgOriginal" />
+    	<input type="hidden" id="cYoutube" name="cYoutube" />
+    	<input type="hidden" id="cYoutubeId" name="mTcYoutubeIdype" />
+    	<input type="hidden" id="cDate" name="cDate" />
+    	<input type="hidden" id="cDisplay" name="cDisplay" />
     	<input type="file" id="fileName" name="fileName" />
-    	<!-- <input type="hidden" id="fileName" name="fileName" /> -->
+    	<input type="hidden" id="action" name="action" />
     </form>
     
     </th:block>

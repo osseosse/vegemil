@@ -43,6 +43,7 @@ import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminBabyDTO;
+import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
 import com.vegemil.domain.AdminCfDTO;
@@ -672,6 +673,27 @@ public class AdminBabyController extends UiUtils {
 		DataTableDTO dataTableDto = adminBabyService.getBabyTvcfList(commandMap);
 		return dataTableDto;
 	}
+	
+	//TVCF 등록	
+	@RequestMapping(value = "/admin/manage/baby/saveBabyTvcf")
+    public @ResponseBody Map<String, Object> saveBabyTvcf(@ModelAttribute("params") final AdminCfDTO adminCfDTO)throws Exception{
+		
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		try {
+			System.out.println("adminCfDTO정보: " +adminCfDTO.toString());
+			boolean isResulted = adminBabyService.saveBabyTvcf(adminCfDTO);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+    }
+	
+	
 	
 	
 	

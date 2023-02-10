@@ -652,6 +652,25 @@
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
 	
+	<insert id="insertBabyTvcf" parameterType="com.vegemil.domain.AdminCfDTO">
+		INSERT INTO m_tvcf_brandbaby (
+			c_title,
+			c_img,
+			c_img_original,
+			c_youtube,
+			c_youtube_id,
+			c_date,
+			c_display
+		) VALUES (
+			  #{cTitle}		
+			, #{cImg}
+			, #{cImgOriginal}			
+			, #{cYoutube}
+			, #{cYoutubeId}
+			, #{cDate} 
+			, #{cDisplay}			
+		)
+	</insert>
 	
 	
 

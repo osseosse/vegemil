@@ -217,8 +217,8 @@ var createTable = function() {
 				return '<img src="/web/upload/vegemilBaby/tvcf/'+full['cImg']+' " width="80" />'+
       			'</br>'+
       			'</br>'+      		      			      			
-          }
-          
+      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'DI\')" style="display: inline-block;" />수정</button>'
+          }          
         },
  		{
           targets: 5,
@@ -410,41 +410,33 @@ function btnSave(idx, action) {
 		
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
-		$('#mIdx').val("");
-		$('#mProduct').val($('#product').val());		
-		$('#mContent').val($('#content').val());
-		$('#mEdayId').val($('#edayId').val());
-		$('#mStartDate').val($('#startDate').val());		
-		$('#mType').val($('#type').val());
+		$('#cIdx').val("");
+		$('#cTitle').val($('#title').val());				
+		$('#cYoutube').val($('#youtube').val());		
+		$('#cDate').val($('#date').val());		
 		$('#action').val(action);
 		
 		var displayChecked = $('#display').is(':checked');	    
 		if(displayChecked){
-	        $('#mDisplay').val('1');	        
+	        $('#cDisplay').val('1');	        
 	    }else{
-	        $('#mDisplay').val('0');
+	        $('#cDisplay').val('0');
 	    }	    
-	    var ingChecked = $('#ing').is(':checked');
-	    if(ingChecked){
-	        $('#mIng').val('1');
-	    }else{
-	        $('#mIng').val('0');
-	    }
+	   
 		if($('input[type=file]')[0].files[0] === undefined){
 			alert('썸네일을 등록해주세요');
 			return false;
 		}
-	    
+		let cYoutubeId = $('#cYoutube').val().split('v=')[1].split('&')[0];
+	   
 	    const form = $('#form')[0];
 		var formData = new FormData();	    
-	    formData.append("mProduct", $('#mProduct').val());
-	    formData.append("mContent", $('#mContent').val());
-	    formData.append("mDisplay", $('#mDisplay').val());
-	    formData.append("mIng", $('#mIng').val());
-	    formData.append("mEdayId", $('#mEdayId').val());
-	    formData.append("mStartDate", $('#mStartDate').val());
-	    formData.append("mType", $('#mType').val());
-	    formData.append("action", $('#action').val());
+	    formData.append("cTitle", $('#cTitle').val());	    
+	    formData.append("cYoutube", $('#cYoutube').val());
+	    formData.append("cYoutubeId", cYoutubeId);
+	    formData.append("cDate", $('#cDate').val());
+	    formData.append("cDisplay", $('#cDisplay').val());   
+		formData.append("action", $('#action').val());
 	    formData.append('fileName', $('input[type=file]')[0].files[0]); 
 	    
 
@@ -509,8 +501,8 @@ function btnSave(idx, action) {
 	}	
 	
 	if(confirm(msg)) {
-		$.ajax({
-	       url: '/admin/manage/beanSoup/saveBeanSoupEvent',
+		$.ajax({	       
+	       url: '/admin/manage/baby/saveBabyTvcf',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: formData,

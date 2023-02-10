@@ -78,4 +78,6 @@ public interface AdminBabyMapper {
 	public int selectBabyTvcfTotalCount(Map<String, Object> paramMap);
 
 	public List<AdminCfDTO> selectBabyTvcfList(Map<String, Object> commandMap);
+
+	public int insertBabyTvcf(AdminCfDTO adminCfDTO);
 }

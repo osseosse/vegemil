@@ -6,6 +6,7 @@ import java.util.Map;
 import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
 
@@ -65,6 +66,9 @@ public interface AdminBabyService {
 	
 	//TVCF 조회
 	public DataTableDTO getBabyTvcfList(Map<String, Object> commandMap);
+
+	//TVCF 등록	
+	public boolean saveBabyTvcf(AdminCfDTO adminCfDTO) throws Exception;
 
 
 	
