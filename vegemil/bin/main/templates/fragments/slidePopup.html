@@ -1,0 +1,221 @@
+﻿<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}">
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="/common/js/prrple.slider.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  /********** EXAMPLE #5 - H3 - HORIZONTAL SLIDE + LOOP + SEAMLESS **********/
+		  $('#sliderh3 .slider').prrpleSlider({
+				autoPlay:true,				//play slider automatically?  //false 사용시 멈춤 //true 사용시 플레이
+				autoPlayInterval:	4000,		
+				csstransforms:	false,
+				richSwiping:false
+		  });
+		});
+	function popupCookieSave(){
+		setCookie("popup", "done" , 1);
+		mainPop.style.display = "none";
+		//window.close();
+	}
+	// 쿠키 저장(X) 닫기
+	function popupSelfClose(){
+		mainPop.style.display = "none";
+		//window.close();
+	}
+	// 쿠키 저장
+	function setCookie( name, value, expiredays ){
+	    var todayDate = new Date();
+	    todayDate.setDate( todayDate.getDate() + expiredays );
+	    todayDate.setHours(0, 0, -1); // 오늘의 바로 전날 23:59:59로 설정함.
+	    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+	}
+</script>
+<style>
+	.slider{
+	  display:block;
+	  position:relative;
+	  width:350px;
+	  height:430px;
+	}
+	.slider .slider_area{
+	  display:block;
+	  position:relative;
+	  overflow:hidden;
+	  width:352px;
+	  height:100%; 
+	}
+	.slider .slides{
+	  display:block;
+	  position:relative;
+	  width:352px;
+	  height:100%;
+	}
+	.slider .slide{
+	  display:block;
+	  position:relative;
+	  float:left;
+	  width:352px;
+	  height:100%;
+	  background:#DDD;
+	}
+	.slider .slide:nth-child(even){
+	  background:#EEE;
+	}
+	.slider.fade .slide{
+	  display:block;
+	  position:absolute;
+	  top:0;
+	  left:0;
+	 width:352px;
+	}
+	.slider.vertical .slide{
+	  float:none;
+	}
+	.slider .slider_clear{
+	  display:block;
+	  position:relative;
+	  height:0;
+	  clear:both;
+	}
+	.slider .animate{
+	  -webkit-transition:all 500ms ease-in-out;
+	  -moz-transition:all 500ms ease-in-out;
+	  -o-transition:all 500ms ease-in-out;
+	  transition:all 500ms ease-in-out;
+	}
+	/* ARROW NAVIGATION */
+	.slider .slider_left,
+	.slider .slider_right{
+	  display:none;
+	  position:absolute;
+	  top:45%;
+	  left:15px;
+	  color:#333;
+	  cursor:pointer;
+	  -webkit-user-select:none;
+	  -moz-user-select:none;
+	  -ms-user-select:none;
+	  -o-user-select:none;
+	  user-select:none;
+	}
+	.slider .slider_right{
+	  left:auto;
+	  right:15px;
+	}
+	.slider .slider_left:hover,
+	.slider .slider_right:hover{
+	  color:#888;
+	}
+	.slider .slider_left.inactive,
+	.slider .slider_right.inactive{
+	  color:#BBB;
+	}
+	/* DOT NAVIGATION bottom
+	.slider .slider_dotwrap{
+	  display:block;
+	  position:absolute;
+	  width:100%;
+	  bottom:15px;
+	  left:0;
+	  font-size:0;
+	  line-height:0;
+	  text-align:center;
+	  -webkit-user-select:none;
+	  -moz-user-select:none;
+	  -ms-user-select:none;
+	  -o-user-select:none;
+	  user-select:none;
+	}
+	*/
+	
+	/* DOT NAVIGATION top */
+	.slider .slider_dotwrap{
+	  display:block;
+	  position:absolute;
+	  width:100%;
+	  top:10px;
+	  left:0;
+	  font-size:0;
+	  line-height:0;
+	  text-align:center;
+	  -webkit-user-select:none;
+	  -moz-user-select:none;
+	  -ms-user-select:none;
+	  -o-user-select:none;
+	  user-select:none;
+	}
+	
+	.slider .slider_dot{
+	  display:inline-block;
+	  width:9px;
+	  height:9px;
+	  margin:0 6px;
+	  border:1px solid #bcbcbc;
+	  background:#fff;
+	  -webkit-border-radius:50%;
+	  -moz-border-radius:50%;
+	  border-radius:50%;
+	}
+	.slider .slider_dot.current{
+	  background:#428c1d;
+	  border:1px solid #428c1d;
+	}
+	/* PLAY / PAUSE CONTROLS */
+	.slider .slider_controls{
+	  display:none;
+	}
+	.slider .slider_play.hidden,
+	.slider .slider_pause.hidden{
+	  display:none !important;
+	}
+/* 	#sliderh3 .slidetitle img {border:1px solid #767676} /* 선삭제시 width값을 352-> 350으로 수정필요*/ */
+	#sliderh3 .slider a.slider_left {display:none; font-size:0 }
+	#sliderh3 .slider a.slider_right {display:none; font-size:0}
+	.btnBox {background:#232323; width:352px; padding:5px; box-sizing: border-box;}
+	.bl {padding:0px 0 6px 5px; color:#bfbfbf; display:inline-block; float: left;}
+	.btnBox .br{padding:2px 5px 0px 0px;}
+	.btnBox .br a{color:#fff; float:right;} 
+</style>
+<style>
+	.popBox .action {position:relative; background:#4e4e4e; padding-left:5px; top:-4px;padding-top:2px}
+	.popBox span.txt {font-size:11px ; display:inline-block; text-align:right; position:absolute; right:5px; top:3px; color:#fff; vertical-align:middle}
+	.popBox span.txt input {vertical-align:middle; margin-top:-1px}
+</style>
+</head>
+<body id="mainPop">
+<div class="popBox"><!-- 400px * 570px -->
+	<!-- pp-slider -->
+	<div class="container" id="sliderh3">
+		<div class="slider">
+			<div class="slider_area">
+				<div class="slides">
+					<div class="slide">
+						<div class="slidetitle" >
+							<a href="/company/mediaNews" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230109.jpg" alt="iso 인증" border="0"/></a>
+						</div>
+					</div>
+					
+					<div class="slide">
+						<div class="slidetitle" >
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202302.jpg" alt="CCM 수상" border="0"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="slider_left"></a>
+			<a class="slider_right"></a>
+		</div>
+	</div>
+	<!-- // pp-slider -->
+	<!-- action -->
+	<div class="action">
+		<div class="pop_close"><a href="javascript:popupSelfClose();"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/pop_notice_btn_close.gif" alt="닫기" /></a></div>
+		<span class="txt"><label ><input type="checkbox" id="todayChk" onclick="javascript:popupCookieSave();">오늘 하루 열지 않음</label></span>
+	</div>
+	<!-- action //-->
+</div>
+</body>
+</html>
