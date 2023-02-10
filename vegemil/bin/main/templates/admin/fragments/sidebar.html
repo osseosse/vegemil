@@ -39,6 +39,9 @@
                         <li th:classappend="${#request.requestURI.equals('/admin/manage/baby/babyQnaList')}? 'active': ''">
                         	<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/babyQnaList}"><i data-feather="circle"></i><span class="menu-item text-truncate">육아 상담 관리</span></a>
                         </li>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/baby/tvCf')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/tvCf}"><i data-feather="circle"></i><span class="menu-item text-truncate">TV CF 관리</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">고객지원</span></a>

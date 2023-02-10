@@ -61,6 +61,11 @@ public interface AdminBabyService {
 
 	public List<AdminSampleBabyDTO> getSampleBabyList(Map<String, Object> paramMap);
 
+	//=================== TV CF관리 =========================
+	
+	//TVCF 조회
+	public DataTableDTO getBabyTvcfList(Map<String, Object> commandMap);
+
 
 	
 }

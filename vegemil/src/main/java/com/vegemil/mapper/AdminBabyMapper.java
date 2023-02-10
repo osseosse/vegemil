@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 
 @Mapper
@@ -71,4 +72,10 @@ public interface AdminBabyMapper {
 	public List<AdminSampleBabyDTO> selectSampleBabyList(Map<String, Object> paramMap);
 
 	public int selectSampleBabyTotalCount(Map<String, Object> paramMap);
+	
+	//=================== TV CF관리 =========================
+	
+	public int selectBabyTvcfTotalCount(Map<String, Object> paramMap);
+
+	public List<AdminCfDTO> selectBabyTvcfList(Map<String, Object> commandMap);
 }

@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.mapper.AdminBabyMapper;
@@ -19,7 +20,7 @@ import com.vegemil.paging.PaginationInfo;
 @Service
 @Transactional
 public class AdminBabyServiceImpl implements AdminBabyService {
-
+	
 	@Autowired
 	private AdminBabyMapper adminBabyMapper;
 	
@@ -260,5 +261,34 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 
 		return sampleBabyList;
 	}
+	
+	//=================== TV CF관리 =========================
+
+	//TVCF 조회
+	@Override
+	public DataTableDTO getBabyTvcfList(Map<String, Object> commandMap) {
+		
+		List<AdminCfDTO> babyTvcfList = Collections.emptyList();
+		DataTableDTO dataTableDto = new DataTableDTO();
+		
+		int babyTvcfTotalCount = adminBabyMapper.selectBabyTvcfTotalCount(commandMap);
+
+		if (babyTvcfTotalCount > 0) {
+			int start = Integer.parseInt(commandMap.get("start").toString());
+			int length = Integer.parseInt(commandMap.get("length").toString());
+			
+			commandMap.put("start", start);
+			commandMap.put("length", length);
+			babyTvcfList = adminBabyMapper.selectBabyTvcfList(commandMap);
+		}
+		
+		dataTableDto.setData(babyTvcfList);
+		dataTableDto.setRecordsTotal(babyTvcfTotalCount);
+		dataTableDto.setRecordsFiltered(babyTvcfTotalCount);
+		dataTableDto.setDraw(Integer.parseInt(commandMap.get("draw").toString()));
+
+		return dataTableDto;
+	}
+	
 
 }

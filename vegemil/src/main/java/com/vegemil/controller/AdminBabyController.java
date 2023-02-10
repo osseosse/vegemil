@@ -45,6 +45,7 @@ import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminBabyService;
@@ -470,6 +471,25 @@ public class AdminBabyController extends UiUtils {
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
 	
+	//정적 이미지 불러오기 - tvcf
+	@GetMapping("/web/upload/vegemilBaby/tvcf/{filename}")
+	public ResponseEntity<Resource> displayTvcf(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/tvcf/" + filename);
+		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/tvcf/" + filename);
+			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")
 	public @ResponseBody Map<String, Object> updateCalendarModelList(@ModelAttribute("params") final AdminCalendarModelDTO params, 
 			Model model, HttpServletResponse response) {
@@ -637,4 +657,25 @@ public class AdminBabyController extends UiUtils {
 		
 		return "admin/baby/babyQnaAdd";
     }
+	//============================================ TVCF ============================================
+	
+	@RequestMapping(value = "/admin/manage/baby/tvCf")
+    public String moveBabyTvCf(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+		return "admin/baby/tvCf";
+    }
+	
+	//TVCF 조회
+	@GetMapping("/admin/manage/baby/tvcfList")
+	public @ResponseBody DataTableDTO getBabyInfoList(@ModelAttribute("params") AdminCfDTO params, Model model,
+			@RequestParam Map<String, Object> commandMap) {
+		
+		DataTableDTO dataTableDto = adminBabyService.getBabyTvcfList(commandMap);
+		return dataTableDto;
+	}
+	
+	
+	
+	
+	
+	//============================================ TVCF ============================================
 }

@@ -603,5 +603,56 @@
 		FROM
 			m_sample_baby
 	</select>
+	
+	
+	<!-- =================== TV CF관리 ========================= -->
+	<select id="selectBabyTvcfTotalCount" parameterType="hashMap" resultType="int">
+		SELECT COUNT(*)
+		FROM m_tvcf_brandbaby
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND c_date &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND c_date &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='cDisplay != "" and cDisplay != null '>
+	 	   AND c_display = #{cDisplay}
+	     </if>	     
+	     <if test='searchWord != "" '>
+		   AND c_title like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')   
+		 </if>
+	</select>
+	
+	
+	<select id="selectBabyTvcfList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCfDTO">
+		SELECT
+			c_title,
+			c_img,
+			c_youtube,
+			c_youtube_id,
+			c_date,
+			c_display
+		  FROM m_tvcf_brandbaby
+		 WHERE 1=1
+		 <if test='sStartdate != "" '>
+	       AND c_date &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND c_date &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>
+	     <if test='cDisplay != "" and cDisplay != null '>
+	 	   AND c_display = #{cDisplay}
+	     </if>	     
+	     <if test='searchWord != "" '>
+		   AND c_title like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')   
+		 </if>
+		 
+		 ORDER BY c_idx DESC
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	
+	
 
 </mapper>
