@@ -163,7 +163,7 @@
 															<li th:each="model : ${modelList}"  th:with="var=${model.ROWNUM}" th:class="md+${var}"> 
 																<div class="model_month">
 																	<p  th:with="var=${model.cRank}" th:class="model_box+${var}"  
-																		th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/model_upload_resize/' + ${model.cImage} +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></p>
+																		th:style="'background: url(/web/upload/vegemilBaby/' + ${model.cImage} +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></p>
 																	<p class="f17_4 mt50" th:text="${model.cHonor}"></p>
 																	<p class="f26_4" th:text="|*${model.cName}님|">이름</p>
 																</div>

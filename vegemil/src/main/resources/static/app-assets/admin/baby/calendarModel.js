@@ -529,7 +529,8 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox1">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage+'" /></p>'
+	/*modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'*/
+	modal +=													'<p class="mt-1"><img src="D:/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -542,7 +543,7 @@ function getModal(obj) {
 	modal +=												'<div class="mt-1 photoBox2">'
 	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
 	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage2+'" /></p>'
+	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage2+'"  width="100%"/></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -621,3 +622,12 @@ function getModal(obj) {
     
     return modal;
 }
+
+$(document).ready(function () {
+	  var angle = 90;        // 현재의 각도를 변수로 저장
+	  $('.photoBox1 .rotateL').click(function() { angle += -90; $(".photoBox1 > p").rotate(angle);});
+	  $('.photoBox1 .rotateR').click(function() { angle += +90; $(".photoBox1 > p").rotate(angle);});
+
+	  $('.photoBox2 .rotateL').click(function() { angle += -90; $(".photoBox2 > p").rotate(angle);});
+	  $('.photoBox2 .rotateR').click(function() { angle += +90; $(".photoBox2 > p").rotate(angle);});
+	});
