@@ -198,7 +198,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 				
 				String savefileName = uuid + "_" +file;
 				
-				//저장 - 실제경로
+				//저장 - 실제경로 
 				Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);
 				//저장 - Test로컬경로
 				//Path savePath = Paths.get("D:/upload/vegemilBaby/" + savefileName);
