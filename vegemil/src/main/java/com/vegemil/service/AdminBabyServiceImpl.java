@@ -1,5 +1,6 @@
 package com.vegemil.service;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -312,7 +313,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
 					String savefileName = uuid + "_" + file;
 					//저장 - 실제경로
-					//Path savePath = Paths.get(uploadPath + "/upload/BEANSOUP/event/" + savefileName);
+					//Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/tvcf/" + savefileName);
 					//저장 - Test로컬경로
 					Path savePath = Paths.get("D:/upload/admin/vegemilbaby/" + savefileName);		
 					adminCfDTO.getFileName().transferTo(savePath);
@@ -323,84 +324,76 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 			queryResult = adminBabyMapper.insertBabyTvcf(adminCfDTO);
 
 		}
-//		else if ("U".equals(adminCfDTO.getAction())) {
-//			System.out.println("=======수정 시작========");
-//			
-//			if(adminCfDTO.getFileName() != null) {
-//				System.out.println("이미지 등록로직 시작");
-//				
-//				String uuid = UUID.randomUUID().toString();
-//				String originalName = adminCfDTO.getFileName().getOriginalFilename();
-//				
-//				if(!"".equals(originalName)) {
-//					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
-//					String savefileName = uuid + "_" + file;
-//					//저장 - 실제경로
-//					Path savePath = Paths.get(uploadPath + "/upload/BEANSOUP/event/" + savefileName);
-//					//저장 - Test로컬경로
-//					//Path savePath = Paths.get("D:/upload/admin/beanSoup/" + savefileName);		
-//					adminCfDTO.getFileName().transferTo(savePath);
-//					adminCfDTO.setMThum(savefileName);
-//					adminCfDTO.setMThumOriginal(originalName);							
-//				}
-//			}
-//			
-//			queryResult = adminBeanSoupMapper.updateBeanSoupEvent(adminCfDTO);
-//		}
-//		else if("DI".equals(adminCfDTO.getAction())) {
-//			System.out.println("=======썸네일 삭제 시작========");
-//					
-//			String storedImg = adminBeanSoupMapper.selectImgFile(adminCfDTO.getMIdx());
-//			
-//			//삭제 - 실제경로
-//			String storedfilePath = uploadPath+ "/upload/BEANSOUP/event/" + storedImg;
-//			//삭제 - Test로컬경로						
-//			//String storedfilePath = "D:/upload/admin/beanSoup/" + storedImg;
-//			
-//			File deleteFile = new File(storedfilePath);
-//			
-//			if(deleteFile.exists()) {			            
-//	            deleteFile.delete(); 			            
-//	            System.out.println("파일을 삭제하였습니다.");			            
-//	        } else {
-//	            System.out.println("파일이 존재하지 않습니다.");
-//	        }
-//			
-//			queryResult = adminBeanSoupMapper.updateBeanSoupFileInfo(adminCfDTO);
-//			
-//			
-//		} 
-//		else if("D".equals(adminCfDTO.getAction())) {
-//			System.out.println("=======삭제 시작========");
-//			
-//			System.out.println("=======썸네일 삭제 시작========");			
-//			String storedImg = adminBeanSoupMapper.selectImgFile(adminCfDTO.getMIdx());
-//			
-//			//삭제 - 실제경로
-//			String storedfilePath = uploadPath+ "/upload/BEANSOUP/event/" + storedImg;
-//			//삭제 - Test로컬경로						
-//			//String storedfilePath = "D:/upload/admin/beanSoup/" + storedImg;
-//			
-//			File deleteFile = new File(storedfilePath);
-//			
-//			if(deleteFile.exists()) {			            
-//	            deleteFile.delete(); 			            
-//	            System.out.println("파일을 삭제하였습니다.");			            
-//	        } else {
-//	            System.out.println("파일이 존재하지 않습니다.");
-//	        }
-//			
-//			
-//			queryResult = adminBeanSoupMapper.deleteBeanSoupEvent(adminCfDTO);
-//		}else {
-//			System.out.println("=======입력 시작========");
-//			queryResult = adminBeanSoupMapper.insertBeanSoupEvent(adminCfDTO);
-//		}
+		else if ("U".equals(adminCfDTO.getAction())) {
+			System.out.println("=======수정 시작========");
+			
+			if(adminCfDTO.getFileName() != null) {
+				System.out.println("이미지 등록로직 시작");
+				
+				String uuid = UUID.randomUUID().toString();
+				String originalName = adminCfDTO.getFileName().getOriginalFilename();
+				
+				if(!"".equals(originalName)) {
+					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
+					String savefileName = uuid + "_" + file;
+					//저장 - 실제경로
+					//Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/tvcf/" + savefileName);
+					//저장 - Test로컬경로
+					Path savePath = Paths.get("D:/upload/admin/vegemilbaby/" + savefileName);		
+					adminCfDTO.getFileName().transferTo(savePath);
+					adminCfDTO.setCImg(savefileName);
+					adminCfDTO.setCImgOriginal(originalName);							
+				}
+			}
+			
+			queryResult = adminBabyMapper.updateBabyTvcf(adminCfDTO);
+		}
+		else if("DI".equals(adminCfDTO.getAction())) {
+			System.out.println("=======썸네일 삭제 시작========");
+					
+			String storedImg = adminBabyMapper.selectImgFile(adminCfDTO.getCIdx());
+			
+			//삭제 - 실제경로
+			//String storedfilePath = uploadPath+ "/upload/vegemilBaby/tvcf/" + storedImg;
+			//삭제 - Test로컬경로						
+			String storedfilePath = "D:/upload/admin/vegemilbaby/" + storedImg;
+			
+			File deleteFile = new File(storedfilePath);
+			
+			if(deleteFile.exists()) {			            
+	            deleteFile.delete(); 			            
+	            System.out.println("파일을 삭제하였습니다.");			            
+	        } else {
+	            System.out.println("파일이 존재하지 않습니다.");
+	        }
+			
+			queryResult = adminBabyMapper.updateBabyTvcfFileInfo(adminCfDTO);
+			
+			
+		} 
+		else if("D".equals(adminCfDTO.getAction())) {
+			System.out.println("=======삭제 시작========");
+			
+			System.out.println("=======썸네일 삭제 시작========");			
+			String storedImg = adminBabyMapper.selectImgFile(adminCfDTO.getCIdx());
+			
+			//삭제 - 실제경로
+			//String storedfilePath = uploadPath+ "/upload/vegemilBaby/tvcf/" + storedImg;
+			//삭제 - Test로컬경로						
+			String storedfilePath = "D:/upload/admin/vegemilbaby/" + storedImg;
+			
+			File deleteFile = new File(storedfilePath);
+
+			if(deleteFile.exists()) {			            
+	            deleteFile.delete(); 			            
+	            System.out.println("파일을 삭제하였습니다.");			            
+	        } else {
+	            System.out.println("파일이 존재하지 않습니다.");
+	        }
+			queryResult = adminBabyMapper.deleteBabyTvcf(adminCfDTO);
+		}
 		
 		return (queryResult == 1) ? true : false;
-
-		
 	}
 	
-
 }

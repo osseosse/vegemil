@@ -156,10 +156,10 @@ var createTable = function() {
 			console.log('params', params);
 
 		},
-		/*dataSrc: function(res) {
+		dataSrc: function(res) {
 			console.log('res', res.data)
 			return res.data
-		},*/
+		},
 		error : function(xhr, ajaxSettings, thrownError) { 
 			console.log('error');
 		}
@@ -406,7 +406,7 @@ function btnSave(idx, action) {
 		
 	let msg;
 	let mDisplay;
-	let mIng;
+
 		
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
@@ -455,41 +455,34 @@ function btnSave(idx, action) {
 			msg = "삭제하시겠습니까?";	
 			console.log('삭제시작');
 		}
-		$('#mIdx').val(idx);
-		$('#mProduct').val($('#mProduct'+idx).val());
-		$('#mContent').val($('#mContent'+idx).val());
-		$('#mEdayId').val($('#mEdayId'+idx).val());
-		$('#mType').val($('#mType'+idx).val());		
-		$('#mDisplay').val(mDisplay);
-		$('#mIng').val(mIng);
-		$('#action').val(action);
 		
-		console.log("mIdx: ", $('#mIdx').val());
+		
+		
+		$('#cIdx').val(idx);
+		$('#cTitle').val($('#cTitle'+idx).val());
+		$('#cYoutube').val($('#cYoutube'+idx).val());
+		$('#action').val(action);
 
-		var displayChecked = $('#mDisplay'+idx).is(':checked');	    
+		let cYoutubeId = $('#cYoutube').val().split('v=')[1].split('&')[0];
+
+
+		var displayChecked = $('#cDisplay'+idx).is(':checked');	    
 		if(displayChecked){
-		    formData.append("mDisplay", '1');	        
+		    formData.append("cDisplay", '1');	        
 	    }else{
-		    formData.append("mDisplay", '0');
+		    formData.append("cDisplay", '0');
 	    }	    
-	    var ingChecked = $('#mIng'+idx).is(':checked');
-	    if(ingChecked){
-		    formData.append("mIng", '1');
-	    }else{
-	    	formData.append("mIng", '0');
-	    }	
+	   
 		if(fileInput){
 		console.log('파일 확인!');
 		 formData.append('fileName', fileInput); 
 		}else{
 			console.log('파일미확인');
 		}
-		formData.append("mIdx", $('#mIdx').val());
-	    formData.append("mProduct", $('#mProduct').val());
-	    formData.append("mContent", $('#mContent').val());
-	    formData.append("mEdayId", $('#mEdayId').val());
-	    formData.append("mStartDate", $('#mStartDate').val());
-	    formData.append("mType", $('#mType'+idx).val());
+		formData.append("cIdx", $('#cIdx').val());
+	    formData.append("cTitle", $('#cTitle').val());	    
+	    formData.append("cYoutube", $('#cYoutube').val());
+	    formData.append("cYoutubeId", cYoutubeId);	    
 	    formData.append("action", $('#action').val());
 	    
 	    console.log("formData", formData);
@@ -520,6 +513,7 @@ function btnSave(idx, action) {
 					alert('저장되었습니다.');
 					$('.datatables-basic').DataTable().ajax.reload();		
 			   } else {
+					alert('삭제되었습니다.');
 					$('.datatables-basic').DataTable().ajax.reload();		
 				}
 		   	   

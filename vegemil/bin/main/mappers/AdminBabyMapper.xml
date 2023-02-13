@@ -627,6 +627,7 @@
 	
 	<select id="selectBabyTvcfList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCfDTO">
 		SELECT
+			c_idx,
 			c_title,
 			c_img,
 			c_youtube,
@@ -672,6 +673,50 @@
 		)
 	</insert>
 	
+	
+	<!-- 썸네일 이미지 조회(변환명) -->
+	<select id="selectImgFile" parameterType="String" resultType="String">
+		SELECT 
+			c_img 
+		FROM 
+			m_tvcf_brandbaby			
+		WHERE
+			c_idx = #{cIdx}
+	</select>
+		
+	<update id="deleteBabyTvcf" parameterType="com.vegemil.domain.AdminCfDTO">
+		DELETE FROM m_tvcf_brandbaby
+		WHERE
+			c_idx = #{cIdx}
+	</update>
+	
+	<update id="updateBabyTvcf" parameterType="com.vegemil.domain.AdminCfDTO">
+		UPDATE m_tvcf_brandbaby
+		SET
+			  c_title = #{cTitle}			  
+			, c_youtube = #{cYoutube}
+			, c_youtube_id = #{cYoutubeId}
+			, c_display = #{cDisplay}											
+			<if test='cImg != "" and cImg != null '>
+			, c_img = #{cImg}
+			, c_img_original = #{cImgOriginal}
+			</if>	
+		WHERE
+			c_idx = #{cIdx}
+	</update>
+	
+	<update id="updateBabyTvcfFileInfo" parameterType="com.vegemil.domain.AdminCfDTO">
+		UPDATE 
+			m_tvcf_brandbaby
+		SET
+			  c_title = #{cTitle}			  
+			, c_youtube = #{cYoutube}
+			, c_youtube_id = #{cYoutubeId}
+			, c_display = #{cDisplay}	
+			, c_img = DEFAULT, c_img_original = DEFAULT 
+		WHERE 
+			c_idx = #{cIdx} 	
+	</update>
 	
 
 </mapper>

@@ -228,7 +228,7 @@
 		UPDATE 
 			m_beansoup_event
 		SET
-			m_content = #{mContent}
+			  m_content = #{mContent}
 			, m_product = #{mProduct}
 			, m_eday_id = #{mEdayId}  
 			, m_type = #{mType}

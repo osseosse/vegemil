@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
@@ -49,6 +50,14 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public List<VegemilBabyQnADTO> selectQnAIndex() {
 		return vegemilBabyMapper.selectQnAIndex();
 	}
+	
+	//======[Brand]======	
+	//TvCf 조회
+	@Override
+	public List<AdminCfDTO> selectTvCf() {	
+		return vegemilBabyMapper.selectTvCf();
+	}
+	
 
 	
 	// ======[Community]======
@@ -251,9 +260,5 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return vegemilBabyMapper.selectModelList();
 	}
 	
-	
-	
-	
-
 
 }

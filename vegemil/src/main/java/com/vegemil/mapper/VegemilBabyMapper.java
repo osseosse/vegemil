@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
@@ -24,6 +25,12 @@ public interface VegemilBabyMapper {
 	//육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
 
+	
+	//======[Brand]======	
+	//TvCf 조회	
+	public List<AdminCfDTO> selectTvCf();
+	
+	
 	//======[Community]======	
 	// 육아정보 - 카테고리별 숫자
 	public VegemilBabyCategoryDTO selectCategoryCount(); 	
@@ -85,6 +92,7 @@ public interface VegemilBabyMapper {
 	
 
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
+	
 
 
 

@@ -25,6 +25,20 @@
 		LIMIT 2;
 	</select>
 	
+	<!-- ======[Brand]====== -->
+	<!-- TvCf조회 -->			
+	<select id="selectTvCf" resultType="com.vegemil.domain.AdminCfDTO" >			
+		SELECT 
+			c_title, c_img, c_youtube_id, c_date
+		FROM 
+			m_tvcf_brandbaby
+		WHERE 
+			c_display = 1
+		ORDER BY 
+			c_idx DESC
+	</select>
+	
+	
 	
 	<!-- ======[Community]====== -->	
 	<!-- 육아정보 - 카테고리별 숫자 -->			

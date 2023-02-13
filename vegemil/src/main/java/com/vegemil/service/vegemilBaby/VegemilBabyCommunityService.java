@@ -4,11 +4,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
-import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
@@ -22,6 +23,9 @@ public interface VegemilBabyCommunityService {
 	//육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
 	
+	//======[Brand]======	
+	//TvCf 조회
+	public List<AdminCfDTO> selectTvCf();
 	
 	//======[Community]======	
 	// 육아정보 

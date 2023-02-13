@@ -70,9 +70,18 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
 		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());
 		return "vegemilBaby/index";
-	}
-
-	/* Community */	
+	}	
+	/* ======== Brand ======== */
+	@GetMapping(value = "/vegemilBaby/tv")
+	public String moveTvPage(Model model) {		
+		model.addAttribute("tvcfList",vegemilBabyCommunityService.selectTvCf());		 
+		return "vegemilBaby/tv";
+	}	
+	
+	
+	
+	
+	/* ======== Community ======== */
 	@GetMapping("/vegemilBaby/magazine")
 	public String moveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		
@@ -344,7 +353,6 @@ public class VegemilBabyController extends UiUtils {
 		
 		return showMessageWithRedirect("샘플신청 완료되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 	}
-	
 	
 
 

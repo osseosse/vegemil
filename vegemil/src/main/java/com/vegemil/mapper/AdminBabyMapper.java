@@ -80,4 +80,12 @@ public interface AdminBabyMapper {
 	public List<AdminCfDTO> selectBabyTvcfList(Map<String, Object> commandMap);
 
 	public int insertBabyTvcf(AdminCfDTO adminCfDTO);
+
+	public String selectImgFile(String cIdx);
+	
+	public int deleteBabyTvcf(AdminCfDTO adminCfDTO);
+
+	public int updateBabyTvcf(AdminCfDTO adminCfDTO);
+
+	public int updateBabyTvcfFileInfo(AdminCfDTO adminCfDTO);
 }
