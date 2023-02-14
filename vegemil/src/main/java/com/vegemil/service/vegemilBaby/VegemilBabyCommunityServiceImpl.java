@@ -196,7 +196,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 			if(!"".equals(originalName)) {
 				String file = originalName.substring(originalName.lastIndexOf("\\")+1);
 				
-				String savefileName = uuid + "_" +file;
+				String savefileName = uuid + "_" +file.replaceAll("\\s", "");
 				
 				//저장 - 실제경로 
 				Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);

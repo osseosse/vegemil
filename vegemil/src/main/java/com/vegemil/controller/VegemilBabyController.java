@@ -251,7 +251,7 @@ public class VegemilBabyController extends UiUtils {
 			if(!"".equals(originalName1)) {
 				String file1 = originalName1.substring(originalName1.lastIndexOf("\\") + 1);
 				
-				String savefileName1 = uuid + "_" + file1;
+				String savefileName1 = uuid + "_" + file1.replaceAll("\\s", "");
 				//테스트경로
 				Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
 				//저장
@@ -262,7 +262,7 @@ public class VegemilBabyController extends UiUtils {
 			if(!"".equals(originalName2)) {
 				String file2 = originalName2.substring(originalName2.lastIndexOf("\\") + 1);
 				
-				String savefileName2 = uuid + "_" + file2;
+				String savefileName2 = uuid + "_" + file2.replaceAll("\\s", "");;
 				//테스트경로
 				Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
 				//저장
