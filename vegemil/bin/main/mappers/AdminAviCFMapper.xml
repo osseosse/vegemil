@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminAviCFMapper">
+
+	<sql id="aviCFColumns">
+		t_idx,
+		t_subject,
+		t_date,
+		t_onair,
+		t_youtube,
+		t_youtube_img,
+		t_disp_order
+	</sql>
+	
+	<select id="selectAdminAviCFList" resultType="com.vegemil.domain.AdminAviCFDTO" parameterType="com.vegemil.domain.AdminAviCFDTO">
+		SELECT
+		  <include refid="aviCFColumns" />
+		FROM
+			<choose>
+				<when test='tOnair != "" and tOnair != null'  >
+			 	   (select * 
+			 	   from dbvegemilcokr.M_AviCf 
+			 	   where
+			 	   		t_onair = #{tOnair}
+			 	   	) tb
+			 	</when>
+				<otherwise>
+					M_AviCf
+				</otherwise>
+			</choose>
+		WHERE 
+			1=1
+			<if test='searchKeyword != "" and searchKeyword != null'>
+ 				AND t_subject like CONCAT('%',#{searchKeyword},'%')
+			</if> 
+			<if test='tStartdate != "" and tStartdate != null and tEnddate != "" and tEnddate != null'>
+ 	   			AND t_date between DATE(#{tStartdate, jdbcType=VARCHAR}) AND DATE(#{tEnddate, jdbcType=VARCHAR})+1
+ 	   		</if>			
+		ORDER BY
+			t_idx DESC
+	</select>
+	
+	<insert id="insertAdminAviCF" parameterType="com.vegemil.domain.AdminAviCFDTO" useGeneratedKeys="true" keyProperty="tIdx">
+		INSERT INTO M_AviCf (
+			t_subject,
+			t_date,
+			t_onair,
+			t_youtube,
+			t_youtube_img,
+			t_disp_order
+		) VALUES (
+			#{tSubject ,jdbcType=VARCHAR}     , 
+			NOW()							  , 
+			#{tOnair ,jdbcType=VARCHAR}       ,
+			#{tYoutube ,jdbcType=VARCHAR}     ,
+			#{tYoutubeImg ,jdbcType=VARCHAR}  ,
+			#{tDispOrder ,jdbcType=VARCHAR}      
+		)
+	</insert>
+	
+	<delete id="deleteAdminAviCFData" parameterType="String">
+		delete from M_AviCf where t_idx = #{tIdx}
+	</delete>
+	
+	<select id="selectAdminAviCFData" parameterType="String" resultType="com.vegemil.domain.AdminAviCFDTO">
+		SELECT
+		  <include refid="aviCFColumns" />
+		FROM
+			M_AviCf
+		WHERE 
+			t_idx = #{tIdx}
+	</select>
+	
+	<update id="updatetOnairStatus" parameterType="com.vegemil.domain.AdminAviCFDTO">
+		update M_AviCf 
+		set	
+			t_onair = #{tOnair ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+	
+	<update id="updateAdminAviCFData" parameterType="com.vegemil.domain.AdminAviCFDTO">
+		update M_AviCf
+		set
+			t_subject    = #{tSubject ,jdbcType=VARCHAR},      
+			t_onair = #{tOnair ,jdbcType=VARCHAR},   
+			t_youtube     = #{tYoutube ,jdbcType=VARCHAR},      
+			t_youtube_img   = #{tYoutubeImg ,jdbcType=VARCHAR},   
+			t_disp_order = #{tDispOrder ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+</mapper>

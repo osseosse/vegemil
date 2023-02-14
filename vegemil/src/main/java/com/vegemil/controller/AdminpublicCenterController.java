@@ -29,10 +29,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.domain.AdminAdEctDTO;
+import com.vegemil.domain.AdminAviCFDTO;
 import com.vegemil.domain.AdminMediaNewsDTO;
+import com.vegemil.domain.AdminRadioCMDTO;
+import com.vegemil.domain.AdminVideoContestDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminAdEtcService;
+import com.vegemil.service.AdminAviCFService;
+import com.vegemil.service.AdminAviRadioCMService;
 import com.vegemil.service.AdminPublicCenterService;
+import com.vegemil.service.AdminVideoContestService;
 import com.vegemil.util.UiUtils;
 
 import lombok.extern.log4j.Log4j2;
@@ -48,7 +54,15 @@ public class AdminpublicCenterController extends UiUtils {
 	@Autowired
 	private AdminAdEtcService adminAdEtcService;
 	
-
+	@Autowired 
+	private AdminVideoContestService adminVideoContestService;
+	
+	@Autowired
+	private AdminAviRadioCMService adminRadioCMSerive;
+	
+	@Autowired
+	private AdminAviCFService adminAviCFService;
+	
 	// 보도자료 등록 페이지
 	@GetMapping("/publicCenter/mediaNewsAdd")
 	public String moveMediaNewsAddPage(@RequestParam(value = "mIdx", required = false) Long mIdx,
@@ -152,6 +166,7 @@ public class AdminpublicCenterController extends UiUtils {
 		return true;
 	}
 	
+	//===========================기타 영상 자료===========================//
 	
 	//기타영상자료 메인
 	@GetMapping("/publicCenter/adEtcList")
@@ -163,7 +178,7 @@ public class AdminpublicCenterController extends UiUtils {
 	@RequestMapping(value = "/publicCenter/getAdEtcList")
     public @ResponseBody JsonObject getAdEtcList(@ModelAttribute("params") final AdminAdEctDTO params, HttpServletRequest req, 
     			Map<String, Object> commandMap)throws Exception{
-		System.out.println("params::" + params);
+		
 		List<AdminAdEctDTO> adEtcList = adminAdEtcService.getAdminAdEtcList(params);
 		JsonObject jsonObj = new JsonObject();
 		if (CollectionUtils.isEmpty(adEtcList) == false) {
@@ -174,7 +189,6 @@ public class AdminpublicCenterController extends UiUtils {
 		
 		return jsonObj;
     }
-	
 	
 	//기타영상 자료 수정 삭제 
 	@RequestMapping(value="/publicCenter/saveAdEtc")
@@ -249,6 +263,263 @@ public class AdminpublicCenterController extends UiUtils {
 		return "admin/publicCenter/adEtcUpdate";
 	}
 	
+	//===========================공모전 동영상===========================//
+	
+	//공모전동영상 메인
+	@GetMapping("/publicCenter/videoContestList")
+	public String getaVideoContestList(Model model) {
+		return "admin/publicCenter/videoContestList";
+	}
+	
+	// 공모전동영상 리스트  
+	@RequestMapping(value = "/publicCenter/getvideoContestList")
+    public @ResponseBody JsonObject getvideoContestList(@ModelAttribute("params") final AdminVideoContestDTO params, HttpServletRequest req, 
+    			Map<String, Object> commandMap)throws Exception{
+		System.out.println("params::" + params);
+		List<AdminVideoContestDTO> videoContestList = adminVideoContestService.getAdminVideoContestList(params);
+		JsonObject jsonObj = new JsonObject();
+		if (CollectionUtils.isEmpty(videoContestList) == false) {
+			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+			JsonArray jsonArr = gson.toJsonTree(videoContestList).getAsJsonArray();
+			jsonObj.add("data", jsonArr);
+		}
+		
+		return jsonObj;
+    }
+	
+	// 공모전동영상 등록 페이지 ㅇ동
+	@GetMapping("/publicCenter/postVideoContest")
+	public String getPostVideoContestView() {
+		return "admin/publicCenter/videoContestPost";
+	}
+	
+	// 새로운 공모전영상 데이터 등록
+	@PostMapping("/publicCenter/postVideoContest")
+	 public @ResponseBody Map<String, Object> saveNewVideoContest(@ModelAttribute("params") final AdminVideoContestDTO params,
+	    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
+		
+		System.out.println("*******"+params);
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminVideoContestService.saveVideoContest(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+			
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+	}
+	
+	// 공모전 영상 수정 삭제
+	@RequestMapping(value="/publicCenter/saveVideoContest")
+    public @ResponseBody Map<String, Object> saveVideoContest(@ModelAttribute("params") final AdminVideoContestDTO params,
+    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile )throws Exception{
+		
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminVideoContestService.saveVideoContest(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+    }
 	
 	
+	// 공모전 영상 노출여부 변경
+	@RequestMapping(value="/publicCenter/changeContestOnairStatus")
+    public @ResponseBody Map<String, Object> getChangeContestOnairStatus(@ModelAttribute("params") final AdminVideoContestDTO params)throws Exception{
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminVideoContestService.changeOnairStatus(params);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		
+		return rtnMsg;
+    }
+	
+	// 공모전 영상 수정 화면 이동
+	@GetMapping("/publicCenter/videoContestUpdate")
+	public String getvideoContestView(@RequestParam("tIdx") String tIdx, Model model) {
+		
+		model.addAttribute("videoContest", adminVideoContestService.getAdminContestVideoData(tIdx));
+		return "admin/publicCenter/videoContestUpdate";
+	}
+	
+	//===========================라디오 씨엠 영상===========================//
+	
+	// 라디오 씨엠 메인
+	@GetMapping("/publicCenter/radioCMList")
+	public String getaradioCMList(Model model) {
+		return "admin/publicCenter/redioCMList";
+	}
+	
+	// 라디오 씨엠 리스트  
+	@RequestMapping(value = "/publicCenter/getRadioCMList")
+    public @ResponseBody JsonObject getvideoContestList(@ModelAttribute("params") final AdminRadioCMDTO params, HttpServletRequest req, 
+    			Map<String, Object> commandMap)throws Exception{
+		System.out.println("params::" + params);
+		List<AdminRadioCMDTO> radioCMList = adminRadioCMSerive.getRadioCMList(params);
+		JsonObject jsonObj = new JsonObject();
+		if (CollectionUtils.isEmpty(radioCMList) == false) {
+			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+			JsonArray jsonArr = gson.toJsonTree(radioCMList).getAsJsonArray();
+			jsonObj.add("data", jsonArr);
+		}
+		
+		return jsonObj;
+    }
+	
+	
+	// 라디오 씨엠 등록 페이지 ㅇ동
+	@GetMapping("/publicCenter/radioCMPost")
+	public String getPostRadioCMView() {
+		return "admin/publicCenter/radioCMPost";
+	}
+	
+	// 라디오 씨엠 수정 화면 이동
+	@GetMapping("/publicCenter/radioCMUpdate")
+	public String getRadioCMUpdateView(@RequestParam("tIdx") String tIdx, Model model) {
+		
+		model.addAttribute("radioCM", adminRadioCMSerive.getRadioCMData(tIdx));
+		return "admin/publicCenter/radioCMUpdate";
+	}
+	
+	// 새로운 라디오 씨엠 데이터 등록 수정 삭제
+	@RequestMapping(value="/publicCenter/saveRadioCM")
+	public @ResponseBody Map<String, Object> saveRadioCM(@ModelAttribute("params") final AdminRadioCMDTO params,
+	    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
+		
+		System.out.println("*******"+params);
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminRadioCMSerive.saveRadioCM(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+			
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+	}
+	// 라디오 씨엠 영상 노출여부 변경
+	@RequestMapping(value="/publicCenter/changeRadioCMOnairStatus")
+    public @ResponseBody Map<String, Object> getChangeRadioCMOnairStatus(@ModelAttribute("params") final AdminRadioCMDTO params)throws Exception{
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminRadioCMSerive.changeOnairStatus(params);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		
+		return rtnMsg;
+    }
+	
+	//===========================CF영상===========================//
+	
+	// CF영상 메인
+	@GetMapping("/publicCenter/aviCFList")
+	public String getAviCFListList(Model model) {
+		return "admin/publicCenter/aviCFList";
+	}
+	
+	// CF영상 리스트  
+	@RequestMapping(value = "/publicCenter/getAviCFList")
+	public @ResponseBody JsonObject getAviCFList(@ModelAttribute("params") final AdminAviCFDTO params, HttpServletRequest req, 
+			Map<String, Object> commandMap)throws Exception{
+		System.out.println("params::" + params);
+		List<AdminAviCFDTO> aviCFList = adminAviCFService.getAdminAviCFList(params);
+		JsonObject jsonObj = new JsonObject();
+		if (CollectionUtils.isEmpty(aviCFList) == false) {
+			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+			JsonArray jsonArr = gson.toJsonTree(aviCFList).getAsJsonArray();
+			jsonObj.add("data", jsonArr);
+		}
+		
+		return jsonObj;
+	}
+	
+	
+	// CF영상 등록 페이지 ㅇ동
+	@GetMapping("/publicCenter/aviCFPost")
+	public String getPostAviCFView() {
+		return "admin/publicCenter/aviCFPost";
+	}
+	
+	// CF영상 수정 화면 이동
+	@GetMapping("/publicCenter/aviCFUpdate")
+	public String getAviCFUpdateView(@RequestParam("tIdx") String tIdx, Model model) {
+		
+		model.addAttribute("aviCF", adminAviCFService.getAdminAviCFData(tIdx));
+		return "admin/publicCenter/aviCFUpdate";
+	}
+	
+	// CF영상 데이터 등록 수정 삭제
+	@RequestMapping(value="/publicCenter/saveAviCF")
+	public @ResponseBody Map<String, Object> saveAviCF(@ModelAttribute("params") final AdminAviCFDTO params,
+			@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
+		
+		System.out.println("*******"+params);
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminAviCFService.saveAviCF(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+			
+		}catch (DataAccessException e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+	}
+	
+	// CF영상 노출여부 변경
+	@RequestMapping(value="/publicCenter/changeAviCFOnairStatus")
+	public @ResponseBody Map<String, Object> getChangeAviCFOnairStatus(@ModelAttribute("params") final AdminAviCFDTO params)throws Exception{
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminAviCFService.changeOnairStatus(params);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		
+		return rtnMsg;
+	}
+		
 }

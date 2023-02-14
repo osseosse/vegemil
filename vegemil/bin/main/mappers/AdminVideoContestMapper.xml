@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminVideoContestMapper">
+
+	<sql id="videoContestColumns">
+		t_idx,
+		t_subject,
+		t_date,
+		t_img,
+		t_flv,
+		t_onair,
+		t_youtube,
+		t_youtube_img,
+		t_disp_order
+	</sql>
+	
+	<select id="selectVideoContestList" resultType="com.vegemil.domain.AdminVideoContestDTO" parameterType="com.vegemil.domain.AdminVideoContestDTO">
+		SELECT
+		  <include refid="videoContestColumns" />
+		FROM
+			<choose>
+				<when test='tOnair != "" and tOnair != null'  >
+			 	   (select * 
+			 	   from dbvegemilcokr.M_VideoContest 
+			 	   where
+			 	   		t_onair = #{tOnair}
+			 	   	) tb
+			 	</when>
+				<otherwise>
+					M_VideoContest
+				</otherwise>
+			</choose>
+		WHERE 
+			1=1
+			<if test='searchKeyword != "" and searchKeyword != null'>
+ 				AND t_subject like CONCAT('%',#{searchKeyword},'%')
+			</if> 
+			<if test='tStartdate != "" and tStartdate != null and tEnddate != "" and tEnddate != null'>
+ 	   			AND t_date between DATE(#{tStartdate, jdbcType=VARCHAR}) AND DATE(#{tEnddate, jdbcType=VARCHAR})+1
+ 	   		</if>			
+		ORDER BY
+			t_idx DESC
+	</select>
+	
+	<insert id="insertVideoContest" parameterType="com.vegemil.domain.AdminVideoContestDTO" useGeneratedKeys="true" keyProperty="tIdx">
+		INSERT INTO M_VideoContest (
+			t_subject,
+			t_date,
+			t_img,
+			t_onair,
+			t_youtube,
+			t_youtube_img,
+			t_disp_order
+		) VALUES (
+			#{tSubject ,jdbcType=VARCHAR}     , 
+			NOW()							  , 
+			#{tImg ,jdbcType=VARCHAR}	      , 
+			#{tOnair ,jdbcType=VARCHAR}       ,
+			#{tYoutube ,jdbcType=VARCHAR}     ,
+			#{tYoutubeImg ,jdbcType=VARCHAR}  ,
+			#{tDispOrder ,jdbcType=VARCHAR}      
+		)
+	</insert>
+	
+	<delete id="deleteVideoContestData" parameterType="String">
+		delete from M_VideoContest where t_idx = #{tIdx}
+	</delete>
+	
+	<select id="selectVideoContestData" parameterType="String" resultType="com.vegemil.domain.AdminVideoContestDTO">
+		SELECT
+		  <include refid="videoContestColumns" />
+		FROM
+			M_VideoContest
+		WHERE 
+			t_idx = #{tIdx}
+	</select>
+	
+	<update id="updatetOnairStatus" parameterType="com.vegemil.domain.AdminVideoContestDTO">
+		update M_VideoContest 
+		set	
+			t_onair = #{tOnair ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+	
+	<update id="updateVideoContestData" parameterType="com.vegemil.domain.AdminVideoContestDTO">
+		update M_VideoContest
+		set
+			t_subject    = #{tSubject ,jdbcType=VARCHAR},      
+			t_onair = #{tOnair ,jdbcType=VARCHAR},   
+			t_youtube     = #{tYoutube ,jdbcType=VARCHAR},      
+			t_youtube_img   = #{tYoutubeImg ,jdbcType=VARCHAR},   
+			t_disp_order = #{tDispOrder ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+</mapper>

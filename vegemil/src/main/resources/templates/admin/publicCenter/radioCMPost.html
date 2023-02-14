@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>보도자료 등록</title>
+		<title>홍보센터 Radio CM</title>
 	</th:block>
 
 	<th:block layout:fragment="add-css">
@@ -37,7 +37,7 @@
 	    		       
 	        function btnSave(){
 	    	   
-	        	var checked = $('#tOnair').is(':checked');
+	        	var checked = $('#active').is(':checked');
         		console.log("checked : " + checked);
         		
 		   	    if(checked){
@@ -54,24 +54,14 @@
 	    		   return false;
 	    	   }	    
 	    	  
-	    	   if(form.tFlv.value == "") {
+	    	   if(form.tYoutube.value == "") {
 	    		   alert('유튜브 영상 url을 입력해 주세요.');
 	    		   return false;
 	    	   } 
 	    	  
-	    	   if(form.tContent.value == "") {
-	    		   alert('내용을 입력해 주세요.');
-	    		   return false;
-	    	   } 
-	    	   
-	    	   /* if(form.tImgNew.value == "") {
-	    		   alert('썸네일 이미지를 첨부해 주세요');
-	    		   return false;
-	    	   } */
-	    	   
 	    	   console.log('form', formData);
                $.ajax({
-            	   url: '/admin/manage/publicCenter/postAdEtc',
+            	   url: '/admin/manage/publicCenter/saveRadioCM',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
@@ -82,7 +72,7 @@
 	    	       console.log('done', data)
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/manage/publicCenter/adEtcList";
+	    	    	   window.location.href = "/admin/manage/publicCenter/radioCMList";
 	    	       }else{
 	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }
@@ -106,26 +96,24 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">기타영상자료 등록</h2>
+                            <h2 class="content-header-title float-start mb-0">라디오 씨엠 등록</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">홍보</a>
                                     </li>
-                                    <li class="breadcrumb-item active">기타영상자료 등록
+                                    <li class="breadcrumb-item active">라디오 씨엠 등록
                                     </li>
                                 </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-              
             </div>
-            
-            <div class="content-body" th:object="${mediaNewsDto}">
-            	<form name="form" th:action="@{/admin/manage/publicCenter/postAdEtc}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
-					<!-- 보도자료 등록 -->
+            <div class="content-body" th:object="${AdminRadioCMDTO}">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/saveRadioCM}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
+					<!-- 공모전 영상 등록 -->
 					<section id="basic-horizontal-layouts">
 						<div class="row" >
 							<div class="col-12">
@@ -134,20 +122,13 @@
 										<!-- Form -->
 	                                    <form action="javascript:;" class="mt-2" onsubmit>                                 
 	                                        <div class="row text-start mt-1">	
-	                                        	<div class="col-md-1">
-	                                        		<label class="form-check-label pb-1" for="tCate">카테고리</label>
-													<select class="form-select" id="tCate" name="tCate">
-														<option value="1">1</option>
-														<option value="2">2</option>
-													</select>
-		                                        </div>  
-	                                        	<div class="col-md-2">
+	                                        	<div class="col-md-4">
 	                                        		<label class="form-check-label pb-1" for="tSubject">제목</label>
 													<input type="text" class="form-control" id="tSubject" name="tSubject" placeholder="제목" />
 		                                        </div>  
-	                                        	<div class="col-md-3">
-	                                        		<label class="form-check-label pb-1" for="tFlv">Youtube url</label>
-												<input type="text" class="form-control" id="tFlv" name="tFlv" placeholder="영상url" />
+	                                        	<div class="col-md-4">
+	                                        		<label class="form-check-label pb-1" for="tYoutube">Youtube url</label>
+												<input type="text" class="form-control" id="tYoutube" name="tYoutube" placeholder="영상url" />
 		                                        </div>  
 	                                        	<div class="col-md-3">
 		                                        	<label class="form-check-label pb-1" for="uploadFile">메인 이미지</label>
@@ -159,16 +140,10 @@
 													<input type="checkbox" class="form-check-input"  id="active" name="active" value="1"/>
 												</div>
 											</div>											
-	                                        <div class="row my-2">	
-	                                        	<div class="col-md-10">
-	                                        		<label class="form-check-label pb-1" for="tContent">내용</label>
-		                                        	<textarea class="form-control" id="tContent" name="tContent" rows="4" cols=""></textarea>
-	                                        	</div>
-											</div>											
 	                                    </form>
 	                                    <!--/ Form -->
 									</div>
-									<div class="card center">
+									<div class="card center mt-1">
 										<div class="card-body">
 											<div class="row">
 												 <div class="col-sm-12">
@@ -184,7 +159,6 @@
 	                </section>
 					<!-- 보도자료 등록 -->
 				</form>
-
             </div>
         </div>
     </div>

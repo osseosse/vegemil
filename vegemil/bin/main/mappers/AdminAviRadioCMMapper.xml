@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminAviRadioCMMapper">
+
+	<sql id="aviRadioCMColumns">
+		t_idx,
+		t_subject,
+		t_date,
+		t_img,
+		t_flv,
+		t_onair,
+		t_youtube
+	</sql>
+	
+	<select id="selectRadioCMList" resultType="com.vegemil.domain.AdminRadioCMDTO" parameterType="com.vegemil.domain.AdminRadioCMDTO">
+		SELECT
+		  <include refid="aviRadioCMColumns" />
+		FROM
+			<choose>
+				<when test='tOnair != "" and tOnair != null'  >
+			 	   (select * 
+			 	   from dbvegemilcokr.M_AviRadioCM 
+			 	   where
+			 	   		t_onair = #{tOnair}
+			 	   	) tb
+			 	</when>
+				<otherwise>
+					M_AviRadioCM
+				</otherwise>
+			</choose>
+		WHERE 
+			1=1
+			<if test='searchKeyword != "" and searchKeyword != null'>
+ 				AND t_subject like CONCAT('%',#{searchKeyword},'%')
+			</if> 
+			<if test='tStartdate != "" and tStartdate != null and tEnddate != "" and tEnddate != null'>
+ 	   			AND t_date between DATE(#{tStartdate, jdbcType=VARCHAR}) AND DATE(#{tEnddate, jdbcType=VARCHAR})+1
+ 	   		</if>			
+		ORDER BY
+			t_idx DESC
+	</select>
+	
+	<insert id="insertRadioCMData" parameterType="com.vegemil.domain.AdminRadioCMDTO" useGeneratedKeys="true" keyProperty="tIdx">
+		INSERT INTO M_AviRadioCM (
+			t_subject,
+			t_date,
+			t_img,
+			t_flv,
+			t_onair,
+			t_youtube
+		) VALUES (
+			#{tSubject ,jdbcType=VARCHAR}     , 
+			NOW()							  , 
+			#{tImg ,jdbcType=VARCHAR}	      , 
+			#{tFlv ,jdbcType=VARCHAR}	      , 
+			#{tOnair ,jdbcType=VARCHAR}       ,
+			#{tYoutube ,jdbcType=VARCHAR}     
+		)
+	</insert>
+	
+	<delete id="deleteRadioCMData" parameterType="String">
+		delete from M_AviRadioCM where t_idx = #{tIdx}
+	</delete>
+	
+	<select id="selectRadioCMData" parameterType="String" resultType="com.vegemil.domain.AdminRadioCMDTO">
+		SELECT
+		  <include refid="aviRadioCMColumns" />
+		FROM
+			M_AviRadioCM
+		WHERE 
+			t_idx = #{tIdx}
+	</select>
+	
+	<update id="updatetOnairStatus" parameterType="com.vegemil.domain.AdminRadioCMDTO">
+		update M_AviRadioCM 
+		set	
+			t_onair = #{tOnair ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+	
+	<update id="updateRadioCMData" parameterType="com.vegemil.domain.AdminRadioCMDTO">
+		update M_AviRadioCM
+		set
+			t_subject	= #{tSubject ,jdbcType=VARCHAR},      
+			t_img 		= #{tImg ,jdbcType=VARCHAR},      
+			t_flv   	= #{tFlv ,jdbcType=VARCHAR},   
+			t_onair 	= #{tOnair ,jdbcType=VARCHAR},
+			t_youtube	= #{tYoutube ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+</mapper>

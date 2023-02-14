@@ -117,6 +117,15 @@
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/adEtcList')}? 'active': ''">
                     		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/adEtcList}"><i data-feather="circle"></i><span class="menu-item text-truncate">기타홍보영상(개발중)</span></a>
                         </li>                        
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/videoContestList')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/videoContestList}"><i data-feather="circle"></i><span class="menu-item text-truncate">공모전동영상(개발중)</span></a>
+                        </li>                        
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/radioCMList')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/radioCMList}"><i data-feather="circle"></i><span class="menu-item text-truncate">Radio CM(개발중)</span></a>
+                        </li>                        
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/aviCFList')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/aviCFList}"><i data-feather="circle"></i><span class="menu-item text-truncate">TV CF(개발중)</span></a>
+                        </li>                        
                     </ul>
                 </li>
                 

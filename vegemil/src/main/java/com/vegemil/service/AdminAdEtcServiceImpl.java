@@ -44,8 +44,9 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 		
 		int queryResult = 0;
 
+		AdminAdEctDTO preDto = adminAdEtcMapper.selectAviData(params.getTIdx());
+		
 		if ("U".equals(params.getAction())) {
-			AdminAdEctDTO preDto = adminAdEtcMapper.selectAviData(params.getTIdx());
 			
 			if(uploadFile.getOriginalFilename().length()>0) {
 				
@@ -61,8 +62,8 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 			
 		} else if("D".equals(params.getAction())) {
 			
-			if(deleteFile(params.getTImgNew())) {
-				queryResult = adminAdEtcMapper.deleteAdEtcData(params.getTIdx());
+			if(deleteFile(preDto.getTImgNew())) {
+				queryResult = adminAdEtcMapper.deleteAdEtcData(preDto.getTIdx());
 			}
 			
 		}else {

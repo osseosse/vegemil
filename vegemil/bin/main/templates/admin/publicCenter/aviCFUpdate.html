@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>보도자료 등록</title>
+		<title>홍보센터 CF</title>
 	</th:block>
 
 	<th:block layout:fragment="add-css">
@@ -34,10 +34,9 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
-	    		       
 	        function btnSave(){
-	    	   
-	        	var checked = $('#tOnair').is(':checked');
+	        	
+        		var checked = $('#tOnair').is(':checked');
         		console.log("checked : " + checked);
         		
 		   	    if(checked){
@@ -46,21 +45,18 @@
 		   	        $('#tOnair').val('0');
 		   	    } 
 		   	    
+		   	   console.log("tOnair : " +  $('#tOnair').val());
 	    	   const form = document.form;	    	
 	    	   const formData = new FormData(form);
-	    	   
+		   	  	
+		   	  console.log("--------------------"+$('#tOnair').val());
 	    	  if(form.tSubject.value == "") {
 	    		   alert('제목을 작성해 주세요.');
 	    		   return false;
 	    	   }	    
 	    	  
-	    	   if(form.tFlv.value == "") {
+	    	   if(form.tYoutube.value == "") {
 	    		   alert('유튜브 영상 url을 입력해 주세요.');
-	    		   return false;
-	    	   } 
-	    	  
-	    	   if(form.tContent.value == "") {
-	    		   alert('내용을 입력해 주세요.');
 	    		   return false;
 	    	   } 
 	    	   
@@ -71,7 +67,7 @@
 	    	   
 	    	   console.log('form', formData);
                $.ajax({
-            	   url: '/admin/manage/publicCenter/postAdEtc',
+            	   url: '/admin/manage/publicCenter/saveAviCF',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
@@ -82,16 +78,16 @@
 	    	       console.log('done', data)
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/manage/publicCenter/adEtcList";
+	    	    	   window.location.href = "/admin/manage/publicCenter/aviCFList";
 	    	       }else{
 	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }
 	           }).fail(function() {
 	        	   console.log('fail')
 	           })
-				
 		   } 
 	       /*]]>*/
+	       
 	    </script>
 	    <!-- END: Page JS-->
     </th:block>
@@ -106,14 +102,14 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">기타영상자료 등록</h2>
+                            <h2 class="content-header-title float-start mb-0">CF 정보 수정</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
                                     <li class="breadcrumb-item"><a href="#">홍보</a>
                                     </li>
-                                    <li class="breadcrumb-item active">기타영상자료 등록
+                                    <li class="breadcrumb-item active">CF 정보 수정
                                     </li>
                                 </ol>
                             </div>
@@ -123,8 +119,8 @@
               
             </div>
             
-            <div class="content-body" th:object="${mediaNewsDto}">
-            	<form name="form" th:action="@{/admin/manage/publicCenter/postAdEtc}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
+            <div class="content-body" th:object="${AdminAviCFDTO}">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/saveAviCF}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
 					<!-- 보도자료 등록 -->
 					<section id="basic-horizontal-layouts">
 						<div class="row" >
@@ -134,47 +130,46 @@
 										<!-- Form -->
 	                                    <form action="javascript:;" class="mt-2" onsubmit>                                 
 	                                        <div class="row text-start mt-1">	
-	                                        	<div class="col-md-1">
-	                                        		<label class="form-check-label pb-1" for="tCate">카테고리</label>
-													<select class="form-select" id="tCate" name="tCate">
-														<option value="1">1</option>
-														<option value="2">2</option>
-													</select>
-		                                        </div>  
-	                                        	<div class="col-md-2">
-	                                        		<label class="form-check-label pb-1" for="tSubject">제목</label>
-													<input type="text" class="form-control" id="tSubject" name="tSubject" placeholder="제목" />
+	                                        	<div class="col-md-3">
+	                                        		<label class="form-check-label pb-2" for="tSubject">제목</label>
+													<input type="text" class="form-control" id="tSubject" name="tSubject" placeholder="제목" th:value="${aviCF.tSubject}" />
 		                                        </div>  
 	                                        	<div class="col-md-3">
-	                                        		<label class="form-check-label pb-1" for="tFlv">Youtube url</label>
-												<input type="text" class="form-control" id="tFlv" name="tFlv" placeholder="영상url" />
+	                                        		<label class="form-check-label pb-2" for="tYoutube">Youtube url</label>
+												<input type="text" class="form-control" id="tYoutube" name="tYoutube" placeholder="영상url" th:value="${aviCF.tYoutube}"/>
 		                                        </div>  
 	                                        	<div class="col-md-3">
-		                                        	<label class="form-check-label pb-1" for="uploadFile">메인 이미지</label>
-													<input type="file" class="form-control" id="uploadFile" name="uploadFile" placeholder="이미지코드" />
+		                                        	<label class="form-check-label pb-2" for="uploadFile">메인 이미지</label>
+													<input type="file" class="form-control" id="uploadFile" name="uploadFile" placeholder="이미지코드" th:value="${aviCF.tYoutubeImg}"/>
 		                                        </div>  
+		                                        
 	                                        	<div class="col-md-1">
-		                                        	<label class="form-check-label pb-1" for="active">진열여부</label>
-												<div class="form-check form-switch">
-													<input type="checkbox" class="form-check-input"  id="active" name="active" value="1"/>
+		                                        	<label class="form-check-label pb-2" for="active">진열여부</label>
+		                                        	
+													<div class="form-check form-switch">
+														<div th:if="${aviCF.tOnair}=='1'">
+															<input type="checkbox" class="form-check-input" id="tOnair" name="tOnair" checked />
+														</div>
+														<div th:unless="${aviCF.tOnair}=='1'">
+															<input type="checkbox" class="form-check-input" name="tOnair" id="tOnair"/>
+														</div>
+													</div>
 												</div>
-											</div>											
-	                                        <div class="row my-2">	
-	                                        	<div class="col-md-10">
-	                                        		<label class="form-check-label pb-1" for="tContent">내용</label>
-		                                        	<textarea class="form-control" id="tContent" name="tContent" rows="4" cols=""></textarea>
+												<div class="col-md-2">
+			                                        <img id="img" width="100%" height="100%" th:src="|https://image.edaymall.com/images/dcf/vegemil/upload/CF/${aviCF.tYoutubeImg}|"/>
 	                                        	</div>
 											</div>											
-	                                    </form>
+	                                    </form> 
 	                                    <!--/ Form -->
+									<hr/>
 									</div>
 									<div class="card center">
-										<div class="card-body">
-											<div class="row">
-												 <div class="col-sm-12">
-													<button type="button" onclick="btnSave();" class="btn btn-primary me-1">등록</button>
-													<button type="reset"  onclick="history.back()" class="btn btn-outline-secondary">취소</button>
-												</div>
+										<div class="row">
+											 <div class="col-sm-12">
+											 	<input type="text" id="tIdx" name="tIdx" hidden="hidden" th:value="${aviCF.tIdx}">
+											 	<input type="text" id="action" name="action" hidden="hidden" value="U">
+												<button type="button" onclick="btnSave();" class="btn btn-primary me-1">수정</button>
+												<button type="reset"  onclick="history.back()" class="btn btn-outline-secondary">취소</button>
 											</div>
 										</div>
 									</div>
@@ -182,7 +177,9 @@
 							</div>
 						</div>
 	                </section>
+	                
 					<!-- 보도자료 등록 -->
+					
 				</form>
 
             </div>
