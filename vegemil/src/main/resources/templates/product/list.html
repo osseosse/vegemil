@@ -239,7 +239,8 @@
 						<div class="row" id="b_tab" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" id="b_list" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
 								<div class="prd-list" >
-									<a href="/vegemilBaby/belief">
+								
+									<a th:if="${product.subCategoryCode == 'VBP'}" href="/vegemilBaby/premium" >																		
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 											<span class="f14" th:text="${product.tag2}"></span>
@@ -253,8 +254,28 @@
 										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
+									
+									<a th:if="${product.subCategoryCode == 'VBB'}" href="/vegemilBaby/belief" >																		
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+											<span class="f14" th:text="${product.tag2}"></span>
+											<span class="f14" th:text="${product.tag3}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									
+									
 									<dl class="prd-viewMore mt40">
-										<dd><a href="/vegemilBaby/belief"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd>
+										<a th:if="${product.subCategoryCode == 'VBP'}" href="/vegemilBaby/premium"><p class="btnType16"><span class="lh140">View More</span></p></a>
+										<a th:if="${product.subCategoryCode == 'VBB'}" href="/vegemilBaby/belief"><p class="btnType16"><span class="lh140">View More</span></p></a>
+										</dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
