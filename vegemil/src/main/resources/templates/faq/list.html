@@ -69,10 +69,10 @@
 					<div class="contant1460">
 						<ul class="tabs5 menu5 f14 mt10">
 							<li class="fw400"><a href="#faq01">제품일반</a></li>
-							<li class="fw400"><a href="#faq02">음료류</a></li>
-							<li class="fw400"><a href="#faq03">유아동두유</a></li>
 							<li class="fw400"><a href="#faq04">베지밀</a></li>
+							<li class="fw400"><a href="#faq03">영.유아식</a></li>
 							<li class="fw400"><a href="#faq05">그린비아</a></li>
+							<li class="fw400"><a href="#faq02">음료류</a></li>
 						</ul>
 					</div>
 					<div class="tab_content5 contant1460">
@@ -84,7 +84,7 @@
 									<th:block th:each="faq : ${faqList11}" th:if="${faq.fGory = '11'}">
 										<div class="ver-title04 f23 fw500 ">
 						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
-						            		<span class="txt-box lh120" th:text="${faq.fQuestion}"></span>
+						            		<span class="txt-box lh120" th:utext="${faq.fQuestion}"></span>
 						            	</div>
 						            	<div>
 						            		<div class="v_content">
@@ -148,150 +148,6 @@
 								</div>
 							</div>
 						</div>
-						<div id="faq02">
-							<div class="row">
-								<div class="col-md-12">
-									<!-- Vetical -->
-									<div id="faq-vtc-2" class="FaqStyle" th:if="${not #lists.isEmpty( faqList22 )}" >
-									<th:block th:each="faq : ${faqList22}" th:if="${faq.fGory = '22'}">
-										<div class="ver-title04 f23 fw500 ">
-						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
-						            		<span class="txt-box lh120" th:text="${faq.fQuestion}"></span>
-						            	</div>
-						            	<div>
-						            		<div class="v_content">
-						            			<span id="labA" th:utext="${faq.fAnswer}"></span>
-						            			<br><br>
-						            			<div class="evaluation mt30">
-							            			<span class="s-info f16 black">별을 클릭하여 만족도를 선택해주세요.</span>
-							            			<ul class="eval-ul mt20">
-							            				<li>
-							            					<dl class="eval-dl">
-							            						<dd class="mr10 f14 black mt3">매우 불만족</dd>
-							            						<dd>
-							            							<div class="star-rating" style="float:left">
-							            							  <input type="radio" th:id="|50-stars${faq.fIdx}|" name="rating" value="매우 만족" />
-							            							  <label th:for="|50-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|40-stars${faq.fIdx}|" name="rating" value="만족" />
-							            							  <label th:for="|40-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|30-stars${faq.fIdx}|" name="rating" value="보통" />
-							            							  <label th:for="|30-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|20-stars${faq.fIdx}|" name="rating" value="불만족" />
-							            							  <label th:for="|20-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|10-stars${faq.fIdx}|" name="rating" value="매우 불만족" />
-							            							  <label th:for="|10-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							</div>
-							            						</dd>
-							            						<dd class="ml10 f14 black mt3">매우 만족</dd>
-							            					</dl>															 
-							            				</li>
-							            				<li>
-							            					<input type="text" class="inp04" th:id="|fEtcbox${faq.fIdx}|" placeholder="100자 이내로 입력해주세요."><button type="button" th:onclick="|saveFaqFeedback(${faq.fIdx});|" class="btnType26 ml10">의견등록</button><br class="clear">
-							            				</li>
-							            			</ul>
-							            		</div>
-						            		</div>
-						            	</div>
-						            </th:block>
-									</div>
-									<script>
-										$("#faq-vtc-2").collapse({
-										  accordion: true, //다열리고 싶을때
-										  open: function() {
-											this.addClass("open");
-											this.css({ height: this.children().outerHeight() });
-										  },
-										  close: function() {
-											this.css({ height: "0px" });
-											this.removeClass("open");
-										  }
-										});
-									</script>
-									<!-- // Vetical -->
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<!-- paging -->
-									<th:block layout:fragment="paging">
-										<nav th:replace="fragments/common :: pagination"></nav>
-									</th:block>
-									<!-- //paging -->
-								</div>
-							</div>
-						</div>
-						<div id="faq03">
-							<div class="row">
-								<div class="col-md-12">
-									<!-- Vetical -->
-									<div id="faq-vtc-3" class="FaqStyle" th:if="${not #lists.isEmpty( faqList33 )}" >
-									<th:block th:each="faq : ${faqList33}" th:if="${faq.fGory = '33'}">
-										<div class="ver-title04 f23 fw500 ">
-						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
-						            		<span class="txt-box lh120" th:text="${faq.fQuestion}"></span>
-						            	</div>
-						            	<div>
-						            		<div class="v_content">
-						            			<span id="labA" th:utext="${faq.fAnswer}"></span>
-						            			<br><br>
-						            			<div class="evaluation mt30">
-							            			<span class="s-info f16 black">별을 클릭하여 만족도를 선택해주세요.</span>
-							            			<ul class="eval-ul mt20">
-							            				<li>
-							            					<dl class="eval-dl">
-							            						<dd class="mr10 f14 black mt3">매우 불만족</dd>
-							            						<dd>
-							            							<div class="star-rating" style="float:left">
-							            							  <input type="radio" th:id="|50-stars${faq.fIdx}|" name="rating" value="매우 만족" />
-							            							  <label th:for="|50-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|40-stars${faq.fIdx}|" name="rating" value="만족" />
-							            							  <label th:for="|40-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|30-stars${faq.fIdx}|" name="rating" value="보통" />
-							            							  <label th:for="|30-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|20-stars${faq.fIdx}|" name="rating" value="불만족" />
-							            							  <label th:for="|20-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							  <input type="radio" th:id="|10-stars${faq.fIdx}|" name="rating" value="매우 불만족" />
-							            							  <label th:for="|10-stars${faq.fIdx}|" class="star">&#9733;</label>
-							            							</div>
-							            						</dd>
-							            						<dd class="ml10 f14 black mt3">매우 만족</dd>
-							            					</dl>															 
-							            				</li>
-							            				<li>
-							            					<input type="text" class="inp04" th:id="|fEtcbox${faq.fIdx}|" placeholder="100자 이내로 입력해주세요."><button type="button" th:onclick="|saveFaqFeedback(${faq.fIdx});|" class="btnType26 ml10">의견등록</button><br class="clear">
-							            				</li>
-							            			</ul>
-							            		</div>
-						            		</div>
-						            	</div>
-						            </th:block>
-									</div>
-									<script>
-										$("#faq-vtc-3").collapse({
-										  accordion: true, //다열리고 싶을때
-										  open: function() {
-											this.addClass("open");
-											this.css({ height: this.children().outerHeight() });
-										  },
-										  close: function() {
-											this.css({ height: "0px" });
-											this.removeClass("open");
-										  }
-										});
-									</script>
-									<!-- // Vetical -->
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<!-- paging -->
-									<th:block layout:fragment="paging">
-										<nav th:replace="fragments/common :: pagination"></nav>
-									</th:block>
-									<!-- //paging -->
-								</div>
-							</div>
-						</div>
 						<div id="faq04">
 							 <div class="row">
 								<div class="col-md-12">
@@ -300,7 +156,7 @@
 									<th:block th:each="faq : ${faqList44}" th:if="${faq.fGory = '44'}">
 										<div class="ver-title04 f23 fw500 ">
 						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
-						            		<span class="txt-box lh120" th:text="${faq.fQuestion}"></span>
+						            		<span class="txt-box lh120" th:utext="${faq.fQuestion}"></span>
 						            	</div>
 						            	<div>
 						            		<div class="v_content">
@@ -364,6 +220,79 @@
 								</div>
 							</div>
 						</div>
+						<div id="faq03">
+							<div class="row">
+								<div class="col-md-12">
+									<!-- Vetical -->
+									<div id="faq-vtc-3" class="FaqStyle" th:if="${not #lists.isEmpty( faqList33 )}" >
+									<th:block th:each="faq : ${faqList33}" th:if="${faq.fGory = '33'}">
+										<div class="ver-title04 f23 fw500 ">
+						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
+						            		<span class="txt-box lh120" th:utext="${faq.fQuestion}"></span>
+						            	</div>
+						            	<div>
+						            		<div class="v_content">
+						            			<span id="labA" th:utext="${faq.fAnswer}"></span>
+						            			<br><br>
+						            			<div class="evaluation mt30">
+							            			<span class="s-info f16 black">별을 클릭하여 만족도를 선택해주세요.</span>
+							            			<ul class="eval-ul mt20">
+							            				<li>
+							            					<dl class="eval-dl">
+							            						<dd class="mr10 f14 black mt3">매우 불만족</dd>
+							            						<dd>
+							            							<div class="star-rating" style="float:left">
+							            							  <input type="radio" th:id="|50-stars${faq.fIdx}|" name="rating" value="매우 만족" />
+							            							  <label th:for="|50-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|40-stars${faq.fIdx}|" name="rating" value="만족" />
+							            							  <label th:for="|40-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|30-stars${faq.fIdx}|" name="rating" value="보통" />
+							            							  <label th:for="|30-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|20-stars${faq.fIdx}|" name="rating" value="불만족" />
+							            							  <label th:for="|20-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|10-stars${faq.fIdx}|" name="rating" value="매우 불만족" />
+							            							  <label th:for="|10-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							</div>
+							            						</dd>
+							            						<dd class="ml10 f14 black mt3">매우 만족</dd>
+							            					</dl>															 
+							            				</li>
+							            				<li>
+							            					<input type="text" class="inp04" th:id="|fEtcbox${faq.fIdx}|" placeholder="100자 이내로 입력해주세요."><button type="button" th:onclick="|saveFaqFeedback(${faq.fIdx});|" class="btnType26 ml10">의견등록</button><br class="clear">
+							            				</li>
+							            			</ul>
+							            		</div>
+						            		</div>
+						            	</div>
+						            </th:block>
+									</div>
+									<script>
+										$("#faq-vtc-3").collapse({
+										  accordion: true, //다열리고 싶을때
+										  open: function() {
+											this.addClass("open");
+											this.css({ height: this.children().outerHeight() });
+										  },
+										  close: function() {
+											this.css({ height: "0px" });
+											this.removeClass("open");
+										  }
+										});
+									</script>
+									<!-- // Vetical -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<!-- paging -->
+									<th:block layout:fragment="paging">
+										<nav th:replace="fragments/common :: pagination"></nav>
+									</th:block>
+									<!-- //paging -->
+								</div>
+							</div>
+						</div>
+						
 						<div id="faq05">
 							<div class="row">
 								<div class="col-md-12">
@@ -372,7 +301,7 @@
 									<th:block th:each="faq : ${faqList55}" th:if="${faq.fGory = '55'}">
 										<div class="ver-title04 f23 fw500 ">
 						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
-						            		<span class="txt-box lh120" th:text="${faq.fQuestion}"></span>
+						            		<span class="txt-box lh120" th:utext="${faq.fQuestion}"></span>
 						            	</div>
 						            	<div>
 						            		<div class="v_content">
@@ -412,6 +341,78 @@
 									</div>
 									<script>
 										$("#faq-vtc-5").collapse({
+										  accordion: true, //다열리고 싶을때
+										  open: function() {
+											this.addClass("open");
+											this.css({ height: this.children().outerHeight() });
+										  },
+										  close: function() {
+											this.css({ height: "0px" });
+											this.removeClass("open");
+										  }
+										});
+									</script>
+									<!-- // Vetical -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<!-- paging -->
+									<th:block layout:fragment="paging">
+										<nav th:replace="fragments/common :: pagination"></nav>
+									</th:block>
+									<!-- //paging -->
+								</div>
+							</div>
+						</div>
+						<div id="faq02">
+							<div class="row">
+								<div class="col-md-12">
+									<!-- Vetical -->
+									<div id="faq-vtc-2" class="FaqStyle" th:if="${not #lists.isEmpty( faqList22 )}" >
+									<th:block th:each="faq : ${faqList22}" th:if="${faq.fGory = '22'}">
+										<div class="ver-title04 f23 fw500 ">
+						            		<span class="faq_cate mr20 f16 gray04" th:text="${faq.fCate}"></span>
+						            		<span class="txt-box lh120" th:utext="${faq.fQuestion}"></span>
+						            	</div>
+						            	<div>
+						            		<div class="v_content">
+						            			<span id="labA" th:utext="${faq.fAnswer}"></span>
+						            			<br><br>
+						            			<div class="evaluation mt30">
+							            			<span class="s-info f16 black">별을 클릭하여 만족도를 선택해주세요.</span>
+							            			<ul class="eval-ul mt20">
+							            				<li>
+							            					<dl class="eval-dl">
+							            						<dd class="mr10 f14 black mt3">매우 불만족</dd>
+							            						<dd>
+							            							<div class="star-rating" style="float:left">
+							            							  <input type="radio" th:id="|50-stars${faq.fIdx}|" name="rating" value="매우 만족" />
+							            							  <label th:for="|50-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|40-stars${faq.fIdx}|" name="rating" value="만족" />
+							            							  <label th:for="|40-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|30-stars${faq.fIdx}|" name="rating" value="보통" />
+							            							  <label th:for="|30-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|20-stars${faq.fIdx}|" name="rating" value="불만족" />
+							            							  <label th:for="|20-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							  <input type="radio" th:id="|10-stars${faq.fIdx}|" name="rating" value="매우 불만족" />
+							            							  <label th:for="|10-stars${faq.fIdx}|" class="star">&#9733;</label>
+							            							</div>
+							            						</dd>
+							            						<dd class="ml10 f14 black mt3">매우 만족</dd>
+							            					</dl>															 
+							            				</li>
+							            				<li>
+							            					<input type="text" class="inp04" th:id="|fEtcbox${faq.fIdx}|" placeholder="100자 이내로 입력해주세요."><button type="button" th:onclick="|saveFaqFeedback(${faq.fIdx});|" class="btnType26 ml10">의견등록</button><br class="clear">
+							            				</li>
+							            			</ul>
+							            		</div>
+						            		</div>
+						            	</div>
+						            </th:block>
+									</div>
+									<script>
+										$("#faq-vtc-2").collapse({
 										  accordion: true, //다열리고 싶을때
 										  open: function() {
 											this.addClass("open");

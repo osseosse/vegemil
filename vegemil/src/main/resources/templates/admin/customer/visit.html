@@ -54,6 +54,52 @@
                 	<!-- Analytics card section -->
 	                <section id="analytics-card">
 						<div class="row">
+						<!-- 설정 -->
+						<div class="col-md-12 col-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">설정</h4>
+								</div>
+								<div class="card-body">
+									<div class="row mb-1 ">
+										<div class="col-md-1 col-12">신청마감</div>
+										<div class="col-md-1 text-right">매월</div>
+										<div class="col-md-1 col-4">		
+											<input type="text" id="sClosedate#" class="form-control" name="sClosedate" th:value="${visitSetup.sClosedate}"  />
+										</div>일
+									</div>
+									<div class="row mb-1 ">
+									</div>
+									<div class="row mb-1">
+										<div class="col-md-1 col-3">
+											혹한기 안내
+										</div>
+										<div class="col-md-5 col-4">
+											<input type="text" id="#" class="form-control" name="sMsg2" th:value="${visitSetup.sMsg2}" placeholder="ex)현재 가능한 견학일정이 없습니다." />
+										</div>
+									</div>
+									<div class="row mb-1 ">
+									</div>
+									<div class="row mb-1">
+										<div class="col-md-1 col-3">
+											혹서기 안내
+										</div>
+										<div class="col-md-5 col-4">
+											<input type="text" id="#" class="form-control" name="sMsg1" th:value="${visitSetup.sMsg1}" placeholder="ex)현재 가능한 견학일정이 없습니다." />
+										</div>
+									</div>
+									<hr />
+									<div class="row">
+										 <div class="col-sm-12">
+											<button type="button" onclick="javascript:btnSetupSave();" class="btn btn-primary me-1">저장</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //설정 -->
+                    </div>
+						<div class="row">
 							<!-- 조회 -->
 							<div class="col-md-12 col-12">
 								<div class="card">
@@ -124,18 +170,18 @@
 											<colgroup>
 												<col width="1%">
 												<col width="1%">
+												<col width="7%">
 												<col width="6%">
+												<col width="7%">
 												<col width="5%">
-												<col width="5%">
-												<col width="4%">
 												<col width="7%">
 												<col width="9%">
 												<col width="15%">
 												<col width="15%">
-												<col width="4%">
 												<col width="5%">
+												<col width="7%">
+												<col width="7%">
 												<col width="5%">
-												<col width="4%">
 											</colgroup>
 											<thead>
 												<tr>

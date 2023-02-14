@@ -345,8 +345,18 @@
 		  FROM m_visit_setup
 	</select>
 	
-	<update id="updateFactoryTourReview" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
+	<update id="updateVisitSetup" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
 		 /* updateVisitSetup by AdminCustomerMapper.xml */ 
+		UPDATE m_visit_setup
+		SET 
+		    s_msg1 = #{sMsg1},
+		    s_msg2 = #{sMsg2},
+		    s_closedate = #{sClosedate}
+		    
+	</update>
+	
+	<update id="updateFactoryTourReview" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
+		 /* updateFactoryTourReview by AdminCustomerMapper.xml */ 
 		UPDATE m_factpost
 		SET 
 		    s_best = #{sBest}
@@ -355,7 +365,7 @@
 	</update>
 	
 	<delete id="deleteFactoryTourReview" parameterType="com.vegemil.domain.AdminVisitSetupDTO">
-		 /* updateVisitSetup by AdminCustomerMapper.xml */ 
+		 /* deleteFactoryTourReview by AdminCustomerMapper.xml */ 
 		DELETE FROM m_factpost
 		WHERE
 		    s_idx = #{sIdx}

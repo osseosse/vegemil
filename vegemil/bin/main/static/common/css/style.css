@@ -932,8 +932,8 @@
     .grayBox06 tr td{ padding: 25px 0px;}
     .grayBox06 tr:first-child td{padding-top: 50px;}
     .grayBox06 tr:last-child td{padding-bottom: 50px;}
-    .grayBox06 tr td:first-child{padding-left: 150px;}
-    .grayBox06 tr td:nth-child(2){padding-right: 150px;}
+    .grayBox06 tr td:first-child{padding-left: 80px;}
+    .grayBox06 tr td:nth-child(2){padding-right: 30px;}
     .grayBox06 .whiteBox{background-color: #fff; padding: 5px 8px; border-radius: 5px; line-height: 250%;}
     .grayBox06 .whiteBox02{background-color: #fff; padding: 15px; border-radius: 5px;}
 	.grayRound {background:#F1F4F5; border-radius:10px; display:inline-block; padding:5px 10px}
@@ -1048,6 +1048,12 @@
 	.content-style01 {position:relative; } 
 	.content-style01 > div {clear: both;display: none; }
 	.content-style01 .current { display: block; }
+	
+
+	.sampleBnrMenu {border:1px solid green}
+	.sampleBnr {border:1px solid red}
+	.sbmBG01 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/mainTop_banner01.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center}
+	.bg-opa {rgba(0, 0, 0, 0.5) 50%}
 
 
 	/* 3000 미디어 popup */
@@ -2807,7 +2813,7 @@
 	.bg_Green.h530 {height:380px} 
 	.bg_Pupple.h530 {height:380px} 
 	.bg_Pink.h530 {height:380px} 
-	.bg_Blue.h530 {height:380px} 
+	.bg_Blue2.h530 {height:380px} 
 
 
 
@@ -3356,6 +3362,10 @@
 	.btnbox-ask-foot li:first-child {background:none}
 	.btnbox-ask-foot li .ask-info {display:block;  margin:25px 0 10px 0; font-size:13px}
 
+	 /* 992 오프라인 견학 */
+    .grayBox06 tr td:first-child{padding-left: 20px; width: 25%;}
+
+
 
 	/* 992 회원가입 */
 	div.joinT {width:100%}
@@ -3742,7 +3752,7 @@
     .grayBox06 tr td{padding: 20px 0px;}
     .grayBox06 tr:first-child td{padding-top: 40px;}
     .grayBox06 tr:last-child td{padding-bottom: 40px;}
-    .grayBox06 tr td:first-child{padding-left: 20px; width: 35%;}
+    .grayBox06 tr td:first-child{padding-left: 10px; width: 15%; padding-right: 10px; vertical-align:top}
     .grayBox06 tr td:nth-child(2){padding-right: 20px;}
     .grayBox06 .whiteBox{line-height: 300%;}
     .grayBox06 .whiteBox02{padding: 10px 5px;}

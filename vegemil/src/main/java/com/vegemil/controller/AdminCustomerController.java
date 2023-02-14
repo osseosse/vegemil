@@ -502,8 +502,8 @@ public class AdminCustomerController extends UiUtils {
 	public @ResponseBody Map<String, Object> saveVisitSetup(@ModelAttribute("params") final AdminVisitSetupDTO params, Model model) throws Exception {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
-			params.setSMonth1(params.getSMonth1().replaceAll(",", "/"));
-			params.setSMonth2(params.getSMonth2().replaceAll(",", "/"));
+//			params.setSMonth1(params.getSMonth1().replaceAll(",", "/"));
+//			params.setSMonth2(params.getSMonth2().replaceAll(",", "/"));
 			boolean isUpdate = adminCustomerService.saveVisitSetup(params);
 			rtnMap.put("result", isUpdate);
 		} catch (DataAccessException e) {
