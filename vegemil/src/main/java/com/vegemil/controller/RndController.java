@@ -97,12 +97,21 @@ public class RndController extends UiUtils {
 		} else {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/rnd/factory", Method.GET, null, model);
 		}
+		
 		if(authentication != null) {
 	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
 	    	
 			if("1".equals(member.getMIsIdle())){
 	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 	        }
+			
+			VisitDTO visit = new VisitDTO();
+			visit.setVEmail(member.getMEmail());
+			visit.setVAppdate(date.substring(0, 7));
+			int monthCnt = rndService.getApplyMonthCount(visit);
+			if(monthCnt >= 2) {
+				return showMessageWithRedirect("견학신청은 최대 월 2회 가능합니다.", "/rnd/factoryTour", Method.GET, null, model);
+			}
 			
 	        model.addAttribute("member",member);	//유저 정보
 		}

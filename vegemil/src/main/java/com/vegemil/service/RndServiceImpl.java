@@ -47,6 +47,15 @@ public class RndServiceImpl implements RndService {
 	}
 	
 	@Override
+	public int getApplyMonthCount(VisitDTO visitDTO) {
+
+		int result = 0;
+		result = rndMapper.selectApplyMonthCount(visitDTO);
+
+		return result;
+	}
+	
+	@Override
 	public int getApplyCount(String date) {
 
 		int result = 0;

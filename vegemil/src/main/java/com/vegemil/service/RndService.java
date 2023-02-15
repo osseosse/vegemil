@@ -15,6 +15,8 @@ public interface RndService {
 	
 	public int getApplyTimeCount(VisitDTO visitDTO);
 	
+	public int getApplyMonthCount(VisitDTO visitDTO);
+	
 	public int getApplyCount(String date);
 	
 	public List<ScheduleDTO> getTourScheduleList();
