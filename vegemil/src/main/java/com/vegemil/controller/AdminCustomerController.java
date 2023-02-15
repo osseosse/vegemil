@@ -386,7 +386,7 @@ public class AdminCustomerController extends UiUtils {
 		}
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
-	
+	/*
 	//정적 이미지 불러오기
 	@GetMapping("/web/upload/{foldername}/{filename}")
 	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename,
@@ -404,7 +404,7 @@ public class AdminCustomerController extends UiUtils {
 		}
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
-	
+	*/
 	@RequestMapping(value = "/admin/manage/customer/visit")
 	public String openVisit(@ModelAttribute("params") AdminVisitSetupDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
