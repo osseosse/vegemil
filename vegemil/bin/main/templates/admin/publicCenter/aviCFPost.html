@@ -37,7 +37,7 @@
 	    		       
 	        function btnSave(){
 	    	   
-	        	var checked = $('#active').is(':checked');
+	        	var checked = $('#tActive').is(':checked');
         		console.log("checked : " + checked);
         		
 		   	    if(checked){
@@ -141,9 +141,10 @@
 													<input type="file" class="form-control" id="uploadFile" name="uploadFile" placeholder="이미지코드" />
 		                                        </div>  
 	                                        	<div class="col-md-1">
-		                                        	<label class="form-check-label pb-1" for="active">진열여부</label>
+		                                        	<label class="form-check-label pb-1" for="tActive">진열여부</label>
 												<div class="form-check form-switch">
-													<input type="checkbox" class="form-check-input"  id="active" name="active" value="1"/>
+													<input type="checkbox" class="form-check-input"  id="tActive" name="tActive" value="1"/>
+													<input type="text" id="tOnair" name="tOnair" hidden="hidden">
 												</div>
 											</div>											
 	                                    </form>

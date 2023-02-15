@@ -226,7 +226,6 @@ public class AdminpublicCenterController extends UiUtils {
 			e.printStackTrace();
 			throw new Exception("저장에 실패하였습니다");
 		}
-		
 		return rtnMsg;
     }
 	
@@ -351,7 +350,6 @@ public class AdminpublicCenterController extends UiUtils {
 			e.printStackTrace();
 			throw new Exception("저장에 실패하였습니다");
 		}
-		
 		return rtnMsg;
     }
 	
@@ -383,7 +381,6 @@ public class AdminpublicCenterController extends UiUtils {
 			JsonArray jsonArr = gson.toJsonTree(radioCMList).getAsJsonArray();
 			jsonObj.add("data", jsonArr);
 		}
-		
 		return jsonObj;
     }
 	
@@ -437,7 +434,6 @@ public class AdminpublicCenterController extends UiUtils {
 			e.printStackTrace();
 			throw new Exception("저장에 실패하였습니다");
 		}
-		
 		return rtnMsg;
     }
 	
@@ -461,7 +457,6 @@ public class AdminpublicCenterController extends UiUtils {
 			JsonArray jsonArr = gson.toJsonTree(aviCFList).getAsJsonArray();
 			jsonObj.add("data", jsonArr);
 		}
-		
 		return jsonObj;
 	}
 	
@@ -516,7 +511,6 @@ public class AdminpublicCenterController extends UiUtils {
 			e.printStackTrace();
 			throw new Exception("저장에 실패하였습니다");
 		}
-		
 		return rtnMsg;
 	}
 }
