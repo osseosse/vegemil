@@ -97,9 +97,9 @@ public class AdminImageLoadController extends UiUtils {
 	}
 	
 	//라디오 씨엠 이미지 불러오기
-	@GetMapping("/web/upload/CM/{filename}")
+	@GetMapping("/web/upload/RCM/{filename}")
 	public ResponseEntity<Resource> cmDisplay(@PathVariable(value = "filename", required = false) String filename) {
-		Resource resource = new FileSystemResource(uploadPath + "/upload/CM/" + filename);
+		Resource resource = new FileSystemResource(uploadPath + "/upload/RCM/" + filename);
 		if(!resource.exists()) 
 			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
 		HttpHeaders header = new HttpHeaders();
