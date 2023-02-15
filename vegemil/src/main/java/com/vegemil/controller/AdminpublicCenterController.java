@@ -1,9 +1,5 @@
 package com.vegemil.controller;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,18 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.Resource;
 import org.springframework.dao.DataAccessException;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -102,7 +92,6 @@ public class AdminpublicCenterController extends UiUtils {
 		} catch (DataAccessException e) {
 		} catch (Exception e) {
 		}
-
 		return rtnMap;
 	}
 
@@ -134,7 +123,6 @@ public class AdminpublicCenterController extends UiUtils {
 		} catch (DataAccessException e) {
 		} catch (Exception e) {
 		}
-
 		return rtnMap;
 	}
 
@@ -200,7 +188,6 @@ public class AdminpublicCenterController extends UiUtils {
 			JsonArray jsonArr = gson.toJsonTree(adEtcList).getAsJsonArray();
 			jsonObj.add("data", jsonArr);
 		}
-		
 		return jsonObj;
     }
 	
@@ -349,7 +336,6 @@ public class AdminpublicCenterController extends UiUtils {
 		return rtnMsg;
     }
 	
-	
 	// 공모전 영상 노출여부 변경
 	@RequestMapping(value="/publicCenter/changeContestOnairStatus")
     public @ResponseBody Map<String, Object> getChangeContestOnairStatus(@ModelAttribute("params") final AdminVideoContestDTO params)throws Exception{
@@ -400,7 +386,6 @@ public class AdminpublicCenterController extends UiUtils {
 		
 		return jsonObj;
     }
-	
 	
 	// 라디오 씨엠 등록 페이지 ㅇ동
 	@GetMapping("/publicCenter/radioCMPost")
@@ -480,7 +465,6 @@ public class AdminpublicCenterController extends UiUtils {
 		return jsonObj;
 	}
 	
-	
 	// CF영상 등록 페이지 ㅇ동
 	@GetMapping("/publicCenter/aviCFPost")
 	public String getPostAviCFView() {
@@ -535,5 +519,4 @@ public class AdminpublicCenterController extends UiUtils {
 		
 		return rtnMsg;
 	}
-		
 }

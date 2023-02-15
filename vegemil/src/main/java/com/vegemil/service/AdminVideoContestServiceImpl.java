@@ -83,27 +83,6 @@ public class AdminVideoContestServiceImpl implements AdminVideoContestService{
 	
 	private AdminVideoContestDTO uploadFile(MultipartFile uploadFile, AdminVideoContestDTO params) {
 		
-		/* for test 
-		try {
-			String originalName = uploadFile.getOriginalFilename();
-			
-			if(originalName.length() > 0) {
-				
-				String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\VC\\";//"D:/data/dcf/";
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;
-				
-				File file = new File(dirPath + originalName);
-				uploadFile.transferTo(file);
-				params.setTYoutubeImg(originalName);
-				
-				return params;
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return params;
-		*/
-		
 		try {
 			String originalName = uploadFile.getOriginalFilename();
 			
@@ -137,26 +116,5 @@ public class AdminVideoContestServiceImpl implements AdminVideoContestService{
 		}
 		
 		return false;
-		
-		/* for test
-		 
-		String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\VC\\";//"D:/data/dcf/";
-		
-		try {
-			File file = new File(dirPath+fileName);
-			file.delete();
-			return true;
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-		 */
-		
 	}
-
-
-
-
-	
 }

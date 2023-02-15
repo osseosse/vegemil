@@ -102,8 +102,8 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 			e.printStackTrace();
 		}
 		return params;
-		
 	}
+	
 	public boolean deleteFile(String fileName) {
 		
 		try {

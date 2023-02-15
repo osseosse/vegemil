@@ -81,26 +81,6 @@ public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
 	}
 	
 	private AdminRadioCMDTO uploadFile(MultipartFile uploadFile, AdminRadioCMDTO params) {
-		/* for test
-		try {
-			String originalName = uploadFile.getOriginalFilename();
-			
-			if(originalName.length() > 0) {
-				
-				String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\CM\\";//"D:/data/dcf/";
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;
-				
-				File file = new File(dirPath + originalName);
-				uploadFile.transferTo(file);
-				params.setTImg(originalName);
-				
-				return params;
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return params;
-		*/
 		
 		try {
 			String originalName = uploadFile.getOriginalFilename();
@@ -109,7 +89,7 @@ public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
 				
 				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;			
 								
-				Path savePath = Paths.get(uploadPath+ "/upload/CM/" + originalName);					
+				Path savePath = Paths.get(uploadPath+ "/upload/RCM/" + originalName);					
 				uploadFile.transferTo(savePath);
 				params.setTImg(originalName);
 
@@ -129,7 +109,7 @@ public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
 		}
 
 		try {
-			File file = new File(uploadPath+ "/upload/CM/" +fileName);
+			File file = new File(uploadPath+ "/upload/RCM/" +fileName);
 			file.delete();
 			return true;
 		} catch(Exception e) {
@@ -137,21 +117,6 @@ public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
 		}
 		
 		return false;
-		
-		
-		/* for test
-		String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\CM\\";//"D:/data/dcf/";
-		
-		try {
-			File file = new File(dirPath+fileName);
-			file.delete();
-			return true;
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-		*/
 		
 	}
 }

@@ -80,28 +80,6 @@ public class AdminAviCFtServiceImpl implements AdminAviCFService{
 	}
 
 	private AdminAviCFDTO uploadFile(MultipartFile uploadFile, AdminAviCFDTO params) {
-		
-		/* ========= 실제 코드 
-		try {
-			String originalName = uploadFile.getOriginalFilename();
-			
-			if(originalName.length() > 0) {
-				
-				String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\CF\\";//"D:/data/dcf/";
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;
-				
-				File file = new File(dirPath + originalName);
-				uploadFile.transferTo(file);
-				params.setTYoutubeImg(originalName);
-				
-				return params;
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return params;
-		*/
-		
 		try {
 			String originalName = uploadFile.getOriginalFilename();
 			
@@ -119,8 +97,6 @@ public class AdminAviCFtServiceImpl implements AdminAviCFService{
 			e.printStackTrace();
 		}
 		return params;
-		
-		
 	}
 	public boolean deleteFile(String fileName) {
 		
@@ -137,20 +113,5 @@ public class AdminAviCFtServiceImpl implements AdminAviCFService{
 		}
 		
 		return false;
-		
-		/*
-		String dirPath = "\\\\211.233.87.7\\data\\images\\dcf\\vegemil\\upload\\CF\\";//"D:/data/dcf/";
-		
-		try {
-			File file = new File(dirPath+fileName);
-			file.delete();
-			return true;
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-		*/
 	}
-	
 }
