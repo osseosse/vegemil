@@ -58,12 +58,6 @@
 	    		   alert('유튜브 영상 url을 입력해 주세요.');
 	    		   return false;
 	    	   } 
-	    	  
-	    	   
-	    	   /* if(form.tImgNew.value == "") {
-	    		   alert('썸네일 이미지를 첨부해 주세요');
-	    		   return false;
-	    	   } */
 	    	   
 	    	   console.log('form', formData);
                $.ajax({
@@ -117,8 +111,8 @@
                     </div>
                 </div>
             </div>
-            <div class="content-body" th:object="${AdminRadioCMDTO}">
-            	<form name="form" th:action="@{/admin/manage/publicCenter/postVideoContest}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
+            <div class="content-body" th:object="${AdminAviCFDTO}">
+            	<form name="form" th:action="@{/admin/manage/publicCenter/saveAviCF}" method="POST" class="form-horizontal" enctype="multipart/form-data" role="form">
 					<!-- 공모전 영상 등록 -->
 					<section id="basic-horizontal-layouts">
 						<div class="row" >

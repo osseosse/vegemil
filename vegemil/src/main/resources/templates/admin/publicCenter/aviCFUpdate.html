@@ -60,11 +60,6 @@
 	    		   return false;
 	    	   } 
 	    	   
-	    	   /* if(form.tImgNew.value == "") {
-	    		   alert('썸네일 이미지를 첨부해 주세요');
-	    		   return false;
-	    	   } */
-	    	   
 	    	   console.log('form', formData);
                $.ajax({
             	   url: '/admin/manage/publicCenter/saveAviCF',
@@ -156,7 +151,7 @@
 													</div>
 												</div>
 												<div class="col-md-2">
-			                                        <img id="img" width="100%" height="100%" th:src="|https://image.edaymall.com/images/dcf/vegemil/upload/CF/${aviCF.tYoutubeImg}|"/>
+			                                        <img id="img" width="100%" height="100%" th:src="|web/upload/CF/${aviCF.tYoutubeImg}|"/>
 	                                        	</div>
 											</div>											
 	                                    </form> 

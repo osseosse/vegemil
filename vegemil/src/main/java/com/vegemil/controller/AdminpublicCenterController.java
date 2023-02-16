@@ -298,7 +298,6 @@ public class AdminpublicCenterController extends UiUtils {
 	 public @ResponseBody Map<String, Object> saveNewVideoContest(@ModelAttribute("params") final AdminVideoContestDTO params,
 	    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
 		
-		System.out.println("*******"+params);
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		
 		try {
@@ -403,7 +402,6 @@ public class AdminpublicCenterController extends UiUtils {
 	public @ResponseBody Map<String, Object> saveRadioCM(@ModelAttribute("params") final AdminRadioCMDTO params,
 	    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
 		
-		System.out.println("*******"+params);
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		
 		try {
@@ -479,7 +477,6 @@ public class AdminpublicCenterController extends UiUtils {
 	public @ResponseBody Map<String, Object> saveAviCF(@ModelAttribute("params") final AdminAviCFDTO params,
 			@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
 		
-		System.out.println("*******"+params);
 		Map<String, Object> rtnMsg = new HashMap<String, Object>();
 		
 		try {
