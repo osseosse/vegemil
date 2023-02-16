@@ -14,6 +14,9 @@
 	}
 	
 	function goSub(sub){
+		if(sub == '0') {
+			return false;
+		}
         location.href = "/webzine/" + sub;
     }
     
