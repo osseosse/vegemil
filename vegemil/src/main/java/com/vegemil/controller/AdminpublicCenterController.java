@@ -275,7 +275,7 @@ public class AdminpublicCenterController extends UiUtils {
 	@RequestMapping(value = "/publicCenter/getvideoContestList")
     public @ResponseBody JsonObject getvideoContestList(@ModelAttribute("params") final AdminVideoContestDTO params, HttpServletRequest req, 
     			Map<String, Object> commandMap)throws Exception{
-		System.out.println("params::" + params);
+		
 		List<AdminVideoContestDTO> videoContestList = adminVideoContestService.getAdminVideoContestList(params);
 		JsonObject jsonObj = new JsonObject();
 		if (CollectionUtils.isEmpty(videoContestList) == false) {
@@ -372,7 +372,7 @@ public class AdminpublicCenterController extends UiUtils {
 	@RequestMapping(value = "/publicCenter/getRadioCMList")
     public @ResponseBody JsonObject getvideoContestList(@ModelAttribute("params") final AdminRadioCMDTO params, HttpServletRequest req, 
     			Map<String, Object> commandMap)throws Exception{
-		System.out.println("params::" + params);
+		
 		List<AdminRadioCMDTO> radioCMList = adminRadioCMSerive.getRadioCMList(params);
 		JsonObject jsonObj = new JsonObject();
 		if (CollectionUtils.isEmpty(radioCMList) == false) {
@@ -447,7 +447,7 @@ public class AdminpublicCenterController extends UiUtils {
 	@RequestMapping(value = "/publicCenter/getAviCFList")
 	public @ResponseBody JsonObject getAviCFList(@ModelAttribute("params") final AdminAviCFDTO params, HttpServletRequest req, 
 			Map<String, Object> commandMap)throws Exception{
-		System.out.println("params::" + params);
+		
 		List<AdminAviCFDTO> aviCFList = adminAviCFService.getAdminAviCFList(params);
 		JsonObject jsonObj = new JsonObject();
 		if (CollectionUtils.isEmpty(aviCFList) == false) {

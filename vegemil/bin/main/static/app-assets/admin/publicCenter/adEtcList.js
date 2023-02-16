@@ -128,11 +128,6 @@ var createTable = function() {
   // --------------------------------------------------------------------
 
   if (dt_basic_table.length) {
-	//const range = $('#fp-range').val().split(' to ');
-	//const cStartdate = range[0];
-	//const cEnddate = range[1];
-	//$('#cStartdate').attr("value",cStartdate);
-	//$('#cEnddate').attr("value",cEnddate);
 	//테이블 정보 불러와서 테이블로 만들기 ,,,
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
