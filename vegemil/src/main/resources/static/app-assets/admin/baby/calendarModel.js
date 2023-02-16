@@ -183,7 +183,7 @@ var createTable = function() {
         contentType : "application/json; charset=utf-8",
         data:function(params){   
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			console.log('json', json);			
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
@@ -419,7 +419,7 @@ var createTable = function() {
 
 function btnSave(idx) {
 	console.log('data', idx)
-	
+
 	const form = $('#modalForm'+idx).serializeArray();
 	
 	let cRank = false;
@@ -435,8 +435,15 @@ function btnSave(idx) {
 		alert("선정등수를 선택해주세요.")
 		return false;
 	}
-	    	   
-	    	   
+	
+//	var formData = new FormData();	    
+//	formData.append("cIdx", $('#mProduct').val());
+//    formData.append("cUpdateTime", $('#mProduct').val());
+//    formData.append("cRank", $('#mContent').val());
+//    formData.append("cMainImage", $('#mDisplay').val());
+  	   
+	 console.log($('#modalForm'+idx).serialize());
+  	   
     $.ajax({
        url: '/admin/manage/baby/updateCalendarModel',
 	   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
@@ -472,8 +479,23 @@ function getRank(val, rank) {
 }
 
 
-function getModal(obj) {
+function getModal(obj) {	
+	
+    $('.photoBox1 .rotateR'+obj.cIdx).click(function() { 
+    	obj.cAngle += 90; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.cIdx);
+    	angleInfo1.value = obj.cAngle;	  
+    	$(".mt-1"+obj.cIdx).rotate(obj.cAngle);
+
+    	});
+
+    $('.photoBox2 .rotateL').click(function() { angle += -90; $(".photoBox2 > p").rotate(angle);});
+    $('.photoBox2 .rotateR').click(function() { angle += +90; $(".photoBox2 > p").rotate(angle);});
+	
+  	
 	console.log('obj----------',obj);
+	
+
 	let modal = "";	
 	modal +=	'<form name="modalForm'+obj.cIdx+'" id="modalForm'+obj.cIdx+'" method="post">'
     modal +=		'<section id="modal-sizes">'
@@ -526,11 +548,11 @@ function getModal(obj) {
 	modal +=											'<div class="form-check">'
 	modal +=												'<input type="radio" id="photoSelection1" name="cMainImage" value='+obj.cImage+' class="form-check-input" checked />'
 	modal +=												'<label class="form-check-label" for="#">대표이미지로 선택</label>'
-	modal +=												'<div class="mt-1 photoBox1">'
-	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
-	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
+	modal +=												'<div class="mt-1 photoBox1">'	
+	modal +=													'<button type="button"  class="rotateR'+obj.cIdx+' btn btn-outline-primary btn-sm">이미지 회전</button>'
+	modal +=													'<input type="hidden"  name="cAngle" id="angleInfo1'+obj.cIdx+'" value='+obj.cAngle+' >'
 	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'
-	/*modal +=													'<p class="mt-1"><img src="/sample/'+obj.cImage+'" width="100%"/></p>'*/
+	/*modal +=													'<p class="mt-1'+obj.cIdx+'"><img id="imageToRotate" src="/image/'+obj.cImage+'" width="100%"/></p>'*/
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -611,6 +633,7 @@ function getModal(obj) {
 	modal +=								'</thead>'
 	modal +=							'</table>'
 	modal +=						'</div>'
+	modal +=						'</di'
 	modal +=						'<div class="modal-footer">'
 	modal +=							'<button type="button" onclick="btnSave('+obj.cIdx+');" class="btn btn-primary" >저장</button>'
 	modal +=						'</div>'
@@ -620,16 +643,5 @@ function getModal(obj) {
     modal += 		'</section>'
     modal +=	'</form>'
 
-    
-	$(document).ready(function () {
-	  	  var angle = 90;        // 현재의 각도를 변수로 저장
-	  	  $('.photoBox1 .rotateL').click(function() { angle += -90; $(".photoBox1 > p").rotate(angle);});
-	  	  $('.photoBox1 .rotateR').click(function() { angle += +90; $(".photoBox1 > p").rotate(angle);});
-
-	  	  $('.photoBox2 .rotateL').click(function() { angle += -90; $(".photoBox2 > p").rotate(angle);});
-	  	  $('.photoBox2 .rotateR').click(function() { angle += +90; $(".photoBox2 > p").rotate(angle);});
-	  	});
-
     return modal;
 }
-

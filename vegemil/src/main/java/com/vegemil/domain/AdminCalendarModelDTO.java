@@ -51,5 +51,8 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	
 	/** 회원ID */
 	private String mId;
+	
+	private int cAngle;
+	private int cAngle2;
 
 }
