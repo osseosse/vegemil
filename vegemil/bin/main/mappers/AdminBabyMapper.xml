@@ -21,11 +21,13 @@
 		, c_addr
 		, c_email
 		, c_image
+		, c_angle
 		, c_write_date
 		, (CASE WHEN c_rank IS NULL THEN "" ELSE c_update_time END) as c_update_time
 		, c_baby_name
 		, c_route
 		, c_image2
+		, c_angle2
 		, c_alived
 		, c_rank
 	</sql>
@@ -345,8 +347,10 @@
 				c_update_time = ''			  
 			  </otherwise>			
 			</choose>	
+			, c_rank = #{cRank}			
 			, c_rank = #{cRank}
-			, c_main_image = #{cMainImage}
+			, c_angle = #{cAngle}
+			, c_angle2 = #{cAngle2}
 		WHERE
 			c_idx = #{cIdx}
 	</update>
@@ -365,8 +369,10 @@
 		FROM
 			(SELECT 
 				<include refid="calendarModelColumns" />
-				, m.m_id
-			  FROM m_calendar_model c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp) subQuery
+				<!-- , m.m_id -->
+			  FROM m_calendar_model 
+			  <!-- c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp  -->
+			  ) subQuery
 			  
 			  WHERE 1 =1
 			  
@@ -387,6 +393,40 @@
 		 ORDER BY c_write_date DESC		 
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
+	
+	
+	<!-- <select id="selectCalendarModelList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCalendarModelDTO">
+		SELECT * /* selectCalendarModelList by AdminEventMapper.xml */
+		FROM
+			(SELECT 
+				<include refid="calendarModelColumns" />
+				, m.m_id
+			  FROM m_calendar_model c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp) subQuery
+			  
+			  WHERE 1 =1
+			  
+			  <if test='sStartdate != "" '>
+			  	AND c_write_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
+			  </if>
+			  <if test='sEnddate != "" '>
+			  	AND c_write_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})
+			  </if>
+			  <if test='gubun == "1" '>
+			  </if>
+			  <if test='searchType == "mName" '> 작성자명
+			  	AND c_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+			  </if>
+			  <if test='searchType == "bName" '> 아기이름
+			  	AND c_baby_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
+			  </if>			  
+		 ORDER BY c_write_date DESC		 
+		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select> -->
+	
+	
+	
+	
+	
 
 	<select id="selectCalendarModelTotalCount" parameterType="hashMap" resultType="int">
 		SELECT /* selectCalendarModelTotalCount by AdminEventMapper.xml */

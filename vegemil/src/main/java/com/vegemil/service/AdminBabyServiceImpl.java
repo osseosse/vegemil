@@ -1,12 +1,17 @@
 package com.vegemil.service;
 
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -121,6 +126,22 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	}
 	
 	
+	public static BufferedImage rotateImage(BufferedImage imageToRotate, int angle) {
+        int widthOfImage = imageToRotate.getWidth();
+        int heightOfImage = imageToRotate.getHeight();
+        int typeOfImage = imageToRotate.getType();
+
+        BufferedImage newImageFromBuffer = new BufferedImage(widthOfImage, heightOfImage, typeOfImage);
+
+        Graphics2D graphics2D = newImageFromBuffer.createGraphics();
+
+        graphics2D.rotate(Math.toRadians(angle), widthOfImage / 2, heightOfImage / 2);
+        graphics2D.drawImage(imageToRotate, null, 0, 0);
+
+        return newImageFromBuffer;
+    }
+	
+	
 	@Override
 	public boolean registerCalendarModel(AdminCalendarModelDTO params) {
 		int queryResult = 0;
@@ -129,9 +150,39 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		if (params.getCIdx() == null) {
 			queryResult = adminBabyMapper.insertCalendarModel(params);
 		} else {
+			int angle = params.getCAngle();	
+			System.out.println("회전각도: "+ angle );
+			
+			if(angle != 0) {				
+				System.out.println("사진이 회전됐습니다.");
+
+				//기존 저장된 이미지 구하기
+				String storedImgName = params.getCMainImage();
+				System.out.println(storedImgName);
+				
+				try {					
+					//이미지조회 - 실제경로					
+					BufferedImage originalImage = ImageIO.read(new File(uploadPath +"/upload/vegemilBaby/" +storedImgName));
+					//이미지조회- Test로컬경로
+					//BufferedImage originalImage = ImageIO.read(new File("D:/upload/admin/vegemilbaby/"+storedImgName));
+		            BufferedImage rotatedImage = rotateImage(originalImage, angle);
+		            
+		            //이미지 생성 -실제경로
+		            File rotatedImageFile = new File(uploadPath +"/upload/vegemilBaby/"+storedImgName);
+		            //이미지 생성 -Test로컬경로
+		            //File rotatedImageFile = new File("D:/upload/admin/vegemilbaby/"+storedImgName);
+
+		            ImageIO.write(rotatedImage, "jpg", rotatedImageFile);
+
+		            System.out.println("New Rotated Image File Path: "+rotatedImageFile.getPath());
+
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			queryResult = adminBabyMapper.updateCalendarModel(params);
 		}
-
 		return (queryResult == 1) ? true : false;
 	}
 
