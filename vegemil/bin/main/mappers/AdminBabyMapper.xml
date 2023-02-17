@@ -346,14 +346,40 @@
 			  <otherwise>
 				c_update_time = ''			  
 			  </otherwise>			
-			</choose>	
-			, c_rank = #{cRank}			
+			</choose>							
 			, c_rank = #{cRank}
+			
+			<if test='imgSelect == "img1"'>
+	 	       , c_main_image = #{cMainImage}	 	       
+	 		</if>
+	 		<if test='imgSelect == "img2"'>
+	 	       , c_main_image = #{cMainImage2}	 	       
+	 		</if>
 			, c_angle = #{cAngle}
 			, c_angle2 = #{cAngle2}
 		WHERE
 			c_idx = #{cIdx}
 	</update>
+	
+	<select id="selectBabyImg" parameterType="long" resultType="String">
+		SELECT
+	       	c_image	    	
+		FROM
+			m_calendar_model
+		WHERE
+			c_idx = #{cIdx}
+	</select>
+	
+	<select id="selectBabyImg2" parameterType="long" resultType="String">
+		SELECT
+	       	c_image2	    	
+		FROM
+			m_calendar_model
+		WHERE
+			c_idx = #{cIdx}
+	</select>
+	
+	
 
 	<update id="deleteCalendarModel" parameterType="hashMap">
 		DELETE FROM m_calendar_model

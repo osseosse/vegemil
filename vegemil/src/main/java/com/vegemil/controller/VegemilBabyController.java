@@ -1,11 +1,14 @@
 package com.vegemil.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.UUID;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -252,8 +255,12 @@ public class VegemilBabyController extends UiUtils {
 				String file1 = originalName1.substring(originalName1.lastIndexOf("\\") + 1);
 				
 				String savefileName1 = uuid + "_" + file1.replaceAll("\\s", "");
-				//테스트경로
-				Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
+				
+				//저장 - 실제 경로
+				//Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
+				//저장 - 테스트경로
+				Path savePath = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName1);
+
 				//저장
 				calModel.getFileName1().transferTo(savePath);
 				//포트폴리오
@@ -263,12 +270,15 @@ public class VegemilBabyController extends UiUtils {
 				String file2 = originalName2.substring(originalName2.lastIndexOf("\\") + 1);
 				
 				String savefileName2 = uuid + "_" + file2.replaceAll("\\s", "");;
-				//테스트경로
-				Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
+				//저장 - 실제 경로
+				//Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
+				//저장 - 테스트경로
+				Path savePath2 = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName2);
+				
 				//저장
 				calModel.getFileName2().transferTo(savePath2);
 				//포트폴리오
-				calModel.setCImage(savefileName2);
+				calModel.setCImage2(savefileName2);
 			}
 			
 			boolean isRegistered = vegemilBabyCommunityService.insertModelForm(calModel);
@@ -284,6 +294,8 @@ public class VegemilBabyController extends UiUtils {
 			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
 			
 		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println(e.getMessage());
 			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
 			out.flush();
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
