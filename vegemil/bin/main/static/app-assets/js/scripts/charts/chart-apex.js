@@ -14,25 +14,26 @@ $(function () {
     isRtl = $('html').attr('data-textdirection') === 'rtl',
     chartColors = {
       column: {
-        series1: '#826af9',
-        series2: '#d2b0ff',
-        bg: '#f8d3ff'
+        series1: '#ff386c',
+        series2: '#4285f4',
+	    series3: '#fbb900',
+        bg: '#cbcbcb'
       },
       success: {
         shade_100: '#7eefc7',
         shade_200: '#06774f'
       },
       donut: {
-        series1: '#ffe700',
-        series2: '#00d4bd',
-        series3: '#826bf8',
+        series1: '#2fd862',
+        series2: '#4285f4',
+        series3: '#fbb900',
         series4: '#2b9bf4',
         series5: '#FFA1A1'
       },
       area: {
-        series3: '#a4f8cd',
-        series2: '#60f2ca',
-        series1: '#2bdac7'
+        series3: '#fbb900',
+        series2: '#4285f4',
+        series1: '#2fd862'
       }
     };
 
@@ -59,7 +60,7 @@ $(function () {
     flatPicker.each(function () {
       $(this).flatpickr({
         mode: 'range',
-        defaultDate: ['2019-05-01', '2019-05-10']
+        defaultDate: ['2021-12-01', '2022-12-01']
       });
     });
   }
@@ -95,37 +96,36 @@ $(function () {
           }
         }
       },
-      colors: [chartColors.area.series3, chartColors.area.series2, chartColors.area.series1],
+      colors: [chartColors.area.series1, chartColors.area.series2, chartColors.area.series3],
       series: [
         {
-          name: 'Visits',
+          name: 'NAVER',
           data: [100, 120, 90, 170, 130, 160, 140, 240, 220, 180, 270, 280, 375]
         },
         {
-          name: 'Clicks',
+          name: 'Google',
           data: [60, 80, 70, 110, 80, 100, 90, 180, 160, 140, 200, 220, 275]
         },
         {
-          name: 'Sales',
+          name: 'Daum',
           data: [20, 40, 30, 70, 40, 60, 50, 140, 120, 100, 140, 180, 220]
         }
       ],
       xaxis: {
         categories: [
-          '7/12',
-          '8/12',
-          '9/12',
-          '10/12',
-          '11/12',
-          '12/12',
-          '13/12',
-          '14/12',
-          '15/12',
-          '16/12',
-          '17/12',
-          '18/12',
-          '19/12',
-          '20/12'
+          '21/12',
+          '22/01',
+          '22/02',
+          '22/03',
+          '22/04',
+          '22/05',
+          '22/06',
+          '22/07',
+          '22/08',
+          '22/09',
+          '22/10',
+          '22/11',
+          '22/12'
         ]
       },
       fill: {
@@ -168,7 +168,7 @@ $(function () {
               chartColors.column.bg,
               chartColors.column.bg
             ],
-            backgroundBarRadius: 10
+            backgroundBarRadius: 8
           }
         }
       },
@@ -180,7 +180,7 @@ $(function () {
         position: 'top',
         horizontalAlign: 'start'
       },
-      colors: [chartColors.column.series1, chartColors.column.series2],
+      colors: [chartColors.column.series1, chartColors.column.series2, chartColors.column.series3],
       stroke: {
         show: true,
         colors: ['transparent']
@@ -195,15 +195,20 @@ $(function () {
       series: [
         {
           name: 'Apple',
-          data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180]
+          data: [20, 40, 15, 20, 10, 40, 40]
         },
         {
           name: 'Samsung',
-          data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20]
+          data: [85, 100, 30, 40, 95, 100, 40]
+        },
+		{
+          name: 'Etc',
+          data: [5, 10, 30, 10, 15, 10, 10]
         }
+		 
       ],
       xaxis: {
-        categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12']
+        categories: ['23/01', '23/02', '23/03', '23/04', '23/05', '23/06', '23/07']
       },
       fill: {
         opacity: 1
@@ -398,7 +403,7 @@ $(function () {
     lineChart.render();
   }
 
-  // Bar Chart
+  // Bar Chart 유입상위
   // --------------------------------------------------------------------
   var barChartEl = document.querySelector('#bar-chart'),
     barChartConfig = {
@@ -434,11 +439,11 @@ $(function () {
       },
       series: [
         {
-          data: [700, 350, 480, 600, 210, 550, 150]
+          data: [700, 600, 480, 450, 380, 310, 150]
         }
       ],
       xaxis: {
-        categories: ['MON, 11', 'THU, 14', 'FRI, 15', 'MON, 18', 'WED, 20', 'FRI, 21', 'MON, 23']
+        categories: ['메인', '베지밀 5060 시니어두유', 'TF1000', '건강맘', '베지밀 담백한 에이', '베지밀 루테인 두유', '영유아식 샘플신청']
       },
       yaxis: {
         opposite: isRtl
@@ -448,6 +453,59 @@ $(function () {
     var barChart = new ApexCharts(barChartEl, barChartConfig);
     barChart.render();
   }
+
+
+  // Bar Chart-2 이탈상위
+  // --------------------------------------------------------------------
+  var barChartEl = document.querySelector('#bar-chart-2'),
+    barChartConfig = {
+      chart: {
+        height: 400,
+        type: 'bar',
+        parentHeightOffset: 0,
+        toolbar: {
+          show: false
+        }
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true,
+          barHeight: '30%',
+          endingShape: 'rounded'
+        }
+      },
+      grid: {
+        xaxis: {
+          lines: {
+            show: false
+          }
+        },
+        padding: {
+          top: -15,
+          bottom: -10
+        }
+      },
+      colors: window.colors.solid.info,
+      dataLabels: {
+        enabled: false
+      },
+      series: [
+        {
+          data: [700, 600, 480, 450, 380, 310, 150]
+        }
+      ],
+      xaxis: {
+        categories: ['메인', '샘플신청', 'TF1000', '건강맘', '베지밀 담백한 에이', '베지밀 루테인 두유', '영유아식 샘플신청']
+      },
+      yaxis: {
+        opposite: isRtl
+      }
+    };
+  if (typeof barChartEl !== undefined && barChartEl !== null) {
+    var barChart = new ApexCharts(barChartEl, barChartConfig);
+    barChart.render();
+  }
+
 
   // Candlestick Chart
   // --------------------------------------------------------------------
@@ -702,7 +760,7 @@ $(function () {
   var radialBarChartEl = document.querySelector('#radialbar-chart'),
     radialBarChartConfig = {
       chart: {
-        height: 350,
+        height: 370,
         type: 'radialBar'
       },
       colors: [chartColors.donut.series1, chartColors.donut.series2, chartColors.donut.series4],
@@ -761,7 +819,7 @@ $(function () {
   var radarChartEl = document.querySelector('#radar-chart'),
     radarChartConfig = {
       chart: {
-        height: 400,
+        height: 425,
         type: 'radar',
         toolbar: {
           show: false
@@ -784,17 +842,17 @@ $(function () {
       },
       series: [
         {
-          name: 'iPhone 11',
-          data: [41, 64, 81, 60, 42, 42, 33, 23]
+          name: 'man',
+          data: [50, 100, 81, 160, 142, 142, 33 ]
         },
         {
-          name: 'Samsung s20',
-          data: [65, 46, 42, 25, 58, 63, 76, 43]
+          name: 'woman',
+          data: [50, 100, 100, 25, 158, 163, 76]
         }
       ],
       colors: [chartColors.donut.series1, chartColors.donut.series3],
       xaxis: {
-        categories: ['Battery', 'Brand', 'Camera', 'Memory', 'Storage', 'Display', 'OS', 'Price']
+        categories: ['10대', '20대', '30대', '40대', '50대', '60대', '70대']
       },
       fill: {
         opacity: [1, 0.8]
@@ -824,20 +882,19 @@ $(function () {
   var donutChartEl = document.querySelector('#donut-chart'),
     donutChartConfig = {
       chart: {
-        height: 350,
+        height: 410,
         type: 'donut'
       },
       legend: {
         show: true,
         position: 'bottom'
       },
-      labels: ['Operational', 'Networking', 'Hiring', 'R&D'],
-      series: [85, 16, 50, 50],
+      labels: [ 'PC',' Mobile', 'Tablet' ],
+      series: [60, 35, 5],
       colors: [
         chartColors.donut.series1,
-        chartColors.donut.series5,
+        chartColors.donut.series2,
         chartColors.donut.series3,
-        chartColors.donut.series2
       ],
       dataLabels: {
         enabled: true,
@@ -852,11 +909,11 @@ $(function () {
               show: true,
               name: {
                 fontSize: '2rem',
-                fontFamily: 'Montserrat'
+                fontFamily: 'Mobile'
               },
               value: {
                 fontSize: '1rem',
-                fontFamily: 'Montserrat',
+                fontFamily: 'PC',
                 formatter: function (val) {
                   return parseInt(val) + '%';
                 }
@@ -864,9 +921,9 @@ $(function () {
               total: {
                 show: true,
                 fontSize: '1.5rem',
-                label: 'Operational',
+                label: 'PC',
                 formatter: function (w) {
-                  return '31%';
+                  return '60%';
                 }
               }
             }
