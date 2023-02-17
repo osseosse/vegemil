@@ -34,9 +34,6 @@ public class AdminAviCFtServiceImpl implements AdminAviCFService{
 	}
 	@Override
 	public boolean saveAviCF(AdminAviCFDTO params, MultipartFile uploadFile) {
-		if(params.getTOnair() == null) {
-			params.setTOnair("0");
-		}
 		
 		int queryResult = 0;
 

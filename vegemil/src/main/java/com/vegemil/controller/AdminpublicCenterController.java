@@ -191,8 +191,8 @@ public class AdminpublicCenterController extends UiUtils {
 		return jsonObj;
     }
 	
-	//기타영상 자료 수정 삭제 
-	@RequestMapping(value="/publicCenter/saveAdEtc")
+	//기타영상 자료 등록 수정 삭제 
+	@RequestMapping(value="/publicCenter/saveAdEtc", method = { RequestMethod.GET, RequestMethod.POST })
     public @ResponseBody Map<String, Object> saveAdEtc(@ModelAttribute("params") final AdminAdEctDTO params,
     		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile )throws Exception{
 		
@@ -235,26 +235,6 @@ public class AdminpublicCenterController extends UiUtils {
 		return "admin/publicCenter/adEtcPost";
 	}
 	
-	// 새로운 기타홍보영상 등록
-	@PostMapping("/publicCenter/postAdEtc")
-    public @ResponseBody Map<String, Object> saveAdEtc22(@ModelAttribute("params") final AdminAdEctDTO params,
-    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
-		Map<String, Object> rtnMsg = new HashMap<String, Object>();
-		
-		try {
-			boolean isResulted = adminAdEtcService.saveAdEtc(params, uploadFile);
-			rtnMsg.put("result", isResulted);
-			
-		}catch (DataAccessException e) {
-    		e.printStackTrace();
-    		throw new Exception("저장에 실패하였습니다");
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("저장에 실패하였습니다");
-		}
-		return rtnMsg;
-	}
-	
 	// 기타홍보영상 수정 화면 이동
 	@GetMapping("/publicCenter/adEtcUpdate")
 	public String getUpdateAdEtcView(@RequestParam("tIdx") String tIdx, Model model) {
@@ -293,28 +273,7 @@ public class AdminpublicCenterController extends UiUtils {
 		return "admin/publicCenter/videoContestPost";
 	}
 	
-	// 새로운 공모전영상 데이터 등록
-	@PostMapping("/publicCenter/postVideoContest")
-	 public @ResponseBody Map<String, Object> saveNewVideoContest(@ModelAttribute("params") final AdminVideoContestDTO params,
-	    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
-		
-		Map<String, Object> rtnMsg = new HashMap<String, Object>();
-		
-		try {
-			boolean isResulted = adminVideoContestService.saveVideoContest(params, uploadFile);
-			rtnMsg.put("result", isResulted);
-			
-		}catch (DataAccessException e) {
-    		e.printStackTrace();
-    		throw new Exception("저장에 실패하였습니다");
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("저장에 실패하였습니다");
-		}
-		return rtnMsg;
-	}
-	
-	// 공모전 영상 수정 삭제
+	// 공모전 영상 등록 수정 삭제
 	@RequestMapping(value="/publicCenter/saveVideoContest")
     public @ResponseBody Map<String, Object> saveVideoContest(@ModelAttribute("params") final AdminVideoContestDTO params,
     		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile )throws Exception{

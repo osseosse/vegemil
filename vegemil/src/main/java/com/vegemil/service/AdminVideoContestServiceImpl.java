@@ -34,10 +34,6 @@ public class AdminVideoContestServiceImpl implements AdminVideoContestService{
 	@Override
 	public boolean saveVideoContest(AdminVideoContestDTO params, MultipartFile uploadFile) {
 		
-		if(params.getTOnair() == null) {
-			params.setTOnair("0");
-		}
-		
 		int queryResult = 0;
 
 		AdminVideoContestDTO preDto = adminVideoContestMapper.selectVideoContestData(params.getTIdx());

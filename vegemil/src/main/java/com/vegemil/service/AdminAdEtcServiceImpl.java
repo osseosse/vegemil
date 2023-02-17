@@ -38,10 +38,6 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 	@Override
 	public boolean saveAdEtc(AdminAdEctDTO params, MultipartFile uploadFile) {
 		
-		if(params.getTOnair() == null) {
-			params.setTOnair("0");
-		}
-		
 		int queryResult = 0;
 
 		AdminAdEctDTO preDto = adminAdEtcMapper.selectAviData(params.getTIdx());
