@@ -35,9 +35,6 @@ public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
 	
 	@Override
 	public boolean saveRadioCM(AdminRadioCMDTO params, MultipartFile uploadFile) {
-		if(params.getTOnair() == null) {
-			params.setTOnair("0");
-		}
 		
 		int queryResult = 0;
 
