@@ -41,6 +41,9 @@ public interface AdminBabyMapper {
 	public AdminCalendarModelDTO selectCalendarModelDetail(Long idx);
 
 	public int updateCalendarModel(AdminCalendarModelDTO params);
+	
+	public String selectBabyImg(AdminCalendarModelDTO params);
+	public String selectBabyImg2(AdminCalendarModelDTO params);
 
 	public int deleteCalendarModel(Map<String, Object> paramMap);
 
@@ -88,4 +91,6 @@ public interface AdminBabyMapper {
 	public int updateBabyTvcf(AdminCfDTO adminCfDTO);
 
 	public int updateBabyTvcfFileInfo(AdminCfDTO adminCfDTO);
+
+	
 }

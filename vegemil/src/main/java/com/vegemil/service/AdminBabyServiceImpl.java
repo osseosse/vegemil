@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -125,7 +126,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		return adminBabyMapper.selectBabyQnaDetail(mbsIdx);
 	}
 	
-	
+	//이미지 회전 로직
 	public static BufferedImage rotateImage(BufferedImage imageToRotate, int angle) {
         int widthOfImage = imageToRotate.getWidth();
         int heightOfImage = imageToRotate.getHeight();
@@ -145,37 +146,62 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	@Override
 	public boolean registerCalendarModel(AdminCalendarModelDTO params) {
 		int queryResult = 0;
-		System.out.println("이미지 선택" + params.getCMainImage());
 
 		if (params.getCIdx() == null) {
 			queryResult = adminBabyMapper.insertCalendarModel(params);
 		} else {
 			int angle = params.getCAngle();	
-			System.out.println("회전각도: "+ angle );
+			int angle2 = params.getCAngle2();	
+			System.out.println("사진1 회전각도: "+ angle );
+			System.out.println("사진2 회전각도: "+ angle2 );
 			
-			if(angle != 0) {				
+			if(angle != 0 || angle2 != 0) {				
 				System.out.println("사진이 회전됐습니다.");
-
-				//기존 저장된 이미지 구하기
-				String storedImgName = params.getCMainImage();
-				System.out.println(storedImgName);
+				String storedImgName = null;
+				String storedImgName2 = null;
 				
-				try {					
-					//이미지조회 - 실제경로					
-					BufferedImage originalImage = ImageIO.read(new File(uploadPath +"/upload/vegemilBaby/" +storedImgName));
-					//이미지조회- Test로컬경로
-					//BufferedImage originalImage = ImageIO.read(new File("D:/upload/admin/vegemilbaby/"+storedImgName));
-		            BufferedImage rotatedImage = rotateImage(originalImage, angle);
-		            
-		            //이미지 생성 -실제경로
-		            File rotatedImageFile = new File(uploadPath +"/upload/vegemilBaby/"+storedImgName);
-		            //이미지 생성 -Test로컬경로
-		            //File rotatedImageFile = new File("D:/upload/admin/vegemilbaby/"+storedImgName);
-
-		            ImageIO.write(rotatedImage, "jpg", rotatedImageFile);
-
-		            System.out.println("New Rotated Image File Path: "+rotatedImageFile.getPath());
-
+				//저장된 이미지이름  조회
+				if(angle != 0) {
+					storedImgName = adminBabyMapper.selectBabyImg(params);					
+				}
+				if(angle2 != 0) {
+					storedImgName2 = adminBabyMapper.selectBabyImg2(params);
+				}				
+				
+				try {						
+					BufferedImage rotatedImage = null;
+					BufferedImage rotatedImage2 = null;					
+					
+					if(angle != 0) {
+						//이미지조회 - 실제경로
+						BufferedImage originalImage = ImageIO.read(new File(uploadPath +"/upload/vegemilBaby/" +storedImgName));
+						//이미지조회- Test로컬경로
+						//BufferedImage originalImage = ImageIO.read(new File("D:/upload/admin/vegemilbaby/"+storedImgName));
+						
+						rotatedImage = rotateImage(originalImage, angle);	
+						
+						//회전된 이미지 저장 - 실제경로
+						File rotatedImageFile = new File(uploadPath +"/upload/vegemilBaby/" +storedImgName);						
+						//회전된 이미지 저장 - Test로컬경로
+			            //File rotatedImageFile = new File("D:/upload/admin/vegemilbaby/"+storedImgName);
+			            
+						ImageIO.write(rotatedImage, "jpg", rotatedImageFile);
+					}
+					if(angle2 != 0) {
+						//이미지조회 - 실제경로
+						BufferedImage originalImage2 = ImageIO.read(new File(uploadPath +"/upload/vegemilBaby/" +storedImgName2));
+						//이미지조회- Test로컬경로
+						//BufferedImage originalImage2 = ImageIO.read(new File("D:/upload/admin/vegemilbaby/"+storedImgName2));
+						
+						rotatedImage2 = rotateImage(originalImage2, angle2);
+						
+						//회전된 이미지 저장 - 실제경로
+						File rotatedImageFile2 = new File(uploadPath +"/upload/vegemilBaby/" +storedImgName);						
+						//회전된 이미지 저장 - Test로컬경로
+						//File rotatedImageFile2 = new File("D:/upload/admin/vegemilbaby/"+storedImgName2);
+			           
+						ImageIO.write(rotatedImage2, "jpg", rotatedImageFile2);
+					}
 					
 				} catch (IOException e) {
 					e.printStackTrace();

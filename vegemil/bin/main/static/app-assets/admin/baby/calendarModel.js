@@ -419,8 +419,14 @@ var createTable = function() {
 
 function btnSave(idx) {
 	console.log('data', idx)
-
-	const form = $('#modalForm'+idx).serializeArray();
+	
+	//메인 이미지 선택
+	let cMainImage="";
+	if ( $("input[name=imgSelect]:checked").val() == 'img1') {
+		cMainImage = $("#cMainImage").val();
+	}else if ($("input[name=imgSelect]:checked").val() == 'img2') {
+		cMainImage = $("#cMainImage2").val();
+	}
 	
 	let cRank = false;
 	for(var i=0; i<form.length; i++) {
@@ -435,14 +441,8 @@ function btnSave(idx) {
 		alert("선정등수를 선택해주세요.")
 		return false;
 	}
-	
-//	var formData = new FormData();	    
-//	formData.append("cIdx", $('#mProduct').val());
-//    formData.append("cUpdateTime", $('#mProduct').val());
-//    formData.append("cRank", $('#mContent').val());
-//    formData.append("cMainImage", $('#mDisplay').val());
-  	   
-	 console.log($('#modalForm'+idx).serialize());
+	  	   
+	console.log($('#modalForm'+idx).serialize());
   	   
     $.ajax({
        url: '/admin/manage/baby/updateCalendarModel',
@@ -481,16 +481,63 @@ function getRank(val, rank) {
 
 function getModal(obj) {	
 	
-    $('.photoBox1 .rotateR'+obj.cIdx).click(function() { 
-    	obj.cAngle += 90; 
+    $('.photoBox1 .rotateL1'+obj.cIdx).click(function() { 
+    	obj.cAngle = -90; 
     	var angleInfo1 = document.getElementById("angleInfo1"+obj.cIdx);
     	angleInfo1.value = obj.cAngle;	  
-    	$(".mt-1"+obj.cIdx).rotate(obj.cAngle);
+    	$(".imageToRotate1"+obj.cIdx).rotate(-90);
 
     	});
+    
+    $('.photoBox1 .rotateR1'+obj.cIdx).click(function() { 
+    	obj.cAngle = 90; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.cIdx);
+    	angleInfo1.value = obj.cAngle;	  
+    	$(".imageToRotate1"+obj.cIdx).rotate(90);
 
-    $('.photoBox2 .rotateL').click(function() { angle += -90; $(".photoBox2 > p").rotate(angle);});
-    $('.photoBox2 .rotateR').click(function() { angle += +90; $(".photoBox2 > p").rotate(angle);});
+    	});
+    
+    $('.photoBox1 .rotateD1'+obj.cIdx).click(function() { 
+    	obj.cAngle = 180; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.cIdx);
+    	angleInfo1.value = obj.cAngle;	  
+    	$(".imageToRotate1"+obj.cIdx).rotate(180);
+    	});
+    
+    $('.photoBox1 .rotateC1'+obj.cIdx).click(function() { 
+    	obj.cAngle = 0; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.cIdx);
+    	angleInfo1.value = obj.cAngle;	  
+    	$(".imageToRotate1"+obj.cIdx).rotate(0);
+    	});
+    
+    $('.rotateL2'+obj.cIdx).click(function() { 
+    	obj.cAngle2 = -90; 
+    	var angleInfo2 = document.getElementById("angleInfo2"+obj.cIdx);
+    	angleInfo2.value = obj.cAngle2;	  
+    	$(".imageToRotate2"+obj.cIdx).rotate(-90);
+    	});
+    
+    $('.rotateR2'+obj.cIdx).click(function() { 
+    	obj.cAngle2 = 90; 
+    	var angleInfo2 = document.getElementById("angleInfo2"+obj.cIdx);
+    	angleInfo2.value = obj.cAngle2;	  
+    	$(".imageToRotate2"+obj.cIdx).rotate(90);
+    	});
+    
+    $('.rotateD2'+obj.cIdx).click(function() { 
+    	obj.cAngle2 = 180; 
+    	var angleInfo2 = document.getElementById("angleInfo2"+obj.cIdx);
+    	angleInfo2.value = obj.cAngle2;	  
+    	$(".imageToRotate2"+obj.cIdx).rotate(180);
+    	});
+    
+    $('.rotateC2'+obj.cIdx).click(function() { 
+    	obj.cAngle2 = 0; 
+    	var angleInfo2 = document.getElementById("angleInfo2"+obj.cIdx);
+    	angleInfo2.value = obj.cAngle2;	  
+    	$(".imageToRotate2"+obj.cIdx).rotate(0);
+    	});
 	
   	
 	console.log('obj----------',obj);
@@ -546,13 +593,17 @@ function getModal(obj) {
 												if(obj.cImage != null) {
 	modal +=										'<dd>'
 	modal +=											'<div class="form-check">'
-	modal +=												'<input type="radio" id="photoSelection1" name="cMainImage" value='+obj.cImage+' class="form-check-input" checked />'
+	modal +=												'<input type="radio" id="imgSelect" name="imgSelect" value="img1" class="form-check-input" checked/>'
+	modal +=												'<input type="hidden" id="cMainImage" name="cMainImage" value='+obj.cImage+'  />'
 	modal +=												'<label class="form-check-label" for="#">대표이미지로 선택</label>'
 	modal +=												'<div class="mt-1 photoBox1">'	
-	modal +=													'<button type="button"  class="rotateR'+obj.cIdx+' btn btn-outline-primary btn-sm">이미지 회전</button>'
-	modal +=													'<input type="hidden"  name="cAngle" id="angleInfo1'+obj.cIdx+'" value='+obj.cAngle+' >'
-	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'
-	/*modal +=													'<p class="mt-1'+obj.cIdx+'"><img id="imageToRotate" src="/image/'+obj.cImage+'" width="100%"/></p>'*/
+	modal +=													'<button type="button"  class="rotateL1'+obj.cIdx+' btn btn-outline-primary btn-sm">왼쪽</button>'
+	modal +=													'<button type="button"  class="rotateR1'+obj.cIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
+	modal +=													'<button type="button"  class="rotateD1'+obj.cIdx+' btn btn-outline-primary btn-sm">아래</button>'
+	modal +=													'<button type="button"  class="rotateC1'+obj.cIdx+' btn btn-outline-primary btn-sm">취소</button>'
+	modal +=													'<input type="text"  name="cAngle" id="angleInfo1'+obj.cIdx+'" value='+obj.cAngle+' >'
+//	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="/image/'+obj.cImage+'" width="100%"/></p>'
+	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="/web/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -560,12 +611,18 @@ function getModal(obj) {
 												if(obj.cImage2 != null) {
 	modal +=										'<dd>'
 	modal +=											' <div class="form-check">'
-	modal +=												'<input type="radio" id="photoSelection2" name="cMainImage" value='+obj.cImage2+' class="form-check-input" />'
+	modal +=												'<input type="radio" id="imgSelect" name="imgSelect" value="img2" class="form-check-input" />'
+	modal +=												'<input type="hidden" id="cMainImage2" name="cMainImage2" value='+obj.cImage2+'  />'
 	modal +=												'<label class="form-check-label" for="#">대표이미지로 선택</label>'
 	modal +=												'<div class="mt-1 photoBox2">'
-	modal +=													'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
-	modal +=													'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'
-	modal +=													'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.cImage2+'"  width="100%"/></p>'
+	modal +=													'<button type="button"  class="rotateL2'+obj.cIdx+' btn btn-outline-primary btn-sm">왼쪽</button>'
+	modal +=													'<button type="button"  class="rotateR2'+obj.cIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
+	modal +=													'<button type="button"  class="rotateD2'+obj.cIdx+' btn btn-outline-primary btn-sm">아래</button>'
+	modal +=													'<button type="button"  class="rotateC2'+obj.cIdx+' btn btn-outline-primary btn-sm">취소</button>'
+	modal +=													'<input type="text"  name="cAngle2" id="angleInfo2'+obj.cIdx+'" value='+obj.cAngle2+' >'	
+//	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="/image/'+obj.cImage2+'" width="100%"/></p>'
+	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="/web/upload/vegemilBaby/'+obj.cImage2+'" width="100%"/></p>'
+
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
