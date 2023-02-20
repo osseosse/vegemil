@@ -2386,6 +2386,12 @@ button:hover:before {content:"Reply!"}
 	#header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
 	.greenHeader #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
 	.greenHeader #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
+	.pinkHeader  #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
+	.pinkHeader  #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
+	.puppleHeader  #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
+	.puppleHeader  #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
+	.blueHeader  #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
+	.blueHeader  #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
 
 
 	ul.dv5 li:first-child {text-align:left; padding-left:20px; font-size:14px }
@@ -2398,7 +2404,7 @@ button:hover:before {content:"Reply!"}
 
 	/* 1760 popup */
 	.main-popup {position:absolute; top:110px; right:120px; z-index:100; height:480px; text-align:center; }
-
+	.recom ul.recomTitle li img {margin-right:5px}
 
 	/* 1760 Gnb */
 	#gnb{width: 90%; height: 90px; text-align: center;  position: relative;}
@@ -2415,6 +2421,11 @@ button:hover:before {content:"Reply!"}
 	/* //fullMenu */
 
 	#slider0 .slider0-txtbox li dl {  padding-left:60%}
+	
+
+	/* 1760 news */
+	.newsLine {border:1px solid #DCDCDC; border-radius:10px;padding:25px 25px;  }
+
 
 	/* 1760 main > floting */
 	.floting .flotingContent {padding:25px 30px}
@@ -3142,7 +3153,40 @@ button:hover:before {content:"Reply!"}
 	.greenHeader .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
 	.greenHeader .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
 	.greenHeader .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
+
+
+	.pinkHeader  .mView .m_header {background:#E5264D;} 
+	.pinkHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
+	.pinkHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.pinkHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.pinkHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
+
+
+	.puppleHeader  .mView .m_header {background:#7375FB;} 
+	.puppleHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
+	.puppleHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.puppleHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.puppleHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
+
+
+	.blueHeader  .mView .m_header {background:#008BD5;} 
+	.blueHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
+	.blueHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.blueHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.blueHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
+
+	.f52.fw600.lh150.white {font-size:29px}
+	.swiper-wrapper {width:90%}
+	.swiper-wrapper .swiper-slide .slBox {overflow:hidden; border-radius:20px}
+	.swiper-wrapper .swiper-slide .slBox .centerH {width:80%; }
+	.swiper-wrapper .swiper-slide.bnr_brand04  {background-position:75% center !important;  overflow:hidden }
+	.swiper-wrapper .swiper-slide.bnr_brand04  .slBox {background-color: rgba(0, 0, 0, 0.4); }
+	.swiper-wrapper .swiper-slide.bnr_brand09 {background-position:80% center !important;  overflow:hidden }
+	.swiper-wrapper .swiper-slide.bnr_brand09 .slBox {background-color: rgba(0, 0, 0, 0.4); }
 	
+	.slidetitle.bnr_brand04 .bgDark {background-color:rgba(0, 0, 0, 0.4)!important; z-index:1000; display:inline-block; width:100%; height:100%}
+	.slidetitle.bnr_brand09 .bgDark {background-color:rgba(0, 0, 0, 0.4)!important; z-index:1000; display:inline-block;  width:100%; height:100%}
+	.slider .slider_dotwrap {bottom:5px}
 	/* 모바일aside */
 	.mAside {
 	  height: 100%;
@@ -3283,7 +3327,11 @@ button:hover:before {content:"Reply!"}
 	.contactBox .col-6:nth-child(3) {padding-right:3px}
 	.contactBox .col-6:nth-child(4) {padding-left:3px}
 
+	/* 992 main > 진열 */
+	.best-subCopy {position:relative;height:57px; overflow:hidden; }
+	ul.bestBox li.default {padding-bottom:10px; }
 
+	
 	/* 992 회사소개 > 프로필 */
 	.f66.fw600.mt30 {font-size:35px}
 	.f22.mt40.fw500 {font-size:17px}
@@ -3299,8 +3347,9 @@ button:hover:before {content:"Reply!"}
 
 	/* 992 news */
 	ul.newsBox li {display:inline-block; width:100%; border-bottom:1px solid #DCDCDC; padding-bottom:10px; padding-top:10px; width:100%;  }
-	ul.newsBox li dl dd.newsImg {position:relative; max-width:110px; width:30%; float:left; } 
-	ul.newsBox li dl dd.newsTxt {position:relative; max-width:500px; width:65%; float:left; color:#787878 ; padding-left:15px; height:58px; } 
+	ul.newsBox li dl dd.newsImg {position:relative; max-width:110px; width:30%; float:left; border-radius:15px} 
+	ul.newsBox li dl dd.newsTxt {position:relative; max-width:500px; width:65%; float:left; color:#787878 ; padding-left:15px;  font-size:14px; 
+	overflow: hidden; text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;} 
 	.newsLine {border:1px solid #DCDCDC; border-radius:10px;padding:20px 25px;  }
 	
 	/* 992 middleBanner */
@@ -3311,7 +3360,7 @@ button:hover:before {content:"Reply!"}
 	/* 992 사회공헌/식품안전인증현황 */
 	ul.dv5 {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center;display:inline-block; width:100%; padding:0 20px; padding-bottom:20px}
 	ul.dv5 li:first-child {text-align:center;  padding:20px 0 15px 0; font-size:15px; border-bottom:1px solid #DCDCDC}
-	ul.dv5 li {width:100%; display:block; padding:10px 0; line-height:100% ;background:none ;  font-size:12px}
+	ul.dv5 li {width:100%; display:block; padding:14px 0; line-height:100% ;background:none ;  font-size:12px}
 	ul.dv6 {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center;display:inline-block; width:100%; padding:0 20px; padding-bottom:20px}
 	ul.dv6 li:first-child {text-align:center;  padding:20px 0 15px 0; font-size:15px; border-bottom:1px solid #DCDCDC}
 	ul.dv6 li {width:100%; display:block; padding:10px 0; line-height:100% ;background:none ;  font-size:12px}
@@ -3324,8 +3373,9 @@ button:hover:before {content:"Reply!"}
 	.reviewLine {height:2px; border:1px solid #000; width:120%; max-width:250px; position:absolute; right:0; }
 
 	/* 992 SNS+관련사 */
-	.fcLinbox li {display:inline-block; width:23.5%; text-align:center; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 10px no-repeat;}
+	.fcLinbox li {display:inline-block; width:49%; text-align:center; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 10px no-repeat;}
 	.fcLinbox li a {padding:10px 0;display:inline-block;  color:#222; font-size:11px}
+	.fcLinbox li:nth-child(2) {background:none}
 	
 
 
@@ -3492,7 +3542,7 @@ button:hover:before {content:"Reply!"}
 	ul.brand_cook li:first-child {max-width:100px; margin-right:10px; border-radius:10px; width:auto; width:26%}
 	ul.brand_cook li:nth-child(2) {width:70%}
 	.cook_red {font-size:12px; width:70px }
-
+	ul.brandPrd .f18 {font-size:13px}
 
 
 	/* 992 company */
@@ -3976,7 +4026,7 @@ button:hover:before {content:"Reply!"}
 	.brand_big { padding:0;  margin-top:-150px}
 	.brand_big .visual-ttl h1 { font-size: 53px; margin-bottom: 15px; }
 	.brand_big .visual-ttl p { font-size: 1.36rem; line-height: 1.47; }
-	.brand_big .visual-slide { width: calc(100% + 30px); height: 426px; margin-left: -15px; margin-bottom:0px; margin-top:0px; }
+	.brand_big .visual-slide { width: calc(100% + 30px); height: 426px; margin-left: -15px; margin-bottom:0px; margin-top:0px;  width:95%; margin:0 auto }
 	.brand_big .visual-slide .swiper-slide { border-radius: 20px; }
 	.brand_big .visual-slide h2 { font-size: 2.78rem; }
 	.brand_big .visual-slide p { margin-top: 15px; }
@@ -4002,7 +4052,7 @@ button:hover:before {content:"Reply!"}
 .rnd_big .visual-slide .swiper-pagination { }
 
 .rnd_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0; }
-.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1; border:10px solid red }
+.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1;  }
 .rnd_big .swiper-horizontal>.swiper-pagination-bullets, 
 .rnd_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
 .rnd_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
