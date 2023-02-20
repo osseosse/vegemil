@@ -351,31 +351,7 @@
 	  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 	}
 
-	/* Float */
-	.hvr-float {
-	  display: inline-block;
-	  vertical-align: middle;
-	  -webkit-transform: translateZ(0);
-	  transform: translateZ(0);
-	  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	  -webkit-backface-visibility: hidden;
-	  backface-visibility: hidden;
-	  -moz-osx-font-smoothing: grayscale;
-	  -webkit-transition-duration: 0.3s;
-	  transition-duration: 0.3s;
-	  -webkit-transition-property: transform;
-	  transition-property: transform;
-	  -webkit-transition-timing-function: ease-out;
-	  transition-timing-function: ease-out;
-	}
-	.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
-	  -webkit-transform: translateY(-6px);
-	  transform: translateY(-6px);
-	}
-
-
 	
-
 	/* 
 	ul.f_ul_middle li:nth-child(1){padding:18.5px 0} 
 	ul.f_ul_middle li:nth-child(3){padding:19.5px 0} 
@@ -602,10 +578,6 @@
 	.btnType27 a {color:#fff; display:inline-block; padding:6px 20px}
 	.btn-admin {background:#000; padding:1px 15px; border-radius:10px}
 	.btn-admin a{color:#fff} 
-
-	.btnType28 { border-radius:10px; max-width:280px; width:100%; text-align:Center; background:#fd8156}
-	.btnType28 a {padding:13px 0; display:inline-block; width:100%; color:#fff}
-	.btnType28 a:hover {color:#fff}
 
 	ul.foot-btn-box {position:relative}
 	ul.foot-btn-box li {display:inline-block; margin-left:5px}
@@ -960,8 +932,8 @@
     .grayBox06 tr td{ padding: 25px 0px;}
     .grayBox06 tr:first-child td{padding-top: 50px;}
     .grayBox06 tr:last-child td{padding-bottom: 50px;}
-    .grayBox06 tr td:first-child{padding-left: 80px;}
-    .grayBox06 tr td:nth-child(2){padding-right: 30px;}
+    .grayBox06 tr td:first-child{padding-left: 150px;}
+    .grayBox06 tr td:nth-child(2){padding-right: 150px;}
     .grayBox06 .whiteBox{background-color: #fff; padding: 5px 8px; border-radius: 5px; line-height: 250%;}
     .grayBox06 .whiteBox02{background-color: #fff; padding: 15px; border-radius: 5px;}
 	.grayRound {background:#F1F4F5; border-radius:10px; display:inline-block; padding:5px 10px}
@@ -1076,29 +1048,6 @@
 	.content-style01 {position:relative; } 
 	.content-style01 > div {clear: both;display: none; }
 	.content-style01 .current { display: block; }
-	
-
-	
-	.sampleBnr {border-radius:10px; overflow:hidden}
-	.sbmBG00 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG01_01.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:left; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center; }
-	.sbmBG01 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG02_02.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:left; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center; }
-	.sbmBG02 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG03_02.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:left; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center}
-	.sbmBG03 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG03_03.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:10% center; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center}
-	.sbmBG04 {position:relative; background:url('https://image.edaymall.com/images/dcf/webzine/Q3_2018/03.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:25% center; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center;}
-	.bg-opa {background:rgba(250, 250, 246, 0.90); border-radius:20px; overflow:hidden; padding:15px 30px; -webkit-box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.71); box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.51);}
-	.bg-opa .btnType28 {margin:0 auto; background:#fd8156 ; background-size: 6px; padding:0 10px}
-	.sampleBnrMenu {position:relative; }
-	.sampleBnrMenu li { background:#fff; border-radius:20px; border:1px solid #ccc; margin-bottom:10px; padding-left:10px ; width:100%}
-	.sampleBnrMenu li a { width:100%; display:inline-block; padding:13px 20px ; }
-	.sampleBnrMenu li:hover a{ color:#fff;  /*background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_white_arrow.png) no-repeat 5px 18px; background-size: 6px; */}
-	.sampleBnrMenu li:hover {background:#fd8156; border:1px solid #fd8156 ; border-radius:20px}
-	.sampleBnrMenu li a:hover  span {display:none}
-	.sampleBnrMenu li a:hover:before {content:"VIEW MORE"}
-/*
-	button:hover span {display:none}
-button:hover:before {content:"Reply!"}
-*/
-
 
 
 	/* 3000 미디어 popup */
@@ -2079,7 +2028,6 @@ button:hover:before {content:"Reply!"}
 
 	
 	.bnr_brand04 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
-	
 	.bnr_brand05 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand05.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_brand06 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand06.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_brand07 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand07.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
@@ -2386,12 +2334,6 @@ button:hover:before {content:"Reply!"}
 	#header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
 	.greenHeader #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
 	.greenHeader #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
-	.pinkHeader  #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
-	.pinkHeader  #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
-	.puppleHeader  #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
-	.puppleHeader  #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
-	.blueHeader  #header h1.logo {position:absolute;top:20px;left:20px; z-index: 100;}
-	.blueHeader  #header .header-right {position:absolute;top:17px;right:20px; z-index: 100; }
 
 
 	ul.dv5 li:first-child {text-align:left; padding-left:20px; font-size:14px }
@@ -2404,7 +2346,7 @@ button:hover:before {content:"Reply!"}
 
 	/* 1760 popup */
 	.main-popup {position:absolute; top:110px; right:120px; z-index:100; height:480px; text-align:center; }
-	.recom ul.recomTitle li img {margin-right:5px}
+
 
 	/* 1760 Gnb */
 	#gnb{width: 90%; height: 90px; text-align: center;  position: relative;}
@@ -2421,11 +2363,6 @@ button:hover:before {content:"Reply!"}
 	/* //fullMenu */
 
 	#slider0 .slider0-txtbox li dl {  padding-left:60%}
-	
-
-	/* 1760 news */
-	.newsLine {border:1px solid #DCDCDC; border-radius:10px;padding:25px 25px;  }
-
 
 	/* 1760 main > floting */
 	.floting .flotingContent {padding:25px 30px}
@@ -2870,7 +2807,7 @@ button:hover:before {content:"Reply!"}
 	.bg_Green.h530 {height:380px} 
 	.bg_Pupple.h530 {height:380px} 
 	.bg_Pink.h530 {height:380px} 
-	.bg_Blue2.h530 {height:380px} 
+	.bg_Blue.h530 {height:380px} 
 
 
 
@@ -3133,8 +3070,7 @@ button:hover:before {content:"Reply!"}
 	.fac-txt-hidden {display:none}
 	.fac-text-left {position:relative; width:100%; text-align:center; padding-bottom:50px}
 
-	.slidetitle.bnr_brand04.h520 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:60% center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
-	.slidetitle.bnr_brand09.h520 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand09.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:80% center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
+	
 	/* 모바일 header */
 	#header {height:56px; overflow:hidden}
 	.m_header {position:relative; display:inline-block;width:100%; height:56px}
@@ -3153,40 +3089,7 @@ button:hover:before {content:"Reply!"}
 	.greenHeader .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
 	.greenHeader .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
 	.greenHeader .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
-
-
-	.pinkHeader  .mView .m_header {background:#E5264D;} 
-	.pinkHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
-	.pinkHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
-	.pinkHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
-	.pinkHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
-
-
-	.puppleHeader  .mView .m_header {background:#7375FB;} 
-	.puppleHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
-	.puppleHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
-	.puppleHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
-	.puppleHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
-
-
-	.blueHeader  .mView .m_header {background:#008BD5;} 
-	.blueHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
-	.blueHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
-	.blueHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
-	.blueHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
-
-	.f52.fw600.lh150.white {font-size:29px}
-	.swiper-wrapper {width:90%}
-	.swiper-wrapper .swiper-slide .slBox {overflow:hidden; border-radius:20px}
-	.swiper-wrapper .swiper-slide .slBox .centerH {width:80%; }
-	.swiper-wrapper .swiper-slide.bnr_brand04  {background-position:75% center !important;  overflow:hidden }
-	.swiper-wrapper .swiper-slide.bnr_brand04  .slBox {background-color: rgba(0, 0, 0, 0.4); }
-	.swiper-wrapper .swiper-slide.bnr_brand09 {background-position:80% center !important;  overflow:hidden }
-	.swiper-wrapper .swiper-slide.bnr_brand09 .slBox {background-color: rgba(0, 0, 0, 0.4); }
 	
-	.slidetitle.bnr_brand04 .bgDark {background-color:rgba(0, 0, 0, 0.4)!important; z-index:1000; display:inline-block; width:100%; height:100%}
-	.slidetitle.bnr_brand09 .bgDark {background-color:rgba(0, 0, 0, 0.4)!important; z-index:1000; display:inline-block;  width:100%; height:100%}
-	.slider .slider_dotwrap {bottom:5px}
 	/* 모바일aside */
 	.mAside {
 	  height: 100%;
@@ -3327,11 +3230,7 @@ button:hover:before {content:"Reply!"}
 	.contactBox .col-6:nth-child(3) {padding-right:3px}
 	.contactBox .col-6:nth-child(4) {padding-left:3px}
 
-	/* 992 main > 진열 */
-	.best-subCopy {position:relative;height:57px; overflow:hidden; }
-	ul.bestBox li.default {padding-bottom:10px; }
 
-	
 	/* 992 회사소개 > 프로필 */
 	.f66.fw600.mt30 {font-size:35px}
 	.f22.mt40.fw500 {font-size:17px}
@@ -3347,9 +3246,8 @@ button:hover:before {content:"Reply!"}
 
 	/* 992 news */
 	ul.newsBox li {display:inline-block; width:100%; border-bottom:1px solid #DCDCDC; padding-bottom:10px; padding-top:10px; width:100%;  }
-	ul.newsBox li dl dd.newsImg {position:relative; max-width:110px; width:30%; float:left; border-radius:15px} 
-	ul.newsBox li dl dd.newsTxt {position:relative; max-width:500px; width:65%; float:left; color:#787878 ; padding-left:15px;  font-size:14px; 
-	overflow: hidden; text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;} 
+	ul.newsBox li dl dd.newsImg {position:relative; max-width:110px; width:30%; float:left; } 
+	ul.newsBox li dl dd.newsTxt {position:relative; max-width:500px; width:65%; float:left; color:#787878 ; padding-left:15px; height:58px; } 
 	.newsLine {border:1px solid #DCDCDC; border-radius:10px;padding:20px 25px;  }
 	
 	/* 992 middleBanner */
@@ -3360,7 +3258,7 @@ button:hover:before {content:"Reply!"}
 	/* 992 사회공헌/식품안전인증현황 */
 	ul.dv5 {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center;display:inline-block; width:100%; padding:0 20px; padding-bottom:20px}
 	ul.dv5 li:first-child {text-align:center;  padding:20px 0 15px 0; font-size:15px; border-bottom:1px solid #DCDCDC}
-	ul.dv5 li {width:100%; display:block; padding:14px 0; line-height:100% ;background:none ;  font-size:12px}
+	ul.dv5 li {width:100%; display:block; padding:10px 0; line-height:100% ;background:none ;  font-size:12px}
 	ul.dv6 {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center;display:inline-block; width:100%; padding:0 20px; padding-bottom:20px}
 	ul.dv6 li:first-child {text-align:center;  padding:20px 0 15px 0; font-size:15px; border-bottom:1px solid #DCDCDC}
 	ul.dv6 li {width:100%; display:block; padding:10px 0; line-height:100% ;background:none ;  font-size:12px}
@@ -3373,9 +3271,8 @@ button:hover:before {content:"Reply!"}
 	.reviewLine {height:2px; border:1px solid #000; width:120%; max-width:250px; position:absolute; right:0; }
 
 	/* 992 SNS+관련사 */
-	.fcLinbox li {display:inline-block; width:49%; text-align:center; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 10px no-repeat;}
+	.fcLinbox li {display:inline-block; width:23.5%; text-align:center; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 10px no-repeat;}
 	.fcLinbox li a {padding:10px 0;display:inline-block;  color:#222; font-size:11px}
-	.fcLinbox li:nth-child(2) {background:none}
 	
 
 
@@ -3450,8 +3347,6 @@ button:hover:before {content:"Reply!"}
 	.btnType16 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat right 11px; background-size:5px; padding:6px 5px 6px 15px; display:inline-block;width:95px   }
 	.btnType24 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat 90% 18px; background-size:5px; padding:11px 0px 11px 20px; display:inline-block; width:100%; font-size: 12px;}
 	.btnType25 {margin:0 auto; }
-	.btnType28 a {padding:7px 0; }
-	
 	/* 서브메뉴 */
 	.subMenu {margin-top:-34px}
 	.subMenu p.btnSubLeft {position:absolute; top:20px; }
@@ -3460,10 +3355,6 @@ button:hover:before {content:"Reply!"}
 	.btnbox-ask-foot li {display:block; width:100%; margin-bottom:10px}
 	.btnbox-ask-foot li:first-child {background:none}
 	.btnbox-ask-foot li .ask-info {display:block;  margin:25px 0 10px 0; font-size:13px}
-
-	 /* 992 오프라인 견학 */
-    .grayBox06 tr td:first-child{padding-left: 20px; width: 25%;}
-
 
 
 	/* 992 회원가입 */
@@ -3542,7 +3433,7 @@ button:hover:before {content:"Reply!"}
 	ul.brand_cook li:first-child {max-width:100px; margin-right:10px; border-radius:10px; width:auto; width:26%}
 	ul.brand_cook li:nth-child(2) {width:70%}
 	.cook_red {font-size:12px; width:70px }
-	ul.brandPrd .f18 {font-size:13px}
+
 
 
 	/* 992 company */
@@ -3603,12 +3494,9 @@ button:hover:before {content:"Reply!"}
     }
 
 
-	/* 992 메인 > 영유아식tab */
-	.sampleBnrMenu li { background:#fff; border-radius:20px; border:1px solid #ccc; margin-bottom:10px; padding-left:10px; display:inline-block; width:100% }
-	.sampleBnrMenu li a { width:100%; display:inline-block; padding:10px 10px ; }
-	.sampleBnrMenu li.current a{ color:#fff;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_white_arrow.png) no-repeat 5px 16px; background-size: 6px;}
-	.sampleBnrMenu li.current {background:#fd8156; border:1px solid #fd8156 ; border-radius:20px}
-	.sampleBnr .h360 {height:250px}
+
+
+
 	
 
 
@@ -3633,17 +3521,15 @@ button:hover:before {content:"Reply!"}
 	ul.snsUL li {width:48.2%; display:inline-block; vertical-align:top}
 	ul.snsUL li:nth-child(2n) { margin-left:5px;}
 
-	/* 768 메인 영유아식 */
-	.sbmBG01 .centerL {position:absolute; top:50%;left:50%;color:#fff;transform:translate(-50%,-50%); width:70%}
-	.sbmBG01 {background-position:35% center; }
+
+	
 	/* 768 창업주 기념관 창업주 기념관 */
 		.white.f66.fw600 {font-size:30px}
 		.heriBox .col-md-6:first-child {width:100%}
 		.heriBox .col-md-6:nth-child(2) {width:100%}
 		.heriBox .img100.w410.text-right {margin-top:50px}
 	
-	/* 768 메인 > 영유아식tab */
-	.sampleBnrMenu li { background:#fff; border-radius:20px; border:1px solid #ccc; margin-bottom:10px; padding-left:0px; display:inline-block; width:49%; text-align:center }
+
 
 	/* 768 사업영역 */
 	ul.baseList {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center}
@@ -3856,7 +3742,7 @@ button:hover:before {content:"Reply!"}
     .grayBox06 tr td{padding: 20px 0px;}
     .grayBox06 tr:first-child td{padding-top: 40px;}
     .grayBox06 tr:last-child td{padding-bottom: 40px;}
-    .grayBox06 tr td:first-child{padding-left: 10px; width: 15%; padding-right: 10px; vertical-align:top}
+    .grayBox06 tr td:first-child{padding-left: 20px; width: 35%;}
     .grayBox06 tr td:nth-child(2){padding-right: 20px;}
     .grayBox06 .whiteBox{line-height: 300%;}
     .grayBox06 .whiteBox02{padding: 10px 5px;}
@@ -4026,7 +3912,7 @@ button:hover:before {content:"Reply!"}
 	.brand_big { padding:0;  margin-top:-150px}
 	.brand_big .visual-ttl h1 { font-size: 53px; margin-bottom: 15px; }
 	.brand_big .visual-ttl p { font-size: 1.36rem; line-height: 1.47; }
-	.brand_big .visual-slide { width: calc(100% + 30px); height: 426px; margin-left: -15px; margin-bottom:0px; margin-top:0px;  width:95%; margin:0 auto }
+	.brand_big .visual-slide { width: calc(100% + 30px); height: 426px; margin-left: -15px; margin-bottom:0px; margin-top:0px; }
 	.brand_big .visual-slide .swiper-slide { border-radius: 20px; }
 	.brand_big .visual-slide h2 { font-size: 2.78rem; }
 	.brand_big .visual-slide p { margin-top: 15px; }
@@ -4052,7 +3938,7 @@ button:hover:before {content:"Reply!"}
 .rnd_big .visual-slide .swiper-pagination { }
 
 .rnd_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0; }
-.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1;  }
+.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1; border:10px solid red }
 .rnd_big .swiper-horizontal>.swiper-pagination-bullets, 
 .rnd_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
 .rnd_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
