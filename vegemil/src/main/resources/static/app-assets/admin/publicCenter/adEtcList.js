@@ -129,6 +129,7 @@ var createTable = function() {
 
   if (dt_basic_table.length) {
 	//테이블 정보 불러와서 테이블로 만들기 ,,,
+	const range = $('#fp-range').val().split(' to ');
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
       ajax: {
