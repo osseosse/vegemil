@@ -129,10 +129,35 @@ public class AdminBabyController extends UiUtils {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-
-
 		return rtnMap;
 	}
+	
+	//육아정보 삭제
+	@RequestMapping("/admin/manage/baby/deleteBabyInfo")
+    public @ResponseBody boolean deleteBabyInfo(@ModelAttribute("params") AdminBabyDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
+    	try {
+    		String checkList[] = request.getParameterValues("checkList");
+    		log.info("check==========="+checkList);
+    		ArrayList<String> list = new ArrayList<>();
+     		for(int i=0; i<checkList.length; i++) {
+    			list.add(checkList[i]);
+    		}
+    		
+    		Map<String, Object> paramMap = new HashMap<String, Object>();
+    		paramMap.put("list", list);
+    		
+    		boolean isDeleted = adminBabyService.deleteBabyInfo(paramMap);
+    		if (!isDeleted) {
+				return false;
+			}
+    	} catch (DataAccessException e) {
+    		return false;
+		} catch (Exception e) {
+			return false;
+		}
+    	return true;
+    }
+	
 	
 	
 	
@@ -237,32 +262,7 @@ public class AdminBabyController extends UiUtils {
 		}
 	}
 	
-	@RequestMapping("/admin/manage/baby/deleteBabyInfo")
-    public @ResponseBody boolean deleteBabyInfo(@ModelAttribute("params") AdminBabyDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
-    	try {
-    		String checkList[] = request.getParameterValues("checkList");
-    		log.info("check==========="+checkList);
-    		ArrayList<String> list = new ArrayList<>();
-     		for(int i=0; i<checkList.length; i++) {
-    			list.add(checkList[i]);
-    		}
-    		
-    		Map<String, Object> paramMap = new HashMap<String, Object>();
-    		paramMap.put("list", list);
-    		
-    		boolean isDeleted = adminBabyService.deleteBabyInfo(paramMap);
-    		if (!isDeleted) {
-				return false;
-			}
-    		
-    		
-    	} catch (DataAccessException e) {
-    		return false;
-		} catch (Exception e) {
-			return false;
-		}
-    	return true;
-    }
+	
 	
 	@RequestMapping(value = "/admin/manage/baby/babyInfoAdd")
     public String openBabyInfoAdd(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, HttpServletRequest req, Model model)throws Exception{

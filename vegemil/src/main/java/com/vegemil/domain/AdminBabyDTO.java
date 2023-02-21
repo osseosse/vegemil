@@ -24,8 +24,10 @@ public class AdminBabyDTO extends AdminCommonDTO {
 	/** 날짜 */
 	private String mbsGetdate;
 	
-	/** 이미지 */
+	/** 썸네일 이미지 */
 	private String mbsImage;
+	
+	private String mbsImageOriginal;
 
 	/** 게시여부 */
 	private int mbsActive;
