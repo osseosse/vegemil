@@ -4,7 +4,7 @@
 	<title th:text="${snsTitle}"></title>
     <head th:replace="webzine/head :: headFragment"></head>
     <meta property="og:title" th:attr="content=${snsTitle}" >
-	<!-- <meta property="og:url" th:attr="content=${webPath}" > -->
+    <meta property="og:image" th:attr="content='https://image.edaymall.com/images/dcf/webzine/_sns.png'" >
 <body>
 <div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
 <!-- ******************* header ******************* -->
