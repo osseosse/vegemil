@@ -11,7 +11,7 @@
 		, mbs_getdate
 		, mbs_active
 		, mbs_check
-		, mbs_category
+		, mbs_category	
 	</sql>
 	
 	<sql id="calendarModelColumns">
@@ -83,7 +83,15 @@
 	<insert id="insertBabyInfo" parameterType="com.vegemil.domain.AdminBabyDTO">
 		/* insertBabyInfo by AdminBabyMapper.xml */
 		INSERT INTO m_edit_brandbaby (
-			<include refid="BabyColumns" />
+			  mbs_title
+			, mbs_content
+			, mbs_summary
+			, mbs_image
+			, mbs_getdate
+			, mbs_active
+			, mbs_check
+			, mbs_category
+			, mbs_m_category
 		) VALUES (
 			  #{mbsTitle}
 			, #{mbsContent}
@@ -93,6 +101,7 @@
 			, #{mbsActive}
 			, #{mbsCheck}
 			, #{mbsCategory}
+			, #{mbsMCategory}
 		)
 	</insert>
 
@@ -449,11 +458,7 @@
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select> -->
 	
-	
-	
-	
-	
-
+		
 	<select id="selectCalendarModelTotalCount" parameterType="hashMap" resultType="int">
 		SELECT /* selectCalendarModelTotalCount by AdminEventMapper.xml */
 			COUNT(*)
@@ -476,6 +481,41 @@
 		</if>
 	</select>
 	
+	
+	<select id="selectModelRank1" resultType="com.vegemil.domain.AdminCalendarModelDTO">
+		SELECT 
+			* 
+	    FROM
+			(SELECT 
+				RANK() OVER(ORDER BY c_update_time) AS ROWNUM, 
+				MONTH(c_write_date) AS c_month, 
+				SUBSTRING(c_baby_name,2,2) AS c_name, 	
+				c_rank	
+			FROM 
+				m_calendar_model
+			WHERE 
+				c_rank between 1 and 3
+			ORDER BY 
+				c_update_time desc) subQuery
+		WHERE c_rank = 1
+		LIMIT 20; 	
+	</select>
+	
+	
+	<insert id="insertCalenderModelTitle" parameterType="com.vegemil.domain.AdminCalendarTitleDTO">
+		INSERT INTO m_calendar_title (
+			t_year,
+			t_month1,
+			t_month2,
+			t_rownum
+		) VALUES (
+		 	  #{tYear}
+			, #{tMonth1}
+			, #{tMonth2}
+			, #{tRownum}			
+		)
+	</insert>
+			
 	
 	<insert id="insertBestReview" parameterType="com.vegemil.domain.AdminBestReviewDTO">
 		INSERT INTO m_sns (

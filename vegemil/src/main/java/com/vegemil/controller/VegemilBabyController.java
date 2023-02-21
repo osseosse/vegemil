@@ -210,6 +210,7 @@ public class VegemilBabyController extends UiUtils {
 	@GetMapping("/vegemilBaby/event/model")
 	public String moveEventModelPage(Model model) {
 		model.addAttribute("modelList", vegemilBabyCommunityService.selectModelList());		
+		model.addAttribute("title", null);		
 		return "vegemilBaby/event_model";
 	}
 	

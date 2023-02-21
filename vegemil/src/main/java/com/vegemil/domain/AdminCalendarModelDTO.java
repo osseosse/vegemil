@@ -58,5 +58,8 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	
 	private int cAngle;
 	private int cAngle2;
+	
+	private String cMonth;
+	private String rownum;
 
 }

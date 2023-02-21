@@ -1,5 +1,6 @@
 package com.vegemil.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -46,7 +47,9 @@ import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
+import com.vegemil.domain.AdminMediaNewsDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminBabyService;
@@ -79,21 +82,29 @@ public class AdminBabyController extends UiUtils {
 	
 	@PostMapping(value = "/admin/manage/baby/registerBabyInfo")
 	@ResponseBody
-	public Map<String, Object> saveBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile, 
-			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
+	public Map<String, Object> saveBabyInfo(@ModelAttribute("params") final AdminBabyDTO params,
+											@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile, 
+											HttpServletResponse response, HttpServletRequest request) throws Exception {
+		
+		System.out.println(params.toString());
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
-			String originalName = uploadFile.getOriginalFilename();
-			if(!"".equals(originalName)) {
-				String ext = originalName.substring(originalName.lastIndexOf("\\") + 1);
-				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + ext;
-				Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
-				params.getFileName1().transferTo(savePath);
-				params.setMbsImage(savefileName);
-			}
+//			String originalName = uploadFile.getOriginalFilename();
+//			if(!"".equals(originalName)) {
+//				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+//				String uuid = UUID.randomUUID().toString();
+//				String savefileName = uuid + "_" + file;			
+//				
+//				//Test 로컬경로
+//				File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
+//				//실제 경로
+//				//File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/" + savefileName);				 
+//
+//				uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
+//				params.setMbsImage(savefileName);
+//			}
 			
-			boolean isRegistered = adminBabyService.registerBabyInfo(params);
+			boolean isRegistered = adminBabyService.registerBabyInfo(params, uploadFile);
 			rtnMap.put("result", isRegistered);
 		} catch (DataAccessException e) {
 			log.error("fail to process file", e);
@@ -104,6 +115,42 @@ public class AdminBabyController extends UiUtils {
 
 		return rtnMap;
 	}
+	
+	
+	@PostMapping(value = "/admin/manage/baby/uploadBabyInfo")
+	@ResponseBody
+	public Map<String, Object> uploadBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
+			, HttpServletResponse response, HttpServletRequest request) {
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		try {
+			String originalName = uploadFile.getOriginalFilename();
+			String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+			String uuid = UUID.randomUUID().toString();
+			String savefileName = uuid + "_" + file;
+			
+			//test경로
+			String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
+			//실제경로			
+			//String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
+			
+			File f1 = new File(dirPath + savefileName);
+			
+			uploadFile.transferTo(f1);			
+			
+			params.setMbsImage(savefileName);
+
+			rtnMap.put("uploadPath", f1);
+			rtnMap.put("uuid", uuid);
+			rtnMap.put("fileName", originalName);
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+
+
+		return rtnMap;
+	}
+	
+	
 	
 	@GetMapping(value = "/admin/manage/baby/babyInfoDetail")
 	public String openBabyInfoDetail(@ModelAttribute("params") AdminBabyDTO params, @RequestParam(value = "mbsIdx", required = false) Long mbsIdx, Model model, HttpServletResponse response) throws Exception {
@@ -141,7 +188,7 @@ public class AdminBabyController extends UiUtils {
 					fileName.transferTo(savePath);
 					params.setMbsImage(savefileName);
 				}
-			boolean isRegistered = adminBabyService.registerBabyInfo(params);
+			boolean isRegistered = adminBabyService.registerBabyInfo(params, fileName);
 			if (isRegistered == false) {
 				out.println("<script>alert('게시글 수정에 실패하였습니다.'); history.go(-1);</script>");
 				out.flush();
@@ -176,7 +223,7 @@ public class AdminBabyController extends UiUtils {
 			babyInfo.setMbsIdx(mbsIdx);
 			babyInfo.setMbsActive(mbsActive);
 			babyInfo.setMbsCheck(mbsCheck);
-			isRegistered = adminBabyService.registerBabyInfo(babyInfo);
+			isRegistered = adminBabyService.registerBabyInfo(babyInfo, null);
 			if (!isRegistered) {
 				throw new IOException("저장에 실패하였습니다.");
 			}
@@ -199,7 +246,7 @@ public class AdminBabyController extends UiUtils {
 		AdminBabyDTO babyInfo = adminBabyService.getBabyInfoDetail(mbsIdx);
 		babyInfo.setMbsIdx(mbsIdx);
 		babyInfo.setMbsCheck(display);
-		boolean isRegistered = adminBabyService.registerBabyInfo(babyInfo);
+		boolean isRegistered = adminBabyService.registerBabyInfo(babyInfo, null);
 		if (isRegistered == false) {
 			out.println("<script>alert('메인화면 진열 변경에 실패하였습니다.'); window.location='/admin/baby/babyInfoList';</script>");
 			out.flush();
@@ -242,30 +289,7 @@ public class AdminBabyController extends UiUtils {
 		return "admin/baby/babyInfoAdd";
     }
 	
-	@PostMapping(value = "/admin/manage/baby/uploadBabyInfo")
-	@ResponseBody
-	public Map<String, Object> uploadBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
-			, HttpServletResponse response, HttpServletRequest request) {
-		Map<String, Object> rtnMap = new HashMap<String, Object>();
-		try {
-			String originalName = uploadFile.getOriginalFilename();
-			String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-			String uuid = UUID.randomUUID().toString();
-			String savefileName = uuid + "_" + file;
-			Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
-			params.getFileName1().transferTo(savePath);
-			params.setMbsImage(savefileName);
-
-			rtnMap.put("uploadPath", savePath);
-			rtnMap.put("uuid", uuid);
-			rtnMap.put("fileName", originalName);
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-
-
-		return rtnMap;
-	}
+	
 	
 	@RequestMapping(value = "/admin/manage/baby/babyQnaListData")
 	public @ResponseBody JsonObject getBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model,
@@ -295,7 +319,7 @@ public class AdminBabyController extends UiUtils {
 			babyInfo.setMbsIdx(mbsIdx);
 			babyInfo.setMbsActive(mbsActive);
 			babyInfo.setMbsCheck(mbsCheck);
-			isRegistered = adminBabyService.registerBabyInfo(babyInfo);
+			isRegistered = adminBabyService.registerBabyInfo(babyInfo, null);
 			if (!isRegistered) {
 				throw new IOException("저장에 실패하였습니다.");
 			}
@@ -307,13 +331,13 @@ public class AdminBabyController extends UiUtils {
 		return isRegistered;
 	}
 	
-//	@GetMapping(value = "/admin/manage/baby/babyQnaList")
-//	public String openBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model) {
-//		List<AdminBabyDTO> babyQnaList = adminBabyService.getBabyQnaList(params);
-//		model.addAttribute("babyQnaList", babyQnaList);
-//
-//		return "admin/baby/babyQnaList";
-//	}
+	@GetMapping(value = "/admin/manage/baby/babyQnaList")
+	public String openBabyQnaList(@ModelAttribute("params") AdminBabyDTO params, Model model) {
+		List<AdminBabyDTO> babyQnaList = adminBabyService.getBabyQnaList(params);
+		model.addAttribute("babyQnaList", babyQnaList);
+
+		return "admin/baby/babyQnaList";
+	}
 	
 	@PostMapping(value = "/admin/manage/baby/registerBabyQna")
 	@ResponseBody
@@ -329,7 +353,7 @@ public class AdminBabyController extends UiUtils {
 				String savefileName = uuid + "_" + file;
 				
 				Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
-				params.getFileName1().transferTo(savePath);
+				params.getFileName().transferTo(savePath);
 				params.setMbsImage(savefileName);
 			}
 			boolean isRegistered = adminBabyService.registerBabyQna(params);
@@ -443,7 +467,7 @@ public class AdminBabyController extends UiUtils {
 	}
 	
 	
-	
+	//============================================= 아기달력모델 =============================================
 	@RequestMapping(value = "/admin/manage/baby/calendarModelList")
 	 public @ResponseBody DataTableDTO getCalenModelList(@ModelAttribute("params") AdminCalendarModelDTO params, Model model, 
 			 @RequestParam Map<String, Object> commandMap) {
@@ -451,6 +475,33 @@ public class AdminBabyController extends UiUtils {
 		DataTableDTO dataTableDto = adminBabyService.getCalendarModelList(commandMap);
 		return dataTableDto;
 	 }
+	
+	@GetMapping("/admin/manage/baby/calenderModelTitle")
+	public String moveCalenderModelTitlePage(Model model) {
+		model.addAttribute("modelList", adminBabyService.selectModelRank1());  
+		return "admin/baby/calenderModelTitle";		
+	}
+	
+	@PostMapping("/admin/manage/baby/calenderModelTitle")	
+	@ResponseBody
+	public Map<String, Object>insertCalenderModelTitle(@ModelAttribute("params") final AdminCalendarTitleDTO params, Model model,
+			HttpServletResponse response, HttpServletRequest request)throws Exception{
+		
+		System.out.println(params.toString());
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		
+		try {
+			boolean isRegistered = adminBabyService.insertCalenderModelTitle(params);
+			rtnMap.put("result", isRegistered);
+		} catch (DataAccessException e) {
+		} catch (Exception e) {
+		}
+		return rtnMap;
+
+		
+				
+	}
+	//============================================= 아기달력모델 =============================================
 	
 	
 	//정적 이미지 불러오기
