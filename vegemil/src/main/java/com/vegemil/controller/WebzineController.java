@@ -668,6 +668,40 @@ public class WebzineController extends UiUtils {
 		return returnHtml;
 	}
 	
+	@GetMapping(value = "/webzine/{qrtYear}/event")
+	public String moveWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
+									, Model model, HttpServletRequest request) {
+		
+		String wYear = "";
+		String returnHtml = "";
+		
+		if(!qrtYear.equals("")) {
+			wYear = qrtYear.substring(3, 7);
+		}
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
+		
+		if(qrtYear.equals("Q1_2023")) {
+			returnHtml = "webzine/event";
+		} else {
+			returnHtml = "webzine/oldEvent";
+		}
+		
+		model.addAttribute("webzineListQY", webzineListQY);
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		
+		model.addAttribute("qrtYear", qrtYear);
+		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "event");
+
+		return returnHtml;
+	}
+	
 	@GetMapping(value = "/main/webzine/events/event_{qrtYear}.aspx")
 	public String openWebzineEventQY(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, Model model, HttpServletRequest request) {

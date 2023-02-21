@@ -199,8 +199,11 @@
             m_webzine
         WHERE
             qrt_year = #{qrtYear}
-        ORDER BY
-            file_no
+        ORDER BY CASE 
+	               WHEN file_no = 'index.aspx' THEN 1
+	               WHEN file_no = 'event' THEN 3
+	               ELSE 2
+	           END, file_no;
     </select>
     
     <select id="selectWebzine" parameterType="com.vegemil.domain.WebzineDTO" resultType="com.vegemil.domain.WebzineDTO">
@@ -256,8 +259,11 @@
 			, sns_title
         FROM
             m_webzine
-        Order by
-        	file_no asc
+        ORDER BY CASE 
+	               WHEN file_no = 'index.aspx' THEN 1
+	               WHEN file_no = 'event' THEN 3
+	               ELSE 2
+	           END, file_no;
     </select>
     
     <select id="selectWebzineQ" resultType="com.vegemil.domain.WebzineDTO">
