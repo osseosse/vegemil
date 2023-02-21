@@ -139,17 +139,19 @@ public class MemberController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		long mIdx;
+		long mCnt;
 		String mEmail = "";
 		
 		try {
 			
 			//idx 조회해와서 없으면 띵
-			mIdx = memberService.getMemberIdx(member);
+			mCnt = memberService.getMemberCountByEmail(member);
 			//해당 회원 없음
-			if(mIdx == 0) {
-				return showMessageWithRedirect("해당하는 회원이 존재하지 않습니다. 아이디이메일을 다시 확인 바랍니다.", "/member/pwSearch", Method.GET, null, model);
+			if(mCnt == 0) {
+				return showMessageWithRedirect("해당하는 회원이 존재하지 않습니다.\n아이디 또는 이메일을 다시 확인 바랍니다.", "/member/pwSearch", Method.GET, null, model);
 			} else {
 				//재설정메일 발송
+				mIdx = memberService.getMemberIdx(member);
 				member.setMIdx(mIdx);
 				mEmail = mailService.sendPwResetEmail(member);
 				member.setMEmail(mEmail);

@@ -50,6 +50,16 @@ public class MemberService implements UserDetailsService  {
 		return mIdx;
 	}
 	
+	public int getMemberCountByEmail(MemberDTO params) {
+		
+		int mCnt = memberMapper.selectMemberCount(params);
+		if(mCnt < 0 ) {
+			mCnt = 0;
+		}
+		
+		return mCnt;
+	}
+	
 	public int overlappedID(MemberDTO member) throws Exception{
 		int result = memberMapper.overlappedID(member);
 		return result;
