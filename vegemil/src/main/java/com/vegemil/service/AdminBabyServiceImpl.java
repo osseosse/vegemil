@@ -79,9 +79,9 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 				String savefileName = uuid + "_" + file;
 				
 				//Test 로컬경로
-				File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
+				//File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
 				//실제 경로
-				//File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/" + savefileName);				 
+				File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + savefileName);				 
 
 				uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
 				params.setMbsImage(savefileName);	

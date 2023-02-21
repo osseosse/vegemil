@@ -72,6 +72,7 @@ public class AdminBabyController extends UiUtils {
 		return "admin/baby/"+viewName;
     }
 	
+	//========================================== 육아정보 ==========================================
 	@RequestMapping(value = "/admin/manage/baby/babyInfoListData")
 	public @ResponseBody DataTableDTO getBabyInfoList(@ModelAttribute("params") AdminBabyDTO params, Model model,
 			@RequestParam Map<String, Object> commandMap) {
@@ -80,30 +81,15 @@ public class AdminBabyController extends UiUtils {
 		return dataTableDto;
 	}
 	
+	//육아정보 등록
 	@PostMapping(value = "/admin/manage/baby/registerBabyInfo")
 	@ResponseBody
 	public Map<String, Object> saveBabyInfo(@ModelAttribute("params") final AdminBabyDTO params,
 											@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile, 
 											HttpServletResponse response, HttpServletRequest request) throws Exception {
 		
-		System.out.println(params.toString());
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
-//			String originalName = uploadFile.getOriginalFilename();
-//			if(!"".equals(originalName)) {
-//				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-//				String uuid = UUID.randomUUID().toString();
-//				String savefileName = uuid + "_" + file;			
-//				
-//				//Test 로컬경로
-//				File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
-//				//실제 경로
-//				//File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/" + savefileName);				 
-//
-//				uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
-//				params.setMbsImage(savefileName);
-//			}
-			
 			boolean isRegistered = adminBabyService.registerBabyInfo(params, uploadFile);
 			rtnMap.put("result", isRegistered);
 		} catch (DataAccessException e) {
@@ -111,13 +97,11 @@ public class AdminBabyController extends UiUtils {
 		} catch (Exception e) {
 			log.error("fail to process file", e);
 		}
-		
-
 		return rtnMap;
 	}
 	
-	
-	@PostMapping(value = "/admin/manage/baby/uploadBabyInfo")
+	//육아정보 본문 이미지 등록
+	@PostMapping(value = "/admin/manage/baby/uploadBabyInfoImg")
 	@ResponseBody
 	public Map<String, Object> uploadBabyInfo(@ModelAttribute("params") final AdminBabyDTO params, Model model, @RequestParam(value="uploadFile", required=false) MultipartFile uploadFile
 			, HttpServletResponse response, HttpServletRequest request) {
@@ -129,9 +113,9 @@ public class AdminBabyController extends UiUtils {
 			String savefileName = uuid + "_" + file;
 			
 			//test경로
-			String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
+			//String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
 			//실제경로			
-			//String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
+			String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
 			
 			File f1 = new File(dirPath + savefileName);
 			
@@ -504,44 +488,6 @@ public class AdminBabyController extends UiUtils {
 	//============================================= 아기달력모델 =============================================
 	
 	
-	//정적 이미지 불러오기
-	@GetMapping("/web/upload/vegemilBaby/{filename}")
-	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
-		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/" + filename);
-		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
-		if(!resource.exists()) 
-			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
-		HttpHeaders header = new HttpHeaders();
-		Path filePath = null;
-		try {
-			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + filename);
-			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
-			header.add("Content-type", Files.probeContentType(filePath));
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
-	}
-	
-	//정적 이미지 불러오기 - tvcf
-	@GetMapping("/web/upload/vegemilBaby/tvcf/{filename}")
-	public ResponseEntity<Resource> displayTvcf(@PathVariable(value = "filename", required = false) String filename) {
-		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/tvcf/" + filename);
-		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
-		if(!resource.exists()) 
-			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
-		HttpHeaders header = new HttpHeaders();
-		Path filePath = null;
-		try {
-			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/tvcf/" + filename);
-			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
-			header.add("Content-type", Files.probeContentType(filePath));
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
-	}
-	
 	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")
 	public @ResponseBody Map<String, Object> updateCalendarModelList(@ModelAttribute("params") final AdminCalendarModelDTO params, 
 			Model model, HttpServletResponse response) {
@@ -743,12 +689,61 @@ public class AdminBabyController extends UiUtils {
 		}
 		return rtnMsg;
     }
-	
-	
-	
-	
-	
-	
-	
 	//============================================ TVCF ============================================
+	
+	//정적 이미지 불러오기
+	@GetMapping("/web/upload/vegemilBaby/{filename}")
+	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/" + filename);
+		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + filename);
+			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
+	
+	
+	//정적 이미지 불러오기 - 육아정보-썸네일
+	@GetMapping("/web/upload/vegemilBaby/babyInfo/thumbnail/{filename}")
+	public ResponseEntity<Resource> displayBabyInfoThumbnail(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
+		
+	//정적 이미지 불러오기 - tvcf
+	@GetMapping("/web/upload/vegemilBaby/tvcf/{filename}")
+	public ResponseEntity<Resource> displayTvcf(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/tvcf/" + filename);
+		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/vegemilBaby/tvcf/" + filename);
+			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
 }
