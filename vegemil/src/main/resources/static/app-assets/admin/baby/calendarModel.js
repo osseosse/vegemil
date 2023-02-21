@@ -410,7 +410,10 @@ var createTable = function() {
 		} );
 	} ).draw();
     
-    $('div.head-label').html('<h6 class="mb-0">아기 달력 모델 선정 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button></h6>');
+    
+    
+    $('div.head-label').html('<h6 class="mb-0">아기 달력 모델 선정 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
+    		'<button type="button" onclick="location.href=\'/admin/manage/customer/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h6>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
     });
@@ -601,7 +604,7 @@ function getModal(obj) {
 	modal +=													'<button type="button"  class="rotateR1'+obj.cIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
 	modal +=													'<button type="button"  class="rotateD1'+obj.cIdx+' btn btn-outline-primary btn-sm">아래</button>'
 	modal +=													'<button type="button"  class="rotateC1'+obj.cIdx+' btn btn-outline-primary btn-sm">취소</button>'
-	modal +=													'<input type="text"  name="cAngle" id="angleInfo1'+obj.cIdx+'" value='+obj.cAngle+' >'
+	modal +=													'<input type="hidden"  name="cAngle" id="angleInfo1'+obj.cIdx+'" value='+obj.cAngle+' >'
 //	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="/image/'+obj.cImage+'" width="100%"/></p>'
 	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="/web/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'
 	modal +=												'</div>'
@@ -619,7 +622,7 @@ function getModal(obj) {
 	modal +=													'<button type="button"  class="rotateR2'+obj.cIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
 	modal +=													'<button type="button"  class="rotateD2'+obj.cIdx+' btn btn-outline-primary btn-sm">아래</button>'
 	modal +=													'<button type="button"  class="rotateC2'+obj.cIdx+' btn btn-outline-primary btn-sm">취소</button>'
-	modal +=													'<input type="text"  name="cAngle2" id="angleInfo2'+obj.cIdx+'" value='+obj.cAngle2+' >'	
+	modal +=													'<input type="hidden"  name="cAngle2" id="angleInfo2'+obj.cIdx+'" value='+obj.cAngle2+' >'	
 //	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="/image/'+obj.cImage2+'" width="100%"/></p>'
 	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="/web/upload/vegemilBaby/'+obj.cImage2+'" width="100%"/></p>'
 
@@ -701,4 +704,15 @@ function getModal(obj) {
     modal +=	'</form>'
 
     return modal;
+}
+
+function btnYearMonth(year, month1, month2){
+	alert(year);
+	alert(month1);
+	alert(month2);
+	
+	
+	
+	
+	
 }

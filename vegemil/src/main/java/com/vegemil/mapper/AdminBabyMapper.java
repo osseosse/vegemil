@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 
@@ -36,6 +37,8 @@ public interface AdminBabyMapper {
 	
 	public int updateBabyQna(AdminBabyDTO params);
 	
+	
+	//=================== 아기달력모델  =========================	
 	public int insertCalendarModel(AdminCalendarModelDTO params);
 
 	public AdminCalendarModelDTO selectCalendarModelDetail(Long idx);
@@ -49,9 +52,15 @@ public interface AdminBabyMapper {
 
 	public List<AdminCalendarModelDTO> selectCalendarModelList(Map<String, Object> paramMap);
 
-	public int selectCalendarModelTotalCount(Map<String, Object> paramMap);
+	public int selectCalendarModelTotalCount(Map<String, Object> paramMap);	
+	
+	public List<AdminCalendarModelDTO> selectModelRank1();
+	
+	public int insertCalenderModelTitle(AdminCalendarTitleDTO adminCalendarTitleDTO);
+	//=================== 아기달력모델  =========================	
 	
 	
+	//=================== 후기이벤트  =========================
 	public int insertBestReview(AdminBestReviewDTO params);
 
 	public AdminBestReviewDTO selectBestReviewDetail(Long idx);
@@ -63,7 +72,10 @@ public interface AdminBabyMapper {
 	public List<AdminBestReviewDTO> selectBestReviewList(Map<String, Object> paramMap);
 
 	public int selectBestReviewTotalCount(Map<String, Object> paramMap);
+	//=================== 후기이벤트  =========================
 	
+	
+	//=================== 샘플신청  =========================
 	public int insertSampleBaby(AdminSampleBabyDTO params);
 
 	public AdminSampleBabyDTO selectSampleBabyDetail(Long idx);
@@ -75,9 +87,10 @@ public interface AdminBabyMapper {
 	public List<AdminSampleBabyDTO> selectSampleBabyList(Map<String, Object> paramMap);
 
 	public int selectSampleBabyTotalCount(Map<String, Object> paramMap);
+	//=================== 샘플신청  =========================
 	
-	//=================== TV CF관리 =========================
 	
+	//=================== TV CF관리 =========================	
 	public int selectBabyTvcfTotalCount(Map<String, Object> paramMap);
 
 	public List<AdminCfDTO> selectBabyTvcfList(Map<String, Object> commandMap);
@@ -91,6 +104,10 @@ public interface AdminBabyMapper {
 	public int updateBabyTvcf(AdminCfDTO adminCfDTO);
 
 	public int updateBabyTvcfFileInfo(AdminCfDTO adminCfDTO);
+
+	
+
+	
 
 	
 }

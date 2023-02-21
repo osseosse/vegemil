@@ -32,6 +32,7 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/katex.min.js}"></script>
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
+	    <script type="text/javascript" th:src="@{/app-assets/admin/common/common.js}"></script>
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
 	       $(function () {
@@ -97,7 +98,7 @@
 		           $.ajax({
 		        	   type: 'post',
 		               enctype: 'multipart/form-data',
-		               url: '/admin/baby/babyInfo/fileUpload',
+		               url: '/admin/manage/baby/uploadBabyInfo',
 		               data: formData,
 		               processData: false,
 		               contentType: false,
@@ -154,7 +155,9 @@
 	    	   form.mbsCheck.value = form.mbsCheck.value == "on"?"1":"0";
 	    	   const formData = new FormData(form);
 	    	   formData.append('uploadFile', $('#uploadFile')[0].files[0])
+	    	   
 	    	   formData.append('1', '2');
+	    	   console.log("uploadFile: ", $('#uploadFile')[0].files[0]);
 	    	   
 	    	   if(form.mbsTitle.value == "") {
 	    		   alert('제목을 작성해 주세요.');
@@ -169,7 +172,7 @@
 	    	   console.log('form', formData);
 // 	    	   form.submit();
                $.ajax({
-            	   url: '/admin/baby/registerBabyInfo',
+            	   url: '/admin/manage/baby/registerBabyInfo',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
@@ -178,7 +181,7 @@
 	    	       console.log('done', data)
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/baby/babyInfoList";
+	    	    	   window.location.href = "/admin/manage/baby/babyInfoList";
 	    	       }else{
 	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }

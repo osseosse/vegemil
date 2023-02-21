@@ -18,10 +18,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vegemil.domain.AdminBabyDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
+import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
@@ -63,8 +65,31 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	}
 	
 	@Override
-	public boolean registerBabyInfo(AdminBabyDTO params) {
-		int queryResult = 0;
+	public boolean registerBabyInfo(AdminBabyDTO params, MultipartFile uploadFile) throws Exception {
+		System.out.println(params.toString());
+
+		if (params.getMbsIdx() == null) { //신규등록이라면
+			
+			String originalName = uploadFile.getOriginalFilename();			
+			
+			if(originalName != null && !"".equals(originalName)) {
+				
+				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+				String uuid = UUID.randomUUID().toString();
+				String savefileName = uuid + "_" + file;
+				
+				//Test 로컬경로
+				File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
+				//실제 경로
+				//File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/" + savefileName);				 
+
+				uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
+				params.setMbsImage(savefileName);	
+				//params.setEImgOriginal(originalName);				
+			}	
+		}
+		
+		int queryResult = 0;		
 
 		if (params.getMbsIdx() == null) {
 			queryResult = adminBabyMapper.insertBabyInfo(params);
@@ -253,6 +278,21 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	}
 	
 	
+	@Override
+	public List<AdminCalendarModelDTO> selectModelRank1() {
+		return adminBabyMapper.selectModelRank1();		
+	}
+	
+	
+	
+	@Override
+	public boolean insertCalenderModelTitle(AdminCalendarTitleDTO params) {
+		
+		int queryResult = 0;
+		queryResult= adminBabyMapper.insertCalenderModelTitle(params);		
+		return (queryResult == 1)? true : false;		
+	}
+
 	@Override
 	public boolean registerBestReview(AdminBestReviewDTO params) {
 		int queryResult = 0;
@@ -472,5 +512,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		
 		return (queryResult == 1) ? true : false;
 	}
+
+	
 	
 }

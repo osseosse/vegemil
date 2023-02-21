@@ -2,11 +2,11 @@ package com.vegemil.domain;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class AdminBabyDTO extends AdminCommonDTO {
 
 	/** 번호 (PK) */
@@ -50,6 +50,6 @@ public class AdminBabyDTO extends AdminCommonDTO {
 	
 	private String cateGh;
 	
-	private MultipartFile fileName1;
+	private MultipartFile fileName;
 
 }

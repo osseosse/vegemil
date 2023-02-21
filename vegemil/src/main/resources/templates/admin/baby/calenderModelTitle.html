@@ -4,7 +4,7 @@
 	layout:decorator="admin/layout/dataLayout">
 	
 	<th:block layout:fragment="title">
-		<title>FAQ 등록</title>
+		<title>달력모델 년/월 타이틀 등록</title>
 	</th:block>
 
 	<th:block layout:fragment="add-css">
@@ -33,27 +33,38 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/highlight.min.js}"></script>
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
-	       /*<![CDATA[*/
-	       
+	       /*<![CDATA[*/	       
+
 	       
 	       	function btnSave(){
 	    	   const form = document.form;	    	
 	    	   const formData = new FormData(form);
 	    	   
-	    	   if(form.mSubject.value == "") {
-	    		   alert('제목을 작성해 주세요.');
+	    	   const tRownum = document.getElementById('tRownum').value;
+	    	   const tYear = document.getElementById('tYear').value;
+	    	   const tMonth1 = document.getElementById('tMonth1').value;
+
+	    	   
+	    	   if(tRownum == "" || tRownum == "기준 아기모델 선택") {
+	    		   alert('기준 아기모델을 선택해주세요');
+	    		   return false;
+	    	   }
+	    	   if(tYear == "" || tYear == "년도") {
+	    		   alert('년도를 선택해주세요');
 	    		   return false;
 	    	   }	    	   
-	    	   if(form.mDate.value == "") {
-	    		   alert('일자를 선택해 주세요.');
+	    	   if(tMonth1 == "" || tMonth1 == "월") {
+	    		   alert('달을 선택해 주세요.');
 	    		   return false;
 	    	   }
 	    	   
-	    	   console.log('form', formData);
+	    	   console.log('form', document.form);
+	    	   console.log('formData', formData);
                $.ajax({
-            	   url: '/admin/manage/publicCenter/mediaNewsAdd',
+            	   url: '/admin/manage/baby/calenderModelTitle',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+				   //data: $('#titleForm').serialize(),  //위에서 선언한 fromdata
 				   data: formData,  //위에서 선언한 fromdata
 				   type: 'POST'
 			   }).done(function(data){
@@ -62,11 +73,12 @@
 	    	       console.log('done', data)
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/manage/publicCenter/mediaNews";
+	    	    	   window.location.href = "/admin/manage/baby/calendarModel";
 	    	       }else{
 	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	    	       }
 	           }).fail(function() {
+		    	   console.log('formData', formData)
 	        	   console.log('fail')
 	           })
 				
@@ -86,63 +98,25 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">FAQ 등록</h2>
+                            <h2 class="content-header-title float-start mb-0">달력모델 년/월 타이틀 등록</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">고객지원</a>
+                                    <li class="breadcrumb-item"><a href="#">영유아식</a>
                                     </li>
-                                    <li class="breadcrumb-item active">FAQ 새글등록
+                                    <li class="breadcrumb-item active">달력모델 년/월 타이틀 등록
                                     </li>
                                 </ol>
                             </div>
                         </div>
                     </div>
-                </div>
-              
+                </div>              
             </div>
             
             <div class="content-body">
-            	<form name="form" th:action="@{/admin/customer/faq/register}" method="POST" class="form-horizontal" role="form">
-	                <!-- Analytics card section -->
-	                <section id="analytics-card">
-						 <div class="row">
-							<div class="col-md-12 col-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row mb-1 ">
-											<div class="col-md-1 col-12">전시위치</div>
-											<div class="col-md-2 col-12">
-												<select class="form-select" id="fCate" name="fCate">
-													<option value="11" th:selected="'11' == ${faq?.fCate}">제품일반</option>
-													<option value="22" th:selected="'22' == ${faq?.fCate}">음료류</option>
-													<option value="33" th:selected="'33' == ${faq?.fCate}">유아동두유</option>
-													<option value="44" th:selected="'44' == ${faq?.fCate}">베지밀</option>
-													<option value="55" th:selected="'55' == ${faq?.fCate}">그린비아</option>
-												</select>
-											</div>
-										</div>
-										<div class="row mb-1">
-											<div class="col-md-1 col-3">
-												전시설정
-											</div>
-											<div class="col-md-4 col-4">
-												<div class="form-check form-switch">
-													<input type="checkbox" class="form-check-input"  id="fView" name="fView" th:checked="${faq?.fView}" />
-													<label class="form-check-label" for="fView"></label>
-												</div>
-											</div>
-										</div>
-	
-										
-									</div>
-								</div>
-							</div>
-	                    </div>
-	                </section>
-	                <!--/ Analytics Card section -->
-	
+            	<form name="titleForm" id="titleForm" th:action="@{/admin/manage/baby/calenderModelTitle}" method="POST" class="form-horizontal" role="form">
+	                	
 					<!-- 달력모델선정 -->
 					<section id="basic-horizontal-layouts">
 						<div class="row" >
@@ -150,29 +124,67 @@
 								<div class="card">								
 									<div class="card-body ">
 										<!-- Form -->
-	                                    <form action="javascript:;" class="mt-2" onsubmit>
-	                                        <div class="row">
-	                                            <div class="col-md-1 col-12">제목</div>
-	                                            <div class="col-md-5 col-12">
-	                                                <input type="text" id="fQuestion" name="fQuestion" class="form-control" th:value="${faq?.fQuestion}" placeholder="제목을 작성해주세요" />
-	                                                <input type="hidden" id="fAnswer" name="fAnswer" class="form-control" value="" />
-	                                                <input type="hidden" id="fIdx" name="fIdx" class="form-control" th:value="${faq?.fIdx}" /> 
-	                                            </div>
+	                                    <form action="javascript:;" class="mt-2" onsubmit>										
+										
+										<div class="row mt-1">
+                                            <div class="col-md-1">기준 아기모델 </div>
+											<div class="col-md-2 col-3">
+											<select name="tRownum" id="tRownum" class="form-select form-select" aria-label=".form-select-sm example">
+											  <option value="" selected>기준 아기모델 선택 </option>
+											  <option th:each = "baby: ${modelList}"  th:value="${baby.rownum}" th:text="${baby.cName}"></option>												  
+											</select>
 											</div>
+										</div>											
+										<div class="row mt-1">
+											<div class="col-md-1">년/월 선택</div>								
+											<div class="col-md-2 col-3">
+												<select name="tYear" id="tYear" class="form-select form-select" aria-label=".form-select-sm example">
+												  <option value="" selected>년도</option>
+												  <option value="2022">2022</option>
+												  <option value="2023">2023</option>
+												  <option value="2024">2024</option>
+												  <option value="2025">2025</option>
+												</select>
+											</div>
+											<div class="col-md-2 col-3">
+												<select name="tMonth1" id="tMonth1" class="form-select form-select" aria-label=".form-select-sm example">
+											      <option value="" selected >월</option>
+												  <option value="1">1</option>
+												  <option value="2">2</option>
+												  <option value="3">3</option>
+												  <option value="4">4</option>
+												  <option value="5">5</option>
+												  <option value="6">6</option>
+												  <option value="7">7</option>
+												  <option value="8">8</option>
+												  <option value="9">9</option>
+												  <option value="10">10</option>
+												  <option value="11">11</option>
+												  <option value="12">12</option>
+												</select>
+											</div>
+											<div class="col-md-3 col-3">
+												<select name="tMonth2" id="tMonth2" class="form-select form-select" aria-label=".form-select-sm example">
+											      <option value="" selected >월2 (2달치 등록시에만 선택)</option>
+												  <option value="1">1</option>
+												  <option value="2">2</option>
+												  <option value="3">3</option>
+												  <option value="4">4</option>
+												  <option value="5">5</option>
+												  <option value="6">6</option>
+												  <option value="7">7</option>
+												  <option value="8">8</option>
+												  <option value="9">9</option>
+												  <option value="10">10</option>
+												  <option value="11">11</option>
+												  <option value="12">12</option>
+												</select>
+											</div>											                                            
 											
-											<div class="row mt-1">
-	                                            <div class="col-md-1"> 내용</div>
-												<div class="col-md-10 col-12 ">
-													<div id="blog-editor-wrapper">
-														<div id="editor">
-															<div class="editor h500">
-															</div>
-														</div>
-													</div>
-	                                            </div>
-	                                        </div>
-	                                    </form>
-	                                    <!--/ Form -->
+										</div>
+	                                    <!--/ Form -->	                                    
+	                                </form>    
+	                                    
 									</div>
 									<div class="card center">
 										<div class="card-body mb-2">
@@ -190,8 +202,10 @@
 	                </section>
 					<!-- //달력모델선정 -->
 				</form>
-
             </div>
+            
+            
+            
         </div>
     </div>
     <!-- END: Content-->
