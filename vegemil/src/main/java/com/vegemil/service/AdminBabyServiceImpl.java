@@ -74,7 +74,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 			
 			if(originalName != null && !"".equals(originalName)) {
 				
-				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+				String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
 				String uuid = UUID.randomUUID().toString();
 				String savefileName = uuid + "_" + file;
 				
