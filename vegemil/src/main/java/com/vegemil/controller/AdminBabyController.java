@@ -108,7 +108,7 @@ public class AdminBabyController extends UiUtils {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+			String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
 			String uuid = UUID.randomUUID().toString();
 			String savefileName = uuid + "_" + file;
 			
@@ -129,10 +129,35 @@ public class AdminBabyController extends UiUtils {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-
-
 		return rtnMap;
 	}
+	
+	//육아정보 삭제
+	@RequestMapping("/admin/manage/baby/deleteBabyInfo")
+    public @ResponseBody boolean deleteBabyInfo(@ModelAttribute("params") AdminBabyDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
+    	try {
+    		String checkList[] = request.getParameterValues("checkList");
+    		log.info("check==========="+checkList);
+    		ArrayList<String> list = new ArrayList<>();
+     		for(int i=0; i<checkList.length; i++) {
+    			list.add(checkList[i]);
+    		}
+    		
+    		Map<String, Object> paramMap = new HashMap<String, Object>();
+    		paramMap.put("list", list);
+    		
+    		boolean isDeleted = adminBabyService.deleteBabyInfo(paramMap);
+    		if (!isDeleted) {
+				return false;
+			}
+    	} catch (DataAccessException e) {
+    		return false;
+		} catch (Exception e) {
+			return false;
+		}
+    	return true;
+    }
+	
 	
 	
 	
@@ -237,32 +262,7 @@ public class AdminBabyController extends UiUtils {
 		}
 	}
 	
-	@RequestMapping("/admin/manage/baby/deleteBabyInfo")
-    public @ResponseBody boolean deleteBabyInfo(@ModelAttribute("params") AdminBabyDTO params, Model model, HttpServletResponse response, HttpServletRequest request) {
-    	try {
-    		String checkList[] = request.getParameterValues("checkList");
-    		log.info("check==========="+checkList);
-    		ArrayList<String> list = new ArrayList<>();
-     		for(int i=0; i<checkList.length; i++) {
-    			list.add(checkList[i]);
-    		}
-    		
-    		Map<String, Object> paramMap = new HashMap<String, Object>();
-    		paramMap.put("list", list);
-    		
-    		boolean isDeleted = adminBabyService.deleteBabyInfo(paramMap);
-    		if (!isDeleted) {
-				return false;
-			}
-    		
-    		
-    	} catch (DataAccessException e) {
-    		return false;
-		} catch (Exception e) {
-			return false;
-		}
-    	return true;
-    }
+	
 	
 	@RequestMapping(value = "/admin/manage/baby/babyInfoAdd")
     public String openBabyInfoAdd(@RequestParam(value = "mbsIdx", required = false) Long mbsIdx, HttpServletRequest req, Model model)throws Exception{
@@ -710,7 +710,7 @@ public class AdminBabyController extends UiUtils {
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
 	
-	
+
 	//정적 이미지 불러오기 - 육아정보-썸네일
 	@GetMapping("/web/upload/vegemilBaby/babyInfo/thumbnail/{filename}")
 	public ResponseEntity<Resource> displayBabyInfoThumbnail(@PathVariable(value = "filename", required = false) String filename) {
@@ -727,6 +727,23 @@ public class AdminBabyController extends UiUtils {
 		}
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
+	
+	//정적 이미지 불러오기 - 육아정보-본문
+		@GetMapping("/web/upload/vegemilBaby/babyInfo/{filename}")
+		public ResponseEntity<Resource> displayBabyInfo(@PathVariable(value = "filename", required = false) String filename) {
+			Resource resource = new FileSystemResource(uploadPath + "/upload/vegemilBaby/babyInfo/" + filename);
+			if(!resource.exists()) 
+				return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+			HttpHeaders header = new HttpHeaders();
+			Path filePath = null;
+			try {
+				filePath = Paths.get(uploadPath + "/upload/vegemilBaby/babyInfo/" + filename);
+				header.add("Content-type", Files.probeContentType(filePath));
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+			return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+		}
 		
 	//정적 이미지 불러오기 - tvcf
 	@GetMapping("/web/upload/vegemilBaby/tvcf/{filename}")

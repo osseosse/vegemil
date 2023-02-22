@@ -61,7 +61,7 @@
 				</div>
 				<table cellspacing="0" border="0" class="press mt50" th:if="${not #lists.isEmpty( mediaNewsList )}">
 					<caption>보도자료</caption>
-					<tr th:each="mediaNews : ${mediaNewsList}">
+					<tr th:each="mediaNews : ${mediaNewsList}" th:id="${mediaNews.mIdx}">
 						<td>
 							<a th:href="${mediaNews.mAduri1}">
 								<div class="t-day">
@@ -133,6 +133,29 @@
 			return false;
 		}
 	}
+	
+	const newsList = document.querySelectorAll('tr');
+
+	newsList.forEach(item => {
+	  item.addEventListener('click', () => {
+	    const itemId = item.getAttribute('id');
+			$.ajax({
+				url : '/main/mediaNews/count',
+				type : "post",
+				data : {mIdx : itemId},
+				dataType : "json",
+				success : function(data) {
+					console.log('data============',data);
+				},
+				error : function(){
+				}
+			});
+	  });
+	});
+	
+	
+	
+	
 	
 /*]]>*/
 </script>

@@ -15,6 +15,7 @@ import com.vegemil.domain.AdminSampleBabyDTO;
 @Mapper
 public interface AdminBabyMapper {
 	
+	//=================== 육아정보  =========================
 	public List<AdminBabyDTO> selectBabyInfoList(Map<String, Object> paramMap);
 	
 	public int selectBabyInfoTotalCount(Map<String, Object> paramMap);
@@ -26,6 +27,12 @@ public interface AdminBabyMapper {
 	public int updateBabyInfo(AdminBabyDTO params);
 	
 	public int deleteBabyInfo(Map<String, Object> paramMap);
+	
+	public String selectImgFileOriginalBabyInfo(Long mbsIdx);
+	
+	public String selectImgFileBabyInfo(Long mbsIdx);
+	//=================== 육아정보  =========================	
+	
 	
 	public List<AdminBabyDTO> selectBabyQnaList(AdminBabyDTO params);
 	
@@ -106,8 +113,5 @@ public interface AdminBabyMapper {
 	public int updateBabyTvcfFileInfo(AdminCfDTO adminCfDTO);
 
 	
-
-	
-
 	
 }

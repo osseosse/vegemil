@@ -133,6 +133,14 @@
        	LIMIT
        		3
     </select>
+    
+    <update id="updateMediaNewsCount" parameterType="Long">
+        UPDATE 
+        	m_media_news 
+        SET 
+        	m_hit = m_hit + 1 
+        WHERE m_idx = #{mIdx}
+    </update>
 
     <select id="mediaNewsFindAll" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.MediaNewsDTO">
         SELECT

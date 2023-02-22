@@ -118,6 +118,7 @@ $(function () {
 });
 
 var createTable = function() {
+	
 	console.log('carateTable')
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');

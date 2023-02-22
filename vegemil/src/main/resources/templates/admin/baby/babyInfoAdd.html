@@ -311,6 +311,8 @@
 												<div class="col-md-1 col-12">썸네일</div>
 												<div class="col-md-5 col-12">
 													<input class="form-control" type="file" id="uploadFile" name="uploadFile" accept="image/*" th:value="${babyInfo?.mbsImage}" />
+													<input th:if="${babyInfo?.mbsImageOriginal}" type="text" class="form-control" id="fileName2" name="fileName2" th:value="|업로드된 이미지:  ${babyInfo.mbsImageOriginal}|" readonly>
+													<input th:unless="${babyInfo?.mbsImageOriginal}" type="text" class="form-control" id="fileName2" name="fileName2" value="업로드된 이미지: 업로드된 이미지가 없습니다." readonly>
 												</div>
 											</div>
 											<div class="row mt-1">

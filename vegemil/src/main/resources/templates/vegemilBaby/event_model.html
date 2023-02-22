@@ -160,11 +160,11 @@
 													<div class="col-md-12">
 														<ul class="model_ul">
 														
-															<li class="mcBox">
+															<!-- <li class="mcBox">
 																<div class="best_day">
 																<span class="bestType01 bg_bean">1</span> January <span class="bestYear">2023</span>
 																</div>
-															</li>
+															</li> -->
 															
 															<li th:each="model : ${modelList}"  th:with="var=${model.ROWNUM}" th:class="md+${var}"  
 																th:classappend="${model.cRank =='1'} ? 1st"> 

@@ -19,4 +19,6 @@ public interface CompanyService {
     
     public List<MediaNewsDTO> getMediaNewsTop3();
 
+    public boolean updateMediaNewsCount(Long mIdx);
+
 }

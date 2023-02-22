@@ -78,4 +78,14 @@ public class CompanyServiceImpl implements CompanyService {
         return faqList;
     }
 
+	@Override
+	public boolean updateMediaNewsCount(Long mIdx) {
+		int queryResult = 0;		
+		if (mIdx != null) {
+			queryResult = companyMapper.updateMediaNewsCount(mIdx);
+		}
+		return (queryResult == 1) ? true : false;
+	}
+	
+
 }

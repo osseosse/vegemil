@@ -87,6 +87,7 @@
 			, mbs_content
 			, mbs_summary
 			, mbs_image
+			, mbs_image_original
 			, mbs_getdate
 			, mbs_active
 			, mbs_check
@@ -97,6 +98,7 @@
 			, #{mbsContent}
 			, ''
 			, #{mbsImage}
+			, #{mbsImageOriginal}
 			, NOW()
 			, #{mbsActive}
 			, #{mbsCheck}
@@ -108,7 +110,7 @@
 	<select id="selectBabyInfoDetail" parameterType="long" resultType="com.vegemil.domain.AdminBabyDTO">
 		SELECT /* selectBabyInfoDetail by AdminBabyMapper.xml */
 			<include refid="BabyColumns" />
-			, mbs_idx, mbs_ange_html, mbs_ange, mbs_m_category
+			, mbs_idx, mbs_ange_html, mbs_ange, mbs_m_category, mbs_image_original
 		FROM
 			m_edit_brandbaby
 		WHERE
@@ -124,13 +126,35 @@
 			  mbs_title = #{mbsTitle}
 			, mbs_content = #{mbsContent}
 			, mbs_image = #{mbsImage}
+			, mbs_image_original = #{mbsImageOriginal}
 			, mbs_active = #{mbsActive}
 			, mbs_check = #{mbsCheck}
 			, mbs_category = #{mbsCategory}
+			, mbs_m_category = #{mbsMCategory}
 			, mbs_getdate = NOW()
 		WHERE
 			mbs_idx = #{mbsIdx}
 	</update>
+		
+	<!-- 썸네일 이미지 조회(변환명) -->
+	<select id="selectImgFileBabyInfo" parameterType="Long" resultType="String">
+		SELECT 
+			mbs_image
+		FROM 
+			m_edit_brandbaby			
+		WHERE
+			mbs_idx = #{mbsIdx}
+	</select>
+	
+	<!-- 썸네일 이미지 조회(원본명) -->
+	<select id="selectImgFileOriginalBabyInfo" parameterType="Long" resultType="String">
+		SELECT 
+			mbs_image_original
+		FROM 
+			m_edit_brandbaby			
+		WHERE
+			mbs_idx = #{mbsIdx}
+	</select>
 
 	<update id="deleteBabyInfo" parameterType="long">
 		/* deleteBabyInfo by AdminBabyMapper.xml */
@@ -204,7 +228,6 @@
 		 </if>
 	</select>
 	
-	<!--  -->
 	
 	<insert id="insertBabyQna" parameterType="com.vegemil.domain.AdminBabyDTO">
 		/* insertBabyQna by AdminBabyMapper.xml */

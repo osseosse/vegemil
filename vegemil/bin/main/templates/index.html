@@ -186,7 +186,7 @@
 						<div class="newsLine mt20">
 							<p class="f18 fw600 newsIco f_pp black">NEWS<a href="/company/mediaNews"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_newsMore.png" alt="more"></a></p>
 							<ul class="newsBox mt10">
-								<li th:if="${not #lists.isEmpty( mediaNewsList )}" th:each="mediaNews : ${mediaNewsList}" >
+								<li th:if="${not #lists.isEmpty( mediaNewsList )}" th:each="mediaNews : ${mediaNewsList}" th:id="${mediaNews.mIdx}" >
 									<dl>
 										<a th:href="${mediaNews.mAduri1}">
 											<dd class="newsImg"><img th:src="|/web/upload/MediaNews/${mediaNews.mImg}|" alt="제품사진"/></dd>
@@ -928,6 +928,28 @@ $(".verticalType02").collapse({
 		this.removeClass("open");
 	  }
 	});
-</script>
+ 
+ 
+	//보도자료 조회수 증가 
+	const newsList = document.querySelectorAll('.newsBox li');
+
+	newsList.forEach(item => {
+	  item.addEventListener('click', () => {
+	    const itemId = item.getAttribute('id');
+			$.ajax({
+				url : '/main/mediaNews/count',
+				type : "post",
+				data : {mIdx : itemId},
+				dataType : "json",
+				success : function(data) {
+					console.log('data============',data);
+				},
+				error : function(){
+				}
+			});
+	  });
+	});
+	</script>
+
 </body>
 </html>

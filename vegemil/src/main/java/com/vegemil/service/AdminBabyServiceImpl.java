@@ -74,7 +74,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 			
 			if(originalName != null && !"".equals(originalName)) {
 				
-				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
+				String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
 				String uuid = UUID.randomUUID().toString();
 				String savefileName = uuid + "_" + file;
 				
@@ -85,18 +85,87 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 
 				uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
 				params.setMbsImage(savefileName);	
-				//params.setEImgOriginal(originalName);				
+				params.setMbsImageOriginal(originalName);				
 			}	
+			
+		}else {
+			System.out.println("게시글 수정");			
+			
+			//전달된 파일
+			String originalName = uploadFile.getOriginalFilename();				
+			//DB에 저장된 파일 불러오기
+			String storedImgOriginal = adminBabyMapper.selectImgFileOriginalBabyInfo(params.getMbsIdx());
+			String storedImg = adminBabyMapper.selectImgFileBabyInfo(params.getMbsIdx());
+						
+			if(storedImgOriginal == null || storedImgOriginal.equals("") ) { // 1. DB에 첨부 파일 존재X
+				System.out.println("=============DB에  파일이 없습니다.==============");
+				if(originalName != null && !"".equals(originalName)) { //   1 -1 :전달되어온 파일이 존재
+					System.out.println("=============새로 입력되는 파일이 있습니다.==============");
+					
+					String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
+					String uuid = UUID.randomUUID().toString();
+					String savefileName = uuid + "_" + file;
+					
+					//Test 로컬경로
+					//File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
+					//실제 경로
+					File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + savefileName);
+																
+					uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
+					params.setMbsImage(savefileName);	
+					params.setMbsImageOriginal(originalName);
+				}else {
+					System.out.println("=============새로 입력되는 파일이 없습니다.==============");
+				}					
+					
+			}else { 			// 2. DB에  첨부 파일 존재
+				System.out.println("=============DB에  파일이 있습니다.==============");
+				if(originalName != null && !"".equals(originalName)) {  //전달된 파일이 존재
+					System.out.println("=============새로 입력되는 파일이 있습니다.==============");
+					System.out.println("기존 파일명:" + storedImgOriginal);
+					System.out.println("새로 등록 파일명:" + originalName);
+					if(!originalName.equals(storedImgOriginal)) { //전달된 파일과 기존 파일이 다르면 		
+						System.out.println("=============전달될 파일과 기존 파일이 다릅니다..==============");
+						
+						String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
+						String uuid = UUID.randomUUID().toString();
+						String savefileName = uuid + "_" + file;			
+										
+						//Test 로컬경로
+						//File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
+						//실제 경로
+						File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + savefileName);											
+					
+						uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
+						params.setMbsImage(savefileName);	
+						params.setMbsImageOriginal(originalName);											
+						
+						//삭제 - Test로컬경로						
+						//String storedfilePath = "D:/upload/admin/vegemilbaby/" + storedImg;
+						//삭제 - 실제경로
+						String storedfilePath = uploadPath+ "/upload/vegemilBaby/babyInfo/thumbnail/" + storedImg;
+													
+				        File deleteFile = new File(storedfilePath);
+				        if(deleteFile.exists()) {			            
+				            deleteFile.delete(); 			            
+				            System.out.println("파일을 삭제하였습니다.");			            
+				        } else {
+				            System.out.println("파일이 존재하지 않습니다.");
+				        }
+					}				
+				}else {
+					System.out.println("=============새로 입력되는 파일이 없습니다.==============");
+				}
+			}
 		}
 		
 		int queryResult = 0;		
-
+		
 		if (params.getMbsIdx() == null) {
 			queryResult = adminBabyMapper.insertBabyInfo(params);
 		} else {
 			queryResult = adminBabyMapper.updateBabyInfo(params);
 		}
-
 		return (queryResult == 1) ? true : false;
 	}
 	
@@ -107,8 +176,8 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	
 	@Override
 	public boolean deleteBabyInfo(Map<String, Object> paramMap) {
-		int queryResult = 0;
 
+		int queryResult = 0;
 
 		queryResult = adminBabyMapper.deleteBabyInfo(paramMap);
 
