@@ -101,7 +101,8 @@
                  <div class="container pb150">
                      <div class="row">
                          <div class="col-md-12 mt120 modelForm">
-                            <form onchange="inputCheck()" th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data">
+<!--                             <form onchange="inputCheck()" th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data"> -->
+                            <form th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data">
                                 <fieldset>
                                     <legend>개인 정보 수집 및 이용에 관한 안내</legend>
                                      <div class="gray_lineBox">
@@ -156,7 +157,7 @@
 				                            <dl class="divideType01 f17_4">
 					                            <dd>주소 <span class="red_dot">*</span></dd>
 					                            <dd class="linkType f17_3_g mt10m">
-						                            <input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" readonly required/>&nbsp
+						                            <input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" required/>&nbsp
 						                            <img id=imgZipcode class="veM" name="imgZipcode"  onclick=javascript:execPostcode(); alt="우편번호검색" align="top" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_zip.jpg"><br>
 						                            <input class="inType03 mt15" name="cAddr1" id="cAddr1" type="text" value="" maxlength="150" readonly/><br >
 						                            <input class="inType03 mt15" name="cAddr2" id="cAddr2" type="text" value="" maxlength="30" />
@@ -195,9 +196,9 @@
                                          <!-- //마케팅동의 -->
                                          <li>
 											<dl class="divideType02 f17_4">
-												<dd><p class="f17_3">사진에 나오는 아기(자녀)의 이름</p></dd>
+												<dd><p class="f17_3">사진에 나오는 아기(자녀)의 이름<span class="red_dot">*</span></p></dd>
 												<dd class="mt10">
-													<input type="text" class="w250" name="cBabyName" id="cBabyName">	
+													<input type="text" class="w250" name="cBabyName" id="cBabyName" required>	
 												</dd>
 											</dl>
                                          </li>
@@ -224,7 +225,8 @@
                                          </li>
                                      </ul>
                                      <div class="col-md-12 center mt100">
-                                         <input style="background:gray;" type="submit" disabled="disabled" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> <!-- input type="image --> 
+<!--                                          <input style="background:gray;" type="submit" disabled="disabled" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> input type="image --> 
+                                         <input type="submit" onclick="inputCheck()"src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> <!-- input type="image --> 
                                      </div>
                                  </fieldset>
                              </form>
@@ -250,12 +252,40 @@
 	 var address = document.forms["modelForm"]["cZipcode"].value;
 	 var cEmail = document.forms["modelForm"]["cEmail"].value;
 	 var fileName1 = document.forms["modelForm"]["fileName1"].value;
-		if (name != null && name != "" && address != null && address != "" && cEmail != null && cEmail != "" && fileName1 != null && fileName1 != "") {
+	 var cBabyName = document.forms["modelForm"]["cBabyName"].value;
+	 
+	 
+	if($("input[name='agree_radio']:checked").val() == '0'){
+		 alert('개인 정보 수집 및 이용에 동의해주세요.');
+		   return false;
+	}
+	if(!name) {
+		   alert('이름을 작성해 주세요.');
+		   return false;
+	}
+	if(!address) {
+		   alert('주소를 작성해 주세요.');
+		   return false;
+	}
+	if(!fileName1) {
+		   alert('지원사진을 첨부해주세요');
+		   return false;
+	}
+	if(!cBabyName) {
+		   alert('아기(자녀)이름을 입력해주세요');
+		   return false;
+	}
+		/* if (name != null && name != "" && 
+			address != null && address != "" && 
+			cEmail != null && cEmail != "" && 
+			fileName1 != null && fileName1 != "" &&
+			cBabyName != null && cBabyName != "" &&) {
 		 document.getElementById('joinBtn').style.background = 'black';
 	 	}else{
 	 		document.getElementById('joinBtn').style.background = 'gray';	 		
 	 	}		 
-	} 	
+	} */
+	}
  
 </script>
 </body>

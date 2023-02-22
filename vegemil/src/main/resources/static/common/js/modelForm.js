@@ -33,56 +33,56 @@ new daum.Postcode({
 }
 /*[- end of function -]*/
 
-function btnAvtive() {
-	
-	const cName = $('#cName').val();
-	const cEmail = $('#cEmail').val();
-//	const cHp = $('#cHp').val();
-	const cAddr = $('#cAddr').val();
-	const cAddr2 = $('#cAddr2').val();
-	//const cFileName = $('#fileName1').val();
-	
-	if($.trim(cName).length > 1
-	&& $('input[name=agree_radio]:checked').val() == '1'
-	&& $.trim(cAddr).length > 1
-	&& $.trim(cEmail).length > 1) 
-	{
-		$("#joinBtn").attr("disabled", false); //해제
-	} else {
-		$("#joinBtn").attr("disabled", true); //설정
-	}
-	return;
-}
+//function btnAvtive() {
+//	
+//	const cName = $('#cName').val();
+//	const cEmail = $('#cEmail').val();
+////	const cHp = $('#cHp').val();
+//	const cAddr = $('#cAddr').val();
+//	const cAddr2 = $('#cAddr2').val();
+//	//const cFileName = $('#fileName1').val();
+//	
+//	if($.trim(cName).length > 1
+//	&& $('input[name=agree_radio]:checked').val() == '1'
+//	&& $.trim(cAddr).length > 1
+//	&& $.trim(cEmail).length > 1) 
+//	{
+//		$("#joinBtn").attr("disabled", false); //해제
+//	} else {
+//		$("#joinBtn").attr("disabled", true); //설정
+//	}
+//	return;
+//}
+//
+//$(function(){
+//
+//	$("input[name='agree_radio']:radio").change(function () {
+//		btnAvtive();
+//	});
+//	$("#cAddr2").keyup(function () {
+//		$("#cAddr").val($("#cAddr1").val()+" "+$("#cAddr2").val());
+//		btnAvtive();
+//	});
+//	
+//	$('#cHp').keyup(function () {
+//		btnAvtive();
+//	});
+//	
+//	$('#cEmail').keyup(function () {
+//		btnAvtive();
+//	});
+//	$("input[name='agree_radio2']:radio").change(function () {
+//		btnAvtive();
+//	});
+//	$('#cBabyName').keyup(function () {
+//		btnAvtive();
+//	});
+//	$('#cAlived').keyup(function () {
+//		btnAvtive();
+//	});
+//	$('#cRoute').keyup(function () {
+//		btnAvtive();
+//	});
 
-$(function(){
-
-	$("input[name='agree_radio']:radio").change(function () {
-		btnAvtive();
-	});
-	$("#cAddr2").keyup(function () {
-		$("#cAddr").val($("#cAddr1").val()+" "+$("#cAddr2").val());
-		btnAvtive();
-	});
-	
-	$('#cHp').keyup(function () {
-		btnAvtive();
-	});
-	
-	$('#cEmail').keyup(function () {
-		btnAvtive();
-	});
-	$("input[name='agree_radio2']:radio").change(function () {
-		btnAvtive();
-	});
-	$('#cBabyName').keyup(function () {
-		btnAvtive();
-	});
-	$('#cAlived').keyup(function () {
-		btnAvtive();
-	});
-	$('#cRoute').keyup(function () {
-		btnAvtive();
-	});
-
-});
+//});
 /*]]>*/
