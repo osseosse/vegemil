@@ -4,6 +4,7 @@
 	<title th:text="${snsTitle}"></title>
     <head th:replace="webzine/oldHead :: headFragment"></head>
     <meta property="og:title" th:attr="content=${snsTitle}">
+    <meta property="og:url" th:attr="content=|https://www.vegemil.co.kr/webzine/${qrtYear}/sub${num}|" >
     <meta property="og:image" th:attr="content=|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${num}_sns.png|" >
     <meta property="og:description" content="신뢰와 믿음의 기업 (주)정식품 웹진 입니다."/>
     <div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
