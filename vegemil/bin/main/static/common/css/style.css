@@ -264,8 +264,30 @@
 	.blueHeader #header .btn_fullMenu {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) ; width:40px;height:40px; display:inline-block;   background-size:40px 40px; position:relative; cursor:pointer;}
 	/* //3000 Brand Header : BLUE */
 
-
-
+	/* 3000 Brand Header : STAR */
+	.starHeader #header { background:none; }
+	.starHeader #header h1.logo a {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png); background-size:86px 50px }
+	.starHeader #header {position:absolute; top:0; left:0; width:100%; z-index: 1000; border-bottom: 0px solid #008BD5; height: 90px; overflow: hidden; }
+	.starHeader #header.sub {position:absolute;}
+	.starHeader #header h1.logo {position:absolute;top:20px;left:80px; z-index: 100;}
+	.starHeader #header h1.logo a {display:block;width:86px;height:56px;background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat 0 0;background-size:86px 50px; }
+	.starHeader #header .header-right {position:absolute;top:17px;right:80px; z-index: 100;}
+	.starHeader #header .header-right ul.sub_area > li {display:inline-block; margin-left:20px; }
+	.starHeader #header .header-right ul.sub_area li:first-child {margin-left:0}
+	.starHeader #header .header-right ul.sub_area > li {color:#fff; font-size:14px; }
+	.starHeader #header .header-right ul.sub_area > li > a {text-decoration:none;color:#fff}
+	.starHeader #header .header-right ul.sub_area > li > a:hover {text-decoration:none; color:#fff}
+	.starHeader #header #gnb > ul > li > a{color:#fff}
+	.starHeader #header .custom-sel select {color:#fff}
+	.starHeader #header .custom-sel select option {color:#222}
+	.starHeader #header.white.open { background: #fff;}
+	.starHeader #header.open {height: 90px; border-bottom: none; background-repeat: no-repeat; background-position: right bottom; overflow: hidden; border-bottom: 1px solid #ddd; box-shadow: 0 5px 5px rgba(100,100,100,.05); z-index: 1500;}
+	.starHeader #header.open .bg{width: 100%; height: 91px; position: absolute; left: 0; top: 0;background:none); border-bottom: 1px solid #ddd;   background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/star_header.jpg) no-repeat scroll 0 0  } 
+	.starHeader #header.open h1.logo a {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) ;  background-size:86px 50px}
+	.starHeader #header.open #gnb > ul > li > a{color: #fff;}
+	
+	.starHeader #header .btn_fullMenu {background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) ; width:40px;height:40px; display:inline-block;   background-size:40px 40px; position:relative; cursor:pointer;}
+	/* //3000 Brand Header : STAR */
 
 
 	/* 3000 main > floting */
@@ -2367,6 +2389,205 @@ button:hover:before {content:"Reply!"}
 	}
 	.baseRadioBox2 input[type="radio"]:checked + label span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/radio_order.png) -22px top no-repeat;}	
 	.baseRadioBox2 label {margin-right:10px;   border-radius:5px; padding:3px 10px; font-size:16px}
+	.starZindex {z-index:1000}
+	.letter10 {letter-spacing:7px}
+	.btn_scroll_bottom {width:40px;  position:absolute; z-index:1000; bottom:0px; top: 80%;left: 50%; height:40px}
+	/* 3000 창업주기념관 NEW */
+	
+	section {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	 
+	  min-height: 100%;
+	 /* height: 100vh; */
+	}
+	.Quick-navigation {
+	  position: fixed;
+	  z-index: 1;
+	  margin: 0;
+	  top: 50%;
+	  left: 100px;
+	  transform: translateY(-50%);z-index:1000; 
+	 
+	}
+	.Quick-navigation a {color:#fff; opacity:0.5}
+	.Quick-navigation-item {
+	  color: rgba(0,0,0,0.4);
+	  text-decoration: none;
+	  font-size:13px;
+	  transition: color 0.3s;
+	  padding: 20px 0;
+	  display: block; padding-left:25px
+	}
+	.Quick-navigation-item:hover,
+	.Quick-navigation-item.current {
+	  color: #fff; opacity:1;
+	  background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_arrow_white.png) 0 22px no-repeat;
+	  background-size:15px
+	}
+	.Scroll-progress-indicator {
+	  will-change: opacity, transform;
+	  transition: all 0.5s;
+	  left: -10px;
+	  border-radius: 2px;
+	  position: absolute;
+	  top: 50%;
+	  opacity: 0;
+	  padding: 2em;
+	  transform: translateX(200%) translateY(-50%);
+	  background-color: rgba(0,0,0,0.1);
+	}
+	.Scroll-progress-indicator.visible {
+	  transform: translateX(-100%) translateY(-50%);
+	  opacity: 1;
+	}
+	#A {}
+	#B {}
+	#C {}
+	#D {}
+	#E {}
+	.Scroll-to-top {
+	  position: fixed;
+	  right: 20px;
+	  bottom: 0;
+	  background-color: rgba(0,0,0,0.2);
+	  border: none;
+	  color: rgba(255,255,255,0.5);
+	  font-size: 1.5rem;
+	  padding: 0.5em;
+	  cursor: pointer;
+	  opacity: 0;
+	  transform: translateY(100%);
+	  transition: all 0.3s;
+	  outline: none;
+	}
+	.Scroll-to-top.visible {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+	.Scroll-to-top:hover {
+	  color: rgba(255,255,255,0.9);
+	}
+
+	.starBox {position:absolute; width:100%; height:100%;  z-index:100; }
+	.star {
+	  display:block;
+	  width:4px;
+	  height:4px;
+	  border-radius:50%;
+	  background:#FFF;
+	  top:100px;
+	  left:1600px;
+	  position:relative;
+	  transform-origin:100% 0;
+	  animation:star-ani 4s infinite ease-out;
+	  animation-direction: normal;
+	  opacity:0;
+	 
+	 
+	}
+	.star:after {
+	  content:'';
+	  position:absolute;
+	  top:0px;
+	  left:4px;
+	  border:2px solid #F00;
+	  border-width:2px 150px 2px 250px; 
+	  border-color:transparent transparent transparent #FFF;
+	  transform:rotate(-45deg) translate3d(1px, -1px, 0);
+	  transform-origin:0% 100%;
+	  animation:shooting-ani 2s infinite  ease-out;
+	  animation-direction: normal;
+	}
+
+	.pink {
+	  top:50px;
+	  right:500px;
+	  background:#008aff;
+	  animation-delay:1.8s;
+	}
+	.pink:after {
+	  border-color:transparent transparent transparent #008aff ;
+	  animation-delay:1.8s;
+	}
+
+	.blue {
+	  top:200px;
+	  right:450px;
+	  background:#4dabff ;
+	  animation-delay:4.5s;
+	}
+	.blue:after {
+	  border-color:transparent transparent transparent #4dabff;
+	  animation-delay:4.5s;
+	}
+
+	.yellow {
+	  top:350px;
+	  right:100px;
+	  background:#1789a6;
+	  animation-delay:8.8s;
+	}
+	.yellow:after {
+	  border-color:transparent transparent transparent #1789a6;
+	  animation-delay:8.8s;
+	}
+
+	.yellow2 {
+	  top:0px;
+	  left:700px !important;
+	  background:#2a77af;
+	  animation-delay:1s;
+	}
+	.yellow2:after {
+	  border-color:transparent transparent transparent #2a77af;
+	  animation-delay:1s;
+	}
+
+	@-webkit-keyframes shooting-ani {
+	  0% {
+		
+	  }
+	  50% {
+		transform:scale(1) rotate(-45deg) translate(0px, 0px);
+	  }
+	  100% {
+		transform:scale(1) rotate(-45deg) translate(0px, -1px);
+	  }
+	}
+
+	@-webkit-keyframes star-ani {
+	  0% {
+		opacity:0;
+		transform:scale(0) rotate(0) translate3d(0, 0, 0);
+	  }
+	  
+
+	  50% {
+		opacity:1;
+		transform:scale(1) rotate(0) translate3d(-420px, 420px, 0);
+	  }
+	  100% {
+		opacity:0;
+		transform:scale(1) rotate(0) translate3d(-550px, 550px, 0);
+	  }
+	}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+	
+
 
 
 
@@ -2535,9 +2756,10 @@ button:hover:before {content:"Reply!"}
 
 	/* 1760 미디어 */
 	ul.videoList {position:relative; width:570px; }
-	ul.videoList li { width:140px}
+	ul.videoList li { width:140px;  }
+	ul.videoList li p {width:140px}
 	ul.radioList {position:relative; width:570px; }
-	
+	.prWrap .col-md-2{flex:25%; max-width:25%}
 
 
 }
@@ -3175,6 +3397,13 @@ button:hover:before {content:"Reply!"}
 	.blueHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
 	.blueHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
 
+	.starHeader  .mView .m_header {background:red; background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/star_header.jpg) no-repeat  0 0} 
+	.starHeader  .m_header .m_h_left span {background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/logo_w.png) no-repeat  0 0; width:60px;height:34.88px;  display:inline-block; background-size:60px}
+	.starHeader  .m_header ul.m_h_right li.btn_m_search span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_search_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.starHeader  .m_header ul.m_h_right li.btn_m_edaymall span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_m_edaymall_w.png) no-repeat 0 0; width:24px; height:24px; display:inline-block; background-size:24px}
+	.starHeader  .m_header ul.m_h_right li.btnOpen span{background: url(https://image.edaymall.com/images/dcf/vegemil/img/btn/btn_fullMenu_w.png) no-repeat 0px 0px; width:33px; height:33px; display:inline-block; background-size:33px}
+	.mt-60 {margin-top:-56px}
+
 	.f52.fw600.lh150.white {font-size:29px}
 	.swiper-wrapper {width:90%}
 	.swiper-wrapper .swiper-slide .slBox {overflow:hidden; border-radius:20px}
@@ -3610,7 +3839,9 @@ button:hover:before {content:"Reply!"}
 	.sampleBnrMenu li.current {background:#fd8156; border:1px solid #fd8156 ; border-radius:20px}
 	.sampleBnr .h360 {height:250px}
 	
-
+	/* 992 창업주기념관 NEW */
+	.starbg01 {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/star01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;height:100vh; -webkit-background-size: cover;background-size:cover;z-index:1; text-align:center; }
+	.starbg02 {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/star02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;height:100vh; -webkit-background-size: cover;background-size:cover;z-index:1; text-align:center;}
 
 
 	
@@ -4077,3 +4308,6 @@ button:hover:before {content:"Reply!"}
 
 
 /* //3000 브랜드빅배너 */
+
+
+
