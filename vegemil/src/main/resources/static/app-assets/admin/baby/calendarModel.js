@@ -412,8 +412,7 @@ var createTable = function() {
     
     
     
-    $('div.head-label').html('<h6 class="mb-0">아기 달력 모델 선정 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-    		'<button type="button" onclick="location.href=\'/admin/manage/customer/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h6>');
+    $('div.head-label').html('<h6 class="mb-0">아기 달력 모델 선정 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
     });
@@ -440,10 +439,10 @@ function btnSave(idx) {
 		}
 	}
 	
-	if(!cRank) {
-		alert("선정등수를 선택해주세요.")
-		return false;
-	}
+//	if(!cRank) {
+//		alert("선정등수를 선택해주세요.")
+//		return false;
+//	}
 	  	   
 	console.log($('#modalForm'+idx).serialize());
   	   
