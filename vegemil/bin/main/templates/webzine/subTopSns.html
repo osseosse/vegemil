@@ -32,7 +32,7 @@
 	    window.open("http://blog.naver.com/openapi/share?url=" + encodeURIComponent(uri) + "&title=" + encodeURIComponent(title));
 	}
 	
-	$("meta[property='og\\:image']").attr("content", url );
+// 	$("meta[property='og\\:image']").attr("content", url );
 	$("meta[property='og\\:url']").attr("content", window.location.href );   
 	$("meta[property='og\\:description']").attr("content", remark.substr(0, 50) + '...' );
 	
