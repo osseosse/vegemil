@@ -24,6 +24,8 @@ public interface CompanyMapper {
 	
 	public List<MediaNewsDTO> selectMediaNewsTop3();
 
+	public int updateMediaNewsCount(Long mIdx);
+
 	public int mediaNewsCount(SearchDTO params);
 
 }
