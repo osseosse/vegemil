@@ -113,9 +113,9 @@ public class AdminBabyController extends UiUtils {
 			String savefileName = uuid + "_" + file;
 			
 			//test경로
-			//String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
+			String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
 			//실제경로			
-			String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
+			//String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
 			
 			File f1 = new File(dirPath + savefileName);
 			
@@ -271,7 +271,8 @@ public class AdminBabyController extends UiUtils {
 		model.addAttribute("babyInfo", babyDto);
 		
 		return "admin/baby/babyInfoAdd";
-    }
+    }	
+	//========================================== 육아정보 ==========================================
 	
 	
 	
@@ -485,7 +486,6 @@ public class AdminBabyController extends UiUtils {
 		
 				
 	}
-	//============================================= 아기달력모델 =============================================
 	
 	
 	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")
@@ -536,6 +536,9 @@ public class AdminBabyController extends UiUtils {
 		}
 	   	return true;
    }
+	
+	//============================================= 아기달력모델 =============================================
+
 	
 	
 	@RequestMapping(value = "/admin/manage/baby/bestReviewList", method = {RequestMethod.GET, RequestMethod.POST})

@@ -77,12 +77,11 @@
       	    	  }else{
       	    		return '';
       	    	  }
-      	    		  
-      	    	  
       	      }
-	  	                  
-      	      
 	       });
+	       
+	       
+	       
 	       function imageHandler(image, callback) {
 	    	   const fileInput = document.createElement('input');
 		       fileInput.setAttribute('type', 'file');
@@ -169,8 +168,25 @@
 	    		   return false;
 	    	   }
 	    	   
+	    	   if(form.mbsCategory.value == "전체") {
+	    		   alert('중분류를 선택해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   var selectedValue = $('#mbsMCategory').val();
+	    	   if(selectedValue == "전체" || selectedValue == null || selectedValue == "") {
+	    		   alert('소분류를 선택해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   	    	   
+	    	   if(form.mbsMCategory.value == "전체") {
+	    		   alert('소분류를 선택해 주세요.');
+	    		   return false;
+	    	   }
+	    	   
+	    	   
 	    	   console.log('form', formData);
-// 	    	   form.submit();
                $.ajax({
             	   url: '/admin/manage/baby/registerBabyInfo',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
