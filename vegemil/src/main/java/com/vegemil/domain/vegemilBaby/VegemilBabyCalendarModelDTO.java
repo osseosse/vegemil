@@ -2,11 +2,9 @@ package com.vegemil.domain.vegemilBaby;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class VegemilBabyCalendarModelDTO {
 
 	private MultipartFile fileName1;

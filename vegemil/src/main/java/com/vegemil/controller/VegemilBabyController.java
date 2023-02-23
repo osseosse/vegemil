@@ -1,14 +1,11 @@
 package com.vegemil.controller;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.UUID;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

@@ -250,6 +250,7 @@
   function inputCheck(){	
 	 var name = document.forms["modelForm"]["cName"].value;
 	 var address = document.forms["modelForm"]["cZipcode"].value;
+	 var cAddr2 = document.forms["modelForm"]["cAddr2"].value;
 	 var cEmail = document.forms["modelForm"]["cEmail"].value;
 	 var fileName1 = document.forms["modelForm"]["fileName1"].value;
 	 var cBabyName = document.forms["modelForm"]["cBabyName"].value;
@@ -257,7 +258,8 @@
 	 
 	if($("input[name='agree_radio']:checked").val() == '0'){
 		 alert('개인 정보 수집 및 이용에 동의해주세요.');
-		   return false;
+		 event.preventDefault();
+		 return false;
 	}
 	if(!name) {
 		   alert('이름을 작성해 주세요.');
@@ -266,6 +268,16 @@
 	if(!address) {
 		   alert('주소를 작성해 주세요.');
 		   return false;
+	}
+	if(!cAddr2) {
+		if(confirm('주소를 모두 입력하셨나요?')){
+			return true;
+		}else{
+			event.preventDefault();
+			return false;
+		}
+		
+		   
 	}
 	if(!cEmail) {
 		   alert('이메일을 작성해 주세요.');
@@ -279,6 +291,12 @@
 		   alert('아기(자녀)이름을 입력해주세요');
 		   return false;
 	}
+	if($("input[name='agree_radio2']:checked").val() == '0'){
+		 alert('동의하셔야 접수하실 수 있습니다.');
+		 event.preventDefault();
+		 return false;
+	}
+	
 		/* if (name != null && name != "" && 
 			address != null && address != "" && 
 			cEmail != null && cEmail != "" && 

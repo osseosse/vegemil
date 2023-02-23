@@ -238,7 +238,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	@Override
 	@Transactional
 	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel) {
-
+		calModel.setCAddr(calModel.getCAddr1()+calModel.getCAddr2());
 		int queryResult = 0;
 		queryResult = vegemilBabyMapper.insertCalendarModel(calModel);
 
