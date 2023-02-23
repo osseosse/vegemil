@@ -473,9 +473,9 @@ function getModal(obj) {
 	modal +=						'</div>'
 	modal +=					'</div>'
 	modal +=					'<h4 class="mt-50">처리내용</h4>'
-	modal +=					'<div class="row">'
+	modal +=					'<div class="row mb-1 mt-1">'
 	modal +=						'<div class="col-1"><p>신청처리</p></div>'
-	modal +=						'<div class="col-2">'
+	modal +=						'<div class="col-5">'
 	modal +=							'<select class="form-select" name="vConfstat" id="vConfstat'+obj.vIdx+'">'
 	modal +=								'<option value="1"'
 												if(obj.vConfstat == 1) {  
@@ -494,17 +494,19 @@ function getModal(obj) {
 	modal +=                                            '>취소</option>'
 	modal +=							'</select>'
 	modal +=						'</div>'
+	modal +=					'</div>'
+	modal +=					'<div class="row">'
 	modal +=						'<div class="col-1"><p>확정일자</p></div>'
-	modal +=						'<div class="col-2">'
+	modal +=						'<div class="col-3">'
 	modal +=                            '<input type="hidden" name="vIdx" value="'+obj.vIdx+'">'
 	modal +=                            '<input type="date" id="vConfdate'+obj.vIdx+'" class="form-control flatpickr" name="vConfdate" placeholder="YYYY-MM-DD" maxlength="10" '  
 														if(vConfdate != "") {
-    modal +=                                             	'value="'+vConfdate+'"/>'
+    modal +=                                             	'value="'+obj.vConfdate.split(" ",1)+'"/>'
 														}else{
 	modal +=												' />'													
 														}
 	modal +=						'</div>'
-	modal +=						'<div class="col-3">'
+	modal +=						'<div class="col-2">'
 	modal +=							'<div class="form-check form-check-inline">'
 	modal +=								'<input class="form-check-input" type="radio" name="vConftime" id="inlineRadio1" value="1"'
 												if(obj.vConftime == 1) {
@@ -517,6 +519,36 @@ function getModal(obj) {
 	modal +=							'<div class="form-check form-check-inline">'
 	modal +=								'<input class="form-check-input" type="radio" name="vConftime" id="inlineRadio2" value="2"' 
 												if(obj.vConftime == 2) {
+    modal +=                                        ' checked />'													
+												}else{
+	modal +=                                          '/>'
+												}
+	modal +=								'<label class="form-check-label" for="inlineRadio2">오후</label>'
+	modal +=							'</div>'
+	modal +=						'</div>'
+	modal +=						'<div class="col-1"><p>신청일자</p></div>'
+	modal +=						'<div class="col-3">'
+	modal +=                            '<input type="hidden" name="vIdx" value="'+obj.vIdx+'">'
+	modal +=                            '<input type="date" id="vAppdate'+obj.vIdx+'" class="form-control flatpickr" name="vAppdate" placeholder="YYYY-MM-DD" maxlength="10" '  
+														if(obj.vAppdate != "" || obj.vAppdate != null) {
+    modal +=                                             	'value="'+obj.vAppdate.split(" ",1)+'"/>'
+														}else{
+	modal +=												' />'													
+														}
+	modal +=						'</div>'
+	modal +=						'<div class="col-2">'
+	modal +=							'<div class="form-check form-check-inline">'
+	modal +=								'<input class="form-check-input" type="radio" name="vApptime" id="inlineRadio1" value="1"'
+												if(obj.vApptime == 1) {
+    modal +=                                        ' checked />'													
+												}else{
+	modal +=                                          '/>'
+												}
+	modal +=								'<label class="form-check-label" for="inlineRadio1">오전</label>'
+	modal +=							'</div>'
+	modal +=							'<div class="form-check form-check-inline">'
+	modal +=								'<input class="form-check-input" type="radio" name="vApptime" id="inlineRadio2" value="2"' 
+												if(obj.vApptime == 2) {
     modal +=                                        ' checked />'													
 												}else{
 	modal +=                                          '/>'
