@@ -113,9 +113,9 @@ public class AdminBabyController extends UiUtils {
 			String savefileName = uuid + "_" + file;
 			
 			//test경로
-			String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
+			//String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
 			//실제경로			
-			//String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
+			String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
 			
 			File f1 = new File(dirPath + savefileName);
 			
