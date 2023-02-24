@@ -10,7 +10,8 @@
 		t_content, 
 		t_flv, 
 		t_onair,
-		t_img_new
+		t_img_new,
+		t_date
 	</sql>
 	
 	
@@ -58,7 +59,8 @@
 			t_flv, 
 			t_onair,
 			t_img_new,
-			t_img
+			t_img,
+			t_date
 		) VALUES (
 			#{tCate ,jdbcType=VARCHAR} 		  , 	
 			#{tSubject ,jdbcType=VARCHAR}     , 
@@ -66,7 +68,8 @@
 			#{tFlv ,jdbcType=VARCHAR}	      , 
 			#{tOnair ,jdbcType=VARCHAR}		  ,  
 			#{tImgNew ,jdbcType=VARCHAR}      ,
-			#{tImgNew ,jdbcType=VARCHAR}      
+			#{tImgNew ,jdbcType=VARCHAR}      ,
+			NOW()
 		)
 	</insert>
 	 

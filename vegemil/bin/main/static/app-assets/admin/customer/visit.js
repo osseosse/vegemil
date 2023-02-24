@@ -581,6 +581,9 @@ function btnSave(idx) {
 	let check = false;
 	for(var i=0; i<form.length; i++) {
 		if(form[i].value.length < 1) {
+			if(form[i].name == "vConfdate" || form[i].name == "vAdminmemo"){
+				continue;
+			}
 			alert('처리내용을 입력해주세요');
 			return false;
 		}

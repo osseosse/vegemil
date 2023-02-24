@@ -151,6 +151,9 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 	
 	@Override
 	public boolean saveVisit(AdminVisitDTO params) {
+		
+		if(params.getVConfdate().length()<1) { params.setVConfdate(null); }
+		
 		int queryResult = 0;
 		
 		queryResult = adminCustomerMapper.updateVisit(params);
