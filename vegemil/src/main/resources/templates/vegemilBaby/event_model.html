@@ -159,13 +159,19 @@
 												<div class="col-md-12 mt80 ">
 													<div class="col-md-12">
 														<ul class="model_ul">
-														
-															<!-- <li class="mcBox">
+																													
+															<li class="mcBox" th:each="title : ${titleList}" th:id="${title.tRownum}">
 																<div class="best_day">
-																<span class="bestType01 bg_bean">1</span> January <span class="bestYear">2023</span>
+																	<span class="bestType01 bg_bean" th:text="${title.tMonth1}">1</span>
+																	<span th:text="${title.tMonth1String}"> January</span>
+																	<th:block th:if="${not #strings.isEmpty(title.tMonth1)}">
+																		<span class="bestType01 bg_bean" th:text="${title.tMonth2}">1</span>
+																		<span th:text="${title.tMonth2String}"> January</span>																	    
+																	</th:block>																	 
+																	<span class="bestYear" th:text="${title.tYear}">2023</span>																
 																</div>
-															</li> -->
-															
+															</li>
+																														
 															<li th:each="model : ${modelList}"  th:with="var=${model.ROWNUM}" th:class="md+${var}"  
 																th:classappend="${model.cRank =='1'} ? 1st"> 
 															
@@ -264,9 +270,30 @@
 															<!-- 2020 4월달 하드코딩 -->
 														</ul>
 													</div>
+													
+												
+									
+									
+									
+									
 									<script>
 									  $( document ).ready( function() {
-										$( '.md305' ).before( '<li class="mcBox"><div class="best_day"><span class="bestType01 bg_bean">1</span> January <span class="bestYear">2023</span></div></li>' );
+										
+										var titles = document.querySelectorAll(".mcBox"); //1. 타이틀 관련 리스트 모두 구하기
+										
+										for (let i = 0; i < titles.length; i++) {         //2. 타이를 리스트 for문  돌면서 
+										  let titleId = titles.item(i).getAttribute('id'); //  각각의 id값 구함
+										  
+										  if(document.querySelector(".md"+titleId)){  	  //3. 타이틀 리스트id값을 당첨자 리스트의 class이름에 대입하여 그것이 존재한다면
+											$(".md"+titleId).before(titles.item(i));      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
+										  }
+										  
+										}
+										 
+										
+										
+										  
+										/* $( '.md305' ).before( '<li class="mcBox"><div class="best_day"><span class="bestType01 bg_bean">1</span> January <span class="bestYear">2023</span></div></li>' ); */
 										$( '.md298' ).before( '<li class="mcBox"><div class="best_day"><span class="bestType01 bg_bean">12</span> December <span class="bestYear">2022</span></div></li>' );
 									    $( '.md287' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">10</span> October <span class="bestType01 bg_bean">11</span> November<span class="bestYear"> 2022</span></div></li>' );
                                         $( '.md275' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">9</span> September <span class="bestYear">2022</span></div></li>' );           
@@ -322,7 +349,14 @@
 
 	<!-- 뷰저블리 -->
    <script type="text/javascript">
-	(function(w, d, a){
+	
+   //조회된(가져온) t_rownum이 html의 t_rownum 에 있다면
+   //해당 t_rownum 클래스 앞에 특정 html요소를 붙인다.
+
+	   
+	
+   
+   (function(w, d, a){
 		w.__beusablerumclient__ = {
 			load : function(src){
 				var b = d.createElement("script");

@@ -358,9 +358,9 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	}
 	
 	
-	
 	@Override
 	public boolean insertCalenderModelTitle(AdminCalendarTitleDTO params) {
+		System.out.println(params.toString());
 		
 		int queryResult = 0;
 		queryResult= adminBabyMapper.insertCalenderModelTitle(params);		

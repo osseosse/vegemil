@@ -461,6 +461,17 @@
 	</select>
 	
 	
+	<!-- 아기모델센발대회 - 타이틀 조회-->
+	<select id='selectCalenderModelTitle'  resultType="com.vegemil.domain.AdminCalendarTitleDTO">	
+		SELECT 
+			*
+		FROM 
+			m_calendar_title
+		ORDER BY 
+			t_year DESC, t_month1 DESC;
+	</select>
+	
+	
 	<insert id ="insertCalendarModel" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO" useGeneratedKeys="true" keyProperty="cIdx"  >
 	INSERT INTO
 		m_calendar_model

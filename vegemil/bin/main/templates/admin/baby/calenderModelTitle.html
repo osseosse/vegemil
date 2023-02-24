@@ -43,8 +43,89 @@
 	    	   const tRownum = document.getElementById('tRownum').value;
 	    	   const tYear = document.getElementById('tYear').value;
 	    	   const tMonth1 = document.getElementById('tMonth1').value;
-
+	    	   const tMonth2 = document.getElementById('tMonth2').value;
+	    	   let tMonth1String ="";
+	    	   let tMonth2String ="";
 	    	   
+	    	   switch (tMonth1){
+	    	    case "1": 
+	    	      tMonth1String = "January";
+	    	      break; 
+	    	    case "2":
+	    	      tMonth1String = "February";
+	    	      break;
+	    	    case "3":
+	    	      tMonth1String = "march"; 
+	    	      break;
+	    	    case "4":
+	    	      tMonth1String = "April"; 
+	    	      break; 
+	    	    case "5":
+	    	      tMonth1String = "May"; 
+	    	      break; 
+	    	    case "6":
+	    	      tMonth1String = "June"; 
+	    	      break; 
+	    	    case "7":
+	    	      tMonth1String = "July"; 
+	    	      break; 
+	    	    case "8":
+	    	      tMonth1String = "August"; 
+	    	      break; 
+	    	    case "9":
+	    	      tMonth1String = "September"; 
+	    	      break; 
+	    	    case "10":
+	    	      tMonth1String = "October"; 
+	    	      break; 
+	    	    case "11":
+	    	      tMonth1String = "November"; 
+	    	      break; 
+	    	    case "12":
+	    	      tMonth1String = "December"; 
+	    	      break; 
+	    	  }
+	    	   switch (tMonth2){
+	    	    case "1": 
+	    	      tMonth2String = "January";
+	    	      break; 
+	    	    case "2":
+	    	      tMonth2String = "February";
+	    	      break;
+	    	    case "3":
+	    	      tMonth2String = "march"; 
+	    	      break;
+	    	    case "4":
+	    	      tMonth2String = "April"; 
+	    	      break; 
+	    	    case "5":
+	    	      tMonth2String = "May"; 
+	    	      break; 
+	    	    case "6":
+	    	      tMonth2String = "June"; 
+	    	      break; 
+	    	    case "7":
+	    	      tMonth2String = "July"; 
+	    	      break; 
+	    	    case "8":
+	    	      tMonth2String = "August"; 
+	    	      break; 
+	    	    case "9":
+	    	      tMonth2String = "September"; 
+	    	      break; 
+	    	    case "10":
+	    	      tMonth2String = "October"; 
+	    	      break; 
+	    	    case "11":
+	    	      tMonth2String = "November"; 
+	    	      break; 
+	    	    case "12":
+	    	      tMonth2String = "December"; 
+	    	      break; 
+	    	  }
+	    	   
+	    	   
+	    	   	    	   
 	    	   if(tRownum == "" || tRownum == "기준 아기모델 선택") {
 	    		   alert('기준 아기모델을 선택해주세요');
 	    		   return false;
@@ -56,31 +137,29 @@
 	    	   if(tMonth1 == "" || tMonth1 == "월") {
 	    		   alert('달을 선택해 주세요.');
 	    		   return false;
-	    	   }
-	    	   
-	    	   console.log('form', document.form);
-	    	   console.log('formData', formData);
+	    	   }	    	   
+	    	 
+	    	   console.log('titleForm', $('#titleForm').serialize());
                $.ajax({
-            	   url: '/admin/manage/baby/calenderModelTitle',
-				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
-				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-				   //data: $('#titleForm').serialize(),  //위에서 선언한 fromdata
-				   data: formData,  //위에서 선언한 fromdata
-				   type: 'POST'
-			   }).done(function(data){
-		    	   console.log('form', formData);
-
-	    	       console.log('done', data)
-	    	       if(data.result) {
-	    	    	   alert('저장되었습니다.');
-	    	    	   window.location.href = "/admin/manage/baby/calendarModel";
-	    	       }else{
-	    	    	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-	    	       }
-	           }).fail(function() {
-		    	   console.log('formData', formData)
-	        	   console.log('fail')
-	           })
+				   type: 'POST',
+            	   url: '/admin/manage/baby/calenderModelTitle',				   
+    			   dataType : "text",
+				   data: {
+						   	"tRownum" : tRownum,
+		    				"tYear" : tYear,
+		    				"tMonth1" : tMonth1, 
+		    				"tMonth1String" : tMonth1String, 
+		    				"tMonth2" : tMonth2,	   
+		    				"tMonth2String" : tMonth2String, 
+				   		 },				   		 
+			   		success:function(a){
+			   			alert('저장되었습니다.');
+		    	    	window.location.href = "/admin/manage/baby/calendarModel";
+			      	},
+			       	error:function(e){
+			    		alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');				       
+			    	}
+               })
 				
 		   } 
 	       /*]]>*/

@@ -469,10 +469,10 @@ public class AdminBabyController extends UiUtils {
 	
 	@PostMapping("/admin/manage/baby/calenderModelTitle")	
 	@ResponseBody
-	public Map<String, Object>insertCalenderModelTitle(@ModelAttribute("params") final AdminCalendarTitleDTO params, Model model,
-			HttpServletResponse response, HttpServletRequest request)throws Exception{
-		
+	public Map<String, Object>insertCalenderModelTitle(AdminCalendarTitleDTO params)throws Exception{
+
 		System.out.println(params.toString());
+		
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		
 		try {

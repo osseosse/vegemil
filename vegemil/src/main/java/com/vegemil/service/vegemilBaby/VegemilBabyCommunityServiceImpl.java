@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
-import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -259,6 +259,12 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public List<VegemilBabyCalendarModelDTO> selectModelList() {
 		return vegemilBabyMapper.selectModelList();
 	}
+	//아기모델센발대회 - 타이틀 조회
+	@Override
+	public List<AdminCalendarTitleDTO> selectCalenderModelTitle() {		
+		return vegemilBabyMapper.selectCalenderModelTitle();
+	}
+	
 	
 
 }

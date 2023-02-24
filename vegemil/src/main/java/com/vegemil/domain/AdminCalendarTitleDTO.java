@@ -11,15 +11,17 @@ public class AdminCalendarTitleDTO extends AdminCommonDTO {
 	private Long tIdx;
 
 	/** 년도 */
-	private int tYear;
+	private String tYear;
 	
 	/** 월1*/
-	private int tMonth1;
+	private String tMonth1;
+	private String tMonth1String;
 
 	/** 월2*/
-	private int tMonth2;
+	private String tMonth2;
+	private String tMonth2String;
 
 	/** 기준 아기모델 번호*/
-	private int tRownum;
+	private String tRownum;
 
 }

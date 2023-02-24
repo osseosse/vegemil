@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
@@ -65,11 +66,15 @@ public interface VegemilBabyCommunityService {
 	//아기모델 - 이달의모델 조회
 	public List<VegemilBabyCalendarModelDTO> selectModelList();
 	//아기모델 - 신청하기
-	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);
+	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);	
+	//아기모델 - 타이틀 조회
+    public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
+
 	
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);    
     public boolean isSampleForm(VegemilBabySampleDTO params);
+	
 	
        
     

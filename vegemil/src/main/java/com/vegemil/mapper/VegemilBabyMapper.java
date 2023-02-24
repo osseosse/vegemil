@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
@@ -82,6 +83,9 @@ public interface VegemilBabyMapper {
 	
 	//아기모델센발대회 - 이달의모델 조회
 	public List<VegemilBabyCalendarModelDTO> selectModelList();
+	//아기모델센발대회 - 타이틀 조회
+	public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
+
 	
 	//샘플신청
 	public int insertSampleForm(VegemilBabySampleDTO sample);
