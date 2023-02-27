@@ -464,6 +464,7 @@ public class AdminBabyController extends UiUtils {
 	@GetMapping("/admin/manage/baby/calenderModelTitle")
 	public String moveCalenderModelTitlePage(Model model) {
 		model.addAttribute("modelList", adminBabyService.selectModelRank1());  
+		model.addAttribute("titleList", adminBabyService.selectCalenderModelTitle());  
 		return "admin/baby/calenderModelTitle";		
 	}
 	
@@ -482,10 +483,24 @@ public class AdminBabyController extends UiUtils {
 		} catch (Exception e) {
 		}
 		return rtnMap;
-
-		
-				
 	}
+	
+    @RequestMapping(value = "/admin/manage/baby/deleteCalenderModelTitle/{tIdx}", method = RequestMethod.DELETE)
+    public @ResponseBody boolean deleteCalenderModelTitle(@PathVariable("tIdx") Long tIdx) {
+		System.out.println("tidx: "+ tIdx);
+    	try {	   		
+		   	boolean isDeleted = adminBabyService.deleteCalenderModelTitle(tIdx);
+	   		if (!isDeleted) {
+				return false;
+			}
+		} catch (DataAccessException e) {
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+   		
+   }
 	
 	
 	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")

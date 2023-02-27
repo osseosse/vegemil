@@ -366,7 +366,23 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		queryResult= adminBabyMapper.insertCalenderModelTitle(params);		
 		return (queryResult == 1)? true : false;		
 	}
-
+	
+	@Override
+	public List<AdminCalendarTitleDTO> selectCalenderModelTitle() {
+		return adminBabyMapper.selectCalenderModelTitle();
+	}
+	
+	@Override
+	public boolean deleteCalenderModelTitle(Long tIdx) {
+		int queryResult = 0;
+        queryResult = adminBabyMapper.deleteCalenderModelTitle(tIdx);
+		if(queryResult > 0) {
+			return true;
+		} else {
+			return false;
+		}  
+	}
+	
 	@Override
 	public boolean registerBestReview(AdminBestReviewDTO params) {
 		int queryResult = 0;
@@ -417,8 +433,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 			return true;
 		} else {
 			return false;
-		}
-               
+		}               
     }
 	
 	@Override
@@ -586,6 +601,9 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		
 		return (queryResult == 1) ? true : false;
 	}
+
+	
+	
 
 	
 	

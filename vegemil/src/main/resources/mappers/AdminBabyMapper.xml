@@ -532,7 +532,8 @@
 			t_month1_string,
 			t_month2,
 			t_month2_string,
-			t_rownum
+			t_rownum,
+			t_babyname
 		) VALUES (
 		 	  #{tYear}
 			, #{tMonth1}
@@ -540,8 +541,30 @@
 			, #{tMonth2}
 			, #{tMonth2String}
 			, #{tRownum}			
+			, #{tBabyname}			
 		)
 	</insert>
+	
+	<select id="selectCalenderModelTitle" resultType="com.vegemil.domain.AdminCalendarTitleDTO">
+		    SELECT
+		    	t_idx, 
+		    	t_year, 
+		    	t_month1, 
+		    	t_month2, 
+		    	t_rownum, 
+		    	t_babyname 
+		    FROM 
+		    	m_calendar_title 
+		    ORDER BY t_year DESC, t_month1 DESC
+	</select>
+	
+	<delete id="deleteCalenderModelTitle" parameterType="Long">
+		DELETE 
+		FROM 
+			m_calendar_title 
+		WHERE 
+			t_idx = #{tIdx}
+  	</delete>
 			
 	
 	<insert id="insertBestReview" parameterType="com.vegemil.domain.AdminBestReviewDTO">

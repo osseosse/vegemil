@@ -23,5 +23,7 @@ public class AdminCalendarTitleDTO extends AdminCommonDTO {
 
 	/** 기준 아기모델 번호*/
 	private String tRownum;
+	/** 기준 아기이름*/
+	private String tBabyname;
 
 }

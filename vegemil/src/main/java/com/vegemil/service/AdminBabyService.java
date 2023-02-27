@@ -41,6 +41,10 @@ public interface AdminBabyService {
 	public List<AdminCalendarModelDTO> selectModelRank1();	
 	
 	public boolean insertCalenderModelTitle(AdminCalendarTitleDTO adminCalendarTitleDTO);
+	
+	public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
+	
+	boolean deleteCalenderModelTitle(Long tIdx);
 	//=================== 아기달력모델  =========================
 	
 	
@@ -73,6 +77,7 @@ public interface AdminBabyService {
 	//TVCF 등록	
 	public boolean saveBabyTvcf(AdminCfDTO adminCfDTO) throws Exception;
 	//=================== TV CF관리 =========================
+
 
 	
 	

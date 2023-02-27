@@ -64,6 +64,10 @@ public interface AdminBabyMapper {
 	public List<AdminCalendarModelDTO> selectModelRank1();
 	
 	public int insertCalenderModelTitle(AdminCalendarTitleDTO adminCalendarTitleDTO);
+	
+	public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
+
+	public int deleteCalenderModelTitle(Long tIdx);
 	//=================== 아기달력모델  =========================	
 	
 	
