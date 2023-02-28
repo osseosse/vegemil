@@ -13,7 +13,7 @@ public interface ProductMapper {
 
 	public List<ProductDTO> selectProductList(String searchKeyword);
 	
-	public List<ProductDTO> selectRecProduct(String categoryCode);
+	public List<ProductDTO> selectRecProduct(ProductDTO productDto);
 	
 	public List<ProductDTO> selectBrandStroyList(String categoryCode);
 

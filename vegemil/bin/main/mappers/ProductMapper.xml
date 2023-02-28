@@ -90,19 +90,16 @@
 	    ORDER BY p_idx ASC
 	</select>
 	
-	<select id="selectRecProduct" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
+	<select id="selectRecProduct" parameterType="com.vegemil.domain.ProductDTO" resultType="com.vegemil.domain.ProductDTO">
 		SELECT 
 			 <include refid="productColumns" />
 		FROM          
 			 m_product           
 		WHERE p_active = 1
-		  <if test="searchKeyword != null and searchKeyword != ''">  
-		  and category_code = #{categoryCode}
-		  </if>                 
-	    ORDER BY 
-	    	  display_priority desc
-	    LIMIT
-	    	  4
+		  <if test="categoryCode != null and categoryCode != ''">
+		  	and category_code = #{categoryCode}
+		  	and p_idx != #{pIdx}
+		  </if> 
 	</select>
 
 	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
