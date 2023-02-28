@@ -310,7 +310,7 @@ var createTable = function() {
       		targets: 11,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sDesctime']==null)	return '-';
+      			if(full['sDesctime']==null || full['sDesctime']== "")	return '-';
       			else	return full['sDesctime'].substr(0, 7);
       		}
       	}
@@ -395,35 +395,63 @@ var createTable = function() {
 
 function getModal(obj) {
 	
-	$('.photoBox1 .rotateL1'+obj.sIdx).click(function() { 
+	$('.rotateL1'+obj.sIdx).click(function() { 
     	obj.sAngle = -90; 
     	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
     	angleInfo1.value = obj.sAngle;	  
-    	$(".imageToRotate1"+obj.sIdx).rotate(-90);
-
+    	//$(".imageToRotate1"+obj.sIdx).rotate(-90);
+    	$(".imageToRotate1"+obj.sIdx).css({
+    	      "-webkit-transform": "rotate(-90deg)",
+    	      "-moz-transform": "rotate(-90deg)",
+    	      "-o-transform": "rotate(-90deg)",
+    	      "-ms-transform": "rotate(-90deg)",
+    	      "transform": "rotate(-90deg)"
+    	    });
+    	 
     	});
     
     $('.photoBox1 .rotateR1'+obj.sIdx).click(function() { 
     	obj.sAngle = 90; 
     	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
     	angleInfo1.value = obj.sAngle;	  
-    	$(".imageToRotate1"+obj.sIdx).rotate(90);
-
+    	//$(".imageToRotate1"+obj.sIdx).rotate(90);
+    	$(".imageToRotate1"+obj.sIdx).css({
+  	      "-webkit-transform": "rotate(90deg)",
+  	      "-moz-transform": "rotate(90deg)",
+  	      "-o-transform": "rotate(90deg)",
+  	      "-ms-transform": "rotate(90deg)",
+  	      "transform": "rotate(90deg)"
+  	    });
+    	
     	});
     
     $('.photoBox1 .rotateD1'+obj.sIdx).click(function() { 
     	obj.sAngle = 180; 
     	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
     	angleInfo1.value = obj.sAngle;	  
-    	$(".imageToRotate1"+obj.sIdx).rotate(180);
+    	//$(".imageToRotate1"+obj.sIdx).rotate(180);
+    	$(".imageToRotate1"+obj.sIdx).css({
+  	      "-webkit-transform": "rotate(180deg)",
+  	      "-moz-transform": "rotate(180deg)",
+  	      "-o-transform": "rotate(180deg)",
+  	      "-ms-transform": "rotate(180deg)",
+  	      "transform": "rotate(180deg)"
+  	    });
     	});
     
     $('.photoBox1 .rotateC1'+obj.sIdx).click(function() { 
     	obj.sAngle = 0; 
     	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
     	angleInfo1.value = obj.sAngle;	  
-    	$(".imageToRotate1"+obj.sIdx).rotate(0);
-    	});
+    	//$(".imageToRotate1"+obj.sIdx).rotate(0);
+    	$(".imageToRotate1"+obj.sIdx).css({
+  	      "-webkit-transform": "rotate(0deg)",
+  	      "-moz-transform": "rotate(0deg)",
+  	      "-o-transform": "rotate(0deg)",
+  	      "-ms-transform": "rotate(0deg)",
+  	      "transform": "rotate(0deg)"
+  	    });
+    });
 	
 	
 	
@@ -453,7 +481,7 @@ function getModal(obj) {
 	modal +=						'</tr>'
 	modal +=						'<tr>'
 	modal +=							'<th>등록일시<span class="text-warning"> '+obj.sWritedate + obj.sWritetime+'</span></th>'
-									if(obj.sRank != null) {
+									if(obj.sRank == "1" || obj.sRank == "2") {
 	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-success">Y</span></th>'
 									}else{
 	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-danger">N</span></th>'									
@@ -479,8 +507,8 @@ function getModal(obj) {
 	modal +=											'<button type="button"  class="rotateR1'+obj.sIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
 	modal +=											'<button type="button"  class="rotateD1'+obj.sIdx+' btn btn-outline-primary btn-sm">아래</button>'
 	modal +=											'<button type="button"  class="rotateC1'+obj.sIdx+' btn btn-outline-primary btn-sm">취소</button>'
-	modal +=											'<input type="text"  name="sAngle" id="angleInfo1'+obj.sIdx+'" value='+obj.sAngle+' >'
-//	modal +=											'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+obj.sImage+'" class="rounded"></p>'
+	modal +=											'<input type="hidden"  name="sAngle" id="angleInfo1'+obj.sIdx+'" value='+obj.sAngle+' >'
+//	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="/image/'+obj.sImage+'" width="100%"/></p>'
 	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="/web/upload/vegemilBaby/'+obj.sImage+'"  width="100%"></p>'
 	modal +=										'</div>'
 	modal +=									'</div>'
@@ -583,7 +611,7 @@ function btnSave(idx) {
 	   console.log('done', data)
 	   if(data.result) {
 	   	   alert('저장되었습니다.');
-	   	   //$('.datatables-basic').DataTable().ajax.reload();
+	   	   location.reload();
 	   }else{
 	  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
 	   }

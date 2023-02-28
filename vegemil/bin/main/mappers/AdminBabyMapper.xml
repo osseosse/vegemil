@@ -452,36 +452,7 @@
 		 ORDER BY c_write_date DESC		 
 		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
-	
-	
-	<!-- <select id="selectCalendarModelList" parameterType="hashMap" resultType="com.vegemil.domain.AdminCalendarModelDTO">
-		SELECT * /* selectCalendarModelList by AdminEventMapper.xml */
-		FROM
-			(SELECT 
-				<include refid="calendarModelColumns" />
-				, m.m_id
-			  FROM m_calendar_model c LEFT JOIN m_member m ON c.c_name = m.m_name AND c.c_hp = m.m_hp) subQuery
-			  
-			  WHERE 1 =1
-			  
-			  <if test='sStartdate != "" '>
-			  	AND c_write_date &gt;= DATE(#{sStartdate, jdbcType=VARCHAR})
-			  </if>
-			  <if test='sEnddate != "" '>
-			  	AND c_write_date &lt;= DATE(#{sEnddate, jdbcType=VARCHAR})
-			  </if>
-			  <if test='gubun == "1" '>
-			  </if>
-			  <if test='searchType == "mName" '> 작성자명
-			  	AND c_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
-			  </if>
-			  <if test='searchType == "bName" '> 아기이름
-			  	AND c_baby_name LIKE CONCAT('%', #{searchWord, jdbcType=VARCHAR}, '%')
-			  </if>			  
-		 ORDER BY c_write_date DESC		 
-		 LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
-	</select> -->
-	
+		
 		
 	<select id="selectCalendarModelTotalCount" parameterType="hashMap" resultType="int">
 		SELECT /* selectCalendarModelTotalCount by AdminEventMapper.xml */
@@ -598,9 +569,16 @@
 		/* updateBestReview by AdminBabyMapper.xml */ 
 		UPDATE m_sns
 		SET
-			  s_desctime = NOW()
-			, s_rank = #{sRank}
-			, s_angle = #{sAngle}
+			<choose>
+				<when test='sRank == "1" or sRank == "2" '>
+			  		s_desctime = NOW(),
+			  	</when>
+			  	<otherwise>
+					s_desctime = '',			  
+			  	</otherwise>			
+			</choose>
+			s_rank = #{sRank},
+			s_angle = #{sAngle}
 		WHERE
 			s_idx = #{sIdx}
 	</update>
