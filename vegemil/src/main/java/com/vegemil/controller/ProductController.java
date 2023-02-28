@@ -62,7 +62,7 @@ public class ProductController extends UiUtils {
 			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/productList", Method.GET, null, model);
 		}
 		
-		List<ProductDTO> recProduct = productService.getRecProduct(product.getCategoryCode());
+		List<ProductDTO> recProduct = productService.getRecProduct(product);
 		model.addAttribute("product", product);
 		model.addAttribute("recProduct", recProduct);
 

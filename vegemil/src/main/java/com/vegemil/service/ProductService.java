@@ -12,6 +12,6 @@ public interface ProductService {
 	
 	public List<ProductDTO> getBrandStroyList(String categoryCode);
 	
-	public List<ProductDTO> getRecProduct(String categoryCode);
+	public List<ProductDTO> getRecProduct(ProductDTO productDto);
 
 }

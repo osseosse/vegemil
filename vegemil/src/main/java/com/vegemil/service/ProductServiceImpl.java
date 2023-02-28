@@ -1,7 +1,11 @@
 package com.vegemil.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,16 +53,40 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<ProductDTO> getRecProduct(String categoryCode) {
+	public List<ProductDTO> getRecProduct(ProductDTO productDto) {
 		
-		List<ProductDTO> productList = Collections.emptyList();
-
+		List<ProductDTO> productList = new ArrayList<>();
+		Set<Integer> randomIdxSet = new HashSet<>();
+		
 		int productTotalCount = productMapper.selectProductTotalCount();
-
+		
 		if (productTotalCount > 0) {
-			productList = productMapper.selectRecProduct(categoryCode);
+			if(productDto.getCategoryCode().equals("S") || productDto.getCategoryCode().equals("W") || productDto.getCategoryCode().equals("P")) {
+				productDto.setCategoryCode("V");
+			}
+			productList = productMapper.selectRecProduct(productDto);
+			
+			int listSize = productList.size();
+			
+			if(listSize < 5) {
+				return productList;
+			}
+			
+			while(true) {
+				randomIdxSet.add((int)(Math.random()*listSize-1));
+				if(randomIdxSet.size()==4) {
+					break;
+				}
+			}
+			
+			Iterator<Integer> iter = randomIdxSet.iterator();
+			
+			while(iter.hasNext()) {
+				productList.add(productList.get((int) iter.next())); 
+			}
+			
+			productList = productList.subList(listSize, productList.size());
 		}
-
 		return productList;
 	}
 
