@@ -96,9 +96,12 @@
 		FROM          
 			 m_product           
 		WHERE p_active = 1
+			  AND p_idx != 18 
+			  AND p_idx != 21
+			  AND p_idx != 12
 		  <if test="categoryCode != null and categoryCode != ''">
-		  	and category_code = #{categoryCode}
-		  	and p_idx != #{pIdx}
+		  	AND category_code = #{categoryCode}
+		  	AND p_idx != #{pIdx}
 		  </if> 
 	</select>
 
