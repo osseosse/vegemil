@@ -468,6 +468,7 @@
 	.bg_Blue {background:#7AAAB4}
 	.bg_Blue2 {background:#008BD5}
 	.bg_Pupple {background:#7375FB}
+	.bg_edaymall {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_edaymall.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.line_gray_gray {border-bottom:1px solid #DCDCDC}
 	.line_top_gray {border-top:1px solid #DCDCDC}
 	.line_bottom_gray {border-bottom:1px solid #DCDCDC}
@@ -533,6 +534,7 @@
 	.h280 {height:280px}
 	.h260 {height:260px}
 	.h230 {height:230px}
+	.h220 {height:220px}
 	.h200 {height:200px}
 	.h190 {height:190px}
 
@@ -624,10 +626,13 @@
 	.btnType27 a {color:#fff; display:inline-block; padding:6px 20px}
 	.btn-admin {background:#000; padding:1px 15px; border-radius:10px}
 	.btn-admin a{color:#fff} 
-
 	.btnType28 { border-radius:10px; max-width:280px; width:100%; text-align:Center; background:#fd8156}
 	.btnType28 a {padding:13px 0; display:inline-block; width:100%; color:#fff}
 	.btnType28 a:hover {color:#fff}
+	
+	.btnType29 { background:#fff; border-radius:5px; color:#222;display:inline-block; font-size:16px; padding-right:20px; border:1px solid #DCDCDC; border-radius:5px }
+	.btnType29 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat right 17px; background-size:7px; padding:9px 70px 9px 20px; display:inline-block;   }
+
 
 	ul.foot-btn-box {position:relative}
 	ul.foot-btn-box li {display:inline-block; margin-left:5px}
@@ -2146,6 +2151,7 @@ button:hover:before {content:"Reply!"}
 	table.table-sim td:first-child {text-align:left}
 	table.table-sim td {text-align:center}
 	table.table-sim tr.last-td {background:#F1F4F5; color:#E3A62C}
+	.bnr_color {color:#CBE5E9}
 	/* 3000 웹진신청*/
 	table.int {width:100%; border:1px solid #ccc; border-radius:10px; }
 	table.int th {padding:10px 10px 5px 30px; vertical-align:top; }
@@ -2261,7 +2267,13 @@ button:hover:before {content:"Reply!"}
 	text-align:left; display:inline-block; padding:2px 10px; border:1px solid #DCDCDC}
 	.brand_thumb a:hover {color:#222; }
 	
-
+	/* 3000 브랜드 이데이몰 배너 */
+	.bnrBrand { position:relative; }
+	.bnrBrand .bnr_copy {position:relative; text-align:left; width:100%; }
+	.bnrBrand .bnr_copy li {display:inline-block; vertical-align:middle; margin:25px 0}
+	.bnrBrand .bnr_copy li:nth-child(2){margin-left:40px;margin-top:100px }  
+	.bnr_img img {position:absolute; bottom:0; right:20px }
+	.bg_edaymall .col-md-6 {position:relative; vertical-align:bottom;  }
 
 
 	/* 3000 브랜드 기본 */
@@ -2321,9 +2333,10 @@ button:hover:before {content:"Reply!"}
 	ul.prd_acd li.expand.default .outType{display:none}
 	ul.prd_acd li.expand.default .inType{display:block}
 	ul.prd_acd li.expand.default .inType.centerH {max-height:500px; max-width:420px; width:100%;  background:#fff; }
-	ul.prd_acd li.expand.default .inType.centerH .whiteBox {color:#222; padding:20% 0 ; position:relative }
+	ul.prd_acd li.expand.default .inType.centerH .whiteBox {color:#222; padding:15% 0 ; position:relative }
 	ul.prd_acd li.expand.default .inType.centerH .whiteBox p:first-child {border-bottom:1px solid #222; padding-bottom:10px; display:inline-block} 
 	ul.prd_acd li.expand.default .inType.centerH .inType_ico {max-width:66px; margin:0 auto}
+	ul.prd_acd li.expand.default .inType.centerH .inType_pd {max-width:109px; margin:0 auto}
 	
 	/* 3000 쿡앤쿡 */
 	.cook-wrap {position:relative; width:100%}
@@ -2659,7 +2672,8 @@ button:hover:before {content:"Reply!"}
 	.btnType16 { background:#fff; border-radius:5px; color:#222;display:inline-block; font-size:14px; padding-right:20px; border:1px solid #DCDCDC; border-radius:5px; }
 	.btnType16 a {color:#222}
 	.btnType16 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat right 15px; background-size:5px; padding:9px 0px 9px 20px; display:inline-block;width:120px   }
-
+	.btnType29 { background:#fff; border-radius:5px; color:#222;display:inline-block; font-size:14px; padding-right:10px; border:1px solid #DCDCDC; border-radius:5px }
+	.btnType29 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat right 13px; background-size:7px; padding:7px 50px 7px 15px; display:inline-block;   }
 
 	/* 1760 마이페이지 */
 	.myBox {position:relative; width:100%; padding:40px 25px}
@@ -2730,10 +2744,6 @@ button:hover:before {content:"Reply!"}
 	.brand_bnr > div:nth-child(4) { padding-left:90px; }
 	.brand_bnr > div:nth-child(5) { padding-left:90px; }
 	.brand_bnr > div:nth-child(6) { padding-left:90px; }
-
-
-
-	
 	ul.brand_cook li {margin-bottom:20px; }
 	ul.brand_cook li:first-child {max-width:150px; margin-right:10px; border-radius:10px; width:auto; width:26%}
 	ul.brand_cook li:nth-child(2) {width:70%}
@@ -2741,6 +2751,22 @@ button:hover:before {content:"Reply!"}
 	.simBox li {display:inline-block; width:30%; text-align:center; max-width:250px; margin:0 50px}
 	ul.baseList li {display:inline-block; padding:10px 4%;  }
 	.reviewLine  {width:50%}
+
+	/* 1760 브랜드 이데이몰 배너 */
+	.bnrBrand { position:relative; }
+	.bnrBrand .bnr_copy {position:relative; text-align:left; width:100%; }
+	.bnrBrand .bnr_copy li {display:inline-block; vertical-align:middle; margin:25px 0}
+	.bnrBrand .bnr_copy li:nth-child(2){margin-left:10px;margin-top:100px }  
+	.bnr_img img {position:absolute; bottom:0; right:20px ; width:330px}
+	.bg_edaymall .col-md-6 {position:relative; vertical-align:bottom;  }
+
+	
+	
+	
+
+
+
+
 
 	 /* 1760 연혁  */
     .historyBg .leftRoundBox{left: 30px;}
@@ -3056,6 +3082,14 @@ button:hover:before {content:"Reply!"}
 	.banner-logo.easy li:nth-child(2) {width:75%}
 	.brandMaintxt {max-width:75%} 
 	.bnr_brand04 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
+	
+
+	/* 1200 브랜드 이데이몰 배너 */
+	.bnrBrand { position:relative; }
+	.bnrBrand .bnr_copy {position:relative; text-align:left; width:100%; }
+	.bnrBrand .bnr_copy li {display:block; vertical-align:middle; margin:20px 0}
+	.bnrBrand .bnr_copy li:nth-child(2){margin-left:0px;margin-top:0px }  
+	.bnr_img img {position:absolute; bottom:0; right:20px ; width:330px}
 
 
 	/* 1200 제품상세 Tab */
@@ -3197,6 +3231,7 @@ button:hover:before {content:"Reply!"}
 	
 	
 	
+
 	/* //1200 브랜드 및 공통영역 > 카테고리 */
 
 
@@ -3680,6 +3715,8 @@ button:hover:before {content:"Reply!"}
 	.btnType24 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat 90% 18px; background-size:5px; padding:11px 0px 11px 20px; display:inline-block; width:100%; font-size: 12px;}
 	.btnType25 {margin:0 auto; }
 	.btnType28 a {padding:7px 0; }
+	.btnType29 { background:#fff; border-radius:5px; color:#222;display:inline-block; font-size:14px; padding-right:20px; border:1px solid #DCDCDC; border-radius:5px }
+	.btnType29 span {background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_blackRight.png) no-repeat right 12px; background-size:7px; padding:7px 50px 7px 15px; display:inline-block;   }
 	
 	/* 서브메뉴 */
 	.subMenu {margin-top:-34px}
@@ -3795,6 +3832,15 @@ button:hover:before {content:"Reply!"}
 	.sim .f80 {font-size:30px}
 	.sim .f60 {font-size:30px}
 	.simBox .f23 {font-size:15px}
+
+	/* 992 브랜드 이데이몰 배너 */
+	.bnrBrand { position:relative; }
+	.bnrBrand .bnr_copy {position:relative; text-align:left; width:100%;z-index:100 }
+	.bnrBrand .bnr_copy li {display:block; vertical-align:middle; margin:20px 0}
+	.bnrBrand .bnr_copy li:first-child p:nth-child(3) {display:none}
+	.bnrBrand .bnr_copy li:nth-child(2){margin-left:0px;margin-top:0px }  
+	.bnr_img img {position:absolute; bottom:0; right:10px ; width:230px}
+
 
 
 	/* 992 공정거래 */
