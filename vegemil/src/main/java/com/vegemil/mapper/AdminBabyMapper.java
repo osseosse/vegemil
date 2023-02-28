@@ -81,8 +81,11 @@ public interface AdminBabyMapper {
 	public int deleteBestReview(Map<String, Object> paramMap);
 
 	public List<AdminBestReviewDTO> selectBestReviewList(Map<String, Object> paramMap);
+	public List<AdminBestReviewDTO> selectBestReviewList2(Map<String, Object> paramMap);
 
 	public int selectBestReviewTotalCount(Map<String, Object> paramMap);
+	
+	public String selectBestReviewImg(AdminBestReviewDTO params);
 	//=================== 후기이벤트  =========================
 	
 	
@@ -115,6 +118,8 @@ public interface AdminBabyMapper {
 	public int updateBabyTvcf(AdminCfDTO adminCfDTO);
 
 	public int updateBabyTvcfFileInfo(AdminCfDTO adminCfDTO);
+
+
 
 	
 	

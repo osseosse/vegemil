@@ -156,7 +156,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('carateTable')
+	console.log('createTable')
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('#bestReview').DataTable();
@@ -394,6 +394,39 @@ var createTable = function() {
 }
 
 function getModal(obj) {
+	
+	$('.photoBox1 .rotateL1'+obj.sIdx).click(function() { 
+    	obj.sAngle = -90; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
+    	angleInfo1.value = obj.sAngle;	  
+    	$(".imageToRotate1"+obj.sIdx).rotate(-90);
+
+    	});
+    
+    $('.photoBox1 .rotateR1'+obj.sIdx).click(function() { 
+    	obj.sAngle = 90; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
+    	angleInfo1.value = obj.sAngle;	  
+    	$(".imageToRotate1"+obj.sIdx).rotate(90);
+
+    	});
+    
+    $('.photoBox1 .rotateD1'+obj.sIdx).click(function() { 
+    	obj.sAngle = 180; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
+    	angleInfo1.value = obj.sAngle;	  
+    	$(".imageToRotate1"+obj.sIdx).rotate(180);
+    	});
+    
+    $('.photoBox1 .rotateC1'+obj.sIdx).click(function() { 
+    	obj.sAngle = 0; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
+    	angleInfo1.value = obj.sAngle;	  
+    	$(".imageToRotate1"+obj.sIdx).rotate(0);
+    	});
+	
+	
+	
 	console.log('obj---------------',obj)
 	let modal = "";
 	modal += '<form name="modalForm'+obj.sIdx+'" id="modalForm'+obj.sIdx+'" method="post">'
@@ -441,11 +474,14 @@ function getModal(obj) {
 	modal +=									'<div class="form-check">'
 	modal +=										'<input type="radio" id="#" name="photoSelection" class="form-check-input" checked />'
 	modal +=										'<label class="form-check-label" for="#">대표이미지로 선택</label>'
-	modal +=										'<div class="mt-1 photoBox1">'
-	modal +=											'<button type="button"  class="rotateL btn btn-outline-primary btn-sm" >좌</button>'
-	modal +=											'<button type="button"  class="rotateR btn btn-outline-primary btn-sm" >우</button>'		
+	modal +=										'<div class="mt-1 photoBox1">'		
+	modal +=											'<button type="button"  class="rotateL1'+obj.sIdx+' btn btn-outline-primary btn-sm">왼쪽</button>'
+	modal +=											'<button type="button"  class="rotateR1'+obj.sIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
+	modal +=											'<button type="button"  class="rotateD1'+obj.sIdx+' btn btn-outline-primary btn-sm">아래</button>'
+	modal +=											'<button type="button"  class="rotateC1'+obj.sIdx+' btn btn-outline-primary btn-sm">취소</button>'
+	modal +=											'<input type="text"  name="sAngle" id="angleInfo1'+obj.sIdx+'" value='+obj.sAngle+' >'
 //	modal +=											'<p class="mt-1"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+obj.sImage+'" class="rounded"></p>'
-	modal +=											'<p class="mt-1"><img src="/web/upload/vegemilBaby/'+obj.sImage+'" class="rounded"></p>'
+	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="/web/upload/vegemilBaby/'+obj.sImage+'"  width="100%"></p>'
 	modal +=										'</div>'
 	modal +=									'</div>'
 	modal +=								'</dd>'
@@ -485,6 +521,20 @@ function getModal(obj) {
 	modal +=														'<label class="form-check-label" for="#">2등</label>'
 	modal +=													'</div>'
 	modal +=												'</dd>'
+		
+	modal +=												'<dd>'
+	modal +=													'<div class="form-check">'
+	modal +=														'<input type="radio" id="#" name="sRank" class="form-check-input" value=""" '
+																if(!obj.sRank) {
+    modal +=														'checked />'
+																}else {
+	modal +=														' />'
+																}
+	modal +=														'<label class="form-check-label" for="#">미선정</label>'
+	modal +=													'</div>'
+	modal +=												'</dd>'		
+		
+		
 	modal +=											'</dl>'
 	modal +=										'</div>'
 	modal +=									'</div>'

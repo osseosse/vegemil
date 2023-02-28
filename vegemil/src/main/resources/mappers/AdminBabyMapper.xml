@@ -43,6 +43,7 @@
 		,s_edayId
 		,s_sns
 		,s_image
+		,s_angle
 		,s_rank
 		,s_desctime
 	</sql>
@@ -599,6 +600,7 @@
 		SET
 			  s_desctime = NOW()
 			, s_rank = #{sRank}
+			, s_angle = #{sAngle}
 		WHERE
 			s_idx = #{sIdx}
 	</update>
@@ -658,6 +660,17 @@
 		 #{idx, jdbcType=VARCHAR}
 	  </foreach>
 	</delete>
+	
+	<select id="selectBestReviewImg" parameterType="long" resultType="String">
+		SELECT 
+			s_image 
+		FROM 
+			m_sns 
+		WHERE s_idx = #{sIdx};		
+	</select>
+	
+	
+	
 	
 	<insert id="insertSampleBaby" parameterType="com.vegemil.domain.AdminSampleBabyDTO">
 		/* insertSampleBaby by SampleBabyMapper.xml */

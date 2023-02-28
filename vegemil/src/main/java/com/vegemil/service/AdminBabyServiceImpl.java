@@ -388,8 +388,36 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		int queryResult = 0;
 
 		if (params.getSIdx() == null) {
-			queryResult = adminBabyMapper.insertBestReview(params);
+			queryResult = adminBabyMapper.insertBestReview(params); 
 		} else {
+			int angle = params.getSAngle();	
+			System.out.println("사진 회전각도: "+ angle);
+			
+			if(angle != 0) {
+				System.out.println("사진이 회전됐습니다.");
+				
+				//저장된 이미지이름  조회			
+				String storedImgName = adminBabyMapper.selectBestReviewImg(params);
+				
+				try {					
+					//이미지조회 - 실제경로
+					BufferedImage originalImage = ImageIO.read(new File(uploadPath +"/upload/vegemilBaby/" +storedImgName));
+					//이미지조회- Test로컬경로
+					//BufferedImage originalImage = ImageIO.read(new File("D:/upload/admin/vegemilbaby/"+storedImgName));
+					
+					BufferedImage rotatedImage = rotateImage(originalImage, angle);	
+					
+					//회전된 이미지 저장 - 실제경로
+					File rotatedImageFile = new File(uploadPath +"/upload/vegemilBaby/" +storedImgName);						
+					//회전된 이미지 저장 - Test로컬경로
+		            //File rotatedImageFile = new File("D:/upload/admin/vegemilbaby/"+storedImgName);
+		            
+					ImageIO.write(rotatedImage, "jpg", rotatedImageFile);
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}	
 			queryResult = adminBabyMapper.updateBestReview(params);
 		}
 
@@ -414,6 +442,7 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 			
 			paramMap.put("start", start);
 			paramMap.put("length", length);
+			//BestReviewList = adminBabyMapper.selectBestReviewList(paramMap);
 			BestReviewList = adminBabyMapper.selectBestReviewList(paramMap);
 		}
 		
