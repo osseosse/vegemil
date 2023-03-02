@@ -5,6 +5,7 @@ var tag = document.createElement('script');
 var player;
 var player2;
 var player3;
+var player4;
 function onYouTubePlayerAPIReady() {
   // TVCF
   player = new YT.Player('player', {
@@ -18,6 +19,20 @@ function onYouTubePlayerAPIReady() {
       rel: 0
     }
   });
+  
+  // 동영상 공모전
+  player4 = new YT.Player('player4', {
+   // width: 640,
+   // height: 400,
+    videoId: '6XgGro9X8_o',
+    "playerVars": {
+      //autoplay: 1,
+      showinfo:0,
+      controls:1,
+      rel: 0
+    }
+  });
+  
   // Radio
   player2 = new YT.Player('player2', {
    // width: 640,
@@ -52,6 +67,17 @@ function onYouTubePlayerAPIReady() {
 $('.imge').on('click', function () {
     var url = $(this).attr('data-id');
     player.cueVideoById(
+      {
+        videoId: url
+      }
+    );
+    player.playVideo();
+});
+
+// 동영상 공모전
+$('.imge4').on('click', function () {
+    var url = $(this).attr('data-id');
+    player4.cueVideoById(
       {
         videoId: url
       }
