@@ -226,6 +226,7 @@
             m_webzine
         WHERE
 			file_no !='index.aspx'
+			AND title != '이벤트'
 		and 
 			qrt_year = #{qrtYear}
         Order by
