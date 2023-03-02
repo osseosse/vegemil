@@ -102,7 +102,11 @@
 		  <if test="categoryCode != null and categoryCode != ''">
 		  	AND category_code = #{categoryCode}
 		  	AND p_idx != #{pIdx}
-		  </if> 
+		  </if>
+		Order by
+        	rand()
+		Limit
+			4 
 	</select>
 
 	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
