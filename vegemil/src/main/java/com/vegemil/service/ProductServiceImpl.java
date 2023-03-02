@@ -89,5 +89,14 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return productList;
 	}
+	
+	@Override
+	public boolean updateAddCount(Long pIdx) {
+		
+		int queryResult = 0;
+		queryResult = productMapper.updateAddCount(pIdx);
+
+		return (queryResult == 1) ? true : false;
+	}
 
 }

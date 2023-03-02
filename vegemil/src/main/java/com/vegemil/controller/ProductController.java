@@ -1,11 +1,15 @@
 package com.vegemil.controller;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.ProductDTO;
@@ -69,4 +73,15 @@ public class ProductController extends UiUtils {
 		return "product/detail";
 	}
 
+	@GetMapping("/product/addCount")
+	public @ResponseBody Map<String, Object> updateProductCount(@RequestParam("pIdx") Long pIdx) {
+		
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		
+		boolean isUpdate = productService.updateAddCount(pIdx);
+		rtnMap.put("result", isUpdate);
+		
+		return rtnMap;
+	}
+	
 }

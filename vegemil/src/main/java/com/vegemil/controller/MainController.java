@@ -25,15 +25,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.JsonObject;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminCalendarModelDTO;
 import com.vegemil.domain.MediaNewsDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.service.AdminService;
 import com.vegemil.service.CompanyService;
 import com.vegemil.service.MemberService;
 import com.vegemil.util.UiUtils;
@@ -46,6 +49,9 @@ public class MainController extends UiUtils {
 	
 	@Autowired
 	private CompanyService companyService;
+	
+	@Autowired
+	private AdminService adminService;
 	
 	@RequestMapping(value = "/")
 	public String moveIndex(Model model, Authentication authentication) throws Exception {
@@ -225,7 +231,6 @@ public class MainController extends UiUtils {
 	}
 	
 	
-	
 	//정적 이미지 불러오기
 	@GetMapping("/web/upload/MediaNews/{filename}")
 	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
@@ -243,6 +248,26 @@ public class MainController extends UiUtils {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
+	
+	@PostMapping("/analysis/agentCount")
+	@ResponseBody
+	public JsonObject updateAgentCount(@RequestBody Map<String, Object> agent) {
+
+		JsonObject jsonObj = new JsonObject();
+			
+		if(agent != null) {
+	        boolean isRegistered1 = adminService.updateAgentCount(agent);
+	        jsonObj.addProperty("result1", isRegistered1);
+	        
+	        if(agent.get("mUrl") != null) {
+	        	
+	        	boolean isRegistered2 = adminService.registerUrl(agent.get("mUrl").toString());
+	        	jsonObj.addProperty("result2", isRegistered2);
+	        }
+		}
+
+		return jsonObj;
 	}
 	
 }

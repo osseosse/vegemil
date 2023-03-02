@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.AdminDTO;
 import com.vegemil.domain.MemberDTO;
@@ -111,6 +112,30 @@ public class AdminService implements UserDetailsService {
 		
 		if (queryResult != 0) {
 			queryResult = adminMapper.activeAdmin(member);
+		}
+
+		return (queryResult == 1) ? true : false;
+	}
+    
+	@Transactional
+	public boolean updateAgentCount(Map<String, Object> params) {
+		int queryResult = 0;
+		
+		queryResult = adminMapper.updateAgentCount(params);
+
+		return (queryResult == 1) ? true : false;
+	}
+	
+	@Transactional
+	public boolean registerUrl(String url) {
+		int queryResult = 0;
+		
+		int result = adminMapper.selectUrlCount(url);
+		
+		if(result == 0) {
+			queryResult = adminMapper.insertUrl(url);
+		} else {
+			queryResult = adminMapper.updateUrl(url);
 		}
 
 		return (queryResult == 1) ? true : false;

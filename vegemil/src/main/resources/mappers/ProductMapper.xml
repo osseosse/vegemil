@@ -154,5 +154,14 @@
 		 or
 		   rep_product_cate != 0
 	</select>
+	
+	<update id="updateAddCount" parameterType="Long">
+		UPDATE
+			m_product
+		SET
+			count = count + 1
+		WHERE
+			p_idx = #{pIdx}
+	</update>
 
 </mapper>

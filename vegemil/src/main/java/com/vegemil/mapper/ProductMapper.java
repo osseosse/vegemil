@@ -21,4 +21,6 @@ public interface ProductMapper {
 
 	public int selectBrandStroyCount();
 	
+	public int updateAddCount(Long pIdx);
+	
 }

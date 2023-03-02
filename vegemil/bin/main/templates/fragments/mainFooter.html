@@ -54,22 +54,7 @@
 		</div>
 	</div>
 </div>
-<script th:inline="javascript">
-/*<![CDATA[*/
-
-	$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-	
-      function(json) {
-        if(json.ip == '211.204.41.41' || json.ip == '115.88.198.133') {
-        	$('#adminLink').css('display', 'block');
-        } else {
-        	$('#adminLink').css('display', 'none');
-        }
-      }
-    );
-
-/*]]>*/
-</script>
+<script type="text/javascript" src="/common/js/analysis.js"></script>
 <script type="text/x-javascript">
 (function(w, d, a){
     w.__beusablerumclient__ = {

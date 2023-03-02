@@ -127,5 +127,56 @@
 	    AND
 	        m_name = #{mName, jdbcType=VARCHAR}
 	</update>
-
+	
+	<update id="updateAgentCount" parameterType="hashMap">
+		UPDATE m_user_agent_count
+		SET
+			<if test="mType == 'mobile'">
+				mobile = mobile + 1
+			</if>
+			<if test="mType == 'pc'">
+				pc = pc + 1
+			</if>
+			<if test="mAgent == 'android'">
+				, android = android + 1
+			</if>
+			<if test="mAgent == 'ios'">
+				, ios = ios + 1
+			</if>
+			<if test="mAgent == 'etc'">
+				, etc = etc + 1
+			</if>
+			<if test="mAgent == 'tablet'">
+				, tablet = tablet + 1
+			</if>
+		WHERE
+			m_id = 1
+	</update>
+	
+	<insert id="insertUrl" parameterType="String"  useGeneratedKeys="true" >
+		INSERT INTO m_url (
+		   url,
+		   count,
+		   insert_date
+		) VALUES (
+		   #{url},
+		   1,
+		   NOW()
+		)
+	</insert>
+	
+	<select id="selectUrlCount" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		  FROM m_url
+		 WHERE url = #{url}
+	</select>
+	
+	<update id="updateUrl" parameterType="String">
+		UPDATE m_url
+		SET
+				count = count + 1
+		WHERE
+			url = #{url}
+	</update>
+	
 </mapper>

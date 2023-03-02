@@ -14,4 +14,6 @@ public interface ProductService {
 	
 	public List<ProductDTO> getRecProduct(ProductDTO productDto);
 
+	public boolean updateAddCount(Long pIdx);
+	
 }

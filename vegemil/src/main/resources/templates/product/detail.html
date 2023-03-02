@@ -274,6 +274,17 @@ $(function(){
 	//html 파일 로드
 	var loadHtml = "[[ ${product.pCode} ]]";
     $(".productLoad").load("/product/"+loadHtml.trim()+".html");
+    
+    var url = window.location.pathname;
+    var pIdx = url.replace("/product/detail/", "");
+    
+    $.ajax({
+		url: "/product/addCount?pIdx="+pIdx,
+		success: function (response) {
+			return;
+		}
+	})
+    
 });
 //]]>
 </script>
