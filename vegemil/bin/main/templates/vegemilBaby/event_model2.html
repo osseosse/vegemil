@@ -1,0 +1,154 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<title>달력모델2</title>
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+   
+	
+	<!-- 최근 수상내역 -->
+										<div class="container100 bg_b mt30">
+											<div class="row pd0 mg0">
+												<div class="col-md-12 mt80 ">
+													<div class="col-md-12">
+														<ul class="model_ul" id="storyList">
+														
+														
+																														
+															<!-- <li th:each="model : ${modelList}"  th:with="var=${model.ROWNUM}" th:class="md+${var}"  
+																th:classappend="${model.cRank =='1'} ? 1st"> 
+															
+																<div class="model_month">
+																	<p  th:with="var=${model.cRank}" th:class="model_box+${var}"  
+																		th:style="'background: url(/web/upload/vegemilBaby/' + ${model.cImage} +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></p>
+																	<p class="f17_4 mt50" th:text="${model.cHonor}"></p>
+																	<p class="f26_4" th:text="|*${model.cName}님|">이름</p>
+																</div>
+															</li> -->
+												
+														
+														
+														</ul>
+													</div>
+													
+												
+									
+									
+									
+									
+									
+												</div><!-- // col-md-12 -->
+											</div><!-- // container -->
+										</div><!-- // container100 최근 수상내역 -->
+	<!-- ------------------- // content ------------------- -->
+
+	<!-- 뷰저블리 -->
+	<script type="text/javascript">
+	//이전 스크롤 좌표
+	var lastScrollTop = 0;
+	
+	//스크롤 이벤트 최초 발생
+    $(window).scroll( ()=> {
+    	//0.777
+    	//4157
+    	console.log("윈도우 scrollTop", $(window).scrollTop());
+    	console.log("문서의 높이", $(document).height());
+    	console.log("윈도우 높이", $(window).height());
+	    let checkNum = $(window).scrollTop();
+    	//let checkNum = $(window).scrollTop() - ( $(document).height() - $(window).height() );
+    	//console.log("checkNum: ", checkNum);
+		if(checkNum <4200 && checkNum >4150){
+			pageNum++;
+			storyLoad();
+		}
+    });
+   
+
+	   
+	
+   
+   (function(w, d, a){
+		w.__beusablerumclient__ = {
+			load : function(src){
+				var b = d.createElement("script");
+				b.src = src; b.async=true; b.type = "text/javascript";
+				d.getElementsByTagName("head")[0].appendChild(b);
+			}
+		};w.__beusablerumclient__.load(a);
+	})(window, document, '//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5');
+	
+   
+	
+	// 게시글 로드하기
+	let pageNum=0;
+	function storyLoad() {
+	    $.ajax({
+	        url:`/api/vegemilBaby/event/model?pageNum=${pageNum}&pageSize=20`,
+	        dataType : "json"
+	    }).done(res=>{
+	        console.log(res);
+	        res.data.list.forEach((model) => {
+
+	              console.log(model);
+	            let storyItem = getStoryItem(model)
+	            $("#storyList").append(storyItem);
+	            /* $("#storyList").append("<h1>hi<h1>"); */
+
+	        })
+	    }).fail(error => {
+	        console.log("오류", error);
+
+	    });
+	}
+
+	storyLoad();
+	
+	
+	function getStoryItem(model) {
+		let item =
+		    `
+		    <li  class="md${model.ROWNUM}"  th:classappend="${model.cRank =='1'} ? 1st">
+		    <div class="model_month">
+				<p class="model_box${model.cRank}"	
+		             <img src="/web/upload/vegemilBaby/${model.cImage}" />
+
+				</p>
+				<p class="f17_4 mt50" >${model.cHonor}</p>
+				<p class="f26_4" >*${model.cName}님</p>
+
+
+					
+			</li>
+
+		    
+		     `;
+
+
+		    return item;
+	}
+
+	
+	
+	
+		 
+		
+		
+		  
+		
+		
+	
+	</script>
+	
+	
+	
+	<!-- //뷰저블리 -->
+	
+		
+	<!-- ================================ Footer ================================ -->
+	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
+	</body>
+</html>

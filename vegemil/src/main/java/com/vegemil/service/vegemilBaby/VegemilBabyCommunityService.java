@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
@@ -15,6 +18,8 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
+import com.vegemil.paging.BoardListSearchDTO;
+import com.vegemil.paging.BoardResponseVO;
 
 public interface VegemilBabyCommunityService {
 	
@@ -64,11 +69,16 @@ public interface VegemilBabyCommunityService {
 	public List<VegemilBabyBestReviewDTO> selectBestReviewList();
 
 	//아기모델 - 이달의모델 조회
+//	public List<VegemilBabyCalendarModelDTO> selectModelList(BoardListSearchDTO boardListSearchDTO);
+	public List<BoardResponseVO> selectModelList(BoardListSearchDTO boardListSearchDTO);
 	public List<VegemilBabyCalendarModelDTO> selectModelList();
+	
 	//아기모델 - 신청하기
 	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);	
 	//아기모델 - 타이틀 조회
     public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
+	public AdminCalendarTitleDTO selectCalenderModelTitlebyRownum(String rownum);
+
 
 	
 	//샘플 신청 등록

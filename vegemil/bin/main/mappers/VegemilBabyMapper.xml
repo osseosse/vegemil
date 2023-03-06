@@ -442,7 +442,8 @@
 	
 	
 	<!-- 아기모델센발대회 - 이달의모델 조회 -->
-	<select id='selectModelList'  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO">	
+	<select id='selectModelList'  parameterType ="com.vegemil.paging.BoardListSearchDTO" resultType="com.vegemil.paging.BoardResponseVO">	
+<!-- 	<select id='selectModelList'  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO"> -->	
 		SELECT 
 			RANK() OVER(ORDER BY c_update_time) AS ROWNUM, 
 			MONTH(c_write_date) AS c_month, 
@@ -457,18 +458,48 @@
 		WHERE 
 			c_rank between 1 and 3
 		ORDER BY 
-			c_update_time desc;
+			c_update_time desc
+		
+	</select>
+	
+	<select id='selectModelList2'  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO">	
+		SELECT 
+			RANK() OVER(ORDER BY c_update_time) AS ROWNUM, 
+			MONTH(c_write_date) AS c_month, 
+			SUBSTRING(c_baby_name,2,2) AS c_name, 			
+			IFNULL(c_main_image, c_image) AS c_image,
+			c_rank,
+			(CASE WHEN c_rank = '1' THEN '이달의 베지밀 달력 아기모델' 
+			  WHEN c_rank = '3' THEN '이달의 베지밀 달력 아기모델' 
+			 ELSE '참여상' END) AS c_honor 
+		FROM 
+			m_calendar_model
+		WHERE 
+			c_rank between 1 and 3
+		ORDER BY 
+			c_update_time desc
+		
 	</select>
 	
 	
 	<!-- 아기모델센발대회 - 타이틀 조회-->
 	<select id='selectCalenderModelTitle'  resultType="com.vegemil.domain.AdminCalendarTitleDTO">	
+		    SELECT 
+		    	t_idx, CAST(t_year AS SIGNED INTEGER)t_year , CAST(t_month1 AS SIGNED INTEGER) t_month1, t_month1_string, t_month2, t_month2_string, t_rownum, t_babyname
+    		FROM 
+    			m_calendar_title 
+   			ORDER BY 
+   				t_year DESC, t_month1 DESC;
+	</select>
+	
+	<select id='selectCalenderModelTitlebyRownum'  parameterType="String" resultType="com.vegemil.domain.AdminCalendarTitleDTO">	
 		SELECT 
 			*
 		FROM 
 			m_calendar_title
-		ORDER BY 
-			t_year DESC, t_month1 DESC;
+		WHERE
+			t_rownum = #{tRownum};
+			
 	</select>
 	
 	

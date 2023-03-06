@@ -1,9 +1,11 @@
 package com.vegemil.controller;
 
 import java.io.PrintWriter;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,13 +31,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.vegemil.constant.Method;
+import com.vegemil.domain.CMRespDto;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
+import com.vegemil.paging.BoardListSearchDTO;
+import com.vegemil.paging.CustomBaseResponse;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
 import com.vegemil.util.UiUtils;
 
@@ -200,16 +214,32 @@ public class VegemilBabyController extends UiUtils {
 		model.addAttribute("bestReviewList", vegemilBabyCommunityService.selectBestReviewList());
 		return "vegemilBaby/event_best_review";
 	}
-
-	
+		
 	
 	//달력아기모델 
 	@GetMapping("/vegemilBaby/event/model")
 	public String moveEventModelPage(Model model) {
-		model.addAttribute("modelList", vegemilBabyCommunityService.selectModelList());		
+//		model.addAttribute("modelList", vegemilBabyCommunityService.selectModelList());		
 		model.addAttribute("titleList", vegemilBabyCommunityService.selectCalenderModelTitle());		
 		return "vegemilBaby/event_model";
 	}
+
+	
+	
+	@GetMapping("/api2/vegemilBaby/event/model")
+	public  ResponseEntity moveEventModelPage2(BoardListSearchDTO boardListSearchDTO) {
+			
+		List<VegemilBabyCalendarModelDTO> modelList = vegemilBabyCommunityService.selectModelList();
+        
+		
+        return new ResponseEntity<>(new CMRespDto<>(1, "성공", modelList), HttpStatus.OK);
+    
+		
+	}
+	
+	
+	
+	
 	
 	
 	//달력아기모델 신청 페이지

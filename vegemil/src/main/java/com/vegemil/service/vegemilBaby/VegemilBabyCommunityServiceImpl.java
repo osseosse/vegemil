@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,6 +30,8 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.mapper.VegemilBabyMapper;
+import com.vegemil.paging.BoardListSearchDTO;
+import com.vegemil.paging.BoardResponseVO;
 import com.vegemil.paging.PaginationInfo;
 
 @Service
@@ -187,8 +191,8 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	@Transactional
 	public int insertReviewEvent(@ModelAttribute("review")VegemilBabyBestReviewDTO review, HttpServletResponse response) throws Exception {
 			
-		  response.setContentType("text/html; charset=UTF-8"); PrintWriter out =
-		  response.getWriter();
+		  response.setContentType("text/html; charset=UTF-8"); 
+		  PrintWriter out = response.getWriter();
 		  
 			String uuid = UUID.randomUUID().toString();
 			String originalName = review.getFileName().getOriginalFilename();	
@@ -256,13 +260,25 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	
 	//아기모델센발대회 - 이달의모델 조회
 	@Override
+	public List<BoardResponseVO> selectModelList(BoardListSearchDTO boardListSearchDTO) {
+		return vegemilBabyMapper.selectModelList(boardListSearchDTO);
+	}
+//	@Override
+//	public List<VegemilBabyCalendarModelDTO> selectModelList(BoardListSearchDTO boardListSearchDTO) {
+//		return vegemilBabyMapper.selectModelList(boardListSearchDTO);
+//	}
+	@Override
 	public List<VegemilBabyCalendarModelDTO> selectModelList() {
-		return vegemilBabyMapper.selectModelList();
+		return vegemilBabyMapper.selectModelList2();
 	}
 	//아기모델센발대회 - 타이틀 조회
 	@Override
 	public List<AdminCalendarTitleDTO> selectCalenderModelTitle() {		
 		return vegemilBabyMapper.selectCalenderModelTitle();
+	}
+	@Override
+	public AdminCalendarTitleDTO selectCalenderModelTitlebyRownum(String rownum) {
+		return vegemilBabyMapper.selectCalenderModelTitlebyRownum(rownum);
 	}
 	
 	
