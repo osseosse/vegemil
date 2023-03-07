@@ -68,6 +68,10 @@ public interface AdminBabyMapper {
 	public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
 
 	public int deleteCalenderModelTitle(Long tIdx);
+	
+	public int selectSecond1stBaby(int rownum);
+	
+	public int updateTitle2ndInfo(int cIdx);
 	//=================== 아기달력모델  =========================	
 	
 	
@@ -118,6 +122,8 @@ public interface AdminBabyMapper {
 	public int updateBabyTvcf(AdminCfDTO adminCfDTO);
 
 	public int updateBabyTvcfFileInfo(AdminCfDTO adminCfDTO);
+
+	
 
 
 

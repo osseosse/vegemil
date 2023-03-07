@@ -61,5 +61,11 @@ public class AdminCalendarModelDTO extends AdminCommonDTO {
 	
 	private String cMonth;
 	private String rownum;
+	
+	/** 2개월치 1등 선정할 때 두 번째 1등인지 여부 
+	 * 해당   :1
+	 * 미해당:0
+	 * */	
+	private int cTitle2nd;
 
 }

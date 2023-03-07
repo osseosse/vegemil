@@ -384,6 +384,21 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	}
 	
 	@Override
+	public int selectSecond1stBaby(int rownum) {
+		return adminBabyMapper.selectSecond1stBaby(rownum);
+	}
+	
+	@Override
+	public boolean updateTitle2ndInfo(int cIdx) {
+		
+		int queryResult = 0;
+		queryResult = adminBabyMapper.updateTitle2ndInfo(cIdx);
+		return (queryResult > 0) ? true : false;		
+		
+	}
+
+	
+	@Override
 	public boolean registerBestReview(AdminBestReviewDTO params) {
 		int queryResult = 0;
 
@@ -630,6 +645,9 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		
 		return (queryResult == 1) ? true : false;
 	}
+
+	
+	
 
 	
 	

@@ -17,4 +17,5 @@ public class BoardResponseVO {
 	private String cImage;
 	private String cRank;
 	private String cHonor;
+	private String cTitle2nd;
 }

@@ -452,7 +452,8 @@
 			c_rank,
 			(CASE WHEN c_rank = '1' THEN '이달의 베지밀 달력 아기모델' 
 			  WHEN c_rank = '3' THEN '이달의 베지밀 달력 아기모델' 
-			 ELSE '참여상' END) AS c_honor 
+			 ELSE '참여상' END) AS c_honor,
+			 c_title_2nd
 		FROM 
 			m_calendar_model
 		WHERE 
@@ -472,6 +473,7 @@
 			(CASE WHEN c_rank = '1' THEN '이달의 베지밀 달력 아기모델' 
 			  WHEN c_rank = '3' THEN '이달의 베지밀 달력 아기모델' 
 			 ELSE '참여상' END) AS c_honor 
+			  , c_title_2nd
 		FROM 
 			m_calendar_model
 		WHERE 

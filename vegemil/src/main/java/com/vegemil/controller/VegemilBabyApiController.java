@@ -34,19 +34,10 @@ public class VegemilBabyApiController extends UiUtils {
 	@GetMapping("/api/vegemilBaby/event/model")
 	public ResponseEntity<?> moveEventModelPage(BoardListSearchDTO boardListSearchDTO) {
 		
-//		if(boardListSearchDTO.getPageNum() <= 0) {
-//			return CustomBaseResponse.error(400, "Bad Request", "요청 정보 확인이 필요합니다.");
-//		}else if(boardListSearchDTO.getPageSize() <= 0) {
-//			return CustomBaseResponse.error(400, "Bad Request", "요청 정보 확인이 필요합니다.");
-//		}
-		
         PageHelper.startPage(boardListSearchDTO);
-        //return CustomBaseResponse.ok(PageInfo.of(vegemilBabyCommunityService.selectModelList(boardListSearchDTO)));
        
         return new ResponseEntity<>(new CMRespDto<>(1, "성공", PageInfo.of(vegemilBabyCommunityService.selectModelList(boardListSearchDTO))), HttpStatus.OK);
 
-    
-		
 	}
 	
 	@GetMapping("/api/vegemilBaby/event/model/title")
@@ -54,19 +45,15 @@ public class VegemilBabyApiController extends UiUtils {
 		
 		List<AdminCalendarTitleDTO> titleList = vegemilBabyCommunityService.selectCalenderModelTitle(); 
         return new ResponseEntity<>(new CMRespDto<>(1, "성공", titleList), HttpStatus.OK);
-
-    
 		
 	}
+	
 	@GetMapping("/api/vegemilBaby/event/model/title/{rownum}")
 	public ResponseEntity<?> eventModelTitle2(@PathVariable("rownum") String rownum) {
 		
-		//List<AdminCalendarTitleDTO> titleList = vegemilBabyCommunityService.selectCalenderModelTitle(); 
 		AdminCalendarTitleDTO title = vegemilBabyCommunityService.selectCalenderModelTitlebyRownum(rownum); 
         return new ResponseEntity<>(new CMRespDto<>(1, "성공", title), HttpStatus.OK);
 
-    
-		
 	}
 	
 

@@ -470,13 +470,20 @@ public class AdminBabyController extends UiUtils {
 	@PostMapping("/admin/manage/baby/calenderModelTitle")	
 	@ResponseBody
 	public Map<String, Object>insertCalenderModelTitle(AdminCalendarTitleDTO params)throws Exception{
-
-		System.out.println(params.toString());
-		
+				
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
-		
+		System.out.println("param info: "+ params.toString());
 		try {
 			boolean isRegistered = adminBabyService.insertCalenderModelTitle(params);
+			if(params.getTMonth2() != null) { //두 번째 달 입력이 있다면
+				//첫번째 달 의 ROWNUM -1 을 통해 두번째 달 아기의 c_idx 조회
+				int rownum = Integer.parseInt(params.getTRownum())-1; 
+				int second1stBaby = adminBabyService.selectSecond1stBaby(rownum);
+											// 해당 아기의  c_title_2nd를 1로 수정
+				boolean isUpdated = adminBabyService.updateTitle2ndInfo(second1stBaby);
+
+			}
+			
 			rtnMap.put("result", isRegistered);
 		} catch (DataAccessException e) {
 		} catch (Exception e) {

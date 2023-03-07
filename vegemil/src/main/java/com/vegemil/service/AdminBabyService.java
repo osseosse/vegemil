@@ -45,6 +45,11 @@ public interface AdminBabyService {
 	public List<AdminCalendarTitleDTO> selectCalenderModelTitle();
 	
 	boolean deleteCalenderModelTitle(Long tIdx);
+	
+	public int selectSecond1stBaby(int rownum);
+	
+	public boolean updateTitle2ndInfo(int second1stBaby);
+
 	//=================== 아기달력모델  =========================
 	
 	
@@ -77,6 +82,9 @@ public interface AdminBabyService {
 	//TVCF 등록	
 	public boolean saveBabyTvcf(AdminCfDTO adminCfDTO) throws Exception;
 	//=================== TV CF관리 =========================
+
+
+	
 
 
 	

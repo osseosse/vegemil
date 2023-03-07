@@ -493,7 +493,6 @@
 			ORDER BY 
 				c_update_time desc) subQuery
 		WHERE c_rank = 1
-		LIMIT 20; 	
 	</select>
 	
 	
@@ -537,6 +536,36 @@
 		WHERE 
 			t_idx = #{tIdx}
   	</delete>
+  	
+  	
+  	
+  	<select id="selectSecond1stBaby" parameterType="int" resultType="int">
+		SELECT 
+			c_idx 
+	    FROM(
+			SELECT 
+				c_idx,
+                   RANK() OVER(ORDER BY c_update_time) AS ROWNUM, 
+				c_rank
+			FROM 
+				m_calendar_model
+			WHERE 
+				c_rank between 1 and 3	
+			) subQuery
+		WHERE subQuery.ROWNUM = #{cIdx}
+	</select>
+		
+	<update id="updateTitle2ndInfo" parameterType="int" >
+		UPDATE 
+			m_calendar_model
+		SET 
+			c_title_2nd = 1
+		WHERE 
+			c_idx = #{cIdx}
+	</update>
+  	
+  	
+  	
 			
 	
 	<insert id="insertBestReview" parameterType="com.vegemil.domain.AdminBestReviewDTO">

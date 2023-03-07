@@ -158,55 +158,8 @@
 											<div class="row pd0 mg0">
 												<div class="col-md-12 mt80 ">
 													<div class="col-md-12">
-														<ul class="model_ul" id="storyList">
-														
-																													
-															<!-- <li class="mcBox" th:each="title : ${titleList}" th:id="${title.tRownum}">
-																<div class="best_day">
-																	<span class="bestType01 bg_bean" th:text="${title.tMonth1}">1</span>
-																	<span th:text="${title.tMonth1String}"> January</span>
-																	<th:block th:if="${not #strings.isEmpty(title.tMonth2)}">
-																		<span class="bestType01 bg_bean" th:text="${title.tMonth2}">1</span>
-																		<span th:text="${title.tMonth2String}"> January</span>																	    
-																	</th:block>																	 
-																	<span class="bestYear" th:text="${title.tYear}">2023</span>																
-																</div>
-															</li>  -->
-															
-															
-															<!-- <script type="text/javascript">
-															 $( document ).ready( function() {
-																	
-																	var titles = document.querySelectorAll(".mcBox"); //1. 타이틀 관련 리스트 모두 구하기
-																	
-																	for (let i = 0; i < titles.length; i++) {         //2. 타이를 리스트 for문  돌면서 
-																	  let titleId = titles.item(i).getAttribute('id'); //  각각의 id값 구함
-																	  if(document.querySelector(".md"+titleId)){  	  //3. 타이틀 리스트id값을 당첨자 리스트의 class이름에 대입하여 그것이 존재한다면
-																			alert('있다.')
-																		  $(".md"+titleId).before(titles.item(i));      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
-																	  }
-																	  
-																	}
-																	
-																																			
-																	 																	
-																	
-																  } ); 
-															 </script> -->
-																														
-															<!-- <li th:each="model : ${modelList}"  th:with="var=${model.ROWNUM}" th:class="md+${var}"  
-																th:classappend="${model.cRank =='1'} ? 1st"> 
-															
-																<div class="model_month">
-																	<p  th:with="var=${model.cRank}" th:class="model_box+${var}"  
-																		th:style="'background: url(/web/upload/vegemilBaby/' + ${model.cImage} +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></p>
-																	<p class="f17_4 mt50" th:text="${model.cHonor}"></p>
-																	<p class="f26_4" th:text="|*${model.cName}님|">이름</p>
-																</div>
-															</li> -->
-												
-														
-														
+														<ul class="model_ul" id="babyList">
+																												
 															 <div style="clear:both"></div> 
 
 															<!--2020 4월달 하드코딩-->
@@ -289,261 +242,8 @@
 															</li><div style="clear:both"></div> -->
 															<!-- 2020 4월달 하드코딩 -->
 														</ul>
-													</div>
-													
-												
+													</div>													
 									
-									
-									
-									
-									<script>
-									
-									
-									// 게시글 로드하기
-									let pageNum= 1;	
-									function storyLoad() {
-										console.log("pageNum:", pageNum)
-									    $.ajax({
-									        url:`/api/vegemilBaby/event/model?pageNum=${pageNum}&pageSize=30`,
-									        dataType : "json",
-										     async: false
-
-									        
-									    }).done(res=>{
-									        console.log(res);
-									        res.data.list.forEach((model) => {
-
-												console.log(model);
-									            let storyItem = getStoryItem(model)
-									            $("#storyList").append(storyItem);
-
-									          
-									            if(model.cRank == '1' ){ //1등면
-									            	console.log("1등", model.ROWNUM)
-									            	//console.log("타이틀: ", titleLoad2(model.ROWNUM));
-									            	$(".md"+model.ROWNUM).before(titleLoad2(model.ROWNUM));
-									            }
-									        })									        
-									    }).fail(error => {
-									        console.log("오류", error);
-									    });
-									}
-									
-									function titleLoad2(rownum){
-										console.log('타이틀 로드 함수실행')
-										let title;
-										$.ajax({
-											  url:'/api/vegemilBaby/event/model/title/'+rownum,
-											  method: "GET",
-										      dataType : "json",
-										      async: false,
-	
-											  success: function(res) {
-												  let model = res.data;
-										          title = makeTitle(model);
-											  },
-											  error: function(error) {
-											    // Handle any errors here
-											  }
-											});										
-									return title;
-									
-									} 
-									
-									
-									function makeTitle(model){
-										let title = `
-											<li class="mcBox" id="${model.tRownum}">
-												<div class="best_day">
-													<span class="bestType01 bg_bean">${model.tMonth1}</span>
-													<span>${model.tMonth1String}</span>
-													`;
-													if(model.tMonth2){													
-														title += `
-														<span class="bestType01 bg_bean">${model.tMonth2}</span>
-														<span>${model.tMonth2String}</span>`;
-													}
-													title += `
-													<span class="bestYear">${model.tYear}</span>
-												</div>
-											
-											</li> 
-										`;
-										return title;
-										
-									}
-									
-									
-									function titleDP(){
-										var titles = document.querySelectorAll(".mcBox"); //1. 타이틀 관련 리스트 모두 구하기
-										console.log(titles);
-										
-										for (let i = 0; i < titles.length; i++) {         //2. 타이를 리스트 for문  돌면서 
-											  let titleId = titles.item(i).getAttribute('id'); //  각각의 id값 구함
-											  console.log(titleId);
-											  if(document.querySelector(".md"+titleId)){  	  //3. 타이틀 리스트id값을 당첨자 리스트의 class이름에 대입하여 그것이 존재한다면
-												$(".md"+titleId).before(titles.item(i));      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
-											  }
-											  
-											} 
-	
-									}
-																		
-									/*  var titles = document.querySelectorAll(".mcBox"); //1. 타이틀 관련 리스트 모두 구하기
-										
-										for (let i = 0; i < titles.length; i++) {         //2. 타이를 리스트 for문  돌면서 
-										  let titleId = titles.item(i).getAttribute('id'); //  각각의 id값 구함
-										  console.log(titleId);
-										  if(document.querySelector(".md"+titleId)){  	  //3. 타이틀 리스트id값을 당첨자 리스트의 class이름에 대입하여 그것이 존재한다면
-											$(".md"+titleId).before(titles.item(i));      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
-										  }
-										  
-										}  */
-
-									function getStoryItem(model) {
-										let item =
-										    `
-										    <li  class="md${model.ROWNUM}" id="md${model.ROWNUM}" >
-										    <div class="model_month">
-										    <p class="model_box${model.cRank}"  
-										    style="background: url(/web/upload/vegemilBaby/${model.cImage}); background-position:center;-webkit-background-size: cover; background-size: cover;">
-											</p>
-											
-												<p class="f17_4 mt50" >${model.cHonor}</p>
-												<p class="f26_4" >*${model.cName}님</p>
-												
-											</li>	
-										     `;
-									
-										    return item;
-									}
-									
-											
-									
-									function titleLoad(){
-										$.ajax({
-									        url:`/api/vegemilBaby/event/model/title`,
-									        dataType : "json"
-									    }).done(res=>{
-									        console.log("title Total:", res);
-									        res.data.forEach((model) => {
-
-									            console.log("title:", model);
-									            //var titles = document.querySelectorAll(".mcBox");
-									            									            
-									            if(document.querySelector(".md"+model.tRownum)){
-									            	//console.log(model.tRownum, "에 해당하는 클래스 찾음");
-									            	
-										            let titleItem = makeTitle(model);
-										            //console.log(titleItem);
-										            $(".md"+model.tRownum).before(titleItem);
-
-									            	//$(".md"+model.tRownum).before('<h1>test</h1>');      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
-									            } 
-
-									        })
-									    }).fail(error => {
-									        console.log("오류", error);
-									    });										
-									}
-									
-									
-									storyLoad();
-									
-									
-									
-										
-									
-								
-									
-									
-									
-								
-									
-								
-								    /* function titleLoad2(rownum){
-									console.log('함수실행')
-									$.ajax({
-								        url:'/api/vegemilBaby/event/model/title/'+rownum,
-								        dataType : "json"
-								    }).done(res=>{
-								        console.log(res);
-
-								            
-								    }).fail(error => {
-								        console.log("오류", error);
-
-								    });
-									
-								} */
-								
-								
-									
-									
-								/* <li class="mcBox" th:each="title : ${titleList}" th:id="${title.tRownum}">
-									<div class="best_day">
-										<span class="bestType01 bg_bean" th:text="${title.tMonth1}">1</span>
-										<span th:text="${title.tMonth1String}"> January</span>
-										<th:block th:if="${not #strings.isEmpty(title.tMonth2)}">
-											<span class="bestType01 bg_bean" th:text="${title.tMonth2}">1</span>
-											<span th:text="${title.tMonth2String}"> January</span>																	    
-										</th:block>																	 
-										<span class="bestYear" th:text="${title.tYear}">2023</span>																
-									</div>
-								</li>   */
-									
-									
-									
-									
-									
-									
-									/* var titles = document.querySelectorAll(".mcBox"); //1. 타이틀 관련 리스트 모두 구하기
-									
-									for (let i = 0; i < titles.length; i++) {         //2. 타이를 리스트 for문  돌면서 
-									  let titleId = titles.item(i).getAttribute('id'); //  각각의 id값 구함
-									  if(document.querySelector(".md"+titleId)){  	  //3. 타이틀 리스트id값을 당첨자 리스트의 class이름에 대입하여 그것이 존재한다면
-											alert('있다.')
-										  $(".md"+titleId).before(titles.item(i));      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
-									  }
-									  
-									} */
-									
-
-									//titleLoad();
-									
-									
-									
-								/* 	<li class="mcBox" th:each="title : ${titleList}" th:id="${title.tRownum}">
-									<div class="best_day">
-										<span class="bestType01 bg_bean" th:text="${title.tMonth1}">1</span>
-										<span th:text="${title.tMonth1String}"> January</span>
-										<th:block th:if="${not #strings.isEmpty(title.tMonth2)}">
-											<span class="bestType01 bg_bean" th:text="${title.tMonth2}">1</span>
-											<span th:text="${title.tMonth2String}"> January</span>																	    
-										</th:block>																	 
-										<span class="bestYear" th:text="${title.tYear}">2023</span>																
-									</div>
-								</li>  */
-									
-									
-									
-									
-									
-									
-												/* var titles = document.querySelectorAll(".mcBox"); //1. 타이틀 관련 리스트 모두 구하기
-												
-												for (let i = 0; i < titles.length; i++) {         //2. 타이를 리스트 for문  돌면서 
-												  let titleId = titles.item(i).getAttribute('id'); //  각각의 id값 구함
-												  if(document.querySelector(".md"+titleId)){  	  //3. 타이틀 리스트id값을 당첨자 리스트의 class이름에 대입하여 그것이 존재한다면
-														alert('있다.')
-													  $(".md"+titleId).before(titles.item(i));      //4. 당첨자 리스트 앞에 해당 타이틀을 삽입
-												  }
-												  
-												} */
-									
-									
-									 
-									</script>
 												</div><!-- // col-md-12 -->
 											</div><!-- // container -->
 										</div><!-- // container100 최근 수상내역 -->
@@ -575,33 +275,116 @@
 
 	<!-- 뷰저블리 -->
 	<script type="text/javascript">
-	 $( document ).ready( function() {
-			
+	// 게시글 로드하기
+	let pageNum= 1;	
+	function storyLoad() {
+		console.log("pageNum:", pageNum)
+	    $.ajax({
+	        url:`/api/vegemilBaby/event/model?pageNum=${pageNum}&pageSize=30`,
+	        dataType : "json",
+		     async: false
+	        
+	    }).done(res=>{
+	        console.log(res);
+	        res.data.list.forEach((model) => {
+
+				console.log(model);
+	            let babyModel = makeBabyModel(model)
+	            $("#babyList").append(babyModel);
+	          
+	            if(model.cRank == '1' && model.cTitle2nd != '1'){ 
+	            	console.log("1등", model.ROWNUM)
+	            	$(".md"+model.ROWNUM).before(titleLoad(model.ROWNUM));
+	            }
+	        })									        
+	    }).fail(error => {
+	        console.log("오류", error);
+	    });
+	}
+	
+	//이달의모델 생성
+	function makeBabyModel(model) {
+		let item =
+		    `
+		    <li  class="md${model.ROWNUM}" id="md${model.ROWNUM}" >
+		    <div class="model_month">
+		    <p class="model_box${model.cRank}"  
+		    style="background: url(/web/upload/vegemilBaby/${model.cImage}); background-position:center;-webkit-background-size: cover; background-size: cover;">
+			</p>											
+				<p class="f17_4 mt50" >${model.cHonor}</p>
+				<p class="f26_4" >*${model.cName}님</p>
+				
+			</li>	
+		     `;									
+		    return item;
+	}
+	
+	//생성된 타이틀 로드
+	function titleLoad(rownum){
+		console.log('타이틀 로드 함수실행')
+		let title;
+		$.ajax({
+			  url:'/api/vegemilBaby/event/model/title/'+rownum,
+			  method: "GET",
+		      dataType : "json",
+		      async: false,
+
+			  success: function(res) {
+				  let model = res.data;
+		          title = makeTitle(model);
+			  },
+			  error: function(error) {
+			      console.log(error);
+			  }
+			});										
+	return title;
+	
+	} 
+	
+	//타이틀 생성
+	function makeTitle(model){
+		let title = `
+			<li class="mcBox" id="${model.tRownum}">
+				<div class="best_day">
+					<span class="bestType01 bg_bean">${model.tMonth1}</span>
+					<span>${model.tMonth1String}</span>
+					`;
+					if(model.tMonth2){													
+						title += `
+						<span class="bestType01 bg_bean">${model.tMonth2}</span>
+						<span>${model.tMonth2String}</span>`;
+					}
+					title += `
+					<span class="bestYear">${model.tYear}</span>
+				</div>											
+			</li> 
+		`;
+		return title;										
+	}
+	
+	storyLoad();	
+	
+	 $( document ).ready( function() {			
 			//이전 스크롤 좌표
-			var lastScrollTop = 0;
-			
+			var lastScrollTop = 0;			
 			//스크롤 이벤트 최초 발생
 		    $(window).scroll( ()=> {
 		    	
 		    	let checkNum = $(window).scrollTop() - ( document.documentElement.scrollHeight - window.innerHeight );
-		    	//console.log("checkNum: ", checkNum);
 				if(checkNum <0.5 && checkNum >-2.5){
 					pageNum++;
 					console.log('새 페이지 로드')
 					storyLoad();
 					
-
 				} 
 		    });
-			
-			
-			
+						
 			  
 			/* $( '.md305' ).before( '<li class="mcBox"><div class="best_day"><span class="bestType01 bg_bean">1</span> January <span class="bestYear">2023</span></div></li>' ); 
 			$( '.md298' ).before( '<li class="mcBox"><div class="best_day"><span class="bestType01 bg_bean">12</span> December <span class="bestYear">2022</span></div></li>' ); */
 		    /* $( '.md287' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">10</span> October <span class="bestType01 bg_bean">11</span> November<span class="bestYear"> 2022</span></div></li>' ); */
 	        /* $( '.md275' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">9</span> September <span class="bestYear">2022</span></div></li>' ); */           
-		    $( '.md265' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">8</span> August <span class="bestYear">2022</span></div></li>' );
+		   /*  $( '.md265' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">8</span> August <span class="bestYear">2022</span></div></li>' );
 		    $( '.md257' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">7</span> July <span class="bestYear">2022</span></div></li>' );
 		    $( '.md247' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">6</span> June  <span class="bestYear">2022</span></div></li>' );
 			$( '.md236' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">5</span> May  <span class="bestYear">2022</span></div></li>' );
@@ -629,18 +412,10 @@
 	        $( '.md33' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">7</span> July   <span class="bestYear">2020</span></div></li>' );
 	        $( '.md22' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">6</span> June   <span class="bestYear">2020</span></div></li>' );
 	        $( '.md11' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">5</span> May  <span class="bestYear">2020</span></div></li>' );
-	        $( '.md22_hard' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">4</span> April   <span class="bestYear">2020</span></div></li>' );
+	        $( '.md22_hard' ).before( '<li class=mcBox><div class="best_day"><span class="bestType01 bg_bean">4</span> April   <span class="bestYear">2020</span></div></li>' ); */
 			
 		  } );
-	
-	
-	
-	
-   
-   
-
-	   
-	
+		
    
    (function(w, d, a){
 		w.__beusablerumclient__ = {
