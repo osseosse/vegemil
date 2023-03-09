@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -255,14 +256,23 @@ public class MainController extends UiUtils {
 	public JsonObject updateAgentCount(@RequestBody Map<String, Object> agent) {
 
 		JsonObject jsonObj = new JsonObject();
+		String url = "";
+		String title = "";
 			
 		if(agent != null) {
 	        boolean isRegistered1 = adminService.updateAgentCount(agent);
 	        jsonObj.addProperty("result1", isRegistered1);
 	        
 	        if(agent.get("mUrl") != null) {
+	        	url = agent.get("mUrl").toString();
+	        	title = agent.get("mTitle").toString();
 	        	
-	        	boolean isRegistered2 = adminService.registerUrl(agent.get("mUrl").toString());
+	        	LocalDate now = LocalDate.now();
+	        	String month = now.toString().substring(5, 7);
+	        	if(month.length() == 1)
+	        		month = "0" + month;
+	        	
+	        	boolean isRegistered2 = adminService.registerUrl(url, title, month);
 	        	jsonObj.addProperty("result2", isRegistered2);
 	        }
 		}

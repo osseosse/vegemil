@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.vegemil.domain.AdminDTO;
 import com.vegemil.domain.MemberDTO;
@@ -29,10 +30,10 @@ public interface AdminMapper {
 	
 	public int updateAgentCount(Map<String, Object> params);
 	
-	public int selectUrlCount(String url);
+	public int selectUrlCount(@Param("url") String url, @Param("table") String table);
 	
-	public int insertUrl(String url);
+	public int insertUrl(@Param("url") String url, @Param("title") String title, @Param("table") String table);
 	
-	public int updateUrl(String url);
+	public int updateUrl(@Param("url") String url, @Param("title") String title, @Param("table") String table);
 
 }

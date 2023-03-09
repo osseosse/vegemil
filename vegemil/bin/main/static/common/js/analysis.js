@@ -37,9 +37,11 @@
 		type = "pc";
 	}
 	
+	var title = "";
+	title = document.title;
 	var url = window.location.pathname;
 	var headers = {"Content-Type" : "application/json", "X-HTTP-Method-Override" : "POST"};
-	var map = {"mAgent": agent, "mType": type, "mUrl": url};
+	var map = {"mAgent": agent, "mType": type, "mUrl": url, "mTitle": title};
 	
 	$.ajax({
 		url: "/analysis/agentCount",

@@ -153,28 +153,142 @@
 			m_id = 1
 	</update>
 	
-	<insert id="insertUrl" parameterType="String"  useGeneratedKeys="true" >
-		INSERT INTO m_url (
+	<insert id="insertUrl" parameterType="map"  useGeneratedKeys="true" >
+		INSERT INTO 
+			<if test="table == '01'">
+				m_url_01
+			</if>
+			<if test="table == '02'">
+				m_url_02
+			</if>
+			<if test="table == '03'">
+				m_url_03
+			</if>
+			<if test="table == '04'">
+				m_url_04
+			</if>
+			<if test="table == '05'">
+				m_url_05
+			</if>
+			<if test="table == '06'">
+				m_url_06
+			</if>
+			<if test="table == '07'">
+				m_url_07
+			</if>
+			<if test="table == '08'">
+				m_url_08
+			</if>
+			<if test="table == '09'">
+				m_url_09
+			</if>
+			<if test="table == '10'">
+				m_url_10
+			</if>
+			<if test="table == '11'">
+				m_url_11
+			</if>
+			<if test="table == '12'">
+				m_url_12
+			</if>
+		(
 		   url,
+		   title,
 		   count,
 		   insert_date
 		) VALUES (
 		   #{url},
+		   #{title},
 		   1,
 		   NOW()
 		)
 	</insert>
 	
-	<select id="selectUrlCount" parameterType="String" resultType="int">
-		SELECT COUNT(*)
-		  FROM m_url
-		 WHERE url = #{url}
+	<select id="selectUrlCount" parameterType="map" resultType="int">
+		SELECT 
+				COUNT(*)
+		  FROM 
+	  		<if test="table == '01'">
+				m_url_01
+			</if>
+			<if test="table == '02'">
+				m_url_02
+			</if>
+			<if test="table == '03'">
+				m_url_03
+			</if>
+			<if test="table == '04'">
+				m_url_04
+			</if>
+			<if test="table == '05'">
+				m_url_05
+			</if>
+			<if test="table == '06'">
+				m_url_06
+			</if>
+			<if test="table == '07'">
+				m_url_07
+			</if>
+			<if test="table == '08'">
+				m_url_08
+			</if>
+			<if test="table == '09'">
+				m_url_09
+			</if>
+			<if test="table == '10'">
+				m_url_10
+			</if>
+			<if test="table == '11'">
+				m_url_11
+			</if>
+			<if test="table == '12'">
+				m_url_12
+			</if>
+		 WHERE 
+		 		url = #{url}
 	</select>
 	
-	<update id="updateUrl" parameterType="String">
-		UPDATE m_url
+	<update id="updateUrl" parameterType="map">
+		UPDATE 
+			<if test="table == '01'">
+				m_url_01
+			</if>
+			<if test="table == '02'">
+				m_url_02
+			</if>
+			<if test="table == '03'">
+				m_url_03
+			</if>
+			<if test="table == '04'">
+				m_url_04
+			</if>
+			<if test="table == '05'">
+				m_url_05
+			</if>
+			<if test="table == '06'">
+				m_url_06
+			</if>
+			<if test="table == '07'">
+				m_url_07
+			</if>
+			<if test="table == '08'">
+				m_url_08
+			</if>
+			<if test="table == '09'">
+				m_url_09
+			</if>
+			<if test="table == '10'">
+				m_url_10
+			</if>
+			<if test="table == '11'">
+				m_url_11
+			</if>
+			<if test="table == '12'">
+				m_url_12
+			</if>
 		SET
-				count = count + 1
+				count = count + 1,
+				title = #{title}
 		WHERE
 			url = #{url}
 	</update>

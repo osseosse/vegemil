@@ -195,20 +195,20 @@ $(function () {
       series: [
         {
           name: 'Apple',
-          data: [20, 40, 15, 20, 10, 40, 40]
+          data: [20, 40, 15, 20, 10, 40, 40]	// 실데이터
         },
         {
           name: 'Samsung',
-          data: [85, 100, 30, 40, 95, 100, 40]
+          data: [85, 100, 30, 40, 95, 100, 40]	// 실데이터
         },
 		{
           name: 'Etc',
-          data: [5, 10, 30, 10, 15, 10, 10]
+          data: [5, 10, 30, 10, 15, 10, 10]	// 실데이터
         }
 		 
       ],
       xaxis: {
-        categories: ['23/01', '23/02', '23/03', '23/04', '23/05', '23/06', '23/07']
+        categories: ['23/01', '23/02', '23/03', '23/04', '23/05', '23/06', '23/07']	// 실데이터
       },
       fill: {
         opacity: 1
@@ -842,17 +842,17 @@ $(function () {
       },
       series: [
         {
-          name: 'man',
-          data: [50, 100, 81, 160, 142, 142, 33 ]
+          name: '남자',
+          data: [50, 100, 81, 160, 142, 142, 33 ]	//실데이터 영역
         },
         {
-          name: 'woman',
-          data: [50, 100, 100, 25, 158, 163, 76]
+          name: '여자',
+          data: [50, 100, 100, 25, 158, 163, 76]	//실데이터 영역
         }
       ],
       colors: [chartColors.donut.series1, chartColors.donut.series3],
       xaxis: {
-        categories: ['10대', '20대', '30대', '40대', '50대', '60대', '70대']
+        categories: ['10대', '20대', '30대', '40대', '50대', '60대', '70대 이상']
       },
       fill: {
         opacity: [1, 0.8]
@@ -890,7 +890,7 @@ $(function () {
         position: 'bottom'
       },
       labels: [ 'PC',' Mobile', 'Tablet' ],
-      series: [60, 35, 5],
+      series: [60, 35, 5],	//실데이터 영역
       colors: [
         chartColors.donut.series1,
         chartColors.donut.series2,

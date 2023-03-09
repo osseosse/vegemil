@@ -46,6 +46,12 @@ public class AdminController extends UiUtils {
 		List<AdminSupportDTO> supportList = Collections.emptyList();
 		supportList = adminFaqService.getSupportList();
 		
+		//회원
+		
+		//유입
+		
+		//
+		
 		model.addAttribute("supportList", supportList);
 		// View attribute
 	    return "admin/index";

@@ -127,15 +127,15 @@ public class AdminService implements UserDetailsService {
 	}
 	
 	@Transactional
-	public boolean registerUrl(String url) {
+	public boolean registerUrl(String url, String title, String table) {
 		int queryResult = 0;
 		
-		int result = adminMapper.selectUrlCount(url);
+		int result = adminMapper.selectUrlCount(url, table);
 		
 		if(result == 0) {
-			queryResult = adminMapper.insertUrl(url);
+			queryResult = adminMapper.insertUrl(url, title, table);
 		} else {
-			queryResult = adminMapper.updateUrl(url);
+			queryResult = adminMapper.updateUrl(url, title, table);
 		}
 
 		return (queryResult == 1) ? true : false;
