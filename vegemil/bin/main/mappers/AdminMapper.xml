@@ -150,7 +150,7 @@
 				, tablet = tablet + 1
 			</if>
 		WHERE
-			m_id = 1
+			date_format(yymm, '%y-%m') = #{yymm}
 	</update>
 	
 	<insert id="insertUrl" parameterType="map"  useGeneratedKeys="true" >

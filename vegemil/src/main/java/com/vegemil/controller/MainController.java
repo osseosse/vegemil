@@ -258,8 +258,12 @@ public class MainController extends UiUtils {
 		JsonObject jsonObj = new JsonObject();
 		String url = "";
 		String title = "";
+		LocalDate now = LocalDate.now();
 			
 		if(agent != null) {
+			
+			String yymm = now.toString().substring(2, 7);
+			agent.putIfAbsent("yymm", yymm);
 	        boolean isRegistered1 = adminService.updateAgentCount(agent);
 	        jsonObj.addProperty("result1", isRegistered1);
 	        
@@ -267,7 +271,7 @@ public class MainController extends UiUtils {
 	        	url = agent.get("mUrl").toString();
 	        	title = agent.get("mTitle").toString();
 	        	
-	        	LocalDate now = LocalDate.now();
+	        	
 	        	String month = now.toString().substring(5, 7);
 	        	if(month.length() == 1)
 	        		month = "0" + month;
