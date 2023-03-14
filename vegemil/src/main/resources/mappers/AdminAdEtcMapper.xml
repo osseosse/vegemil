@@ -37,6 +37,7 @@
  				AND t_subject like CONCAT('%',#{searchKeyword},'%')
  				OR t_content like CONCAT('%',#{searchKeyword},'%')
  				OR t_cate like CONCAT('%',#{searchKeyword},'%')
+ 				OR t_flv like CONCAT('%',#{searchKeyword},'%')
 			</if> 
 		ORDER BY
 			t_idx DESC

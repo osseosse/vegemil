@@ -1,3 +1,4 @@
+
 package com.vegemil.domain;
 
 import lombok.Getter;
@@ -16,6 +17,7 @@ public class AdminAdEctDTO extends AdminCommonDTO {
 	private String tFlv;
 	private String tOnair;
 	private String tImgNew;
+	private String tDate;
 	
 	private String cStartdate;
 	private String cEnddate;
