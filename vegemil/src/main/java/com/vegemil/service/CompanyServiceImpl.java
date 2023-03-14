@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vegemil.paging.PaginationInfo;
+import com.vegemil.domain.AgencyDTO;
 import com.vegemil.domain.MediaNewsDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.mapper.CompanyMapper;
@@ -86,6 +87,9 @@ public class CompanyServiceImpl implements CompanyService {
 		}
 		return (queryResult == 1) ? true : false;
 	}
-	
 
+	@Override
+	public List<AgencyDTO> getAgencyList(AgencyDTO params) {
+		return companyMapper.selectAgencyByArea(params);
+	}
 }

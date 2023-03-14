@@ -36,13 +36,63 @@
         DATE_FORMAT(insert_date,'%Y-%m') as modified_date
     </sql>
     
+    <sql id="agencyColumns">
+    	idx,
+    	area,
+    	name,
+    	addr,
+    	tel,
+    	hp,
+    	cover_range,
+    	mapx,
+    	mapy
+    </sql>
+    
     <sql id="search">
         <!-- 검색 키워드가 있을 때 -->
         <if test="searchKeyword != null and searchKeyword != ''">
             AND m_subject LIKE CONCAT('%', #{searchKeyword}, '%')
         </if>
     </sql>
-
+	
+	<select id="selectAgencyByArea" parameterType="com.vegemil.domain.AgencyDTO" resultType="com.vegemil.domain.AgencyDTO">
+        SELECT
+        	<include refid="agencyColumns" />
+        FROM
+            M_Agency
+        WHERE 
+        	1=1
+        	<if test="searchKeyword != null and searchKeyword != ''">
+        		<choose>
+					<when test="searchType != null and searchType == 'coverRange'">
+						AND cover_range LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>        	
+					<when test="searchType != null and searchType == 'name'">
+						AND name LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>        	
+        			<otherwise>
+		     		 	AND area LIKE CONCAT('%', #{searchKeyword}, '%')
+		     		 	OR name LIKE CONCAT('%', #{searchKeyword}, '%')
+		     		 	OR addr LIKE CONCAT('%', #{searchKeyword}, '%')
+        			</otherwise>
+        		</choose>
+        	</if> 
+        	<if test="area != null and area != ''">
+        		AND area = #{area}
+        	</if>
+    </select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     <!-- 게시글 저장 -->
     <insert id="mediaNewsSave" parameterType="com.vegemil.domain.MediaNewsDTO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO m_media_news (

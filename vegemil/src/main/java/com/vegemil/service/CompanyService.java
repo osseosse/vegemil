@@ -2,6 +2,7 @@ package com.vegemil.service;
 
 import java.util.List;
 
+import com.vegemil.domain.AgencyDTO;
 import com.vegemil.domain.MediaNewsDTO;
 import com.vegemil.domain.SearchDTO;
 
@@ -20,5 +21,7 @@ public interface CompanyService {
     public List<MediaNewsDTO> getMediaNewsTop3();
 
     public boolean updateMediaNewsCount(Long mIdx);
+    
+    public List<AgencyDTO> getAgencyList(AgencyDTO params);
 
 }

@@ -1,11 +1,12 @@
 package com.vegemil.mapper;
 
-import com.vegemil.domain.MediaNewsDTO;
-import com.vegemil.domain.SearchDTO;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
+import com.vegemil.domain.AgencyDTO;
+import com.vegemil.domain.MediaNewsDTO;
+import com.vegemil.domain.SearchDTO;
 
 @Mapper
 public interface CompanyMapper {
@@ -27,5 +28,7 @@ public interface CompanyMapper {
 	public int updateMediaNewsCount(Long mIdx);
 
 	public int mediaNewsCount(SearchDTO params);
+	
+	public List<AgencyDTO> selectAgencyByArea(AgencyDTO params);
 
 }

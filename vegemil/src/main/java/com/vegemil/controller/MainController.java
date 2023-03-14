@@ -192,12 +192,6 @@ public class MainController extends UiUtils {
 		return "fragments/"+viewName;
     }
 	
-	@RequestMapping(value = "/company/{viewName}")
-    public String moveCompany(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
-		
-		return "company/"+viewName;
-    }
-	
 	@RequestMapping(value = "/rnd/{viewName}")
     public String moveRnd(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
