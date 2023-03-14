@@ -66,14 +66,18 @@
         		<choose>
 					<when test="searchType != null and searchType == 'coverRange'">
 						AND cover_range LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR name LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR addr LIKE CONCAT('%', #{searchKeyword}, '%')
 					</when>        	
 					<when test="searchType != null and searchType == 'name'">
 						AND name LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR addr LIKE CONCAT('%', #{searchKeyword}, '%')
 					</when>        	
         			<otherwise>
 		     		 	AND area LIKE CONCAT('%', #{searchKeyword}, '%')
 		     		 	OR name LIKE CONCAT('%', #{searchKeyword}, '%')
 		     		 	OR addr LIKE CONCAT('%', #{searchKeyword}, '%')
+		     		 	OR cover_range LIKE CONCAT('%', #{searchKeyword}, '%')
         			</otherwise>
         		</choose>
         	</if> 
