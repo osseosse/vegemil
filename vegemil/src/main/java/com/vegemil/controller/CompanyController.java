@@ -64,7 +64,7 @@ public class CompanyController {
     }
 	
 	@GetMapping("/company/agency") public String getAgencyInfo(Model model, AgencyDTO params){
-		return "company/agency_dev"; 
+		return "company/agency"; 
 	}
 	
 	@RequestMapping(value = "/company/agencyDev")

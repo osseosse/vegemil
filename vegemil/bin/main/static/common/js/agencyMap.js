@@ -6,6 +6,7 @@ function selectData() {
 		var addr = $(infoData[2]).text();
 		var name = $(infoData[1]).text();
 
+		// 상단탭 제어
 		var tabList = $(".mapTab").find("li");
 		for (var i = 0; i < tabList.length; i++) {
 			if ($(tabList[i]).hasClass("current")) {
@@ -14,10 +15,10 @@ function selectData() {
 		}
 
 		$("#" + area).addClass("current");
+
+		// 결과탭 제어
 		var tabContentList = $(".tab_content5").find(".row");
-		console.log(tabContentList);
 		for (var i = 0; i < tabContentList.length; i++) {
-			console.log($(tabContentList[i]).css("display"));
 			if ($(tabContentList[i]).css("display") == "block"){
 				$(tabContentList[i]).css("display","none");
 			}
@@ -25,6 +26,7 @@ function selectData() {
 		
 		$("#map" + area).css("display","block");
 
+		// 지도 정보 
 		var mapContainer = document.getElementById('map');
 		mapOption = {
 			center: new kakao.maps.LatLng(33.450701, 127.100132), // 지도의 중심좌표
@@ -37,44 +39,20 @@ function selectData() {
 		// 주소-좌표 변환 객체를 생성합니다
 		var geocoder = new kakao.maps.services.Geocoder();
 
-		geocoder.addressSearch(addr, function (result, status) {
-			if (status === daum.maps.services.Status.OK) {
-				//console.log(addr);
-				var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+		searchAndMark(map, geocoder, addr , name + " 대리점" , true);
 
-				var marker = new daum.maps.Marker({
-					position: coords,
-					clickable: true
-				});
-
-				// 마커를 지도에 표시합니다.
-				marker.setMap(map);
-				// 인포윈도우를 생성합니다
-				var infowindow = new kakao.maps.InfoWindow({
-					content: '<div style="width:150px;text-align:center;padding:6px 0;">' + name + ' 대리점 </div>',
-					removable: true
-				});
-
-				infowindow.open(map, marker);
-
-				$("#roadView").attr("href", "https://map.kakao.com/link/roadview/" + result[0].y + "," + result[0].x);
-				$("#findRoad").attr("href", "https://map.kakao.com/link/to/" + name + "," + result[0].y + "," + result[0].x);
-				$("#wideMap").attr("href", "https://map.kakao.com/link/map/" + result[0].y + "," + result[0].x);
-
-				//console.log("찾은 위경도>>>", coords);
-
-				map.setCenter(coords);
-			} else {
-				console.log(">>>위경도 조회 실패", item.name);
-			}
-		});
-
+		// 지도로 스크롤 이동 
 		var offset = $('.mapTab').offset(); //선택한 태그의 위치를 반환
 		$('html').animate({ scrollTop: offset.top }, 400);
+
+		$(this).blur();
+		return;
 	});
 }
 
-var searchAgency = () => {
+function searchAgency() {
+	
+	$(".btn-search").blur();
 	var searchKeyword = $("#searchKeyword").val();
 	$('#searchKeywordRes').text(" ' " + searchKeyword + " ' ");
 	$.ajax({
@@ -82,9 +60,7 @@ var searchAgency = () => {
 		type: "get",
 		success: function (data) {
 
-			//console.log("넘어온 데이터 : ", data);
-			//console.log("넘어온 데이터 길이: ", data.length);
-
+			// 결과 테이블 렌더링
 			if (data.length > 0) {
 				$("#resultInfo").attr("hidden", false);
 				$("#resultTbl").attr("hidden", false);
@@ -125,17 +101,12 @@ var searchAgency = () => {
   
 function getAddrList(area) {
 
-	/* centerX = null;
-	centerY = null; */
 	$.ajax({
 		url: "/company/agencyDev?area=" + area,
 		type: "get",
 		data: "전송할 데이터",
 		dataType: "json",
 		success: function (data) {
-
-			console.log("넘어온 데이터 : ", data);
-			console.log("넘어온 데이터 길이: ", data.length);
 
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 				mapOption = {
@@ -150,27 +121,26 @@ function getAddrList(area) {
 			var geocoder = new kakao.maps.services.Geocoder();
 
 			// foreach loop
-
 			try {
 				data.forEach(function (item, index) {
 					if(index == data.length-1){
 						throw new Error("영업소!!");
 					}
-					searchAndMark(map, geocoder, item.addr, item.name + " 대리점");
+					searchAndMark(map, geocoder, item.addr, item.name + " 대리점", false);
 				});
 			} catch (error) {
 			}
 			
-			searchAndMark(map, geocoder, data[data.length - 1].addr,data[data.length - 1].name);
+			searchAndMark(map, geocoder, data[data.length - 1].addr,data[data.length - 1].name, true);
 			
 		},
 		error: function () {
-			//전송에 실패하면 실행될 코드;
+			console.log("error>>>>>>>");
 		}
 	});
 }
 
-function searchAndMark(map, geocoder, addr , name){
+function searchAndMark(map, geocoder, addr , name, isCenter){
 
 	// 주소-좌표 변환 객체를 생성합니다
 	var geocoder = new kakao.maps.services.Geocoder();
@@ -179,8 +149,7 @@ function searchAndMark(map, geocoder, addr , name){
 	geocoder.addressSearch(addr, function (result, status) {
 					
 		if (status === daum.maps.services.Status.OK) {
-			//console.log(addr);
-			//console.log(name);
+
 			var coords = new daum.maps.LatLng(result[0].y, result[0].x);
 
 			var marker = new daum.maps.Marker({
@@ -194,7 +163,7 @@ function searchAndMark(map, geocoder, addr , name){
 			// 영업소면 인포윈도우를 생성합니다
 			name = name + "";
 
-			if(name.includes('영업소')){
+			if(isCenter == true){
 				var infowindow = new kakao.maps.InfoWindow({
 					content: '<div style="width:150px;text-align:center;padding:6px 0;">' + name + '<div>',
 					removable: true
@@ -223,11 +192,8 @@ function searchAndMark(map, geocoder, addr , name){
 				$("#wideMap").attr("href", "https://map.kakao.com/link/map/" + result[0].y + "," + result[0].x);
 			});
 
-			//console.log("찾은 위경도>>>", coords);
-			count++;
-			//console.log("count >>>", count)
 		} else {
-			console.log(">>>위경도 조회 실패", name);
+			console.log("error>>>>>>>");
 		}
 	});
 }
