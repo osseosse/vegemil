@@ -373,7 +373,7 @@
 												<td th:text="${productStat.count}"></td>
 												<td th:text="${product.subCategoryName}"></td>
 												<td th:text="${product.pName}"></td>
-												<td th:text="${product.count}"></td>
+												<td th:text="|${#numbers.formatInteger(product.count, 0, 'COMMA')}|"></td>
 												<td class="underline"><a th:href="|/product/detail/${product.pIdx}|" target="_blank">바로가기</a></td>
 											</tr>
 										</tbody>
@@ -450,7 +450,7 @@
 											<tr th:if="${urlList !=null}" th:each="url : ${urlList}">
 												<td th:text="${urlStat.count}"></td>
 												<td th:text="${url.title}"></td>
-												<td th:text="${url.count}"></td>
+												<td th:text="|${#numbers.formatInteger(url.count, 0, 'COMMA')}|"></td>
 												<td class="underline"><a th:href="${url.url}" target="_blank">바로가기</a></td>
 											</tr>
 										</tbody>
