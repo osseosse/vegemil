@@ -317,74 +317,7 @@ $(window).on('load', function () {
   earningsChart = new ApexCharts($earningsChart, earningsChartOptions);
   earningsChart.render();
 
-  //------------ Revenue Report Chart ------------
-  //----------------------------------------------
-  revenueReportChartOptions = {
-    chart: {
-      height: 230,
-      stacked: true,
-      type: 'bar',
-      toolbar: { show: false }
-    },
-    plotOptions: {
-      bar: {
-        columnWidth: '17%',
-        endingShape: 'rounded'
-      },
-      distributed: true
-    },
-    colors: [window.colors.solid.primary, window.colors.solid.warning],
-    series: [
-      {
-        name: 'Earning',
-        data: [95, 177, 284, 256, 105, 63, 168, 218, 72, 95, 177, 284]	//실데이터 영역
-      },
-      {
-        name: 'Expense',
-        data: [-145, -80, -60, -180, -100, -60, -85, -75, -100, -145, -80, -60]	//실데이터 영역
-      }
-    ],
-    dataLabels: {
-      enabled: false
-    },
-    legend: {
-      show: false
-    },
-    grid: {
-      padding: {
-        top: -20,
-        bottom: -10
-      },
-      yaxis: {
-        lines: { show: false }
-      }
-    },
-    xaxis: {
-      categories: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-      labels: {
-        style: {
-          colors: $textMutedColor,
-          fontSize: '0.86rem'
-        }
-      },
-      axisTicks: {
-        show: false
-      },
-      axisBorder: {
-        show: false
-      }
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: $textMutedColor,
-          fontSize: '0.86rem'
-        }
-      }
-    }
-  };
-  revenueReportChart = new ApexCharts($revenueReportChart, revenueReportChartOptions);
-  revenueReportChart.render();
+  
 
   //---------------- Budget Chart ----------------
   //----------------------------------------------
@@ -708,3 +641,78 @@ $(window).on('load', function () {
   goalOverviewChart = new ApexCharts($goalOverviewChart, goalOverviewChartOptions);
   goalOverviewChart.render();
 });
+
+var $textMutedColor = '#b9b9c3';
+var $revenueReportChart = document.querySelector('#revenue-report-chart');
+
+//월별 가입자수
+function revenueReportChart(joinData, joinDate) {
+  revenueReportChartOptions = {
+    chart: {
+      height: 230,
+      stacked: true,
+      type: 'bar',
+      toolbar: { show: false }
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '17%',
+        endingShape: 'rounded'
+      },
+      distributed: true
+    },
+    colors: [window.colors.solid.primary, window.colors.solid.warning],
+    series: [
+      {
+        name: 'Earning',
+        data: joinData	//실데이터 영역
+      }
+      //탈퇴회원수
+      //,
+      //{
+        //name: 'Expense',
+        //data: [-145, -80, -60, -180, -100, -60, -85, -75, -100, -145, -80, -60]	//실데이터 영역
+      //}
+    ],
+    dataLabels: {
+      enabled: false
+    },
+    legend: {
+      show: false
+    },
+    grid: {
+      padding: {
+        top: -20,
+        bottom: -10
+      },
+      yaxis: {
+        lines: { show: false }
+      }
+    },
+    xaxis: {
+      categories: joinDate,
+      labels: {
+        style: {
+          colors: $textMutedColor,
+          fontSize: '0.86rem'
+        }
+      },
+      axisTicks: {
+        show: false
+      },
+      axisBorder: {
+        show: false
+      }
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: $textMutedColor,
+          fontSize: '0.86rem'
+        }
+      }
+    }
+  };
+  revenueReportChart = new ApexCharts($revenueReportChart, revenueReportChartOptions);
+  revenueReportChart.render();
+}

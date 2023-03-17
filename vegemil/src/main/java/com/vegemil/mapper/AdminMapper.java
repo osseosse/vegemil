@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Param;
 
 import com.vegemil.domain.AdminDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.UrlDTO;
+import com.vegemil.domain.UserAgentDTO;
 
 @Mapper
 public interface AdminMapper {
@@ -35,5 +38,19 @@ public interface AdminMapper {
 	public int insertUrl(@Param("url") String url, @Param("title") String title, @Param("table") String table);
 	
 	public int updateUrl(@Param("url") String url, @Param("title") String title, @Param("table") String table);
+	
+	public MemberDTO selectMemCount();
+	
+	public List<MemberDTO> selectSexRate();
+	
+	public List<MemberDTO> selectMonthlyJoinCount();
+	
+	public List<UserAgentDTO> selectMonthlyMobileAgent();
+	
+	public UserAgentDTO selectUserAgent(String yymm);
+	
+	public List<UrlDTO> selectUrlList();
+	
+	public List<ProductDTO> selectProductList();
 
 }

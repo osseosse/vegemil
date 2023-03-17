@@ -1,6 +1,10 @@
 package com.vegemil.service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.AdminDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.UrlDTO;
+import com.vegemil.domain.UserAgentDTO;
 import com.vegemil.mapper.AdminMapper;
 
 @Service
@@ -49,6 +56,51 @@ public class AdminService implements UserDetailsService {
         }else {
         	return 0;
         }
+    }
+    
+    public Map<String, Object> getMainInformation() {
+    	
+    	Map<String, Object> hs = new HashMap<>();
+    	
+    	String yymm = "";
+    	LocalDate now = LocalDate.now();
+    	yymm = now.toString().substring(2, 7);
+    	
+    	//1. 회원수
+    	MemberDTO memCount = adminMapper.selectMemCount();
+    	hs.put("memCount", memCount);
+    	
+    	//2. 성비
+    	List<MemberDTO> sexRate = new ArrayList<>();
+    	sexRate = adminMapper.selectSexRate();
+    	hs.put("sexRate", sexRate);
+    	
+    	//3. 가입자수
+    	List<MemberDTO> monthlyJoinCount = new ArrayList<>();
+    	monthlyJoinCount = adminMapper.selectMonthlyJoinCount();
+    	hs.put("monthlyJoinCount", monthlyJoinCount);
+    	
+    	//4. 모바일 기기별 월 유입
+    	List<UserAgentDTO> monthlyMobileAgent = new ArrayList<>();
+    	monthlyMobileAgent = adminMapper.selectMonthlyMobileAgent();
+    	hs.put("monthlyMobileAgent", monthlyMobileAgent);
+    	
+    	//5. 디바이스별 유입 월
+    	UserAgentDTO userAgent = new UserAgentDTO();
+    	userAgent = adminMapper.selectUserAgent(yymm);
+    	hs.put("userAgent", userAgent);
+    	
+    	//6. 조회수 상위페이지
+    	List<UrlDTO> urlList = adminMapper.selectUrlList();
+    	hs.put("urlList", urlList);
+    	
+    	//7. 조회수 상위 제품
+		List<ProductDTO> productList = adminMapper.selectProductList();
+		hs.put("productList", productList);
+    	
+    	
+    	return hs;
+    	
     }
     
     public Map<String, Object> validationLogin(MemberDTO member) {

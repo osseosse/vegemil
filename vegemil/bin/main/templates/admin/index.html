@@ -27,17 +27,52 @@
 	    <script src="/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
 		<script src="/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
 		<script src="/app-assets/js/scripts/charts/chart-apex.js"></script>
-	    <script>
+	    <script th:inline="javascript">
 	    $(function () {
+	    	/*<![CDATA[*/
+	    	var manCount = new Array();
+	    	var womenCount = new Array();
+	    	var j = 0;
+	    	[# th:each="sexRate : ${sexRate}"]
+		    	manCount[j] = [[${sexRate.man}]];
+		    	womenCount[j] = [[${sexRate.women}]];
+				j++;
+			[/]
+			
+			var joinData = new Array();
+			var joinDate = new Array();
+			var k = 0;
+	    	[# th:each="monthlyJoinCount : ${monthlyJoinCountList}"]
+		    	joinData[k] = [[${monthlyJoinCount.mCount}]];
+		    	joinDate[k] = [[${monthlyJoinCount.mJoindate}]];
+				k++;
+			[/]
 	    	
-		    var today = new Date();            
-	    	var month = today.getMonth() + 1;  // 월
-	    	var date = today.getDate();  // 날짜
-	    	var week = new Array('일', '월', '화', '수', '목', '금', '토');
-	    	var day = week[today.getDay()];
-// 	    	$('#txtDate').text(day);
-// 	    	$('#txtDay').text(month+"/"+date);
+	    	//모바일 월 유입
+	    	var iosList = [];
+			var androidList = [];
+			var etcList = [];
+			var yymmList = [];
+			var i = 0;
+// 			var userAgentList = [[${monthlyMobileAgentList}]];
+			[# th:each="monthlyMobile : ${monthlyMobileAgentList}"]
+				iosList[i] = [[${monthlyMobile.ios}]];
+				androidList[i] = [[${monthlyMobile.android}]];
+				etcList[i] = [[${monthlyMobile.etc}]];
+				yymmList[i] = [[${monthlyMobile.yymm}]];
+				i++;
+			[/]
+			
+			var pc = [[${userAgent.pc}]];
+			var mobile = [[${userAgent.mobile}]];
+			var tablet = [[${userAgent.tablet}]];
+		
+			radarChart(manCount, womenCount);
+			revenueReportChart(joinData, joinDate);
+			columnChart(iosList,androidList, etcList, yymmList);
+			donutChart(pc, mobile, tablet);
 	    	
+	    	/*]]>*/
 	    });
 	    </script>
 	    <!-- END: Page JS-->
@@ -92,7 +127,7 @@
 																</div>
 															</div>
 															<div class="my-auto">
-																<h4 class="fw-bolder mb-0">20,000명</h4>
+																<h4 class="fw-bolder mb-0" th:text="|${#numbers.formatInteger(memCount.total, 0, 'COMMA')}명|"></h4>
 																<p class="card-text font-small-3 mb-0">총 회원수</p>
 															</div>
 														</div>
@@ -105,7 +140,7 @@
 																</div>
 															</div>
 															<div class="my-auto">
-																<h4 class="fw-bolder mb-0">15,000명</h4>
+																<h4 class="fw-bolder mb-0" th:text="|${#numbers.formatInteger(memCount.live, 0, 'COMMA')}명|"></h4>
 																<p class="card-text font-small-3 mb-0">활성 회원</p>
 															</div>
 														</div>
@@ -118,24 +153,24 @@
 																</div>
 															</div>
 															<div class="my-auto">
-																<h4 class="fw-bolder mb-0">5,000명</h4>
-																<p class="card-text font-small-3 mb-0">휴면 회원</p>
+																<h4 class="fw-bolder mb-0" th:text="|${#numbers.formatInteger(memCount.comp, 0, 'COMMA')}명|"></h4>
+																<p class="card-text font-small-3 mb-0">법인 회원</p>
 															</div>
 														</div>
 													</div>
-<!-- 													<div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0"> -->
-<!-- 														<div class="d-flex flex-row"> -->
-<!-- 															<div class="avatar bg-light-danger me-2"> -->
-<!-- 																<div class="avatar-content"> -->
-<!-- 																	<i data-feather="user" class="avatar-icon"></i> -->
-<!-- 																</div> -->
-<!-- 															</div> -->
-<!-- 															<div class="my-auto"> -->
-<!-- 																<h4 class="fw-bolder mb-0">5,000명</h4> -->
-<!-- 																<p class="card-text font-small-3 mb-0">사이트 휴면회원</p> -->
-<!-- 															</div> -->
-<!-- 														</div> -->
-<!-- 													</div> -->
+													<div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+														<div class="d-flex flex-row">
+															<div class="avatar bg-light-danger me-2">
+																<div class="avatar-content">
+																	<i data-feather="user" class="avatar-icon"></i>
+																</div>
+															</div>
+															<div class="my-auto">
+																<h4 class="fw-bolder mb-0">-</h4>
+																<p class="card-text font-small-3 mb-0">사이트 휴면회원(휴면처리 일시정지중)</p>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -179,10 +214,10 @@
 								align-items-md-center align-items-start
 							  ">
 									<h4 class="card-title">모바일 기기별 월유입</h4>
-									<div class="d-flex align-items-center mt-md-0 mt-1">
-										<i class="font-medium-2" data-feather="calendar"></i>
-										<input type="text" class="form-control flat-picker bg-transparent border-0 shadow-none" placeholder="YYYY-MM-DD" />
-									</div>
+<!-- 									<div class="d-flex align-items-center mt-md-0 mt-1"> -->
+<!-- 										<i class="font-medium-2" data-feather="calendar"></i> -->
+<!-- 										<input type="text" class="form-control flat-picker bg-transparent border-0 shadow-none" placeholder="YYYY-MM-DD" /> -->
+<!-- 									</div> -->
 								</div>
 								<div class="card-body">
 									<div id="column-chart"></div>
@@ -198,11 +233,11 @@
 								flex-md-row flex-column
 								justify-content-md-between justify-content-start
 								align-items-md-center align-items-start">
-                                    <h4 class="card-title ">디바이스별 유입</h4>
-										<div class="d-flex align-items-center mt-md-0 mt-1">
-										<i class="font-medium-2" data-feather="calendar"></i>
-										<input type="text" class="form-control flat-picker bg-transparent border-0 shadow-none" placeholder="YYYY-MM-DD" />
-									</div>
+                                    <h4 class="card-title ">[[${month}]]월 디바이스 유입</h4>
+<!-- 										<div class="d-flex align-items-center mt-md-0 mt-1"> -->
+<!-- 											<i class="font-medium-2" data-feather="calendar"></i> -->
+<!-- 											<input type="text" class="form-control flat-picker bg-transparent border-0 shadow-none" placeholder="YYYY-MM-DD" /> -->
+<!-- 										</div> -->
                                 </div>
 								
                                 <div class="card-body">
@@ -278,43 +313,40 @@
 								<div class="card-body">
 									<div class="row ">
 										<div class="col-md-12 col-12 mb-2">
-                                            <h4 class="card-title">조회수 상위제품</h4>
+                                            <h4 class="card-title">[[${month}]]월 조회수 상위제품</h4>
 										</div>
-										<div class="col-md-1 col-12 ">
-											등록일
-										</div>
+<!-- 										<div class="col-md-1 col-12 "> -->
+<!-- 											등록일 -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-4 col-12"> -->
+<!--                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> -->
+<!--                                                 <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" autocomplete="off" checked /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label> -->
 
-										<div class="col-md-4 col-12">
-                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-1" autocomplete="off" checked />
-                                                <label class="btn btn-outline-primary" for="btnradio1-1">오늘</label>
+<!--                                                 <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label> -->
 
-                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-2" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio1-2">1개월</label>
+<!--                                                 <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label> -->
 
-                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio1-3" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio1-3">3개월</label>
+<!-- 												<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label> -->
 
-												<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-4" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio1-4">6개월</label>
-
-												<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio1-5">1년</label>
-                                            </div>
-										</div>
-										<div class="col-md-3 col-12">
-											<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
-										</div>
+<!-- 												<input type="radio" class="btn-check" name="btnradio1" id="btnradio1-5" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio1-5">1년</label> -->
+<!--                                             </div> -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-3 col-12"> -->
+<!-- 											<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" /> -->
+<!-- 										</div> -->
 									</div>
-									
-								
-									<hr />
-									<div class="row">
-										 <div class="col-sm-12">
-											<button type="reset" class="btn btn-primary me-1">조회</button>
-											<button type="reset" class="btn btn-outline-secondary">초기화</button>
-										</div>
-									</div>
+<!-- 									<hr /> -->
+<!-- 									<div class="row"> -->
+<!-- 										 <div class="col-sm-12"> -->
+<!-- 											<button type="reset" class="btn btn-primary me-1">조회</button> -->
+<!-- 											<button type="reset" class="btn btn-outline-secondary">초기화</button> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
 								</div>
 
 
@@ -337,82 +369,16 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>01</td>
-												<td>플레인두유</td>
-												<td>베지밀 담백한 에이</td>
-												<td>1,245</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>02</td>
-												<td>일반영양식</td>
-												<td>마일드케어 구수한맛</td>
-												<td>1,145</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>03</td>
-												<td>전문영양식</td>
-												<td>TF 1000</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>04</td>
-												<td>우리콩</td>
-												<td>우리콩</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>05</td>
-												<td>프리미엄</td>
-												<td>프리미엄</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>06</td>
-												<td>프리미엄 두유</td>
-												<td>베지밀 루테인 두유</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>07</td>
-												<td>콩국물&육수</td>
-												<td>간단요리사 담백한 채소육수</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>08</td>
-												<td>과즙&차류 두유</td>
-												<td>베지밀 입안 가득 바나나 두유</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>09</td>
-												<td>블랙두유</td>
-												<td>베지밀 검은콩과 검은참깨 두유</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>10</td>
-												<td>균형건강음료</td>
-												<td>그린비아 프로틴밀 아몬드와 호두</td>
-												<td>945</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
+											<tr th:if="${productList !=null}" th:each="product : ${productList}">
+												<td th:text="${productStat.count}"></td>
+												<td th:text="${product.subCategoryName}"></td>
+												<td th:text="${product.pName}"></td>
+												<td th:text="${product.count}"></td>
+												<td class="underline"><a th:href="|/product/detail/${product.pIdx}|" target="_blank">바로가기</a></td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
-
-
-							
 							</div>
 						</div>
 					</div>
@@ -427,43 +393,40 @@
 								<div class="card-body">
 									<div class="row ">
 										<div class="col-md-12 col-12 mb-2">
-                                            <h4 class="card-title">조회수 상위페이지</h4>
+                                            <h4 class="card-title">[[${month}]]월 조회수 상위페이지</h4>
 										</div>
-										<div class="col-md-1 col-12 ">
-											등록일
-										</div>
+<!-- 										<div class="col-md-1 col-12 "> -->
+<!-- 											등록일 -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-4 col-12"> -->
+<!--                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> -->
+<!--                                                 <input type="radio" class="btn-check" name="btnradio1" id="btnradio2-1" autocomplete="off" checked /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio2-1">오늘</label> -->
 
-										<div class="col-md-4 col-12">
-                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio2-1" autocomplete="off" checked />
-                                                <label class="btn btn-outline-primary" for="btnradio2-1">오늘</label>
+<!--                                                 <input type="radio" class="btn-check" name="btnradio1" id="btnradio2-2" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio2-2">1개월</label> -->
 
-                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio2-2" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio2-2">1개월</label>
+<!--                                                 <input type="radio" class="btn-check" name="btnradio1" id="btnradio2-3" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio2-3">3개월</label> -->
 
-                                                <input type="radio" class="btn-check" name="btnradio1" id="btnradio2-3" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio2-3">3개월</label>
+<!-- 												<input type="radio" class="btn-check" name="btnradio1" id="btnradio2-4" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio2-4">6개월</label> -->
 
-												<input type="radio" class="btn-check" name="btnradio1" id="btnradio2-4" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio2-4">6개월</label>
-
-												<input type="radio" class="btn-check" name="btnradio1" id="btnradio2-5" autocomplete="off" />
-                                                <label class="btn btn-outline-primary" for="btnradio2-5">1년</label>
-                                            </div>
-										</div>
-										<div class="col-md-3 col-12">
-											<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" />
-										</div>
+<!-- 												<input type="radio" class="btn-check" name="btnradio1" id="btnradio2-5" autocomplete="off" /> -->
+<!--                                                 <label class="btn btn-outline-primary" for="btnradio2-5">1년</label> -->
+<!--                                             </div> -->
+<!-- 										</div> -->
+<!-- 										<div class="col-md-3 col-12"> -->
+<!-- 											<input type="text" id="fp-range" class="form-control flatpickr-range" placeholder="YYYY-MM-DD to YYYY-MM-DD" /> -->
+<!-- 										</div> -->
 									</div>
-									
-								
-									<hr />
-									<div class="row">
-										 <div class="col-sm-12">
-											<button type="reset" class="btn btn-primary me-1">조회</button>
-											<button type="reset" class="btn btn-outline-secondary">초기화</button>
-										</div>
-									</div>
+<!-- 									<hr /> -->
+<!-- 									<div class="row"> -->
+<!-- 										 <div class="col-sm-12"> -->
+<!-- 											<button type="reset" class="btn btn-primary me-1">조회</button> -->
+<!-- 											<button type="reset" class="btn btn-outline-secondary">초기화</button> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
 								</div>
 
 
@@ -484,23 +447,11 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>01</td>
-												<td>창업주 기념관</td>
-												<td>1,245</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>02</td>
-												<td>대표이사 인사말</td>
-												<td>1,145</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
-											</tr>
-											<tr>
-												<td>03</td>
-												<td>프로필</td>
-												<td>1,145</td>
-												<td class="underline"><a href="#" target="_blank">바로가기</a></td>
+											<tr th:if="${urlList !=null}" th:each="url : ${urlList}">
+												<td th:text="${urlStat.count}"></td>
+												<td th:text="${url.title}"></td>
+												<td th:text="${url.count}"></td>
+												<td class="underline"><a th:href="${url.url}" target="_blank">바로가기</a></td>
 											</tr>
 										</tbody>
 									</table>
@@ -517,7 +468,6 @@
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-    
     </th:block>
 
 </html>

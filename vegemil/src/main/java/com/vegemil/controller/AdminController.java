@@ -1,8 +1,11 @@
 package com.vegemil.controller;
 
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,14 +46,23 @@ public class AdminController extends UiUtils {
 	@RequestMapping(value = "/admin/manage")
 	public String adminIndex(HttpServletRequest req, Model model) {
 		
+		LocalDate now = LocalDate.now();
+        int month = now.getMonthValue();
+		
 		List<AdminSupportDTO> supportList = Collections.emptyList();
 		supportList = adminFaqService.getSupportList();
 		
-		//회원
+		Map<String, Object> hs = new HashMap<>();
+		hs = adminService.getMainInformation();
 		
-		//유입
-		
-		//
+		model.addAttribute("month", month);
+		model.addAttribute("memCount", hs.get("memCount"));
+		model.addAttribute("sexRate", hs.get("sexRate"));
+		model.addAttribute("monthlyJoinCountList", hs.get("monthlyJoinCount"));
+		model.addAttribute("monthlyMobileAgentList", hs.get("monthlyMobileAgent"));
+		model.addAttribute("userAgent", hs.get("userAgent"));
+		model.addAttribute("urlList", hs.get("urlList"));
+		model.addAttribute("productList", hs.get("productList"));
 		
 		model.addAttribute("supportList", supportList);
 		// View attribute

@@ -57,6 +57,17 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
 	private String mDualYn;
 	private String mDi;
 	private String mLocation;
+	
+	//유입
+	private Long mAge;
+	private Long man;
+	private Long women;
+	private Long mCount;
+	
+	private Long total;
+	private Long live;
+	private Long sleep;
+	private Long comp;
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

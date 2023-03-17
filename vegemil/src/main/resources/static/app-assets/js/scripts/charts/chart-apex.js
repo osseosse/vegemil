@@ -6,7 +6,6 @@
     Author: PIXINVENT
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
-
 $(function () {
   'use strict';
 
@@ -143,85 +142,8 @@ $(function () {
     var areaChart = new ApexCharts(areaChartEl, areaChartConfig);
     areaChart.render();
   }
-
-  // Column Chart
-  // --------------------------------------------------------------------
-  var columnChartEl = document.querySelector('#column-chart'),
-    columnChartConfig = {
-      chart: {
-        height: 400,
-        type: 'bar',
-        stacked: true,
-        parentHeightOffset: 0,
-        toolbar: {
-          show: false
-        }
-      },
-      plotOptions: {
-        bar: {
-          columnWidth: '15%',
-          colors: {
-            backgroundBarColors: [
-              chartColors.column.bg,
-              chartColors.column.bg,
-              chartColors.column.bg,
-              chartColors.column.bg,
-              chartColors.column.bg
-            ],
-            backgroundBarRadius: 8
-          }
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      legend: {
-        show: true,
-        position: 'top',
-        horizontalAlign: 'start'
-      },
-      colors: [chartColors.column.series1, chartColors.column.series2, chartColors.column.series3],
-      stroke: {
-        show: true,
-        colors: ['transparent']
-      },
-      grid: {
-        xaxis: {
-          lines: {
-            show: true
-          }
-        }
-      },
-      series: [
-        {
-          name: 'Apple',
-          data: [20, 40, 15, 20, 10, 40, 40]	// 실데이터
-        },
-        {
-          name: 'Samsung',
-          data: [85, 100, 30, 40, 95, 100, 40]	// 실데이터
-        },
-		{
-          name: 'Etc',
-          data: [5, 10, 30, 10, 15, 10, 10]	// 실데이터
-        }
-		 
-      ],
-      xaxis: {
-        categories: ['23/01', '23/02', '23/03', '23/04', '23/05', '23/06', '23/07']	// 실데이터
-      },
-      fill: {
-        opacity: 1
-      },
-      yaxis: {
-        opposite: isRtl
-      }
-    };
-  if (typeof columnChartEl !== undefined && columnChartEl !== null) {
-    var columnChart = new ApexCharts(columnChartEl, columnChartConfig);
-    columnChart.render();
-  }
-
+  
+  
   // Scatter Chart
   // --------------------------------------------------------------------
   var scatterChartEl = document.querySelector('#scatter-chart'),
@@ -814,8 +736,38 @@ $(function () {
     radialChart.render();
   }
 
-  // Radar Chart
-  // --------------------------------------------------------------------
+
+});
+
+var flatPicker = $('.flat-picker'),
+    isRtl = $('html').attr('data-textdirection') === 'rtl',
+    chartColors = {
+      column: {
+        series1: '#ff386c',
+        series2: '#4285f4',
+	    series3: '#fbb900',
+        bg: '#cbcbcb'
+      },
+      success: {
+        shade_100: '#7eefc7',
+        shade_200: '#06774f'
+      },
+      donut: {
+        series1: '#2fd862',
+        series2: '#4285f4',
+        series3: '#fbb900',
+        series4: '#2b9bf4',
+        series5: '#FFA1A1'
+      },
+      area: {
+        series3: '#fbb900',
+        series2: '#4285f4',
+        series1: '#2fd862'
+      }
+    };
+
+// 남녀 성비
+function radarChart(manCount, womenCount) {
   var radarChartEl = document.querySelector('#radar-chart'),
     radarChartConfig = {
       chart: {
@@ -843,11 +795,11 @@ $(function () {
       series: [
         {
           name: '남자',
-          data: [50, 100, 81, 160, 142, 142, 33 ]	//실데이터 영역
+          data: manCount	//실데이터 영역
         },
         {
           name: '여자',
-          data: [50, 100, 100, 25, 158, 163, 76]	//실데이터 영역
+          data: womenCount	//실데이터 영역
         }
       ],
       colors: [chartColors.donut.series1, chartColors.donut.series3],
@@ -876,9 +828,109 @@ $(function () {
     var radarChart = new ApexCharts(radarChartEl, radarChartConfig);
     radarChart.render();
   }
+}
 
-  // Donut Chart
-  // --------------------------------------------------------------------
+//모바일 기기 월유입
+function columnChart(iosList,androidList, etcList, yymmList){
+
+  var columnChartEl = document.querySelector('#column-chart'),
+    columnChartConfig = {
+      chart: {
+        height: 400,
+        type: 'bar',
+        stacked: true,
+        parentHeightOffset: 0,
+        toolbar: {
+          show: false
+        }
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '15%',
+          colors: {
+            backgroundBarColors: [
+              chartColors.column.bg,
+              chartColors.column.bg,
+              chartColors.column.bg,
+              chartColors.column.bg,
+              chartColors.column.bg
+            ],
+            backgroundBarRadius: 8
+          }
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      legend: {
+        show: true,
+        position: 'top',
+        horizontalAlign: 'start'
+      },
+      colors: [chartColors.column.series1, chartColors.column.series2, chartColors.column.series3],
+      stroke: {
+        show: true,
+        colors: ['transparent']
+      },
+      grid: {
+        xaxis: {
+          lines: {
+            show: true
+          }
+        }
+      },
+      series: [
+        {
+          name: 'ios',
+          data: iosList	// 실데이터
+        },
+        {
+          name: 'android',
+          data: androidList	// 실데이터
+        },
+		{
+          name: 'etc',
+          data: etcList	// 실데이터
+        }
+		 
+      ],
+      xaxis: {
+        categories: yymmList	// 실데이터
+      },
+      fill: {
+        opacity: 1
+      },
+      yaxis: {
+        opposite: isRtl
+      }
+    };
+  if (typeof columnChartEl !== undefined && columnChartEl !== null) {
+    var columnChart = new ApexCharts(columnChartEl, columnChartConfig);
+    columnChart.render();
+  }
+}
+
+// 디바이스별 유입
+function donutChart(pc, mobile, tablet) {
+	var total = pc + mobile + tablet;
+	var pcRatio = Math.round(pc/total*100);
+	var mobileRatio = Math.round(mobile/total*100);
+	var tabletRatio = Math.round(tablet/total*100);
+	var maxDevice = "PC";
+	var maxRatio = pcRatio;
+	var temp = 0;
+	if(maxRatio < mobileRatio) {
+		maxRatio = mobileRatio;
+		maxDevice = "Mobile";
+		if(maxRatio < tabletRatio ) {
+			maxRatio = tabletRatio;
+			maxDevice = "Tablet";
+		}
+	} else if(maxRatio < tabletRatio ) {
+		maxRatio = tabletRatio;
+		maxDevice = "Tablet";
+	}
+
   var donutChartEl = document.querySelector('#donut-chart'),
     donutChartConfig = {
       chart: {
@@ -890,7 +942,7 @@ $(function () {
         position: 'bottom'
       },
       labels: [ 'PC',' Mobile', 'Tablet' ],
-      series: [60, 35, 5],	//실데이터 영역
+      series: [pcRatio, mobileRatio, tabletRatio],	//실데이터 영역
       colors: [
         chartColors.donut.series1,
         chartColors.donut.series2,
@@ -921,9 +973,9 @@ $(function () {
               total: {
                 show: true,
                 fontSize: '1.5rem',
-                label: 'PC',
+                label: maxDevice,
                 formatter: function (w) {
-                  return '60%';
+                  return maxRatio+'%';
                 }
               }
             }
@@ -971,4 +1023,4 @@ $(function () {
     var donutChart = new ApexCharts(donutChartEl, donutChartConfig);
     donutChart.render();
   }
-});
+}

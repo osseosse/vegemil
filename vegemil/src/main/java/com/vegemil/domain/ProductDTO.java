@@ -15,6 +15,7 @@ public class ProductDTO extends CommonDTO {
 	private String pOnuri;
 	private Long   pActive;
 	private Long   pOnactive;
+	private Long   count;
 	private String categoryCode;
 	private String categoryName;
 	private String subCategoryCode;

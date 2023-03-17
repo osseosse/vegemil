@@ -293,4 +293,95 @@
 			url = #{url}
 	</update>
 	
+	<select id="selectMemCount" resultType="com.vegemil.domain.MemberDTO">
+		select
+			count(*) as total,
+		    sum(if(m_auth='USER',1,0)) as live,
+		    sum(if(m_auth='USER',0,1)) as comp
+		from 
+			m_member
+	</select>
+	
+	<select id="selectSexRate" resultType="com.vegemil.domain.MemberDTO">
+	<![CDATA[
+		SELECT * 
+		FROM  
+			(SELECT
+				FLOOR((date_format(now(),'%Y')-substring(m_year,1,4))/10)*10 as m_age, 
+				sum(if(m_sex='남',1,0)) as man,
+			    sum(if(m_sex='여',1,0)) as women
+			 FROM m_member
+			 GROUP BY m_age 
+			) S
+		 WHERE S.m_age >= 0 AND S.m_age <= 70
+		 order by S.m_age
+	]]>
+	</select>
+	
+	<select id="selectMonthlyJoinCount" resultType="com.vegemil.domain.MemberDTO">
+		SELECT 
+			MID(m_joindate,3,5) m_joindate, COUNT(*) as m_count
+		FROM 
+			m_member 
+		where 
+			m_auth='USER'
+		and 
+			m_joindate is not null
+		GROUP BY 
+			MID(m_joindate,1,7)
+		order by 
+			m_joindate desc
+		Limit 
+			12
+	</select>
+	
+	<select id="selectMonthlyMobileAgent" resultType="com.vegemil.domain.UserAgentDTO">
+	<![CDATA[
+		select 
+			ios, android, etc, date_format(yymm, '%y-%m') as yymm
+		from
+			m_user_agent_count
+		where 
+			date_format(yymm, '%y-%m') <= date_format(now(), '%y-%m')
+        order by 
+        	yymm desc
+    ]]>
+	</select>
+	
+	<select id="selectUserAgent" resultType="com.vegemil.domain.UserAgentDTO" parameterType="String">
+		select 
+			pc, mobile, tablet, date_format(yymm, '%y-%m') as yymm
+		from 
+			m_user_agent_count
+		where
+			date_format(yymm, '%y-%m') = #{yymm}
+	</select>
+	
+	<select id="selectUrlList" resultType="com.vegemil.domain.UrlDTO">
+	<![CDATA[
+		select * 
+		from
+			m_url_03
+		where 
+			url != '/'
+		and 
+			url != '/member/login'
+		and
+			url not like '%/product/detail%'
+		order by 
+			count desc
+		limit 10
+	]]>
+	</select>
+	
+	<select id="selectProductList" resultType="com.vegemil.domain.ProductDTO">
+		select
+			p_idx, sub_category_name, p_name, count 
+		from
+			m_product
+		order by
+			count desc
+		limit 10
+	</select>
+	
 </mapper>
