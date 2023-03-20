@@ -4,275 +4,640 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 창업주기념관</title>
    <head th:replace="fragments/head :: headFragment"></head>
+   <link rel="stylesheet" href="https://www.vegemil.co.kr/common/css/greenbia/aos.css" />
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<header class="starHeader" th:replace="fragments/mainHeaderStarryDark :: headerFragmentStarryDark"></header>
+<!-- AOS -->
+<script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	AOS.init({
+		
+	});
+</script>
 <!-- ================================ // Header ================================ -->
 <!-- ================================ 
 		Content
 ================================ -->
-<div id="content" class="pb100">
-	<div class="contant1760 mt90h">
-		<div class="center mt250 ">            
-            <p class="f45 fw600 mt50 lh140">창업주 기념관</p>
-			 <p class="f18 fw400 gray04 mt20 lh140">정식품 창업주 정재원 명예회장 1917.01 ~ 2017.10</p>
-        </div>
-	   <div class="subTopHeri h600 mt100">
-			<div class="centerL text-left">
-				<p class="f_pp white f18 fw400">Dr.CHUNG'S  FOOD  Heritage</p>
-				<p class="white f66 fw600">인류건강문화에 <br class="mView">이 몸 바치고저</p>
-			</div>
-		</div>
-	</div>
-	<div class="contant1460 whiteRound" >
-<!-- 		<p class="f14 fw400 black mt30 mr30 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p> -->
-		<br class="clear">
-        <div class="center mt50">            
-			<p class="f52 fw600  lh140"><span class="gold">의사로서의 사명감</span>으로 시작된<br>베지밀의 아버지,</p>
-			<p class="f34 fw600 lh140 mt50">[ 혜춘 정재원 ]</p>
-			<p class="mt50 f18 fw400 gray04 lh170">1937년, 가난한 급사에서 독학으로 시작된 소아과 의사 생활<br class="wView">그리고 치료받지 못하고 보내야 했던 아이들을 살리기 위해 바친 30년의 청춘</p>
-
-			<p class="mt20 f18 fw400 gray04 lh170">유당불내증.<br>오랜 유학의 끝에 규명한 원인을 극복하기 위해 베지밀이라는 치유식을 개발했습니다.<br class="wView">겉으론 평범한 음료 한 병.</p>
-
-			<p class="mt20 f18 fw400 gray04 lh170">그러나 그 안에는 죽어가는 아이를 살리기 위한 의사의 사명이 한 평생이 담겨있습니다.<br class="wView">
-그 곧고 바른 마음에서 치유로, 제품에서 사랑으로 이어져 오늘의 정식품을 만들었습니다.</p>
-			<div class="mt100">
-				<iframe class="vegemilstory" src="https://www.youtube.com/embed/IfIpAiAGwPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-<!-- 			<p class="mt100"> -->
-<!--                 <img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heritige_banner.jpg" alt="임시배너"> -->
-<!--             </p> -->
-        </div>
-    </div><!--//contant1460-->
-
-    <div class="contant100 mt250">
-	    <div class="row">
-            <div class="col-md-12 ">
-               <!-- 탭 시작 -->
-			   <!-- tab -->
-				<div class="heriTab ">
-					<div class="contant1460">
-						<ul class="tabs5 menu3 f14">
-							<li class="fw400"><a href="#history01">유소년기</a></li>
-							<li class="fw400"><a href="#history02">청장년기</a></li>
-							<li class="fw400"><a href="#history03">노년기</a></li>
-						</ul>
+<div id="content">
+	<div class="content100 mt-60 bgBlack">
+		
+		<!-- smooth-scrolling -->
+		<nav class="Quick-navigation f_pp">
+			<a href="#star-page01" class="Quick-navigation-item">Home</a>
+			<a href="#star-page02" class="Quick-navigation-item">Belief</a>
+			<!-- <a href="#star-page03" class="Quick-navigation-item">History</a> -->
+			<a href="#star-page04" class="Quick-navigation-item">History </a>
+			<a href="#star-page05" class="Quick-navigation-item">Vegemil Story</a>
+			<div class="Scroll-progress-indicator"></div>
+		</nav>
+		<div id="container-star" >
+			<div class="bgStar01" >
+				<section id="star-page01" class="js-scroll-step starbg01">
+					<!-- shooting star -->
+					<div class="starBox">
+						<span class="star"></span>
+						<span class="star pink"></span>
+						<span class="star blue"></span>
+						<span class="star yellow"></span>
+						<span class="star yellow2"></span>
 					</div>
-					<div class="tab_content5 ">
-						<div id="history01">
-							<div class="row">
-								<div class="subMiddleHeri01 h540">
-									<div class="centerH">
-										<p class="f23 fw600 white lh150">幼少年期</p>
-										<p class="f45 fw600 white center lh150">유소년기</p>
-										<p class="mt100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/year01.png" ></p>
-									</div>
+					<!-- //shooting star -->
+					<div class="centerH starZindex center f_sf">
+						<p class="f_pp letter10 " data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="500" data-aos-delay="500">Dr.CHUNG'S  FOOD  Heritage</p>
+						<p class="f66 fw400 mt50 lh130 f_sf" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="700" data-aos-delay="500">인류건강문화에</p>
+						<p class="f66 fw400  lh130" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="900" data-aos-delay="1000">이 몸 바치고저</p>
+						<p class="f27 fw200 mt40" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="1200">혜춘 정재원</p>
+					</div>
+					<p class="btn_scroll_bottom" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="1000"><a href="#star-page02"><span class="f_pp f16 white ">Scroll</span><img class="mt10" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_scroll.png" /></a></p>
+				</section>
+
+				<section id="star-page02"  class="js-scroll-step starbg02">
+					<div class="centerH2 starZindex  f_sf text-left" >
+						<div class="row">
+							<div class="col-md-6">
+								<div class="wView">
+									<div class="f23 fw500" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="200" data-aos-delay="100">의사로서의 사명감으로 시작된<br>베지밀의 아버지,</div>
+									<p class="f45 fw500 mt20" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="400" data-aos-delay="500">[ 혜춘 정재원 ]</p>
+									<p class="f18 fw200 lh160 mt50 gray03" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="600" data-aos-delay="500">
+										1937년, 가난한 급사에서 독학으로 시작된 소아과 의사 생활<br>
+										그리고 치료받지 못하고 보내야 했던 아이들을 살리기 위해 바친 30년의 청춘
+										<br><br><br>
+										유당불내증.<br>
+										오랜 유학의 끝에 규명한 원인을 극복하기 위해 베지밀이라는 치유식을 개발했습니다.<br>
+										
+										<br><br>
+										겉으론 평범한 음료 한 병.<br>
+										그러나 그 안에는 죽어가는 아이를 살리기 위한 의사의 사명이 한 평생이 담겨있습니다.<br>
+										그 곧고 바른 마음에서 치유로, 제품에서 사랑으로 이어져 오늘의 정식품을 만들었습니다.
+									</p>
 								</div>
-								<div class="contant1460 whiteRound">
-									<div class="heriBox">
-										<div class="row">
-											<div class="col-md-6">
-												<p class="f52 fw600 lh130">유소년기</p>
-												<p class="f23 fw500 mt10 lh130">1917~1937</p>
-												<table border="0" summary="유소년기" class="heirT mt50">
-													<tr>
-														<th class="f23 f_pp  black">1917.01</th>
-														<td class="f16  gray04">황해도 은율 출생</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1932.</th>
-														<td class="f16  gray04">평양 기성의학강습소 재직</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1937.06</th>
-														<td class="f16  gray04">의사검정고시 합격</td>
-													</tr>
-												</table>
-												<p class="img100 mt120 "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri01.jpg" /></p>
-												<p class="mt10 gray04 f16">견습의사 시절</p>
-											</div>
-											<div class="col-md-6 ">
-												<div class="img100 w410 text-right"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri02.jpg" />
-													<p class="mt10 gray04 text-right f16">정재원명예회장의 어머니</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div><!--//contant1460-->
+								<div class="mView" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="200" data-aos-delay="100">
+									<div class="f23 fw500" ><div style="height:100px"></div>의사로서의 사명감으로 시작된<br>베지밀의 아버지,</div>
+									<p class="f45 fw500 mt20">[ 혜춘 정재원 ]</p>
+									<p class="f18 fw200 lh160 mt50 gray03" >
+										1937년, 가난한 급사에서 독학으로 시작된 소아과 의사 생활<br>
+										그리고 치료받지 못하고 보내야 했던 아이들을 살리기 위해 바친 30년의 청춘
+										<br><br><br>
+										유당불내증.<br>
+										오랜 유학의 끝에 규명한 원인을 극복하기 위해 베지밀이라는 치유식을 개발했습니다.<br>
+										
+										<br><br>
+										겉으론 평범한 음료 한 병.<br>
+										그러나 그 안에는 죽어가는 아이를 살리기 위한 의사의 사명이 한 평생이 담겨있습니다.<br>
+										그 곧고 바른 마음에서 치유로, 제품에서 사랑으로 이어져 오늘의 정식품을 만들었습니다.
+									</p>
+								</div>
+							</div>
+							<div class="col-md-6" >
+								<div class="img_jjw " data-aos="fade-left" data-aos-easing="linear"  data-aos-duration="900" data-aos-delay="100" >
+									<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_jjw.png" />
+								</div>
 							</div>
 						</div>
-						<div id="history02">
-							<div class="row">
-								<div class="subMiddleHeri02 h540">
-									<div class="centerH">
-										<p class="f23 fw600 white lh150">幼少年期</p>
-										<p class="f45 fw600 white center lh150">청장년기</p>
-										<p class="mt100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/year02.png" ></p>
-									</div>
-								</div>
-								<div class="contant1460 whiteRound">
-									<div class="heriBox">
-										<div class="row">
-											<div class="col-md-6">
-												<p class="f52 fw600 lh130">청장년기</p>
-												<p class="f23 fw500 mt10 lh130">1937~1967</p>
-												<table border="0" summary="유소년기" class="heirT mt50">
-												
-													<tr>
-														<th class="f23 f_pp  black">1937.</th>
-														<td class="f16  gray03 f16">명동성모병원 의사 활동 시작</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1939.</th>
-														<td class="f16  gray03 f16">인천 해성병원 원장 역임</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1940.</th>
-														<td class="f16  gray03 f16">황해도 태탄 안당의원 개원</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1942. 04.</th>
-														<td class="f16  gray03 f16">결혼</td>
-													</tr>
-												</table>
-												<p class="img100 mt120 "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri04.jpg" /></p>
-												<p class="mt10 gray04 f16">인천해성병원</p>
-
-												<table border="0" summary="유소년기" class="heirT mt100">
-													<colgroup>
-														<col width="30%">
-														<col width="70%">
-													</colgroup>
-													<tr>
-														<th class="f23 f_pp  black">1966.</th>
-														<td class="f16  gray03">베지밀 개발 완료 및 발명특허</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1966.</th>
-														<td class="f16  gray03">국제무역박람회 대법원장상 수상</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1966.</th>
-														<td class="f16  gray03">연세대학교 외래교수</td>
-													</tr>
-												</table>
-												<p class="img100 mt120 "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri06.jpg" alt=""/></p>
-												<p class="mt10 gray04 f16">서울 회현동 정소아과</p>
-
-											</div>
-											<div class="col-md-6 ">
-												<div class="img100 w410 text-right "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri03.jpg" alt="율리아 여사와 결혼"/>
-													<p class="mt10 gray04 text-right f16">율리아 여사와 결혼</p>
-												</div>
-												<div class="img100 w410 text-right mt150"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri05.jpg" alt="소아불치병 연구를 위해 유학 중"/>
-													<p class="mt10 gray04 text-right f16">소아불치병 연구를 위해 유학 중</p>
-												</div>
-												<div class="img100 w410 text-right mt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri07.jpg" alt="소아불치병 해답을 찾고 귀국"/>
-													<p class="mt10 gray04 text-right f16">소아불치병 해답을 찾고 귀국</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div><!--//contant1460-->
+						
+					</div>
+				</section>
+			</div>
+			<div id="star-page04" class="js-scroll-step f_sf">
+				<div class="starZindex">
+					<div class="contant1310">
+						<div class="row">
+							<div class="col-md-6 pt100 star-photo-box"  >
+								<p class="f45 white gbBar">1917~1937</p>
+								<ul class="gray03 star-photo-txt mt60" >
+									<li>
+										<dl>
+											<dd class="f18">1917. 01</dd>
+											<dd class="f18">황해도 은율 출생</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1932.</dd>
+											<dd class="f18">평양 기성의학강습소 재직</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1937. 06</dd>
+											<dd class="f18">의사검정고시 합격</dd>
+										</dl>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<div id="history03">
-							<div class="row">
-								<div class="subMiddleHeri02 h540">
-									<div class="centerH">
-										<p class="f23 fw600 white lh150">老年期</p>
-										<p class="f45 fw600 white center lh150">노년기</p>
-										<p class="mt100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/year03.png" ></p>
+						<div class="row">
+							<div class="col-md-6 pt100 star-photo-box" >
+								<div class="w410"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_01.png" alt=""/>
+									<p class="fw400 f18 gray03 mt20">홀로 삼남매를 키워주신 모친</p>
+								</div>
+							</div>
+							<div class="col-md-6  star-photo-box" >
+								<div class="mt50 w560"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_02.png" alt=""/>
+									<p class="fw400 f18 gray03 mt20">견습 의사 시절</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6  star-photo-box" >
+								<div class="w560 mt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_03.png" />
+									<p class="fw400 f18 gray03 mt20">인천 혜성 병원</p>
+								</div>
+								<ul class="gray03 star-photo-txt mt130" >
+									<li>
+										<dl>
+											<dd class="f18">1947.</dd>
+											<dd class="f18">서울 회현동 '정소아과' 개원</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1959.</dd>
+											<dd class="f18">수도의과대학(현 고려대학병원)<br class="mView"> 박사과정 수료 (병리학)</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1960.</dd>
+											<dd class="f18">소아 불치병을 연구하기 위해 영국 유학</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1961.</dd>
+											<dd class="f18">일본 동경 소화의과대학 박사학위 취득</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1963.</dd>
+											<dd class="f18">영국 런던대학교 <br class="mView">소아과대학원 전기코스 수료</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1963.</dd>
+											<dd class="f18">미국 유학-알러지 전공 <br class="mView">(샌프란시스코 유씨 메디컬센터)</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1965.</dd>
+											<dd class="f18">국내 유당불내증 치료식 연구 시작</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6 mt50 mt100m star-photo-box" >
+								<p class="f45 white gbBar">1937~1967</p>
+								<ul class="gray03 star-photo-txt mt60" >
+									<li>
+										<dl>
+											<dd class="f18">1937. 01</dd>
+											<dd class="f18">명동성모병원 의사 활동 시작</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1939.</dd>
+											<dd class="f18">인천 해성병원 원장</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1940.</dd>
+											<dd class="f18">황해도 태탄 안당의원 개원</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1942.04</dd>
+											<dd class="f18">결혼</dd>
+										</dl>
+									</li>
+								</ul>
+								<div class="mt100 w410"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_04.png" />
+									<p class="fw400 f18 gray03 mt20">율리아 여사와 결혼</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6 pt100 star-photo-box" >
+								
+							</div>
+							<div class="col-md-6 pt100 star-photo-box" >
+								
+							</div>
+						</div>
+
+
+
+
+						<div class="row">
+							<div class="col-md-6  mt50 star-photo-box" >
+								<div class="w410"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_05.png" />
+									<p class="fw400 f18 gray03 mt20">소아불치병 연구를 위해 유학 중</p>
+								</div>
+							</div>
+							<div class="col-md-6 mt70 star-photo-box" >
+								<div class="mt50 w560"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_06.png" />
+									<p class="fw400 f18 gray03 mt20">서울 회현동 정소아과</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6  mt100 star-photo-box" >
+								<ul class="gray03 star-photo-txt mt40" >
+									<li>
+										<dl>
+											<dd class="f18">1966.</dd>
+											<dd class="f18">베지밀 개발 완료 및 발명특허</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1966.</dd>
+											<dd class="f18">국제무역박람회 대법원장상 수상</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1966.</dd>
+											<dd class="f18">연세대학교 외래교수</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6  mt50 star-photo-box" >
+								<div class=" w560"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_07.png" />
+									<p class="fw400 f18 gray03 mt20">병원 지하에서 개발한 최초의 베지밀</p>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					
+				</div>
+			</div>
+			<div class="js-scroll-step f_sf">
+				<div class="starZindex bgStar03 h700">
+					<!-- shooting star -->
+					<div class="wView">
+						<span class="star"></span>
+						<span class="star pink" ></span>
+						<span class="star blue2"></span>
+						<span class="star yellow" ></span>
+						<span class="star yellow2" ></span>
+					</div>
+					<!-- //shooting star -->
+				</div>
+			</div>
+
+			<div id="star-page05" class="js-scroll-step f_sf ">
+				<div class="starZindex bgStar04"  style="border-bottom:1px solid #000">
+					<div class="contant1310">
+						
+						<div class="row ">
+							<div class="col-md-12  star-photo-box"  >
+								<p class="f23 white mt60 fw200" data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="200" data-aos-delay="100">만약 그 일을 겪지 않았다면, 두유 개발에<br>인생을 걸어야 할 내 인연은 없었을지도 모른다.</p>
+								<p class="f52 white mt20 fw200" data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="400" data-aos-delay="500">베지밀 탄생</p>
+								<p class="f18 white mt40 fw200" data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="600" data-aos-delay="500">
+								베지밀은 혜춘 정재원 박사가 의사로서의 소명의식을 바탕으로 30년간의 연구활동과 경험을 통해 <br>콩의 영양적 가치를 발견하고 콩으로 만든 식품개발에 시간과 열성을 바쳐 탄생시킨 건강 식품입니다.</p>
+							</div>
+							
+						</div>
+					</div>
+					<!-- timeline -->
+					<div class="timeline-carousel mt250 mb700" >
+						<div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+							<!--Timeline item-->
+							<div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick01.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">01</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">소아과 의사로서의 시작 </span></p>
 									</div>
 								</div>
-								<div class="contant1460 whiteRound">
-									<div class="heriBox">
-										<div class="row">
-											<div class="col-md-6">
-												<p class="f52 fw600 lh130">노년기</p>
-												<p class="f23 fw500 mt10 lh130">1972~2017</p>
-												<table border="0" summary="유소년기" class="heirT mt50">
-													<tr>
-														<th class="f23 f_pp  black">1972.</th>
-														<td class="f16  gray03">재단법인 정건강관리소 정식 개업</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1973. 09.</th>
-														<td class="f16  gray03">주식회사 정식품 설립. 베지밀 제조공장 준공(신갈)</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1984. 07.</th>
-														<td class="f16  gray03">베지밀 제2 제조공장 준공(청주)</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1984. 12.</th>
-														<td class="f16  gray03">재단법인 혜춘장학회 설립 및 이사장 취임</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1993. 01.</th>
-														<td class="f16  gray03">베지밀C 한국발명특허 (No. 093635) 획득</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1995. 02.</th>
-														<td class="f16  gray03">베지밀C 호주발명특허 (No. 654241) 획득</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">1995. 05.</th>
-														<td class="f16  gray03">베지밀C 미국발명특허 (U.S. Patent No. 5413803) 획득</td>
-													</tr>
-												</table>
-												<p class="img100 mt120 "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri09.jpg" alt="" /></p>
-												<p class="mt10 gray04">최초의 1966 베지밀</p>
-												<p class="img100 mt120 "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri11.jpg" alt="" /></p>
-												<p class="mt10 gray04">신갈 제조공장 </p>
-
-												<table border="0" summary="노년기" class="heirT mt100">
-													<colgroup>
-														<col width="30%">
-														<col width="70%">
-													</colgroup>
-													<tr>
-														<th class="f23 f_pp  black">1998. 07.</th>
-														<td class="f16  gray03">국제 콩 심포지엄 개최</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">2002. 03.</th>
-														<td class="f16  gray03">명예회장</td>
-													</tr>
-													<tr>
-														<th class="f23 f_pp  black">2017.10.</th>
-														<td class="f16  gray03">별세</td>
-													</tr>
-												</table>
-											
-											</div>
-											<div class="col-md-6 ">
-												<div class="img100 w410 text-right "><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri08.jpg" alt="병원 지하에서 완성된 베지밀 개발"/>
-													<p class="mt10 gray04 text-right">병원 지하에서 완성된 베지밀 개발</p>
-												</div>
-												<div class="img100 w410 text-right mt150"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri10.jpg" alt="베지밀 발명 특허상 수상"/>
-													<p class="mt10 gray04 text-right">베지밀 발명 특허상 수상</p>
-												</div>
-												<div class="img100 w410 text-right mt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/heri12.jpg" alt="명예회장 역임"/>
-													<p class="mt10 gray04 text-right">명예회장 역임</p>
-												</div>
-											</div>
-										</div>
+							</div>
+						   <!--/Timeline item-->
+						   
+							<!--Timeline item-->
+							<div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick02.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">02</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">아이들을 살리기 위한 노력 </span></p>
 									</div>
-								</div><!--//contant1460-->
+								</div>
+							</div>
+						   <!--/Timeline item-->
+						   
+						   <!--Timeline item-->
+						   <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick03.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">03</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">유당 불내증 연구 </span></p>
+									</div>
+								</div>
+							</div>
+						   <!--/Timeline item-->
+
+						   <!--Timeline item-->
+						   <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick04.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">04</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">영유아 치료 목적의 베지밀 개발 </span></p>
+									</div>
+								</div>
+							</div>
+
+
+							
+						   <!--/Timeline item-->
+						   
+						   <!--Timeline item-->
+						    <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick05.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">05</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">베지밀 발명 특허상 수상</span></p>
+									</div>
+								</div>
+							</div>
+						   <!--/Timeline item-->
+						   
+						   <!--Timeline item-->
+						   <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick06.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">06</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">(주)정&middot;식품 설립</span></p>
+									</div>
+								</div>
+							</div>
+						   <!--/Timeline item-->
+						   <!--Timeline item-->
+						   <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick07.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">07</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">국민 건강을 위한 베지밀 생산</span></p>
+									</div>
+								</div>
+							</div>
+						   <!--/Timeline item-->
+						   <!--Timeline item-->
+						    <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick08.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">08</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">청주 제2공장 준공</span></p>
+									</div>
+								</div>
+							</div>
+						   <!--/Timeline item-->
+						    <!--Timeline item-->
+							 <div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick09.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">09</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">혜춘장학회 설립</span></p>
+									</div>
+								</div>
+							</div>
+
+							
+						   <!--/Timeline item-->
+						    <!--Timeline item-->
+							<div class="timeline-carousel__item">
+								<div class="timeline-carousel__image ">
+									<div class="media-wrapper media-wrapper--overlay" style="background: url('https://image.edaymall.com/images/dcf/vegemil/img/company/star_slick10.jpg') center center; background-size:cover;">
+									<p class="photo-number f_pp f18">10</p>
+									<p class="photo-title"><span class="f45 fw500 f_sf white">대한민국 오리지널 두유 베지밀</span></p>
+									</div>
+								</div>
+							</div>
+						   <!--/Timeline item-->
+						</div>
+					</div>
+					<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js'></script>
+					<script>
+					$.js = function (el) {
+						return $('[data-js=' + el + ']')
+						};
+						function carousel() {
+						  $.js('timeline-carousel').slick({
+							infinite: false,
+							arrows: false,
+							dots: true,
+							autoplay: false,
+							speed: 1100,
+							slidesToShow: 2,
+							slidesToScroll: 2,
+							responsive: [
+							  {
+								breakpoint: 800,
+								settings: {
+								  slidesToShow: 1,
+								  slidesToScroll: 1
+								}
+							  }]
+						  });
+						}
+						carousel();
+					</script>
+					<!-- //timeline -->
+				</div><!-- // starZindex bgStar04 -->
+				<div class="starZindex  star-mt-520">
+					<div class="contant1310 pt200">
+						<div class="row flex">
+							<div class="col-md-5 star-photo-box mt50m" >
+								<div class="w410"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_08.png" alt=""/>
+									<p class="fw400 f18 gray03 mt20">재단법인 정건강관리소</p>
+								</div>
+							</div>
+							<div class="col-md-7  star-photo-box"  >
+								<p class="f45 white gbBar">1972~2017</p>
+								<ul class="gray03 star-photo-txt mt40 " >
+									<li>
+										<dl>
+											<dd class="f18">1972.</dd>
+											<dd class="f18">재단법인 정건강관리소 정식 개업</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1973. 09.</dd>
+											<dd class="f18">주식회사 정식품 설립.<br class="mView">베지밀 제조공장 준공(신갈)</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1984. 07.</dd>
+											<dd class="f18">베지밀 제2 제조공장 준공(청주)</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1984. 12.</dd>
+											<dd class="f18">재단법인 혜춘장학회 설립 및 <br class="mView">이사장 취임</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1993. 01.</dd>
+											<dd class="f18">베지밀C 한국발명특허 <br class="mView">(No. 093635) 획득</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1995. 02.</dd>
+											<dd class="f18">베지밀C 호주발명특허 <br class="mView">(No. 654241) 획득</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">1995. 05.</dd>
+											<dd class="f18">베지밀C 미국발명특허 <br class="mView">(U.S. Patent No. 5413803) 획득</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-md-6  star-photo-box " >
+								<div class="w410 mt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_09.png" />
+									<p class="fw400 f18 gray03 mt20">1980년대의 베지밀</p>
+								</div>
+							
+							</div>
+							<div class="col-md-6  star-photo-box" >
+								<div class="w410 mt50"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_10.png" />
+									<p class="fw400 f18 gray03 mt20">베지밀 제조공장 준공</p>
+								</div>
+							</div>
+							<div class="col-md-6  star-photo-box" >
+								<div class="w510 mt250"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_11.png" />
+									<p class="fw400 f18 gray03 mt20">베지밀 신문광고</p>
+								</div>
+							
+							</div>
+							<div class="col-md-6  star-photo-box mt50m" >
+								<div class="w410"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_12.png" />
+									<p class="fw400 f18 gray03 mt20">60대의 정재원 박사와 율리아여사</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-5 pt200 star-photo-box" >
+								<ul class="gray03 star-photo-txt mt40" >
+									<li>
+										<dl>
+											<dd class="f18">1998. 07.</dd>
+											<dd class="f18">국제 콩 심포지엄 개최</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">2002. 03.</dd>
+											<dd class="f18">명예회장</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dd class="f18">2017. 10</dd>
+											<dd class="f18">별세</dd>
+										</dl>
+									</li>
+								</ul>
+								<div class=" mt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_14.png" />
+									<p class="fw400 f18 gray03 mt20">연구에 매진하는 정재원 박사</p>
+								</div>
+							</div>
+							<div class="col-md-7  star-photo-box" >
+								<div class=" pt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/starPhoto_13.png" />
+									<p class="fw400 f18 gray03 mt20">국제 콩 심포지엄 개최</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 pt200 star-photo-box" >
+								<ul class="mt40 star-foot-ul" >
+									<li>
+										<div class="f_pp letter10 white f80 fw700" data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="500" data-aos-delay="100">Right <span class="txt01">Food</span><br>Right <span class="txt02">Person</span></div>
+										<div class="mt50 f18 white lh170" data-aos="fade-right" data-aos-easing="linear"  data-aos-duration="700" data-aos-delay="1000">
+										정식품 임직원 일동은 "인류 건강에 이 몸 바치고저"라는<br>
+										정재원 명예회장님의 생명존중정신 이념 실현을 위해,<br>
+										국민건강을 넘어 세계인의 건강에 보탬이 되는 기업으로<br>
+										성장해 갈 것을 약속드립니다.
+										</div>
+									</li>
+									<li>
+										<div data-aos="fade-left" data-aos-easing="linear"  data-aos-duration="800" data-aos-delay="1000"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/star_foot_jjy.png" /></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12  star-photo-box">
+								<div class="star_foot_bg h600">
+									<p class="centerH "><span class="f_pp  white" >Dr.CHUNG'S  FOOD  Heritage</span></p>
+								</div>
+							</div>
+							<div class="col-md-12  star-photo-box" >
+								<ul class="star-p">
+									<li data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="500" data-aos-delay="100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/star-p01.png" alt="베지밀 에이"/>
+										<p class="f_ss f16 gray03 fw300">순수 콩의 담백한 맛을 담은 정통 두유</p>
+										<p class="f_ss f23 white fw500 mt10">담백한 베지밀 에이</p>
+									</li>
+									<li data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="700" data-aos-delay="1000"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/star-p02.png" alt="인펀트 우리콩 1단계"/>
+										<p class="f_ss f16 gray03 fw300">100% 우리콩에 기능성분이 강화된 영&middot;유아식</p>
+										<p class="f_ss f23 white fw500 mt10">베지밀 영유아식 우리콩</p>
+									</li>
+									<li data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="900" data-aos-delay="2000"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/star-p03.png" alt="그린비아 키즈"/>
+										<p class="f_ss f16 gray03 fw300">영양불량 소아 환자를 위한 어린이 균형 영양식</p>
+										<p class="f_ss f23 white fw500 mt10">그린비아 키즈</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row ">
+							<div class="col-md-12 star_foot ">
+								<div class="pb300 mt200">
+									<div class="center star-youtube" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="1000" data-aos-delay="100"><iframe  height="470" src="https://www.youtube.com/embed/IfIpAiAGwPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									</div>
+									<div class="center">
+										<p class="mt200"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/star_foot_txt.png" alt="dr.chung's food"/></p>
+									</div>
+									<ul class="star_foot_link ">
+										<li class="f_pp f55 fw600" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="500" data-aos-delay="100"><div><a href="/company/greetings">Company</a></div></li>
+										<li class="f_pp f55 fw600" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="700" data-aos-delay="100"><div><a href="/rnd/introduce">R&D</a></div></li>
+										<li class="f_pp f55 fw600" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="900" data-aos-delay="100"><div><a href="/product/list">Product</a></div></li>
+										<li class="f_pp f55 fw600" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="1100" data-aos-delay="100"><div><a href="/communication/voc">Communication</a></div></li>
+									</ul>
+								</div>
+								<div class="center btn_star_top"><a href="#"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_star_top.png" /></a></div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<script type="text/javascript">
-					$(document).ready(function(){
-						$('.heriTab').basicTabs5();
-					});
-				</script>
-			   <!-- //탭 시작 -->
-            </div>
+			</div>
 		</div>
-	</div><!--//contant1460-->
+		<button class="Scroll-to-top">Scroll To Top</button>
+		
+		 <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+		 <script type="text/javascript" src="/common/js/smooth-scrolling.js"></script>
+		 
+		<!-- //smooth-scrolling -->
+	</div>
 </div>
 <!-- ================================ 
 		// Content

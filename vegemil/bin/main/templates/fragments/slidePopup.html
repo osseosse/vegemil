@@ -14,6 +14,9 @@
 				csstransforms:	false,
 				richSwiping:false
 		  });
+		  var theDay = new Date('2023-03-23 08:30:00'); 
+		  timeCheck(theDay);
+		 
 		});
 	function popupCookieSave(){
 		setCookie("popup", "done" , 1);
@@ -31,6 +34,13 @@
 	    todayDate.setDate( todayDate.getDate() + expiredays );
 	    todayDate.setHours(0, 0, -1); // 오늘의 바로 전날 23:59:59로 설정함.
 	    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+	}
+	function timeCheck(theDay){
+		var today = new Date();
+		if(today >= theDay){
+			 $("#currentPopup").css("display","none");
+			 $("#nextPopup").css("display","block");
+		}
 	}
 </script>
 <style>
@@ -180,17 +190,50 @@
 	.btnBox .br a{color:#fff; float:right;} 
 </style>
 <style>
+	 #nextPopup {
+		display:none;
+	 }
 	.popBox .action {position:relative; background:#4e4e4e; padding-left:5px; top:-4px;padding-top:2px}
 	.popBox span.txt {font-size:11px ; display:inline-block; text-align:right; position:absolute; right:5px; top:3px; color:#fff; vertical-align:middle}
 	.popBox span.txt input {vertical-align:middle; margin-top:-1px}
 </style>
 </head>
 <body id="mainPop">
-<div class="popBox"><!-- 400px * 570px -->
+<div class="popBox" id="nextPopup"><!-- 400px * 570px -->
 	<!-- pp-slider -->
-	<div class="container" id="sliderh3">
+	<div class="container"  id="sliderh3">
 		<div class="slider">
-			<div class="slider_area">
+			<div class="slider_area" >
+				<div class="slides">
+					<div class="slide">
+						<div class="slidetitle" >
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202303.jpg" alt="브랜드 인지도" border="0"/>
+						</div>
+					</div>
+					<div class="slide">
+						<div class="slidetitle" >
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202302.jpg" alt="CCM 수상" border="0"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="slider_left"></a>
+			<a class="slider_right"></a>
+		</div>
+	</div>
+	<!-- // pp-slider -->
+	<!-- action -->
+	<div class="action">
+		<div class="pop_close"><a href="javascript:popupSelfClose();"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/pop_notice_btn_close.gif" alt="닫기" /></a></div>
+		<span class="txt"><label ><input type="checkbox" id="todayChk" onclick="javascript:popupCookieSave();">오늘 하루 열지 않음</label></span>
+	</div>
+	<!-- action //-->
+</div>
+<div class="popBox"  id="currentPopup"><!-- 400px * 570px -->
+	<!-- pp-slider -->
+	<div class="container"  id="sliderh3">
+		<div class="slider">
+			<div class="slider_area" >
 				<div class="slides">
 					<!-- <div class="slide">
 						<div class="slidetitle" >

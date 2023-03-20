@@ -58,117 +58,69 @@ dd,ul {margin-bottom:0 !important;}
 label {margin-bottom:0 !important;}
 
 body {overflow-x: hidden;word-break:keep-all;}
+html {scroll-behavior: smooth;} 
 
-/*
-@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
-@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),  	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
-*/
-
-
-/* 상대경로 */
+/* [local] 노토산스  
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(../../font/noto/NotoSansKR-Light.woff2) format('woff2'),      url(../../font/noto/NotoSansKR-Light.woff) format('woff'),      url(../../font/noto/NotoSansKR-Light.otf) format('opentype');}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(../../font/noto/NotoSansKR-Regular.woff2) format('woff2'),      url(../../font/noto/SansKR-Regular.woff) format('woff'),      url(../../font/noto/NotoSansKR-Regular.otf) format('opentype');}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;src:url(../../font/noto/NotoSansKR-Medium.woff2) format('woff2'),      url(../../font/noto/NotoSansKR-Medium.woff) format('woff'),      url(../../font/noto/NotoSansKR-Medium.otf) format('opentype');}
+/* [vegemil.co.kr] 노토산스  */
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(/common/font/noto/NotoSansKR-Light.woff2) format('woff2'),      url(/common/font/noto/NotoSansKR-Light.woff) format('woff'),      url(/common/font/noto/NotoSansKR-Light.otf) format('opentype');}
-@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(/common/font/noto/NotoSansKR-Regular.woff2) format('woff2'),      url(/common/font/NotoNoto/SansKR-Regular.woff) format('woff'),      url(/common/font/noto/NotoSansKR-Regular.otf) format('opentype');}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(/common/font/noto/NotoSansKR-Regular.woff2) format('woff2'),      url(/common/font/noto/NotoSansKR-Regular.woff) format('woff'),      url(/common/font/noto/NotoSansKR-Regular.otf) format('opentype');}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;src:url(/common/font/noto/NotoSansKR-Medium.woff2) format('woff2'),      url(/common/font/noto/NotoSansKR-Medium.woff) format('woff'),      url(/common/font/noto/NotoSansKR-Medium.otf) format('opentype');}
-/* 절대경로 
-@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:300;src:url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSansKR-Light.woff2) format('woff2'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/Noto/NotoSansKR-Light.woff) format('woff'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/Noto/NotoSansKR-Light.otf) format('opentype');}
-@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;src:url(https://image.edaymall.com/images/dcf/vegemil/font/noto/Noto/NotoSansKR-Regular.woff2) format('woff2'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoNoto/SansKR-Regular.woff) format('woff'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/Noto/NotoSansKR-Regular.otf) format('opentype');}
-@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;src:url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSansKR-Medium.woff2) format('woff2'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSansKR-Medium.woff) format('woff'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSansKR-Medium.otf) format('opentype');}
-*/
-
-
-/* devanagari */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* devanagari */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* devanagari */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-
-
-
-
-
-
-
-
-
-
-.f_pp {font-family: 'Poppins'; letter-spacing:0}
+/* [local] 노토명조  
+@font-face{font-family:'Noto Serif KR';font-style:normal;font-weight:200;src:url(../../font/noto/NotoSerifKR-ExtraLight.woff2) format('woff2'),      url(../../font/noto/NotoSerifKR-ExtraLight.woff) format('woff'),      url(../../font/noto/NotoSerifKR-ExtraLight.otf) format('opentype');}
+@font-face{font-family:'Noto Serif KR';font-style:normal;font-weight:400;src:url(../../font/noto/NotoSerifKR-Regular.woff2) format('woff2'),      url(../../font/noto/NotoSerifKR-Regular.woff) format('woff'),      url(../../font/noto/NotoSerifKR-Regular.otf) format('opentype');}
+@font-face{font-family:'Noto Serif KR';font-style:normal;font-weight:500;src:url(../../font/noto/NotoSerifKR-Medium.woff2) format('woff2'),      url(../../font/noto/NotoSerifKR-Medium.woff) format('woff'),      url(../../font/noto/NotoSerifKR-Medium.otf) format('opentype');}
+/* [vegemil.co.kr] 노토명조  */
+@font-face{font-family:'Noto Serif KR';font-style:normal;font-weight:200;src:url(/common/font/noto/NotoSerifKR-ExtraLight.woff2) format('woff2'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSerifKR-ExtraLight.woff) format('woff'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSerifKR-ExtraLight.otf) format('opentype');}
+@font-face{font-family:'Noto Serif KR';font-style:normal;font-weight:400;src:url(/common/font/noto/NotoSerifKR-Regular.woff2) format('woff2'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/noto/NotoSerifKR-Regular.woff) format('woff'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSerifKR-Regular.otf) format('opentype');}
+@font-face{font-family:'Noto Serif KR';font-style:normal;font-weight:500;src:url(/common/font/noto/NotoSerifKR-Medium.woff2) format('woff2'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSerifKR-Medium.woff) format('woff'),      url(https://image.edaymall.com/images/dcf/vegemil/font/noto/NotoSerifKR-Medium.otf) format('opentype');}
+/* [local] Poppins 
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 600;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 600;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 600;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 700;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 700;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 700;font-display: swap;src: url(../../font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+/* [vegemil.co.kr] Poppins */
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 500;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 600;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 600;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 600;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 700;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 700;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Poppins';font-style: normal;font-weight: 700;font-display: swap;src: url(/common/font/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+  
+.f_ss {font-family: 'Noto Sans KR';}
+.f_sf {font-family: 'Noto Serif KR', serif;}
+.f_pp {font-family: 'Poppins'; letter-spacing:0;}
+.fw200 {font-weight:200}
+.fw300 {font-weight:300}
+.fw400 {font-weight:400}
 .fw500 {font-weight:500}
 .fw600 {font-weight:600} /*영문 semibold, medium */
 .fw700 {font-weight:700} /*영문 bold */
@@ -177,7 +129,7 @@ body {overflow-x: hidden;word-break:keep-all;}
 .round5 {border-radius:5px}
 .round10 {border-radius:10px}
 .round15 {border-radius:15px}
-.round20 {border-radius:20px}
+.round20 {border-radius:20px;}
 
 /* ===========================
 	01. font / color / margin / padding 
@@ -214,7 +166,7 @@ body {overflow-x: hidden;word-break:keep-all;}
 	.f60 {font-size:60px}
 	.f66 {font-size:66px}
 	.f70 {font-size:70px}
-	.f80 {font-size:80px;}
+	.f80 {font-size:80px}
 	.white {color:#fff}
 
 	.blue {color:#23A3EB}
@@ -282,6 +234,11 @@ body {overflow-x: hidden;word-break:keep-all;}
 	.mt290 {margin-top:290px !important}
 	.mt300 {margin-top:300px !important}
 	.mt350 {margin-top:350px !important}
+	.mt400 {margin-top:400px !important}
+	.mt450 {margin-top:450px !important}
+	.mt500 {margin-top:500px !important}
+	.mt550 {margin-top:550px !important}
+
 	/* margin-bottom */
 	.mb10{margin-bottom:10px !important}
 	.mb20{margin-bottom:20px !important}
@@ -628,6 +585,10 @@ body {overflow-x: hidden;word-break:keep-all;}
 	.mt290 {margin-top:145px !important}
 	.mt300 {margin-top:150px !important}
 	.mt350{margin-top:150px !important}
+	.mt400{margin-top:150px !important}
+	.mt450{margin-top:150px !important}
+	.mt500{margin-top:150px !important}
+	.mt550{margin-top:150px !important}
 
 
 	/* margin-top 모바일전용 */
