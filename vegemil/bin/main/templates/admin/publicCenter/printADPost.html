@@ -54,12 +54,8 @@
 	    		   return false;
 	    	   }	    
 	    	  
-	    	   if(form.tYoutube.value == "") {
-	    		   alert('유튜브 영상 url을 입력해 주세요.');
-	    		   return false;
-	    	   } 
-	    	  
 	    	   console.log('form', formData);
+	    	   
                $.ajax({
             	   url: '/admin/manage/publicCenter/savePrintAD',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
