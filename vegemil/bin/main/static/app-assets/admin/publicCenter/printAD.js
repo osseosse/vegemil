@@ -187,7 +187,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['tImg']==null)	return '';
-      			else	return  '<img style="width:170px;height:120px; margin-bottom:8px;" src="'+ full['tImg']+'"/>'
+      			else	return  '<img style="width:170px;height:120px; margin-bottom:8px;" src="'+ '/web/upload/PAD/' + full['tImg']+'"/>'
       							+'<input hidden type="text" class="form-control" id="tImg'+full['tIdx']+'" value="'+full['tImg']+'">'
       							+'<p> '+full["tImg"]+'</p>';
           }

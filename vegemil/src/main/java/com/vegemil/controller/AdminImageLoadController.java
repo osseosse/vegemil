@@ -130,6 +130,20 @@ public class AdminImageLoadController extends UiUtils {
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
 	
-	
-	
+	//지면 광고 이미지 불러오기
+	@GetMapping("/web/upload/PAD/{filename}")
+	public ResponseEntity<Resource> printDisplay(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/PAD/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/PAD/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
 }

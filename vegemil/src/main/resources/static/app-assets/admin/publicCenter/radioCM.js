@@ -332,10 +332,7 @@ var createTable = function() {
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
-	  
-	
   }
-	
 }
 
 // 진열 체크박스처리 
