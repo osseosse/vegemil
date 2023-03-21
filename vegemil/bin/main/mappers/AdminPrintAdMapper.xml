@@ -44,7 +44,7 @@
 			t_subject,
 			t_date,
 			t_img,
-			t_onair,
+			t_onair
 		) VALUES (
 			#{tSubject ,jdbcType=VARCHAR}     , 
 			NOW()							  , 
@@ -79,7 +79,7 @@
 		set
 			t_subject	= #{tSubject ,jdbcType=VARCHAR},      
 			t_img 		= #{tImg ,jdbcType=VARCHAR},      
-			t_onair 	= #{tOnair ,jdbcType=VARCHAR},
+			t_onair 	= #{tOnair ,jdbcType=VARCHAR}
 		where
 			t_idx = #{tIdx}
 	</update>
