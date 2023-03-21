@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.AdminPrintAdMapper">
+
+	<sql id="printADColumns">
+		t_idx,
+		t_subject,
+		t_date,
+		t_img,
+		t_onair
+	</sql>
+	
+	<select id="selectPrintADList" resultType="com.vegemil.domain.AdminPrintAdDTO" parameterType="com.vegemil.domain.AdminPrintAdDTO">
+		SELECT
+		  <include refid="printADColumns" />
+		FROM
+			<choose>
+				<when test='tOnair != "" and tOnair != null'  >
+			 	   (select * 
+			 	   from dbvegemilcokr.M_PrintAd 
+			 	   where
+			 	   		t_onair = #{tOnair}
+			 	   	) tb
+			 	</when>
+				<otherwise>
+					M_PrintAd
+				</otherwise>
+			</choose>
+		WHERE 
+			1=1
+			<if test='searchKeyword != "" and searchKeyword != null'>
+ 				AND t_subject like CONCAT('%',#{searchKeyword},'%')
+			</if> 
+			<if test='tStartdate != "" and tStartdate != null and tEnddate != "" and tEnddate != null'>
+ 	   			AND t_date between DATE(#{tStartdate, jdbcType=VARCHAR}) AND DATE(#{tEnddate, jdbcType=VARCHAR})+1
+ 	   		</if>			
+		ORDER BY
+			t_idx DESC
+	</select>
+	
+	<insert id="insertPrintADData" parameterType="com.vegemil.domain.AdminPrintAdDTO" useGeneratedKeys="true" keyProperty="tIdx">
+		INSERT INTO M_PrintAd (
+			t_subject,
+			t_date,
+			t_img,
+			t_onair,
+		) VALUES (
+			#{tSubject ,jdbcType=VARCHAR}     , 
+			NOW()							  , 
+			#{tImg ,jdbcType=VARCHAR}	      , 
+			#{tOnair ,jdbcType=VARCHAR}       
+		)
+	</insert>
+	
+	<delete id="deletePrintADData" parameterType="String">
+		delete from M_PrintAd where t_idx = #{tIdx}
+	</delete>
+	
+	<select id="selectPrintADData" parameterType="String" resultType="com.vegemil.domain.AdminPrintAdDTO">
+		SELECT
+		  <include refid="printADColumns" />
+		FROM
+			M_PrintAd
+		WHERE 
+			t_idx = #{tIdx}
+	</select>
+	
+	<update id="updatetOnairStatus" parameterType="com.vegemil.domain.AdminPrintAdDTO">
+		update M_PrintAd 
+		set	
+			t_onair = #{tOnair ,jdbcType=VARCHAR}
+		where
+			t_idx = #{tIdx}
+	</update>
+	
+	<update id="updatePrintADData" parameterType="com.vegemil.domain.AdminPrintAdDTO">
+		update M_PrintAd
+		set
+			t_subject	= #{tSubject ,jdbcType=VARCHAR},      
+			t_img 		= #{tImg ,jdbcType=VARCHAR},      
+			t_onair 	= #{tOnair ,jdbcType=VARCHAR},
+		where
+			t_idx = #{tIdx}
+	</update>
+</mapper>

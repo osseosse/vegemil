@@ -51,7 +51,7 @@ function onYouTubePlayerAPIReady() {
    player3 = new YT.Player('player3', {
    // width: 640,
    // height: 400,
-    videoId: 'sskZWJ-pSnw',
+    videoId: '2SqMxB2P4TI',
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -99,6 +99,8 @@ $('.imge2').on('click', function () {
 // Etc
 $('.imge3').on('click', function () {
     var url = $(this).attr('data-id');
+	$("#player3").css("display","block");
+ 	$("#playerMp4").css("display","none");
     player3.cueVideoById(
       {
         videoId: url
@@ -107,4 +109,11 @@ $('.imge3').on('click', function () {
     player3.playVideo();
 });
 
+$(".imgeMp").on("click", function() {
+	 var url = $(this).attr('data-id');
+	 
+	 $("#player3").css("display","none");
+	 $("#playerMp4").css("display","block");
+	 $("#videoMp4").attr("src",url);
+});
 

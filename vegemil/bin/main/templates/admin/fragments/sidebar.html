@@ -126,6 +126,9 @@
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/aviCFList')}? 'active': ''">
                     		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/aviCFList}"><i data-feather="circle"></i><span class="menu-item text-truncate">TV CF</span></a>
                         </li>                        
+                    	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/printAdList')}? 'active': ''">
+                    		<a class="d-flex align-items-center" th:href="@{/admin/manage/publicCenter/printAdList}"><i data-feather="circle"></i><span class="menu-item text-truncate">지면 광고</span></a>
+                        </li>                        
                     </ul>
                 </li>
                 

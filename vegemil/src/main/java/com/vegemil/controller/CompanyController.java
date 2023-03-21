@@ -53,7 +53,8 @@ public class CompanyController {
 		
 		if(viewName.equals("media")) {
 			AdminAviCFDTO cfDto = new AdminAviCFDTO(); cfDto.setTOnair("1");
-			AdminAdEctDTO etcDto = new AdminAdEctDTO(); etcDto.setTOnair("1"); etcDto.setSearchKeyword("youtube");
+			//AdminAdEctDTO etcDto = new AdminAdEctDTO(); etcDto.setTOnair("1"); etcDto.setSearchKeyword("youtube");
+			AdminAdEctDTO etcDto = new AdminAdEctDTO(); etcDto.setTOnair("1"); 
 			model.addAttribute("cfList", adminAviCFService.getAdminAviCFList(cfDto));
 			model.addAttribute("cmList", adminRadioCMSerive.getRadioCMList(null));
 			model.addAttribute("contestList", adminVideoContestService.getAdminVideoContestList(null));
@@ -78,9 +79,6 @@ public class CompanyController {
 	@RequestMapping(value = "/company/agencyDevSearch")
 	public @ResponseBody List<AgencyDTO> getAgencyListBykeyword(@RequestParam("searchKeyword") String searchKeyword, 
 						@RequestParam("searchType") String searchType, HttpServletRequest req, Map<String, Object> commandMap)throws Exception{
-		
-		System.out.println(searchType);
-		System.out.println(searchKeyword);
 		
 		AgencyDTO params = new AgencyDTO();
 		params.setSearchKeyword(searchKeyword);

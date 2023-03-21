@@ -32,12 +32,14 @@ import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.domain.AdminAdEctDTO;
 import com.vegemil.domain.AdminAviCFDTO;
 import com.vegemil.domain.AdminMediaNewsDTO;
+import com.vegemil.domain.AdminPrintAdDTO;
 import com.vegemil.domain.AdminRadioCMDTO;
 import com.vegemil.domain.AdminVideoContestDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminAdEtcService;
 import com.vegemil.service.AdminAviCFService;
 import com.vegemil.service.AdminAviRadioCMService;
+import com.vegemil.service.AdminPrintADService;
 import com.vegemil.service.AdminPublicCenterService;
 import com.vegemil.service.AdminVideoContestService;
 import com.vegemil.util.UiUtils;
@@ -63,6 +65,9 @@ public class AdminpublicCenterController extends UiUtils {
 	
 	@Autowired
 	private AdminAviCFService adminAviCFService;
+	
+	@Autowired
+	private AdminPrintADService adminPrintADService;
 	
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
@@ -469,4 +474,85 @@ public class AdminpublicCenterController extends UiUtils {
 		}
 		return rtnMsg;
 	}
+	
+	//===========================지면 광고===========================//
+	
+	//지면 광고 메인
+	@GetMapping("/publicCenter/printAdList")
+	public String getPrintAdList(Model model) {
+		return "admin/publicCenter/printAdList";
+	}
+	
+	// 지면 광고  등록 페이지 ㅇ동
+	@GetMapping("/publicCenter/printADPost")
+	public String getPostPrintAdView() {
+		return "admin/publicCenter/printADPost";
+	}
+		
+	// 지면 광고  수정 화면 이동
+	@GetMapping("/publicCenter/printADUpdate")
+	public String getPrintADUpdateView(@RequestParam("tIdx") String tIdx, Model model) {
+		
+		model.addAttribute("printAD", adminPrintADService.getPrintADData(tIdx));
+		return "admin/publicCenter/printADUpdate";
+	}
+	
+	// 지면 광고 리스트
+	@RequestMapping(value = "/publicCenter/getPrintAdList")
+    public @ResponseBody JsonObject getPrintAdListData(@ModelAttribute("params") final AdminPrintAdDTO params, HttpServletRequest req, 
+    			Map<String, Object> commandMap)throws Exception{
+		
+		System.out.println("params >> " + params);
+		
+		List<AdminPrintAdDTO> printAdList = adminPrintADService.getPrintADList(params);
+		
+		System.out.println(printAdList.get(0).toString());
+		JsonObject jsonObj = new JsonObject();
+		if (CollectionUtils.isEmpty(printAdList) == false) {
+			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+			JsonArray jsonArr = gson.toJsonTree(printAdList).getAsJsonArray();
+			jsonObj.add("data", jsonArr);
+		}
+		return jsonObj;
+    }
+	
+	
+	//지면광고 등록 수정 삭제
+	@RequestMapping(value="/publicCenter/savePrintAD")
+	public @ResponseBody Map<String, Object> savePrintAD(@ModelAttribute("params") final AdminPrintAdDTO params,
+	    		@RequestParam(value="uploadFile", required=false) MultipartFile uploadFile ) throws Exception{
+		
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminPrintADService.savePrintAD(params, uploadFile);
+			rtnMsg.put("result", isResulted);
+			
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+	}
+	
+	// 지면광고 노출여부 변경 
+	@RequestMapping(value="/publicCenter/changePrindADOnairStatus")
+    public @ResponseBody Map<String, Object> getChangePrintADOnairStatus(@ModelAttribute("params") final AdminPrintAdDTO params)throws Exception{
+		Map<String, Object> rtnMsg = new HashMap<String, Object>();
+		
+		try {
+			boolean isResulted = adminPrintADService.changeOnairStatus(params);
+			rtnMsg.put("result", isResulted);
+		}catch (DataAccessException e) {
+    		e.printStackTrace();
+    		throw new Exception("저장에 실패하였습니다");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("저장에 실패하였습니다");
+		}
+		return rtnMsg;
+    }
 }
