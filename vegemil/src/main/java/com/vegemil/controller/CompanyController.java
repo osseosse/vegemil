@@ -1,5 +1,6 @@
 package com.vegemil.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +24,7 @@ import com.vegemil.domain.SearchDTO;
 import com.vegemil.service.AdminAdEtcService;
 import com.vegemil.service.AdminAviCFService;
 import com.vegemil.service.AdminAviRadioCMService;
+import com.vegemil.service.AdminPrintADService;
 import com.vegemil.service.AdminVideoContestService;
 import com.vegemil.service.CompanyService;
 
@@ -47,20 +49,21 @@ public class CompanyController {
 	@Autowired
 	private AdminAdEtcService adminAdEtcService;
 	
+	@Autowired
+	private AdminPrintADService adminPrintADService;
 
 	@RequestMapping(value = "/company/{viewName}")
     public String moveCompany(@PathVariable(value = "viewName", required = false) String viewName, Model model)throws Exception{
 		
 		if(viewName.equals("media")) {
 			AdminAviCFDTO cfDto = new AdminAviCFDTO(); cfDto.setTOnair("1");
-			//AdminAdEctDTO etcDto = new AdminAdEctDTO(); etcDto.setTOnair("1"); etcDto.setSearchKeyword("youtube");
 			AdminAdEctDTO etcDto = new AdminAdEctDTO(); etcDto.setTOnair("1"); 
 			model.addAttribute("cfList", adminAviCFService.getAdminAviCFList(cfDto));
 			model.addAttribute("cmList", adminRadioCMSerive.getRadioCMList(null));
 			model.addAttribute("contestList", adminVideoContestService.getAdminVideoContestList(null));
 			model.addAttribute("etcList", adminAdEtcService.getAdminAdEtcList(etcDto));
+			model.addAttribute("printList", adminPrintADService.getPrintADListForDisplay());
 		}
-		
 		return "company/"+viewName;
     }
 	
@@ -86,7 +89,6 @@ public class CompanyController {
 		List<AgencyDTO> agencyList = companyService.getAgencyList(params);
 		return agencyList;
 	}
-	
 	
     @GetMapping("/company/mediaNews")
     public String openFaqList(@ModelAttribute("params") final SearchDTO params, Model model) {

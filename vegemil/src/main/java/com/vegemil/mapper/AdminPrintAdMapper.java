@@ -11,6 +11,7 @@ import com.vegemil.domain.AdminRadioCMDTO;
 public interface AdminPrintAdMapper {
 	
 	public List<AdminPrintAdDTO> selectPrintADList(AdminPrintAdDTO params);
+	public List<AdminPrintAdDTO> selectPrintADListLimit();
 	public int insertPrintADData(AdminPrintAdDTO params);
 	public int deletePrintADData(String tIdx);
 	public AdminPrintAdDTO selectPrintADData(String tIdx);

@@ -32,6 +32,11 @@ public class AdminPrintADServiceImpl implements AdminPrintADService{
 	}
 	
 	@Override
+	public List<AdminPrintAdDTO> getPrintADListForDisplay() {
+		return adminPrintAdMapper.selectPrintADListLimit();
+	}
+	
+	@Override
 	public boolean savePrintAD(AdminPrintAdDTO params, MultipartFile uploadFile) {
 		
 		int queryResult = 0;
@@ -111,4 +116,5 @@ public class AdminPrintADServiceImpl implements AdminPrintADService{
 		}
 		return false;
 	}
+
 }

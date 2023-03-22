@@ -39,6 +39,18 @@
 			t_idx DESC
 	</select>
 	
+	<select id="selectPrintADListLimit" resultType="com.vegemil.domain.AdminPrintAdDTO">
+		SELECT
+		  <include refid="printADColumns" />
+		FROM
+			M_PrintAd
+		WHERE 
+			t_onair = 1
+		ORDER BY
+			t_idx DESC
+		LIMIT 4
+	</select>
+	
 	<insert id="insertPrintADData" parameterType="com.vegemil.domain.AdminPrintAdDTO" useGeneratedKeys="true" keyProperty="tIdx">
 		INSERT INTO M_PrintAd (
 			t_subject,

@@ -190,7 +190,6 @@ var createTable = function() {
       			else	return '<input hidden type="text" class="form-control" id="tSubject'+full['tIdx']+'" value="'+full['tSubject']+'">'
 								+'<p class="text-start">'+full["tSubject"]+'</p>';
           }
-          
         },
         {
           targets: 3,
@@ -241,7 +240,6 @@ var createTable = function() {
             );
           }
         },
-        
         {
           targets: 6,
           orderable: false,
@@ -252,7 +250,6 @@ var createTable = function() {
       							+'<p> '+full["tImgNew"]+'</p>';
           }
         },
-        
         {
           targets: 7,
           orderable: false,
@@ -271,7 +268,6 @@ var createTable = function() {
               '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['tIdx']+',\'D\')" />삭제</button>'
             );
           }
-          
         }
       ],
       
@@ -350,10 +346,7 @@ var createTable = function() {
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
-	  
-	
   }
-	
 }
 
 // 진열 체크박스처리 
@@ -411,7 +404,6 @@ function btnSave(idx, action) {
 	    }else{
 	        $('#tOnair').val('0');
 	    }
-		
 	}else{
 		if(action == "U") {
 			msg = "수정하시겠습니까?";	
@@ -428,7 +420,6 @@ function btnSave(idx, action) {
 		$('#tOnair').val($('#tOnair'+idx).val()=="on"?"1":"0");
 		$('#tImgNew').val($('#tImgNew'+idx).val());
 		$('#action').val(action);
-		
 	}
 	console.log('display', $('#cVactive').val())
 	

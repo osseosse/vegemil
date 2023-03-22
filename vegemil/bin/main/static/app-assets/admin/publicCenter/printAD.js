@@ -180,7 +180,6 @@ var createTable = function() {
       			else	return '<input hidden type="text" class="form-control" id="tSubject'+full['tIdx']+'" value="'+full['tSubject']+'">'
 								+'<p class="text-start">'+full["tSubject"]+'</p>';
           }
-          
         },
         {
           targets: 2,
@@ -226,7 +225,6 @@ var createTable = function() {
               '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'printADUpdate?tIdx='+full['tIdx']+ '\'">수정</button>'
             );
           }
-          
         },
         {
           targets: 6,

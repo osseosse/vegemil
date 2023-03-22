@@ -9,6 +9,7 @@ import com.vegemil.domain.AdminPrintAdDTO;
 public interface AdminPrintADService {
 	
 	public List<AdminPrintAdDTO> getPrintADList(AdminPrintAdDTO params);
+	public List<AdminPrintAdDTO> getPrintADListForDisplay();
 	public boolean savePrintAD(AdminPrintAdDTO params, MultipartFile uploadFile);
 	public boolean changeOnairStatus(AdminPrintAdDTO params);
 	public AdminPrintAdDTO getPrintADData(String tIdx);

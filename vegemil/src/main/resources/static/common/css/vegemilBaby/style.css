@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 /*==============================================
 
@@ -1075,7 +1075,7 @@ ul.cate_ul_list2 li:hover {background:#e3f1f4}
 .brand_story {margin:200px 0px 0 0px;  text-align:center}
 .brand_story img {margin-top:50px; width:100%}
 
-
+	
 
 /* 영양 */
 ul.btn_ch19 {width:100%; border-top:1px solid #dcdcdc; border-right:1px solid #dcdcdc; display:inline-block; margin:0}
@@ -1367,7 +1367,7 @@ span.win1 {background:#3c3c3c; border:2px solid #3c3c3c; border-radius:60px; pad
 span.win2 {background:#fff; border:2px solid #45423d; border-radius:60px; padding:20px; font-size:25px; font-weight:400; color:#000; position:absolute; right:12%; bottom:1% }
 
 /* 우리아이선발대회 */
-.btn_model {position:relative; background:#dff0dd; padding:80px 50px 120px 50px; text-align:center; }
+.btn_model {position:relative; background:#e3f1f4; padding:80px 50px 120px 50px; text-align:center; }
 .model_txt {background:#f0f0f0; padding:40px 0 40px 140px }
 .model_txt  li {display:inline-block}
 .model_txt  li:first-child {font-size:30px; font-weight:600}
@@ -2077,9 +2077,10 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 }
 
 
-
-
-
+@media only screen and (max-width : 3000px) {
+	.mView {display:none}
+	.wView {display:block}
+}
 /* 1700px ~ / 중요크기 */
 @media only screen and (max-width : 1700px) {
 	.btn_top {display:none}
@@ -2311,6 +2312,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 
 	/* 아기모델선발대회*/
 	.btn_model {position:relative; padding:40px 30px 60px 30px; text-align:center; }
+	.btn_model img {max-width:60%}
 	.model_txt {background:#f0f0f0; padding:40px 20px 40px 40px }
 	.model_txt li {display:inline-block}
 	.model_txt li:first-child {font-size:20px; font-weight:600}
@@ -2531,6 +2533,8 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 /* ~ 1000 */
 @media only screen and (max-width:1000px) {
 	body {}
+	.mView {display:block}
+	.wView {display:none}
 	.txtHide4 {display:none} 
 	.mHide {display:none} 
 	.btn_top {max-width:70px; position:absolute; right:10px; top:0px; display:block}
@@ -3088,7 +3092,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	*/
 
     
-/* 이달의모델*/
+	/* 이달의모델*/
 	.model_month {padding-bottom:30px; text-align:center; }
 	.model_box1 {width:170px;border-radius:170px; height:170px; margin:0 auto }
 	.model_box2 {width:120px;border-radius:120px; height:120px; margin:0 auto }
@@ -3468,7 +3472,6 @@ a:hover .btn_add_n {background:#3c3c3c;color:#fff; }
  .grtyoutube-popup-close {
 	background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/icon-close-black.png) no-repeat;
 }
-
 
 
 

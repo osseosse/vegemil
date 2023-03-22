@@ -14,7 +14,6 @@
 		t_date
 	</sql>
 	
-	
 	<select id="selectAviAdList" resultType="com.vegemil.domain.AdminAdEctDTO" parameterType="com.vegemil.domain.AdminAdEctDTO">
 		SELECT
 		  <include refid="aviAdColumns" />
@@ -40,7 +39,7 @@
  				OR t_flv like CONCAT('%',#{searchKeyword},'%')
 			</if> 
 		ORDER BY
-			t_idx DESC
+			t_date DESC, t_idx DESC
 	</select>
 	
 	<select id="selectAviData" parameterType="String" resultType="com.vegemil.domain.AdminAdEctDTO">
@@ -77,7 +76,6 @@
 	<delete id="deleteAdEtcData" parameterType="String">
 		delete from M_AviAd where t_idx = #{tIdx}
 	</delete>
-	
 	
 	<update id="updateAdEtcData" parameterType="com.vegemil.domain.AdminAdEctDTO">
 		update M_AviAd

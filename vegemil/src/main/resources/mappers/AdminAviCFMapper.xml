@@ -83,11 +83,11 @@
 	<update id="updateAdminAviCFData" parameterType="com.vegemil.domain.AdminAviCFDTO">
 		update M_AviCf
 		set
-			t_subject    = #{tSubject ,jdbcType=VARCHAR},      
-			t_onair = #{tOnair ,jdbcType=VARCHAR},   
-			t_youtube     = #{tYoutube ,jdbcType=VARCHAR},      
+			t_subject    	= #{tSubject ,jdbcType=VARCHAR},      
+			t_onair 	 	= #{tOnair ,jdbcType=VARCHAR},   
+			t_youtube     	= #{tYoutube ,jdbcType=VARCHAR},      
 			t_youtube_img   = #{tYoutubeImg ,jdbcType=VARCHAR},   
-			t_disp_order = #{tDispOrder ,jdbcType=VARCHAR}
+			t_disp_order 	= #{tDispOrder ,jdbcType=VARCHAR}
 		where
 			t_idx = #{tIdx}
 	</update>
