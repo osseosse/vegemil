@@ -6,12 +6,15 @@ var player;
 var player2;
 var player3;
 var player4;
+
+/* 유튜부 api 플레이어 생성 */
+
 function onYouTubePlayerAPIReady() {
   // TVCF
   player = new YT.Player('player', {
    // width: 640,
    // height: 400,
-    videoId: 'M9RY0KW61SA',
+    videoId: cfLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -24,7 +27,7 @@ function onYouTubePlayerAPIReady() {
   player4 = new YT.Player('player4', {
    // width: 640,
    // height: 400,
-    videoId: '6XgGro9X8_o',
+    videoId: contestLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -37,8 +40,7 @@ function onYouTubePlayerAPIReady() {
   player2 = new YT.Player('player2', {
    // width: 640,
    // height: 400,
-  
-    videoId: 'Xf3nXHwMeLY',
+    videoId: cmLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -51,7 +53,7 @@ function onYouTubePlayerAPIReady() {
    player3 = new YT.Player('player3', {
    // width: 640,
    // height: 400,
-    videoId: 'sskZWJ-pSnw',
+    videoId: etcLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -59,10 +61,10 @@ function onYouTubePlayerAPIReady() {
       rel: 0
     }
   });
-
-
-
 }
+
+/*클릭 이벤트 리스너 등록*/
+ 
 // TVCF
 $('.imge').on('click', function () {
     var url = $(this).attr('data-id');

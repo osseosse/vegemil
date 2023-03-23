@@ -223,12 +223,18 @@
 				</div>
 			<!-- //etc -->
 		
-			<script type="text/javascript">
+			<script type="text/javascript" th:inline="javascript">
 				$(document).ready(function(){
 					$('.cfWrap').basicTabs6();
 				});
+				
+				const cfLoadId = [[${cfLoadId}]];
+				const cmLoadId = [[${cmLoadId}]];
+				const contestLoadId = [[${contestLoadId}]];
+				const etcLoadId = [[${etcLoadId}]];
 			</script>
-			<script  src="/common/js/videoTab.js"></script>
+			
+			<script src="/common/js/videoTab.js"></script>
 		</div>
     </div>
 </div>
