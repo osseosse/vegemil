@@ -15,6 +15,7 @@ import com.vegemil.domain.DataTableDTO;
 
 public interface AdminBabyService {
 	
+	//=================== 육아정보  =========================
 	public DataTableDTO getBabyInfoList(Map<String, Object> paramMap);
 	
 	public boolean registerBabyInfo(AdminBabyDTO params, MultipartFile uploadFile) throws Exception;
@@ -28,7 +29,9 @@ public interface AdminBabyService {
 	public boolean registerBabyQna(AdminBabyDTO params) throws Exception;
 	
 	public AdminBabyDTO getBabyQnaDetail(Long mbsIdx);
+	//=================== 육아정보  =========================
 	
+	 
 	//=================== 아기달력모델  =========================	
 	public boolean registerCalendarModel(AdminCalendarModelDTO params);
 

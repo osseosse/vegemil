@@ -20,6 +20,8 @@ public interface AdminBabyMapper {
 	
 	public int selectBabyInfoTotalCount(Map<String, Object> paramMap);
 	
+	public int updateBabyInfoCount(Long mbsIdx);
+	
 	public int insertBabyInfo(AdminBabyDTO params);
 	
 	public AdminBabyDTO selectBabyInfoDetail(Long mbsIdx);
