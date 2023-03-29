@@ -1,8 +1,7 @@
 package com.vegemil.service;
 
-import lombok.AllArgsConstructor;
-
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 import javax.mail.MessagingException;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import com.vegemil.domain.AdminDTO;
 import com.vegemil.domain.MailDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.PaymentDTO;
@@ -23,6 +21,7 @@ import com.vegemil.mapper.AdminMapper;
 import com.vegemil.util.RedisUtil;
 
 import javassist.NotFoundException;
+import lombok.AllArgsConstructor;
 
 
 @Service
@@ -155,5 +154,29 @@ public class MailService {
 		return (queryResult == 1) ? true : false;
 	    
 	}
+	
+	// 묹자 메일 마케팅 정보 수신 동의 메일 
+    public void mailSendReceiveAgreeConfirm(MemberDTO member) {
+    	
+    	MimeMessage message = mailSender.createMimeMessage();
+    	Context context = new Context();
+    	
+    	try {
+    		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 a HH:mm:ss");
+    		context.setVariable("agreeDate", sdf.format(new Date()));
+    		context.setVariable("mName", member.getMName());
+			context.setVariable("mSmssend", member.getMSmssend());
+			context.setVariable("mEmailsend", member.getMEmailsend());
+    		
+	    	message.setFrom(MailService.FROM_ADDRESS);
+			message.addRecipients(MimeMessage.RecipientType.TO, member.getMEmail());
+			message.setSubject("[정식품] 마케팅 수신 동의 확인");
+			message.setText(templateEngine.process("admin/email/agreeReceiveMarketingInfoConfirmMail", context), "utf-8", "html"); 
+	        mailSender.send(message);
+        
+    	} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
     
 }

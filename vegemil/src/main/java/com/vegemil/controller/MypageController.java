@@ -34,6 +34,7 @@ import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.QnaDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
+import com.vegemil.service.MailService;
 import com.vegemil.service.MemberService;
 import com.vegemil.service.QnaService;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
@@ -50,6 +51,9 @@ public class MypageController extends UiUtils {
 	
 	@Autowired
 	private VegemilBabyCommunityService vegemilBabyCommunityService;
+	
+	@Autowired
+	private MailService mailService;
 	
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
@@ -330,6 +334,7 @@ public class MypageController extends UiUtils {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		MemberDTO preMember = memberService.getMember(member.getMIdx());
 		
 		try {
 			
@@ -339,6 +344,14 @@ public class MypageController extends UiUtils {
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 			}
+			
+			// =========> 마케팅 수신 동의 메일코드 시작
+			if((member.getMSmssend().equals("1") && preMember.getMSmssend().equals("0"))
+							|| (member.getMEmailsend().equals("1") && preMember.getMEmailsend().equals("0"))) {
+				mailService.mailSendReceiveAgreeConfirm(member);
+			}
+			// 마케팅 수신 동의 메일 코드 끝 <========= 
+			
 			model.addAttribute("member", member);
 			
 		} catch (DataAccessException e) {
