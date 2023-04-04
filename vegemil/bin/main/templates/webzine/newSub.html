@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<title th:text="${snsTitle}"></title>
+    <head th:replace="webzine/head :: headFragment"></head>
+    <!-- <link type="text/css" rel="stylesheet" href="/webzine/css/style_dev_recomm.css"> -->
+    <meta property="og:title" th:attr="content=${snsTitle}" >
+    <meta property="og:url" th:attr="content=|https://www.vegemil.co.kr/webzine/${qrtYear}/sub${num}|" >
+    <meta property="og:image" th:attr="content=|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${num}_sns.png|" >
+    <meta property="og:description" content="신뢰와 믿음의 기업 (주)정식품 웹진 입니다."/>
+    <script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+    <!-- 2023-03-13 추천기사 -->
+	<script type="text/javascript">
+		(function($){
+			$(document).ready(function() {
+				if (!$('#wzPage').length){return false};  
+				var limit =  $(window).height() - ($('.wz-floting').height()+00);
+				//alert(limit);
+				if (limit > 0){
+					$('.wz-floting').addFloating({  
+						targetRight: 10,  
+						targetTop: 20,  //스크롤시 높이설정 
+						snap: true  
+					});  
+				} else {
+					$('.wz-floting').addFloating({  
+						targetRight: 10,  
+						targetTop: 40,  
+						snap: true  
+					});  
+				}
+			});
+		})(jQuery);
+	</script>
+	<!-- //2023-03-13 추천기사 -->
+<body>
+
+<!-- ******************* header ******************* -->
+<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
+<!-- ******************* // header ******************* -->	
+<div id="wrapper"> 
+    <div class="content-holder1">
+        <div class="content h550-3 home-content">
+            <div class="hero-content fl-wrap h550-3">
+				<!-- IMG -->
+                <!-- <div th:class="|${qrtYear}_${num}|"></div> 잠시-->
+                <div th:class="|Q1_2023_01|"></div>
+            </div>
+        </div>
+        <!-- snsWrap -->
+	    <div class="content bg-g3">
+	        <div class="w1470 snsWrap">
+	            <div class="w1140-left">
+	                <div class="subTopSNS">
+					    <span><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_insta.gif" alt="인스타그램" ></a></span>
+					    <span><a href="javascript:facebook();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_facebook.gif" alt="페이스북" ></a></span>
+					    <span><a href="javascript:blog();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_blog.gif" alt="블로그" ></a></span>
+					    <span><a href="javascript:kakaostory();"><img src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png"/></a></span>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- //snsWrap -->
+    </div>
+	<!-- ******************* main-content ******************* -->
+	<div class="content bg-g3">
+		<section>
+			<th:block th:replace="|webzine/html/sub${wYear}/${qrtYear}_${fileNo}|"></th:block>
+				<!-- 추천기사 날개버전 -->
+				<div class="wz-right">
+					<div class="wz-floting">
+						<p class="wz-news-title">추천기사</p>
+						<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}"
+							th:each="recWebzine : ${recommandWebzineList}">
+							<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+								<li>
+									<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+									<p class="wz-news-type02" th:text="|${recWebzine.snsTitle}/임시|"></p>
+								</li>
+								<li>
+									<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+								</li>
+							</a>
+						</ul>
+						<p class="wz-bnr"><a href=""><img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" /></a>
+						</p>
+					</div>
+				</div>
+				<!-- // 추천기사 날개 버전 -->
+		</section>
+	</div>
+	<!-- ******************* //main-content ******************* -->
+	<!-- <div class="content">
+		<div class="wrap-inner5">
+			<div class="container">
+				<div class="project-detail-wrap fl-wrap bg-g3 container-sub80">
+					******************* navi *******************
+					<th:block th:replace="webzine/subNewNavy :: navyFragmentVer2"></th:block>
+					******************* // navi *******************
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="content bg-g3">
+        <div class="w1470">
+            <div class="w1140-left">
+            <!-- ******************* navi ******************* -->
+            <th:block th:replace="webzine/subNewNavy :: navyFragmentVer2"></th:block>
+            <!-- ******************* // navi ******************* -->
+            </div>
+        </div>
+    </div>
+	<!-- ******************* footer ******************* -->
+	<footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
+	<!-- ******************* // footer ******************* -->
+</div>
+<script type="text/javascript">
+//<![CDATA[
+	
+	var num = '[[${num}]]';
+	var qrter = '[[${qrtYear}]]';
+	var fileNum = parseInt(num);
+	var beforeNo = fileNum - 1;
+	var afterNo = fileNum + 1;
+
+	$('#btnBefore').on("click", function() {
+		if(fileNum == '01') {
+			alert("첫번째 기사입니다.");
+			return false;
+		} else {
+			if(beforeNo <= 9) {
+				document.location.href="/webzine/"+qrter+"/sub0"+beforeNo;
+			} else {
+				document.location.href="/webzine/"+qrter+"/sub"+beforeNo;
+			}
+		}
+    });
+	
+	$('#btnNext').on("click", function() {
+		if(fileNum == '15') {
+			document.location.href="/webzine/event/"+qrter;
+		} else {
+			if(afterNo <= 9) {
+				document.location.href="/webzine/"+qrter+"/sub0"+afterNo;
+			} else {
+				document.location.href="/webzine/"+qrter+"/sub"+afterNo;
+			}
+		}
+    });
+	
+	function moveUrl(str1, str2){
+	    document.location.href="/main/webzine/"+str1+"/"+str2;
+	}
+    
+//]]>
+</script>
+</body>
+</html>
