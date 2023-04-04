@@ -748,8 +748,41 @@
 
 	<select id="selectSampleBabyList" parameterType="hashMap" resultType="com.vegemil.domain.AdminSampleBabyDTO">
 		SELECT /* selectSampleBabyList by SampleBabyMapper.xml */
-			  <include refid="sampleBabyColumns" />
-		  FROM 	m_sample_baby
+			 s.s_idx
+			,s.s_id
+			,s.s_mname
+			,s.s_year
+			,s.s_hp
+			,s.s_tel
+			,s.s_zipcode
+			,s.s_addr1
+			,s.s_addr2
+			,s.s_email
+			,s.s_writedate
+			,s.s_name
+			,s.s_sex
+			,s.s_materdate
+			,s.s_foodplan
+			,s.s_sabo
+			,s.s_before
+			,s.s_deliver
+			,s.s_deliverdate
+			,s.s_item
+			,s.s_feedmethod
+			,s.s_babycnt
+			,s.s_materdate2
+			,s.s_name2
+			,s.s_sex2
+			,s.s_feedmethod2
+			,s.s_materdate3
+			,s.s_name3
+			,s.s_sex3
+			,s.s_feedmethod3
+			,m.m_smssend 
+			,m.m_emailsend 
+		  FROM 	m_sample_baby s
+			  INNER Join m_member m
+				ON s.s_id = m.m_id
 		 WHERE 1=1
 		 <if test='gubun != "" '>
 		   AND s_item = #{gubun, jdbcType=VARCHAR}

@@ -198,7 +198,9 @@ var createTable = function() {
         { data: 'sWritedate' },
         { data: 'sBefore' },
         { data: 'sDeliverdate' },
-        { data: 'sDeliver' }
+        { data: 'sDeliver' },
+        { data: 'mSmssend' },
+        { data: 'mEmailsend' },
       ],
       columnDefs: [
       	{
@@ -335,7 +337,28 @@ var createTable = function() {
       			else if(full['sBefore']=='10')	return '영유아식 인스타그램';
       			else	return '기타';
       		}
-        }
+        },
+        {
+      		targets: 13,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+      			if(full['mSmssend']==null ||full['mSmssend']==0)	return '<span class="badge rounded-pill bg-danger">N</span>';
+      			else	return '<span class="badge rounded-pill bg-success">Y</span>';
+      			
+      		}
+      	},
+        {
+      		targets: 14,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+      			if(full['mEmailsend']==null ||full['mEmailsend']==0) return '<span class="badge rounded-pill bg-danger">N</span>';
+      			else	return '<span class="badge rounded-pill bg-success">Y</span>';
+      			
+      		}
+      	}
+      	
+      	
+      	
       ],
       order: [[0, 'desc']],
       dom:

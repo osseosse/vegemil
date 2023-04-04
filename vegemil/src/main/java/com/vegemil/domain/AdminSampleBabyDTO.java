@@ -37,5 +37,7 @@ public class AdminSampleBabyDTO extends AdminCommonDTO {
 	private String 	sName3;
 	private String 	sSex3;
 	private String 	sFeedmethod3;
+	private String 	mSmssend;
+	private String 	mEmailsend;
 
 }
