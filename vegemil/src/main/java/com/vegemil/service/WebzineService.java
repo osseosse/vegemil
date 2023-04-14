@@ -2,10 +2,11 @@ package com.vegemil.service;
 
 import java.util.List;
 
-import com.vegemil.domain.WebzineDTO;
-import com.vegemil.domain.WebzineEventDTO;
+import com.vegemil.domain.BannerDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
+import com.vegemil.domain.WebzineDTO;
+import com.vegemil.domain.WebzineEventDTO;
 
 public interface WebzineService {
 
@@ -31,6 +32,8 @@ public interface WebzineService {
     
     public List<WebzineDTO> getRecommandWebzine(String qrtYear);
     
+    public List<WebzineDTO> getRecommandWebzineThree(String qrtYear);
+    
     public List<WebzineDTO> getWebzineQrtYear(String qrtYear);
     
     public List<WebzineDTO> getWebzineYear();
@@ -50,4 +53,7 @@ public interface WebzineService {
     public List<WebzineDTO> getWebzine06();
     
     public List<WebzineDTO> getWebzineSearchList(SearchDTO params);
+    
+    public BannerDTO getRandomBanner();
+    public BannerDTO getBanner(BannerDTO dto);
 }

@@ -13,6 +13,7 @@
 		, sns_title
 		, category
 		, remark
+		, sum_line
 		, DATE_FORMAT(insert_date,'%Y-%m-%d') as insert_date
     </sql>
     
@@ -35,6 +36,15 @@
 		, s_active
 		, s_writedate
 		, s_email
+    </sql>
+    
+    <sql id="webzineBannerColumns">
+    	idx,
+    	domain_name, 
+    	link_addr, 
+    	img_name,
+    	qrt_year,
+    	article
     </sql>
     
     <!-- 게시글 검색 -->
@@ -222,6 +232,7 @@
 			, file_no
 			, title
 			, sns_title
+			, sum_line
         FROM
             m_webzine
         WHERE
@@ -233,6 +244,49 @@
         	rand()
 		Limit
 			4
+    </select>
+    
+    <select id="selectWebzineRandomThree" resultType="com.vegemil.domain.WebzineDTO">
+        SELECT
+            index_no
+			, qrt_year
+			, file_no
+			, title
+			, sns_title
+			, sum_line
+        FROM
+            m_webzine
+        WHERE
+			file_no !='index.aspx'
+			AND title != '이벤트'
+		and 
+			qrt_year = #{qrtYear}
+        Order by
+        	rand()
+		Limit
+			3
+    </select>
+    <select id="selectWebzineBannerRandom"  resultType="com.vegemil.domain.BannerDTO">
+    	SELECT
+    		<include refid="webzineBannerColumns"/>
+    	FROM	
+    		m_banner
+    	Order by
+        	rand()
+		Limit
+			1
+    </select>
+    
+    <select id="selectWebzineBanner"  resultType="com.vegemil.domain.BannerDTO">
+    	SELECT
+    		<include refid="webzineBannerColumns"/>
+    	FROM	
+    		m_banner
+    	WHERE
+    		qrt_year = #{qrtYear}
+         and
+         	article = #{article}
+    		
     </select>
     
     <select id="selectWebzineYear" resultType="com.vegemil.domain.WebzineDTO">
@@ -250,6 +304,8 @@
 			, substring(qrt_year,2,1) as qrt_year2
         FROM
             m_webzine
+        WHERE
+        	qrt_year != 'Q2_2023' <!-- 실반영시 지워야 할 것 -->
         Order by
         	qrt_year asc
     </select>
@@ -434,4 +490,5 @@
            	OR remark LIKE CONCAT('%', #{searchKeyword}, '%')
 		</if>
 	</select>
+	
 </mapper>

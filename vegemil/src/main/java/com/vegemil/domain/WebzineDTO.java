@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class WebzineDTO extends CommonDTO {
+public class WebzineDTO extends CommonDTO { 
 
     private Long indexNo;              
     private String qrtYear;
@@ -19,6 +19,6 @@ public class WebzineDTO extends CommonDTO {
     private String category;
     private String remark;
     private String insertDate;
+    private String sumLine;
     
-
 }

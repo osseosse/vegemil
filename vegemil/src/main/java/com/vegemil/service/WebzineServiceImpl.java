@@ -8,14 +8,13 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.vegemil.paging.PaginationInfo;
-import com.vegemil.domain.WebzineDTO;
-import com.vegemil.domain.WebzineEventDTO;
-import com.vegemil.domain.FactpostDTO;
+import com.vegemil.domain.BannerDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
-import com.vegemil.mapper.CustomerMapper;
+import com.vegemil.domain.WebzineDTO;
+import com.vegemil.domain.WebzineEventDTO;
 import com.vegemil.mapper.WebzineMapper;
+import com.vegemil.paging.PaginationInfo;
 
 @Service
 public class WebzineServiceImpl implements WebzineService {
@@ -234,6 +233,21 @@ public class WebzineServiceImpl implements WebzineService {
 			webzineList = webzineMapper.selectWebzineSearchList(params);
 		}
         return webzineList;
+	}
+
+	@Override
+	public BannerDTO getRandomBanner() {
+		return webzineMapper.selectWebzineBannerRandom();
+	}
+
+	@Override
+	public BannerDTO getBanner(BannerDTO dto) {
+		return webzineMapper.selectWebzineBanner(dto);
+	}
+
+	@Override
+	public List<WebzineDTO> getRecommandWebzineThree(String qrtYear) {
+		return webzineMapper.selectWebzineRandomThree(qrtYear);
 	}
 
 

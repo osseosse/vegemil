@@ -1,13 +1,14 @@
 package com.vegemil.mapper;
 
-import com.vegemil.domain.WebzineDTO;
-import com.vegemil.domain.WebzineEventDTO;
-import com.vegemil.domain.SearchDTO;
-import com.vegemil.domain.SubscribeDTO;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
+import com.vegemil.domain.BannerDTO;
+import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.SubscribeDTO;
+import com.vegemil.domain.WebzineDTO;
+import com.vegemil.domain.WebzineEventDTO;
 
 @Mapper
 public interface WebzineMapper {
@@ -36,6 +37,8 @@ public interface WebzineMapper {
 	
 	public List<WebzineDTO> selectWebzineRandom(String qrtYear);
 	
+	public List<WebzineDTO> selectWebzineRandomThree(String qrtYear);
+	
 	public List<WebzineDTO> selectWebzineByQrtYear(String qrtYear);
 
 	public int webzineCount();
@@ -62,6 +65,11 @@ public interface WebzineMapper {
 	
 	public List<WebzineDTO> selectWebzineSearchList(SearchDTO params);
 	public int selectWebzineSearchCount(SearchDTO params);
+	
+	public BannerDTO selectWebzineBannerRandom();
+	public BannerDTO selectWebzineBanner(BannerDTO dto);
+	
+
 	
 	
 }

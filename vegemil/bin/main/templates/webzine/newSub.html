@@ -7,7 +7,7 @@
     <meta property="og:title" th:attr="content=${snsTitle}" >
     <meta property="og:url" th:attr="content=|https://www.vegemil.co.kr/webzine/${qrtYear}/sub${num}|" >
     <meta property="og:image" th:attr="content=|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${num}_sns.png|" >
-    <meta property="og:description" content="신뢰와 믿음의 기업 (주)정식품 웹진 입니다."/>
+    <meta property="og:description" th:attr="content=${sumLine}"/>
     <script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
     <!-- 2023-03-13 추천기사 -->
 	<script type="text/javascript">
@@ -75,14 +75,15 @@
 							<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
 								<li>
 									<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
-									<p class="wz-news-type02" th:text="|${recWebzine.snsTitle}/임시|"></p>
+									<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
 								</li>
 								<li>
 									<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
 								</li>
 							</a>
 						</ul>
-						<p class="wz-bnr"><a href=""><img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" /></a>
+						<p class="wz-bnr"><a href="#"><img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" 
+																							th:src="${banner.imgName}"/></a>
 						</p>
 					</div>
 				</div>
@@ -149,7 +150,7 @@
     });
 	
 	function moveUrl(str1, str2){
-	    document.location.href="/main/webzine/"+str1+"/"+str2;
+	    document.location.href="/webzine/"+str1+"/"+str2;
 	}
     
 //]]>

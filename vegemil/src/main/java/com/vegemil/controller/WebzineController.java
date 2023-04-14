@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vegemil.constant.Method;
+import com.vegemil.domain.BannerDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
@@ -220,6 +221,7 @@ public class WebzineController extends UiUtils {
 		return "webzine/special";
 	}
 	
+	//상세진입 교체완
 	@GetMapping(value = "/main/webzine/{qrtYear}/sub{fileNo}.aspx")
 	public String openWebzineSubQY(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, @PathVariable(value = "fileNo", required = false) String fileNo
@@ -231,9 +233,9 @@ public class WebzineController extends UiUtils {
 		String returnHtml = "";
 		
 		if(!qrtYear.equals("")) {
-			wYear = qrtYear.substring(3, 7);
-			sortYear = qrtYear.substring(5, 7);
-			qrt  = qrtYear.substring(0, 2);
+			wYear = qrtYear.substring(3, 7); // 2023
+			sortYear = qrtYear.substring(5, 7); //23
+			qrt  = qrtYear.substring(0, 2); //Q1
 		}
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
@@ -244,16 +246,22 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
-		webzine.setFileNo("sub"+fileNo);
+		webzine.setFileNo("sub"+fileNo); 
+		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
 			model.addAttribute("snsTitle", webzine.getSnsTitle());
+			model.addAttribute("sumLine", webzine.getSumLine());
+			
 		}
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldSub";
+		} else if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
+			model.addAttribute("banner",webzineService.getBanner(new BannerDTO(qrtYear, "sub"+fileNo)));
+			returnHtml = "webzine/newSub";
 		} else {
 			returnHtml = "webzine/sub";
 		}
@@ -269,10 +277,11 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("wYear", wYear);
 		model.addAttribute("num", fileNo);
 		model.addAttribute("fileNo", "sub"+fileNo);
-
+		
 		return returnHtml;
 	}
 	
+	//상세진입 교체완
 	@GetMapping(value = "/webzine/{qrtYear}/sub{fileNo}.aspx")
 	public String moveWebzineSubAspx(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, @PathVariable(value = "fileNo", required = false) String fileNo
@@ -284,9 +293,9 @@ public class WebzineController extends UiUtils {
 		String returnHtml = "";
 		
 		if(!qrtYear.equals("")) {
-			wYear = qrtYear.substring(3, 7);
-			sortYear = qrtYear.substring(5, 7);
-			qrt  = qrtYear.substring(0, 2);
+			wYear = qrtYear.substring(3, 7); // 2023
+			sortYear = qrtYear.substring(5, 7); //23
+			qrt  = qrtYear.substring(0, 2); //Q1
 		}
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
@@ -297,16 +306,22 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
-		webzine.setFileNo("sub"+fileNo);
+		webzine.setFileNo("sub"+fileNo); 
+		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
 			model.addAttribute("snsTitle", webzine.getSnsTitle());
+			model.addAttribute("sumLine", webzine.getSumLine());
+			
 		}
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldSub";
+		} else if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
+			model.addAttribute("banner",webzineService.getBanner(new BannerDTO(qrtYear, "sub"+fileNo)));
+			returnHtml = "webzine/newSub";
 		} else {
 			returnHtml = "webzine/sub";
 		}
@@ -322,10 +337,11 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("wYear", wYear);
 		model.addAttribute("num", fileNo);
 		model.addAttribute("fileNo", "sub"+fileNo);
-
+		
 		return returnHtml;
 	}
 	
+	//상세진입 교체완
 	@GetMapping(value = "/Main/webzine/{qrtYear}/sub{fileNo}.aspx")
 	public String moveWebzineSubQY(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, @PathVariable(value = "fileNo", required = false) String fileNo
@@ -337,9 +353,9 @@ public class WebzineController extends UiUtils {
 		String returnHtml = "";
 		
 		if(!qrtYear.equals("")) {
-			wYear = qrtYear.substring(3, 7);
-			sortYear = qrtYear.substring(5, 7);
-			qrt  = qrtYear.substring(0, 2);
+			wYear = qrtYear.substring(3, 7); // 2023
+			sortYear = qrtYear.substring(5, 7); //23
+			qrt  = qrtYear.substring(0, 2); //Q1
 		}
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
@@ -350,16 +366,22 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
-		webzine.setFileNo("sub"+fileNo);
+		webzine.setFileNo("sub"+fileNo); 
+		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
 			model.addAttribute("snsTitle", webzine.getSnsTitle());
+			model.addAttribute("sumLine", webzine.getSumLine());
+			
 		}
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldSub";
+		} else if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
+			model.addAttribute("banner",webzineService.getBanner(new BannerDTO(qrtYear, "sub"+fileNo)));
+			returnHtml = "webzine/newSub";
 		} else {
 			returnHtml = "webzine/sub";
 		}
@@ -375,11 +397,11 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("wYear", wYear);
 		model.addAttribute("num", fileNo);
 		model.addAttribute("fileNo", "sub"+fileNo);
-
+		
 		return returnHtml;
 	}
 	
-	// simple path version 
+	// simple path version 상세진입 교체완
 	@GetMapping(value = "/webzine/{qrtYear}/sub{fileNo}")
 	public String moveWebzineSubQY2(@PathVariable(value = "qrtYear", required = false) String qrtYear
 			, @PathVariable(value = "fileNo", required = false) String fileNo
@@ -391,9 +413,9 @@ public class WebzineController extends UiUtils {
 		String returnHtml = "";
 		
 		if(!qrtYear.equals("")) {
-			wYear = qrtYear.substring(3, 7);
-			sortYear = qrtYear.substring(5, 7);
-			qrt  = qrtYear.substring(0, 2);
+			wYear = qrtYear.substring(3, 7); // 2023
+			sortYear = qrtYear.substring(5, 7); //23
+			qrt  = qrtYear.substring(0, 2); //Q1
 		}
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
@@ -404,16 +426,22 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
-		webzine.setFileNo("sub"+fileNo);
+		webzine.setFileNo("sub"+fileNo); 
+		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
 			model.addAttribute("snsTitle", webzine.getSnsTitle());
+			model.addAttribute("sumLine", webzine.getSumLine());
+			
 		}
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldSub";
+		} else if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
+			model.addAttribute("banner",webzineService.getBanner(new BannerDTO(qrtYear, "sub"+fileNo)));
+			returnHtml = "webzine/newSub";
 		} else {
 			returnHtml = "webzine/sub";
 		}
@@ -989,7 +1017,7 @@ public class WebzineController extends UiUtils {
 		return "webzine/searchNew";
 	}
 	
-	// 새로운 추천기사  개발
+	// 새로운 추천기사  개발 상세진입
 	@GetMapping(value = "/webzineDev/{qrtYear}/sub{fileNo}")
 	public String moveWebzineSubQYDev(@PathVariable(value = "qrtYear", required = false) String qrtYear
 													, @PathVariable(value = "fileNo", required = false) String fileNo
@@ -1014,25 +1042,25 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
-		webzine.setFileNo("sub"+fileNo);
+		webzine.setFileNo("sub"+fileNo); 
+		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
 			model.addAttribute("snsTitle", webzine.getSnsTitle());
+			model.addAttribute("sumLine", webzine.getSumLine());
+			model.addAttribute("banner", webzineService.getRandomBanner());
 		}
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldSub";
-		} else {
+		} else if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
 			returnHtml = "webzine/newSub";
+		} else {
+			returnHtml = "webzine/sub";
 		}
 		
-		/*
-		if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
-			returnHtml = "webzine/newSub";
-		}
-		*/
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
