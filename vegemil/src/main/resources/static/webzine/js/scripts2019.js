@@ -462,7 +462,7 @@ $(function () {
 });
 
 
-// ë©”ë‰´ìŠ¬ë¼ì´ë“œ ------------------
+// ¸Þ´º½½¶óÀÌµå ------------------
 $(function(){
 	var duration = 300;
 	var $aside = $('.page-main > aside');
@@ -471,12 +471,12 @@ $(function(){
 			$aside.toggleClass('open');
 			if($aside.hasClass('open')) {
 				$aside.stop(true).animate({left:'0px'}, duration, 'swing'); /* right*/
-				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ì´ë¯¸ì§€ë¡œ on,off ì œì–´ê°€ëŠ¥
-				$('button.list').css('background','#f15c5c'); //on ë°°ê²½
+				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ÀÌ¹ÌÁö·Î on,off Á¦¾î°¡´É
+				$('button.list').css('background','#f15c5c'); //on ¹è°æ
 			} else{
 				$aside.stop(true).animate({left:'-190px'}, duration, 'swing'); /* right*/
-				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ì´ë¯¸ì§€ë¡œ on,off ì œì–´ê°€ëŠ¥
-				$('button.list').css('background','none'); //off ë°°ê²½ 
+				$asideButton.find('button.list img').attr('src','./images/common/gnb01.png'); //ÀÌ¹ÌÁö·Î on,off Á¦¾î°¡´É
+				$('button.list').css('background','none'); //off ¹è°æ 
 			};
 		});
 });
@@ -488,14 +488,14 @@ $(function(){
 //	})
 //});
 
-// ë©”ì¸ > ì¸ë„¤ì¼ì˜¤ë²„  ------------------
+// ¸ÞÀÎ > ½æ³×ÀÏ¿À¹ö  ------------------
 $(function(){
 	// 
 	var duration = 300;
 
 	// images ----------------------------------------
 	 var $images = $('.hover-effect p');
-	// images ì„¸ë²ˆì§¸ ì´ë¯¸ì§€
+	// images ¼¼¹øÂ° ÀÌ¹ÌÁö
 	 $images.filter('p')
 		.on('mouseover', function(){
 			$(this).find('strong').stop(true).animate({bottom: '0px'}, duration);
@@ -511,20 +511,20 @@ $(function(){
 
 
 
-// Q4_2019/sub05 ìŠ¬ë¼ì´ë“œ ------------------
+// Q4_2019/sub05 ½½¶óÀÌµå ------------------
 $(function(){
 	$('#slider3 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// Q1_2020/sub07 ìŠ¬ë¼ì´ë“œ ------------------
+// Q1_2020/sub07 ½½¶óÀÌµå ------------------
 $(function(){
 	$('#slider4 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -532,10 +532,10 @@ $(function(){
 });
 
 
-// Q3_2020/ì¸ë±ìŠ¤ ìŠ¬ë¼ì´ë“œ ------------------
+// Q3_2020/ÀÎµ¦½º ½½¶óÀÌµå ------------------
 $(function(){
 	$('#slider5 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -543,20 +543,20 @@ $(function(){
 });
 
 
-// Q1_2021/sub01 ìŠ¬ë¼ì´ë“œ ------------------
+// Q1_2021/sub01 ½½¶óÀÌµå ------------------
 $(function(){
 	$('#slider6 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ë©”ì¸ ë¦¬ë‰´ì–¼ > ê±´ê°•ë ˆì‹œí”¼ ìŠ¬ë¼ì´ë“œ ------------------
+// 2022 ¸ÞÀÎ ¸®´º¾ó > °Ç°­·¹½ÃÇÇ ½½¶óÀÌµå ------------------
 $(function(){
 	$('.slider8 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -564,44 +564,44 @@ $(function(){
 });
 
 
-// 2022 ë©”ì¸ ë¦¬ë‰´ì–¼ > ì—¬í–‰ ìŠ¬ë¼ì´ë“œ ------------------
+// 2022 ¸ÞÀÎ ¸®´º¾ó > ¿©Çà ½½¶óÀÌµå ------------------
 $(function(){
 	$('#slider9 .slider').prrpleSlider({
 		multiple:2,
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ìŠ¤íŽ˜ì…œ > ë ˆì‹œí”¼ ------------------
+// 2022 ½ºÆä¼È > ·¹½ÃÇÇ ------------------
 $(function(){
 	$('#slider10 .slider').prrpleSlider({
 		multiple:1,
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ìŠ¤íŽ˜ì…œ > ì—¬í–‰ ------------------
+// 2022 ½ºÆä¼È > ¿©Çà ------------------
 $(function(){
 	$('#slider11 .slider').prrpleSlider({
 		multiple:4,
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
 	});
 });
 
-// 2022 ìŠ¤íŽ˜ì…œ > ì—¬í–‰(ì‚¬ê³„ì ˆ) ------------------
+// 2022 ½ºÆä¼È > ¿©Çà(»ç°èÀý) ------------------
 $(function(){
 	$('#slider12 .slider').prrpleSlider({
 		multiple:1,
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -610,7 +610,20 @@ $(function(){
 });
 
 
-// ìŠ¤íŽ˜ì…œíŽ˜ì´ì§€ PC~ëª¨ë°”ì¼ ì „ì²´ 
+// 2023 2ºÐ±â º½¿©ÇàÁö ½½¶óÀÌµå ------------------
+$(function(){
+	$('.slider13 .slider').prrpleSlider({
+		multiple:1,
+		autoPlay:true,				//play slider automatically?  //false »ç¿ë½Ã ¸ØÃã
+		autoPlayInterval:	4000,		
+		csstransforms:	false,
+		richSwiping:false
+
+	});
+});
+
+
+// ½ºÆä¼ÈÆäÀÌÁö PC~¸ð¹ÙÀÏ ÀüÃ¼ 
 $(function(){
 	let multiple
 		function isMobile(){
@@ -627,9 +640,9 @@ $(function(){
 	
 
 	if(isMobile()){
-			multiple=2; //MOìš© íŽ˜ì´ì§€
+			multiple=2; //MO¿ë ÆäÀÌÁö
 	}else{
-			multiple=4; //PCìš© íŽ˜ì´ì§€
+			multiple=4; //PC¿ë ÆäÀÌÁö
 	}
  $('#slider7 .slider').prrpleSlider({
 		loop:true,
@@ -645,7 +658,7 @@ $(function(){
 
 
 /* ------------------------------------------------------
-		***** ìŠ¤íŽ˜ì…œíŽ˜ì´ì§€ tab  *****
+		***** ½ºÆä¼ÈÆäÀÌÁö tab  *****
 --------------------------------------------------------*/
 
 
@@ -654,7 +667,7 @@ $(function(){
 
 
 /* ------------------------------------------------------
-		***** ë©”ì¸ë¹„ì¥¬ì–¼ > TV ê´‘ê³   *****
+		***** ¸ÞÀÎºñÁê¾ó > TV ±¤°í  *****
 --------------------------------------------------------*/
 (function ( $ ) {
 
@@ -711,12 +724,12 @@ $(function(){
 
 
 
-/* ìŠ¤íŽ˜ì…œ íƒ­  */
+/* ½ºÆä¼È ÅÇ  */
 (function( $ ) {
-  $.fn.basicTabs2 = function(options){ /* basicTabs2 ë³€ê²½ */
+  $.fn.basicTabs2 = function(options){ /* basicTabs2 º¯°æ */
     var settings = $.extend({
       active_class: "current",
-      list_class: "tabs2", /* tabe2 ë³€ê²½*/
+      list_class: "tabs2", /* tabe2 º¯°æ*/
       content_class: "tab_content2", /* tab_content2 */
       starting_tab: 1
     }, options );
@@ -741,10 +754,10 @@ $(function(){
 
 
 (function( $ ) {
-	$.fn.basicTabs3 = function(options){ /* basicTabs3 ë³€ê²½ */
+	$.fn.basicTabs3 = function(options){ /* basicTabs3 º¯°æ */
 		var settings = $.extend({
 		  active_class: "current",
-		  list_class: "tabs3", /* tabe3 ë³€ê²½*/
+		  list_class: "tabs3", /* tabe3 º¯°æ*/
 		  content_class: "tab_content3", /* tab_content3 */
 		  starting_tab: 1
 		}, options );
@@ -767,10 +780,10 @@ $(function(){
 
 
 (function( $ ) {
-	$.fn.basicTabs4 = function(options){ /* basicTabs4 ë³€ê²½ */
+	$.fn.basicTabs4 = function(options){ /* basicTabs4 º¯°æ */
 		var settings = $.extend({
 		  active_class: "current",
-		  list_class: "tabs4", /* tabe4 ë³€ê²½*/
+		  list_class: "tabs4", /* tabe4 º¯°æ*/
 		  content_class: "tab_content4", /* tab_content4 */
 		  starting_tab: 1
 		}, options );
@@ -791,12 +804,11 @@ $(function(){
 	  };
 }( jQuery ));
 
-
 (function( $ ) {
-	$.fn.basicTabs5 = function(options){ /* basicTabs5 ë³€ê²½ */
+	$.fn.basicTabs5 = function(options){ /* basicTabs5 º¯°æ */
 		var settings = $.extend({
 		  active_class: "current",
-		  list_class: "tabs5", /* tabe5 ë³€ê²½*/
+		  list_class: "tabs5", /* tabe5 º¯°æ*/
 		  content_class: "tab_content5", /* tab_content5 */
 		  starting_tab: 1
 		}, options );
@@ -816,3 +828,4 @@ $(function(){
 		});
 	  };
 }( jQuery ));
+

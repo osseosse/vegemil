@@ -591,6 +591,8 @@ public class WebzineController extends UiUtils {
 			model.addAttribute("wYear", wYear);
 			model.addAttribute("fileNo", "index");
 			
+			System.out.println("??>>>>>>>>>>>");
+			
 			return returnHtml;
 		}
 		
