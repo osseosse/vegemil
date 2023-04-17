@@ -427,7 +427,7 @@ public class WebzineController extends UiUtils {
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
 		webzine.setFileNo("sub"+fileNo); 
-		//webzine.setFileNo("sub05"); 개발용 하드코드
+		
 		webzine = webzineService.getWebzine(webzine);
 		
 		if(webzine != null) {
@@ -560,108 +560,108 @@ public class WebzineController extends UiUtils {
 		return returnHtml;
 	}
 	
-		// simple path version 
-		@GetMapping(value = "/webzine/{qrtYear}/index")
-		public String openWebzineIndexQY2(@PathVariable(value = "qrtYear", required = false) String qrtYear
-				, @RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
-			
-			String wYear = "";
-			String returnHtml = "";
-			
-			if(!qrtYear.equals("")) {
-				wYear = qrtYear.substring(3, 7);
-			}
-			
-			List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
-			List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
-			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
-			
-			if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
-				returnHtml = "webzine/oldIndex";
-			} else {
-				returnHtml = "webzine/index";
-			}
-			
-			model.addAttribute("webzineYear", webzineYear);
-			model.addAttribute("webzineQrt", webzineQrt);
-			model.addAttribute("webzineLink", webzineLink);
-			model.addAttribute("webzineListQY", webzineListQY);
-			model.addAttribute("qrtYear", qrtYear);
-			model.addAttribute("wYear", wYear);
-			model.addAttribute("fileNo", "index");
-			
-			return returnHtml;
+	// simple path version 
+	@GetMapping(value = "/webzine/{qrtYear}/index")
+	public String openWebzineIndexQY2(@PathVariable(value = "qrtYear", required = false) String qrtYear
+			, @RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
+		
+		String wYear = "";
+		String returnHtml = "";
+		
+		if(!qrtYear.equals("")) {
+			wYear = qrtYear.substring(3, 7);
 		}
 		
-		@GetMapping(value = "/Main/webzine/events/event_{qrtYear}.aspx")
-		public String moveMainOldWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
-										, Model model, HttpServletRequest request) {
-			
-			String wYear = "";
-			String returnHtml = "";
-			
-			if(!qrtYear.equals("")) {
-				wYear = qrtYear.substring(3, 7);
-			}
-			
-			List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
-			List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
-			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
-			
-			if(qrtYear.equals("Q2_2023")){
-				returnHtml = "webzine/event_Q2_2023";
-			}else {
-				returnHtml = "webzine/oldEvent";
-			}
-			
-			model.addAttribute("webzineListQY", webzineListQY);
-			model.addAttribute("webzineYear", webzineYear);
-			model.addAttribute("webzineQrt", webzineQrt);
-			model.addAttribute("webzineLink", webzineLink);
-			
-			model.addAttribute("qrtYear", qrtYear);
-			model.addAttribute("wYear", wYear);
-			model.addAttribute("fileNo", "event");
-
-			return returnHtml;
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
+		
+		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
+			returnHtml = "webzine/oldIndex";
+		} else {
+			returnHtml = "webzine/index";
 		}
 		
-		@GetMapping(value = "/webzine/events/event_{qrtYear}.aspx")
-		public String moveOldWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
-										, Model model, HttpServletRequest request) {
-			
-			String wYear = "";
-			String returnHtml = "";
-			
-			if(!qrtYear.equals("")) {
-				wYear = qrtYear.substring(3, 7);
-			}
-			
-			List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
-			List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
-			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
-			
-			if(qrtYear.equals("Q2_2023")){
-				returnHtml = "webzine/event_Q2_2023";
-			}else {
-				returnHtml = "webzine/oldEvent";
-			}
-			
-			model.addAttribute("webzineListQY", webzineListQY);
-			model.addAttribute("webzineYear", webzineYear);
-			model.addAttribute("webzineQrt", webzineQrt);
-			model.addAttribute("webzineLink", webzineLink);
-			
-			model.addAttribute("qrtYear", qrtYear);
-			model.addAttribute("wYear", wYear);
-			model.addAttribute("fileNo", "event");
-
-			return returnHtml;
-		}
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		model.addAttribute("webzineListQY", webzineListQY);
+		model.addAttribute("qrtYear", qrtYear);
+		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "index");
+		
+		return returnHtml;
+	}
 	
+	@GetMapping(value = "/Main/webzine/events/event_{qrtYear}.aspx")
+	public String moveMainOldWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
+									, Model model, HttpServletRequest request) {
+		
+		String wYear = "";
+		String returnHtml = "";
+		
+		if(!qrtYear.equals("")) {
+			wYear = qrtYear.substring(3, 7);
+		}
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
+		
+		if(qrtYear.equals("Q2_2023")){
+			returnHtml = "webzine/event_Q2_2023";
+		}else {
+			returnHtml = "webzine/oldEvent";
+		}
+		
+		model.addAttribute("webzineListQY", webzineListQY);
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		
+		model.addAttribute("qrtYear", qrtYear);
+		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "event");
+
+		return returnHtml;
+	}
+	
+	@GetMapping(value = "/webzine/events/event_{qrtYear}.aspx")
+	public String moveOldWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
+									, Model model, HttpServletRequest request) {
+		
+		String wYear = "";
+		String returnHtml = "";
+		
+		if(!qrtYear.equals("")) {
+			wYear = qrtYear.substring(3, 7);
+		}
+		
+		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
+		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
+		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
+		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
+		
+		if(qrtYear.equals("Q2_2023")){
+			returnHtml = "webzine/event_Q2_2023";
+		}else {
+			returnHtml = "webzine/oldEvent";
+		}
+		
+		model.addAttribute("webzineListQY", webzineListQY);
+		model.addAttribute("webzineYear", webzineYear);
+		model.addAttribute("webzineQrt", webzineQrt);
+		model.addAttribute("webzineLink", webzineLink);
+		
+		model.addAttribute("qrtYear", qrtYear);
+		model.addAttribute("wYear", wYear);
+		model.addAttribute("fileNo", "event");
+
+		return returnHtml;
+	}
+
 	@GetMapping(value = "/webzine/event/{qrtYear}")
 	public String openWebzineEvent(@PathVariable(value = "qrtYear", required = false) String qrtYear
 									, Model model, HttpServletRequest request) {
@@ -1015,65 +1015,6 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("webzineListSearch", webzineListSearch);
 		
 		return "webzine/searchNew";
-	}
-	
-	// 새로운 추천기사  개발 상세진입
-	@GetMapping(value = "/webzineDev/{qrtYear}/sub{fileNo}")
-	public String moveWebzineSubQYDev(@PathVariable(value = "qrtYear", required = false) String qrtYear
-													, @PathVariable(value = "fileNo", required = false) String fileNo
-														, @RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
-		
-		String wYear = "";
-		String qrt = "";
-		String sortYear = "";
-		String returnHtml = "";
-		
-		if(!qrtYear.equals("")) {
-			wYear = qrtYear.substring(3, 7); // 2023
-			sortYear = qrtYear.substring(5, 7); //23
-			qrt  = qrtYear.substring(0, 2); //Q1
-		}
-		
-		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
-		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
-		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
-		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
-		WebzineDTO webzine = new WebzineDTO();
-		webzine.setQrtYear(qrtYear);
-		webzine.setFileNo("sub"+fileNo); 
-		//webzine.setFileNo("sub05"); 개발용 하드코드
-		webzine = webzineService.getWebzine(webzine);
-		
-		if(webzine != null) {
-			model.addAttribute("title", webzine.getTitle());
-			model.addAttribute("snsTitle", webzine.getSnsTitle());
-			model.addAttribute("sumLine", webzine.getSumLine());
-			model.addAttribute("banner", webzineService.getRandomBanner());
-		}
-		
-		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
-			returnHtml = "webzine/oldSub";
-		} else if(Integer.parseInt(wYear)>=2023 && Integer.parseInt(qrt.substring(1)) >= 2) {
-			returnHtml = "webzine/newSub";
-		} else {
-			returnHtml = "webzine/sub";
-		}
-		
-		model.addAttribute("webzineYear", webzineYear);
-		model.addAttribute("webzineQrt", webzineQrt);
-		model.addAttribute("webzineLink", webzineLink);
-		model.addAttribute("webzineListQY", webzineListQY);
-		model.addAttribute("recommandWebzineList", recommandWebzineList);
-		model.addAttribute("qrtYear", qrtYear);
-		model.addAttribute("sortYear", sortYear);
-		model.addAttribute("qrt", qrt);
-		model.addAttribute("wYear", wYear);
-		model.addAttribute("num", fileNo);
-		model.addAttribute("fileNo", "sub"+fileNo);
-		
-		return returnHtml;
 	}
 	
 }
