@@ -4,10 +4,10 @@
 	<title th:text="${snsTitle}"></title>
     <head th:replace="webzine/head :: headFragment"></head>
     <!-- <link type="text/css" rel="stylesheet" href="/webzine/css/style_dev_recomm.css"> -->
-    <meta property="og:title" th:attr="content=${snsTitle}" >
+    <meta property="og:title" th:attr="content=${sumLine}" >
     <meta property="og:url" th:attr="content=|https://www.vegemil.co.kr/webzine/${qrtYear}/sub${num}|" >
     <meta property="og:image" th:attr="content=|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${num}_sns.png|" >
-    <meta property="og:description" th:attr="content=${sumLine}"/>
+    <meta property="og:description" th:attr="content=${snsTitle}"/>
     <script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
     <!-- 2023-03-13 추천기사 -->
 	<script type="text/javascript">

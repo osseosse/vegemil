@@ -137,7 +137,11 @@ public class WebzineServiceImpl implements WebzineService {
         int count = webzineMapper.webzineCount();
 
 		if(count > 0) {
-			webzineList = webzineMapper.selectWebzineRandom(qrtYear);
+			if(qrtYear.equals("Q2_2023")) {
+				webzineList = webzineMapper.selectWebzineRandomThree(qrtYear);
+			}else {
+				webzineList = webzineMapper.selectWebzineRandom(qrtYear);
+			}
 		}
         return webzineList;
     }
