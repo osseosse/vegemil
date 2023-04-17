@@ -139,7 +139,8 @@ public class WebzineServiceImpl implements WebzineService {
 		if(count > 0) {
 			if(qrtYear.equals("Q2_2023")) {
 				webzineList = webzineMapper.selectWebzineRandomThree(qrtYear);
-			}else {
+				
+			} else {
 				webzineList = webzineMapper.selectWebzineRandom(qrtYear);
 			}
 		}
@@ -248,11 +249,4 @@ public class WebzineServiceImpl implements WebzineService {
 	public BannerDTO getBanner(BannerDTO dto) {
 		return webzineMapper.selectWebzineBanner(dto);
 	}
-
-	@Override
-	public List<WebzineDTO> getRecommandWebzineThree(String qrtYear) {
-		return webzineMapper.selectWebzineRandomThree(qrtYear);
-	}
-
-
 }

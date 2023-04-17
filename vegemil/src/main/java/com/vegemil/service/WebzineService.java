@@ -32,8 +32,6 @@ public interface WebzineService {
     
     public List<WebzineDTO> getRecommandWebzine(String qrtYear);
     
-    public List<WebzineDTO> getRecommandWebzineThree(String qrtYear);
-    
     public List<WebzineDTO> getWebzineQrtYear(String qrtYear);
     
     public List<WebzineDTO> getWebzineYear();

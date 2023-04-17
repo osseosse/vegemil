@@ -83,7 +83,8 @@
                 </select>	
 				<span>목차 </span>
 				<select id="contents" class="w450" onchange="javascript:goSub(this.value);" th:if="${not #lists.isEmpty( webzineLink )}">
-		            <option th:each="link : ${webzineLink}" th:value="${link.qrtYear}" th:text="${link.snsTitle}"></option>
+		            <option th:each="link : ${webzineLink}" th:value="${link.qrtYear}" th:if="${link.sumLine == null}" th:text="${link.snsTitle}"></option>
+		            <option th:each="link : ${webzineLink}" th:value="${link.qrtYear}" th:unless="${link.sumLine == null}" th:text="${link.sumLine}"></option>
 		        </select>
 				<script th:inline="javascript">
 				/*<![CDATA[*/

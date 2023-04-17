@@ -1,46 +1,11 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-	<title>정식품 웹진 이벤트</title>
-    <head th:replace="webzine/head :: headFragment"></head>
-    <meta property="og:title" content="정식품 웹진 이벤트"> 
-    <meta property="og:url" th:attr="content=|https://www.vegemil.co.kr/webzine/event/${qrtYear}|" >
-    <meta property="og:image" content="https://image.edaymall.com/images/dcf/webzine/Q1_2023/event.jpg" >
-	<!-- <meta property="og:url" th:attr="content=${webPath}" > -->
-<body>
-<div th:replace="webzine/subTopSns :: topSnsScriptFragment"></div>
-<!-- ******************* header ******************* -->
-<th:block th:replace="webzine/mainHeader :: headerFragment"></th:block>
-<!-- ******************* // header ******************* -->	
-<div id="wrapper"> 
-    <div class="content-holder1">
-        <div class="content h550-3 home-content">
-            <div class="hero-content fl-wrap h550-3">
-				<!-- IMG -->
-                <div th:class="|${qrtYear}_event|"></div>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-		<div class="wrap-inner5">
-			<div class="container">
-				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
-					<!-- <th:block th:replace="webzine/subTopSns :: topSnsFragment"></th:block>-->
-					<div class="subTopSNS">
-					    <span><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_insta.gif" alt="인스타그램" ></a></span>
-					    <span><a href="javascript:facebook();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_facebook.gif" alt="페이스북" ></a></span>
-					    <span><a href="javascript:blog();"><img src="https://image.edaymall.com/images/dcf/webzine/common/ico_blog.gif" alt="블로그" ></a></span>
-					    <span><a href="javascript:kakaostory();"><img src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png"/></a></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- ******************* main-content ******************* -->
 	<div class="content">
 	<section>
 		<div class="wrap-inner5">
-			<div class="container">
+			<div class="container center">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
 					<div class="row ">
 						<div class="col-md-12">
@@ -61,31 +26,31 @@
 						<div class="col-md-12 grayLine2">
 							<h1 class="center mt50-m"><span class="gray">EVENT 2.</span> 퀴즈를 맞혀라!</h1>
 							<h2 class="center mt20">낱말 퀴즈! 흰색 빈칸 속 낱말을 맞춰주세요.</h2>
-							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/e.jpg" alt="낱말퀴즈" /></p>
+							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine//Q1_2023/e.jpg" alt="낱말퀴즈" /></p>
 							
-							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/e1.jpg" alt="낱말퀴즈" /></p>
-							<p class="mt10-m right"><a href="/Main/webzine/Q2_2023/sub02.aspx"><span class="type28-3">힌트 보러가기</span></a></p>
+							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine//Q1_2023/e1.jpg" alt="낱말퀴즈" /></p>
+							<p class="mt10-m right"><a href="/Main/webzine/Q1_2023/sub10.aspx"><span class="type28-3">힌트 보러가기</span></a></p>
 							
-							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/e2.jpg" alt="낱말퀴즈" /></p>
-							<p class="mt10-m right"><a href="/Main/webzine/Q2_2023/sub04.aspx"><span class="type28-3">힌트 보러가기</span></a></p>
+							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine//Q1_2023/e2.jpg" alt="낱말퀴즈" /></p>
+							<p class="mt10-m right"><a href="/Main/webzine/Q1_2023/sub01.aspx"><span class="type28-3">힌트 보러가기</span></a></p>
 
-							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/e3.jpg" alt="낱말퀴즈" /></p>
-							<p class="mt10-m right"><a href="/Main/webzine/Q2_2023/sub12.aspx"><span class="type28-3">힌트 보러가기</span></a></p>
+							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine//Q1_2023/e3.jpg" alt="낱말퀴즈" /></p>
+							<p class="mt10-m right"><a href="/Main/webzine/Q1_2023/sub13.aspx"><span class="type28-3">힌트 보러가기</span></a></p>
 							
 							<p class="col-md-12 mt50-m pd0"><span class="grayPink">참여방법</span></p>
 							<p>1) '힌트 보러가기' 통해 낱말 힌트 찾기</p>
 							<p>2) 퀴즈 정답을 본 페이지 ‘이벤트 응모하기’에 남기면 끝!</p>
 							
 						</div>											
-					</div><!--//row-->
+					</div>
 					<div class="row mt50-m intxt">
 						<div class="col-md-12">
 							<h1 class="center mt50-m mb30">응모안내</h1>
 							<div class="col-md-6 mt30-m pd0">
-								<p><span class="grayPink">기간</span><br>2023. 04. 01 ~ 06. 30</p>
+								<p><span class="grayPink">기간</span><br>2023.01.01~03.31</p>
 							</div>
 							<div class="col-md-6 mt30-m pd0">
-								<p><span class="grayPink">발표</span><br>2023년 3분기 정식품 웹진	</p>
+								<p><span class="grayPink">발표</span><br>2023년 2분기 정식품 웹진</p>
 							</div>
 						</div>
 						<div class="col-md-12 mt30-m">
@@ -109,32 +74,32 @@
 				</div>
 			</div>
 			<!-- width 100%  -->
-								<div class="hero-content fl-wrap h240 bg-pink">
-									 <!-- hero-wrap-->           
-									<div class="hero-wrap">
-										<div class="container">
-											<div class="hero-item3">
-													<div class="row">
-														<div class="col-md-9">
-															<p class="type22-3">Tip.</p>
-															<div class="hero-dec"></div>
-															<p class="type02-5 mt20">
-															* 한가지 이벤트만 참여해도 응모 가능합니다.단, 두 이벤트에 모두 참여시 알찬 경품 당첨 확률 UP!<br>
-															* 정식품 웹진 구독하면 당첨 확률 UP!<br>
-															* 웹진 공유 시 제목 및 본문에 &lt;정식품 웹진&gt; 키워드를 넣어 작성하면 당첨 확률 UP!
-															</p>
-														</div>
-														<div class="col-md-3">
-															<p class="right hidden768"><a href="/main/customer/offlineNews.aspx?page_code=OLN"><img src="../img/common/btn_subscribe.jpg" /></a></p>
-															<a href="/main/customer/offlineNews.aspx?page_code=OLN"><div class="hidden1069 center "><p class="btnEvent"><img src="../img/common/btn_sub.gif" /> 정식품 웹진 구독 신청하기</p></div></a>
-														</div>
-													</div>
-											</div>
-										</div>
+			<div class="hero-content fl-wrap h240 bg-pink">
+				 <!-- hero-wrap-->           
+				<div class="hero-wrap">
+					<div class="container">
+						<div class="hero-item3">
+								<div class="row">
+									<div class="col-md-9">
+										<p class="type22-3">Tip.</p>
+										<div class="hero-dec"></div>
+										<p class="type02-5 mt20">
+										* 한가지 이벤트만 참여해도 응모 가능합니다.단, 두 이벤트에 모두 참여시 알찬 경품 당첨 확률 UP!<br>
+										* 정식품 웹진 구독하면 당첨 확률 UP!<br>
+										* 웹진 공유 시 제목 및 본문에 &lt;정식품 웹진&gt; 키워드를 넣어 작성하면 당첨 확률 UP!
+										</p>
 									</div>
-									<!-- hero-wrap end-->
+									<div class="col-md-3">
+										<p class="right hidden768"><a href="/webzine/subscribe"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_subscribe.jpg" /></a></p>
+										<a href="/webzine/subscribe"><div class="hidden1069 center "><p class="btnEvent"><img src="https://image.edaymall.com/images/dcf/webzine/common/btn_sub.gif" /> 정식품 웹진 구독 신청하기</p></div></a>
+									</div>
 								</div>
-								<!-- width 100%  -->
+						</div>
+					</div>
+				</div>
+				<!-- hero-wrap end-->
+			</div>
+			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
 					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
@@ -142,7 +107,7 @@
 					<div class="row intxt mt80-m">
 					</div>
 					<div class="row intxt mt80-m">
-						<div class="col-md-12">
+						<!-- <div class="col-md-12">
 							<p class="type25-1" >1. 이름 <span class="red2">*(필수)</span></p>
 								<div class="mt30-m">
 									<input class="evebase05" name="custName" id="custName" maxlength="5">
@@ -169,11 +134,11 @@
 								</div>
 						</div>
 						<div class="col-md-12">
-							<p class="type25-1 mt80-m" >4.EVENT 1 웹진 홍보 URL <span class="red2">*</span> <!-- <b class="red">*(URL이 여러개일 경우 Enter키를 이용해 하나씩 입력해주세요.)</b> --></p>			
+							<p class="type25-1 mt80-m" >4.EVENT 1 웹진 홍보 URL <span class="red2">*</span> <b class="red">*(URL이 여러개일 경우 Enter키를 이용해 하나씩 입력해주세요.)</b></p>			
 							<textarea class="eveTxt mt30-m" placeholder="공유한 게시물의 URL 남겨주세요" name="remark" maxlength="120"></textarea>
 						</div>
 						<div class="col-md-12">
-							<p class="type25-1 mt80-m" >5.EVENT 2 낱말 퀴즈 정답 <span class="red2">*</span><!-- <b class="red">*(URL이 여러개일 경우 Enter키를 이용해 하나씩 입력해주세요.)</b> --></p>												
+							<p class="type25-1 mt80-m" >5.EVENT 2 낱말 퀴즈 정답 <span class="red2">*</span><b class="red">*(URL이 여러개일 경우 Enter키를 이용해 하나씩 입력해주세요.)</b></p>												
 							<textarea class="eveTxt mt30-m" placeholder="공유한 게시물의 URL 남겨주세요" name="answer" maxlength="40"></textarea>
 						</div>
 						<div class="col-md-12" >
@@ -188,39 +153,39 @@
 							<div class="mt90 center">
 								<input  class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기">
 							</div>
-						</div>
+						</div> -->
 						<div class="col-md-12 mt100-m2" >
 							<p class="type20 center">지난호 당첨자</p>
 							<div class="eventList2 mt50-m ">
 								<div class="col-md-3 mt30m">
 									<p class="type28-1">1등</p>		
-									<p>신*연</p>
-									<p>김*호</p>
-									<p>유*화</p>
+									<p>이*아</p>
+									<p>이*인</p>
+									<p>김*표</p>
 								</div>
 								<div class="col-md-3 mt30m">
 									<p class="type28-1">2등</p>
-									<p>김*석</p>
-									<p>서*연</p>
-									<p>임*민</p>
-									<p>김*주</p>
-									<p>서*연</p>
+									<p>이*롬</p>
+									<p>박*선</p>
+									<p>배*수</p>
+									<p>한*혜</p>
+									<p>이*지</p>
 								</div>
 								<div class="col-md-3 mt30m">
 									<p class="type28-1">3등</p>
-									<p>김*경</p>
-									<p>박*현</p>
-									<p>김*연</p>
-									<p>조*희</p>
-									<p>강*재</p>
+									<p>김*수</p>
+									<p>젤*나</p>
+									<p>이*준</p>
+									<p>이*미</p>
+									<p>주*옥</p>
 								</div>
 								<div class="col-md-3 mt30m">
 									<p class="type28-1 hidden768">&nbsp;</p>
-									<p>신*리</p>
-									<p>이*윤</p>
-									<p>김*수</p>
-									<p>김*훈</p>
-									<p>이*규</p>
+									<p>황*성</p>
+									<p>김*인</p>
+									<p>김*경</p>
+									<p>유*영</p>
+									<p>박*훈</p>
 								</div>
 							</div>
 						</div>
@@ -228,57 +193,5 @@
 					</form>
 				</div>
 			</div><!-- //container -->
-		</div><!-- //wrap-inner2 -->
-	</section>
-</div>
-<!-- ******************* //main-content ******************* -->
-</div>
-<!-- ******************* footer ******************* -->
-<footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
-<!-- ******************* // footer ******************* -->
-<script type="text/javascript">
-//<![CDATA[
 
-	function btnActive() {
-		
-		buildData();
-		const sName = $('#custName').val();
-		const sHp = $('#custHp').val();
-		const sEmail = $('#custEmail').val();
-		
-		if($.trim(sName).length > 0
-		&& $.trim(sHp).length > 0
-		&& $.trim(sEmail).length > 0) {
-			
-			if(($("input[type=radio][name=chk_privacy]:checked").val() == '1') == false){
-				alert("개인정보취급에 동의하셔야 이벤트 응모가 가능합니다.");
-				return false;
-			}
-			return true;
-		} else {
-			alert("필수 값을 입력해주세요");
-			return false;
-		}
-	}
-	
-	function buildData(){
-		
-		var hp = $("#hp1").val()  + "-" +  $('#hp2').val() + "-" + $('#hp3').val();
-		$('input[name=custHp]').attr('value',hp);
-        console.log(hp);
-	}
-	
-	$(function(){
-		
-		//이메일 입력방식 선택
-		$('#hp1').change(function(){
-		   $("#hp1 option:selected").each(function () {
-				$("#custHp").val($("#hp1").val()+$("#hp2").val()+$("#hp3").val());
-		   });
-		});
-		
-	});
-//]]>
-</script>
-</body>
 </html>

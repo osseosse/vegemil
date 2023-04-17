@@ -591,8 +591,6 @@ public class WebzineController extends UiUtils {
 			model.addAttribute("wYear", wYear);
 			model.addAttribute("fileNo", "index");
 			
-			System.out.println("??>>>>>>>>>>>");
-			
 			return returnHtml;
 		}
 		
@@ -612,9 +610,9 @@ public class WebzineController extends UiUtils {
 			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 			
-			if(qrtYear.equals("Q1_2023")) {
-				returnHtml = "webzine/event";
-			} else {
+			if(qrtYear.equals("Q2_2023")){
+				returnHtml = "webzine/event_Q2_2023";
+			}else {
 				returnHtml = "webzine/oldEvent";
 			}
 			
@@ -646,9 +644,9 @@ public class WebzineController extends UiUtils {
 			List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 			List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 			
-			if(qrtYear.equals("Q1_2023")) {
-				returnHtml = "webzine/event";
-			} else {
+			if(qrtYear.equals("Q2_2023")){
+				returnHtml = "webzine/event_Q2_2023";
+			}else {
 				returnHtml = "webzine/oldEvent";
 			}
 			
@@ -680,10 +678,8 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
-		if(qrtYear.equals("Q1_2023") ) {
-			returnHtml = "webzine/event_Q1";
-		}else if(qrtYear.equals("Q2_2023")){
-			returnHtml = "webzine/event_Q2";
+		if(qrtYear.equals("Q2_2023")){
+			returnHtml = "webzine/event_Q2_2023";
 		}else {
 			returnHtml = "webzine/oldEvent";
 		}
@@ -716,11 +712,8 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
-		if(qrtYear.equals("Q1_2023") ) {
-			returnHtml = "webzine/event_Q1";
-			
-		}else if(qrtYear.equals("Q2_2023")){
-			returnHtml = "webzine/event_Q2";
+		if(qrtYear.equals("Q2_2023")){
+			returnHtml = "webzine/event_Q2_2023";
 		}else {
 			returnHtml = "webzine/oldEvent";
 		}
@@ -753,12 +746,8 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
-		if(qrtYear.equals("Q1_2023") ) {
-			returnHtml = "webzine/event_Q1";
-			
-		}else if(qrtYear.equals("Q2_2023")){
-			returnHtml = "webzine/event_Q2";
-			
+		if(qrtYear.equals("Q2_2023")){
+			returnHtml = "webzine/event_Q2_2023";
 		}else {
 			returnHtml = "webzine/oldEvent";
 		}

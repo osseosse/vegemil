@@ -314,6 +314,7 @@
         SELECT
             CONCAT(qrt_year, '/', file_no) as qrt_year
 			, sns_title
+			, sum_line
         FROM
             m_webzine
         ORDER BY CASE 
