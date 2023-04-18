@@ -82,8 +82,10 @@
 								</li>
 							</a>
 						</ul>
-						<p class="wz-bnr"><a href="#" th:href="${banner.linkAddr}"><img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" 
-																							th:src="${banner.imgName}"/></a>
+						<p class="wz-bnr" th:if="${banner != null}">
+							<a href="#" th:href="${banner.linkAddr}">
+								<img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}"/>
+							</a>
 						</p>
 					</div>
 				</div>
