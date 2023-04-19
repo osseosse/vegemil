@@ -113,7 +113,8 @@
 	.depth02_menu_wrap .inner .gnb_depth2 > li{width: 16.5%; text-align: left; padding: 5px 10px 5px 20px; margin-bottom: 20px;  text-align:center}
 	.depth02_menu_wrap .inner .gnb_depth2 > li::after{content: ""; position: absolute; top: 0; width: 1px; height: 100%; background-color: transparent;}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > a{display: block;  font-weight: 500; color:#222; margin-bottom: 15px; font-size:16px}
-	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3{padding: 0 0px;}
+	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3{padding: 0 0px;  }
+	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 li.long { letter-spacing:-0.3px}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li{position: relative; padding-left:0px; margin-top: 5px; }
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li:first-child{margin-top: 0px;}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li > a{font-size: 14px; color:#787878}
