@@ -304,8 +304,7 @@
 			, substring(qrt_year,2,1) as qrt_year2
         FROM
             m_webzine
-        WHERE
-        	qrt_year != 'Q2_2023' <!-- 실반영시 지워야 할 것 -->
+       
         Order by
         	qrt_year asc
     </select>
