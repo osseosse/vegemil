@@ -61,6 +61,15 @@ public class WebzineController extends UiUtils {
 		return "webzine/default";
 	}
 	
+	@GetMapping(value = "/Main/webzine/default.aspx") // 웹진 QR코드 url 대응 
+	public String moveWebzineForQRcode(Model model, @RequestParam(required = false) SearchDTO params) {
+		
+		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
+		model.addAttribute("webzineList", webzineList);
+		
+		return "webzine/default";
+	}
+	
 	@GetMapping(value = "/main/publicCenter/webzine.aspx")
 	public String moveWebzineSubs(@RequestParam(required = false) String page_code, Model model, HttpServletRequest request) {
 
