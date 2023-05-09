@@ -1574,6 +1574,44 @@ button:hover:before {content:"Reply!"}
 		background: #fff;
 		
 	}
+	/* 3000 50주년이벤트 vertical */
+	.event-title-50year {background:#000; border-radius:30px; text-align:center; padding:20px 0;}
+	.ver-title05 {border:1px solid #cacfd5; border-top:0; vertical-align:top; }
+	.ver-title05 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 30px no-repeat;display: block; padding:15px 30px  15px 30px;margin: 0;  }
+	.ver-title05.open a { background-position: right -110px;font-weight:500;}
+	.ver-title05 + div { padding: 0px; }
+	.ver-title05 span {vertical-align:middle}
+	
+	.EventStyle {border-top:1px solid #cacfd5}
+	.EventStyle .ver-title05 + div {
+		height: 0px;
+		padding: 0px;
+		overflow: hidden;
+		background:#fff;
+		width:100%;
+		display: block!important;
+		-webkit-transform: translateZ(0);
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		-ms-transition:all 0.3s ease;
+		transition: all 0.3s ease;
+	}
+	.EventStyle .v_content {
+		padding: 25px;
+		margin-left:0px;background:#82c1ea;border:1px solid #DCDCDC; border-top:0;color:#787878; font-size:16px; font-weight:400;
+		
+	}
+	.EventStyle .ver-title05.open + div {
+		height: auto;
+		background:#fff;
+		
+	}
+	.event_v_con {background:#eff7fc; width:100%; border-radius:50px; padding:40px;  }
+	.event_v_con ul { width:19%;  display:inline-block; text-align:center }
+	.event_v_con ul li {line-height:180%;}
+
+
 
 	/* 3000 404 페이지 추가 */
     .beigeBg{background-color: #F6F2E7;}
@@ -3612,6 +3650,11 @@ button:hover:before {content:"Reply!"}
 	.ver-title04.open a { background-position: right -74px;font-weight:500}
 	.FaqStyle .v_content {padding: 35px  35px;font-size:14px; font-weight:400;}
 
+	/* 1200 event 50주년 */
+	.ver-title05 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 19px no-repeat;display: block; padding:10px 15px 12px 15px ;margin: 0; font-size:16px; background-size:27px }
+	.ver-title05.open a { background-position: right -73px;font-weight:500}
+	.EventStyle .v_content {padding: 35px  35px;font-size:14px; font-weight:400;}
+
 	/* 1200 연구소 소개 */
     .rndIntroduceInfo02 > div:first-child{padding-right: 30px;}
     .rndIntroduceInfo02 > div:last-child{padding-left: 30px;}
@@ -3965,6 +4008,11 @@ button:hover:before {content:"Reply!"}
 	.ver-title04 a {font-size:14px}
 	.ver-title04.open a { background-position: right -75px;font-weight:500}
 	
+
+	/* 992 event 50주년 */
+	.ver-title05 .txt-box {margin-top:0}
+
+
 	/* 992 RnD ISO 45001 */
 	.iso_02 {max-width:100%; width:100%}
 
@@ -4545,6 +4593,13 @@ button:hover:before {content:"Reply!"}
     .emailBtn li:nth-child(2) a{line-height:50px; }
  
     /* 768 20230116 sh 추가 */
+
+
+	/* 768 event 50주년 */
+	.EventStyle .v_content {padding:10px}
+	.event_v_con {background:#eff7fc; width:100%; border-radius:20px; padding:20px;  }
+	.event_v_con ul { width:49%;  display:inline-block; text-align:center }
+	.event_v_con ul li {line-height:180%;}
 
 	
 
