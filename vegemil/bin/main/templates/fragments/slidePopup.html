@@ -70,6 +70,7 @@
 	  width:352px;
 	  height:100%;
 	  background:#DDD;
+	  z-index: 1;
 	}
 	.slider .slide:nth-child(even){
 	  background:#EEE;
@@ -193,7 +194,7 @@
 	 #nextPopup {
 		display:none;
 	 }
-	.popBox .action {position:relative; background:#4e4e4e; padding-left:5px; top:-4px;padding-top:2px}
+	.popBox .action {position:relative; background:#4e4e4e; padding-left:5px; top:-1px;padding-top:2px}
 	.popBox span.txt {font-size:11px ; display:inline-block; text-align:right; position:absolute; right:5px; top:3px; color:#fff; vertical-align:middle}
 	.popBox span.txt input {vertical-align:middle; margin-top:-1px}
 </style>
@@ -207,24 +208,27 @@
 				<div class="slides">
 					<div class="slide">
 						<div class="slidetitle" >
-							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202303.jpg" alt="브랜드 인지도" border="0"/>
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_off.jpg" alt="50주년이벤트" border="0" usemap="#event_50"/>
+							<map name="event_50">
+							    <area target="_blank" alt="" title="" href="/event/eventFor50years" coords="288,402,61,354" shape="rect">
+							</map>
 						</div>
 					</div>
 					<div class="slide">
 						<div class="slidetitle" >
-							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202302.jpg" alt="CCM 수상" border="0"/>
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202303.jpg" alt="브랜드 인지도" border="0"/>
 						</div>
 					</div>
+				
 				</div>
 			</div>
 			<a class="slider_left"></a>
 			<a class="slider_right"></a>
 		</div>
-	</div>
-	<!-- // pp-slider -->
+	</div>	<!-- // pp-slider -->
 	<!-- action -->
 	<div class="action">
-		<div class="pop_close"><a href="javascript:popupSelfClose();"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/pop_notice_btn_close.gif" alt="닫기" /></a></div>
+		<div class="pop_close" style=""><a href="javascript:popupSelfClose();"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/pop_notice_btn_close.gif" alt="닫기" /></a></div>
 		<span class="txt"><label ><input type="checkbox" id="todayChk" onclick="javascript:popupCookieSave();">오늘 하루 열지 않음</label></span>
 	</div>
 	<!-- action //-->
