@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.ClaimDTO;
 import com.vegemil.domain.EventDTO;
-import com.vegemil.domain.WebzineDTO;
 import com.vegemil.service.CommunicationService;
+import com.vegemil.service.MailService;
 import com.vegemil.util.UiUtils;
 
 @Controller
@@ -35,6 +35,8 @@ public class CommunicationConroller extends UiUtils{
 
 	@Autowired
 	private ResourceLoader resourceLoader; 
+	
+	@Autowired MailService mailService;
 	
 	@RequestMapping(value = "/communication/{viewName}")
     public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName) throws Exception {
@@ -151,6 +153,7 @@ public class CommunicationConroller extends UiUtils{
 		int result = communicationService.insertMclaim(claimDTO);
 		
 		if(result > 0) {
+			//mailService.alertSubmitCpDecl(claimDTO); 템플릿 완성 전까지 주석 --욘-- 
 			return showMessageWithRedirect("신고가 정상적으로 접수되었습니다.", "/communication/cp", Method.GET, null, model);
 		}
 		

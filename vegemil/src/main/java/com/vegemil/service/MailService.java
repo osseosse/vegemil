@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import com.vegemil.domain.ClaimDTO;
 import com.vegemil.domain.MailDTO;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.PaymentDTO;
@@ -179,4 +180,28 @@ public class MailService {
 		}
     }
     
+    // 불공정 거래 신고시 관리자 메일 발송 
+    public void alertSubmitCpDecl(ClaimDTO claim) {
+    	
+    	//MimeMessage message = mailSender.createMimeMessage();
+    	SimpleMailMessage message = new SimpleMailMessage();
+    	//Context context = new Context();
+    	
+    	try {
+    		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 a HH:mm:ss");
+    		
+    		
+            message.setTo("hypark023@osse.co.kr");
+            message.setFrom(MailService.FROM_ADDRESS);
+            message.setSubject("[정식품] 불공정 거래 신고가 접수되었습니다.");
+            
+            message.setText("제목 : " + claim.getCSubject() + "\n\n" + 
+            					"내용: " + claim.getCContent());
+
+	        mailSender.send(message);
+        
+    	} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 }
