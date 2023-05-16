@@ -1,20 +1,18 @@
 <!doctype html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="osse">
-  <meta name="Keywords" content="정식품 수신 동의">
-  <meta name="Description" content="베지밀 수신 동의 확인">
-  <title>정식품 관리자</title>
- </head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="정식품"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/> 
+	<title>정식품</title>
+	<style>img {border:0}</style>
+</head>
 <body style="margin:0; padding:0; color:#666666; font-family:'돋움', Dotum, Arial, AppleGothic, '애플고딕', sans-serif;  line-height:1.5em; letter-spacing:-1px; ">
 	<center>
 		<table cellspacing="0" width="800" > 
 			<thead>
 				<tr>
 					<td>
-						<a href="http://www.vegemil.co.kr" target="_blank"><img src="http://image.edaymall.com/images/mail/news/common/mailHeader.gif"  alt="로고" border="0" /></a>
+						<a href="https://www.vegemil.co.kr" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png"  alt="정식품CI" border="0" /></a>
 					</td>
 				</tr>
 			</thead>
@@ -22,58 +20,61 @@
 			<tbody>
 				<tr>
 					<td style=" text-align:center; padding:80px 0 20px 0">
-						<img src="http://image.edaymall.com/images/mail/news/common/hand.gif" alt="손" />
+						<img src="http://image.edaymall.com/images/mail/news/common/mailok.gif" alt="메일아이콘" />
 					</td>
 				</tr>
 				<tr>
 					<td style=" text-align:center; padding:8px 0 0 0" >
-						<h1 style="font-size:40px;color:#3d3d3d;  letter-spacing:-4px;line-height:115%; font-weight:bold">마케팅 수신동의 여부 안내</h1>
+						<h1 style="font-size:40px;color:#3d3d3d;  letter-spacing:-4px;line-height:115%; font-weight:bold">광고성 수신 동의 여부에 대한<br>변경 처리가 완료되었습니다.</h1>
 						<p style="font-size:16px; color:#787878; letter-spacing:-2px; margin:30px 0 0 0; font-weight:500; line-height:160%">
-						안녕하세요 <span th:text="${mName}"></span> 회원님<br>
+						안녕하세요 회원님,<br>
 						정식품을 이용해 주셔서 감사드립니다.<br>
-						정보통신망 이용촉진 및 정보보호 등에 관한 법률 제 50조 및 동법 시행령<br>
-						제 62조의 3에 의거 회원님의 광고성 수신 동의 내역을 안내드립니다.
+						요청하신 광고성 메일 수신동의 여부에 대한 변경처리가 완료되었습니다. 
 						<div style="border-bottom:4px solid #e2e6ee; height:60px; margin-top:0"></div>
 					</td>
 				</tr>
 				<tr>
-					<td style="text-align:left; padding:50px 20px; ">
-						<table cellspacing="0" summary="#" style="width:780px; margin-top:10px; border-top:1px solid #e4e9ef">
-							<colgroup>
-								<col width="40%">
-								<col width="60%">
-							</colgroup>
-							<tr>
-								<th style="background-color:#e4e9ef; color:#3e3e3e; padding:0px 0; text-align:left; height:60px; padding-left:50px; border-bottom:1px solid #fff">
-									<p style="font-size:22px; color:#3d3d3d; font-weight:bold; ">전송자의 명칭</p>
-								</th>
-								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:22px; border-bottom:1px solid #e4e9ef">정식품</td>
-							</tr>
-							<tr>
-								<th style="background-color:#e4e9ef; color:#3e3e3e; padding:0px 0; text-align:left; height:60px;  padding-left:50px; border-bottom:1px solid #fff">
-									<p style="font-size:22px; color:#3d3d3d; font-weight:bold;">수신동의 날짜</p>
-								</th>
-								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:18px; color:#969696; border-bottom:1px solid #e4e9ef">
-									<p th:text="${agreeDate}"></p>
-								</td>
-							</tr>
-							<tr>
-								<th style="background-color:#e4e9ef; color:#3e3e3e; padding:0px 0; text-align:left; height:60px;  padding-left:50px">
-									<p style="font-size:22px; color:#3d3d3d; font-weight:bold;">수신동의 내용</p>
-								</th>
-								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:18px; color:#969696; border-bottom:1px solid #e4e9ef">
-									<input type="checkbox" name="mail" value="메일" onclick="return false;" th:if="${mEmailsend == '1'}" checked> 메일 &nbsp;&nbsp;&nbsp;
-									<input type="checkbox" name="SMS" value="SMS"  onclick="return false;" th:if="${mSmssend == '1'}" checked> SMS
-								</td>
-							</tr> 
-						</table>
-					</td>
+				    <td style="text-align:left; padding:50px 20px; ">
+				        <table cellspacing="0" summary="#" style="width:780px; margin-top:10px; border-top:1px solid #e4e9ef">
+				            <colgroup>
+				                <col width="40%">
+				                <col width="60%">
+				            </colgroup>
+				            <tr>
+				                <th style="background-color:#e4e9ef; color:#3e3e3e; padding:0px 0; text-align:left; height:60px; padding-left:50px; border-bottom:1px solid #fff">
+				                    <p style="font-size:22px; color:#3d3d3d; font-weight:bold; ">전송자의 명칭</p>
+				                </th>
+				                <td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:22px; border-bottom:1px solid #e4e9ef">정식품</td>
+				            </tr>
+				            <tr>
+				                <th style="background-color:#e4e9ef; color:#3e3e3e; padding:0px 0; text-align:left; height:60px;  padding-left:50px; border-bottom:1px solid #fff">
+				                    <p style="font-size:22px; color:#3d3d3d; font-weight:bold;">수신동의 날짜</p>
+				                </th>
+				                <td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:18px; color:#969696; border-bottom:1px solid #e4e9ef">
+				                    <p th:text="${agreeDate}"></p>
+				                </td>
+				            </tr>
+				            <tr>
+				                <th style="background-color:#e4e9ef; color:#3e3e3e; padding:0px 0; text-align:left; height:60px;  padding-left:50px">
+				                    <p style="font-size:22px; color:#3d3d3d; font-weight:bold;">수신동의 내용</p>
+				                </th>
+				                <td  th:if="${mEmailsend == '1' or mSmssend == '1'}" style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:18px; color:#969696; border-bottom:1px solid #e4e9ef">
+				                    <input type="checkbox" name="mail" value="메일" onclick="return false;" th:if="${mEmailsend == '1'}" checked> 메일 &nbsp;&nbsp;&nbsp;
+				                    <input type="checkbox" name="SMS" value="SMS"  onclick="return false;" th:if="${mSmssend == '1'}" checked> SMS
+				                </td>
+				                <td  th:if="${mEmailsend == '0' and mSmssend == '0'}"  style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:60px; font-weight:bold; font-size:18px; color:#969696; border-bottom:1px solid #e4e9ef">
+				                    <p>수신동의 거부</p>
+				                </td>
+				            </tr> 
+				        </table>
+				    </td>
 				</tr>
 				<tr>
 					<td style="padding:0px 20px 100px 20px; "  >
 							<p style="color:#969696; font-weight:bold; vertical-align:middle; font-size:16px; letter-spacing:-2px; margin-top:0px"><img style="vertical-align:middle " src="http://image.edaymall.com/images/mail/news/common/ico_gray.gif" alt="회색" /> 수신동의 설정 변경 방법</p>
 						<div style="padding:20px; font-size:13px; color:#3d3d3d; background-color:#f8f8f8; border:1px solid #d2d2d2; line-height:160%; margin-top:20px">
-							<b>[PC] 정식품 홈페이지</b> > 고객지원 > 마이페이지 > 개인정보 변경 > SMS/E-mail 수신여부<br>
+							<b>[PC] 정식품 홈페이지</b> > 고객지원 > 마이페이지 > 개인정보 변경 > <a href="https://www.vegemil.co.kr/mypage/myInfo" target="_blank">SMS/E-mail 수신여부</a><br>
+	
 						</div>
 					</td>
 				</tr>
@@ -88,19 +89,18 @@
 			</colgroup>
 			<tbody>
 				<tr>
-					<td style="vertical-align:top; padding-top:20px; "><a href="http://www.vegemil.co.kr" target="_blank"><img src="http://image.edaymall.com/images/mail/news/common/mailLogo.gif" alt="정식품로고" border="0" /></a></td>
+					<td style="vertical-align:top; padding-top:20px; "><a href="https://www.vegemil.co.kr" target="_blank"><img src="https://image.edaymall.com/images/mail/news/common/mailLogo.gif" alt="정식품" border="0" /></a></td>
 					<td style="padding:20px 0 40px 0 ; text-align:left; vertical-align:top; ">
-						<p style="font-size:13px; color:#969696; margin:0px 0 0 0; font-weight:bold; letter-spacing:-1px">본 메일은 발신전용 메일이므로 회신되지 않습니다. 문의사항은 <a href="http://www.vegemil.co.kr/main/customer/supportFlow.aspx?page_code=SPF" style="text-decoration:underline; color:#6e6e6e;font-weight:600" target="_blank">고객센터</a>로 문의해주시기 바랍니다. </p>
+						<p style="font-size:13px; color:#969696; margin:0px 0 0 0; font-weight:bold; letter-spacing:-1px">본 메일은 발신전용 메일이므로 회신되지 않습니다. 문의사항은 <a href="https://www.vegemil.co.kr/communication/ask" style="text-decoration:underline; color:#6e6e6e;font-weight:600" target="_blank">고객센터</a>로 문의해주시기 바랍니다. </p>
 						<span style="font-size:15px; color:#6e6e6e; letter-spacing:-1px; background-color:#e1f1e6; border-radius:12px; border:1px solid #b5e5bf; padding:4px 9px 0px 9px; margin-top:7px; display:inline-block; line-height:120%; "><b>고객문의 080-930-8888</b> </span>
 						<p style="font-size:13px; color:#969696;line-height:120%; margin:10px 0 0 0; letter-spacing:-1px ">(주)정식품ㅣ충청북도 청주시 흥덕구 산단로 124 (우)28446  <br>
 						사업자등록번호: 315-81-19977 <br>
-						Copyright(c)2008 Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved. </p>
+						ⓒ 2023 Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved. </p>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<!-- // 비영리 FOOTER 아웃룩2010 -->
 	</center>
-<!-- MAIL_MAKE_COMPLETE (do not delete!)-->
 </body>
 </html>

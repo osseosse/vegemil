@@ -346,8 +346,8 @@ public class MypageController extends UiUtils {
 			}
 			
 			// =========> 마케팅 수신 동의 메일코드 시작
-			if((member.getMSmssend().equals("1") && preMember.getMSmssend().equals("0"))
-							|| (member.getMEmailsend().equals("1") && preMember.getMEmailsend().equals("0"))) {
+			if(member.getMSmssend().equals(preMember.getMSmssend()) == false
+							|| member.getMEmailsend().equals(preMember.getMEmailsend())==false) {
 				mailService.mailSendReceiveAgreeConfirm(member);
 			}
 			// 마케팅 수신 동의 메일 코드 끝 <========= 

@@ -4,7 +4,8 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<title>그린비아 온라인구매</title>
 	<head th:replace="fragments/greenbia/head_greenbia :: headFragment"></head>	
-	 <script type="text/javascript">
+	<script type="text/javascript"></script>
+	<script type="text/javascript">
     
         var curQuestion = 'q1';
         var preQuestion = new Array();
@@ -14,6 +15,7 @@
         $(function(){
             $('.btn_yes').click(function(){
                 if($('.q1').css("display")=="block"){
+                    $('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q1').hide();
                     $('#r1').show();
@@ -36,6 +38,7 @@
                     curQuestion='q4';
                 }
                 else if($('.q4').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q4').hide();
                     $('#r5').show();
@@ -44,6 +47,7 @@
                     curResult='r5';
                 }
                 else if($('.q5').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q5').hide();
                     $('#r3').show();
@@ -52,6 +56,7 @@
                     curResult='r3';
                 }
                 else if($('.q6').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q6').hide();
                     $('#r6').show();
@@ -60,6 +65,7 @@
                     curResult='r6';
                 }
                 else if($('.q7').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q7').hide();
                     $('#r6').show();
@@ -101,6 +107,7 @@
                     curQuestion='q7';
                 }
                 else if($('.q5').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q5').hide();
                     $('#r4').show();
@@ -109,6 +116,7 @@
                     curResult='r4';
                 }
                 else if($('.q6').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q6').hide();
                     $('#r2').show();
@@ -117,6 +125,7 @@
                     curResult='r2';
                 }
                 else if($('.q7').css("display")=="block"){
+                	$('html, body').animate({scrollTop: 1600});
                     $('.qBox').hide();
                     $('.q7').hide();
                     $('#r7').show();
@@ -231,7 +240,7 @@
     <div class="container1660_15" >
 	    <div class="row">
 		    <div class="col-md-12 mt80">
-			    <div class="bg_ChoiceGuide h590 brandVideo">
+			    <div class="h590 brandVideo" style="background-image:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_ChoiceGuide.jpg);">
 				    <div class="hcenter center" >
 					    <p class="bradnVideType" data-aos="fade-down" data-aos-duration="2000">Choice Guide</p>
 					    <p class="f30_4_w mt20" data-aos="fade-down" data-aos-duration="2000">환자, 보호자가 제품을 선택하기 전 <br class="noneM">도움을 드리기 위한 안내입니다.</p>
@@ -251,7 +260,7 @@
 				    </ul>
 				    <div class="qBox">
 					    <ul class="qOX flex">
-						    <li><a><div class="btn_yes"></div></a><p class="f25_5 mt30">그렇다</p></li>
+						    <li><a href="javascript:void(0);"><div class="btn_yes"></div></a><p class="f25_5 mt30">그렇다</p></li>
 						    <li>
 							    <div id="loading"></div>
 							    <div class="q_board"></div>
