@@ -387,7 +387,7 @@
 			</div>
 			<div class="col-md-2 mt70 mt50m">
 				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/brand/brand_g05.png" /></p>
-				<p class="f23 fw500 lh150 mt20">간편고 맛있는 고단백 <br>섭취가 필요한 분들을 위한</p>
+				<p class="f23 fw500 lh150 mt20">간편하고 맛있는 고단백 <br>섭취가 필요한 분들을 위한</p>
 				<div class="brandPrdWrap line_top_gray mt40 pt40">
 					<ul class="brandPrd">
 						<a href="https://www.vegemil.co.kr/greenbia/product/detail/68">
@@ -423,6 +423,7 @@
 						<ul class="swiper-wrapper">
 						  <li class="swiper-slide active"><a href="#tab1">전체보기</a></li>
 						  <li class="swiper-slide"><a href="#tab2">일반영양식</a></li>
+						  <li class="swiper-slide"><a href="#tab3">전문영양식</a></li>
 						  <li class="swiper-slide"><a href="#tab4">연하식</a></li>
 						  <li class="swiper-slide"><a href="#tab5">건강식품</a></li>
 						</ul>
@@ -607,17 +608,25 @@
 				<!-- 전문영양식 > 대표제품 -->
 				<a href="/greenbia/product/detail/57">
 					<div class="line_bottom_gray pb60">
+						<!--
 						<div class="h370 GEI06_860_01 mt20  brand_thumb_img">
 							<div class="top_tag"><p><span>전문영양식</span></p></div>
 							<div class="bottom_tag"><p><span>#발효성당류제한</span></p><p><span>#가수분해유청단백</span></p><p><span>#경관급식</span></p></div>
 						</div>
 						<p class="f27 mt40 fw500">그린비아 알티에이치</p>
 						<p class="f16 mt5 fw400 gray04">장을 자극하는 '발효성 당류'를 제한한 전문영양식</p>
+						 태그 내용 확인하고 교체 예정 230518--욘욘--  -->
+						<div class="h370 GEH01_860_01 mt20  brand_thumb_img">
+							<div class="top_tag"><p><span>전문영양식</span></p></div>
+							<div class="bottom_tag"><p><span>#발효성당류제한</span></p><p><span>#5대영양소함유</span></p><p><span>#고단백균형영양</span></p></div>
+						</div>
+						<p class="f27 mt40 fw500">그린비아 고단백 솔루션</p>
+						<p class="f16 mt5 fw400 gray04">단백질을 강화하고 발효성 당류 함량을 낮춘 고단백식</p> 
 					</div>
 				</a>
 				<!-- //전문영양식 > 대표제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'GEK' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="(${brandStroy.subCategoryCode} == 'GEK' and ${brandStroy.repProductCate} != 0) or ${brandStroy.pCode} == 'GER03'" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -668,6 +677,24 @@
 					</div>
 				</a>
 				<!-- //건강식품 > 신제품 -->
+				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
+				<div class="col-md-6" th:if="${brandStroy.brandDisplay} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="recom">
+						<a th:href="|/greenbia/product/detail/${brandStroy.pIdx}|">
+							<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
+							<div class="recomTxt mt30">
+								<div class="key03 f14 mt20"><p th:text="${brandStroy.subCategoryName}"></p></div>
+								<p class="f20 fw500 black lh160 mt20" th:text="${brandStroy.pName}"></p>
+								<div class="key02 f14 gray04 mt20">
+									<p  th:if="${brandStroy.tag1 != null}" th:text="${brandStroy.tag1}"></p>
+									<p  th:if="${brandStroy.tag2 != null}" th:text="${brandStroy.tag2}"></p>
+									<p  th:if="${brandStroy.tag3 != null}" th:text="${brandStroy.tag3}"></p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div> 
 			</div>
 			<div class="col-md-6 brand_thumb mt50 mt50m">
 				<!-- 건강식품 > 대표제품 -->
@@ -684,6 +711,8 @@
 				</a>
 				<!-- //건강식품 > 대표제품 -->
 			</div>
+			<!-- 건강식품 리스트-->
+			
 		</div>
 		
 	</div><!-- //contant1460 -->

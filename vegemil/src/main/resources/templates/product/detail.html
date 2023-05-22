@@ -137,10 +137,10 @@
 		</div>
 	</div><!-- // contant1760 -->
 	<div class="contant100-15 " id="section-01" >
-		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryCode} == 'V'">
+		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryName} == '두유(베지밀)'">
 			<div class="contant1460">
 				<div class="f16 fw500">
-					<a href="/product/list/#V">
+					<a href="/brandStory/vegemil">
 						<ul class="banner-logo">
 							<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_vegemil.png" /></li>
 							<li class="banner-txt">Brand Story 대한민국 두유의 기준, 베지밀 브랜드 스토리 확인하고 다른 제품도 확인하세요!</li>
@@ -150,11 +150,11 @@
 			</div>
 		</div>
 		
-		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryCode} == 'F'">
+		<div class="banner-prd pink  mt50 mt50m" th:if="${product.categoryName} == '식재료'">
 			<div class="contant1460">
 				<div class="f16 fw500">
-					<a href="/product/list/#F">
-						<ul class="banner-logo">
+					<a href="/brandStory/recipe">
+						<ul class="banner-logo easy">
 							<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_easy_w.png" /></li>
 							<li class="banner-txt">Brand Story 요리를 간단하고 맛있게! 간단요리사. 브랜드 스토리 확인하고 다른 제품도 확인하세요!</li>
 						</ul>
@@ -162,20 +162,18 @@
 				</div>
 			</div>
 		</div>
-		
-		<div class="banner-prd green mt50 mt50m" th:if="${product.categoryCode} == 'W'">
+		<div class="banner-prd blue mt50 mt50m" th:if="${product.categoryName} == '생수'">
 			<div class="contant1460">
 				<div class="f16 fw500">
-					<a href="/product/list/#W">
+					<a href="/brandStory/simcheonsoo">
 						<ul class="banner-logo">
-							<li ><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_sim_w.png" /></li>
+							<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/bi_sim_w.png" /></li>
 							<li class="banner-txt">Brand Story 지리산에서 만들어진 자연 그대로의 깨끗함. 부드럽게 마시는 맛있는 물! 브랜드 스토리를 확인하세요!</li>
 						</ul>
 					</a>
 				</div>
 			</div>
 		</div>
-		
 	</div><!-- // contant100 -->
 	<div class="contant1760" >
 		<div id="flotingPage">

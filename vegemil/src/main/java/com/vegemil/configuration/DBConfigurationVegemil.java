@@ -21,7 +21,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @PropertySource("classpath:/application.properties")
 @EnableTransactionManagement
 @Configuration
-public class DBConfiguration {
+public class DBConfigurationVegemil {
 
 	@Autowired
 	private ApplicationContext applicationContext;

@@ -34,6 +34,7 @@ public class ProductDTO extends CommonDTO {
 	private Long   newProductCate;
 	private Long   repProductCate;
 	private Long   displayPriority;
+	private Long   brandDisplay;
 	private String capacity1;
 	private String capacity2;
 	private String capacity3;

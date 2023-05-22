@@ -291,16 +291,16 @@
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
 									<li class="gg active"><input type="radio" name="gg" id="#11" value="" > <label for="#11"><span></span>전체보기</label></li>
-									<li class="gg"><input type="radio" name="gg" id="#12" value="GPL" > <label for="#12"><span></span>일반영양식</label></li>
-									<li class="gg"><input type="radio" name="gg" id="#13" value="GED" > <label for="#13"><span></span>전문영양식</label></li>
-									<li class="gg"><input type="radio" name="gg" id="#14" value="GDY" > <label for="#14"><span></span>연하식</label></li>
+									<li class="gg"><input type="radio" name="gg" id="#12" value="일반영양식" > <label for="#12"><span></span>일반영양식</label></li>
+									<li class="gg"><input type="radio" name="gg" id="#13" value="전문영양식" > <label for="#13"><span></span>전문영양식</label></li>
+									<li class="gg"><input type="radio" name="gg" id="#14" value="연하식" > <label for="#14"><span></span>연하식</label></li>
 								</ul>
 							</div>
 						</div>
 					</div><!-- //floting-left_prd -->
 					<div class="floting-right_prd">
 						<div class="row" id="g_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="g_list" th:if="${product.categoryCode == 'G'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
+							<div class="col-md-4 col-6" id="g_list" th:if="${product.categoryCode == 'G'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}" >
 								<div class="prd-list" >
 									<a th:href="|/greenbia/product/detail/${product.pIdx}|">
 										<div class="prd-txt">

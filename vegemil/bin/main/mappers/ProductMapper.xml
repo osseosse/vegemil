@@ -65,7 +65,8 @@
 		tip,
 		tag1,
 		tag2,
-		tag3
+		tag3,
+		brand_display
 	</sql>
 
 	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.ProductDTO">
@@ -138,6 +139,10 @@
 		  or
 		    rep_product_cate != 0
 		    )
+		  <if test='categoryCode == "G"'>
+		  	<!-- 이런 말도안되는 억지 조건이 들어간 이유는 그린비아 categorycode가 나눠져 있는데 기존 로직 다 바꾸는 건 할 수 없어서... -->
+		  	or p_name like CONCAT('%','그린비아','%')
+		  </if>
 		ORDER BY 
 			new_product_all, rep_product_all, new_product_cate, rep_product_cate
 	</select>
