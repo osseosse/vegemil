@@ -11,10 +11,10 @@
 		  $('#sliderh3 .slider').prrpleSlider({
 				autoPlay:true,				//play slider automatically?  //false 사용시 멈춤 //true 사용시 플레이
 				autoPlayInterval:	4000,		
-				csstransforms:	false,
+				csstransforms:	true,
 				richSwiping:false
 		  });
-		  var theDay = new Date('2023-05-24 00:00:00'); 
+		  var theDay = new Date('2023-05-24 11:00:00'); 
 		  timeCheck(theDay);
 		 
 		});
@@ -39,9 +39,9 @@
 		var today = new Date();
 		if(today >= theDay){
 			 // 제어하고 싶은 코드 그때그떄 변경// 
-			 //$("#currentPopup").css("display","none");
-			 //$("#nextPopup").css("display","block");
-			 $("#eventFor50").attr("src","https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_on.jpg")
+			 $("#currentPopup").css("display","none");
+			 $("#nextPopup").css("display","block");
+			 
 		}
 	}
 </script>
@@ -202,6 +202,9 @@
 	 
 	 }
 	 
+	 #eventFor50on{
+	 	display:none;
+	 }
 	.popBox .action {position:relative; background:#4e4e4e; padding-left:5px; top:-1px;padding-top:2px}
 	.popBox span.txt {font-size:11px ; display:inline-block; text-align:right; position:absolute; right:5px; top:3px; color:#fff; vertical-align:middle}
 	.popBox span.txt input {vertical-align:middle; margin-top:-1px}
@@ -216,7 +219,7 @@
 				<div class="slides">
 					<div class="slide">
 						<div class="slidetitle" >
-							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_off.jpg" id="eventFor50" alt="50주년이벤트" border="0" usemap="#event_50"/>
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_off.jpg" id="eventFor50off" alt="50주년이벤트" border="0" usemap="#event_50"/>
 							<map name="event_50">
 							    <area target="_top" alt="" title="" href="/event/eventFor50years" coords="288,402,61,354" shape="rect">
 							</map>
@@ -241,18 +244,45 @@
 	</div>
 	<!-- action //-->
 </div>
-
-<div class="popBox"  id="nextPopup"><!-- 400px * 570px -->
+<div class="popBox" id="nextPopup"><!-- 400px * 570px -->
 	<!-- pp-slider -->
 	<div class="container"  id="sliderh3">
 		<div class="slider">
 			<div class="slider_area" >
 				<div class="slides">
-					<!-- <div class="slide">
+					<div class="slide">
 						<div class="slidetitle" >
-							<a href="/company/mediaNews" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230109.jpg" alt="iso 인증" border="0"/></a>
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_on.jpg" id="eventFor50" alt="50주년이벤트" border="0" usemap="#event_50on"/>
+							<map name="event_50on">
+							    <area target="_top" alt="" title="" href="/event/eventFor50years" coords="288,402,61,354" shape="rect">
+							</map>
 						</div>
-					</div> -->
+					</div>
+					<div class="slide">
+						<div class="slidetitle" >
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_202303.jpg" alt="브랜드 인지도" border="0"/>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+			<a class="slider_left"></a>
+			<a class="slider_right"></a>
+		</div>
+	</div>	<!-- // pp-slider -->
+	<!-- action -->
+	<div class="action">
+		<div class="pop_close" style=""><a href="javascript:popupSelfClose();"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/pop_notice_btn_close.gif" alt="닫기" /></a></div>
+		<span class="txt"><label ><input type="checkbox" id="todayChk" onclick="javascript:popupCookieSave();">오늘 하루 열지 않음</label></span>
+	</div>
+	<!-- action //-->
+</div>
+<!-- 400px * 570px
+<div class="popBox"  id="nextPopup">
+	<div class="container"  id="sliderh3">
+		<div class="slider">
+			<div class="slider_area" >
+				<div class="slides">
 					
 					<div class="slide">
 						<div class="slidetitle" >
@@ -265,14 +295,11 @@
 			<a class="slider_right"></a>
 		</div>
 	</div>
-	<!-- // pp-slider -->
-	<!-- action -->
 	<div class="action">
 		<div class="pop_close"><a href="javascript:popupSelfClose();"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/pop_notice_btn_close.gif" alt="닫기" /></a></div>
 		<span class="txt"><label ><input type="checkbox" id="todayChk" onclick="javascript:popupCookieSave();">오늘 하루 열지 않음</label></span>
 	</div>
-	<!-- action //-->
 </div>
-
+ -->
 </body>
 </html>
