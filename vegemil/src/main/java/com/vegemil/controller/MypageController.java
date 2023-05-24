@@ -1,6 +1,5 @@
 package com.vegemil.controller;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.nio.file.Path;
@@ -38,6 +37,7 @@ import com.vegemil.service.MailService;
 import com.vegemil.service.MemberService;
 import com.vegemil.service.QnaService;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
+import com.vegemil.util.CommonEncoder;
 import com.vegemil.util.UiUtils;
 
 @Controller
@@ -45,6 +45,9 @@ public class MypageController extends UiUtils {
 
 	@Autowired
 	private QnaService qnaService;
+	
+	@Autowired 
+	private CommonEncoder commonEncoder;
 	
 	@Autowired
 	private MemberService memberService;
@@ -335,6 +338,8 @@ public class MypageController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		MemberDTO preMember = memberService.getMember(member.getMIdx());
+		boolean isPwChange = commonEncoder.matches(member.getMPwd(), preMember.getMPwd()); // 원시 비번과 해시된 비번 비교, 같으면 true 다르면 false 
+		
 		
 		try {
 			
@@ -348,9 +353,15 @@ public class MypageController extends UiUtils {
 			// =========> 마케팅 수신 동의 메일코드 시작
 			if(member.getMSmssend().equals(preMember.getMSmssend()) == false
 							|| member.getMEmailsend().equals(preMember.getMEmailsend())==false) {
-				mailService.mailSendReceiveAgreeConfirm(member);
+				mailService.marketingInfoReceiveAgreeConfirm(member);
 			}
 			// 마케팅 수신 동의 메일 코드 끝 <========= 
+			
+			// =========> 비밀번호 변경 시 안내 메일 코드 시작
+			if(!isPwChange) {
+				mailService.confirmPasswordChange(member);
+			}
+			// 비밀번호 변경 시 안내 메일 코드  끝 <========= 
 			
 			model.addAttribute("member", member);
 			

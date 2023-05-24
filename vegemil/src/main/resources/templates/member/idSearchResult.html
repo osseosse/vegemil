@@ -18,12 +18,14 @@
 <div id="content" class="pb200">
 	<div class="contant1460" >
 		<div class="row mt90h">
-			<div class=" col-md-12">
+			<div class=" col-md-12 center"  th:if="*{mId != null and mId != ''}">
 				<p class="f52 fw600 mt130 black center">ID/비밀번호 찾기</p>
-				<p class="f18 fw400 mt20 gray04" th:if="*{mId != null and mId != ''}">
-					검색하신 아이디는 <span class="blackLine3" th:text="${mId}"></span><span class="f20 fw500 gray04">입니다.</span>
-				</p>
-				<p class="f18 fw400 mt20 gray04 center" th:if="*{mId == null or mId == ''}">
+				<p class="f23 fw500 mt130 gray04 ">고객님의 아이디는</p>
+				<p class="f45 fw600 mt30 black"><span class="blackLine3" th:text="${mId}"></span> <span class="f20 fw500 gray04">입니다.</span></p>
+			</div>
+			<div class=" col-md-12 center" th:if="*{mId == null or mId == ''}">
+				<p class="f52 fw600 mt130 black center">ID/비밀번호 찾기</p>
+				<p class="f18 fw400 mt130 gray04 center">
 					검색하신 데이터가 존재하지 않습니다. <br class="mView">다시 확인해주시기 바랍니다.
 				</p>
 			</div>

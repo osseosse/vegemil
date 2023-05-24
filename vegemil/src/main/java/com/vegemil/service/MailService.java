@@ -157,7 +157,7 @@ public class MailService {
 	}
 	
 	// 묹자 메일 마케팅 정보 수신 동의 메일 
-    public void mailSendReceiveAgreeConfirm(MemberDTO member) {
+    public void marketingInfoReceiveAgreeConfirm(MemberDTO member) {
     	
     	MimeMessage message = mailSender.createMimeMessage();
     	Context context = new Context();
@@ -178,6 +178,28 @@ public class MailService {
     	} catch (Exception e) {
 			e.printStackTrace();
 		}
+    }
+    
+    // 비밀번호 변경 성공 안내 
+    public void confirmPasswordChange(MemberDTO member) {
+    	
+    	MimeMessage message = mailSender.createMimeMessage();
+    	Context context = new Context();
+    	
+    	try {
+    		context.setVariable("mName", member.getMName());
+    		context.setVariable("mEmail", member.getMEmail());
+    		context.setVariable("mHp", member.getMHp());
+    		
+    		message.setFrom(MailService.FROM_ADDRESS);
+    		message.addRecipients(MimeMessage.RecipientType.TO, member.getMEmail());
+    		message.setSubject("[정식품] 새로운 비밀번호로 변경이 완료되었습니다.");
+    		message.setText(templateEngine.process("admin/email/confirmPasswordChange", context), "utf-8", "html"); 
+    		mailSender.send(message);
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
     }
     
     // 불공정 거래 신고시 관리자 메일 발송 
