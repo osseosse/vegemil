@@ -31,9 +31,9 @@
 					<option value="Privacy_v60">개인정보 처리방침 2021-02-03</option>
 					<option value="Privacy_v50">2017.08.31 ~ 2021.02.02</option>
 					<option value="Privacy_v40">2013.12.19 ~ 2017.08.31</option>
-					<option value="Privacy_v40">2013.07.01 ~ 2013.12.18</option>
-					<option value="Privacy_v30">2012.07.01 ~ 2013.06.30</option>
-					<option value="Privacy_v20">2008.01.01 ~ 2012.06.30</option>
+					<option value="Privacy_v30">2013.07.01 ~ 2013.12.18</option>
+					<option value="Privacy_v20">2012.07.01 ~ 2013.06.30</option>
+					<option value="Privacy_v10">2008.01.01 ~ 2012.06.30</option>
 				</select>
 			</div>		
 		</div>
@@ -52,7 +52,9 @@ $( document ).ready( function() {
 	$( '.person' ).load( '/privacy/Privacy_v60.html' );
 
 	$("#selPrivacy").change(function(){
-        if($(this).val() == "Privacy_v50"){
+        if($(this).val() == "Privacy_v60"){
+        	$( '.person' ).load( '/privacy/Privacy_v60.html' );
+        } else if($(this).val() == "Privacy_v50"){
         	$( '.person' ).load( '/privacy/Privacy_v50.html' );
         } else if($(this).val() == "Privacy_v40"){
         	$( '.person' ).load( '/privacy/Privacy_v40.html' );
@@ -60,6 +62,9 @@ $( document ).ready( function() {
         	$( '.person' ).load( '/privacy/Privacy_v30.html' );
         } else if($(this).val() == "Privacy_v20"){
         	$( '.person' ).load( '/privacy/Privacy_v20.html' );
+        } else if($(this).val() == "Privacy_v10"){
+        	$( '.person' ).load( '/privacy/Privacy_v10.html' );
+        	
         }
     });
 	
