@@ -2,6 +2,7 @@ package com.vegemil.service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import javax.mail.MessagingException;
@@ -10,6 +11,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -35,6 +37,9 @@ public class MailService {
     
     @Autowired
 	private AdminMapper adminMapper;
+    
+    @Autowired
+    private EdayVempService edayVempService;
 
     public void mailSendOrigen(MailDTO mailDto) {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -202,28 +207,84 @@ public class MailService {
     	}
     }
     
-    // 불공정 거래 신고시 관리자 메일 발송 
-    public void alertSubmitCpDecl(ClaimDTO claim) {
+    
+    // 불공정 거래 신고시 관리자 퇴직 알림 메일
+    public void requestCheckPersonInCharge() {
     	
-    	//MimeMessage message = mailSender.createMimeMessage();
-    	SimpleMailMessage message = new SimpleMailMessage();
-    	//Context context = new Context();
-    	
-    	try {
-    		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 a HH:mm:ss");
-    		
-    		
-            message.setTo("hypark023@osse.co.kr");
-            message.setFrom(MailService.FROM_ADDRESS);
-            message.setSubject("[정식품] 불공정 거래 신고가 접수되었습니다.");
-            
-            message.setText("제목 : " + claim.getCSubject() + "\n\n" + 
-            					"내용: " + claim.getCContent());
+    	SimpleMailMessage messageText = new SimpleMailMessage();
 
-	        mailSender.send(message);
-        
+    	try {
+    		String[] addressList = new String[] {"cs@vegemil.co.kr","jade@osse.co.kr","informngdept@vegemil.co.kr"}; 
+    		//String[] addressList = new String[] {"hypark023@gmail.com", "hypark023@osse.co.kr"}; 테스트용  
+	        messageText.setTo(addressList);
+			messageText.setFrom(MailService.FROM_ADDRESS);
+			messageText.setSubject("[정식품] 불공정 거래행위 신고 처리 담당자 확인 요청의 건");
+			messageText.setText("\n\n\n기존 cp신고 처리 담당자가 퇴직상태로 조회됩니다. 새로운 담당자 확인 후 유관부서에 공유 부탁드립니다.");
+    		mailSender.send(messageText);
+    		
     	} catch (Exception e) {
 			e.printStackTrace();
 		}
+    }
+    
+    // 불공정 거래 신고시 관리자 메일 발송 
+    public void alertSubmitCpDecl(ClaimDTO claimDTO, List<String> recipientsId) {
+    	
+    	MimeMessage message = mailSender.createMimeMessage();
+    	Context context = new Context();
+    	recipientsId.add("cs@vegemil.co.kr"); 
+    	
+    	try {
+	    		MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+				
+				String[] receiveList = recipientsId.toArray(new String[recipientsId.size()]);
+		        messageHelper.setTo(receiveList);
+		        
+		        context.setVariable("cYear", claimDTO.getCWritedate().split("-")[0]);
+		        context.setVariable("cMonth", claimDTO.getCWritedate().split("-")[1]);
+		        context.setVariable("cDay", claimDTO.getCWritedate().split("-")[2]);
+    			context.setVariable("cName", claimDTO.getCName());
+    			context.setVariable("cHp", claimDTO.getCHp());
+    			context.setVariable("cTel", claimDTO.getCTel());
+    			context.setVariable("cEmail", claimDTO.getCEmail());
+    			context.setVariable("cSubject", claimDTO.getCSubject());
+    			context.setVariable("cContent", claimDTO.getCContent());
+        		
+        		message.setFrom(MailService.FROM_ADDRESS);
+        		message.setSubject("[정식품] 불공정거래행위 상담이 접수되었습니다.");
+        		message.setText(templateEngine.process("admin/email/cpComplainAlert", context), "utf-8", "html"); 
+        		mailSender.send(message);
+    		
+    	} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
+    //불공정 거래 신고시 신고인 확인 메일 발송 
+    public void confirmSubmitCpDecl(ClaimDTO claimDTO) {
+    	
+    	MimeMessage message = mailSender.createMimeMessage();
+    	Context context = new Context();
+    	
+    	try {
+    			context.setVariable("cYear", claimDTO.getCWritedate().split("-")[0]);
+    			context.setVariable("cMonth", claimDTO.getCWritedate().split("-")[1]);
+    			context.setVariable("cDay", claimDTO.getCWritedate().split("-")[2]);
+    			context.setVariable("cName", claimDTO.getCName());
+    			context.setVariable("cHp", claimDTO.getCHp());
+    			context.setVariable("cTel", claimDTO.getCTel());
+    			context.setVariable("cEmail", claimDTO.getCEmail());
+    			context.setVariable("cSubject", claimDTO.getCSubject());
+    			context.setVariable("cContent", claimDTO.getCContent());
+    			
+    			message.setFrom(MailService.FROM_ADDRESS);
+    			message.setSubject("[정식품] 불공정거래행위 상담이 접수되었습니다.");
+    			message.setText(templateEngine.process("admin/email/confirmCpComplain", context), "utf-8", "html"); 
+    			message.addRecipients(MimeMessage.RecipientType.TO, claimDTO.getCEmail());
+    			mailSender.send(message);
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
     }
 }

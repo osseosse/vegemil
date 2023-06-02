@@ -46,7 +46,8 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
-	
+	//오라클 드라이버
+	implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.3.0.0'
 	 // Page Helper
    // https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter
    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.2'

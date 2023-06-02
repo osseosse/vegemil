@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapperEday.EdaymallVempMapper">
+	<sql id="vempColumns">
+	
+		 cust_no,
+		 cust_name,
+		 mem_id ,
+		 comp_code ,
+		 comp_gb , 
+		 emp_no , 
+		 emp_name , 
+		 dept_cd , 
+		 dept_name , 
+		 sleep_yn , 
+		 expire_yn , 
+		 jp_cd , 
+		 jp_nm , 
+		 pg_nm ,
+		 email 
+	</sql>
+	
+	<select id="selectVempMember" parameterType="String" resultType="com.vegemil.domainEday.EdayVempDTO">
+		SELECT
+		  <include refid="vempColumns" />
+		FROM
+			vemp
+	    WHERE email = #{email}
+			
+	</select>
+	
+</mapper>

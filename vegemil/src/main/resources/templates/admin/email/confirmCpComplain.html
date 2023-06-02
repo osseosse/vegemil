@@ -1,0 +1,121 @@
+﻿<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="정식품"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/> 
+	<title>정식품</title>
+	<style>img {border:0}</style>
+</head>
+<body style="margin:0; padding:0; color:#666666; font-family:'돋움', Dotum, Arial, AppleGothic, '애플고딕', sans-serif;  line-height:1.5em; letter-spacing:-1px; ">
+	<center>
+		<table cellspacing="0" width="800" style="background:#f2f5f6"> 
+			<thead>
+				<tr>
+					<td>
+						<a href="https://www.vegemil.co.kr" target="_blank">
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png"  alt="정식품CI" border="0" / style="margin-left:20px; margin-top:20px">
+						</a>
+					</td>
+				</tr>
+			</thead>
+			<!----------------------------- tbody : 뉴스콘텐츠 ---------------------------->
+			<tbody >
+				
+				<tr>
+					<td style=" text-align:center; padding:80px 0 0 0" >
+						<h1 style="font-size:30px;color:#3d3d3d;  letter-spacing:-4px;line-height:115%; font-weight:bold">불공정거래신고/공정거래 상담 및 <br>문의 메일이 접수되었습니다.</h1>
+						<p style="font-size:16px; color:#787878; letter-spacing:-1px; margin:30px 0 0 0; font-weight:500; line-height:160%">
+						안녕하세요. <span th:text="|${cName}님,|"> 고객님, </span><br>
+						등록하신 신고 내용은 빠른 시일 내에 귀하의 <br>E-mail이나 전화를 통해 답변을 드리도록 하겠습니다.<br>
+						
+						<div style="border-bottom:4px solid #e2e6ee; height:60px; margin-top:0"></div>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:left; padding:50px 20px; ">
+						<table cellspacing="0" summary="#" style="width:780px; margin-top:10px; border-top:1px solid #e4e9ef"><!-- 2017-07-04  보더값 수정 --->
+							<colgroup>
+								<col width="30%">
+								<col width="70%">
+							</colgroup>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px; padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold; ">성함</p>
+								</th>
+								<td style="background-color:#fff; color:#969696; padding:0 0 0 20px; text-align:left; height:50px; font-weight:bold; font-size:14px; 
+								border-bottom:1px solid #e4e9ef" th:text="${cName}"></td>
+							</tr>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px;  padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold;">접수날짜</p>
+								</th>
+								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:50px; font-weight:bold; font-size:14px; color:#969696; 
+								border-bottom:1px solid #e4e9ef" th:text="|${cYear}년 ${cMonth}월 ${cDay}일|">2025년 05월 30일</td>
+							</tr>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px;  padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold;">전화번호</p>
+								</th>
+								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:50px; font-weight:bold; font-size:14px; color:#969696;
+								 border-bottom:1px solid #e4e9ef" th:text="${cTel}">02-546-4521</td>
+							</tr>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px;  padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold;">휴대전화</p>
+								</th>
+								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:50px; font-weight:bold; font-size:14px; color:#969696;
+								 border-bottom:1px solid #e4e9ef" th:text="${cHp}">010-5555-8888</td>
+							</tr>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px;  padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold;">이메일</p>
+								</th>
+								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:50px; font-weight:bold; font-size:14px; color:#969696; 
+								border-bottom:1px solid #e4e9ef" th:text="${cEmail}">test@naver.com</td>
+							</tr>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px;  padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold;">제목</p>
+								</th>
+								<td style="background-color:#fff; color:#3e3e3e; padding:0 0 0 20px; text-align:left; height:50px; font-weight:bold; font-size:14px; color:#969696;
+									 border-bottom:1px solid #e4e9ef" th:text="${cSubject}">거래위반</td>
+							</tr>
+							<tr>
+								<th style="background-color:#f8f8f8; color:#3e3e3e; padding:0px 0; text-align:left; height:50px;  padding-left:50px; border-bottom:1px solid #e4e9ef">
+									<p style="font-size:14px; color:#3d3d3d; font-weight:bold; ">신고/상담 및 문의 내용</p>
+								</th>
+								<td style="background-color:#fff; color:#3e3e3e; padding:20px; text-align:left; min-height:150px; font-weight:400; font-size:14px; color:#969696; 
+									border-bottom:1px solid #e4e9ef; line-height:170%" th:text="${cContent}">
+								</td>
+							</tr> 
+						</table>
+					</td>
+				</tr>
+				
+			</tbody>
+			<!----------------------------- // tbody : 뉴스콘텐츠 ---------------------------->
+		</table>
+		<!-- 비영리 FOOTER 아웃룩2010 -->
+		<table cellspacing="0" width="800" style="margin:0; border-top:1px solid #c9cace">
+			<colgroup>
+				<col width="20%">
+				<col width="80%">
+			</colgroup>
+			<tbody>
+				<tr>
+					<td style="vertical-align:top; padding-top:20px; "><a href="https://www.vegemil.co.kr" target="_blank"><img src="https://image.edaymall.com/images/mail/news/common/mailLogo.gif" alt="정식품" border="0" /></a></td>
+					<td style="padding:20px 0 40px 0 ; text-align:left; vertical-align:top; ">
+						<p style="font-size:13px; color:#969696; margin:0px 0 0 0; font-weight:bold; letter-spacing:-1px">본 메일은 발신전용 메일이므로 회신되지 않습니다. 문의사항은 <a href="https://www.vegemil.co.kr/communication/ask" style="text-decoration:underline; color:#6e6e6e;font-weight:600" target="_blank">고객센터</a>로 문의해주시기 바랍니다. </p>
+						<span style="font-size:15px; color:#6e6e6e; letter-spacing:-1px; background-color:#e1f1e6; border-radius:12px; border:1px solid #b5e5bf; padding:4px 9px 0px 9px; margin-top:7px; display:inline-block; line-height:120%; "><b>고객문의 080-930-8888</b> </span>
+						<p style="font-size:13px; color:#969696;line-height:120%; margin:10px 0 0 0; letter-spacing:-1px ">(주)정식품ㅣ충청북도 청주시 흥덕구 산단로 124 (우)28446  <br>
+						사업자등록번호: 315-81-19977 <br>
+						ⓒ 2023 Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved. </p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- // 비영리 FOOTER 아웃룩2010 -->
+	</center>
+</body>
+</html>

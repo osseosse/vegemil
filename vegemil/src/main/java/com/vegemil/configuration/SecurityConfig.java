@@ -21,8 +21,8 @@ import com.vegemil.service.MemberService;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
+	
+	@Autowired
     private MemberService memberService;
     
     @Order(1)
@@ -98,7 +98,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public class CommonSecurityConfig extends WebSecurityConfigurerAdapter {
         
     	@Autowired
-	    @Qualifier("dataSource")
+    	@Qualifier("vegemilDataSource")
 	    private DataSource dataSource;
     	
 	    @Override
@@ -149,7 +149,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    	repo.setDataSource(dataSource);
 	    	return repo;
 	    }
-	    
     }
-
 }
