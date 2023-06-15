@@ -20,6 +20,10 @@ public class AdminCalendarTitleDTO extends AdminCommonDTO {
 	/** 월2*/
 	private String tMonth2;
 	private String tMonth2String;
+	
+	/** 월3*/
+	private String tMonth3;
+	private String tMonth3String;
 
 	/** 기준 아기모델 번호*/
 	private String tRownum;

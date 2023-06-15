@@ -47,9 +47,11 @@
 	    	   const tYear = document.getElementById('tYear').value;
 	    	   const tMonth1 = document.getElementById('tMonth1').value;
 	    	   const tMonth2 = document.getElementById('tMonth2').value;
+	    	   const tMonth3 = document.getElementById('tMonth3').value;
 	    	   const tBabyname = $("#tRownum option:selected").text();;
 	    	   let tMonth1String ="";
 	    	   let tMonth2String ="";
+	    	   let tMonth3String ="";
 	    	   
 				console.log("tBabyname:" , tBabyname);
 		    
@@ -131,7 +133,44 @@
 	    	      break; 
 	    	  }
 	    	   
-	    	   
+	    	   switch (tMonth3){
+	    	    case "1": 
+	    	       tMonth3String = "January";
+	    	      break; 
+	    	    case "2":
+	    	       tMonth3String = "February";
+	    	      break;
+	    	    case "3":
+	    	       tMonth3String = "march"; 
+	    	      break;
+	    	    case "4":
+	    	       tMonth3String = "April"; 
+	    	      break; 
+	    	    case "5":
+	    	       tMonth3String = "May"; 
+	    	      break; 
+	    	    case "6":
+	    	       tMonth3String = "June"; 
+	    	      break; 
+	    	    case "7":
+	    	       tMonth3String= "July"; 
+	    	      break; 
+	    	    case "8":
+	    	       tMonth3String = "August"; 
+	    	      break; 
+	    	    case "9":
+	    	       tMonth3String = "September"; 
+	    	      break; 
+	    	    case "10":
+	    	       tMonth3String = "October"; 
+	    	      break; 
+	    	    case "11":
+	    	       tMonth3String = "November"; 
+	    	      break; 
+	    	    case "12":
+	    	       tMonth3String = "December"; 
+	    	      break; 
+	    	  }
 	    	   	    	   
 	    	   if(tRownum == "" || tRownum == "기준 아기모델 선택") {
 	    		   alert('기준 아기모델을 선택해주세요');
@@ -158,6 +197,8 @@
 		    				"tMonth1String" : tMonth1String, 
 		    				"tMonth2" : tMonth2,	   
 		    				"tMonth2String" : tMonth2String, 
+		    				"tMonth3" : tMonth3,	   
+		    				"tMonth3String" : tMonth3String, 
 		    				"tBabyname" : tBabyname, 
 				   		 },				   		 
 			   		success:function(a){
@@ -295,6 +336,23 @@
 											<div class="col-md-3 col-3">
 												<select name="tMonth2" id="tMonth2" class="form-select form-select" aria-label=".form-select-sm example">
 											      <option value="" selected >월2 (2달치 등록시에만 선택)</option>
+												  <option value="1">1</option>
+												  <option value="2">2</option>
+												  <option value="3">3</option>
+												  <option value="4">4</option>
+												  <option value="5">5</option>
+												  <option value="6">6</option>
+												  <option value="7">7</option>
+												  <option value="8">8</option>
+												  <option value="9">9</option>
+												  <option value="10">10</option>
+												  <option value="11">11</option>
+												  <option value="12">12</option>
+												</select>
+											</div>											                                            
+											<div class="col-md-3 col-3">
+												<select name="tMonth3" id="tMonth3" class="form-select form-select" aria-label=".form-select-sm example">
+											      <option value="" selected >월3 (3달치 등록시에만 선택)</option>
 												  <option value="1">1</option>
 												  <option value="2">2</option>
 												  <option value="3">3</option>

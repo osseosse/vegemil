@@ -7,8 +7,6 @@
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-   
-	
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
@@ -354,6 +352,11 @@
 						title += `
 						<span class="bestType01 bg_bean">${model.tMonth2}</span>
 						<span>${model.tMonth2String}</span>`;
+					}
+					if(model.tMonth3){													
+						title += `
+						<span class="bestType01 bg_bean">${model.tMonth3}</span>
+						<span>${model.tMonth3String}</span>`;
 					}
 					title += `
 					<span class="bestYear">${model.tYear}</span>

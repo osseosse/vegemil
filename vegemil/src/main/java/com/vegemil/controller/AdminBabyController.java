@@ -480,8 +480,15 @@ public class AdminBabyController extends UiUtils {
 				int rownum = Integer.parseInt(params.getTRownum())-1; 
 				int second1stBaby = adminBabyService.selectSecond1stBaby(rownum);
 											// 해당 아기의  c_title_2nd를 1로 수정
-				boolean isUpdated = adminBabyService.updateTitle2ndInfo(second1stBaby);
-
+				boolean isUpdated_1 = adminBabyService.updateTitle2ndInfo(second1stBaby);
+			}
+			
+			if(params.getTMonth3() != null) { //두 번째 달 입력이 있다면
+				//첫번째 달 의 ROWNUM -1 을 통해 두번째 달 아기의 c_idx 조회
+				int rownum = Integer.parseInt(params.getTRownum())-2; 
+				int second2stBaby = adminBabyService.selectSecond1stBaby(rownum);
+				// 해당 아기의  c_title_2nd를 1로 수정
+				boolean isUpdated_2 = adminBabyService.updateTitle2ndInfo(second2stBaby);
 			}
 			
 			rtnMap.put("result", isRegistered);
@@ -505,17 +512,12 @@ public class AdminBabyController extends UiUtils {
 			return false;
 		}
 		return true;
-   		
-   }
-	
-	
+    }
 	@RequestMapping(value = "/admin/manage/baby/updateCalendarModel")
 	public @ResponseBody Map<String, Object> updateCalendarModelList(@ModelAttribute("params") final AdminCalendarModelDTO params, 
 			Model model, HttpServletResponse response) {
 		
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
-		
-		
 		try {
 			boolean isUpdate = adminBabyService.registerCalendarModel(params);
 			rtnMap.put("result", isUpdate);
@@ -526,7 +528,6 @@ public class AdminBabyController extends UiUtils {
 			log.error("fail to process file", e);
 		}
 		System.out.println(rtnMap);
-
 		return rtnMap;
 	}
 	

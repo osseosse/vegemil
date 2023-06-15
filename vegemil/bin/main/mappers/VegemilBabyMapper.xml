@@ -452,12 +452,12 @@
 			c_rank,
 			(CASE WHEN c_rank = '1' THEN '이달의 베지밀 달력 아기모델' 
 			  WHEN c_rank = '3' THEN '이달의 베지밀 달력 아기모델' 
-			 ELSE '참여상' END) AS c_honor,
+			  ELSE '참여상' END) AS c_honor,
 			 c_title_2nd
 		FROM 
 			m_calendar_model
 		WHERE 
-			c_rank between 1 and 3
+			c_rank between 1 and 4
 		ORDER BY 
 			c_update_time desc
 		
@@ -487,7 +487,7 @@
 	<!-- 아기모델센발대회 - 타이틀 조회-->
 	<select id='selectCalenderModelTitle'  resultType="com.vegemil.domain.AdminCalendarTitleDTO">	
 		    SELECT 
-		    	t_idx, CAST(t_year AS SIGNED INTEGER)t_year , CAST(t_month1 AS SIGNED INTEGER) t_month1, t_month1_string, t_month2, t_month2_string, t_rownum, t_babyname
+		    	t_idx, CAST(t_year AS SIGNED INTEGER)t_year , CAST(t_month1 AS SIGNED INTEGER) t_month1, t_month1_string, t_month2, t_month2_string, t_month3, t_month3_string
     		FROM 
     			m_calendar_title 
    			ORDER BY 
