@@ -14,9 +14,33 @@
 				csstransforms:	true,
 				richSwiping:false
 		  });
-		  var theDay = new Date('2023-05-24 11:00:00'); 
+		  /* 
+		  var theDay = new Date('2023-06-24 11:00:00'); 
 		  timeCheck(theDay);
-		 
+		  */
+		  
+		  /* 평상시에는 자세히 보기 팝업 적용하고, 24~5일까지만 당첨자 발표 버튼으로 노출시키는 코드 
+		  var theDay = new Date();
+		  var dateOnTheDay = theDay.getDate();
+		  console.log("theDay >> " + dateOnTheDay)
+		  var timeOfTheDay = theDay.getHours();
+		  console.log("time of theDay >> " + theDay.getHours());
+		  if(dateOnTheDay>=24 || dateOnTheDay <=5){
+			  if(dateOnTheDay == 24){
+				  if(timeOfTheDay >= 11){
+					  //timeCheck(theDay);
+					  $("#currentPopup").css("display","none");
+				      $("#nextPopup").css("display","block");
+				  }
+			  }else{
+				  //timeCheck(theDay);
+				  $("#currentPopup").css("display","none");
+				  $("#nextPopup").css("display","block");
+			  }
+		  }
+		  */
+		  changeStateElementIdByday("#currentPopup","#nextPopup",24,5,11);
+		  
 		});
 	function popupCookieSave(){
 		setCookie("popup", "done" , 1);
@@ -42,6 +66,25 @@
 			 $("#currentPopup").css("display","none");
 			 $("#nextPopup").css("display","block");
 		}
+	}
+	
+	function changeStateElementIdByday(elementIdFHidden, elementIdShow, StartDayOfpreMonth, dayOfnextMonth, turningTime){
+		
+		var theDay = new Date();
+		var dateOnTheDay = theDay.getDate();
+		var timeOfTheDay = theDay.getHours();
+		if(dateOnTheDay>=StartDayOfpreMonth || dateOnTheDay <=dayOfnextMonth){
+			if(dateOnTheDay == StartDayOfpreMonth){
+				if(timeOfTheDay >= turningTime){
+				  $(elementIdFHidden).css("display","none");
+			      $(elementIdShow).css("display","block");
+				}
+			}else{
+			  $(elementIdFHidden).css("display","none");
+			  $(elementIdShow).css("display","block");
+			}
+		}
+		
 	}
 </script>
 <style>

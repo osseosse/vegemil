@@ -48,7 +48,9 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	//오라클 드라이버
 	implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.3.0.0'
-	 // Page Helper
-   // https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter
-   implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.2'
+	// Page Helper
+    // https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter
+    implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.2'
+    implementation 'com.github.rkpunjal.sqlsafe:sql-injection-safe:1.0.2'
+    
 }

@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import com.github.rkpunjal.sqlsafe.SQLInjectionSafe;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,12 +9,12 @@ import lombok.Setter;
 @Getter
 public class ClaimDTO {
 	private String cIdx;
-	private String cName;
-	private String cHp;
-	private String cTel;
-	private String cEmail;
-	private String cSubject;
-	private String cContent;
+	private @SQLInjectionSafe String cName;
+	private @SQLInjectionSafe String cHp;
+	private @SQLInjectionSafe String cTel;
+	private @SQLInjectionSafe String cEmail;
+	private @SQLInjectionSafe String cSubject;
+	private @SQLInjectionSafe String cContent;
 	private String cWritedate;
 	private String cWritetime;
 	private String cCheck;

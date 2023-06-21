@@ -5,6 +5,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -155,7 +157,7 @@ public class CommunicationConroller extends UiUtils{
 	}
 
 	@PostMapping("/communication/cp/cpDeclaration")
-	public String postCpClaim(Model model, ClaimDTO claimDTO) {
+	public String postCpClaim(Model model, @Valid ClaimDTO claimDTO) {
 		
 		int result = communicationService.insertMclaim(claimDTO);
 		List<String> recipientsId = new ArrayList<>();

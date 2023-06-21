@@ -32,11 +32,10 @@
 				<p class="blackLine2 mt40"></p>
 			</div>
 			<script>
-				function timeCheck(theDay){
+				function timeCheck(theDay,displayElementById){
 					var today = new Date();
 					if(today >= theDay){
-						 $("#resultTitle").css("display","block");
-						 $("#event-vtc-1").css("display","block");
+						 $(displayElementById).css("display","block");
 					}
 				}
 			
@@ -54,17 +53,85 @@
 							this.removeClass("open");
 						  }
 						});
-					  var theDay = new Date('2023-05-24 11:00:00'); 
-					  timeCheck(theDay);
+					  var theDay = new Date('2023-06-24 11:00:00'); 
+					  timeCheck(theDay,"#juneWinners");
 				 });
 			</script>
 			<div class="col-md-12 mt50  grayLine2">
 				<div class="contant1160 pb100 pt50">
-					<p class="event-title-50year f23 fw500 white" id="resultTitle" style="display:none;">당첨자 발표</p>
-					
+					<p class="event-title-50year f23 fw500 white" id="resultTitle">당첨자 발표</p>
 					<!-- Vetical -->
-					 <div id="event-vtc-1" class="EventStyle mt40" style="display:none;">
-						<div class="ver-title05 f23 fw500 "><p><span class="txt-box lh140">5월 이벤트 당첨자</span></p></div>
+					 <div id="event-vtc-1" class="EventStyle mt40" >
+					 	<!-- 6월 -->
+						<div class="ver-title05 f23 fw500" id="juneWinners" style="display:none;"><span class="txt-box lh140">6월 이벤트 당첨자</span></p></div>
+						<div>
+							<div class="v_content">
+								<div class="event_v_con">
+									<ul>
+										<li>노*진	9309</li>
+										<li>권*희	 4377</li>
+										<li>류*희	 7937</li>
+										<li>이*지	 2677</li>
+										<li>신*선	 0940</li>
+										<li>신*철	 5808</li>
+										<li>김*미	 3715</li>
+										<li>이*신 2256</li>
+										<li>안*희	 8317</li>
+										<li>황*국	 6821</li>
+									</ul>
+									<ul>
+										<li>장*하	 2582</li>
+										<li>이*진	 6123</li>
+										<li>윤*숙	 0986</li>
+										<li>선*미	 9099</li>
+										<li>한*희	 2193</li>
+										<li>박*미	 0960</li>
+										<li>조*날	 5172</li>
+										<li>황*이	 7266</li>
+										<li>홍*욱 4279</li>
+										<li>손*주	 2124</li>
+									</ul>
+									<ul>
+										<li>최*정	 4459</li>
+										<li>이*례	 3260</li>
+										<li>서*라	 2830</li>
+										<li>박*열	 9665</li>
+										<li>송*근	 7664</li>
+										<li>우*영	 2385</li>
+										<li>김*정	 9525</li>
+										<li>배*정	 2597</li>
+										<li>김*주	 2744</li>
+										<li>배*열	 0198</li>
+									</ul>
+									<ul>
+										<li>김*리 0377</li>
+										<li>권*진 7099</li>
+										<li>김*미	 4552</li>
+										<li>김*혁 3349</li>
+										<li>신*철 1601</li>
+										<li>박*현	 7897</li>
+										<li>박*규	 7124</li>
+										<li>이*영 0258</li>
+										<li>송*이	 3486</li>
+										<li>이*연	 7301</li>
+									</ul>
+									<ul>
+										<li>이*윤	 7984</li>
+										<li>최*아	 0184</li>
+										<li>장 *&nbsp;&nbsp; 0312</li>
+										<li>최*향 6394</li>
+										<li>홍*명	 3257</li>
+										<li>정*민	 2864</li>
+										<li>박*영 2536</li>
+										<li>오*영	 6866</li>
+										<li>조*엽 0177</li>
+										<li>김*경 7530</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- //6월 -->	
+						<div class="ver-title05 f23 fw500" id="mayWinners"><p><span class="txt-box lh140">5월 이벤트 당첨자</span></p></div>
 						<div>
 							<div class="v_content">
 								<div class="event_v_con">
