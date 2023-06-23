@@ -18,27 +18,7 @@
 		  var theDay = new Date('2023-06-24 11:00:00'); 
 		  timeCheck(theDay);
 		  */
-		  
-		  /* 평상시에는 자세히 보기 팝업 적용하고, 24~5일까지만 당첨자 발표 버튼으로 노출시키는 코드 
-		  var theDay = new Date();
-		  var dateOnTheDay = theDay.getDate();
-		  console.log("theDay >> " + dateOnTheDay)
-		  var timeOfTheDay = theDay.getHours();
-		  console.log("time of theDay >> " + theDay.getHours());
-		  if(dateOnTheDay>=24 || dateOnTheDay <=5){
-			  if(dateOnTheDay == 24){
-				  if(timeOfTheDay >= 11){
-					  //timeCheck(theDay);
-					  $("#currentPopup").css("display","none");
-				      $("#nextPopup").css("display","block");
-				  }
-			  }else{
-				  //timeCheck(theDay);
-				  $("#currentPopup").css("display","none");
-				  $("#nextPopup").css("display","block");
-			  }
-		  }
-		  */
+		 
 		  changeStateElementIdByday("#currentPopup","#nextPopup",24,5,11);
 		  
 		});
@@ -68,6 +48,14 @@
 		}
 	}
 	
+	/*
+	*날짜에 맞춰서 팝업 교체
+	*<elementIdFHidden> string 숨김처리할 태그 아이디값 #elementIdFHidden
+	*<elementIdShow> string 전시처리할 태그 아이디값 #elementIdShow
+	*<StartDayOfpreMonth> int 팝업교체 시작일(년원일중 '일') 24
+	*<dayOfnextMonth> int 교체된 팝업이 유지되는 다음달 종료일 (년원일중 '일') 5
+	*<turningTime> int 팝업이 교체되는 시간  
+	*/
 	function changeStateElementIdByday(elementIdFHidden, elementIdShow, StartDayOfpreMonth, dayOfnextMonth, turningTime){
 		
 		var theDay = new Date();
