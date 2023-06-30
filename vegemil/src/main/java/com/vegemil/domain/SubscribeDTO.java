@@ -1,6 +1,8 @@
 package com.vegemil.domain;
 
 
+import com.github.rkpunjal.sqlsafe.SQLInjectionSafe;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,12 +11,12 @@ import lombok.Setter;
 public class SubscribeDTO {
 
     private Long   sIdx;              
-    private String sName;               
-    private String sHp;         
-    private String sMemo;          
+    private @SQLInjectionSafe String sName;               
+    private @SQLInjectionSafe String sHp;         
+    private @SQLInjectionSafe String sMemo;          
     private Long   sActive;
     private String sWritedate;
-    private String sEmail;
+    private @SQLInjectionSafe String sEmail;
     private String mSabocol;  
 
 }

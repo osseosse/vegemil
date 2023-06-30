@@ -173,7 +173,7 @@ public class VegemilBabyController extends UiUtils {
 	}
 	
 	@PostMapping("/vegemil/review/apply")
-	public String submitReviewForm(@ModelAttribute("review") VegemilBabyBestReviewDTO review,
+	public String submitReviewForm(@ModelAttribute("review") @Valid VegemilBabyBestReviewDTO review,
 									BindingResult bindingResult,
 									HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
 		
