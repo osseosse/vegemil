@@ -246,7 +246,7 @@ public class VegemilBabyController extends UiUtils {
 	
 	//달력아기모델 등록	
 	@PostMapping("/vegemilBaby/model/apply")
-	public String submitModelForm(@ModelAttribute("model") @Valid VegemilBabyCalendarModelDTO calModel,
+	public String submitModelForm(@ModelAttribute("model") VegemilBabyCalendarModelDTO calModel,
 							BindingResult bindingResult,
 							HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
 		
