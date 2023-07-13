@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import java.util.Date;
+
 import com.github.rkpunjal.sqlsafe.SQLInjectionSafe;
 
 import lombok.Getter;
@@ -19,6 +21,7 @@ public class ClaimDTO {
 	private String cWritetime;
 	private String cCheck;
 	private String cAnswer;
+	private String cIp;
 	
 	private String tel01;
 	private String tel02;
@@ -30,4 +33,6 @@ public class ClaimDTO {
 	
 	private String email01;
 	private String email02;
+	
+	private Date submitTime; 
 }

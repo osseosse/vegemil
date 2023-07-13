@@ -67,7 +67,7 @@
 		<section>
 			<th:block th:replace="|webzine/html/sub${wYear}/${qrtYear}_${fileNo}|"></th:block>
 				<!-- 추천기사 날개버전 -->
-				<div class="wz-right">
+				<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
 					<div class="wz-floting">
 						<p class="wz-news-title">추천기사</p>
 						<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}"
@@ -82,11 +82,25 @@
 								</li>
 							</a>
 						</ul>
-						<p class="wz-bnr" th:if="${banner != null}">
+						<p class="wz-bnr" th:if="${banner != null && banner.domainName != '바나나두유'}">
 							<a href="#" th:href="${banner.linkAddr}">
 								<img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}"/>
 							</a>
 						</p>
+						<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.domainName == '바나나두유'}">
+							<ul class="wz-half-bnr">
+								<li>
+									<a href="https://www.vegemil.co.kr/product/detail/31" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/photo/VFT01_860_01.jpg" alt="과즙두유"/>
+										<p>제품소개 바로가기</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.vegemil.co.kr/product/detail/32" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/photo/VFT02_860_01.jpg" alt="과즙두유"/>
+										<p>제품소개 바로가기</p>
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<!-- // 추천기사 날개 버전 -->

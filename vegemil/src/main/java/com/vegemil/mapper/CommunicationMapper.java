@@ -18,4 +18,6 @@ public interface CommunicationMapper {
 	
 	public int insertMclaim(ClaimDTO claimDTO);
 	
+	public String selectClaimIPRecent();
+	
 }

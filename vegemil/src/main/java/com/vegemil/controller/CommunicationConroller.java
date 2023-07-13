@@ -3,9 +3,10 @@ package com.vegemil.controller;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import javax.validation.Valid;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -45,8 +46,7 @@ public class CommunicationConroller extends UiUtils{
 	
     @Autowired
     private EdayVempService edayVempService;
-
-	
+    
 	@RequestMapping(value = "/communication/{viewName}")
     public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName) throws Exception {
 		
@@ -157,9 +157,24 @@ public class CommunicationConroller extends UiUtils{
 	}
 
 	@PostMapping("/communication/cp/cpDeclaration")
-	public String postCpClaim(Model model, @Valid ClaimDTO claimDTO) {
+	public String postCpClaim(Model model, ClaimDTO claimDTO, HttpServletRequest req) {
 		
+		long timeGap = (new Date().getTime()-claimDTO.getSubmitTime().getTime());
+		
+		if(claimDTO.getSubmitTime() == null) {
+			return showMessageWithRedirect("잘못된 접근입니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
+		}
+		
+		//System.out.println("timeGap >>> " + timeGap);
+		
+		String ip = getClientIpVer2(req);
+		if(ip.equals(communicationService.getRecentClaimIp()) || timeGap < 6000) {
+			return showMessageWithRedirect("앞에서 같은 아이피 주소로 접수한 기록이 있습니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
+		}
+		
+		claimDTO.setCIp(ip);
 		int result = communicationService.insertMclaim(claimDTO);
+		
 		List<String> recipientsId = new ArrayList<>();
 		//recipientsId.add("hypark023@osse.co.kr"); 테스트용
     	
@@ -180,7 +195,6 @@ public class CommunicationConroller extends UiUtils{
 			mailService.alertSubmitCpDecl(claimDTO, recipientsId);
 			//신고인에게 확인 메일 발송
 			mailService.confirmSubmitCpDecl(claimDTO);
-			
 			return showMessageWithRedirect("신고가 정상적으로 접수되었습니다.", "/communication/cp", Method.GET, null, model);
 		}
 		

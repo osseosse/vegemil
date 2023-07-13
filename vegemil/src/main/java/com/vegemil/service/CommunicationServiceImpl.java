@@ -47,5 +47,10 @@ public class CommunicationServiceImpl implements CommunicationService{
 		
 		return event;
 	}
+
+	@Override
+	public String getRecentClaimIp() {
+		return communicationMapper.selectClaimIPRecent();
+	}
 	
 }

@@ -14,5 +14,7 @@ public interface CommunicationService {
 	public List<EventDTO> getEnevetList();
 	
 	public EventDTO getEvent(String eIdx);
+	
+	public String getRecentClaimIp();
 
 }

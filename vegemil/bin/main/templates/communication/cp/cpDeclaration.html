@@ -7,6 +7,7 @@
     <head th:replace="fragments/head :: headFragment"></head>
 	<link rel='stylesheet' th:href="@{/common/css/swiper-bundle.min.css}"><!-- swiper(카테고리별제품 메뉴) -->
 	<script src="/common/js/swiper-bundle.min.js"></script><!-- swiper(카테고리별제품 메뉴) -->
+	<script type="text/javascript" src="http://jsgetip.appspot.com"></script><!-- ip 정보 얻어오는 google api코드 -->
 </head>
 <body>
 <!-- ================================ 
@@ -219,6 +220,7 @@
                 </div> <!-- //col-md-12 -->
             </div><!-- //row -->
             <br class="clear">
+            <input name="submitTime" value="" id="submitTime" hidden>
 		    </form>
         </div>
     </div>
@@ -248,7 +250,7 @@
 			email01.focus();
 			return false;
 		}
-		
+
 		document.getElementById('frm').submit();
 	}
 	
@@ -263,7 +265,12 @@
 </script>
 <script>
 
+	$(function(){
+	    $("#submitTime").val(new Date());
+	});
+
 	function btnAvtive() {
+		
 		const cName = $('#cName').val();
 		const hp02 = $('#hp02').val();
 		const hp03 = $('#hp03').val();
@@ -292,6 +299,7 @@
 	}
 	
 	$('#cName').keyup(function () {
+		$("#submitTime").val(new Date());
 		btnAvtive();
 	});
 	

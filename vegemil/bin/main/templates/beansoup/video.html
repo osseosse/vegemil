@@ -50,7 +50,7 @@
 						                     style="border-radius:20px" allowfullscreen></iframe>
 					                    </div>
 					                    <div class="recipeTxt_white">
-						                    <p class="f16 gray" th:text="${item.mWriteDate}"></p>
+						                    <p class="f16 gray" th:text="${#strings.substring(item.mWriteDate,0,10)}"></p>
 						                    
 						                    <p class="f22 fw600 mt10" th:text="${item.mTitle}"></p>
 					                    </div>

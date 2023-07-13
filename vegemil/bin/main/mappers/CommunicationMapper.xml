@@ -64,7 +64,15 @@
 		and
 			e_idx = #{eIdx}
 	</select>
-
+	<select id="selectClaimIPRecent" resultType="String">
+		select 
+			c_ip
+		from
+			M_Claim
+		order by
+		 	c_idx desc 
+		limit 1;
+	</select>
 	<insert id="insertMclaim" parameterType="com.vegemil.domain.ClaimDTO">
 		insert into M_Claim (
 			c_idx,
@@ -77,7 +85,8 @@
 			c_writetime,
 			c_check,
 			c_answer,
-			c_tel
+			c_tel,
+			c_ip
 		) values (
 			#{cIdx},
 			#{cName},
@@ -89,7 +98,8 @@
 			#{cWritetime},
 			#{cCheck},
 			#{cAnswer},
-			#{cTel}
+			#{cTel},
+			#{cIp}
 		)
 	</insert>
 </mapper>

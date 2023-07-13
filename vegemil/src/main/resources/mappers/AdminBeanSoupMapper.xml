@@ -52,7 +52,6 @@
 		SET
 			  m_title = #{mTitle}
 			, m_display = #{mDisplay}
-			, m_writeDate = NOW()
 			, m_src = #{mSrc}
 		WHERE
 			m_idx = #{mIdx}
