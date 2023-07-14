@@ -79,8 +79,8 @@
 		        </select>
 				<span>분기 </span>
 				<select id="qrt" onchange="javascript:selectContents(this.value);" th:if="${not #lists.isEmpty( webzineQrt )}">
-	            	<!-- <option th:each="qrt : ${webzineQrt}" th:value="${qrt.qrtYear}" th:text="|${qrt.qrtYear2}분기|"></option> 오픈때 살려야 할 욘욘-->
-	            	<option th:each="qrt : ${webzineQrt}" th:value="${qrt.qrtYear}" th:text="|${qrt.qrtYear2}분기|" th:if="${qrt.qrtYear2} lt 3"></option>
+	            	<option th:each="qrt : ${webzineQrt}" th:value="${qrt.qrtYear}" th:text="|${qrt.qrtYear2}분기|"></option> 
+	            	<!-- <option th:each="qrt : ${webzineQrt}" th:value="${qrt.qrtYear}" th:text="|${qrt.qrtYear2}분기|" th:if="${qrt.qrtYear2} lt 3"></option> -->
                 </select>	
 				<span>목차 </span>
 				<select id="contents" class="w450" onchange="javascript:goSub(this.value);" th:if="${not #lists.isEmpty( webzineLink )}">

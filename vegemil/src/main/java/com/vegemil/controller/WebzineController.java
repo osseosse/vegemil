@@ -619,11 +619,11 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
 		
-		if(qrtYear.equals("Q2_2023")){
-			returnHtml = "webzine/event_Q2_2023";
-		}else {
-			returnHtml = "webzine/oldEvent";
-		}
+		/*
+		 * if(qrtYear.equals("Q2_2023")){ returnHtml = "webzine/event_Q2_2023"; }else {
+		 * returnHtml = "webzine/oldEvent"; }
+		 */
+		returnHtml = "webzine/oldEvent";
 		
 		model.addAttribute("webzineListQY", webzineListQY);
 		model.addAttribute("webzineYear", webzineYear);

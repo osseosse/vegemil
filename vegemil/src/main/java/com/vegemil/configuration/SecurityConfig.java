@@ -50,6 +50,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	            .and()
 	                .exceptionHandling()
 	                .accessDeniedPage("/error/error");
+	        http
+	        	.headers()
+	        	.xssProtection()
+	        	.and()
+	        	.contentSecurityPolicy("script-src 'self'");
 	    }
 	    
 	    @Override

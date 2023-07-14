@@ -82,20 +82,20 @@
 								</li>
 							</a>
 						</ul>
-						<p class="wz-bnr" th:if="${banner != null && banner.domainName != '바나나두유'}">
+						<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
 							<a href="#" th:href="${banner.linkAddr}">
 								<img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}"/>
 							</a>
 						</p>
-						<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.domainName == '바나나두유'}">
+						<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
 							<ul class="wz-half-bnr">
 								<li>
-									<a href="https://www.vegemil.co.kr/product/detail/31" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/photo/VFT01_860_01.jpg" alt="과즙두유"/>
+									<a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유"/>
 										<p>제품소개 바로가기</p>
 									</a>
 								</li>
 								<li>
-									<a href="https://www.vegemil.co.kr/product/detail/32" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/photo/VFT02_860_01.jpg" alt="과즙두유"/>
+									<a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유"/>
 										<p>제품소개 바로가기</p>
 									</a>
 								</li>
