@@ -55,7 +55,7 @@ public class MainController extends UiUtils {
 	private AdminService adminService;
 	
 	@RequestMapping(value = "/")
-	public String moveIndex(Model model, Authentication authentication) throws Exception {
+	public String moveIndex(Model model, Authentication authentication, HttpServletResponse response) throws Exception {
 		
 		MemberDTO member = new MemberDTO();
 		

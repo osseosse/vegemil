@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.vegemil.service.MemberService;
@@ -50,12 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	            .and()
 	                .exceptionHandling()
 	                .accessDeniedPage("/error/error");
-	        http
-	        	.headers()
-	        	.xssProtection()
-	        	.and()
-	        	.contentSecurityPolicy("script-src 'self'");
-	    }
+	                
+		}
 	    
 	    @Override
 	    public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -139,7 +136,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		            .key("dcf") //쿠키에 사용되는 값을 암호화하기 위한 키(key)값
 		            .rememberMeParameter("remember-me")
 		            .tokenRepository(persistentTokenRepository()) //DataSource 추가
-		            .tokenValiditySeconds(604800); //토큰 유지 시간(초단위) - 일주일
+		            .tokenValiditySeconds(604800) //토큰 유지 시간(초단위) - 일주일
+		        .and().headers().frameOptions().disable()
+		        .addHeaderWriter(new StaticHeadersWriter("X-Frame-Options", "ALLOW-FROM https://recruit.vegemil.co.kr/"));
 	    }
     
 	    @Override
