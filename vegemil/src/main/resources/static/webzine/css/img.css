@@ -2,24 +2,24 @@
 
 /* -------------------------------------------------------------------------------------------------
 
-	! ¹ÝÀÀÇü »çÀÌÆ® Æ¯¼º»ó ¹è°æÀ¸·Î ÀÌ¹ÌÁöÃ³¸® ÇÕ´Ï´Ù.
+	! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
 
-	- ºÐ±âº° ÀÌ¹ÌÁöÆú´õ(ex 'Q2_2016') ¸¦ ¸¸µé¾î¼­ Æú´õ°æ·Î¸¸ º¯°æÇØ ÁÝ´Ï´Ù. 
-	- subÆäÀÌÁö´Â »ó´çºò¹è³Ê¸¸ CSS¿¡¼­ Àû¿ëÇØ ÁÝ´Ï´Ù.
-	- CSS¿¡¼­ ¹è°æÀ» Á¤ÀÇÇÏ´Â ÀÌÀ¯´Â width, height¿¡¼­ ºñÀ²À» À¯ÁöÇÏ°í ÁÙ¿©ÁÖ´Â °Í ÀÌ °¡´ÉÇÏ±â ¶§¹®
-	- 16Q2 -> "2016³âµµ 2ºÐ±â"
+	- ï¿½Ð±âº° ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ex 'Q2_2016') ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý´Ï´ï¿½. 
+	- subï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê¸ï¿½ CSSï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý´Ï´ï¿½.
+	- CSSï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ width, heightï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ù¿ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	- 16Q2 -> "2016ï¿½âµµ 2ï¿½Ð±ï¿½"
 
 
 --------------------------------------------------------------------------------------------------*/
 
 
 /* --------------------------------------------------------------------------------------
-				2016_2ºÐ±â 
+				2016_2ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */   
-.slide-bg_16Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
-.slide-bg_16Q2  { position: absolute;left: 0;top: 0; width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* Ä¿¹ö¹Ì»ç¿ë½Ã z-index:0 */
-/* slide-bg Ä¿¹ö±â´É */
+.slide-bg_16Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+.slide-bg_16Q2  { position: absolute;left: 0;top: 0; width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* Ä¿ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ z-index:0 */
+/* slide-bg Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_16Q2:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: #000;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.4;}
 /* main 02 */	.post-featured-img.square_2_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/03.jpg) ; background-position:center; }
@@ -33,57 +33,57 @@
 /* main 11 */	.post-featured-img.square_7_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_16Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_16Q2_main   { background:#cb9630 }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_16Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_16Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2016/13_01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_16Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub search TopÀÌ¹ÌÁö  */   
+/* sub search Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine//search.jpg) no-repeat scroll 0 0; }
 .slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 /* --------------------------------------------------------------------------------------
-				2016_3ºÐ±â 
+				2016_3ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */   
-.slide-bg_16Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
-.slide-bg_16Q3  { position: absolute;left: 0;top: 0; width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* Ä¿¹ö¹Ì»ç¿ë½Ã z-index:0 */
-/* slide-bg Ä¿¹ö±â´É */
+.slide-bg_16Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+.slide-bg_16Q3  { position: absolute;left: 0;top: 0; width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* Ä¿ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ z-index:0 */
+/* slide-bg Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_16Q3:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%; /*background: #000*/;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.4;}
 /* main 02 */	.post-featured-img.square_2_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/03.jpg) ; background-position:center; }
@@ -97,46 +97,46 @@
 /* main 11 */	.post-featured-img.square_7_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_16Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_16Q3_main   { background:#cb9630 }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_16Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_16Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/13_01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_16Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub search TopÀÌ¹ÌÁö  */   
+/* sub search Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
 .slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
@@ -145,12 +145,12 @@
 
 
 /* --------------------------------------------------------------------------------------
-				2016_4ºÐ±â 
+				2016_4ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_16Q4  { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
-.slide-bg_16Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* Ä¿¹ö¹Ì»ç¿ë½Ã z-index:0 */
-/* slide-bg Ä¿¹ö±â´É */
+.slide-bg_16Q4  { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
+.slide-bg_16Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 1;} /* Ä¿ï¿½ï¿½ï¿½Ì»ï¿½ï¿½ï¿½ z-index:0 */
+/* slide-bg Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_16Q4:after {position: absolute;left: 0;top: 0;width: 100%;height: 100%; background: #000;z-index: -1;content: "";-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";filter: alpha(opacity=35);opacity: 0.2;}
 /* main 02 */	.post-featured-img.square_2_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/03.jpg) ; background-position:center; }
@@ -164,56 +164,56 @@
 /* main 11 */	.post-featured-img.square_7_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_16Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_16Q4_main   { background:#cb9630 }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2016/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_16Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_16Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2016/13_01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_16Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub search TopÀÌ¹ÌÁö  */   
+/* sub search Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
 .slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 
 /* --------------------------------------------------------------------------------------
-				2017_1ºÐ±â 
+				2017_1ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_17Q1  { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_17Q1  { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_17Q1  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/03.jpg) ; background-position:center; }
@@ -227,62 +227,62 @@
 /* main 11 */	.post-featured-img.square_7_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_17Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_17Q1_main   { background:#cb9630 }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_17Q1_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/01_top.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_17Q1_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_17Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/13.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_17Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 14 TopÀÌ¹ÌÁö  */   
+/* sub 14 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub14_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/14.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub14_17Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 15 TopÀÌ¹ÌÁö  */   
+/* sub 15 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub15_17Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2017/15.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub15_17Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub search TopÀÌ¹ÌÁö  */   
+/* sub search Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
 .slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 
 /* --------------------------------------------------------------------------------------
-				2017_2ºÐ±â 
+				2017_2ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_17Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_17Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_17Q2  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/03.jpg) ; background-position:center; }
@@ -296,62 +296,62 @@
 /* main 11 */	.post-featured-img.square_7_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_17Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_17Q2_main   { background:#cb9630 }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_17Q2_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/01_top.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_17Q2_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_17Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/13.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_17Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 14 TopÀÌ¹ÌÁö  */   
+/* sub 14 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub14_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/14.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub14_17Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 15 TopÀÌ¹ÌÁö  */   
+/* sub 15 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub15_17Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2017/15.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub15_17Q2 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub search TopÀÌ¹ÌÁö  */   
+/* sub search Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
 .slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 
 /* --------------------------------------------------------------------------------------
-				2017_3ºÐ±â 
+				2017_3ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_17Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_17Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_17Q3  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/03.jpg) ; background-position:center; }
@@ -365,62 +365,62 @@
 /* main 11 */	.post-featured-img.square_7_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_17Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_17Q3_main   { background:#cb9630 }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_17Q3_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/01_top.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_17Q3_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_17Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/13.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_17Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 14 TopÀÌ¹ÌÁö  */   
+/* sub 14 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub14_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/14.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub14_17Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 15 TopÀÌ¹ÌÁö  */   
+/* sub 15 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub15_17Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2017/15.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub15_17Q3 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub search TopÀÌ¹ÌÁö  */   
+/* sub search Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-search { background: url(https://image.edaymall.com/images/dcf/webzine/search.jpg) no-repeat scroll 0 0; }
 .slide-bg-search { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 
 /* --------------------------------------------------------------------------------------
-				2017_4ºÐ±â 
+				2017_4ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 00 */
-.slide-bg_17Q4  { background:#ccc url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_17Q4  { background:#ccc url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_17Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 01 */	.post-featured-img.square_1_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/01.jpg) ; background-position:center; }
 /* main 02 */	.post-featured-img.square_2_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/02.jpg) ; background-position:center; }
@@ -437,64 +437,66 @@
 /* main 12 */	.post-featured-img.square_8_17Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.full_2_17Q4_main   { background:#cb9630 }
 
-/* sub 00 TopÀÌ¹ÌÁö */ 
-.slide-bg-sub01_17Q4_00 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00_1.jpg) no-repeat scroll 0 0; }
-.slide-bg-sub01_17Q4_00 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 01 TopÀÌ¹ÌÁö */ 
+/* sub 00 Topï¿½Ì¹ï¿½ï¿½ï¿½ */ 
+.slide-bg-sub00_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00_1.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub00_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 99; text-align:center}
+/* .slide-bg-sub01_17Q4_00 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/00_1.jpg) no-repeat scroll 0 0; }
+.slide-bg-sub01_17Q4_00 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center} */
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */ 
 .slide-bg-sub01_17Q4_02 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_17Q4_02 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_17Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub13_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/13.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_17Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 14 TopÀÌ¹ÌÁö  */   
+/* sub 14 Topï¿½Ì¹ï¿½ï¿½ï¿½  */   
 .slide-bg-sub14_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/14.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub14_17Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 15 TopÀÌ¹ÌÁö(ÄûÁî¸ÞÀÎ)  */   
+/* sub 15 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)  */   
 .slide-bg-sub15_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/15.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub15_17Q4 { position: absolute;left: 0;top: 0; ba ckground-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 16 TopÀÌ¹ÌÁö(ÄûÁî)  */   
+/* sub 16 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)  */   
 .slide-bg-sub16_17Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2017/16.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub16_17Q4 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 /* --------------------------------------------------------------------------------------
-				2018_1ºÐ±â 
+				2018_1ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 00 */
-.slide-bg_18Q1  { background:#ccc url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_18Q1  { background:#ccc url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_18Q1  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 01 */	.post-featured-img.square_1_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) ; background-position:center; }
 /* main 02 */	.post-featured-img.square_2_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/02.jpg) ; background-position:center; }
@@ -510,52 +512,52 @@
 /* main 12 */	.post-featured-img.square_8_18Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/12.jpg) ; background-position:center; }
 /* main 13 */	.post-featured-img.square_13_18Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/13_1.jpg) ; background-position:center;  }
 
-/* sub 01 TopÀÌ¹ÌÁö */ 
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */ 
 .slide-bg-sub01_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub12_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_18Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 13 TopÀÌ¹ÌÁö(ÄûÁî)  */   
+/* sub 13 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)  */   
 .slide-bg-sub13_18Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2018/13.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub13_18Q1 { position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 /* --------------------------------------------------------------------------------------
-				2018_2ºÐ±â 
+				2018_2ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_18Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_18Q2  { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_18Q2  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/03.jpg) ; background-position:center; }
@@ -569,49 +571,49 @@
 /* main 11 */	.post-featured-img.square_7_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_18Q2 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/12.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_13_18Q2   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/12_1.jpg) ; background-position:center;  }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö(ÄûÁî) */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) */   
 .slide-bg-sub12_18Q2 { background: url(https://image.edaymall.com/images/dcf/webzine/Q2_2018/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_18Q2 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 /* --------------------------------------------------------------------------------------
-				2018_3ºÐ±â 
+				2018_3ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_18Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_18Q3  { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_18Q3  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/03.jpg) ; background-position:center; }
@@ -625,49 +627,49 @@
 /* main 11 */	.post-featured-img.square_7_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_18Q3 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/12.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_13_18Q3   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/12_1.jpg) ; background-position:center;  }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö(ÄûÁî) */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) */   
 .slide-bg-sub12_18Q3 { background: url(https://image.edaymall.com/images/dcf/webzine/Q3_2018/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_18Q3 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 /* --------------------------------------------------------------------------------------
-				2018_4ºÐ±â 
+				2018_4ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_18Q4  { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_18Q4  { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_18Q4  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/03.jpg) ; background-position:center; }
@@ -681,50 +683,50 @@
 /* main 11 */	.post-featured-img.square_7_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_18Q4 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/12.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_13_18Q4   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/12_1.jpg) ; background-position:center;  }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö(ÄûÁî) */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) */   
 .slide-bg-sub12_18Q4 { background: url(https://image.edaymall.com/images/dcf/webzine/Q4_2018/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_18Q4 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
 
 
 /* --------------------------------------------------------------------------------------
-				2019_1ºÐ±â 
+				2019_1ï¿½Ð±ï¿½ 
 --------------------------------------------------------------------------------------- */
 /* main 01 */
-.slide-bg_19Q1  { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.css¿¡ ¸ÞÀÎ½½¶óÀÌµå Å¾ÀÇ class¸¦ °øÅëÀ¸·Î º¯°æ */
+.slide-bg_19Q1  { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/01.jpg) no-repeat scroll 0 0;  background-position:center; }  /* style.cssï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ Å¾ï¿½ï¿½ classï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 .slide-bg_19Q1  { position: absolute;left: 0;top: 0; width: 100%; height:100%; -webkit-background-size: cover;background-size: cover;z-index: 0;}
 /* main 02 */	.post-featured-img.square_2_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/02.jpg) ; background-position:center; }
 /* main 03 */	.post-featured-img.square_3_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/03.jpg) ; background-position:center; }
@@ -738,40 +740,40 @@
 /* main 11 */	.post-featured-img.square_7_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/11.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_8_19Q1 { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/12.jpg) ; background-position:center; }
 /* main 12 */	.post-featured-img.square_13_19Q1   { background-image: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/12_1.jpg) ; background-position:center;  }
-/* sub 01 TopÀÌ¹ÌÁö */   
+/* sub 01 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub01_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/01.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub01_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 02 TopÀÌ¹ÌÁö */   
+/* sub 02 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub02_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/02.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub02_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 03 TopÀÌ¹ÌÁö */   
+/* sub 03 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub03_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/03.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub03_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 04 TopÀÌ¹ÌÁö */   
+/* sub 04 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub04_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/04.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub04_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 05 TopÀÌ¹ÌÁö */   
+/* sub 05 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub05_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/05.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub05_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 06 TopÀÌ¹ÌÁö */   
+/* sub 06 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub06_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/06.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub06_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 07 TopÀÌ¹ÌÁö */   
+/* sub 07 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub07_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/07.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub07_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 08 TopÀÌ¹ÌÁö */   
+/* sub 08 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub08_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/08.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub08_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 09 TopÀÌ¹ÌÁö */   
+/* sub 09 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub09_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/09.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub09_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 10 TopÀÌ¹ÌÁö */   
+/* sub 10 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub10_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/10.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub10_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 11 TopÀÌ¹ÌÁö */   
+/* sub 11 Topï¿½Ì¹ï¿½ï¿½ï¿½ */   
 .slide-bg-sub11_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/11.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub11_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
-/* sub 12 TopÀÌ¹ÌÁö(ÄûÁî) */   
+/* sub 12 Topï¿½Ì¹ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) */   
 .slide-bg-sub12_19Q1 { background: url(https://image.edaymall.com/images/dcf/webzine/Q1_2019/12.jpg) no-repeat scroll 0 0; }
 .slide-bg-sub12_19Q1 {position: absolute;left: 0;top: 0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index: 1; text-align:center}
 
