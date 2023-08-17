@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+<body>
+	<!-- ================================ 
+		        Header
+        ================================ -->
+	<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+	<!-- ================================ 
+		        // Header
+        ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div class="container100 pb100 " >
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 ">
+				<div class="tcenter">
+					<p class="mt100 certifi01"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/certifi01.jpg" alt="대회 참가를 위한 본인 인증"/></p>
+					<p class="subTitle mt30">본인인증 후에 참가신청이 진행됩니다.<br>모든 정보는 고객님의 동의없이 공개되지 않으며,<br class="mView"> 개인정보보호방침에 의해 보호받습니다.</p>
+				</div>
+			</div>
+		</div><!-- //row -->
+		<div class="row w1000 center mt100">
+			<div class="col-md-12">
+				<div class="agree_season center0 mt70">	
+					<div class="checkStyle "><input type="checkbox" id="agree01" name="agree" /><label for="agree01"><span></span><b class="red">[필수]</b> 1. 개인정보 수집 및 이용 동의</label> </div>
+					<textarea class="agree_txt_box mt10" readonly>
+제 1회 정식품 간단요리사 어린이 동시 그림 대회 원활한 진행을 위해 아래와 같이 개인정보를 수집 및 이용합니다.
+
+1. 수집 및 이용하는 개인정보 항목
+제 1회 정식품 간단요리사 어린이 동시 그림 대회의 운영 및 심사를 위해 수집하는 개인정보 항목은 다음과 같습니다.
+- 참가자 이름
+- 참가자 학년 및 생년월일
+- 법정대리인 이름
+- 법정대리인 연락처
+- 법정대리인 주소
+
+2. 개인정보의 수집 및 이용목적
+다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 [개인정보 보호법] 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+- 참가 자격 확인
+- 참가자 본인 및 법정대리인 확인
+- 문의사항에 대한 응대
+- 대회 운영 및 심사 등 관리 목적
+- 수상자 발표와 경품 발송
+					</textarea>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<div class="agree_season center0 mt70">	
+					<div class="checkStyle "><input type="checkbox" id="agree02" name="agree" /><label for="agree02"><span></span><b class="red">[필수]</b> 2. 출품작 저작권 관련 사항 안내</label> </div>
+					<textarea class="agree_txt_box mt10" readonly>
+- 작품의 저작권은 참가자에게 있으며, 수상작에 한하여 (주)정식품에서 마케팅, 홍보 등의 목적으로 복제/배포 등 2차 저작물로 제작 및 활용될 수 있습니다.
+
+- 작품 제출시 출품작의 사용권을 주최기관인 정식품에 부여하는 것에 동의한 것으로 간주하며, 수상작으로 선정된 작품을 당사 홍보물 제작 용도로 사용하는 것에 대해 이의를 제기하거나 저작권, 사용권을 요구할 수 없습니다.
+
+- 모든 출품작은 본인의 순수 창작물이어야 하며 표절, 도용, 모방 또는 참가자 본인의 작품이 아닌 것으로 판명될 경우 심사에서 제외됩니다. 수상 이후라도 부정한 응모가 확인될 시 수상 취소와 시상품 등을 회수합니다.
+
+- 응모작 및 수상작과 관련하여 저작권 분쟁 등 법적 분쟁 발생 시 모든 법적 책임은 응모자 및 보호자(법정대리인)에게 있습니다.
+
+- 수상작에 한하여 (주)정식품은 마케팅 등의 목적으로 복제, 배포, 전송, 전시 등의 방식으로 이용할 수 있습니다.
+					</textarea>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="agree_season center0 mt70">	
+					<div class="checkStyle "><input type="checkbox" id="agree03" name="agree" /><label for="agree03"><span></span><b class="red">[선택]</b> 3. 마케팅 활용 동의</label> </div>
+					<textarea class="agree_txt_box mt10 h150" readonly>
+㈜정식품의 다양한 브랜드 소식과 서비스, 구매 혜택에 대한 정보를 제공합니다.
+
+(수신방식 : 문자, 전화, 앱푸시, 이메일, 우편, 알림톡등)
+					</textarea>
+				</div>
+			</div>
+			<div class="col-lg-12 ">
+				<div class="tcenter">
+					<p class="mt100 mb100 certifi02"><button type="button" class="btn_base" onclick="btnCheck()"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/certifi02.jpg" alt="휴대폰 인증"/></button></p>
+				</div>
+			</div>
+		</div><!-- //row -->
+	</div>
+</div><!-- // container -->
+<form name="authForm" id="authForm" method="post" action="" target="" style="display:hidden;">
+	<input type="hidden"	name="joinType"	 id="joinType"			 />
+	<input type="hidden"	name="step"		 id="step"		value="2"/>
+	<input type="hidden"	name="reqURL"	 id="reqURL"			 />
+	<input type="hidden"	name="firstURL"  id="firstURL"		   	 />
+	<input type="hidden"	name="secondURL" id="secondURL"		   	 />
+</form>
+<!-- ================================  
+		// Content
+================================ -->
+
+	<script th:src="@{/common/js/modality.js}"></script>
+	<!-- 팝업 script -->
+	<script>
+		var modal1 = Modality.init('#pop_policy', {effect: 'slide-up'}); 
+		var modal2 = Modality.init('#pop_privacy', {effect: 'slide-up'}); 
+		var modal3 = Modality.init('#pop_edaymall', {effect: 'slide-up'}); 
+	</script>
+	<!-- //팝업 script -->
+
+	<!--  ================================ 
+		        Footer
+    ================================ -->
+	<footer th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+	<!-- ================================ 
+		        // Footer
+     ================================ --> 
+<script>
+
+//체크박스 전체 선택
+$(".col-md-12").on("click", "#agreeAll", function () {
+	
+  var checked = $(this).is(":checked");
+
+  if(checked){
+  	$(this).parents(".col-md-12").find('input').prop("checked", true);
+  } else {
+  	$(this).parents(".col-md-12").find('input').prop("checked", false);
+  }
+});
+
+function btnCheck() {
+	var personalInfo = $("#agree01");
+	
+	if(personalInfo.is(':checked') == false){
+		alert("필수 항목을 체크해주세요.")
+		return;
+	}	
+	var copyright = $("#agree02");
+	
+	if(copyright.is(':checked') == false){
+		alert("필수 항목을 체크해주세요.")
+		return;
+	}
+	
+	var marketing = $("#agree03");
+	
+	joinHPCheck();
+
+}
+
+//휴대폰 인증 확인
+function joinHPCheck(){
+	
+	var authForm = $('#authForm');
+    //조인타입에 flag 값을 넣어줌
+	/////////////////////////해당URL가져온후문자열정리//////////////////////////////
+	var url = document.URL;
+	//var tmpUrl = url.split("?");
+	//var reqURL_result = tmpUrl[0];
+	var urlStr = url.split("/");
+	var urlStr_1 = urlStr[3];
+	var urlStr_2 = urlStr[4];
+	var urlStr_3 = urlStr[5];
+	var urlStr_4 = urlStr[6];
+
+	var reqURL;
+	if(urlStr_3 == null){
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2;
+	}else if(urlStr_4 == null){
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3;
+	}else{
+		reqURL = "/" + urlStr_1 + "/" + urlStr_2 + "/" + urlStr_3 + "/" + urlStr_4;
+	}
+	/////////////////////////해당URL가져온후문자열정리//////////////////////////////
+
+	$('#reqURL').attr("value", reqURL);
+	$('#firstURL').attr("value", urlStr[0]);
+	$('#secondURL').attr("value", urlStr[2]);
+	
+	console.log($('#reqURL').val()); // /beanSoup/agreement
+	console.log($('#firstURL').val()); // http:
+	console.log($('#secondURL').val()); // localhost:8080
+	
+	//return;
+	
+	var PCC_window = window.open('', 'PCCV3Window', 'width=430, height=560, resizable=1, scrollbars=no, status=0, titlebar=0, toolbar=0, left=300, top=200' );
+	authForm.attr("action", "/input_seed.jsp");
+	authForm.attr("target", "PCCV3Window");
+	authForm.submit();
+
+	if(PCC_window == null){
+		alert(" ※ 윈도우 XP SP2 또는 인터넷 익스플로러 7 사용자일 경우에는 \n    화면 상단에 있는 팝업 차단 알림줄을 클릭하여 팝업을 허용해 주시기 바랍니다. \n\n※ MSN,야후,구글 팝업 차단 툴바가 설치된 경우 팝업허용을 해주시기 바랍니다.");
+   	}
+
+}
+</script>
+</body>
+</html>

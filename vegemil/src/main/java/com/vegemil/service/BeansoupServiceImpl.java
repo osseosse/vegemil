@@ -12,6 +12,8 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.contest.PaintingContestDTO;
 import com.vegemil.mapper.BeansoupMapper;
 import com.vegemil.paging.PaginationInfo;
 
@@ -162,6 +164,16 @@ public class BeansoupServiceImpl implements BeansoupService{
 	@Override
 	public int selectBeansoupVideoCount(BeansoupVideoDTO param) {
 		return beansoupMapper.selectBeansoupVideoCount(param);
+	}
+
+	@Override
+	public int submitPaintingPoetWork(PaintingContestDTO paintingContestDTO) {
+		return beansoupMapper.insertPaintingContest(paintingContestDTO);
+	}
+
+	@Override
+	public List<PaintingContestDTO> findAllSubmitList(PaintingContestDTO searchDTO) {
+		return beansoupMapper.selectPaintingContestList(searchDTO);
 	}
 
 	

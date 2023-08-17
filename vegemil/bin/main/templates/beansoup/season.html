@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<th:block class="white" th:replace="fragments/beansoup/head :: headFragmentContestVer"></th:block>	
+	<script th:src="@{/webzine/js/kakao.min.js}"></script>
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->		        
+		<!-- ================================ 
+				Content
+		================================ -->
+        <div class="container100 pb100  bg_seoson1111" >
+		<div class="container">
+			<div class="row ">
+				<div class="">
+					<div class="wView"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/01.jpg"  usemap="#Map"/>
+					<map name="Map">
+					  <area shape="rect" coords="46,28,170,113" href="https://www.vegemil.co.kr/" title="정식품"  target="_blank">
+					  <area shape="rect" coords="183,2354,627,2453" href="#" onClick="alert('준비중입니다.')">
+					</map>
+					</div>
+					<div class="mView">
+						<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m01.jpg" /></p>
+						<p><a href="#" onClick="alert('준비중입니다.')"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m02.jpg" /></a></p>
+						<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m03.jpg" /></p>
+					</div>
+					<div><a href="#" onClick="alert('준비중입니다.')"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/02.jpg" alt="참가 접수하러가기"/></a></div>
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/03.jpg" alt="간단요리사 cf"/></div>
+					<div class="bg_pink">
+						<p class="y_size"><iframe   src="https://www.youtube.com/embed/5XKc6mJDmfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+					</div>
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/04.jpg" alt="간단요리사 토마토"/></div>
+					<div class="bg_yellow">
+						<p class="y_size"><iframe   src="https://www.youtube.com/embed/9d4KBs3JJmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+					</div>
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/05.jpg" alt="밀푀유나베"/></div>
+					<div class="bg_yellow">
+						<p class="y_size"><iframe   src="https://www.youtube.com/embed/UiOu_F9CvJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+					</div>
+	
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/06.jpg" alt="동치미국수"/></div>
+					<div class="bg_yellow">
+						<p class="y_size"><iframe   src="https://www.youtube.com/embed/HBovPVPDAJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+					</div>
+	
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/07.jpg" alt="팥콩국수"/></div>
+					<div class="bg_yellow">
+						<p class="y_size"><iframe   src="https://www.youtube.com/embed/IHF4uWLHJQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+					</div>
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/08.jpg" /></div>
+					<div><a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=4&cateCode=20000268&pCateCode=20000002" target="_blank"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/09.jpg" alt="제품 구매하러 가기"/></a></div>
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/10.jpg" /></div>
+				</div>
+				<div class="">
+					<div class="bg_green">
+						<!-- 공유기능 확인필요 -->
+						<ul class="season-sns">
+							<li><p><a onclick="kakaostory(); return;" target="_blank"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/sns01.png" alt="카카오"/></a></p></li>
+							<li><p><a href="https://www.instagram.com/vegemil.official/"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/sns02.png" alt="인스타그램"/></a></p></li>
+							<li><p><a onclick="facebook(); return;" target="_blank"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/sns03.png" alt="페이스북"/></a></p></li>
+							<li><p><a onclick="blog(); return;" target="_blank"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/sns04.png" alt="블로그"/></a></p></li>
+							<li><p><a onclick="contestUrlCopy(); return;" target="_blank"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/sns05.png" alt="링크"/></a></p></li>
+						</ul>
+						<div class="q01"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/q01.png" /></div>
+						<dl class="kakaoQRWrap ">
+							<dd class="kakaobtn">
+								<p><a href="https://open.kakao.com/o/gccR3Qzf?rt=O009"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/q02.png" alt="카톡문의 바로가기"/></a></p>
+								<p><a href="https://open.kakao.com/o/gccR3Qzf?rt=O009"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/q03.png" alt="카톡문의 바로가기"/></a></p>
+							</dd>
+							<dd class="kakaoQR">
+								<p><a href="https://open.kakao.com/o/gccR3Qzf?rt=O009"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/q04.png" alt="카톡문의 바로가기"/></a></p>
+								
+							</dd>
+						</dl>
+					</div>
+					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/info.jpg" /></div>
+				</div>
+			</div><!-- //row -->
+		</div>
+	</div><!-- // container -->
+	<script type='text/javascript'>
+	//<![CDATA[	
+		var uri = window.location.href;
+		var title = "제철요리 그림 동시 대회";
+		var image = "https://image.edaymall.com/images/vegemil/beansoup/img/season/og.jpg";
+		var url = "https://image.edaymall.com/images/dcf/webzine/dcf_logo.jpg";
+		var kakaoUri = '';
+	    //트위터
+		function twitter(uri){
+		
+			var win = window.open("http://twitter.com/intent/tweet?text=" + encodeURIComponent(title) + " " + encodeURIComponent(uri), 'twitter', 'width=500,height=364,scrollbars=no,resizable=no');
+			
+			if(win){
+				win.focus();
+			}
+		}
+		
+		//페이스북
+		function facebook() {
+		    urif = uri + "?utm_source=facebook&utm_medium=contents&utm_campaign=kidsfesta";		    
+		    		
+	        url2 = "http://www.facebook.com/sharer.php?u=" + urif;
+			url2 = url2.split("#").join("%23");
+			url2 = encodeURI(url2);
+			
+			//alert(url2);
+			console.log(url2);			
+			window.open(url2);
+			
+		}	
+		
+		function blog() {
+			
+			urib = uri + "?utm_source=naver_blog&utm_medium=contents&utm_campaign=kidsfesta";
+			console.log(urib);			
+		    window.open("http://blog.naver.com/openapi/share?url=" + encodeURIComponent(urib) + "&title=" + encodeURIComponent(title));
+		}
+		
+		//주소복사
+		function contestUrlCopy() {
+		   
+		   var isIE = false;
+		   var agent = navigator.userAgent.toLowerCase();
+		   if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
+			    isIE = true;
+		   }
+		
+		   if(isIE){
+		   if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?"))
+		       window.clipboardData.setData("Text",document.location.href);
+		   }else{
+		       temp = prompt("Ctrl+C를 눌러 주소를 클립보드로 복사하세요.",document.location.href+'?utm_source=homepage&utm_medium=button&utm_campaign=kidsfesta');
+		   }
+		} 
+		
+	// 	$("meta[property='og\\:image']").attr("content", url );
+	// 	$("meta[property='og\\:url']").attr("content", window.location.href );
+		$("meta[property='og\\:description']").attr("content", remark.substr(0, 50) + '...' );
+		
+	//]]>
+	</script>
+	<script type='text/javascript'>
+		//<![CDATA[																																	
+		    Kakao.init('69dcb1eae2476d998ca3272b99b45897');
+		    var title = $(document).find("title").text();							
+		    function kakaostory(){
+		    // 스토리 공유 버튼을 생성합니다.
+		        Kakao.Story.share({
+				    url: window.location.href + '?utm_source=kakao&utm_medium=homepage&utm_campaign=kidsfesta',
+				    text: title
+			    });
+		    }
+		//]]>
+	</script>
+	<!-- ================================ 
+			// Content
+	================================ -->
+
+      <!-- ================================ 
+       			 Footer
+      ================================ -->
+     	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+      <!-- ================================ 
+       			 // Footer
+      ================================ -->
+    </body>
+</html>

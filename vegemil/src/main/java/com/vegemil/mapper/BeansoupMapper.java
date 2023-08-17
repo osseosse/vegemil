@@ -8,6 +8,8 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.contest.PaintingContestDTO;
 
 @Mapper
 public interface BeansoupMapper {
@@ -30,4 +32,10 @@ public interface BeansoupMapper {
 	//m_beanSoup_video
 	public List<BeansoupVideoDTO> selectBeansoupVideoList(BeansoupVideoDTO beansoupVideoDTO);
 	public int selectBeansoupVideoCount(BeansoupVideoDTO beansoupVideoDTO);
+	
+	//23년 08월 오픈~ 그림 동시 대회 
+	public int insertPaintingContest(PaintingContestDTO paintingContestDTO);
+	public List<PaintingContestDTO> selectPaintingContestList(PaintingContestDTO searchDTO);
+	public int updatePaintingContestPrize(String id, String prize);
+	
 }

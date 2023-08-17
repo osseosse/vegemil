@@ -131,12 +131,7 @@
 		<!-- LIMIT
 			#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex} -->
 	</select>
-	
-	
-	
-	
-	
-	
+
 	<select id="selectBeansoupEventCount" parameterType="com.vegemil.domain.BeansoupEventDTO" resultType="int">
 		SELECT
 			COUNT(*)
@@ -235,5 +230,131 @@
 			
 	</select> -->
 	
-
+	<!-- ///////////////// [m_beansoup_painting_contest] 2308 그림 동시 대회 ///////////////// -->
+	<sql id="PaintingContestColumns">
+		id, 
+		section, 
+		material, 
+		painting_filename, 
+		painting_saved_filename, 
+		painting_desc, 
+		guardian_name, 
+		guardian_ph, 
+		guardian_addr, 
+		contestant_name, 
+		contestant_birth, 
+		contestant_grade, 
+		contest_root, 
+		beansoup_awareness,
+		insert_date,
+		update_date
+	</sql>
+	
+	<!-- 그림 동시 대회 지원 -->
+	<insert id="insertPaintingContest" parameterType="com.vegemil.domain.contest.PaintingContestDTO">
+		/* insertPaintingContest by BeansoupMapper.xml */
+		INSERT INTO m_beansoup_painting_contest (
+			section, 
+			material, 
+			painting_filename, 
+			painting_saved_filename, 
+			painting_desc, 
+			guardian_name, 
+			guardian_ph, 
+			guardian_di,			
+			contestant_name, 
+			contestant_birth, 
+			contestant_grade, 
+			contest_root, 
+			beansoup_awareness,
+			zip_code,
+			addr1,
+			addr2,
+			insert_time,
+			update_time
+		) VALUES (
+			  #{section}
+			, #{material}
+			, #{paintingFilename}
+			, #{paintingSavedFilename}
+			, #{paintingDesc}
+			, #{guardianName}
+			, #{guardianPh}
+			, #{guardianDI}			
+			, #{contestantName}
+			, #{contestantBirth}
+			, #{contestantGrade}
+			, #{contestRoot}
+			, #{beansoupAwareness}
+			, #{zipCode}
+			, #{addr1}
+			, #{addr2}
+			, NOW()
+			, NOW()
+		)
+	</insert>
+	
+	<!-- 동시 그림 참가자 리스트 조회 -->
+	<select id="selectPaintingContestList" parameterType="com.vegemil.domain.contest.PaintingContestDTO" 
+													resultType="com.vegemil.domain.contest.PaintingContestDTO">
+		SELECT * 
+		FROM m_beansoup_painting_contest
+		WHERE 1=1 
+		<!-- 부문 검색 들어왔을때 -->
+		<if test="section != null and section != ''">
+			AND section LIKE CONCAT('%', #{section} ,'%')
+		</if>
+		<!-- 주제 키워드 검색 들어왔을때 -->
+		<if test="material != null and material != ''">
+			AND material LIKE CONCAT('%', #{material} ,'%')
+		</if>
+		<!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != ''">
+            <choose>
+                <!-- 검색 유형이 있을 때 -->
+                <when test="searchType != null and searchType != ''">
+                    <choose>
+                        <when test="'guardianName'.equals( searchType )"> <!-- 보호자 이름 -->
+                            AND guardian_name LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'contestantName'.equals( searchType )"> <!-- 참가자 이름 -->
+                            AND contestant_name LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'section'.equals( searchType )"> <!-- 부문(나이) -->
+                            AND section LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                        <when test="'material'.equals( searchType )"> <!-- 선택 시제 -->
+                            AND material LIKE CONCAT('%', #{searchKeyword}, '%')
+                        </when>
+                    </choose>
+                </when>
+                <!-- 전체 검색일 때 때 -->
+                <otherwise>
+                    AND (
+                        section LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR material LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR contestant_name LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR guardian_name LIKE CONCAT('%', #{searchKeyword}, '%')
+                        OR painting_desc LIKE CONCAT('%', #{searchKeyword}, '%')
+                    )
+                </otherwise>
+            </choose>
+        </if>
+        ORDER BY ID DESC		
+	</select>
+	
+	<!-- 동시 그림 순위 선정 -->
+	<update id="updatePaintingContestPrize" parameterType="String">
+		UPDATE 
+			m_beansoup_painting_contest
+		SET
+			prize = #{prize},
+			update_date = NOW()
+		WHERE 
+			id = #{id} 	
+	</update>
+	
+	<!-- 지원서 삭제 -->
+	
+	
 </mapper>

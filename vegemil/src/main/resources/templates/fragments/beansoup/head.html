@@ -93,4 +93,82 @@
     </script>
     
 </head>
+
+<head th:fragment="headFragmentContestVer">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="정식품 간단요리사 어린이 동시 그림대회">
+	<meta name="Keywords" content="간단요리사, 요리용 육수, 간단해지는 요리, 고민없이, 물없이, 실패없이, 시원한 채소육수, 담백한 채소육수, 냉요리용" />
+	<meta property="og:title" content="정식품 간단요리사"> 
+	<meta property="og:url" content="https://www.vegemil.co.kr/beanSoup/season"> 
+	<meta property="og:image" content="https://image.edaymall.com/images/vegemil/beansoup/img/season/og.jpg" /> 
+	<meta property="og:description" content="정식품 간단요리사 어린이 동시 그림대회"/> 
+    <meta name="author" content="OSSE">
+    <title>정식품 간단요리사</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/><!-- 파비콘 추가 -->
+    <link th:href="@{/beansoup/css/reset.css}" rel="stylesheet">
+    <!-- 추천렛피 -->
+    <link rel='stylesheet' href='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.css'>
+    <!-- 리뷰슬라이드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+    <link th:href="@{/beansoup/css/review.css}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/beansoup/css/bootstrap.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/beansoup/css/style.css}" rel="stylesheet">
+    <!-- //리뷰슬라이드 -->
+    <script th:src="@{/beansoup/js/jquery.1.11.1.min.js}"></script>
+    <script th:src="@{/beansoup/js/jquery.touchSwipe.1.6.min.js}"></script>
+    <script th:src="@{/beansoup/js/prrple.slider.js}"></script>
+    <script th:src="@{/beansoup/js/design.js}"></script>
+	<script th:src="@{/beansoup/js/grid.js}"></script>
+	<script th:src="@{/beansoup/js/plugins.min.js}"></script>
+	
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+
+		if (window.location.protocol == "http:") {
+			if(window.location.hostname == 'vegemil.co.kr' || window.location.hostname == "www.vegemil.co.kr") {
+				window.location.href = window.location.href.replace('http:', 'https:');
+			}
+		}
+	
+	/*]]>*/
+	</script>
+    
+    <script type="text/x-javascript">
+	(function(w, d, a){
+	    w.__beusablerumclient__ = {
+	        load : function(src){
+	            var b = d.createElement("script");
+	            b.src = src; b.async=true; b.type = "text/x-javascript";
+	            d.getElementsByTagName("head")[0].appendChild(b);
+	        }
+	    };w.__beusablerumclient__.load(a);
+	})(window, document, "//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5");
+	</script>
+    
+    <!-- Google tag (gtag.js) 구버전-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141294099-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-141294099-1');
+	</script>
+     
+     <!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1YK5SP1WL"></script> 
+	<script> 
+	    window.dataLayer = window.dataLayer || []; 
+	    function gtag(){dataLayer.push(arguments);} 
+	    gtag('js', new Date()); gtag('config', 'G-S1YK5SP1WL'); 
+	</script>
+	<!-- // Google tag (gtag.js)-->
+
+    
+</head>
 </html>

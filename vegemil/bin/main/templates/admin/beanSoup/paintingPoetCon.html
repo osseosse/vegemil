@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>그림동시대회</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script th:src="@{/app-assets/admin/beanSoup/paintingPoetCon.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+	    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css}">
+		<script th:src="@{https://cdn.jsdelivr.net/npm/flatpickr}"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+        	<div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">그림동시대회 지원서 관리</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">간단요리사 콘테스트</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">그림동시대회
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+            	<form id="frm" name="frm" method="POST">
+                	<!-- Analytics card section -->
+	                <section id="analytics-card">
+						<div class="row">
+							<!-- 조회 -->
+							<div class="col-md-12 col-12">
+								<div class="card">
+									<div class="card-header">
+										<h4 class="card-title">조회</h4>
+									</div>
+									
+									<div class="card-body">
+										<div class="row mb-1">
+											<div class="col-6">
+												<div class="row mt-1">
+													<div class="col-md-2 col-3 mt-1">
+														부문
+													</div>
+													<div class="col-md-10 col-6">
+			                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-1" value="미취학"/>
+			                                                <label class="btn btn-outline-primary" for="btnradio1-1">미취학</label>
+			
+			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-2" value="초등저학년"/>
+			                                                <label class="btn btn-outline-primary" for="btnradio1-2">초등 저학년</label>
+			
+			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-3" value="초등고학년"/>
+			                                                <label class="btn btn-outline-primary" for="btnradio1-3">초등 고학년</label>
+
+			                                            </div>
+													</div>
+												</div>
+												<div class="row mt-1">
+													<div class="col-md-2 col-3 mt-1">
+														제철재료
+													</div>			
+													<div class="col-md-10 col-6">
+			                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+			                                                <input type="radio" class="btn-check" name="material" id="material1-1" value="고사리"/>
+			                                                <label class="btn btn-outline-primary" for="material1-1">고사리</label>
+			
+			                                                <input type="radio" class="btn-check" name="material" id="material1-2" value="봄나물"/>
+			                                                <label class="btn btn-outline-primary" for="material1-2">봄나물</label>
+			
+			                                                <input type="radio" class="btn-check" name="material" id="material1-3" value="연근"/>
+			                                                <label class="btn btn-outline-primary" for="material1-3">연근</label>
+			                                                
+			                                                <input type="radio" class="btn-check" name="material" id="material1-4" value="완두콩"/>
+			                                                <label class="btn btn-outline-primary" for="material1-4">완두콩</label>
+			                                                
+			                                                <input type="radio" class="btn-check" name="material" id="material1-5" value="고구마"/>
+			                                                <label class="btn btn-outline-primary" for="material1-5">고구마</label>
+			                                                
+			                                                <input type="radio" class="btn-check" name="material" id="material1-6" value="고구마s"/>
+			                                                <label class="btn btn-outline-primary" for="material1-6">고구마</label>			      
+			                                            </div>
+													</div>
+												</div>
+												<div class="row mt-1">
+													<div class="col-md-2 col-3 mt-1">
+														상세검색
+													</div>
+													<div class="col-md-6 col-6">
+														<input type="text" id="searchKeyword" class="form-control" name="searchKeyword" placeholder="제목, 내용, 이름에 포함된 단어를 입력하세요" />
+													</div>
+												</div>
+											</div>
+											<!-- 차트 -->
+											<div class="col-md-3 col-6">
+												<canvas id="bar-chart" width="300" height="230"></canvas>												
+											</div>
+										</div>
+										<hr />
+										<div class="row">
+											 <div class="col-sm-12">
+												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
+												<button type="reset" class="btn btn-outline-secondary">초기화</button>												
+												<!-- <input type="hidden" class="form-control" name="material" id="material" value=""/> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //조회 -->
+						
+	                    </div>
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+				<form id="form" name="form" method="POST">
+					<section id="basic-horizontal-layouts">
+						<div class="row" >
+							<div class="col-12">
+								<div class="card">								
+									<div class="table-responsive">
+										<table class="datatables-basic table table-bordered text-center f13 paddingType">
+											<colgroup>
+												<col width="1%">
+												<col width="5%"> <!-- 부문 -->
+												<col width="8%"> <!-- 키워드 -->
+												<col width="8%"> <!-- 보호자 이름 -->
+												<col width="8%"> <!-- 참가자 이름 -->
+												<col width="10%"> <!-- 연락처 -->
+												<col width="30%"><!-- 작품 -->
+												<col width="10%"> <!-- 등수 -->
+												<col width="8%"> <!--작품보기 -->
+											</colgroup>
+											<thead>
+												<tr>
+													<th>No.</th>
+													<th>부문</th>
+													<th>키워드</th>
+													<th>보호자</th>
+													<th>참가자</th>
+													<th>연락처</th>
+													<th>설명</th>
+													<th>등수</th>
+													<th>작품보기</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+	                </section>
+	            </form>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <form id="factPostForm" method="POST">
+    	<input type="hidden" id="sIdx" name="sIdx" />
+    	<input type="hidden" id="sBest" name="sBest" />
+    	<input type="hidden" id="action" name="action" />
+    </form>
+    
+    </th:block>
+    
+</html>

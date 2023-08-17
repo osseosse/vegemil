@@ -1,12 +1,32 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+		
 <div id="gnb" th:fragment="headerFragment">
+	<script type="text/javascript">
+		$(document).ready(function(){
+	
+		  var theDay = new Date('2023-08-18 12:00:00'); 
+		  timeCheck(theDay);
+	
+		  
+		});
+		
+		function timeCheck(theDay){
+			var today = new Date();
+			if(today >= theDay){
+				 // 제어하고 싶은 코드 그때그떄 변경// 			 
+				 $("#seasons").css("display","block");
+			}
+		}
+		
+	</script>		
 	<div class="gnbBG"></div>
 	<div class="logo">
 		<a href="/beanSoup"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/logo.png"  alt="로고"></a>
 	</div>
 	<ul>
+		<li style="display:none;" id="seasons"><a href="/beanSoup/Season" class="dep01">제철요리</a></li>
 		<li><a href="/beanSoup/mall" class="dep01">구매처</a></li>
 		<li class="mView">
 			<a href="/beanSoup/video" class="dep01">소식</a>
@@ -27,4 +47,5 @@
 	  <a href="/" class="dcf"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/q_dcf.png"> 정식품사이트</a>
 	</div>
 </div>
+
 </html>

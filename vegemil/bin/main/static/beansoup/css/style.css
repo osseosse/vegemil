@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 /* ----------------------------------------------- */
@@ -116,7 +116,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#gnb ul li ul {display:none; height:70px;position:absolute; top:65px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ������ġ���� */
 	#gnb ul li.active > a {color:#a7c541}
 	#gnb ul li:hover > a  {color:#a7c541}
-	/* 
+	/*
 	1������ �����޴� ������ CSS JS .drop Ŭ���� �����ϰ�(�Ʒ� hover������) �ش� CSS Ȱ��ȭ �Ұ�! 
 	#gnb ul li.active > ul { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bar_line.gif) no-repeat center 0px;  } 
 	*/ 
@@ -378,7 +378,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	ul.foot_ul li {display:inline-block; vertical-align:top}
 	ul.foot_ul li:first-child {margin-right:30px}
 	#movetopbt {z-index:1000}
-	.btn_top {position:absolute; right:50px; top:0; cursor: pointer; z-indeX:1000; border:3px solid red}
+	.btn_top {position:absolute; right:50px; top:0; cursor: pointer; z-indeX:1000; }
 	footer .col-md-12.add {padding-left:160px}
 
 	/* -------------------- */
@@ -763,11 +763,66 @@ body {margin:0; padding:0; overflow-x:hidden}
 	/* //3000 ���޴�
 	----------------------- */
 
+	/* -------------------- */
+	/* 3000 season
+	----------------------- */
+	.bg_seoson {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yy.jpg) repeat scroll 0px 0px;  }
+	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px;  }
+	.bg_pink {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_pink.jpg) repeat-y ;  background-size: contain }
+	.bg_yellow {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yellow.jpg) repeat ; background-size: contain  }
+	.bg_green ul {position:relative; width:95%; margin:0 auto}
+	.bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
+	.y_size {position:relative; text-align:center}
+	.y_size iframe {max-width:1100px; width:80%; height:610px; margin:0 auto; text-align:center; border-radius:20px }
+	dl.kakaoQRWrap {position:relative; margin:0 auto; text-align:center; padding-bottom:100px;}
+	dl.kakaoQRWrap dd {display:inline-block; vertical-align:top; margin-top:50px; }
+	dl.kakaoQRWrap dd.kakaobtn {position:relative; width:40%; }
+	dl.kakaoQRWrap dd.kakaobtn p:first-child {margin-bottom:30px;}
+	dl.kakaoQRWrap dd.kakaoQR {position:relative; width:30%; margin-left:7%}
+	.q01 {position:relative; text-align:center; margin-top:200px; margin-bottom:0px}
+	/*position: absolute;top: 50%; left: 50%;background: #f00;transform: translate(-50%, -50%); display:inline-block*/
+	.bg_green ul.season-sns {width:100%; text-align:center}
+	.bg_green ul.season-sns li {width:15%; margin:0 5px; }
+	.bg_green ul.season-sns li img {width:100%}
+	p {margin:0; padding:0; outline:0; bordeR:0}
+	img {margin:0; padding:0; outline:0;bordeR:0}
+	.fake-btn{ position:absolute;  width:450px; height:100px; top:2355px; left:180px; z-index:100;  }
+	.fake-btn a {display:inline-block;width:100%; height:100%}
 
 
+	/* 3000 popup */
+	.pop_wrap_recipe {background:#eeeeee; padding:0px 0px; max-height:800px; overflow-y:scroll; overflow-x:hidden;  border-radius:0px; }
+	.pop_wrap_recipe {width:100%; margin:0 auto}
+	.pop_wrap_recipe div.popBasePW {width:100%; position:relative; }
+	.popTextbox {position:relative;  heighT:300px; padding:10px 10px; bordeR:1px solid #E6E6E6; width:100%; line-height:140%; overflow-y:scroll; width:100%; background:#fff; font-size:13px}
+	div.pop_recipeBase {width:100%; position:relative; }
+	div.pop_recipeBase.w400 {width:400px; position:relative; }
+	div.pop_recipeBase p.btn_pop_close {position:absolute; right:10px; top:15px; margin:0; padding:0;  }
+	.w800 {max-width:800px}
+	.w1000 {max-width:1000px}
+	textarea.h150 {height:150px}
+	.relative {position:relative}
 
-
+	/* 3000 certifi */
+	.subTitle {font-size:20px; font-weight:400; color:#383838; text-align:center}
+	.checkStyle input[type="checkbox"]:checked + label span { background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/checkbox.png) -30px top no-repeat; background-size:60px}
 	
+	/* checkbox Design */
+	.checkStyle input[type="checkbox"] {display:none;}
+	.checkStyle input[type="checkbox"] + label {color:#343434;}
+	.checkStyle input[type="checkbox"] + label span {
+		display:inline-block;
+		width:30px;
+		height:30px;
+		margin:-5px 6px 0 0;
+		vertical-align:middle;
+		background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/checkbox.png) left top no-repeat;
+		cursor:pointer;background-size:60px
+	}
+	.checkStyle input[type="checkbox"]:checked + label span { background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/checkbox.png) -30px top no-repeat; background-size:60px}
+	.agree_season {position:relative; font-size:25px}
+	.agree_txt_box {position:relative; font-size:14px; text-align:left; width:100%; height:220px; padding:4%  ; background:#f3f3f3 ;color:#a4a4a4; border:0; border-radius:20px}
+	.btn_base {background:none; border:0; outline:none}
 }
 
 
@@ -1011,9 +1066,9 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	-------------------------- */
 	#gnb > ul {max-width:1400px; width:100%;  position:relative;  margin:0; padding:0;   margin:0 auto ;   }
 	#gnb > ul .logo {position:absolute; top:25px; left:0; }
-	#gnb > ul li.first { margin-left:38%}
+	#gnb > ul li.first { margin-left:33%}
 	#gnb li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 30px 30px 30px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
-	#gnb li {margin-left:2%}
+	#gnb li {margin-left:3%}
 
 	/* -------------------- */
 	/* 1400 ���� > font-ani
@@ -1088,7 +1143,14 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 }
 
-
+@media (max-width: 1200px) {
+	#gnb li {margin-left:1%; }
+	#gnb li a.dep01 {padding:30px 20px 30px 20px}
+	.subTitle  {font-size:15px}
+	.agree_season {font-size:18px}
+	.certifi01 {width:200px; margin:0 auto}
+	.certifi02 {width:250px; margin:50px auto}
+}
 
 @media (max-width: 990px) {
 	body { overflow-x:hidden }
@@ -1165,7 +1227,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	#gnb .logo img {width:80px}
 	#gnb > ul li.first { margin-left:100px}
 	#gnb > ul li ul { border:1px solid blue}
-	#gnb li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:21px 5px 18px 5px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
+	#gnb li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 15px 18px 15px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 	#gnb ul li ul.none li a {display:none; bordeR:0}
 	#gnb .gnbBG {opacity:0}
 	
@@ -1503,11 +1565,31 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.mt180 {margin-top:90px}
 	.mt190 {margin-top:95px}
 	.mt200 {margin-top:50px}
+
+	.q01 {width:150px; text-align:center; margin:0 auto; margin-bottom:10px; margin-top:100px}
+	.bg_green ul.season-sns {width:100%; text-align:center}
+	.bg_green ul.season-sns li {width:15%; margin:0 5px; }
+	.bg_green ul.season-sns li img {width:100%}
+	.y_size iframe {max-width:400px; width:80%; height:220px; margin:0 auto; text-align:center; border-radius:20px }
+	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px; background-size:1px 80px  }
+/*
+	.bg_green ul {position:relative; width:95%; margin:0 auto}
+.bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
+*/
+
+
 }
 
 
 
-
+@media (max-width: 720px) {
+	#gnb li {margin-left:0%; }
+	#gnb li a.dep01{ font-size:13px;padding:22px 5px 18px 5px; }
+	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px; background-size:1px 50px  }
+	p {margin:0; padding:0; outline:0; bordeR:0}
+	img {margin:0; padding:0; outline:0;bordeR:0}
+	.btn_pop_close img {width:40px}
+}
 
 /*================================ 
     MAIN > ���� �����̵� PRRPLE SLIDER
@@ -1643,4 +1725,5 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 .slider .slider_pause.hidden{
   display:none !important;
 }
+
 

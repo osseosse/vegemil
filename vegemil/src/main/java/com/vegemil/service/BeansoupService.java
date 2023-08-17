@@ -7,6 +7,8 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.contest.PaintingContestDTO;
 
 public interface BeansoupService {
 	
@@ -30,6 +32,12 @@ public interface BeansoupService {
 	public List<BeansoupVideoDTO> selectBeansoupVideoList(BeansoupVideoDTO beansoupVideoDTO);
 	public int selectBeansoupVideoCount(BeansoupVideoDTO beansoupVideoDTO);
 
+	//그림동시대회
+	public int submitPaintingPoetWork(PaintingContestDTO paintingContestDTO);
+	// 지원서 목록
+	public List<PaintingContestDTO> findAllSubmitList(PaintingContestDTO searchDTO);
+	// 등수 매기기
+	
 	//추가작업용
 	public Map<String, Integer> mappingCount(List<BeansoupDTO> beansoupList);
 }
