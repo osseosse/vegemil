@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -44,12 +45,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
-import com.vegemil.domain.AdminBeanSoupNewsDTO;
 import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
-import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 import com.vegemil.service.BeansoupService;
 import com.vegemil.util.UiUtils;
@@ -278,7 +277,8 @@ public class BeanSoupController extends UiUtils {
 			paintingContest.setGuardianDI(diKey);
 			// 다음 그림 등록 페이지에서 렌더링 될 것들
 			model.addAttribute("paintingContest", paintingContest);
-			returnHtml = "beansoup/submitWork";
+			returnHtml = "beansoup/submitWork"; 
+			//returnHtml = "beansoup/season"; // 임시조치
 		} else {
 			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
 			out.flush();
@@ -300,14 +300,15 @@ public class BeanSoupController extends UiUtils {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		Date date = new Date();
 		try {
 			String originalName = fileName.getOriginalFilename();
 			if(!"".equals(originalName)) {
 				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
 				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + file;
-				Path savePath = Paths.get("D:/test/"+savefileName);
-				
+				String savefileName = uuid + "_" + date.toString();
+				//Path savePath = Paths.get("D:/test/"+savefileName);
+				Path savePath = Paths.get(uploadPath + "/upload/beansoupCon/" + savefileName);
 				fileName.transferTo(savePath);
 				paintingContestDto.setPaintingFilename(originalName);
 				paintingContestDto.setPaintingSavedFilename(savefileName);
@@ -334,14 +335,16 @@ public class BeanSoupController extends UiUtils {
 	}
 	
 	// 콘테스트 어드민
-	@GetMapping("/admin/manage/beanSoup/PaintingPoetCon")
-	public String getPaintingPoetContAdmin(Model model, @RequestParam(required = false) SearchDTO searchDTO) {
+	@GetMapping("/admin/manage/beanSoup/paintingPoetCon")
+	public String getPaintingPoetContAdmin() {
 		
-		return "admin/beanSoup/PaintingPoetCon";
+		return "admin/beanSoup/paintingPoetCon";
 	}
 	
 	@GetMapping("/admin/manage/beanSoup/paintingPoetConList")
-	public @ResponseBody JsonObject paintingPoetConList(@ModelAttribute("params") PaintingContestDTO params) {
+	public @ResponseBody JsonObject paintingPoetConList(@ModelAttribute("params") PaintingContestDTO params,
+					@RequestParam Map<String, Object> commandMap)
+	{			
 		
 		List<PaintingContestDTO> pcList = beansoupService.findAllSubmitList(params);
 		JsonObject jsonObj = new JsonObject();

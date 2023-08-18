@@ -173,6 +173,9 @@ public class BeansoupServiceImpl implements BeansoupService{
 
 	@Override
 	public List<PaintingContestDTO> findAllSubmitList(PaintingContestDTO searchDTO) {
+		
+		List<PaintingContestDTO> pcList = beansoupMapper.selectPaintingContestList(searchDTO);
+		
 		return beansoupMapper.selectPaintingContestList(searchDTO);
 	}
 

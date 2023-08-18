@@ -70,14 +70,14 @@
 													</div>
 													<div class="col-md-10 col-6">
 			                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-1" value="미취학"/>
-			                                                <label class="btn btn-outline-primary" for="btnradio1-1">미취학</label>
+			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-1" value="유치부문"/>
+			                                                <label class="btn btn-outline-primary" for="btnradio1-1">유치부문</label>
 			
-			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-2" value="초등저학년"/>
-			                                                <label class="btn btn-outline-primary" for="btnradio1-2">초등 저학년</label>
+			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-2" value="저학년"/>
+			                                                <label class="btn btn-outline-primary" for="btnradio1-2">저학년</label>
 			
-			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-3" value="초등고학년"/>
-			                                                <label class="btn btn-outline-primary" for="btnradio1-3">초등 고학년</label>
+			                                                <input type="radio" class="btn-check" name="section" id="btnradio1-3" value="고학년"/>
+			                                                <label class="btn btn-outline-primary" for="btnradio1-3">고학년</label>
 
 			                                            </div>
 													</div>
@@ -87,25 +87,49 @@
 														제철재료
 													</div>			
 													<div class="col-md-10 col-6">
-			                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-			                                                <input type="radio" class="btn-check" name="material" id="material1-1" value="고사리"/>
-			                                                <label class="btn btn-outline-primary" for="material1-1">고사리</label>
-			
-			                                                <input type="radio" class="btn-check" name="material" id="material1-2" value="봄나물"/>
-			                                                <label class="btn btn-outline-primary" for="material1-2">봄나물</label>
-			
-			                                                <input type="radio" class="btn-check" name="material" id="material1-3" value="연근"/>
-			                                                <label class="btn btn-outline-primary" for="material1-3">연근</label>
-			                                                
-			                                                <input type="radio" class="btn-check" name="material" id="material1-4" value="완두콩"/>
-			                                                <label class="btn btn-outline-primary" for="material1-4">완두콩</label>
-			                                                
-			                                                <input type="radio" class="btn-check" name="material" id="material1-5" value="고구마"/>
-			                                                <label class="btn btn-outline-primary" for="material1-5">고구마</label>
-			                                                
-			                                                <input type="radio" class="btn-check" name="material" id="material1-6" value="고구마s"/>
-			                                                <label class="btn btn-outline-primary" for="material1-6">고구마</label>			      
-			                                            </div>
+														<div class="row">
+				                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+				                                                <input type="radio" class="btn-check" name="material" id="material1-1" value="무"/>
+				                                                <label class="btn btn-outline-primary" for="material1-1">무</label>
+				
+				                                                <input type="radio" class="btn-check" name="material" id="material1-2" value="바지락"/>
+				                                                <label class="btn btn-outline-primary" for="material1-2">바지락</label>
+				
+				                                                <input type="radio" class="btn-check" name="material" id="material1-3" value="봄나물"/>
+				                                                <label class="btn btn-outline-primary" for="material1-3">봄나물</label>
+				                                                
+				                                                <input type="radio" class="btn-check" name="material" id="material1-4" value="주꾸미"/>
+				                                                <label class="btn btn-outline-primary" for="material1-4">쭈꾸미</label>
+				                                                
+				                                                <input type="radio" class="btn-check" name="material" id="material1-5" value="오이"/>
+				                                                <label class="btn btn-outline-primary" for="material1-5">오이</label>
+				                                                
+				                                                <input type="radio" class="btn-check" name="material" id="material1-6" value="토마토"/>
+				                                                <label class="btn btn-outline-primary" for="material1-6">토마토</label>			      
+				                                            </div>
+														</div>
+														<div class="row mt-1">
+				                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+				                                                <input type="radio" class="btn-check" name="material" id="material1-7" value="옥수수"/>
+				                                                <label class="btn btn-outline-primary" for="material1-7">옥수수</label>
+				
+				                                                <input type="radio" class="btn-check" name="material" id="material1-8" value="새우"/>
+				                                                <label class="btn btn-outline-primary" for="material1-8">새우</label>
+				
+				                                                <input type="radio" class="btn-check" name="material" id="material1-9" value="대파"/>
+				                                                <label class="btn btn-outline-primary" for="material1-9">대파</label>
+				                                                
+				                                                <input type="radio" class="btn-check" name="material" id="material1-10" value="배추"/>
+				                                                <label class="btn btn-outline-primary" for="material1-10">배추</label>
+				                                                
+				                                                <input type="radio" class="btn-check" name="material" id="material1-11" value="감자"/>
+				                                                <label class="btn btn-outline-primary" for="material1-11">감자</label>
+				                                                
+				                                                <input type="radio" class="btn-check" name="material" id="material1-12" value="크리스마스"/>
+				                                                <label class="btn btn-outline-primary" for="material1-12">크리스마스</label>
+	      
+				                                            </div>
+														</div>
 													</div>
 												</div>
 												<div class="row mt-1">
@@ -119,7 +143,10 @@
 											</div>
 											<!-- 차트 -->
 											<div class="col-md-3 col-6">
-												<canvas id="bar-chart" width="300" height="230"></canvas>												
+												<canvas id="bar-chart1" width="300" height="230"></canvas>												
+											</div>
+											<div class="col-md-3 col-3">
+												<canvas id="bar-chart2" width="300" height="230"></canvas>												
 											</div>
 										</div>
 										<hr />

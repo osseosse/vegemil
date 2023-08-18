@@ -61,120 +61,349 @@ new daum.Postcode({
 	<!-- ================================ 
 		        // Header
         ================================ -->
-	<!-- ================================ 
-			Content
-	================================ -->
-	<div id="content" style="padding:40px;">
-		<div class="contant1460 text-center" >
-		<form th:action="|@{/beansoup/submitWork}|" th:object="${paintingContest}" method="post" enctype="multipart/form-data">
-			<div class="row mt90h">			
-				<input type="hidden" th:field="*{guardianDI}" />
-				<div class="col-md-12 ">
-					 <ul>
-			            <li>부문</li>
-			            <li>
-			                <select th:field="*{section}" class="sel02 w200 mt10m">
-			                     <option value="0">미취학</option>
-			                     <option value="1">초등학교 저학년(1~3)</option>
-			                     <option value="2">초등학교 고학년(4~6)</option>
-			                </select>
-			            </li>
-			        </ul>
-			        <ul>
-			            <li>시제</li>
-			            <li>
-			                <select th:field="*{material}" class="sel02 w200 mt10m">
-			                     <option value="고사리">고사리</option>
-			                     <option value="옥수수">옥수수</option>
-			                     <option value="강낭콩">강낭콩</option>
-			                     <option value="감자">감자</option>
-			                     <option value="검은콩">검은콩</option>
-			                </select>
-			            </li>
-			        </ul>
-			         <ul>
-			            <li>그림 첨부</li>
-			            <li><input type="file" name="fileName" id="fileName"></li>
-			        </ul>
-			        <ul>
-			            <li>작품설명</li>
-			            <li><textarea rows = "7" cols = "100" name ="paintingDesc"></textarea></li>
-			        </ul>
-			       
-			        <ul>
-			            <li>보호자 성명</li>
-			            <li>
-							<input type="text" th:field="*{guardianName}">
-						</li>
-			        </ul>
-			        <ul>
-			            <li>보호자 연락처</li>
-			            <li>
-							<input type="text" th:field="*{guardianPh}">
-						</li>
-			        </ul>
-			        <ul>
-			            <li>주소</li>
-			            <li>
-			                <input name="txtZipcode" class="inp03" type="text" readonly th:field="*{zipCode}" maxlength="5" placeholder="우편번호"><button type="button" onclick="execPostcode()" class="btnType09 ml10">우편번호검색</button><br>
-			                <input name="txtAddr1" class="inp02 mt10 w700" type="text" th:field="*{addr1}" maxlength="100" readonly="readonly" placeholder="우편번호를 검색하시면 기본 주소가 입력됩니다.">
-			                <input name="txtAddr2" class="inp02 mt10 w700" type="text" th:field="*{addr2}" placeholder="상세주소를 입력해 주세요" maxlength="50">
-			            </li>
-			        </ul>
-			        
-			        <ul>
-			            <li>참가자 성명</li>
-			            <li>
-							<input type="text" th:field="*{contestantName}">
-						</li>
-			        </ul>
-			        <ul>
-			            <li>생년월일</li>
-			            <li>
-							<input type="text" th:field="*{contestantBirth}">
-						</li>
-			        </ul>
-			        <ul>
-			            <li>참가자 학년</li>
-			            <li>
-							<input type="text" th:field="*{contestantGrade}">
-						</li>
-			        </ul>
-			        <ul>
-			            <li>그림동시대회 알게된 경로</li>
-			            <li>
-							<input type="text" th:field="*{contestRoot}">
-						</li>
-			        </ul>
-			        <ul>
-			            <li>간단요리사 사전에 알고 있었는지</li>
-			            <li>
-							<input type="text" th:field="*{beansoupAwareness}">
-						</li>
-			        </ul>
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual 
+<div class="container100 clear" >
+	<div class="row  h500" >
+		<div class="col-lg-12 bg_mall">
+			<div class="hCenter02">
+				<p class="f50 white fw600">구매처</p>
+			</div>
+		</div>
+	</div>
+</div>  
+<!-- // main Visual -->
+<div class="container100 pb100">
+	<div class="container1">
+		<div class="row">
+			<div class="col-lg-12 ">
+				<div class="tcenter">
+					<p class="mt100 certifi02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/write01.jpg" alt="대회 참가를 위한 본인 인증"/></p>
+					<p class="subTitle mt30">* 접수된 파일은 수정이 불가하며, <br class="mView">다자녀일 경우 본인인증을 거쳐 한번 더 접수를 해주세요.</p>
 				</div>
 			</div>
-			<div class="w1160 center0 grayLine mt70">
-				<div class="w560 center0 mb200">
-					<ul class="joinbtnFoot mt50">
-						<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
-						<li><button type="submit" id="joinBtn" class="btnType17 f20 fw500 lh140">작품제출</button></li>
+		</div><!-- //row -->
+		<div class="row w1000 center mt100">
+			<form th:action="|@{/beansoup/submitWork}|" th:object="${paintingContest}" method="post" enctype="multipart/form-data">
+			<input type="hidden" th:field="*{guardianDI}" />
+			<!-- STEP 1 -->
+			<div class="col-md-12">
+				<div class="stepBox center0 mt70">	
+					<span class="greenR">STEP 1</span> <span class="subTitle02">부문선택</span>
+				</div>
+				<div class="agree_season center0 mt30">	
+					<div class="radioStyle">
+						<ul class="school">
+							<li><input type="radio" id="school1" name="section" value="유치부문"/><label for="school1"><span></span>유치부문<b>(5세~7세)</b></label></li>
+							<li><input type="radio" id="school2" name="section" value="저학년"/><label for="school2"><span></span>초등 저학년 부문<b>(1~3학년)</b></label></li>
+							<li><input type="radio" id="school3" name="section" value="고학년"/><label for="school3"><span></span>초등 고학년 부문<b>(4~6학년)</b></label></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- STEP 2 -->
+			<div class="col-md-12">
+				<div class="stepBox center0 mt70">	
+					<span class="greenR">STEP 2</span> <span class="subTitle02">월별 제철 재료 선택</span>
+				</div>
+				<div class="agree_season center0 mt30">	
+					<select class="sel_season" name="material" id="material" >
+						<option value="">제철 재료 선택</option>
+						<option value="무">무	</option>
+						<option value="바지락">바지락</option>
+						<option value="봄나물">봄나물</option>
+						<option value="주꾸미">주꾸미</option>
+						<option value="오이">오이</option>
+						<option value="감자">감자</option>
+						<option value="토마토">토마토</option>
+						<option value="옥수수">옥수수</option>
+						<option value="새우">새우</option>
+						<option value="대파">대파</option>
+						<option value="배추">배추</option>
+						<option value="크리스마스">크리스마스</option>
+					</select>
+					<p class="info">*작품의 소재가 된 제철 재료를 선택해주세요!</p>
+				</div>
+			</div>
+			<!-- STEP 3 + 가이드라인 -->
+			<div class="col-md-12">
+				<div class="stepBox center0 mt70">	
+					<span class="greenR">STEP 3</span> <span class="subTitle02">동시그림 촬영본 첨부</span>
+					<!-- <div class="season_input mt30">
+						<input type="file" name="fileName" id="fileName">
+						<p class="mt10">* 지원되는 파일 업로드 (최대 20MB)</p>
+					</div> -->
+					<div class="mt50" >
+                        <div class="filebox ">
+                            <input class="upload-name" placeholder="첨부파일">
+                            <label for="file">파일찾기</label> 
+                            <input type="file" name="fileName" id="file" >
+                        </div>
+                        <script>
+                        $("#file").on('change',function(){
+                          var fileName = $("#file").val();
+                          $(".upload-name").val(fileName);
+                        });
+                        </script>
+                    </div>
+                    
+					<div class="season_input mt30">
+						<p class="f22">동시그림 한줄소개</p>
+						<div class="mt10">
+							<textarea type="text" class="season_areatxt" name="paintingDesc" id="paintingDesc" maxlength="100"></textarea>
+							<!-- <p id="ceiling" class="text-muted text-right text-sm">100자 이내로 작성<span id="textCount">0자</span></p> -->					
+						</div>
+					</div>
+					
+				</div>
+				<p class="mt100"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/write02.jpg" alt="촬영 가이드라인"/></p>	
+			</div>
+			<!-- STEP 4 -->
+			<div class="col-md-12">
+				<div class="stepBox center0 mt70">	
+					<span class="greenR">STEP 4</span> <span class="subTitle02">개인정보 입력 <b>(필수)</b></span>
+				</div>
+				<div class="season_input mt50">
+					<p class="f22">보호자(법정대리인) 이름</p>
+					<div class="mt20"><input type="text" class="season_areaIn w300" th:field="*{guardianName}" readonly></div>
+				</div>
+				<div class="season_input mt50">
+					<input th:field="*{guardianPh}" hidden/>
+					<p class="f22">보호자(법정대리인) 연락처</p>
+					<div class="mt20">
+						<ul class="ul-tel mt10">
+							<li><input type="text" class="season_areaIn w80"  th:value="${#strings.substring(paintingContest.guardianPh, 0, 3)}" readonly></li>
+							<li class="ml5 mr5">-</li>
+							<li><input type="text" class="season_areaIn w80" th:value="${#strings.substring(paintingContest.guardianPh, 3, 7)}" readonly></li>
+							<li class="ml5 mr5">-</li>
+							<li><input type="text" class="season_areaIn w80" th:value="${#strings.substring(paintingContest.guardianPh, 7, 11)}" readonly></li>
+						</ul>
+					</div>
+				</div>
+				<div class="season_input mt50">
+					<p class="f22">보호자(법정대리인) 주소</p>
+					<input class="w80 mt20 season_areaIn" type="text" alt="우편번호" th:field="*{zipCode}" readonly><span class="btn_type04 "><a href="javascript:void(0);" onclick="execPostcode()" >우편번호찾기</a> </span>
+					<p class="mt10"><input class="add season_areaIn" th:field="*{addr1}" type="text" alt="주소" readonly></p>
+					<p class="mt10"><input class="w600 season_areaIn" th:field="*{addr2}" type="text" alt="세부주소"></p>
+					<p class="info_yellow mt10">대회 수상 시, 입력해주신 연락처와 주소로 상품이 발송되니 정확하게 작성해주세요!</p>
+				</div>
+				<div class="season_input mt30">
+					<p class="f22">참가자 본인 이름</p>
+					<div class="mt20"><input type="text" class="season_areaIn w300" th:field="*{contestantName}"></div>
+				</div>
+				<div class="season_input mt50">
+					<p class="f22">참가자(본인) 생년월일 및 학년</p>					
+					<input type="text" th:field="*{contestantBirth}" hidden="hidden">
+					<ul class="ul-yy mt20">
+						<li>
+							<select class="sel-yy" name="year" id="year">
+								<option value="">년 선택</option>
+								<option value="2023">2023</option>
+								<option value="2022">2022</option>
+								<option value="2021">2021</option>
+								<option value="2020">2020</option>
+								<option value="2019">2019</option>
+								<option value="2018">2018</option>
+								<option value="2017">2017</option>
+								<option value="2016">2016</option>
+								<option value="2015">2015</option>
+								<option value="2014">2014</option>
+								<option value="2013">2013</option>
+								<option value="2012">2012</option>
+								<option value="2011">2011</option>
+								<option value="2010">2010</option>
+								<option value="2009">2009</option>
+							</select>
+						</li>
+						<li>
+							<select class="sel-mm" name="month" id="month">
+								<option value="">월 선택</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</li>
+						<li>
+							<select class="sel-dd" name="day" id="day">
+								<option value="">일 선택</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+							</select>
+						</li>
+					</ul>
+					<div>
+						<select class="sel-sh w100" name="contestantGrade" id="contestantGrade">
+							<option value="">학년선택</option>
+							<option value="초등6">초등6</option>
+							<option value="초등5">초등5</option>
+							<option value="초등3">초등3</option>
+							<option value="초등4">초등4</option>
+							<option value="초등3">초등3</option>
+							<option value="초등2">초등2</option>
+							<option value="초등1">초등1</option>
+							<option value="유치원7세">유치원7세</option>
+							<option value="유치원6세">유치원6세</option>
+							<option value="유치원5세">유치원5세</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- STEP 5 -->
+			<div class="col-md-12 agree_season">
+				<div class="stepBox center0 mt70">	
+					<span class="greenR">STEP 5</span> <span class="subTitle02">대회를 알게된 경로 <b>(선택)</b></span>
+				</div>
+				<div class="checkStyle mt50">
+					<ul class="route-ul season_input ">
+						<li><input type="checkbox" id="route01" name="contestRoot" value="SNS"/><label for="route01"><span></span>SNS</label> </li>
+						<li><input type="checkbox" id="route02" name="contestRoot" value="뉴스 기사"/><label for="route02"><span></span>뉴스 기사</label> </li>
+						<li><input type="checkbox" id="route03" name="contestRoot" value="학교 선생님"/><label for="route03"><span></span>학교 선생님</label></li>
+						<li><input type="checkbox" id="route04" name="contestRoot" value="미술학원 선생님"/><label for="route04"><span></span>미술학원 선생님</label></li>
+						<li><input type="checkbox" id="route05" name="contestRoot" value="당근마켓 배너"/><label for="route05"><span></span>당근마켓 배너</label> </li>
+						<li><input type="checkbox" id="route06" name="contestRoot" value="클래스팅 배너"/><label for="route06"><span></span>클래스팅 배너</label> </li>
+						<li class="etc">
+							<input type="checkbox" id="route07" name="contestRoot"  value=""/>
+							<label for="route07"><span></span>기타</label>
+							<input type="text" class="season_areaIn  w300" id="routeEtc" >
+						</li>
 					</ul>
 				</div>
 			</div>
+			<!-- STEP 6 -->
+			<div class="col-md-12">
+				<div class="stepBox center0 mt70">	
+					<span class="greenR">STEP 6</span> <span class="subTitle02">간단요리사를 알고 있었나요? <b>(선택)</b></span>
+				</div>
+				<div class="agree_season center0 mt30">	
+					<div class="radioStyle">
+						<ul class="school">
+							<li><input type="radio" id="know01"	name="beansoupAwareness" value="1"/><label for="know01"><span></span>네</label></li>
+							<li><input type="radio" id="know02" name="beansoupAwareness" value="0"/><label for="know02"><span></span>아니오</label></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 접수버튼 -->
+			<div class="col-lg-12 ">
+				<div class="tcenter">
+					<p class="mt100 mb100 certifi02">
+					<button type="button" class="btn_base" onclick="btnCheck()"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_ok.png" alt="참가 접수 완료"/></button>
+					</p>
+				</div>
+			</div>
 			</form>
-			<br class="clear">
-		</div><!-- //contant1460 -->
+		</div><!-- //row -->
 	</div>
-	<!-- ================================  
-			// Content
-	================================ -->
-	<!-- ================================ 
-		        Footer
-        ================================ -->
-	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
-	<!-- ================================ 
-		        // Footer
-        ================================ -->
+</div><!-- // container -->
+<script>
+function btnCheck() {
+	
+	var year = $("#year").val(); 
+	var month =  $("#month").val();
+	var day = $("#day").val()
+	
+	$("#contestantBirth").val(year+month+day);
+	
+	var section = $('input[name=section]').val();
+	var material = $("#material").val();
+	var contestantName = $("#contestantName").val();
+	var contestantBirth = $("#contestantBirth").val();
+	var contestantGrade = $("#contestantGrade").val();
+	var routeEtc = $("#routeEtc").val();
+	
+	if(routeEtc.length >1 && ($("#route07").is(':checked') == true)){
+		
+		$("#route07").val(routeEtc);
+	}
+	
+	console.log(section);
+	console.log(material);
+	console.log(contestantName);
+	console.log(contestantBirth);
+	console.log(contestantGrade);
+	
+	if(section == "" || section.length < 1){
+		alert("연령 부문을 선택해주세요.")
+		section.focus();
+		return;
+	}		
+	
+	if(material == "" || material.length < 1){
+		alert("작품의 소재가 된 제철 재료를 선택해주세요.")
+		material.focus();
+		return;
+	}		
+	if(contestantName == "" || contestantName.length < 1){
+		alert("참가자의 이름을 입력해주세요.")
+		contestantName.focus();
+		return;
+	}		
+	if(contestantBirth == "" || contestantBirth.length < 8){
+		alert("참가자의 탄생일을 입력해주세요.")
+		contestantBirth.focus();
+		return;
+	}		
+	if(contestantGrade == "" || contestantGrade.length < 1){
+		alert("참가자의 학년을 입력해주세요.")
+		contestantGrade.focus();
+		return;
+	}		
+	
+	console.log("??");
+	
+	$("form").submit();
+}
+</script>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ 
+	        Footer
+================================ -->
+<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+	        // Footer
+       ================================ -->
 </body>
 </html>

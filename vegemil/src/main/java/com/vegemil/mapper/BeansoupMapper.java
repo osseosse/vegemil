@@ -37,5 +37,6 @@ public interface BeansoupMapper {
 	public int insertPaintingContest(PaintingContestDTO paintingContestDTO);
 	public List<PaintingContestDTO> selectPaintingContestList(PaintingContestDTO searchDTO);
 	public int updatePaintingContestPrize(String id, String prize);
+	public int selectCountConData(String section);
 	
 }

@@ -341,6 +341,18 @@
             </choose>
         </if>
         ORDER BY ID DESC		
+        LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	<select id="selectCountConData" parameterType="String">
+		SELECT COUNT(*)
+		FROM m_beansoup_painting_contest
+		WHERE 1=1
+		<!-- 부문 검색 들어왔을때 -->
+		<if test="section != null and section != ''">
+			AND section LIKE CONCAT('%', #{section} ,'%')
+		</if>
+		
 	</select>
 	
 	<!-- 동시 그림 순위 선정 -->
