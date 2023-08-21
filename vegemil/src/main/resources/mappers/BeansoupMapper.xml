@@ -352,6 +352,9 @@
 		<if test="section != null and section != ''">
 			AND section LIKE CONCAT('%', #{section} ,'%')
 		</if>
+		<if test="material != null and material != ''">
+			AND material LIKE CONCAT('%', #{material} ,'%')
+		</if>
 		
 	</select>
 	

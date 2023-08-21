@@ -146,4 +146,21 @@ public class AdminImageLoadController extends UiUtils {
 		}
 		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
 	}
+	
+	//동시그림대회 이미지
+	@GetMapping("/web/upload/beansoupCon/{filename}")
+	public ResponseEntity<Resource> beansoupConDisplay(@PathVariable(value = "filename", required = false) String filename) {
+		Resource resource = new FileSystemResource(uploadPath + "/upload/beansoupCon/" + filename);
+		if(!resource.exists()) 
+			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
+		HttpHeaders header = new HttpHeaders();
+		Path filePath = null;
+		try {
+			filePath = Paths.get(uploadPath + "/upload/beansoupCon/" + filename);
+			header.add("Content-type", Files.probeContentType(filePath));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+	}
 }

@@ -123,7 +123,7 @@ var createTable = function() {
 	  destroy: true,
 	  lengthChange: false,
       bPaginate: true,
-	  pageLength: 5,
+	  pageLength: 10,
 	  serverSide: true,
 	  processing: true,
       ajax: {
@@ -229,8 +229,10 @@ var createTable = function() {
       		targets: 8,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			return '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['id']+',\'D\')">작품보기</button>'
-      			
+      			return( '<a data-bs-toggle="modal" data-bs-target="#large'+full['id']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">작품보기</button></a>'
+				  +getModal(full)
+				)
+				
       		}
       	}
       ],
@@ -348,7 +350,7 @@ var createTable = function() {
 	    }
 	}); */
     
-    $('div.head-label').html('<h4 class="card-title">후기목록</h4>');
+    $('div.head-label').html('<h4 class="card-title">접수목록</h4>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
@@ -415,10 +417,10 @@ function getModal(obj) {
 	modal +=		'<div class="modal-dialog modal-dialog-centered modal-lg">'
 	modal +=			'<div class="modal-content">'
 	modal +=				'<div class="modal-header">'
-	modal +=					'<h4 class="modal-title" id="myModalLabel17">견학신청후기</h4>'
-	modal +=					'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'
+	modal +=					'<h4 class="modal-title" id="myModalLabel17">작품</h4>'
+	modal +=					'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin:3px;"></button>'
 	modal +=				'</div>'
-	modal +=				'<table class="table table-bordered  f13 paddingType">'
+	modal +=				'<table class="table table-bordered p-2 f13 paddingType">'
 	modal +=					'<colgroup>'
 	modal +=						'<col width="20%">'
 	modal +=						'<col width="20%">'
@@ -426,34 +428,27 @@ function getModal(obj) {
 	modal +=					'</colgroup>'
 	modal +=					'<thead>'
 	modal +=						'<tr>'
-	modal +=							'<th>신청자명 <span class="text-warning">'+obj.sName+' </span></th>'
-	modal +=							'<th>아이디 <span class="text-warning">'+obj.sId+' </span></th>'
-	modal +=							'<th colspan="2">H.P<span class="text-warning"> '+obj.sHp+' </span></th>'
+	modal +=							'<th class="px-2">참가자 <span class="text-warning">'+obj.contestantName+' </span></th>'
+	modal +=							'<th class="px-2">학년 <span class="text-warning">'+obj.contestantGrade+' </span></th>'
+	modal +=							'<th colspan="2" class="px-2">제철재료 <span class="text-warning"> '+obj.material+' </span></th>'
 	modal +=						'</tr>'
 	modal +=					'</thead>'
 	modal +=				'</table>'
-	modal +=                '<h4 class="mt-2">고객의견</h4>'
-	modal +=                '<p class="mt-1">제목 <span class="text-warning">'+obj.sSubject+'</span></p>'
-	modal +=				'<div class="row">'
-	modal +=					'<div class="col-7">'
-	modal +=						'<p>내용</p>'
-	modal +=						'<p>'+obj.sContent+'</p>'
+	modal +=                '<h4 class="mt-2 ps-2">작품설명</h4>'
+	modal +=                '<p class="px-2"><span class="text-warning h6">'+obj.paintingDesc+'</span></p>'
+	modal +=				'<div class="row ps-2">'
+	modal +=                    '<div class="scroll-h250">'
+	modal +=                        '<p class="img100">'
+	modal +=                            '<img src="/web/upload/beansoupCon/'+ obj.paintingSavedFilename +'" />'
+	modal +=                         '</p>'
 	modal +=					'</div>'
-	modal +=					'<div class="col-5">'
-	modal +=						'<p>사진 <a download class="btn btn-secondary btn-sm2" target="_blank" href="https://www.vegemil.co.kr/web/upload/CUSTOMER/'+obj.sFile+'">다운로드</a></p>'
-	modal +=                        '<div class="scroll-h250">'
-	modal +=                        	'<p class="img100">'
-	modal +=                            	'<img src="/web/upload/CUSTOMER/'+obj.sFile+'" />'
-	modal +=                            '</p>'
-	modal +=						'</div>'
-	modal +=					'</div>'
+	modal +=					'<p><a download class="btn btn-secondary btn-sm2" target="_blank" href="https://www.vegemil.co.kr/web/upload/beansoupCon/'+ obj.paintingSavedFilename +'">그림저장하기</a></p>'
 	modal +=				'</div>'
 	modal +=			'</div>'
 	modal +=		'</div>'
 	modal +=	'</div>'
 	modal +=  '</section>'
 	
-	return modal;
-	
+
 	return modal;
 }
