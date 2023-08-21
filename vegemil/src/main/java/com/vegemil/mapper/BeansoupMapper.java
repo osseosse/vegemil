@@ -35,8 +35,8 @@ public interface BeansoupMapper {
 	
 	//23년 08월 오픈~ 그림 동시 대회 
 	public int insertPaintingContest(PaintingContestDTO paintingContestDTO);
-	public List<PaintingContestDTO> selectPaintingContestList(PaintingContestDTO searchDTO);
-	public int updatePaintingContestPrize(String id, String prize);
+	public List<PaintingContestDTO> selectPaintingContestList(PaintingContestDTO searchDTO);	
 	public int selectCountConData(String section);
+	public int updatePaintingContestPrize(PaintingContestDTO paintingContestDTO);
 	
 }

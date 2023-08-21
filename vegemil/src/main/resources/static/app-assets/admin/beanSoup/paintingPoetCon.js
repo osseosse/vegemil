@@ -102,8 +102,34 @@ var normalizeDate = function (dateString) {
   return normalized;
 };
 // Advanced Search Functions Ends
-
+/*<![CDATA[*/
+function drawGraph(){
+	
+	new Chart(document.getElementById("bar-chart1"), {
+	    type: 'bar',
+	    data: {
+	      labels: ["미취학", "초등 저학년", "초등 고학년",""],
+	      datasets: [
+	        {
+	          label: "Population (millions)",
+	          backgroundColor: ["#3e95cd","#9FC93C", "#8e5ea2","#3cba9f"],
+	          data: [10,10,30,0]
+	        }
+	      ]
+	    },
+	    options: {
+	      legend: { display: false },
+	      title: {
+	        display: true,
+	        text: '그림 동시 대회 연령별 참가자'
+	      }
+	    }
+	});
+}
+/*]]>*/
 $(function () {
+
+	//drawGraph();
 	createTable();
 	
 });
@@ -186,9 +212,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				if(data==null)	return '-';
-      			else	return data;
-							
-							
+      			else	return data;													
       		}
       	},
       	{
@@ -214,11 +238,11 @@ var createTable = function() {
 				let checked;
 				return (
 				'<div class="form-check form-check-inline">'+
-				'<input class="form-check-input" type="radio" name="prize'+full['prize']+'" id="inlineRadio1" value="0" '+getCheck(0, full['prize'])+' onclick="btnSave('+full['id']+',\'U\')" />'+													
+				'<input class="form-check-input" type="radio" name="prize'+full['id']+'" id="inlineRadio" value="0" '+getCheck(0, full['prize'])+' onclick="btnSave('+full['id']+',\'U\')" />'+													
 				'<label class="form-check-label" for="inlineRadio1">낙선</label>'+
 				'</div>'+
 				'<div class="form-check form-check-inline">'+
-				'<input class="form-check-input" type="radio" name="sBest'+full['prize']+'" id="inlineRadio1" value="1" '+getCheck(1, full['prize'])+' onclick="btnSave('+full['id']+',\'U\')" />'+													
+				'<input class="form-check-input" type="radio" name="prize'+full['id']+'" id="inlineRadio1" value="1" '+getCheck(1, full['prize'])+' onclick="btnSave('+full['id']+',\'U\')" />'+													
 				'<label class="form-check-label" for="inlineRadio1">입선</label>'+
 				'</div>'
 				)
@@ -363,31 +387,31 @@ function getCheck(val1, val2) {
 }
 
 function btnSave(idx, action) {
-	const form = $('#factPostForm');
+	const form = $('#prizePost');
 	let msg;
-	let preVal = $('input[name=sBest'+idx+']:checked').val();
+	let preVal = $('input[name=prize'+idx+']:checked').val();
 	
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
 	}else{
 		if(action == "U") {
 			msg = "수정하시겠습니까?";
-			if($('input[name=sBest'+idx+']:checked').val() == 1) {
-				preVal = 0;
+			if($('input[name=prize'+idx+']:checked').val() == 1) {
+				msg = "입선작선택";				
 			}else{
-				preVal = 1;
+				msg = "낙선작";
 			}
-			$('#sBest').val($('input[name=sBest'+idx+']:checked').val());
+			$('#prize').val($('input[name=prize'+idx+']:checked').val());
 		}else {
 			msg = "삭제하시겠습니까?";	
 		}
 	}
-	$('#sIdx').val(idx);
+	$('#id').val(idx);
 	$('#action').val(action);
 	
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/customer/saveFactoryTourReview',
+	       url: '/admin/manage/beanSoup/savePaintingPoetConData',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),
@@ -405,7 +429,7 @@ function btnSave(idx, action) {
 		 })
 	}else {
 		//이전 라디오버튼 체크
-		$("input[name=sBest"+idx+"]:radio[value='" + preVal + "']").prop('checked', true);
+		$("input[name=prize"+idx+"]:radio[value='" + preVal + "']").prop('checked', true);
 		return;
 	}
 }

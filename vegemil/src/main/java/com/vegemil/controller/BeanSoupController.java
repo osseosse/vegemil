@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -45,6 +46,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
+import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
@@ -336,7 +338,7 @@ public class BeanSoupController extends UiUtils {
 	
 	// 콘테스트 어드민
 	@GetMapping("/admin/manage/beanSoup/paintingPoetCon")
-	public String getPaintingPoetContAdmin() {
+	public String getPaintingPoetContAdmin(Model model) {				
 		
 		return "admin/beanSoup/paintingPoetCon";
 	}
@@ -354,5 +356,22 @@ public class BeanSoupController extends UiUtils {
 			jsonObj.add("data", jsonArr);
 		}
 		return jsonObj;
+	}
+	
+	@RequestMapping(value = "/admin/manage/beanSoup/savePaintingPoetConData", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody Map<String, Object> saveFactoryTourReview(@ModelAttribute("params") final PaintingContestDTO paintingContestDTO, Model model) throws Exception {
+		Map<String, Object> rtnMap = new HashMap<String, Object>();
+		try {
+			boolean isUpdate = beansoupService.updatePaintingContestPrize(paintingContestDTO);
+			rtnMap.put("result", isUpdate);
+		} catch (DataAccessException e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		} catch (Exception e) {
+			log.error("fail to process file", e);
+			throw new IOException("저장에 실패하였습니다.");
+		}
+
+		return rtnMap;
 	}
 }

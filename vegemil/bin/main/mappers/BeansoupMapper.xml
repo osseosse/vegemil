@@ -359,12 +359,12 @@
 	</select>
 	
 	<!-- 동시 그림 순위 선정 -->
-	<update id="updatePaintingContestPrize" parameterType="String">
+	<update id="updatePaintingContestPrize" parameterType="com.vegemil.domain.contest.PaintingContestDTO">
 		UPDATE 
 			m_beansoup_painting_contest
 		SET
 			prize = #{prize},
-			update_date = NOW()
+			update_time = NOW()
 		WHERE 
 			id = #{id} 	
 	</update>

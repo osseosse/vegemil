@@ -26,6 +26,7 @@
 
 	<th:block layout:fragment="content">
     <!-- BEGIN: Content-->
+    
     <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
@@ -34,7 +35,7 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-start mb-0">그림동시대회 지원서 관리</h2>
+                            <h2 class="content-header-title float-start mb-0">그림동시대회 지원서 관리</h2>                            
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
@@ -142,8 +143,8 @@
 												</div>
 											</div>
 											<!-- 차트 -->
-											<div class="col-md-3 col-6">
-												<canvas id="bar-chart1" width="300" height="230"></canvas>												
+											<div class="col-md-3 col-6 ">
+												<canvas class="mx-5" id="bar-chart1" width="300" height="230"></canvas>												
 											</div>
 											<div class="col-md-3 col-3">
 												<canvas id="bar-chart2" width="300" height="230"></canvas>												
@@ -153,7 +154,7 @@
 										<div class="row">
 											 <div class="col-sm-12">
 												<button type="button" onclick="javascript:createTable();" class="btn btn-primary me-1">조회</button>
-												<button type="reset" class="btn btn-outline-secondary">초기화</button>												
+												<button type="reset" class="btn btn-outline-secondary" id="">초기화</button>												
 												<!-- <input type="hidden" class="form-control" name="material" id="material" value=""/> -->
 											</div>
 										</div>
@@ -211,9 +212,9 @@
     
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-    <form id="factPostForm" method="POST">
-    	<input type="hidden" id="sIdx" name="sIdx" />
-    	<input type="hidden" id="sBest" name="sBest" />
+    <form id="prizePost" method="POST">
+    	<input type="hidden" id="id" name="id" />
+    	<input type="hidden" id="prize" name="prize" />
     	<input type="hidden" id="action" name="action" />
     </form>
     

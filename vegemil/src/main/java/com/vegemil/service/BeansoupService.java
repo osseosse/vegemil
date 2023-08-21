@@ -40,4 +40,7 @@ public interface BeansoupService {
 	
 	//추가작업용
 	public Map<String, Integer> mappingCount(List<BeansoupDTO> beansoupList);
+	
+	// 어드민 수정
+	public boolean updatePaintingContestPrize(PaintingContestDTO paintingContestDTO);
 }

@@ -179,6 +179,17 @@ public class BeansoupServiceImpl implements BeansoupService{
 		return beansoupMapper.selectPaintingContestList(searchDTO);
 	}
 
+	@Override
+	public boolean updatePaintingContestPrize(PaintingContestDTO paintingContestDTO) {
+		int result = beansoupMapper.updatePaintingContestPrize(paintingContestDTO);
+		if(result>0) {
+			return true;
+		}else {			
+			return false;
+		}
+			
+	}
+
 	
 	
 }
