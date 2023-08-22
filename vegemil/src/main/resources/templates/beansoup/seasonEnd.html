@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+
+<body>
+	<!-- ================================ 
+		        Header
+        ================================ -->
+	<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+	<!-- ================================ 
+		        // Header
+        ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual 
+<div class="container100 clear" >
+	<div class="row  h500" >
+		<div class="col-lg-12 bg_mall">
+			<div class="hCenter02">
+				<p class="f50 white fw600">구매처</p>
+			</div>
+		</div>
+	</div>
+</div>  
+<!-- // main Visual -->
+
+
+
+<div class="container100 pb100 " >
+	<div class="container">
+		<div class="row">
+			<div class="endBox">
+				<div class="centerH">
+					<div class="name">
+						<span th:text="${name}">레오나르도,</span><span><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/end01.jpg" alt="간단요리사 동그림 대회 접수가 완료되었어요!"/></span>
+					</div>
+					<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/end.jpg" alt="간단요리사 동그림 대회 접수가 완료되었어요!"/></p>
+					<!-- 2023-08-22 -->
+					<p class="mt50"><a href="https://www.vegemil.co.kr/beanSoup"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_ok2.gif" alt="확인"/></a></p>
+					<!-- //2023-08-22 -->
+					<!--
+					<ul class="end_btn_box">
+						<li><a href="https://www.vegemil.co.kr/beanSoup"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_end01.gif" alt="간단요리사 바로가기"/></a></li>
+						<li><a href="https://www.vegemil.co.kr/beanSoup/season"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_end02.gif" alt="간단요리사 어린이 동시 그림 대회 바로가기"/></a></li>
+					</ul>
+					-->
+				</div>
+			</div>
+		</div><!-- //row -->
+	</div>
+</div><!-- // container -->
+
+
+<!-- ================================ 
+		// Content
+================================ -->
+
+<!-- ================================ 
+	        Footer
+================================ -->
+<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+<!-- ================================ 
+	        // Footer
+       ================================ -->
+</body>
+</html>

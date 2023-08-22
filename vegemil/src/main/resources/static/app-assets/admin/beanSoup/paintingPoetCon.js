@@ -104,32 +104,42 @@ var normalizeDate = function (dateString) {
 // Advanced Search Functions Ends
 /*<![CDATA[*/
 function drawGraph(){
-	
-	new Chart(document.getElementById("bar-chart1"), {
-	    type: 'bar',
-	    data: {
-	      labels: ["미취학", "초등 저학년", "초등 고학년",""],
-	      datasets: [
-	        {
-	          label: "Population (millions)",
-	          backgroundColor: ["#3e95cd","#9FC93C", "#8e5ea2","#3cba9f"],
-	          data: [10,10,30,0]
-	        }
-	      ]
-	    },
-	    options: {
-	      legend: { display: false },
-	      title: {
-	        display: true,
-	        text: '그림 동시 대회 연령별 참가자'
-	      }
-	    }
+
+	$.ajax({
+		url:"/admin/beansoup/submitCount",
+		type:"get",
+		dataType:"json",
+		success:function(data){
+
+			new Chart(document.getElementById("bar-chart1"), {
+				type: 'bar',
+				data: {
+				  labels: ["미취학", "초등 저학년", "초등 고학년",""],
+				  datasets: [
+					{
+					  label: "Population (millions)",
+					  backgroundColor: ["#3e95cd","#9FC93C", "#8e5ea2","#3cba9f"],
+					  data: [data.data[0], data.data[1], data.data[2], 0]
+					}
+				  ]
+				},
+				options: {
+				  legend: { display: false },
+				  title: {
+					display: true,
+					text: '그림 동시 대회 연령별 참가자'
+				  }
+				}
+			});
+		}
 	});
+	
 }
 /*]]>*/
+
 $(function () {
 
-	//drawGraph();
+	drawGraph();
 	createTable();
 	
 });
@@ -174,6 +184,8 @@ var createTable = function() {
       	{ data: 'contestantName' },
       	{ data: 'guardianPh' },
         { data: 'paintingDesc'},
+        { data: 'contestRoot'},
+        { data: 'beansoupAwareness' },
         { data: 'prize' },
         { data: 'id' },
         
@@ -227,12 +239,38 @@ var createTable = function() {
       		targets: 6,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(data==null)	return '-';
-      			else	return data;
+      			if(full['zipCode']==null)	return '-';
+      			else return '(' + full['zipCode'] + ') ' + full['addr1'] + ' ' +full['addr2'];
       		}
       	},   
       	{
       		targets: 7,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+      			if(data==null)	return '-';
+      			else return data;
+      		}
+      	},   
+      	{
+      		targets: 8,
+      		orderable: false,
+      		render: function (data, type, full, meta) {
+				let checked;
+				return (
+				'<div class="form-check form-check-inline">'+
+				'<input class="form-check-input" type="radio" name="beansoupAwareness'+full['id']+'" id="inlineRadio" value="0" '+getCheck(1, full['beansoupAwareness'])+' disabled >'+													
+				'<label class="form-check-label" for="inlineRadio1">Y</label>'+
+				'</div>'+
+				'<div class="form-check form-check-inline">'+
+				'<input class="form-check-input" type="radio" name="beansoupAwareness'+full['id']+'" id="inlineRadio1" value="1" '+getCheck(0, full['beansoupAwareness'])+' disabled >'+													
+				'<label class="form-check-label" for="inlineRadio1">N</label>'+
+				'</div>'
+				)
+      			
+      		}
+      	},
+      	{
+      		targets: 9,
       		orderable: false,
       		render: function (data, type, full, meta) {
 				let checked;
@@ -250,7 +288,7 @@ var createTable = function() {
       		}
       	},
       	{
-      		targets: 8,
+      		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
       			return( '<a data-bs-toggle="modal" data-bs-target="#large'+full['id']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">작품보기</button></a>'

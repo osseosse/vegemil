@@ -61,13 +61,10 @@ public class PaintingContestDTO extends CommonDTO{
 	private String zipCode;	
 	@NotBlank
 	private String addr1;
-	
 	private String addr2;
 	
-	// 부문별 지원자 통계 그래프용
-	private int countKinder;
-	private int countLow;
-	private int countHigh;
+	// 풀주소ㄹ
+
 	
 	//paging
 	private Integer start;

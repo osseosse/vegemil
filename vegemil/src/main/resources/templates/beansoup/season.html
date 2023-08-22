@@ -4,6 +4,8 @@
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<th:block class="white" th:replace="fragments/beansoup/head :: headFragmentContestVer"></th:block>	
 	<script th:src="@{/webzine/js/kakao.min.js}"></script>
+	<link href="/common/css/modality.css" rel="stylesheet">
+	<script type="text/javascript" src="/common/js/modality.js"></script>
     <body>
         <!-- ================================ 
 		        Header
@@ -19,18 +21,26 @@
 		<div class="container">
 			<div class="row ">
 				<div class="">
-					<div class="wView"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/01.jpg"  usemap="#Map"/>
-					<map name="Map">
-					  <area shape="rect" coords="46,28,170,113" href="https://www.vegemil.co.kr/" title="정식품"  target="_blank">
-					  <area shape="rect" coords="183,2354,627,2453" href="#" onClick="alert('준비중입니다.')">
-					</map>
+					<!-- 2023-08-16 -->
+					<div class="wView relative"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/01.jpg"  usemap="#Map"/>
+						<map name="Map">
+							<area shape="rect" coords="46,28,170,113" href="https://www.vegemil.co.kr/" title="정식품"  target="_blank">
+							<!-- <area shape="rect" coords="183,2354,627,2453" href="#pop_season" onClick="alert('준비중입니다.')"> -->
+						</map>
+						<div class="fake-btn"><a href="#pop_season">&nbsp;</a></div>
 					</div>
 					<div class="mView">
 						<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m01.jpg" /></p>
-						<p><a href="#" onClick="alert('준비중입니다.')"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m02.jpg" /></a></p>
-						<p style="margin-top:-1px"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m03.jpg" /></p>
+						<p><a href="#pop_season" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m02.jpg" alt="제철 재료 확인하러가기"/></a></p>
+						<p style="margin-top:-1px "><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m03.jpg" /></p>
 					</div>
-					<div style="margin-top:-1px"><a href="#" onClick="alert('준비중입니다.')"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/02.jpg" alt="참가 접수하러가기"/></a></div>
+					<div style="margin-top:-1px ">
+						<ul class="popBTN">
+							<li><a href="#pop_season_info"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_s01.jpg" alt="접수 가이드라인"/></a></li>
+							<li><a href="/beanSoup/agreement"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_s02.jpg" alt="참가 접수하러가기"/></a></li>
+						</ul>	
+					</div>
+					<!-- //2023-08-16 -->
 					<div><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/03.jpg" alt="간단요리사 cf"/></div>
 					<div class="bg_pink" style="margin-top:-1px">
 						<p class="y_size"><iframe   src="https://www.youtube.com/embed/5XKc6mJDmfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
@@ -161,7 +171,49 @@
 	<!-- ================================ 
 			// Content
 	================================ -->
+	<!-- ================================ 
+				Popup 
+	================================ -->
+	
+	<!--제철재료 pop_season -->
+	<div id="pop_season" class="pop_wrap_recipe w800" style="display:none;">
+		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
+			<div>
+				<p class="btn_pop_close">	
+					<a href="#pop_season" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_btn.jpg" alt="닫기"></a>
+				</p>
+				<p class="center">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop.jpg" alt="팝업본문"/>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //제철재료 pop_season -->
+	<!-- 주의사항 pop_season 2023-08-21 -->
+	<div id="pop_season_info" class="pop_wrap_recipe w800" style="display:none;">
+		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
+			<div>
+				<p class="btn_pop_close">	
+					<a href="#pop_season_info" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_close_info.jpg" alt="닫기"></a>
+				</p>
+				<p class="center">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_info.jpg" alt="팝업본문"/>
+				</p>
+				<p class="center" style="padding-bottom:70px; background:#fffedf">
+					<a href="/beanSoup/agreement"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_pop_info.jpg" alt="참가 접수하러가기"/></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //주의사항 pop_season 2023-08-21 -->
 
+	<script src="https://www.vegemil.co.kr/common/js/modality.js"></script>
+	<!-- 팝업 script -->
+	<script>
+		var modal1 = Modality.init('#pop_season', {effect: 'slide-up'}); 
+		var modal1 = Modality.init('#pop_season_info', {effect: 'slide-up'});  // 2023-08-21 추가
+	</script>
+	<!-- //팝업 script -->
       <!-- ================================ 
        			 Footer
       ================================ -->

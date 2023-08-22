@@ -39,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,6 +52,7 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.contest.AdminBeansoupPPConGraphDTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 import com.vegemil.service.BeansoupService;
 import com.vegemil.util.UiUtils;
@@ -237,7 +239,7 @@ public class BeanSoupController extends UiUtils {
 	}
 
 	// test 그림대회인증
-	@RequestMapping(value = "/beanSoup/agreementDev123", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/beanSoup/agreement", method = { RequestMethod.GET, RequestMethod.POST })
 	public String moveJoin(Model model, HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value = "step", required = false, defaultValue = "1") int step) throws Exception {
 
@@ -277,6 +279,7 @@ public class BeanSoupController extends UiUtils {
 			paintingContest.setGuardianName(pccName);
 			paintingContest.setGuardianPh(pccCellno);
 			paintingContest.setGuardianDI(diKey);
+			
 			// 다음 그림 등록 페이지에서 렌더링 될 것들
 			model.addAttribute("paintingContest", paintingContest);
 			returnHtml = "beansoup/submitWork"; 
@@ -293,7 +296,8 @@ public class BeanSoupController extends UiUtils {
 	//그림 제출
 	@PostMapping("/beansoup/submitWork")
 	public String getSubmitWorkForm(@Validated @ModelAttribute("paintingContest") PaintingContestDTO paintingContestDto,
-			BindingResult bindingResult,@RequestParam("fileName") MultipartFile fileName, HttpServletRequest request, Model model, HttpServletResponse response) throws IOException {
+			BindingResult bindingResult,@RequestParam("fileName") MultipartFile fileName, HttpServletRequest request, Model model,
+								RedirectAttributes redirectModel, HttpServletResponse response) throws IOException {
 
 		if (bindingResult.hasErrors()) {
 			log.info("검증 에러 발생");			
@@ -308,9 +312,9 @@ public class BeanSoupController extends UiUtils {
 			if(!"".equals(originalName)) {
 				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
 				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + date.toString();
-				//Path savePath = Paths.get("D:/test/"+savefileName);
-				Path savePath = Paths.get(uploadPath + "/upload/beansoupCon/" + savefileName);
+				String savefileName = uuid + "_" + paintingContestDto.getZipCode();
+				Path savePath = Paths.get("D:/test/"+savefileName);
+				//Path savePath = Paths.get(uploadPath + "/upload/beansoupCon/" + savefileName);
 				fileName.transferTo(savePath);
 				paintingContestDto.setPaintingFilename(originalName);
 				paintingContestDto.setPaintingSavedFilename(savefileName);
@@ -332,7 +336,7 @@ public class BeanSoupController extends UiUtils {
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/beanSoup", Method.GET, null, model);
 		}
 		
-		return showMessageWithRedirect("그림동시대회 접수가 완료되었습니다.", "/beanSoup", Method.GET, null, model);
+		return showMessageWithRedirect("그림동시대회 접수가 완료되었습니다.", "/beanSoup/seasonEnd?name="+paintingContestDto.getContestantName(), Method.GET, null, model);
 			
 	}
 	
@@ -341,6 +345,13 @@ public class BeanSoupController extends UiUtils {
 	public String getPaintingPoetContAdmin(Model model) {				
 		
 		return "admin/beanSoup/paintingPoetCon";
+	}
+	
+	@GetMapping("/beanSoup/seasonEnd")
+	public String getPaintingPoetContEnd(Model model, @RequestParam("name") String name) {
+		
+		model.addAttribute("name", name);
+		return "beanSoup/seasonEnd";
 	}
 	
 	@GetMapping("/admin/manage/beanSoup/paintingPoetConList")
@@ -357,6 +368,26 @@ public class BeanSoupController extends UiUtils {
 		}
 		return jsonObj;
 	}
+	
+	@GetMapping("/admin/beansoup/submitCount")
+	public @ResponseBody JsonObject testCount()	{			
+		
+		
+		List<String> sectionCount= beansoupService.selectCountConSectionData();
+		
+		JsonObject jsonObj = new JsonObject();
+		
+		if (CollectionUtils.isEmpty(sectionCount) == false) { 
+			Gson gson = new
+			GsonBuilder().registerTypeAdapter(LocalDateTime.class, new
+			GsonLocalDateTimeAdapter()).create(); JsonArray jsonArr =
+			gson.toJsonTree(sectionCount).getAsJsonArray(); jsonObj.add("data", jsonArr);
+		}
+		
+		return jsonObj;
+	}
+	
+	
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/savePaintingPoetConData", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody Map<String, Object> saveFactoryTourReview(@ModelAttribute("params") final PaintingContestDTO paintingContestDTO, Model model) throws Exception {

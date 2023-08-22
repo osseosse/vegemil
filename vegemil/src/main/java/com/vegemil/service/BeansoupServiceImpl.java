@@ -1,5 +1,6 @@
 package com.vegemil.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,6 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
-import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 import com.vegemil.mapper.BeansoupMapper;
 import com.vegemil.paging.PaginationInfo;
@@ -168,6 +168,9 @@ public class BeansoupServiceImpl implements BeansoupService{
 
 	@Override
 	public int submitPaintingPoetWork(PaintingContestDTO paintingContestDTO) {
+		int result = beansoupMapper.insertPaintingContest(paintingContestDTO); 
+		
+		System.out.println("id >>>>>>>>>>>>" + result);
 		return beansoupMapper.insertPaintingContest(paintingContestDTO);
 	}
 
@@ -190,6 +193,18 @@ public class BeansoupServiceImpl implements BeansoupService{
 			
 	}
 
-	
+	@Override
+	public List<String> selectCountConSectionData() {
+		
+		List<String> conCountList = new ArrayList<>();
+		Map<String,Integer> conCounMap = beansoupMapper.selectCountConData();
+		
+		for(String k : conCounMap.keySet()) {
+			conCountList.add(conCounMap.get(k)+"");
+		}
+		
+		return conCountList;
+	}
+
 	
 }

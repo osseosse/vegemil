@@ -788,6 +788,25 @@ body {margin:0; padding:0; overflow-x:hidden}
 	img {margin:0; padding:0; outline:0;bordeR:0}
 	.fake-btn{ position:absolute;  width:450px; height:100px; top:2355px; left:180px; z-index:100;  }
 	.fake-btn a {display:inline-block;width:100%; height:100%}
+	ul.popBTN {margin:0; padding:0}
+	ul.popBTN li:first-child {width:50%; float:left}
+	ul.popBTN li:nth-child(2) {width:50%; float:right}
+	.endBox {position:relative;  width:100%; height:80vh}
+	.endBox .name {position:relative; text-align:center; margin-bottom:10px}
+	.endBox .name span {font-size:50px; font-weight:600; color:#6fc876; line-height:120%; margin-top:10px;  display:inline-block }
+	.endBox .name span img { width:270px}
+	.endBox .name span:first-child {border-bottom:2px solid #6cc873; z-index:10; position:relative}
+	.endBox p {text-align:center; font-size:35px; font-weight:500;}
+	.endBox p img {}
+	.centerH {position: absolute;top: 50%; left: 50%;;transform: translate(-50%, -50%); width:80%; max-width:580px}
+	.centerH img {}
+	ul.end_btn_box {position:relative; width:100%; margin-top:50px}
+	ul.end_btn_box li {display:inline-block; text-align:center; margin:0 auto;  padding:0; margin:0; }
+	ul.end_btn_box li {width:47%}
+	ul.end_btn_box li:first-child {text-align:right; margin-right:5px}
+	ul.end_btn_box li:nth-child(2) {text-align:left; margin-left:5px}
+	ul.end_btn_box li a {text-align:center; }
+
 
 
 	/* 3000 popup */
@@ -1251,6 +1270,8 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.season_input input {font-size:15px;}
 	.info_yellow {font-size:14px}
 
+	
+
 
 	/* 3000 file input Design */
 	.filebox .upload-name {height: 35px;}
@@ -1699,6 +1720,8 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.bg_green ul {position:relative; width:95%; margin:0 auto}
 .bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
 */
+	
+
 
 
 }
@@ -1712,6 +1735,13 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	p {margin:0; padding:0; outline:0; bordeR:0}
 	img {margin:0; padding:0; outline:0;bordeR:0}
 	.btn_pop_close img {width:40px}
+
+	.endBox .name {position:relative; text-align:center; margin-bottom:10px}
+	.endBox .name span {font-size:35px; font-weight:600; color:#6fc876; line-height:120%}
+	.endBox .name span img {max-width:190px}
+	.end_btn_box li {margin:0}
+
+
 }
 
 /*================================ 

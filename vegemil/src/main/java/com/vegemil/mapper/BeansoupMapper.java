@@ -1,6 +1,7 @@
 package com.vegemil.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,7 +9,6 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
-import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 
 @Mapper
@@ -38,5 +38,6 @@ public interface BeansoupMapper {
 	public List<PaintingContestDTO> selectPaintingContestList(PaintingContestDTO searchDTO);	
 	public int selectCountConData(String section);
 	public int updatePaintingContestPrize(PaintingContestDTO paintingContestDTO);
+	public Map<String,Integer> selectCountConData();
 	
 }
