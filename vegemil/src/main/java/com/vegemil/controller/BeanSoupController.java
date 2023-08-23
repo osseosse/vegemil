@@ -283,7 +283,7 @@ public class BeanSoupController extends UiUtils {
 			// 다음 그림 등록 페이지에서 렌더링 될 것들
 			model.addAttribute("paintingContest", paintingContest);
 			returnHtml = "beansoup/submitWork"; 
-			//returnHtml = "beansoup/season"; // 임시조치
+			
 		} else {
 			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
 			out.flush();
@@ -306,15 +306,15 @@ public class BeanSoupController extends UiUtils {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		Date date = new Date();
+		
 		try {
 			String originalName = fileName.getOriginalFilename();
 			if(!"".equals(originalName)) {
 				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
 				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + paintingContestDto.getZipCode();
-				Path savePath = Paths.get("D:/test/"+savefileName);
-				//Path savePath = Paths.get(uploadPath + "/upload/beansoupCon/" + savefileName);
+				String savefileName = uuid + "_" + originalName;
+				//Path savePath = Paths.get("D:/test/"+savefileName);
+				Path savePath = Paths.get(uploadPath + "/upload/beansoupCon/" + savefileName);
 				fileName.transferTo(savePath);
 				paintingContestDto.setPaintingFilename(originalName);
 				paintingContestDto.setPaintingSavedFilename(savefileName);
@@ -335,8 +335,8 @@ public class BeanSoupController extends UiUtils {
 			out.flush();
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/beanSoup", Method.GET, null, model);
 		}
-		
-		return showMessageWithRedirect("그림동시대회 접수가 완료되었습니다.", "/beanSoup/seasonEnd?name="+paintingContestDto.getContestantName(), Method.GET, null, model);
+		model.addAttribute("name", paintingContestDto.getContestantName());
+		return "beansoup/seasonEnd";
 			
 	}
 	
@@ -351,7 +351,7 @@ public class BeanSoupController extends UiUtils {
 	public String getPaintingPoetContEnd(Model model, @RequestParam("name") String name) {
 		
 		model.addAttribute("name", name);
-		return "beanSoup/seasonEnd";
+		return "beansoup/seasonEnd";
 	}
 	
 	@GetMapping("/admin/manage/beanSoup/paintingPoetConList")

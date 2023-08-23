@@ -168,9 +168,7 @@ public class BeansoupServiceImpl implements BeansoupService{
 
 	@Override
 	public int submitPaintingPoetWork(PaintingContestDTO paintingContestDTO) {
-		int result = beansoupMapper.insertPaintingContest(paintingContestDTO); 
 		
-		System.out.println("id >>>>>>>>>>>>" + result);
 		return beansoupMapper.insertPaintingContest(paintingContestDTO);
 	}
 

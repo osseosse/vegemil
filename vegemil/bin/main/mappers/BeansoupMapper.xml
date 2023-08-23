@@ -344,20 +344,6 @@
         LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 	</select>
 	
-	<select id="selectCountConData" parameterType="String">
-		SELECT COUNT(*)
-		FROM m_beansoup_painting_contest
-		WHERE 1=1
-		<!-- 부문 검색 들어왔을때 -->
-		<if test="section != null and section != ''">
-			AND section LIKE CONCAT('%', #{section} ,'%')
-		</if>
-		<if test="material != null and material != ''">
-			AND material LIKE CONCAT('%', #{material} ,'%')
-		</if>
-		
-	</select>
-	
 	<!-- 동시 그림 순위 선정 -->
 	<update id="updatePaintingContestPrize" parameterType="com.vegemil.domain.contest.PaintingContestDTO">
 		UPDATE 
@@ -369,7 +355,12 @@
 			id = #{id} 	
 	</update>
 	
-	<!-- 지원서 삭제 -->
+	<select id="selectCountConData" resultType="map">
+		SELECT 	COUNT(CASE WHEN section='유치부문' THEN 1 END) as a,
+				COUNT(CASE WHEN section='저학년' THEN 1 END) as b,
+				COUNT(CASE WHEN section='고학년' THEN 1 END) as c 
+		FROM m_beansoup_painting_contest;
+	</select>
 	
 	
 </mapper>
