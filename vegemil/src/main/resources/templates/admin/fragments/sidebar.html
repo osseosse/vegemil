@@ -84,6 +84,9 @@
                         <li th:classappend="${#request.requestURI.equals('/admin/manage/beanSoup/event')}? 'active': ''">
                         	<a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/event}"><i data-feather="circle"></i><span class="menu-item text-truncate">생생후기</span></a>
                         </li>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/beanSoup/paintingPoetCon')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/paintingPoetCon}"><i data-feather="circle"></i><span class="menu-item text-truncate">그림동시대회</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">그린비아</span></a>
