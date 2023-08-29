@@ -130,18 +130,18 @@ public class WebzineServiceImpl implements WebzineService {
     }
 	
 	@Override
-    public List<WebzineDTO> getRecommandWebzine(String qrtYear) {
+    public List<WebzineDTO> getRecommandWebzine(WebzineDTO webzineDTO) {
 		
 		List<WebzineDTO> webzineList = Collections.emptyList();
 		
         int count = webzineMapper.webzineCount();
 
 		if(count > 0) {
-			if(qrtYear.equals("Q2_2023")) {
-				webzineList = webzineMapper.selectWebzineRandomThree(qrtYear);
+			if((webzineDTO.getQrtYear()).equals("Q2_2023")) {
+				webzineList = webzineMapper.selectWebzineRandomThree(webzineDTO.getQrtYear());
 				
 			} else {
-				webzineList = webzineMapper.selectWebzineRandom(qrtYear);
+				webzineList = webzineMapper.selectWebzineRandom(webzineDTO);
 			}
 		}
         return webzineList;

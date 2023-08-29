@@ -30,7 +30,7 @@ public interface WebzineService {
     
     public List<SubscribeDTO> findAllWebzine();
     
-    public List<WebzineDTO> getRecommandWebzine(String qrtYear);
+    public List<WebzineDTO> getRecommandWebzine(WebzineDTO webzineDTO);
     
     public List<WebzineDTO> getWebzineQrtYear(String qrtYear);
     

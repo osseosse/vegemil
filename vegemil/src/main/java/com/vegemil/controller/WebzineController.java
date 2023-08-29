@@ -1,5 +1,6 @@
 package com.vegemil.controller;
 import java.io.PrintWriter;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +25,7 @@ import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.SubscribeDTO;
 import com.vegemil.domain.WebzineDTO;
 import com.vegemil.domain.WebzineEventDTO;
+import com.vegemil.mapper.WebzineMapper;
 import com.vegemil.service.WebzineService;
 import com.vegemil.util.UiUtils;
 
@@ -32,6 +34,8 @@ public class WebzineController extends UiUtils {
 
 	@Autowired
 	private WebzineService webzineService;
+	
+	@Autowired private WebzineMapper mapper;
 	
 	@GetMapping(value = "/main/webzine/list")
 	public String openWebzineList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
@@ -252,12 +256,12 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
-		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
 		webzine.setFileNo("sub"+fileNo); 
 		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
+		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
@@ -312,12 +316,12 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
-		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
 		webzine.setFileNo("sub"+fileNo); 
 		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
+		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
@@ -372,12 +376,12 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
-		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
 		webzine.setFileNo("sub"+fileNo); 
 		//webzine.setFileNo("sub05"); 개발용 하드코드
 		webzine = webzineService.getWebzine(webzine);
+		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
@@ -432,12 +436,12 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
-		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(qrtYear);
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
 		webzine.setFileNo("sub"+fileNo); 
 		
 		webzine = webzineService.getWebzine(webzine);
+		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(webzine);
 		
 		if(webzine != null) {
 			model.addAttribute("title", webzine.getTitle());
@@ -1025,5 +1029,6 @@ public class WebzineController extends UiUtils {
 		
 		return "webzine/searchNew";
 	}
+		
 	
 }

@@ -229,8 +229,8 @@
             qrt_year = #{qrtYear} and file_no like CONCAT('%',#{fileNo},'%')
     </select>
     
-    <select id="selectWebzineRandom" resultType="com.vegemil.domain.WebzineDTO">
-        SELECT
+    <select id="selectWebzineRandom" resultType="com.vegemil.domain.WebzineDTO" parameterType="com.vegemil.domain.WebzineDTO">
+        SELECT  /* selectWebzineRandom by.webzineMapper*/
             index_no
 			, qrt_year
 			, file_no
@@ -241,6 +241,7 @@
             m_webzine
         WHERE
 			file_no !='index.aspx'
+			AND file_no != #{fileNo}
 			AND title != '이벤트'
 		and 
 			qrt_year = #{qrtYear}
@@ -251,7 +252,7 @@
     </select>
     
     <select id="selectWebzineRandomThree" resultType="com.vegemil.domain.WebzineDTO">
-        SELECT
+        SELECT /* selectWebzineRandomThree by.webzineMapper*/
             index_no
 			, qrt_year
 			, file_no
@@ -271,7 +272,7 @@
 			3
     </select>
     <select id="selectWebzineBannerRandom"  resultType="com.vegemil.domain.BannerDTO">
-    	SELECT
+    	SELECT /* selectWebzineBannerRandom by.webzineMapper*/
     		<include refid="webzineBannerColumns"/>
     	FROM	
     		m_banner
@@ -282,7 +283,7 @@
     </select>
     
     <select id="selectWebzineBanner"  resultType="com.vegemil.domain.BannerDTO">
-    	SELECT
+    	SELECT		 /* selectWebzineBanner by.webzineMapper*/
     		<include refid="webzineBannerColumns"/>
     	FROM	
     		m_banner

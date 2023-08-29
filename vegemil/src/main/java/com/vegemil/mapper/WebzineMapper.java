@@ -35,7 +35,7 @@ public interface WebzineMapper {
 	
 	public List<SubscribeDTO> selectSubscibeAll();
 	
-	public List<WebzineDTO> selectWebzineRandom(String qrtYear);
+	public List<WebzineDTO> selectWebzineRandom(WebzineDTO param);
 	
 	public List<WebzineDTO> selectWebzineRandomThree(String qrtYear);
 	
@@ -68,8 +68,6 @@ public interface WebzineMapper {
 	
 	public BannerDTO selectWebzineBannerRandom();
 	public BannerDTO selectWebzineBanner(BannerDTO dto);
-	
-
 	
 	
 }

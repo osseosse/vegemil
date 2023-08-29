@@ -55,6 +55,8 @@ public class PaintingContestDTO extends CommonDTO{
 	
 	private String prize; 					// 수상 등수  
 	
+	private String marketingAgree;			//마케팅 수신 동의여부
+	
 	//
 	
 	@NotBlank
