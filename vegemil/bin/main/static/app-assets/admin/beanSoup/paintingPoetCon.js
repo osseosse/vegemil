@@ -369,49 +369,7 @@ var createTable = function() {
 		} );
 	} ).draw();
     
-	// 그래프 그리기
-	/* new Chart(document.getElementById("bar-chart2"), {
-	    type: 'bar',
-	    data: {
-	      labels: ["고사리", "미나리", "콩나물",""],
-	      datasets: [
-	        {
-	          label: "Population (millions)",
-	          backgroundColor: ["#3e95cd","#9FC93C", "#8e5ea2","#3cba9f"],
-	          data: [20,10,30,0]
-	        }
-	      ]
-	    },
-	    options: {
-	      legend: { display: false },
-	      title: {
-	        display: true,
-	        text: '가장 많이 선택한 재철재료'
-	      }
-	    }
-	}); */
-    // 그래프 그리기
-	/* new Chart(document.getElementById("bar-chart1"), {
-	    type: 'bar',
-	    data: {
-	      labels: ["미취학", "초등 저학년", "초등 고학년",""],
-	      datasets: [
-	        {
-	          label: "Population (millions)",
-	          backgroundColor: ["#3e95cd","#9FC93C", "#8e5ea2","#3cba9f"],
-	          data: [20,10,30,0]
-	        }
-	      ]
-	    },
-	    options: {
-	      legend: { display: false },
-	      title: {
-	        display: true,
-	        text: '그림 동시 대회 연령별 참가자'
-	      }
-	    }
-	}); */
-    
+
     $('div.head-label').html('<h4 class="card-title">접수목록</h4>');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
