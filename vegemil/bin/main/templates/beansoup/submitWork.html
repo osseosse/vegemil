@@ -138,7 +138,7 @@ new daum.Postcode({
 					</div> -->
 					<div class="mt50" >
                         <div class="filebox ">
-                            <input class="upload-name" placeholder="첨부파일">
+                            <input class="upload-name" id="upload-name" placeholder="첨부파일">
                             <label for="file">파일찾기</label> 
                             <input type="file" name="fileName" id="file" >
                         </div>
@@ -352,16 +352,21 @@ function btnCheck() {
 	var contestantGrade = $("#contestantGrade").val();
 	var routeEtc = $("#routeEtc").val();
 	
+	var uploadName = $("#upload-name").val();
+	var zipCode  = $("#zipCode").val(); 
+	var addr1    = $("#addr1").val(); 
+	var addr2    = $("#addr2").val(); 
+	
 	if(routeEtc.length >1 && ($("#route07").is(':checked') == true)){
 		
 		$("#route07").val(routeEtc);
 	}
 	
-	console.log(section);
-	console.log(material);
-	console.log(contestantName);
-	console.log(contestantBirth);
-	console.log(contestantGrade);
+	console.log("uploadName  = >>>>" + uploadName);
+	console.log("zipCode  = >>>>" + zipCode);
+	console.log("addr1    = >>>>" + addr1);
+	console.log("addr2    = >>>>" + addr2);
+	
 	
 	if(section == "" || section.length < 1){
 		alert("연령 부문을 선택해주세요.")
@@ -388,7 +393,29 @@ function btnCheck() {
 		alert("참가자의 학년을 입력해주세요.")
 		contestantGrade.focus();
 		return;
-	}		
+	}
+	
+	if(uploadName == "" || uploadName.length < 1){
+		alert("동시그림을 첨부해주세요.")
+		uploadName.focus();
+		return;
+	}
+	
+	if(zipCode == "" || zipCode.length < 1){
+		alert("우편번호를 입력해주세요.")
+		zipCode.focus();
+		return;
+	}
+	if(addr1 == "" || addr1.length < 1){
+		alert("기본 주소지를 입력해주세요.")
+		addr1.focus();
+		return;
+	}
+	if(addr2 == "" || addr2.length < 1){
+		alert("상세 주소를 입력해주세요.")
+		addr2.focus();
+		return;
+	}
 	
 	console.log("??");
 	
