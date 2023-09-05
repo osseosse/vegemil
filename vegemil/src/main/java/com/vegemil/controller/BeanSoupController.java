@@ -238,7 +238,7 @@ public class BeanSoupController extends UiUtils {
 		return "beansoup/season";
 	}
 
-	// test 그림대회인증
+	// 그림대회인증
 	@RequestMapping(value = "/beanSoup/agreement", method = { RequestMethod.GET, RequestMethod.POST })
 	public String moveJoin(Model model, HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value = "step", required = false, defaultValue = "1") int step) throws Exception {
@@ -301,7 +301,6 @@ public class BeanSoupController extends UiUtils {
 
 		if (bindingResult.hasErrors()) {
 			log.info("검증 에러 발생");			
-			
 		}
 		
 		response.setContentType("text/html; charset=UTF-8");
@@ -372,7 +371,6 @@ public class BeanSoupController extends UiUtils {
 	@GetMapping("/admin/beansoup/submitCount")
 	public @ResponseBody JsonObject testCount()	{			
 		
-		
 		List<String> sectionCount= beansoupService.selectCountConSectionData();
 		
 		JsonObject jsonObj = new JsonObject();
@@ -386,7 +384,6 @@ public class BeanSoupController extends UiUtils {
 		
 		return jsonObj;
 	}
-	
 	
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/savePaintingPoetConData", method = {RequestMethod.GET, RequestMethod.POST})
