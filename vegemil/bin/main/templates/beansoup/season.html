@@ -37,7 +37,7 @@
 					<div style="margin-top:-1px ">
 						<ul class="popBTN">
 							<li><a href="#pop_season_info"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_s01.jpg" alt="접수 가이드라인"/></a></li>
-							<li><a href="/beanSoup/agreement"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_s02.jpg" alt="참가 접수하러가기"/></a></li>
+							<li><a href="javascript:void(0);" onclick="timeCheckLocation();return;"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_s02.jpg" alt="참가 접수하러가기"/></a></li>
 						</ul>	
 					</div>
 					<!-- //2023-08-16 -->
@@ -149,9 +149,20 @@
 		   }
 		} 
 		
-	// 	$("meta[property='og\\:image']").attr("content", url );
-	// 	$("meta[property='og\\:url']").attr("content", window.location.href );
-	//	$("meta[property='og\\:description']").attr("content", remark.substr(0, 50) + '...' );
+		function timeCheckLocation(){
+			
+			var theDay = new Date('2023-09-14 00:00:00'); 
+			var today = new Date();
+			
+			if(today < theDay){
+				location.href="/beanSoup/agreement";
+			}else{
+				alert("접수 기간이 마감되었습니다.");
+				return;
+			}						
+			
+		}
+
 		
 	//]]>
 	</script>

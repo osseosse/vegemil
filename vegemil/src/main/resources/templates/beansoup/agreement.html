@@ -3,6 +3,20 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
+<script>
+	$(document).ready(function () {
+		var theDay = new Date('2023-09-14 00:00:00'); 
+		var today = new Date();
+		
+		if(today < theDay){
+			
+		}else{
+			alert("잘못된 접근입니다.");
+			location.href="/beanSoup";
+			
+		}		
+	});
+</script>
 <body>
 	<!-- ================================ 
 		        Header
