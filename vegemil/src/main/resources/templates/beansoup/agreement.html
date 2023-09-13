@@ -12,8 +12,7 @@
 			
 		}else{
 			alert("잘못된 접근입니다.");
-			location.href="/beanSoup";
-			
+			location.href="/beanSoup";			
 		}		
 	});
 </script>
@@ -180,6 +179,7 @@
 		</div><!-- //row -->
 	</div>
 </div><!-- // container -->
+<input type="hidden" name="currentTime" id="currentTime" value="" th:value="${currentTime}">
 <form name="authForm" id="authForm" method="post" action="" target="" style="display:hidden;">
 	<input type="hidden"	name="joinType"	 id="joinType"			 />
 	<input type="hidden"	name="step"		 id="step"		value="2"/>

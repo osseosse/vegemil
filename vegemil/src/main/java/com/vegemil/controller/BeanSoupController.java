@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -111,6 +112,12 @@ public class BeanSoupController extends UiUtils {
 	public String moveBeanSoupIntro(Model model) {
 
 		return "beansoup/intro";
+	}
+	
+	@GetMapping("/beanSoup/en/{reqView}")
+	public String moveBeansoupIndex(Model model, @PathVariable(value="reqView") String reqView) {
+		
+		return "/beansoup/en/"+reqView;
 	}
 
 	// 간단레시피
@@ -234,7 +241,14 @@ public class BeanSoupController extends UiUtils {
 	// 그림동시대회코드
 
 	@RequestMapping(value = { "/beanSoup/Season", "/beanSoup/season", "beansoup/Season", "/beansoup/season" })
-	public String getSeasonContest() {
+	public String getSeasonContest(Model model) {
+		
+		//마감시간체크를 위한 현재시간 
+		LocalDateTime now = LocalDateTime.now();
+		String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		
+		model.addAttribute("currentTime",formatedNow);
+		
 		return "beansoup/season";
 	}
 

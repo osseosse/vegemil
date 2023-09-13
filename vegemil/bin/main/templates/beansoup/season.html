@@ -94,6 +94,7 @@
 			</div><!-- //row -->
 		</div>
 	</div><!-- // container -->
+	<input type="hidden" name="currentTime" id="currentTime" value="" th:value="${currentTime}">
 	<script type='text/javascript'>
 	//<![CDATA[	
 		var uri = window.location.href;
@@ -152,18 +153,20 @@
 		function timeCheckLocation(){
 			
 			var theDay = new Date('2023-09-14 00:00:00'); 
-			var today = new Date();
+			var currentValue = $("#currentTime").val();			
+			var today = new Date(currentValue);
 			
+			alert("today >> " + today);
+			alert("theDay >> " + theDay);
+			alert(today < theDay);
+						
 			if(today < theDay){
 				location.href="/beanSoup/agreement";
 			}else{
 				alert("접수 기간이 마감되었습니다.");
 				return;
-			}						
-			
-		}
-
-		
+			}									
+		}		
 	//]]>
 	</script>
 	<script type='text/javascript'>

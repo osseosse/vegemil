@@ -1,0 +1,65 @@
+<!-- ---------------------------------------------------------------------------------------------
+	1. 모바일 GNB스크립트 모바일 메뉴 스크립트 입니다. 개발시 아래 JS삭제해주세요.
+	2. common.js에 있는 gnb, 모바일gnb와 동일한 스크립트입니다.
+	3. 불러오기방식은 HTML에서 작동이 안됨. mainHeader.html에 다이렉트로 스크립트 적용
+--------------------------------------------------------------------------------------------- -->
+
+
+<div id="gnb" >
+	<div class="gnbBG"></div>
+	<div class="logo wView" ><a href="/beanSoup/en/index"><img src="https://image.edaymall.com/images/mail/news/dcf/c/en/img/logo_w.png" alt="로고"></a></div>
+	<div class="logo mView" ><a href="/beanSoup/en/index"><img src="https://image.edaymall.com/images/mail/news/dcf/c/en/img/logo.png" alt="로고"></a></div>
+	<ul >
+		<li class="mView"><a href="/beanSoup/en/video" class="dep01">Video</a></li>
+		<li class="drop wView"><a href="/beanSoup/en/video" class="dep01">Video</a>
+			<ul class="mView">
+				<li><a href="/beanSoup/en/video">영상</a></li>
+				<li><a href="/beanSoup/en/news">뉴스</a></li>
+				<li><a href="/beanSoup/en/event">이벤트</a></li>
+			</ul>
+		</li>
+		<li><a href="/beanSoup/en/list" class="dep01 ">Recipe</a></li>
+		<li class="first"><a href="/beanSoup/en/brand" class="dep01">Brand</a></li>
+	</ul>
+</div>
+    
+
+
+
+
+	<!-- -------------------------------
+		개발시 아래 스크립트 삭제해주세요.
+	--------------------------------- -->
+	<script>
+	// 모바일 메뉴
+	function openNav() {
+	  document.getElementById("myNav").style.width = "100%";
+		$('.container100').css('display','none')
+	}
+
+	function closeNav() {
+	  document.getElementById("myNav").style.width = "0%";
+		 $('.container100').css('display','block')
+	}
+
+
+
+	</script>
+
+	<script>
+	// PC 메뉴
+	function chk(){
+			if(cc == 1){
+			$("#gnb ul li ul").slideDown(200);
+			$(".gnbBG").slideDown(200);
+			
+		}else{
+			$("#gnb ul li ul").slideUp(250);
+			$(".gnbBG").slideUp(250);
+			
+		}
+	}
+
+
+	
+	</script>
