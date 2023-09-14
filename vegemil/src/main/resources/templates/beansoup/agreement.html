@@ -5,9 +5,11 @@
 <th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
 <script>
 	$(document).ready(function () {
-		var theDay = new Date('2023-09-14 00:00:00'); 
-		var today = new Date();
 		
+		var theDay = new Date('2023-09-14 00:00:00'); 
+		var currentValue = $("#currentTime").val();			
+		var today = new Date(currentValue);
+						
 		if(today < theDay){
 			
 		}else{

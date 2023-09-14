@@ -117,7 +117,7 @@ public class BeanSoupController extends UiUtils {
 	@GetMapping("/beanSoup/en/{reqView}")
 	public String moveBeansoupIndex(Model model, @PathVariable(value="reqView") String reqView) {
 		
-		return "/beansoup/en/"+reqView;
+		return "beansoup/en/"+reqView;
 	}
 
 	// 간단레시피
@@ -256,6 +256,12 @@ public class BeanSoupController extends UiUtils {
 	@RequestMapping(value = "/beanSoup/agreement", method = { RequestMethod.GET, RequestMethod.POST })
 	public String moveJoin(Model model, HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value = "step", required = false, defaultValue = "1") int step) throws Exception {
+		
+		//마감시간체크를 위한 현재시간 
+		LocalDateTime now = LocalDateTime.now();
+		String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		
+		model.addAttribute("currentTime",formatedNow);
 
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
