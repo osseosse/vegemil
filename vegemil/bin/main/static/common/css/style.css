@@ -1537,7 +1537,7 @@ button:hover:before {content:"Reply!"}
 	.eval-ul dl.eval-dl dd {display:inline-block; vertical-align:middle;}
 	.txt-box {width:80%; position:relative; display:inline-block}
 	
-	.star-rating {border:solid 0px #ccc;display:flex;flex-direction: row-reverse;font-size:1.5em;justify-content:space-around;padding:0 .2em;text-align:center;width:5em;}
+	.star-rating {border:solid 0px #ccc;display:flex;flex-direction: row-reverse;font-size:1.5em;justify-content:space-around;padding:0 .2em;text-align:center;width:5em; ; }
 	.star-rating input {display:none;}
 	.star-rating label {color:#ccc; cursor:pointer; font-size:20px}
 	.star-rating :checked ~ label {color:#000;}
@@ -1992,7 +1992,8 @@ button:hover:before {content:"Reply!"}
 	dl.prd-viewMore dd:first-child {float:left; }
 	dl.prd-viewMore dd:nth-child(2) {float:right;  border:1px solid #DCDCDC; text-align:center; border-radius:5px; width:48px; padding:11px 0; display:inline-block; background:#Fff}
 	.prd-label {position:absolute;right:10px; top:-8px; width:70px}
-	.HJS { max-width:890px; margin:0 auto}
+	.ppl-label {position:absolute;right:15px; top:15px; width:70px}
+	.HJS { max-width:1000px; width:100%; margin:0 auto}
 
 	/* 3000 力前惑技 Tab */
 	.prd_thumb {position:relative; margin:0 auto; float:left; max-width:150px; width:100%} 
@@ -3791,6 +3792,7 @@ button:hover:before {content:"Reply!"}
 	.slidetitle.bnr_brand04 .bgDark {background-color:rgba(0, 0, 0, 0.4)!important; z-index:1000; display:inline-block; width:100%; height:100%}
 	.slidetitle.bnr_brand09 .bgDark {background-color:rgba(0, 0, 0, 0.4)!important; z-index:1000; display:inline-block;  width:100%; height:100%}
 	.slider .slider_dotwrap {bottom:5px}
+	
 	/* 葛官老aside */
 	.mAside {
 	  height: 100%;
@@ -4113,6 +4115,7 @@ button:hover:before {content:"Reply!"}
 	.prd-name {font-size:16px}
 	.prd-list {height:550px}
 	.prd-list .prd-label{width:40px; top:-4px}
+	.prd-list .ppl-label {right:10px; top:10px; width:40px}
 	.prd-txt .f14 {color:#787878; font-size:10.5px}
 	.prd-list a .prd-thumb img {transition: all ease 0.2s;}
 	.prd-list a .prd-thumb {background:#fff; max-width:200px;width:100%; max-height:200px;height:auto;  border-radius:200px;margin:0 auto  }
