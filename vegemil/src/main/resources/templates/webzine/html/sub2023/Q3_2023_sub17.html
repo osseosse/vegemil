@@ -1,0 +1,207 @@
+
+<script>
+
+var type = "";
+var times = 1;
+var imgCommonPath = "https://image.edaymall.com/images/dcf/webzine/Q4_2023/";
+var resultLandingCommonPath = "https://www.vegemil.co.kr/product/detail/";
+$(document).ready(function () {
+  //setInterval(getRes, 5000);
+
+  $(".choice").click(function () {
+	var choiceId = $(this).attr("id");
+		
+	type += choiceId;
+	times++;
+	
+	console.log("choice is = " + choiceId);
+	console.log("type value = " + type);
+	console.log("times = " + times);
+	
+	// 편의점에서 베지밀에이를 발견했다
+	if(times == 2){		
+		// 질문 공통
+		$("#question").attr("src",imgCommonPath+"16_q2_1.jpg");
+		$("#leftImg").attr("src",imgCommonPath+"16_btn3.png");
+		$("#rightImg").attr("src",imgCommonPath+"16_btn4.png");	
+		
+	}		
+	// 늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어! 
+	if(times == 3){
+		$("#question").attr("src",imgCommonPath+"16_q3_1.jpg");
+		$("#leftImg").attr("src",imgCommonPath+"16_btn5.png");
+		$("#rightImg").attr("src",imgCommonPath+"16_btn6.png")
+	}	
+	if(times == 4){		
+		var resultframe = '<p class="green-btn img100 "><a class="resultLanding" href=""><img id="resultImg" src=""/></a></p>'+
+						  '<div class="greenFoot_BtnBox center mt50-m" style="display:none;" id="resBtn">'+
+						  '<a href="javascript:void(0);" class="hvr-float-shadow mr20" onclick="reset();"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn_close.jpg" alt="다시 해보기"/></a>' +
+						  '<a href="#" class="resultLanding" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn.jpg" alt="구매하기" /></a>';
+						  
+		$("#frameEx").html(resultframe);		
+		$("#resultImg").attr("src",imgCommonPath+"16_loading.gif");
+		
+		resultInterval = setInterval(getRes, 2000);
+	}
+  });
+});
+function getRes(){
+	
+	switch(type){
+	case "LLL" : 
+		console.log("LLL/IFJ"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"75");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_1.jpg");
+		break;		
+	case "LLR" :
+		console.log("LLR/IFP");
+		$(".resultLanding").attr("href",resultLandingCommonPath+"20");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_2.jpg");
+		break;
+		
+	case "LRR" : //? 4번 이미지를 노출해야한다는데 I를 선택했는데 E가 나온다고 ?
+		console.log("LRR/ITP");
+		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
+		break;				
+	case "LRL" :
+		console.log("LRL/ITP");
+		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
+		break;
+		
+	case "RRL" :
+		console.log("RRL/ETJ"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
+		break;		
+	case "RLL" :
+		console.log("RLL/EFJ"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"7");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_5.jpg");
+		break;		
+		
+	case "RLR" :
+		console.log("RLR/EFP"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"31");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_6.jpg");
+		break;
+	case "RRR" :
+		console.log("RLR/EFP"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
+		break;		
+	}
+	// 버튼 노출 (다시하기|제품보러가기)
+	$("#resBtn").css('display', 'block');
+}
+
+function reset(){
+	location.reload();
+}
+</script>
+
+
+<div class="wrap-inner5" id="wzPage" >
+	<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+	<div class="container wz-left">
+	<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+		<div class="row">
+			<div class="col-md-12 center">
+				<h3 class="center mt50">나의 정식품 MBTI는 무엇일까?</h3>
+				
+			<p class="mt40 center">질문을 읽고 끌리는 답변을 골라주세요. 내 성격과 딱 맞는 제품을 추천해준답니다!<br> 이번 주말, 나의 정식품 MBTI 제품을 마셔보는건 어떨까요?</p>
+			</div>	
+	</div><!--//row-->
+	<div class="row intxt mt50-m">
+		<div class="col-md-12">
+			<div class="w783" id="frameEx">
+				<!-- 질문1 I/E -->
+				<div class="geenBox">
+					<div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+					<p class="img100"><img id="question" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q01.jpg" alt="드디어 찾아온 주말 오늘같은 날은" /></p>
+					<div class="greenBtnBox">
+						<p class="green-btn img100"><a href="javascript:void(0);" class="choice" id="L"><img id="leftImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn1.png" alt="집에서 편안히 쉬면서 충전할래!" /></a></p>
+						<p class="green-btn img100"><a href="javascript:void(0);" class="choice" id="R"><img id="rightImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn2.png" alt="오늘은 어디로 가지? 주말은 친구들과 외출하는 날!" /></a></p>
+					</div>
+				</div>
+				<!-- //질문1 I/E -->
+
+				<!-- 질문2-1 F/T 
+				<div class="geenBox">
+					<div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+					<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q2_1.jpg" alt="편의점에서 베지밀A를 발견했다." /></p>
+					<div class="greenBtnBox">
+						<p class="green-btn img100 "><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn3.png" alt="어렸을때부터 마시던 추억의 음료... 감상에 젖어든다" /></a></p>
+						<p class="green-btn img100"><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn4.png" alt="영양성분이무척좋은걸? 자주마셔야겠다!" /></a></p>
+					</div>
+				</div>
+				<!-- //질문2-1 F/T -->
+
+				<!-- 질문2-2 F/T 
+				<div class="geenBox">
+					<div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+					<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q2_2.jpg" alt="편의점에서 베지밀A를 발견했다." /></p>
+					<div class="greenBtnBox">
+						
+						<p class="green-btn img100"><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn4.png" alt="영양성분이무척좋은걸? 자주마셔야겠다!" /></a></p>
+						<p class="green-btn img100 "><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn3.png" alt="어렸을때부터 마시던 추억의 음료... 감상에 젖어든다" /></a></p>
+					</div>
+				</div>
+				<!-- //질문2-2 F/T -->
+				<!-- 질문3-1 J/P 
+				<div class="geenBox">
+					<div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+					<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q3_1.jpg" alt="늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어!" /></p>
+					<div class="greenBtnBox">
+						<p class="green-btn img100"><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn5.png" alt="항상 준비가 철저한 편! 이럴 때를 대비해 구매한 베지밀 두유를 마셔야지~ " /></a></p>
+						<p class="green-btn img100 "><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn6.png" alt="내 사전에 준비성이란 없다! 급한대로 편의점에 가야겠어!" /></a></p>
+					</div>
+				</div>
+				<!-- //질문3-1 J/P -->
+				<!-- 질문3-2 J/P
+				<div class="geenBox">
+					<div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+					<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q3_1.jpg" alt="늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어!" /></p>
+					<div class="greenBtnBox">
+						<p class="green-btn img100"><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn6.png" alt="내 사전에 준비성이란 없다! 급한대로 편의점에 가야겠어!" /></a></p>
+						<p class="green-btn img100 "><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn5.png" alt="항상 준비가 철저한 편! 이럴 때를 대비해 구매한 베지밀 두유를 마셔야지" /></a></p>
+					</div>
+				</div>
+				<!-- //질문3-2J/P -->
+				<!-- 질문3-3 J/P 
+				<div class="geenBox">
+					<div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+					<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q3_1.jpg" alt="늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어!" /></p>
+					<div class="greenBtnBox">
+						<p class="green-btn img100"><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn6.png" alt="내 사전에 준비성이란 없다! 급한대로 편의점에 가야겠어!" /></a></p>
+						<p class="green-btn img100 "><a href="#"><img class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn5.png" alt="항상 준비가 철저한 편! 이럴 때를 대비해 구매한 베지밀 두유를 마셔야지" /></a></p>
+					</div>
+				</div>
+				<!-- //질문3-3 J/P -->
+			</div>
+		</div>
+		<!-- <div class="clear"></div> -->
+		<!-- <p style="border-radius:10px; border:2px dashed blue; padding:10px; background:yellow">아래이미지는 결과 값노출</p>
+		<div class="col-md-12 ">
+			<div class="w783">
+				결과 4-1 IFJ
+				<p class="green-btn img100 "><a href="https://www.vegemil.co.kr/product/detail/75"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_a4_1.jpg" alt="조용하지만 어디든 잘 스며드는 당신은 진한콩국물" /></a></p>
+				<!-- 결과 4-2 IFP 
+				<p class="green-btn img100 "><a href="https://www.vegemil.co.kr/product/detail/20"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_a4_2.jpg" alt="친구들에게 늘 따뜻한 위로를 건네는 당신은 검은콩고칼슘" /></a></p>
+				<!-- 결과 4-3 ITP
+				<p class="green-btn img100 "><a href="https://www.vegemil.co.kr/product/detail/26"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_a4_3.jpg" alt="친구들에게 늘 해결사로 통하는 당신은" /></a></p>
+				<!-- 결과 4-4 ETJ
+				<p class="green-btn img100 "><a href="https://www.vegemil.co.kr/product/detail/79"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_a4_4.jpg" alt="이성적이고 실속있는 당신은 건강담은 야채가득 V19" /></a></p>
+				<!-- 결과 4-5 EFJ
+				<p class="green-btn img100 "><a href="https://www.vegemil.co.kr/product/detail/7"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_a4_5.jpg" alt="긍정적이고 따뜻한 마음씨를 가진 당신은 베지밀B" /></a></p>
+				<!-- 결과 4-6 EFP 
+				<p class="green-btn img100 "><a href="https://www.vegemil.co.kr/product/detail/31"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_a4_6.jpg" alt="어디서나 통통튀는 매력을 가진 당신은" /></a></p>
+				
+				결과 BTN
+					<div class="greenFoot_BtnBox center mt50-m "><a href="# " class="hvr-float-shadow mr20"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_re_btn.jpg" alt="다시 해보기" /></a><a href="# " class="hvr-float-shadow"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn.jpg" alt="구매하기" /></a></div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</div><!-- //container -->

@@ -292,9 +292,9 @@ public class BeanSoupController extends UiUtils {
 		}
 		// -----------------------pcc 결과값--------------------------
 
-		if (step == 1) {
-			// model.addAttribute("member", member);
-			returnHtml = "beansoup/agreement";
+		if (step == 1) {		
+			//returnHtml = "beansoup/agreement";
+			return showMessageWithRedirect("접수가 마감되었습니다.", "beanSoup", Method.GET, null, model);
 		} else if (step == 2) {
 			paintingContest.setGuardianName(pccName);
 			paintingContest.setGuardianPh(pccCellno);
@@ -318,6 +318,8 @@ public class BeanSoupController extends UiUtils {
 	public String getSubmitWorkForm(@Validated @ModelAttribute("paintingContest") PaintingContestDTO paintingContestDto,
 			BindingResult bindingResult,@RequestParam("fileName") MultipartFile fileName, HttpServletRequest request, Model model,
 								RedirectAttributes redirectModel, HttpServletResponse response) throws IOException {
+		
+		
 
 		if (bindingResult.hasErrors()) {
 			log.info("검증 에러 발생");			
