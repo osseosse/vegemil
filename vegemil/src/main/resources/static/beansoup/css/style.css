@@ -1,4 +1,4 @@
-Ôªø@charset "utf-8";
+@charset "utf-8";
 
 
 /* ----------------------------------------------- */
@@ -7,13 +7,12 @@
 /*
 @import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 */
-body {font-family:"Noto Sans KR","NanumGothic","NanumGothicBold","verdana","gulim","dotum", sans-serif !important; word-break:keep-all}
+body {font-family:'Pretendard', sans-serif !important; word-break:keep-all}
 
 
 
-/* ÔøΩÔøΩÔøΩÔøΩ∆Æ*/
+/* ¿•∆˘∆Æ ≥Î≈‰ */
 
 @font-face {
 font-family:'Noto Sans KR';
@@ -40,6 +39,9 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
 	url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
 }
 
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
 /*================================ 
     common 
 ================================*/
@@ -56,7 +58,6 @@ body {margin:0; padding:0; overflow-x:hidden}
 @media (max-width: 3000px) {
 	body {}
 	.wView {display:block}
-	.wView2 {display:inline-block; padding-left:10px;}
 	.mView {display:none}
 	.f-right {float:right}
 	.f-left {float:left}
@@ -73,20 +74,24 @@ body {margin:0; padding:0; overflow-x:hidden}
 	/* --------------- */
 	/*  3000 fontType
 	------------------ */
+	.fw300 {font-weight:300; }
 	.fw400 {font-weight:400; }
 	.fw600 {font-weight:600}
-	.plus {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_plus.png) no-repeat right 4px; width:60px; font-size:16px; line-height:120%; padding:0; font-weight:600; border-bottom:1px solid #000; padding-bottom:5px}
+	.fw700 {font-weight:700}
+	.plus {background:url(../../img/ico_plus.png) no-repeat 65px 9px; font-size:16px; line-height:120%; padding:0; font-weight:600; border:1px solid #ccc; padding-bottom:5px; border-radius:20px; padding:6px 15px; display:inline-block; padding-right:25px}
 	.plus a {text-decoration:none; color:#121212}
 	.white {color:#fff}
 	.green {color:#9cbb28}
 	.black {color:#121212}
-	.gray {color:#636363}
+	.gray {color:#636443}
 	.gray2 {color:#666}
 	.gray3 {color:#333333}
+	.gray4 {color:#969696}
 	.brown {color:#443d33}
+	.f12 {font-size:12px; line-height:180% }
 	.f14 {font-size:14px; line-height:180% }
 	.f16 {font-size:16px; line-height:150% }
-	.f18 {font-size:18px; line-height:120%; }
+	.f18 {font-size:18px; }
 	.f20 {font-size:20px; line-height:180%; }
 	.f22 {font-size:22px; line-height:120%}
 	.f24 {font-size:24px; line-height:120%}
@@ -95,8 +100,23 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.f35 {font-size:35px; line-height:140%}
 	.f38 {font-size:38px; line-height:120%}
 	.f40 {font-size:40px; line-height:120%}
-	.f48 {font-size:48px; line-height:120%}
 	.f50 {font-size:50px; line-height:120%}
+	.f60 {font-size:60px; line-height:120%}
+	.f65 {font-size:65px; line-height:120%}
+	.f70 {font-size:70px; line-height:120%}
+	.f75 {font-size:75px; line-height:120%}
+
+	.li120 {line-height:120%}
+	.li130 {line-height:130%}
+	.li140 {line-height:140%}
+	.li150 {line-height:150%}
+	.li160 {line-height:160%}
+	.li170 {line-height:170%}
+	.li180 {line-height:180%}
+	.li190 {line-height:190%}
+	.li200 {line-height:200%}
+
+
 
 
 	/* --------------- */
@@ -105,22 +125,27 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#slider0 .slider {}
 	#slider1 .slider {height:282px}
 	header {position:relative; top:0; width:100%;} 
-	.gnbBG {background:#fff;display:none; position:absolute; width:100%; top:84px; left:0; height:70px; /*border-top:1px solid #cdcdcd*/} /* ÔøΩÔøΩÔøΩÔøΩﬁ¥ÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	#gnb {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:84px;margin:0 auto;border-bottom:1px solid #cdcdcd    }
+	.gnbBG {background:none;display:none; position:absolute; width:100%; top:84px; left:0; height:70px; /*border-top:1px solid #cdcdcd*/} /* º≠∫Í∏ﬁ¥∫ πË∞Ê∆˜«‘ */
+	#gnb {position:absolute; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:none;  z-index:100;  width:100%; height:84px;margin:0 auto;border-bottom:1px solid #cdcdcd    }
 	#gnb > ul { width:1360px;  position:relative;  margin:0; padding:0;   margin:0 auto ;  }
 	#gnb .logo {position:absolute; top:25px;  width:1360px; margin:0 auto;  top: 50%;left: 50%; transform: translate(-50%, -50%); z-index:0}
 	#gnb > ul li {position:relative; float:right; }
 	#gnb:after {display:block; content:"";clear:both;}
-	#gnb li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 50px 30px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1ÔøΩÔøΩ */
+	#gnb li a.dep01{font-size:20px;font-weight:600;color:#fff;display:block;padding:30px 50px 30px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1µ™ */
+	
+	header.black #gnb li a.dep01 {color:#000}
+	header.black #gnb .mView {display:block}
+	header.black #gnb .wView {display:none}
+	
 	#gnb li.last a.dep01 {width:100%; }
-	#gnb ul li ul {display:none; height:70px;position:absolute; top:65px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩƒ°ÔøΩÔøΩÔøΩÔøΩ */
+	#gnb ul li ul {display:none; height:70px;position:absolute; top:65px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ø¿«¬¿ßƒ°¡∂¿˝ */
 	#gnb ul li.active > a {color:#a7c541}
 	#gnb ul li:hover > a  {color:#a7c541}
-	/*
-	1ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩﬁ¥ÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ CSS JS .drop ≈¨ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩœ∞ÔøΩ(ÔøΩ∆∑ÔøΩ hoverÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ) ÔøΩÿ¥ÔøΩ CSS »∞ÔøΩÔøΩ»≠ ÔøΩ“∞ÔøΩ! 
-	#gnb ul li.active > ul { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bar_line.gif) no-repeat center 0px;  } 
+	/* 
+	1µ™Ω∫ø° «œ¿ß∏ﬁ¥∫ ¿÷¿ªΩ√ CSS JS .drop ≈¨∑°Ω∫ ªË¡¶«œ∞Ì(æ∆∑° hoverµµªË¡¶) «ÿ¥Á CSS »∞º∫»≠ «“∞Õ! 
+	#gnb ul li.active > ul { background: url(../../img/bar_line.gif) no-repeat center 0px;  } 
 	*/ 
-	#gnb ul li:hover {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/bar_line.gif) no-repeat center 81px;}
+	#gnb ul li:hover {background:url(../../img/bar_line.gif) no-repeat center 81px;}
 	#gnb ul li ul {width:300px;  margin-left:-95px;  }
 	#gnb ul li ul li {padding:0 0 0 0; background:none; font-size:16px; margin:0 0 10px 0; color:#323232; text-align:center; width:30%;  
 	display:inline-block; margin-top:40px;vertical-align:top; }
@@ -133,7 +158,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#gnb ul li span {font-size:13px; margin-top:5px; display:inline-block}
 
 	/* -------------------- */
-	/* 3000 ÔøΩÔøΩÔøΩÔøΩ > font-ani
+	/* 3000 ∏ﬁ¿Œ > font-ani
 	----------------------- */
 	#font-ani {text-transform: uppercase;font-size:70px;font-weight:600;width:100%;bottom:45%;display:block;color:#fff}
 	#flip {height:92px;overflow:hidden;margin-top:10px;}
@@ -154,6 +179,13 @@ body {margin:0; padding:0; overflow-x:hidden}
 	}
 
 	.layer { position: absolute; z-index:10;top: 35%;left: 26%;background: none;transform: translate(-40%, -20%)}
+	.layer_en { position: absolute; z-index:10;top:50%;left:50%;background: none;transform: translate(-50%, -50%)}
+	.main_key {margin-top:50px}
+	.main_key li {display:inline-block; width: 130px;height: 40px;padding: 14px;justify-content: center;align-items: center; }
+	.main_key li {font-size:16px; font-weight:400; border-radius: 6px; background: rgba(255, 255, 255, 0.60); line-height:120%; padding:10px 0; 
+	text-align:center; margin-right:10px; letter-spacing:0; color:#000}
+	
+	
 	.lyType01 {font-size:30px; font-weight:600; color:#fff}
 	.lyType02 {font-size:70px; font-weight:600; color:#fff}
 	input.in-search {color:#858585; }
@@ -166,33 +198,35 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.mainSearch > a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 17px;}
 	.mainSearch a:hover {background-color: #aac14c;color: black;}
 	.mainSearch a.active {background-color: #aac14c;color: white;}
-
-	
-
 	.mainSearch .search-container {float: right;   }
 	.mainSearch input[type=text] {padding:9px; padding-left:30px; margin-top: 0px;font-size: 24px;border: none; width:460px; border-radius:50px 0 0 50px; background:#fff}
 	.mainSearch .search-container button {float: right;padding:27px 35px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
-	.mainSearch .search-container button:hover {background:#aac14c url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; }
-	
-
-	.mainSearch .search-container #btnSearch {float: right;padding:17px 27px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 30px 30px 0  }
-	.mainSearch .search-container #btnSearch:hover {background:#aac14c}
-	
-
-
-
+	font-size: 17px;border: none;cursor: pointer; background:#000 url(../../img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
+	.mainSearch .search-container button:hover {background:#aac14c url(../../img/ico_search.png) no-repeat center center; }
 	.mainSearch input:focus { outline:none}
 
+
+	.btn-box {position:relative; border-radius: 24px;background: #FFF;box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.16); margin-top:-40px; margin-left:0px; margin-right:0px}
+	.btn-box a {color:#343434; }
+	.btn-box a:hover {background:none; text-decoration:none}
+	.btn-box div:first-child{border-right:1px solid #DADBDD }
+	.btn-box div {padding:10px 20px 10px 20px}
+
+	.link_box {position:relative; margin:0}
+	.link_box li {display:inline-block; vertical-align:middle}
+	.link_box li:nth-child(1) {width:10%}
+	.link_box li:nth-child(2) {width:88%;  background: url(../../img/btn_right_main.png) no-repeat center right; }
+	
 	/* //font-ani */
 
 
 	/* -------------------- */
-	/* 3000 ÔøΩÔøΩÔøΩÔøΩ
+	/* 3000 ∏ﬁ¿Œ
 	----------------------- */
+	.h293 {height:293px}
 	.h400 {height:400px}
 	.h500 {height:500px}
+	
 	.h840 {height:840px}
 	.h600_review {height:600px}
 	.h600 {height:600px}
@@ -200,100 +234,71 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.h800 {height:800px}
 	.h400 {height:400px}
 	.h350 {height:350px}
-	.h240 {height:240px} /* ÔøΩÔøΩ∆©ÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	.h240 {height:240px} /* ¿Ø∆©∫Í ªÁ¿Ã¡Ó */
 	.h230 {height:230px}
 	.h220 {height:220px}
-	.w600 {max-width:600px; width:100%; margin:0 auto }
-	.sbg01 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg02 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg03 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg04 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg05 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner05.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg06 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner06.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg07 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner07.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg08 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner08.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg09 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner09.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg10 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner10.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg11 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner11.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg12 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner12.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 
+	.mt-200 {margin-top:-200px; }
+
+	.w600 {max-width:600px; width:100%; margin:0 auto }
+	.sbg01 {position:relative;  background: url(../../img/bigBanner01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.sbg02 {position:relative;  background: url(../../img/bigBanner02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.sbg03 {position:relative;  background: url(../../img/bigBanner03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	
 	.main01 {position:relative }
 	.main01 img {max-width:1200px; position:absolute}
-	ul.info {position:relative; width:900px; z-index:100  }
-	ul.info li {width:250px; display:inline-block; vertical-align:top;  text-align:center;  background:#fff; margin-right:20px; border-radius:15px; padding:30px 20px;-webkit-box-shadow: 3px 2px 15px 2px rgba(0,0,0,0.41); 
+	ul.info {position:relative; z-index:100 ; }
+	ul.info li {width:250px; display:inline-block; vertical-align:top;  text-align:center;  background:#fff;border-radius:15px; 
+	padding:30px 20px;-webkit-box-shadow: 3px 2px 15px 2px rgba(0,0,0,0.41); 
 	box-shadow: 3px 2px 15px 2px rgba(0,0,0,0.21); color:#666666}
-	ul.info li .r01 {font-size:20px; font-weight:600; background:#9cbb28; border-radius:20px; text-align:center; color:#fff;displaY:inline-block; padding:2px 20px }
-	
+	ul.info li .r01 {font-size:20px; font-weight:600; /*background:#9cbb28;*/ border-radius:20px; text-align:center; color:#000;displaY:inline-block; padding:2px 20px }
+
 	/* DOT NAVIGATION */
-	#slider0 .slider .slider_dot {width:70px; border-radius:0; background:#dbd6d3; bordeR:0; height:5px; margin-bottom:50px}
-	#slider0 .slider .slider_dot.current {background:#fff;}
-	#slider1 .slider .slider_dot {width:10px; border-radius:0; background:#ecf1c8; bordeR:0; border-radius:20px; height:10px; margin-bottom:0px; margin:0 4px}
-	#slider1 .slider .slider_dot.current {background:#fff; width:24px}
+	#slider0 .slider .slider_dot {width:10px; border-radius:0; background:#dbd6d3; bordeR:0; height:10px; margin-bottom:50px;  border-radius:5px}
+	#slider0 .slider .slider_dot.current {background:#fff; width:32px}
+	#slider1 .slider .slider_dot {width:10px; border-radius:0; background:#ecf1c8; bordeR:0; border-radius:20px; height:10px; margin-bottom:0px; margin:0 2px}
+	#slider1 .slider .slider_dot.current {background:#fff; width:32px}
 
 
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* π´«—∑Á«¡ */
+	.bg_01 { background: url(../../img/Rectangle-56.jpg) no-repeat center; padding:100px 0 100px 0; vertical-align:middle;  }
 	.body-content__rollig-text {
 	  white-space: nowrap;
-	  margin-top:200px;
+	 
 	}
 	.body-content__rollig-text .rolling-text__text {
-	 font-family:'Work Sans';
 	  font-size: 3vw;
 	  letter-spacing:35px;
-	  font-weight:700;
+	  font-weight:600;
 	  color:#e8ecef;
 	  display: inline-block;
 	  line-height:120%
 	}
-	
-	/* ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ∆∞ */
-	.mainProductBtn{border-bottom:1px solid #f0f1f2;}
-
 	/* -------------------- */
-	/* 3000 ÔøΩÔøΩÔøΩŒøÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+	/* 3000 ªı∑ŒøÓ ∑πΩ√««
 	----------------------- */
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_01_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_01_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.chef_01_02_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_01_02_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩ√∏ÔøΩ */
+	
 	.chef_02_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_02_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_03_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_03_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩƒ°ÔøΩÃ±ÔøΩÔøΩÔøΩ */
 	.chef_04_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_04_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩŒ∫ŒπÔøΩÔøΩÔøΩ */
 	.chef_05_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_05_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩ‘±ÔøΩ */
 	.chef_06_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_06_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_07_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_07_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩ»∏ */
 	.chef_08_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_08_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩ«£ÔøΩÔøΩ */
 	.chef_09_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_09_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_10_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_10_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩ»≠ÔøΩ√∏ÔøΩ */
 	.chef_11_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_11_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩ ∞Ë±πÔøΩÔøΩ */
 	.chef_12_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_12_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩ‚±πÔøΩÔøΩ */
 	.chef_13_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_13_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩ */
 	.chef_14_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_14_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_15_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_15_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩŒ¥ÔøΩÔøΩÓ∞≥ */
 	.chef_16_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_16_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÒ∂±∫ÔøΩÔøΩÔøΩ */
 	.chef_17_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_17_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_18_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_18_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÃøÔøΩÔøΩÔøΩ */
 	.chef_19_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_19_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
 	.chef_20_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_20_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ≈∞¬´ÔøΩÔøΩ */
 	.chef_21_big {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/chef/chef_21_big.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	
 
@@ -312,27 +317,38 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.round-review .pd2 {background:#a8c345; color:#fff; padding:3px 7px; border-radius:12px; line-height:120%; display:inline-block}
 	.round-review .pd3 {background:#6b3f19; color:#fff; padding:3px 7px; border-radius:12px; line-height:120%; display:inline-block}
 	.ml20 {margin-left:20px}
+
+
 	.thumbBox {position:relative; margin-bottom:50px; }
 	.thumbBox a {text-decoration:none; color:#121212}
 	.recipeTxt {padding:15px 20px 25px 20px;background:#faf9f5;border-radius:0 0px 20px 20px;  }
 	.recipeTxt_white {padding:15px 20px 25px 20px;background:#fff;border-radius:0 0px 20px 20px;  }
+	.recipeTxt2 {padding:15px 20px 25px 20px;border-radius:0 0px 20px 20px; border:1px solid #dcdddf  }
 	.recipeTxtBig {padding:35px;background:#ece9e7;border-radius:0 0px 20px 20px;  }
 	.label {position:absolute; right:15px; top:10px}
 	.label img {width:80px}
 	.col-lg-6 .label {position:absolute; right:15px; top:10px}
 	.col-lg-6 .label img {width:90px}
+
 	.labelBox {position:absolute; bottom:10px; right:15px; margin:0; padding:0}
 	.labelBox li.new {background:#fa9e14; color:#fff; font-weight:400; border-radius:4px; padding:0px 10px; font-size:14px; display:inline-block}
 	.labelBox li.hit {background:#f95b61; color:#fff; font-weight:400; border-radius:4px; padding:0px 10px; font-size:14px; display:inline-block}
 	.labelBox li.cool {background:#017bc8; color:#fff; font-weight:400; border-radius:4px; padding:0px 10px; font-size:14px; display:inline-block}
 	.labelBox li.hot {background:#d91d23; color:#fff; font-weight:400; border-radius:4px; padding:0px 10px; font-size:14px; display:inline-block}
 
-	.bg_w {background:#fff; padding:39px  32px}
-	.level {position:relative; font-size:16px; color:#a8c345; font-weight:500}
-	.level img {margin-left:5px}
 
+	.bg_w {background:#fff; padding:39px  32px}
+	.level {position:relative; font-size:16px; color:#505050; font-weight:500; background:#fff; border-radius:30px; padding:10px 20px; border:1px solid #a6a6a6}
+	.level img {margin-left:5px}
+	.level span {margin-left:0px; display:block}
+	.copyBox_en {text-align:center; max-width:700px; width:100%;text-align:left;  color:#fff; font-weight:700; }
+
+
+	dl.recipeDL {position:relative; width:100%; border:1px solid #DADBDD; border-radius:20px;overflow:hidden}
+	dl.recipeDL dd {position:relative; float:left;  margin:0; width:50%}
+	dl.recipeDL dd:nth-child(2) {padding:50px}
 	/* -------------------- */
-	/* 3000 ÔøΩÔøΩ√µ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+	/* 3000 √ﬂ√µ ∑πΩ√««
 	----------------------- */
 	.candy-wrapper {margin: 0 auto;position: relative; width:100%}
 	.main {display: inline-block;width: 75%;vertical-align: top; floaT:right; }
@@ -346,10 +362,11 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.recoBox li a:hover {background:#a8c345; font-size:20px; font-weight:500; padding:12px 17px; color:#fff }
 	.more { position:relative;  float:right; margin-bottom:30px}
 
+
 	/* -------------------- */
-	/* 3000 ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩƒ±ÔøΩ
+	/* 3000 ∑πΩ√««»ƒ±‚
 	----------------------- */
-	.bg_review {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_review.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.bg_review {position:relative; background: url(../../img/bg_review.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.hCenter {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%;}
 	.hCenter02 {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%;}
 	.hCenter03 {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%;}
@@ -361,24 +378,23 @@ body {margin:0; padding:0; overflow-x:hidden}
 	ul.linkBox a:hover li:nth-child(2) span {background:#333333}
 	ul.linkBox a:hover {text-decoration:none; border:1px solid #f0f1f2; background:#a8c345}
 	ul.linkBox a li {floaT:left;  bordeR:0}
-	ul.linkBox a li.ico_sy01 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy01.png) no-repeat scroll 45px 17px; padding-left:90px; width:70% }
-	ul.linkBox a:hover li.ico_sy01 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy01_on.png) no-repeat scroll 45px 17px; padding-left:90px; width:70% }
-	ul.linkBox a li.ico_sy02 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy02.png) no-repeat scroll 45px 21px; padding-left:90px; width:70% }
-	ul.linkBox a:hover li.ico_sy02 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy02_on.png) no-repeat scroll 45px 21px; padding-left:90px; width:70% }
+	ul.linkBox a li.ico_sy01 {background:url(../../img/ico_sy01.png) no-repeat scroll 45px 17px; padding-left:90px; width:70% }
+	ul.linkBox a:hover li.ico_sy01 {background:url(../../img/ico_sy01_on.png) no-repeat scroll 45px 17px; padding-left:90px; width:70% }
+	ul.linkBox a li.ico_sy02 {background:url(../../img/ico_sy02.png) no-repeat scroll 45px 21px; padding-left:90px; width:70% }
+	ul.linkBox a:hover li.ico_sy02 {background:url(../../img/ico_sy02_on.png) no-repeat scroll 45px 21px; padding-left:90px; width:70% }
 	ul.linkBox a:hover li {color:#fff}
 	ul.linkBox a li:nth-child(2) {width:25%; }
 	ul.linkBox a li:nth-child(2) span {background:#dddddd; position:absolute; right:18px ;top:10px; border-radius:50px; padding:15px 22px }
-	.ico_sy01 {bordeR:1px solid #f6f6f6; width:100%;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:20px; font-weight:600;}
-	.ico_sy02 {bordeR:1px solid #f6f6f6; width:100%;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:20px; font-weight:600;}
+	.ico_sy01 {bordeR:1px solid #f6f6f6; width:100%;  background: url(../../img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:20px; font-weight:600;}
+	.ico_sy02 {bordeR:1px solid #f6f6f6; width:100%;  background: url(../../img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:20px; font-weight:600;}
 	/* -------------------- */
 	/* 3000 footer
 	----------------------- */
-	footer {margin-top:00px; margin-bottom:00px; background:#f1f3f4; padding:90px 0 60px 0; }
+	footer {margin-top:00px; margin-bottom:00px; background:#f1f3f4; padding:90px 0 60px 0; position:relative}
 	ul.foot_ul {position:relative; width:100% } 
 	ul.foot_ul li {display:inline-block; vertical-align:top}
 	ul.foot_ul li:first-child {margin-right:30px}
-	#movetopbt {z-index:1000}
-	.btn_top {position:absolute; right:50px; top:0; cursor: pointer; z-indeX:1000; }
+	.btn_top {cursor: pointer; z-index:1000}
 	footer .col-md-12.add {padding-left:160px}
 
 	/* -------------------- */
@@ -387,8 +403,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.center {margin:0 auto;}
 	.tcenter {text-align:center}
 	.clear {clear:both}
-	.top_line {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/topline.gif) no-repeat  0 0; padding-top:20px}
-	.bg_brand {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_brand.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.top_line {background: url(../../img/topline.gif) no-repeat  0 0; padding-top:20px}
+	.bg_brand {position:relative; background: url(../../img/bg_brand.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.btnType01 {border-radius:50px; padding:16px 55px; color:#fff; font-weight:600; text-align:center; background:#a8c345; display:inline-block}
 	.btnType02 {border-radius:50px; padding:11px 20px; color:#fff; font-weight:600; text-align:center; background:#a8c345; display:inline-block}
 	.btnType03 {border-radius:50px; padding:11px 30px; color:#fff; font-weight:500; text-align:center; background:#a8c345; display:inline-block}
@@ -410,10 +426,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.tab_content2 > div {clear: both;line-height: 19px;display: none;}
 	.tab_content2 .current { display: block; }
 
-	/* brand tab ÔøΩÔøΩ…ªÔøΩÔøΩÔøΩ */
-	p.tabTitle_red {width:100%; padding:15px 0; color:#fff; font-size:20px; font-weight:600; background:#d91d23; text-align:Center; border-radius:5px}
-	p.tabTitle_blue {width:100%; padding:15px 0; color:#fff; font-size:20px; font-weight:600; background:#017bc8; text-align:Center; border-radius:5px}
-	p.tabTitle_brown {width:100%; padding:15px 0; color:#fff; font-size:20px; font-weight:600; background:#744443; text-align:Center; border-radius:5px}
+
+
 
 	.btn_ny19 {background:#faaa42; padding:25px 47px; position:relative; display:inline-block; width:826px}
 	.btn_ny19 li { list-style:none;  display:block; width:265px; margin:0; float:left; z-index:100; position:relative   }
@@ -458,11 +472,25 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.bg_brand_footer {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_brand_footer.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1;  }
 	.brand_info {text-align:center; width:100%; padding-top:30px}
 	.brand_info img {max-width:500px; text-align:center; width:100% }
+	
+
+	.center {text-align:center}
+	.gray2 {color:#8A8A8A}
+	.gray3 {color:#636363}
+	.h400 {height:400px}
+
+	.title360_01 {background: #d91d23;color: #fff;; border-radius:10px; text-align:center; padding:12px 0; font-size:18px}
+	.title360_02 {background: #017bc8;color: #fff;; border-radius:10px; text-align:center; padding:12px 0; font-size:18px}
+	.title360_03 {background: #744443;color: #fff;; border-radius:10px; text-align:center; padding:12px 0; font-size:18px}
+
 	.tetra {position:relative; widtH:100%; max-width:800px; margin:0 auto;}
 	.tetra ul li {displaY:inline-block; vertical-align:middle}
 	.tetra ul li p {margin-top:6px}
 	.tetra ul li p:nth-child(2) {margin-top:10px}
 	.tetra ul li:first-child {width:120px; margin-right:20px}
+
+
+
 
 	/* -------------------- */
 	/* 3000  360 3D
@@ -475,7 +503,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  display: inline-block;
 	}
 
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩ √§ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* ¥„πÈ«— √§ºˆ¿∞ºˆ */
 	.cd-product-viewer-wrapper img {
 	  /* this is the image visible before the image sprite is loaded */
 	  display: block;
@@ -490,7 +518,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  height: 100%;
 	  /* our image sprite is composed by 16 frames */
 	  width: 3600%;
-	  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/360-dam-550-min.png) no-repeat center center;
+	  background: url(../../img/360-dam-550-min.png) no-repeat center center;
 	  background-size: 100%;
 	  opacity: 0;
 	  -webkit-transition: opacity 0.3s;
@@ -502,9 +530,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  opacity: 1;
 	  cursor: ew-resize;
 	}
-	/* //ÔøΩÔøΩÔøΩÔøΩÔøΩ √§ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* //¥„πÈ«— √§ºˆ¿∞ºˆ */
 
-	/* ÔøΩ√øÔøΩÔøΩÔøΩ √§ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* Ω√ø¯«— √§ºˆ¿∞ºˆ */
 	.cd-product-viewer-wrapper .product-sprite2 {
 	  position: absolute;
 	  z-index: 2;
@@ -513,7 +541,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  height: 100%;
 	  /* our image sprite is composed by 16 frames */
 	  width: 3600%;
-	  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/360-cool-550-min.png) no-repeat center center;
+	  background: url(../../img/360-cool-550-min.png) no-repeat center center;
 	  background-size: 100%;
 	  opacity: 0;
 	  -webkit-transition: opacity 0.3s;
@@ -526,10 +554,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  opacity: 1;
 	  cursor: ew-resize;
 	}
-	/* //ÔøΩ√øÔøΩÔøΩÔøΩ √§ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* //Ω√ø¯«— √§ºˆ¿∞ºˆ */
 
-
-	/* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* ±∏ºˆ«—ªÁº“ ªÁ∞Ò¿∞ºˆ */
 	.cd-product-viewer-wrapper .product-sprite3 {
 	  position: absolute;
 	  z-index: 2;
@@ -538,12 +565,13 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  height: 100%;
 	  /* our image sprite is composed by 16 frames */
 	  width: 3600%;
-	  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/360-bone-550-min.png) no-repeat center center;
+	  background: url(../../img/360-bone-550-min.png) no-repeat center center;
 	  background-size: 100%;
 	  opacity: 0;
 	  -webkit-transition: opacity 0.3s;
 	  -moz-transition: opacity 0.3s;
 	  transition: opacity 0.3s;
+	  
 	}
 
 	.cd-product-viewer-wrapper.loaded .product-sprite3 {
@@ -551,7 +579,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  opacity: 1;
 	  cursor: ew-resize;
 	}
-	/* //ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	/* //±∏ºˆ«—ªÁº“ ªÁ∞Ò¿∞ºˆ */
+
+
 
 
 	.cd-product-viewer-handle {
@@ -606,7 +636,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  width: 44px;
 	  left: 0;
 	  top: -20px;
-	  background: #9cbb28 url(https://image.edaymall.com/images/vegemil/beansoup/img/cd-arrows.svg) no-repeat center center;
+	  background: #9cbb28 url(../../img/cd-arrows.svg) no-repeat center center;
 	  border-radius: 50%;
 	  box-shadow: 0 0 0 6px rgba(193, 214, 119, 0.6), 0 0 20px rgba(0, 0, 0, 0.2);
 	  /* replace text with image */
@@ -694,264 +724,27 @@ body {margin:0; padding:0; overflow-x:hidden}
 	/* // 3000  360 3D
 	----------------------- */
 
-
-	/* -------------------- */
-	/* 3000 ÔøΩÔøΩÔøΩﬁ¥ÔøΩ
-	----------------------- */
-	.side-quick-menu {
-	  display:block;
-	  position:fixed;
-	  top:20%;
-	  right:0;
-	  z-index:100
-	}
-	.side-quick-menu a.bean {background:#b17d55; color:#fff}
-	.side-quick-menu a.dcf {background:#f5f5f5; color:#000}
-	.side-quick-menu a {
-	  display:block;
-	  position:relative;
-	  margin-bottom: 2px;
-	  padding:12px 12px 12px 12px;
-	  border-radius:0 5px 5px 0;
-	  text-align:left;
-	  text-decoration:none;
-	  width: 230px;
-	  right:calc(-100% + 55px);
-	  transition:all 0.5s ease-in-out;
-	  -moz-transition:all 0.5s ease-in-out;
-	  -webkittransition:all 0.5s ease-in-out;
-	  /* animation: rightout .7s linear; */
-	  font-size:15px; line-height:170%;
-	}
-	
-	.side-quick-menu a:hover {
-	  right: -30px;
-	}
-	.side-quick-menu a img {margin-right:10px}
-
-	@keyframes rightout {
-	  50% {
-		right: 0px;
-	  }
-	}
-
-	.side-quick-menu a:nth-child(1) {  
-	  animation-delay: 2s 
-	}
-	.side-quick-menu a:nth-child(2) { 
-	  animation-delay: 2.1s 
-	}
-	.side-quick-menu a:nth-child(3) {
-	  animation-delay: 2.2s 
-	}
-	.side-quick-menu a:nth-child(4) {  
-	  animation-delay: 2.3s 
-	}
-	.side-quick-menu a:nth-child(5) { 
-	  animation-delay: 2.4s 
-	}
-	.side-quick-menu a:nth-child(6) {
-	  animation-delay: 2.5s 
-	}
-	.side-quick-menu a:nth-child(7) {  
-	  animation-delay: 2.6s 
-	}
-	.side-quick-menu a:nth-child(8) { 
-	  animation-delay: 2.7s 
-	}
-	/* -------------------- */
-	/* //3000 ÔøΩÔøΩÔøΩﬁ¥ÔøΩ
-	----------------------- */
-
-	/* -------------------- */
-	/* 3000 season
-	----------------------- */
-	.bg_seoson {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yy.jpg) repeat scroll 0px 0px;  }
-	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px;  }
-	.bg_pink {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_pink.jpg) repeat-y ;  background-size: contain }
-	.bg_yellow {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yellow.jpg) repeat ; background-size: contain  }
-	.bg_green ul {position:relative; width:95%; margin:0 auto}
-	.bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
-	.y_size {position:relative; text-align:center}
-	.y_size iframe {max-width:1100px; width:80%; height:610px; margin:0 auto; text-align:center; border-radius:20px }
-	dl.kakaoQRWrap {position:relative; margin:0 auto; text-align:center; padding-bottom:100px;}
-	dl.kakaoQRWrap dd {display:inline-block; vertical-align:top; margin-top:50px; }
-	dl.kakaoQRWrap dd.kakaobtn {position:relative; width:40%; }
-	dl.kakaoQRWrap dd.kakaobtn p:first-child {margin-bottom:30px;}
-	dl.kakaoQRWrap dd.kakaoQR {position:relative; width:30%; margin-left:7%}
-	.q01 {position:relative; text-align:center; margin-top:200px; margin-bottom:0px}
-	/*position: absolute;top: 50%; left: 50%;background: #f00;transform: translate(-50%, -50%); display:inline-block*/
-	.bg_green ul.season-sns {width:100%; text-align:center}
-	.bg_green ul.season-sns li {width:15%; margin:0 5px; }
-	.bg_green ul.season-sns li img {width:100%}
-	p {margin:0; padding:0; outline:0; bordeR:0}
-	img {margin:0; padding:0; outline:0;bordeR:0}
-	.fake-btn{ position:absolute;  width:450px; height:100px; top:2355px; left:180px; z-index:100;  }
-	.fake-btn a {display:inline-block;width:100%; height:100%}
-	ul.popBTN {margin:0; padding:0}
-	ul.popBTN li:first-child {width:50%; float:left}
-	ul.popBTN li:nth-child(2) {width:50%; float:right}
-	.endBox {position:relative;  width:100%; height:80vh}
-	.endBox .name {position:relative; text-align:center; margin-bottom:10px}
-	.endBox .name span {font-size:50px; font-weight:600; color:#6fc876; line-height:120%; margin-top:10px;  display:inline-block }
-	.endBox .name span img { width:270px}
-	.endBox .name span:first-child {border-bottom:2px solid #6cc873; z-index:10; position:relative}
-	.endBox p {text-align:center; font-size:35px; font-weight:500;}
-	.endBox p img {}
-	.centerH {position: absolute;top: 50%; left: 50%;;transform: translate(-50%, -50%); width:80%; max-width:580px}
-	.centerH img {}
-	ul.end_btn_box {position:relative; width:100%; margin-top:50px}
-	ul.end_btn_box li {display:inline-block; text-align:center; margin:0 auto;  padding:0; margin:0; }
-	ul.end_btn_box li {width:47%}
-	ul.end_btn_box li:first-child {text-align:right; margin-right:5px}
-	ul.end_btn_box li:nth-child(2) {text-align:left; margin-left:5px}
-	ul.end_btn_box li a {text-align:center; }
-
-
-
-	/* 3000 popup */
-	.pop_wrap_recipe {background:#eeeeee; padding:0px 0px; max-height:800px; overflow-y:scroll; overflow-x:hidden;  border-radius:0px; }
-	.pop_wrap_recipe {width:100%; margin:0 auto}
-	.pop_wrap_recipe div.popBasePW {width:100%; position:relative; }
-	.popTextbox {position:relative;  heighT:300px; padding:10px 10px; bordeR:1px solid #E6E6E6; width:100%; line-height:140%; overflow-y:scroll; width:100%; background:#fff; font-size:13px}
-	div.pop_recipeBase {width:100%; position:relative; }
-	div.pop_recipeBase.w400 {width:400px; position:relative; }
-	div.pop_recipeBase p.btn_pop_close {position:absolute; right:10px; top:15px; margin:0; padding:0;  }
-	.w800 {max-width:800px}
-	.w1000 {max-width:1000px}
-	textarea.h150 {height:150px}
-	.relative {position:relative}
-
-	/* 3000 certifi */
-	.subTitle {font-size:20px; font-weight:400; color:#383838; text-align:center}
-	.checkStyle input[type="checkbox"]:checked + label span { background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/checkbox.png) -30px top no-repeat; background-size:60px}
-	
-	/* 3000 checkbox Design */
-	.checkStyle input[type="checkbox"] {display:none;}
-	.checkStyle input[type="checkbox"] + label {color:#343434;}
-	.checkStyle input[type="checkbox"] + label span {
-		display:inline-block;
-		width:30px;
-		height:30px;
-		margin:-5px 6px 0 0;
-		vertical-align:middle;
-		background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/checkbox.png) left top no-repeat;
-		cursor:pointer;background-size:60px
-	}
-	.checkStyle input[type="checkbox"]:checked + label span { background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/checkbox.png) -30px top no-repeat; background-size:60px}
-	.agree_season {position:relative; font-size:25px}
-	.agree_txt_box {position:relative; font-size:14px; text-align:left; width:100%; height:220px; padding:4%  ; background:#f3f3f3 ;color:#a4a4a4; border:0; border-radius:20px}
-	.btn_base {background:none; border:0; outline:none}
-
-	/* 3000 step input*/
-	.stepBox {position:relative; width:100%; border-top:2px solid #ffb046; padding-top:20px}
-	.stepBox .greenR {background:#ee685c; border-radius:10px; font-size:20px; font-weight:600; color:#fff; padding:6px 10px}
-	.stepBox span {vertical-align:middle; }
-	.stepBox span:first-child {margin-right:10px}
-	.subTitle02 {font-size:28px; font-weight:500; coloR:#424242; vertical-align:top}
-	ul.school {position:relative; margin:0; padding:0}
-	ul.school li {display:inline-block; margin-right:50px}
-	ul.school li b {font-weight:300; color:#424242; font-size:18px}
-	/* 3000 radio Design */
-	.radioStyle input[type="radio"] {display:none;}
-	.radioStyle input[type="radio"] + label {}
-	.radioStyle input[type="radio"] + label span {
-		display:inline-block;
-		width:30px;
-		height:30px;
-		margin:-5px 10px 0 0;
-		vertical-align:middle;
-		background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/radio_button.png) 0px top no-repeat;background-size:60px;
-		cursor:pointer;
-	}
-	.radioStyle input[type="radio"]:checked + label span {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/season/radio_button.png) -30px top no-repeat; 
-	background-size:60px}
-
-
-	
-	select.sel_season {position:relative}
-	select.sel_season {border-radius:5px;  color:#367c1e; padding:0px 15px; height:40px}
-	select.sel_season option {font-size:17px; color:#367c1e; border:1px solid red}
-	.info {font-size:16px; margin-top:10px}
-	.season_input input {background:#e2f5e1; width:100%; font-size:22px; }
-	.season_input select {background:#e2f5e1; width:100%; font-size:18px; border:10px ;  padding:8px 5px; border-radius:10px; color:#000 }
-	.season_input select option {font-size:18px; border:2px solid green}
-	
-	textarea.season_areatxt {border:0; padding:2px 10px; background:#e2f5e1; width:100%; font-size:20px; padding:1%; border-radius:10px}
-	input.season_areaIn {border:0; border-radius:10px; font-size:18px; padding:10px }
-	input.season_areaIn.w300 {max-width:300px; width:100%}
-	.w100 { width:100%; }
-	input.w80 {max-width:80px; }
-	.stepBox b {color:#367c1e}
-	ul.ul-tel {position:relative}
-	ul.ul-tel li {display:inline-block}
-	.info_yellow {background:#fffede; color:#ffb046; padding:10px; border-radius:20px}
-
-
-	.btn_type04 { background:#F3F3F3;border:1px solid #E6E6E6;  color:#aaa; font-weight:400; text-align:center; 
-	display:inline-block;  font-size:14px; margin-left:10px; border-radius:20px}
-	.btn_type04 a {color:#aaa; padding:12px 15px; display:inline-block; }
-	.btn_type04 a:hover {text-decoration:none}
-	ul.ul-yy {position:relative; }
-	ul.ul-yy li {display:inline-block; display:inline-block ;width:23%; max-width:100px; margin-right:10px; border:0; }
-	ul.route-ul {position:relative}
-	ul.route-ul li {position:relative; width:30%; display:inline-block}
-	.in_file {color:#000} 
-
-	/* 3000 file input Design */
-	.filebox .upload-name {
-		display: inline-block;
-		height: 50px;
-		padding: 0 10px;
-		vertical-align: middle;
-		border:0;
-		width: 70%;
-		color:#000;
-		background:#e2f5e1; border-radius:10px
-	}
-
-
-	.filebox label {
-		display: inline-block;
-		padding: 11px 20px;
-		color: #fff;
-		vertical-align: middle;
-		background-color: #999999;
-		cursor: pointer;
-		margin-left: 5px; border-radius:10px; font-size:18px; ;vertical-align:top
-	}
-
-
-	.filebox input[type="file"] {
-		position: absolute;
-		width: 0;
-		height: 0;
-		padding: 0;
-		overflow: hidden;
-		border: 0;
-	}
-
 }
 
 
 
 
 	/* ------------------------------------
-		3000 ÔøΩÔøΩÔøΩÔøΩ∆Æ > Grid
+		3000 ∏ÆΩ∫∆Æ > Grid
 	--------------------------------------- */
 	ul.key2 {position:relative; margin-top:26px; display:block; width:100%;  text-align:center}
 	ul.key2 li {font-size:14px; background:#fff; display:inline-block; font-weight:500; border-radius:20px; color:#333333; margin-right:10px} 
-	ul.key2 li a {color:#333333; text-decoration:none; padding:10px 20px; display:inline-block}
-	ul.key2 li a:hover {background:#000; color:#fff; border-radius:20px}
+	ul.key2 li {color:#333333; text-decoration:none; padding:10px 20px; display:inline-block; margin-bottom:10px}
+	ul.key2 li {}
 	.listLine {position:relative; width:100%; border-bottom:2px solid #000; padding:0; }
-	.listLine .count {float:left; margin-top:10px}
+	.listLine .count {float:left}
 	ul.list-op {position:relative;text-align:right;   }
-	ul.list-op li.active {display:inline-block; vertical-align:top; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_greenDot.gif) no-repeat scroll 0px 10px; padding-left:10px; margin-left:15px }
-	ul.list-op li {display:inline-block; vertical-align:top; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_greenDotGray.gif) no-repeat scroll 0px 10px; padding-left:10px; margin-left:15px }
+	ul.list-op li.active {display:inline-block; vertical-align:top; background: url(../../img/ico_greenDot.gif) no-repeat scroll 0px 10px; padding-left:10px; margin-left:15px }
+	ul.list-op li {display:inline-block; vertical-align:top; background: url(../../img/ico_greenDotGray.gif) no-repeat scroll 0px 10px; padding-left:10px; margin-left:15px }
 	ul.list-op li a {font-size:14px; color:#000; text-decoration:none}
 	.bgIv {background:#f3f0e4} 
 	/* Metro Grid Style 3 */
-	.bg_list {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_list.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;  width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center }
+	.bg_list {background: url(../../img/bg_list.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;  width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center }
 
 	
 	
@@ -1033,44 +826,37 @@ body {margin:0; padding:0; overflow-x:hidden}
 
 	.messonry-button button.is-checked span.filter-text b {color:#fff; }
 	.messonry-button button span.filter-text b {position:absolute;bottom:12%;left:50%; transform: translate(-50%, -50%); font-size:20px; font-weighT:400; color:#323232 }
-	.messonry-button button.ico_pc_01 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_01.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_01.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_01_on.png) no-repeat center 35%; b }
-	.messonry-button button.ico_pc_02 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_02.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_02.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_02_on.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_03 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_03.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_03.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_03_on.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_04 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_04.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_04.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_04_on.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_05 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_05.png) no-repeat center 35%;  }
-	.messonry-button button.ico_pc_05.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/g_btn_05_on.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_01 span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_01.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_01.is-checked span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_01_on.png) no-repeat center 35%; b }
+	.messonry-button button.ico_pc_02 span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_02.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_02.is-checked span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_02_on.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_03 span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_03.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_03.is-checked span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_03_on.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_04 span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_04.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_04.is-checked span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_04_on.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_05 span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_05.png) no-repeat center 35%;  }
+	.messonry-button button.ico_pc_05.is-checked span.filter-text {color: #fff;  background:#fff url(../../img/g_btn_05_on.png) no-repeat center 35%;  }
 	
 	.prd_info { padding:20px 0 0 0; margin-top:50px }
-	.prd_info li {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_product.gif) no-repeat 0px 5px; padding-left:30px; display:inline-block; margin-right:50px; margin-bottom:20px }
+	.prd_info li {background: url(../../img/ico_product.gif) no-repeat 0px 5px; padding-left:30px; display:inline-block; margin-right:50px; margin-bottom:20px }
 	.prd_info li:last-child {margin-right:0}
 	.prd_info {width:100%; border-top:1px solid #d1d3dc; border-bottom:2px solid #323232}
 	.thumb_txt {position:relative; height:200px; overflow:hidden}
 	.thumb {position:relative; }
 	.thumb_line {padding:25px 0 15px 0; border-bottom:1px solid #d1d3dc; width:100%;  position:relative}
-	.thumb_line span {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_thump.gif) no-repeat center 1px; width:20px; height:10px; display:inline-block}
+	.thumb_line span {background:url(../../img/ico_arrow_thump.gif) no-repeat center 1px; width:20px; height:10px; display:inline-block}
 	.thumb_line b {font-weight:400}
 	.thumb b { padding:12px 13px; font-size:13px; font-weight:400; position:absolute; left:13px; top:13px; background:#7f99e3; color:#fff; border-radius:40px}
 
 	br.view {display:none}
 
-	.paging3 { position: relative; margin: 0px 0 200px 0; text-align: center; }
+	.paging3 { position: relative; margin: 64px 0 0 0; text-align: center; }
 	.paging3 ol { overflow: hidden; }
 	.paging3 ol li { display: inline-block; font-weight: bold; line-height: 170%; margin:0 5px }
 	.paging3 ol li a { display: inline-block; width: 28px; text-align: center; color: #000;  font-size:16px; font-weight:600; padding:3px 0 }
 	.paging3 ol li a:hover { display: inline-block; text-decoration:underline }
-	.paging3 ol li strong {
-	    display: inline-block;
-	    color: #fff;
-	    font-size: 18px;
-	    padding: 10px 20px;
-	    font-weight: 400;
-	    background: #92b024;
-	    border-radius: 50px;
-	}
+	.paging3 ol li strong { display: inline-block; color: #fff;font-size:18px; padding:10px 20px; font-weight:400; 
+	background:#92b024;  border-radius:50px}
 	.paging3 ol li img { vertical-align: top; margin:6px 5px; }
 	.paging3 ol li.preEnd,
 	.paging3 ol li.pre,
@@ -1079,10 +865,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.paging3 ol li.pre { padding-right: 10px; }
 	.paging3 ol li.next { padding-left: 10px;  }
 
-	#resultWord { clear:both}
-
 	/* ------------------------------------
-		3000 ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ
+		3000 ∑πΩ√«« ªÛºº
 	--------------------------------------- */
 	.cardBox {position:absolute;  top:190px ; right:2%;-webkit-box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13); 
 box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
@@ -1103,22 +887,15 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.detailLine {border-top:2px solid #000}
 	.recipe_content {position:relative; text-align:center; }
 	.textleft {text-align:center}
-	.logobox {position:absolute; padding:35px 24px 0 24px; width:100% }
-	.logobox li {width:49%; display:block}
-	.logobox li:first-child {text-align:left; float:left}
-	.logobox li:first-child img {max-width:76px}
-	.logobox li:nth-child(2) {text-align:right; float:right;  }
-	.logobox li:nth-child(2) img {max-width:85px}
-	
 
 	/* ------------------------------------
-		3000 ÔøΩ‘ΩÔøΩÔøΩÔøΩ
+		3000 ∞‘Ω√∆«
 	--------------------------------------- */
-	.bg_video {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_video.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.bg_news {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_news.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.bg_event {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_event.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.bg_video {position:relative; background: url(../../img/bg_video.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.bg_news {position:relative; background: url(../../img/bg_news.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.bg_event {position:relative; background: url(../../img/bg_event.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	ul.board_tab {position:absolute; bottom:0; margin:0 auto; width:100%; max-width:1357px}
-	ul.board_tab li {width:33%;  font-weight:600; background:#fff; text-align:center; float:left; border-top:1px solid #dedede; border-right:1px solid #dedede; border-bottom:1px solid #dedede}
+	ul.board_tab li {width:49.5%;  font-weight:600; background:#fff; text-align:center; float:left; border-top:1px solid #dedede; border-right:0px solid #dedede; border-bottom:1px solid #dedede}
 	ul.board_tab li.active { background:#a8c345;border-top:1px solid #a8c345 }
 	ul.board_tab li.active a { color:#fff; }
 	ul.board_tab li a { padding:20px 0; width:100%; display:inline-block; text-decoration:none; color:#666666; font-size:20px }
@@ -1139,24 +916,21 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.boardSearch .search-container {float: right;   }
 	.boardSearch input[type=text] {padding:9px; padding-left:30px; margin-top: 0px;font-size: 24px; border:1px solid #999999; padding:5px 0px 5px 30px; width:300px; border-radius:50px 0 0 50px; background:#fff}
 	.boardSearch .search-container button {float: right;padding:24px 31px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
-	.boardSearch .search-container button:hover {background:#aac14c url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; }
+	font-size: 17px;border: none;cursor: pointer; background:#000 url(../../img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
+	.boardSearch .search-container button:hover {background:#aac14c url(../../img/ico_search.png) no-repeat center center; }
 	.boardSearch input:focus { outline:none}
 
 
 	/* ------------------------------------
-		3000 ÔøΩÔøΩÔøΩÔøΩ√≥
+		3000 ±∏∏≈√≥
 	--------------------------------------- */
-	.bg_mall {position:relative; background:  url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mall.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.bg_mall {position:relative; background: url(../../img/bg_mall.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	ul.mall_list {position:relative; width:100%;}
 	ul.mall_list li {position:relative; width:100%; margin-top:30px}
 	ul.mall_list li a {color:#343434; text-decoration:none}
 	ul.mall_list li dl.mallBox {position:relative; background:#f2f3f5; padding:44px;  50px; border-radius:20px}
 	ul.mall_list li dl.mallBox dd {width:45%; display:inline-block; vertical-align:top; }
 	ul.mall_list li dl.mallBox dd:nth-child(2) {padding:20px 40px}
-	
-
-	
 
 
 
@@ -1164,22 +938,22 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 @media (max-width: 1400px) {
 	body {margin:0; padding:0}
 	.container {max-width:1360px; width:100%}
-	/* #slider0 .slider {height:660px} */
+	#slider0 .slider {height:660px}
 	.h840 {height:660px}
 	#gnb .logo {margin-left:15px;width:100%}
 	.hcenter_right { position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); width:80%; z-index:100}
-	.w600 {width:450px;}/* ÔøΩÔøΩÔøΩÔøΩ∆Æ > ÔøΩÀªÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	.w600 {width:450px;}/* ∏ÆΩ∫∆Æ > ∞Àªˆ∆‰¿Ã¡ˆ ªÁ¿Ã¡Ó */
 	/* -------------------------
 		1400 GNB
 	-------------------------- */
 	#gnb > ul {max-width:1400px; width:100%;  position:relative;  margin:0; padding:0;   margin:0 auto ;   }
 	#gnb > ul .logo {position:absolute; top:25px; left:0; }
-	#gnb > ul li.first { margin-left:33%}
-	#gnb li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 30px 30px 30px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1ÔøΩÔøΩ */
-	#gnb li {margin-left:3%}
+	#gnb > ul li.first { margin-left:38%}
+	#gnb li a.dep01{font-size:20px;font-weight:600;color:#fff;display:block;padding:30px 30px 30px 30px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1µ™ */
+	#gnb li {margin-left:2%}
 
 	/* -------------------- */
-	/* 1400 ÔøΩÔøΩÔøΩÔøΩ > font-ani
+	/* 1400 ∏ﬁ¿Œ > font-ani
 	----------------------- */
 
 	#font-ani {text-transform: uppercase;font-size:45px;font-weight:600;width:100%;bottom:45%;display:block;color:#fff}
@@ -1191,12 +965,12 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	#flip div:nth-child(3) div {background:#ff6600;}
 	@keyframes show {
 	 0% {margin-top:-186px;}
-	  5% {margin-top:-140px; } /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	  33% {margin-top:-140px;} /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	  38% {margin-top:-72px;}  /* ÔøΩ√øÔøΩÔøΩÔøΩ */
-	  66% {margin-top:-72px;}  /* ÔøΩ√øÔøΩÔøΩÔøΩ */
-	  71% {margin-top:-3px; }  /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	  99.99% {margin-top:-3px;} /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	  5% {margin-top:-140px; } /* æÓ∑¡øÓ */
+	  33% {margin-top:-140px;} /* æÓ∑¡øÓ */
+	  38% {margin-top:-72px;}  /* Ω√ø¯«— */
+	  66% {margin-top:-72px;}  /* Ω√ø¯«— */
+	  71% {margin-top:-3px; }  /* ¥„πÈ«— */
+	  99.99% {margin-top:-3px;} /* ¥„πÈ«— */
 	  100% {margin-top:-186px;}
 	}
 
@@ -1206,13 +980,8 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.mainSearch a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
 	.mainSearch input[type=text] {padding:9px; padding-left:20px; margin-top: 0px;font-size: 17px;border: none; width:350px; border-radius:50px 0 0 50px; background:#fff}
 	.mainSearch .search-container button {float: right;padding:22px 30px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 20px 20px 0  }
+	font-size: 17px;border: none;cursor: pointer; background:#000 url(../../img/ico_search.png) no-repeat center center; border-radius:0 20px 20px 0  }
 	
-
-	.mainSearch .search-container #btnSearch {float: right;padding:13px 18px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 20px 20px 0  }
-	
-
 	/* --------------- */
 	/*  1400 fontType
 	------------------ */
@@ -1227,7 +996,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.cd-product-viewer-wrapper .product-viewer {position: relative;z-index: 1;display: inline-block;overflow: hidden;width:400px;  height:450px;}
 
 	/* ------------------------------------
-		1400 ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ
+		1400 ∑πΩ√«« ªÛºº
 	--------------------------------------- */
 	.candy-wrapper {margin: 0 auto;position: relative; width:100%; padding:0 15px}
 	.sidebar_right {width:30%; margin-left:0}
@@ -1239,10 +1008,6 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	ul.mall_list li dl.mallBox {padding:20px}
 
 
-
-	.wView2 {display:none}
-
-
 	
 	
 
@@ -1251,50 +1016,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 }
 
-@media (max-width: 1200px) {
-	#gnb li {margin-left:1%; }
-	#gnb li a.dep01 {padding:30px 20px 30px 20px}
-	.subTitle  {font-size:15px}
-	.agree_season {font-size:18px}
-	.certifi01 {width:200px; margin:50px auto}
-	.certifi02 {width:250px; margin:50px auto}
-	.subTitle02 {font-size:16px}
-	.stepBox .greenR {font-size:16px}
-	.info {font-size:14px} 
-	ul.route-ul li {width:100%}
-	input.season_areaIn {font-size:15px; padding:7px}
-	.season_input input {font-size:18px}
-	.agree_season {font-size:15px; }
-	.agree_season .radioStyle b{font-size:15px; }
-	.season_input select {font-size:15px; height:40px; }
-	.season_input input {font-size:15px;}
-	.info_yellow {font-size:14px}
 
-	
-
-
-	/* 3000 file input Design */
-	.filebox .upload-name {height: 35px;}
-	.filebox label {padding:5px 20px;margin-left: 5px; border-radius:10px; font-size:15px; ;vertical-align:top}
-	.filebox input[type="file"] {
-		position: absolute;
-		width: 0;
-		height: 0;
-		padding: 0;
-		overflow: hidden;
-		border: 0;
-		color:#000
-	}
-
-	textarea.season_areatxt {font-size:15px; padding:10px}
-
-
-
-
-
-
-
-}
 
 @media (max-width: 990px) {
 	body { overflow-x:hidden }
@@ -1303,84 +1025,61 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.container {width:100%; max-width:100%}
 	.wView {display:none}
 	.mView {display:block}
-	/* #slider0 .slider {height:345px; } */
+	#slider0 .slider {height:460px}
 	.h220 {height:190px}
 	.h450 {height:450px}
-	.h500 {height:300px} /* ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ*/
+	.h500 {height:400px}
 	.h600 {height:500px}
 	.h600_review {height:850px; overflow-y:hidden }
-	.h680 {height:345px;} /* ÔøΩÍ∑£ÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ */
-	.h800 {height:400px}
-	.h840 {height:500px;}
-	.w600 {max-width:90%; overflow:hidden; width:370px}/* ÔøΩÔøΩÔøΩÔøΩ∆Æ > ÔøΩÀªÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	.h680 {height:500px}
+	.h800 {height:500px}
+	.h840 {height:460px}
+	.w600 {max-width:90%; overflow:hidden; width:370px}/* ∏ÆΩ∫∆Æ > ∞Àªˆ∆‰¿Ã¡ˆ ªÁ¿Ã¡Ó */
 	.hcenter_right { position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); width:80%; z-index:100}
-
+	dl.recipeDL dd:nth-child(2) {padding:15px}
 
 	/* --------------- */
 	/*  990 fontType
 	------------------ */
 	.f16 {font-size:15px; line-height:150% }
-	.f18 {font-size:14px; line-height:120%}
+	.f18 {font-size:14px; line-height:160%}
 	.f20 {font-size:15px; line-height:140%}
 	.f22 {font-size:16px; line-height:120%}
 	.f24 {font-size:18px; line-height:120%}
 	.f28 {font-size:20px; line-height:120%}
 	.f30 {font-size:23px; line-height:120%}
-	.f35 {font-size:26px; line-height:140%}
+	.f35 {font-size:26px; line-height:120%}
 	.f38 {font-size:28px; line-height:120%}
-	.f40 {font-size:20px; line-height:120%} /* ÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ»≠ÔøΩÔøΩ»£ */
-	.f45 {font-size:30px; line-height:120%}
+	.f40 {font-size:20px; line-height:120%} /* ∞Ì∞¥ªÛ¥„ ¿¸»≠π¯»£ */
 	.f50 {font-size:30px; line-height:120%}
+	.f70 {font-size:35px}
 	
 
 	/* -------------------------
-		990 ÔøΩÔøΩÔøΩÔøΩ ÔøΩÃ∫ÔøΩ∆Æ ÔøΩÔøΩÔøΩÔøΩÔøΩÃµÔøΩ
+		990 ∏ﬁ¿Œ ¿Ã∫•∆Æ ΩΩ∂Û¿ÃµÂ
 	-------------------------- */
 	#slider1 {max-height:260px; height:100%}
 	#slider1 .slider .slider_dot {display:none}
 
-	.sbg01 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg02 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg03 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg04 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg05 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo05.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg06 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo06.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg07 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo07.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg08 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo08.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg09 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo09.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg10 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo10.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg11 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo11.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.sbg12 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner_mo12.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.bg_brand_footer {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_brand_footer_mo.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1;  }
-	.bg_review {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_review_mo.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.bg_mall {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mall_mo.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.bg_list {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_list_mo.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;  width: 100%; height: 100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center }
-	
-	
-	.bg_news {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_news_mo.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.bg_event {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_event_mo.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	
-	
+
 	/* -------------------------
 		990 GNB
 	-------------------------- */
 	#gnb {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:60px;margin:0 auto; overflow:hidden  }
 	#gnb > ul {max-width:100%; width:100%;  position:relative;  margin:0; padding:0;   margin:0 auto; height:60px; float:right;  }
 
-	#gnb .logo { top:28px; max-width:80px; text-align:left; left:37px; z-index:1000 }
-	#gnb .logo img {width:80px}
+	#gnb .logo { top:28px; max-width:140px; text-align:left; left:67px; z-index:1000;  }
+	#gnb .logo img {width:140px}
 	#gnb > ul li.first { margin-left:100px}
-	#gnb > ul li ul { border:1px solid blue}
-	#gnb li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 15px 18px 15px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1ÔøΩÔøΩ */
+	#gnb > ul li ul { border:1px solid blue; }
+	#gnb li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:21px 5px 18px 5px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1µ™ */
 	#gnb ul li ul.none li a {display:none; bordeR:0}
 	#gnb .gnbBG {opacity:0}
-	
 
 
 	/* -------------------- */
-	/* 990 ÔøΩÔøΩÔøΩÔøΩ > font-ani
+	/* 990 ∏ﬁ¿Œ > font-ani
 	----------------------- */
-
 	#font-ani {font-size:35px;bottom:45%;display:block;color:#fff}
 	#flip {height:42px;overflow:hidden;margin-top:0px;}
 	#flip > div > div {color:#fff;padding:0px 10px;height:table;margin-bottom:0px;display:inline-block; }
@@ -1390,40 +1089,35 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	#flip div:nth-child(3) div {background:#ff6600;}
 	@keyframes show {
 	 0% {margin-top:-126px;}
-	  5% {margin-top:-110px; } /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	  33% {margin-top:-110px;} /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	  38% {margin-top:-58px;}  /* ÔøΩ√øÔøΩÔøΩÔøΩ */
-	  66% {margin-top:-58px;}  /* ÔøΩ√øÔøΩÔøΩÔøΩ */
-	  71% {margin-top:-5px; }  /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
-	  99.99% {margin-top:-5px;} /* ÔøΩÔøΩÔøΩÔøΩÔøΩ */
+	  5% {margin-top:-110px; } /* æÓ∑¡øÓ */
+	  33% {margin-top:-110px;} /* æÓ∑¡øÓ */
+	  38% {margin-top:-58px;}  /* Ω√ø¯«— */
+	  66% {margin-top:-58px;}  /* Ω√ø¯«— */
+	  71% {margin-top:-5px; }  /* ¥„πÈ«— */
+	  99.99% {margin-top:-5px;} /* ¥„πÈ«— */
 	  100% {margin-top:-126px;}
 	}
-	.layer { position: absolute; z-index:10;top:50%;left: 50%;background: none;transform: translate(-50%, -50%); width:90%}
+	.layer { position: absolute; z-index:10;top:40%;left: 50%;background: none;transform: translate(-50%, -50%); width:90%}
 	.lyType01 {font-size:20px; font-weight:600; color:#fff; margin-bottom:10px}
 	.lyType02 {font-size:35px; font-weight:600; color:#fff}
 
 	.mainSearch a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
 	.mainSearch input[type=text] {padding:9px; padding-left:20px; margin-top: 0px;font-size: 14px;border: none; width:260px; border-radius:50px 0 0 50px; background:#fff}
 	.mainSearch .search-container button {float: right;padding:20px 30px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 20px 20px 0  }
+	font-size: 17px;border: none;cursor: pointer; background:#000 url(../../img/ico_search.png) no-repeat center center; border-radius:0 20px 20px 0  }
 	ul.key { display:none;}
 
-
-	.mainSearch .search-container #btnSearch {float: right;padding:10px 13px;margin-top: 0px;margin-right: 10px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 18px 18px 0  }
-
-
 	/* DOT NAVIGATION */
-	#slider0 .slider .slider_dot {width:70px; border-radius:0; background:#dbd6d3; bordeR:0; height:5px; margin-bottom:10px}
-	#slider0 .slider .slider_dot.current {background:#fff;}
-	#slider0 .slider .slider_left {opacity:0}
-	#slider0 .slider .slider_right {opacity:0}
+	#slider0 .slider .slider_dot { bottom:20px; margin-bottom:0}
 
-	/* ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ∆∞ */
-	.mainProductBtn{border-bottom:none;}
-
+	.main_key {margin-top:20px}
+	.main_key li {display:inline-block;height:35px;padding: 14px;justify-content: center;align-items: center; width:100px}
+	.main_key li {font-size:12px; font-weight:400; border-radius: 6px; background: rgba(255, 255, 255, 0.60); line-height:120%; padding:10px 0; 
+	text-align:center; margin-right:10px; letter-spacing:0; color:#000; margin-bottom:5px}
+	.slider .slider_left, .slider .slider_right { opacity:0}
+	.level {position:relative; font-size:14px; color:#505050; font-weight:500; background:#fff; border-radius:10px; padding:5px 10px; border:1px solid #a6a6a6}
 	/* -------------------- */
-	/* 990 ÔøΩÔøΩÔøΩŒøÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+	/* 990 ªı∑ŒøÓ ∑πΩ√««
 	----------------------- */
 	.round {border-radius:10px}
 	.thumbBox {margin-bottom:30px}
@@ -1439,32 +1133,29 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.recipeTxt_white {padding:10px 10px 15px 10px;}
 	.recipeTxt_white > .f16 {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;margin-bottom:7px}
 	/* -------------------- */
-	/* 990 ÔøΩÔøΩ√µ ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
+	/* 990 √ﬂ√µ ∑πΩ√««
 	----------------------- */
 	.more { position:absolute;  right:0; top:0;  }
-	.a-right {position:absolute; right:10px}
-	.a-right2 {position:absolute;  right:20px; top:30px;}
+	.a-right2 {position:absolute;  right:50px; top:30px;}
 	br.none {display:none}
-	.pd-lr-10m { padding:0 10px}
 	.pd-lr-20m { padding:0 20px}
 	.candy-wrapper {padding:0 0px; }
-	.main {display: inline-block;width: 100%; vertical-align: top;clear:both;   overflow-x:hidden; }
+	.main {display: inline-block;width: 100%; vertical-align: top;clear:both;   }
 	.main_left {display: inline-block;width: 100%; vertical-align: top;clear:both; padding:0 15px   }
-	.sidebar {display: inline-block;width: 104%;vertical-align: top;clear:both; z-index:100; background:#fff;  margin-left:-5px; margin-right:-5px }
+	.sidebar {display: inline-block;width: 110%;vertical-align: top;clear:both; z-index:100; background:#fff;  margin-left:-5px; margin-right:-5px }
 	.sidebar_right {display:none;}
 	.col-lg-4.col-sm-6 {width:50%}
 	.fixedsticky {top: 0;}
-	.plus {font-size:13px}
+	.plus {font-size:13px; background:url(../../img/ico_plus.png) no-repeat 55px}
 	.recoBox {position:relative; margin:20px 0 15px 0px; padding:0; z-index:100;  }
 	.recoBox li {position:relative; margin:5px 0 5px 0; display:inline-block ; z-index:100;}
 	.recoBox li a {z-index:0; font-size:15px; font-weight:500;  background:#f6f7f9; padding:7px 15px; display:inline-block; text-decoration:none; border-radius:50px; bordeR:0px solid #ccc;  }
 	.recoBox li a:hover {background:#a8c345; font-size:15px; font-weight:500; padding:7px 15px; color:#fff }
 	
-	#resultWord { clear:both; margin-top:70px}
 	/* -------------------- */
-	/* 990 ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩƒ±ÔøΩ
+	/* 990 ∑πΩ√««»ƒ±‚
 	----------------------- */
-	
+	.bg_review {position:relative; background: url(../../img/bg_review.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.hCenter {position:absolute; z-index:10;top:25%; left:50%;background: none;transform: translate(-50%, -45%); width:100%}
 	.bgGray .row div:nth-child(1) { margin-top:10px}
 	.bgGray .row div:nth-child(2) { margin-bottom:15px}
@@ -1476,42 +1167,37 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	ul.linkBox a:hover {text-decoration:none; border:1px solid #f0f1f2; background:#a8c345}
 	ul.linkBox a li {floaT:left; font-size:14px  }
 	
-	ul.linkBox a li.ico_sy01 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy01.png) no-repeat scroll 20px 17px; padding-left:60px; width:85% }
-	ul.linkBox a:hover li.ico_sy01 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy01_on.png) no-repeat scroll 20px 17px; padding-left:60px; width:85% }
+	ul.linkBox a li.ico_sy01 {background:url(../../img/ico_sy01.png) no-repeat scroll 20px 17px; padding-left:60px; width:85% }
+	ul.linkBox a:hover li.ico_sy01 {background:url(../../img/ico_sy01_on.png) no-repeat scroll 20px 17px; padding-left:60px; width:85% }
 	
-	ul.linkBox a li.ico_sy02 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy02.png) no-repeat scroll 20px 21px; padding-left:60px; width:85% }
-	ul.linkBox a:hover li.ico_sy02 {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_sy02_on.png) no-repeat scroll 20px 21px; padding-left:60px; width:85% }
+	ul.linkBox a li.ico_sy02 {background:url(../../img/ico_sy02.png) no-repeat scroll 20px 21px; padding-left:60px; width:85% }
+	ul.linkBox a:hover li.ico_sy02 {background:url(../../img/ico_sy02_on.png) no-repeat scroll 20px 21px; padding-left:60px; width:85% }
 	
 	ul.linkBox a:hover li {color:#fff}
 	ul.linkBox a li:nth-child(2) {width:25%; }
 	ul.linkBox a li:nth-child(2) span {background:#dddddd; position:absolute; right:18px ;top:15px; border-radius:50px; padding:6px 13px }
-	.ico_sy01 {bordeR:1px solid #f6f6f6; width:100%;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:17px; font-weight:600;}
-	.ico_sy02 {bordeR:1px solid #f6f6f6; width:100%;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:17px; font-weight:600;}
+	.ico_sy01 {bordeR:1px solid #f6f6f6; width:100%;  background: url(../../img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:17px; font-weight:600;}
+	.ico_sy02 {bordeR:1px solid #f6f6f6; width:100%;  background: url(../../img/ico_arrow_w.png) no-repeat ;color:#121212; padding:20px 30px; font-size:17px; font-weight:600;}
 	.newsWrap {position:relative}
 	.newsWrap .col-lg-3 {width:50%}
-
-	.logobox {padding:10px}
-	.logobox li:first-child img {max-width:36px}
-	.logobox li:nth-child(2) img {max-width:35px}
+	
 	
 	/* -------------------- */
 	/* 990 footer
 	----------------------- */
-	footer { padding:30px 0; }
+	footer {margin-top:100px; padding:30px 0; }
 	ul.foot_ul {position:relative; width:100% } 
 	ul.foot_ul li {display:inline-block; vertical-align:top}
 	ul.foot_ul li:first-child {margin-right:30px}
-	.btn_top {position:absolute; right:0; top:-130px; }
+	.btn_top {position:absolute; right:0; top:-130px}
 	ul.foot_ul li img {width:60px}
 	footer .col-md-12.add {padding-left:105px}
 	.add {font-size:12px; text-align:left}
-	#movetopbt {width:55px}
 
 	/* -------------------- */
-	/* 990 ÔøΩÍ∑£ÔøΩÔøΩ“∞ÔøΩ
+	/* 990 ∫Í∑£µÂº“∞≥
 	----------------------- */
-	.bg_brand_footer .hCenter {position:absolute; z-index:10;top:75%; left:50%;background: none;transform: translate(-50%, -50%); width:100%; text-align:center}
-	.bg_brand_footer .h400 {height:600px}
+	.bg_brand_footer .hCenter {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%; text-align:center}
 	ul.ul360 li {width:100%; displaY:block}
 	ul.ul360 li:first-child {height:530px; width:100%}
 	ul.ul360 li:nth-child(2) {width:100%}
@@ -1520,12 +1206,14 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 	table.brandTableYYS th {font-size:12px}
 	table.brandTableYYS td {font-size:12px}
-	.brand_txt {position:absolute; padding-left:10%; bottom:20%; text-align:left; line-height:150%; font-size:18px}
+	.brand_txt {position:absolute; padding-left:10%; bottom:25%; text-align:left; line-height:150%; font-size:22px}
 	.symbol img {width:200px}
+
+
 	.tetra {text-align:center}
 	.tetra ul li:first-child {margin-bottom:30px}
 	.tetra ul li p {font-size:13px}
-	.ul360{margin-top:30px;} /* ÔøΩÃºÔøΩÔøΩÔøΩ ÔøΩﬂ∞ÔøΩ */
+
 
 	/* ------------------------------------
 		990 360 3D
@@ -1537,74 +1225,9 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.cd-product-viewer-wrapper .product-viewer {position: relative;z-index:1;display: inline-block;overflow: hidden;width:320px;  height:370px;}
 
 
-	/* -------------------- */
-	/* 990 ÔøΩÔøΩÔøΩﬁ¥ÔøΩ
-	----------------------- */
-	.side-quick-menu {
-	  display:block;
-	  position:fixed;
-	  top:20%;
-	  right:0;
-	  z-index:1000
-	}
-	.side-quick-menu a.bean {background:#b17d55; color:#fff}
-	.side-quick-menu a.dcf {background:#f5f5f5; color:#000}
-	.side-quick-menu a {
-	  display:block;
-	  position:relative;
-	  margin-bottom: 2px;
-	  padding:10px 0px 10px 8px;
-	  border-radius:0 5px 5px 0;
-	  text-align:left;
-	  text-decoration:none;
-	  width: 180px;
-	  right:calc(-100% + 43px);
-	  transition:all 0.5s ease-in-out;
-	  -moz-transition:all 0.5s ease-in-out;
-	  -webkittransition:all 0.5s ease-in-out;
-	  /* animation: rightout .7s linear; */
-	  font-size:12px; line-height:170%;
-	}
-	
-	.side-quick-menu a:hover {
-	  right: -30px;
-	}
-	.side-quick-menu a img {margin-right:5px; width:30px}
-
-	@keyframes rightout {
-	  50% {
-		right: 0px;
-	  }
-	}
-
-	.side-quick-menu a:nth-child(1) {  
-	  animation-delay: 2s 
-	}
-	.side-quick-menu a:nth-child(2) { 
-	  animation-delay: 2.1s 
-	}
-	.side-quick-menu a:nth-child(3) {
-	  animation-delay: 2.2s 
-	}
-	.side-quick-menu a:nth-child(4) {  
-	  animation-delay: 2.3s 
-	}
-	.side-quick-menu a:nth-child(5) { 
-	  animation-delay: 2.4s 
-	}
-	.side-quick-menu a:nth-child(6) {
-	  animation-delay: 2.5s 
-	}
-	.side-quick-menu a:nth-child(7) {  
-	  animation-delay: 2.6s 
-	}
-	.side-quick-menu a:nth-child(8) { 
-	  animation-delay: 2.7s 
-	}
-
 
 	/* ------------------------------------
-		990 ÔøΩÔøΩÔøΩÔøΩ∆Æ > Grid
+		990 ∏ÆΩ∫∆Æ > Grid
 	--------------------------------------- */
 	ul.key2 {position:relative; margin-top:26px; display:block; width:100%;  text-align:center; }
 	ul.key2 li {background:#fff; display:inline-block; font-weight:500; border-radius:20px; color:#333333; margin-right:10px; margin-bottom:5px; text-align:center} 
@@ -1630,9 +1253,9 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.messonry-button button.ico_pc_04.is-checked span.filter-text {background-size:70px}
 
 	/* ------------------------------------
-		990 ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩ
+		990 ∑πΩ√«« ªÛºº
 	--------------------------------------- */
-	.btnType01 {padding:10px 15px, font-size:18px;}
+	.btnType01 {padding:5px 10px}
 	.recipe_content {margin-bottom:70px; }
 	.recipe_content img {width:100%}
 	.recommend .col-lg-3 {width:50%}
@@ -1641,7 +1264,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 
 	/* ------------------------------------
-		990 ÔøΩ‘ΩÔøΩÔøΩÔøΩ
+		990 ∞‘Ω√∆«
 	--------------------------------------- */
 	ul.board_tab li a { padding:10px 0;  font-size:16px}
 
@@ -1653,13 +1276,14 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.boardSearch input[type=text] {padding:9px; padding-left:30px; margin-top: 0px;font-size: 24px; border:1px solid #999999; padding:5px 0px 5px 30px; 
 		border-radius:50px 0 0 50px; background:#fff}
 	.boardSearch .search-container button {float: right;padding:24px 31px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
-	.boardSearch .search-container button:hover {background:#aac14c url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; }
+	font-size: 17px;border: none;cursor: pointer; background:#000 url(../../img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
+	.boardSearch .search-container button:hover {background:#aac14c url(../../img/ico_search.png) no-repeat center center; }
 	.boardSearch input:focus { outline:none}
 
 
 	.boardSearch {margin-top:0px; width:100%; margin-bottom:120px; }
 	.mCenter {text-align:center}
+	.btn-box div:first-child {border-right:0}
 	
 
 	/* ------------------------------------
@@ -1698,7 +1322,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.mt70 {margin-top:35px}
 	.mt80 {margin-top:40px}
 	.mt90 {margin-top:45px}
-	.mt100 {margin-top:50px}
+	.mt100 {margin-top:50px; }
 	.mt110 {margin-top:55px}
 	.mt120 {margin-top:60px}
 	.mt130 {margin-top:65px}
@@ -1708,44 +1332,15 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.mt170 {margin-top:85px}
 	.mt180 {margin-top:90px}
 	.mt190 {margin-top:95px}
-	.mt200 {margin-top:50px}
-
-	.q01 {width:150px; text-align:center; margin:0 auto; margin-bottom:10px; margin-top:100px}
-	.bg_green ul.season-sns {width:100%; text-align:center}
-	.bg_green ul.season-sns li {width:15%; margin:0 5px; }
-	.bg_green ul.season-sns li img {width:100%}
-	.y_size iframe {max-width:400px; width:80%; height:220px; margin:0 auto; text-align:center; border-radius:20px }
-	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px; background-size:1px 80px  }
-/*
-	.bg_green ul {position:relative; width:95%; margin:0 auto}
-.bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
-*/
-	
-
-
-
+	.mt200 {margin-top:100px}
 }
 
 
 
-@media (max-width: 720px) {
-	#gnb li {margin-left:0%; }
-	#gnb li a.dep01{ font-size:13px;padding:22px 5px 18px 5px; }
-	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px; background-size:1px 50px  }
-	p {margin:0; padding:0; outline:0; bordeR:0}
-	img {margin:0; padding:0; outline:0;bordeR:0}
-	.btn_pop_close img {width:40px}
 
-	.endBox .name {position:relative; text-align:center; margin-bottom:10px}
-	.endBox .name span {font-size:35px; font-weight:600; color:#6fc876; line-height:120%}
-	.endBox .name span img {max-width:170px; }
-	.end_btn_box li {margin:0}
-
-
-}
 
 /*================================ 
-    MAIN > ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩÔøΩÃµÔøΩ PRRPLE SLIDER
+    MAIN > øµªÛ ΩΩ∂Û¿ÃµÂ PRRPLE SLIDER
 ================================*/
 
 /* MAIN */
@@ -1753,27 +1348,27 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
   display:block;
   position:relative;
   width:100%;
-  height:100%; top:0px
+  height:auto; top:0px
 }
 .slider .slider_area{
   display:block;
   position:relative;
   overflow:hidden;
   width:100%;
-  height:100%;
+  height:auto;
 }
 .slider .slides{
   display:block;
   position:relative;
   width:100%;
-  height:100%;
+  height:auto;
 }
 .slider .slide{
   display:block;
   position:relative;
   float:left;
   width:100%;
-  height:100%;
+  height:auto;
  
 }
 .slider .slide:nth-child(even){
@@ -1856,7 +1451,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
   display:inline-block;
   width:8px;
   height:8px;
-  margin:0 8px;
+  margin:0 4px;
   border:1px solid #999;
   -webkit-border-radius:50%;
   -moz-border-radius:50%;
@@ -1878,5 +1473,4 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 .slider .slider_pause.hidden{
   display:none !important;
 }
-
 
