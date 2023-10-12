@@ -13,10 +13,12 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,10 +32,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -245,10 +250,16 @@ public class RndController extends UiUtils {
 		return "rnd/reviewWrite";
 	}
 	
-	@GetMapping(value = "/rnd/saveReview")
-    public @ResponseBody JsonObject saveReview(Model model, Authentication authentication, FactpostDTO review)throws Exception{
+	@RequestMapping(value = "/rnd/saveReview", method = { RequestMethod.POST })
+    public @ResponseBody JsonObject saveReview(Model model, Authentication authentication, @RequestBody Map<String,String> reviewMap)throws Exception{
 		
+		
+		System.out.println(reviewMap.get("sContent") + "***********");
 		JsonObject jsonObj = new JsonObject();
+		FactpostDTO review = new FactpostDTO();
+		review.setSContent(reviewMap.get("sContent"));
+		review.setSSubject(reviewMap.get("sSubject"));
+		review.setSUrl(reviewMap.get("sUrl"));
 
 		try {
 		

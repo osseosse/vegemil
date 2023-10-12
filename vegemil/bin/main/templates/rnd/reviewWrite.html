@@ -55,7 +55,7 @@
 						<ul>
 							<li>내용</li>
 							<li>
-								<textarea class="fac-textarea f16 h500" rows="20" cols="10" id="sContent" name="sContent"></textarea>
+								<textarea class="fac-textarea f16 h500" rows="50" cols="10" id="sContent" name="sContent"></textarea>
 <!-- 								<p class="error">견학후기를 작성해 주세요.</p> -->
 							</li>
 						</ul>
@@ -98,8 +98,8 @@ smartEditor = function() {
 
 savePost = function() {
 	
-    oEditors.getById["sContent"].exec("UPDATE_CONTENTS_FIELD", [])
-    let content = document.getElementById("sContent").value
+    oEditors.getById["sContent"].exec("UPDATE_CONTENTS_FIELD", []);
+    let content = document.getElementById("sContent").value;	    
 
     if(content == '') {
       alert("내용을 입력해주세요.")
@@ -107,16 +107,18 @@ savePost = function() {
       return
     } else {
 
-      let post = {
-    	sSubject: $("#sSubject").val()
-        , sContent: content
-        , sUrl: $("#sUrl").val() 
-      }
+      var post = {
+    	  "sSubject": $("#sSubject").val()
+        , "sContent": content
+        , "sUrl": $("#sUrl").val() 
+      };          
 
       $.ajax({
-        url: "/rnd/saveReview"
-        , data: post
-        , success: function(data) {
+    	 type : "POST"
+        , url : "/rnd/saveReview"
+        , data : JSON.stringify(post)
+        , contentType : "application/json; charset=utf-8"
+        , success : function(data) {
         	if(data.success == '1') {
                 alert('저장되었습니다.')
                 location.href = '/rnd/tourReview';
