@@ -9,6 +9,7 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.contest.PaintingContestAward23DTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 
 @Mapper
@@ -39,5 +40,7 @@ public interface BeansoupMapper {
 	public int selectCountConData(String section);
 	public int updatePaintingContestPrize(PaintingContestDTO paintingContestDTO);
 	public Map<String,Integer> selectCountConData();
+	
+	public List<PaintingContestAward23DTO> selectContestAwawrdList23(String section);
 	
 }

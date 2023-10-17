@@ -13,6 +13,7 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.contest.PaintingContestAward23DTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 import com.vegemil.mapper.BeansoupMapper;
 import com.vegemil.paging.PaginationInfo;
@@ -202,6 +203,11 @@ public class BeansoupServiceImpl implements BeansoupService{
 		}
 		
 		return conCountList;
+	}
+
+	@Override
+	public List<PaintingContestAward23DTO> getContestAwardList23(String section) {	
+		return beansoupMapper.selectContestAwawrdList23(section);
 	}
 
 	

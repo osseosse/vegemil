@@ -7,6 +7,7 @@ import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
+import com.vegemil.domain.contest.PaintingContestAward23DTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 
 public interface BeansoupService {
@@ -45,4 +46,6 @@ public interface BeansoupService {
 	
 	// 부문별 카운트 
 	public  List<String> selectCountConSectionData();
+	
+	public List<PaintingContestAward23DTO> getContestAwardList23(String section);
 }

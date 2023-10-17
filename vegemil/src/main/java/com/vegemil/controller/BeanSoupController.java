@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,12 +47,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
-import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
-import com.vegemil.domain.contest.AdminBeansoupPPConGraphDTO;
+import com.vegemil.domain.contest.PaintingContestAward23DTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
 import com.vegemil.service.BeansoupService;
 import com.vegemil.util.UiUtils;
@@ -424,4 +422,20 @@ public class BeanSoupController extends UiUtils {
 
 		return rtnMap;
 	}
+	
+	@GetMapping("/contestAward/pintingPoet23")
+	public String getAwardView(Model model) {
+		
+		List<PaintingContestAward23DTO> kinderAwards = beansoupService.getContestAwardList23("유치부");
+		List<PaintingContestAward23DTO> lowerGradeAwards = beansoupService.getContestAwardList23("초등부 저학년");
+		List<PaintingContestAward23DTO> upperGradeAwards = beansoupService.getContestAwardList23("초등부 고학년");
+		
+		model.addAttribute("kinderAwards",kinderAwards);
+		model.addAttribute("lowerGradeAwards",lowerGradeAwards);
+		model.addAttribute("upperGradeAwards",upperGradeAwards);
+		
+		return "beansoup/brand";
+		
+	}
+	
 }
