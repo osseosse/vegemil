@@ -389,7 +389,7 @@
 		WHERE 			
 				section = #{section}
 		</if> 
-		ORDER BY display_order																					
+		ORDER BY display_order, contestant_name																					
 	</select>
 	
 	<select id="selectContestAwardPaging23" parameterType="com.vegemil.domain.contest.PaintingContestAward23DTO" 
@@ -406,7 +406,7 @@
 		<if test="searchKeyword != null and searchKeyword != ''">
 			AND contestant_name LIKE CONCAT('%', #{searchKeyword} ,'%')
 		</if>
-        ORDER BY display_order 		
+        ORDER BY display_order, contestant_name			 		
         LIMIT
 			#{paginationInfo.firstRecordIndex}, 12
 	</select>
