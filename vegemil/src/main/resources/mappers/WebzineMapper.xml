@@ -12,7 +12,7 @@
 		, title
 		, sns_title
 		, category
-		, remark
+		<!-- , remark 내용은 어차피 퍼블리싱으로 -->
 		, sum_line
 		, DATE_FORMAT(insert_date,'%Y-%m-%d') as insert_date
     </sql>
@@ -23,7 +23,7 @@
 		, cust_hp
 		, cust_email
 		, qrt
-		, remark
+		<!-- , remark -->
 		, answer
 		, DATE_FORMAT(apply_date,'%Y-%m-%d') as apply_date
     </sql>
@@ -299,6 +299,8 @@
             distinct substring(qrt_year, 4, 4) as qrt_year
         FROM
             m_webzine
+		WHERE 
+			is_open = '1'           
         Order by
         	qrt_year desc
     </select>
@@ -309,7 +311,8 @@
 			, substring(qrt_year,2,1) as qrt_year2
         FROM
             m_webzine
-       
+       WHERE 
+			is_open = '1'     
         Order by
         	qrt_year asc
     </select>

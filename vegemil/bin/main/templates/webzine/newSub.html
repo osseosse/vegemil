@@ -107,17 +107,7 @@
 		</section>
 	</div>
 	<!-- ******************* //main-content ******************* -->
-	<!-- <div class="content">
-		<div class="wrap-inner5">
-			<div class="container">
-				<div class="project-detail-wrap fl-wrap bg-g3 container-sub80">
-					******************* navi *******************
-					<th:block th:replace="webzine/subNewNavy :: navyFragmentVer2"></th:block>
-					******************* // navi *******************
-				</div>
-			</div>
-		</div>
-	</div> -->
+
 	<div class="content bg-g3">
         <div class="w1470">
             <div class="w1140-left">
@@ -134,12 +124,14 @@
 <script type="text/javascript">
 //<![CDATA[
 	
+	var countArticles = '[[${countArticles}]]'
 	var num = '[[${num}]]';
 	var qrter = '[[${qrtYear}]]';
 	var fileNum = parseInt(num);
 	var beforeNo = fileNum - 1;
 	var afterNo = fileNum + 1;
-
+	var totSubCount = countArticles - 2;
+	
 	$('#btnBefore').on("click", function() {
 		if(fileNum == '01') {
 			alert("첫번째 기사입니다.");
@@ -154,7 +146,8 @@
     });
 	
 	$('#btnNext').on("click", function() {
-		if(fileNum == '16') {
+
+		if(fileNum == totSubCount) {
 			document.location.href="/webzine/event/"+qrter;
 		} else {
 			if(afterNo <= 9) {

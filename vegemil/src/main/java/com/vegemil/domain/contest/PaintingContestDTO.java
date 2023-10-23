@@ -34,7 +34,6 @@ public class PaintingContestDTO extends CommonDTO{
 	@Length(max=110)
 	private String paintingDesc; 			//작품설명
 	
-	
 	@NotNull
 	private String guardianName; 			// 보호자 이름
 	@NotNull

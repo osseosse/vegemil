@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<th:block class="white" th:replace="fragments/beansoup/head :: headFragmentContestVer"></th:block>	
+	<script th:src="@{/webzine/js/kakao.min.js}"></script>
+	<link href="/common/css/modality.css" rel="stylesheet">
+	<script type="text/javascript" src="/common/js/modality.js"></script>
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/reset.css" rel="stylesheet">
+	<!-- 추천렛피 -->
+	<link rel='stylesheet' href='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.css'>
+	<!-- 리뷰슬라이드 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/review.css" rel="stylesheet">
+	<!-- //리뷰슬라이드 -->
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/jquery.1.11.1.min.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/jquery.touchSwipe.1.6.min.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/prrple.slider.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/design.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/bootstrap.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/style.css" rel="stylesheet">
+		
+	
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <script>
+        	function keywordCheck(){
+        		if($("#searchKeyword").val().length<1){
+        			alert("검색하실 수상자 이름을 입력해주세요.")
+        			return false;
+        		}
+        		return true;
+        	}
+        </script>
+        <!-- ================================ 
+		        // Header
+        ================================ -->		        
+		<!-- ================================ 
+				Content
+		================================ -->
+
+		<!-- main Visual -->
+		<div class="container100 clear" >
+			<div class="row bg_win h400">
+				<div class="hCenter03">
+					<p class="f30 white fw300"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pen_subTop.png" alt="닫기" /></p>
+					<p class="f22 fw400 black mt-30" >어린이 동시그림대회</p>
+					<p class="f50 fw600 mt10 black">온라인 전시</p>
+					
+				</div>
+			</div>
+		</div>  
+		<!-- // main Visual -->
+		
+		<div class="container100">
+			<!-- <p style="border:2px dashed #000; background:yellow">1. 한페이지 노출수 12개, 진열 순서는 간단요리상(대상) 
+					최우수상  우수상 아차상 참가상<br> 2. 부문 구분 및 검색 개발</p> -->
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12 ">
+						<div class="winSearch mt80">
+							<form onsubmit="return keywordCheck()">
+								<select class="win_sel " name="section">
+									<option disabled>부문 구분</option>
+									<option>유치부</option>
+									<option>초등부 저학년</option>
+									<option>초등부 고학년</option>
+								</select>
+								<div class="search-container clear">
+									  <input class="in-search" type="text" placeholder="아이 이름을 검색" name="searchKeyword" id="searchKeyword">
+									  <button type="submit"><i class="fa fa-search"></i></button>
+									 <div class="clear"></div>
+								 </div>
+							</form>
+						 </div>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-md-3 col-6 mt100" th:each="award : ${allAwards}">
+						<a href="javascript:void(0)" class="hvr-float-shadow"  th:onclick="|location.href='@{/beanSoup/seasonWinnerDetail(id=${award.id})}'|" >
+							<div class="winBox02">
+								<div class="winImg">
+									<p class="win_r h480" th:classappend="${award.paintingFilename}" ></p>
+									<p class="ico_w03">
+										<img  th:if="${award.award == '대상'}"  src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대상" />
+										<img  th:if="${award.award == '최우수'}" src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="최우수" />
+										<img  th:if="${award.award == '우수상'}" src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w03.png" alt="우수상" />
+										<img  th:if="${award.award == '아차상'}" src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w04.png" alt="아차상" />
+										<img  th:if="${award.award == '참가상'}" src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w05.png" alt="참가상" />
+									</p>
+								</div>
+								<p class="f20 fw400 mt20">작가 : 
+									<span class="fw500" th:text="${award.contestantName}">오유하</span> 
+									<span class="L01 fw500 ml5" th:if="${award.section == '유치부'}">유치부</span>
+									<span class="L02 fw500 ml5" th:if="${award.section == '초등부 저학년'}">초등부 저학년</span>
+									<span class="L03 fw500 ml5" th:if="${award.section == '초등부 고학년'}">초등부 고학년</span>
+								</p>
+							</div>
+						</a>
+					</div>					
+					
+				</div>				
+			</div>
+			
+			<div class="container">
+				<div class="row mt100">
+						<div class="col-md-12 ">
+							<!-- 페이징 -->
+							<div class="pagiWrap" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" 
+            												th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}">
+								<div class="pagination mt0">
+									<!-- <a class="prev end">첫 페이지</a> -->
+									<a class="prev"  th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">이전 페이지</a>
+									<th:block th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}">
+										<th:block th:if="${pageNo == params.currentPageNo}">
+								    		<a href="#" class="on" th:text="${pageNo}">1</a>
+								    	</th:block>
+								    	<th:block th:if="${pageNo != params.currentPageNo}">
+											<a href="javascript:void(0)" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
+								    	</th:block>
+									</th:block>
+						
+									<a href="#" class="next" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">다음 페이지</a>
+									<!-- <a href="#" class="next end">마지막 페이지</a> --?
+								<!-- //페이징 -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+		<!-- ================================ 
+				// Content
+		================================ -->
+      <!-- ================================ 
+       			 Footer
+      ================================ -->
+     	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+      <!-- ================================ 
+       			 // Footer
+      ================================ -->
+    </body>
+</html>

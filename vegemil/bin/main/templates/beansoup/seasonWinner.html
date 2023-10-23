@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<th:block class="white" th:replace="fragments/beansoup/head :: headFragmentContestVer"></th:block>	
+	<script th:src="@{/webzine/js/kakao.min.js}"></script>
+	<link href="/common/css/modality.css" rel="stylesheet">
+	<script type="text/javascript" src="/common/js/modality.js"></script>
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/reset.css" rel="stylesheet">
+	<!-- 추천렛피 -->
+	<link rel='stylesheet' href='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.css'>
+	<!-- 리뷰슬라이드 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/review.css" rel="stylesheet">
+	<!-- //리뷰슬라이드 -->
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/jquery.1.11.1.min.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/jquery.touchSwipe.1.6.min.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/prrple.slider.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/design.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/bootstrap.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/style.css" rel="stylesheet">
+		
+	
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->		        
+		<!-- ================================ 
+				Content
+		================================ -->
+		<!-- main Visual -->
+		<div class="container100 clear" >
+			<div class="row bg_win h400">
+				<div class="hCenter03">
+					<p class="f30 white fw300"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pen_subTop.png" alt="닫기" /></p>
+					<p class="f22 fw400 black mt-30" >어린이 동시그림대회</p>
+					<p class="f50 fw600 mt10 black">결과 발표</p>
+					
+				</div>
+			</div>
+		</div>  
+		<!-- // main Visual -->
+		
+		<div class="container100 pb100 bg_yellow02">
+			<div class="container">
+				<!--2023-10-20 (1) -->
+				<div class="row ">
+					<div class="col-md-12 ">
+						<p class="mt70 tcenter wView"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win_info_ch01.png" alt="제철 재료와 친해지는시간이 되었나요? 어린이 작가 여러분 모두 절말 멋졌어요!"/></p>
+						<p class="mt70 tcenter win_info_ch01 mView"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win_info_ch01m.png" alt="제철 재료와 친해지는시간이 되었나요? 어린이 작가 여러분 모두 절말 멋졌어요!"/></p>
+						<div class="bar01 mt60">
+							
+							<p class="mr30"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/line_label01.png" alt="대상"/> 간단요리상</p>
+						</div>
+					</div>
+				</div>
+				<!-- //2023-10-20 (1) -->
+				
+				<div class="row  mt40 bg_winner">
+			
+						<div class="col-md-4">
+							<a href="" class="hvr-float-shadow">
+								<div class="winBox01">
+									<div class="winImg">
+										<p class="win_r"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win01.jpg" /></p>
+										<p class="ico_w01"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대상" /></p>
+									</div>
+									<p class="f28 fw600 mt20">토마토 전구</p>
+									<p class="f20 fw400 mt5">작가 : <span class="fw500 ">남하율</span> <span class="L01 fw500">유치부</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 ">
+							<a href="" class="hvr-float-shadow">
+								<div class="winBox01">
+									<div class="winImg">
+										<p class="win_r"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win02.jpg" />
+										<p class="ico_w01"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대상" /></p>
+									</div>
+									<p class="f28 fw600 mt20">대파 달리기</p>
+									<p class="f20 fw400 mt5">작가 : <span class="fw500">오유하</span> <span class="L02 fw500">초등부 저학년</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4">
+							<a href="" class="hvr-float-shadow">
+								<div class="winBox01">
+									<div class="winImg">
+										<p class="win_r"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win03.jpg" /></p>
+										<p class="ico_w01"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대상" /></p>
+									</div>
+									<p class="f28 fw600 mt20">봄 편지</p>
+									<p class="f20 fw400 mt5">작가 : <span class="fw500">장서율</span> <span class="L03 fw500">초등부 고학년</span></p>
+								</div>
+							</a>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container100 pb100 ">
+			<div class="container">
+				<div class="row  mt130">
+					<div class="col-md-12 ">
+						<div class="bar02">
+							<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/line_label02.png" alt="대표 수상작" /> 대표 수상작</p>
+						</div>
+					</div>
+				</div>
+				<!-- 1월 -->
+				<div class="row  mt50" >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_01.png" alt="무" /> 1월 무</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win04.jpg" alt="고마운 무" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">고마운 무</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">최유나</span> <span class="L01 fw500 ml5">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win05.jpg" alt="무한도전" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">무한도전</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김종훈</span> <span class="L02 fw500 ml5">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win06.jpg" alt="기상청무" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">기상청무</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">노서아</span> <span class="L03 fw500 ml5">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //1월 -->
+				
+		
+				<!-- 2월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_02.png" alt="바지락" /> 2월 바지락</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="애기조개가 문을 닫고 있다가" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">애기조개가 문을 닫고 있다가</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김도한</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win08.jpg" alt="바지락의 여행" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">바지락의 여행</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">임현우</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win09.jpg" alt="바지락" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">바지락</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">문윤영</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //2월 -->
+		
+				<!-- 3월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_03.png" alt="봄나물" /> 3월 봄나물</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win10.jpg" alt="쑥" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">쑥</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김유하</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win11.jpg" alt="봄나물 신호등" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">봄나물 신호등</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김윤하</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win12.jpg" alt="봄 편지" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">봄 편지</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">장서율</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //3월 -->
+		
+				<!-- 4월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_04.png" alt="쭈꾸미" /> 4월 쭈꾸미</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win13.jpg" alt="주꾸미는 갯벌에서 무엇을 하고 놀까" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">주꾸미는 갯벌에서 무엇을 하고 놀까</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">권윤솔</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win14.jpg" alt="잘 먹고 쑥쑥 클 껄" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">잘 먹고 쑥쑥 클 껄</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">유지후</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win15.jpg" alt="엄마 문어의 슬픔" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">엄마 문어의 슬픔</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">한지민</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //4월 -->
+		
+				<!-- 5월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_05.png" alt="오이" /> 5월 오이</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win16.jpg" alt="오이의 변신" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">오이의 변신</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">이서윤</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win17.jpg" alt="아삭아삭 오이" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">아삭아삭 오이</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">최윤서</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win18.jpg" alt="오이친구" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">오이친구</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">이혜원</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //5월 -->
+		
+				<!-- 6월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_06.png" alt="감자" /> 6월 감자</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win19.jpg" alt="감자는 맛있어" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">감자는 맛있어</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">명재연</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win20.jpg" alt="감자의 모험" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">감자의 모험</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김수혁</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win21.jpg" alt="감자" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">감자</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">조선우</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //6월 -->
+		
+				<!-- 7월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_07.png" alt="토마토" /> 7월 토마토</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win22.jpg" alt="토마토 전구" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">토마토 전구</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">남하율</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win23.jpg" alt="캡틴 토마토" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">캡틴 토마토</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">이수아</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win24.jpg" alt="토마토 놀이터" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">토마토 놀이터</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">서영빈</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //7월 -->
+		
+				<!-- 8월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_08.png" alt="옥수수" /> 8월 옥수수</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win25.jpg" alt="옥수수는 좋겠다" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">옥수수는 좋겠다</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">채지현</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win26.jpg" alt="옥수수 꽃의 만남" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">옥수수 꽃의 만남</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김지안</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win27.jpg" alt="옥수수 기관차" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">옥수수 기관차</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김다솔</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //8월 -->
+				
+				<!-- 9월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_09.png" alt="새우" /> 9월 새우</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win28.jpg" alt="어린 새우" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">어린 새우</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김혜윤</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win29.jpg" alt="새우 달리기" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">새우 달리기</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김주연</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win30.jpg" alt="독도 바다 지킴이 독도새우" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">독도 바다 지킴이 독도새우</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">서의진</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //9월 -->
+		
+				<!-- 10월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_10.png" alt="대파" /> 10월 대파</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win31.jpg" alt="대파 사이좋은 친구" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">대파 사이좋은 친구</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">최유나</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win32.jpg" alt="대파 달리기" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">대파 달리기</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">오유하</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w01.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win33.jpg" alt="대파…너는 대체…" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">대파…너는 대체…</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">조하연</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //10월 -->
+		
+				<!-- 11월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_11.png" alt="배추" /> 11월 배추</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win34.jpg" alt="배추" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">배추</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">윤채원</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win35.jpg" alt="배추는 우리가족" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">배추는 우리가족</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">신지윤</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win36.jpg" alt="내 사랑 배추" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">내 사랑 배추</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">한예빈</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //11월 -->
+		
+				<!-- 12월 -->
+				<div class="row  mt100 " >
+					<div class="col-md-12 ">
+						<div class="bar03">
+							<table class="bar-table" cellspacing="0" border="0">
+								<colgroup>
+									<col width="14px">
+									<col width="*">
+									<col width="270px">
+									<col width="*">
+									<col width="17px">
+								</colgroup>
+								<tr>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/left.png" alt="left" /></td>
+									<td></td>
+									<td><p class="f30 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ob_12.png" alt="크리스마스" /> 12월 크리스마스</p></td>
+									<td></td>
+									<td><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/right.png" alt="left" /></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win37.jpg" alt="크리스마스 트리" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">크리스마스 트리</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">김지온</span> <span class="L01 fw500">유치부</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win38.jpg" alt="12월은 내가 제철" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">12월은 내가 제철</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">이예설</span> <span class="L02 fw500">초등부 저학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-6 mt40">
+						<a href="" class="hvr-float-shadow">
+							<div class="winBox">
+								<div>
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win39.jpg" alt="밤" /> 
+									<div class="winTxt">
+										<p class="f28 fw600 mt20">밤</p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">문시율</span> <span class="L03 fw500">초등부 고학년</span></p>
+										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //12월 -->
+			</div>
+		</div>
+		
+		<!--2023-10-20 (2) -->
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-12 ">
+					<p class="tcenter wView" ><a href="https://www.vegemil.co.kr/beanSoup/brand"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/bnr_win.png" alt="내가그린 제철 재료 도 간단요리사와 함께 해요!" /></a></p>
+					<p class="tcenter mView" ><a href="https://www.vegemil.co.kr/beanSoup/brand"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/bnr_win_m.png" alt="내가그린 제철 재료 도 간단요리사와 함께 해요!" /></a></p>
+				</div>
+			</div>
+		</div>
+		<!--2023-10-20 (2) -->
+				
+		
+		
+		<div class="container100 pb100 pt150 bgGray">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-12 ">
+						<div class="bar04">
+							<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/line_label03.png" alt="전체 수상자 명단" /> 전체 수상자 명단</p>
+						</div>
+						<p class="tcenter mt50"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pen03.png" alt="ctrl+F를 눌러 이름을 찾아보세요!" /></p>
+					</div>
+					<!-- 유치부 -->
+					<div class="col-md-4 mt50">
+						<table cellspacing="0" border="0" class="winTable bgT01">
+							<colgroup>
+								<col width="15%">
+								<col width="15%">
+								<col width="45%">
+								<col width="*">
+							</colgroup>
+							<tr>
+								<th colspan="4"><p class="f18">유치부</p></th>
+							</tr>
+							<tr>
+								<td>수상</td>
+								<td>이름</td>
+								<td>작품 소개</td>
+								<td>보호자 연락처</td>
+							</tr>
+							<tr th:each="kinderAward : ${kinderAwards}">
+								<td th:text="${kinderAward.award}">우수상</td>
+								<td th:text="${kinderAward.contestantName}">이*주</td>
+								<td>
+									<p class="ellipsis" th:text="${kinderAward.paintingDesc}">토마토는 맛있어 </p> 
+								</td>
+								<td th:text="${#strings.substring(kinderAward.guardianPh,6,10)}">3076</td>
+							</tr>									
+						</table>
+					</div>
+					<!-- 초등 저학년 -->
+					<div class="col-md-4 mt50">
+						<table cellspacing="0" border="0" class="winTable bgT02">
+							<colgroup>
+								<col width="15%">
+								<col width="15%">
+								<col width="45%">
+								<col width="*">
+							</colgroup>
+							<tr>
+								<th colspan="4"><p class="f18">초등 저학년</p></th>
+							</tr>
+							<tr>
+								<td>수상</td>
+								<td>이름</td>
+								<td>작품 소개</td>
+								<td>보호자 연락처</td>
+							</tr>
+							<tr th:each="lowerGradeAward : ${lowerGradeAwards}">
+								<td th:text="${lowerGradeAward.award}">우수상</td>
+								<td th:text="${lowerGradeAward.contestantName}">이*주</td>
+								<td>
+									<p class="ellipsis" th:text="${lowerGradeAward.paintingDesc}">토마토는 맛있어 </p> 
+								</td>
+								<td th:text="${#strings.substring(lowerGradeAward.guardianPh,6,10)}">3076</td>
+							</tr>									
+						</table>
+					</div>
+					<!-- 초등 고학년 -->
+					<div class="col-md-4 mt50">
+						<table cellspacing="0" border="0" class="winTable bgT03">
+							<colgroup>
+								<col width="15%">
+								<col width="15%">
+								<col width="45%">
+								<col width="*">
+							</colgroup>
+							<tr>
+								<th colspan="4"><p class="f18">초등 고학년 </p></th>
+							</tr>
+							<tr>
+								<td>수상</td>
+								<td>이름</td>
+								<td>작품 소개</td>
+								<td>보호자 연락처</td>
+							</tr>
+							<tr th:each="upperGradeAward : ${upperGradeAwards}">
+								<td th:text="${upperGradeAward.award}">우수상</td>
+								<td th:text="${upperGradeAward.contestantName}">이*주</td>
+								<td>
+									<p class="ellipsis" th:text="${upperGradeAward.paintingDesc}">토마토는 맛있어 </p> 
+								</td>
+								<td th:text="${#strings.substring(upperGradeAward.guardianPh,6,10)}">3076</td>
+							</tr>									
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ================================ 
+				// Content
+		================================ -->
+
+	<!-- ================================ 
+				Popup 
+	================================ -->
+	
+	<!--제철재료 pop_season -->
+	<div id="pop_season" class="pop_wrap_recipe w800" style="display:none;">
+		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
+			<div>
+				<p class="btn_pop_close">	
+					<a href="#pop_season" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_btn.jpg" alt="닫기"></a>
+				</p>
+				<p class="center">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop.jpg" alt="팝업본문"/>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //제철재료 pop_season -->
+	<!-- 주의사항 pop_season 2023-08-21 -->
+	<div id="pop_season_info" class="pop_wrap_recipe w800" style="display:none;">
+		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
+			<div>
+				<p class="btn_pop_close">	
+					<a href="#pop_season_info" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_close_info.jpg" alt="닫기"></a>
+				</p>
+				<p class="center">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_info.jpg" alt="팝업본문"/>
+				</p>
+				<p class="center" style="padding-bottom:70px; background:#fffedf">
+					<a href="/beanSoup/agreement"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_pop_info.jpg" alt="참가 접수하러가기"/></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //주의사항 pop_season 2023-08-21 -->
+
+	<script src="https://www.vegemil.co.kr/common/js/modality.js"></script>
+	<!-- 팝업 script -->
+	<script>
+		var modal1 = Modality.init('#pop_season', {effect: 'slide-up'}); 
+		var modal1 = Modality.init('#pop_season_info', {effect: 'slide-up'});  // 2023-08-21 추가
+	</script>
+	<!-- //팝업 script -->
+      <!-- ================================ 
+       			 Footer
+      ================================ -->
+     	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+      <!-- ================================ 
+       			 // Footer
+      ================================ -->
+    </body>
+</html>

@@ -259,7 +259,7 @@ public class WebzineController extends UiUtils {
 		WebzineDTO webzine = new WebzineDTO();
 		webzine.setQrtYear(qrtYear);
 		webzine.setFileNo("sub"+fileNo); 
-		//webzine.setFileNo("sub05"); 개발용 하드코드
+		
 		webzine = webzineService.getWebzine(webzine);
 		List<WebzineDTO> recommandWebzineList = webzineService.getRecommandWebzine(webzine);
 		
@@ -279,6 +279,7 @@ public class WebzineController extends UiUtils {
 			returnHtml = "webzine/sub";
 		}
 		
+		model.addAttribute("countArticles", webzineListQY.size());
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
@@ -339,6 +340,8 @@ public class WebzineController extends UiUtils {
 			returnHtml = "webzine/sub";
 		}
 		
+		
+		model.addAttribute("countArticles", webzineListQY.size());
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
@@ -399,6 +402,7 @@ public class WebzineController extends UiUtils {
 			returnHtml = "webzine/sub";
 		}
 		
+		model.addAttribute("countArticles", webzineListQY.size());
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
@@ -459,6 +463,7 @@ public class WebzineController extends UiUtils {
 			returnHtml = "webzine/sub";
 		}
 		
+		model.addAttribute("countArticles", webzineListQY.size());
 		model.addAttribute("webzineYear", webzineYear);
 		model.addAttribute("webzineQrt", webzineQrt);
 		model.addAttribute("webzineLink", webzineLink);
@@ -1028,6 +1033,11 @@ public class WebzineController extends UiUtils {
 		model.addAttribute("webzineListSearch", webzineListSearch);
 		
 		return "webzine/searchNew";
+	}
+	
+	@GetMapping("/prePub/{filename}")
+	public String prePub(Model model, @PathVariable("filename") String filename) {
+		return "";
 	}
 		
 	

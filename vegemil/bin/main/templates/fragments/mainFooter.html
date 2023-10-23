@@ -47,7 +47,7 @@
 				<p class="f14 fw400 gray04 mt10"><span>대표전화 02 3484 9300</span>,  고객상담 <span>080 930 8888</span>, 상담메일 <span><a href="mailto:cs@vegemil.co.kr" target="_blank">cs@vegemil.co.kr</a></span></p>
 				<!-- //2023-09-01 -->
 				<ul class="foot-btn-box">
-					<li sec:authorize="!hasAuthority('USER')"><p class="f14 fw400 gray04 mt10"><b  id="adminLink" style="display:none;"><span class="f13 btn-admin"><a href="/admin/manage">관리자</a></span></b></li>
+					<li sec:authorize="!hasAuthority('USER')"><p class="f14 fw400 gray04 mt10"><b  id="adminLink" style="display:block;"><span class="f13 btn-admin"><a href="/admin/manage">관리자</a></span></b></li>
 					<li sec:authorize="!hasAuthority('USER')" ><p class="f14 fw400 gray04 mt10"><b><span class="f13 btn-admin"><a href="/comp/payment/list">그린비아 결제</a></span></b></p></li>
 					<li><p class="f14 fw400 gray04 mt10"><a href="/member/privacy"><b><span class="gray04 f13">개인정보처리방침</span></b></a></li>
 					<li><p class="f14 fw400 gray04 mt10"><a href="/member/policy"><span class="gray04 f13 ml10">이용약관</span></a></p> </li>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="/common/js/analysis.js"></script>
+<!-- <script type="text/javascript" src="/common/js/analysis.js"></script> -->
 <script type="text/x-javascript">
 (function(w, d, a){
     w.__beusablerumclient__ = {

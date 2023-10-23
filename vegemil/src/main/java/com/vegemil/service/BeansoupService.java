@@ -48,4 +48,7 @@ public interface BeansoupService {
 	public  List<String> selectCountConSectionData();
 	
 	public List<PaintingContestAward23DTO> getContestAwardList23(String section);
+	public List<PaintingContestAward23DTO> getContestAwardListPaging23(PaintingContestAward23DTO params);
+	public PaintingContestAward23DTO getContestWinnerDetail(PaintingContestAward23DTO params);
+
 }

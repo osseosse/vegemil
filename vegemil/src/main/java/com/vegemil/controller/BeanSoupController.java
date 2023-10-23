@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +55,8 @@ import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
 import com.vegemil.domain.contest.PaintingContestAward23DTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
+import com.vegemil.paging.Criteria;
+import com.vegemil.paging.PaginationInfo;
 import com.vegemil.service.BeansoupService;
 import com.vegemil.util.UiUtils;
 
@@ -348,8 +352,7 @@ public class BeanSoupController extends UiUtils {
 			return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/beanSoup", Method.GET, null, model);
 			
 		} catch (Exception e) {
-			System.out.println(e);
-			System.out.println(e.getMessage());
+
 			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
 			out.flush();
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/beanSoup", Method.GET, null, model);
@@ -423,18 +426,33 @@ public class BeanSoupController extends UiUtils {
 		return rtnMap;
 	}
 	
-	@GetMapping("/contestAward/pintingPoet23")
-	public String getAwardView(Model model) {
+	@GetMapping("/beanSoup/{seasonPath}")
+	public String getAwardView(Model model, @PathVariable("seasonPath") String seasonPath, @ModelAttribute("params") PaintingContestAward23DTO params) {
 		
-		List<PaintingContestAward23DTO> kinderAwards = beansoupService.getContestAwardList23("유치부");
-		List<PaintingContestAward23DTO> lowerGradeAwards = beansoupService.getContestAwardList23("초등부 저학년");
-		List<PaintingContestAward23DTO> upperGradeAwards = beansoupService.getContestAwardList23("초등부 고학년");
+		if(seasonPath.equals("seasonWinner")) {
+			
+			model.addAttribute("kinderAwards",beansoupService.getContestAwardList23("유치부"));
+			model.addAttribute("lowerGradeAwards",beansoupService.getContestAwardList23("초등부 저학년"));
+			model.addAttribute("upperGradeAwards",beansoupService.getContestAwardList23("초등부 고학년"));
+			
+		}else if(seasonPath.equals("seasonWinnerList")) {
+			
+			model.addAttribute("allAwards",beansoupService.getContestAwardListPaging23(params));
+			if(params.getSearchKeyword() != null && params.getSearchKeyword().length()>0) {				
+				seasonPath = "seasonWinnerSearch";				
+			}
+			
+		}else if(seasonPath.equals("seasonWinnerDetail")) {
+			
+			if(params.getId() != null && params.getId().length() > 0) {
+				model.addAttribute("award", beansoupService.getContestWinnerDetail(params));
+			}					
+		}
+				
+		model.addAttribute("keyword", params.getSearchKeyword());
+		model.addAttribute("section", params.getSection());
 		
-		model.addAttribute("kinderAwards",kinderAwards);
-		model.addAttribute("lowerGradeAwards",lowerGradeAwards);
-		model.addAttribute("upperGradeAwards",upperGradeAwards);
-		
-		return "beansoup/brand";
+		return "beansoup/" + seasonPath;
 		
 	}
 	

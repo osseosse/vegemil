@@ -42,5 +42,7 @@ public interface BeansoupMapper {
 	public Map<String,Integer> selectCountConData();
 	
 	public List<PaintingContestAward23DTO> selectContestAwawrdList23(String section);
+	public List<PaintingContestAward23DTO> selectContestAwardPaging23(PaintingContestAward23DTO dto);
+	public PaintingContestAward23DTO selectContestWinner(PaintingContestAward23DTO dto);
 	
 }

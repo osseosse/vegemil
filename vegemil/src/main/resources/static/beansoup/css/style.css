@@ -90,6 +90,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.f20 {font-size:20px; line-height:180%; }
 	.f22 {font-size:22px; line-height:120%}
 	.f24 {font-size:24px; line-height:120%}
+	.f26 {font-size:26px; line-height:120%}
 	.f28 {font-size:28px; line-height:120%}
 	.f30 {font-size:30px; line-height:120%}
 	.f35 {font-size:35px; line-height:140%}
@@ -1117,6 +1118,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.bg_video {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_video.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bg_news {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_news.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bg_event {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_event.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	
 	ul.board_tab {position:absolute; bottom:0; margin:0 auto; width:100%; max-width:1357px}
 	ul.board_tab li {width:33%;  font-weight:600; background:#fff; text-align:center; float:left; border-top:1px solid #dedede; border-right:1px solid #dedede; border-bottom:1px solid #dedede}
 	ul.board_tab li.active { background:#a8c345;border-top:1px solid #a8c345 }
@@ -1155,10 +1157,446 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	ul.mall_list li dl.mallBox dd {width:45%; display:inline-block; vertical-align:top; }
 	ul.mall_list li dl.mallBox dd:nth-child(2) {padding:20px 40px}
 	
+	/* ------------------------------------
+		3000 WINNER
+	--------------------------------------- */
+	.bg_win {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_win.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; width:100%;  text-align:center }
+	.bg_yellow02 {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yellow02.jpg) no-repeat scroll 0 0; left: 0; top: 0; background-position: center;width: 100%; height: 100%;-webkit-background-size: cover; background-size: cover; z-index: 1;text-align: center }
+	
+	 
+	
+	.bar01 {border-radius:15px; background:#ffe2b1; width:100%;  text-align:center; font-size:36px; font-weight:600; line-height:100%; vertical-align:middle; padding:12px 10px 8px 10px}
+	.bar01 img {width:73px; vertical-align:middle; margin-right:15px}
+	.bar02 {border-radius:15px; background:#E2F6DF; width:100%;  text-align:center; font-size:36px; font-weight:600; line-height:120%; vertical-align:middle; padding:12px 10px 8px 10px}
+	.bar02 img {width:73px; vertical-align:middle; margin-right:15px}
+	.bar03 {position:relative; width:100%}
+	.mt-30 {margin-top:-35px}
+	.bar03 table.bar-table {position:relative; width:100%; margin:0 auto}
+	.bar03 table.bar-table td {padding:0}
 
+	.bar03 table.bar-table td:nth-child(2) {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/center.png) repeat-x 0 0; height:74px;}
+	.bar03 table.bar-table td:nth-child(3) {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/center01.png) repeat-x 0 0; height:74px; }
+	.bar03 table.bar-table td:nth-child(3) p {margin-top:0px; text-align:center; color:#358D2C}
+	.bar03 table.bar-table td:nth-child(4) {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/center.png) repeat-x 0 0; height:74px;}
+	.bar04 {border-radius:15px; background:#ECECEC; width:100%;  text-align:center; font-size:36px; font-weight:600; line-height:120%; vertical-align:middle; padding:12px 10px 8px 10px}
+	.bar04 img {width:73px; vertical-align:middle; margin-right:15px}
+
+	
+	.bg_winner {border-radius:15px; background:#fff; border-radius:15px; padding:48px 55px; -webkit-box-shadow: 4px 3px 9px 0px rgba(0,0,0,0.12); box-shadow: 4px 3px 9px 0px rgba(0,0,0,0.12);}
+	.winBox01 {position:relative; padding:0 15px }
+	.winImg p.ico_w01 {position:absolute;width:64px; right:20px; bottom:66px; z-index:100}
+	 p.ico_w02 {position:absolute;width:64px; right:20px; bottom:86px}
+	.ico_w03 {position:absolute;right:20px;z-index:100; bottom:20px; width:58px }
+	.ico_w04 {position:relative;width:260px;  margin:0 auto ; top:-60px}
+	.ico_w04 img {width:100%}
+	.L01 {border-radius:10px; background:#FFF3D8; color:#CE8430; padding:4px 7px; line-height:120%; font-size:16px; font-weight:500}
+	.L02 {border-radius:10px; background:#FFE4D6; color:#E26242; padding:4px 7px; line-height:120%; font-size:16px; font-weight:500}
+	.L03 {border-radius:10px; background:#E1F3E3; color:#619F58; padding:4px 7px; line-height:120%; font-size:16px; font-weight:500}
+	.winBox {position:relative; border-radius:20px; overflow:hidden; border:1px solid #ccc ; width:100%}
+	
+	.winTxt {position:absolute; bottom:0; background:#fff; z-index:100; width:100%; border-radius:20px; padding:20px 40px }
+	.w_round {border:10px solid red; position:absolute; right:0; bottom:0; height:70px}
+	.bgT01 th{background:#FFF3D8;color:#CE8430;}
+	.bgT02 th {background:#FFE4D6;color:#E26242}
+	.bgT03 th{background:#E1F3E3;color:#619F58}
+
+
+	table.winTable {position:relative}
+	table.winTable tr th { padding:15px 0; border-radius:20px 20px 0px 0px; text-align:center; font-weight:600;border-bottom:1px solid #DFDFDF }
+	table.winTable tr td {border-right:1px solid #DFDFDF; border-bottom:1px solid #DFDFDF; padding:10px 10px 10px 15px; font-size:13px; color:#4B4B4B; background:#fff}
+	table.winTable tr td:first-child {background:#F7F7F7; border-left:1px solid #DFDFDF}
+	table.winTable tr td:last-child {text-align:center}
+	.ellipsis { overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+	.col-md-4 a:hover {text-decoration:none; color:#000}
+	.col-md-3 a:hover {text-decoration:none; color:#000}
+	.h560 {height:560px; width:100%}
+	.a2_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/win06.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; width:100%; }
+	.a2_1 {position:relative; background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yellow02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover;background-size: cover;z-index:1; width:100%; display:inline-block}
+	.baseBG {background: no-repeat scroll 0 0; left:0; top:0; background-position:center;-webkit-background-size: cover; background-size: cover; z-index:1; width:100%; display:inline-block ; width:100%; height:560px; }
+	
+	
+
+	.winSearch {overflow: hidden; text-align:center; width:710px; margin:0 auto; margin-top:80px }
+	.winSearch > a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 17px;}
+	.winSearch .search-container {float: right;   }
+	.winSearch input[type=text] {padding:13px 9px; padding-left:30px; margin-top: 0px;font-size: 18px;border: none; width:460px; border-radius:12px 0 0 12px; background:#fff; border:1px solid #DFDFDF; vertical-align:top; line-height:140%}
+	.winSearch .search-container button {float: right;padding:27px 35px;margin-top: 0px;margin-right: 16px;background: #fff;
+	font-size: 17px;border: none;cursor: pointer; background:#F06339 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 12px 12px 0  }
+	.winSearch .search-container #btnSearch {float: right;padding:17px 27px;margin-top: 0px;margin-right: 16px;background: #fff;
+	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 12px 12px 0  }
+	.winSearch input:focus { outline:none}
+	.win_sel {bordeR:1px solid #DFDFDF; display:inline-block; color:#2E2E2E; font-size:18px; border-radius:10px; padding:11px 10px; margin-right:10px; width:150px} 
+	.win_r {border-radius:20px}
+	.ml5 {margin-left:5px}
+	.h480 {height:480px}
+	.pagiWrap {margin:0 auto;  text-align:Center;  margin-bottom:200px;  display:inline-block; position:relative; display:table}
+	.pagination{margin-top:20px;white-space: nowrap; text-align:center; height: 37px; line-height:37px;  }
+	.pagination a{display:inline-block;  height:36px; width:36px;  vertical-align:middle; text-align:center; text-decoration:none; font-size:15px; color:#000; margin:0 5px}
+	.pagination .on{color:#fff; font-weight:bold; background:#F06339; border-radius:40px}
+	.pagination .prev,.pagination .next{height:36px; width:36px; overflow:hidden;position:relative; font-size:0;}
+	.pagination .prev.end,.pagination .next.end{height:36px; width:36px; font-size:0;}
+		.pagination .prev{background: url("https://image.edaymall.com/images/vegemil/beansoup/img/season/prev.png") no-repeat center center; margin-right:11px; background-size:10px 17px}
+	.pagination .prev.end{background: url("https://image.edaymall.com/images/vegemil/beansoup/img/season/prevEnd.png") no-repeat center center; margin-right:4px; border-right:0;}
+		.pagination .next{background: url("https://image.edaymall.com/images/vegemil/beansoup/img/season/next.png") no-repeat center center; margin-left:11px;background-size:10px 17px}
+	.pagination .next.end{background: url("https://image.edaymall.com/images/vegemil/beansoup/img/season/nextEnd.png") no-repeat center center; margin-left:4px; border-left:0;}
+	.detailBox {position:relative; text-align:center; padding:64px 0}
+	.detailBox .detail_img {height:554px; text-align:center;  margin:0 auto }
+	.detailBox .detail_img img {height:554px; width:auto; border-radius:20px;}
+	.winLine {position:relative; border-bottom:2px solid #ccc}
+	.win_infoBox {position:relative;  border:36px solid #EAF5E3; border-radius:30px; padding:70px; text-align:center}
+	.win_info_title {position:relative; text-align:center; margin-bottom:-140px; z-index:100}
 	
 
 
+	.a1_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a1_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a2_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a2_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a3_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a3_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_13 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_13.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_14 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_14.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_15 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_15.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_16 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_16.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_17 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_17.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_18 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_18.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_19 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_19.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_20 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_20.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_21 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_21.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_22 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_22.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_23 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_23.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_24 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_24.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_25 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_25.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_26 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_26.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_27 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_27.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_28 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_28.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_29 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_29.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_30 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_30.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_31 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_31.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_32 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_32.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_33 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_33.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_34 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_34.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_35 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_35.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_36 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_36.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_37 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_37.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_38 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_38.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_39 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_39.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_40 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_40.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_41 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_41.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_42 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_42.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_43 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_43.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_44 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_44.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_45 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_45.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_46 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_46.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_47 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_47.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_48 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_48.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_49 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_49.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_50 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_50.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_51 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_51.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_52 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_52.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_53 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_53.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_54 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_54.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_55 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_55.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a4_56 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a4_56.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_13 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_13.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_14 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_14.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_15 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_15.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_16 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_16.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_17 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_17.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_18 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_18.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_19 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_19.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.a5_20 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/a5_20.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b1_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b1_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b2_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b2_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b3_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b3_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_13 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_13.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_14 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_14.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_15 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_15.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_16 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_16.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_17 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_17.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_18 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_18.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_19 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_19.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_20 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_20.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_21 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_21.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_22 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_22.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_23 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_23.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_24 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_24.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_25 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_25.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_26 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_26.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_27 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_27.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_28 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_28.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_29 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_29.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_30 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_30.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_31 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_31.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_32 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_32.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_33 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_33.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_34 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_34.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_35 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_35.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_36 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_36.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_37 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_37.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_38 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_38.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_39 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_39.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_40 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_40.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_41 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_41.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_42 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_42.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_43 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_43.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_44 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_44.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_45 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_45.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_46 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_46.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_47 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_47.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_48 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_48.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_49 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_49.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_50 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_50.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_51 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_51.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_52 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_52.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_53 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_53.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_54 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_54.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_55 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_55.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b4_56 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b4_56.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_13 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_13.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_14 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_14.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_15 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_15.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_16 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_16.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_17 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_17.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_18 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_18.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_19 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_19.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.b5_20 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/b5_20.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c1_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c1_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c2_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c2_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c3_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c3_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_13 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_13.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_14 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_14.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_15 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_15.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_16 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_16.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_17 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_17.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_18 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_18.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_19 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_19.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_20 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_20.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_21 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_21.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_22 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_22.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_23 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_23.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_24 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_24.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_25 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_25.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_26 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_26.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_27 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_27.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_28 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_28.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_29 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_29.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_30 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_30.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_31 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_31.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_32 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_32.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_33 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_33.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_34 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_34.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_35 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_35.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_36 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_36.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_37 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_37.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_38 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_38.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_39 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_39.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_40 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_40.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_41 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_41.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_42 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_42.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_43 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_43.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_44 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_44.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_45 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_45.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_46 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_46.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_47 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_47.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_48 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_48.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_49 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_49.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_50 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_50.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_51 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_51.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_52 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_52.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_53 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_53.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_54 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_54.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_55 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_55.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c4_56 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c4_56.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_1 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_1.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_2 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_2.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_3 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_3.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_4 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_4.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_5 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_5.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_6 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_6.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_7 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_7.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_8 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_8.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_9 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_9.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_10 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_10.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_11 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_11.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_12 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_12.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_13 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_13.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_14 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_14.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_15 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_15.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_16 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_16.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_17 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_17.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_18 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_18.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_19 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_19.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	.c5_20 { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/c5_20.jpg) no-repeat scroll 0 0;left: 0; top: 0; background-position: center;width: 100%; -webkit-background-size: cover; background-size: cover; z-index: 1; text-align: center}
+	
+	/* --------------------------------------------- 
+	hover-master 
+	 --------------------------------------------- */
+	/* Float Shadow */
+	.hvr-float-shadow {
+	  display: block;
+	  vertical-align: middle;
+	  -webkit-transform: translateZ(0);
+	  transform: translateZ(0);
+	  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	  -webkit-backface-visibility: hidden;
+	  backface-visibility: hidden;
+	  -moz-osx-font-smoothing: grayscale;
+	  position: relative;
+	  -webkit-transition-duration: 0.3s;
+	  transition-duration: 0.3s;
+	  -webkit-transition-property: transform;
+	  transition-property: transform;
+	}
+	.hvr-float-shadow:before {
+	  pointer-events: none;
+	  position: absolute;
+	  z-index: -1;
+	  content: '';
+	  top: 100%;
+	  left: 5%;
+	  height: 15px;
+	  width: 90%;
+	  opacity: 0;
+	  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+	  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+	  /* W3C */
+	  -webkit-transition-duration: 0.3s;
+	  transition-duration: 0.3s;
+	  -webkit-transition-property: transform, opacity;
+	  transition-property: transform, opacity;
+	}
+	.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+	  -webkit-transform: translateY(-15px);
+	  transform: translateY(-15px);
+	  /* move the element up by 5px */
+	}
+	.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+	  opacity: 1;
+	  -webkit-transform: translateY(15px);
+	  transform: translateY(15px);
+	  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+	}
 
 
 @media (max-width: 1400px) {
@@ -1290,8 +1728,24 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 
 
-
-
+	/* ------------------------------------
+		1200 WINNER
+	--------------------------------------- */
+	.winSearch {overflow: hidden; text-align:center; width:390px; margin:0 auto; margin-top:80px }
+	.winSearch > a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
+	.winSearch .search-container {float: right;   }
+	.winSearch input[type=text] {padding:11px 4px; padding-left:15px; margin-top: 0px;font-size: 18px;border: none; width:180px; border-radius:12px 0 0 12px; background:#fff; border:1px solid #DFDFDF; vertical-align:top; line-height:140%}
+	.winSearch .search-container button {float: right;padding:25px 25px;margin-top: 0px;margin-right: 16px;background: #fff;
+	font-size: 17px;border: none;cursor: pointer; background:#F06339 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 12px 12px 0  }
+	.winSearch .search-container #btnSearch {float: right;padding:17px 27px;margin-top: 0px;margin-right: 16px;background: #fff;
+	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 12px 12px 0  }
+	.winSearch input:focus { outline:none}
+	.win_sel {bordeR:1px solid #DFDFDF; display:inline-block; color:#2E2E2E; font-size:15px; border-radius:10px; padding:11px 10px; margin-right:10px; width:120px} 
+	.h480 {height:370px}
+	.ico_w03 {position:absolute;right:10px;z-index:100; bottom:20px; width:38px }
+	.h400 {height:250px} 
+	.win_info_ch01 img {width:80%; } 
+	
 
 
 }
@@ -1324,6 +1778,7 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 	.f20 {font-size:15px; line-height:140%}
 	.f22 {font-size:16px; line-height:120%}
 	.f24 {font-size:18px; line-height:120%}
+	.f26 {font-size:19px; line-height:120%}
 	.f28 {font-size:20px; line-height:120%}
 	.f30 {font-size:23px; line-height:120%}
 	.f35 {font-size:26px; line-height:140%}
@@ -1673,6 +2128,67 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 
 
+	/* --------------------------------------------- 
+		990 hover-master 
+	 --------------------------------------------- */
+	/* Float Shadow */
+	.hvr-float-shadow {
+	  display: block;
+	  vertical-align: middle;
+	  -webkit-transform: translateZ(0);
+	  transform: translateZ(0);
+	  box-shadow: 0 ;
+	  -webkit-backface-visibility: hidden;
+	  backface-visibility: hidden;
+	  -moz-osx-font-smoothing: grayscale;
+	  position: relative;
+	  -webkit-transition-duration: 0.3s;
+	  transition-duration: 0.3s;
+	  -webkit-transition-property: transform;
+	  transition-property: transform;
+	}
+	.hvr-float-shadow:before {
+	  pointer-events: none;
+	  background: 0;
+	}
+	.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+	  -webkit-transform: translateY(0px);
+	  transform: translateY(0px);
+	  /* move the element up by 5px */
+	}
+	.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+	  opacity: 1;
+	  -webkit-transform: translateY(0px);
+	  transform: translateY(0px);
+	  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+	}
+
+
+
+
+	/* ------------------------------------
+		990 winner
+	--------------------------------------- */
+	.bar01 {font-size:23px;} 
+	.bar02 {font-size:23px;} 
+	.bar04 {font-size:23px;} 
+	.winTxt {padding:10px 15px}
+	.L01 {border-radius:10px; background:#FFF3D8; color:#CE8430; padding:4px 7px; line-height:120%; font-size:13px; font-weight:500}
+	.L02 {border-radius:10px; background:#FFE4D6; color:#E26242; padding:4px 7px; line-height:120%; font-size:13px; font-weight:500}
+	.L03 {border-radius:10px; background:#E1F3E3; color:#619F58; padding:4px 7px; line-height:120%; font-size:13px; font-weight:500}
+	p.ico_w02 { width:40px; right:10px; bottom:60px;   }
+	p.ico_w02 img {width:100%; }
+	.bg_winner {padding:40px 0}
+	.h480 {height:320px}
+
+	.detailBox {position:relative; text-align:center; padding:24px 10px}
+	.detailBox .detail_img {height:554px; text-align:center;  margin:0 auto }
+	.detailBox .detail_img img {height:554px; width:auto; border-radius:20px;}
+	.winLine {position:relative; border-bottom:2px solid #ccc}
+	.win_infoBox {position:relative;  border:20px solid #EAF5E3; border-radius:30px; padding:70px; text-align:center}
+	.win_info_title {position:relative; text-align:center; margin-bottom:-90px; z-index:100}
+	
+
 
 
 	.mt10m {margin-top:10px}
@@ -1738,8 +2254,13 @@ box-shadow: 12px 10px 28px 5px rgba(0,0,0,0.13);}
 
 	.endBox .name {position:relative; text-align:center; margin-bottom:10px}
 	.endBox .name span {font-size:35px; font-weight:600; color:#6fc876; line-height:120%}
-	.endBox .name span img {max-width:170px; }
+	.endBox .name span img {max-width:190px}
 	.end_btn_box li {margin:0}
+
+	/* ------------------------------------
+		720 winner
+	--------------------------------------- */
+	.bg_winner .col-md-4 {margin-top:50px}
 
 
 }

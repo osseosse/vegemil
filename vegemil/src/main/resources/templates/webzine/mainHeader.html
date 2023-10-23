@@ -74,7 +74,7 @@
 		<div class="n-menu-bottom">
 			<div class="f_left">
 				<span>년도 </span>
-				<select id="year" onchange="javascript:selectQrt(this.value);" th:if="${not #lists.isEmpty( webzineYear )}">
+				<select id="year" onchange="javascript:selectQrt(this.value);" th:if="${not #lists.isEmpty( webzineYear )}">					
 		            <option th:each="year : ${webzineYear}" th:value="${year.qrtYear}" th:text="|${year.qrtYear}년|"></option>
 		        </select>
 				<span>분기 </span>

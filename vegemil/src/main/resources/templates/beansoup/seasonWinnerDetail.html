@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<th:block class="white" th:replace="fragments/beansoup/head :: headFragmentContestVer"></th:block>	
+	<script th:src="@{/webzine/js/kakao.min.js}"></script>
+	<link href="/common/css/modality.css" rel="stylesheet">
+	<script type="text/javascript" src="/common/js/modality.js"></script>
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/reset.css" rel="stylesheet">
+	<!-- 추천렛피 -->
+	<link rel='stylesheet' href='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.css'>
+	<!-- 리뷰슬라이드 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/review.css" rel="stylesheet">
+	<!-- //리뷰슬라이드 -->
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/jquery.1.11.1.min.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/jquery.touchSwipe.1.6.min.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/prrple.slider.js"></script>
+	<script src="https://image.edaymall.com/images/mail/news/dcf/c/html/common/js/design.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/bootstrap.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/style.css" rel="stylesheet">
+		
+	
+    <body>
+        <!-- ================================ 
+		        Header
+        ================================ -->
+        <th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+        <!-- ================================ 
+		        // Header
+        ================================ -->		        
+		<!-- ================================ 
+				Content
+		================================ -->
+		
+		<div class="container100 pb200 ">
+			<div class="container">			
+				<div class="row bgGray">
+					<div class="col-lg-12">
+						<div class="winBox03">
+							<div class="detailBox">
+								<p class="detail_img">
+									<img th:src="|https://image.edaymall.com/images/vegemil/beansoup/img/season/${award.paintingFilename}.jpg|" alt="대상" />
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>		
+				<div class="row">
+					<div class="col-lg-12">                               
+						<p class="ico_w04" th:if="${award.award == '대상'}" ><img  src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_an01.gif" alt="대상" /></p>
+						<p class="ico_w04" th:if="${award.award == '최우수'}"><img  src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_an02.gif" alt="최우수" /></p>
+						<p class="ico_w04" th:if="${award.award == '우수상'}"><img  src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_an03.gif" alt="우수상" /></p>
+						<p class="ico_w04" th:if="${award.award == '아차상'}"><img  src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_an04.gif" alt="아차상" /></p>
+						<p class="ico_w04" th:if="${award.award == '참가상'}"><img  src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_an05.gif" alt="참가상" /></p>
+					</div>
+				</div>	
+				<div class="row ">
+					<div class="col-lg-12 winLine pb80">
+						<p class="f26 fw400  tcenter">작가 : <span class="fw500" th:text="${award.contestantName}">오유하</span> <span class="L02 fw500 ml5" th:text="${award.section}">초등부 저학년</span></p>
+					</div>
+					<div class="col-lg-12 mt100">
+						<p class="win_info_title"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win_info_title.png" alt="작품설명"/></p>
+						<div class="win_infoBox mt80">
+							<p class="f20" th:text="${award.paintingDesc}">토마토를 전구에 비유하여 곤충 친구를 위해 밝게 비추며 함께 살아가는 세상을 표현했습니다.</p>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+			
+		<!-- ================================ 
+				// Content
+		================================ -->
+
+      <!-- ================================ 
+       			 Footer
+      ================================ -->
+     	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+      <!-- ================================ 
+       			 // Footer
+      ================================ -->
+    </body>
+</html>

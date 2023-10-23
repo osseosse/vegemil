@@ -90,7 +90,7 @@
 	var fileNum = parseInt(num);
 	var beforeNo = fileNum - 1;
 	var afterNo = fileNum + 1;
-
+	
 	$('#btnBefore').on("click", function() {
 		if(fileNum == '01') {
 			alert("첫번째 기사입니다.");
@@ -105,7 +105,8 @@
     });
 	
 	$('#btnNext').on("click", function() {
-		if(fileNum == '15') {
+
+		if(fileNum == num) {
 			document.location.href="/webzine/event/"+qrter;
 		} else {
 			if(afterNo <= 9) {

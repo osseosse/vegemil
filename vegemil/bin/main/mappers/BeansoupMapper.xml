@@ -250,6 +250,7 @@
 		update_date
 	</sql>
 	<sql id="PaintingContestAwardColumns">
+		id,
 		section,
 		award,
 		material,
@@ -384,13 +385,39 @@
 			<include refid="PaintingContestAwardColumns"/>
 		FROM 
 			m_contest_2023_award
-		WHERE 
-			(award = '우수상' OR award = '참가상')
-			<if test="award != null and award != ''">
-				AND section = #{section}			
-			</if> 
-		
-														
+		<if test="section != null and section != ''">
+		WHERE 			
+				section = #{section}
+		</if> 
+		ORDER BY display_order																					
 	</select>
 	
+	<select id="selectContestAwardPaging23" parameterType="com.vegemil.domain.contest.PaintingContestAward23DTO" 
+													resultType="com.vegemil.domain.contest.PaintingContestAward23DTO">
+		SELECT 
+			<include refid="PaintingContestAwardColumns"/>
+		FROM m_contest_2023_award
+		WHERE 1=1 
+		<!-- 부문 검색 들어왔을때 -->
+		<if test="section != null and section != ''">
+			AND section LIKE CONCAT('%', #{section} ,'%')
+		</if>
+		<!-- 주제 키워드 검색 들어왔을때 -->
+		<if test="searchKeyword != null and searchKeyword != ''">
+			AND contestant_name LIKE CONCAT('%', #{searchKeyword} ,'%')
+		</if>
+        ORDER BY display_order 		
+        LIMIT
+			#{paginationInfo.firstRecordIndex}, 12
+	</select>
+	
+	<select id="selectContestWinner"  parameterType="com.vegemil.domain.contest.PaintingContestAward23DTO" 
+													resultType="com.vegemil.domain.contest.PaintingContestAward23DTO">
+		SELECT 
+			<include refid="PaintingContestAwardColumns"/> 
+		FROM m_contest_2023_award		
+		WHERE
+			id = #{id}
+	
+	</select>
 </mapper>

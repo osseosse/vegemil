@@ -1,0 +1,146 @@
+<script>
+
+var type = "";
+var times = 1;
+var imgCommonPath = "https://image.edaymall.com/images/dcf/webzine/Q4_2023/";
+var resultLandingCommonPath = "https://www.vegemil.co.kr/product/detail/";
+$(document).ready(function () {
+  //setInterval(getRes, 5000);
+
+  $(".choice").click(function () {
+	var choiceId = $(this).attr("id");
+		
+	type += choiceId;
+	times++;
+	
+	console.log("choice is = " + choiceId);
+	console.log("type value = " + type);
+	console.log("times = " + times);
+	
+	// 편의점에서 베지밀에이를 발견했다
+	if(times == 2){		
+		// 질문 공통
+		//console.log(type);
+		
+		if(type == 'L'){
+		    $("#question").attr("src",imgCommonPath+"16_q2_1.jpg");
+		}else{
+		    $("#question").attr("src",imgCommonPath+"16_q2_2.jpg");
+		}
+		
+		$("#leftImg").attr("src",imgCommonPath+"16_btn3.png");
+		$("#rightImg").attr("src",imgCommonPath+"16_btn4.png");	
+		
+	}		
+	// 늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어! 
+	if(times == 3){
+		$("#question").attr("src",imgCommonPath+"16_q3_1.jpg");
+		$("#leftImg").attr("src",imgCommonPath+"16_btn5.png");
+		$("#rightImg").attr("src",imgCommonPath+"16_btn6.png")
+	}	
+	if(times == 4){		
+		var resultframe = '<div class="btn-mbti-center"><p class="green-btn img100 "><a class="resultLoading" id="resultBoard" href=""><img  class="content-center" id="resultImg" src=""/></a></p></div>'
+						  
+		$("#frameEx").html(resultframe);
+
+		$("#resultImg").attr("src",imgCommonPath+"16_loading.gif");
+		
+		//return;
+		
+		resultInterval = setInterval(getRes, 3000);
+	}
+  });
+});
+function getRes(){
+	
+	var btns = '<div class="greenFoot_BtnBox center mt50-m ">'+
+				  '<a href="javascript:void(0);" class="  center" onclick="reset();"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn_re.jpg" alt="다시 해보기"/></a>' +
+				  '<a href="#" class="resultLanding" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn.jpg" alt="구매하기" /></a>';
+				  
+	$("#resultBoard").removeClass('resultLoading');
+    $("#frameEx").append(btns);
+    
+	switch(type){
+	case "LLL" : 
+		console.log("LLL/IFJ"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"75");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_1.jpg");
+		break;		
+	case "LLR" :
+		console.log("LLR/IFP");
+		$(".resultLanding").attr("href",resultLandingCommonPath+"20");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_2.jpg");
+		break;
+		
+	case "LRR" : //? 4번 이미지를 노출해야한다는데 I를 선택했는데 E가 나온다고 ?
+		console.log("LRR/ITP");
+		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
+		break;				
+	case "LRL" :
+		console.log("LRL/ITP");
+		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
+		break;
+		
+	case "RRL" :
+		console.log("RRL/ETJ"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
+		break;		
+	case "RLL" :
+		console.log("RLL/EFJ"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"7");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_5.jpg");
+		break;		
+		
+	case "RLR" :
+		console.log("RLR/EFP"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"31");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_6.jpg");
+		break;
+	case "RRR" :
+		console.log("RLR/EFP"); 
+		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
+		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
+		break;		
+	}
+	
+	clearInterval(resultInterval);
+	
+}
+
+function reset(){
+	location.reload();
+}
+</script>
+<div class="wrap-inner5" id="wzPage" >
+        <script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+        <div class="container wz-left">
+        <div class="project-detail-wrap fl-wrap bg-w2 container-sub80" style="height:1364px;">
+	       	<div class="row">
+	                <div class="col-md-12 center">
+	                    <h3 class="center mt50">나의 정식품 MBTI는 무엇일까?</h3>
+	    				
+	                <p class="mt40 center">질문을 읽고 끌리는 답변을 골라주세요. 내 성격과 딱 맞는 제품을 추천해준답니다!<br> 이번 주말, 나의 정식품 MBTI 제품을 마셔보는건 어떨까요?</p>
+	                </div>	
+	        </div><!--//row-->
+	        <div class="row intxt mt50-m">
+	            <div class="col-md-12">
+	                <div class="w783" id="frameEx">
+	                    <!-- 질문1 I/E -->
+	                    <div class="geenBox">
+	                        <div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
+	                        <p class="img100"><img id="question" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q01.jpg" alt="드디어 찾아온 주말 오늘같은 날은" /></p>
+	                        <div class="greenBtnBox">
+	                            <p class="green-btn img100"><a href="javascript:void(0);" class="choice" id="L"><img id="leftImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn1.png" alt="집에서 편안히 쉬면서 충전할래!" /></a></p>
+	                            <p class="green-btn img100"><a href="javascript:void(0);" class="choice" id="R"><img id="rightImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn2.png" alt="오늘은 어디로 가지? 주말은 친구들과 외출하는 날!" /></a></p>
+	                        </div>
+	                    </div>
+	                    <!-- //질문1 I/E -->
+	        	</div>
+	      	</div>
+	      </div>
+        </div>
+    </div><!-- //container -->
+	

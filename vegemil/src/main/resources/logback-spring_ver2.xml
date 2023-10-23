@@ -51,7 +51,7 @@
     </appender>
 	<!-- //Appenders -->
 	<!-- Logger 이건 뭘까 ??-->
-	<logger name="com.vegemil" level="DEBUG" appender-ref="console" />
+	<logger name="com.vegemil" level="INFO" appender-ref="console" />
 	<logger name="jdbc.sqlonly" level="INFO" appender-ref="console-infolog" />
 	<logger name="jdbc.resultsettable" level="INFO" appender-ref="console-infolog" />
 
