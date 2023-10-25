@@ -30,8 +30,12 @@
 			<div class="col-md-6 mt50">
 				<a th:href="${event.eUri}" target="_blank">
 					<div class="notice-img">
-					<p th:style="|position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/${event.eImg}) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;|" class="h380">
-					<img src="" alt=""/><span class="ing-end on f16">진행중인 이벤트</span></p>
+						<p th:style="|position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/${event.eImg}) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;|" class="h380">
+							<img src="" alt="" />
+								<span class="ing-end on f16" th:if="${event.eBvactive}=='1'">진행중인 이벤트</span>
+								<span class="ing-end on f16" th:if="${event.eBvactive}=='0'"> 이벤트 마감 </span>
+							
+						</p>
 					</div>
 				</a>
 			</div>

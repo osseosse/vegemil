@@ -53,7 +53,7 @@
 	<!-- Logger 이건 뭘까 ??-->
 	<logger name="com.vegemil" level="INFO" appender-ref="console" />
 	<!-- <logger name="jdbc.sqlonly" level="INFO" appender-ref="console-infolog" /> -->
-	<logger name="jdbc.resultsettable" level="INFO" appender-ref="console-infolog" />
+	<!-- <logger name="jdbc.resultsettable" level="INFO" appender-ref="console-infolog" /> -->
 
 	<!-- Root Logger(로그 전역 세팅) -->
 	 <root level="${LOG_LEVEL}">
