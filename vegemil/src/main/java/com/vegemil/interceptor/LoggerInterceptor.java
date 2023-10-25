@@ -17,8 +17,6 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 		
 		logger.info("==================== BEGIN ====================");
 		logger.info("Request URI ===> " + request.getRequestURI());
-		logger.info("Request URL ===> " + request.getRequestURL());
-		
 		
 		// java vm이 사용할수 있는 총 메모리(bytes), -Xmx
 		long maxMem = Runtime.getRuntime().maxMemory()/1024/1024;
@@ -43,8 +41,8 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		
-		logger.info("==================== END ======================");
-		logger.info("===============================================");
+		//logger.info("==================== END ======================");
+		//logger.info("===============================================");
 		
 	}
 

@@ -23,7 +23,24 @@
 	<!-- Custom styles for this template -->
 	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/style.css" rel="stylesheet">
 		
-	
+	<script>
+		$("document").ready(function(){
+			var path = document.location.href;
+			var tmpArr = path.split('/');
+			var checkPath = tmpArr[tmpArr.length-1]
+			if(checkPath == 'season'){
+				$("#contestInfo").addClass('active');
+			}
+			
+			if(checkPath == 'seasonWinner'){
+				$("#awardList").addClass('active');
+			}
+			
+			if(checkPath == 'seasonWinnerList'){
+				$("#awardDisplay").addClass('active');
+			}
+		});
+	</script>
     <body>
         <!-- ================================ 
 		        Header
@@ -35,6 +52,14 @@
 		<!-- ================================ 
 				Content
 		================================ -->
+		<!-- winner tab -->
+		<div class="container100 clear mView" >
+			<ul class="winTab">
+				<li id="contestInfo"><a href="https://www.vegemil.co.kr/beanSoup/season">대회 안내</a></li>
+				<li id="awardList"><a href="https://www.vegemil.co.kr/beanSoup/seasonWinner">결과 발표</a></li>
+				<li id="awardDisplay"><a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerList">온라인 전시</a></li>
+			</ul>
+		</div>
 		<!-- main Visual -->
 		<div class="container100 clear" >
 			<div class="row bg_win h400">
@@ -66,7 +91,7 @@
 				<div class="row  mt40 bg_winner">
 			
 						<div class="col-md-4">
-							<a href="" class="hvr-float-shadow">
+							<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=65" class="hvr-float-shadow">
 								<div class="winBox01">
 									<div class="winImg">
 										<p class="win_r"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win01.jpg" /></p>
@@ -78,7 +103,7 @@
 							</a>
 						</div>
 						<div class="col-md-4 ">
-							<a href="" class="hvr-float-shadow">
+							<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=142" class="hvr-float-shadow">
 								<div class="winBox01">
 									<div class="winImg">
 										<p class="win_r"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win02.jpg" />
@@ -90,7 +115,7 @@
 							</a>
 						</div>
 						<div class="col-md-4">
-							<a href="" class="hvr-float-shadow">
+							<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=276" class="hvr-float-shadow">
 								<div class="winBox01">
 									<div class="winImg">
 										<p class="win_r"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win03.jpg" /></p>
@@ -138,22 +163,22 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/agv0m3p5aPI?si=jWPn3EaiEkZilsS6" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you01.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=83" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win04.jpg" alt="고마운 무" /> 
 									<div class="winTxt">
 										<p class="f28 fw600 mt20">고마운 무</p>
-										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">최유나</span> <span class="L01 fw500 ml5">유치부</span></p>
+										<p class="f20 fw400 mt5">작가 : <span class="fw500 ">최유주</span> <span class="L01 fw500 ml5">유치부</span></p>
 										<p class="ico_w02"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/ico_w02.png" alt="대표 수상작" /></p>
 									</div>
 								</div>
@@ -161,7 +186,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=157" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win05.jpg" alt="무한도전" /> 
@@ -175,7 +200,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=209" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win06.jpg" alt="기상청무" /> 
@@ -215,16 +240,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/K7IIe2bBlWI?si=FgKOrywUxqGCHiC3" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you02.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=50" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="애기조개가 문을 닫고 있다가" /> 
@@ -238,7 +263,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=109" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win08.jpg" alt="바지락의 여행" /> 
@@ -252,7 +277,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=266" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win09.jpg" alt="바지락" /> 
@@ -291,16 +316,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/77V5uBLi-r4?si=_6K5AUQxMSZU2YB5" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you03.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=62" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win10.jpg" alt="쑥" /> 
@@ -314,7 +339,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=178" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win11.jpg" alt="봄나물 신호등" /> 
@@ -328,7 +353,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=276" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win12.jpg" alt="봄 편지" /> 
@@ -367,16 +392,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/Nzk30ScoK-k?si=47-xccsPYGvNXxGJ" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you04.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=68" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win13.jpg" alt="주꾸미는 갯벌에서 무엇을 하고 놀까" /> 
@@ -390,7 +415,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=135" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win14.jpg" alt="잘 먹고 쑥쑥 클 껄" /> 
@@ -404,7 +429,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=241" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win15.jpg" alt="엄마 문어의 슬픔" /> 
@@ -443,16 +468,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/Jgz3s_v8sXw?si=-T81Bp9BpY2-zNpc" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you05.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=37" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win16.jpg" alt="오이의 변신" /> 
@@ -466,7 +491,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=180" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win17.jpg" alt="아삭아삭 오이" /> 
@@ -480,7 +505,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=207" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win18.jpg" alt="오이친구" /> 
@@ -519,16 +544,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href=" https://youtube.com/shorts/uvP2idg3Ixs?si=liyg_ZsixsJ0BCqd" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you06.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=13" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win19.jpg" alt="감자는 맛있어" /> 
@@ -542,7 +567,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=175" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win20.jpg" alt="감자의 모험" /> 
@@ -556,7 +581,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=246" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win21.jpg" alt="감자" /> 
@@ -595,16 +620,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href=" https://youtube.com/shorts/ByI9DrMSZVY?si=_CnXKp6hMcVEEtGD" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you07.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=65" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win22.jpg" alt="토마토 전구" /> 
@@ -618,7 +643,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=174" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win23.jpg" alt="캡틴 토마토" /> 
@@ -632,7 +657,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=248" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win24.jpg" alt="토마토 놀이터" /> 
@@ -671,16 +696,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/XdhosX1SIag?si=8-R3Ne7CSlIzCP4n" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you08.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=9" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win25.jpg" alt="옥수수는 좋겠다" /> 
@@ -694,7 +719,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=137" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win26.jpg" alt="옥수수 꽃의 만남" /> 
@@ -708,7 +733,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=244" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win27.jpg" alt="옥수수 기관차" /> 
@@ -747,16 +772,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/NNLra4XCcuw?si=WHCPFnIzijykbLoz" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you09.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=72" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win28.jpg" alt="어린 새우" /> 
@@ -770,7 +795,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=195" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win29.jpg" alt="새우 달리기" /> 
@@ -784,7 +809,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=249" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win30.jpg" alt="독도 바다 지킴이 독도새우" /> 
@@ -823,16 +848,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/_iBdWRO8K3A?si=SLz1Z3nT7A6dSNLE" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you10.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=86" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win31.jpg" alt="대파 사이좋은 친구" /> 
@@ -846,7 +871,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=142" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win32.jpg" alt="대파 달리기" /> 
@@ -860,7 +885,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=287" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win33.jpg" alt="대파…너는 대체…" /> 
@@ -899,16 +924,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/sb5KfBjNSqc?si=rzx6hz0qYCMpPkHP" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you11.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=74" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win34.jpg" alt="배추" /> 
@@ -922,7 +947,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=140" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win35.jpg" alt="배추는 우리가족" /> 
@@ -936,7 +961,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=223" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win36.jpg" alt="내 사랑 배추" /> 
@@ -975,16 +1000,16 @@
 						</div>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://youtube.com/shorts/qcaztSZuXuE?si=tu1LeJjF1zqqV_W4" class="hvr-float-shadow" target="_blank">
 							<div class="winBox">
 								<div>
-									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win07.jpg" alt="쇼츠 조개" /> 
+									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/you12.jpg" alt="쇼츠 조개" /> 
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=42" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win37.jpg" alt="크리스마스 트리" /> 
@@ -998,7 +1023,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=156" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win38.jpg" alt="12월은 내가 제철" /> 
@@ -1012,7 +1037,7 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-6 mt40">
-						<a href="" class="hvr-float-shadow">
+						<a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerDetail?id=205" class="hvr-float-shadow">
 							<div class="winBox">
 								<div>
 									<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/win39.jpg" alt="밤" /> 
@@ -1027,9 +1052,11 @@
 					</div>
 				</div>
 				<!-- //12월 -->
+		
 			</div>
 		</div>
-		
+
+				
 		<!--2023-10-20 (2) -->
 		<div class="container">
 			<div class="row ">
@@ -1055,12 +1082,14 @@
 					<!-- 유치부 -->
 					<div class="col-md-4 mt50">
 						<table cellspacing="0" border="0" class="winTable bgT01">
-							<colgroup>
-								<col width="15%">
-								<col width="15%">
-								<col width="45%">
-								<col width="*">
-							</colgroup>
+							 <!-- 2023-10-24 간격조절 -->
+		                    <colgroup>
+		                        <col width="18%">
+		                        <col width="19%">
+		                        <col width="45%">
+		                        <col width="*">
+		                    </colgroup>
+		                    <!-- //2023-10-24 간격조절 -->
 							<tr>
 								<th colspan="4"><p class="f18">유치부</p></th>
 							</tr>
@@ -1083,12 +1112,14 @@
 					<!-- 초등 저학년 -->
 					<div class="col-md-4 mt50">
 						<table cellspacing="0" border="0" class="winTable bgT02">
-							<colgroup>
-								<col width="15%">
-								<col width="15%">
-								<col width="45%">
-								<col width="*">
-							</colgroup>
+							 <!-- 2023-10-24 간격조절 -->
+		                    <colgroup>
+		                        <col width="18%">
+		                        <col width="19%">
+		                        <col width="45%">
+		                        <col width="*">
+		                    </colgroup>
+		                    <!-- //2023-10-24 간격조절 -->
 							<tr>
 								<th colspan="4"><p class="f18">초등 저학년</p></th>
 							</tr>
@@ -1111,12 +1142,14 @@
 					<!-- 초등 고학년 -->
 					<div class="col-md-4 mt50">
 						<table cellspacing="0" border="0" class="winTable bgT03">
-							<colgroup>
-								<col width="15%">
-								<col width="15%">
-								<col width="45%">
-								<col width="*">
-							</colgroup>
+							<!-- 2023-10-24 간격조절 -->
+		                    <colgroup>
+		                        <col width="18%">
+		                        <col width="19%">
+		                        <col width="45%">
+		                        <col width="*">
+		                    </colgroup>
+                    		<!-- //2023-10-24 간격조절 -->
 							<tr>
 								<th colspan="4"><p class="f18">초등 고학년 </p></th>
 							</tr>

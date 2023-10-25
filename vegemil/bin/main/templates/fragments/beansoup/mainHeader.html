@@ -6,7 +6,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 	
-		  var theDay = new Date('2023-08-23 08:00:00'); 
+		  var theDay = new Date('2023-10-24 09:00:00'); 
 		  timeCheck(theDay);
 	
 		  
@@ -16,7 +16,8 @@
 			var today = new Date();
 			if(today >= theDay){
 				 // 제어하고 싶은 코드 그때그떄 변경// 			 
-				 $("#seasons").css("display","block");
+				 $("#contest").css("display","block");
+				 $("#seasons").css("display","none");
 			}
 		}
 		
@@ -27,22 +28,21 @@
 	</div>
 	<ul>
 		
-		<li class="drop wView2 ab" id=""><a href="/beanSoup/season" class="dep01">제철요리</a>
+		<li class="drop wView2 ab" id="contest" style="display: none;"><a href="/beanSoup/seasonWinner" class="dep01">어린이 대회</a>
 			<ul class="mView2" style="display: none;">
 				<li><a href="/beanSoup/seasonWinnerList">온라인 전시</a></li>
 				<li><a href="/beanSoup/seasonWinner">결과 발표</a></li>
 			</ul>
 		</li>
+		<li><a href="/beanSoup/season" class="dep01" id="seasons">제철요리</a></li>
 		<li><a href="/beanSoup/mall" class="dep01">구매처</a></li>
-		<li class="mView">
-			<a href="/beanSoup/video" class="dep01">소식</a>
-		</li>
+
 		<li class="drop wView1 ab" id=""><a href="/beanSoup/video" class="dep01">소식</a>
-			<ul class="mView1" style="display: none;">
+			<!-- <ul class="mView1" style="display: none;">
 				<li><a href="/beanSoup/event">생생후기</a></li>
 				<li><a href="/beanSoup/news">뉴스</a></li>
 				<li><a href="/beanSoup/video">영상</a></li>
-			</ul>
+			</ul>  -->
 		</li>
 		<li><a href="/beanSoup/list" class="dep01 ">간단레시피</a></li>
 		<!-- <li><a href="void(0);" onclick="alert('준비중입니다.');return false;"  class="dep01 ">간단 레시피</a></li> -->

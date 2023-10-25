@@ -22,7 +22,22 @@
 	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/bootstrap.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/style.css" rel="stylesheet">
-		
+	<script>
+		$("document").ready(function(){
+			var path = document.location.href;
+			var tmpArr = path.split('/');
+			var checkPath = tmpArr[tmpArr.length-1]
+			if(checkPath == 'season'){
+				$("#contestInfo").addClass('active');
+			}
+			if(checkPath == 'seasonWinner'){
+				$("#awardList").addClass('active');
+			}
+			if(checkPath == 'seasonWinnerList'){
+				$("#awardDisplay").addClass('active');
+			}
+		});
+	</script>
 	
     <body>
         <!-- ================================ 
@@ -44,7 +59,14 @@
 		<!-- ================================ 
 				Content
 		================================ -->
-
+		<!-- winner tab -->
+		<div class="container100 clear mView" >
+			<ul class="winTab">
+				<li id="contestInfo"><a href="https://www.vegemil.co.kr/beanSoup/season">대회 안내</a></li>
+				<li id="awardList"><a href="https://www.vegemil.co.kr/beanSoup/seasonWinner">결과 발표</a></li>
+				<li id="awardDisplay"><a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerList">온라인 전시</a></li>
+			</ul>
+		</div>
 		<!-- main Visual -->
 		<div class="container100 clear" >
 			<div class="row bg_win h400">

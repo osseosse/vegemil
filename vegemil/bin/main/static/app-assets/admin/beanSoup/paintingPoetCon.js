@@ -462,7 +462,7 @@ function getModal(obj) {
 	modal +=                            '<img src="https://image.edaymall.com/images/dcf/vegemil/upload/beansoupCon/'+ obj.paintingSavedFilename +'" />'
 	modal +=                         '</p>'
 	modal +=					'</div>'
-	modal +=					'<p><a download class="btn btn-secondary btn-sm2" target="_blank" href="/web/upload/beansoupCon/'+ obj.paintingSavedFilename +'">그림저장하기</a></p>'
+	//modal +=					'<p><a download class="btn btn-secondary btn-sm2" target="_blank" href="/web/upload/beansoupCon/'+ obj.paintingSavedFilename +'">그림저장하기</a></p>'
 	modal +=				'</div>'
 	modal +=			'</div>'
 	modal +=		'</div>'
