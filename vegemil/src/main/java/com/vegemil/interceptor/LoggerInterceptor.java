@@ -41,9 +41,8 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		
-		//logger.info("==================== END ======================");
-		//logger.info("===============================================");
-		
+		logger.info("==================== END ======================");
+				
 	}
 
 }

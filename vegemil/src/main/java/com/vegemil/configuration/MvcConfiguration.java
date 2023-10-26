@@ -16,7 +16,8 @@ public class MvcConfiguration implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new LoggerInterceptor())
 		.excludePathPatterns("/common/**","/css/**", "/fonts/**", "/img/**", "/scripts/**", "/js/**","/*.ico","/beansoup/css/**",
-								"/beansoup/js/**","/webzine/js/**", "/webzine/css/**", "/app-assets/**", "/beansoupRecipe/css/**");
+								"/beansoup/js/**","/webzine/js/**", "/webzine/css/**", "/app-assets/**",
+								"/beansoupRecipe/css/**", "beansoupRecipe/js/**", "beansoupRecipe/fonts/**");
 	}
 	
 	@Bean
