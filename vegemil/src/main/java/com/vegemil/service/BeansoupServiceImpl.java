@@ -42,6 +42,13 @@ public class BeansoupServiceImpl implements BeansoupService {
 		List<BeansoupDTO> beansoupList = this.mappingfilter(beansoupMapper.selectBeanListWithKeyword(searchKeyword));
 		return beansoupList;
 	}
+	
+	@Override
+	public List<BeansoupDTO> selectBeanListWithKeywordRenew(String searchKeyword) {
+		List<BeansoupDTO> beansoupList = this.mappingfilter(beansoupMapper.selectBeanListWithKeywordRenew(searchKeyword));
+		return beansoupList;
+	}
+
 
 	@Override
 	public List<BeansoupDTO> selectBeansoupProposalList(String mCate) {
@@ -235,5 +242,6 @@ public class BeansoupServiceImpl implements BeansoupService {
 	public PaintingContestAward23DTO getContestWinnerDetail(PaintingContestAward23DTO params) {
 		return beansoupMapper.selectContestWinner(params);
 	}
+
 
 }

@@ -1607,11 +1607,17 @@ button:hover:before {content:"Reply!"}
 		background:#fff;
 		
 	}
+	
 	.event_v_con {background:#eff7fc; width:100%; border-radius:50px; padding:40px;  }
 	.event_v_con ul { width:19%;  display:inline-block; text-align:center }
-	.event_v_con ul li {line-height:180%;}
+	.event_v_con ul li {line-height:180%; }
 
-
+	.blueBox {padding: 100px 45px 50px 45px;margin-left:0px;background:#82c1ea;border:1px solid #DCDCDC; border-top:0;color:#787878; font-size:16px; font-weight:400;}
+	.blueBoxIn {background:#fff; border-radius:20px; padding:0 60px 100px 60px }
+	.fifty {position:relative; }
+	.fifty_title {text-align:center; margin-top:-50px}
+	ul.fiftyUL {position:relative; }
+	ul.fiftyUL li {displaY:inline-block; margin:5px 8px; text-align:left}
 
 	/* 3000 404 페이지 추가 */
     .beigeBg{background-color: #F6F2E7;}
@@ -3656,6 +3662,10 @@ button:hover:before {content:"Reply!"}
 	.ver-title05 a {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/arrow_faq.png")  right 19px no-repeat;display: block; padding:10px 15px 12px 15px ;margin: 0; font-size:16px; background-size:27px }
 	.ver-title05.open a { background-position: right -73px;font-weight:500}
 	.EventStyle .v_content {padding: 35px  35px;font-size:14px; font-weight:400;}
+	.blueBoxIn {padding:10px 10px}
+	.blueBox {padding:100px 20px 50px 20px}
+	.blueBox .col-md-12 {padding:0; font-size:14px;} 
+	.contant1160 {padding:0}
 
 	/* 1200 연구소 소개 */
     .rndIntroduceInfo02 > div:first-child{padding-right: 30px;}

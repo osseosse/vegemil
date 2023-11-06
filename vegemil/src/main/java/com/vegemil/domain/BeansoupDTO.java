@@ -12,6 +12,7 @@ public class BeansoupDTO {
 	private String fileNo;
 	private String cssClass;
 	private String lCate;
+	private String nCate;
 	private String mCate;
 	private String product;
 	private String name;

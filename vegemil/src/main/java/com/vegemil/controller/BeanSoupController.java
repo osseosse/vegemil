@@ -87,6 +87,14 @@ public class BeanSoupController extends UiUtils {
 
 		return "beansoup/brand";
 	}
+	
+	@GetMapping("/beanSoup/brandDev123433")
+	public String beanSoupBrandDev(Model model) {
+		
+		return "beansoup/brandDev";
+	}
+	
+	
 
 	@GetMapping("/Main/beanSoup/intro.aspx")
 	public String beanSoupIntro(Model model) {
@@ -142,7 +150,42 @@ public class BeanSoupController extends UiUtils {
 
 		return "beansoup/list";
 	}
+	@GetMapping("/beanSoup/listDev123445")
+	public String beanSoupRecipeRenew(Model model, @RequestParam(required = false) String tag) {
+		
+		List<BeansoupDTO> beansoupSearchList = new ArrayList<>();
+		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
+		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
+		
+		if (tag != null && tag != "") {
+			beansoupSearchList = beansoupService.selectBeanListWithKeywordRenew(tag);
+			model.addAttribute("search_html", beansoupSearchList.size() + "건");
+			model.addAttribute("search_result_html", "#" + tag);
+		}
+		
+		model.addAttribute("countMap", countMap);
+		model.addAttribute("searchList", beansoupSearchList);
+		model.addAttribute("beansoupList", beansoupList);
+		
+		return "beansoup/listDev";
+	}
+	
+	@PostMapping("/beanSoup/listDev")
+	public String beanSoupRecipeRenewSearch(Model model, @RequestParam("txtSearchWord") String serachKeyword) {
+		
+		List<BeansoupDTO> beansoupSearchList = beansoupService.selectBeanListWithKeyword(serachKeyword);
+		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
+		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
 
+		model.addAttribute("countMap", countMap);
+		model.addAttribute("search_html", beansoupSearchList.size() + "건");
+		model.addAttribute("search_result_html", "#" + serachKeyword);
+		model.addAttribute("searchList", beansoupSearchList);
+		model.addAttribute("beansoupList", beansoupList);
+
+		return "beansoup/listDev";
+	}
+	
 	// 간단 레시피 검색
 	@PostMapping("/beanSoup/list")
 	public String beanSoupRecipeSearch(Model model, @RequestParam("txtSearchWord") String serachKeyword) {

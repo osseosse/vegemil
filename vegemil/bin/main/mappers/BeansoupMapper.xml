@@ -52,6 +52,24 @@
 		  	OR tip like CONCAT('%',#{searchKeyword},'%')
 		  	OR display like CONCAT('%',#{searchKeyword},'%')
 		  	OR keyword like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_cate like CONCAT('%',#{searchKeyword},'%')
+		</if>  
+		ORDER BY
+			idx DESC
+	</select>
+	
+	<select id="selectBeanListWithKeywordRenew" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		SELECT
+			/* selectBeanListWithKeywordRenew */
+			<include refid="beansoupColumns" />
+		FROM
+			m_beansoup
+		WHERE
+			<!-- display = '1' 잠깐 주석 -->
+		<if test="searchKeyword != null and searchKeyword != ''">  
+		 	n_cate like CONCAT('%',#{searchKeyword},'%')
+		 OR product like CONCAT('%',#{searchKeyword},'%')
+
 		</if>  
 		ORDER BY
 			idx DESC
@@ -74,10 +92,11 @@
 		WHERE
 			display = '1'
 		
-		<if test="mCate != null and mCate != ''">
-			AND m_cate like CONCAT('%',#{mCate},'%')
-			LIMIT 4;
+		<if test="nCate != null and nCate != ''">
+			AND n_cate like CONCAT('%',#{nCate},'%')
 		</if>
+		ORDER BY RAND()
+		LIMIT 4;
 	</select>
 	
 	<select id="selectBeansoupDetail" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">

@@ -16,6 +16,7 @@ public interface BeansoupService {
 	public List<BeansoupDTO> selectBeansoupList();
 	public int selectBeansoupListCount(BeansoupDTO beansoupDto);
 	public List<BeansoupDTO> selectBeanListWithKeyword(String searchKeyword);
+	public List<BeansoupDTO> selectBeanListWithKeywordRenew(String searchKeyword);
 	public BeansoupDTO selectBeansoupDetail(String fileNo);
 	public List<BeansoupDTO> selectBeansoupProposalList(String mCate);
 	
