@@ -129,7 +129,7 @@
 
 					<th:block th:if="${not #strings.isEmpty(search_result_html)}">
 						<div class="listLine mt30m">
-							<div id="searchTotal">
+							<div id="searchTotal" th:if="${search_html!=null}">
 								<div class='count'><p class='f16'>검색결과 <span class='green' th:text="${search_html}"></span> 조회</p></div>
 							</div>
 						</div>

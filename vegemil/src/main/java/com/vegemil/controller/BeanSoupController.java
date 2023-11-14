@@ -168,10 +168,13 @@ public class BeanSoupController extends UiUtils {
 		if (tag != null && tag != "") {
 			beansoupSearchList = beansoupService.selectBeanListWithKeywordRenew(tag);
 			model.addAttribute("tagSearched", "tagSearched");
-			/*
-			model.addAttribute("search_html", beansoupSearchList.size() + "건");
-			model.addAttribute("search_result_html", "#" + tag);
-			*/
+			
+			if("담백한 채소육수".equals(tag) || "시원한 채소육수".equals(tag) || "구수한 사골육수".equals(tag) || "진한 콩국물".equals(tag)) {
+				// model.addAttribute("search_html", beansoupSearchList.size() + "건");
+				model.addAttribute("search_result_html", "#" + tag);	
+			}
+			
+			
 		}else {
 			beansoupList = beansoupService.selectBeansoupList();
 		}
@@ -185,14 +188,10 @@ public class BeanSoupController extends UiUtils {
 	@PostMapping("/beanSoup/list")
 	public String beanSoupRecipeRenewSearch(Model model, @RequestParam("txtSearchWord") String serachKeyword) {
 		
-		List<BeansoupDTO> beansoupSearchList = beansoupService.selectBeanListWithKeyword(serachKeyword);
-		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
-//		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
-
-//		model.addAttribute("countMap", countMap);
-		model.addAttribute("search_html", beansoupSearchList.size() + "건");
+		List<BeansoupDTO> beansoupList = beansoupService.selectBeanListWithKeyword(serachKeyword);
+		model.addAttribute("search_html", beansoupList.size() + "건");
 		model.addAttribute("search_result_html", "#" + serachKeyword);
-		model.addAttribute("searchList", beansoupSearchList);
+		model.addAttribute("searchList", beansoupList);
 		model.addAttribute("beansoupList", beansoupList);
 
 		return "beansoup/list";
