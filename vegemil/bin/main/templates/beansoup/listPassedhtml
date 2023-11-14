@@ -12,14 +12,6 @@
 				return false;
 			}
 		});
-		
-		$(".moveCate").click(function(e){
-			e.preventDefault();
-			var elementPressed = $(this).find('p');
-			alert(elementPressed.text());
-			location.href="/beanSoup/listDev?tag=" + elementPressed.text();
-			return;			
-		});
 
 		function onKeydownEnterKey(obj) {
 			if (event.keycode == 13) {
@@ -30,6 +22,12 @@
 			}
 		}
 
+		/*if ('<%=search %>' != '') { <!--??-->
+			$('#originList').hide();
+			$('#searchList').show();
+			$('#searchTotal').show();
+			$('#resultWord').show();
+		} */
 	});
 
 	function selectCategory() {
@@ -73,63 +71,72 @@
 		        Content
         ================================ -->
 	<!-- main Visual -->
-	
-		<!-- main Visual -->
-		<div class="container100 clear" >
+	<form id="Form1" method="post" action="">
+		<div class="container100 clear">
 			<div class="row h500">
-				<div class="col-lg-12 bg_pink">
+				<div class="col-lg-12 bg_list">
 					<div class="hCenter02">
 						<!-- subSearch -->
-						<div class="mainSearch w600 ">
-						  <p class="f26 mt60">간단요리사와 함께, 우리집</p>
-						  <p class="f64 tcenter fw600 black">간단레시피</p>
-		
-						  <div class="search-container clear mt30">
-							<form id="Form1" method="post" action="">
-							  <input type="text" class="in-search" name="txtSearchWord"
+						<div class="mainSearch w600 fw600">
+							<p class="f50  white tcenter">간단레시피</p>
+
+							<div class="search-container clear mt30">
+								<input type="text" class="in-search" name="txtSearchWord"
 									id="txtSearch" placeholder="찾으시는 레시피를 검색해보세요." autofocus></input>
-							  <button type="submit"><i class="fa fa-search"></i></button>
-							</form> <div class="clear"></div>
-						  </div>
-						  <div class="clear"></div>
-						  <ul class="mt20 key3">
-							<li><a href="/beanSoup/listDev?tag=담백한 채소육수">#담백한 채소육수</a></li>
-							<li><a href="/beanSoup/listDev?tag=시원한 채소육수">#시원한 채소육수</a></li>
-							<li><a href="/beanSoup/listDev?tag=구수한 사골육수">#구수한 사골육수</a></li>
-							<li><a href="/beanSoup/listDev?tag=진한 콩국물">#진한 콩국물</a></li>
-						  </ul>
+								<!--  <button id="btnSearch" name="btnSearch" class="fa fa-search" alt="검색"> -->
+									<img id="btnSearch" name="btnSearch"
+										class="fa fa-search" alt="검색" src=""
+										th:src="@{https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png}" onclick="document.getElementById('Form1').submit();"> 
+								<!-- </button>-->
+							</div>
+							<div class="clear"></div>
+							<ul class="mt20 key2">
+								<li><a href="/beanSoup/list?tag=담백한">#담백한
+										채소육수</a></li>
+								<li><a href="/beanSoup/list?tag=시원한">#시원한
+										채소육수</a></li>
+								<li><a href="/beanSoup/list?tag=구수한 사골육수">#구수한
+										사골육수</a></li>
+								<!--<li><a href="/Main/beanSoup/list.aspx?tag=냄비요리">#냄비요리</a></li>
+                                <li><a href="/Main/beanSoup/list.aspx?tag=면요리">#면요리</a></li>-->
+							</ul>
 						</div>
 						<!-- //subSearch -->
 					</div>
 				</div>
 			</div>
-		</div>  
+		</div>
 		<!-- // main Visual -->
 		<div class="container mt80">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="messonry-button2 text-center pb30 ">
-						<button data-filter="*" class="is-checked cate0"><span class="filter-text"></span><span class="filter-counter">78</span>
-						<p class="f16 f500 mt10">전체</p></button>
-						<button data-filter=".recType01" class="cate1 moveCate" >
-							<span class="filter-text"></span>
-							<span class="filter-counter">6</span>
-							<p class="f16 f500 mt10">맑은 국물</p>
+					<div class="messonry-button text-center pb30 ">
+						<button data-filter="*" class="is-checked ico_pc_01" type="button"
+							id="01" onclick="selectCategory();">
+							<span class="filter-text"></span><span class="filter-counter" th:text="${countMap.allCount}">21</span>
+							<p class="f18 f500 mt10">전체</p>
 						</button>
-						<button data-filter=".recType02" class="cate2 moveCate">
-							<span class="filter-text"></span> 
-							<span class="filter-counter">11</span>
-							<p class="f16 f500 mt10">진한 국물</p>
+						<button data-filter=".recType01" class="ico_pc_02" type="button"
+							id="02" onclick="selectCategory();">
+							<span class="filter-text"></span> <span class="filter-counter" th:text="${countMap.recType01}">12</span>
+							<p class="f18 f500 mt10">
+								익숙한 <br class="view">일상요리
+							</p>
 						</button>
-						<button class="cate3 moveCate"><span class="filter-text"></span> <span class="filter-counter">7</span><p class="f16 f500 mt10">봄</p></button>
-						<button class="cate4 moveCate"><span class="filter-text"></span> <span class="filter-counter">12</span><p class="f16 f500 mt10">여름</p></button>
-						<button class="cate5 moveCate"><span class="filter-text"></span> <span class="filter-counter">9</span><p class="f16 f500 mt10">가을</p></button>
-						<button class="cate6 moveCate"><span class="filter-text"></span> <span class="filter-counter">12</span><p class="f16 f500 mt10">겨울</p></button>
-						<button class="cate7 moveCate"><span class="filter-text"></span> <span class="filter-counter">10</span><p class="f16 f500 mt10">우리집 파티</p></button>
-						<button class="cate8 moveCate"><span class="filter-text"></span> <span class="filter-counter">12</span><p class="f16 f500 mt10">아이와 함께</p></button>
-						<button class="cate9 moveCate"><span class="filter-text"></span> <span class="filter-counter">11</span><p class="f16 f500 mt10">채소를 듬뿍</p></button>
-						<button class="cate10 moveCate"><span class="filter-text"></span> <span class="filter-counter">8</span><p class="f16 f500 mt10">고소한 간식</p></button>
-						<button class="cate11 moveCate"><span class="filter-text"></span> <span class="filter-counter">9</span><p class="f16 f500 mt10">새로운 발견</p></button>
+						<button data-filter=".recType02" class="ico_pc_03" type="button"
+							id="03" onclick="selectCategory();">
+							<span class="filter-text"></span> <span class="filter-counter" th:text="${countMap.recType02}">6</span>
+							<p class="f18 f500 mt10">
+								특별한 날 <br class="view">메인요리
+							</p>
+						</button>
+						<button data-filter=".recType03" class="ico_pc_04" type="button"
+							id="04" onclick="selectCategory();">
+							<span class="filter-text"></span> <span class="filter-counter" th:text="${countMap.recType03}">3</span>
+							<p class="f18 f500 mt10">
+								부어서 <br class="view">세계속으로
+							</p>
+						</button>
 					</div>
 
 					<th:block th:if="${not #strings.isEmpty(search_result_html)}">
@@ -149,9 +156,20 @@
 								<div class="thumbBox">
 									<a href="#" th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
 										<!--pk:fileNo -->
-										<div class="h220 round" th:classappend="${item.cssClass}">											
+										<div class="h220 round" th:classappend="${item.cssClass}">
+											<th:block th:if="${item.mCate == '온요리'}">
+												<ul class="labelBox">
+													<li class="hot"><span>온요리</span></li>
+												</ul>
+											</th:block>
+											<th:block th:if="${item.mCate == '냉요리'}">
+												<ul class="labelBox">
+													<li class="cool"><span>냉요리</span></li>
+												</ul>
+											</th:block>
 										</div>
-										<div class="recipeTxt_white">											
+										<div class="recipeTxt_white">
+											<p class="f16 gray" th:text="${item.tag}">tag</p>
 											<p class="f22 fw600 mt10" th:text="${item.name}">name</p>
 										</div>
 									</a>
@@ -170,7 +188,18 @@
 								<div class="thumbBox" style="height:350px;">
 									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 										<!--pk:fileNo -->
-										<div class="h220 round" th:classappend="${item.cssClass}"></div>
+										<div class="h220 round" th:classappend="${item.cssClass}">
+											<th:block th:if="${item.mCate == '온요리'}">
+												<ul class="labelBox">
+													<li class="hot"><span>온요리</span></li>
+												</ul>
+											</th:block>
+											<th:block th:if="${item.mCate == '냉요리'}">
+												<ul class="labelBox">
+													<li class="cool"><span>냉요리</span></li>
+												</ul>
+											</th:block>
+										</div>
 										<div class="recipeTxt_white">
 											<p class="f16 gray" th:text="${item.tag}">tag</p>
 											<p class="f22 fw600 mt10" th:text="${item.name}">name</p>
@@ -182,8 +211,18 @@
 					</div>
 					<!-- 메인 전체리스트 끝끝-->
 				</div>
-			</div>			           
+			</div>
+			<!-- paging 
+                <div class="paging3">
+                    <ol>
+                        <li class="pre"><asp:imagebutton id="btnPrev" runat="server"  img src="./assets/img/page_left.png" alt="이전" /></li>
+		                <li><asp:label id="labPageList" runat="server"></asp:label>
+                        <li class="next"><asp:imagebutton id="btnNext" runat="server" img src="./assets/img/page_right.png" alt="다음" /></li>
+                    </ol>
+                </div>
+            <!-- paging //-->
 		</div>
+	</form>
 	<!-- //container -->
 	<!-- ================================ 
 		        // Content

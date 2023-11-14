@@ -8,11 +8,15 @@ import lombok.ToString;
 @Setter
 public class BeansoupDTO {
 	
-	private Long idx;;
+	private Long idx;
 	private String fileNo;
 	private String cssClass;
-	private String lCate;
+	private String lCate;	
 	private String nCate;
+	private String nCatea;
+	private String nCateb;
+	private String nCatec;
+	private String nCated;
 	private String mCate;
 	private String product;
 	private String name;

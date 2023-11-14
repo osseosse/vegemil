@@ -8,32 +8,35 @@
 	<sql id="beansoupColumns">
 		idx, 
 		file_no, 
-		css_class, 
-		l_cate, 
-		m_cate, 
+		css_class, 				
+		l_cate,
+		n_cate,
+		n_catea,
+		n_cateb,
+		n_catec,
+		n_cated,
+		m_cate,
 		product, 
 		name, 
-		title, 
 		tag, 
-		ingredient, 
-		cooking, 
-		tip, 
 		display,
 		keyword
 	</sql>
 
 	<select id="selectBeansoupList" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		/* BeansoupMapper.xml ===> selectBeansoupList */
 		SELECT
 			<include refid="beansoupColumns" />
 		FROM
 			m_beansoup
-		WHERE
+		 WHERE
 			display = '1'
 		ORDER BY
 			idx DESC
 	</select>
 	
 	<select id="selectBeanListWithKeyword" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
+		/*BeansoupMapper  ===>  selectBeanListWithKeyword */
 		SELECT
 			<include refid="beansoupColumns" />
 		FROM
@@ -52,7 +55,10 @@
 		  	OR tip like CONCAT('%',#{searchKeyword},'%')
 		  	OR display like CONCAT('%',#{searchKeyword},'%')
 		  	OR keyword like CONCAT('%',#{searchKeyword},'%')
-		  	OR n_cate like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_catea like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_cateb like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_catec like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_cated like CONCAT('%',#{searchKeyword},'%')
 		</if>  
 		ORDER BY
 			idx DESC
@@ -67,8 +73,12 @@
 		WHERE
 			<!-- display = '1' 잠깐 주석 -->
 		<if test="searchKeyword != null and searchKeyword != ''">  
-		 	n_cate like CONCAT('%',#{searchKeyword},'%')
+		 	n_catea like CONCAT('%',#{searchKeyword},'%')
+		 OR n_cateb like CONCAT('%',#{searchKeyword},'%')
+		 OR n_catec like CONCAT('%',#{searchKeyword},'%')
+		 OR n_cated like CONCAT('%',#{searchKeyword},'%')
 		 OR product like CONCAT('%',#{searchKeyword},'%')
+		 
 
 		</if>  
 		ORDER BY
@@ -92,8 +102,8 @@
 		WHERE
 			display = '1'
 		
-		<if test="nCate != null and nCate != ''">
-			AND n_cate like CONCAT('%',#{nCate},'%')
+		<if test="nCate != null and mCate != ''">
+			AND m_cate like CONCAT('%',#{mCate},'%')
 		</if>
 		ORDER BY RAND()
 		LIMIT 4;

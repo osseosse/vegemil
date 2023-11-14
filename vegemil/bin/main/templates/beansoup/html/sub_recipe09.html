@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_09_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">콩 무스 케이크</p>
+				<p class="mt20 f22 lh150 gray">
+					밀가루 없이도 이렇게 건강하고 맛있게! 간식으로 좋은 케이크
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">20분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">1인분</p>
+					</li>
+				</ul>
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b>   콩국물 170ml ,젤라틴 2장 ,설탕 10g ,계란 1개, 고구마(중) 1개 ,병아리콩 10g</p>
+            <p class="f20 fw500 mt10m"><b>[추가재료]</b> 캐슈넛 5g ,오트밀 또는 시리얼 3g</p>
+		</div>
+	</div><!-- //row -->
+	<!-- 제품상세 -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/EIdaVY19TKA?si=8pY2GPSebaNhQVa6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">젤라틴을 뜨거운 물100ml에 넣고 불린다. 고구마와 병아리콩은 삶아준다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>1분 정도만 데쳐주시면 돼요~
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">고구마는 껍질을 제거하여 삶은 병아리콩과 함께 섞어준다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">계란노른자+설탕10g+레몬즙(선택)을 섞어준다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>고구마가 당도가 있으므로 설탕은 조금만! 레몬즙은 노른자의 비린맛을 감소시켜줘요.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">콩국물 150ml를 냄비에 데워주고 젤라틴물을 섞어준다. 3번을 검은콩&일반 콩국젤라틴물에 넣는다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>노른자와 콩국물이 분리되지 않도록 주의!!
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">2번에 콩국10ml를 넣고 부드럽게 으깨준다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>되직함은 콩국물을 넣으면서 조절하기. 병아리콩은 부드럽게 잘으깨줘야 합니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">준비한 푸딩용그릇,컵케잌용 그릇,블랜딩잔,요거트볼 등 다양한 그릇에 고구마반죽을 넣는다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>맨밑에 오트밀,시리얼을 넣어주면 그릇에 뒤집었을때 위에 올라온다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_07 "></li>
+							<li>
+								<p class="btnType04 f18">Step 07</p>
+								<p class="f20 fw500 mt20">용기의 2/3부분까지 식은 4번을 넣어준다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>미지근한 온도나 차가울때 넣는것을 추천드립니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_09_08 "></li>
+							<li>
+								<p class="btnType04 f18">Step 08</p>
+								<p class="f20 fw500 mt20">냉동고에 1~2시간정도 넉넉히 얼려서 시럽이나 올리고당을 얹고 캐슈넛과 함께 먹는다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>시원한 무스를 느끼기 위해 냉동고를 추천합니다.
+						</div>
+					</div>
+					<!-- // 수정한 코드 -->
+					<div class="topBox">
+						<p class="f15 fw500"><b>[Tip]</b><br>고구마의 당이 있어서 설탕은 조금만 넣는것을 추천드립니다. <br>밀가루를 못먹고 당이 걱정되는 어린이,노인,성인 모두 가능한 디저트입니다. <br>층분리가 되어서 한번에 먹는것이 포인트입니다. <br>냉장고는 부드러운 무스 /냉동고는 시원한 샤벳트 느낌을 선택할수 있습니다.</p>
+					</div>
+					<!-- // 수정 전 코드 -->
+					<!-- <p class="topBox">[Tip]<br>기호에 따라 대파, 후추, 지단 등을 더해 드셔도 좋습니다. </p> -->
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+</div><!-- // container -->
+
+<!-- ================================ 
+		// Content
+================================ -->
+</html>

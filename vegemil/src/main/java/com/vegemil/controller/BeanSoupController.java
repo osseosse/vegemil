@@ -6,6 +6,7 @@ import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class BeanSoupController extends UiUtils {
 	@Autowired
 	BeansoupService beansoupService;
 
-	@GetMapping("/beanSoup")
+	//@GetMapping("/beanSoup") 구버전 
 	public String beanSoupMain(Model model) {
 
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
@@ -81,19 +82,24 @@ public class BeanSoupController extends UiUtils {
 		model.addAttribute("mainBeansoupEventList", mainBeansoupEventList);
 		return "beansoup/index";
 	}
+	
+	@GetMapping("/beanSoup")
+	public String beanSoupMainDev(Model model) {
+		
+		int randNum = (int)(Math.random() * 4) + 1;
+		LocalDate now = LocalDate.now();
+			
+		
+		model.addAttribute("randNum", randNum);	
+		model.addAttribute("month", now.getMonthValue());
+		
+		return "beansoup/index";
+	}
 
 	@GetMapping("/beanSoup/brand")
 	public String beanSoupBrand(Model model) {
-
 		return "beansoup/brand";
 	}
-	
-	@GetMapping("/beanSoup/brandDev123433")
-	public String beanSoupBrandDev(Model model) {
-		
-		return "beansoup/brandDev";
-	}
-	
 	
 
 	@GetMapping("/Main/beanSoup/intro.aspx")
@@ -130,64 +136,70 @@ public class BeanSoupController extends UiUtils {
 		return "beansoup/en/"+reqView;
 	}
 
-	// 간단레시피
-	@GetMapping("/beanSoup/list")
+	// 간단레시피 구버전
+	//@GetMapping("/beanSoup/listPassed")
 	public String beanSoupRecipe(Model model, @RequestParam(required = false) String tag) {
 
 		List<BeansoupDTO> beansoupSearchList = new ArrayList<>();
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
-		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
-
+		
+		//Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
+		 
+		 
 		if (tag != null && tag != "") {
 			beansoupSearchList = beansoupService.selectBeanListWithKeyword(tag);
 			model.addAttribute("search_html", beansoupSearchList.size() + "건");
 			model.addAttribute("search_result_html", "#" + tag);
 		}
 
-		model.addAttribute("countMap", countMap);
+		model.addAttribute("countMap", 10);
 		model.addAttribute("searchList", beansoupSearchList);
 		model.addAttribute("beansoupList", beansoupList);
 
 		return "beansoup/list";
 	}
-	@GetMapping("/beanSoup/listDev123445")
+	
+	@GetMapping("/beanSoup/list")
 	public String beanSoupRecipeRenew(Model model, @RequestParam(required = false) String tag) {
 		
-		List<BeansoupDTO> beansoupSearchList = new ArrayList<>();
-		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
-		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
+		List<BeansoupDTO> beansoupSearchList = Collections.emptyList();
+		List<BeansoupDTO> beansoupList = Collections.emptyList();
 		
 		if (tag != null && tag != "") {
 			beansoupSearchList = beansoupService.selectBeanListWithKeywordRenew(tag);
+			model.addAttribute("tagSearched", "tagSearched");
+			/*
 			model.addAttribute("search_html", beansoupSearchList.size() + "건");
 			model.addAttribute("search_result_html", "#" + tag);
+			*/
+		}else {
+			beansoupList = beansoupService.selectBeansoupList();
 		}
-		
-		model.addAttribute("countMap", countMap);
+		model.addAttribute("tag", tag);
 		model.addAttribute("searchList", beansoupSearchList);
 		model.addAttribute("beansoupList", beansoupList);
 		
-		return "beansoup/listDev";
+		return "beansoup/list";
 	}
 	
-	@PostMapping("/beanSoup/listDev")
+	@PostMapping("/beanSoup/list")
 	public String beanSoupRecipeRenewSearch(Model model, @RequestParam("txtSearchWord") String serachKeyword) {
 		
 		List<BeansoupDTO> beansoupSearchList = beansoupService.selectBeanListWithKeyword(serachKeyword);
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
-		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
+//		Map<String, Integer> countMap = beansoupService.mappingCount(beansoupList);
 
-		model.addAttribute("countMap", countMap);
+//		model.addAttribute("countMap", countMap);
 		model.addAttribute("search_html", beansoupSearchList.size() + "건");
 		model.addAttribute("search_result_html", "#" + serachKeyword);
 		model.addAttribute("searchList", beansoupSearchList);
 		model.addAttribute("beansoupList", beansoupList);
 
-		return "beansoup/listDev";
+		return "beansoup/list";
 	}
 	
-	// 간단 레시피 검색
-	@PostMapping("/beanSoup/list")
+	// 간단 레시피 검색 구관
+	//@PostMapping("/beanSoup/list")
 	public String beanSoupRecipeSearch(Model model, @RequestParam("txtSearchWord") String serachKeyword) {
 
 		List<BeansoupDTO> beansoupSearchList = beansoupService.selectBeanListWithKeyword(serachKeyword);

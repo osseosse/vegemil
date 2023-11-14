@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_15_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">마 영양밥</p>
+				<p class="mt20 f22 lh150 gray">
+					건강한 영양밥, 콩국물로 지어볼까요?
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">30분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">2인분</p>
+					</li>
+				</ul>
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b> 진한 콩국물 100ml, 진한 콩국물 검은콩 100ml, 물 200ml, 불린 쌀 2컵, 마 1개, 대추 5개, 자숙 은행 20알, 당근 1/3개, 다진 마늘 1T, 포도씨유 50ml</p>
+            <p class="f20 fw500 mt10m"><b>[양념재료]</b> 부추 5줄기, 양조간장 4T, 매실액 1T, 참기름 1T, 통깨 1T</p>
+		</div>
+	</div><!-- //row -->
+
+
+
+	<!-- 제품상세 -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/gmxTBXhlloo?si=bwmve2c8eU2NmFaP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">쌀은 깨끗이 씻어 체에 받쳐 남은 수분으로 30분 정도 불립니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>물에 담가 불리면 쌀알이 부서지거나 질어질 수도 있어요.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">필러로 마의 껍질을 벗긴 후 깍둑썰기 합니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>마 알레르기가 있을 수 있으므로 손에 위생장갑을 끼고 손질하세요.
+						</div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">대추는 돌려 깎아 씨를 뺀 후 채 썰고 당근은 4등분으로 잘라주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">달군 팬에 포도씨유 50ml를 두르고 다진 마늘 1T 넣은 후 중약 불에서 노릇하게 볶아 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">마늘 향이 밴 기름을 체에 받쳐 마늘기름을 만듭니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">물 200ml, 진한 콩국물 100ml, 진한 콩국물 검은콩 100ml을 잘 섞어서 밥물을 맞추세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>물의 비율은 쌀 : 물 = 1 : 1 비율로 하면 고슬고슬한 밥이 됩니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_07 "></li>
+							<li>
+								<p class="btnType04 f18">Step 07</p>
+								<p class="f20 fw500 mt20">뚝배기에 불린 쌀을 넣고 준비한 마, 대추, 당근을 위에 올려주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_08 "></li>
+							<li>
+								<p class="btnType04 f18">Step 08</p>
+								<p class="f20 fw500 mt20">밥을 할 때 기름을 조금 넣어주면 밥에 윤기가 나고 고소해집니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>물의 비율은 쌀 : 물 = 1 : 1 비율로 하면 고슬고슬한 밥이 됩니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_09 "></li>
+							<li>
+								<p class="btnType04 f18">Step 09</p>
+								<p class="f20 fw500 mt20">솥밥은 처음부터 뚜껑을 닫고 끓이면 끓어 넘칠 수 있으니 뚜껑을 연 채로 센불에서 끓입니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_10 "></li>
+							<li>
+								<p class="btnType04 f18">Step 10</p>
+								<p class="f20 fw500 mt20">끓기 시작하면 뚜껑을 닫고 중약 불에서 7분 정도 끓입니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_11 "></li>
+							<li>
+								<p class="btnType04 f18">Step 11</p>
+								<p class="f20 fw500 mt20">뜸 들이기 전에 은행을 넣고 아주 약불에서 2~3분 정도 뜸을 들여주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_12 "></li>
+							<li>
+								<p class="btnType04 f18">Step 12</p>
+								<p class="f20 fw500 mt20">뜸 들이는 사이 양념장에 넣을 부추는 송송 썰어주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_13 "></li>
+							<li>
+								<p class="btnType04 f18">Step 13</p>
+								<p class="f20 fw500 mt20">볼에 양조간장 4T, 매실액 1T, 부추, 참기름 1T, 통깨 1T 넣고 골고루 섞어주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>매콤한 걸 좋아하면 청양고추나 고춧가루 추가해서 넣으시면 됩니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_15_14 "></li>
+							<li>
+								<p class="btnType04 f18">Step 14</p>
+								<p class="f20 fw500 mt20">이제 뜸 들인 건강 가득한 마영양밥에 양념장 곁들여 맛있게 드시면 됩니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="topBox">
+						<p class="f15 fw500"><b>[Tip]</b><br>마 대신 감자나 고구마로 대체하셔도 됩니다.<br>양념장에 청양고추나 고춧가루 추가하면 매콤해서 맛있어요.</p>
+					</div>
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+	
+</div><!-- // container -->
+<!-- ================================ 
+		// Content
+================================ -->
+</html>

@@ -124,5 +124,12 @@ public class CompanyController {
         
         return "company/notice";
     }
+    
+    
+    @GetMapping("/company/valueSys")
+    public String openValueSystem(Model model) {
+        
+        return "company/valueSys";
+    }
 
 }

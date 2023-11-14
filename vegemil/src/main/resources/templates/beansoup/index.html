@@ -5,507 +5,516 @@
 <th:block class="white" th:replace="fragments/beansoup/head :: headFragment"></th:block>
 
 <body>
-	<!-- ================================ 
-		        Header
-        ================================ -->
-	<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
-	<!-- ================================ 
-		        // Header
-        ================================ -->
-	<!-- ================================ 
-		        Content
-        ================================ -->
-	<!-- main Visual Slide -->
-	<div class="container100" id="slider0">
-		<div class="layer">
-			<!-- font- ani -->
-			<div id="font-ani">
-				<p class="lyType01">간단요리사와 함께라면,</p>
-				<div id="flip">
-					<div>
-						<div>담백한 요리도</div>
-					</div>
-					<div>
-						<div>시원한 요리도</div>
-					</div>
-					<div>
-						<div>어려운 요리도</div>
-					</div>
-				</div>
-				<p class="lyType02">간단하게!</p>
-			</div>
-			<!-- // font ani -->
-			<!-- mainSearch 
-		        <div class="mainSearch f-left">
-                    <div class="search-container mt20">
-                        <form>
-                            <input class="in-search" type="text" placeholder="찾으시는 레시피를 검색해보세요." name="search">
-                            <button type="submit" onclick="alert('준비중입니다.');return false;"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-			-->
-			<div class="clear"></div>
-			<ul class="key mt20 ">
-				<li><a href="/beanSoup/list?tag=한식">#한식</a></li>
-				<li><a href="/beanSoup/list?tag=간단요리">#간단요리</a></li>
-				<li><a href="/beanSoup/list?tag=집밥">#집밥</a></li>
-				<li><a href="/beanSoup/list?tag=냄비요리">#냄비요리</a></li>
-			</ul>
-			<!-- //mainSearch -->
-		</div>
-		<div class="slider">
-			<div class="slider_area">
-				<div class="slides ">
-					<div class="slide">
-						<div class="slidetitle sbg07 h840"></div>
-					</div>
-					<div class="slide">
-						<div class="slidetitle sbg12 h840"></div>
-					</div>
-					<div class="slide ">
-						<div class="slidetitle sbg01 h840"></div>
-					</div>
-					<!--<div class="slide">
-					        <div class="slidetitle sbg03 h840"></div>
-				        </div>-->
+<!-- ================================ 
+	        Header
+================================ -->
+<th:block class="white" th:replace="fragments/beansoup/mainHeader :: headerFragment"></th:block>
+<!-- ================================ 
+	        // Header
+ ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
 
-					<div class="slide">
-						<div class="slidetitle sbg02 h840"></div>
-					</div>
-					<div class="slide">
-						<div class="slidetitle sbg08 h840"></div>
+<script src="https://wowjs.uk/dist/wow.min.js"></script>
+<script>
+ new WOW().init();
+ mobile:       true      // 기본값
+</script>
+
+
+<section class="mainSection ">
+<!-- main Visual Slide -->
+<div class="container100 ">
+	<div class="row wView">
+		<div class="col-lg-12 h800 bg_main00 ">
+			<div class="row">
+				<div class="col-lg-12" >
+					<div class="aniBox " >
+						<div class="ani-txt container" >
+							<p class="fw400 f66 lh120 wow animate__animated" data-wow-delay="1.1s" style="visibility: visible;  animation-name: bounceInDown;"><span class="fw600">초록머리 대파선수</span>가 <br>언제나 꼴찌인 이유는?</p>
+							<p class="mt50 btn_main_ani wow f18 fw500 animate__animated"  data-wow-delay="1.4s" style="visibility: visible;  animation-name: bounceInDown;"><a href="/beanSoup/list">더 알아보기</a></p>
+						</div>
+						
+						<p class="wow animate__animated mvc01" data-wow-delay="0.1s" style="visibility: visible;  animation-name: bounceInLeft;"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc01.png" alt="구름1"/></p>
+						<p class="wow animate__animated mvc02" data-wow-delay="0.2s" style="visibility: visible;  animation-name: bounceInLeft;"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc02.png" alt="구름2"/></p>
+						<p class="wow animate__animated mvc03" data-wow-delay="0.3s" style="visibility: visible;  animation-name: bounceInLeft;"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc03.png" alt="구름3"/></p>
+						<p class="wow animate__animated mvc04" data-wow-delay="0.4s" style="visibility: visible;  animation-name: bounceInLeft;"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc04.png" alt="구름4"/></p>
+						
+						<!-- wow 클래스제거 -->
+						<p class=" animate__animated mvc06" data-wow-delay="0.9s" style="visibility: visible;  animation-name: bounceInRight; opacity:0.5"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc06.png" alt="모자"/></p>
+						<p class="wow animate__animated mvc07" data-wow-delay="1.1s" style="visibility: visible;  animation-name: bounceInRight; "><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc07.png" alt="구름7"/></p>
+
+
 					</div>
 				</div>
 			</div>
-			<a class="slider_left"></a>
-			<a class="slider_right"></a>
-		</div>
+		</div>	
 	</div>
-	<!-- // main Visual Slide -->
-
-	<!-- 하단 구매 유도 버튼 -->
-	<div class="container100 mt20m mainProductBtn">
-		<div class="row w1360">
-			<div class="col-lg-6">
-				<ul class="linkBox">
-					<a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=4&cateCode=20000268&pCateCode=20000002" target="_blank">
-						<li class="ico_sy01"><p>간단요리사 제품 구매하러 가기</p></li>
-						<li class="ico_arrow"><span><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_w.png" alt="레시피 후기 " /></span></li>
-					</a>
-				</ul>
-			</div>
-			<div class="col-lg-6">
-				<ul class="linkBox">
-					<a href="/Main/beanSoupRecipe/index.html" target="_blank">
-						<li class="ico_sy02"><p>진한 콩국물 레시피 사이트 바로가기</p></li>
-						<li class="ico_arrow"><span><img
-								src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_arrow_w.png" alt="레시피 후기 " /></span></li>
-					</a>
-				</ul>
+	<div class="row wView">
+		<!--Waves Container-->
+		<div class="parallax2-wrap ">
+			<div>
+			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+			<defs>
+				<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+			</defs>
+			<g class="parallax2">
+				<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(158,201,145,0.7" />
+				<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(210,233,193,0.5)" />
+				<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(223,240,211,0.3)" />
+				<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+			</g>
+			</svg>
 			</div>
 		</div>
-	</div>
-	<!-- //하단 구매 유도 버튼 -->
+		<div class="wow animate__animated mvc09" data-wow-delay="1.5s"  style="visibility: visible;  animation-name: bounceInRight;">
+			<p class="wow animate__animated " data-wow-delay="0.4s" data-wow-duration="5s" style="visibility: visible;  animation-name: swing;" data-wow-iteration="infinite"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc09.png" alt="대파1"/></p>
+		</div>
+		<div class="wow animate__animated mvc10" data-wow-delay="1.7s"  style="visibility: visible;  animation-name: bounceInRight;">
+			<p class="wow animate__animated " data-wow-delay="0.2s" data-wow-duration="5s" style="visibility: visible;  animation-name: swing;" data-wow-iteration="infinite">
+			<span><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc10.png" alt="대파2"/></span>
+			</p>
+		</div>
+		<div class="wow animate__animated mvc11" data-wow-delay="0.1s"  style="visibility: visible;  animation-name: bounceInRight;">
+			<p class="wow animate__animated " data-wow-iteration="infinite" data-wow-duration="5s"  data-wow-delay="2.1s"  style="visibility: visible;  animation-name:pulse;" >
+				<span><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc11.png" alt="가족"/></span>
+			</p>
+		</div>
 
+		<!-- <div class="wow animate__animated mvc11" data-wow-delay="0.1s"  style="visibility: visible;  animation-name: bounceInRight;">
+			<p class="wow animate__animated " data-wow-iteration="infinite" data-wow-duration="5s" data-wow-iteration="25" data-wow-delay="2.1s"  style="visibility: visible;  animation-name:pulse;" >
+				<span><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc11.png" alt="가족"/></span>
+			</p>
+		</div> -->
+		<p class="wow animate__animated mvc05" data-wow-delay="0.3s" style="visibility: visible;  animation-name: bounceInLeft; "><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc05.png" alt="구름5"/></p>
+		<p class="wow animate__animated mvc08" data-wow-delay="1.1s" style="visibility: visible;  animation-name: bounceInRight"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/mvc08.png" alt="구름8"/></p>
+		<!--Waves end-->
+	</div>
+	<div class="row mView721">
+		<div>
+			<div class="ani-txt " >
+				<p class="fw400 f66 lh120" ><span class="fw600">초록머리 대파선수</span>가 <br>언제나 꼴찌인 이유는?</p>
+				<p class="mt50 btn_main_ani f18" ><a href="#">더 알아보기</a></p>
+			</div>
+			<p class="bg_main00_ta"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/bg_main00_ta.jpg" alt="721~"/></p>
+			<p class="bg_main00_mo"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/bg_main00_mo.jpg" alt="~720"/></p>
+		</div>
+	</div>
+</div>  
+<!-- // main Visual Slide -->
+
+
+<div class="container100   bg_main01  h706 mt200" id="down-section" >
 	<div class="container">
-		<div class="row mt20">
-			<div class="col-lg-4 col-sm-12 mt120">
-				<p class="main01-m mView">
-					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main01.jpg" alt="" />
-				</p>
-				<p class="f20 green fw400 mt50m">Brand introduction</p>
-				<p class="f50 fw500 mt10m">
-					<span class="symbol"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/symbol.gif" alt="" /></span><br> <b>브랜드
-						소개</b>
-				</p>
-				<p class="f16 gray fw400 mt40">
-					간단요리사는 소비자의 건강을 최우선으로 하는 <br class="none"> 정식품의 새로운 브랜드입니다. <br
-						class="none"> 누구나 간단요리사와 함께 일품요리도,<br class="none">
-					일상요리도 간단하게 경험해 보세요.
-				</p>
-				<p class="plus mt50">
-					<a href="/beanSoup/brand">MORE </a>
-				</p>
-				<ul class="info mt50 wView">
-					<li><p class="mt10">
-							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main05.jpg" alt="간단하게" />
-						</p>
-						<p class="r01 mt10">간단하게!</p>
-						<p class="f16 mt10 gray2">
-							요리 완성의 지름길<br>간단요리사만 부어주세요!
-						</p></li>
-					<li><p class="mt10">
-							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main02.jpg"  alt="맛있게" />
-						</p>
-						<p class="r01 mt10">맛있게!</p>
-						<p class="f16 mt10 gray2">
-							엄선된 재료로<br>알맞게 간이 되어있어요!
-						</p></li>
-					<li><p class="mt10">
-							<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main03.jpg" alt="단번에" />
-						</p>
-						<p class="r01 mt10">단번에!</p>
-						<p class="f16 mt10 gray2">
-							쉬운 요리도 어려운 요리도<br>금세 완성!
-						</p></li>
-				 </ul>
+		<div class="row mt20 ">
+			<div class="col-lg-5 col-sm-12  text-left">
+				<p class="f22 orange fw400">SEASONAL RECIPE</p>
+				<p class="f44 fw400 mt20">1년 365일 함께 하는</p>
+				<p class="f44 fw600 bg_mainLine01 text-left">우리집 간단요리사</p>
+				<p class="f22 fw400 gray mt30 lh140">1월부터 12월까지의 제철 요리도<br>간단요리사에게 맡겨보세요!</p>
+				<p class="btn_mainType01 mt50 f18"><a href="/beanSoup/list">더 보러가기</a></p>
 			</div>
-			<div class="col-lg-8 mt120 wView">
-				<p class="main01 ">
-					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main01.jpg" alt="" />
-				</p>
-			</div>
-		</div>
-		<!-- /.row -->
-	</div>
-	<!-- // container -->
-	<div class="container100 wView " style="overflow-x: hidden">
-		<!-- 무한 루프 -->
-		<script>
-			$(document).ready(function() {
-				let $text = $('.rolling-text .rolling-text__text');
-				let $wrap = $('.rolling-text');
-
-				$text.clone().appendTo($wrap);
-
-				TweenMax.to($wrap, 30, {
-					x : -($text.width()),
-					ease : Linear.easeNone,
-					repeat : -1
-				});
-			});
-		</script>
-		<div class="row ">
-			<div class="col-lg-12 ">
-
-				<div class="body-content__rollig-text rolling-text" data-reveal>
-					<div class="rolling-text__text">
-						<!--<img src="./beansoup/img/simple.png"><img src="./beansoup/img/simple.png">-->
-						SIMPLE & COOK &nbsp;&nbsp; SIMPLE & COOK &nbsp;&nbsp;
-					</div>
-				</div>
-				<script
-					src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
-			</div>
-		</div>
-		<!-- //무한 루프 -->
-	</div>
-
-	<div class="container mt100">
-		<div class="row flex">
-			<div class="col-lg-12 mt50 ">
-				<p class="f38 fw600 mt80m">새로운 레시피</p>
-				<p class="f20 gray mt10 wView">핫한 요즘 레시피가 궁금하시다면, 이 레시피는 어떠세요?</p>
-				<p class="plus a-right mt-20">
-					<a href="/beanSoup/list">MORE </a>
-				</p>
-			</div>
-			<div class="col-lg-3 col-sm-6">
-				<div class="thumbBox mt50">
-					<a href="/beanSoup/detail?recipe=recipe01">
-						<div class="chef_01_big h220 roundTop">
-							<!--  <p class="label"><img src="./beansoup/img/lable07.png" alt="편스토랑"/></p> -->
-							<ul class="labelBox">
-								<li class="new"><span>NEW</span></li>
-								<li class="hit"><span>HIT</span></li>
-							</ul>
-						</div>
-						<div class="recipeTxt">
-							<p class="f16 gray">#진한 #보양식 #갈비탕</p>
-							<p class="f22 fw600 mt10">갈비탕</p>
-						</div>
-					</a>
-				</div>
-				<div class="thumbBox mt30">
-					<a href="/beanSoup/detail?recipe=recipe04">
-						<div class="chef_04_big h220 roundTop">
-							<!--  <p class="label"><img src="./beansoup/img/lable07.png" alt="편스토랑"/></p> -->
-							<ul class="labelBox">
-								<li class="new"><span>NEW</span></li>
-								<li class="hit"><span>HIT</span></li>
-							</ul>
-						</div>
-						<div class="recipeTxt">
-							<p class="f16 gray">#시원하게 #아삭아삭 #동치미국수</p>
-							<p class="f22 fw600 mt10">동치미국수</p>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-lg-6 col-sm-12">
-				<div class="thumbBox mt50">
-					<a href="/beanSoup/detail?recipe=recipe06">
-						<div class="chef_06_big h350 roundTop">
-							<!--  <p class="label"><img src="./beansoup/img/lable07.png" alt="편스토랑"/></p> -->
-							<ul class="labelBox">
-								<li class="new"><span>NEW</span></li>
-								<li class="hit"><span>HIT</span></li>
-							</ul>
-						</div>
-						<div class="recipeTxtBig">
-							<div class="bg_w">
-								<p class="f30 fw600">만둣국</p>
-								<p class="f16 fw400 mt20 gray">
-									먹고나면 기분 좋은 포만감이 들게 하는 만둣국 레시피예요.<br> 간단하게 만두 몇개와 집에 남은 파,
-									계란 지단,<br> 그리고 간단요리사 채수만 있다면 요리 끝! 한번 만들어 보실래요?
-								</p>
-								<p class="level mt20">
-									난이도<img src="https://image.edaymall.com/images/vegemil/beansoup/img/star1.png" />
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6">
-				<div class="thumbBox mt50">
-					<a href="/beanSoup/detail?recipe=recipe05">
-						<div class="chef_05_big h220 roundTop">
-							<!--  <p class="label"><img src="./beansoup/img/lable07.png" alt="편스토랑"/></p> -->
-							<ul class="labelBox">
-								<li class="new"><span>NEW</span></li>
-								<li class="hit"><span>HIT</span></li>
-							</ul>
-						</div>
-						<div class="recipeTxt">
-							<p class="f16 gray">#나만의 #두부버섯전골 #레시피</p>
-							<p class="f22 fw600 mt10">두부버섯전골</p>
-						</div>
-					</a>
-				</div>
-				<div class="thumbBox mt30">
-					<a href="/beanSoup/detail?recipe=recipe09">
-						<div class="chef_09_big h220 roundTop">
-							<!--  <p class="label"><img src="./beansoup/img/lable07.png" alt="편스토랑"/></p> -->
-							<ul class="labelBox">
-								<li class="new"><span>NEW</span></li>
-								<li class="hit"><span>HIT</span></li>
-							</ul>
-						</div>
-						<div class="recipeTxt">
-							<p class="f16 gray">#사실 #정말쉬운 #밀푀유나베</p>
-							<p class="f22 fw600 mt10">밀푀유나베</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-		<!-- 이벤트 배너 
-	        <div class="row" >
-		        <div class="mt100 wView" id="slider1" >
-			        <div class="slider">
-				        <div class="slider_area">
-					        <div class="slides">
-						        <div class="slide">
-							        <div class="slidetitle"><a href="#" onclick="alert('준비중입니다.');return false;"><img src="./beansoup/img/banner01.jpg" alt="이벤트슬라이드"/></a></div>
-						        </div>
-						        <div class="slide">
-							        <div class="slidetitle"><a href="#" onclick="alert('준비중입니다.');return false;"><img src="./beansoup/img/banner01.jpg" alt="이벤트슬라이드"/></a></div>
-						        </div>
-						        <div class="slide">
-							        <div class="slidetitle"><a href="#" onclick="alert('준비중입니다.');return false;"><img src="./beansoup/img/banner01.jpg" alt="이벤트슬라이드"/></a></div>
-						        </div>
-					        </div>
-				        </div>
-				        <a class="slider_left"></a>
-				        <a class="slider_right"></a>
-			        </div>
-		        </div>
-		        <div class="mt100 mView" id="Div1" >
-			        <div class="slider">
-				        <div class="slider_area">
-					        <div class="slides">
-						        <div class="slide">
-							        <div class="slidetitle"><a href="#" onclick="alert('준비중입니다.');return false;"><img src="./beansoup/img/banner01_m.jpg" alt="이벤트슬라이드"/></a></div>
-						        </div>
-						        <div class="slide">
-							        <div class="slidetitle"><a href="#" onclick="alert('준비중입니다.');return false;"><img src="./beansoup/img/banner01_m.jpg" alt="이벤트슬라이드"/></a></div>
-						        </div>
-						        <div class="slide">
-							        <div class="slidetitle"><a href="#" onclick="alert('준비중입니다.');return false;"><img src="./beansoup/img/banner01_m.jpg" alt="이벤트슬라이드"/></a></div>
-						        </div>
-					        </div>
-				        </div>
-				        <a class="slider_left"></a>
-				        <a class="slider_right"></a>
-			        </div>
-		        </div>  
-	        </div> 
-	        <!-- //이벤트 배너 -->
-		<!-- 추천 레시피 -->
-		<div class="row mt100 pd-lr-10m">
-			<section class="candy-wrapper ">
-				<aside class="sidebar fixedsticky" style="overflow-x: hidden">
-					<div class="pd0 mg0" style="margin: 0l padding0">
-						<div class="col-lg-12 mView">
-							<p class="plus a-right2">
-								<a href="#" onclick="alert('준비중입니다.');return false;">MORE </a>
-							</p>
-						</div>
-						<div class="col-lg-12">
-							<div class="f38 fw600 mt20m">추천 레시피</div>
-							<ul class="recoBox">
-								<li><a href="#reco01">#ALL</a></li>
-								<li><a href="#recType01">#익숙한 일상요리</a></li>
-								<li><a href="#recType02">#특별한 날 메인요리</a></li>
-								<li><a href="#recType03">#부어서 세계속으로</a></li>
-							</ul>
-						</div>
-					</div>
-				</aside>
-				<script>
-					$(document).ready(function() {
-						$('.sidebar').fixedsticky();
-					});
-				</script>
-
-				<article class="main">
-					<div class="row">
-						<div class="col-lg-12 wView">
-							<p class="plus  more">
-								<a th:href="@{/beanSoup/list}">MORE </a>
-							</p>
-						</div>
-						<th:block th:each="item : ${beansoupList}">
-							<div class="col-lg-4 col-sm-6" id="reco04" th:id="${item.filter}">
-								<div class="thumbBox">
-									<a th:href="@{/beanSoup/detail(recipe=${item.fileNo})}">
-										<div class="big h220 round" th:classappend="${item.cssClass}">
-											<th:block th:if="${item.mCate == '온요리'}">
-												<ul class="labelBox">
-													<li class="hot"><span>온요리</span></li>
-												</ul>
-											</th:block>
-											<th:block th:if="${item.mCate == '냉요리'}">
-												<ul class="labelBox">
-													<li class="cool"><span>냉요리</span></li>
-												</ul>
-											</th:block>
-										</div>
-										<div class="recipeTxt_white">
-											<p class="f16 gray" th:text="${item.tag}">태그영역</p>
-											<p class="f22 fw600 mt10" th:text="${item.name}">이름영역</p>
-										</div>
-									</a>
-								</div>
-							</div>
-						</th:block>
-					</div>
-				</article>
-				<!-- Leave No Space -->
-			</section>
-			<div style="border: 1">
-				<br> <br> <br>
-			</div>
-			<script src='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.js'></script>
-		</div>
-		<!-- //추천 레시피 -->
-	</div>
-	<!-- //container -->
-
-	<div class="container100 bg_review">
-		<div class="container">
-			<!-- 리뷰 -->
-			<div class="row mt100 h600_review">
-				<div class="col-md-5">
-					<div class="hCenter">
-						<div class="textleft">
-							<p>
-								<img src="https://image.edaymall.com/images/vegemil/beansoup/img/sign.png" />
-							</p>
-							<p class="f38 white fw600 mt20">간단요리사 레시피 후기</p>
-							<p class="f20 white mt30">
-								간단요리사를 이용해 음식을 만들어본 분들의 <br>소중한 후기를 공유합니다.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-7">
-					<div class="hCenter">
-						<div class="blog-slider">
-							<div class="blog-slider__wrp swiper-wrapper">
-								<!-- 리뷰 1 -->
-								<div class="blog-slider__item swiper-slide">
-									<div class="blog-slider__img bg_">
-										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/review02.jpg" alt="레시피 후기 " />
+			<div class="col-lg-7  mt100m">
+				<!-- slide -->				
+				<div class="swiper-container two">
+				
+					<div class="swiper-wrapper">
+					<div class="swiper-slide" th:classappend="${month == '11'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe30">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp11.png" alt="slide 1">
 									</div>
-									<div class="blog-slider__content">
-										<a href="#" class="blog-slider__button ">evs1** 님의 후기</a>
-										<p class="f22 fw600 mt30">냉면이 금방 만들어지네요 ㅎㅎ</p>
-										<p class="f16 mt20 gray">
-											더워서 냉면 먹고 싶었는데 육수를 따로 만들기가<br> 번거롭더라구요. 간단요리사 냉요리용이 따로
-											있어<br> 구매해봤는데 간도 딱 맞고 맛있네요.<br> 면과 계란만 익히면 돼서 넘
-											편해요~
-										</p>
+									<div class="main-swt-txt">
+										<p class="f24 rc11">서늘한 날씨에 더 맛있는</p>
+										<p class="f32 fw600 mt5 black">배추된장국</p>
+										<p class="f20 mt20 lh140 gray">은근 맛내기 어려운 집밥 메뉴<br>중요한 건 바로 이것?</p>
 									</div>
 								</div>
-								<!-- 리뷰 2 -->
-								<div class="blog-slider__item swiper-slide">
-									<div class="blog-slider__img bg_">
-										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/review01.jpg"
-											alt="레시피 후기 " />
-									</div>
-									<div class="blog-slider__content">
-										<a href="#" class="blog-slider__button ">ddm**님의 후기</a>
-										<p class="f22 fw600 mt30">붓고 졸이면 이유식 완성!</p>
-										<p class="f16 mt20 gray">
-											이유식 만드는데 사실 신경 쓸게 많잖아요.<br> 간단요리사 채수는 국산 채소를 써서 안심하고<br>
-											이유식에 써도 되겠더라구요~<br> 아이도 맛있는지 잘 먹어서 뿌듯했어요 ^^
-										</p>
-									</div>
-								</div>
-								<!-- 리뷰 3 -->
-								<div class="blog-slider__item swiper-slide">
-									<div class="blog-slider__img bg_">
-										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/review03.jpg" alt="레시피 후기 " />
-									</div>
-									<div class="blog-slider__content">
-										<a href="#" class="blog-slider__button ">lov8** 님의 후기</a>
-										<p class="f22 fw600 mt30">이렇게 편리해도 되나요?</p>
-										<p class="f16 mt20 gray">
-											집에서 갈비탕 하려는데 육수 재료 손질하는데<br> 만만치가 않더라구요. 그냥 간단요리사만 부어서<br>
-											소갈비랑 같이 끓이니 푹 끓인 깊은맛이 납니다 ㅎㅎ<br> 가족들이 좋아해요.
-										</p>
-									</div>
-								</div>
-								<!-- //리뷰 3 -->
-							</div>
-							<div class="blog-slider__pagination"></div>
+							</a>
 						</div>
+						<div class="swiper-slide" th:classappend="${month == '12'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe31">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp12.png" alt="slide 12">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc12">따듯한 크리스마스를 담은</p>
+										<p class="f32 fw600 mt5 black">에그인헬</p>
+										<p class="f20 mt20 lh140 gray">낭만 가득한 크리스마스<br>홈파티 요리도 간단하게</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '1'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe22">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp01.png" alt="slide 1">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc01 ">제철 맞은 겨울 무로 만든</p>
+										<p class="f32 fw600 mt5 black">나박김치</p>
+										<p class="f20 mt20 lh140 gray">간 맞추기 어려웠던 물김치도<br>이젠 간단하게 시원하게!</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '2'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe23">
+								<div class="main-shadow">
+									<div class="slider-image" >
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp02.png" alt="slide 2">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc02">겨울에 안 먹고 넘어가면 섭섭한</p>
+										<p class="f32 fw600 mt5 black">바지락 순두부찌개</p>
+										<p class="f20 mt20 lh140 gray">오통통한 바지락을 넣어<br>시원 칼칼한 국물 맛</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '3'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe24">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp03.png" alt="slide 3">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc03">향긋한 봄 내음으로 가득한 밥상 </p>
+										<p class="f32 fw600 mt5 black">냉이된장국</p>
+										<p class="f20 mt20 lh140 gray">별 재료 없이도<br>맑고 향긋한 된장국 레시피</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '4'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe25">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp04.png" alt="slide 4">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc04">일년을 지나 돌아온 4월의 재미</p>
+										<p class="f32 fw600 mt5 black">주꾸미 샤브샤브</p>
+										<p class="f20 mt20 lh140 gray">손 많이 가는 샤브샤브 육수?!<br>이렇게 준비해 보세요.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '5'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe26">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp05.png" alt="slide 5">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc05">가볍고 푸르른 맛의 정점</p>
+										<p class="f32 fw600 mt5 black">오이면 국수</p>
+										<p class="f20 mt20 lh140 gray ">재료가 간단할수록<br>더욱 돋보이는 감칠맛!</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '6'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=sub_recipe16">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp06.png" alt="slide 6">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc06">하지감자의 특별한 변신</p>
+										<p class="f32 fw600 mt5 black">감자 옹심이</p>
+										<p class="f20 mt20 lh140 gray">쫄깃쫄깃한 감자에<br>고소한 콩국물까지!</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '7'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe27">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp07.png" alt="slide 7">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc07">상큼하고 시원한 여름의 맛</p>
+										<p class="f32 fw600 mt5 black">토마토 콜드 수프</p>
+										<p class="f20 mt20 lh140 gray">스페인 국민 음식 '가스파초'를<br>나의 식탁으로 초대하세요!</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '8'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=sub_recipe05">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp08.png" alt="slide 8">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc08">제철 옥수수에 풍미를 더하다</p>
+										<p class="f32 fw600 mt5 black">콘치즈 그라탕</p>
+										<p class="f20 mt20 lh140 gray">8월의 옥수수를 더욱 고소하게<br>만들어줄 단 하나의 비법</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '9'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe28">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp09.png" alt="slide 9">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc09">통통한 가을 새우를 색다르게</p>
+										<p class="f32 fw600 mt5 black">새우 완탕</p>
+										<p class="f20 mt20 lh140 gray">이젠 중식 셰프 요리도<br>간단요리사에게 맡겨보세요</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="swiper-slide" th:classappend="${month == '10'} ? 'swiper-slide-active' : ''">
+							<a href="/beanSoup/detail?recipe=recipe29">
+								<div class="main-shadow">
+									<div class="slider-image">
+										<img src="https://image.edaymall.com/images/vegemil/beansoup/img/main-swp10.png" alt="slide 10">
+									</div>
+									<div class="main-swt-txt">
+										<p class="f24 rc10">가을을 즐기는 방법,</p>
+										<p class="f32 fw600 mt5 black">파개장</p>
+										<p class="f20 mt20 lh140 gray">제철 맞은 대파로 깔끔담백<br>파개장 후루룩 완성!</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						
+						<!-- Add Pagination -->
 					</div>
+					<div class="swiper-pagination"></div>
 				</div>
-			</div>
-			<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
-			<script>
-				$(document).ready(function() {
-					var swiper = new Swiper('.blog-slider', {
-						spaceBetween : 30,
-						effect : 'fade',
-						loop : true,
-						mousewheel : {
-							invert : false,
-						},
-						// autoHeight: true,
-						pagination : {
-							el : '.blog-slider__pagination',
-							clickable : true,
+				<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+				<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js'></script>
+				
+					<!--  카드 스크립트 수정 2023-11-13 -->
+					<script>
+						if (document.body.clientWidth > 990) {
+							var swiper = new Swiper( '.swiper-container.two', {
+									pagination: '.swiper-pagination',
+									paginationClickable: true,
+									effect: 'coverflow',
+									loop: true,
+									centeredSlides: true,
+									slidesPerView: '1.85',
+									//slidesPerView: '2',
+									coverflow: {
+										rotate: 0,
+										stretch: 100,
+										depth: 150,
+										modifier: 1.5,
+										slideShadows : false,
+									},
+
+									coverflowEffect: {
+										rotate: 0,
+										stretch: 0,
+										depth: 100,
+										modifier: 5,
+										slideShadows: true
+									  },
+
+							});
 						}
-					});
-				});
-			</script>
-			<!-- //리뷰 -->
+						if (document.body.clientWidth < 989) {
+							var swiper = new Swiper( '.swiper-container.two', {
+									pagination: '.swiper-pagination',
+									paginationClickable: true,
+									effect: 'coverflow',
+									loop: true,
+									centeredSlides: true,
+									slidesPerView: '1',
+									//slidesPerView: '2',
+									coverflow: {
+										rotate: 0,
+										stretch: 100,
+										depth: 150,
+										modifier: 1.5,
+										slideShadows : false,
+									},
+
+									coverflowEffect: {
+										rotate: 0,
+										stretch: 0,
+										depth: 100,
+										modifier: 5,
+										slideShadows: true
+									  },
+
+							});
+						}
+					</script>
+					<!--  //카드 스크립트 수정 2023-11-13 -->
+				
+				
+				<!-- //slide -->
+			</div>
+		</div><!-- /.row -->
+	</div>
+</div><!-- // container 카드 -->
+
+<div class="container100  bg_main02 ">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="text-center gr mt180">
+					<p class="center f22 fw600 gr_color mt180">RECIPE GAME</p>
+					<p class="f44 fw400 mt20">이럴 땐 이 요리 어때요? <span class="fw600 bg_mainLine01"><br class="mView">간단 밸런스 게임!</span></p>
+					<p class="f22 mt20">메뉴 고민 이제 끝! 내 상황에 맞는 레시피를 알려드릴게요.</p>
+				</div>
+			</div>
+			<div class="col-lg-12 baBox">
+				<div class="gallery-ba mt100 wView">
+					<th:block th:if="${randNum == 1}">						
+						<img onclick="location.href='/beanSoup/list?tag=겨울'"  src="https://image.edaymall.com/images/vegemil/beansoup/img/ba01_01.jpg" alt="겨울 " />
+						<img onclick="location.href='/beanSoup/list?tag=여름'"  src="https://image.edaymall.com/images/vegemil/beansoup/img/ba01_02.jpg" alt="여름" />
+					</th:block>
+					<!-- game02 -->
+					<th:block th:if="${randNum == 2}">		
+						<img onclick="location.href='/beanSoup/list?tag=맑은 국물'" src="https://image.edaymall.com/images/vegemil/beansoup/img/ba02_01.jpg" alt="맑은국물" />
+						<img  onclick="location.href='/beanSoup/list?tag=진한 국물'" src="https://image.edaymall.com/images/vegemil/beansoup/img/ba02_02.jpg" alt="진한국물" />
+					</th:block>
+					<!-- game03 -->
+					<th:block th:if="${randNum == 3}">
+						<img onclick="location.href='/beanSoup/list?tag=겨울'" src="https://image.edaymall.com/images/vegemil/beansoup/img/ba03_01.jpg" alt="겨울" />
+						<img onclick="location.href='/beanSoup/list?tag=새로운 발견'" src="https://image.edaymall.com/images/vegemil/beansoup/img/ba03_02.jpg" alt="새로운 발견" />
+					</th:block>
+					<!-- game04  -->
+					<th:block th:if="${randNum == 4}">
+						<img onclick="location.href='/beanSoup/list?tag=고소한 간식'" src="https://image.edaymall.com/images/vegemil/beansoup/img/ba04_01.jpg" alt="고소한 간식" />
+						<img onclick="location.href='/beanSoup/list?tag=우리집 파티'" src="https://image.edaymall.com/images/vegemil/beansoup/img/ba04_02.jpg" alt="우리집 파티" />
+					</th:block>
+				</div>
+				<div class="gallery_mo mView">
+					<ul class="mt100">
+						<th:block th:if="${randNum == 1}">	
+							<li><a href="/beanSoup/list?tag=겨울"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba01_01_mo.jpg" alt="겨울 " /></a></li>
+							<li><a href="/beanSoup/list?tag=여름"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba01_02_mo.jpg" alt="여름" /></a></li>
+						</th:block>
+						
+						<th:block th:if="${randNum == 2}">
+							<li><a href="/beanSoup/list?tag=맑은 국물"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba02_01_mo.jpg" alt="맑은국물 " /></a></li>
+							<li><a href="/beanSoup/list?tag=진한 국물"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba02_02_mo.jpg" alt="진한국물" /></a></li>
+						</th:block>
+						
+						<th:block th:if="${randNum == 3}">
+							<li><a href=/beanSoup/list?tag=겨울""><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba03_01_mo.jpg" alt="겨울" /></a></li>
+							<li><a href="/beanSoup/list?tag=새로운 발견"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba03_02_mo.jpg" alt="새로운 발견" /></a></li>
+						</th:block>
+						<th:block th:if="${randNum == 4}">
+							<li><a href="/beanSoup/list?tag=고소한 간식"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba04_01_mo.jpg" alt="고소한 간식 " /></a></li>
+							<li><a href="/beanSoup/list?tag=우리집 파티"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ba04_02_mo.jpg" alt="우리집 파티" /></a></li>
+						</th:block>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- ================================ 
-		        // Content
-        ================================ -->
-	<!-- ================================ 
-		        Footer
-        ================================ -->
-	<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
-	<!-- ================================ 
-		        // Footer
-        ================================ -->
+</div>
+
+<div class="container100 mt200">
+	<div class="parallax wView">
+		<div class="row">
+			<div class="col-lg-7" ></div>
+			<div class="col-lg-5">
+				<div class="para">
+					<p class="fw600 white">SIMPLE COOK</p>
+					<p class="mt10 f44 green4">일품요리도, 일상요리도<br><span class="bg_mainLine02 fw600">요리가 간단해지는 비법!</span></p>
+					<p class="mt30 white">간단요리사와 함께 한다면, 쉬운 요리도 어려운 요리도 금세 완성할 수 있어요!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mView"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/bnr_model_m.jpg" alt="01" /></div>
+</div>
+
+
+<div class="container100 pb200 bg_main04 ">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center mt200 pb100">
+				<p class="f22 fw600 orange">PRODUCTS</p>
+				<p class="f44 mt20">간단요리사 <span class="fw600 bg_mainLine03">제품 소개</span></p>
+			</div>
+			<div class="col-lg-6 ">
+				<div class="prd_t">
+					<a href=""><p class="main_prd_01 h270"></p></a>
+					<div class="main_thumb_white">
+						<p class="f32 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/main_num01.png" alt="01" /> <span class="bg_mainLine06">진한 콩국물 플레인</span> /  <span class="bg_mainLine05">검은콩</span></p>
+						<p class="gray f20 lh140 mt20">콩을 통째로 갈아 넣어 한 층 깊은 고소함! <br class="wView">콩의 맛과 영양이 그대로 담겼어요.</p>
+						<ul class="mt20">
+							<li><a href="/beanSoup/list?tag=진한 콩국물">레시피 보기</a></li>
+							<li><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951">구매하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 mt30m">
+				<div class="prd_t">
+					<a href=""><p class="main_prd_02 h270"></p></a>
+					<div class="main_thumb_white">
+						<p class="f32 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/main_num02.png" alt="02" /> <span class="bg_mainLine04">담백한 채소육수</span></p>
+						<p class="gray f20 lh140 mt20">국산채소 4종을 우려내어 감칠맛을 살렸어요. <br class="wView">담백한 채소육수와 재료만 넣고 보글보글 끓여주면 맛있는 요리 완성!</p>
+						<ul class="mt20">
+							<li><a href="/beanSoup/list?tag=담백한 채소육수">레시피 보기</a></li>
+							<li><a href="https://www.edaymall.com/display/goods.do?goods_code=10275397">구매하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 mt50">
+				<div class="prd_t">
+					<a href=""><p class="main_prd_03 h270"></p></a>
+					<div class="main_thumb_white">
+						<p class="f32 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/main_num03.png" alt="03" /> <span class="bg_mainLine07">시원한 채소육수</span></p>
+						<p class="gray f20 lh140 mt20">제주 겨울무, 국산 대파와 마늘로 시원하게 우려낸 동치미 국물! <br class="wView">시원한 채소육수로 여름의 맛을 느껴보세요.</p>
+						<ul class="mt20">
+							<li><a href="/beanSoup/list?tag=시원한 채소육수">레시피 보기</a></li>
+							<li><a href="https://www.edaymall.com/display/goods.do?goods_code=10275392">구매하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 mt50">
+				<div class="prd_t">
+					<a href=""><p class="main_prd_04 h270"></p></a>
+					<div class="main_thumb_white">
+						<p class="f32 fw600"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/main_num04.png" alt="04" /> <span class="bg_mainLine08">구수한 사골육수</span></p>
+						<p class="gray f20 lh140 mt20">24시간의 정성을 담은 구수한 사골육수! 무, 마늘, 파를 넣어 <br class="wView">깊은 맛을 더했어요.</p>
+						<ul class="mt20">
+							<li><a href="/beanSoup/list?tag=구수한 사골육수">레시피 보기</a></li>
+							<li><a href="https://www.edaymall.com/display/goods.do?goods_code=10277485">구매하기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</section>
+<!-- //container -->
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ 
+	        Footer
+================================ -->
+<footer  th:replace="fragments/beansoup/mainFooter :: footerFragment"></footer>
+
+<!-- ================================ 
+	        // Footer
+================================ -->
 </body>
 </html>

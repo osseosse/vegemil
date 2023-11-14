@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_17_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">콩물 새우 계란찜</p>
+				<p class="mt20 f22 lh150 gray">
+					부드럽게 술술 넘어가는 영양만점 계란찜
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">15분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">2인분</p>
+					</li>
+				</ul>
+
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b> 진한 콩국물 검은콩 1컵, 계란 4개, 데친새우 2개, 소금 1t , 액젓 1t, 브로콜리 조금, 참기름 1t, 통깨 1t</p>
+            <!-- <p class="f20 fw500 mt10m"><b>[양념김치]</b> 신김치 1컵, 송송 썬 대파 1T, 다진 마늘 1t, 설탕 2T, 2배 식초 1T, 고춧가루 3t, 참기름 2T, 통깨 적당량</p>-->
+		</div>
+	</div><!-- //row -->
+	<!-- 제품상세 -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/GCLqLEUaLxo?si=eTpltnBZDqNLpX1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_17_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">볼에 계란 4개와 진한 콩국물 검은콩을 넣어 잘 섞어줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_17_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">부드러운 계란 찜을 만들기 위해 체에 두 번 걸러 주세요./p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_17_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">잘 걸러진 콩국 계란물에 액젓과 참기름, 소금을 넣어 잘 섞어 주시고</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_17_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">찜기에 김을 올리신 후 면포를 덮고 쪄주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_17_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">찜이 살짝 몽글몽글해지면 살짝 데친새우와 브로콜리를 올리시고</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_17_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">통깨도 살짝 뿌려주시면 부드러운 콩물새우계란찜이 완성됩니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="topBox">
+						<p class="f15 fw500"><b>[Tip]</b><br>계란의 알끈이 남지 않도록 잘 섞어주시고 체에 두 번 거르면 정말 부드러운 계란찜이 됩니다.</p>
+					</div>
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+	
+</div><!-- // container -->
+
+<!-- ================================ 
+		// Content
+================================ -->
+</html>

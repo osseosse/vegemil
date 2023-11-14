@@ -9,8 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 */
-body {font-family:"Noto Sans KR","NanumGothic","NanumGothicBold","verdana","gulim","dotum", sans-serif !important; word-break:keep-all}
-
+body {font-family:"Noto Sans KR","NanumGothic","NanumGothicBold","verdana","gulim","dotum", sans-serif !important; word-break:keep-all; }
+section.mainSection {overflow-x:hidden;}
 
 
 /* ����Ʈ*/
@@ -57,6 +57,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	body {}
 	.wView {display:block}
 	.wView2 {display:inline-block; padding-left:10px;}
+	.mView721 {display:none}
 	.mView {display:none}
 	.f-right {float:right}
 	.f-left {float:left}
@@ -67,7 +68,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.w100 {width:100%}
 	.img100 img {width:100%}
 	.img100 {width:100%}
-	
+	.mvs {overflow:hidden; border:2px solid pink}
 
 
 	/* --------------- */
@@ -79,6 +80,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.plus a {text-decoration:none; color:#121212}
 	.white {color:#fff}
 	.green {color:#9cbb28}
+	.green2  {color:#619144}
+	.green3	{color:#66AB88}
+	.green4 {color:#1C392F}
 	.orange {color:#E34111}
 	.orange2 {color:#F57F59}
 	.black {color:#121212}
@@ -86,6 +90,23 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.gray2 {color:#666}
 	.gray3 {color:#333333}
 	.brown {color:#443d33}
+	.mint {color:#60A7A7}
+	.brown {color:#C97C56}
+
+	.rc01 {color:#60A7A7}
+	.rc02 {color:#66AB88}
+	.rc03 {color:#C97C56}
+	.rc04 {color:#C88245}
+	.rc05 {color:#619144}
+	.rc06 {color:#60A7A7}
+	.rc07 {color:#66AB88}
+	.rc08 {color:#C97C56}
+	.rc09 {color:#C88245}
+	.rc10 {color:#619144}
+	.rc11 {color:#60A7A7}
+	.rc12 {color:#66AB88}
+	
+
 	.f14 {font-size:14px; line-height:180% }
 	.f16 {font-size:16px; line-height:150% }
 	.f18 {font-size:18px; line-height:120%; }
@@ -99,7 +120,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.f35 {font-size:35px; line-height:140%}
 	.f38 {font-size:38px; line-height:120%}
 	.f40 {font-size:40px; line-height:120%}
-	.f44 {font-size:44px; line-height:120%}
+	.f44 {font-size:44px; line-height:120%; letter-spacing:-2px}
 	.f48 {font-size:48px; line-height:120%}
 	.f50 {font-size:50px; line-height:120%}
 	.f64 {font-size:64px; line-height:120%}
@@ -158,6 +179,34 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#gnb a {text-decoration:none}
 	#gnb > ul > li > ul > li {display:inline-block}
 	#gnb ul li span {font-size:13px; margin-top:5px; display:inline-block}
+
+
+
+	#gnb2 {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:84px;margin:0 auto;border-bottom:1px solid #cdcdcd ; }
+	#gnb2 > ul { width:150px;  position:relative;  margin:0; padding:0;   text-align:right; margin:0 auto;   }
+	#gnb2 .logo {position:absolute; top:25px;  width:1360px; top: 50%;left: 50%; transform: translate(-50%, -50%); z-index:0;}
+	#gnb2 > ul {float:right;width:50%; max-width:1360px; }
+	#gnb2 > ul > li {position:relative; float:left;  }
+	#gnb2:after {display:block; content:"";clear:both;}
+	#gnb2 li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 50px 30px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
+	#gnb2 li.last a.dep01 {width:100%; }
+	#gnb2 ul li ul {display:none; height:70px;position:absolute; top:65px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ������ġ���� */
+	#gnb2 ul li.active > a {color:#a7c541}
+	#gnb2 ul li:hover > a  {color:#a7c541}
+
+	#gnb2 ul li:hover {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/bar_line.gif) no-repeat center 81px;}
+	#gnb2 ul li ul {width:300px;  margin-left:-135px;  }
+	#gnb2 ul li ul li {padding:0 0 0 0; background:none; font-size:16px; margin:0 0 10px 0; color:#323232; text-align:center; width:30%;  
+	display:inline-block; margin-top:40px;vertical-align:top; }
+	#gnb2 ul li ul li a {color:#323232;  padding:5px 0 ; padding:10px 10px; }
+	#gnb2 ul li ul li > a {   padding:5px 0; color:#000; margin:0 auto; display:block; width:100%; font-weight:600}
+	#gnb2 ul li ul li > a:hover, 
+	#gnb2 ul li ul li > a:focus { color:#aac14c; padding:5px 0; margin:0 auto; display:block; width:100% }
+	#gnb2 a {text-decoration:none}
+	#gnb2 > ul > li > ul > li {display:inline-block}
+	#gnb2 ul li span {font-size:13px; margin-top:5px; display:inline-block}
+
+
 
 	/* -------------------- */
 	/* 3000 ���� > font-ani
@@ -228,9 +277,11 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.h800 {height:800px}
 	.h400 {height:400px}
 	.h350 {height:350px}
+	.h270 {height:270px}
 	.h240 {height:240px} /* ��Ʃ�� ������ */
 	.h230 {height:230px}
 	.h220 {height:220px}
+	.h1000 {height:1000px}
 	.w600 {max-width:600px; width:100%; margin:0 auto }
 	.w800 {max-width:800px; width:100%; margin:0 auto }
 	.sbg01 {position:relative;  background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bigBanner01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
@@ -359,6 +410,30 @@ body {margin:0; padding:0; overflow-x:hidden}
 	/* -------------------- */
 	/* 3000 Main renewal
 	----------------------- */
+	.aniBox {position:relative;}
+	.bgMV {background:#aed6a3}
+	.mv01 {position:absolute; right:0; top:0; z-index:10}
+	.mv02 {position:absolute; left:0; top:404px; z-index:1}
+	.mvc01 {position:absolute; left:-50px; top:188px; z-index:10}
+	.mvc02 {position:absolute; left:125px; top:338px; z-index:10}
+	.mvc03 {position:absolute; left:171px; top:71px; z-index:10}
+	.mvc04 {position:absolute; left:376px; top:618px; z-index:10}
+	.mvc05 {position:absolute; left:870px; top:630px; z-index:11}
+	.mvc06 {position:absolute; right:396px; top:120px; z-index:1}
+	.mvc07 {position:absolute; right:112px; top:337px; z-index:10}
+	.mvc08 {position:absolute; right:312px; top:479px; z-index:10}
+	.mvc09 {position:absolute; right:380px; top:327px; z-index:10}
+	.mvc10 {position:absolute; right:720px; top:468px; z-index:10; }
+	.mvc11 {position:absolute; right:87px; top:462px; z-index:5; text-align:right}
+	.ani-txt {position:relative;  top:170px; margin:0 auto; z-index:20}
+	.btn_main_ani {background:#fff; display:inline-block;  border-radius:25px; overflow:hidden}
+	.btn_main_ani a {display:inline-block; padding:12px 40px; color:#2E2E2E }
+	.btn_main_ani a:hover {text-decoration:none; color:#2E2E2E}
+	.f66 {font-size:66px; letter-spacing:-2px}
+	
+
+	.h706 {height:706px}
+	.h1200 {height:1200px}
 	.down-section {text-align:center; display:block; margin:0 auto;  color:#fff; width:160px}
 	.down-section a {color:#379453}
 	.down-section a:hover {text-decoration:none}
@@ -406,9 +481,196 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  81% { transform: translateY(0); opacity: 0; height: 8px;}
 	  100% { opacity: 1; height: 8px;}
 	}
+	
+	.bg_main00 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main00.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1;background-size:cover }
+	.bg_main01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main01.png) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1; text-align:center;}
+	.bg_main02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main02.png) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1;z-index:1; }
+	.bg_main03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main03.png) no-repeat scroll 0 0; left:0; top:0; background-position:center; z-index:1; text-align:center}
+	.bg_main04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main04.png) no-repeat scroll 0 0; left:0; bottom:0; background-position:bottom; z-index:1; }
+	.main_thumb_pc_prd01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_mo_prd01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_thumb_pc_prd02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_mo_prd02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_thumb_pc_prd03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_mo_prd03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_thumb_pc_prd04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_mo_prd04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	
+	.main_thumb_pc_prd01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_pc_prd01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_thumb_pc_prd02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_pc_prd02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_thumb_pc_prd03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_pc_prd03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_thumb_pc_prd04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_pc_prd04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 
+	.bg_mainLine01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine01.png) no-repeat scroll 0 bottom; }
+	.bg_mainLine02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine02.png) no-repeat scroll 0 bottom; }
+	.bg_mainLine03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine03.png) no-repeat scroll 0 bottom; }
+	
+	.bg_mainLine04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine04.png) no-repeat scroll 0 bottom; }
+	.bg_mainLine05 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine05.png) no-repeat scroll 0 bottom; }
+	.bg_mainLine06 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine06.png) no-repeat scroll 0 bottom; }
+	.bg_mainLine07 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine07.png) no-repeat scroll 0 bottom; }
+	.bg_mainLine08 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine08.png) no-repeat scroll 0 bottom; }
+	
+	
+	.btn_mainType01 {border:1px solid #CCCCCC; border-radius:20px; text-align:center; display:inline-block; background:#fff  }
+	.btn_mainType01 a {padding:12px 40px; display:inline-block }
+	.btn_mainType01 a:hover {text-decoration:none; color:#000}
+	.gr {position:relative;}
+	.gr_color {color:#FFECD8}
+	.gallery_mo {position:relative}
+	.gallery_mo ul li {width:50%}
+	.gallery_mo ul li:first-child {float:left;}
+	.gallery_mo ul li:nth-child(2) {float:right}
+	.gallery_mo ul li img {width:100%}
+
+	.gallery-ba {
+	  --z: 32px;  /* control the zig-zag  */
+	  --s: 680px; /* control the size */
+	  --g: 8px;   /* control the gap */
+	  
+	  display: grid;
+	  gap: var(--g);
+	  width: calc(2*var(--s) + var(--g));
+	  grid-auto-flow: column;
+	  margin:0 auto; margin-top:50px
+	}
+	.gallery-ba > img {
+	  width: 0;
+	  min-width: calc(100% + var(--z)/2);
+	  height: var(--s);
+	  object-fit: cover;
+	  -webkit-mask: var(--mask);
+			  mask: var(--mask);
+	  cursor: pointer;
+	  transition: .5s;
+	}
+	.gallery-ba > img:hover {
+	  width: calc(var(--s)/2);
+	}
+	.gallery-ba > img:first-child {
+	  place-self: start;
+	  clip-path: polygon(calc(2*var(--z)) 0,100% 0,100% 100%,0 100%);
+	  --mask: 
+		conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) 
+		  50%/100% calc(2*var(--z)) repeat-y;
+		 
+	}
+
+	.gallery-ba > img:last-child {
+	  place-self: end;
+	  clip-path: polygon(0 0,100% 0,calc(100% - 2*var(--z)) 100%,0 100%);
+	  --mask: 
+		conic-gradient(from   45deg at left ,#0000,#000 1deg 89deg,#0000 90deg) 
+		  50% calc(50% - var(--z))/100% calc(2*var(--z)) repeat-y;
+	}
+
+
+	.parallax {
+	  /* The image used */
+	  background-image: url("https://image.edaymall.com/images/vegemil/beansoup/img/bg_model.jpg");
+
+	  /* Set a specific height */
+	  min-height: 420px; 
+
+	  /* Create the parallax scrolling effect */
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover ;
+	}
+
+	.para {position:relative;  padding-top:15%; padding-bottom:15%}
+	.ba_symbol {position:absolute; right:-60px; bottom:-60px}
+	.main_prd_01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_prd_02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_prd_03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.main_prd_04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.prd_t {-webkit-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.41); box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.41); border-radius:20px; overflow:hidden }
+	.main_thumb_white {padding:30px 40px;  overflow:hidden; background:#fff }
+	.main_thumb_white ul {position:relative}
+	.main_thumb_white ul li:first-child {border:1px solid #CCCCCC;  text-align:center; width:48%; border-radius:10px; float:left }
+	.main_thumb_white ul li:last-child  {border:1px solid #F06339;  text-align:center; width:48%; border-radius:10px; float:right; }
+	.main_thumb_white ul li:first-child a {color:#2E2E2E}
+	.main_thumb_white ul li a { padding:10px 0; width:100%;  display:inline-block}
+	.main_thumb_white ul li a:hover { text-decoration:none;  }
+	.main_thumb_white ul li:last-child a {color:#F06339}
+
+
+
+
+
+	/* -------------------- */
+	/* 3000 main wave
+	----------------------- */
+	.waves {
+	  position:relative;
+	  width: 100%;
+	  height:15vh;
+	 margin-top:-100px;
+	  min-height:100px;
+	  max-height:150px; 
+		bottom:0; z-index:100; width:100%; z-index:2
+	}
+
+	.content {
+	  position:relative;
+	  height:20vh;
+	  text-align:center;
+	  background-color: white;
+	}
 
 	
+	.parallax2-wrap{
+	  position:relative;
+	  text-align:center;
+	  /* background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%); */
+	  background:#9ec991;
+	  color:white; width:100%;
+	}
+	.parallax2 {width:100%; z-index:100; margin-top:-50px;}
+	.parallax2 > use {
+	  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+	}
+	.parallax2 > use:nth-child(1) {
+	  animation-delay: -2s;
+	  animation-duration: 7s;
+	}
+	.parallax2 > use:nth-child(2) {
+	  animation-delay: -3s;
+	  animation-duration: 10s;
+	}
+	.parallax2 > use:nth-child(3) {
+	  animation-delay: -4s;
+	  animation-duration: 13s;
+	}
+	.parallax2 > use:nth-child(4) {
+	  animation-delay: -5s;
+	  animation-duration: 20s;
+	}
+	@keyframes move-forever {
+	  0% {
+	   transform: translate3d(-90px,0,0);
+	  }
+	  100% { 
+		transform: translate3d(85px,0,0);
+	  }
+	}
+	@media (max-width: 768px) {
+	  .waves {
+		height:40px;
+		min-height:40px;
+	  }
+	  .content {
+		height:30vh;
+	  }
+	  h1 {
+		font-size:24px;
+	  }
+	}
+	/* -------------------- */
+	/* //3000 main wave
+	----------------------- */
+
+
+
+
+
 
 	/* -------------------- */
 	/* 3000 ��õ ������
@@ -424,7 +686,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.recoBox li a {font-size:20px; font-weight:500;  background:#f6f7f9; padding:12px 17px; display:inline-block; text-decoration:none; border-radius:50px; bordeR:0px solid #ccc;  }
 	.recoBox li a:hover {background:#a8c345; font-size:20px; font-weight:500; padding:12px 17px; color:#fff }
 	.more { position:relative;  float:right; margin-bottom:30px}
-
+	
 	/* -------------------- */
 	/* 3000 �������ı�
 	----------------------- */
@@ -432,7 +694,10 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.hCenter {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%;}
 	.hCenter02 {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%;}
 	.hCenter03 {position:absolute; z-index:10;top:50%; left:50%;background: none;transform: translate(-50%, -50%); width:100%;}
-
+	.baBox {position:relative;width:100%}
+	
+	
+	
 	.textleft {text-align:left}
 	.bgGray {background:#f6f7f8}
 	ul.linkBox {position:relative; width:100%; margin:30px 0  }
@@ -545,6 +810,12 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.tetra ul li p {margin-top:6px}
 	.tetra ul li p:nth-child(2) {margin-top:10px}
 	.tetra ul li:first-child {width:120px; margin-right:20px}
+	
+
+
+	/* -------------------- */
+	/* 3000  Main renewal    
+	----------------------- */
 	
 
 	/* -------------------- */
@@ -1090,7 +1361,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	
 	select.sel_season {position:relative}
 	select.sel_season {border-radius:5px;  color:#367c1e; padding:0px 15px; height:40px}
-	select.sel_season option {font-size:17px; color:#367c1e; border:1px solid red}
+	select.sel_season option {font-size:17px; color:#367c1e; }
 	.info {font-size:16px; margin-top:10px}
 	.season_input input {background:#e2f5e1; width:100%; font-size:22px; }
 	.season_input select {background:#e2f5e1; width:100%; font-size:18px; border:10px ;  padding:8px 5px; border-radius:10px; color:#000 }
@@ -3415,6 +3686,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	/* #slider0 .slider {height:660px} */
 	.h840 {height:660px}
 	#gnb .logo {margin-left:15px;width:100%}
+	#gnb2 .logo {margin-left:15px;width:100%}
 	.hcenter_right { position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); width:80%; z-index:100}
 	.w600 {width:450px;}/* ����Ʈ > �˻������� ������ */
 	/* -------------------------
@@ -3426,6 +3698,13 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	#gnb li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 30px 30px 30px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 	#gnb li {margin-left:3%}
 	#gnb ul li ul {width:300px;  margin-left:-175px;  }
+
+	#gnb2 > ul {max-width:1400px; width:100%;  position:relative;  margin:0; padding:0;   margin:0 auto ;   }
+	#gnb2 > ul .logo {position:absolute; top:25px; left:0; }
+	#gnb2 > ul li.first { margin-left:33%}
+	#gnb2 li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 30px 30px 30px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
+	#gnb2 li {margin-left:3%}
+	#gnb2 ul li ul {width:300px;  margin-left:-175px;  }
 
 	/* -------------------- */
 	/* 1400 ���� > font-ani
@@ -3491,7 +3770,20 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 
 	.wView2 {display:none}
 
+	.ani-txt {margin-left:50px}
+	.f66 {font-size:50px}
+	.mvc06 {right:250px}
+	.mvc06 img{width:80%}
+	.mvc09 {right:350px}
+	.mvc09 img{width:80%} /* 대파 */ 
+	.mvc10 {right:520px} /* 대파 */ 
+	.mvc10 img{width:80%}
+	.mvc11 {right:50px}
+	.mvc05 {display:none}
+	.mvc11 img {width:80%; }
+	.h800 { height:700px}
 
+	.gallery-ba { --s: 540px;}
 	
 	
 
@@ -3501,8 +3793,17 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 }
 
 @media (max-width: 1200px) {
+	.container {
+	  padding-right: 25px;
+	  padding-left: 25px;
+	  margin-right: auto;
+	  margin-left: auto;
+	}
+	
 	#gnb li {margin-left:1%; }
 	#gnb li a.dep01 {padding:30px 20px 30px 20px}
+	#gnb2 li {margin-left:1%; }
+	#gnb2 li a.dep01 {padding:30px 20px 30px 20px}
 	.subTitle  {font-size:15px}
 	.agree_season {font-size:18px}
 	.certifi01 {width:200px; margin:50px auto}
@@ -3518,7 +3819,6 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.season_input select {font-size:15px; height:40px; }
 	.season_input input {font-size:15px;}
 	.info_yellow {font-size:14px}
-
 	
 
 
@@ -3562,13 +3862,22 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	--------------------------------------- */
 	dl.reco dd:nth-child(2) .brand_reco_hu img{width:60px; }
 	
+	.h706 {height:auto}
+	.bg_main01 {padding-bottom:50px; }
+
+
+
+	.gallery-ba { --s: 480px;}
+
+	
 
 
 }
 
+
 @media (max-width: 990px) {
 	body { overflow-x:hidden }
-	.container100 {overflow-x:hidden }
+	/* .container100 {overflow-x:hidden } */
 	
 	.container {width:100%; max-width:100%}
 	.wView {display:none}
@@ -3584,7 +3893,8 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.h840 {height:500px;}
 	.w600 {max-width:90%; overflow:hidden; width:370px}/* ����Ʈ > �˻������� ������ */
 	.hcenter_right { position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); width:80%; z-index:100}
-
+	.btn_main_ani {background:#468454}
+	.btn_main_ani a {color:#fff}
 
 	/* --------------- */
 	/*  990 fontType
@@ -3601,9 +3911,10 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.f35 {font-size:26px; line-height:140%}
 	.f38 {font-size:28px; line-height:120%}
 	.f40 {font-size:20px; line-height:120%} 
-	.f44 {font-size:30px; line-height:120%}
+	.f44 {font-size:30px; line-height:120%;}
 	.f45 {font-size:30px; line-height:120%}
 	.f50 {font-size:30px; line-height:120%}
+	.f66 {font-size:35px;}
 	
 
 	/* -------------------------
@@ -3639,7 +3950,6 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	-------------------------- */
 	#gnb {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:60px;margin:0 auto; overflow:hidden  }
 	#gnb > ul {max-width:100%; width:100%;  position:relative;  margin:0; padding:0;   margin:0 auto; height:60px; float:right;  }
-
 	#gnb .logo { top:28px; max-width:80px; text-align:left; left:37px; z-index:1000 }
 	#gnb .logo img {width:80px}
 	#gnb > ul li.first { margin-left:100px}
@@ -3647,6 +3957,16 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	#gnb li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 15px 18px 15px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 	#gnb ul li ul.none li a {display:none; bordeR:0}
 	#gnb .gnbBG {opacity:0}
+
+	#gnb2 {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:60px;margin:0 auto; overflow:hidden  }
+	#gnb2 > ul {width:70%;  position:relative;  margin:0; padding:0;   margin:0 auto; height:60px; float:right;  }
+	#gnb2 .logo { top:28px; max-width:80px; text-align:left; left:37px; z-index:1000 }
+	#gnb2 .logo img {width:80px}
+	#gnb2 > ul li.first { margin-left:0px}
+	#gnb2 > ul li ul { border:1px solid blue}
+	#gnb2 li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 15px 18px 15px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
+	#gnb2 ul li ul.none li a {display:none; bordeR:0}
+	#gnb2 .gnbBG {opacity:0}
 	
 
 
@@ -3766,6 +4086,15 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.logobox {padding:10px}
 	.logobox li:first-child img {max-width:36px}
 	.logobox li:nth-child(2) img {max-width:35px}
+
+
+	.h270 {height:200px}
+	.prd_t { border-radius:15px;}
+	.main_thumb_white {padding:25px 25px;  overflow:hidden; background:#fff }
+	.main_thumb_white p img {width:40px}
+	.main_thumb_white ul li a { padding:5px 0; width:100%;  display:inline-block}
+	.ba_symbol img {width:120px} 
+	
 	
 	/* -------------------- */
 	/* 990 footer
@@ -4073,8 +4402,11 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.recipe-youBox iframe {height:270px} 
 	.recipe-youBox.shorts {border-radius:20px; overflow:hidden; }
 	.recipe-youBox.shorts iframe {height:600px}
-
-
+	.ani-txt {position:absolute; left:0px; top:180px}
+	.bg_main00_ta {display:none}
+	.bg_main00_mo {display:block}
+	.bg_main00_mo img {width:100%}
+	
 
 
 	.mt10m {margin-top:10px}
@@ -4110,7 +4442,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.mt170 {margin-top:85px}
 	.mt180 {margin-top:90px}
 	.mt190 {margin-top:95px}
-	.mt200 {margin-top:50px}
+	.mt200 {margin-top:130px}
 
 	.q01 {width:150px; text-align:center; margin:0 auto; margin-bottom:10px; margin-top:100px}
 	.bg_green ul.season-sns {width:100%; text-align:center}
@@ -4123,16 +4455,25 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 .bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
 */
 	
-
+	
 
 
 }
 
 
 
+@media (max-width:989px) {
+	.mView721 {display:block}
+	.mView721 .bg_main00_ta {position:relative; display:block; }
+	.mView721 .bg_main00_ta img {display:block;}
+	.mView721 .bg_main00_mo img {display:none; }
+}
+
 @media (max-width: 720px) {
 	#gnb li {margin-left:0%; }
 	#gnb li a.dep01{ font-size:13px;padding:22px 5px 18px 5px; }
+	#gnb2 li {margin-left:0%; }
+	#gnb2 li a.dep01{ font-size:13px;padding:22px 10px 18px 10px; }
 	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px; background-size:1px 50px  }
 	p {margin:0; padding:0; outline:0; bordeR:0}
 	img {margin:0; padding:0; outline:0;bordeR:0}
@@ -4142,6 +4483,8 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.endBox .name span {font-size:35px; font-weight:600; color:#6fc876; line-height:120%}
 	.endBox .name span img {max-width:190px}
 	.end_btn_box li {margin:0}
+	.mView721 .bg_main00_ta {position:relative; display:none; }
+	.mView721 .bg_main00_mo img {display:block; }
 
 	/* ------------------------------------
 		720 winner

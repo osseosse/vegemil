@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_12_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">콩국물 비건 허브와플</p>
+				<p class="mt20 f22 lh150 gray">
+					누구나 맛있게 먹을 수 있는 건강한 비건식 디저트
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">120분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">6인분</p>
+					</li>
+				</ul>
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b> 진한 콩국물 500ml, 진한 콩국물 요거트 150ml, 폴란테 300g, 딸기 블루베리 취향껏, 생바질 3~4g, 딜 1~2g, 아가베시럽 취향껏, 발사믹 그레이즈 약간, 바질 식조 약간, 바질 오일 약간 </p>
+		</div>
+	</div><!-- //row -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/ycv4iQ-VkmE?si=axA_aeaLjngT77av" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">진한 콩국물 500ml에 폴란테 300g을 넣어줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>폴란테는 시중에 흔하지 않기 때문에 없으면 현미가루 또는 통밀가루로 대체 가능합니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">잘 섞이도록 저어주고 폴란테가 불어 나도록 그대로 둡니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">껍질을 벗기고 자른 산마, 바질, 스테비아를 넣어 핸드블랜더로 갈아줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>스테비아가 없으면 원당, 아가베, 메이플 시럽 등으로 대체 가능합니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">곱게 갈아 둔 산마를 머랭을 처 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">콩국물과 폴란테에 산마머랭을 넣고 잘 섞이도록 반죽을 해서 와플반죽을 준비합니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">와플기에 와플이 붙지 않도록 바질오일을 발라줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>바질오일이 없으면 다른 식용유로 대체 가능합니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_07 "></li>
+							<li>
+								<p class="btnType04 f18">Step 07</p>
+								<p class="f20 fw500 mt20">원하는 사이즈로 와플반죽을 와플기에 올려주고 구워 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_08 "></li>
+							<li>
+								<p class="btnType04 f18">Step 08</p>
+								<p class="f20 fw500 mt20">미리 만들어 둔 비건 콩국물 요거트를 약 150ml 를 덜어 용기에 넣어주고 아가베시럽으로 단맛을 넣어줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>취향껏 양을 조정하여서 넣습니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_12_09 "></li>
+							<li>
+								<p class="btnType04 f18">Step 09</p>
+								<p class="f20 fw500 mt20">풍미를 더하기 위해서 바질 식초를 조금 넣습니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>요거트에 신맛이 있기에 맛을 보며 넣어 줍니다.
+						</div>
+						<div class="recipe_content">
+							<ul class="recipe_half">
+								<li class="h310  recipe_12_10 "></li>
+								<li>
+									<p class="btnType04 f18">Step 10</p>
+									<p class="f20 fw500 mt20">딜을 잘게 잘라서 넣어주세요.</p>
+								</li>
+							</ul>
+							<div class="clear"></div>
+							<div class="recipe_tip">
+								<p class="btnType06 f16">TIP</p>없으면 다른 허브 또는 생략을 해도 좋습니다.
+							</div>
+
+						</div>
+						<div class="recipe_content">
+							<ul class="recipe_half">
+								<li class="h310  recipe_12_11 "></li>
+								<li>
+									<p class="btnType04 f18">Step 11</p>
+									<p class="f20 fw500 mt20">준비해 둔 접시에 와플을 올리고 무화과 반개, 콩국물 소스, 발사믹 그레이즈, 바질을 올려 마무리합니다.</p>
+								</li>
+							</ul>
+							<div class="clear"></div>
+							<div class="recipe_tip">
+								<p class="btnType06 f16">TIP</p>무화과 대신에 베리류 또는 다른 과일들을 올리시면 더 좋을수 있습니다.
+							</div>
+						</div>
+					</div>
+					<!-- // 수정한 코드 -->
+					<div class="topBox">
+						<p class="f15 fw500"><b>[Tip]</b><br>디저트이기 때문에 좀 단맛을 좋아하시는 분은 단맛을 많이 추가 하시면 좋을듯 합니다. <br> 먹는 사람의 입맛에 잘 맞아야 하므로 계속 조금씩 찍어 먹어가며 단맛과 신맛과 콩국물의 고소한맛을 잘 조화롭게 맞춰 나가야 본인의 입에 가장 잘 맞는 요리가 될 거 같습니다.</p>
+					</div>
+					<!-- // 수정 전 코드 -->
+					<!-- <p class="topBox">[Tip]<br>기호에 따라 대파, 후추, 지단 등을 더해 드셔도 좋습니다. </p> -->
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+</div><!-- // container -->
+
+
+<!-- ================================ 
+		// Content
+================================ -->
+</html>

@@ -3,6 +3,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments/beansoup/head :: headFragment"></head>
+<script src='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.js'></script>
 <script type="text/javascript">
 	//주소복사
 	function TourUrlCopy() {
@@ -21,7 +22,12 @@
 	   }
 	} 
 </script>
-<script src='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.js'></script>
+<script>
+	$(document).ready(function(){
+		$( '.sidebar_right' ).fixedsticky();
+	});
+</script>
+
 <body>
 <!-- ================================ 
 	        Header
@@ -49,7 +55,7 @@
 				<div class="thumbBox">
 					<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 						<div class="h220 round" th:classappend="${item.cssClass}">
-							<th:block th:if="${item.mCate == '온요리'}">
+							<!-- <th:block th:if="${item.mCate == '온요리'}">
 								<ul class="labelBox">
 									<li class="hot"><span>온요리</span></li>
 								</ul>
@@ -58,10 +64,10 @@
 								<ul class="labelBox">
 									<li class="cool"><span>냉요리</span></li>
 								</ul>
-							</th:block>
+							</th:block> -->
 						</div>
 						<div class="recipeTxt_white">
-							<p class="f16 gray" th:text="${item.tag}">tag</p>
+							<!-- <p class="f16 gray" th:text="${item.tag}">tag</p> -->
 							<p class="f22 fw600 mt10" th:text="${item.name}">name</p>
 						</div>
 					</a>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_26_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">크림카레우동</p>
+				<p class="mt20 f22 lh150 gray">
+					남녀노소 누구다 좋아하는 색다른 카레요리
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">20분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">1인분</p>
+					</li>
+				</ul>
+
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b> 다진 양파 1/2개 ,다진 당근 1/2개 ,정식품 콩국물 100ml ,카레가루 25g ,우동사리 1개</p>
+            <p class="f20 fw500 mt10m"><b>[크림재료]</b> 삶은 감자 4개 ,생크림 100ml ,정식품 콩국물 100ml ,후추 1t ,소금 1t</p>
+		</div>
+	</div><!-- //row -->
+	<!-- 제품상세 -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+
+
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/IyU5qTLn9bY?si=6h7Gw7TdvOrPoppb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">기름 두른 후라이팬에 다진 양파와 당근을 넣고 볶아 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>양파를 볶을수록 카레의 단맛이 풍부해 집니다!
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">채소가 충분히 볶아졌다면 콩국물 100ml를 넣어줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>카레에 콩국물을 넣어주면 부드럽고 고소한 맛의 카레를 만들 수 있습니다 :)
+						</div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">약불에서 살짝 끓여주세요. 너무 불이 강해 졸아들지 않도록 주의해 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>스팸이 아니더라도 햄도 될 수 있으면 깡통햄을 사용하시는걸 추천드려요 :)
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">가장자리가 조금씩 끓기 시작한다면 카레가루 25g을 넣어 주세요. 국물과 카레 가루를 잘 섞어 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>*약불, 기호에 맞게 콩국물의 양과 카레 가루의 양을 조절하여도 좋습니다 :)
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">끓는 물에 30초 삶은 우동사리를 넣고 잘 섞어 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">감자가 들어가있는 볼에 콩국물 100ml를 넣어주세요 고소한 맛을 위해 생크림 100ml를 넣어 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>생크림 이외에 기존의 콩국물이나 우유로 대체하셔도 좋습니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_07 "></li>
+							<li>
+								<p class="btnType04 f18">Step 07</p>
+								<p class="f20 fw500 mt20">삶은 감자를 으깨줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_08 "></li>
+							<li>
+								<p class="btnType04 f18">Step 08</p>
+								<p class="f20 fw500 mt20">후추1t,소금1t를 넣고 잘 섞어 줍니다. 핸드블렌더를 이용하여 크림을 만들어 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>묽은 질감을 원하신다면 콩국물을 첨가해 섞어 주세요.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_26_09 "></li>
+							<li>
+								<p class="btnType04 f18">Step 09</p>
+								<p class="f20 fw500 mt20">만들어진 크림을 짤 주머니에 넣어 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>가정용 지퍼백을 이용하면 손 쉽게 짤 주머니를 만들 수 있답니다!
+						</div>
+						<div class="recipe_content">
+							<ul class="recipe_half">
+								<li class="h310  recipe_26_10 "></li>
+								<li>
+									<p class="btnType04 f18">Step 10</p>
+									<p class="f20 fw500 mt20">그릇에 카레우동을 담은 후 위에 크림을 돌려가며 올려 줍니다 :)</p>
+								</li>
+							</ul>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<!-- // 수정한 코드 -->
+					<div class="topBox">
+						<p class="f15 fw500"><b>[Tip]</b><br>양파를 오래 볶을수록 카레의 맛이 풍부해져요. 정식품 진한 검은콩국물을 이용하여도 좋습니다.</p>
+					</div>
+					<!-- // 수정 전 코드 -->
+					<!-- <p class="topBox">[Tip]<br>기호에 따라 대파, 후추, 지단 등을 더해 드셔도 좋습니다. </p> -->
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+	
+</div><!-- // container -->
+
+
+
+<!-- ================================ 
+		// Content
+================================ -->
+
+</html>

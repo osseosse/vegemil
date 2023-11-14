@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_01_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">숙주 대패삼겹 국밥</p>
+				<p class="mt20 f22 lh150 gray">
+					숙주 대패삼겹 국밥 구수하면서 담백해요~!(with 정식품 콩국물)
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">30분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">2인분</p>
+					</li>
+				</ul>
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b> 밥 1/2공기, 대패삼겹살or 불고기용 200g, 양배추 5장, 숙주 2줌, 청양고추 2개, 대파 1/2대, 사골국물 200ml, 정식품 진한 콩국물 250ml, 정식품 검은콩 콩국물 250ml, 양조간장 1큰술, 어간장 1큰술, 다진 마늘 1큰술, 소금 약간, 후춧가루 약간</p>
+			<!--
+			<p class="f20 fw500 mt10m"><b>[양념재료]</b> 국간장 2큰술, 다진마늘 0.5큰술, 소금 0.5큰술, 후춧가루 약간, 썬 대파 약간</p>
+			-->
+		</div>
+	</div><!-- //row -->
+
+
+
+	<!-- 제품상세 -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<script>
+			$(document).ready(function(){
+				$( '.sidebar_right' ).fixedsticky();
+			});
+			</script>
+
+
+
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/7qphvkStGdM?si=cUhdEUz_1vGag0-z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">숙주 대패삼겹국밥에 들어갈 재료부터 준비합니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">양배추 5장 깨끗이 씻어 먹기 좋게 자릅니다. </p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">청양고추 2개 어슷썰기해요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>청양고추를 넣으면 국물이 칼칼하면서 느끼함을 잡아줍니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">진한 콩국물 250ml과 검은콩 콩국물 250ml을 섞어 준비합니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>한가지보다 두가지를 섞어서 끓이면 고소함이 배가 된답니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">달군 깊은 팬에 대패삼겹살을 넣고 센 불에서 1분 볶아주세요</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>센 불에서 볶아야 고기가 질겨지지 않아요~
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">대패삼겹살을 먹기 좋게 가위로 잘라줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>대패삼겹살 대신 목살 or 앞다리살 불고기용으로 하셔도 됩니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_07 "></li>
+							<li>
+								<p class="btnType04 f18">Step 07</p>
+								<p class="f20 fw500 mt20">후춧가루 뿌려 센불에서 계속 볶으면서 누린내를 없앱니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>대패삼겹살 대신 목살 or 앞다리살 불고기용으로 하셔도 됩니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_08 "></li>
+							<li>
+								<p class="btnType04 f18">Step 08</p>
+								<p class="f20 fw500 mt20">양배추, 다진 마늘 1큰술과 양조간장 1큰술을 넣고 센불에서 1분간 볶아주세요</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>센불에서 볶아야 약간의 불맛이 나면서 국물이 풍미 있어집니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_09 "></li>
+							<li>
+								<p class="btnType04 f18">Step 09</p>
+								<p class="f20 fw500 mt20">사골국물 200ml 넣어주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>진하고 구수한맛을 더해줍니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_10 "></li>
+							<li>
+								<p class="btnType04 f18">Step 10</p>
+								<p class="f20 fw500 mt20">콩국물 500ml 모두 넣고 3분 정도 끓여주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>대패삼겹살 대신 목살 or 앞다리살 불고기용으로 하셔도 됩니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_11 "></li>
+							<li>
+								<p class="btnType04 f18">Step 11</p>
+								<p class="f20 fw500 mt20">보글보글 끓으면 숙주, 청양고추, 대파 넣고 2분간 끓입니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>센불에서 볶아야 약간의 불맛이 나면서 국물이 풍미 있어집니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_12 "></li>
+							<li>
+								<p class="btnType04 f18">Step 12</p>
+								<p class="f20 fw500 mt20">어간장 1큰술 넣고 간을 한 다음 한소끔 끓으면 불을 끕니다. 부족한 간은 소금을 추가하시면 되세요. 염도가 있는 사골국물이나 콩국물은 간장과 소금의 양을 가감하세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_tip">
+							<p class="btnType06 f16">TIP</p>어간장이 없는 경우 참치액젓 or 국간장으로 대체 가능합니다.
+						</div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_01_13 "></li>
+							<li>
+								<p class="btnType04 f18">Step 13</p>
+								<p class="f20 fw500 mt20">그릇에 밥 반공기 정도 담고 밥이 잠길 정도로 푸짐히 올리고 후춧가루 톡톡톡 뿌리면 나가사키 짬뽕맛 나는 숙주 대패삼겹국밥 완성입니다~!</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="topBox">
+						<p class="f15 fw500"><b>[Tip]</b><br>대패삼겹살과 양배추를 볶을 때 꼭 센불에서 볶아야 불 맛이 납니다.<br>숙주를 넣고 너무 오래 끓이면 숙주의 아삭한 식감이 줄어드니까 오래 끓이지 마세요!<br>양배추 대신 알배기 배추를 넣어도 좋아요~!</p>
+					</div>
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+</div><!-- // container -->
+
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!-- ================================ 
+		Content
+================================ -->
+
+<!-- main Visual Slide -->
+<div class="container100 bg_wave04" >
+	<div class="container" id="slider0">
+	  <div class="slider">
+		<div class="slider_area">
+		  <div class="slides ">
+			<div class="slide">
+			  <div class="slidetitle recipe_20_big  h800"></div>
+			</div>
+			
+		  </div>
+		</div>
+		<a class="slider_left"><img src="./img/btn_ppl_left.png" alt="왼쪽" /></a>
+		<a class="slider_right"><img src="./img/btn_ppl_right.png" alt="오른족" /></a>
+	  </div>
+	  <div class="cardBoxRound">
+		  <div class="cardRound">
+				<p class="f35 fw600 box_shadow">콩 함박 스테이크</p>
+				<p class="mt20 f22 lh150 gray">
+					남녀노소 누구나 좋아하는 함박 스테이크를 건강하게
+				</p>
+				<ul class="cradTime mt30">
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_time.png" alt="시간" /> 조리시간</p>
+						<p class="f32 fw600 gray">30분</p>
+					</li>
+					<li>
+						<p class="f18 fw500"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_food.png" alt="분량" /> 분량</p>
+						<p class="f32 fw600 gray">2인분</p>
+					</li>
+				</ul>
+				<ul class="cardBtnRound mt30">
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li class="btn_orange"><a href="https://www.edaymall.com/display/goods.do?goods_code=10259951" target="_blank">제품 구매하기</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+	</div>	
+</div>
+<!-- // main Visual Slide -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 tcenter mt100">
+			<p class="f28 fw600 center mt50m">재료</p>
+		</div>
+		<div class="col-lg-12 col-sm-12 bgGray material" >
+			<p class="f20 fw500"><b>[재료]</b> 진한 콩국물 950ml, 소금 1T, 식초 1T, 돼지고기 다짐육 300g, 양파 1/2개, 빵가루 3T, 소금 1T, 후추 톡톡, 간장 2T, 다진마늘 1T</p>
+            <p class="f20 fw500 mt10m"><b>[양념재료]</b> 콩국물 검은콩 100ml, 설탕 1T, 케첩 1T, 돈까스 소스 3T</p>
+		</div>
+	</div><!-- //row -->
+	<!-- 제품상세 -->
+	<div class="row mt100 ">
+		<section class="candy-wrapper detailLine2">
+			<aside class="sidebar_right fixedsticky">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="product-Box ">
+							<p class="f28 fw600 mt50">레시피 관련제품</p>
+							<div class="product-Box-img mt20 radius20">
+								<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/pd_04.jpg" alt="진한 콩국물"/></p>
+								<p class="f20 fw400  mt30">진한 콩국물 950ml</p>
+								<a href="https://www.edaymall.com/display/goods.do?goods_code=10259951"><p class="f16 fw600 btnType05 mt30">제품 구매하기</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+		  <article class="main_left" >
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="f28 fw600 mt50">레시피 영상</p>
+					<div class="mt20 recipe-youBox">
+						<iframe width="100%"  src="https://www.youtube.com/embed/JjCpGKsFePI?si=5rhG0jvCr8255nkG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<p class="f28 fw600 mt70">조리순서</p>
+					<div class="recipe_content mt30 ">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_01 "></li>
+							<li>
+								<p class="btnType04 f18">Step 01</p>
+								<p class="f20 fw500 mt20">먼저 냄비에 진한 콩국물을 붓고 중불로 끓여 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_02 "></li>
+							<li>
+								<p class="btnType04 f18">Step 02</p>
+								<p class="f20 fw500 mt20">적당히 끓어오르면 소금과 식초를 분량대로 넣어 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_03 "></li>
+							<li>
+								<p class="btnType04 f18">Step 03</p>
+								<p class="f20 fw500 mt20">많이 젓지 말고 끓이다가 덩어리들이 몽글몽글 올라오면 불을 끄고 면포에 받쳐 콩물을 부어 줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_04 "></li>
+							<li>
+								<p class="btnType04 f18">Step 04</p>
+								<p class="f20 fw500 mt20">물기가 다 빠지도록 면포를 잘 감싸고 꾹꾹 눌러 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_05 "></li>
+							<li>
+								<p class="btnType04 f18">Step 05</p>
+								<p class="f20 fw500 mt20">양파 반 개를 다진 후 팬에 버터를 녹여서 볶아주시고</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_06 "></li>
+							<li>
+								<p class="btnType04 f18">Step 06</p>
+								<p class="f20 fw500 mt20">다짐육, 물기 짠 콩비지, 볶은양파, 다진마늘, 빵가루, 후추, 소금, 간장을 넣고 섞어 고기 반죽을 만들어줍니다.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_07 "></li>
+							<li>
+								<p class="btnType04 f18">Step 07</p>
+								<p class="f20 fw500 mt20">잘 섞어진 반죽을 떼어 동그랗게 모양을 잡아주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_08 "></li>
+							<li>
+								<p class="btnType04 f18">Step 08</p>
+								<p class="f20 fw500 mt20">달군 팬에 식용유를 두르고 반죽을 올려 중약불로 노릇하게 구워 주세요.</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="recipe_content">
+						<ul class="recipe_half">
+							<li class="h310  recipe_20_09 "></li>
+							<li>
+								<p class="btnType04 f18">Step 09</p>
+								<p class="f20 fw500 mt20">진한 콩국물 검은콩을 100ml 정도 양파 볶은 팬에 그대로 붓고</p>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<div class="recipe_content">
+							<ul class="recipe_half">
+								<li class="h310  recipe_20_10 "></li>
+								<li>
+									<p class="btnType04 f18">Step 10</p>
+									<p class="f20 fw500 mt20">케첩, 설탕, 돈까스 소스를 분량대로 넣고 소스를 만들어주세요.</p>
+								</li>
+							</ul>
+							<div class="clear"></div>
+							<div class="recipe_content">
+								<ul class="recipe_half">
+									<li class="h310  recipe_20_11 "></li>
+									<li>
+										<p class="btnType04 f18">Step 11</p>
+										<p class="f20 fw500 mt20">이제 잘 구운 스테이크와 소스, 야채들로 플레이팅 해서 마무리 합니다.</p>
+									</li>
+								</ul>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+					<!-- // 수정한 코드 -->
+					<!-- // 수정 전 코드 -->
+					<!-- <p class="topBox">[Tip]<br>기호에 따라 대파, 후추, 지단 등을 더해 드셔도 좋습니다. </p> -->
+				</div>
+				
+			</div>
+			
+		  </article><!-- Leave No Space 
+		  -->
+		</section>
+		<div style=" border:1"><br><br><br></div>
+	</div>
+	<!-- //제품상세 -->
+</div><!-- // container -->
+<!-- ================================ 
+		// Content
+================================ -->
+</html>

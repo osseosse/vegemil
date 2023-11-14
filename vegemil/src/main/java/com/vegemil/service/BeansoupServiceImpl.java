@@ -28,7 +28,7 @@ public class BeansoupServiceImpl implements BeansoupService {
 	// =======================BeansoupDTO=========================
 	@Override
 	public List<BeansoupDTO> selectBeansoupList() {
-		List<BeansoupDTO> beansoupList = this.mappingfilter(beansoupMapper.selectBeansoupList());
+		List<BeansoupDTO> beansoupList = beansoupMapper.selectBeansoupList();
 		return beansoupList;
 	}
 
@@ -39,13 +39,13 @@ public class BeansoupServiceImpl implements BeansoupService {
 
 	@Override
 	public List<BeansoupDTO> selectBeanListWithKeyword(String searchKeyword) {
-		List<BeansoupDTO> beansoupList = this.mappingfilter(beansoupMapper.selectBeanListWithKeyword(searchKeyword));
+		List<BeansoupDTO> beansoupList = beansoupMapper.selectBeanListWithKeyword(searchKeyword);
 		return beansoupList;
 	}
 	
 	@Override
 	public List<BeansoupDTO> selectBeanListWithKeywordRenew(String searchKeyword) {
-		List<BeansoupDTO> beansoupList = this.mappingfilter(beansoupMapper.selectBeanListWithKeywordRenew(searchKeyword));
+		List<BeansoupDTO> beansoupList = beansoupMapper.selectBeanListWithKeywordRenew(searchKeyword);
 		return beansoupList;
 	}
 
