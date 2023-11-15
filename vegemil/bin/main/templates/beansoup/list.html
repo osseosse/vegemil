@@ -77,7 +77,7 @@
 						<!-- subSearch -->
 						<div class="mainSearch w600 ">
 						  <p class="f26 mt60">간단요리사와 함께, 우리집</p>
-						  <p class="f64 tcenter fw600 black">간단레시피</p>
+						  <p class="f50 tcenter fw600 black">간단레시피</p>
 		
 						  <div class="search-container clear mt30">
 							<form id="Form1" method="post" action="">
@@ -102,7 +102,7 @@
 		<!-- // main Visual -->
 		<div class="container mt80">
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="col-lg-12---------------">
 					<div class="messonry-button2 text-center pb30 ">
 						<button data-filter="*" class="cate0" th:classappend="${tag == null} ? 'is-checked' : ''"><span class="filter-text"></span><span class="filter-counter">78</span>
 						<p class="f16 f500 mt10">전체</p></button>
@@ -159,7 +159,7 @@
 						<!--나중에 th:block -> div로 바꿔보기 -->
 						<th:block th:each="item : ${beansoupList}">
 							<div class="portfolio portfolio_style--1 portfolio-25">
-								<div class="thumbBox" style="height:350px;">
+								<div class="thumbBox">
 									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 										<!--pk:fileNo -->
 										<div class="h220 round" th:classappend="${item.cssClass}"></div>

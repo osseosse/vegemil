@@ -32,7 +32,7 @@ function chk(){
 
 
 $(function(){
-	$('#gnb>ul>li.drop').mouseover(function(){
+	$('#gnb>ul>li').mouseover(function(){
 		setTimeout(chk, 100);
 		cc = 1;
 		$(this).addClass('active');
@@ -57,5 +57,41 @@ $(function(){
 
 
 
+// gnb2
+function chk(){
+		if(cc == 1){
+		$("#gnb2 ul li ul").slideDown(200);
+		$(".gnbBG").slideDown(200);
+		//$("#gnb .gnb_bg").slideDown(100);
+	}else{
+		$("#gnb2 ul li ul").slideUp(250);
+		$(".gnbBG").slideUp(250);
+		//$("#gnb .gnb_bg").slideUp(250);
+	}
+}
+
+
+$(function(){
+	$('#gnb2>ul>li.menu-deps').mouseover(function(){ // .menu-deps클래스 추가
+		setTimeout(chk, 100);
+		cc = 1;
+		$(this).addClass('active');
+	});
+	$('#gnb2').mouseout(function(){
+		setTimeout(chk, 400);
+		cc = 0;
+		$('#gnb2 ul li.menu-deps').removeClass('active'); // .menu-deps클래스 추가
+	});
+	$('#gnb2 ul li.menu-deps a').focus(function(){ // .menu-deps클래스 추가
+		setTimeout(chk, 100);
+		cc = 1;
+		$(this).parent().addClass('active');
+	});
+	$('#gnb2 ul li.menu-deps a').blur(function(){ // .menu-deps클래스 추가
+		setTimeout(chk, 100);
+		cc = 0;
+		$('#gnb2 ul li.menu-deps').removeClass('active'); // .menu-deps클래스 추가
+	});
+});
 
 

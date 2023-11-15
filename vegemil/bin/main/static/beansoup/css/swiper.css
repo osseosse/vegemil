@@ -561,11 +561,17 @@ button.swiper-pagination-bullet {
 
 /* custom */
 
-.main-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);  border-radius:0 0 20px 20px;  overflow:hidden} 
+.main-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);  border-radius:0 0 20px 20px;  overflow:hidden; background:#fff} 
 .slider-image {background:#fff }
 .main-swt-txt {height:230px; display:inline-block;  width:100% ; text-align:left; padding:20px 43px; background:#fff}
 .swiper-slide a:hover {none}
 @media (max-width: 1200px) {
+	.main-swt-txt {height:210px; display:inline-block;  width:100% ; text-align:left; padding:10px 13px; background:#fff}
+
+}
+
+
+@media (max-width: 990px) {
 	.main-swt-txt {height:170px; display:inline-block;  width:100% ; text-align:left; padding:10px 13px; background:#fff}
 
 }

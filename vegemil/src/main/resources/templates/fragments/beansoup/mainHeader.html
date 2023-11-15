@@ -2,56 +2,23 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		
-<div id="gnb" th:fragment="headerFragment">
-	<script type="text/javascript">
-		$(document).ready(function(){
-	
-		  /* var theDay = new Date('2023-10-24 09:00:00'); 
-		  timeCheck(theDay); */
-	
-		  
-		});
-		
-		function timeCheck(theDay){
-			var today = new Date();
-			if(today >= theDay){
-				 // 제어하고 싶은 코드 그때그떄 변경// 			 
-				 $("#contest").css("display","block");
-				 $("#seasons").css("display","none");
-			}
-		}
-		
-	</script>		
+<div id="gnb2" th:fragment="headerFragment" >
 	<div class="gnbBG"></div>
 	<div class="logo">
 		<a href="/beanSoup"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/logo.png"  alt="로고"></a>
 	</div>
 	<ul>
 		
-		<li class="drop wView2 ab" id="contest"><a href="/beanSoup/seasonWinner" class="dep01">어린이 대회</a>
-			<ul class="mView2" style="display: none;">
-				<li><a href="/beanSoup/seasonWinnerList">온라인 전시</a></li>
-				<li><a href="/beanSoup/seasonWinner">결과 발표</a></li>
-			</ul>
-		</li>
-		<!-- <li><a href="/beanSoup/season" class="dep01" id="seasons">제철요리</a></li> -->
-		<!-- <li><a href="/beanSoup/mall" class="dep01">구매처</a></li> -->
-
-		<!--<li class="wView1 ab" id=""><a href="/beanSoup/video" class="dep01">소식</a>
-			 <ul class="mView1" style="display: none;">
-				<li><a href="/beanSoup/event">생생후기</a></li>
-				<li><a href="/beanSoup/news">뉴스</a></li>
-				<li><a href="/beanSoup/video">영상</a></li>
-			</ul> 
-		</li> -->
-		<li><a href="/beanSoup/list" class="dep01 ">간단레시피</a></li>
-		<!-- <li><a href="void(0);" onclick="alert('준비중입니다.');return false;"  class="dep01 ">간단 레시피</a></li> -->
 		<li class="first"><a href="/beanSoup/brand" class="dep01">브랜드소개</a></li>
+		<li><a href="/beanSoup/list" class="dep01 ">간단레시피</a></li>
+		
+		<li class="menu-deps"><a  class="dep01" href="/beanSoup/seasonWinner">어린이 대회</a>
+			<ul>
+				<li><a href="/beanSoup/seasonWinner">온라인 전시</a></li>
+				<li><a href="/beanSoup/seasonWinnerList" >결과 발표</a></li>
+			</ul>
+			
+		</li>
 	</ul>
-	<!-- <div class="side-quick-menu">
-	  <a href="/beanSoupRecipe/index" class="bean"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/q_bean.png"> 콩국물 브랜드사이트</a>
-	  <a href="/" class="dcf"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/q_dcf.png"> 정식품사이트</a>
-	</div> -->
 </div>
-
 </html>

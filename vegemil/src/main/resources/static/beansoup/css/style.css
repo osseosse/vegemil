@@ -199,7 +199,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#gnb2 ul li ul li {padding:0 0 0 0; background:none; font-size:16px; margin:0 0 10px 0; color:#323232; text-align:center; width:30%;  
 	display:inline-block; margin-top:40px;vertical-align:top; }
 	#gnb2 ul li ul li a {color:#323232;  padding:5px 0 ; padding:10px 10px; }
-	#gnb2 ul li ul li > a {   padding:5px 0; color:#000; margin:0 auto; display:block; width:100%; font-weight:600}
+	#gnb2 ul li ul li > a {   padding:5px 0; color:#000; margin:0 auto; display:block; width:100%; font-weight:500}
 	#gnb2 ul li ul li > a:hover, 
 	#gnb2 ul li ul li > a:focus { color:#aac14c; padding:5px 0; margin:0 auto; display:block; width:100% }
 	#gnb2 a {text-decoration:none}
@@ -1258,6 +1258,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.bg_seoson {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yy.jpg) repeat scroll 0px 0px;  }
 	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px;  }
 	.bg_pink {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_pink.jpg) repeat-y ;  background-size: contain }
+	.bg_pink2 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_pink2.jpg) repeat-y ;  background-size: contain }
 	.bg_yellow {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_yellow.jpg) repeat ; background-size: contain  }
 	.bg_green ul {position:relative; width:95%; margin:0 auto}
 	.bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
@@ -1454,7 +1455,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	
 	
 	.portfolio-grid-metro4 {margin: 0 -5px;  margin-top:70px}
-	.portfolio-grid-metro4 .portfolio-25 {width:25%; padding: 0 15px;margin-bottom: 30px; }
+	.portfolio-grid-metro4 .portfolio-25 {width:25%; padding: 0 15px;margin-bottom: 15px; }
 	.portfolio-grid-metro4 .resizer {width: 25%; }
 	@media only screen and (min-width: 768px) and (max-width: 991px) {
 		.portfolio-grid-metro4 {margin-top:30px}
@@ -1548,7 +1549,8 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 
 	/* recipe cate */
 	.messonry-button2 {margin:0 auto}
-	.messonry-button2 button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:14px;}
+	.messonry-button2 button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:14px; margin-bottom:20px}
+	.messonry-button2 button {color:#000}
 	.messonry-button2 button:last-child {margin-right:0}
 	.messonry-button2 button span {position: relative;display: inline-block;padding: 5px 15px; }
 	.messonry-button2 button span.filter-text {
@@ -4019,7 +4021,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	/* 990 ���ο� ������
 	----------------------- */
 	.round {border-radius:10px}
-	.thumbBox {margin-bottom:30px}
+	.thumbBox {margin-bottom:0px; }
 	.recipeTxtBig {padding:25px;}
 	.recipeTxt {padding:15px 20px 25px 10px;background:#faf9f5;border-radius:0 0px 20px 20px; height:100px  }
 	.flex {display:flex; flex-direction:row; flex-wrap:wrap;  }
@@ -4031,6 +4033,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.flex .col-lg-3 {width:50%; }
 	.recipeTxt_white {padding:10px 10px 15px 10px;}
 	.recipeTxt_white > .f16 {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;margin-bottom:7px}
+	.recipeTxt_white {min-height:50px; }
 	/* -------------------- */
 	/* 990 ��õ ������
 	----------------------- */
@@ -4454,8 +4457,92 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.bg_green ul {position:relative; width:95%; margin:0 auto}
 .bg_green ul li {display:inline-block; margin:0 10px; width:18%; }
 */
+
+	/* ------------------------------------
+		990 cate list
+	--------------------------------------- */
+
+	.messonry-button2 button span.filter-text {width:45px; height:45px; border-radius:15px; }
+	.messonry-button2.text-center.pb30 {text-align:left; }
+	/*
+	.messonry-button2 button.cate1 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate0.png) 
+	no-repeat center 45%; background-size:50px 50px}
+
+	.messonry-button2 button.cate1:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate0_hover.png) 
+	no-repeat center 45%;  background-size:50px 50px}
+
+	.messonry-button2 button.cate1.is-checked span.filter-text {background-size:50px 50px}
+	.messonry-button2 {margin:0 auto; width:100%; border:1px solid red;  overflow:scroll; overflow: auto; white-space: nowrap; background:green}
+	.messonry-button2 button {position:relative; float:left}
+	*/
+
+
 	
+	.messonry-button2 button.is-checked span.filter-text b {color:#fff; }
+	.messonry-button2 button span.filter-text b {position:absolute;bottom:12%;left:50%; transform: translate(-50%, -50%); font-size:15px; font-weighT:400; color:#323232 }
 	
+	.messonry-button2 button.cate0 span.filter-text {color: #fff; background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate0_mo.jpg) no-repeat center 100%;  background-size:100%;  }
+	.messonry-button2 button.cate0:hover span.filter-text {color: #fff; background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate0_mo.jpg) no-repeat center 100%;   background-size:100% ;  }
+	.messonry-button2 button.cate0.is-checked span.filter-text {color: #fff;   background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate0_on_mo.jpg) no-repeat center 100%; background-size:100%;    }
+	
+	.messonry-button2 button.cate1 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate1_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate1:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate1_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate1.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate1_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+	
+	.messonry-button2 button.cate2 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate2_mo.jpg) no-repeat center 35%;  background-size:100%;}
+	.messonry-button2 button.cate2:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate2_mo.jpg) no-repeat center 35%;background-size:100%;  }
+	.messonry-button2 button.cate2.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate2_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+	
+	.messonry-button2 button.cate3 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate3_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate3:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate3_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate3.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate3_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+	
+	.messonry-button2 button.cate4 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate4_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate4:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate4_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate4.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate4_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+
+	.messonry-button2 button.cate5 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate5_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate5:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate5_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate5.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate5_on_mo.jpg) no-repeat center 35%;  background-size:100%;}
+
+	.messonry-button2 button.cate6 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate6_mo.jpg) no-repeat center 35%;background-size:100%;  }
+	.messonry-button2 button.cate6:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate6_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate6.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate6_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+
+	.messonry-button2 button.cate7 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate7_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate7:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate7_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate7.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate7_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+
+	.messonry-button2 button.cate8 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate8_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate8:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate8_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate8.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate8_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+
+	.messonry-button2 button.cate9 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate9_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate9:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate9_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate9.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate9_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+
+	.messonry-button2 button.cate10 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate10_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate10:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate10_mo.jpg) no-repeat center 35%; background-size:100%; }
+	.messonry-button2 button.cate10.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate10_on_mo.jpg) no-repeat center 35%; background-size:100%; }
+
+	.messonry-button2 button.cate11 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate11_mo.jpg) no-repeat center 35%;background-size:100%;  }
+	.messonry-button2 button.cate11:hover span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate11_mo.jpg) no-repeat center 35%;background-size:100%;  }
+	.messonry-button2 button.cate11.is-checked span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate11_on_mo.jpg) no-repeat center 35%;background-size:100%;  }
+	
+
+	.messonry-button2 button span.filter-counter {
+	    position: absolute;
+    top: -7px;
+    left: 50%;
+    visibility: hidden;
+    margin: 0 auto;
+    min-width: 20px;
+    height: 23px;
+    line-height: 13px;
+    
+    font-size: 12px;
+	;
+    }
 
 
 }
