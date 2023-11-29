@@ -3,6 +3,7 @@ package com.vegemil.service;
 import java.util.List;
 import java.util.Map;
 
+import com.vegemil.domain.BeansoupCardDispDTO;
 import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
@@ -52,4 +53,6 @@ public interface BeansoupService {
 	public List<PaintingContestAward23DTO> getContestAwardListPaging23(PaintingContestAward23DTO params);
 	public PaintingContestAward23DTO getContestWinnerDetail(PaintingContestAward23DTO params);
 
+	public List<BeansoupCardDispDTO> getRecipecardsForMainDiplay();
+	
 }

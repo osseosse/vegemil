@@ -5,6 +5,18 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}">
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
 	<script type="text/javascript">
+	$(document).ready(function(){
+		var theDay = new Date('2023-12-13 00:00:00');
+		timeCheck(theDay);		  
+	});
+	
+	function timeCheck(theDay){
+		var today = new Date();
+		if(today >= theDay){
+			 // 제어하고 싶은 코드 그때그떄 변경// 			
+			 $("#popupContent").css("display","none");			 
+		}
+	}
 	function popupCookieSave(){
 		setCookie("popup2", "done" , 1);
 		mainPop2.style.display = "none";
@@ -30,7 +42,7 @@
 </style>
 </head>
 <body id="mainPop2">
-<div class="popBox"><!-- 400px * 570px -->
+<div class="popBox" id="popupContent"><!-- 400px * 570px -->
 	<div class="img">
 		<a href='javascript:void(0)'><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20231114.jpg" alt="iso 인증" border="0"/></a>
 	</div>

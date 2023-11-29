@@ -5,16 +5,12 @@ var tag = document.createElement('script');
 var player;
 var player2;
 var player3;
-var player4;
-
-/* 유튜부 api 플레이어 생성 */
-
 function onYouTubePlayerAPIReady() {
   // TVCF
   player = new YT.Player('player', {
    // width: 640,
    // height: 400,
-    videoId: cfLoadId,
+    videoId: '7o3hwpPMl2o',
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -22,25 +18,12 @@ function onYouTubePlayerAPIReady() {
       rel: 0
     }
   });
-  
-  // 동영상 공모전
-  player4 = new YT.Player('player4', {
-   // width: 640,
-   // height: 400,
-    videoId: contestLoadId,
-    "playerVars": {
-      //autoplay: 1,
-      showinfo:0,
-      controls:1,
-      rel: 0
-    }
-  });
-  
   // Radio
   player2 = new YT.Player('player2', {
    // width: 640,
    // height: 400,
-    videoId: cmLoadId,
+  
+    videoId: 'Xf3nXHwMeLY',
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -53,7 +36,7 @@ function onYouTubePlayerAPIReady() {
    player3 = new YT.Player('player3', {
    // width: 640,
    // height: 400,
-    videoId: etcLoadId,
+    videoId: 'sskZWJ-pSnw',
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -61,25 +44,14 @@ function onYouTubePlayerAPIReady() {
       rel: 0
     }
   });
-}
 
-/*클릭 이벤트 리스너 등록*/
- 
+
+
+}
 // TVCF
 $('.imge').on('click', function () {
     var url = $(this).attr('data-id');
     player.cueVideoById(
-      {
-        videoId: url
-      }
-    );
-    player.playVideo();
-});
-
-// 동영상 공모전
-$('.imge4').on('click', function () {
-    var url = $(this).attr('data-id');
-    player4.cueVideoById(
       {
         videoId: url
       }
@@ -101,8 +73,6 @@ $('.imge2').on('click', function () {
 // Etc
 $('.imge3').on('click', function () {
     var url = $(this).attr('data-id');
-	$("#player3").css("display","block");
- 	$("#playerMp4").css("display","none");
     player3.cueVideoById(
       {
         videoId: url
@@ -111,11 +81,4 @@ $('.imge3').on('click', function () {
     player3.playVideo();
 });
 
-$(".imgeMp").on("click", function() {
-	 var url = $(this).attr('data-id');
-	 
-	 $("#player3").css("display","none");
-	 $("#playerMp4").css("display","block");
-	 $("#videoMp4").attr("src",url);
-});
 

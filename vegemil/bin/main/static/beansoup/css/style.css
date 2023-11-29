@@ -162,8 +162,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#gnb li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 50px 30px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 	#gnb li.last a.dep01 {width:100%; }
 	#gnb ul li ul {display:none; height:70px;position:absolute; top:65px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ������ġ���� */
-	#gnb ul li.active > a {color:#a7c541}
-	#gnb ul li:hover > a  {color:#a7c541}
+	#gnb ul li.active > a {color:#aac14c}
+	#gnb ul li:hover > a  {color:#aac14c}
 	/*
 	1������ �����޴� ������ CSS JS .drop Ŭ���� �����ϰ�(�Ʒ� hover������) �ش� CSS Ȱ��ȭ �Ұ�! 
 	#gnb ul li.active > ul { background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bar_line.gif) no-repeat center 0px;  } 
@@ -190,9 +190,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	#gnb2:after {display:block; content:"";clear:both;}
 	#gnb2 li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 50px 30px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 	#gnb2 li.last a.dep01 {width:100%; }
-	#gnb2 ul li ul {display:none; height:70px;position:absolute; top:65px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ������ġ���� */
-	#gnb2 ul li.active > a {color:#a7c541}
-	#gnb2 ul li:hover > a  {color:#a7c541}
+	#gnb2 ul li ul {display:none; height:70px;position:absolute; top:65px;left:30px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ������ġ���� */
+	#gnb2 ul li.active > a {color:#aac14c}
+	#gnb2 ul li:hover > a  {color:#aac14c}
 
 	#gnb2 ul li:hover {background:url(https://image.edaymall.com/images/vegemil/beansoup/img/bar_line.gif) no-repeat center 81px;}
 	#gnb2 ul li ul {width:300px;  margin-left:-135px;  }
@@ -232,21 +232,21 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.layer { position: absolute; z-index:10;top: 35%;left: 26%;background: none;transform: translate(-40%, -20%)}
 	.lyType01 {font-size:30px; font-weight:600; color:#fff}
 	.lyType02 {font-size:70px; font-weight:600; color:#fff}
-	input.in-search {color:#858585; }
-	input::placeholder {color:#858585; font-size:15px; margin-top:-10px}
+	input.in-search {color:#000;}
+	input::placeholder {color:#A6A6A6; font-size:18px; }
 	ul.key {position:relative; margin-top:26px; display:block; width:100%; clear:both}
 	ul.key li {font-size:16px; background: rgba(255, 255, 255, 0.4); display:inline-block; font-weight:600; border-radius:10px; color:#fff; margin-right:10px} 
 	ul.key li a {color:#fff; text-decoration:none; padding:10px 20px; display:inline-block}
 
 	.mainSearch {overflow: hidden; }
-	.mainSearch > a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 17px;}
+	.mainSearch > a { float: left; display: block; color: black; text-align:center; padding:14px 16px; text-decoration: none;font-size: 17px;}
 	.mainSearch a:hover {background-color: #aac14c;color: black;}
 	.mainSearch a.active {background-color: #aac14c;color: white;}
 
 	
 
-	.mainSearch .search-container {float: right;   }
-	.mainSearch input[type=text] {padding:9px; padding-left:30px; margin-top: 0px;font-size: 24px;border: none; width:460px; border-radius:50px 0 0 50px; background:#fff}
+	.mainSearch .search-container {float: right; }
+	.mainSearch input[type=text] {padding:9px; padding-left:30px; margin-top: 0px;font-size: 24px;border: none; width:510px; border-radius:50px 0 0 50px; background:#fff}
 	.mainSearch .search-container button {float: right;padding:27px 35px;margin-top: 0px;margin-right: 16px;background: #fff;
 	font-size: 17px;border: none;cursor: pointer; background:#E34111 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 30px 30px 0  }
 	.mainSearch .search-container button:hover {background:#E34111 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; }
@@ -384,7 +384,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.thumbBox {position:relative; margin-bottom:50px; }
 	.thumbBox a {text-decoration:none; color:#121212}
 	.recipeTxt {padding:15px 20px 25px 20px;background:#faf9f5;border-radius:0 0px 20px 20px;  }
-	.recipeTxt_white {padding:15px 20px 5px 20px;background:#fff;border-radius:0 0px 20px 20px;  min-height:90px  }
+	.recipeTxt_white {padding:8px 20px 5px 20px;background:#fff;border-radius:0 0px 20px 20px;  min-height:50px  }
 	.recipeTxtBig {padding:35px;background:#ece9e7;border-radius:0 0px 20px 20px;  }
 	.label {position:absolute; right:15px; top:10px}
 	.label img {width:80px}
@@ -415,35 +415,40 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.mv01 {position:absolute; right:0; top:0; z-index:10}
 	.mv02 {position:absolute; left:0; top:404px; z-index:1}
 	.mvc01 {position:absolute; left:-50px; top:188px; z-index:10}
-	.mvc02 {position:absolute; left:125px; top:338px; z-index:10}
+	.mvc02 {position:absolute; left:130px; top:338px; z-index:10}
 	.mvc03 {position:absolute; left:171px; top:71px; z-index:10}
-	.mvc04 {position:absolute; left:376px; top:618px; z-index:10}
+	.mvc04 {position:absolute; left:476px; top:480px; z-index:10}
 	.mvc05 {position:absolute; left:870px; top:630px; z-index:11}
 	.mvc06 {position:absolute; right:396px; top:120px; z-index:1}
 	.mvc07 {position:absolute; right:112px; top:337px; z-index:10}
-	.mvc08 {position:absolute; right:312px; top:479px; z-index:10}
+	.mvc08 {position:absolute; right:300px; top:400px; z-index:10}
 	.mvc09 {position:absolute; right:380px; top:327px; z-index:10}
 	.mvc10 {position:absolute; right:720px; top:468px; z-index:10; }
 	.mvc11 {position:absolute; right:87px; top:462px; z-index:5; text-align:right}
 	.ani-txt {position:relative;  top:170px; margin:0 auto; z-index:20}
 	.btn_main_ani {background:#fff; display:inline-block;  border-radius:25px; overflow:hidden}
-	.btn_main_ani a {display:inline-block; padding:12px 40px; color:#2E2E2E }
-	.btn_main_ani a:hover {text-decoration:none; color:#2E2E2E}
+	.btn_main_ani a {display:inline-block; padding:12px 40px; color:#2E2E2E; transition: all 0.4s; }
+	.btn_main_ani a:hover {text-decoration:none; color:#fff; background-color:#468454;}
 	.f66 {font-size:66px; letter-spacing:-2px}
 	
-
+	
 	.h706 {height:706px}
+	.h770 {height:770px}
+	.h970 {height:970px}
 	.h1200 {height:1200px}
-	.down-section {text-align:center; display:block; margin:0 auto;  color:#fff; width:160px}
-	.down-section a {color:#379453}
+	.down-section {text-align:center; display:block; margin:0 auto; color:#fff; width:160px;}
+	.down-section a {color:#379453;}
 	.down-section a:hover {text-decoration:none}
 	.scroll {
 	  position: relative;
 	  display: block;
 	  font-size: 0.933rem;
-	  color: rgba(55,148,83,1);
+	  font-weight: 500;
+	  color: #379453;
 	  text-decoration: none;
-	  padding: 10px 10px 10px 40px;
+	  padding: 6px 10px 0px 40px;
+	  left:46%;
+	
 	  &::before {
 		display: block;
 		position: absolute;
@@ -451,18 +456,19 @@ body {margin:0; padding:0; overflow-x:hidden}
 		left:0;
 		width: 24px;
 		height: 40px;
-		border: 2px solid rgba(55,148,83,1);
+		border: 2px solid #379453;
 		border-radius: 12px;
 		content:"";
 	  }
 	  &::after {
 		display: block;
 		position: absolute;
+		color: #379453;
 		top:9px;
 		left:11px;
 		width: 2px;
 		height: 8px;
-		background: rgba(55,148,83,1);
+		background: #379453;
 		border-radius: 1px;
 		content:"";
 		animation-name: scroll;
@@ -481,9 +487,13 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  81% { transform: translateY(0); opacity: 0; height: 8px;}
 	  100% { opacity: 1; height: 8px;}
 	}
+
+	.scroll a {text-decoration:none; color:#379453;}
+	.scroll a : hover {text-decoration:none; color:#379453;}
 	
+
 	.bg_main00 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main00.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1;background-size:cover }
-	.bg_main01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main01.png) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1; text-align:center;}
+	.bg_main01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1; text-align:center;}
 	.bg_main02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main02.png) no-repeat scroll 0 0; left:0; top:0; background-position:center 0; z-index:1;z-index:1; }
 	.bg_main03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main03.png) no-repeat scroll 0 0; left:0; top:0; background-position:center; z-index:1; text-align:center}
 	.bg_main04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_main04.png) no-repeat scroll 0 0; left:0; bottom:0; background-position:bottom; z-index:1; }
@@ -497,6 +507,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.main_thumb_pc_prd03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_pc_prd03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.main_thumb_pc_prd04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_thumb_pc_prd04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 
+	.bg_mainLine00 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine00.png) no-repeat scroll 0 bottom; }
 	.bg_mainLine01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine01.png) no-repeat scroll 0 bottom; }
 	.bg_mainLine02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine02.png) no-repeat scroll 0 bottom; }
 	.bg_mainLine03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine03.png) no-repeat scroll 0 bottom; }
@@ -508,9 +519,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.bg_mainLine08 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/bg_mainLine08.png) no-repeat scroll 0 bottom; }
 	
 	
-	.btn_mainType01 {border:1px solid #CCCCCC; border-radius:20px; text-align:center; display:inline-block; background:#fff  }
-	.btn_mainType01 a {padding:12px 40px; display:inline-block }
-	.btn_mainType01 a:hover {text-decoration:none; color:#000}
+	.btn_mainType01 {border:1px solid #CCCCCC; border-radius:25px; text-align:center; display:inline-block; background:#fff; }
+	.btn_mainType01 a {border-radius:25px; padding:12px 40px; display:inline-block; transition:all 0.4s;}
+	.btn_mainType01 a:hover {text-decoration:none; border:1px solid #F06339; border-radius:25px; color:#fff; background-color:#F06339}
 	.gr {position:relative;}
 	.gr_color {color:#FFECD8}
 	.gallery_mo {position:relative}
@@ -523,6 +534,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	  --z: 32px;  /* control the zig-zag  */
 	  --s: 680px; /* control the size */
 	  --g: 8px;   /* control the gap */
+	  /* background-color:#fff;
+	  border-radius:80px 20px 80px 20px; */
 	  
 	  display: grid;
 	  gap: var(--g);
@@ -545,7 +558,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	}
 	.gallery-ba > img:first-child {
 	  place-self: start;
-	  clip-path: polygon(calc(2*var(--z)) 0,100% 0,100% 100%,0 100%);
+	  /* clip-path: polygon(calc(2*var(--z)) 0,100% 0,100% 100%,0 100%); */
+	  border-radius: 80px 0px 0px 20px;
 	  --mask: 
 		conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) 
 		  50%/100% calc(2*var(--z)) repeat-y;
@@ -554,7 +568,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 
 	.gallery-ba > img:last-child {
 	  place-self: end;
-	  clip-path: polygon(0 0,100% 0,calc(100% - 2*var(--z)) 100%,0 100%);
+	 /*  clip-path: polygon(0 0,100% 0,calc(100% - 2*var(--z)) 100%,0 100%); */
+	 border-radius: 0px 20px 80px 0px;
 	  --mask: 
 		conic-gradient(from   45deg at left ,#0000,#000 1deg 89deg,#0000 90deg) 
 		  50% calc(50% - var(--z))/100% calc(2*var(--z)) repeat-y;
@@ -576,12 +591,16 @@ body {margin:0; padding:0; overflow-x:hidden}
 	}
 
 	.para {position:relative;  padding-top:15%; padding-bottom:15%}
-	.ba_symbol {position:absolute; right:-60px; bottom:-60px}
+	
+	.emblem {position:absolute; right:-60px; bottom:-60px}
+	.emblem_text {position:absolute; right:-60px; bottom:-60px; z-index:1; animation: rotate_image 20s linear infinite; transform-origin: 50% 50%;}
+	@keyframes rotate_image{100% {transform: rotate(360deg);}}
+
 	.main_prd_01 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.main_prd_02 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.main_prd_03 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.main_prd_04 {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/main_prd_04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; -webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	.prd_t {-webkit-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.41); box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.41); border-radius:20px; overflow:hidden }
+	.prd_t {-webkit-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.41); box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.24); border-radius:20px; overflow:hidden }
 	.main_thumb_white {padding:30px 40px;  overflow:hidden; background:#fff }
 	.main_thumb_white ul {position:relative}
 	.main_thumb_white ul li:first-child {border:1px solid #CCCCCC;  text-align:center; width:48%; border-radius:10px; float:left }
@@ -590,6 +609,30 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.main_thumb_white ul li a { padding:10px 0; width:100%;  display:inline-block}
 	.main_thumb_white ul li a:hover { text-decoration:none;  }
 	.main_thumb_white ul li:last-child a {color:#F06339}
+
+	.mt-10 {margin-top:-5px}
+	.mt-20 {margin-top:-10px}
+	.mt-30 {margin-top:-15px}
+	.mt-40 {margin-top:-20px}
+	.mt-50 {margin-top:-25px}
+	.mt-60 {margin-top:-30px}
+	.mt-70 {margin-top:-35px}
+	.mt-80 {margin-top:-40px}
+	.mt-90 {margin-top:-45px}
+	.mt-100 {margin-top:-50px}
+	.mt-110 {margin-top:-55px}
+	.mt-120 {margin-top:-60px}
+	.mt-130 {margin-top:-65px}
+	.mt-140 {margin-top:-70px}
+	.mt-150 {margin-top:-75px}
+	.mt-160 {margin-top:-80px}
+	.mt-170 {margin-top:-85px}
+	.mt-180 {margin-top:-90px}
+	.mt-190 {margin-top:-100px}
+	.mt-200 {margin-top:-130px}
+	.mt-210 {margin-top:-150px}
+
+	.pt200 {padding-top:200px}
 
 
 
@@ -717,7 +760,9 @@ body {margin:0; padding:0; overflow-x:hidden}
 	/* -------------------- */
 	/* 3000 footer
 	----------------------- */
-	footer {margin-top:00px; margin-bottom:00px; background:#f1f3f4; padding:90px 0 60px 0; }
+
+	footer {margin-top:00px; margin-bottom:00px; background:#fff; padding:90px 0 60px 0; border-top:solid 1px #CCCCCC; }
+	
 	ul.foot_ul {position:relative; width:100% } 
 	ul.foot_ul li {display:inline-block; vertical-align:top}
 	ul.foot_ul li:first-child {margin-right:30px}
@@ -745,6 +790,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.brand_txt {position:absolute;padding-left:10%; bottom:22%; text-align:left; line-height:150%}
 	.symbol {position:relative;}
 
+	
 	/* brand tab */
 	.tabwrap {background: #fff;overflow: hidden;width:100%;margin: 20px auto; } 
 	.tabs360 {background:#e2e6ef;} 
@@ -1483,6 +1529,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		background:#eef0f2; padding:0px;  border-radius:250px; height:95px; width:95px; position:relative
 
 	}
+	
 	.messonry-button button span.filter-counter {
 		position: absolute;
 		top: -10px;
@@ -1494,7 +1541,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		line-height: 13px;
 		border-radius: 0px;
 		font-size: 17px;
-		background-color: #a8c345;
+		background-color: #F57F59;
 		color: #fff;
 		text-align: center;
 		opacity: 0;
@@ -1516,11 +1563,11 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		margin: 0 auto;
 		width: 0;
 		height: 0;
-		border-top: 4px solid #a8c345;
+		border-top: 4px solid #F57F59;
 		border-right: 4px solid transparent;
 		border-left: 4px solid transparent;
 		content: "";
-		border-top-color: #a8c345; 
+		border-top-color: #F57F59; 
 	}
 	  .messonry-button button:hover span.filter-counter {
 		visibility: visible;
@@ -1529,6 +1576,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		-ms-transform: translate(-50%, -100%);
 		transform: translate(-50%, -100%); 
 	}
+	
 
 	.messonry-button button.is-checked span.filter-text b {color:#fff; }
 	.messonry-button button span.filter-text b {position:absolute;bottom:12%;left:50%; transform: translate(-50%, -50%); font-size:20px; font-weighT:400; color:#323232 }
@@ -1546,7 +1594,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	
 
 
-
+	
 	/* recipe cate */
 	.messonry-button2 {margin:0 auto}
 	.messonry-button2 button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:14px; margin-bottom:20px}
@@ -1575,7 +1623,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		line-height: 13px;
 		border-radius: 0px;
 		font-size: 17px;
-		background-color: #a8c345;
+		background-color: #F57F59;
 		color: #fff;
 		text-align: center;
 		opacity: 0;
@@ -1597,11 +1645,11 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		margin: 0 auto;
 		width: 0;
 		height: 0;
-		border-top: 4px solid #a8c345;
+		border-top: 4px solid #F57F59;
 		border-right: 4px solid transparent;
 		border-left: 4px solid transparent;
 		content: "";
-		border-top-color: #a8c345; 
+		border-top-color: #F57F59; 
 	}
 	  .messonry-button2 button:hover span.filter-counter {
 		visibility: visible;
@@ -1610,6 +1658,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		-ms-transform: translate(-50%, -100%);
 		transform: translate(-50%, -100%); 
 	}
+	
 
 	.messonry-button2 button.is-checked span.filter-text b {color:#fff; }
 	.messonry-button2 button span.filter-text b {position:absolute;bottom:12%;left:50%; transform: translate(-50%, -50%); font-size:20px; font-weighT:400; color:#323232 }
@@ -3734,7 +3783,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.lyType01 {font-size:25px; font-weight:600; color:#fff}
 	.lyType02 {font-size:45px; font-weight:600; color:#fff}
 	.mainSearch a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
-	.mainSearch input[type=text] {padding:9px; padding-left:20px; margin-top: 0px;font-size: 17px;border: none; width:350px; border-radius:50px 0 0 50px; background:#fff}
+	.mainSearch input[type=text] {padding:9px; padding-left:20px; margin-top: 0px;font-size: 17px;border: none; width:372px; border-radius:50px 0 0 50px; background:#fff}
 	.mainSearch .search-container button {float: right;padding:22px 30px;margin-top: 0px;margin-right: 16px;background: #fff;
 	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 20px 20px 0  }
 	
@@ -3844,20 +3893,27 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	/* ------------------------------------
 		1200 WINNER
 	--------------------------------------- */
-	.winSearch {overflow: hidden; text-align:center; width:390px; margin:0 auto; margin-top:80px }
-	.winSearch > a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
-	.winSearch .search-container {float: right;   }
-	.winSearch input[type=text] {padding:11px 4px; padding-left:15px; margin-top: 0px;font-size: 18px;border: none; width:180px; border-radius:12px 0 0 12px; background:#fff; border:1px solid #DFDFDF; vertical-align:top; line-height:140%}
-	.winSearch .search-container button {float: right;padding:25px 25px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#F06339 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 12px 12px 0  }
+	.winSearch {overflow: hidden; text-align:center; max-width:100%; margin:0 auto; margin-top:80px ;  }
+		.win_sel {width:100%; background:#fff; position:relative; }
+		.search-container {float:left; width:100%}
+		.winSearch .search-container button {margin-right:0 !important}
+		.winSearch > a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
+		.winSearch .search-container {float: left;  position:relative; margin-top:10px }
+	
+		.winSearch input[type=text] {padding:11px 4px; padding-left:15px; margin-top: 0px;font-size: 17px;border: none; width:100%; border-radius:12px; background:#fff; border:1px solid #DFDFDF; vertical-align:top; line-height:140%; font-weight:500; color:#000}
+		.winSearch .search-container button {float: right;padding:25px 25px;margin-top: 0px;margin-right: 16px;background: #fff;
+	font-size: 17px;border: none;cursor: pointer; background:#F06339 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 12px 12px 0; position:absolute; right:0; top:0  }
+	
+	
 	.winSearch .search-container #btnSearch {float: right;padding:17px 27px;margin-top: 0px;margin-right: 16px;background: #fff;
 	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 12px 12px 0  }
 	.winSearch input:focus { outline:none}
-	.win_sel {bordeR:1px solid #DFDFDF; display:inline-block; color:#2E2E2E; font-size:15px; border-radius:10px; padding:11px 10px; margin-right:10px; width:120px} 
+	.win_sel {bordeR:1px solid #DFDFDF; display:inline-block; color:#2E2E2E; font-size:15px; border-radius:10px; padding:11px 10px; margin-right:10px; height:48px; } 
 	.h480 {height:370px}
 	.ico_w03 {position:absolute;right:10px;z-index:100; bottom:20px; width:38px }
 	.h400 {height:250px} 
 	.win_info_ch01 img {width:80%; } 
+	input::placeholder {color:#A6A6A6; font-size:14px; font-weight:400}
 
 	/* ------------------------------------
 		1200 Brand renewal
@@ -3882,6 +3938,13 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	/* .container100 {overflow-x:hidden } */
 	
 	.container {width:100%; max-width:100%}
+	.container {
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  margin-right: auto;
+	  margin-left: auto;
+	}
+
 	.wView {display:none}
 	.mView {display:block}
 	/* #slider0 .slider {height:345px; } */
@@ -3918,7 +3981,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.f50 {font-size:30px; line-height:120%}
 	.f66 {font-size:35px;}
 	
-
+	
 	/* -------------------------
 		990 ���� �̺�Ʈ �����̵�
 	-------------------------- */
@@ -3996,17 +4059,20 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.layer { position: absolute; z-index:10;top:50%;left: 50%;background: none;transform: translate(-50%, -50%); width:90%}
 	.lyType01 {font-size:20px; font-weight:600; color:#fff; margin-bottom:10px}
 	.lyType02 {font-size:35px; font-weight:600; color:#fff}
-
+	
+	.mainSearch {position:relative}
 	.mainSearch a { float: left;display: block;color: black;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 15px;}
-	.mainSearch input[type=text] {padding:9px; padding-left:20px; margin-top: 0px;font-size: 14px;border: none; width:260px; border-radius:50px 0 0 50px; background:#fff}
-	.mainSearch .search-container button {float: right;padding:20px 30px;margin-top: 0px;margin-right: 16px;background: #fff;
-	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; border-radius:0 20px 20px 0  }
+	.mainSearch input[type=text] {padding:9px; padding-left:20px; margin-top: 0px;font-size: 14px;border: none; width:100%; border-radius:50px; background:#fff}
+	.mainSearch .search-container {position:relative}
+	.mainSearch .search-container button {padding:20px 30px;margin-top: 0px;margin-right: 16px;background: #fff; position:absolute; right:0px; top:0;
+	font-size: 17px;border: none;cursor: pointer; background:#000 url(https://image.edaymall.com/images/vegemil/beansoup/img/ico_search.png) no-repeat center center; 
+	border-radius:0 20px 20px 0 ; margin-right:0 }
 	ul.key { display:none;}
 
 
 	.mainSearch .search-container #btnSearch {float: right;padding:10px 13px;margin-top: 0px;margin-right: 10px;background: #fff;
 	font-size: 17px;border: none;cursor: pointer; background:#000 ; border-radius:0 18px 18px 0  }
-
+	.mainSearch input[type=text] {width:100%}
 
 	/* DOT NAVIGATION */
 	#slider0 .slider .slider_dot {width:70px; border-radius:0; background:#dbd6d3; bordeR:0; height:5px; margin-bottom:10px}
@@ -4112,6 +4178,16 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.add {font-size:12px; text-align:left}
 	#movetopbt {width:55px}
 
+
+	/* -------------------- */
+	/* 990 Main renewal
+	----------------------- */
+	
+	.emblem {display: none}
+	.emblem_text {display: none}
+	
+
+
 	/* -------------------- */
 	/* 990 brand
 	----------------------- */
@@ -4131,6 +4207,12 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.tetra ul li:first-child {margin-bottom:30px}
 	.tetra ul li p {font-size:13px}
 	.ul360{margin-top:30px;} /* �̼��� �߰� */
+
+	/* flex */
+	.flex01 {display:flex; flex-direction:row; flex-wrap:wrap;  }
+	.flex01 .f-left{order:2; width:100%; }
+	.flex01 .f-right{order:1; width:100%; }
+
 	
 
 	/* -------------------- */
@@ -4376,7 +4458,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.pagination .prev,.pagination .next{height:20px; width:20px; overflow:hidden;position:relative; font-size:0;}
 	.pagination .prev.end,.pagination .next.end{height:20px; width:20px; font-size:0;}
 		
-	.winTab {position:relative}
+	ul.winTab {position:relative; margin-bottom:0}
 	.winTab li {float:left; position:relative; text-align:center; background:#fffaec; width:33.33%;}
 	.winTab li a {padding:10px 0; display:inline-block; color:#000; font-weight:500; font-size:14px}
 	.winTab li.active a {color:#fff}
@@ -4397,7 +4479,11 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.bg_wave02 .cradTime p:nth-child(2) {padding:15px 0; text-align:center; background:#F6F6F6; border-radius:0 0 10px 10px }
 	.bg_wave03 .cradTime p:nth-child(2) {padding:15px 0; text-align:center; background:#F6F6F6; border-radius:0 0 10px 10px }
 	.bg_wave04 .cradTime p:nth-child(2) {padding:15px 0; text-align:center; background:#F6F6F6; border-radius:0 0 10px 10px }
-	
+	.bg_wave01 .cardBtnRound li.btn_orange {width:70%}
+	.bg_wave02 .cardBtnRound li.btn_orange {width:70%}
+	.bg_wave03 .cardBtnRound li.btn_orange {width:70%}
+	.bg_wave04 .cardBtnRound li.btn_orange {width:70%}
+
 	.cardBtnRound li:first-child {width:46px; border:1px solid #ccc; border-radius:5px; overflow:hidden; float:left}
 	.cardBtnRound li.btn_orange {width:80%; background:#F06339; color:#fff; text-align:center; border-radius:5px; float:right }
 	.cardBtnRound li.btn_orange a {padding:11px 0; color:#fff; font-weight:600; display:inline-block}
@@ -4447,6 +4533,8 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.mt190 {margin-top:95px}
 	.mt200 {margin-top:130px}
 
+	
+
 	.q01 {width:150px; text-align:center; margin:0 auto; margin-bottom:10px; margin-top:100px}
 	.bg_green ul.season-sns {width:100%; text-align:center}
 	.bg_green ul.season-sns li {width:15%; margin:0 5px; }
@@ -4462,8 +4550,10 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 		990 cate list
 	--------------------------------------- */
 
-	.messonry-button2 button span.filter-text {width:45px; height:45px; border-radius:15px; }
+	.messonry-button2 button span.filter-text {width:45px; height:45px; border-radius:12px; border:1px solid #e1e1e1}
+
 	.messonry-button2.text-center.pb30 {text-align:left; }
+	.messonry-button2 button.is-checked span.filter-text {border:1px solid #e34112}
 	/*
 	.messonry-button2 button.cate1 span.filter-text {color: #fff;  background:#fff url(https://image.edaymall.com/images/vegemil/beansoup/img/cate0.png) 
 	no-repeat center 45%; background-size:50px 50px}
@@ -4476,7 +4566,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.messonry-button2 button {position:relative; float:left}
 	*/
 
-
+	
 	
 	.messonry-button2 button.is-checked span.filter-text b {color:#fff; }
 	.messonry-button2 button span.filter-text b {position:absolute;bottom:12%;left:50%; transform: translate(-50%, -50%); font-size:15px; font-weighT:400; color:#323232 }
@@ -4545,6 +4635,9 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
     }
 
 
+	
+
+
 }
 
 
@@ -4586,6 +4679,14 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.brandWrap .col-lg-5 {-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
 	.brandWrap .col-lg-7 {-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
 
+
+	/* -------------------- */
+	/* 720 list
+	----------------------- */
+	.messonry-button2 button span.filter-text {width:38px; height:38px; border-radius:10px; border:1px solid #e1e1e1}
+	.messonry-button2.text-center.pb30 {text-align:left; }
+	.messonry-button2 button.is-checked span.filter-text {border:1px solid #e34112}
+	.messonry-button2 .f16 {font-size:13px}
 
 }
 

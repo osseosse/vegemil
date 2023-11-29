@@ -92,6 +92,7 @@ public class BeanSoupController extends UiUtils {
 		
 		model.addAttribute("randNum", randNum);	
 		model.addAttribute("month", now.getMonthValue());
+		model.addAttribute("cards", beansoupService.getRecipecardsForMainDiplay());
 		
 		return "beansoup/index";
 	}

@@ -93,6 +93,7 @@
 		WHERE
 			display = '1'
 	</select>
+
 	
 	<select id="selectBeansoupProposalList" parameterType="String" resultType="com.vegemil.domain.BeansoupDTO">
 		SELECT
@@ -449,4 +450,37 @@
 			id = #{id}
 	
 	</select>
+	
+	<!-- 리뉴얼 화면 카드 전시 데이터 조회 -->
+	
+	<sql id="beansoupCardDisplayColumn">
+		idx,
+		month,
+		recipe_name, 
+		desc1, 
+		desc2, 
+		img_name, 
+		recipe_detail,
+		display_order
+	</sql>
+	<select id="selectBeansoupCardsForDisplayPre" parameterType="int" resultType="com.vegemil.domain.BeansoupCardDispDTO">
+		SELECT
+			<include refid="beansoupCardDisplayColumn"/>
+		FROM
+			m_beansoup_card_dsiplay
+		WHERE month >= #{monthNow} 
+		ORDER BY month
+	
+	</select>
+	
+	<select id="selectBeansoupCardsForDisplayPost" parameterType="int" resultType="com.vegemil.domain.BeansoupCardDispDTO">
+		SELECT
+			<include refid="beansoupCardDisplayColumn"/>
+		FROM
+			m_beansoup_card_dsiplay
+		WHERE month <![CDATA[ < ]]>  #{monthNow} 
+		ORDER BY month
+	</select>
+	
+	
 </mapper>

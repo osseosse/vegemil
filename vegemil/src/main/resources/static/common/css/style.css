@@ -2011,7 +2011,8 @@ button:hover:before {content:"Reply!"}
 	color:#222; font-weight:500; font-size:18px;}
 	ul.prd_dCate li a:focus {color:#000; font-size:17px; font-weight:500; background-image:#fff url("https://image.edaymall.com/images/dcf/vegemil/img/ico/sub_cate.png") right 7px no-repeat; height:30px; }
 	ul.prd_dCate li a:active {color:#000; font-size:17px; font-weight:500; background-image:#fff url("https://image.edaymall.com/images/dcf/vegemil/img/ico/sub_cate.png") right 7px no-repeat; height:30px; }
-
+	
+	iframe.youtuLJW {position:relative; width:100%; height:560px}
 
 	
 
@@ -2263,6 +2264,21 @@ button:hover:before {content:"Reply!"}
 	table.int tr:last-child td {padding-bottom:30px}
 	table.int tr:first-child th {padding-top:30px}
 	table.int tr:last-child th {padding-bottom:30px}
+
+	/* 3000 eng */
+	.engTitle {position: relative;}
+	.engTitle span {background: url(https://image.edaymall.com/images/vegemil/comm/engTitle.jpg) repeat-x bottom; padding-bottom:7px; line-height:120%}
+	table.engT {width:100%}
+	table.engT td,
+	table.engT th {border:0px solid red}
+	
+	table.engT {position:relative; width:100%; max-width:1000px; text-align:left}
+	
+	table.engT td:first-child {vertical-align:top}
+	table.engT td:nth-child(2) {line-height:100%}
+	table.engT td.engNum01 {color:#009E5A}
+	table.engT td.engNum02 span{color:#303030; border-bottom:1px solid #009E5A}
+	.engGray{border-radius:10px; background:#F1F4F5; padding:40px 30px; width:100% }
 	
 
 
@@ -3486,7 +3502,7 @@ button:hover:before {content:"Reply!"}
 	.tab_content4 {position:relative; padding:0px 0 0px 0; float:left;  max-width:100%; width:78%; background:#F1F4F5; border-radius:10px; overflow:hidden ;  margin-left:20px} 
 	.prd-sel .col-md-8 {flex:0 0 66.666667%;max-width:66.666667%;}
 	.prd-sel .col-md-4 {flex:0 0 33.333333%; max-width:33.333333%}
-
+	iframe.youtuLJW {position:relative; width:100%; height:400px }
 
 	/* 1200 영양성분 */
 	.yys_title {background:#fff; font-size:12px;color:#282828; font-weight:300; line-height:200%; padding:10px ; border-top:1px solid #282828; border-right:1px solid #d1d3dc }
@@ -4453,7 +4469,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	ul.prd_subCate.mt40 {margin-top:5px !important;}
 	.prd-subTxt {height:42px; overflow:hidden}
 	.prd-viewMore.mt40 {margin-top:5px !important;}
-
+	iframe.youtuLJW {position:relative; width:100%; height:300px }
 
 
 	/* 768 제품상세 Tab */
@@ -4807,6 +4823,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.rnd_big { padding:0;  margin-top:-50px}
 	.yyy {display:none}
 	
+	
 }
 @media (max-width: 992px) {
 	.rnd_big { padding:0;  margin-top:-150px}
@@ -4817,6 +4834,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.rnd_big .visual-slide h2 { font-size: 2.78rem; }
 	.rnd_big .visual-slide p { margin-top: 15px; }
 	.rnd_big .visual-slide .swiper-pagination {  }
+	
 
 
 /* //3000 브랜드빅배너 */

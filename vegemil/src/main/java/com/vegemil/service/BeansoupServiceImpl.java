@@ -1,5 +1,6 @@
 package com.vegemil.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vegemil.domain.BeansoupCardDispDTO;
 import com.vegemil.domain.BeansoupDTO;
 import com.vegemil.domain.BeansoupEventDTO;
 import com.vegemil.domain.BeansoupNewsDTO;
@@ -241,6 +243,16 @@ public class BeansoupServiceImpl implements BeansoupService {
 	@Override
 	public PaintingContestAward23DTO getContestWinnerDetail(PaintingContestAward23DTO params) {
 		return beansoupMapper.selectContestWinner(params);
+	}
+
+	@Override
+	public List<BeansoupCardDispDTO> getRecipecardsForMainDiplay() {
+		
+		int monthNow = LocalDateTime.now().getMonthValue();
+		List<BeansoupCardDispDTO> list = beansoupMapper.selectBeansoupCardsForDisplayPre(monthNow);
+		list.addAll( beansoupMapper.selectBeansoupCardsForDisplayPost(monthNow));
+				
+		return list; 
 	}
 
 

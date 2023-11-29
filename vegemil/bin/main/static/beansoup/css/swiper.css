@@ -1,4 +1,3 @@
-.swiper-pagination-bullet{border: 1px solid #1da1f2;}.swiper-pagination-bullet-active{background:#1da1f2}
 
 
 .swiper-container {
@@ -538,20 +537,19 @@ button.swiper-pagination-bullet {
     bottom: 0;
 }
 
+
 .swiper-pagination-bullet {
-	background: transparent none repeat scroll 0 0;
-	border: 1px solid #e9ad9a;
-	border-radius: 10px;
+	background:rgba(170,113,84,0.2);
 	display: inline-block;
-	height: 10px;
+	height: 12px;
 	opacity: 1;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	width: 26px;
+	width: 12px;
     transition: 0.2s;
 }
 
 .swiper-pagination-bullet-active {
-    background: rgba(0, 0, 0, 0) linear-gradient(to right, #e9ad9a 0%, #e9ad9a 100%) repeat scroll 0 0;
+    background:rgb(170,113,84); repeat scroll 0 0;
     border: medium none;
     height: 12px;
     opacity: 1;
@@ -559,9 +557,10 @@ button.swiper-pagination-bullet {
     width: 12px;
 }
 
+
 /* custom */
 
-.main-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);  border-radius:0 0 20px 20px;  overflow:hidden; background:#fff} 
+.main-shadow { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);  border-radius:0 0 20px 20px;  overflow:hidden; background:#fff} 
 .slider-image {background:#fff }
 .main-swt-txt {height:230px; display:inline-block;  width:100% ; text-align:left; padding:20px 43px; background:#fff}
 .swiper-slide a:hover {none}

@@ -102,10 +102,10 @@
 		<!-- // main Visual -->
 		<div class="container mt80">
 			<div class="row">
-				<div class="col-lg-12---------------">
+				<div class="col-lg-12">
 					<div class="messonry-button2 text-center pb30 ">
-						<button data-filter="*" class="cate0" th:classappend="${tag == null} ? 'is-checked' : ''"><span class="filter-text"></span><span class="filter-counter">78</span>
-						<p class="f16 f500 mt10">전체</p></button>
+						<button data-filter="*" onclick="location.href='/beanSoup/list'" class="cate0" th:classappend="${tag == null} ? 'is-checked' : ''"><span class="filter-text"></span><span class="filter-counter">78</span>
+						<p class="f16 f500 mt10" >전체</p></button>
 						<button data-filter=".recType01" class="cate1 moveCate" th:classappend="${tag == '맑은 국물'} ? 'is-checked' : ''">
 							<span class="filter-text"></span>
 							<span class="filter-counter">6</span>
@@ -171,7 +171,6 @@
 								</div>
 							</div>
 						</th:block>
-					
 					</div>
 					<th:block th:if="${search_html == '0건'}">
 						<div class=" text-center" style="height:250px;">
