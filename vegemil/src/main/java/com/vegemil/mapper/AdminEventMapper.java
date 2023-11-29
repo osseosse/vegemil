@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.vegemil.domain.AdminEventDTO;
+import com.vegemil.domain.ThermometerLoveDTO;
 
 @Mapper
 public interface AdminEventMapper {
@@ -43,6 +44,16 @@ public interface AdminEventMapper {
 
 	/* 영유아식 이벤트 상세 조회  */
 	public AdminEventDTO selectEventInfoDetailVB(Long eIdx);
+	
+	/* 사랑의 온도계  조회*/
+	public ThermometerLoveDTO selectThermometerLove(int year);
+	
+	/* 사랑의 온도계  최초 등록*/
+	public int insertLoveThermometer(ThermometerLoveDTO dto);
+	
+	/* 사랑의 온도계  업데이트 */
+	public int updateLoveThermometer(ThermometerLoveDTO dto);
+	
 
 	
 

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,16 +32,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.service.AdminEventService;
+import com.vegemil.util.UiUtils;
 
 import lombok.extern.log4j.Log4j2;
 
 @Controller
 @Log4j2
 @RequestMapping("/admin/manage")
-public class AdminEventController {
+public class AdminEventController extends UiUtils{
 	
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
@@ -246,6 +251,24 @@ public class AdminEventController {
 		}
 		return isRegistered;
 		}
+	
+	// 사랑의 온도계
+	@GetMapping("/event/thermometerOfLove")
+	public String moveThermometerOfLoveAdminView(Model model) {
+		
+		int year = LocalDateTime.now().getYear();
+		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
+		model.addAttribute("dto", dto);
+		
+		return "admin/event/thermometerOfLove";		
+	}
+	
+	@PostMapping("/event/thermometerOfLove")
+	public String submitThermometerOfLove(ThermometerLoveDTO params, Model model) {
+		
+		adminEventService.updateLoveThermometer(params);
+		return showMessageWithRedirect("사랑의 온도를 저장했습니다.", "/admin/manage/event/thermometerOfLove",Method.GET, null, model);
+	}
 	
 	//정적 이미지 불러오기
 	@GetMapping("/web/upload/EVENT/{filename}")

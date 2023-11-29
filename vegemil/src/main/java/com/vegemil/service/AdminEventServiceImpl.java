@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.mapper.AdminEventMapper;
 
 @Service
@@ -254,6 +255,27 @@ public class AdminEventServiceImpl implements AdminEventService {
 	@Override
 	public AdminEventDTO getEventDetailVB(Long eIdx) {
 		return adminEventMapper.selectEventInfoDetailVB(eIdx);
+	}
+
+	@Override
+	public ThermometerLoveDTO getThermometerLove(int year) {
+		return adminEventMapper.selectThermometerLove(year);
+	}
+
+	@Override
+	public boolean updateLoveThermometer(ThermometerLoveDTO dto) {
+		
+		ThermometerLoveDTO findDto = adminEventMapper.selectThermometerLove(Integer.parseInt(dto.getYear()));
+	
+		int result = 0;
+		
+		if(findDto == null) {
+			result = adminEventMapper.insertLoveThermometer(dto);
+		}else {			
+			result = adminEventMapper.updateLoveThermometer(dto);
+		}
+		
+		return (result > 0)? true : false;
 	}
 	
 	

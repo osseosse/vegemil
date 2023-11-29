@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>베지밀 이벤트 내역관리</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">			    	       
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>	    
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+        	<div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">사랑의 온도계</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item">이벤트관리</li>
+                                    <li class="breadcrumb-item active">사랑의 온도계</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="params" id="params" method="post">
+	                <!-- Basic table -->
+	                <section id="basic-datatable">
+	                    <div class="row">
+	                        <div class="col-12">
+	                            <div class="card">
+	                            	<div class="card-header">
+										<h4 class="card-title">온도입력</h4>			
+									</div>
+									<hr/>
+									<div class="card-body">
+										<div class="row mb-1 "></div>
+										<div class="row mb-1 ps-1">
+											<div class="col-sm-2">
+												<div class="mb-1">연도</div>	
+												<select class="form-select" id="year" name="year">
+													<option value="2023" selected>2023</option>
+													<option value="2024">2024</option>
+													<option value="2025">2025</option>
+													<option value="2026">2026</option>
+													<option value="2027">2027</option>
+													<option value="2028">2028</option>
+													<option value="2029">2029</option>
+													<option value="2030">2030</option>
+													<option value="2031">2031</option>
+												</select>
+											</div>
+											<div class="col-sm-3">
+												<div class="mb-1">온도</div>
+												<input type="text" class="form-control" name="temperature" id="temperature" placeholder="현재까지 모인 온도 입력" />
+											</div>
+											<div class="col-sm-4">
+												<div class="mb-1"></div>	
+												<button type="submit" class="mt-1 btn btn-outline-secondary">저장</button>																																			
+											</div>
+										</div>
+		
+									</div>
+									<hr />	                            	
+					                <div class="text-center mt-4" style="height:400px;">
+					                	<p class="py-5" style="font-size: 30px; color: antiquewhite; "><span th:text="${dto.year}">2023</span>년  온도 현황 </p>
+					                	<p class="pb-6" style="font-size: 100px; color: aliceblue;"><span th:text="${dto.temperature}">24000</span></p>
+					                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </section>
+	                <!--/ Basic table -->
+	            </form>
+   
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    
+    </th:block>
+    
+</html>

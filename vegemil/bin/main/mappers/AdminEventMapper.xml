@@ -209,9 +209,35 @@
 		WHERE		
 			e_idx = #{eIdx}
 	</select>
-		
 	
+	<!-- 사랑의 온도계 조회 -->
+	<select id="selectThermometerLove" parameterType="int" resultType="com.vegemil.domain.ThermometerLoveDTO">
+		SELECT *
+		FROM
+			m_temperature
+		WHERE		
+			year = #{year}	
+	</select>
 	
+ 	<!-- 사랑의 온도계 최초 등록 -->
+ 	<insert id="insertLoveThermometer" parameterType="com.vegemil.domain.ThermometerLoveDTO">
+ 		INSERT INTO m_temperature
+ 		(
+ 			year,temperature
+		)VALUES(
+			#{year}, #{temperature}				
+		)	
+ 	</insert>
+ 	
+	
+	<update id="updateLoveThermometer" parameterType="com.vegemil.domain.ThermometerLoveDTO">
+		UPDATE 
+			m_temperature
+		SET 
+			temperature = #{temperature}
+		WHERE 
+			year = #{year}  	
+	</update>
 	
 
 </mapper>
