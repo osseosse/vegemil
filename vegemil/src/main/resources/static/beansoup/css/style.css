@@ -9,6 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 */
+html { scroll-behavior: smooth;}
 body {font-family:"Noto Sans KR","NanumGothic","NanumGothicBold","verdana","gulim","dotum", sans-serif !important; word-break:keep-all; }
 section.mainSection {overflow-x:hidden;}
 
@@ -184,8 +185,10 @@ body {margin:0; padding:0; overflow-x:hidden}
 
 	#gnb2 {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:84px;margin:0 auto;border-bottom:1px solid #cdcdcd ; }
 	#gnb2 > ul { width:150px;  position:relative;  margin:0; padding:0;   text-align:right; margin:0 auto;   }
+
 	#gnb2 .logo {position:absolute; top:25px;  width:1360px; top: 50%;left: 50%; transform: translate(-50%, -50%); z-index:0;}
-	#gnb2 > ul {float:right;width:50%; max-width:1360px; }
+	#gnb2 .logo img { width:200px}
+	#gnb2 > ul {float:right;width:45%; max-width:1360px; }
 	#gnb2 > ul > li {position:relative; float:left;  }
 	#gnb2:after {display:block; content:"";clear:both;}
 	#gnb2 li a.dep01{font-size:20px;font-weight:600;color:#323232;display:block;padding:30px 50px 30px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
@@ -476,7 +479,11 @@ body {margin:0; padding:0; overflow-x:hidden}
 		animation-iteration-count: infinite;
 		animation-delay: 2s;
 	  }
+	 
 	}
+
+	 a.a-scroll:focus {text-decoration:none; }
+	 a.a-scroll:hover {text-decoration:none; }
 
 	@keyframes scroll {
 	  0% { opacity: 1; height: 8px;}
@@ -524,11 +531,15 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.btn_mainType01 a:hover {text-decoration:none; border:1px solid #F06339; border-radius:25px; color:#fff; background-color:#F06339}
 	.gr {position:relative;}
 	.gr_color {color:#FFECD8}
-	.gallery_mo {position:relative}
+	.gallery_mo {position:relative;}
 	.gallery_mo ul li {width:50%}
-	.gallery_mo ul li:first-child {float:left;}
+	.gallery_mo ul li:first-child {float:left; }
 	.gallery_mo ul li:nth-child(2) {float:right}
-	.gallery_mo ul li img {width:100%}
+	.gallery_mo ul li img {width:100%; }
+
+	.gallery_mo ul li:first-child img {border-radius:20px 0px 0px 20px;  }
+	.gallery_mo ul li:nth-child(2) img {border-radius:0px 20px 20px 0px; }
+
 
 	.gallery-ba {
 	  --z: 32px;  /* control the zig-zag  */
@@ -4022,17 +4033,34 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	#gnb li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 15px 18px 15px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
 	#gnb ul li ul.none li a {display:none; bordeR:0}
 	#gnb .gnbBG {opacity:0}
+	
+	
+	/*
+	#gnb2 ul {float:right; width:70%; border:2px solid red} 
+	#gnb2 ul li {float:left} 
+	#gnb2 ul li:first-child {margin:0}
+	#gnb2 ul {}
 
-	#gnb2 {position:relative; left:0px; top: 0px;  /*position: fixed;*/ z-index:10; background-color:#fff;  z-index:100;  width:100%; height:60px;margin:0 auto; overflow:hidden  }
-	#gnb2 > ul {width:70%;  position:relative;  margin:0; padding:0;   margin:0 auto; height:60px; float:right;  }
-	#gnb2 .logo { top:28px; max-width:80px; text-align:left; left:37px; z-index:1000 }
-	#gnb2 .logo img {width:80px}
+
+	.flex02 {display:flex; flex-direction:row; flex-wrap:wrap;  }
+	.flex02 .f-left{order:2; width:100%; }
+	.flex02 .f-right{order:1; width:100%; }
+*/
+
+
+
+
+	#gnb2 {position:relative; left:0px; top: 0px;   z-index:10; background-color:#fff;  z-index:100;  width:100%; height:60px;margin:0 auto; overflow:hidden  }
+	#gnb2 > ul {width:63%;  position:relative; right:0; margin:0; padding:0;   height:60px; float:left;  padding-right:0px;  text-align:right; float:right}
+	#gnb2 .logo { top:28px; max-width:110px; text-align:left; left:0; z-index:1000; margin-left:65px }
+	#gnb2 .logo img {width:100%; }
 	#gnb2 > ul li.first { margin-left:0px}
-	#gnb2 > ul li ul { border:1px solid blue}
-	#gnb2 li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 15px 18px 15px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1�� */
+	#gnb2 > ul li {float:left }
+	#gnb2 > ul li { text-align:right}
+	#gnb2 li a.dep01{ font-size:14px;font-weight:600;color:#323232;display:block;padding:22px 10px 18px 10px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } 
 	#gnb2 ul li ul.none li a {display:none; bordeR:0}
 	#gnb2 .gnbBG {opacity:0}
-	
+
 
 
 	/* -------------------- */
@@ -4097,9 +4125,9 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.flex > div:nth-child(3) {order:2; width:100%}
 	.flex > div:nth-child(4) {order:4}
 	.flex .col-lg-3 {width:50%; }
-	.recipeTxt_white {padding:10px 10px 15px 10px;}
+	.recipeTxt_white {padding:10px 10px 5px 10px; }
 	.recipeTxt_white > .f16 {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;margin-bottom:7px}
-	.recipeTxt_white {min-height:50px; }
+	.recipeTxt_white {min-height:65px; }
 	/* -------------------- */
 	/* 990 ��õ ������
 	----------------------- */
@@ -4356,7 +4384,11 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.cardInfo li {margin-lefT:5px; width:23%}
 	.cardInfo li p  {font-size:13px; }
 
+	
 
+
+	ul.key3 li {font-size:12px;  background-color: rgba( 255, 255, 255, 0.5 ); display:inline-block;}
+	ul.key3 li a {color:#000; text-decoration:none; padding:5px 5px; display:inline-block;  border-radius:10px; font-size:12px}
 	/* ------------------------------------
 		990 �Խ���
 	--------------------------------------- */
@@ -4532,7 +4564,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.mt180 {margin-top:90px}
 	.mt190 {margin-top:95px}
 	.mt200 {margin-top:130px}
-
+	.pt200 {padding-top:100px}
 	
 
 	.q01 {width:150px; text-align:center; margin:0 auto; margin-bottom:10px; margin-top:100px}
@@ -4653,7 +4685,7 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	#gnb li {margin-left:0%; }
 	#gnb li a.dep01{ font-size:13px;padding:22px 5px 18px 5px; }
 	#gnb2 li {margin-left:0%; }
-	#gnb2 li a.dep01{ font-size:13px;padding:22px 10px 18px 10px; }
+	#gnb2 li a.dep01{ font-size:13px;padding:22px 5px 18px 5px; }
 	.bg_green {background: url(https://image.edaymall.com/images/vegemil/beansoup/img/season/bg_green.jpg) repeat scroll 0px 0px; background-size:1px 50px  }
 	p {margin:0; padding:0; outline:0; bordeR:0}
 	img {margin:0; padding:0; outline:0;bordeR:0}
