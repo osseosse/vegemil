@@ -162,6 +162,17 @@
 		</nav>
 		<div class="header-right">
 			<ul class="sub_area">
+				<li>
+					<div class="custom-sel ">
+					  <select id="globalLang" onchange="changeLang();return false">			
+					  	<!-- <option th:text="${lang}"></option> -->	  						  
+						<option th:if="${#locale} == 'ko-KR'" value="ko" selected>KOR</option>
+						<option th:if="${#locale} != 'ko-KR'" value="ko" >KOR</option>
+						<option th:if="${#locale} == 'en'" value="en" selected>ENG</option>
+						<option th:if="${#locale} != 'en'" value="en" >ENG</option>
+					  </select>
+					</div>
+				</li>
 				<li sec:authorize="isAnonymous()"><a href="/member/login">로그인</a></li>
 				<li sec:authorize="isAnonymous()"><a href="/member/join">회원가입</a></li>
 				<li sec:authorize="hasAuthority('USER')"><span class="level-01">[일반회원]</span></li>
@@ -551,10 +562,15 @@
 		$('#gnb > ul > li').removeClass('on');
 		$('#header').removeClass('open');
 	}
-
-
 	
-	
+	function changeLang(){
+		var lang = $("#globalLang option:selected").val();
+		var redUrl = $(location).attr('pathname');
+		
+		location.href = "/langSwitch?lang="+lang+"&redUrl="+redUrl;
+
+	}
+
 	/*================================
 	 * 	 FullMenu
 	*================================*/

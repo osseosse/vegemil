@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,7 +56,12 @@ public class MainController extends UiUtils {
 	private AdminService adminService;
 	
 	@RequestMapping(value = "/")
-	public String moveIndex(Model model, Authentication authentication, HttpServletResponse response) throws Exception {
+	public String moveIndex(Model model, Authentication authentication, HttpServletResponse response,
+												@CookieValue(value = "lang", required = false) String localCookie) throws Exception {
+		
+		if("en".equals(localCookie)) {
+			return "en/index";
+		}
 		
 		MemberDTO member = new MemberDTO();
 		

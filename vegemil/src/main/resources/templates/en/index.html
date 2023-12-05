@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="en/fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="video" >
+		<div class="videoCopy">
+			<p class="f80 fw700 f_pp white lh110">Right Food<br>Right Person</p>
+			<p class="f23 fw400 white mt40">Dr. Chung's Food is dedicated to contributing <br>to the development of a healthy food culture<br>based on the spirit of respecting life.</p>
+			<p class="btnType01 mt100 "><a href="#flotingPage">View More</a></p>
+			
+		</div>
+
+
+		<!-- 2022-12-21 -->
+		<div class="main-quick ">
+			<div class="wView">
+				<ul>
+					<li><a href="https://www.edaymall.com/index.do"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q01.png" alt="Shop" /><p class="f13 fw500 black">Shop</p></a></li>
+					<li><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q02.png" alt="Webzine" /><p class="f13 fw500 black">Webzine</p></a></li>
+					<li><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q03.png" alt="Vegemil Story" /><p class="f13 fw500 black">Vegemil<br>Story</p></a></li>
+				</ul>
+				<p class="main-quick-scroll btn-scroll"><a href="#flotingPage"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_q04.png" alt="스크롤" /></a></p>
+				<script>
+					$(".btn-scroll").click(function(event){
+						event.preventdefault();
+						x = $(this).attr("href");
+						$("html, body").stop().animate({ scrollTop : $(x).offset().top-130} , 1000, "eseInOutExpo");
+					});
+				</script>
+			</div>
+		</div>
+		<!-- //2022-12-21 -->
+		
+		<video autoplay loop muted playsinline class="wView">
+			<source src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/main/part_01.mp4" type="video/mp4" class="wView">
+		</video>
+		<video autoplay loop muted playsinline class="mView">
+			<source src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/main/part_01_mo.mp4" type="video/mp4" class="mView">
+		</video>
+	</div>
+	<div class="contant1760" >
+		<div id="flotingPage">
+			<div class="floting-left mt110" >
+				<div class="row">
+					<div class=" col-md-12">
+						<!-- 슬라이드 -->
+						<div class="" id="slider0">
+							<div class="slider" >
+								<div class="slider_area">
+									<!-- 2023-02-17 배너변경 -->
+									<div class="slides">
+										<div class="slide">
+											<div class="slidetitle bnr_brand01 h520" >
+												<div class="bgDark">
+													<div class="centerH ">
+														<p class="f_pp f18 fw500 lh120">Brand 01</p>
+														<p class="f45 fw600 lh120 mt20">Vegemil</p>
+														<p class="f20 fw500 mt20">A Korean traditional soy milk brand with over 50 years of history.<br class="wView"> We have the best taste and nutrition of soybeans!</p>
+														<div class="btnType25 mt30"><a href="/brandStory/vegemil"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn/btnType25.png" /></a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<div class="slide">
+											<div class="slidetitle bnr_brand02 h520">
+												<div class="bgDark">
+													<div class="centerH ">
+														<p class="f_pp f18 fw500 lh120">Brand 02</p>
+														<p class="f45 fw600 lh120 mt20">Greenbia</p>
+														<p class="f20 fw500 mt20">Established in 1991 with Korean technology,<br class="wView">Greenbia is one of the leading brand in fortified nutrition.</p>
+														<div class="btnType25 mt30"><a href="/brandStory/greenbia"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn/btnType25.png" /></a></div>
+													</div>
+												</div>
+												<!--
+												<ul class="slider0-txtbox">
+													<li>
+														<p class="f27 white">건강하고 정직한 먹거리 개발 </p>
+														<p class="f70 fw700 f_pp white" >Rightness</p>
+													</li>
+													<li>
+														<dl>
+															<dd class="f14_4 white f_pp">01. Originality</dd>
+															<dd class="active f14_4 white f_pp">02. Rightness</dd>
+															<dd class="f14_4 white f_pp">03. Devotion</dd>
+														</dl>
+													</li>
+												</ul>
+												-->
+											</div>
+										</div>
+										<div class="slide">
+											<div class="slidetitle bnr_brand04 h520" >
+												<div class="bgDark">
+													<div class="centerH ">
+														<p class="f_pp f18 fw500 lh120">Brand 03</p>
+														<p class="f45 fw600 lh120 mt20">Gandan yorisa</p>
+														<p class="f20 fw500 mt20">Your reliable kitchen companion!<br class="wView">Gandan yorisa helps to add the rich flavor to the dishes.</p>
+														<div class="btnType25 mt30"><a href="/brandStory/recipe"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn/btnType25.png" /></a></div>
+													</div>
+												</div>
+												<!--
+												<ul class="slider0-txtbox">
+													<li>
+														<p class="f27 white">인류건강에 대한 헌신</p>
+														<p class="f70 fw700 f_pp white" >Devotion</p>
+													</li>
+													<li>
+														<dl>
+															<dd class="f14_4 white f_pp">01. Originality</dd>
+															<dd class="f14_4 white f_pp">02. Rightness</dd>
+															<dd class="active f14_4 white f_pp">03. Devotion</dd>
+														</dl>
+													</li>
+												</ul>
+												
+											</div>
+										</div>
+										<div class="slide">
+											<div class="slidetitle bnr_brand09 h520">
+												<div class="bgDark">
+													<div class="centerH ">
+														<p class="f_pp f18 fw500 lh120">Brand 04</p>
+														<p class="f45 fw600 lh120 mt20">심천수</p>
+														<p class="f20 fw500 mt20">지리산에서 만들어진 자연 그대로의 깨끗함. <br class="wView">부드럽게 마시는 맛있는 물!</p>
+														<div class="btnType25 mt30"><a href="/brandStory/simcheonsoo"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/btn/btnType25.png" /></a></div>
+													</div>
+												</div>-->
+												<!--
+												<ul class="slider0-txtbox">
+													<li>
+														<p class="f27 white">인류건강에 대한 헌신</p>
+														<p class="f70 fw700 f_pp white" >Devotion</p>
+													</li>
+													<li>
+														<dl>
+															<dd class="f14_4 white f_pp">01. Originality</dd>
+															<dd class="f14_4 white f_pp">02. Rightness</dd>
+															<dd class="active f14_4 white f_pp">03. Devotion</dd>
+														</dl>
+													</li>
+												</ul>
+												-->
+											</div>
+										</div>
+									</div>
+									<!-- //2023-02-17 배너변경 -->
+								</div>
+								<!-- 2022-12-30 이미지 오류 -->
+								<a class="slider_left"></a>
+								<a class="slider_right"></a>
+								<!-- 2022-12-30 이미지 오류 -->
+							</div>
+						</div>  
+						<!-- //슬라이드 -->
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class=" col-md-12">
+						
+						<p class="f23 fw500 mt80 black">R&D</p>
+						<ul class="baseList mt20">
+							<li><a href="https://www.vegemil.co.kr/rnd/devWork"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus01.png" alt="제품개발"/><p class="f15 mt10">Product<br>Development</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/rnd/devWork"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus04-1.png" alt="연구정보"/><p class="f15 mt10">Research<br>Information</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/rnd/devWork"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus02-1.png" alt="연구개발"/><p class="f15 mt10">Research &<br>Development</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/rnd/devWork"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus04.png" alt="안전 및 분석"/><p class="f15 mt10">Safety &<br>Analysis</p></a></li>
+							<li><a href="https://www.vegemil.co.kr/rnd/devWork"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_bus05.png" alt="기술 인증 및 특허"/><p class="f15 mt10">Certification &<br>Patents</p></a></li>
+						</ul>
+						
+					</div>
+				</div>
+				
+				<!-- 2023-01-09 (2) -->
+				<div class="row mt80">
+					<div class="col-md-12" >
+						<div id="slider1" class="mView">
+							<div  class="slider">
+								<div class="slider_area">
+									<div class="slides">
+										<div class="slide">
+											<a href="/product/detail/27">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dis01.png"/></li>
+														<li class="f23 black fw500 lh140">아침식사 대용으로<br>강력추천</li>
+													</ul>
+													<div class="VGR02_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="greenR">베지밀</span><span class="grayR">곡물&견과두유</span></p>
+														<p class="f20 fw500 black lh160 mt20">베지밀 17곡 한끼두유</p>
+														<div class="key02 f14 gray04 mt30"><p>#17가지국내산곡물</p><p>#한끼대용</p><p>#미숫가루두유</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="/product/detail/75">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dis02.png"/></li>
+														<li class="f23 black fw500 lh140">건강하게! 맛있게!<br>요리용 제품</li>
+													</ul>
+													<div class="SCI04_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="yellowR">진한콩국물</span><span class="grayR">콩국물</span></p>
+														<p class="f20 fw500 black lh160 mt20">정식품 진한 콩국물</p>
+														<div class="key02 f14 gray04 mt30"><p>##식물성건강식재료</p><p>#콩의맛과영양</p><p>#여름대표요리</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="/greenbia/product/detail/67">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dis03.png"/></li>
+														<li class="f23 black fw500 lh140">체계적이고 과학적인<br>영양밸런스</li>
+													</ul>
+													<div class="CHD01_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="purpleR">그린비아</span><span class="grayR">건강식품</span></p>
+														<p class="f20 fw500 black lh160 mt20">그린비아 프로틴밀 아몬드와 호두</p>
+														<div class="key02 f14 gray04 mt30"><p>#아몬드와호두</p><p>#부담없는단백질섭취</p><p>#고단백균형영양</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="/product/detail/4">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dis04.png"/></li>
+														<li class="f23 black fw500 lh140">식이섬유<br>섭취 부족시</li>
+													</ul>
+													<div class="VPM04_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="greenR">베지밀</span><span class="grayR">프리미엄 두유</span></p>
+														<p class="f20 fw500 black lh160 mt20">베지밀 프리바이오틱스 두유</p>
+														<div class="key02 f14 gray04 mt30"><p>#프리바이오틱스</p><p>#식이섬유충전</p><p>#프리미엄두유</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="/greenbia/product/detail/69">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dis05.png"/></li>
+														<li class="f23 black fw500 lh140">성장기 어린이를 위한<br>어린이 음료</li>
+													</ul>
+													<div class="CHD03_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="purpleR">그린비아</span><span class="grayR">건강식품</span></p>
+														<p class="f20 fw500 black lh160 mt20">그린비아 키즈모아</p>
+														<div class="key02 f14 gray04 mt30"><p>#어린이</p><p>#균형영양식</p><p>#맞춤영양</p></div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="slide">
+											<a href="/product/detail/5">
+												<div class="recom">
+													<ul class="recomTitle">
+														<li><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dis03.png"/></li>
+														<li class="f23 black fw500 lh140">평소 단백질 섭취가<br>부족하다면?</li>
+													</ul>
+													<div class="VPM05_860_01 h260 reImg mt20"></div>
+													<div class="recomTxt mt30">
+														<p class="key"><span class="greenR">베지밀</span><span class="grayR">프리미엄 두유</span></p>
+														<p class="f20 fw500 black lh160 mt20">베지밀 고단백두유 검은콩</p>
+														<div class="key02 f14 gray04 mt30"><p>#베지밀 고단백두유 검은콩</p><p>#든든하고고소한맛</p><p>#운동전후단백질</p></div> 
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<a class="slider_left"></a>
+								<a class="slider_right"></a>
+							</div>
+						</div>
+					</div>
+				</div><br class="clear">
+				<!-- // 2023-01-09 (2) -->
+
+				<!-- BREND TAB -->
+				<div class="row mt70m">
+					<div class="col-md-12">
+						<p class="f23 fw500 black"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_best.png" alt="엄지척" /> Brand Best Product</p>
+						<!-- tab -->
+						<div class="bestTab mt20">
+							<ul class="tabs2">
+								<!-- 2023-01-09 탭위치변경 -->
+								<li class="f16 fw400"><a href="#best01">Vegemil</a></li>
+								<li class="f16 fw400"><a href="#best02">Gandan yorisa</a></li>
+								<li class="f16 fw400"><a href="#best05">Others</a></li>
+								
+								<!-- //2023-01-09 탭위치변경 -->
+							</ul>
+							<div class="tab_content2 ">
+								<div id="best01">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="VPM01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">Vegemil 5060 Senior Soymilk</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">Premium soymilk provides essential nutrition for vitality<br>and health promotion</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="VPL01_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Plain <br> Vegemil A</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">Original plain taste soymilk </p><!-- 2023-01-09 카피수정 -->
+													</a>
+												</li>
+												<li>
+													<a href="#" >
+														<dd class="VPM05_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Vegemil Black Bean Soymilk <br> with Protein</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">Premium soymilk contains 12g of protein</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="VBL02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Vegemil Black Bean & <br> 16 Grains Soymilk</p>
+														<p class="f12 fw400 gray04  lh150 best-subCopy mt10">Soymilk with taste and nutrition of domestic black bean<br>and 16kinds of grains</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="VGR02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150"> Vegemil <br> 17 Grains Soymilk</p>
+														<p class="f14 fw400 gray04  lh150 best-subCopy mt10">Feel full with 17 grains soymilk in the busy morning</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best02">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="SCI04_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">Soybean Soup</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">Savory food ingredients made with ground beans<br>It can be used in various dishes</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="SCI05_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Soybean Soup <br>Black Bean</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">Savory food ingredients made with ground beans<br>It can be used in various dishes</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="SCI02_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Gandan Yorisa Vegetable Stock <br> for Hot Soup Dish</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">The easiest way to cook deliciously<br>Vegetable stock for hot soup dish</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="SCI03_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Gandan Yorisa Vegetable Stock <br>for Cold Soup Dish</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">The easiest way to cook deliciously<br>Vegetable stock for Cold soup dish</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="SCI01_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Gandan Yorisa <br>Beef Bone Broth</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">The easiest way to cook deliciously<br>Made with beef bone broth</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best03">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="CWA01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">정식품 심천수</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">청정지역 지리산이 품은 맑고 깊은 샘물</p>
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="CWA01_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">정식품 심천수</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">청정지역 지리산이 품은 맑고 깊은 샘물</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div id="best04">
+									<div class="row">
+										<div class="col-md-6 mb50m">
+											<a href="#" class="hNone">
+												<div class="SCI04_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">정식품 진한 콩국물</p>
+												<p class="f18 fw400 gray04 mt30 lh150 ">통 콩을 그대로 갈아 만든 콩 국물!<br>간편하게 다양한 요리에 활용 할 수 있어요~</p>
+											</a>
+										</div>
+
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="SCI04_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">정식품 진한 콩국물 검은콩</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">통 콩을 그대로 갈아 만든 콩 국물!<br>간편하게 다양한 요리에 활용 할 수 있어요~</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="SCI05_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">정식품 진한 콩국물 검은콩</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">통 콩을 그대로 갈아 만든 콩 국물!<br>검은콩이 들어간 콩국물로 다양한 요리에 활용 할 수 있어요~</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div id="best05" >
+									<div class="row">
+										<div class="col-md-6 mb50m">
+
+
+
+											<a href="#" class="hNone">
+												<div class="CDR01_860_01 h420 round10"></div>
+												<p class="f36 fw600 black mt50 lh130">Wholesome V19</p>
+												<!-- 2022-12-29 사골 -->
+												<p class="f18 fw400 gray04 lh150  mt30">A beverage contains 19kinds of green vegetables</p>
+												<!-- //2022-12-29 사골 -->
+											</a>
+										</div>
+										<div class="col-md-6">
+											<ul class="bestBox">
+												<li>
+													<a href="#">
+														<dd class="CHD03_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Greenbia Kidsmore</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">Drink for growing children</p>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<dd class="GPL03_860_01 h200 round10"></dd>
+														<p class="f20 fw500 black mt20 lh150">Greenbia Kidsmore Choco</p>
+														<p class="f14 fw400 gray04 lh150 best-subCopy mt10">Chocolate flavored drink for growing children</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('.bestTab').basicTabs2();/* basicTabs2 변경 */
+							});
+						</script>
+
+					</div>
+				</div>
+				
+				<!-- //BREND TAB -->
+				
+				
+
+				<!-- 제품음용후기 web  2023-02-13(2) -->
+				<div class="row rivewWrap wView" >
+					<div class="col-md-12" >
+						<div class="grayLine pb120"></div>
+						<p class="f23 fw500 black">Product Drinking Review</p>
+					</div>
+					
+					<div class="col-md-12 wView768" >
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VPL01_600_01.png" /></p></li>
+									<li>
+										<p class="f23 fw500  black">Plain Vegemil A</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"Nutty and not too sweet—love it.“</dd>
+											<dd class="f14 gray04 fw400">"The whole family buys it in bulk"</dd>
+											<dd class="f14 gray04 fw400">"Absolutely the best"</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/SCI04_600_01.png" /></p></li>
+									<li>
+										<p class="f23 fw500  black">Dr.Chung's Food BeanSoup</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"Excellent for cooking."</dd>
+											<dd class="f14 gray04 fw400">"Great for making cold soybean noodle soup in the summer."</dd>
+											<dd class="f14 gray04 fw400">"Rich and thick, perfect taste."</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<a href="/vegemilBaby/event_best_review">
+										<li><p><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VBP01_600_01.png" /></p></li>
+										<li>
+											<p class="f23 fw500  black">Vegemil Infant Premium <br> Step 1</p>
+											<p class="reviewLine mt20"></p>
+											<dl class="mt40">
+												<dd class="f14 gray04 fw400">"Tried it for the first time, and it's very good."</dd>
+												<dd class="f14 gray04 fw400">"I regularly feed it to my baby."</dd>
+												<dd class="f14 gray04 fw400">"Recommended by other moms in the neighborhood."</dd>
+											</dl>
+										</li>
+									</a>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="reviewBox mt30">
+									<li><p><img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VPM01_600_01.png" /></p></li>
+									<li>
+										<p class="f23 fw500  black">Vegemil 5060 Senior Soymilk</p>
+										<p class="reviewLine mt20"></p>
+										<dl class="mt40">
+											<dd class="f14 gray04 fw400">"Always ordering to make sure it never runs out"</dd>
+											<dd class="f14 gray04 fw400">"Not only good for health but also delicious."</dd>
+											<dd class="f14 gray04 fw400">"Perfect for giving as a gift."</dd>
+										</dl>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- //제품음용후기 web 2023-02-13(2) -->
+
+				
+
+
+
+
+			</div><!-- //floting-left -->
+			<div class="floting-right mt110" style="height:2800px">
+				<div class="floting">
+					<div class="flotingContent"><!-- 2022-11-01 "flotingContent" 클래스추가 --> 
+						<p class="f23 fw500">Dr.Chung's Food Brand</p>
+						<!-- 2023-02-14 (1) -->
+						<ul class="f_ul mt30">
+							<li class="hvr-float-shadow">
+								<a href="/brandStory/vegemil">
+								<div class="bg01 "><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brnad_bi01.png" alt="베지밀병"/><span class="count01">39</span>	</div>	
+								<p class="f14 fw400 glay04">Vegemil</p>
+								</a>
+							</li>
+							<li class="hvr-float-shadow">
+								<a href="/brandStory/recipe">
+								<div class="bg05"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brnad_bi03.png" alt="간단요리사"/><span class="count02">5</span>	</div>	
+								<p class="f14 fw400 glay04">Gandan yorisa</p>
+								</a>
+							</li>
+							<li class="hvr-float-shadow">
+								<a href="/brandStory/greenbia">
+								<div class="bg02"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_brnad_bi02.png" alt="그린비아"/><span class="count0">2</span>	</div>	
+								<p class="f14 fw400 glay04">Greenbia</p>
+								</a>
+
+
+							</li>
+						</ul><br class="clear">
+						<!-- //2023-02-14 (1) -->
+						<p class="f23 fw500 f_pp mt30">All Category</p>
+						<ul class="f_ul_middle">
+							<li><a href="/product/list/#V" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01.png" alt="베지밀"/><p class="f12 gray04  center">Soymilk<br>(Vegemil)</p></a></li>
+							<li><a href="/product/list/#P" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_02.png" alt="임산수유부"/><p class="f12 gray04  center">Soymilk for Lactating<br>& Pregnant Women<br>(Vegemil)</p></a></li>
+							<li><a href="/product/list/#B" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_10.png" alt="유아식"/><p class="f12 gray04  center">Infant Formula</p></a></li>
+							<li><a href="/product/list/#G" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_04.png" alt="그린비아"/><p class="f12 gray04  center">Greenbia</p></a></li>
+							<li><a href="/product/list/#G" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_08.png" alt="음료"/><p class="f12 gray04  center">Beverage</p></a></li>
+							<li><a href="/product/list/#H" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_06.png" alt="건강식품"/><p class="f12 gray04  center">Others</p></a></li>
+						</ul>
+						<!-- // 2023-01-05 -->
+					</div>
+				</div>
+			</div><!-- //floting-right -->
+		</div><!-- //flotingPage -->
+		<br class="clear">
+		
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+<!-- ================================ Footer ================================ -->
+<footer th:replace="en/fragments/mainFooteren :: footerFragmenten"></footer>
+<!-- ================================ // Footer ================================ -->
+
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType02").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+</body>
+</html>

@@ -102,15 +102,27 @@
 	#gnb > ul > li.on > .depth02_menu_wrap{display: block; z-index: 99; opacity: 1;}
 	/* 3000 Default : 2뎁스 박스, 간격조절 */
 	.depth02_menu_wrap{display:none;opacity: 1; position: absolute; left: 0; top: 100%; width: 100%; z-index: 1000;  }
-	.depth02_menu_wrap .inner{max-width: 1100px; padding: 30px 10px 40px; margin: 0 auto; display: flex; min-height: 200px;  }
+	.depth02_menu_wrap .inner{max-width: 1100px; padding: 30px 10px 40px; margin: 0 auto; display: flex; min-height: 200px }
 	.depth02_menu_wrap .inner .gnb_depth2{flex-grow: 1; position: relative; border-left: 0px solid #eee; display: flex; flex-wrap: wrap; text-align:center}
-	#gnb > ul > li:nth-of-type(2) .depth02_menu_wrap .inner{width:750px; }
 	#gnb > ul > li:nth-of-type(2) .depth02_menu_wrap .inner .gnb_depth2 > li:nth-of-type(4)::after{display:none;}
 	#gnb > ul > li:nth-of-type(2) .depth02_menu_wrap .inner .gnb_depth2 > li{width:24%;}
 	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner{width:850px;}
 	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner .gnb_depth2 > li:nth-of-type(4)::after{display:none;}
 	#gnb > ul > li:nth-of-type(3) .depth02_menu_wrap .inner .gnb_depth2 > li{width:24%;}
-	.depth02_menu_wrap .inner .gnb_depth2 > li{width: 16.5%; text-align: left; padding: 5px 10px 5px 20px; margin-bottom: 20px;  text-align:center}
+
+	/* 3000 Default : Gnb EN */
+	#gnb.eng > ul > li:nth-of-type(1) .depth02_menu_wrap .inner{width:850px}
+	#gnb.eng > ul > li:nth-of-type(2) .depth02_menu_wrap .inner{width:250px; }
+	#gnb.eng > ul > li:nth-of-type(2) .inner .gnb_depth2 > li {width:100%; }
+	#gnb.eng > ul > li:nth-of-type(3) .depth02_menu_wrap .inner{width:850px}
+	#gnb.eng .depth02_menu_wrap .inner .gnb_depth2 > li {width:25%; }
+	#gnb.eng .depth02_menu_wrap .inner .gnb_depth2 > li a {color:#787878; font-size:14px; display:inline-block }
+	#gnb.eng .depth02_menu_wrap .inner .gnb_depth2 > li > a:hover,
+	#gnb.eng .depth02_menu_wrap .inner .gnb_depth2 > li > a:focus{color: #E3A62C; font-weight: 500; border-bottom:1px solid #E3A62C}
+	#gnb.eng .depth02_menu_wrap .inner{max-width: 1100px; padding: 30px 10px 40px; margin: 0 auto; display: flex; min-height: 80px }
+
+
+	.depth02_menu_wrap .inner .gnb_depth2 > li{width: 16.5%; text-align: left; padding: 5px 10px 5px 20px; margin-bottom: 20px;  text-align:center; }
 	.depth02_menu_wrap .inner .gnb_depth2 > li::after{content: ""; position: absolute; top: 0; width: 1px; height: 100%; background-color: transparent;}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > a{display: block;  font-weight: 500; color:#222; margin-bottom: 15px; font-size:16px}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3{padding: 0 0px;  }
@@ -302,6 +314,12 @@
 	.floting-right {position:relative; float:right; max-width:410px; width:100%; text-align:left;  }
 	.floting-left_prd {position:relative; float:left; max-width:410px; width:100% }
 	.floting-right_prd {position:relative;  max-width:1310px; width:100%; text-align:left; margin:0px auto; float:right}
+
+	.floting-left_prd.eng {position:relative; float:left; max-width:410px; width:100%;  display:none !important;}
+	.floting-left_prd.eng .floting .flotingContent{ }
+	.floting-right_prd.eng {position:relative;  max-width:1310px; width:100%; text-align:left; margin:0px auto;  float:none; }
+
+
 	
 	.floting{position:absolute;  padding-bottom:0px;  width:100%; padding:0px;  background:#fff;   }
 	.floting .flotingContent {border:1px solid #DCDCDC;padding:40px 50px; border-radius:10px; position:relative;}
@@ -1939,6 +1957,12 @@ button:hover:before {content:"Reply!"}
 	.tab_content3 > div#M {display:none; }
 	.tab_content3 > div#S {display:none; }
 	.tab_content3 > div#W {display:none; }
+	/*전산 ID ENG */
+	.tab_content3 > div#V-ENG {display:none; }
+	.tab_content3 > div#P-ENG {display:none; }
+	.tab_content3 > div#B-ENG {display:none; }
+	.tab_content3 > div#O-ENG {display:none; }
+
 
 	.tab_content3 .current { display: block; }
 	.tab_content3 #home.first { display: block; }
@@ -2269,16 +2293,16 @@ button:hover:before {content:"Reply!"}
 	.engTitle {position: relative;}
 	.engTitle span {background: url(https://image.edaymall.com/images/vegemil/comm/engTitle.jpg) repeat-x bottom; padding-bottom:7px; line-height:120%}
 	table.engT {width:100%}
+	table.engT td:first-child {width:10%}
+	table.engT td:nth-child(2) {width:90%}
 	table.engT td,
 	table.engT th {border:0px solid red}
-	
 	table.engT {position:relative; width:100%; max-width:1000px; text-align:left}
-	
 	table.engT td:first-child {vertical-align:top}
-	table.engT td:nth-child(2) {line-height:100%}
+	table.engT td:nth-child(2) {line-height:140%}
 	table.engT td.engNum01 {color:#009E5A}
 	table.engT td.engNum02 span{color:#303030; border-bottom:1px solid #009E5A}
-	.engGray{border-radius:10px; background:#F1F4F5; padding:40px 30px; width:100% }
+	.engGray{border-radius:10px; background:#F1F4F5; padding:40px 30px; width:100%; color:#707070;  }
 	
 
 
@@ -2949,19 +2973,44 @@ button:hover:before {content:"Reply!"}
 	  }
 	}
 
+	/* 3000 2024 loveVegemil */
+	.love2024 {position:relative}
+	.top-2024love {background:url(https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/01.jpg) no-repeat; height:2000px; width:100%; position:relative;background-position:center 0; }
+	.top01 {margin:0 auto;z-index:100;position:absolute;width:410px;margin-top:620px;left: 0;right: 0; display: inline-block;  }
+	.love2024_logo .logo01 {position:absolute; left:20px; top:20px; z-index:100; }
+	.love2024_logo .logo01 a {margin-right:30px;}
+	.love2024_logo .logo02 {position:absolute; right:20px; top:20px; z-index:100;}
+	table.loveVegemil2024 {width:35px; position:absolute; bottom:263px; left:182px; height:240px;  } 
+	table.loveVegemil2024 td.whiteColor {background-color:#fff}
+	table.loveVegemil2024 td.pinkColor {background-color:#fd7e7e;}
+	.tome {background:#ee782f; border-radius:30px; padding:10px 15px; color:#fff; font-weight:600;font-size:25px; position:absolute; top:-27px; lefT:50px; line-height:120%;  z-index:1000; text-align:center; min-width:150px}
+	.love2024_bean {z-index:100; position:relative; border:0px solid blue}
+	.love2024_bean .bean1 {position:absolute; /*left:400px;*/ left:21%; top:460px}
+	.love2024_bean .bean2 {position:absolute; /*left:280px;*/ left:14%; top:580px}
+	.love2024_bean .bean3 {position:absolute; /*left:480px;*/ left:25%; top:1260px}
+	.love2024_bean .bean4 {position:absolute; /*right:450px;*/ right:24%; top:940px}
+	.love2024_bean .bean5 {position:absolute; /*right:430px;*/  right:23%; top:360px}
+	.bgBrown {background:#6a451b}
 
+	.graBar {
+	 background: linear-gradient(-45deg, #e82222, #8c0404  );
+	 background-size: 400% 400%;
+	 animation: gradient 0.6s ease infinite;
+	 border-radius:20px  ;
+	 position:relative
+		}
+	@keyframes gradient {
+	 0% {background-position: 0% 50%;}
+	 50% {background-position: 100% 50%;}
+	 100% {background-position: 0% 50%;}
+	}
 
-
-
-
-
-
-
+	.bottom-2024love {background:url(https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bg_bottom.jpg) no-repeat; height:2984px; width:100%; position:relative;background-position:center 0;}
+	/* //3000 2024 loveVegemil */
+ 
 
 }
 
-
-	
 
 
 
@@ -3155,10 +3204,18 @@ button:hover:before {content:"Reply!"}
 	/* 1760 창업주기념관NEW */
 	.starbg02 .centerH2  {width:80%}
 	.photo-title .f45 {font-size:30px}
+
+	/* 1760 2024 loveVegemil */
+	.love2024_bean .bean1 {position:absolute;  left:6% !important; top:460px;}
+	.love2024_bean .bean2 {position:absolute;  left:1%; top:580px}
+	.love2024_bean .bean3 {position:absolute;  left:12%; top:1260px}
+	.love2024_bean .bean4 {position:absolute;  right:12%; top:940px}
+	.love2024_bean .bean5 {position:absolute;  right:12%; top:360px}
 	
-
-
 }
+
+
+
 
 @media (max-width: 1200px) {
 	/* display None*/
@@ -3526,6 +3583,23 @@ button:hover:before {content:"Reply!"}
 	.alsoLove-box .col-md-3:nth-child(1n) {padding-left:5px; padding-right:15px; }
 	.alsoLove-box .col-md-3:nth-child(2n) {padding-left:15px; padding-right:5px; }
 
+
+	/* 1200 eng */
+	.engTitle {position: relative;}
+		.engTitle span {background: url(https://image.edaymall.com/images/vegemil/comm/engTitle2.jpg) repeat-x bottom; padding-bottom:4px; line-height:120%; }
+	table.engT {width:100%}
+	table.engT td,
+	table.engT th {border:0px solid red}
+	table.engT {position:relative; width:100%; max-width:1000px; text-align:left}
+	table.engT td:first-child {width:13%}
+	table.engT td:nth-child(2) {width:87%}
+	table.engT td:first-child {vertical-align:top}
+	table.engT td:nth-child(2) {line-height:140%}
+	table.engT td.engNum01 {color:#009E5A; width:140px; font-size:40px}
+	table.engT td.engNum02 span{color:#303030; border-bottom:1px solid #009E5A}
+		.engGray{border-radius:10px; background:#F1F4F5; padding:20px 15px; width:100%; color:#707070;  }
+
+
 	/* 1200 브랜드 */
 	.bg_Green.h530 {height:380px} 
 	.bg_Pupple.h530 {height:380px} 
@@ -3812,6 +3886,8 @@ button:hover:before {content:"Reply!"}
 
 	.slidetitle.bnr_brand04.h520 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:60% center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
 	.slidetitle.bnr_brand09.h520 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_brand09.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:80% center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
+	.slides.eng .st-txt .f23 {font-size:10px !important; line-height:120%; font-weight:500}
+	#slider3 .slider_dotwrap {display:none}
 	/* 모바일 header */
 	#header {height:56px; overflow:hidden}
 	.m_header {position:relative; display:inline-block;width:100%; height:56px}
@@ -3982,7 +4058,8 @@ button:hover:before {content:"Reply!"}
 	
 	/* //모바일aside */
 
-
+	table.engT td:first-child {width:18%}
+	table.engT td:nth-child(2) {width:82%}
 	.floting-right {display:none}
 	.floting-right .floting{ display:none}	
 	
@@ -4366,7 +4443,13 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.btn_scroll_bottom img {margin-left:3px}
 	.star-foot-ul .f80 {font-size:30px} 
 	.starbg01 .centerH { top:40%}
-	
+
+	/* 992 2024 loveVegemil */
+	.love2024 .logo_m {position:absolute; top:0px; left:20px}
+	.love2024 .logo_m span a:first-child img {width:60px; margin-top:20px; margin-right:10px}
+	.love2024 .logo_m span a:nth-child(2) img {width:90px; margin-top:10px;}
+	.love2024 .countBox {position:relative;}
+	.love2024 .countBox .count{text-align:center; position:absolute; margin:0 auto; width:100%; font-size:25px; font-weight:600; color:#fff; bottom:5px}
 }
 
 

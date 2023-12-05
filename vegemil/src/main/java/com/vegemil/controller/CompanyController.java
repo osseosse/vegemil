@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,8 +56,13 @@ public class CompanyController {
 	private AdminPrintADService adminPrintADService;
 
 	@RequestMapping(value = "/company/{viewName}")
-    public String moveCompany(@PathVariable(value = "viewName", required = false) String viewName, Model model)throws Exception{
-		
+    public String moveCompany(@PathVariable(value = "viewName", required = false) String viewName, Model model, 
+    											@CookieValue(value = "lang", required = false) String localCookie)throws Exception{
+	
+		if("en".equals(localCookie)) {
+			return "en/" + viewName;
+		}
+
 		if(viewName.equals("media")) {
 			AdminAviCFDTO cfDto = new AdminAviCFDTO(); cfDto.setTOnair("1");
 			AdminAdEctDTO etcDto = new AdminAdEctDTO(); etcDto.setTOnair("1"); 
@@ -124,12 +130,6 @@ public class CompanyController {
         
         return "company/notice";
     }
-    
-    
-    @GetMapping("/company/valueSys")
-    public String openValueSystem(Model model) {
-        
-        return "company/valueSys";
-    }
+
 
 }

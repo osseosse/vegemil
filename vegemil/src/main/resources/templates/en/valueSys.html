@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="en/fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopGreetings h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">Greetings from the CEO</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/company/profile"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/company/greetings"><span>Greetings from the CEO</span></a></li>
+				<li class="f18 fw500"><a href="/company/profile"><span>Company Profile</span></a></li>
+				<li class="f18 fw500 active"><a href="/company/valueSys"><span>Core Value</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+    </div>
+	<!-- 2022-12-26 -->
+    <div class="contant1760">
+        <div class="greetingsBg  ">
+           <ul class="mt50 ">
+                <li class="col-md-12 centerMo ">
+					<div class="centerHM w80pm">
+						<!-- 2022-12-29 -->
+						<p class="f45 fw600 mt80 black">
+							First of all, <br>We <span class="gold">appreciate your support</span><br> and
+							<span class="gold">trust</span> in our company<br>
+							for the past 50 years.
+						<!-- //2022-12-29 -->
+						<p class="f22 mt40 black">
+							I am Chung Yenho, CEO of Dr. Chung's Food Co., Ltd.<br>
+							Thank you for visiting our website.
+							<span class="mView mSign "><br><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/greetings_03.png" alt="대표이사 서명"></span>
+						</p>
+						<p class=" greetingSign mt50m wView">
+							<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/greetings_03.png" alt="대표이사 서명">
+						</p>
+					</div>
+                </li>
+               
+           </ul>
+        </div>
+		<br class="clear">
+	</div><!-- //contant1760 -->
+	<div class="contant1460 infoCenter" >
+		<div class="greetingsInfo">
+			<div class="row">
+				<!-- 2023-05-09 -->
+			    <div class="col-md-6 f18 gray04 lh180 ">
+					<div class="greeBox">
+						Since 1973, based on the founder's motto "Dedicate to human health culture" Dr. Chung's Food has been trying to contribute to improve and promote people's healthy culture for the past 50 years.
+						<br><br>
+						The journey of Dr. Chung's Food, which began with a medicine to save dying children, has developed to the soymilk for infants and adults. Also we have expanded our business area to plant-based beverage and food ingredients like soybean broth, vegetable broth. 
+						<br><br>
+						For the customer's health and safety, Dr. Chung's Food value manufacturing the best quality products as our first priority. Also we have acquired food safety certifications like FSSC22000, HACCP for the product quality, and  environmental product declaration to make sure our environment is safe as well.
+					</div>
+					<p class="mt80"> <img src="https://image.edaymall.com/images/dcf/vegemil/img/company/greetings_02.jpg" alt="정식품 CI"> </p>
+			    </div>
+				 <div class="col-md-6 f18 gray04 mt40m pl50 lh180">
+					<p class="wView"> <img src="https://image.edaymall.com/images/dcf/vegemil/img/company/greetings_04.png" alt="엄마와 아이"> </p>
+					<div class="greeBox mt80">
+						In addition, we are not complacent about being the No. 1 company that has led the soy milk industry for more than 50 years, but are accelerating research on new products and food materials to lead the market through academic exchanges with our own central research institutes and external research institutes. 
+					<br><br>
+
+					In order to repay your support and trust since its foundation, we support Hyechun Scholarship, The Korea Heart Foundation, Good Neighbors, and Korea Blood Disease & Cancer Association and continue to carry out social contribution activities to return customer love to society.
+					<br><br>
+					We will do our best to strengthen customer-focused management confirmed by CCM(Consumer-Centered Management) certification, so that all executives and employees do their best to realize the customer's value of health promotion.
+					<br><br>
+					Moreover, we promise to become a company that promotes the health of people around the world in order to realize the foundation philosophy of "Dedicate to human health culture."
+					<br><br>
+					Thank you.
+					</div>
+			    </div>
+				<!-- //2023-05-09 -->
+			    
+			</div>
+			
+		</div>
+    </div>
+	<!-- //2022-12-26 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+<!-- ================================ Footer ================================ -->
+<footer th:replace="en/fragments/mainFooteren :: footerFragmenten"></footer>
+<!-- ================================ // Footer ================================ -->
+
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType03").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+</body>
+</html>
