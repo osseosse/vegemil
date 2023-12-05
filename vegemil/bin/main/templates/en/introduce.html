@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="en/fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopRndIntroduce h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">Research Institute Introduction</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="#"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500 active"><a href="/rnd/introduce"><span>Research Institute Introduction</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/haccp"><span>HACCP Certificate</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/fssc"><span>FSSC 22000 Certificate</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/halal"><span>HALAL Certificate</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href="/rnd/haccp"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+        <div class="center mt50">            
+            <p class="f18 mt100 f_pp gold">Global Research &amp; Development </p>
+            <p class="f66 fw600 mt50">Dr.Chung’s Food <br class="none">
+				<br class="mView">affiliated Central Research Institute,</p>
+			<p class="f45 fw500 mt10">which is the highest level in the country</p>
+            <p class="f20 mt50 fw500 black">
+                The Central Research Institute is equipped with state-of-the-art equipment and it has professional research <br class="none">
+                personnel. Furthermore, it focuses on developing functional food.
+            </p>
+        </div>
+    </div>
+   <div class="content100 mt120">
+	   <div class="rndIntroduceBg">
+            <div class="contant1460">
+                <div class="row white">
+                   <div class="col-md-12 rndIntroduceInfo01">
+                        <p class="f45 fw600 centerMo">
+                            We want to take a leap into the global F&B company <br class="none">
+                            through constant R&D 
+                        </p>
+                        <ul class="mt100">
+                            <li class="f16">Domestic and safe imported soybeans are used</li>
+                            <li class="f16 mt30">Central Research Institute accredited by KOLAS</li>
+                            <li class="f16 mt30">Technology certification, patent application, and <br>industry-academia activities</li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+		</div>
+	</div><!--//content100-->
+	
+	<div class="contant1460 mt180">
+	    <div class="row rndIntroduceInfo02">
+	        <div class="col-md-6">
+	            <p class="f30 fw600">Systematic, continuous R&D</p>
+	            <p class="f18 gray04 mt60">
+	                We, Dr.Chung’s Food Co.,Ltd, continuously expand investment to leap into the global F&B  company. The Central Research Institute equipped with state-of-the-art equipment has professional research personnel and tries to develop functional food.  In addition, it increase its competitiveness through constant R&D and product development
+	            </p>
+	        </div>
+	        <div class="col-md-6 mt50m">
+	            <p class="f30 fw600">Quality improvement
+					<br class="none">through co-operation
+					<br class="none">with government and universities.
+					</p>
+	            <p class="f18 gray04 mt60">
+	                We do not settle for current position to develop safe and superior quality’s products and also constantly focus on R&D and quality improvement. We will keep researching on product safety and high quality to become a global F&B company. 
+	            </p>
+	        </div>
+	    </div>
+	</div><!--//content1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer th:replace="en/fragments/mainFooteren :: footerFragmenten"></footer>
+<!-- ================================ // Footer ================================ -->
+
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType03").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+</body>
+</html>

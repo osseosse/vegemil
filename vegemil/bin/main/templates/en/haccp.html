@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="en/fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopHaccp h440 mt90h">
+			<!-- 2023-01-10 -->
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&D</p>
+				<p class="white f45 fw600">HACCP Certificate</p>
+			</div>
+			<!-- //2023-01-10 -->
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/rnd/introduce"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/rnd/introduce"><span>Research Institute Introduction</span></a></li>
+				<li class="f18 fw500 active"><a href="/rnd/haccp"><span>HACCP Certificate</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/fssc"><span>FSSC 22000 Certificate</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/halal"><span>HALAL Certificate</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href="/rnd/fssc"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<!-- <p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+        <div class="center mt50 HaccpInfo01">
+            <p class="f45 fw600">What is HACCP?</p>
+            <p class="f18 mt100 f_pp gray04">Hazard Analysis Critical Control Points</p>
+            <p class="mt40">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_01.jpg" alt="해썹이미지" class="haccp_01">
+            </p>
+            <p class="f18 mt60 fw400 gray04">
+                HACCP is a management system in which food safety is addressed through the analysis and control of biological, <br class="none">
+                chemical, and physical hazards from raw material production, procurement and handling, to manufacturing, <br class="none">
+                distribution and consumption of the finished product.
+            </p>
+        </div>
+    </div><!--//contant1460-->
+    <div class="content100 mt200">
+	   <div class="haccpBg">
+			<div>
+				<img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/en_haccp_02.png" alt="해썹이미지" class="haccp_02">
+				<img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/en_haccp_03.png" alt="해썹이미지" class="mt100">
+			</div>
+		</div>
+	</div><!--//content100-->
+	<div class="contant1460 mt200">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="f38 fw600">
+                    All products produced
+                    <br>in Cheongju factory
+                    <br> got the HACCP Certification                    
+                </p>
+                <p class="f14 gray04 mt40">
+                    Acquisition date of HACCP 
+                    <br>- Growth Formula(May 06, 2010)
+                    <br>- Pack(December 08, 2010)
+                    <br>- Bottle, Pouch(December 11, 2012)
+              
+                </p>
+                <p class="haccpLogo centerMo mt100">
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccpLogo.jpg" alt="해썹로고">
+                </p>
+            </div>
+            <div class="col-md-6 mt50m">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_04.jpg" alt="엄마아아이미지">
+            </div>
+            <div class="col-md-12 mt190">
+                <p class="f27 fw500">HACCP Certificate</p>
+            </div>
+            <ul class="certInfo mt40 mb100 center">
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_05.jpg" alt="해썹인증서_01">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_06.jpg" alt="해썹인증서_02">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_07.jpg" alt="해썹인증서_03">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_08.jpg" alt="해썹인증서_04">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/haccp_09.jpg" alt="해썹인증서_05">
+                </li>
+            </ul>
+        </div>
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+
+<!-- ================================ Footer ================================ -->
+<footer th:replace="en/fragments/mainFooteren :: footerFragmenten"></footer>
+<!-- ================================ // Footer ================================ -->
+
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType03").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+</body>
+</html>

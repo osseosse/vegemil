@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="en/fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopHalal h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&amp;D</p>
+				<p class="white f45 fw600">Halal Certificate</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/rnd/fssc"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL">
+				<li class="f18 fw500"><a href="/rnd/introduce"><span>Research Institute Introduction</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/haccp"><span>HACCP Certificate</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/fssc"><span>FSSC 22000 Certificate</span></a></li>
+				<li class="f18 fw500 active"><a href="/rnd/halal"><span>HALAL Certificate</span></a></li>
+			</ul>
+			<p class="btnSubRight"><a href="#"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
+		</div>
+		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
+        <div class="center mt50 halalInfo01">
+            <p class="f45 fw600">What is HALAL?</p>
+            <p class="mt100">
+                <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halal_01.jpg" alt="halal이미지" class="halal_01">
+            </p>
+            <p class="f18 mt60 fw400 gray04">
+                It is an Arabic word that translates to ‘permissible’ in English and includes every products that can be eaten and used by Muslim.
+            </p>
+            <p class="gray04 f12 mt20">
+                Vegetable food, sea food, chicken, and beef are applicable to HALAL. 
+            </p>
+        </div>
+    </div><!--//contant1460-->
+	<div class="contant1460 mt120 mb200">
+        <div class="row halalInfo">
+            <div class="col-md-12 halalBg01">
+                <div class="white centerMo">
+                    <p class="f27 fw600">HALAL food certification</p>
+                    <p class="f16 mt10">Prohibited material‘HARAM’is not used.</p>
+                </div>
+            </div>
+            <div class="col-md-12 halalBg02 mt60">
+                <div class="white centerMo">
+                    <p class="f27 fw600">Certification authority(IFANCA)</p>
+                    <p class="f16 mt10">IFANCA is one of the world’s top three Halal certification organizations</p>
+                </div>
+            </div>
+            <div class="col-md-12 halalBg03 mt60">
+                <div class="white centerMo">
+                   <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halalLogo.png" alt="할랄로고">
+                    <p class="f27 fw600 mt10m">IFANCA HALAL logo</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt200">
+            <div class="col-md-12">
+                <p class="f38 fw600 black">
+                    IFANCA HALAL certification completed
+                </p>
+                <p class="f14 gray04 mt40">Acquisition date of IFANCA HALAL(September 06, 2015)</p>
+                <p class="f27 fw500 mt100">Total 15products including plain Vegemil A </p>
+            </div>
+            <ul class="certInfo mt40 center">
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halal_02.jpg" alt="할랄인증서_01">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halal_03.jpg" alt="할랄인증서_02">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halal_04.jpg" alt="할랄인증서_03">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halal_05.jpg" alt="할랄인증서_04">
+                </li>
+                <li>
+                    <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/halal_06.jpg" alt="할랄인증서_05">
+                </li>
+            </ul>
+        </div>
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer th:replace="en/fragments/mainFooteren :: footerFragmenten"></footer>
+<!-- ================================ // Footer ================================ -->
+
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType03").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+</body>
+</html>

@@ -199,8 +199,12 @@ public class MainController extends UiUtils {
     }
 	
 	@RequestMapping(value = "/rnd/{viewName}")
-    public String moveRnd(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+    public String moveRnd(@PathVariable(value = "viewName", required = false) String viewName, 
+    									@CookieValue(value = "lang", required = false) String localCookie)throws Exception{
 		
+		if("en".equals(localCookie)) {
+			return "en/" + viewName;
+		}		
 		return "rnd/"+viewName;
     }
 	
