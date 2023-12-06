@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragmentForEvent"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<div id="content"  >
+	<div class="love2024">
+		<div class="wView">
+			<div class="love2024_logo">
+				<div class="logo01">
+					<a href="https://www.vegemil.co.kr/" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/ci01.png" alt="정식품 CI"/></a>
+					<a href="https://kws.or.kr/ " target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/ci01_01.png" alt="초록우산재단"/></a>
+				</div>
+				<div class="logo02"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/ci02.png" alt="사랑나눔캠패인"/></div>
+			</div>
+			<div class="top-2024love">
+				<div class="top01">
+					<img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/02.png" />
+					<!-- 온도계 -->
+					<table class="loveVegemil2024" cellspacing="0" summary="사랑의 베지밀 온도계">
+						<caption>온도계</caption>
+						<tbody>
+							<tr>
+								<td id="tdWhitePc" class="whiteColor" height="0px"></td>
+							</tr>
+							<tr>
+								<td id="tdGreenPc" class="graBar" th:if="${loveHeight > 0}" th:height="${loveHeight}"><p class="tome">
+								<span id="lblCountPc" th:text="${#numbers.formatInteger(dto.temperature, 1, 'COMMA') + '℃'}">[[${dto.temperature}]]</span></p></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //온도계 -->
+				</div>
+				<div class="love2024_bean">
+					<p class="bean1"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bean1.gif" alt="목도리콩"/></p>
+					<p class="bean2"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bean2.gif" alt="루돌프콩"/></p>
+					<p class="bean3"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bean3.gif" alt="누운콩"/></p>
+					<p class="bean4"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bean4.gif" alt="산타콩콩"/></p>
+					<p class="bean5"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bean5.gif" alt="걷는콩"/></p>
+				</div>
+			</div>
+			<div class="bottom-2024love">
+				<p class="center"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/content.png" alt="" usemap="#Map"/></p>
+				 <map name="Map">
+					<area shape="rect" coords="780,486,934,681" href="https://blog.naver.com/vegemilstory" title="블로그">
+					<area shape="rect" coords="582,486,736,681" href="https://www.instagram.com/vegemil.official/" title="인스타그">
+				    <area shape="rect" coords="376,487,530,682" href="https://www.facebook.com/vegemilgood" title="페이스">
+				</map>
+			</div>
+			<div class="contant100 bgBrown" >
+				<p class="center"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/footer.jpg" alt=""/></p>
+			</div>
+		</div>
+		<div class="mView" >
+			<div class="logo_m">
+				<span>
+					<a href="https://www.vegemil.co.kr/" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/ci01.png" alt="정식품 CI"/></a>
+				
+				<a href="https://www.childfund.or.kr/main.do " target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/ci01_01.png" alt="초록우산재단"/></a>
+				</span>
+			</div>
+			
+			<div class="img100 love-mb0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m01.jpg" alt="정식품"/></div>
+			
+			<div class="img100 countBox"><p class="count" th:text="${#numbers.formatInteger(dto.temperature, 3, 'COMMA') + '℃'}">21,471℃</p><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m02.jpg" alt="정식품"/></div>
+			<div class="img100 love-mb0" ><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m03.jpg" alt="정식품"/></div>
+			<table cellspacing="0" border="0" style="width:100%">
+				<tr>
+					<td><p class="img100"><a href="https://www.facebook.com/vegemilgood" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/msns01.jpg" alt="페이스북"/></a></p></td>
+					<td><p class="img100"><a href="https://www.instagram.com/vegemil.official/" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/msns02.jpg" alt="인스타그램"/></a></p></td>
+					<td><p class="img100"><a href="https://blog.naver.com/vegemilstory" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/msns03.jpg" alt="네이버블로그"/></a></p></td>
+				</tr>
+			</table>
+			<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m05.jpg" alt="정식품 CI"/></p>
+		</div>
+	</div>
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- <footer class="contant100"></footer> -->
+<!-- ================================ // Footer ================================ -->
+<script>
+/*================================
+ * 	 main > 자주묻는질문+SNS
+ *================================ */
+$(".verticalType03").collapse({
+	  accordion: true, 
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+</script>
+<!-- //main > 자주묻는질문+SNS -->
+
+<script type="text/javascript">
+</script>
+</body>
+</html>
