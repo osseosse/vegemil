@@ -11,9 +11,9 @@
 <!-- ================================ 
 		Content
 ================================ -->
-<div id="popup" class="main-popup" style="display:none;">
- 	<iframe th:src="@{/fragments/popup2}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no"  style="margin-right:10px"></iframe>
-	<iframe th:src="@{/fragments/slidePopup}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" ></iframe> 
+<div id="popup" class="main-popup">
+ 	<iframe id="popup2" th:src="@{/fragments/popup2}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" style="margin-right:10px"></iframe>
+	<iframe id="popup1" th:src="@{/fragments/popup}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" style="display:none;"></iframe> 
 </div>
 <div id="content" class="pb150">
 	<div class="video" >
@@ -888,28 +888,31 @@
 	    return ;    
 	}
 	
+	function timeCheck(theDay){
+		var today = new Date();
+		if(today >= theDay){
+			 // 제어하고 싶은 코드 그때그떄 변경// 
+			 $("#popup1").css("display","inline");
+		}
+	}
+	
 	$(document).ready(function(){
-		var popup = document.getElementById("popup");
+		
+
+	  	var theDay = new Date('2023-12-08 00:00:00');
+	  	timeCheck(theDay);
+	  
+		var popup = document.getElementById("popup1");
 		var popup2 = document.getElementById("popup2");
+
 		var cookieCheck = getCookie("popup");
+		if (cookieCheck == "done"){
+			popup.style.display = 'none';
+		}
+		
 		var cookieCheck2 = getCookie("popup2");
-		
-		if (cookieCheck != "done"){
-			popup.style.display = 'block';
-		}
-		
-		if (cookieCheck2 != "done"){
-			popup2.style.display = 'block';
-		}
-		
-		var cookieCheck = getCookie("popup");
-		if (cookieCheck != "done"){
-			popup.style.display = 'block';
-		}
-		
-		var cookieCheck2 = getCookie("popup");
-		if (cookieCheck2 != "done"){
-			popup2.style.display = 'block';
+		if (cookieCheck2 == "done"){
+			popup2.style.display = 'none';
 		}
 	});
 	

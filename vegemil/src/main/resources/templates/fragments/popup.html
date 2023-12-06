@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}">
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
 	<script type="text/javascript">
+	
 	function popupCookieSave(){
 		setCookie("popup", "done" , 1);
 		mainPop.style.display = "none";
@@ -22,6 +23,8 @@
 	    todayDate.setHours(0, 0, -1); // 오늘의 바로 전날 23:59:59로 설정함.
 	    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
 	}
+	
+
 </script>
 <style>
 	.popBox .action {position:relative; background:#4e4e4e; padding-left:5px; top:-4px;padding-top:2px}
@@ -32,7 +35,9 @@
 <body id="mainPop">
 <div class="popBox"><!-- 400px * 570px -->
 	<div class="img">
-		<a href="/company/mediaNews" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230109.jpg" alt="iso 인증" border="0"/></a>
+		<a href="/event/loveVegemil/2023" target="_blank">
+			<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20231208.jpg" alt="사랑의 온도계 챌린지" border="0"/>
+		</a>
 	</div>
 	<!-- action -->
 	<div class="action">
