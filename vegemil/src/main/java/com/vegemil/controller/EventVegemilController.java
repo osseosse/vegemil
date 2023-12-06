@@ -33,7 +33,7 @@ public class EventVegemilController extends UiUtils {
 		ThermometerLoveDTO dto = adminEventService.getThermometerLove(Integer.parseInt(year));
 		
 		int temperature = Integer.parseInt(dto.getTemperature());
-		int loveHeight = (int) ((temperature <= 1) ? 1: (temperature * 0.01));
+		int loveHeight = (int) ((temperature <= 99) ? 1: (temperature * 0.01));
 		
 		model.addAttribute("dto", dto);
 		model.addAttribute("loveHeight", loveHeight);
