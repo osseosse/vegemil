@@ -6,7 +6,7 @@
 <head th:replace="fragments/head :: headFragmentForEvent"></head>
 <body>
 <!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- <header class="white" th:replace="fragments/mainHeader :: headerFragment"></header> -->
 <!-- ================================ // Header ================================ -->
 <div id="content"  >
 	<div class="love2024">
@@ -67,7 +67,7 @@
 			
 			<div class="img100 love-mb0"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m01.jpg" alt="정식품"/></div>
 			
-			<div class="img100 countBox"><p class="count" th:text="${#numbers.formatInteger(dto.temperature, 3, 'COMMA') + '℃'}">21,471℃</p><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m02.jpg" alt="정식품"/></div>
+			<div class="img100 countBox"><p class="count" th:text="${#numbers.formatInteger(dto.temperature, 1, 'COMMA') + '℃'}">21,471℃</p><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m02.jpg" alt="정식품"/></div>
 			<div class="img100 love-mb0" ><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/m03.jpg" alt="정식품"/></div>
 			<table cellspacing="0" border="0" style="width:100%">
 				<tr>
