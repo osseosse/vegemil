@@ -7,16 +7,16 @@
 	<script type="text/javascript" src="/common/js/prrple.slider.js" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-		  /********** EXAMPLE #5 - H3 - HORIZONTAL SLIDE + LOOP + SEAMLESS **********/
-		  $('#sliderh3 .slider').prrpleSlider({
-				autoPlay:true,				//play slider automatically?  //false 사용시 멈춤 //true 사용시 플레이
-				autoPlayInterval:	4000,		
-				csstransforms:	true,
-				richSwiping:false
-		  });
-		  
-
-		  changeStateElementIdByday("#currentPopup","#nextPopup",24,5,09);
+			  /********** EXAMPLE #5 - H3 - HORIZONTAL SLIDE + LOOP + SEAMLESS **********/
+			  $('#sliderh3 .slider').prrpleSlider({
+					autoPlay:true,				//play slider automatically?  //false 사용시 멈춤 //true 사용시 플레이
+					autoPlayInterval:	4000,		
+					csstransforms:	true,
+					richSwiping:false
+			  });
+				
+			  var theDay = new Date('2023-12-08 00:00:00');
+			  timeCheck(theDay);
 		  
 		});
 	function popupCookieSave(){
@@ -40,8 +40,7 @@
 		var today = new Date();
 		if(today >= theDay){
 			 // 제어하고 싶은 코드 그때그떄 변경// 
-			 
-			 $("#currentPopup").css("display","none");
+
 			 $("#nextPopup").css("display","block");
 		}
 	}
@@ -239,7 +238,7 @@
 </style>
 </head>
 <body id="mainPop">
-<div class="popBox" id="currentPopup"><!-- 400px * 570px -->
+<div class="popBox" id="currentPopup" style="display:none;"><!-- 400px * 570px -->
 	<!-- pp-slider -->
 	<div class="container"  id="sliderh3">
 		<div class="slider">
@@ -247,28 +246,25 @@
 				<div class="slides">
 					<div class="slide">
 						<div class="slidetitle" >
+							<a href="/event/loveVegemil/2023" target="_blank">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20231208.jpg" alt="사랑의 온도계 챌린지" border="0" />
+							</a>
+						</div>
+					</div>				
+					<!-- <div class="slide">
+						<div class="slidetitle" >
 							<a href="https://tv.naver.com/v/41460873/list/877681" target="_blank">
 								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230919.jpg" alt="안싸워서 다행이야 간단요리사" border="0" />
 							</a>
 						</div>
-					</div>				
-					<div class="slide">
+					</div>			 -->	
+					<!-- <div class="slide">
 						<div class="slidetitle" >
 							<a href="https://www.edaymall.com/display/goods.do?goods_code=10287800" target="_blank">
 								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230831.jpg" alt="녹차베지밀" border="0" />
 							</a>
 						</div>
-					</div>
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="/event/eventFor50years" target="_blank">
-							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_on.jpg" id="eventFor50" alt="50주년이벤트" border="0" usemap="#event_50on"/>
-							</a>
-							<!-- <map name="event_50on">
-							    <area target="_top" alt="" title="" href="/event/eventFor50years" coords="288,402,61,354" shape="rect">
-							</map> -->
-						</div>
-					</div>				
+					</div> -->				
 				</div>
 			</div>
 			<a class="slider_left"></a>
@@ -287,32 +283,28 @@
 	<div class="container"  id="sliderh3">
 		<div class="slider">
 			<div class="slider_area" >
-				<div class="slides">				
+				<div class="slides">
 					<div class="slide">
+						<div class="slidetitle" >
+							<a href="/event/loveVegemil/2023" target="_blank">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20231208.jpg" alt="사랑의 온도계 챌린지" border="0" />
+							</a>
+						</div>
+					</div>								
+					<!-- <div class="slide">
 						<div class="slidetitle" >
 							<a href="https://tv.naver.com/v/41460873/list/877681" target="_blank">
 								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230919.jpg" alt="안싸워서 다행이야 간단요리사" border="0" />
 							</a>
 						</div>
-					</div>
-					<div class="slide">
+					</div> -->
+					<!-- <div class="slide">
 						<div class="slidetitle" >
 							<a href="https://www.edaymall.com/display/goods.do?goods_code=10287800" target="_blank">
 								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230831.jpg" alt="녹차베지밀" border="0" />
 							</a>
 						</div>
-					</div>
-					
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="/event/eventFor50years" target="_blank">
-							<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20230509_on.jpg" id="eventFor50" alt="50주년이벤트" border="0" usemap="#event_50on"/>
-							</a>
-							<!-- <map name="event_50on">
-							    <area target="_top" alt="" title="" href="/event/eventFor50years" coords="288,402,61,354" shape="rect">
-							</map> -->
-						</div>
-					</div>								
+					</div> -->								
 				</div>
 			</div>
 			<a class="slider_left"></a>

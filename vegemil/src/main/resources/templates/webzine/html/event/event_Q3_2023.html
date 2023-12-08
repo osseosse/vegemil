@@ -184,108 +184,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<!-- -----------------------------  작업서버파일(개발에 적용시 디자인주석처리할것) ----------------------------------- -->
 					
-					<!-- <div class="row intxt mt80-m">
-						<div class="col-md-12">
-							<p class="type25-1" >1. 이름 <span class="red2">*(필수)</span></p>
-								<div class="mt30-m">
-									<asp:textbox id="txtName" runat="server" class="evebase05" ></asp:textbox>
-								</div>
-						</div>
-						<div class="col-md-6 mt80-m">
-							<p class="type25-1" >2. 휴대폰 번호 <span class="red2">*(필수)</span></p>
-							<div class="mt30-m">
-								<select class="tel02" id="Hp1" name="Hp2" runat="server">
-									<option selected value="010">010</option>
-									<option value="011">011</option>
-									<option value="016">016</option>
-									<option value="017">017</option>
-								</select>&nbsp; - &nbsp;
-								디자인 
-								<input class="evebase04"> &nbsp; - &nbsp; <input class="evebase04">
-								<asp:textbox id="txtHp2"  runat=server class="evebase04" maxlength=4 onkeydown=onlyNumber(); ></asp:textbox> - <asp:textbox id="txtHp3" onkeydown=onlyNumber();  runat="server"  class="evebase04" maxlength=4></asp:textbox>
-								//디자인
-								<p class="mt30-m">※ 원활한 상품 발송을 위해 휴대전화 번호를 정확하게 기입해 주시길 바랍니다.</p>
-							</div>
-						</div>
-						<div class="col-md-6 mt80-m">
-							<p class="type25-1" >3. 이메일 <span class="red2">*(필수)</span></p>
-								<div class="mt30-m">	
-									디자인 <input class="evebase03">
-									<asp:textbox id="txtEmail" runat="server" class="evebase03" ></asp:textbox>
-									//디자인
-								</div>
-						</div>
-						<div class="col-md-12">
-							<p class="type25-1 mt80-m" >4.EVENT 1 웹진 홍보 URL <span class="red2">*</span> <b class="red">*(URL이 여러개일 경우 Enter키를 이용해 하나씩 입력해주세요.)</b></p>			
-							디자인 
-							<textarea class="eveTxt mt30-m" placeholder="공유한 게시물의 URL 남겨주세요" ></textarea>
-							<asp:textbox id="txtRemark" runat="server" textmode="MultiLine" class="eveTxt mt30-m" placeholder="공유한 게시물의 URL 남겨주세요"></asp:textbox>
-							//디자인
-						</div>
-						<div class="col-md-12">
-							<p class="type25-1 mt80-m" >5.EVENT 2 낱말 퀴즈 정답 <span class="red2">*</span><b class="red">*(URL이 여러개일 경우 Enter키를 이용해 하나씩 입력해주세요.)</b></p>												
-							디자인 
-							<textarea class="eveTxt mt30-m" placeholder="공유한 게시물의 URL 남겨주세요" ></textarea>
-							<asp:textbox id="txtAnswer" runat="server" textmode="MultiLine" class="eveTxt mt30-m" placeholder="퀴즈정답을 적어주세요(20자 이내)" MaxLength="20"></asp:textbox>
-							//디자인
-						</div>
-						<div class="col-md-12" >
-							<p class="type25-1 mt80-m" >6. 개인정보취급 동의 <span class="red2">*(필수)</span></p>
-							<p class="mt20-m">
-							(보내주신 개인정보는 본 퀴즈 이벤트의 경품 배송 목적으로만 활용되며, 배송 후 즉시 파기됨을 알려 드립니다. 개인정보취급을 동의하신 분들에 한해 당첨자를 선정, 경품을 발송하오니 참고 부탁 드립니다.)
-							</p>
-							<ul class="ins_radio">
-								<li><input type="radio" name="chk_privacy" value="1"> 예 &nbsp;&nbsp;&nbsp;
-								<li><input type="radio" name="chk_privacy" value="0"> 아니오</li>
-							</ul>
-							<div class="mt90 center">													
-								디자인 
-								<input type="image" class="center eventBtn" src="../img/common/btn_event.gif" alt="응모하기" />
-								<p class="center eventBtn"><asp:imagebutton id="btnApply"  runat="server" alternatetext="응모하기" imageurl="../img/common/btn_event_pink.gif" alt="응모하기" ></asp:imagebutton></p>
-								//디자인
-							</div>
-						</div>
-
-
-						<div class="col-md-12 mt100-m2" >
-							<p class="type20 center">지난호 당첨자</p>
-							<div class="eventList2 mt50-m ">
-								<div class="col-md-3 mt30m">
-									<p class="type28-1">1등</p>		
-									<p>이*연</p>
-									<p>박*희</p>
-									<p>김*진</p>
-								</div>
-								<div class="col-md-3 mt30m">
-									<p class="type28-1">2등</p>
-									<p>유*선</p>
-									<p>최*지</p>
-									<p>박*영</p>
-									<p>신*연</p>
-									<p>김*미</p>
-								</div>
-								<div class="col-md-3 mt30m">
-									<p class="type28-1">3등</p>
-									<p>최*지</p>
-									<p>박*희</p>
-									<p>정*준</p>
-									<p>김*희</p>
-									<p>우*림</p>
-								</div>
-								<div class="col-md-3 mt30m">
-									<p class="type28-1 hidden768">&nbsp;</p>
-									<p>최*구</p>
-									<p>이*정</p>
-									<p>김*일</p>
-									<p>유*영</p>
-									<p>김*지</p>
-								</div>
-							</div>
-						</div>
-					</div>// row  -->
-					<!-- -----------------------------  //작업서버파일(개발에 적용시 디자인주석처리할것) ----------------------------------- -->
 					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
 					<input type="hidden" name="qrt" th:value="${qrtYear}">
 					<div class="row intxt mt80-m">
@@ -335,7 +234,7 @@
 								<li><input type="radio" name="chk_privacy" value="0" checked> 아니오</li>
 							</ul>
 							<div class="mt90 center">
-								<input  class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기">
+								<input  class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기" disabled>
 							</div>
 						</div>
 						<div class="col-md-12 mt100-m2" >
