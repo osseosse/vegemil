@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 제품소개</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="contant100 mt90h" >
+		<div class="row">
+			<!-- 슬라이드 -->
+			<div  id="slider3">
+				<div class="slider" >
+					<div class="slider_area">
+						<div class="slides eng">
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle VPM01_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Vegemil 5060 Senior Soymilk</p>
+										<p class="f13 fw400 gray04 mt10">Premium soymilk provides essential nutrition<br>for vitality and health promotion</p>
+									</div>
+								</a>
+							</div>
+
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle VPM05_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Black Bean Soymilk with protein</p>
+										<p class="f13 fw400 gray04 mt10">Premium soymilk contains 12g of protein</p>
+									</div>
+								</a>
+							</div>
+							
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI01_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Gandan Yorisa Beef Bone Broth</p>
+										<p class="f13 fw400 gray04 mt10">The easiest way to cook deliciously<br>Made with beef bone broth</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI02_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Gandan Yorisa Vegetable Stock for Hot Soup Dish</p>
+										<p class="f13 fw400 gray04 mt10">The easiest way to cook deliciously<br>Vegetable stock for hot soup dish</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI03_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Gandan Yorisa Vegetable Stock for Cold Soup Dish</p>
+										<p class="f13 fw400 gray04 mt10">The easiest way to cook deliciously<br>Vegetable stock for cold soup dish</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI04_860_01  h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Soybean Soup</p>
+										<p class="f13 fw400 gray04 mt10">Savory food ingredients made with ground beans<br>It can be used in various dishes</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="#">
+									<div class="slidetitle SCI05_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Soybean Soup Black Bean</p>
+										<p class="f13 fw400 gray04 mt10">Savory food ingredients made with ground black beans<br>It can be used in various dishes</p>
+									</div>
+								</a>
+							</div>
+							<!-- //2022-12-22 -->
+							
+							
+						
+						</div>
+					</div>
+					<!-- 2022-12-30 이미지 삭제 -->
+					<a class="slider_left"></a>
+					<a class="slider_right"></a>
+					<!-- //2022-12-30 이미지 삭제 -->
+				</div>
+			</div>  
+			<!-- //슬라이드 -->
+		</div>
+	</div>
+	<div class="contant1760" >
+		<div class="row">
+			<div class="col-md-12 mt100">
+				<!-- tabs3 -->
+				<div class="prd_wrap mt20">
+					<ul class="tabs3">
+						<!-- 2023-01-05 -->
+						<li><a href="#V-ENG"><p class="ico_VE"></p></a><span>Soymilk (Vegemil)</span></li>
+						<li><a href="#P-ENG"><p class="ico_VM"></p></a><span>Soymilk for Lactating & <br>Pregnant Women</span></li>
+						<li><a href="#B-ENG"><p class="ico_VB"></p></a><span>Infant Formula</span></li>						
+						<li><a href="#O-ENG"><p class="ico_SC"></p></a><span>Others</span></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('.prd_wrap').basicTabs3();/* basicTabs3 변경 */
+					});
+				</script>
+				<!-- //tabs3 -->
+			</div>
+		</div>
+		<div id="flotingPage " class="mt110">
+			<!-- tabs3 content -->
+			<div class="tab_content3" >
+				<div id="V-ENG">
+					<div class="floting-right_prd eng"><!-- eng 추가 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'V'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}">#Designed for senior</span>
+											<span class="f14" th:text="${product.tag2}">#Increase vitality</span>
+											<span class="f14" th:text="${product.tag3}">#Premium soymilk</span>
+										</div>
+										<div class="prd-thumb">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/img//product/thumb/VPM01_600_01.png"
+												th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|">
+										</div>
+										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Premium soymilk</span></div>-->
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}">Vegemil 5060 Senior Soymilk</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">
+											To provide proper nutrition in case a meal is not enough
+										</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img//ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+				</div>
+				<div id="P-ENG">
+					<div class="floting-right_prd eng"><!-- eng 추가 -->
+						<div class="row"  th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6"  th:if="${product.categoryCode == 'P'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14"  th:text="${product.tag1}">#Thorough nutrition design</span>
+											<span class="f14"  th:text="${product.tag2}">#Mother's nutrition </span>
+											<span class="f14"  th:text="${product.tag3}">#Must have item for prenatal and postnatal</span>
+										</div>
+										<div class="prd-thumb">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VMO01_600_01.png"
+												th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|">
+										</div>
+										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Lactating & Pregnant Women</span></div>-->
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}">Vegemil Soymilk for Healthy Mom</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">
+											For the pregnant and lactating women who need nutritional supplement
+										</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+				
+				<div id="B-ENG">					
+					<div class="floting-right_prd eng"><!-- eng 추가 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
+											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
+											<span class="f14" th:text="${product.tag3}">#Thorough nutrition design</span>
+
+										</div>
+										<div class="prd-thumb">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VBP01_600_01.png" 
+														th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|">
+										</div>
+										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Infant Formula</span></div>-->
+										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}">Vegemil Infant <br>Premium Step 1</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>	
+							</div>			
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+				<div id="O-ENG">					
+					<div class="floting-right_prd eng"><!-- eng 추가 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'|| product.categoryCode == 'H'|| product.categoryCode == 'F'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
+											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
+											<span class="f14" th:text="${product.tag3}">#Thorough nutrition design</span>
+
+										</div>
+										<div class="prd-thumb">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VBP01_600_01.png" 
+														th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"/>
+										</div>
+										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Infant Formula</span></div>-->
+										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}">Vegemil Infant Premium Step 1</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+			</div><!-- //tabs3 content -->
+		</div><!-- //flotingPage -->
+		<br class="clear">
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script th:inline="javascript">
+$(document).ready(function(){
+	
+	var link = document.location.href;  //현재 접속 url  
+	var tab = link.split('/').pop();   //배열의 맨 마지막 요소를 삭제하고 삭제된 해당 값을 반환함
+	$('a[href$='+tab+']').trigger("click"); //해당 앵커 트리거를이용 클릭 이벤트
+	
+	var offset = $("#topTap").offset(); //해당 위치 반환
+
+	//카테고리 필터링
+	$("input[name='vv']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#v_tab #v_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#v_tab #v_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".vv").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='pp']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#p_tab #p_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#p_tab #p_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".pp").removeClass("active");
+		$(this).parent().addClass("active");
+	});
+	
+	$("input[name='bb']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#b_tab #b_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#b_tab #b_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".bb").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='gg']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#g_tab #g_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#g_tab #g_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".gg").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='hh']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#h_tab #h_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#h_tab #h_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".hh").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='ff']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#f_tab #f_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#f_tab #f_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ff").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='ss']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#s_tab #s_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#s_tab #s_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ss").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+	$("input[name='ww']").on("click", function () {
+		const value = $(this).val();
+		
+		if(!$(this).is(":checked")) {
+			$(this).prop("checked", false);
+			$("#w_tab #w_list").filter(function() {
+				$(this).toggle()
+			});
+		} else {
+			$(this).prop("checked", true);
+			$("#w_tab #w_list").filter(function() {
+				$(this).toggle($(this).attr('name').indexOf(value) > -1)
+			});
+		}
+		
+		$("html, body").animate({scrollTop: offset.top},600);
+		$(".ww").removeClass("active");
+		$(this).parent().addClass("active");
+		
+	});
+	
+});
+</script>
+</body>
+</html>

@@ -342,7 +342,9 @@
 	ul.f_ul span.count05 {background:#E35234}
 
 	ul.f_ul_middle {position:relative; width:100%; height:auto; border-top:2px solid #000; border-bottom:2px solid #000;  margin-top:10px; display:inline-block; padding-bottom:0}
+	ul.f_ul_middle01 {position:relative; width:100%; height:auto; border-top:2px solid #000; border-bottom:2px solid #000;  margin-top:10px; display:inline-block; padding-bottom:0}
 	ul.f_ul_middle li {width:33%; float:left;  text-align:center; padding:10px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed2.png") bottom  repeat-x;   }
+	ul.f_ul_middle01 li {width:50%; float:left;  text-align:center; padding:30px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed2.png") bottom  repeat-x;   }
 	ul.f_ul_middle li img {width:100%; max-width:36px}
 	ul.f_ul_middle li p {height:36px; line-height:120%;  margin-top:3px}
 	ul.f_ul_middle li:nth-child(7) p{height:20px}
@@ -680,7 +682,7 @@
 
 
 
-	/* 3000 company (����ī�װ�, ���û�,����) */
+	/* 3000 company (����ī�װ���, ���û�,����) */
 	.subCategoryBg{position: relative; background-image: linear-gradient(to bottom, #F1F4F5 70%, #fff 30%);}
     .whiteBg{background-color: #fff; border-top: 1px solid #DCDCDC;  }
     .subCategory{position: relative; width: 100%; position: absolute;}
@@ -1928,7 +1930,7 @@ button:hover:before {content:"Reply!"}
 
 
 
-	/* 3000 ��ǰī�װ� tab */
+	/* 3000 ��ǰī�װ��� tab */
 	.prd_wrap {position:relative; margin:0 auto} 
 	.tabs3 {background:none; position:relative; z-index:100;  width:100% ;  overflow:hidden;  margin:0 auto; display:inline-block;  text-align:center} 
 	.tabs3 li { display:inline-block;  margin:0 20px 0 20px; display:inline-block; text-align:center;   border-radius:5px; vertical-align:top }
@@ -2304,12 +2306,16 @@ button:hover:before {content:"Reply!"}
 	table.engT td.engNum02 span{color:#303030; border-bottom:1px solid #009E5A}
 	.engGray{border-radius:10px; background:#F1F4F5; padding:40px 30px; width:100%; color:#707070;  }
 	
+	.engT td span{word-break:keep-all; } 
+	.engT td p{word-break:keep-all; } 
+	.HJS  {word-break:keep-all; }
 
 
 
 
 
-	/* 3000 �귣�� > ī�װ��� ��ǰ���� */
+
+	/* 3000 �귣�� > ī�װ����� ��ǰ���� */
 	.swiper-box {
 	  max-width: 1460px;
 	  width: 100%;
@@ -3093,7 +3099,7 @@ button:hover:before {content:"Reply!"}
 	table.myT td:nth-child(2) .titletxt{text-align:center;  overflow: hidden;text-overflow: ellipsis;white-space: nowrap; width:360px ;  text-align:left; }
 	
 
-	/* 1760 ��ǰī�װ� tab */
+	/* 1760 ��ǰī�װ��� tab */
 	.prd_wrap {position:relative; margin:0 auto} 
 	.tabs3 {background:none; position:relative; z-index:100;  width:100% ;  overflow:hidden;  margin:0 auto;  text-align:center}
 	.tabs3 li { display:inline-block;  margin:0 10px 0 10px; display:inline-block; text-align:center;   border-radius:5px; vertical-align:top }
@@ -3253,7 +3259,7 @@ button:hover:before {content:"Reply!"}
 	.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li > a{font-size: 13px; color:#787878}
 	
 	
-	/* 1200 ��ǰ����Ʈ ī�װ� */
+	/* 1200 ��ǰ����Ʈ ī�װ��� */
 	.tabs3 {background:none; position:relative; z-index:100;  width:100% ;  overflow:hidden;  margin:0 auto; display:inline-block;  text-align:center} 
 	.tabs3 li { display:inline-block;  margin:0 20px 0 20px; display:inline-block; text-align:center;   border-radius:5px; vertical-align:top; margin-bottom:20px }
 	.tabs3 li.current a{background: #222; }
@@ -3520,7 +3526,7 @@ button:hover:before {content:"Reply!"}
 	.infoBox {background:#fff; border-radius:10px; padding:15px 20px}
 
 
-	/* 1200 ��ǰī�װ� tab */
+	/* 1200 ��ǰī�װ��� tab */
 	
 
 	/* 1200 ��ǰ����Ʈ */
@@ -3659,7 +3665,7 @@ button:hover:before {content:"Reply!"}
 
 
 	
-	/* 1200 �귣�� �� ���뿵�� > ī�װ� */
+	/* 1200 �귣�� �� ���뿵�� > ī�װ��� */
 	.swiper-box {
 	  max-width: 1460px;
 	  width: 100%;
@@ -3714,7 +3720,7 @@ button:hover:before {content:"Reply!"}
 	
 	
 
-	/* //1200 �귣�� �� ���뿵�� > ī�װ� */
+	/* //1200 �귣�� �� ���뿵�� > ī�װ��� */
 
 
 
@@ -4313,7 +4319,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	dl.prd-viewMore dd:nth-child(2) {float:right;  border:1px solid #DCDCDC; text-align:center; border-radius:5px; width:30px; padding:4px 0 5px 0; display:inline-block; background:#Fff}
 
 
-	/* 992 ��ǰī�װ� tab */
+	/* 992 ��ǰī�װ��� tab */
 	
 	.tab_content3 .col-6:nth-child(1n) {padding-left:15px; padding-right:5px }
 	.tab_content3 .col-6:nth-child(2n)  {padding-left:5px; padding-right:15px}
@@ -4933,4 +4939,3 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 
 
 
-		.depth02_menu_wrap .inner .gnb_depth2 > li > .gnb_depth3 > li {position: relative; padding-left:0px; margin-top:5px; }

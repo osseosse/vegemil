@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="contant1760 mt90h" ><!-- 2022-12-14 id추가 -->
+		<div class="row pro-top-tab">
+			<p class="js">🡇 그린비아만 썸네일 2개만 노출</p>
+			<div class="col-md-8 mt50 ">
+				<!-- tabs4 -->
+				<div class="prd_thumb">
+					<ul class="tabs4">
+						<li><a href="#photo01"><div th:class="|${product.productClass1} h190|"></div></a></li>
+						<li><a href="#photo02"><div th:class="|${product.productClass2} h190|"></div></a></li>
+						<li th:if="${product.categoryCode} != 'G'"><a href="#photo03"><div th:class="|${product.productClass3} h190|"></div></a></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+						$('.prd_thumb').basicTabs4();/* basicTabs4 변경 */
+					});
+				</script>
+				<!-- //tabs4 -->
+				<!-- tabs4 content -->
+				<div class="tab_content4">
+					<div id="photo01" class="thumb_img">
+						<div th:class="|${product.productClass1} h590|"></div>
+						<div class="prd-txt ab-bottom">
+							<span class="f14" th:text="${product.tag1}"></span>
+							<span class="f14" th:text="${product.tag2}"></span>
+							<span class="f14" th:text="${product.tag3}"></span>
+						</div>						
+					</div>
+					<div id="photo02">
+						<div th:class="|${product.productClass2} h590|"></div>
+					</div>
+					<div id="photo03">
+						<div th:class="|${product.productClass3} h590|"></div>
+					</div>
+				</div><!-- //tabs4 content -->
+			</div>
+			<div class="col-md-4  mt50">
+				<div class="prd-info-wrap">
+					<div class="prd-key  text-left">
+						<span class="key-green" th:text="${product.categoryName}">Vegemil</span> 
+						<span class="key-white" th:text="${product.subCategoryName}">Premium Soymilk</span>
+					</div>
+					<p class="f38 fw600 lh130 mt20"  th:text="${product.pName}">Plain Vegemil A</p>
+					<p class="mt10 gray04" th:text="${product.description}">Original plain taste soymilk </p>	
+					<ul class="info_ul mt40">
+						<li>
+							<p><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_info01.png" alt="용량" /></p>
+							<p>
+								<span class="f16 fw400 gray04">Carton</span>
+								<span class="f16 f_pp fw400" th:text="|${product.capacity1}|">190ml</span>
+							</p>
+						</li>
+						<li>
+							<p><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_info02.png" alt="유통기한" /></p>
+							<p>
+								<span class="f16 fw400 gray04">Expiration date</span>
+								<span class="f16 f_pp fw400" th:text="${product.expirationMonth}">7month</span>
+							</p>
+						</li>
+						<li>
+							<p><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_info03.png" alt="칼로리" /></p>
+							<p>
+								<span class="f16 fw400 gray04">Calorie</span>
+								<span class="f16 f_pp fw400" th:text="${product.kcal1}">115kcal</span>
+							</p>
+						</li>
+						<li>
+							<p><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_info04.png" alt="출시년도" /></p>
+							<p>
+								<span class="f16 fw400 gray04">Release year</span>
+								<span class="f16 f_pp fw400" th:text="${product.releaseYm}">1973.01</span>
+							</p>
+						</li>
+					</ul>
+					<ul class="info_ul_bottom mt30">
+
+						<li th:if="${product.recommender} != null">
+							<p class="f16 fw400">Proposer </p>
+							<p class="f14 fw400 gray04" th:text="${product.recommender}"></p>
+						</li>
+						
+						<li th:if="${product.tip} != null">
+							<p class="f16 fw400">Application tip</p>
+							<p class="f14 fw400 gray04" th:text="${product.tip}"></p>
+						</li>
+					</ul>
+					<ul class="info_btn_box mt40">
+						<li><p class="btnType19"><a th:href="|${product.pOnuri}|">BUYING</a></p></li>
+						<li><p class="btnType20"><a href="#section-02">nutrition</a></p></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div><!-- // contant1760 -->
+
+	<div class="contant1760" >
+		<div id="flotingPage">
+			<div class="floting-left mt110">
+				<!-- productLoad -->
+				<div class="section-02">
+					<div class="productLoad"></div>
+				</div>
+				<!-- //productLoad -->
+				<div class="row">
+					<div class="scroll  mt100" id="section-03"><!-- 2022-12-14 id 추가 -->
+						<div class="row mt150 alsoLove-box" >			
+							<div class="col-md-12 mb70">
+								<p class="text-center f_pp f55 fw600"><span class="gold">You</span> may also <span class="gold">love</span></p>
+							</div>
+							<div class="col-md-3" th:each="recProduct, i : ${recProduct}">
+								<div class="alsoLove">
+									<a th:href="|/product/detail/${recProduct.pIdx}|">
+										<p th:class="|alsoThumb ${recProduct.productClass2} h330|"><!-- <span class="recipe-green">베지밀</span> --></p>
+										<p class="f20 fw500 mt30 lh140 also-name" th:text="${recProduct.pName}"></p>
+										<p class="f16 gray04 mt10 also-sub-txt" th:text="${recProduct.description}"></p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div><!-- //floting-left -->
+			<div class="floting-right mt110">
+				<div class="floting">
+					<div class="flotingContent">
+						<div class="floating-menu">
+							<p class="f23 fw500 prd_subCateTitle">Plain Vegemil A</p>
+							<!-- 2022-12-14 -->
+							<ul class="prd_dCate mt40">
+								<li><a href="#section-01" class="menu-01"><span>Product Details</span></a></li>
+								<li><a href="#section-02" class="menu-02"><span>Nutrition Facts</span></a></li>
+								<li><a href="#section-03" class="menu-03"><span>Recommended Products</span></a></li>
+							</ul>
+							<!-- //2022-12-14 -->
+							<script type="text/javascript" src="./common/js/floating-menu-position.js"></script>
+						</div>
+					</div>
+
+					<div class="flotingContent mt20">
+						<p class="f23 fw500 lh150 black">Hello Customer,<br>Is there any product you are looking for?</p>
+						 <div class="search-container mt30">
+							 <span class="search-img"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_search.png" alt="검색" /></span><input type="text" placeholder="Search for the product" name="search">
+							<button type="submit" class="btn-search"><p class="f11 fw600">Search</p></button>
+						</div>
+					</div>
+					<!-- 2022-12-26 추가 -->
+					<div class="h200"></div>
+					<!-- //2022-12-26 추가 -->
+				</div>
+			</div><!-- //floting-right -->
+		</div><!-- //flotingPage -->
+		<br class="clear">
+	</div><!-- //contant1760 -->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+	//html 파일 로드
+	var loadHtml = "[[ ${product.pCode} ]]";
+	console.log(loadHtml)
+    $(".productLoad").load("/product/en/"+loadHtml.trim()+"_en.html");
+    
+    var url = window.location.pathname;
+    var pIdx = url.replace("/product/detail/", "");
+    
+
+});
+//]]>
+</script>
+</body>
+</html>

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.ProductDTO;
+import com.vegemil.service.ProductGlobalService;
 import com.vegemil.service.ProductService;
 import com.vegemil.util.UiUtils;
 
@@ -21,9 +23,20 @@ public class ProductController extends UiUtils {
 
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private ProductGlobalService productGlobalService;
 	
 	@GetMapping(value = "/product/list")
-	public String openProductList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
+	public String openProductList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword,
+																@CookieValue(value = "lang", required = false) String localCookie) {
+		
+
+		if("en".equals(localCookie)) {
+			List<ProductDTO> productGlobalList = productGlobalService.getProductList(searchKeyword);
+			model.addAttribute("productList", productGlobalList);
+			model.addAttribute("productCount", productGlobalList.size());
+			return "en/product/list";
+		}
 	    
 		List<ProductDTO> productList = productService.getProductList(searchKeyword);
 		model.addAttribute("productList", productList);
@@ -56,14 +69,32 @@ public class ProductController extends UiUtils {
 	
 	
 	@GetMapping(value = "/product/detail/{pIdx}")
-	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model) {
+	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model, 
+													@CookieValue(value = "lang", required = false) String localCookie) {
+		
 		if (pIdx == null) {
-			return showMessageWithRedirect("올바르지 않은 접근입니다.", "product/productList", Method.GET, null, model);
+			return showMessageWithRedirect("올바르지 않은 접근입니다.", "product/list", Method.GET, null, model);
 		}
+		
+		if("en".equals(localCookie)) {
+			ProductDTO product = productGlobalService.getProductDetail(pIdx);
+			
+			if (product == null) {
+				return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/list", Method.GET, null, model);
+			}
+			
+			List<ProductDTO> recProduct = productGlobalService.getRecProduct(product);
+			model.addAttribute("product", product);
+			model.addAttribute("recProduct", recProduct);
+			return "en/product/detail";
+		}
+	    
+		
+		
 
 		ProductDTO product = productService.getProductDetail(pIdx);
 		if (product == null) {
-			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/productList", Method.GET, null, model);
+			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/list", Method.GET, null, model);
 		}
 		
 		List<ProductDTO> recProduct = productService.getRecProduct(product);
