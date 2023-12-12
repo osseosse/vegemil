@@ -15632,3 +15632,180 @@ java.io.FileNotFoundException: C:\Users\hypark023\.gradle\caches\modules-2\files
 2023-10-26 15:47:25.367 INFO  [HikariPool-1 connection closer] [jdbc.connection] - 5. Connection closed
 2023-10-26 15:47:25.367 INFO  [HikariPool-1 connection closer] [jdbc.audit] - 5. Connection.close() returned 
 2023-10-26 15:47:25.369 INFO  [Thread-8] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2023-12-12 11:48:10.146 INFO  [restartedMain] [com.vegemil.VegemilApplication] - Starting VegemilApplication on 박혜연 with PID 27668 (C:\Users\hypark023\git\vegemil\vegemil\bin\main started by hypark023 in C:\Users\hypark023\git\vegemil\vegemil)
+2023-12-12 11:48:10.149 INFO  [restartedMain] [com.vegemil.VegemilApplication] - The following profiles are active: redis
+2023-12-12 11:48:10.337 INFO  [restartedMain] [o.s.boot.devtools.restart.ChangeableUrls] - The Class-Path manifest attribute in C:\Users\hypark023\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\21.3.0.0\73649ab9bfb94daa4df21b80c98ac35aea4aa2f5\ojdbc8-21.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/21.3.0.0/73649ab9bfb94daa4df21b80c98ac35aea4aa2f5/oraclepki.jar
+2023-12-12 11:48:10.337 INFO  [restartedMain] [o.s.boot.devtools.restart.ChangeableUrls] - The Class-Path manifest attribute in C:\Users\hypark023\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+2023-12-12 11:48:10.338 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-12 11:48:10.338 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-12 11:48:12.310 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-12-12 11:48:12.310 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-12 11:48:12.418 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 100ms. Found 0 JPA repository interfaces.
+2023-12-12 11:48:12.436 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-12-12 11:48:12.437 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-12-12 11:48:12.518 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 71ms. Found 0 Redis repository interfaces.
+2023-12-12 11:48:13.008 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'DBConfigurationVegemil' of type [com.vegemil.configuration.DBConfigurationVegemil$$EnhancerBySpringCGLIB$$c7f25fd8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.094 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'vegemilDataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.121 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.132 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.137 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.JpaProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.142 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.146 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.148 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'hikariPoolDataSourceMetadataProvider' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda$362/1948527400] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.153 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.162 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.167 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.170 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.250 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'jpaVendorAdapter' of type [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.256 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'entityManagerFactoryBuilder' of type [org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:13.264 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2023-12-12 11:48:13.490 INFO  [restartedMain] [jdbc.connection] - 1. Connection opened
+2023-12-12 11:48:13.490 INFO  [restartedMain] [jdbc.audit] - 1. Connection.new Connection returned 
+2023-12-12 11:48:13.490 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getNetworkTimeout() returned 0
+2023-12-12 11:48:13.501 INFO  [restartedMain] [jdbc.audit] - 1. Connection.isReadOnly() returned false
+2023-12-12 11:48:13.501 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getAutoCommit() returned true
+2023-12-12 11:48:13.507 INFO  [restartedMain] [jdbc.audit] - 1. Connection.isValid(1) returned true
+2023-12-12 11:48:13.513 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getTransactionIsolation() returned 4
+2023-12-12 11:48:13.522 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2023-12-12 11:48:13.542 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaDataUsingInfoSchema@d1f5c49
+2023-12-12 11:48:13.555 INFO  [restartedMain] [jdbc.audit] - 1. Connection.clearWarnings() returned 
+2023-12-12 11:48:13.664 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-12 11:48:13.686 INFO  [HikariPool-1 connection adder] [jdbc.connection] - 2. Connection opened
+2023-12-12 11:48:13.686 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 2. Connection.new Connection returned 
+2023-12-12 11:48:13.696 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 2. Connection.isReadOnly() returned false
+2023-12-12 11:48:13.697 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 2. Connection.getAutoCommit() returned true
+2023-12-12 11:48:13.732 INFO  [restartedMain] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 5.4.12.Final
+2023-12-12 11:48:13.753 INFO  [HikariPool-1 connection adder] [jdbc.connection] - 3. Connection opened
+2023-12-12 11:48:13.753 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 3. Connection.new Connection returned 
+2023-12-12 11:48:13.759 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 3. Connection.isReadOnly() returned false
+2023-12-12 11:48:13.759 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 3. Connection.getAutoCommit() returned true
+2023-12-12 11:48:13.822 INFO  [HikariPool-1 connection adder] [jdbc.connection] - 4. Connection opened
+2023-12-12 11:48:13.823 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 4. Connection.new Connection returned 
+2023-12-12 11:48:13.830 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 4. Connection.isReadOnly() returned false
+2023-12-12 11:48:13.830 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 4. Connection.getAutoCommit() returned true
+2023-12-12 11:48:13.892 INFO  [HikariPool-1 connection adder] [jdbc.connection] - 5. Connection opened
+2023-12-12 11:48:13.892 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 5. Connection.new Connection returned 
+2023-12-12 11:48:13.898 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 5. Connection.isReadOnly() returned false
+2023-12-12 11:48:13.899 INFO  [HikariPool-1 connection adder] [jdbc.audit] - 5. Connection.getAutoCommit() returned true
+2023-12-12 11:48:13.973 INFO  [restartedMain] [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2023-12-12 11:48:14.090 INFO  [restartedMain] [jdbc.audit] - 1. Connection.isValid(10) returned true
+2023-12-12 11:48:14.090 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaDataUsingInfoSchema@25201e33
+2023-12-12 11:48:14.092 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaDataUsingInfoSchema@62bc7cea
+2023-12-12 11:48:14.122 INFO  [restartedMain] [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 11:48:14.174 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getCatalog() returned dbvegemilcokr
+2023-12-12 11:48:14.188 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getSchema() returned null
+2023-12-12 11:48:14.189 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getSchema() returned null
+2023-12-12 11:48:14.201 INFO  [restartedMain] [jdbc.audit] - 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaDataUsingInfoSchema@5bd58790
+2023-12-12 11:48:14.203 INFO  [restartedMain] [jdbc.audit] - 1. Connection.createClob() returned com.mysql.cj.jdbc.Clob@7c6d64ca
+2023-12-12 11:48:14.204 INFO  [restartedMain] [jdbc.audit] - 1. Connection.clearWarnings() returned 
+2023-12-12 11:48:14.349 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 11:48:14.362 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12 11:48:14.369 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:14.379 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'entityManagerFactory' of type [com.sun.proxy.$Proxy89] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:14.386 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'transactionManager' of type [org.springframework.orm.jpa.JpaTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:14.390 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'transactionAspect' of type [com.vegemil.aop.TransactionAspect$$EnhancerBySpringCGLIB$$cd7d316f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:14.394 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'transactionAdvice' of type [org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:14.395 INFO  [restartedMain] [o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] - Bean 'transactionAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-12 11:48:14.757 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8080 (http)
+2023-12-12 11:48:14.768 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-12-12 11:48:14.768 INFO  [restartedMain] [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2023-12-12 11:48:14.769 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2023-12-12 11:48:15.095 WARN  [restartedMain] [o.a.tomcat.util.scan.StandardJarScanner] - Failed to scan [file:/C:/Users/hypark023/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/21.3.0.0/73649ab9bfb94daa4df21b80c98ac35aea4aa2f5/oraclepki.jar] from classloader hierarchy
+java.io.FileNotFoundException: C:\Users\hypark023\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\21.3.0.0\73649ab9bfb94daa4df21b80c98ac35aea4aa2f5\oraclepki.jar (지정된 파일을 찾을 수 없습니다)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.jar.JarFile.<init>(Unknown Source)
+	at java.util.jar.JarFile.<init>(Unknown Source)
+	at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:177)
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65)
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49)
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383)
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318)
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:270)
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233)
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262)
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104)
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5135)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(Unknown Source)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:467)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:88)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:438)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.vegemil.VegemilApplication.main(VegemilApplication.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2023-12-12 11:48:15.099 INFO  [restartedMain] [org.apache.jasper.servlet.TldScanner] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-12-12 11:48:15.104 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2023-12-12 11:48:15.105 INFO  [restartedMain] [o.s.web.context.ContextLoader] - Root WebApplicationContext: initialization completed in 4767 ms
+2023-12-12 11:48:15.257 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-12 11:48:17.206 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Creating filter chain: Ant [pattern='/admin/manage/**/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a99a918, org.springframework.security.web.context.SecurityContextPersistenceFilter@420b3ef1, org.springframework.security.web.header.HeaderWriterFilter@78ea16b1, org.springframework.security.web.authentication.logout.LogoutFilter@4cfd02fe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@716049bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49e87709, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@494870b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21af591c, org.springframework.security.web.session.SessionManagementFilter@3d005c98, org.springframework.security.web.access.ExceptionTranslationFilter@27f19101, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e0b739a]
+2023-12-12 11:48:17.210 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Creating filter chain: Ant [pattern='/comp/payment/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47cd3775, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f35e694, org.springframework.security.web.header.HeaderWriterFilter@14befd75, org.springframework.security.web.authentication.logout.LogoutFilter@5deb004a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7164f99e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68c0b208, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bf6af30, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a4c744e, org.springframework.security.web.session.SessionManagementFilter@63b8ae53, org.springframework.security.web.access.ExceptionTranslationFilter@5e6d35f7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@747f28dd]
+2023-12-12 11:48:17.219 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4db70be3, org.springframework.security.web.context.SecurityContextPersistenceFilter@2217b6ed, org.springframework.security.web.header.HeaderWriterFilter@2f2cd860, org.springframework.security.web.authentication.logout.LogoutFilter@578c9df9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@461c7d4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@90570e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40a3467e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@a59e8f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6864e916, org.springframework.security.web.session.SessionManagementFilter@6ffcec9a, org.springframework.security.web.access.ExceptionTranslationFilter@28607b22, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7fdda8ae]
+2023-12-12 11:48:17.231 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49d88b3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3df07fa, org.springframework.security.web.header.HeaderWriterFilter@12556e6b, org.springframework.security.web.csrf.CsrfFilter@424b619f, org.springframework.security.web.authentication.logout.LogoutFilter@7953cae3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31306af3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@53b86718, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@52fbaa57, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@55411cd6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c6bf0db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@574f70b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f01bb72, org.springframework.security.web.session.SessionManagementFilter@b0ba227, org.springframework.security.web.access.ExceptionTranslationFilter@496ecca6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d1a6577]
+2023-12-12 11:48:17.380 INFO  [restartedMain] [o.s.s.concurrent.ThreadPoolTaskExecutor] - Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-12 11:48:17.490 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2023-12-12 11:48:19.541 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2023-12-12 11:48:19.571 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8080"]
+2023-12-12 11:48:19.601 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-12 11:48:19.610 INFO  [restartedMain] [com.vegemil.VegemilApplication] - Started VegemilApplication in 9.871 seconds (JVM running for 11.522)
+2023-12-12 11:48:19.977 INFO  [http-nio-8080-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-12 11:48:19.977 INFO  [http-nio-8080-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2023-12-12 11:48:19.989 INFO  [http-nio-8080-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 12 ms
+2023-12-12 11:48:20.023 INFO  [http-nio-8080-exec-1] [c.vegemil.interceptor.LoggerInterceptor] - ==================== BEGIN ====================
+2023-12-12 11:48:20.024 INFO  [http-nio-8080-exec-1] [c.vegemil.interceptor.LoggerInterceptor] - Request URI ===> /
+2023-12-12 11:48:20.024 INFO  [http-nio-8080-exec-1] [c.vegemil.interceptor.LoggerInterceptor] - maxMem > 3612 | usedMem  : 284 | resource pct :7.0%
+2023-12-12 11:48:20.115 INFO  [http-nio-8080-exec-1] [c.vegemil.interceptor.LoggerInterceptor] - ==================== END ======================
+2023-12-12 11:48:20.537 WARN  [http-nio-8080-exec-1] [n.n.u.t.fragments.FragmentProcessor] - You don't need to put the layout:fragment/data-layout-fragment attribute into the <head> section - the decoration process will automatically copy the <head> section of your content templates into your layout page.
+2023-12-12 11:48:24.933 INFO  [http-nio-8080-exec-7] [c.vegemil.interceptor.LoggerInterceptor] - ==================== BEGIN ====================
+2023-12-12 11:48:24.933 INFO  [http-nio-8080-exec-7] [c.vegemil.interceptor.LoggerInterceptor] - Request URI ===> /
+2023-12-12 11:48:24.933 INFO  [http-nio-8080-exec-7] [c.vegemil.interceptor.LoggerInterceptor] - maxMem > 3612 | usedMem  : 105 | resource pct :2.0%
+2023-12-12 11:48:24.934 INFO  [http-nio-8080-exec-7] [c.vegemil.interceptor.LoggerInterceptor] - ==================== END ======================
+2023-12-12 11:49:10.718 INFO  [Thread-8] [o.s.s.concurrent.ThreadPoolTaskExecutor] - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-12 11:49:10.845 INFO  [Thread-8] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-12 11:49:10.848 INFO  [Thread-8] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2023-12-12 11:49:10.854 INFO  [HikariPool-1 connection closer] [jdbc.connection] - 1. Connection closed
+2023-12-12 11:49:10.854 INFO  [HikariPool-1 connection closer] [jdbc.audit] - 1. Connection.close() returned 
+2023-12-12 11:49:10.855 INFO  [HikariPool-1 connection closer] [jdbc.connection] - 2. Connection closed
+2023-12-12 11:49:10.855 INFO  [HikariPool-1 connection closer] [jdbc.audit] - 2. Connection.close() returned 
+2023-12-12 11:49:10.856 INFO  [HikariPool-1 connection closer] [jdbc.connection] - 3. Connection closed
+2023-12-12 11:49:10.856 INFO  [HikariPool-1 connection closer] [jdbc.audit] - 3. Connection.close() returned 
+2023-12-12 11:49:10.857 INFO  [HikariPool-1 connection closer] [jdbc.connection] - 4. Connection closed
+2023-12-12 11:49:10.857 INFO  [HikariPool-1 connection closer] [jdbc.audit] - 4. Connection.close() returned 
+2023-12-12 11:49:10.858 INFO  [HikariPool-1 connection closer] [jdbc.connection] - 5. Connection closed
+2023-12-12 11:49:10.858 INFO  [HikariPool-1 connection closer] [jdbc.audit] - 5. Connection.close() returned 
+2023-12-12 11:49:10.858 INFO  [Thread-8] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
