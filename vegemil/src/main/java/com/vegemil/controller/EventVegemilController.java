@@ -24,15 +24,12 @@ public class EventVegemilController {
 	}
 	
 	@GetMapping("/event/loveVegemil/{year}")
-	public String getThermometerOfLove(@PathVariable("year") String year, Model model) {
+	public String getThermometerOfLove(@PathVariable("year") Integer year, Model model) {
 		
-		ThermometerLoveDTO dto = adminEventService.getThermometerLove(Integer.parseInt(year));
-		
-		int temperature = Integer.parseInt(dto.getTemperature());
-		int loveHeight = (int) ((temperature <= 99) ? 1: (temperature * 0.01));
+		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
 		
 		model.addAttribute("dto", dto);
-		model.addAttribute("loveHeight", loveHeight);
+		model.addAttribute("loveHeight", (dto.getTemperature() <= 99) ? 1: (dto.getTemperature() * 0.01));
 
 		return "event/thermometer/"+year; 
 		 
