@@ -51,15 +51,9 @@ public class GolobalizeDevController {
 		System.out.println("lang >>> " + cv);
 		Cookie[] co = request.getCookies();
 		for(Cookie c : co) {
-			
-			System.out.println("cookie >>>> " + c.getName());
+			log.info("cookie >>>> " + c.getName());
 		}
-		
-		
 		return "/index";
-		
-		
-		
 	}
 	
 	

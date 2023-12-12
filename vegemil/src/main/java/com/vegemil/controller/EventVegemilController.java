@@ -13,7 +13,6 @@ import com.vegemil.util.UiUtils;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Slf4j
 public class EventVegemilController extends UiUtils {
 	
 	@Autowired
