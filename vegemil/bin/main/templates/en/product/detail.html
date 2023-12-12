@@ -50,10 +50,10 @@
 			</div>
 			<div class="col-md-4  mt50">
 				<div class="prd-info-wrap">
-					<div class="prd-key  text-left">
+					<!-- <div class="prd-key  text-left">
 						<span class="key-green" th:text="${product.categoryName}">Vegemil</span> 
 						<span class="key-white" th:text="${product.subCategoryName}">Premium Soymilk</span>
-					</div>
+					</div> -->
 					<p class="f38 fw600 lh130 mt20"  th:text="${product.pName}">Plain Vegemil A</p>
 					<p class="mt10 gray04" th:text="${product.description}">Original plain taste soymilk </p>	
 					<ul class="info_ul mt40">
@@ -138,7 +138,7 @@
 				<div class="floting">
 					<div class="flotingContent">
 						<div class="floating-menu">
-							<p class="f23 fw500 prd_subCateTitle">Plain Vegemil A</p>
+							<p class="f23 fw500 prd_subCateTitle" th:text="${product.pName}">Plain Vegemil A</p>
 							<!-- 2022-12-14 -->
 							<ul class="prd_dCate mt40">
 								<li><a href="#section-01" class="menu-01"><span>Product Details</span></a></li>
@@ -153,8 +153,11 @@
 					<div class="flotingContent mt20">
 						<p class="f23 fw500 lh150 black">Hello Customer,<br>Is there any product you are looking for?</p>
 						 <div class="search-container mt30">
-							 <span class="search-img"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_search.png" alt="검색" /></span><input type="text" placeholder="Search for the product" name="search">
-							<button type="submit" class="btn-search"><p class="f11 fw600">Search</p></button>
+						 <form action="/product/list" method="get">						 
+							<span class="search-img"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_search.png" alt="검색" /></span>
+							<input type="text" placeholder="Search for the product" name="searchKeyword">
+							<button type="submit" class="btn-search"><span class="f11 fw600">Search</span></button>
+						</form>
 						</div>
 					</div>
 					<!-- 2022-12-26 추가 -->

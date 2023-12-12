@@ -35,7 +35,12 @@ public class ProductController extends UiUtils {
 			List<ProductDTO> productGlobalList = productGlobalService.getProductList(searchKeyword);
 			model.addAttribute("productList", productGlobalList);
 			model.addAttribute("productCount", productGlobalList.size());
-			return "en/product/list";
+			if(searchKeyword != null) {
+				model.addAttribute("searchKeyword", searchKeyword);
+				return "en/product/list_searched";
+			}else {
+				return "en/product/list";
+			}			
 		}
 	    
 		List<ProductDTO> productList = productService.getProductList(searchKeyword);
