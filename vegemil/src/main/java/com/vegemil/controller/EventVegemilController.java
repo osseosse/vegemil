@@ -13,14 +13,10 @@ import com.vegemil.util.UiUtils;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@Slf4j
-public class EventVegemilController extends UiUtils {
+public class EventVegemilController {
 	
 	@Autowired
 	private AdminEventService adminEventService;
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
 	
 	@GetMapping("/event/{eventTitle}")
 	public String beanSoupBrand(@PathVariable(value = "eventTitle", required = false) String eventTitle ) {
@@ -41,7 +37,5 @@ public class EventVegemilController extends UiUtils {
 		return "event/thermometer/"+year; 
 		 
 	}
-	
-	
 	
 }

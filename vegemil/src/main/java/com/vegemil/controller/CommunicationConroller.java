@@ -182,7 +182,7 @@ public class CommunicationConroller extends UiUtils{
 			if(recipientsId.size()>0) {
 				for(String recipientId : recipientsId) {
 					EdayVempDTO receiverEmp = edayVempService.getVempInfo(recipientId);
-					System.out.println(receiverEmp.toString());
+					
 					if(receiverEmp.getExpireYn().equals("1")) {
 						// 담당자 확인 요청 메일 
 						mailService.requestCheckPersonInCharge();
@@ -200,4 +200,6 @@ public class CommunicationConroller extends UiUtils{
 		
 		return showMessageWithRedirect("신고 접수에 실패했습니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
 	}
+	
+	
 }
