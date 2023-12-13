@@ -91,10 +91,12 @@ function searchAgency() {
 
 			var offset = $('#searchBlockStart').offset(); //선택한 태그의 위치를 반환
 			$('html').animate({ scrollTop: offset.top - 50 }, 400);
+			
+			return;
 		},
 		error: function () {
 			console.log("error>>>>>>>");
-
+			return;
 		}
 	});
 }
@@ -132,10 +134,11 @@ function getAddrList(area) {
 			}
 			
 			searchAndMark(map, geocoder, data[data.length - 1].addr,data[data.length - 1].name, true);
-			
+			return;
 		},
 		error: function () {
 			console.log("error>>>>>>>");
+			return;
 		}
 	});
 }
