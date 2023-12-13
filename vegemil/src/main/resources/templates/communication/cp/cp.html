@@ -139,14 +139,14 @@
 $(function(){
 	//html 파일 로드
 	var txtId = $("#textList option:selected").val();
-	console.log(txtId);
+
     $("#declaration").load("/cp/html/"+txtId+".html");
 });
 </script>
 <script>
 function changeText(){
 	var txtId = document.getElementById('textList').value;
-	console.log("+++++"+ txtId);
+
 	$("#declaration").load("/cp/html/"+txtId+".html");
 }
 </script>

@@ -217,7 +217,7 @@ Dropzone.options.fileDropzone = {
         	if(myDropzone.files.length > 0) { 
         		myDropzone.processQueue();
         		this.on("success", function(file, response) {
-        			console.log(response.result);
+
         			if(response.result) {
         				alert("1:1문의 등록이 완료되었습니다.");
         			}else{
@@ -233,7 +233,7 @@ Dropzone.options.fileDropzone = {
         			data : $(form).serialize(),
         			dataType : "json",
         			success : function(data) {
-        				console.log('data', data);
+
         				if(data.result){
         					alert("1:1문의 등록이 완료되었습니다.");
         				}

@@ -37,8 +37,7 @@
 	    		       
 	        function btnSave(){
 	    	   
-	        	var checked = $('#tActive').is(':checked');
-        		console.log("checked : " + checked);
+	        	var checked = $('#tActive').is(':checked');        		
         		
 		   	    if(checked){
 		   	        $('#tOnair').val('1');
@@ -53,8 +52,7 @@
 	    		   alert('제목을 작성해 주세요.');
 	    		   return false;
 	    	   }	    
-	    	  
-	    	   console.log('form', formData);
+	    	  	    	  
 	    	   
                $.ajax({
             	   url: '/admin/manage/publicCenter/savePrintAD',
@@ -63,9 +61,7 @@
 				   data: formData,  //위에서 선언한 fromdata
 				   type: 'POST'
 			   }).done(function(data){
-		    	   console.log('form', formData);
 
-	    	       console.log('done', data)
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
 	    	    	   window.location.href = "/admin/manage/publicCenter/printAdList";

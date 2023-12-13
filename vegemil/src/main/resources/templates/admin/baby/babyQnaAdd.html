@@ -34,8 +34,7 @@
 	    <script type="text/javascript" th:src="@{/app-assets/vendors/js/editors/quill/quill.min.js}"></script>
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/
-	    	$(function () {
-	    		console.log('function');
+	    	$(function () {	    		
 	    		
 	    	});
 	    	   
@@ -48,8 +47,7 @@
 		       fileInput.addEventListener("change", function () {  // change 이벤트로 input 값이 바뀌면 실행
 		    	   const formData = new FormData();
 		           const file = fileInput.files[0];
-		           formData.append('uploadFile', file);
-		           console.log("input.type " + formData);
+		           formData.append('uploadFile', file);		           
 
 		           $.ajax({
 		        	   type: 'post',
@@ -60,12 +58,11 @@
 		               contentType: false,
 		               dataType: 'json',
 		               success: function (data) {
-		            	   console.log('success', data);
-		            	   console.log('data.uploadPath', data.uploadPath);
+		            	   
 		            	   const range = quill.getSelection(); // 사용자가 선택한 에디터 범위
 		            	   // uploadPath에 역슬래시(\) 때문에 경로가 제대로 인식되지 않는 것을 슬래시(/)로 변환
 		                   const uploadPath = data.uploadPath.path.replace(/\\/g, '/').replace('data', '');
-		                   console.log('uploadPath', uploadPath);
+		                   
 		                   quill.insertEmbed(range.index, 'image', uploadPath);
 		               },
 		               error: function (err) {
@@ -96,8 +93,7 @@
 	    	  },
 	    	  placeholder: '게시물을 작성해주세요.',
 	    	  theme: 'snow'
-	       });
-	       console.log('quill', quill)
+	       });	       
 	       
 	       const editContent = [[ ${babyQna?.mbsContent} ]];
 	       if(editContent) {
@@ -126,17 +122,14 @@
 	    		   alert('내용을 작성해 주세요.');
 	    		   return false;
 	    	   }
-	    	   
-	    	   console.log('form', formDate);
-// 	    	   form.submit();
+
                $.ajax({
             	   url: '/admin/baby/registerBabyQna',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formDate,  //위에서 선언한 fromdata
 				   type: 'POST'
-			   }).done(function(data){
-	    	       console.log('done', data)
+			   }).done(function(data){	    	       
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
 	    	    	   window.location.href = "/admin/baby/babyQnaList";

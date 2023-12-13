@@ -376,12 +376,7 @@ function btnCheck() {
 		
 		$("#route07").val(routeEtc);
 	}
-	
-	console.log("uploadName  = >>>>" + uploadName);
-	console.log("zipCode  = >>>>" + zipCode);
-	console.log("addr1    = >>>>" + addr1);
-	console.log("addr2    = >>>>" + addr2);
-	
+
 	
 	if(section == "" || section.length < 1){
 		alert("연령 부문을 선택해주세요.")
@@ -431,8 +426,7 @@ function btnCheck() {
 		addr2.focus();
 		return;
 	}
-	
-	console.log("??");
+
 	
 	$("form").submit();
 }
