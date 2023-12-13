@@ -159,7 +159,7 @@
 						<div class="row"  th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6"  th:if="${product.categoryCode == 'P'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a href="#">
+									<a th:href="|/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14"  th:text="${product.tag1}">#Thorough nutrition design</span>
 											<span class="f14"  th:text="${product.tag2}">#Mother's nutrition </span>
@@ -193,7 +193,7 @@
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a href="#">
+									<a th:href="|/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
 											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
@@ -224,7 +224,7 @@
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'|| product.categoryCode == 'H'|| product.categoryCode == 'F'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a href="#">
+									<a th:href="|/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
 											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
