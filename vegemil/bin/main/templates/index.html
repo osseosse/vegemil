@@ -12,8 +12,7 @@
 		Content
 ================================ -->
 <div id="popup" class="main-popup">
- 	<iframe id="popup2" th:src="@{/fragments/popup2}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" style="margin-right:10px"></iframe>
-	<iframe id="popup1" th:src="@{/fragments/popup}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" style="display:none;"></iframe> 
+	<iframe id="popup1" th:src="@{/fragments/popup}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" ></iframe> 
 </div>
 <div id="content" class="pb150">
 	<div class="video" >
@@ -889,7 +888,7 @@
 	}
 	
 	function timeCheck(theDay){
-		var today = new Date();
+		const today = new Date();
 		if(today >= theDay){
 			 // 제어하고 싶은 코드 그때그떄 변경// 
 			 $("#popup1").css("display","inline");
@@ -897,10 +896,6 @@
 	}
 	
 	$(document).ready(function(){
-		
-
-	  	var theDay = new Date('2023-12-08 00:00:00');
-	  	timeCheck(theDay);
 	  
 		var popup = document.getElementById("popup1");
 		var popup2 = document.getElementById("popup2");
@@ -931,10 +926,11 @@ $(".verticalType02").collapse({
 		this.css({ height: "0px" });
 		this.removeClass("open");
 	  }
-	});
+});
  
  
 	//보도자료 조회수 증가 
+	/*
 	const newsList = document.querySelectorAll('.newsBox li');
 
 	newsList.forEach(item => {
@@ -953,6 +949,7 @@ $(".verticalType02").collapse({
 			});
 	  });
 	});
+	*/
 	</script>
 
 </body>

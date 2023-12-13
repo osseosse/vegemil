@@ -12,15 +12,6 @@
 		Content
 ================================ -->
 <script>
-	function timeCheck(theDay,displayElementById){
-		var today = new Date();
-		if(today >= theDay){
-			 $(displayElementById).css("display","block");
-		}
-	}
-
-</script>
-<script>
 	$(document).ready(function(){
 		$("#event-vtc-1").collapse({
 			  accordion: true, //다열리고 싶을때
@@ -32,24 +23,11 @@
 				this.css({ height: "0px" });
 				this.removeClass("open");
 			  }
-			});
-		  var theDay = new Date('2023-10-31 11:00:00'); 
-		  timeCheck(theDay,"#octWinner");
-		  timeCheck(theDay,"#closingEvent");
+		});
 	 });
 </script>
 <div id="content" class=" pb100">
-	<!-- <div class="contant1460" >
-		<div class="subMenu">
-			<p class="btnSubLeft"><a href=""><img src="./img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
-			<ul class="submenuUL">
-				<li class="f18 fw500"><a href="01_01_greetings.html"><span>보도자료</span></a></li>
-				<li class="f18 fw500 active"><a href="01_02_profile.html"><span>공지사항</span></a></li>
-			</ul>
-			<p class="btnSubRight"><a href=""><span class="f13 fw400 gray04">Next</span><img src="./img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
-		</div>
-		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear">
-    </div> -->
+
     <div class="contant1460  mt200 mt220m" >
 		<div class="row mb80">
 			<div class="col-md-12 mt50 center">
@@ -63,7 +41,7 @@
 				<div class="contant1160 pb100 pt50">
 					<p class="event-title-50year f23 fw500 white" id="resultTitle">당첨자 발표</p>
 					<!-- fifty -->
-					<div class="fifty mt50 blueBox" id="closingEvent" style="display:none;">
+					<div class="fifty mt50 blueBox" id="closingEvent">
 						<div class="row blueBoxIn">
 							<div class="col-md-12 ">
 								<p class="fifty_title"><img src="https://image.edaymall.com/images/dcf/vegemil/upload/EVENT/EVENT_20230504_00.png"  alt=""/></p>
@@ -625,7 +603,7 @@
 					<!-- Vetical -->
 					 <div id="event-vtc-1" class="EventStyle mt40" >
 						 <!-- 10월 -->
-						<div class="ver-title05 f23 fw500" id="octWinner" style="display:none;"><p><span class="txt-box lh140">10월 이벤트 당첨자</span></p></div>
+						<div class="ver-title05 f23 fw500" id="octWinner" ><p><span class="txt-box lh140">10월 이벤트 당첨자</span></p></div>
 						<div>
 							<div class="v_content">
 								<div class="event_v_con">

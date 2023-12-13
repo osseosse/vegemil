@@ -11,7 +11,7 @@ public class ThermometerLoveDTO {
 	
 	private Long idx;
 	private String year;
-	private String temperature;
+	private double temperature;
 	
 
 }

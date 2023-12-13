@@ -128,14 +128,15 @@
 	<input type="hidden" name="currentTime" id="currentTime" value="" th:value="${currentTime}">
 	<script type='text/javascript'>
 	//<![CDATA[	
-		var uri = window.location.href;
+		/* var uri = window.location.href;
 		var title = "제철요리 그림 동시 대회";
 		var image = "https://image.edaymall.com/images/vegemil/beansoup/img/season/og.jpg";
 		var url = "https://image.edaymall.com/images/dcf/webzine/dcf_logo.jpg";
-		var kakaoUri = '';
+		var kakaoUri = ''; */
 	    //트위터
-		function twitter(uri){
-		
+		function twitter(){
+			
+			var uri = window.location.href;
 			var win = window.open("http://twitter.com/intent/tweet?text=" + encodeURIComponent(title) + " " + encodeURIComponent(uri), 'twitter', 'width=500,height=364,scrollbars=no,resizable=no');
 			
 			if(win){
@@ -145,22 +146,23 @@
 		
 		//페이스북
 		function facebook() {
-		    urif = uri + "?utm_source=facebook&utm_medium=contents&utm_campaign=kidsfesta";		    
+			var uri = window.location.href;
+		    var urif = uri + "?utm_source=facebook&utm_medium=contents&utm_campaign=kidsfesta";		    
 		    		
-	        url2 = "http://www.facebook.com/sharer.php?u=" + urif;
-			url2 = url2.split("#").join("%23");
-			url2 = encodeURI(url2);
+	        var url2 = "http://www.facebook.com/sharer.php?u=" + urif;
+			var url2 = url2.split("#").join("%23");
+			var url2 = encodeURI(url2);
 			
-			//alert(url2);
-			console.log(url2);			
+			//alert(url2);	
 			window.open(url2);
 			
 		}	
 		
-		function blog() {
-			
-			urib = uri + "?utm_source=naver_blog&utm_medium=contents&utm_campaign=kidsfesta";
-			console.log(urib);			
+		function blog() 
+			var uri = window.location.href;
+			var title = "제철요리 그림 동시 대회";
+			var urib = uri + "?utm_source=naver_blog&utm_medium=contents&utm_campaign=kidsfesta";
+					
 		    window.open("http://blog.naver.com/openapi/share?url=" + encodeURIComponent(urib) + "&title=" + encodeURIComponent(title));
 		}
 		

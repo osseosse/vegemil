@@ -13,13 +13,10 @@ import com.vegemil.util.UiUtils;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-public class EventVegemilController extends UiUtils {
+public class EventVegemilController {
 	
 	@Autowired
 	private AdminEventService adminEventService;
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
 	
 	@GetMapping("/event/{eventTitle}")
 	public String beanSoupBrand(@PathVariable(value = "eventTitle", required = false) String eventTitle ) {
@@ -27,20 +24,15 @@ public class EventVegemilController extends UiUtils {
 	}
 	
 	@GetMapping("/event/loveVegemil/{year}")
-	public String getThermometerOfLove(@PathVariable("year") String year, Model model) {
+	public String getThermometerOfLove(@PathVariable("year") Integer year, Model model) {
 		
-		ThermometerLoveDTO dto = adminEventService.getThermometerLove(Integer.parseInt(year));
-		
-		int temperature = Integer.parseInt(dto.getTemperature());
-		int loveHeight = (int) ((temperature <= 99) ? 1: (temperature * 0.01));
+		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
 		
 		model.addAttribute("dto", dto);
-		model.addAttribute("loveHeight", loveHeight);
+		model.addAttribute("loveHeight", dto.getTemperature() * 0.01);
 
 		return "event/thermometer/"+year; 
 		 
 	}
-	
-	
 	
 }
