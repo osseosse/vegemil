@@ -128,7 +128,7 @@
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'V'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a href="#">
+									<a th:href="|/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Designed for senior</span>
 											<span class="f14" th:text="${product.tag2}">#Increase vitality</span>
@@ -145,7 +145,7 @@
 										</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img//ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
@@ -176,7 +176,7 @@
 										</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
@@ -209,7 +209,7 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>	
@@ -240,7 +240,7 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
@@ -258,10 +258,10 @@
 <!-- ================================ 
 		// Content
 ================================ -->
-
 <!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
-<!-- ================================ // Footer ================================ -->
+<footer th:replace="en/fragments/mainFooteren :: footerFragmenten"></footer>
+<!-- ================================ // Footer ================================-->
+
 <script th:inline="javascript">
 $(document).ready(function(){
 	

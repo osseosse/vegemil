@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @RequiredArgsConstructor
 @Slf4j
-public class GolobalizeDevController {
+public class GolobalizeController {
 	
 	private final LocaleResolver localeResolver;
 	
@@ -41,14 +41,21 @@ public class GolobalizeDevController {
 		
 		localeResolver.setLocale(request, response, locale);
 		
-		return "redirect:" + redUrl;				
+		return "redirect:" + redUrl;						
+	}
+	
+	@GetMapping("/en")
+	public String GlobalIndex(HttpServletResponse response, HttpServletRequest request) {
 		
+		localeResolver.setLocale(request, response, Locale.ENGLISH);		
+		return "redirect:/";		
 	}
 	
 	@GetMapping("/en/index")
 	public String GlobalController(Model model, HttpServletRequest request , @CookieValue(value = "lang", required = false) String cv) {
 		
-		System.out.println("lang >>> " + cv);
+		log.info("lang >>> " + cv);
+		
 		Cookie[] co = request.getCookies();
 		for(Cookie c : co) {
 			log.info("cookie >>>> " + c.getName());
