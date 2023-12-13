@@ -24,7 +24,7 @@ public class EventVegemilController {
 	}
 	
 	@GetMapping("/event/loveVegemil/{year}")
-	public String getThermometerOfLove(@PathVariable("year") Integer year, Model model) {
+	public String getThermometerOfLove(@PathVariable("year") int year, Model model) {
 		
 		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
 		

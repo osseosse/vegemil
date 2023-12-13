@@ -22,8 +22,7 @@
 	    todayDate.setDate( todayDate.getDate() + expiredays );
 	    todayDate.setHours(0, 0, -1); // 오늘의 바로 전날 23:59:59로 설정함.
 	    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
-	}
-	
+	}	
 
 </script>
 <style>
