@@ -29,7 +29,7 @@
 								<td id="tdWhitePc" class="whiteColor" height="0px"></td>
 							</tr>
 							<tr>
-								<td id="tdGreenPc" class="graBar" th:if="${loveHeight > 0}" th:height="${loveHeight}"><p class="tome">
+								<td id="tdGreenPc" class="graBar" th:height="${loveHeight}"><p class="tome">
 								<span id="lblCountPc" th:text="${#numbers.formatInteger(dto.temperature, 1, 'COMMA') + '℃'}">[[${dto.temperature}]]</span></p></td>
 							</tr>
 						</tbody>
@@ -106,7 +106,5 @@ $(".verticalType03").collapse({
 </script>
 <!-- //main > 자주묻는질문+SNS -->
 
-<script type="text/javascript">
-</script>
 </body>
 </html>

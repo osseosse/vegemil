@@ -29,7 +29,7 @@ public class EventVegemilController {
 		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
 		
 		model.addAttribute("dto", dto);
-		model.addAttribute("loveHeight", (dto.getTemperature() <= 99) ? 1: (dto.getTemperature() * 0.01));
+		model.addAttribute("loveHeight", dto.getTemperature() * 0.01);
 
 		return "event/thermometer/"+year; 
 		 
