@@ -116,11 +116,11 @@ $(function () {
   });
   
   $('#btnDel').click(function(e){
-	console.log('e', e)
+	
     var form = document.form;
       
     // Output form data to a console
-    console.log("Form submission", decodeURIComponent($(form).serialize())); 
+     
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
@@ -129,7 +129,7 @@ $(function () {
 			data : $(form).serialize(),
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+	
 				if(data){
 					alert("삭제되었습니다.");
 					//window.location.reload();
@@ -153,7 +153,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('carateTable')
+	
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -179,8 +179,7 @@ var createTable = function() {
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
-			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			var json = $("#frm").serializeObject();	
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
@@ -208,8 +207,7 @@ var createTable = function() {
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
-        	 console.log('data',data);
-        	 console.log('full',full);
+        	 
 			 return (
               '<div class="form-check center-ck"> <input class="form-check-input dt-checkboxes" type="checkbox" name="checkList" value="'+data+'" id="checkbox' +
               data +
@@ -353,7 +351,7 @@ var createTable = function() {
 }
 
 function btnDisplay(idx) {
-	console.log('btnDisplay', idx)
+	
 	let mbsActive;
 	let mbsCheck;
 	if($('#mbsActive'+idx).is(":checked")){
@@ -374,7 +372,7 @@ function btnDisplay(idx) {
 			type : "get",
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+
 				if(data){
 					alert("수정되었습니다.");
 					$('.datatables-basic').DataTable().ajax.reload();

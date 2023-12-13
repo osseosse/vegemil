@@ -119,7 +119,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('createTable')	
+		
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -147,17 +147,14 @@ var createTable = function() {
         contentType : "application/json; charset=utf-8",
         data:function(params){  
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
-			console.log('length',params.length);
-			console.log('json', json);
-			console.log('params', params);
+			
 
 		},
-		dataSrc: function(res) {
-			console.log('res', res.data)
+		dataSrc: function(res) {			
 			return res.data
 		},
 		error : function(xhr, ajaxSettings, thrownError) { 
@@ -336,14 +333,14 @@ var createTable = function() {
 
 /*
 function btnDisplay(idx) {
-	console.log('btnDisplay', idx)
+	
 	let mDisplay;
 	if($('#mDisplay'+idx).is(":checked")){
 		mDisplay = 1;
 	}else{
 		mDisplay = 0;
 	}
-	console.log('============mDisplay',mDisplay)
+	
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
@@ -351,7 +348,7 @@ function btnDisplay(idx) {
 			type : "get",
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+				
 				if(data){
 					alert("수정되었습니다.");
 					$('.datatables-basic').DataTable().ajax.reload();
@@ -379,7 +376,7 @@ function altImg(idx){
 		   data: form.serialize(),
 		   dataType : 'json',
 		}).done(function(data){
-		   console.log('done', data)
+		   
 		   if(data.result) {
 		   	   alert('저장되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();
@@ -401,12 +398,9 @@ function deleteImg(idx){
 
 
 function btnSave(idx, action) {
-	console.log('action', action);
-	console.log('idx', idx);
 		
 	let msg;
 	let mDisplay;
-
 		
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
@@ -452,8 +446,7 @@ function btnSave(idx, action) {
 		}else if(action == "DI"){			
 			msg = "썸네일을 수정하시겠습니까??";	
 		}else if(action == "D"){
-			msg = "삭제하시겠습니까?";	
-			console.log('삭제시작');
+			msg = "삭제하시겠습니까?";				
 		}
 		
 		
@@ -473,8 +466,7 @@ function btnSave(idx, action) {
 		    formData.append("cDisplay", '0');
 	    }	    
 	   
-		if(fileInput){
-		console.log('파일 확인!');
+		if(fileInput){		
 		 formData.append('fileName', fileInput); 
 		}else{
 			console.log('파일미확인');
@@ -484,12 +476,9 @@ function btnSave(idx, action) {
 	    formData.append("cYoutube", $('#cYoutube').val());
 	    formData.append("cYoutubeId", cYoutubeId);	    
 	    formData.append("action", $('#action').val());
-	    
-	    console.log("formData", formData);
+	    	    
 		let entries = formData.entries();
-		for (const pair of entries) {
-		    console.log(pair[0]+ ', ' + pair[1]); 
-		}
+		
 	    
 	}	
 	
@@ -502,10 +491,8 @@ function btnSave(idx, action) {
 		   type: "POST",
            enctype: 'multipart/form-data',
 		   dataType : 'json',
-		}).done(function(data){
-		   console.log('done', data)
-		   if(data.result) {
-			   console.log(data);
+		}).done(function(data){		   
+		   if(data.result) {			   
 			   if(action == "U") {
 				   alert('수정되었습니다.');
 			   	   $('.datatables-basic').DataTable().ajax.reload();

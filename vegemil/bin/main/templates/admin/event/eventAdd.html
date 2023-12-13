@@ -63,8 +63,7 @@
 	    		   alert('썸네일을 등록해주세요.');
 	    		   return false;
 	    	   } 
-	    	   
-	    	   console.log('form', formData);
+	    	   	    	  
 
                $.ajax({
             	   url: '/admin/manage/event/eventAdd',
@@ -72,8 +71,7 @@
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
 				   type: 'POST'
-			   }).done(function(data){
-	    	       console.log('done', data)
+			   }).done(function(data){	    	       
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
 	    	    	   window.location.href = "/admin/manage/event/vegemil";

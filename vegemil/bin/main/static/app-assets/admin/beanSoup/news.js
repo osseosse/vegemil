@@ -119,7 +119,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('carateTable')
+	
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -142,14 +142,13 @@ var createTable = function() {
         contentType : "application/json; charset=utf-8",
         data:function(params){   
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
-			console.log('length',params.length)
+			
 		},
-		dataSrc: function(res) {
-			console.log('res', res.data)
+		dataSrc: function(res) {			
 			return res.data
 		},
 		error : function(xhr, ajaxSettings, thrownError) { 
@@ -363,14 +362,14 @@ var createTable = function() {
 
 /*
 function btnDisplay(idx) {
-	console.log('btnDisplay', idx)
+	
 	let mDisplay;
 	if($('#mDisplay'+idx).is(":checked")){
 		mDisplay = 1;
 	}else{
 		mDisplay = 0;
 	}
-	console.log('============mDisplay',mDisplay)
+	
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
@@ -378,7 +377,7 @@ function btnDisplay(idx) {
 			type : "get",
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+				
 				if(data){
 					alert("수정되었습니다.");
 					$('.datatables-basic').DataTable().ajax.reload();
@@ -396,8 +395,6 @@ function btnDisplay(idx) {
 */
 
 function btnSave(idx, action) {
-	console.log('action', action);
-	console.log('mtitle', $('#mTitle'+idx).val());
 	
 	const form = $('#form');
 	let msg;
@@ -415,7 +412,6 @@ function btnSave(idx, action) {
 	}else{
 		mIng = 0;
 	}
-	console.log('mDisplay', mDisplay);
 	
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
@@ -443,7 +439,6 @@ function btnSave(idx, action) {
 		$('#action').val(action);
 	}
 	
-	console.log(form.serialize());
 	if(confirm(msg)) {
 		$.ajax({
 	       url: '/admin/manage/beanSoup/saveBeanSoupNews',
@@ -452,7 +447,7 @@ function btnSave(idx, action) {
 		   data: form.serialize(),
 		   dataType : 'json',
 		}).done(function(data){
-		   console.log('done', data)
+		   
 		   if(data.result) {
 		   	   alert('저장되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();

@@ -287,12 +287,12 @@
 	        console.log(res);
 	        res.data.list.forEach((model) => {
 
-				console.log(model);
+
 	            let babyModel = makeBabyModel(model)
 	            $("#babyList").append(babyModel);
 	          
 	            if(model.cRank == '1' && model.cTitle2nd != '1'){ 
-	            	console.log("1등", model.ROWNUM)
+
 	            	$(".md"+model.ROWNUM).before(titleLoad(model.ROWNUM));
 	            }
 	        })									        
@@ -320,7 +320,7 @@
 	
 	//생성된 타이틀 로드
 	function titleLoad(rownum){
-		console.log('타이틀 로드 함수실행')
+
 		let title;
 		$.ajax({
 			  url:'/api/vegemilBaby/event/model/title/'+rownum,
@@ -377,7 +377,7 @@
 		    	let checkNum = $(window).scrollTop() - ( document.documentElement.scrollHeight - window.innerHeight );
 				if(checkNum <0.5 && checkNum >-2.5){
 					pageNum++;
-					console.log('새 페이지 로드')
+			
 					storyLoad();
 					
 				} 

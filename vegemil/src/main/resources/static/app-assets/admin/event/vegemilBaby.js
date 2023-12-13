@@ -116,11 +116,11 @@ $(function () {
   });
   
   $('#btnDel').click(function(e){
-	console.log('e', e)
+	
     var form = document.form;
       
     // Output form data to a console
-    console.log("Form submission", decodeURIComponent($(form).serialize())); 
+     
       
     if(confirm('삭제하시겠습니까?')){
 		$.ajax({
@@ -129,7 +129,7 @@ $(function () {
 			data : $(form).serialize(),
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+				
 				if(data){
 					alert("삭제되었습니다.");
 					//window.location.reload();
@@ -153,7 +153,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('createTable')
+	
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -180,14 +180,14 @@ var createTable = function() {
         contentType : "application/json; charset=utf-8",
         data:function(params){   
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
-			console.log('length',params.length)
+			
 		},
 		dataSrc: function(res) {
-			console.log('res', res.data)
+			
 			return res.data
 		},
 		error : function(xhr, ajaxSettings, thrownError) { 
@@ -389,7 +389,6 @@ var createTable = function() {
 
 
 function btnDisplay(idx, idx1, idx2) {
-	console.log('btnDisplay', idx1, idx2)
 	
 	let eIdx = idx;
 	let eActive;
@@ -412,7 +411,7 @@ function btnDisplay(idx, idx1, idx2) {
 			type : "get",
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+
 				if(data){
 					alert("수정되었습니다.");
 					$('.datatables-basic').DataTable().ajax.reload();

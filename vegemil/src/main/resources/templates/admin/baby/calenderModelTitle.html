@@ -37,8 +37,6 @@
 	    <script th:inline="javascript">
 	       /*<![CDATA[*/	
 	    	   
-	    	  
-	       
 	       	function btnSave(){
 	    	   const form = document.form;	    	
 	    	   const formData = new FormData(form);
@@ -51,10 +49,7 @@
 	    	   const tBabyname = $("#tRownum option:selected").text();;
 	    	   let tMonth1String ="";
 	    	   let tMonth2String ="";
-	    	   let tMonth3String ="";
-	    	   
-				console.log("tBabyname:" , tBabyname);
-		    
+	    	   let tMonth3String ="";	    	   					    
 	    	   
 	    	   switch (tMonth1){
 	    	    case "1": 
@@ -185,7 +180,6 @@
 	    		   return false;
 	    	   }	    	   
 	    	 
-	    	   console.log('titleForm', $('#titleForm').serialize());
                $.ajax({
 				   type: 'POST',
             	   url: '/admin/manage/baby/calenderModelTitle',				   
@@ -220,7 +214,7 @@
 						type : "DELETE",					
 						dataType : "text",
 						success : function(data) {
-							console.log('data============',data);
+							
 							if(data){
 								alert("삭제되었습니다.");
 								window.location.reload();

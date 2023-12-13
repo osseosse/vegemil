@@ -37,8 +37,7 @@
 	    		       
 	        function btnSave(){
 	    	   
-	        	var checked = $('#tActive').is(':checked');
-        		console.log("checked : " + checked);
+	        	var checked = $('#tActive').is(':checked');        		
         		
 		   	    if(checked){
 		   	        $('#tOnair').val('1');
@@ -58,18 +57,15 @@
 	    		   alert('유튜브 영상 url을 입력해 주세요.');
 	    		   return false;
 	    	   } 
-	    	  
-	    	   console.log('form', formData);
+	    	  	    	   
                $.ajax({
             	   url: '/admin/manage/publicCenter/saveRadioCM',
 				   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 				   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 				   data: formData,  //위에서 선언한 fromdata
 				   type: 'POST'
-			   }).done(function(data){
-		    	   console.log('form', formData);
-
-	    	       console.log('done', data)
+			   }).done(function(data){		    	   
+	    	       
 	    	       if(data.result) {
 	    	    	   alert('저장되었습니다.');
 	    	    	   window.location.href = "/admin/manage/publicCenter/radioCMList";
