@@ -419,7 +419,7 @@ public class BeanSoupController extends UiUtils {
 	
 	// 콘테스트 어드민
 	@GetMapping("/admin/manage/beanSoup/paintingPoetCon")
-	public String getPaintingPoetContAdmin(Model model) {				
+	public String getPaintingPoetContAdmin() {				
 		
 		return "admin/beanSoup/paintingPoetCon";
 	}

@@ -91,10 +91,12 @@ function searchAgency() {
 
 			var offset = $('#searchBlockStart').offset(); //선택한 태그의 위치를 반환
 			$('html').animate({ scrollTop: offset.top - 50 }, 400);
+			
+			return;
 		},
 		error: function () {
 			console.log("error>>>>>>>");
-
+			return;
 		}
 	});
 }
@@ -108,8 +110,8 @@ function getAddrList(area) {
 		dataType: "json",
 		success: function (data) {
 
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-				mapOption = {
+			var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
+			var	mapOption = {
 					center: new kakao.maps.LatLng(33.450701, 127.100132), // 지도의 중심좌표
 					level: 9 // 지도의 확대 레벨
 				};
@@ -132,10 +134,11 @@ function getAddrList(area) {
 			}
 			
 			searchAndMark(map, geocoder, data[data.length - 1].addr,data[data.length - 1].name, true);
-			
+			return;
 		},
 		error: function () {
 			console.log("error>>>>>>>");
+			return;
 		}
 	});
 }

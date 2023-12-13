@@ -234,8 +234,7 @@
 						<p class="f23 fw500 lh150 black">안녕하세요 고객님,<br>찾으시는 제품이 있으신가요?</p>
 						 <div class="search-container mt30">
 							 <form action="/product/list" method="get">
-							 	<span class="search-img"><img src="/img/ico/ico_search.png" alt="검색" /></span>
-							 	<input type="text" placeholder="제품을 검색해 보세요 " name="searchKeyword">
+							 	<span class="search-img"><img src="/img/ico/ico_search.png" alt="검색" /></span><input type="text" placeholder="제품을 검색해 보세요 " name="searchKeyword">
 								<button type="submit" class="btn-search">검색</button>
 							 </form>
 						</div>
@@ -275,18 +274,16 @@ $(function(){
 	var loadHtml = "[[ ${product.pCode} ]]";
     $(".productLoad").load("/product/"+loadHtml.trim()+".html");
     
-    var url = window.location.pathname;
+    /* var url = window.location.pathname;
     var pIdx = url.replace("/product/detail/", "");
     
-    /*
     $.ajax({
 		url: "/product/addCount?pIdx="+pIdx,
 		success: function (response) {
 			return;
 		}
 	})
-	*/
-    
+     */
 });
 //]]>
 </script>

@@ -117,11 +117,11 @@ $(function () {
     });
 
 	$('#btnDel').click(function(e){
-		console.log('e', e)
+
 	    var form = document.form;
 	      
 	    // Output form data to a console
-	    console.log("Form submission", decodeURIComponent($(form).serialize())); 
+
 	      
 	    if(confirm('삭제하시겠습니까?')){
 			$.ajax({
@@ -130,7 +130,7 @@ $(function () {
 				data : $(form).serialize(),
 				dataType : "json",
 				success : function(data) {
-					console.log('data============',data);
+		
 					if(data){
 						alert("삭제되었습니다.");
 						//window.location.reload();
@@ -156,7 +156,7 @@ $(function () {
 
 
 var createTable = function() {
-	console.log('createTable')
+
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();

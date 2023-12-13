@@ -118,7 +118,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('carateTable')
+	
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -143,14 +143,14 @@ var createTable = function() {
         // 검색정보 말아서 보내기
         data:function(params){   
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
-			console.log('length',params.length)
+			
 		},
 		dataSrc: function(res) {
-			console.log('res', res.data)
+			
 			return res.data
 		},
 		error : function(xhr, ajaxSettings, thrownError) { 
@@ -337,14 +337,14 @@ var createTable = function() {
 
 // 진열 체크박스처리 
 function btnDisplay(idx) {
-	console.log('btnDisplay', idx)
+	
 	let tOnair;
 	if($('#tOnair'+idx).is(":checked")){
 		tOnair = 1;
 	}else{
 		tOnair = 0;
 	}
-	console.log('============tOnair',tOnair)
+	
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
@@ -352,7 +352,7 @@ function btnDisplay(idx) {
 			type : "get",
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+				
 				if(data){
 					alert("수정되었습니다.");
 					$('.datatables-basic').DataTable().ajax.reload();
@@ -369,15 +369,13 @@ function btnDisplay(idx) {
 
 // 데이터 삭제 
 function btnSave(idx, action) {
-	console.log('action', action);
-	console.log('idx', idx);
+	
 	const form = $('#form');
 	let msg = "삭제하시겠습니까?";	
 	
 	$('#tIdx').val(idx);
 	$('#action').val(action);
 	
-	console.log('display', $('#tOnair').val())
 	
 	if(confirm(msg)) {
 		$.ajax({
@@ -387,7 +385,7 @@ function btnSave(idx, action) {
 		   data: form.serialize(),
 		   dataType : 'json',
 		}).done(function(data){
-		   console.log('done', data)
+		   
 		   if(data.result) {
 		   	   alert('저장되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();
