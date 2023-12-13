@@ -54,9 +54,7 @@
     $(window).scroll( ()=> {
     	//0.777
     	//4157
-    	console.log("윈도우 scrollTop", $(window).scrollTop());
-    	console.log("문서의 높이", $(document).height());
-    	console.log("윈도우 높이", $(window).height());
+
 	    let checkNum = $(window).scrollTop();
     	//let checkNum = $(window).scrollTop() - ( $(document).height() - $(window).height() );
     	//console.log("checkNum: ", checkNum);
@@ -89,10 +87,9 @@
 	        url:`/api/vegemilBaby/event/model?pageNum=${pageNum}&pageSize=20`,
 	        dataType : "json"
 	    }).done(res=>{
-	        console.log(res);
+
 	        res.data.list.forEach((model) => {
 
-	              console.log(model);
 	            let storyItem = getStoryItem(model)
 	            $("#storyList").append(storyItem);
 	            /* $("#storyList").append("<h1>hi<h1>"); */

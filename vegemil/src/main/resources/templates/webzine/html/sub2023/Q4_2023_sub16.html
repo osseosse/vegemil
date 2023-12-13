@@ -12,10 +12,7 @@ $(document).ready(function () {
 		
 	type += choiceId;
 	times++;
-	
-	console.log("choice is = " + choiceId);
-	console.log("type value = " + type);
-	console.log("times = " + times);
+
 	
 	// 편의점에서 베지밀에이를 발견했다
 	if(times == 2){		
@@ -62,45 +59,45 @@ function getRes(){
     
 	switch(type){
 	case "LLL" : 
-		console.log("LLL/IFJ"); 
+		
 		$(".resultLanding").attr("href",resultLandingCommonPath+"75");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_1.jpg");
 		break;		
 	case "LLR" :
-		console.log("LLR/IFP");
+		
 		$(".resultLanding").attr("href",resultLandingCommonPath+"20");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_2.jpg");
 		break;
 		
 	case "LRR" : //? 4번 이미지를 노출해야한다는데 I를 선택했는데 E가 나온다고 ?
-		console.log("LRR/ITP");
+		
 		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
 		break;				
 	case "LRL" :
-		console.log("LRL/ITP");
+		
 		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
 		break;
 		
 	case "RRL" :
-		console.log("RRL/ETJ"); 
+
 		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
 		break;		
 	case "RLL" :
-		console.log("RLL/EFJ"); 
+
 		$(".resultLanding").attr("href",resultLandingCommonPath+"7");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_5.jpg");
 		break;		
 		
 	case "RLR" :
-		console.log("RLR/EFP"); 
+		
 		$(".resultLanding").attr("href",resultLandingCommonPath+"31");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_6.jpg");
 		break;
 	case "RRR" :
-		console.log("RLR/EFP"); 
+		
 		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
 		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
 		break;		

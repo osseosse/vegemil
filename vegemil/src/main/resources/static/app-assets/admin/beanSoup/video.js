@@ -118,7 +118,7 @@ $(function () {
 });
 
 var createTable = function() {
-	console.log('carateTable')
+	
 	var dt_basic_table = $('.datatables-basic'),
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
@@ -141,14 +141,14 @@ var createTable = function() {
         contentType : "application/json; charset=utf-8",
         data:function(params){   
 			var json = $("#frm").serializeObject();
-			console.log('json', json);
+			
 			$.each(json,function(e){
 				params[e] = json[e];
 			});
-			console.log('length',params.length)
+			
 		},
 		dataSrc: function(res) {
-			console.log('res', res.data)
+			
 			return res.data
 		},
 		error : function(xhr, ajaxSettings, thrownError) { 
@@ -175,8 +175,7 @@ var createTable = function() {
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
-        	  console.log('data',data);
-        	  console.log('full',full)
+        	  
             if(full['mTitle']==null)	return '';
       			else	return '<input type="text" class="form-control" id="mTitle'+full['mIdx']+'" value="'+full['mTitle']+'">';
           }
@@ -329,14 +328,14 @@ var createTable = function() {
 }
 
 function btnDisplay(idx) {
-	console.log('btnDisplay', idx)
+	
 	let mActive;
 	if($('#mDisplay'+idx).is(":checked")){
 		mActive = 1;
 	}else{
 		mActive = 0;
 	}
-	console.log('============mActive',mActive)
+	
 	
 	if(confirm('진열을 수정하시겠습니까?')){
 		$.ajax({
@@ -344,7 +343,7 @@ function btnDisplay(idx) {
 			type : "get",
 			dataType : "json",
 			success : function(data) {
-				console.log('data============',data);
+				
 				if(data){
 					alert("수정되었습니다.");
 					$('.datatables-basic').DataTable().ajax.reload();
@@ -361,8 +360,6 @@ function btnDisplay(idx) {
 }
 
 function btnSave(idx, action) {
-	console.log('action', action);
-	console.log('mtitle', $('#mTitle'+idx).val());
 	
 	const form = $('#form');
 	let msg;
@@ -386,7 +383,6 @@ function btnSave(idx, action) {
 		$('#mDisplay').val($('#mDisplay'+idx).val()=="on"?"1":"0");
 		$('#action').val(action);
 	}
-	console.log('display', $('#mDisplay').val())
 	
 	if(confirm(msg)) {
 		$.ajax({
@@ -396,7 +392,7 @@ function btnSave(idx, action) {
 		   data: form.serialize(),
 		   dataType : 'json',
 		}).done(function(data){
-		   console.log('done', data)
+	
 		   if(data.result) {
 		   	   alert('저장되었습니다.');
 		   	   $('.datatables-basic').DataTable().ajax.reload();
