@@ -265,7 +265,7 @@ public class AdminEventServiceImpl implements AdminEventService {
 	@Override
 	public boolean updateLoveThermometer(ThermometerLoveDTO dto) {
 		
-		ThermometerLoveDTO findDto = adminEventMapper.selectThermometerLove(Integer.parseInt(dto.getYear()));
+		ThermometerLoveDTO findDto = adminEventMapper.selectThermometerLove(dto.getYear());
 	
 		int result = 0;
 		
