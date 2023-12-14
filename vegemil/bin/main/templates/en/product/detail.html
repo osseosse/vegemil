@@ -55,7 +55,7 @@
 						<span class="key-white" th:text="${product.subCategoryName}">Premium Soymilk</span>
 					</div> -->
 					<p class="f38 fw600 lh130 mt20"  th:text="${product.pName}">Plain Vegemil A</p>
-					<p class="mt10 gray04" th:text="${product.description}">Original plain taste soymilk </p>	
+					<p class="mt10 gray04" th:text="${product.descProduct}">Original plain taste soymilk </p>	
 					<ul class="info_ul mt40">
 						<li>
 							<p><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_info01.png" alt="용량" /></p>
@@ -126,7 +126,7 @@
 									<a th:href="|/product/detail/${recProduct.pIdx}|">
 										<p th:class="|alsoThumb ${recProduct.productClass2} h330|"><!-- <span class="recipe-green">베지밀</span> --></p>
 										<p class="f20 fw500 mt30 lh140 also-name" th:text="${recProduct.pName}"></p>
-										<p class="f16 gray04 mt10 also-sub-txt" th:text="${recProduct.description}"></p>
+										<p class="f16 gray04 mt10 also-sub-txt" th:text="${recProduct.descProduct}"></p>
 									</a>
 								</div>
 							</div>

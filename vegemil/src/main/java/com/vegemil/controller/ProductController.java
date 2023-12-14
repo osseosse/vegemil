@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.global.ProductEnDTO;
 import com.vegemil.service.ProductGlobalService;
 import com.vegemil.service.ProductService;
 import com.vegemil.util.UiUtils;
@@ -32,7 +33,7 @@ public class ProductController extends UiUtils {
 		
 
 		if("en".equals(localCookie)) {
-			List<ProductDTO> productGlobalList = productGlobalService.getProductList(searchKeyword);
+			List<ProductEnDTO> productGlobalList = productGlobalService.getProductList(searchKeyword);
 			model.addAttribute("productList", productGlobalList);
 			model.addAttribute("productCount", productGlobalList.size());
 			if(searchKeyword != null) {
@@ -82,13 +83,13 @@ public class ProductController extends UiUtils {
 		}
 		
 		if("en".equals(localCookie)) {
-			ProductDTO product = productGlobalService.getProductDetail(pIdx);
+			ProductEnDTO product = productGlobalService.getProductDetail(pIdx);
 			
 			if (product == null) {
 				return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/list", Method.GET, null, model);
 			}
 			
-			List<ProductDTO> recProduct = productGlobalService.getRecProduct(product);
+			List<ProductEnDTO> recProduct = productGlobalService.getRecProduct(product);
 			model.addAttribute("product", product);
 			model.addAttribute("recProduct", recProduct);
 			return "en/product/detail";

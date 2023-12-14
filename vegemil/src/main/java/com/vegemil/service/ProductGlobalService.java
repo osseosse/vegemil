@@ -2,17 +2,16 @@ package com.vegemil.service;
 
 import java.util.List;
 
-import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.global.ProductEnDTO;
+
 
 public interface ProductGlobalService {
 
-	public ProductDTO getProductDetail(Long pIdx);
+	public ProductEnDTO getProductDetail(Long pIdx);
 
-	public List<ProductDTO> getProductList(String searchKeyword);
+	public List<ProductEnDTO> getProductList(String searchKeyword);
 	
-	public List<ProductDTO> getBrandStroyList(String categoryCode);
-	
-	public List<ProductDTO> getRecProduct(ProductDTO productDto);
+	public List<ProductEnDTO> getRecProduct(ProductEnDTO ProductEnDTO);
 
 	public boolean updateAddCount(Long pIdx);
 	

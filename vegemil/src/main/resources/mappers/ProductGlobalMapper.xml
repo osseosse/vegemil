@@ -13,21 +13,14 @@
 		p_onactive,
 		category_code,
 		category_name,
-		sub_category_code,
 		sub_category_name,
-		sub_category_ico,
+		sub_category_code,		
 		thumbnail1,
 		thumbnail2,
 		thumbnail3,
 		replace(thumbnail1, '.png', '') as product_class1,
 		replace(thumbnail2, '.jpg', '') as product_class2,
 		replace(thumbnail3, '.jpg', '') as product_class3,
-		new_product,
-		best_product,
-		new_product_all,
-		rep_product_all,
-		new_product_cate,
-		rep_product_cate,
 		display_priority,
 		capacity1,
 		capacity2,
@@ -36,7 +29,7 @@
 		kcal2,
 		kcal3,
 		release_ym,
-		description,
+		desc_product,
 		expiration_month,
 		recommender,
 		tip,
@@ -46,55 +39,72 @@
 		DATE_FORMAT(insert_date,'%Y-%m') as insert_date
 	</sql>
 	
-	<sql id="brandStoryColumns">
+	
+	<sql id="productColumns1">
 		p_idx,
-		p_name,
-		p_code,
-		p_onuri,
-		p_active,
-		category_code,
-		category_name,
-		sub_category_code,
-		sub_category_name,
+		category_code, 
+		category_name, 
+		sub_category_code, 
+		sub_category_name, 
+		sub_category_ico, 
+		best_product,
+		p_code, 
+		thumbnail1, 
+		thumbnail2, 
+		thumbnail3, 
 		replace(thumbnail1, '.png', '') as product_class1,
 		replace(thumbnail2, '.jpg', '') as product_class2,
 		replace(thumbnail3, '.jpg', '') as product_class3,
-		new_product_all,
-		rep_product_all,
-		new_product_cate,
-		rep_product_cate,
-		tip,
-		tag1,
-		tag2,
-		tag3,
-		brand_display
-	</sql>
+		p_name, 
+		ko_name, 
+		count, 
+		display_priority, 
+		p_active, 
+		p_onactive, 
+		p_onuri, 
+		capacity1, 
+		capacity2, 
+		capacity3, 
+		kcal1, 
+		kcal2, 
+		kcal3, 
+		release_ym, 
+		desc_product,
+		expiration_month, 
+		recommender, 
+		tip, 
+		tag1, 
+		tag2, 
+		tag3, 
+		DATE_FORMAT(insert_date,'%Y-%m') as insert_date
 
-	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.ProductDTO">
+	</sql>
+	
+	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.global.ProductEnDTO">
 		SELECT
-			<include refid="productColumns" />
+			<include refid="productColumns1" />
 		FROM
 			m_product_G
 		WHERE
 			p_idx = #{pIdx}
 	</select>
 
-	<select id="selectProductList" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
+	<select id="selectProductList" parameterType="String" resultType="com.vegemil.domain.global.ProductEnDTO">
 		SELECT 
-			 <include refid="productColumns" />
+			 <include refid="productColumns1" />
 		FROM          
 			 m_product_G           
 		WHERE p_active = 1
 		  <if test="searchKeyword != null and searchKeyword != ''">  
 		  AND p_name like CONCAT('%',#{searchKeyword},'%')
-		  OR description like CONCAT('%',#{searchKeyword},'%')
+		  OR desc_product like CONCAT('%',#{searchKeyword},'%')
 		  </if>                 
 	    ORDER BY p_idx ASC
 	</select>
 	
-	<select id="selectRecProduct" parameterType="com.vegemil.domain.ProductDTO" resultType="com.vegemil.domain.ProductDTO">
+	<select id="selectRecProduct" parameterType="com.vegemil.domain.global.ProductEnDTO" resultType="com.vegemil.domain.global.ProductEnDTO">
 		SELECT 
-			 <include refid="productColumns" />
+			 <include refid="productColumns1" />
 		FROM          
 			 m_product_G           
 		WHERE p_active = 1
@@ -111,7 +121,7 @@
 			4 
 	</select>
 
-	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
+	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.global.ProductEnDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM
@@ -120,35 +130,8 @@
 			p_active = '1'
 	</select>
 	
-	<select id="selectBrandStroyList" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
-		SELECT 
-			 <include refid="brandStoryColumns" />
-		FROM          
-			 m_product_G           
-		WHERE 
-		    p_active = 1
-		  <if test="categoryCode != null and categoryCode != ''">  
-		  and category_code = #{categoryCode}
-		  </if>	
-		  and
-		    (
-		    new_product_all != 0
-		  or
-		    rep_product_all != 0
-		  or
-		    new_product_cate != 0
-		  or
-		    rep_product_cate != 0
-		    )
-		  <if test='categoryCode == "G"'>
-		  	<!-- 이런 말도안되는 억지 조건이 들어간 이유는 그린비아 categorycode가 나눠져 있는데 기존 로직 다 바꾸는 건 할 수 없어서... -->
-		  	or p_name like CONCAT('%','그린비아','%')
-		  </if>
-		ORDER BY 
-			new_product_all, rep_product_all, new_product_cate, rep_product_cate
-	</select>
 	
-	<select id="selectBrandStroyCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">
+	<select id="selectBrandStroyCount" parameterType="com.vegemil.domain.global.ProductEnDTO" resultType="int">
 		SELECT
 			COUNT(*)
 		FROM

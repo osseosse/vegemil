@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.global.ProductEnDTO;
+
+
 
 @Mapper
 public interface ProductGlobalMapper {
 
-	public ProductDTO selectProductDetail(Long pIdx);
+	public ProductEnDTO selectProductDetail(Long pIdx);
 
-	public List<ProductDTO> selectProductList(String searchKeyword);
+	public List<ProductEnDTO> selectProductList(String searchKeyword);
 	
-	public List<ProductDTO> selectRecProduct(ProductDTO productDto);
-	
-	public List<ProductDTO> selectBrandStroyList(String categoryCode);
+	public List<ProductEnDTO> selectRecProduct(ProductEnDTO ProductEnDTO);	
 
 	public int selectProductTotalCount();
 

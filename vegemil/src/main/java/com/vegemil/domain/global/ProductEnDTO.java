@@ -12,23 +12,18 @@ public class ProductEnDTO {
 	private Long pIdx;
 	private String categoryCode;
 	private String categoryName;
-	private String sub_categoryCode;
-	private String sub_categoryName;
-	private String sub_categoryIco;
 	private String pCode; 
 	private String thumbnail1; 
 	private String thumbnail2; 
 	private String thumbnail3; 
+	private String productClass1;
+	private String productClass2;
+	private String productClass3;
 	private String pName; 
-	private String koName; 
-	private String count; 
-	private String displayPriority; 
-	private String newProduct; 
-	private String bestProduct; 
-	private String newProductAll; 
-	private String repProductAll; 
-	private String newProductCate; 
-	private String repProductCate; 
+	private String koName; 	
+	private String displayPriority;
+	private String subCategoryName;
+	private String subCategoryCode;
 	private String pActive; 
 	private String pOnactive; 
 	private String pOnuri; 
@@ -39,7 +34,7 @@ public class ProductEnDTO {
 	private String kcal2; 
 	private String kcal3; 
 	private String releaseYm; 
-	private String description;
+	private String descProduct;
 	private String expirationMonth; 
 	private String recommender; 
 	private String tip; 
@@ -48,4 +43,5 @@ public class ProductEnDTO {
 	private String tag3; 
 	private String insertDate; 
 	private String brandDisplay;
+	private String bestProduct;
 }
