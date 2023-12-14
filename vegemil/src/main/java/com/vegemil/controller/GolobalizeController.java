@@ -51,7 +51,7 @@ public class GolobalizeController {
 		return "redirect:/";		
 	}
 	
-	@GetMapping("/en/index")
+	@GetMapping("/en/test")
 	public String GlobalController(Model model, HttpServletRequest request , @CookieValue(value = "lang", required = false) String cv) {
 		
 		log.info("lang >>> " + cv);
