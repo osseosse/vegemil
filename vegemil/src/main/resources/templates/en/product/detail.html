@@ -54,7 +54,7 @@
 						<span class="key-green" th:text="${product.categoryName}">Vegemil</span> 
 						<span class="key-white" th:text="${product.subCategoryName}">Premium Soymilk</span>
 					</div> -->
-					<p class="f38 fw600 lh130 mt20"  th:text="${product.pName}">Plain Vegemil A</p>
+					<p class="f38 fw600 lh130 mt20"  th:utext="${product.pName}">Plain Vegemil A</p>
 					<p class="mt10 gray04" th:text="${product.descProduct}">Original plain taste soymilk </p>	
 					<ul class="info_ul mt40">
 						<li>
@@ -125,7 +125,7 @@
 								<div class="alsoLove">
 									<a th:href="|/product/detail/${recProduct.pIdx}|">
 										<p th:class="|alsoThumb ${recProduct.productClass2} h330|"><!-- <span class="recipe-green">베지밀</span> --></p>
-										<p class="f20 fw500 mt30 lh140 also-name" th:text="${recProduct.pName}"></p>
+										<p class="f20 fw500 mt30 lh140 also-name" th:utext="${recProduct.pName}"></p>
 										<p class="f16 gray04 mt10 also-sub-txt" th:text="${recProduct.descProduct}"></p>
 									</a>
 								</div>
@@ -138,7 +138,7 @@
 				<div class="floting">
 					<div class="flotingContent">
 						<div class="floating-menu">
-							<p class="f23 fw500 prd_subCateTitle" th:text="${product.pName}">Plain Vegemil A</p>
+							<p class="f23 fw500 prd_subCateTitle" th:utext="${product.pName}">Plain Vegemil A</p>
 							<!-- 2022-12-14 -->
 							<ul class="prd_dCate mt40">
 								<li><a href="#section-01" class="menu-01"><span>Product Details</span></a></li>
