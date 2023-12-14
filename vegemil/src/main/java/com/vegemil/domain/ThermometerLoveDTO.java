@@ -10,7 +10,7 @@ import lombok.ToString;
 public class ThermometerLoveDTO {
 	
 	private long idx;
-	private String year;
+	private int year;
 	private double temperature;
 	
 

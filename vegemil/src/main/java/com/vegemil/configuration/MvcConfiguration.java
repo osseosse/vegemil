@@ -19,7 +19,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 		registry.addInterceptor(new LoggerInterceptor())
 		.excludePathPatterns("/common/**","/css/**", "/fonts/**", "/img/**", "/scripts/**", "/js/**","/*.ico","/beansoup/css/**",
 								"/beansoup/js/**","/webzine/js/**", "/webzine/css/**", "/app-assets/**",
-								"/beansoupRecipe/css/**", "beansoupRecipe/js/**", "beansoupRecipe/fonts/**");
+								"/beansoupRecipe/css/**", "beansoupRecipe/js/**", "beansoupRecipe/fonts/**","/web/upload/**");
 	}
 	
 	@Bean
