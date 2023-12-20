@@ -209,128 +209,123 @@
 	</div>
 	
 </div>
+<!-- -------------------------------
+	개발시 아래 스크립트 삭제해주세요.
+--------------------------------- -->
+<script>
+/*---------------------------------------------------------------------------------------------------------------------------
+ * 	 PC Menu
+ *--------------------------------------------------------------------------------------------------------------------------*/
+	$('#gnb > ul > li > a').on("mouseenter focusin",function(e){
+		$('#gnb > ul > li').removeClass('on');
 
-</header>
-	<!-- -------------------------------
-		개발시 아래 스크립트 삭제해주세요.
-	--------------------------------- -->
-	<script>
-	/*---------------------------------------------------------------------------------------------------------------------------
-	 * 	 PC Menu
-	 *--------------------------------------------------------------------------------------------------------------------------*/
-		$('#gnb > ul > li > a').on("mouseenter focusin",function(e){
-			$('#gnb > ul > li').removeClass('on');
-
-			$(this).parent('li').addClass('on')
-			$('#header').addClass('open');
-			
-			var hd = $(this).next('.depth02_menu_wrap').stop().innerHeight();
-			var num = hd + 91;
-			
-			$('#header').stop().animate({height: num}, 340);
-			e.preventDefault();
-		})
-
-		$('.gnb_depth2').find('a').on("focusin",function(e){
-			$('#gnb > ul > li').removeClass('on');
-
-			$(this).parents('#gnb > ul > li').addClass('on')
-			$('#header').addClass('open');
-			
-			var hd = $(this).parents('.depth02_menu_wrap').stop().innerHeight();
-			var num = hd + 101;
-			
-			$('#header').stop().animate({height: num}, 340);
-		})
-
-		// 
-		if (matchMedia("screen and (min-width: 800px)").matches) {
-			$('#header, .all_search_pop').on("mouseleave",function(){
-				gnb_close();
-			})
-		}
+		$(this).parent('li').addClass('on')
+		$('#header').addClass('open');
 		
-		$('#gnb').find("a").last().on("focusout",function(){
+		var hd = $(this).next('.depth02_menu_wrap').stop().innerHeight();
+		var num = hd + 91;
+		
+		$('#header').stop().animate({height: num}, 340);
+		e.preventDefault();
+	})
+
+	$('.gnb_depth2').find('a').on("focusin",function(e){
+		$('#gnb > ul > li').removeClass('on');
+
+		$(this).parents('#gnb > ul > li').addClass('on')
+		$('#header').addClass('open');
+		
+		var hd = $(this).parents('.depth02_menu_wrap').stop().innerHeight();
+		var num = hd + 101;
+		
+		$('#header').stop().animate({height: num}, 340);
+	})
+
+	// 
+	if (matchMedia("screen and (min-width: 800px)").matches) {
+		$('#header, .all_search_pop').on("mouseleave",function(){
 			gnb_close();
-		});
-
-		function gnb_close(){
-			$('#header ').stop().css({height: 90});//웹에서 90으로 변경필요, 
-			$('#gnb > ul > li').removeClass('on');
-			$('#header').removeClass('open');
-		}
+		})
+	}
 	
+	$('#gnb').find("a").last().on("focusout",function(){
+		gnb_close();
+	});
 
-		
-		
-		/*================================
-		 * 	 FullMenu
-		*================================*/
-		/* Open */
-		function openNav() {
-		  document.getElementById("myNav").style.height = "100%";
-		}
-		/* Close */
-		function closeNav() {
-		  document.getElementById("myNav").style.height = "0%";
-		}
-		/*================================
-		 * 	 모바일 FullMenu
-		*================================*/
-		/* mobileAside Open */
-		function openAside() {
-		  document.getElementById("mobileAside").style.width = "70%";
-		}
-
-		/* mobileAside Close */
-		function closeAside() {
-		  document.getElementById("mobileAside").style.width = "0%";
-		}
+	function gnb_close(){
+		$('#header ').stop().css({height: 90});//웹에서 90으로 변경필요, 
+		$('#gnb > ul > li').removeClass('on');
+		$('#header').removeClass('open');
+	}
 
 
-		// 모바일메뉴 vertical
-		$("#verticalType01").collapse({
-		  accordion: true, //다열리고 싶을때
-		  open: function() {
-			this.addClass("open");
-			this.css({ height: this.children().outerHeight() });
-		  },
-		  close: function() {
-			this.css({ height: "0px" });
-			this.removeClass("open");
-		  }
+	/*================================
+	 * 	 FullMenu
+	*================================*/
+	/* Open */
+	function openNav() {
+	  document.getElementById("myNav").style.height = "100%";
+	}
+	/* Close */
+	function closeNav() {
+	  document.getElementById("myNav").style.height = "0%";
+	}
+	/*================================
+	 * 	 모바일 FullMenu
+	*================================*/
+	/* mobileAside Open */
+	function openAside() {
+	  document.getElementById("mobileAside").style.width = "70%";
+	}
+
+	/* mobileAside Close */
+	function closeAside() {
+	  document.getElementById("mobileAside").style.width = "0%";
+	}
+
+
+	// 모바일메뉴 vertical
+	$("#verticalType01").collapse({
+	  accordion: true, //다열리고 싶을때
+	  open: function() {
+		this.addClass("open");
+		this.css({ height: this.children().outerHeight() });
+	  },
+	  close: function() {
+		this.css({ height: "0px" });
+		this.removeClass("open");
+	  }
+	});
+
+
+	/*================================
+	 * 	 Main > Floating
+	 *================================*/
+	// jQuery Load
+	(function($){
+		$(document).ready(function() {
+			
+			//
+			if (!$('#flotingPage').length){return false}; //#contents -> wrap으로 변경 
+			var limit =  $(window).height() - ($('.floting').height()+00);
+			//alert(limit);
+			if (limit > 0){
+				$('.floting').addFloating({  
+					targetRight: 10,  
+					targetTop: 40,  //스크롤시 높이설정 
+					snap: true  
+				});  
+			} else {
+				$('.floting').addFloating({  
+					targetRight: 10,  
+					targetTop: 40,  
+					snap: true  
+				});  
+			}	// end - 2022-02-18 주문 > 결제금액 계산기
+
+
 		});
+	})(jQuery);
 
-
-		/*================================
-		 * 	 Main > Floating
-		 *================================*/
-		// jQuery Load
-		(function($){
-			$(document).ready(function() {
-				
-				//
-				if (!$('#flotingPage').length){return false}; //#contents -> wrap으로 변경 
-				var limit =  $(window).height() - ($('.floting').height()+00);
-				//alert(limit);
-				if (limit > 0){
-					$('.floting').addFloating({  
-						targetRight: 10,  
-						targetTop: 40,  //스크롤시 높이설정 
-						snap: true  
-					});  
-				} else {
-					$('.floting').addFloating({  
-						targetRight: 10,  
-						targetTop: 40,  
-						snap: true  
-					});  
-				}	// end - 2022-02-18 주문 > 결제금액 계산기
-
-
-			});
-		})(jQuery);
-
-
-
-	</script>	
+</script>	
+</header>

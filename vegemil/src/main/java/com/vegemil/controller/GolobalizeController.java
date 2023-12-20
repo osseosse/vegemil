@@ -30,8 +30,8 @@ public class GolobalizeController {
 	public String bakeLangCookie(HttpServletResponse response, HttpServletRequest request,
 										@RequestParam("lang")String lang, @RequestParam("redUrl") String redUrl) {
 			
-		log.info("redUrl >>> {}", redUrl);
-		log.info("lang >>> {}", lang);
+		log.info("redUrl =  {}", redUrl);
+		log.info("lang = {}", lang);
 		
 		Locale locale = Locale.KOREA;
 		
