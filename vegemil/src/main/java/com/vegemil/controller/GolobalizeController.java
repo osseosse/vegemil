@@ -1,5 +1,7 @@
 package com.vegemil.controller;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Locale;
 
 import javax.servlet.http.Cookie;
@@ -33,10 +35,27 @@ public class GolobalizeController {
 		log.info("redUrl =  {}", redUrl);
 		log.info("lang = {}", lang);
 		
+		String[] redUrlArr = {"/company/greetings","/company/profile", "/company/valueSys",
+									"/product/list", "/rnd/introduce", "/rnd/haccp", "/rnd/fssc", "/rnd/halal"};		 		
+		
+		boolean isGlobalUrl = false;
+
 		Locale locale = Locale.KOREA;
 		
 		if("en".equals(lang)) {
 			locale = Locale.ENGLISH;
+
+			for(String url : redUrlArr) {
+				if(url.equals(redUrl)) {
+					isGlobalUrl = true;
+					break;
+				}
+			}
+			
+			if(isGlobalUrl == false && redUrl.contains("/product/detail") == false) {				
+				redUrl = "/";
+			}
+			
 		}
 		
 		localeResolver.setLocale(request, response, locale);
@@ -54,11 +73,11 @@ public class GolobalizeController {
 	@GetMapping("/en/test")
 	public String GlobalController(Model model, HttpServletRequest request , @CookieValue(value = "lang", required = false) String cv) {
 		
-		log.info("lang >>> " + cv);
+		log.info("lang ==> " + cv);
 		
 		Cookie[] co = request.getCookies();
 		for(Cookie c : co) {
-			log.info("cookie >>>> " + c.getName());
+			log.info("cookie ==> " + c.getName());
 		}
 		return "/index";
 	}
