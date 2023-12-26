@@ -108,7 +108,7 @@
 							<span class="f45 fw500 black" th:text='|"${searchKeyword}"|'></span><span class=" f23 fw500 gray04">This is the search result.</span> 
 							<span class="count-box pl10">A total of <span th:text="${productCount}"></span>cases</span>
 						</p>
-						<p class="mt80 center f23 fw500 gray04" th:if="${productCount == 0}"><span class="f45 fw500 black" th:text='|"${searchKeyword}"|'></span> 검색 결과가 없습니다.</p>
+						<p class="mt80 center f23 fw500 gray04" th:if="${productCount == 0}"><span class="f45 fw500 black" th:text='|"${searchKeyword}"|'></span>No search results.</p>
 					</div>
 					<div class="floting-right_prd" style="float: none;" th:if="${not #lists.isEmpty( productList )}">
 						<div class="row">

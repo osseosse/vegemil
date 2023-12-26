@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.PatternMatchUtils;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -54,6 +55,8 @@ public class MainController extends UiUtils {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	private static String[] globalRndList = {"introduce","haccp","fssc","halal"};
 	
 	@RequestMapping(value = "/")
 	public String moveIndex(Model model, Authentication authentication, HttpServletResponse response,
@@ -202,7 +205,7 @@ public class MainController extends UiUtils {
     public String moveRnd(@PathVariable(value = "viewName", required = false) String viewName, 
     									@CookieValue(value = "lang", required = false) String localCookie)throws Exception{
 		
-		if("en".equals(localCookie)) {
+		if("en".equals(localCookie) && PatternMatchUtils.simpleMatch(globalRndList, viewName)) {			
 			return "en/" + viewName;
 		}		
 		return "rnd/"+viewName;

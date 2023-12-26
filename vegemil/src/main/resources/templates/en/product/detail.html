@@ -3,7 +3,7 @@
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품</title>
-<head th:replace="fragments/head :: headFragment"></head>
+<head th:replace="en/fragments/head :: headFragment"></head>
 <body>
 <!-- ================================ Header ================================ -->
 <th:block class="white" th:replace="en/fragments/mainHeaderen :: headerFragmenten"></th:block>
@@ -182,9 +182,6 @@ $(function(){
 	var loadHtml = "[[ ${product.pCode} ]]";
 	console.log(loadHtml)
     $(".productLoad").load("/product/en/"+loadHtml.trim()+"_en.html");
-    
-    var url = window.location.pathname;
-    var pIdx = url.replace("/product/detail/", "");
     
 
 });
