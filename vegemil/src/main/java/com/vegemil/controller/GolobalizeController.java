@@ -52,14 +52,17 @@ public class GolobalizeController extends UiUtils {
 				redUrl = "/";
 			}
 		} else {
+			
 			// 한국어로 전환
-			if (redUrl.contains("/en/")) {
+			if(redUrl.equals("/en")) {
+				redUrl = "/";
+			}else if (redUrl.contains("/en/")) {
 				redUrl = redUrl.substring(4);
 				log.info("ko) redUrl = {}", redUrl);
 			}
-
 		}
-
+		
+		log.info("redUrl = {}", redUrl);
 		localeResolver.setLocale(request, response, locale);
 
 		redUrlArr = null;
