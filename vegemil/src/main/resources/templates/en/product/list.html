@@ -20,7 +20,7 @@
 					<div class="slider_area">
 						<div class="slides eng">
 							<div class="slide">
-								<a href="/product/detail/1">
+								<a href="/en/product/detail/1">
 									<div class="slidetitle VPM01_860_01  h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Vegemil 5060 Senior Soymilk</p>
@@ -30,7 +30,7 @@
 							</div>
 
 							<div class="slide">
-								<a href="/product/detail/5">
+								<a href="/en/product/detail/5">
 									<div class="slidetitle VPM05_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Black Bean Soymilk with protein</p>
@@ -49,7 +49,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/73">
+								<a href="/en/product/detail/73">
 									<div class="slidetitle SCI02_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Vegetable Broth for Hot Soup dish</p>
@@ -58,7 +58,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/74">
+								<a href="/en/product/detail/74">
 									<div class="slidetitle SCI03_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Vegetable Broth for Cold Soup dish</p>
@@ -76,7 +76,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/76">
+								<a href="/en/product/detail/76">
 									<div class="slidetitle SCI05_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Soybean Broth Black Bean</p>
@@ -125,7 +125,7 @@
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'V'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Designed for senior</span>
 											<span class="f14" th:text="${product.tag2}">#Increase vitality</span>
@@ -142,7 +142,7 @@
 										</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img//ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
@@ -156,7 +156,7 @@
 						<div class="row"  th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6"  th:if="${product.categoryCode == 'P'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14"  th:text="${product.tag1}">#Thorough nutrition design</span>
 											<span class="f14"  th:text="${product.tag2}">#Mother's nutrition </span>
@@ -173,7 +173,7 @@
 										</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
@@ -190,7 +190,7 @@
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
 											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
@@ -206,7 +206,7 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>	
@@ -221,7 +221,7 @@
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'|| product.categoryCode == 'H'|| product.categoryCode == 'F'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
 											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
@@ -237,7 +237,7 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>

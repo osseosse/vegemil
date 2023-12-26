@@ -79,14 +79,14 @@ public class ProductController extends UiUtils {
 													@CookieValue(value = "lang", required = false) String localCookie) {
 		
 		if (pIdx == null) {
-			return showMessageWithRedirect("올바르지 않은 접근입니다.", "product/list", Method.GET, null, model);
+			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/product/list", Method.GET, null, model);
 		}
 		
 		if("en".equals(localCookie)) {
 			ProductEnDTO product = productGlobalService.getProductDetail(pIdx);
 			
 			if (product == null) {
-				return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/list", Method.GET, null, model);
+				return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list", Method.GET, null, model);
 			}
 			
 			List<ProductEnDTO> recProduct = productGlobalService.getRecProduct(product);
