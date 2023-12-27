@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>Product Introduction</title>
@@ -129,11 +129,11 @@
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Designed for senior</span>
 											<span class="f14" th:text="${product.tag2}">#Increase vitality</span>
-											<span class="f14" th:text="${product.tag3}">#Premium soymilk</span>
+											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Premium soymilk</span>
 										</div>
 										<div class="prd-thumb">
 											<img src="https://image.edaymall.com/images/dcf/vegemil/img//product/thumb/VPM01_600_01.png"
-												th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|">
+												th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" />
 										</div>
 										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Premium soymilk</span></div>-->
 										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}">Vegemil 5060 Senior Soymilk</p>
@@ -143,7 +143,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img//ico/ico_buy.png"></a></dd>
+										<dd><a href="" th:href="@{|${product.pOnuri}|}"><img src="https://image.edaymall.com/images/dcf/vegemil/img//ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -160,7 +160,7 @@
 										<div class="prd-txt">
 											<span class="f14"  th:text="${product.tag1}">#Thorough nutrition design</span>
 											<span class="f14"  th:text="${product.tag2}">#Mother's nutrition </span>
-											<span class="f14"  th:text="${product.tag3}">#Must have item for prenatal and postnatal</span>
+											<span class="f14"  th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Must have item for prenatal and postnatal</span>
 										</div>
 										<div class="prd-thumb">
 											<img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VMO01_600_01.png"
@@ -174,7 +174,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd><a href=""  th:href="@{|${product.pOnuri}|}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -194,7 +194,7 @@
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
 											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
-											<span class="f14" th:text="${product.tag3}">#Thorough nutrition design</span>
+											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Thorough nutrition design</span>
 
 										</div>
 										<div class="prd-thumb">
@@ -207,7 +207,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd><a href="" th:href="@{|${product.pOnuri}|}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>	
 							</div>			
@@ -225,7 +225,7 @@
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Growth formula</span>
 											<span class="f14" th:text="${product.tag2}">#A plant-based nutrition</span>
-											<span class="f14" th:text="${product.tag3}">#Thorough nutrition design</span>
+											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Thorough nutrition design</span>
 
 										</div>
 										<div class="prd-thumb">
@@ -238,7 +238,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd><a href=""><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd><a href="" th:href="@{|${product.pOnuri}|}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
