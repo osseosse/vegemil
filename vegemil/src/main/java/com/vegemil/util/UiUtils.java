@@ -20,9 +20,6 @@ import com.vegemil.service.MemberService;
 @Controller
 public class UiUtils {
 	
-	@Autowired
-	private MemberService memberService;
-	
 	public String showMessageWithRedirect(@RequestParam(value = "message", required = false) String message,
 										  @RequestParam(value = "redirectUri", required = false) String redirectUri,
 										  @RequestParam(value = "method", required = false) Method method,

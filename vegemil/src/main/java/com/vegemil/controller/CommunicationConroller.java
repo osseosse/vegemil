@@ -165,7 +165,6 @@ public class CommunicationConroller extends UiUtils{
 			return showMessageWithRedirect("잘못된 접근입니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
 		}
 		
-		//System.out.println("timeGap >>> " + timeGap);
 		
 		String ip = getClientIpVer2(req);
 		if(ip.equals(communicationService.getRecentClaimIp()) || timeGap < 6000) {

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.GreenbiaProductDTO;
@@ -34,9 +35,9 @@ public class GreenbiaController extends UiUtils {
     }
 	
 	@RequestMapping(value = "/main/brandgreenbia/index.aspx")
-    public String moveOldGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
+    public RedirectView moveOldGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
-		return "redirect:/greenbia";
+		return new RedirectView("/greenbia");
     }
 	
 	@GetMapping("/Main/BrandGreenbia/{greenbiaAspx}")

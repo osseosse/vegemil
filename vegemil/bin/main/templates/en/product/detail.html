@@ -24,11 +24,7 @@
 						<li th:if="${not #strings.isEmpty(product.productClass3)}"><a href="#photo03"><div th:class="|${product.productClass3} h190|"></div></a></li>
 					</ul>
 				</div>
-				<script type="text/javascript">
-					$(document).ready(function(){
-						$('.prd_thumb').basicTabs4();/* basicTabs4 변경 */
-					});
-				</script>
+	
 				<!-- //tabs4 -->
 				<!-- tabs4 content -->
 				<div class="tab_content4">
@@ -37,10 +33,10 @@
 						<div class="prd-txt ab-bottom">
 							<span class="f14" th:text="${product.tag1}"></span>
 							<span class="f14" th:text="${product.tag2}"></span>
-							<span class="f14"  th:if="${not #strings.isEmpty(product.tag3)}"  th:text="${product.tag3}"></span>
+							<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}"  th:text="${product.tag3}"></span>
 						</div>						
 					</div>
-					<div>
+					<div id="photo02">
 						<div th:class="|${product.productClass2} h590|"></div>
 					</div>
 					<div id="photo03">
@@ -178,6 +174,9 @@
 <script type="text/javascript">
 //<![CDATA[
 $(function(){
+	
+	$('.prd_thumb').basicTabs4();/* basicTabs4 변경 */
+	
 	//html 파일 로드
 	var loadHtml = "[[ ${product.pCode} ]]";
 	console.log(loadHtml)

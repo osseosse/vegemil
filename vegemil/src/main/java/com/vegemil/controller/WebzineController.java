@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vegemil.constant.Method;
@@ -33,9 +34,7 @@ import com.vegemil.util.UiUtils;
 public class WebzineController extends UiUtils {
 
 	@Autowired
-	private WebzineService webzineService;
-	
-	@Autowired private WebzineMapper mapper;
+	private WebzineService webzineService;	
 	
 	@GetMapping(value = "/main/webzine/list")
 	public String openWebzineList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
@@ -56,7 +55,7 @@ public class WebzineController extends UiUtils {
 		return "webzine/default";
 	}
 	
-	@GetMapping(value = "/webzine")
+	@RequestMapping(value = {"/webzine","/Main/webzine/default.aspx"})
 	public String moveWebzine(Model model, @RequestParam(required = false) SearchDTO params) {
 		
 		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
@@ -64,21 +63,7 @@ public class WebzineController extends UiUtils {
 		
 		return "webzine/default";
 	}
-	
-	@GetMapping(value = "/Main/webzine/default.aspx") // 웹진 QR코드 url 대응 
-	public String moveWebzineForQRcode(Model model, @RequestParam(required = false) SearchDTO params) {
-		
-		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
-		model.addAttribute("webzineList", webzineList);
-		
-		return "webzine/default";
-	}
-	
-	@GetMapping(value = "/main/publicCenter/webzine.aspx")
-	public String moveWebzineSubs(@RequestParam(required = false) String page_code, Model model, HttpServletRequest request) {
 
-		return "redirect:/webzine/subscribe";
-	}
 	
 	@GetMapping(value = "/webzine/emaildeny")
 	public String moveEmaildeny(@RequestParam(required = false) String emailaddr, Model model) {
@@ -111,7 +96,7 @@ public class WebzineController extends UiUtils {
 		return showMessageWithRedirect("수신거부 완료되었습니다.", "/", Method.GET, null, model);
 	}
 	
-	@GetMapping(value = "/webzine/subscribe")
+	@RequestMapping(value = {"/webzine/subscribe", "/main/publicCenter/webzine.aspx"})
 	public String openSubscribe(Model model, Authentication authentication) {
 		
 		SubscribeDTO subscribe = new SubscribeDTO();
@@ -921,45 +906,8 @@ public class WebzineController extends UiUtils {
 		return "webzine/theme";
 	}
 	
-	@GetMapping(value = "/webzine/theme.aspx")
-	public String moveThemeAspx(@RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
-		
-		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
-		List<WebzineDTO> webzineQrt = webzineService.getWebzineQrt();
-		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
-		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear("Q1_2023");
-		
-		List<WebzineDTO> webzine02 = webzineService.getWebzine02();
-		if(webzine02.size() > 0) {
-			model.addAttribute("webzineList02", webzine02);
-		}
-		List<WebzineDTO> webzine03 = webzineService.getWebzine03();
-		if(webzine03.size() > 0) {
-			model.addAttribute("webzineList03", webzine03);
-		}
-		List<WebzineDTO> webzine04 = webzineService.getWebzine04();
-		if(webzine04.size() > 0) {
-			model.addAttribute("webzineList04", webzine04);
-		}
-		List<WebzineDTO> webzine05 = webzineService.getWebzine05();
-		if(webzine05.size() > 0) {
-			model.addAttribute("webzineList05", webzine05);
-		}
-		List<WebzineDTO> webzine06 = webzineService.getWebzine06();
-		if(webzine06.size() > 0) {
-			model.addAttribute("webzineList06", webzine06);
-		}
-		
-		model.addAttribute("qrtYear", "Q1_2023");
-		model.addAttribute("webzineYear", webzineYear);
-		model.addAttribute("webzineListQY", webzineListQY);
-		model.addAttribute("webzineQrt", webzineQrt);
-		model.addAttribute("webzineLink", webzineLink);
-
-		return "webzine/theme";
-	}
 	
-	@GetMapping(value = "/webzine/theme")
+	@RequestMapping(value = {"/webzine/theme","/webzine/theme.aspx"})
 	public String moveTheme(@RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
@@ -1034,11 +982,6 @@ public class WebzineController extends UiUtils {
 		
 		return "webzine/searchNew";
 	}
-	
-	@GetMapping("/prePub/{filename}")
-	public String prePub(Model model, @PathVariable("filename") String filename) {
-		return "";
-	}
-		
+
 	
 }

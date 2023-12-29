@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.CMRespDto;
@@ -138,9 +139,9 @@ public class VegemilBabyController extends UiUtils {
 	}
 	
 	@RequestMapping(value = "/main/brandVegemilBaby/reviewInfo.aspx")
-    public String moveOldBvEvent()throws Exception{
+    public RedirectView moveOldBvEvent()throws Exception{
 		
-		return "redirect:/vegemilBaby/bv_event";
+		return new RedirectView("/vegemilBaby/bv_event");
     }
 	
 	/* ======== Event ======== */

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.global.ProductEnDTO;
@@ -33,7 +34,7 @@ public class GolobalizeController extends UiUtils {
 	private final ProductGlobalService productGlobalService;
 
 	@GetMapping("/langSwitch")
-	public String bakeLangCookie(HttpServletResponse response, HttpServletRequest request,
+	public RedirectView bakeLangCookie(HttpServletResponse response, HttpServletRequest request,
 			@RequestParam("lang") String lang, @RequestParam("redUrl") String redUrl) {
 
 		log.info("redUrl =  {}", redUrl);
@@ -66,7 +67,7 @@ public class GolobalizeController extends UiUtils {
 		localeResolver.setLocale(request, response, locale);
 
 		redUrlArr = null;
-		return "redirect:" + redUrl;
+		return new RedirectView(redUrl);
 	}
 
 	@GetMapping("/en")

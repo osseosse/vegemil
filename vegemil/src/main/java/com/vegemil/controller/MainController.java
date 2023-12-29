@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.google.gson.JsonObject;
 import com.vegemil.constant.Method;
@@ -150,23 +151,23 @@ public class MainController extends UiUtils {
 	}
 	
 	@RequestMapping(value = "/main/customer/supportFlow.aspx")
-	public String moveSupportFlow(Model model, @RequestParam(value = "page_code", required = false) String page_code) {
+	public RedirectView moveSupportFlow(Model model, @RequestParam(value = "page_code", required = false) String page_code) {
 		
-        return "redirect:/communication/voc";
+        return new RedirectView("/communication/voc");
 	}
 	
 	@RequestMapping(value = "/main/product/list.aspx")
-	public String redirectVegemil(Model model, @RequestParam(value = "category_code", required = false) String category_code) {
+	public RedirectView redirectVegemil(Model model, @RequestParam(value = "category_code", required = false) String category_code) {
 		
 		String redirectUrl = "";
 		
 		if(category_code.equals("V00")) {
-			redirectUrl = "redirect:/brandStory/vegemil";
+			redirectUrl = "/brandStory/vegemil";
 		} else if(category_code.equals("G00")) {
-			redirectUrl = "redirect:/brandStory/greenbia";
+			redirectUrl = "/brandStory/greenbia";
 		}
 		
-        return redirectUrl;
+        return new RedirectView(redirectUrl);
 	}
 	
 	@RequestMapping(value = "/requestAuth")
@@ -234,7 +235,7 @@ public class MainController extends UiUtils {
 
 		} catch (Exception e) {
 		}
-		System.out.println(rtnMap);
+		
 		return rtnMap;
 	}
 	

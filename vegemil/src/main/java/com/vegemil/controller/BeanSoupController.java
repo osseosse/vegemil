@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +42,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,8 +56,6 @@ import com.vegemil.domain.BeansoupNewsDTO;
 import com.vegemil.domain.BeansoupVideoDTO;
 import com.vegemil.domain.contest.PaintingContestAward23DTO;
 import com.vegemil.domain.contest.PaintingContestDTO;
-import com.vegemil.paging.Criteria;
-import com.vegemil.paging.PaginationInfo;
 import com.vegemil.service.BeansoupService;
 import com.vegemil.util.UiUtils;
 
@@ -73,17 +71,8 @@ public class BeanSoupController extends UiUtils {
 	@Autowired
 	BeansoupService beansoupService;
 
-	//@GetMapping("/beanSoup") 구버전 
-	public String beanSoupMain(Model model) {
-
-		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
-		List<BeansoupEventDTO> mainBeansoupEventList = beansoupService.selectMainBeansoupEventList();
-		model.addAttribute("beansoupList", beansoupList);
-		model.addAttribute("mainBeansoupEventList", mainBeansoupEventList);
-		return "beansoup/index";
-	}
 	
-	@GetMapping("/beanSoup")
+	@RequestMapping(value={"/beanSoup", "/Main/beanSoup/intro.aspx"})
 	public String beanSoupMainDev(Model model) {
 		
 		int randNum = (int)(Math.random() * 4) + 1;
@@ -103,30 +92,8 @@ public class BeanSoupController extends UiUtils {
 	}
 	
 
-	@GetMapping("/Main/beanSoup/intro.aspx")
-	public String beanSoupIntro(Model model) {
-		return "redirect:/beansoup/intro";
-	}
-
-	@GetMapping("/Main/beanSoup/index.aspx")
-	public String beanSoupIndex(Model model) {
-		return "redirect:/beanSoup";
-	}
-
-	@GetMapping("/Main/event/recipeLanding.aspx")
+	@RequestMapping(value = {"/Main/event/recipeLanding.aspx", "/main/event/recipeLanding.aspx", "/beansoup/intro"})
 	public String beanSoupQR(Model model) {
-
-		return "redirect:/beansoup/intro";
-	}
-
-	@GetMapping("/main/event/recipeLanding.aspx")
-	public String beanSoupQR2(Model model) {
-
-		return "redirect:/beansoup/intro";
-	}
-
-	@GetMapping("/beansoup/intro")
-	public String moveBeanSoupIntro(Model model) {
 
 		return "beansoup/intro";
 	}
@@ -229,7 +196,7 @@ public class BeanSoupController extends UiUtils {
 	}
 
 	// [소식]영상
-	@GetMapping("/beanSoup/video")
+	//@GetMapping("/beanSoup/video")
 	public String beanSoupVideo(Model model, @ModelAttribute("params") BeansoupVideoDTO params) {
 
 		params.setRecordsPerPage(9);
@@ -241,7 +208,7 @@ public class BeanSoupController extends UiUtils {
 	}
 
 	// [소식]뉴스
-	@GetMapping("/beanSoup/news")
+	//@GetMapping("/beanSoup/news")
 	public String beanSoupNews(Model model) {
 
 		List<BeansoupNewsDTO> beansoupNewsList = beansoupService.selectBeansoupNewsList();
@@ -260,7 +227,7 @@ public class BeanSoupController extends UiUtils {
 	}
 
 	// [소식]생생후기
-	@GetMapping("/beanSoup/event")
+	//@GetMapping("/beanSoup/event")
 	public String beanSoupEvent(Model model, @ModelAttribute("params") BeansoupEventDTO params) {
 
 		params.setRecordsPerPage(9);
@@ -270,7 +237,7 @@ public class BeanSoupController extends UiUtils {
 	}
 
 	// 구매처
-	@GetMapping("/beanSoup/mall")
+	//@GetMapping("/beanSoup/mall")
 	public String beanSoupMall() {
 
 		return "beansoup/mall";

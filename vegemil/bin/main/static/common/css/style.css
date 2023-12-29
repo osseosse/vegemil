@@ -2311,9 +2311,9 @@ button:hover:before {content:"Reply!"}
 	table.engT td.engNum02 span{color:#303030; border-bottom:1px solid #009E5A}
 	.engGray{border-radius:10px; background:#F1F4F5; padding:40px 30px; width:100%; color:#707070;  }
 	
-	.engT td span{word-break:keep-all; } 
-	.engT td p{word-break:keep-all; } 
-	.HJS  {word-break:keep-all; }
+	.engT td span{word-break:break-word; } 
+	.engT td p{word-break:break-word; } 
+	.HJS  {word-break:break-word; }
 
 
 
