@@ -56,7 +56,7 @@ public class MailService {
     	try {
 	    	MimeMessage message = mailSender.createMimeMessage();
 	    	message.setFrom(MailService.FROM_ADDRESS);
-			message.addRecipients(MimeMessage.RecipientType.TO, "ys9331@vegemil.co.kr");
+			message.addRecipients(MimeMessage.RecipientType.TO, "hypark023@osse.co.kr");
 	        message.setSubject("관리자 회원인증");
 	        message.setText(setAuthContext(member), "utf-8", "html");
 	        mailSender.send(message);

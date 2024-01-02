@@ -14,14 +14,14 @@ public class VegemilBabyBestReviewDTO extends CommonDTO {
 
 	private MultipartFile fileName;
 	private Long sIdx;
-	private @SQLInjectionSafe String sUrl; 
+	private String sUrl; 
 	private String sWritedate;
 	private String sWritetime; 
 	private String sUid; 
-	private @SQLInjectionSafe String sTitle; 
-	private @SQLInjectionSafe String sEdayId; 
+	private String sTitle; 
+	private String sEdayId; 
 	private String sDesctime; 
-	private @SQLInjectionSafe String sSns; 	
+	private String sSns; 	
 	private String sImage; 
 	private String sRank; 
 	private String sHonor; 
