@@ -217,11 +217,7 @@ public class MainController extends UiUtils {
 		
 		return "story/"+viewName;
     }
-	
-	@GetMapping("/mail")
-    public String dispMail() {
-        return "utils/mail";
-    }
+
 	
 	@PostMapping("/main/mediaNews/count")
 	public @ResponseBody Map<String, Object> updateMediaNewsCount(Long mIdx) {
@@ -264,8 +260,6 @@ public class MainController extends UiUtils {
 	public JsonObject updateAgentCount(@RequestBody Map<String, Object> agent) {
 
 		JsonObject jsonObj = new JsonObject();
-		String url = "";
-		String title = "";
 		LocalDate now = LocalDate.now();
 			
 		if(agent != null) {
@@ -276,15 +270,11 @@ public class MainController extends UiUtils {
 	        jsonObj.addProperty("result1", isRegistered1);
 	        
 	        if(agent.get("mUrl") != null) {
-	        	url = agent.get("mUrl").toString();
-	        	title = agent.get("mTitle").toString();
-	        	
-	        	
 	        	String month = now.toString().substring(5, 7);
 	        	if(month.length() == 1)
 	        		month = "0" + month;
 	        	
-	        	boolean isRegistered2 = adminService.registerUrl(url, title, month);
+	        	boolean isRegistered2 = adminService.registerUrl(agent.get("mUrl").toString(), agent.get("mTitle").toString(), month);
 	        	jsonObj.addProperty("result2", isRegistered2);
 	        }
 		}

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.vegemil.domain.global.ProductEnDTO;
 import com.vegemil.mapper.ProductGlobalMapper;
 
 @Service
+@Transactional
 public class ProductGlobalServiceImpl implements ProductGlobalService {
 
 	@Autowired
