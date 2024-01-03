@@ -79,7 +79,7 @@ public class VegemilBabyController extends UiUtils {
 	}	
 	
 	/* ======== Community ======== */
-	@GetMapping("/vegemilBaby/magazine")
+	@RequestMapping(value="/vegemilBaby/magazine")
 	public String moveMagazineList(@ModelAttribute("params") final VegemilBabySearchDTO params, Model model) {
 		
 		  model.addAttribute("magazineList",vegemilBabyCommunityService.selectMagazine(params));
@@ -138,15 +138,9 @@ public class VegemilBabyController extends UiUtils {
 		return "vegemilBaby/recipeDetail";
 	}
 	
-	@RequestMapping(value = "/main/brandVegemilBaby/reviewInfo.aspx")
-    public RedirectView moveOldBvEvent()throws Exception{
-		
-		return new RedirectView("/vegemilBaby/bv_event");
-    }
-	
 	/* ======== Event ======== */
 	//진행 중 이벤트
-	@GetMapping("/vegemilBaby/bv_event")
+	@RequestMapping(value={"/vegemilBaby/bv_event","/main/brandVegemilBaby/reviewInfo.aspx"})
 	public String moveBvEvent(Model model) {
 		model.addAttribute("eventList", vegemilBabyCommunityService.selectEventList());
 		return "vegemilBaby/bv_event";

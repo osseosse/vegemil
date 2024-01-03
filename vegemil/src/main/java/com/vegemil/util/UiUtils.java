@@ -23,13 +23,10 @@ public class UiUtils {
 										  @RequestParam(value = "method", required = false) Method method,
 										  @RequestParam(value = "params", required = false) Map<String, Object> params, Model model) {
 		
-		WeakHashMap<String, Object> weakParams = new WeakHashMap<>(params);
-		params = null; 
-
 		model.addAttribute("message", message);
 		model.addAttribute("redirectUri", redirectUri);
 		model.addAttribute("method", method);
-		model.addAttribute("params", weakParams);
+		model.addAttribute("params", params);
 
 		return "utils/message-redirect";
 	}
