@@ -42,10 +42,12 @@ public class GreenbiaController extends UiUtils {
 	
 	@GetMapping("/Main/BrandGreenbia/{greenbiaAspx}")
 	public String greenbiaRedirect(@PathVariable("greenbiaAspx") String greenbiaAspx) {
+		/*
 		if(greenbiaAspx.contains(".")) {
 			greenbiaAspx = greenbiaAspx.substring(0, greenbiaAspx.lastIndexOf("."));
 		}
-		return "greenbia/" + greenbiaAspx;
+		*/
+		return "greenbia/index";
 	}
 	
 	@GetMapping("/greenbia/product/list")
