@@ -806,6 +806,8 @@
 	     </if>
 		ORDER BY
 			s_idx DESC
+		LIMIT
+			#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}			
 	</select>
 
 	<select id="selectSampleBabyTotalCount" parameterType="hashMap" resultType="int">
