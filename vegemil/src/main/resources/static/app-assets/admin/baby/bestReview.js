@@ -182,7 +182,7 @@ var createTable = function() {
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
-//			params.sTh = $('#sIdx').val();
+//			params.sTh = $('#sidx').val();
 			var json = $("#frm").serializeObject();
 			console.log('json', json);
 			$.each(json,function(e){
@@ -194,17 +194,17 @@ var createTable = function() {
 		}
 	  },
       columns: [
-      	{ data: 'sIdx' },
-      	{ data: 'sIdx' },
-      	{ data: 'sIdx' },
+      	{ data: 'sidx' },
+      	{ data: 'sidx' },
+      	{ data: 'sidx' },
       	{ data: 'sUid' },
         { data: 'sEdayId' },
-        { data: 'mName' },
-        { data: 'sTitle'  },
-        { data: 'sUrl' },
-        { data: 'sImage' },
+        { data: 'mname' },
+        { data: 'stitle'  },
+        { data: 'surl' },
+        { data: 'simage' },
         { data: 'sWritedate' },
-        { data: 'sRank' },
+        { data: 'srank' },
         { data: 'sDesctime' }
       ],
       columnDefs: [
@@ -218,7 +218,7 @@ var createTable = function() {
       		render: function (data, type, full, meta) {
 	            return (
 	              '<div class="form-check">' +
-		              '<input type="checkbox" class="form-check-input" id="customCheck2" name="checkList" value="'+full['sIdx']+'" />' +
+		              '<input type="checkbox" class="form-check-input" id="customCheck2" name="checkList" value="'+full['sidx']+'" />' +
 		              '<label class="form-check-label" for="customCheck2"></label>' +
 	              '</div>'
 	            );
@@ -229,7 +229,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
 				return (
-					'<a data-bs-toggle="modal" data-bs-target="#large'+full['sIdx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
+					'<a data-bs-toggle="modal" data-bs-target="#large'+full['sidx']+'"><button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" \'">상세보기</button></a>'
 					+ getModal(full)
       			)
       		}
@@ -256,8 +256,8 @@ var createTable = function() {
       		targets: 5,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['mName']==null)	return '';
-      			else	return full['mName'];
+      			if(full['mname']==null)	return '';
+      			else	return full['mname'];
       		}
       	},
       	{
@@ -265,7 +265,7 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
             return (
-				'<div class="todo-task-list-wrapper"><div class="todo-item textline"><a href="#large" data-bs-toggle="modal" data-bs-target="#large">'+full['sTitle']+'</a></div></div>'
+				'<div class="todo-task-list-wrapper"><div class="todo-item textline"><a href="#large" data-bs-toggle="modal" data-bs-target="#large">'+full['stitle']+'</a></div></div>'
             );
           }
       	},
@@ -273,8 +273,8 @@ var createTable = function() {
       		targets: 7,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sUrl']==null)	return '';
-      			else	return '<a href="'+full['sUrl']+'" target="_blank">'+full['sUrl']+'</a>';
+      			if(full['surl']==null)	return '';
+      			else	return '<a href="'+full['surl']+'" target="_blank">'+full['surl']+'</a>';
       			
       		}
       	},
@@ -283,9 +283,9 @@ var createTable = function() {
 			targets: 8,
 	        orderable: false,
 	        render: function (data, type, full, meta) {
-				if(full['sImage']==null)	return '';
-/*	  			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+full['sImage']+'" height="40" width="40" class="rounded">';*/
-				else	return '<img src="/web/upload/vegemilBaby/'+full['sImage']+'" height="40" width="40" class="rounded">';
+				if(full['simage']==null)	return '';
+/*	  			else	return '<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/review_upload/'+full['simage']+'" height="40" width="40" class="rounded">';*/
+				else	return '<img src="/web/upload/vegemilBaby/'+full['simage']+'" height="40" width="40" class="rounded">';
 	  		}
         },
         {
@@ -301,7 +301,7 @@ var createTable = function() {
       		targets: 10,
       		orderable: false,
       		render: function (data, type, full, meta) {
-      			if(full['sRank']==null || full['sRank'] == 0)	return '<span class="badge rounded-pill bg-danger">N</span>';
+      			if(full['srank']==null || full['srank'] == 0)	return '<span class="badge rounded-pill bg-danger">N</span>';
       			else return '<span class="badge rounded-pill bg-success">Y</span>';
       			
       		}
@@ -395,12 +395,12 @@ var createTable = function() {
 
 function getModal(obj) {
 	
-	$('.rotateL1'+obj.sIdx).click(function() { 
-    	obj.sAngle = -90; 
-    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
-    	angleInfo1.value = obj.sAngle;	  
-    	//$(".imageToRotate1"+obj.sIdx).rotate(-90);
-    	$(".imageToRotate1"+obj.sIdx).css({
+	$('.rotateL1'+obj.sidx).click(function() { 
+    	obj.sangle = -90; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sidx);
+    	angleInfo1.value = obj.sangle;	  
+    	//$(".imageToRotate1"+obj.sidx).rotate(-90);
+    	$(".imageToRotate1"+obj.sidx).css({
     	      "-webkit-transform": "rotate(-90deg)",
     	      "-moz-transform": "rotate(-90deg)",
     	      "-o-transform": "rotate(-90deg)",
@@ -410,12 +410,12 @@ function getModal(obj) {
     	 
     	});
     
-    $('.photoBox1 .rotateR1'+obj.sIdx).click(function() { 
-    	obj.sAngle = 90; 
-    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
-    	angleInfo1.value = obj.sAngle;	  
-    	//$(".imageToRotate1"+obj.sIdx).rotate(90);
-    	$(".imageToRotate1"+obj.sIdx).css({
+    $('.photoBox1 .rotateR1'+obj.sidx).click(function() { 
+    	obj.sangle = 90; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sidx);
+    	angleInfo1.value = obj.sangle;	  
+    	//$(".imageToRotate1"+obj.sidx).rotate(90);
+    	$(".imageToRotate1"+obj.sidx).css({
   	      "-webkit-transform": "rotate(90deg)",
   	      "-moz-transform": "rotate(90deg)",
   	      "-o-transform": "rotate(90deg)",
@@ -425,12 +425,12 @@ function getModal(obj) {
     	
     	});
     
-    $('.photoBox1 .rotateD1'+obj.sIdx).click(function() { 
-    	obj.sAngle = 180; 
-    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
-    	angleInfo1.value = obj.sAngle;	  
-    	//$(".imageToRotate1"+obj.sIdx).rotate(180);
-    	$(".imageToRotate1"+obj.sIdx).css({
+    $('.photoBox1 .rotateD1'+obj.sidx).click(function() { 
+    	obj.sangle = 180; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sidx);
+    	angleInfo1.value = obj.sangle;	  
+    	//$(".imageToRotate1"+obj.sidx).rotate(180);
+    	$(".imageToRotate1"+obj.sidx).css({
   	      "-webkit-transform": "rotate(180deg)",
   	      "-moz-transform": "rotate(180deg)",
   	      "-o-transform": "rotate(180deg)",
@@ -439,12 +439,12 @@ function getModal(obj) {
   	    });
     	});
     
-    $('.photoBox1 .rotateC1'+obj.sIdx).click(function() { 
-    	obj.sAngle = 0; 
-    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sIdx);
-    	angleInfo1.value = obj.sAngle;	  
-    	//$(".imageToRotate1"+obj.sIdx).rotate(0);
-    	$(".imageToRotate1"+obj.sIdx).css({
+    $('.photoBox1 .rotateC1'+obj.sidx).click(function() { 
+    	obj.sangle = 0; 
+    	var angleInfo1 = document.getElementById("angleInfo1"+obj.sidx);
+    	angleInfo1.value = obj.sangle;	  
+    	//$(".imageToRotate1"+obj.sidx).rotate(0);
+    	$(".imageToRotate1"+obj.sidx).css({
   	      "-webkit-transform": "rotate(0deg)",
   	      "-moz-transform": "rotate(0deg)",
   	      "-o-transform": "rotate(0deg)",
@@ -457,9 +457,9 @@ function getModal(obj) {
 	
 	console.log('obj---------------',obj)
 	let modal = "";
-	modal += '<form name="modalForm'+obj.sIdx+'" id="modalForm'+obj.sIdx+'" method="post">'
+	modal += '<form name="modalForm'+obj.sidx+'" id="modalForm'+obj.sidx+'" method="post">'
 	modal +=  '<section id="modal-sizes">'
-	modal +=     '<div class="modal fade text-start" id="large'+obj.sIdx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
+	modal +=     '<div class="modal fade text-start" id="large'+obj.sidx+'" tabindex="-1" aria-labelledby="myModalLabel17" aria-hidden="true">'
 	modal +=		'<div class="modal-dialog modal-dialog-centered modal-lg">'
 	modal +=			'<div class="modal-content">'
 	modal +=				'<div class="modal-header">'
@@ -477,11 +477,11 @@ function getModal(obj) {
 	modal +=						'<tr>'
 	modal +=							'<th>ID <span class="text-warning">'+obj.sUid+'</span></th>'
 	modal +=							'<th>이데이몰ID <span class="text-warning">'+obj.sEdayId+'</span></th>'
-	modal +=							'<th colspan="2">작성자명<span class="text-warning"> '+obj.mName+'</span></th>'
+	modal +=							'<th colspan="2">작성자명<span class="text-warning"> '+obj.mname+'</span></th>'
 	modal +=						'</tr>'
 	modal +=						'<tr>'
 	modal +=							'<th>등록일시<span class="text-warning"> '+obj.sWritedate + obj.sWritetime+'</span></th>'
-									if(obj.sRank == "1" || obj.sRank == "2") {
+									if(obj.srank == "1" || obj.srank == "2") {
 	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-success">Y</span></th>'
 									}else{
 	modal +=							'<th>선정여부 <span class="badge rounded-pill bg-danger">N</span></th>'									
@@ -492,24 +492,24 @@ function getModal(obj) {
 	modal +=					'</thead>'
 	modal +=				'</table>'
 	modal +=				'<div class="modal-body">'
-	modal +=					'<p>URL <a href="#"><span class="text-warning underline"> '+obj.sUrl+'</span></a></p>'
-	modal +=					'<p class="mt-1">제목 <span class="text-warning">'+obj.sTitle+'</span></p>'
+	modal +=					'<p>URL <a href="#"><span class="text-warning underline"> '+obj.surl+'</span></a></p>'
+	modal +=					'<p class="mt-1">제목 <span class="text-warning">'+obj.stitle+'</span></p>'
 	modal +=					'<div class="row">'
 	modal +=						'<div class="col-12">'
 	modal +=							'<dl class="photoUL">'
-										if(obj.sImage != null) {
+										if(obj.simage != null) {
 	modal +=								'<dd>'
 	modal +=									'<div class="form-check">'
 	modal +=										'<input type="radio" id="#" name="photoSelection" class="form-check-input" checked />'
 	modal +=										'<label class="form-check-label" for="#">대표이미지로 선택</label>'
 	modal +=										'<div class="mt-1 photoBox1">'		
-	modal +=											'<button type="button"  class="rotateL1'+obj.sIdx+' btn btn-outline-primary btn-sm">왼쪽</button>'
-	modal +=											'<button type="button"  class="rotateR1'+obj.sIdx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
-	modal +=											'<button type="button"  class="rotateD1'+obj.sIdx+' btn btn-outline-primary btn-sm">아래</button>'
-	modal +=											'<button type="button"  class="rotateC1'+obj.sIdx+' btn btn-outline-primary btn-sm">취소</button>'
-	modal +=											'<input type="hidden"  name="sAngle" id="angleInfo1'+obj.sIdx+'" value='+obj.sAngle+' >'
-//	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="/image/'+obj.sImage+'" width="100%"/></p>'
-	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="/web/upload/vegemilBaby/'+obj.sImage+'"  width="100%"></p>'
+	modal +=											'<button type="button"  class="rotateL1'+obj.sidx+' btn btn-outline-primary btn-sm">왼쪽</button>'
+	modal +=											'<button type="button"  class="rotateR1'+obj.sidx+' btn btn-outline-primary btn-sm">오른쪽</button><br>'
+	modal +=											'<button type="button"  class="rotateD1'+obj.sidx+' btn btn-outline-primary btn-sm">아래</button>'
+	modal +=											'<button type="button"  class="rotateC1'+obj.sidx+' btn btn-outline-primary btn-sm">취소</button>'
+	modal +=											'<input type="hidden"  name="sangle" id="angleInfo1'+obj.sidx+'" value='+obj.sangle+' >'
+//	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sidx+'" src="/image/'+obj.simage+'" width="100%"/></p>'
+	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sidx+'" src="/web/upload/vegemilBaby/'+obj.simage+'"  width="100%"></p>'
 	modal +=										'</div>'
 	modal +=									'</div>'
 	modal +=								'</dd>'
@@ -528,9 +528,9 @@ function getModal(obj) {
 	modal +=											'<dl class="in_dl">'
 	modal +=												'<dd>'
 	modal +=													'<div class="form-check">'
-	modal +=                                                        '<input type="hidden" name="sIdx" value="'+obj.sIdx+'">'
-	modal +=														'<input type="radio" id="#" name="sRank" class="form-check-input" value="1" '
-																if(obj.sRank == 1) {
+	modal +=                                                        '<input type="hidden" name="sidx" value="'+obj.sidx+'">'
+	modal +=														'<input type="radio" id="#" name="srank" class="form-check-input" value="1" '
+																if(obj.srank == 1) {
     modal +=														'checked />'
 																}else {
 	modal +=														' />'
@@ -540,8 +540,8 @@ function getModal(obj) {
 	modal +=												'</dd>'
 	modal +=												'<dd>'
 	modal +=													'<div class="form-check">'
-	modal +=														'<input type="radio" id="#" name="sRank" class="form-check-input" value="2" '
-																if(obj.sRank == 2) {
+	modal +=														'<input type="radio" id="#" name="srank" class="form-check-input" value="2" '
+																if(obj.srank == 2) {
     modal +=														'checked />'
 																}else {
 	modal +=														' />'
@@ -552,8 +552,8 @@ function getModal(obj) {
 		
 	modal +=												'<dd>'
 	modal +=													'<div class="form-check">'
-	modal +=														'<input type="radio" id="#" name="sRank" class="form-check-input" value=""" '
-																if(!obj.sRank) {
+	modal +=														'<input type="radio" id="#" name="srank" class="form-check-input" value=""" '
+																if(!obj.srank) {
     modal +=														'checked />'
 																}else {
 	modal +=														' />'
@@ -572,7 +572,7 @@ function getModal(obj) {
 	modal +=					'</table>'
 	modal +=				'</div>'
 	modal +=				'<div class="modal-footer">'
-	modal +=					'<button type="button" onclick="btnSave('+obj.sIdx+');" class="btn btn-primary" ">저장</button>'
+	modal +=					'<button type="button" onclick="btnSave('+obj.sidx+');" class="btn btn-primary" ">저장</button>'
 	modal +=				'</div>'
 	modal +=			'</div>'
 	modal +=		'</div>'
@@ -588,15 +588,15 @@ function btnSave(idx) {
 	
 	const form = $('#modalForm'+idx).serializeArray();
 	//const formData = new FormData(form);
-	let sRank = false;
+	let srank = false;
 	for(var i=0; i<form.length; i++) {
 		console.log('name----------',form[i].name)
-		if(form[i].name == "sRank") {
-			sRank = true;
+		if(form[i].name == "srank") {
+			srank = true;
 		}
 	}
 	
-	if(!sRank) {
+	if(!srank) {
 		alert("선정등수를 선택해주세요.")
 		return false;
 	}
