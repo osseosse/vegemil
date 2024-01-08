@@ -74,7 +74,7 @@ public interface AdminBabyService {
 
 	public boolean deleteSampleBaby(Map<String, Object> paramMap);
 
-	public List<AdminSampleBabyDTO> getSampleBabyList(Map<String, Object> paramMap);
+	public List<AdminSampleBabyDTO> getSampleBabyList(AdminSampleBabyDTO paramMap);
 	//=================== 샘플신청  =========================
 	
 	

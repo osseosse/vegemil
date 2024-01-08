@@ -104,9 +104,9 @@ public interface AdminBabyMapper {
 
 	public int deleteSampleBaby(Map<String, Object> paramMap);
 
-	public List<AdminSampleBabyDTO> selectSampleBabyList(Map<String, Object> paramMap);
+	public List<AdminSampleBabyDTO> selectSampleBabyList(AdminSampleBabyDTO params);
 
-	public int selectSampleBabyTotalCount(Map<String, Object> paramMap);
+	public int selectSampleBabyTotalCount(AdminSampleBabyDTO params);
 	//=================== 샘플신청  =========================
 	
 	

@@ -170,6 +170,10 @@ var createTable = function() {
 	$('#sEnddate').attr("value",enddate);
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
+	  pageLength: 10,
+	  bPaginate: true,
+	  serverSide: true,
+	  processing: true,
       ajax: {
         url : '/admin/manage/baby/sampleBabyList',
         dataType : 'json',

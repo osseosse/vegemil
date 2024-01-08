@@ -622,12 +622,14 @@ public class AdminBabyController extends UiUtils {
 			 , @RequestParam Map<String, Object> commandMap) {
 
 		JsonObject jsonObj = new JsonObject();
-		List<AdminSampleBabyDTO> sampleBabyList = adminBabyService.getSampleBabyList(commandMap);
+		List<AdminSampleBabyDTO> sampleBabyList = adminBabyService.getSampleBabyList(params);
 		if (CollectionUtils.isEmpty(sampleBabyList) == false) {
 			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
 			JsonArray jsonArr = gson.toJsonTree(sampleBabyList).getAsJsonArray();
 			jsonObj.add("data", jsonArr);
 		}
+		
+		commandMap = null;
 
 		return jsonObj;
 	 }

@@ -39,5 +39,12 @@ public class AdminSampleBabyDTO extends AdminCommonDTO {
 	private String 	sFeedmethod3;
 	private String 	mSmssend;
 	private String 	mEmailsend;
+	
+	private String gubun;
+	//paging
+	private int length;
+	//? 
+	private String sEnddate;
+	private String sStartdate;
 
 }

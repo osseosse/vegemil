@@ -508,13 +508,13 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	}
 
 	@Override
-	public List<AdminSampleBabyDTO> getSampleBabyList(Map<String, Object> paramMap) {
+	public List<AdminSampleBabyDTO> getSampleBabyList(AdminSampleBabyDTO params) {
 		List<AdminSampleBabyDTO> sampleBabyList = Collections.emptyList();
 
-		int SampleBabyTotalCount = adminBabyMapper.selectSampleBabyTotalCount(paramMap);
+		int SampleBabyTotalCount = adminBabyMapper.selectSampleBabyTotalCount(params);
 
 		if (SampleBabyTotalCount > 0) {
-			sampleBabyList = adminBabyMapper.selectSampleBabyList(paramMap);
+			sampleBabyList = adminBabyMapper.selectSampleBabyList(params);
 		}
 
 		return sampleBabyList;
