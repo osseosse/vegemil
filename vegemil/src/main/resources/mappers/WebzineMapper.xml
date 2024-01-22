@@ -342,8 +342,11 @@
         	qrt_year like CONCAT('%',#{qrtYear},'%')
           and
           	sns_title != '메인'
+          	and
+          	sns_title != '이벤트'
         Order by
-        	qrt_year desc
+        	qrt_year desc,
+        	index_no asc
     </select>
     
     <select id="selectWebzine02" resultType="com.vegemil.domain.WebzineDTO">

@@ -132,7 +132,26 @@
 	var afterNo = fileNum + 1;
 	var totSubCount = countArticles - 2;
 	
+	if(qrter = 'Q1_2024'){
+		var totSubCount = countArticles - 1;
+	}
+	
 	$('#btnBefore').on("click", function() {
+		if(qrter = 'Q1_2024'){			
+			if(fileNum == '00') {
+				alert("첫번째 기사입니다.");
+				return false;
+			} else {
+				if(beforeNo <= 9) {
+					document.location.href="/webzine/"+qrter+"/sub0"+beforeNo;
+				} else {
+					document.location.href="/webzine/"+qrter+"/sub"+beforeNo;
+				}
+			}
+			
+			return;
+		}
+		
 		if(fileNum == '01') {
 			alert("첫번째 기사입니다.");
 			return false;

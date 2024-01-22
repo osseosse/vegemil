@@ -15,9 +15,9 @@
 					richSwiping:false
 			  });
 			  
-			 /*  var theday = new Date('2023-12-22 00:00:00');
+			 var theday = new Date('2024-01-18 14:00:00');
 			  
-			  timeCheck(theday); */
+			  timeCheck(theday); 
 		  
 		});
 	function popupCookieSave(){
@@ -41,7 +41,7 @@
 		var today = new Date();
 		if(today >= theDay){
 			 // 제어하고 싶은 코드 그때그떄 변경// 
-			 $("#currentPopup").css('display','none');		
+			 //$("#currentPopup").css('display','none');		
 			 $("#nextPopup").css("display","block");
 			 
 		}
@@ -241,7 +241,7 @@
 </style>
 </head>
 <body id="mainPop">
-<div class="popBox" id="currentPopup" ><!-- 400px * 570px -->
+<div class="popBox" id="currentPopup" style="display:none;"><!-- 400px * 570px -->
 	<!-- pp-slider -->
 	<div class="container"  id="sliderh3">
 		<div class="slider">
@@ -249,18 +249,12 @@
 				<div class="slides">
 					<div class="slide">
 						<div class="slidetitle" >
-							<a href="https://recruit.vegemil.co.kr/recruit/detail?sTh=202312" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_20231222.jpg" alt="2024상반기공개채용" border="0" />
+							<a href="https://recruit.vegemil.co.kr/mypage/list" target="_blank">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_20240109.jpg" alt="2024상반기공개채용1차합격" border="0" />
 							</a>
 						</div>
 					</div>			 	
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="/event/loveVegemil/2023" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20231208.jpg" alt="사랑의 온도계 챌린지" border="0" />
-							</a>
-						</div>
-					</div>				
+							
 				</div>
 			</div>
 			<a class="slider_left"></a>
@@ -274,7 +268,7 @@
 	</div>
 	<!-- action //-->
 </div>
-<div class="popBox" id="nextPopup" style="display:none;"><!-- 400px * 570px -->
+<div class="popBox" id="nextPopup"><!-- 400px * 570px -->
 	<!-- pp-slider -->
 	<div class="container"  id="sliderh3">
 		<div class="slider">
@@ -282,18 +276,11 @@
 				<div class="slides">
 					<div class="slide">
 						<div class="slidetitle" >
-							<a href="https://recruit.vegemil.co.kr/recruit/detail?sTh=202312" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_20231222.jpg" alt="2024상반기공개채용" border="0" />
+							<a href="https://recruit.vegemil.co.kr/mypage/list" target="_blank">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_20240118.jpg" alt="2024상반기공개채용1차합격" border="0" />
 							</a>
 						</div>
 					</div>			 	
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="/event/loveVegemil/2023" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_20231208.jpg" alt="사랑의 온도계 챌린지" border="0" />
-							</a>
-						</div>
-					</div>				
 				</div>
 			</div>
 			<a class="slider_left"></a>

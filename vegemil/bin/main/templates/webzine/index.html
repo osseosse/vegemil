@@ -3,6 +3,10 @@
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <title>정식품</title>
 <head th:replace="webzine/head :: headFragment"></head>
+<meta property="og:title" th:attr="content=|건강한 사람들의 건강한 이야기|" >
+<meta property="og:url" th:attr="content=|https://www.vegemil.co.kr/webzine/${qrtYear}/index|" >
+<meta property="og:image" th:attr="content=|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/01.jpg|" >
+<!-- <meta property="og:description" th:attr="content=|건강한 사람들의 건강한 이야기|"/> -->
 <!-- Snow 효과 -->
 <link rel="stylesheet" href="/webzine/css/jquery.fallingsnow.css">
 <body>

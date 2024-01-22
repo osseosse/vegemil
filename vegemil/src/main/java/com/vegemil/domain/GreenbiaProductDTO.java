@@ -24,6 +24,7 @@ public class GreenbiaProductDTO extends CommonDTO {
 	private String gTubeMark; 
 	private String gCheck; 
 	private String gOnuri; //varchar(255)
+	private String gImgCnt; 
 
 
 
