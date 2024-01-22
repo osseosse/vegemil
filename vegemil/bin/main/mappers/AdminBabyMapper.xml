@@ -806,7 +806,9 @@
 	     </if>
 		ORDER BY
 			s_idx DESC
-		LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}			
+		<if test='isPrint == 0'>			
+		LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+		</if>			
 	</select>
 
 	<select id="selectSampleBabyTotalCount" parameterType="com.vegemil.domain.AdminSampleBabyDTO" resultType="int">
@@ -814,6 +816,25 @@
 			COUNT(*)
 		FROM
 			m_sample_baby
+		 WHERE 1=1
+		 <if test='gubun != "" '>
+		   AND s_item = #{gubun, jdbcType=VARCHAR}
+		 </if>
+		 <if test='searchType == "mName" '>
+		   AND s_mname like CONCAT('%',#{searchKeyword, jdbcType=VARCHAR},'%')
+		 </if>
+		 <if test='searchType == "id" '>
+		   AND s_id like CONCAT('%',#{searchKeyword, jdbcType=VARCHAR},'%')
+		 </if>
+		 <if test='searchType == "hp" '>
+		   AND s_hp like CONCAT('%',#{searchKeyword, jdbcType=VARCHAR},'%')
+		 </if>
+		 <if test='sStartdate != "" '>
+	       AND s_writedate &gt;= #{sStartdate, jdbcType=VARCHAR} 
+	     </if>
+	     <if test='sEnddate != "" '>
+	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
+	     </if>			
 	</select>
 	
 	
