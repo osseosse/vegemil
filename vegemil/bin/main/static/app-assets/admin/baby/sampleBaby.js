@@ -103,19 +103,8 @@ var normalizeDate = function (dateString) {
 };
 // Advanced Search Functions Ends
 
-$(function () {
-  createTable();
-  
-  // 전체 체크 하는 부분
-  $("[type=checkbox][name=allCheck]").on("change", function(){ //0
-  	var check = $(this).prop("checked"); //1
-	//전체 체크
-	if($(this).hasClass("form-check-input")){ //2
-		$("[type=checkbox][name=checkList]").prop("checked", check);
-	}
-  });
-  
-  $('#btnDel').click(function(e){
+function delData() {
+$('#btnDel').click(function(e){
 	console.log('e', e)
     var form = document.form;
       
@@ -149,6 +138,22 @@ $(function () {
       // Prevent actual form submission
       e.preventDefault();
  });
+
+}
+
+$(function () {
+  createTable();
+  
+  // 전체 체크 하는 부분
+  $("[type=checkbox][name=allCheck]").on("change", function(){ //0
+  	var check = $(this).prop("checked"); //1
+	//전체 체크
+	if($(this).hasClass("form-check-input")){ //2
+		$("[type=checkbox][name=checkList]").prop("checked", check);
+	}
+  });
+  
+  delData();
 
 });
 
@@ -437,6 +442,7 @@ var createTable = function() {
 	} ).draw();
 	
     $('div.head-label').html('<h4 class="card-title">신청목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button></h4>');
+    delData();
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
