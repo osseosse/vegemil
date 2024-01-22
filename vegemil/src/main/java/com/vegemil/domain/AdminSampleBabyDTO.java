@@ -47,7 +47,7 @@ public class AdminSampleBabyDTO extends AdminCommonDTO {
 	private String sEnddate;
 	private String sStartdate;
 	
-	//excel extract 여부 == 1 이면 프린트용 조회  마즘 
+	//excel extract , 1 이면 프린트용 조회  
 	private int isPrint = 0;
 
 }

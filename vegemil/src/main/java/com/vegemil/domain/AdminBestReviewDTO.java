@@ -20,5 +20,9 @@ public class AdminBestReviewDTO extends AdminCommonDTO {
 	private int 	sAngle;/** 사진 각도 */
 	private String 	sRank; /** 개월 수 */
 	private String  mName; /** 이름 */
+	
+	//excel extract , 1 이면 프린트용 조회  
+	private int isPrint = 0;
+
 
 }

@@ -182,7 +182,8 @@ var createTable = function() {
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
-			var json = $("#frm").serializeObject();			
+			var json = $("#frm").serializeObject();
+			console.log('json>>', json);			
 			$.each(json,function(e){
 				params[e] = json[e];
 				console.log(e);

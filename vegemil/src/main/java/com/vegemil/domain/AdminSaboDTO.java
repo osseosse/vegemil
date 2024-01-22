@@ -30,6 +30,9 @@ public class AdminSaboDTO extends AdminCommonDTO {
 
 	/** ?? */
 	private String sSabocol;
+	
+	//excel extract , 1 이면 프린트용 조회  
+	private int isPrint = 0;
 
 	
 

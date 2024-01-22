@@ -564,7 +564,9 @@ public class AdminBabyController extends UiUtils {
 	//============================================= 베스트후기 =============================================
 	@RequestMapping(value = "/admin/manage/baby/bestReviewList", method = {RequestMethod.GET, RequestMethod.POST})
 	 public @ResponseBody DataTableDTO getBestReviewList(@ModelAttribute("params") AdminBestReviewDTO params, Model model, @RequestParam Map<String, Object> commandMap) {
-
+		
+		commandMap.put("isPrint", params.getIsPrint()); // babyservice 파라미터가 map이라 별도 세팅 과정 거침 
+		
 		DataTableDTO dataTableDto = adminBabyService.getBestReviewList(commandMap);
 		return dataTableDto;
 	 }
@@ -613,8 +615,6 @@ public class AdminBabyController extends UiUtils {
    }
    //============================================= 베스트후기 =============================================
 
-	
-	
 	
 	
 	@RequestMapping(value = "/admin/manage/baby/sampleBabyList")
