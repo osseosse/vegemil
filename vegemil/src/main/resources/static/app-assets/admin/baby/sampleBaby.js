@@ -122,7 +122,7 @@ $('#btnDel').click(function(e){
 				if(data){
 					alert("삭제되었습니다.");
 					//window.location.reload();
-					$('.datatables-basic').DataTable().ajax.reload();
+					createTable();
 				}
 				else{
 					alert("실패했습니다.");

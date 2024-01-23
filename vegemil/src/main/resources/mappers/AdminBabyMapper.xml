@@ -485,7 +485,7 @@
 			'%')
 		</if>
 		ORDER BY c_write_date DESC
-		<if test='isPrint == 0'>
+		<if test='isPrint != 1'>
 			LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
 		</if>
 	</select>

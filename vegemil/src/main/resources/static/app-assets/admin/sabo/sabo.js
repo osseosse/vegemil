@@ -21,6 +21,45 @@ function filterColumn(val) {
 
 }
 
+function deleteData(){
+	$('#btnDel').click(function(e){
+
+	    var form = document.form;
+	      
+	    // Output form data to a console
+
+	      
+	    if(confirm('삭제하시겠습니까?')){
+			$.ajax({
+				url : '/admin/manage/sabo/deleteSaboSubscribe',
+				type : "post",
+				data : $(form).serialize(),
+				dataType : "json",
+				success : function(data) {
+		
+					if(data){
+						alert("삭제되었습니다.");
+						//window.location.reload();
+						$('.datatables-basic').DataTable().ajax.reload();
+						return;
+					}
+					else{
+						alert("실패했습니다.");
+					}
+					
+				},
+				error : function(){
+				}
+			});
+		}
+	      
+	       
+	      // Prevent actual form submission
+	      e.preventDefault();
+	});
+
+}
+
 // Datepicker for advanced filter
 var separator = ' - ',
   rangePickr = $('.flatpickr-range'),
@@ -116,40 +155,7 @@ $(function () {
      	}
     });
 
-	$('#btnDel').click(function(e){
-
-	    var form = document.form;
-	      
-	    // Output form data to a console
-
-	      
-	    if(confirm('삭제하시겠습니까?')){
-			$.ajax({
-				url : '/admin/manage/sabo/deleteSaboSubscribe',
-				type : "post",
-				data : $(form).serialize(),
-				dataType : "json",
-				success : function(data) {
-		
-					if(data){
-						alert("삭제되었습니다.");
-						//window.location.reload();
-						$('.datatables-basic').DataTable().ajax.reload();
-					}
-					else{
-						alert("실패했습니다.");
-					}
-					
-				},
-				error : function(){
-				}
-			});
-		}
-	      
-	       
-	      // Prevent actual form submission
-	      e.preventDefault();
-	});
+	deleteData();
 	
 	
 });
@@ -347,6 +353,7 @@ var createTable = function() {
 	} ).draw();
     
     $('div.head-label').html('<h4 class="mb-0">사보 신청자 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button></h4>');
+    deleteData();
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
     });
