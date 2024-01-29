@@ -7,15 +7,18 @@
 	<script type="text/javascript" src="/common/js/prrple.slider.js" charset="utf-8"></script>
 	<script>
 		$(document).ready(function(){
+			
+			  getPopupInfo();
 			  /********** EXAMPLE #5 - H3 - HORIZONTAL SLIDE + LOOP + SEAMLESS **********/
-			  $('#sliderh3 .slider').prrpleSlider({
+			  /* $('#sliderh3 .slider').prrpleSlider({
 					autoPlay:true,				//play slider automatically?  //false 사용시 멈춤 //true 사용시 플레이
 					autoPlayInterval:	4000,		
 					csstransforms:	true,
 					richSwiping:false
-			  });			 
-			
-			 var theday = new Date('2024-01-26 15:00:00');
+			  }); */
+			  
+			 
+			//var theday = new Date('2024-01-26 15:00:00');
 			  
 			//timeCheck(theday); 
 		  
@@ -46,6 +49,56 @@
 			 
 		}
 		return true;
+	}
+	
+	function getPopupInfo(){
+		console.log("쫌 ");
+		$.ajax({
+			url: "/popup/info",
+			type: 'GET',
+			dataType: "json",
+			contentType: "application/json; charset=UTF-8",
+			success: function (response) {
+
+				$("#popupslidesNext").html('');
+				
+				if(response.length < 1){
+					$("#nextPopup").css('display','none');	
+					return;
+				}
+				
+				console.log(response);
+				
+				var popupStr = ''
+				
+				for(let i=0;i<response.length;i++){
+					
+					let imgUrl = response[i].imgUrl; 
+					let alt = response[i].alt;
+					let hrefUrl = response[i].hrefUrl
+					let startDate = new Date(response[i].startDate);
+					let endDate = new Date(response[i].endDate);
+					
+					console.log("alt = " + alt);
+					
+					popupStr += '<div class="slides"><div class="slide"><div class="slidetitle">';
+					popupStr += '<a href="' + hrefUrl + '" target="_blank">';
+					popupStr += '<img src="' + imgUrl + '" alt="' + alt + '" border="0" /></a>';
+					popupStr += '</div></div></div>';					
+					
+				}
+				
+				console.log("popupStr = "+popupStr);
+				$("#popupslidesNext").html(popupStr);
+			 	$('#sliderh3 .slider').prrpleSlider({
+					autoPlay:true,				//play slider automatically?  //false 사용시 멈춤 //true 사용시 플레이
+					autoPlayInterval:	4000,		
+					csstransforms:	true,
+					richSwiping:false
+			  	});
+				return true;
+			}
+		})
 	}
 	
 	/*
@@ -226,7 +279,7 @@
 </style>
 <style>
 	 #nextPopup {
-	 	/* display:none; */
+	 	/* display:none; */ 
 	 }
 	 #currentPopup{
 	 
@@ -246,24 +299,7 @@
 	<div class="container"  id="sliderh3">
 		<div class="slider">
 			<div class="slider_area" >
-				<div class="slides">
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="https://recruit.vegemil.co.kr/mypage/list" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_240126.jpg" alt="2024상반기공개채용최종합격" border="0" />
-							</a>
-						</div>
-					</div>			 	
-				</div>
-				<div class="slides">
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="https://recruit.vegemil.co.kr/mypage/list" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_240126.jpg" alt="2024상반기공개채용최종합격" border="0" />
-							</a>
-						</div>
-					</div>			 	
-				</div>
+				
 			</div>
 			<a class="slider_left"></a>
 			<a class="slider_right"></a>
@@ -280,16 +316,7 @@
 	<!-- pp-slider -->
 	<div class="container"  id="sliderh3">
 		<div class="slider">
-			<div class="slider_area" >
-				<div class="slides">
-					<div class="slide">
-						<div class="slidetitle" >
-							<a href="https://recruit.vegemil.co.kr/mypage/list" target="_blank">
-								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_240126.jpg" alt="2024상반기공개채용최종합격" border="0" />
-							</a>
-						</div>
-					</div>			 	
-				</div>
+			<div class="slider_area" id="popupslidesNext">			
 			</div>
 			<a class="slider_left"></a>
 			<a class="slider_right"></a>

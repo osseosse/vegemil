@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegemil.mapper.PopupMapper">
+	
+	<sql id="popupColumns">
+		idx,
+		img_url,
+		start_date,
+		end_date,
+		active,
+		alt,
+		href_url
+	</sql>
+	
+	<select id="selectPopupList" resultType="com.vegemil.domain.PopupDTO">
+		<![CDATA[
+		select
+			idx,
+			img_url,
+			start_date,
+			end_date,
+			active,
+			alt,
+			href_url
+		from
+			m_popup
+		where
+			active = 1
+		and
+			start_date <= now()
+		and
+			end_date >= now()
+		order by idx desc
+		
+		]]>
+	</select>
+	
+	<select id="selectActiveCount" resultType="int">
+		<![CDATA[
+		select
+			count(*)
+		from
+			m_popup
+		where
+			active = 1
+		and
+			start_date <= now()
+		and
+			end_date >= now()
+		]]>
+	</select>
+
+</mapper>

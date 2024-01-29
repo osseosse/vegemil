@@ -11,8 +11,8 @@
 <!-- ================================ 
 		Content
 ================================ -->
-<div id="popup" class="main-popup">
- <iframe id="popup1" th:src="@{/fragments/slidePopup}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" ></iframe>   
+<div id="popup" class="main-popup" th:if="${isPopup > 0}">
+ <iframe id="popup1" th:src="@{/fragments/slidePopup2}" marginwidth="0" marginheight="0" width="350" height="480" frameborder="0" scrolling="no" ></iframe>   
 </div>
 <div id="content" class="pb150">
 	<div class="video" >

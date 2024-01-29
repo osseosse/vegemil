@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}">
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="/common/js/prrple.slider.js" charset="utf-8"></script>
-	<script type="text/javascript">
+	<script>
 		$(document).ready(function(){
 			  /********** EXAMPLE #5 - H3 - HORIZONTAL SLIDE + LOOP + SEAMLESS **********/
 			  $('#sliderh3 .slider').prrpleSlider({
@@ -13,11 +13,11 @@
 					autoPlayInterval:	4000,		
 					csstransforms:	true,
 					richSwiping:false
-			  });
-			  
+			  });			 
+			
 			 var theday = new Date('2024-01-26 15:00:00');
 			  
-			  timeCheck(theday); 
+			//timeCheck(theday); 
 		  
 		});
 	function popupCookieSave(){
@@ -226,7 +226,7 @@
 </style>
 <style>
 	 #nextPopup {
-	 	display:none;
+	 	/* display:none; */
 	 }
 	 #currentPopup{
 	 
@@ -254,7 +254,15 @@
 							</a>
 						</div>
 					</div>			 	
-							
+				</div>
+				<div class="slides">
+					<div class="slide">
+						<div class="slidetitle" >
+							<a href="https://recruit.vegemil.co.kr/mypage/list" target="_blank">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_recruit_240126.jpg" alt="2024상반기공개채용최종합격" border="0" />
+							</a>
+						</div>
+					</div>			 	
 				</div>
 			</div>
 			<a class="slider_left"></a>

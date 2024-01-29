@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,14 +37,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonObject;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminCalendarModelDTO;
 import com.vegemil.domain.MediaNewsDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.PopupDTO;
 import com.vegemil.service.AdminService;
 import com.vegemil.service.CompanyService;
 import com.vegemil.service.MemberService;
+import com.vegemil.service.PopupService;
 import com.vegemil.util.UiUtils;
 
 @Controller
@@ -56,6 +62,9 @@ public class MainController extends UiUtils {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	@Autowired
+	private PopupService popupSerive;
 	
 	private static String[] globalRndList = {"introduce","haccp","fssc","halal"};
 	
@@ -88,6 +97,7 @@ public class MainController extends UiUtils {
 			}
 			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
 	        model.addAttribute("mediaNewsList", mediaNewsList);
+	        model.addAttribute("isPopup", popupSerive.activePopupCount());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -280,6 +290,13 @@ public class MainController extends UiUtils {
 		}
 
 		return jsonObj;
+	}
+	
+	
+	@GetMapping("/popup/info")
+	@ResponseBody
+	public List<PopupDTO> popupInfo(@RequestBody(required = false) Map<String, Object> agent) throws JsonProcessingException {
+		return popupSerive.getPopupInfo();
 	}
 	
 }
