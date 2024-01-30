@@ -38,24 +38,12 @@ public class WebzineController extends UiUtils {
 	
 	@GetMapping(value = "/main/webzine/list")
 	public String openWebzineList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
-	        	
-		//List<ProductDTO> productList = productService.getProductList(searchKeyword);
-		//model.addAttribute("productList", productList);
-		//model.addAttribute("productCount", productList.size());
-
+	
 		return "webzine/list";
 	}
 	
-	@GetMapping(value = "/main/webzine")
-	public String openWebzineOriginal(Model model, @RequestParam(required = false) SearchDTO params) {
-		
-		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
-		model.addAttribute("webzineList", webzineList);
-		
-		return "webzine/default";
-	}
 	
-	@RequestMapping(value = {"/webzine","/Main/webzine/default.aspx"})
+	@RequestMapping(value = {"/webzine","/Main/webzine/default.aspx","/main/webzine"})
 	public String moveWebzine(Model model, @RequestParam(required = false) SearchDTO params) {
 		
 		List<WebzineDTO> webzineList = webzineService.findAllWebzine(params);
