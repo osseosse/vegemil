@@ -68,7 +68,7 @@ public class MainController extends UiUtils {
 	
 	private static String[] globalRndList = {"introduce","haccp","fssc","halal"};
 	
-	@RequestMapping(value = "/")
+	@RequestMapping(value = {"/","/main/default.aspx","/Main/default.aspx","/home"})
 	public String moveIndex(Model model, Authentication authentication, HttpServletResponse response,
 												@CookieValue(value = "lang", required = false) String localCookie) throws Exception {
 		
@@ -106,59 +106,6 @@ public class MainController extends UiUtils {
         return "index";
 	}
 
-	@RequestMapping(value = "/main/default.aspx")
-	public String moveOldIndex1(Model model, Authentication authentication) throws Exception {
-		
-		MemberDTO member = new MemberDTO();
-		
-		try {
-			
-			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
-			if(authentication != null) {
-		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-		        
-		        if("1".equals(member.getMIsIdle())){
-		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
-		        }
-		        
-		        model.addAttribute("member",member);	//유저 정보
-			}
-			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
-	        model.addAttribute("mediaNewsList", mediaNewsList);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        
-        return "index";
-	}
-	
-	@RequestMapping(value = "/Main/default.aspx")
-	public String moveOldIndex2(Model model, Authentication authentication) throws Exception {
-		
-		MemberDTO member = new MemberDTO();
-		
-		try {
-			
-			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
-			if(authentication != null) {
-		        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-		        
-		        if("1".equals(member.getMIsIdle())){
-		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
-		        }
-		        
-		        model.addAttribute("member",member);	//유저 정보
-			}
-			List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
-	        model.addAttribute("mediaNewsList", mediaNewsList);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        
-        return "index";
-	}
 	
 	@RequestMapping(value = "/main/customer/supportFlow.aspx")
 	public RedirectView moveSupportFlow(Model model, @RequestParam(value = "page_code", required = false) String page_code) {
@@ -186,25 +133,7 @@ public class MainController extends UiUtils {
 		return mav;
     }
 	
-	@RequestMapping(value = "/home")
-    public String moveMain(Model model, Authentication authentication)throws Exception{
-		
-		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
-		MemberDTO member = new MemberDTO();
-		if(authentication != null) {
-	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
-	        
-	        if("1".equals(member.getMIsIdle())){
-	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
-	        }
-	        
-	        model.addAttribute("member",member);	//유저 정보
-		}
-		List<MediaNewsDTO> mediaNewsList = companyService.getMediaNewsTop3();
-        model.addAttribute("mediaNewsList", mediaNewsList);
-		
-		return "index";
-    }
+	
 	
 	@RequestMapping(value = "/fragments/{viewName}")
     public String openFragments(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
