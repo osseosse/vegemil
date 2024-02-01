@@ -212,11 +212,11 @@ public class RndController extends UiUtils {
 		list = rndService.getFactReviewList(params);
 		int listCount = 0;
 		
-		if(list != null) {
-			listCount = list.size();
-		}
+		
+		if(list != null) { listCount = list.size(); }
 		
 		model.addAttribute("list", list);
+		
 		model.addAttribute("listCount", listCount);
 		model.addAttribute("params",params);
 		

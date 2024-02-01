@@ -18,6 +18,7 @@ import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.mapper.AdminEventMapper;
+import com.vegemil.mapper.PopupMapper;
 
 @Service
 @Transactional
@@ -28,6 +29,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 
 	@Autowired
 	private AdminEventMapper adminEventMapper;
+	
+	@Autowired
+	private PopupMapper	popupMapper;
 	
 	//이벤트 조회 - 베지밀
 	@Override
@@ -276,6 +280,14 @@ public class AdminEventServiceImpl implements AdminEventService {
 		}
 		
 		return (result > 0)? true : false;
+	}
+
+	@Override
+	public DataTableDTO getPopupList(Map<String, Object> paramMap) {
+		DataTableDTO datas = new DataTableDTO();
+		
+		datas.setData(popupMapper.selectAllPopupList());
+		return datas;
 	}
 	
 	

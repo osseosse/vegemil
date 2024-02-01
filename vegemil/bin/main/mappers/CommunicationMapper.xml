@@ -52,6 +52,7 @@
 			m_event
 		where
 			e_active = 1
+		order by e_idx desc
 	</select>
 	
 	<select id="selectEvent" resultType="com.vegemil.domain.EventDTO">

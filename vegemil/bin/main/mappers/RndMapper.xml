@@ -172,11 +172,28 @@
 	<select id="selectTourReviewList" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.FactpostDTO" >
 	
 		SELECT
-            <include refid="reviewColumns" />
-        FROM
+            s_idx,
+			s_cate, 
+			s_id, 
+			s_name, 
+			s_hp, 
+			s_email, 
+			s_addr, 
+			s_best,
+			s_subject, 
+			s_file,
+			DATE_FORMAT(s_writedate,'%Y-%m-%d') as s_writedate,
+			DATE_FORMAT(s_writedate,'%Y-%m') as s_year_month,
+			DATE_FORMAT(s_writedate,'%d') as s_day, 
+			s_activeuser, 
+			s_hit, 
+			s_active, 
+			s_url, 
+			s_icon
+		FROM			
             m_factpost
         WHERE
-        	1=1
+        	s_active = 1
             <include refid="search" />
         ORDER BY
             FIELD(s_best, 1, 0), s_idx DESC

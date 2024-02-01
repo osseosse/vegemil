@@ -14,6 +14,7 @@ import com.vegemil.domain.VisitDTO;
 public interface PopupMapper {
 	
 	public List<PopupDTO> selectPopupList();
+	public List<PopupDTO> selectAllPopupList(); 
 	public int selectActiveCount();
 
 }

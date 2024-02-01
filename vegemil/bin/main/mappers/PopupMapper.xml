@@ -49,5 +49,22 @@
 			end_date >= now()
 		]]>
 	</select>
+	
+	<select id="selectAllPopupList" resultType="com.vegemil.domain.PopupDTO">
+		<![CDATA[
+		select
+			idx,
+			img_url,
+			start_date,
+			end_date,
+			active,
+			alt,
+			href_url
+		from
+			m_popup	
+		order by idx desc
+		
+		]]>
+	</select>
 
 </mapper>

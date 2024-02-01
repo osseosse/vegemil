@@ -35,7 +35,8 @@ public interface AdminEventService {
 	// 사랑의 온도계 업데이트 
 	public boolean updateLoveThermometer(ThermometerLoveDTO dto);
 	
-	
+	// 팝업 리스트 조회 
+	public DataTableDTO getPopupList(Map<String, Object> paramMap);
 
 	
 	

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +34,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.PopupDTO;
 import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.service.AdminEventService;
 import com.vegemil.util.UiUtils;
@@ -269,6 +269,23 @@ public class AdminEventController extends UiUtils{
 		adminEventService.updateLoveThermometer(params);
 		return showMessageWithRedirect("사랑의 온도를 저장했습니다.", "/admin/manage/event/thermometerOfLove",Method.GET, null, model);
 	}
+	
+	@GetMapping("/event/popup")
+	public String getPopupAdmin() {
+		return "admin/event/popup";
+	}
+	
+	//이벤트 조회 - 베지밀
+	@GetMapping("/event/popupList")
+	public @ResponseBody DataTableDTO getPopupData(
+						@ModelAttribute("params") PopupDTO params, Model model, 
+						@RequestParam Map<String, Object> commandMap) {
+		
+		DataTableDTO dataTableDto = adminEventService.getPopupList(commandMap);
+		
+		return dataTableDto;
+	}
+
 	
 	//정적 이미지 불러오기
 	@GetMapping("/web/upload/EVENT/{filename}")
