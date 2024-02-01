@@ -23,25 +23,7 @@
 	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/bootstrap.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
 	<link href="https://image.edaymall.com/images/mail/news/dcf/c/html/common/css/style.css" rel="stylesheet">
-	<script>
-		$("document").ready(function(){
-			var path = document.location.href;
-			var tmpArr = path.split('/');
-			var checkPath = tmpArr[tmpArr.length-1]
-
-			if(checkPath == 'season'){
-				$("#contestInfo").addClass('active');
-			}
-			
-			if(checkPath == 'seasonWinner'){
-				$("#awardList").addClass('active');
-			}
-			
-			if(checkPath == 'seasonWinnerList'){
-				$("#awardDisplay").addClass('active');
-			}
-		});
-	</script>
+	
     <body>
         <!-- ================================ 
 		        Header
@@ -54,12 +36,7 @@
 				Content
 		================================ -->
 		<!-- winner tab -->
-		<div class="container100 clear mView" >
-			<ul class="winTab">
-				<li id="contestInfo"><a href="https://www.vegemil.co.kr/beanSoup/season">대회 안내</a></li>
-				<li id="awardList"><a href="https://www.vegemil.co.kr/beanSoup/seasonWinner">결과 발표</a></li>
-				<li id="awardDisplay"><a href="https://www.vegemil.co.kr/beanSoup/seasonWinnerList">온라인 전시</a></li>
-			</ul>
+		<div class="container100 clear mView" >			
 		</div>
 		<section class="mainSection">
         <div class="container100 pb100" >
@@ -75,6 +52,11 @@
 						<div class="fake-btn"><a href="#pop_season">&nbsp;</a></div>
 					</div>
 					<div class="mView">
+						<ul class="winTab">
+							<li id="contestInfo"><a href="/beanSoup/season">대회 안내</a></li>
+							<li id="awardList"><a href="/beanSoup/seasonWinner">결과 발표</a></li>
+							<li id="awardDisplay"><a href="/beanSoup/seasonWinnerList">온라인 전시</a></li>
+						</ul>
 						<p><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m01.jpg" /></p>
 						<p><a href="#pop_season" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m02.jpg" alt="제철 재료 확인하러가기"/></a></p>
 						<p style="margin-top:-1px "><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/m03.jpg" /></p>
@@ -141,6 +123,53 @@
 	</div>
 	</section>	
 	<!-- // container -->
+	
+	<!-- ================================ 
+			// Content
+	================================ -->
+	<!-- ================================ 
+				Popup 
+	================================ -->
+	
+	<!--제철재료 pop_season -->
+	<div id="pop_season" class="pop_wrap_recipe w800" style="display:none;">
+		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
+			<div>
+				<p class="btn_pop_close">	
+					<a href="#pop_season" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_btn.jpg" alt="닫기"></a>
+				</p>
+				<p class="center">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop.jpg" alt="팝업본문"/>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //제철재료 pop_season -->
+	<!-- 주의사항 pop_season 2023-08-21 -->
+	<div id="pop_season_info" class="pop_wrap_recipe w800" style="display:none;">
+		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
+			<div>
+				<p class="btn_pop_close">	
+					<a href="#pop_season_info" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_close_info.jpg" alt="닫기"></a>
+				</p>
+				<p class="center">
+					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_info.jpg" alt="팝업본문"/>
+				</p>
+				<p class="center" style="padding-bottom:70px; background:#fffedf">
+					<a href="#"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_pop_info.jpg" alt="참가 접수하러가기"/></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- //주의사항 pop_season 2023-08-21 -->
+
+	<script src="https://www.vegemil.co.kr/common/js/modality.js"></script>
+	<!-- 팝업 script -->
+	<script>
+		var modal1 = Modality.init('#pop_season', {effect: 'slide-up'}); 
+		var modal1 = Modality.init('#pop_season_info', {effect: 'slide-up'});  // 2023-08-21 추가
+	</script>
+	<!-- //팝업 script -->
 	<input type="hidden" name="currentTime" id="currentTime" value="" th:value="${currentTime}">
 	<script type='text/javascript'>
 	//<![CDATA[	
@@ -200,17 +229,9 @@
 		} 
 		
 		function timeCheckLocation(){
-			
-			var theDay = new Date('2023-09-14 00:00:00'); 
-			var currentValue = $("#currentTime").val();			
-			var today = new Date(currentValue);
-
-			if(today < theDay){
-				location.href="/beanSoup/agreement";
-			}else{
-				alert("접수 기간이 마감되었습니다.");
-				return;
-			}									
+			alert("접수 기간이 마감되었습니다.");
+			return false;
+									
 		}		
 	//]]>
 	</script>
@@ -227,52 +248,26 @@
 		    }
 		//]]>
 	</script>
-	<!-- ================================ 
-			// Content
-	================================ -->
-	<!-- ================================ 
-				Popup 
-	================================ -->
-	
-	<!--제철재료 pop_season -->
-	<div id="pop_season" class="pop_wrap_recipe w800" style="display:none;">
-		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
-			<div>
-				<p class="btn_pop_close">	
-					<a href="#pop_season" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_btn.jpg" alt="닫기"></a>
-				</p>
-				<p class="center">
-					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop.jpg" alt="팝업본문"/>
-				</p>
-			</div>
-		</div>
-	</div>
-	<!-- //제철재료 pop_season -->
-	<!-- 주의사항 pop_season 2023-08-21 -->
-	<div id="pop_season_info" class="pop_wrap_recipe w800" style="display:none;">
-		<div class="pop_recipeBase" cellspacing="0"  summary="타이틀">
-			<div>
-				<p class="btn_pop_close">	
-					<a href="#pop_season_info" class="type"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_close_info.jpg" alt="닫기"></a>
-				</p>
-				<p class="center">
-					<img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/pop_info.jpg" alt="팝업본문"/>
-				</p>
-				<p class="center" style="padding-bottom:70px; background:#fffedf">
-					<a href="#"><img src="https://image.edaymall.com/images/vegemil/beansoup/img/season/btn_pop_info.jpg" alt="참가 접수하러가기"/></a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<!-- //주의사항 pop_season 2023-08-21 -->
-
-	<script src="https://www.vegemil.co.kr/common/js/modality.js"></script>
-	<!-- 팝업 script -->
 	<script>
-		var modal1 = Modality.init('#pop_season', {effect: 'slide-up'}); 
-		var modal1 = Modality.init('#pop_season_info', {effect: 'slide-up'});  // 2023-08-21 추가
+		$("document").ready(function(){
+			var path = document.location.href;
+			var tmpArr = path.split('/');
+			var checkPath = tmpArr[tmpArr.length-1]
+
+			if(checkPath == 'season'){
+				$("#contestInfo").addClass('active');
+			}
+			
+			if(checkPath == 'seasonWinner'){
+				$("#awardList").addClass('active');
+			}
+			
+			if(checkPath == 'seasonWinnerList'){
+				$("#awardDisplay").addClass('active');
+			}
+		});
 	</script>
-	<!-- //팝업 script -->
+	
       <!-- ================================ 
        			 Footer
       ================================ -->
