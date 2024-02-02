@@ -66,5 +66,33 @@
 		
 		]]>
 	</select>
+	
+	<update id="updateAvtiveColumn" parameterType="com.vegemil.domain.PopupDTO">
+		UPDATE m_popup
+		SET
+			  active = #{active}		
+		WHERE
+			idx = #{idx}
+	</update>
+	
+	<insert id="insertPopupRow" parameterType="com.vegemil.domain.PopupDTO">
+		INSERT INTO m_popup (			
+			img_url,
+			href_url,
+			start_date,
+			end_date,
+			active,
+			alt
+		) VALUES (
+			  #{imgUrl}		
+			, #{hrefUrl}
+			, #{startDate}			
+			, #{endDate}
+			, #{active} 
+			, #{alt}
+		)
+	</insert>
+	
+	
 
 </mapper>

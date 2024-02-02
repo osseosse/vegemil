@@ -13,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.PopupDTO;
 import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.mapper.AdminEventMapper;
 import com.vegemil.mapper.PopupMapper;
@@ -289,7 +291,26 @@ public class AdminEventServiceImpl implements AdminEventService {
 		datas.setData(popupMapper.selectAllPopupList());
 		return datas;
 	}
-	
+
+	@Override
+	public int changeActiveStatus(PopupDTO popupDto) {
+		return popupMapper.updateAvtiveColumn(popupDto);
+	}
+
+	@Override
+	public int postPopup(PopupDTO popupDTO) {
+		
+		int result = 0;
+		
+		if(popupDTO.getIdx() == null) {
+			result = popupMapper.insertPopupRow(popupDTO);
+		}else {
+			// 수정 추후 개발 
+		}
+		
+		return result;
+	}
+
 	
 
 }

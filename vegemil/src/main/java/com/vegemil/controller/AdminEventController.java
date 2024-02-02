@@ -271,7 +271,9 @@ public class AdminEventController extends UiUtils{
 	}
 	
 	@GetMapping("/event/popup")
-	public String getPopupAdmin() {
+	public String getPopupAdmin(Model model) {
+		PopupDTO popupDTO = new PopupDTO();
+		model.addAttribute(popupDTO);
 		return "admin/event/popup";
 	}
 	
@@ -285,6 +287,26 @@ public class AdminEventController extends UiUtils{
 		
 		return dataTableDto;
 	}
+	
+	@PostMapping("/event/postingPopup")
+	public String postingPopup(PopupDTO popupDTO, Model model) {
+		
+		log.info("popupDTO ============ > {}", popupDTO.toString());		
+		adminEventService.postPopup(popupDTO);
+		
+		return "redirect:/admin/manage/event/popup";		
+	}
+	
+	@RequestMapping("/popup/switchActive/{idx}/{active}")
+	public @ResponseBody String switchActivePopup(@PathVariable("idx") Long idx, @PathVariable("active") String active) {
+					
+		int result = adminEventService.changeActiveStatus(new PopupDTO(idx, active));
+		
+		return result > 0 ? "수정에 성공하였습니다." : "수정에 실패하였습니다";
+		
+	}
+		
+	
 
 	
 	//정적 이미지 불러오기

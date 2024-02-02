@@ -12,6 +12,6 @@ public interface PopupService {
 	
 
 	public List<PopupDTO> getPopupInfo();
-	
 	public int activePopupCount();
+	
 }

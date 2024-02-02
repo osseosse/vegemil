@@ -16,5 +16,8 @@ public interface PopupMapper {
 	public List<PopupDTO> selectPopupList();
 	public List<PopupDTO> selectAllPopupList(); 
 	public int selectActiveCount();
+	public int updateAvtiveColumn(PopupDTO popupDto);
+	public int insertPopupRow(PopupDTO popupDto);
+	
 
 }

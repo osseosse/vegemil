@@ -21,4 +21,10 @@ public class PopupDTO {
 	private String endDate;
 	private String alt;
 	private String active;
+	
+	public PopupDTO(Long idx, String active) {
+		this.idx = idx;
+		this.active = active;
+	}
+	
 }

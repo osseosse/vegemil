@@ -358,6 +358,16 @@
 		<!-- 수정 -->
 		<div class="m_h_left"><a href="/"><span></span></a></div>
 		<ul class="m_h_right">
+			<!-- 로케일 전환, 영문화, 국제화 -->
+			<li>
+				<div class="custom-sel ">
+				  <select id="globalLangMo" onchange="changeLangMo();return false">								  
+					<option value="ko" selected>KOR</option>
+					<option value="en" >ENG</option>
+				  </select>
+				</div>
+			</li>
+			<!-- // 로케일 전환, 영문화, 국제화 -->
 			<!-- 검색기능 추후 개발 -->
 			<!-- <li class="btn_m_search"><a href="#"><span></span></a></li> -->
 			<li class="btn_m_edaymall"><a href="https://m.edaymall.com"><span></span></a></li>	
@@ -566,6 +576,14 @@
 	
 	function changeLang(){
 		var lang = $("#globalLang option:selected").val();
+		var redUrl = $(location).attr('pathname');
+		
+		location.href = "/langSwitch?lang="+lang+"&redUrl="+redUrl;
+
+	}
+	
+	function changeLangMo(){
+		var lang = $("#globalLangMo option:selected").val();
 		var redUrl = $(location).attr('pathname');
 		
 		location.href = "/langSwitch?lang="+lang+"&redUrl="+redUrl;

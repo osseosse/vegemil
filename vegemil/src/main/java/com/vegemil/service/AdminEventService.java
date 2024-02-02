@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.PopupDTO;
 import com.vegemil.domain.ThermometerLoveDTO;
 
 public interface AdminEventService {
@@ -37,7 +38,12 @@ public interface AdminEventService {
 	
 	// 팝업 리스트 조회 
 	public DataTableDTO getPopupList(Map<String, Object> paramMap);
-
+	
+	// 팝업 활성화 여부 수정 
+	public int changeActiveStatus(PopupDTO popupDto);
+	
+	// 팝업 등록
+	public int postPopup(PopupDTO popupDTO);
 	
 	
 

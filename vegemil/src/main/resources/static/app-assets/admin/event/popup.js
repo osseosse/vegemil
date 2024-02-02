@@ -128,9 +128,11 @@ var createTable = function() {
   // --------------------------------------------------------------------
 
   if (dt_basic_table.length) {
+	  
 	const range = $('#fp-range').val().split(' to ');
 	const startdate = range[0];
 	const enddate = range[1];
+	
 	//$('#sStartdate').attr("value",startdate);
 	//$('#sEnddate').attr("value",enddate);
     var dt_basic = dt_basic_table.DataTable({
@@ -186,7 +188,7 @@ var createTable = function() {
             if(full['alt']==null)
             	return '';     
       		else
-      			return '<input type="text" class="form-control" id="alt' + full['alt'] + '" value="' + full['alt'] + '">';
+      			return  full['alt'];
           }
         },
         {
@@ -197,7 +199,7 @@ var createTable = function() {
             	return '';
            
       		else
-      			return '<input type="text" class="form-control" id="href' + full['idx'] + '" value="' + full['hrefUrl'] + '">';
+      			return full['hrefUrl'];
           }
           
         },
@@ -208,9 +210,7 @@ var createTable = function() {
             if(full['startDate']==null)	
             	return '';
       		else	
-      			return 	'<p> ' + full['startDate'] + '</p>'  + 
-      					'<input type="date" class="form-control" id="startDateUpdate"/>'  + 
-      					'<input type="time" id="startTimeUpdate" class="form-control" />'; 
+      			return 	'<p> ' + full['startDate'] + '</p>'  
           }
         },
         {
@@ -220,9 +220,7 @@ var createTable = function() {
             if(full['endDate']==null)	
             	return '';
       		else	
-      			return 	'<p>' + full['endDate'] + '</p>'  + 
-      					'<input type="date" class="form-control" id="endDateUpdate"/>'  + 
-      					'<input type="time" id="endDateUpdate" class="form-control"/>'; 
+      			return 	'<p>' + full['endDate'] + '</p>' 
           }
         },
         
@@ -236,33 +234,14 @@ var createTable = function() {
 			}
             return (
               '<div class="form-check form-switch center-ck">'+
-                '<input type="checkbox" class="form-check-input" '+checked+' id="active'+full['idx']+ '" name="listOn" >'+
+                '<input type="checkbox" class="form-check-input" '+checked+' id="active'+full['idx']+ '" name="listOn" onclick="btnSaveActive(' + full['idx'] + ')">'+
 				'<label class="form-check-label" for="listOn"></label>'+
 		      '</div>'
             );
           }
           
-        },
-        {
-          targets: 7,
-          orderable: false,
-          render: function (data, type, full, meta) {
-            return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" />수정</button>'
-            );
-          }
-          
-        },
-        {
-          targets: 8,
-          orderable: false,
-          render: function (data, type, full, meta) {
-            return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" />삭제</button>'
-            );
-          }
-          
         }
+    
       ],
       order: [[0, 'desc']],
       dom:
@@ -314,10 +293,10 @@ var createTable = function() {
 		}
       ],
       language: {
-		search : '검색',
+		search : 		'검색',
       	emptyTable:     "표에서 사용할 수있는 데이터가 없습니다.",
-      	zeroRecords: "해당 조건에 대한 검색 결과가 없습니다.",
-      	lengthMenu: "&nbsp;&nbsp;페이지당 _MENU_ 개씩 보기",
+      	zeroRecords: 	"해당 조건에 대한 검색 결과가 없습니다.",
+      	lengthMenu: 	"&nbsp;&nbsp;페이지당 _MENU_ 개씩 보기",
         paginate: {
           // remove previous & next text from pagination
           previous: '&nbsp;',
@@ -342,81 +321,56 @@ var createTable = function() {
 	
 }
 
-function btnDisplay(idx) {
-	
-	let mActive;
-	if($('#mDisplay'+idx).is(":checked")){
-		mActive = 1;
-	}else{
-		mActive = 0;
-	}
-	
-	
-	if(confirm('진열을 수정하시겠습니까?')){
-		$.ajax({
-			url : '/admin/manage/beanSoup/displayBeanSoupVideo?mIdx='+idx+'&mDisplay='+mActive,
-			type : "get",
-			dataType : "json",
-			success : function(data) {
-				
-				if(data){
-					alert("수정되었습니다.");
-					$('.datatables-basic').DataTable().ajax.reload();
-				}
-				else{
-					alert("실패했습니다.");
-				}
-				
-			},
-			error : function(){
-			}
-		});
-	}
-}
 
-function btnSave(idx, action) {
+function btnSaveActive(idx) {
 	
-	const form = $('#form');
-	let msg;
+	let active;
+	let msg = '';
 	
-	if(action == "I") {
-		msg = "등록하시겠습니까?";
-		$('#mIdx').val("");
-		$('#mTitle').val($('#title').val());
-		$('#mSrc').val($('#src').val());
-		$('#mDisplay').val($('#active').val()=="on"?"1":"0");
-		$('#action').val(action);
+	if($('#active'+idx).is(":checked")){
+		active = 1;
 	}else{
-		if(action == "U") {
-			msg = "수정하시겠습니까?";	
-		}else {
-			msg = "삭제하시겠습니까?";	
-		}
-		$('#mIdx').val(idx);
-		$('#mTitle').val($('#mTitle'+idx).val());
-		$('#mSrc').val($('#mSrc'+idx).val());
-		$('#mDisplay').val($('#mDisplay'+idx).val()=="on"?"1":"0");
-		$('#action').val(action);
+		active = 0;
 	}
+	
+	if(active == 1) {
+		msg = '활성화 하시겠습니까?'; 
+	}else {
+		msg = '비활성 하시겠습니까?';
+	}
+
 	
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/saveBeanSoupVideo',
+	       url: '/admin/manage/popup/switchActive/' + idx + '/' + active,
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
-		   data: form.serialize(),
-		   dataType : 'json',
 		}).done(function(data){
-	
-		   if(data.result) {
-		   	   alert('저장되었습니다.');
-		   	   $('.datatables-basic').DataTable().ajax.reload();
-		   }else{
-		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
-		   }
+				alert(data);
 		 }).fail(function() {
 		   	   console.log('fail')
 		 })
 	}
 }
 
+function applyDate() {	
+	
+	const range = $('#fp-range').val().split(' to ');
+	const startdate = range[0];
+	const enddate = range[1];
+	
+	$('#startDate').attr("value",startdate);
+	$('#endDate').attr("value",enddate);
+}
+
+
+function applyActive() {
+	
+	if($('#active').is(':checked')){
+		$('#_active').attr('value','1');
+	}else {
+		$('#_active').attr('value','0');
+	}
+	
+	return true;
+}
