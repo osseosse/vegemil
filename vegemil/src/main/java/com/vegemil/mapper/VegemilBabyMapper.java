@@ -98,6 +98,7 @@ public interface VegemilBabyMapper {
 	public int insertSampleForm(VegemilBabySampleDTO sample);
 	
 	public int insertCalendarModel(VegemilBabyCalendarModelDTO sample);
+	public int selectCountRecentPosting(VegemilBabyCalendarModelDTO sample);
 	
 	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
 	

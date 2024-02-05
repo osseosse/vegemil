@@ -248,6 +248,11 @@ public class VegemilBabyController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
+		if(vegemilBabyCommunityService.isDuple(calModel)) {
+			return showMessageWithRedirect( calModel.getCName()+"("+ calModel.getCEmail()+")님의 자녀 "					   
+					+ calModel.getCBabyName() +" 님은 최근 접수한 이력이 있습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
+		}
+		
 		try {
 			String uuid = UUID.randomUUID().toString();
 			
@@ -259,9 +264,9 @@ public class VegemilBabyController extends UiUtils {
 				String savefileName1 = uuid + "_" + file1.replaceAll("\\s", "");
 				
 				//저장 - 실제 경로
-				Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
+				//Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
 				//저장 - 테스트경로
-				//Path savePath = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName1);
+				Path savePath = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName1);
 
 				//저장
 				calModel.getFileName1().transferTo(savePath);
@@ -273,9 +278,9 @@ public class VegemilBabyController extends UiUtils {
 				
 				String savefileName2 = uuid + "_" + file2.replaceAll("\\s", "");;
 				//저장 - 실제 경로
-				Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
+				//Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
 				//저장 - 테스트경로
-				//Path savePath2 = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName2);
+				Path savePath2 = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName2);
 				
 				//저장
 				calModel.getFileName2().transferTo(savePath2);

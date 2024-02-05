@@ -73,6 +73,9 @@ public interface VegemilBabyCommunityService {
 	public List<BoardResponseVO> selectModelList(BoardListSearchDTO boardListSearchDTO);
 	public List<VegemilBabyCalendarModelDTO> selectModelList();
 	
+	// 아기모델 중복신청 판별
+	public boolean isDuple(VegemilBabyCalendarModelDTO calModel);
+	
 	//아기모델 - 신청하기
 	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel);	
 	//아기모델 - 타이틀 조회

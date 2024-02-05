@@ -1,5 +1,7 @@
 package com.vegemil.domain.vegemilBaby;
 
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.github.rkpunjal.sqlsafe.SQLInjectionSafe;
@@ -9,25 +11,25 @@ import lombok.Data;
 @Data
 public class VegemilBabyCalendarModelDTO {
 
-	private @SQLInjectionSafe MultipartFile fileName1;
-	private @SQLInjectionSafe MultipartFile fileName2;
+	private MultipartFile fileName1;
+	private MultipartFile fileName2;
 	private Long cIdx;
 	private Long ROWNUM;
-	private @SQLInjectionSafe String cName; 
-	private @SQLInjectionSafe String cHp; 
-	private @SQLInjectionSafe String cAddr;
-	private @SQLInjectionSafe String cZipcode;
-	private @SQLInjectionSafe String cAddr1;
-	private @SQLInjectionSafe String cAddr2;
-	private @SQLInjectionSafe String cEmail; 
-	private @SQLInjectionSafe String cImage; 
-	private @SQLInjectionSafe String cRank; 
-	private @SQLInjectionSafe String cHonor; 
-	private @SQLInjectionSafe String cWriteDate;
-	private @SQLInjectionSafe String cUpdateTime;
-	private @SQLInjectionSafe String cMonth;
-	private @SQLInjectionSafe String cBabyName;
-	private @SQLInjectionSafe String cRoute;
-	private @SQLInjectionSafe String cImage2;
-	private @SQLInjectionSafe String cAlived;
+	private String cName; 
+	private String cHp; 
+	private String cAddr;
+	private String cZipcode;
+	private String cAddr1;
+	private String cAddr2;
+	private String cEmail; 
+	private String cImage; 
+	private String cRank; 
+	private String cHonor; 
+	private String cWriteDate;
+	private String cUpdateTime;
+	private String cMonth;
+	private String cBabyName;
+	private String cRoute;
+	private String cImage2;
+	private String cAlived;
 }

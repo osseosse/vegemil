@@ -1444,6 +1444,8 @@ button:hover:before {content:"Reply!"}
 	.tabs2 li:first-child {}
 
 	.tab_content2 {position:relative; padding:55px 0 100px 0 } 
+	
+	
 	.tab_content2 > div {clear: both;line-height: 19px;color: #666;display: none; border-radius:10px; }
 	.tab_content2 .current { display: block; }
 	.tab_content2 #home.first { display: block; }
@@ -3402,6 +3404,7 @@ button:hover:before {content:"Reply!"}
 	
 	/* 1200 ����Ʈ */
 	.tabs2 li { list-style:none;  display:block;  margin:0; float:left; width:20%; text-align:center; }
+	.tabs2.en li {width:33%} 
 
 	/* 1200 ��ǰ�����ı� */
 	ul.reviewBox {position:relative; max-width:550px; width:100%}

@@ -243,6 +243,13 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	@Transactional
 	public boolean insertModelForm(VegemilBabyCalendarModelDTO calModel) {
 		calModel.setCAddr(calModel.getCAddr1()+calModel.getCAddr2());
+		
+		int isPostRecent = vegemilBabyMapper.selectCountRecentPosting(calModel);
+		
+		if(isPostRecent > 0) {
+			return false;
+		}
+		
 		int queryResult = 0;
 		queryResult = vegemilBabyMapper.insertCalendarModel(calModel);
 
@@ -279,6 +286,17 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	@Override
 	public AdminCalendarTitleDTO selectCalenderModelTitlebyRownum(String rownum) {
 		return vegemilBabyMapper.selectCalenderModelTitlebyRownum(rownum);
+	}
+	@Override
+	public boolean isDuple(VegemilBabyCalendarModelDTO calModel) {
+		int count = vegemilBabyMapper.selectCountRecentPosting(calModel);
+		
+		if(count > 0) {
+			return true;
+		}
+		
+		return false;
+		
 	}
 	
 	

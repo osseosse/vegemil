@@ -681,7 +681,21 @@
 	</select>
 	
 	
-	
+	<!-- 최근 올린 게시글 5건중 같은 이름, 같은 이메일 주소로 게시한 자가 있는지 (중복게시, 무차별 대입 공격 방지) -->
+	<select id="selectCountRecentPosting" resultType="int" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO" >
+		SELECT 
+			count(*)
+		FROM 
+			m_calendar_model
+		WHERE 
+			c_name = #{cName}
+			AND
+			c_email = #{cEmail}
+			AND
+			c_baby_name = #{cBabyName}			
+		ORDER BY C_IDX DESC
+		LIMIT 10;		
+	</select>
 		
 
 </mapper>
