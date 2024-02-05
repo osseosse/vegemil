@@ -264,9 +264,9 @@ public class VegemilBabyController extends UiUtils {
 				String savefileName1 = uuid + "_" + file1.replaceAll("\\s", "");
 				
 				//저장 - 실제 경로
-				//Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
+				Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
 				//저장 - 테스트경로
-				Path savePath = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName1);
+				//Path savePath = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName1);
 
 				//저장
 				calModel.getFileName1().transferTo(savePath);
@@ -278,9 +278,9 @@ public class VegemilBabyController extends UiUtils {
 				
 				String savefileName2 = uuid + "_" + file2.replaceAll("\\s", "");;
 				//저장 - 실제 경로
-				//Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
+				Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
 				//저장 - 테스트경로
-				Path savePath2 = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName2);
+				//Path savePath2 = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName2);
 				
 				//저장
 				calModel.getFileName2().transferTo(savePath2);
