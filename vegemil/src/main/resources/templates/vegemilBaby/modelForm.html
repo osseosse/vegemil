@@ -176,13 +176,13 @@
                                                 <br>첨부이미지 사이즈는 총 20MB 이내로 등록 가능합니다.
                                                 <br>베지밀과 함께한 우리아이 사진을 올려주세요. 제품이 포함되지 않으면 당첨자 선정에 제외될 수 있습니다.
                                                 </p>
-												<input id="frm_Photo_i" type="file" accept=".png,.gif,.jpg" name="fileName1" required>
+												<input id="frm_Photo_i" type="file" accept=".png,.gif,.jpg" name="fileName1" onchange="fileExtCheck('frm_Photo_i');" required>
 												<p class="mt10 f14_3"></p>
                                             </li>
                                             
                                           <li class="fileBox">
                                               <p class="f17_3">(선택사항) 추가 접수를 희망하시는 사진이 있으면 첨부해주세요. ^^</p>
-                                              <input id="frm_Photo_i2"  type="file" accept=".png,.gif,.jpg" name="fileName2">
+                                              <input id="frm_Photo_i2"  type="file" accept=".png,.gif,.jpg"  onchange="fileExtCheck('frm_Photo_i2');" name="fileName2">
                                               <p class="mt10 f14_3"></p><br >
                                           </li>
                                         
@@ -321,6 +321,21 @@
 	 		document.getElementById('joinBtn').style.background = 'gray';	 		
 	 	}		 
 	} */
+	}
+	
+	function fileExtCheck(fileId){
+		
+		if($('#' + fileId).val() == ""){
+			return false;
+		}
+		
+		var fileVal = $('#' + fileId).val();
+		var ext = fileVal.split('.').pop().toLowerCase();
+
+		if($.inArray(ext, ['jpg', 'png', 'jpeg', 'gif']) == -1) {
+	        alert(ext+'파일은 업로드 하실 수 없습니다.');
+	        $('#' + fileId).val('');
+	    }
 	}
  
 </script>

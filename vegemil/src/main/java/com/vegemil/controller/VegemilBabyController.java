@@ -19,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.mysql.cj.log.Log;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.CMRespDto;
 import com.vegemil.domain.MemberDTO;
@@ -253,11 +255,33 @@ public class VegemilBabyController extends UiUtils {
 					+ calModel.getCBabyName() +" 님은 최근 접수한 이력이 있습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
 		}
 		
+		// valid extensions
+		String extensionList = "jpg, jpeg, png, gif";
+		
 		try {
 			String uuid = UUID.randomUUID().toString();
 			
 			String originalName1 = calModel.getFileName1().getOriginalFilename();
 			String originalName2 = calModel.getFileName2().getOriginalFilename();
+			String fileExtension2 = "";
+			
+			
+			//확장자 분리 - for check		
+			String fileExtension1 = StringUtils.getFilenameExtension(originalName1);
+			
+			// 옵션데이터인 두번째 이미지 부터 체크 
+			if(StringUtils.hasText(originalName2)) {
+				 fileExtension2 = StringUtils.getFilenameExtension(originalName2);
+				 if(extensionList.contains(fileExtension2.toLowerCase()) == false) {
+					 return showMessageWithRedirect("이미지 형식만 업로드 가능합니다", "/vegemilBaby/model/apply", Method.GET, null, model);
+				 }
+			}
+
+			// extension check
+			if(extensionList.contains(fileExtension1.toLowerCase()) == false) {					
+				return showMessageWithRedirect("이미지 형식만 업로드 가능합니다", "/vegemilBaby/model/apply", Method.GET, null, model);
+			}
+						
 			if(!"".equals(originalName1)) {
 				String file1 = originalName1.substring(originalName1.lastIndexOf("\\") + 1);
 				

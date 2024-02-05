@@ -694,7 +694,7 @@
 			AND
 			c_baby_name = #{cBabyName}			
 		ORDER BY C_IDX DESC
-		LIMIT 10;		
+		LIMIT 1;		
 	</select>
 		
 
