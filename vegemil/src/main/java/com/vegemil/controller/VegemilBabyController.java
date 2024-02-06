@@ -326,7 +326,7 @@ public class VegemilBabyController extends UiUtils {
 			
 		} catch (Exception e) {
 			System.out.println(e);
-			System.out.println(e.getMessage());
+
 			out.println("<script>alert('시스템에 문제가 발생하였습니다.'); history.go(-1);</script>");
 			out.flush();
 			return showMessageWithRedirect("시스템에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
