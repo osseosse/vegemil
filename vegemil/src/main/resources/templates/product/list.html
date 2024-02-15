@@ -4,6 +4,25 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 제품소개</title>
 <head th:replace="fragments/head :: headFragment"></head>
+<!-- CSS -->
+<link href="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/css/slide.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/css/reset.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/css/style.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/css/bootstrap.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/css/product.css" rel="stylesheet">
+<link rel='stylesheet' href='https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/css/swiper-bundle.min.css'><!-- swiper -->
+
+<!-- JS -->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script> 
+<script type="text/javascript" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/jquery.Floater.js"></script>
+<script type="text/javascript" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/prrple.slider.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/jquery.collapse.js"></script>
+<script type="text/javascript" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/jquery.touchSwipe.1.6.min.js"></script>
+<script src='https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/common/js/swiper-bundle.min.js'></script><!-- swiper -->
+<script src='/common/js/swiper.js'></script><!-- swiper -->
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
@@ -20,7 +39,7 @@
 					<div class="slider_area">
 						<div class="slides ">
 							<div class="slide">
-								<a href="/product/detail/72">
+								<a href="#">
 									<div class="slidetitle SCI01_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">간단요리사 구수한 사골육수</p>
@@ -29,7 +48,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/73">
+								<a href="#">
 									<div class="slidetitle SCI02_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
@@ -38,7 +57,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/74">
+								<a href="#">
 									<div class="slidetitle SCI03_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">간단요리사 시원한 채소육수</p>
@@ -47,7 +66,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/5">
+								<a href="#">
 									<div class="slidetitle VPM05_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">베지밀 고단백 두유 검은콩</p>
@@ -56,7 +75,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/4">
+								<a href="#">
 									<div class="slidetitle VPM04_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">베지밀 프리바이오틱스 두유</p>
@@ -64,8 +83,9 @@
 									</div>
 								</a>
 							</div>
+							<!-- 2022-12-22 SCI04_860_01, SCI05_860_01 -->
 							<div class="slide">
-								<a href="/product/detail/75">
+								<a href="#">
 									<div class="slidetitle SCI04_860_01  h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">진한 콩국물</p>
@@ -74,7 +94,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/76">
+								<a href="#">
 									<div class="slidetitle SCI05_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">진한 콩국물 검은콩</p>
@@ -82,8 +102,9 @@
 									</div>
 								</a>
 							</div>
+							<!-- //2022-12-22 -->
 							<div class="slide">
-								<a href="/product/detail/67">
+								<a href="#">
 									<div class="slidetitle CHD02_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">그린비아 프로틴밀 2종</p>
@@ -92,7 +113,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/product/detail/2">
+								<a href="#">
 									<div class="slidetitle VPM02_860_02 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">베지밀 루테인 두유 검은콩</p>
@@ -100,10 +121,14 @@
 									</div>
 								</a>
 							</div>
+							
+						
 						</div>
 					</div>
+					<!-- 2022-12-30 이미지 삭제 -->
 					<a class="slider_left"></a>
 					<a class="slider_right"></a>
+					<!-- //2022-12-30 이미지 삭제 -->
 				</div>
 			</div>  
 			<!-- //슬라이드 -->
@@ -113,8 +138,9 @@
 		<div class="row">
 			<div class="col-md-12 mt100">
 				<!-- tabs3 -->
-				<div class="prd_wrap mt20" id="topTap">
+				<div class="prd_wrap mt20">
 					<ul class="tabs3">
+						<!-- 2023-01-05 -->
 						<li><a href="#V"><p class="ico_VE"></p></a><span>두유 (베지밀)</span></li>
 						<li><a href="#P"><p class="ico_VM"></p></a><span>임산&middot;수유부<br>영양식 (베지밀)</span></li>
 						<li><a href="#B"><p class="ico_VB"></p></a><span>영&middot;유아식<br>(베지밀)</span></li>
@@ -123,6 +149,7 @@
 						<li><a href="#F"><p class="ico_SC"></p></a><span>식재료<br>(간단요리사)</span></li>
 						<li><a href="#S"><p class="ico_CD"></p></a><span>음료</span></li>
 						<li><a href="#W"><p class="ico_CW"></p></a><span>생수<br>(심천수)</span></li>
+						<!-- //2023-01-05 -->
 					</ul>
 				</div>
 				<script type="text/javascript">
@@ -137,376 +164,618 @@
 			<!-- tabs3 content -->
 			<div class="tab_content3">
 				<div id="V">
-					<div class="floting-left_prd">
-						<div class="floting">
-							<div class="flotingContent"><!-- 2022-11-01 "flotingContent" 클래스추가 --> 
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="vv active"><input type="radio" name="vv" id="#0" value="" > <label for="#0"><span></span>전체보기</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#1" value="VPM" > <label for="#1"><span></span>프리미엄 두유</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#2" value="VPL" > <label for="#2"><span></span>플레인 두유</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#3" value="VBL" > <label for="#3"><span></span>블랙두유</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#4" value="VGR" > <label for="#4"><span></span>곡물&견과 두유</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
-								</ul>
-							</div>
-							
-							<div class="h300"></div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd" th:if="${not #lists.isEmpty( productList )}">
-						<div class="row" id="v_tab">
-							<div class="col-md-4 col-6" id="v_list" th:if="${product.categoryCode == 'V'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
-									</dl>
-								</div>
-							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="P"><!-- 임산 수유 -->
 					<div class="floting-left_prd" >
 						<div class="floting">
 							<div class="flotingContent">
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
-									<li class="pp active"><input type="radio" name="pp" id="#6" value="" > <label for="#6"><span></span>전체보기</label></li>
-									<li class="pp"><input type="radio" name="pp" id="#7" value="VMO" > <label for="#7"><span></span>임산 &middot; 수유부 영양식</label></li>
+									<!-- 라디오 체크 방식 -->
+									<li><input type="radio" id="select1" name="shop" checked><label for="select1">전체보기</label></li>
+									<li><input type="radio" id="select2" name="shop"><label for="select2" >프리미엄 두유</label></li>
+									<li><input type="radio" id="select3" name="shop"><label for="select3">플레인 두유</label></li>
+									<li><input type="radio" id="select4" name="shop"><label for="select4">블랙두유</label></li>
+									<li><input type="radio" id="select5" name="shop"><label for="select5">곡물&견과 두유</label></li>
+									<li><input type="radio" id="select6" name="shop"><label for="select6">과즙&차류 두유</label></li>
+
+									<!-- 클래스+active 방식 
+									<li><input type="radio" id="select1" name="shop"><label for="select1">전체보기</label></li>
+									<li class="active"><input type="radio" id="select2" name="shop"><label for="select2" >프리미엄 두유</label></li>
+									<li><input type="radio" id="select3" name="shop"><label for="select3">플레인 두유</label></li>
+									<li ><input type="radio" id="select4" name="shop"><label for="select4">블랙두유</label></li>
+									<li><input type="radio" id="select5" name="shop"><label for="select5">곡물&견과 두유</label></li>
+									<li><input type="radio" id="select6" name="shop"><label for="select6">과즙&차류 두유</label></li>
+									-->
 								</ul>
 							</div>
 						</div>
 					</div><!-- //floting-left_prd -->
 					<div class="floting-right_prd">
-						<div class="row" id="p_tab" th:if="${not #lists.isEmpty( productList )}">
-							<div class="col-md-4 col-6" id="p_list" th:if="${product.categoryCode == 'P'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list box-list"> <!-- box-list 추가 -->
+									<a href="#">
 										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
+											<span class="f14">#고함량단백질12g</span>
 										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb">
+											<!-- swiper -->
+											<div class="swiper listSwiper01">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png" alt="병" /></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_10.png" alt="병 박스" /></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_16.png" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_24.png" alt="팩 24본 박스"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<!-- //swiper -->
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<!-- swiper-button -->
+										<div class="listSwiper01-botton">
+											<div class="swiper-button-next"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/btn_prdlist_next.png" alt="좌" /></div>
+											<div class="swiper-button-prev"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/btn_prdlist_prev.png" alt="우" /></div>
+										</div>
+										<!-- //swiper-button -->
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="B"><!-- 영유아식 -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="bb active"><input type="radio" name="bb" id="#8" value="" > <label for="#8"><span></span>전체보기</label></li>
-									<li class="bb"><input type="radio" name="bb" id="#9" value="VBP" > <label for="#9"><span></span>프리미엄</label></li>
-									<li class="bb"><input type="radio" name="bb" id="#10" value="VBB" > <label for="#10"><span></span>우리콩</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="b_tab" th:if="${not #lists.isEmpty( productList )}">
-							<div class="col-md-4 col-6" id="b_list" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-								
-									<a th:if="${product.subCategoryCode == 'VBP'}" href="/vegemilBaby/premium" >																		
+							<div class="col-md-4 col-6">
+								<div class="prd-list box-list"> <!-- box-list 추가 -->
+									<a href="#">
 										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
+											<span class="f14">#고함량단백질12g</span>
 										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb">
+											<!-- swiper -->
+											<div class="swiper listSwiper02">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png" alt="병" /></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_10.png" alt="병 박스" /></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_16.png" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_24.png" alt="팩 24본 박스"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<!-- //swiper -->
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<!-- swiper-button -->
+										<div class="listSwiper02-botton">
+											<div class="swiper-button-next"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/btn_prdlist_next.png" alt="좌" /></div>
+											<div class="swiper-button-prev"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/btn_prdlist_prev.png" alt="우" /></div>
+										</div>
+										<!-- //swiper-button -->
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
 									</a>
-									
-									<a th:if="${product.subCategoryCode == 'VBB'}" href="/vegemilBaby/belief" >																		
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									
-									
 									<dl class="prd-viewMore mt40">
-										<dd>
-										<a th:if="${product.subCategoryCode == 'VBP'}" href="/vegemilBaby/premium"><p class="btnType16"><span class="lh140">View More</span></p></a>
-										<a th:if="${product.subCategoryCode == 'VBB'}" href="/vegemilBaby/belief"><p class="btnType16"><span class="lh140">View More</span></p></a>
-										</dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="G"><!-- 특수영양식(그린비아) -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="gg active"><input type="radio" name="gg" id="#11" value="" > <label for="#11"><span></span>전체보기</label></li>
-									<li class="gg"><input type="radio" name="gg" id="#12" value="일반영양식" > <label for="#12"><span></span>일반영양식</label></li>
-									<li class="gg"><input type="radio" name="gg" id="#13" value="전문영양식" > <label for="#13"><span></span>전문영양식</label></li>
-									<li class="gg"><input type="radio" name="gg" id="#14" value="연하식" > <label for="#14"><span></span>연하식</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="g_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="g_list" th:if="${product.categoryCode == 'G'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/greenbia/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
-									</dl>
-								</div>
-							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="H"><!-- 건강식품 -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="hh active"><input type="radio" name="hh" id="#15" value="" > <label for="#15"><span></span>전체보기</label></li>
-									<li class="hh"><input type="radio" name="hh" id="#16" value="CHD" > <label for="#16"><span></span>균형영양음료</label></li>
-									<li class="hh"><input type="radio" name="hh" id="#17" value="GHF" > <label for="#17"><span></span>건강기능식품</label></li>
-									<li class="hh"><input type="radio" name="hh" id="#18" value="CHP" > <label for="#18"><span></span>생식&선식</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="h_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="h_list" th:if="${product.categoryCode == 'H'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:if="${product.subCategoryCode} == 'CHP'" th:href="|/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<a th:unless="${product.subCategoryCode} == 'CHP'" th:href="|/greenbia/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
-									</dl>
-								</div>
-							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="F"><!-- 식재료 -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="ff active"><input type="radio" name="ff" id="#16" value="" > <label for="#16"><span></span>전체보기</label></li>
-									<li class="ff"><input type="radio" name="ff" id="#17" value="SCI" > <label for="#17"><span></span>콩국물&육수</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="f_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="f_list" th:if="${product.categoryCode == 'F'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-																												
-										<div class="prd-label ppl-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-											<img th:if="*{product.pIdx == 73}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl.png" alt="안사우면다행이야">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
-									</dl>
-								</div>
-							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="S"><!-- 음료 -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="ss active"><input type="radio" name="ss" id="#20" value="" > <label for="#20"><span></span>전체보기</label></li>
-									<li class="ss"><input type="radio" name="ss" id="#21" value="CDR" > <label for="#21"><span></span>과일&야채음료</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="s_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="s_list" th:if="${product.categoryCode == 'S'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
-										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
-									</dl>
-								</div>
-							</div>
-						</div>
-					</div>
-					<br class="clear">
-				</div><!-- //floting-right_prd -->
-				<div id="W"><!-- 생수 -->
-					<div class="floting-left_prd" >
-						<div class="floting">
-							<div class="flotingContent">
-								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
-								<ul class="prd_subCate mt40">
-									<li class="ww active"><input type="radio" name="ww" id="#22" value="" > <label for="#22"><span></span>전체보기</label></li>
-									<li class="ww"><input type="radio" name="ww" id="#23" value="CWA" > <label for="#23"><span></span>생수</label></li>
-								</ul>
-							</div>
-						</div>
-					</div><!-- //floting-left_prd -->
-					<div class="floting-right_prd">
-						<div class="row" id="w_tab" th:if="${not #lists.isEmpty( productList )}">
-							<div class="col-md-4 col-6" id="w_list" th:if="${product.categoryCode == 'W'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
+							<div class="col-md-4 col-6">
 								<div class="prd-list">
-									<a th:href="|/product/detail/${product.pIdx}|">
+									<a href="#">
 										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
+											<span class="f14">#고함량단백질12g</span>
+											<span class="f14">#든든하고고소한맛</span>
+											<span class="f14">#운동전후단백질</span>
 										</div>
-										<div class="prd-label">
-											<img th:if="*{product.newProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_new.png" alt="신제품">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+											<div class="prd-thumb">
+											<!-- swiper -->
+											<div class="swiper listSwiper11">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png" alt="병" /></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_10.png" alt="병 박스" /></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_16.png" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_24.png" alt="팩 24본 박스"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											<!-- //swiper -->
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<!-- swiper-button -->
+										<div class="listSwiper11-botton">
+											<div class="swiper-button-next"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/btn_prdlist_next.png" alt="좌" /></div>
+											<div class="swiper-button-prev"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/btn_prdlist_prev.png" alt="우" /></div>
+										</div>
+										<!-- //swiper-button -->
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">뼈에좋은 칼슘두유 검은콩 검은깨 검은쌀</p>
+										<p class="prd-subTxt f14 gray04 center mt20">40여년 역사를 지닌 베지밀 정통두유<br class="wView">콩 본래의 담백한 맛과 영양을 그대로!</p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
 						</div>
 					</div>
+					<!-- //floting-right_prd -->
+				</div>
+				
+				<div id="P">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<!-- 라디오 체크 방식 -->
+									<li><input type="radio" id="select1" name="shop" checked><label for="select1">전체보기</label></li>
+									<li><input type="radio" id="select2" name="shop"><label for="select2" >프리미엄 두유</label></li>
+									<li><input type="radio" id="select3" name="shop"><label for="select3">플레인 두유</label></li>
+									<li><input type="radio" id="select4" name="shop"><label for="select4">블랙두유</label></li>
+									<li><input type="radio" id="select5" name="shop"><label for="select5">곡물&견과 두유</label></li>
+									<li><input type="radio" id="select6" name="shop"><label for="select6">과즙&차류 두유</label></li>
+
+									<!-- 클래스+active 방식 
+									<li><input type="radio" id="select1" name="shop"><label for="select1">전체보기</label></li>
+									<li class="active"><input type="radio" id="select2" name="shop"><label for="select2" >프리미엄 두유</label></li>
+									<li><input type="radio" id="select3" name="shop"><label for="select3">플레인 두유</label></li>
+									<li ><input type="radio" id="select4" name="shop"><label for="select4">블랙두유</label></li>
+									<li><input type="radio" id="select5" name="shop"><label for="select5">곡물&견과 두유</label></li>
+									<li><input type="radio" id="select6" name="shop"><label for="select6">과즙&차류 두유</label></li>
+									-->
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">1시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+											<span class="f14">#든든하고고소한맛</span>
+											<span class="f14">#운동전후단백질</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPM01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">2시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">40여년 역사를 지닌 베지밀 정통두유<br class="wView">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+											<span class="f14">#든든하고고소한맛</span>
+											<span class="f14">#운동전후단백질</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">3뼈에좋은 칼슘두유 검은콩 검은깨 검은쌀</p>
+										<p class="prd-subTxt f14 gray04 center mt20">40여년 역사를 지닌 베지밀 정통두유<br class="wView">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_best.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
 					<br class="clear">
-				</div><!-- //floting-right_prd -->
+				</div>
+				
+				<div id="B">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">프리미엄</a><span></span></li>
+									<li><a href="#">우리콩</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+
+				<div id="G">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">일반영양식</a><span></span></li>
+									<li><a href="#">전문영양식</a><span></span></li>
+									<li><a href="#">연하식</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+
+				<div id="H">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">균형영양음료</a><span></span></li>
+									<li><a href="#">건강기능식품</a><span></span></li>
+									<li><a href="#">생식&선식</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+				<div id="F">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">콩국물&육수</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+				<div id="S">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">코코넛&아몬드 음료</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+				<div id="W">
+					<div class="floting-left_prd" >
+						<div class="floting">
+							<div class="flotingContent">
+								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
+								<ul class="prd_subCate mt40">
+									<li class="current"><a href="#">전체보기</a><span></span></li>
+									<li><a href="#">과일&야채음료</a><span></span></li>
+								</ul>
+							</div>
+						</div>
+					</div><!-- //floting-left_prd -->
+					<div class="floting-right_prd">
+						<div class="row">
+							<div class="col-md-4 col-6">
+								<div class="prd-list">
+									<a href="#">
+										<div class="prd-txt">
+											<span class="f14">#고함량단백질12g</span>
+										</div>
+										<div class="prd-label"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_list_new.png" alt="베스트"></div>
+										<div class="prd-thumb"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/product/thumb/VPL01_600_01.png"></div>
+										<div class="prd-key mt20"><span class="key-green">베지밀</span> <span class="key-white">프리미엄 두유</span></div>
+										<p class="prd-name f27 fw500 black mt30">시그니처베지밀 5060 시니어 두유</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160">콩 본래의 담백한 맛과 영양을 그대로!</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a href=""><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
+				
 			</div><!-- //tabs3 content -->
 		</div><!-- //flotingPage -->
+		<br class="clear">
 	</div><!-- //contant1760 -->
 </div>
 <!-- ================================ 
@@ -694,5 +963,6 @@ $(document).ready(function(){
 	
 });
 </script>
+
 </body>
 </html>
