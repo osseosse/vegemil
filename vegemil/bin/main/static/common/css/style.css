@@ -2051,7 +2051,7 @@ button:hover:before {content:"Reply!"}
 
 
 	
-	/* 3000 ��ǰ����Ʈ */
+	/* 3000 product-list */
 	.prd-list {position:relative; margin-bottom:80px}
 	.prd-list {border:1px solid #DCDCDC; border-radius:10px; display:inline-block; padding:19px 19px 40px 19px; max-width:410px; width:100%; position:relative; height:700px}
 	.prd-list:hover {background:#F1F4F5; border:1px solid #F1F4F5;}
@@ -2059,11 +2059,15 @@ button:hover:before {content:"Reply!"}
 	.prd-list .prd-thumb {background:#fff; max-width:262px; height:262px; border-radius:200px;margin:0 auto  }
 	.prd-list:hover .prd-thumb {background:#fff; width:262px; height:262px; border-radius:200px; margin:0 auto  }
 	.prd-list:hover .prd-thumb img {transform: rotate( 15deg ) scale( 1.22 );transition: all 0.2s linear; margin-top:-25px; margin-right:-25px;  }
+
+
+
+	
 	.prd-txt.ab-bottom {position:absolute; left:30px; bottom:30px}
 	.prd-txt {color:#787878; height:87px; }
 	.prd-txt span:first-child {margin-top:0px;}
 	.prd-txt span{border:1px solid #DCDCDC;border-radius:3px; padding:2px 7px; display:table; margin-top:5px;  background:#fff}
-	.prd-thumb {text-align:center}
+	.prd-thumb {text-align:center; position:relative}
 	.prd-key {text-align:Center}
 	.prd-name {letter-spacing:-1px; text-align:Center; line-height:140%; }
 	.prd-subTxt {letter-spacing:-1px; text-align:Center; line-height:160%; max-width:260px;  margin:0 auto; }
@@ -2077,6 +2081,28 @@ button:hover:before {content:"Reply!"}
 	.tab_content4 .ppl-label {width:140px}
 	.HJS { max-width:1000px; width:100%; margin:0 auto}
 
+
+
+
+	.prd-list.box-list:hover {background:none; border:1px solid #DCDCDC }
+	.prd-list.box-list:hover .prd-thumb {background:none;  }
+	.prd-list.box-list:hover .prd-thumb img {transform:none;transition:none; margin-top:0px; margin-right:0px;  }
+	.prd-list.box-list .prd-list-Swiper {position:static}
+	.prd-list.box-list .swiper-button-next {margin-right:30px;}
+	.prd-list.box-list .swiper-button-prev {margin-left:30px; }
+	.prd-list.box-list .swiper-button-next:after, 
+	.prd-list.box-list .swiper-button-prev:after {font-size:0}
+	.prd-list.box-list .swiper-button-next, 
+	.prd-list.box-list .swiper-button-prev  {width:42px; top:35% }
+	.prd-list.box-list .prd-thumb {border-radius:0px;margin:0 auto; width:100% }
+	.prd-list.box-list:hover .prd-thumb {border-radius:0px;margin:0 auto; width:100% }
+	.prd-list.box-list .prd-thumb .swiper-slide img {max-width:262px; width:100%}
+	.prd-list.box-list .swiper-horizontal > .swiper-pagination-bullets {bottom:0px}
+	.prd-list.box-list .swiper-pagination-bullet {width:30px; border-radius:20px; height:4px; border:1px solid #787878; background:#fff}
+	.prd-list.box-list .swiper-pagination-bullet.swiper-pagination-bullet-active {background:#02A85A;  border:1px solid #02A85A;}
+
+
+
 	/* 3000 ��ǰ�� Tab */
 	.prd_thumb {position:relative; margin:0 auto; float:left; max-width:150px; width:100%} 
 	.tabs4 {background:none; position:relative; z-index:100;  width:100% ;  overflow:hidden;  margin:0 auto; display:inline-block;  text-align:center} 
@@ -2085,12 +2111,19 @@ button:hover:before {content:"Reply!"}
 	.tabs4 li a { color:#787878 ;   }
 	.tabs4 li.current a {color: #fff;}
 	.tabs4 li {border:2px solid #fff}
+	
+	.tabs4.boxThumb {position:relative}
+	.tabs4.boxThumb li:first-child {display:none}
+	.tabs4.boxThumb li {display:block; float:left; margin-right:10px; width:100px; height:100px}
+	.tabs4.boxThumb li div {height:100px}
+	
+	
 	.tab_content4 {position:relative; padding:0px 0 0px 0; float:left;  max-width:860px; width:100%; background:#F1F4F5; border-radius:10px; overflow:hidden ;  margin-left:50px} 
 	.tab_content4 > div {clear: both;line-height: 19px;color: #666;display: none; }
 	.tab_content4 .current { display: block; }
 	.tab_content4 #home.first { display: block; }
 	ul.info_ul {position:relative; width:100%; border-top:1px solid #DCDCDC; border-bottom:1px solid #DCDCDC; display:inline-block; padding-bottom:20px}
-	ul.info_ul li {width:50%; float:left;margin-top:30px; border:1p}
+	ul.info_ul li {width:50%; float:left;margin-top:20px; }
 	ul.info_ul li img {max-width:60px}
 	ul.info_ul li p:first-child {float:left}
 	ul.info_ul li p:nth-child(2) {float:left; margin-left:17px; margin-top:5px}
@@ -2101,7 +2134,7 @@ button:hover:before {content:"Reply!"}
 	ul.info_btn_box li:nth-child(1) {width:72%; float:left}
 	ul.info_btn_box li:nth-child(2) {width:26%; float:right}
 
-	#photo01.thumb_img {max-width:500px;margin:0 auto}
+	.thumb_img {max-width:500px;margin:0 auto}
 	/* 3000 ��ǰ�� > �÷��ø޴� > ��ġ�������ϴ��¸޴� */
 	.section-01,
 	.section-02,
@@ -3131,6 +3164,12 @@ button:hover:before {content:"Reply!"}
 	dl.prd-viewMore {width:195px}
 	dl.prd-viewMore dd:nth-child(2) {float:right;  border:1px solid #DCDCDC; text-align:center; padding:9px 0; width:42px }
 	dl.prd-viewMore dd:nth-child(2) img {width:16px}
+	.prd-list.box-list .swiper-button-next {margin-right:10px;}
+	.prd-list.box-list .swiper-button-prev {margin-left:10px; }
+	.prd-list.box-list .swiper-button-next, 
+	.prd-list.box-list .swiper-button-prev  {width:32px; top:35% }
+	
+
 
 	/* 1760 main > floting */
 	ul.f_ul li:nth-child(3n) {margin-right:10px; }
@@ -3540,6 +3579,7 @@ button:hover:before {content:"Reply!"}
 	/* 1200 ��ǰ����Ʈ */
 	.prd-list {margin-bottom:20px}
 	.prd-list .prd-name {font-size:18px}
+
 	
 	.floting-left_prd {max-width:100%; width:100%; position:relative; margin-bottom:50px }
 	.floting-left_prd .floting{position:relative; width:100% }
@@ -4325,7 +4365,10 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 
 
 	dl.prd-viewMore dd:nth-child(2) {float:right;  border:1px solid #DCDCDC; text-align:center; border-radius:5px; width:30px; padding:4px 0 5px 0; display:inline-block; background:#Fff}
-
+	.prd-list.box-list .swiper-button-next {margin-right:0px;}
+	.prd-list.box-list .swiper-button-prev {margin-left:0px; }
+	.prd-list.box-list .swiper-button-next, 
+	.prd-list.box-list .swiper-button-prev  {width:26px; top:29% }
 
 	/* 992 ��ǰī�װ��� tab */
 	

@@ -42,7 +42,16 @@
 		tag1,
 		tag2,
 		tag3,
-		DATE_FORMAT(insert_date,'%Y-%m') as insert_date
+		DATE_FORMAT(insert_date,'%Y-%m') as insert_date,
+		bottle_img,
+		packaging16_img,
+		packaging24_img,
+		packaging15_img,
+		swiper_class,
+		eday_link_bottle,
+		eday_link_16,
+		eday_link_24,
+		eday_link_15	
 	</sql>
 	
 	<sql id="brandStoryColumns">

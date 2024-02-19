@@ -21,6 +21,10 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDTO getProductDetail(Long pIdx) {
+		
+		ProductDTO productDto = productMapper.selectProductDetail(pIdx);
+		productDto.detailImgClassSet();
+		
 		return productMapper.selectProductDetail(pIdx);
 	}
 

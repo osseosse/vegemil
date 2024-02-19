@@ -4,6 +4,9 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 제품소개</title>
 <head th:replace="fragments/head :: headFragment"></head>
+<link rel='stylesheet' th:href=@{/common/css/swiper-bundle.min.css}><!-- swiper -->
+<script src='/common/js/swiper-bundle.min.js'></script><!-- swiper -->
+<script src='/common/js/swiper.js'></script><!-- swiper -->
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
@@ -157,8 +160,8 @@
 					<div class="floting-right_prd" th:if="${not #lists.isEmpty( productList )}">
 						<div class="row" id="v_tab">
 							<div class="col-md-4 col-6" id="v_list" th:if="${product.categoryCode == 'V'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
+								<div class="prd-list box-list" >
+									<!-- <a th:href="|/product/detail/${product.pIdx}|"> -->
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 											<span class="f14" th:text="${product.tag2}"></span>
@@ -167,11 +170,36 @@
 										<div class="prd-label">
 											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
+										<!-- <div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div> -->
+										<div class="prd-thumb">
+											<!-- swiper -->
+											<a th:href="|/product/detail/${product.pIdx}|">
+											<div class="swiper" th:classappend="|${product.swiperClass}|">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
+														<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" alt="대표" />
+													</div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.bottleImg)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" alt="병" /></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging16Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging24Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" alt="팩 24본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging15Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" alt="파우치 15봉"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											</a>
+											<!-- //swiper -->
+										</div>
+										<!-- swiper-button -->
+										<div class="listSwiper10-botton" th:class="|${product.swiperClass}-botton|">
+											<div class="swiper-button-next"><img src="/img/ico/btn_prdlist_next.png" alt="좌" /></div>
+											<div class="swiper-button-prev"><img src="/img/ico/btn_prdlist_prev.png" alt="우" /></div>
+										</div>
+										<!-- //swiper-button -->
+										<a th:href="|/product/detail/${product.pIdx}|">
+											<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+											<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
@@ -197,8 +225,8 @@
 					<div class="floting-right_prd">
 						<div class="row" id="p_tab" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" id="p_list" th:if="${product.categoryCode == 'P'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-									<a th:href="|/product/detail/${product.pIdx}|">
+								<div class="prd-list box-list" >
+									<!-- <a th:href="|/product/detail/${product.pIdx}|"> -->
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 											<span class="f14" th:text="${product.tag2}"></span>
@@ -207,11 +235,36 @@
 										<div class="prd-label">
 											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
+										<!-- <div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div> -->
+										<div class="prd-thumb">
+											<!-- swiper -->
+											<a th:href="|/product/detail/${product.pIdx}|">
+											<div class="swiper" th:classappend="|${product.swiperClass}|">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
+														<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" alt="대표" />
+													</div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.bottleImg)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" alt="병" /></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging16Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging24Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" alt="팩 24본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging15Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" alt="파우치 15봉"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											</a>
+											<!-- //swiper -->
+										</div>
+										<!-- swiper-button -->
+										<div class="listSwiper10-botton" th:class="|${product.swiperClass}-botton|">
+											<div class="swiper-button-next"><img src="/img/ico/btn_prdlist_next.png" alt="좌" /></div>
+											<div class="swiper-button-prev"><img src="/img/ico/btn_prdlist_prev.png" alt="우" /></div>
+										</div>
+										<!-- //swiper-button -->
+										<a th:href="|/product/detail/${product.pIdx}|">
+											<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+											<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
@@ -238,9 +291,8 @@
 					<div class="floting-right_prd">
 						<div class="row" id="b_tab" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" id="b_list" th:if="${product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
-								<div class="prd-list" >
-								
-									<a th:if="${product.subCategoryCode == 'VBP'}" href="/vegemilBaby/premium" >																		
+								<div class="prd-list box-list" >
+									<!-- <a th:href="|/product/detail/${product.pIdx}|"> -->
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 											<span class="f14" th:text="${product.tag2}"></span>
@@ -249,33 +301,38 @@
 										<div class="prd-label">
 											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									
-									<a th:if="${product.subCategoryCode == 'VBB'}" href="/vegemilBaby/belief" >																		
-										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}"></span>
-											<span class="f14" th:text="${product.tag2}"></span>
-											<span class="f14" th:text="${product.tag3}"></span>
+										<!-- <div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div> -->
+										<div class="prd-thumb">
+											<!-- swiper -->
+											<a th:href="|/product/detail/${product.pIdx}|">
+											<div class="swiper" th:classappend="|${product.swiperClass}|">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
+														<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" alt="대표" />
+													</div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.bottleImg)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" alt="병" /></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging16Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging24Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" alt="팩 24본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging15Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" alt="파우치 15봉"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											</a>
+											<!-- //swiper -->
 										</div>
-										<div class="prd-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										<!-- swiper-button -->
+										<div class="listSwiper10-botton" th:class="|${product.swiperClass}-botton|">
+											<div class="swiper-button-next"><img src="/img/ico/btn_prdlist_next.png" alt="좌" /></div>
+											<div class="swiper-button-prev"><img src="/img/ico/btn_prdlist_prev.png" alt="우" /></div>
 										</div>
-										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
-										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
-										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
-									</a>
-									
-									
+										<!-- //swiper-button -->
+										<a th:href="|/product/detail/${product.pIdx}|">
+											<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+											<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
+											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										</a>
 									<dl class="prd-viewMore mt40">
-										<dd>
-										<a th:if="${product.subCategoryCode == 'VBP'}" href="/vegemilBaby/premium"><p class="btnType16"><span class="lh140">View More</span></p></a>
-										<a th:if="${product.subCategoryCode == 'VBB'}" href="/vegemilBaby/belief"><p class="btnType16"><span class="lh140">View More</span></p></a>
-										</dd>
+										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>

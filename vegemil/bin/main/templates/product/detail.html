@@ -86,6 +86,18 @@
 					<div id="photo03">
 						<div th:class="|${product.productClass3} h590|"></div>
 					</div>
+					<div id="photo04" th:if="${not #strings.isEmpty(product.productClassBottle)}">
+						<div th:class="|${product.productClassBottle} h590|"></div>
+					</div>
+					<div id="photo05" th:if="${not #strings.isEmpty(product.productClass16)}">
+						<div th:class="|${product.productClass16} h590|"></div>
+					</div>
+					<div id="photo06"  th:if="${not #strings.isEmpty(product.productClass24)}">
+						<div th:class="|${product.productClass24} h590|"></div>
+					</div>
+					<div id="photo07"  th:if="${not #strings.isEmpty(product.productClass15)}">
+						<div th:class="|${product.productClass15} h590|"></div>
+					</div>
 				</div><!-- //tabs4 content -->
 			</div>
 			<div class="col-md-4  mt50">
@@ -129,8 +141,31 @@
 							<p class="f14 fw400 gray04" th:text="${product.tip}"></p>
 						</li>
 					</ul>
+					<script>
+						function pickPackage(pickUrl){							
+							console.log("pickUrl >> " + pickUrl)
+		
+							$("#toEdaymall").removeAttr("href")			
+							$("#toEdaymall").attr('href', pickUrl.replaceAll('\"', ''));											
+						}
+					</script>
+					<!-- tabs4 박스썸네일 작은 이미지 2024-02-15 -->
+					<ul class="tabs4 boxThumb mt20">
+						<li style="border:0"></li>
+						<li th:if="${not #strings.isEmpty(product.bottleImg)}"><a href="#photo04"><img th:onclick="pickPackage('[[${product.edayLinkBottle}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" /></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging16Img)}"><a href="#photo05"><img th:onclick="pickPackage('[[${product.edayLink16}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" /></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging24Img)}"><a href="#photo06"><img th:onclick="pickPackage('[[${product.edayLink24}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" /></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging15Img)}"><a href="#photo06"><img th:onclick="pickPackage('[[${product.edayLink15}]]');"th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" /></a></li>
+					</ul>
+					<script type="text/javascript">
+					
+						$(document).ready(function(){
+							$('.prd_thumb').basicTabs4();
+						});
+					</script>
+					<!-- //tabs4 박스썸네일 작은 이미지 2024-02-15 -->
 					<ul class="info_btn_box mt40">
-						<li><p class="btnType19" th:if="${product.pOnuri} != null"><a th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
+						<li><p class="btnType19" th:if="${product.pOnuri} != null"><a target="_blank" id="toEdaymall" th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
 						<li><p class="btnType20"><a href="#section-02">영양정보</a></p></li>
 					</ul>
 				</div>
@@ -268,6 +303,7 @@
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
 <script type="text/javascript">
+
 //<![CDATA[
 $(function(){
 	//html 파일 로드
