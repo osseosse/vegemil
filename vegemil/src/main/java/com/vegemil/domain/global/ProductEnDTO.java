@@ -41,6 +41,7 @@ public class ProductEnDTO {
 	private String tag1; 
 	private String tag2; 
 	private String tag3; 
+	private String tag4; 
 	private String insertDate; 
 	private String brandDisplay;
 	private String bestProduct;
