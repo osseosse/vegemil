@@ -144,7 +144,9 @@
 					<script>
 						function pickPackage(pickUrl){							
 							console.log("pickUrl >> " + pickUrl)
-		
+							/* if(pickUrl == 'null'){
+								alert("??"); 
+							} */
 							$("#toEdaymall").removeAttr("href")			
 							$("#toEdaymall").attr('href', pickUrl.replaceAll('\"', ''));											
 						}
