@@ -1,5 +1,5 @@
 /*================================
- * 	 ºê·£µå > swiper
+ * 	 ï¿½ê·£ï¿½ï¿½ > swiper
  *================================*/
  $(document).ready(function(){
 	var swiper = new Swiper(".swiper-container", {
@@ -18,7 +18,7 @@
 
 
 /*================================
- * 	 Á¦Ç°¸®½ºÆ® > ½æ³×ÀÏ > swiper
+ * 	 ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Æ® > ï¿½ï¿½ï¿½ï¿½ï¿½ > swiper
  *================================*/
  $(document).ready(function(){
 	 /*
@@ -52,7 +52,7 @@
 	*/
 	
 	var classNames = ".listSwiper0";
-	for(var i=0;i<40;i++) {
+	for(var i=0;i<42;i++) {
 		
 		if(i == 10) {
 			classNames = ".listSwiper";

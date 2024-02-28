@@ -346,7 +346,10 @@
 	ul.f_ul_middle li {width:33%; float:left;  text-align:center; padding:10px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed2.png") bottom  repeat-x;   }
 	ul.f_ul_middle01 li {width:50%; float:left;  text-align:center; padding:30px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed2.png") bottom  repeat-x;   }
 	ul.f_ul_middle li img {width:100%; max-width:36px}
-	ul.f_ul_middle li p {height:36px; line-height:120%;  margin-top:3px}
+	ul.f_ul_middle li p {height:26px; line-height:120%;  margin-top:3px}
+	ul.f_ul_middle li:nth-child(1) img {max-width:75px; }
+	ul.f_ul_middle li:nth-child(5) img {max-width:56px; }
+	ul.f_ul_middle li:nth-child(5) {background:none}
 	ul.f_ul_middle li:nth-child(7) p{height:20px}
 	ul.f_ul_middle li:nth-child(8) p{height:20px}
 	
@@ -1956,6 +1959,7 @@ button:hover:before {content:"Reply!"}
 	.tab_content3 > div#P {display:none; }
 	.tab_content3 > div#B {display:none; }
 	.tab_content3 > div#G {display:none; }
+	.tab_content3 > div#U {display:none; }
 	.tab_content3 > div#H {display:none; }
 	.tab_content3 > div#F {display:none; }
 	.tab_content3 > div#M {display:none; }
@@ -1991,17 +1995,15 @@ button:hover:before {content:"Reply!"}
 	.tabs3 li.current .ico_CW  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_cate08_on.png") center 15px no-repeat; border-radius:5px; background-size:25px}
 	*/
 
-	.tabs3 li .ico_VE  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01.png") center 10px no-repeat; background-size:45px}
-	.tabs3 li.current  .ico_VE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01.png") center 10px no-repeat;border-radius:5px; background-size:45px}
+	.tabs3 li .ico_VE  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_13.png") center 10px no-repeat; background-size:95px}
+	.tabs3 li.current  .ico_VE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_13.png") center 10px no-repeat;border-radius:5px; background-size:95px}
+
 	.tabs3 li .ico_VM {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_02.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_VM  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_02.png") center 10px no-repeat;border-radius:5px;  background-size:45px}
 	.tabs3 li .ico_VB {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_03.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_VB  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_03.png") center 10px no-repeat; border-radius:5px; background-size:45px}
-
 	.tabs3 li .ico_VB.eng {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_10.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_VB.eng  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_10.png") center 10px no-repeat; border-radius:5px; background-size:45px}
-
-
 	.tabs3 li .ico_GE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_04.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_GE  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_04.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 	.tabs3 li .ico_GH {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_05.png") center 10px no-repeat; background-size:45px}
@@ -2010,11 +2012,15 @@ button:hover:before {content:"Reply!"}
 	.tabs3 li.current .ico_SC  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_06.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 	.tabs3 li .ico_CV {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_07.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_CV  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_07.png") center 10px no-repeat; border-radius:5px; background-size:45px}
+	
 	.tabs3 li .ico_CD {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_08.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_CD  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_08.png") center 10px no-repeat; border-radius:5px; background-size:45px}
-	.tabs3 li .ico_CW {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_09.png") center 10px no-repeat; background-size:45px}
-	.tabs3 li.current .ico_CW  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_09.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 	
+	.tabs3 li .ico_CW {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_12.png") center 10px no-repeat; background-size:65px}
+	.tabs3 li.current .ico_CW  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_12.png") center 10px no-repeat; border-radius:5px; background-size:65px}
+	
+	.tabs3 li .ico_UV {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_11.png") center 10px no-repeat; background-size:45px}
+	.tabs3 li.current .ico_UV  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_11.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 	
 
 

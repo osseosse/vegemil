@@ -20,6 +20,7 @@ public class ProductDTO extends CommonDTO {
 	private Long   count;
 	private String categoryCode;
 	private String categoryName;
+	private String mCategoryCode;
 	private String subCategoryCode;
 	private String subCategoryName;
 	private String subCategoryIco;

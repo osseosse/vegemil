@@ -12,6 +12,7 @@
 		p_onactive,
 		category_code,
 		category_name,
+		m_category_code,
 		sub_category_code,
 		sub_category_name,
 		sub_category_ico,
@@ -97,7 +98,7 @@
 		  AND p_name like CONCAT('%',#{searchKeyword},'%')
 		  OR description like CONCAT('%',#{searchKeyword},'%')
 		  </if>                 
-	    ORDER BY p_idx ASC
+	    ORDER BY display_priority ASC
 	</select>
 	
 	<select id="selectRecProduct" parameterType="com.vegemil.domain.ProductDTO" resultType="com.vegemil.domain.ProductDTO">
