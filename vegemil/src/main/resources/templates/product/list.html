@@ -22,9 +22,18 @@
 				<div class="slider" >
 					<div class="slider_area">
 						<div class="slides ">
-							<!-- 2024-02-28 배너 -->
+							<!-- 2024-02-29 배너 -->
 							<div class="slide">
-								<a href="https://www.vegemil.co.kr/product/detail/5">
+								<a href="/product/detail/73">
+									<div class="slidetitle SCI02_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
+										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 담백한 채소육수</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
+								<a href="/product/detail/5">
 									<div class="slidetitle VPM05_860_03 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">베지밀 고단백 두유 검은콩</p>
@@ -33,7 +42,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="https://www.vegemil.co.kr/product/detail/6">
+								<a href="/product/detail/6">
 									<div class="slidetitle VPL01_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">담백한 베지밀 에이</p>
@@ -42,7 +51,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="https://www.vegemil.co.kr/product/detail/75">
+								<a href="/product/detail/75">
 									<div class="slidetitle SCI04_860_01  h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">진한 콩국물</p>
@@ -51,7 +60,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="https://www.vegemil.co.kr/product/detail/1">
+								<a href="/product/detail/1">
 									<div class="slidetitle VPM01_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f27 fw600 center0">베지밀 5060 시니어두유</p>
@@ -59,16 +68,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="slide">
-								<a href="https://www.vegemil.co.kr/product/detail/73">
-									<div class="slidetitle SCI02_860_01 h300"></div>
-									<div class="st-txt mt20">
-										<p class="f27 fw600 center0">간단요리사 담백한 채소육수</p>
-										<p class="f13 fw400 gray04 mt10">요리를 간단하고 맛있게<br>간단요리사 담백한 채소육수</p>
-									</div>
-								</a>
-							</div>
-							<!-- //2024-02-28 배너 -->
+							<!-- //2024-02-29 배너 -->
 						</div>
 					</div>
 					<a class="slider_left"></a>
@@ -117,7 +117,7 @@
 									<li class="vv"><input type="radio" name="vv" id="#4" value="VGR" > <label for="#4"><span></span>곡물&견과 두유</label></li>
 									<li class="vv"><input type="radio" name="vv" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
 									<li class="vv"><input type="radio" name="vv" id="#7" value="VMO" > <label for="#7"><span></span>임산 &middot; 수유부 영양식</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#8" value="VBT" > <label for="#8"><span></span>영유아식</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#8" value="VBT" > <label for="#8"><span></span>영 &middot; 유아식</label></li>
 								</ul>
 							</div>
 							
@@ -142,7 +142,23 @@
 										<!-- <div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div> -->
 										<div class="prd-thumb">
 											<!-- swiper -->
-											<a th:href="|/product/detail/${product.pIdx}|">
+											<a th:if="${product.categoryCode != 'B'}" th:href="|/product/detail/${product.pIdx}|">																				
+											<div class="swiper" th:classappend="|${product.swiperClass}|">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
+														<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" alt="대표" />
+													</div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.bottleImg)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" alt="병" /></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging16Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" alt="팩 16본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging24Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" alt="팩 24본 박스"/></div>
+													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.packaging15Img)}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" alt="파우치 15봉"/></div>
+												</div>
+												<div class="swiper-pagination"></div>
+											</div>
+											</a>
+											<!-- //swiper -->
+											<!-- swiper -->
+											<a th:if="${product.categoryCode == 'B'}" th:href="${product.subCategoryCode} == 'VBP'? '/vegemilBaby/premium' : '/vegemilBaby/belief'">																				
 											<div class="swiper" th:classappend="|${product.swiperClass}|">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
