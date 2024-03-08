@@ -125,7 +125,7 @@
 			<!-- print -->
 			<div class="row mt200 prWrap" id="pr">
 			    <div class="col-md-12" >
-			        <p class="f_pp f30 fw600">Print AD <span class="countGold f14" style="width:30px; display:inline-block;">04</span></p>
+			        <p class="f_pp f30 fw600">Print AD <span class="countGold f14">04</span></p>
 			    </div>
 				<th:block th:each="print, printStat : ${printList}">
 					<div class="col-md-2 mt40 hvr-float-shadow">
@@ -152,12 +152,12 @@
 				</th:block>
 			</div>
 			<!-- //print -->
-			<!-- 동영상 공모전 -->
+			<!-- 동영상 공모전
 			<div class="row mt200 cfWrap">
 			    <div class="col-md-12">
 			        <p class="f_pp f30 fw600">동영상 공모전 <span class="countGold f14 text-center" style="width:30px; display:inline-block;" th:text="${#lists.size(contestList)}">35</span></p>
 			    </div>
-			    <!-- //플레이 리스트 -->
+			    <!-- //플레이 리스트 
 				<div class="col-md-6 mt40">
 					<ul class="videoList force-overflow scrollbar-3  menu-style01">
 						<li class="hvr-float-shadow" th:each="contest: ${contestList}">
@@ -168,8 +168,8 @@
 						</li>
 					</ul>
 			    </div>
-			    <!-- //플레이 리스트 -->
-			    <!-- 플레이어 부분  -->
+			    <!-- //플레이 리스트 
+			    <!-- 플레이어 부분  
 				<div class="col-md-6 mt40 mt50m">
 					<div class="player-copy tab_content6 content-style01">
 						<th:block th:each="contest : ${contestList}">
@@ -182,9 +182,10 @@
 					<div id="player4" class="youtube-7 mt25">
 					</div>
 			    </div>
-			    <!-- //플에이어 부분 -->
+			    <!-- //플에이어 부분 
 			</div>
 			<!-- //동영상 공모전 -->
+			
 			<!-- etc -->
 			<div class="row mt200 cfWrap mb100">
 			    <div class="col-md-12">
@@ -230,7 +231,7 @@
 				
 				const cfLoadId = [[${cfLoadId}]];
 				const cmLoadId = [[${cmLoadId}]];
-				const contestLoadId = [[${contestLoadId}]];
+				//const contestLoadId = [[${contestLoadId}]];
 				const etcLoadId = [[${etcLoadId}]];
 			</script>
 			

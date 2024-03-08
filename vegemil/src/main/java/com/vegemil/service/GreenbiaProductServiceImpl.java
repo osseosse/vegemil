@@ -102,4 +102,10 @@ public class GreenbiaProductServiceImpl implements GreenbiaProductService {
 		return KeywordProductList;
 	}
 
+	@Override
+	public List<GreenbiaProductDTO> getAllProductList() {
+		
+		return greenbiaProductMapper.selectAllProduct();
+	}
+
 }

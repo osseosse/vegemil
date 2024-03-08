@@ -62,6 +62,10 @@ public class GreenbiaController extends UiUtils {
 		List<GreenbiaProductDTO> countInfoList= greenbiaProductService.getProductCount();		
 		model.addAttribute("countInfo", countInfoList);
 
+		// 전체 	
+		List<GreenbiaProductDTO> allProducts= greenbiaProductService.getAllProductList();
+		model.addAttribute("allProducts", allProducts);
+		
 		//카테고리별 제품 - 일반영양식
 		List<GreenbiaProductDTO> commonProductList= greenbiaProductService.getCommonProduct();
 		model.addAttribute("commonProduct", commonProductList);

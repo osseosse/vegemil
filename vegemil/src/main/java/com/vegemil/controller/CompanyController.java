@@ -69,18 +69,17 @@ public class CompanyController {
 			
 			List<AdminAviCFDTO> cfList = adminAviCFService.getAdminAviCFList(cfDto);
 			List<AdminRadioCMDTO> cmList = adminRadioCMSerive.getRadioCMList(null);
-			List<AdminVideoContestDTO> contestList = adminVideoContestService.getAdminVideoContestList(null);
+			//List<AdminVideoContestDTO> contestList = adminVideoContestService.getAdminVideoContestList(null);
 			List<AdminAdEctDTO> etcList =  adminAdEtcService.getAdminAdEtcList(etcDto);
 			
 			model.addAttribute("cfList", cfList);
 			model.addAttribute("cmList", cmList);
-			model.addAttribute("contestList", contestList);
+			
 			model.addAttribute("etcList", etcList);
 			model.addAttribute("printList", adminPrintADService.getPrintADListForDisplay());
 			
 			model.addAttribute("cfLoadId" ,cfList.get(0).getTYoutube().replace("https://www.youtube.com/embed/", ""));
-			model.addAttribute("cmLoadId" ,cmList.get(0).getTYoutube().replace("https://www.youtube.com/embed/", ""));
-			model.addAttribute("contestLoadId", contestList.get(0).getTYoutube().replace("https://www.youtube.com/embed/", ""));
+			model.addAttribute("cmLoadId" ,cmList.get(0).getTYoutube().replace("https://www.youtube.com/embed/", ""));		
 			model.addAttribute("etcLoadId",etcList.get(0).getTFlv().replace("https://www.youtube.com/embed/", ""));
 		}
 		return "company/"+viewName;

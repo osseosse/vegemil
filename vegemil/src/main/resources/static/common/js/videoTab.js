@@ -5,12 +5,13 @@ var tag = document.createElement('script');
 var player;
 var player2;
 var player3;
+//var player4;
 function onYouTubePlayerAPIReady() {
   // TVCF
   player = new YT.Player('player', {
    // width: 640,
    // height: 400,
-    videoId: '7o3hwpPMl2o',
+    videoId: 'zm6KsDso65Q',
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -44,9 +45,20 @@ function onYouTubePlayerAPIReady() {
       rel: 0
     }
   });
-
-
-
+  /*
+   // 공모전
+   player4 = new YT.Player('player4', {
+    width: 640,
+    height: 400,
+    videoId: '6XgGro9X8_o',
+    "playerVars": {
+      autoplay: 1,
+      showinfo:0,
+      controls:1,
+      rel: 0
+    }
+  });
+  */
 }
 // TVCF
 $('.imge').on('click', function () {
@@ -80,5 +92,16 @@ $('.imge3').on('click', function () {
     );
     player3.playVideo();
 });
+/*
+// Etc
+$('.imge4').on('click', function () {
+    var url = $(this).attr('data-id');
+    player4.cueVideoById(
+      {
+        videoId: url
+      }
+    );
+    player3.playVideo();
+});
 
-
+*/

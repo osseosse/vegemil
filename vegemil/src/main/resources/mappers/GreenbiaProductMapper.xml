@@ -86,7 +86,21 @@
 			FIELD(g_lcate, '전체', '일반영양식', '전문영양식', '연하식', '건강식품' );
 	</select>
 	
-	
+	<!-- 전체 조회 -->	
+	<select id="selectAllProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
+		<![CDATA[	
+		   SELECT g_idx, g_name, g_code, g_lcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,  
+		       	CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark
+		        
+	       FROM
+	       		m_greenbia_product 
+	       WHERE 
+	       		g_active = 1
+	       ORDER BY 
+	       		g_display_order asc
+	       		
+		]]>
+	</select>
 	<!-- 일반영양식 조회 -->	
 	<select id="selectCommonProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
 		<![CDATA[	
@@ -102,7 +116,7 @@
 	       AND 
 	       		g_active = 1
 	       ORDER BY 
-	       		g_mcate , g_idx DESC
+	       		g_display_order asc
 	       		
 		]]>
 	</select>
@@ -124,7 +138,7 @@
 		  FROM  m_greenbia_product
 		  WHERE g_lcate = '전문영양식'
 		  AND   g_active = 1 
-		  ORDER BY g_mcate , g_idx DESC;
+		  ORDER BY g_display_order asc
 		]]>
 	</select>
 
@@ -139,7 +153,7 @@
 		 FROM m_greenbia_product
 		 WHERE g_lcate = '연하식' 
 		 AND   g_active = 1
-		 ORDER BY g_idx DESC
+		 ORDER BY g_display_order asc
 		]]>		
 	</select>
 
@@ -154,7 +168,7 @@
 		 FROM m_greenbia_product
 		 WHERE g_lcate = '건강식품'
 		 AND   g_active = 1 
-		 ORDER BY g_idx DESC
+		 ORDER BY g_display_order asc
 		]]>	
 	</select>
 	
@@ -163,7 +177,7 @@
 	<select id="searchProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO"> 	
 		SELECT 
 			g_idx, g_name, g_code, g_lcate, 
-			CASE WHEN g_lcate = '전문영양식' THEN substring(g_mcate,2,LENGTH(g_mcate))ELSE g_mcate END AS g_mcate, 
+			CASE WHEN g_lcate = '전문영양식' THEN substring(g_mcate,1,LENGTH(g_mcate))ELSE g_mcate END AS g_mcate, 
 	   		 g_contents, g_tube, g_capacity, g_cal, 
 	   		 CASE WHEN g_tube = '1'  THEN '경관급식' ELSE '' END AS g_tubeMark
 		FROM 
@@ -182,11 +196,15 @@
 	<select id="selectKeywordProduct" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO">
 		 <![CDATA[	
 		 SELECT 
-		 	g_idx, g_name, g_code, g_keyword, g_lcate, case when g_lcate = '전문영양식'  then substring(g_mcate,2,LENGTH(g_mcate)) else g_mcate end as g_mcate, g_contents, g_tube, g_capacity, g_cal, case when g_tube = '1'  then '<b>경관<br>급식</b>' else '' end as g_tubeMark
+		 	g_idx, g_name, g_code, g_keyword, g_lcate,
+		 	 case when g_lcate = '전문영양식'  then substring(g_mcate,1,LENGTH(g_mcate)) else g_mcate end as g_mcate, 
+		 	 g_contents, g_tube, g_capacity, g_cal, case when g_tube = '1'  then '<b>경관<br>급식</b>' else '' end as g_tubeMark
 		 FROM  
 		 	m_greenbia_product
 		 WHERE 
-		 	g_name != '' 
+		 	g_name != ''
+		 	And		  
+		 	g_active = '1'
 		 ORDER BY 
 		 	g_idx DESC
 		 ]]>	

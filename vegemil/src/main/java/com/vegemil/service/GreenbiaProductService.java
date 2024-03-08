@@ -10,6 +10,8 @@ public interface GreenbiaProductService {
 	
 	public List<GreenbiaProductDTO> getRecProduct();
 
+	public List<GreenbiaProductDTO> getAllProductList();
+	
 	public List<GreenbiaProductDTO> getProductList();
 	
 	public List<GreenbiaProductDTO> getProductCount();

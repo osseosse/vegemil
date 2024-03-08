@@ -17,6 +17,8 @@ public interface GreenbiaProductMapper {
 
 	public int selectProductTotalCount();
 	
+	public List<GreenbiaProductDTO> selectAllProduct();
+	
 	public List<GreenbiaProductDTO> selectProductCount();
 
 	public List<GreenbiaProductDTO> selectCommonProduct();

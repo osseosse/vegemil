@@ -9,10 +9,11 @@
 
 	$(function(){
         $('.ico_pc_01').click(function(){   //전체 선택시
-            $(".cat--1").css('display','block');
-            $(".cat--2").css('display','block');
-            $(".cat--3").css('display','block');
-            $(".cat--4").css('display','block');
+            $(".cat--0").css('display','block');
+            $(".cat--1").css('display','none');
+            $(".cat--2").css('display','none');
+            $(".cat--3").css('display','none');
+            $(".cat--4").css('display','none');
             
             $(".ico_pc_01").addClass(' is-checked');
             $(".ico_pc_02").removeClass(' is-checked');
@@ -90,6 +91,7 @@
             checkClear('soft',1);
         });
         
+        
         function checkClear(cate,cnt){
             $('#' + cate + '0').prop('checked',true);
             for(var i=1; i<=cnt; i++){
@@ -105,6 +107,7 @@
             $(".ico_pc_04").attr('class','ico_pc_04');
             $(".ico_pc_05").attr('class','ico_pc_05');
  
+            $(".cat--0").css('display','none');
             $(".cat--1").css('display','block');
             $(".cat--2").css('display','none');
             $(".cat--3").css('display','none');
@@ -130,6 +133,7 @@
             $(".ico_pc_04").attr('class','ico_pc_04');
             $(".ico_pc_05").attr('class','ico_pc_05');
  
+            $(".cat--0").css('display','none');
             $(".cat--1").css('display','none');
             $(".cat--2").css('display','block');
             $(".cat--3").css('display','none');
@@ -155,6 +159,7 @@
             $(".ico_pc_04").attr('class','ico_pc_04 is-checked');
             $(".ico_pc_05").attr('class','ico_pc_05');
  
+            $(".cat--0").css('display','none');
             $(".cat--1").css('display','none');
             $(".cat--2").css('display','none');
             $(".cat--3").css('display','block');
@@ -180,6 +185,7 @@
             $(".ico_pc_04").attr('class','ico_pc_04');
             $(".ico_pc_05").attr('class','ico_pc_05 is-checked');
  
+            $(".cat--0").css('display','none');
             $(".cat--1").css('display','none');
             $(".cat--2").css('display','none');
             $(".cat--3").css('display','none');
@@ -205,10 +211,11 @@
             $(".ico_pc_04").attr('class','ico_pc_04');
             $(".ico_pc_05").attr('class','ico_pc_05');
  
-            $(".cat--1").css('display','block');
-            $(".cat--2").css('display','block');
-            $(".cat--3").css('display','block');
-            $(".cat--4").css('display','block');
+            $(".cat--0").css('display','block');
+            $(".cat--1").css('display','none');
+            $(".cat--2").css('display','none');
+            $(".cat--3").css('display','none');
+            $(".cat--4").css('display','none');
             
             $("#normal").hide();
             $("#expert").hide();
@@ -218,7 +225,9 @@
             $('.t01').css('display','none');
 		    $('.t02').css('display','none');
 		    $('.t03').css('display','none');
-		    $('.t04').css('display','none');       
+		    $('.t04').css('display','none');
+		    
+	 
 	    }); 
     } 
 	</script>
@@ -280,7 +289,7 @@
 		<div class="col-lg-12 cateBox" style="text-align: center;">
 			
 			<span th:each="count : ${countInfo}" class="messonry-button text-center pb30 mt100" >
-				<button th:if="${count.gLcate == '전체'}" 	 data-filter="*" class="ico_pc_01 is-checked" type="button"><span class="filter-text"><b>전체</b></span><span class="filter-counter" th:text="${count.total}">100</span></button>				
+				<button th:if="${count.gLcate == '전체'}" 	 data-filter=".cat--0" class="ico_pc_01 is-checked" type="button"><span class="filter-text"><b>전체</b></span><span class="filter-counter" th:text="${count.total}">100</span></button>				
 				<button th:if="${count.gLcate == '일반영양식'}" data-filter=".cat--1" class="ico_pc_02 " type="button"><span class="filter-text"><b>일반영양식</b></span> <span class="filter-counter" th:text="${count.total}">0</span></button> 					
 				<button th:if="${count.gLcate == '전문영양식'}" data-filter=".cat--2" class="ico_pc_03" type="button"><span class="filter-text"><b>전문영양식</b></span> <span class="filter-counter" th:text="${count.total}">0</span></button>
 				<button th:if="${count.gLcate == '연하식'}" 	 data-filter=".cat--3" class="ico_pc_04" type="button"><span class="filter-text"><b>연하식</b></span> <span class="filter-counter" th:text="${count.total}">0</span></button>
@@ -325,8 +334,28 @@
 			<div class="portfolio-grid-metro4 mesonry-list" >
 				<div class="resizer" ></div>
 				
+				<!-- cat--0 전체 -->	
+	            <div th:each="product : ${allProducts}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--0" >
+	                <div class="card border-0">	                
+	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
+					        <div class="poss_relative">
+					       	 	<div class="thumb" th:classappend="|${product.gCode}_s h500|" >	
+							        <ul class="" th:classappend="|${product.gCode}_kcal mlk|">							       
+								        <li class="f_ms" th:text="${product.gCapacity}">용량</li> 
+								        <li class="f_ms" th:text="${product.gCal}">칼로리</li> 
+							        </ul>
+						        </div>
+						        <div class="thumb_txt" style="text-align: left;">
+							        <p class="f14_41 thumb_line"><b th:text="${product.gLcate}"></b><span></span><b th:text="${product.gMcate}"></b></p>        
+							        <p class="f28_4 mt20" th:text="${product.gName}" style="font-weight: bold">제품명</p> 
+							        <p class="f16_4 mt10 gray01" th:text="${product.gContents}">제품설명</p> 
+						        </div>
+					        </div>
+			    		</a>	                    
+	                </div>
+	            </div>
 				<!-- cat--1  일반-->	
-	            <div th:each="product : ${commonProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--1" th:classappend="${product.gCheck}">
+	            <div th:each="product : ${commonProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--1" style="display:none;" th:classappend="${product.gCheck}" >
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
 					        <div class="poss_relative">
@@ -369,7 +398,7 @@
 	            
 	            
 	      		<!-- cat--3  연하-->
-	            <div th:each="product : ${yeonhaProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--3" th:classappend="${product.gCheck}">
+	            <div th:each="product : ${yeonhaProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--3"  th:classappend="${product.gCheck}">
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
 					        <div class="poss_relative">
@@ -390,7 +419,7 @@
 	            </div>
 	            
 	      		<!-- cat--4 건강 -->
-	            <div th:each="product : ${healthProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--4" th:classappend="${product.gCheck}">
+	            <div th:each="product : ${healthProduct}" class="col-12 col-md-6 col-lg-4 portfolio portfolio_style--1 portfolio-33-33 cat--4"  th:classappend="${product.gCheck}">
 	                <div class="card border-0">	                
 	                    <a th:with="var=${product.gCode}" th:href="|/greenbia/product/detail/${product.gIdx}|"> 
 					        <div class="poss_relative">
