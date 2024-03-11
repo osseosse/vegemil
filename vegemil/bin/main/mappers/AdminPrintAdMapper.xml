@@ -48,7 +48,7 @@
 			t_onair = 1
 		ORDER BY
 			t_idx DESC
-		LIMIT 4
+		LIMIT 6
 	</select>
 	
 	<insert id="insertPrintADData" parameterType="com.vegemil.domain.AdminPrintAdDTO" useGeneratedKeys="true" keyProperty="tIdx">
