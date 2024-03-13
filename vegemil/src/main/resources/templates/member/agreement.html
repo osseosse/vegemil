@@ -151,7 +151,12 @@ function btnCheck() {
 	if($("#agree01").is(":checked") == true
 	&& $("#agree02").is(":checked") == true) 
 	{
-		joinHPCheck();
+		if($("#agree03").is(":checked") ==  true){
+			//$('#secondURL').attr("value", urlStr[2] + "WithEdaymall");
+			joinHPCheck('1');
+		}else{
+			joinHPCheck('0');	
+		}
 	} else {
 		alert("필수 항목을 체크해주세요");
 		return false;
@@ -159,7 +164,9 @@ function btnCheck() {
 }
 
 //휴대폰 인증 확인
-function joinHPCheck(){
+function joinHPCheck(joinEday){
+	
+	alert(joinEday);
 	
 	var authForm = $('#authForm');
     //조인타입에 flag 값을 넣어줌
@@ -173,6 +180,13 @@ function joinHPCheck(){
 	var urlStr_2 = urlStr[4];
 	var urlStr_3 = urlStr[5];
 	var urlStr_4 = urlStr[6];
+	
+	alert("** "+ urlStr_2);
+	
+	if(joinEday == '1'){
+		urlStr_2 = urlStr_2 + "WithEdaymall";
+		alert(urlStr_2);
+	}
 
 	var reqURL;
 	if(urlStr_3 == null){

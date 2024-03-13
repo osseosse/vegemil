@@ -68,6 +68,11 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
 	private Long live;
 	private Long sleep;
 	private Long comp;
+	
+	//edaymall 프로시저를 위한
+	private String isForeigner;
+	private String outCode;
+
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

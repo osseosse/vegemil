@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapperEday.EdaymallDualJoinSPMapper">
+	
+	<!-- statementType="CALLABLE" => 프로시저를 사용할때 선언 -->
+	<select id="spJoinMemFromVege" parameterType="com.vegemil.domain.MemberDTO" resultType="hashMap" statementType="CALLABLE">
+		{ CALL 
+			SP_REG_MEM_FROM_VEGEMIl(
+				#{mYear,		mode=IN, jdbcType=VARCHAR}, 
+				#{mSex,			mode=IN, jdbcType=VARCHAR}, 
+				#{mId,			mode=IN, jdbcType=VARCHAR}, 
+				#{mName, 		mode=IN, jdbcType=VARCHAR}, 
+				#{mPwd,			mode=IN, jdbcType=VARCHAR}, 
+				#{isForeigner,	mode=IN, jdbcType=VARCHAR}, 			
+				#{mDi,			mode=IN, jdbcType=VARCHAR}, 
+				#{mHp,			mode=IN, jdbcType=VARCHAR},				 
+				#{mEmail,		mode=IN, jdbcType=VARCHAR},				 
+				#{mSmssend,		mode=IN, jdbcType=VARCHAR},
+				#{mEmailsend,	mode=IN, jdbcType=VARCHAR},
+				#{mDi,			mode=IN, jdbcType=VARCHAR},				
+				#{outCode, 		mode=OUT, jdbcType=VARCHAR}
+				
+			) 
+		}
+	</select>
+
+
+
+	
+</mapper>

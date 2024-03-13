@@ -1,6 +1,7 @@
 package com.vegemil.service;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.mapper.MemberMapper;
+import com.vegemil.mapperEday.EdaymallDualJoinSPMapper;
 
 @Service
 public class MemberService implements UserDetailsService  {
 
 	@Autowired
 	private MemberMapper memberMapper;
+	
+	@Autowired
+	private EdaymallDualJoinSPMapper dualJoinMapper;
 	
 	public int getMemberCount(MemberDTO params) {
 		int memberTotalCount = memberMapper.selectMemberTotalCount(params);
@@ -122,6 +127,14 @@ public class MemberService implements UserDetailsService  {
 		
 		
 		if (memCount == 0) {
+			
+			if(member.getMDualYn().equals("1")) {
+				// 이데이몰 프로시저 실행 쿼리 연결  
+				System.out.println("=============> sp 로직 ㄱㄱ ");
+				dualJoinMapper.spJoinMemFromVege(member);
+				System.out.println("----======> " + member.getOutCode()); // 0000이 찍혀야 정상 등록된거임 - 9999는 초기값 / 8888 중복잡힘 즉, 9999는  중복값 이외의 예외 요소에 걸려 튕긴거임 ?  
+			}
+			
 			queryResult = memberMapper.saveMember(member);
 		} else {
 			queryResult = memberMapper.updateMember(member);
