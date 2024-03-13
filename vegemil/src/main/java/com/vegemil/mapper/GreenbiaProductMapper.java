@@ -30,6 +30,8 @@ public interface GreenbiaProductMapper {
 	public List<GreenbiaProductDTO> selectHealthProduct();
 
 	public List<GreenbiaProductDTO> searchProduct(String searchKeyword);
+	
+	public List<GreenbiaProductDTO> selectProductListTube(String searchKeyword);
 
 	public List<GreenbiaProductDTO> selectKeywordProduct();
 

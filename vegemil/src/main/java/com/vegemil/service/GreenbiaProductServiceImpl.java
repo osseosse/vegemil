@@ -1,13 +1,19 @@
 package com.vegemil.service;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.util.StringUtil;
 import com.vegemil.domain.GreenbiaProductDTO;
 import com.vegemil.mapper.GreenbiaProductMapper;
+
+import antlr.StringUtils;
 
 @Service
 public class GreenbiaProductServiceImpl implements GreenbiaProductService {
@@ -83,16 +89,20 @@ public class GreenbiaProductServiceImpl implements GreenbiaProductService {
 	}
 
 	@Override
-	public List<GreenbiaProductDTO> searchProduct(String searchKeyword) {
-		System.out.println("=====================GreenbiaProductServiceImpl======================");
-
-		List<GreenbiaProductDTO> SearchProductList = greenbiaProductMapper.searchProduct(searchKeyword);
+	public List<GreenbiaProductDTO> searchProduct(String searchKeyword) {		
+		
+		if(StringUtil.isEmpty(searchKeyword)) {
+			return greenbiaProductMapper.searchProduct(searchKeyword);
+		}
+		List<GreenbiaProductDTO> SearchProductList = new ArrayList<GreenbiaProductDTO>();
+		
+		if(searchKeyword.equals("경구") || searchKeyword.equals("경관")) {
+			SearchProductList = greenbiaProductMapper.selectProductListTube(searchKeyword);
+		}else {
+			SearchProductList = greenbiaProductMapper.searchProduct(searchKeyword);
+		}
 		return SearchProductList;
 	}
-
-	
-	
-
 	
 	@Override
 	public List<GreenbiaProductDTO> getKeywordProduct() {

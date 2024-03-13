@@ -185,10 +185,31 @@
 		WHERE 
 			g_active = 1		
 		AND 	
-			g_name like CONCAT('%',#{searchKeyword},'%') 
+			(g_name like CONCAT('%',#{searchKeyword},'%') 
 			OR g_lcate like CONCAT('%',#{searchKeyword},'%') 
 			OR g_mcate like CONCAT('%',#{searchKeyword},'%') 
-			OR g_contents like CONCAT('%',#{searchKeyword},'%') 
+			OR g_eating_way like CONCAT('%',#{searchKeyword},'%')) 
+		ORDER BY g_display_order asc			
+		
+	</select>
+	
+	<!-- 경구 경관 여부 검색했을떄.. -->	
+	<select id="selectProductListTube" parameterType="String"  resultType="com.vegemil.domain.GreenbiaProductDTO"> 	
+		SELECT 
+			g_idx, g_name, g_code, g_lcate, 
+			CASE WHEN g_lcate = '전문영양식' THEN substring(g_mcate,1,LENGTH(g_mcate))ELSE g_mcate END AS g_mcate, 
+	   		 g_contents, g_tube, g_capacity, g_cal, 
+	   		 CASE WHEN g_tube = '1'  THEN '경관급식' ELSE '' END AS g_tubeMark
+		FROM 
+			m_greenbia_product	
+		WHERE 
+			g_active = 1		
+		AND 	
+			(g_name like CONCAT('%',#{searchKeyword},'%') 
+			OR g_lcate like CONCAT('%',#{searchKeyword},'%') 
+			OR g_mcate like CONCAT('%',#{searchKeyword},'%') 
+			OR g_eating_way like CONCAT('%',#{searchKeyword},'%')) 
+		ORDER BY g_display_order2 asc			
 		
 	</select>
 	
@@ -205,8 +226,7 @@
 		 	g_name != ''
 		 	And		  
 		 	g_active = '1'
-		 ORDER BY 
-		 	g_idx DESC
+		 ORDER BY g_display_order asc		
 		 ]]>	
 	</select>
 
