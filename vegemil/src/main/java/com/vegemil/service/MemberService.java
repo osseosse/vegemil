@@ -15,7 +15,10 @@ import com.vegemil.domain.MemberDTO;
 import com.vegemil.mapper.MemberMapper;
 import com.vegemil.mapperEday.EdaymallDualJoinSPMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class MemberService implements UserDetailsService  {
 
 	@Autowired
@@ -127,12 +130,16 @@ public class MemberService implements UserDetailsService  {
 		
 		
 		if (memCount == 0) {
-			
+			// 동시가입 체크 여부 1 이면 
 			if(member.getMDualYn().equals("1")) {
+				
+				member.setResidentNo(member.getMYear() + member.getMSex() + "******"); 
+				member.setIsForeigner("0");
+				
 				// 이데이몰 프로시저 실행 쿼리 연결  
-				System.out.println("=============> sp 로직 ㄱㄱ ");
+				log.info("=============> 동시가입 sp");
 				dualJoinMapper.spJoinMemFromVege(member);
-				System.out.println("----======> " + member.getOutCode()); // 0000이 찍혀야 정상 등록된거임 - 9999는 초기값 / 8888 중복잡힘 즉, 9999는  중복값 이외의 예외 요소에 걸려 튕긴거임 ?  
+				log.info("sp 아웃코드=============>" + member.getOutCode()); // 0000이 찍혀야 정상 등록된거임 - 9999는 초기값 / 8888 중복잡힘 즉, 9999는  중복값 이외의 예외 요소에 걸려 튕긴듯 
 			}
 			
 			queryResult = memberMapper.saveMember(member);
