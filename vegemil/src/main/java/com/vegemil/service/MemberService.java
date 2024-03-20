@@ -135,11 +135,21 @@ public class MemberService implements UserDetailsService  {
 				
 				member.setResidentNo(member.getMYear() + member.getMSex() + "******"); 
 				member.setIsForeigner("0");
+				if(member.getMSex().equals("여")) {
+					member.setMSex("2");
+				}else {
+					member.setMSex("1");
+				}
 				
 				// 이데이몰 프로시저 실행 쿼리 연결  
 				log.info("=============> 동시가입 sp");
 				dualJoinMapper.spJoinMemFromVege(member);
-				log.info("sp 아웃코드=============>" + member.getOutCode()); // 0000이 찍혀야 정상 등록된거임 - 9999는 초기값 / 8888 중복잡힘 즉, 9999는  중복값 이외의 예외 요소에 걸려 튕긴듯 
+				log.info("sp 아웃코드=============>" + member.getOutCode()); // 0000이 찍혀야 정상 등록된거임 - 9999는 초기값 / 8888 중복잡힘 즉, 9999는  중복값 이외의 예외 요소에 걸려 튕긴듯
+				
+				if(!member.getOutCode().equals("0000")) {
+					member.setMDualYn(member.getOutCode());
+				}
+					
 			}
 			
 			queryResult = memberMapper.saveMember(member);

@@ -18,8 +18,8 @@
 				#{mEmail,		mode=IN, jdbcType=VARCHAR},				 
 				#{mSmssend,		mode=IN, jdbcType=VARCHAR},
 				#{mEmailsend,	mode=IN, jdbcType=VARCHAR},
-				#{mDi,			mode=IN, jdbcType=VARCHAR},				
-				#{outCode, 		mode=OUT, jdbcType=VARCHAR}
+				#{residentNo,	mode=IN, jdbcType=VARCHAR},				
+				#{outCode, 		mode=OUT,jdbcType=VARCHAR}
 				
 			) 
 		}

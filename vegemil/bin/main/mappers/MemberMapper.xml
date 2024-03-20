@@ -66,7 +66,8 @@
 		   m_comp_name,
 		   m_bizno,
 		   m_is_idle,
-		   m_di
+		   m_di,
+		   m_dual_yn
 		) VALUES (
 		   #{mId},
 		   #{mPwd},
@@ -89,7 +90,8 @@
 		   #{mCompName},
 		   #{mBizno},
 		   '0',
-		   #{mDi}
+		   #{mDi},
+		   #{mDualYn}
 		)
 		<selectKey keyProperty="mIdx" keyColumn="m_idx" resultType="long" >
 			SELECT LAST_INSERT_ID()
