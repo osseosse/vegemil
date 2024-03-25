@@ -246,6 +246,8 @@ public class MemberController extends UiUtils {
 			member.setMYear(pccBirymd);
 			member.setMHp(pccCellno);
 			member.setMDi(diKey);
+			// 동시가입 비동의 
+			member.setMDualYn("0");
 			model.addAttribute("member", member);
 			returnHtml = "member/join";
 		} else {

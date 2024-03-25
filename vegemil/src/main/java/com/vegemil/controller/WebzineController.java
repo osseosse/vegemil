@@ -471,7 +471,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
-		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
+		if(wYear.equals("2016") || wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
 		} else {
 			returnHtml = "webzine/index";
@@ -504,7 +504,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
-		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
+		if(wYear.equals("2016") || wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
 		} else {
 			returnHtml = "webzine/index";
@@ -537,7 +537,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
-		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
+		if(wYear.equals("2016") || wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
 		} else {
 			returnHtml = "webzine/index";
@@ -571,7 +571,7 @@ public class WebzineController extends UiUtils {
 		List<WebzineDTO> webzineLink = webzineService.getWebzineLink();
 		List<WebzineDTO> webzineListQY = webzineService.getWebzineQrtYear(qrtYear);
 		
-		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
+		if(wYear.equals("2016") || wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldIndex";
 		} else {
 			returnHtml = "webzine/index";
@@ -898,7 +898,7 @@ public class WebzineController extends UiUtils {
 	}
 	
 	
-	@RequestMapping(value = {"/webzine/theme","/webzine/theme.aspx"})
+	@RequestMapping(value = {"/webzine/theme","/webzine/theme.aspx", "/Main/webzine/theme.aspx"})
 	public String moveTheme(@RequestParam(required = false) SearchDTO params, Model model, HttpServletRequest request) {
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();
