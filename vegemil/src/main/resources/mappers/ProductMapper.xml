@@ -76,7 +76,11 @@
 		tag1,
 		tag2,
 		tag3,
-		brand_display
+		brand_display,
+		brand_dis_priority,
+		brand_pre_section,
+		brand_post_section,
+		brand_entire
 	</sql>
 
 	<select id="selectProductDetail" parameterType="long" resultType="com.vegemil.domain.ProductDTO">
@@ -155,6 +159,26 @@
 		  </if>
 		ORDER BY 
 			new_product_all, rep_product_all, new_product_cate, rep_product_cate
+	</select>
+	
+	<select id="selectBrandStroyList2" parameterType="String" resultType="com.vegemil.domain.ProductDTO">
+		SELECT 
+			 <include refid="brandStoryColumns" />
+		FROM          
+			 m_product           
+		WHERE 
+		    p_active = 1
+		  <if test="categoryCode != null and categoryCode != ''">  
+		  and category_code = #{categoryCode}
+		  </if>	
+		  and
+		    brand_display = 1
+		  <if test='categoryCode == "G"'>
+		  	<!-- 이런 말도안되는 억지 조건이 들어간 이유는 그린비아 categorycode가 나눠져 있는데 기존 로직 다 바꾸는 건 할 수 없어서... -->
+		  	or p_name like CONCAT('%','그린비아','%')
+		  </if>
+		ORDER BY 
+			brand_dis_priority
 	</select>
 	
 	<select id="selectBrandStroyCount" parameterType="com.vegemil.domain.ProductDTO" resultType="int">

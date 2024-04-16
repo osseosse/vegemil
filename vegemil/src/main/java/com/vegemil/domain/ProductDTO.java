@@ -37,7 +37,7 @@ public class ProductDTO extends CommonDTO {
 	private Long   newProductCate;
 	private Long   repProductCate;
 	private Long   displayPriority;
-	private Long   brandDisplay;
+
 	private String capacity1;
 	private String capacity2;
 	private String capacity3;
@@ -71,6 +71,13 @@ public class ProductDTO extends CommonDTO {
 	private String productClass16;
 	private String productClass24;
 	private String productClass15;
+	
+	private int brandDisplay;
+	private int brandDisPriority;
+	
+	private int brandPreSection;
+	private int brandPostSection;
+	private int brandEntire;
 	
 	public void detailImgClassSet() {
 		if(!StringUtil.isEmpty(bottleImg)) {

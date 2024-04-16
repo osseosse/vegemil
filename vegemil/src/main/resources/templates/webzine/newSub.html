@@ -132,12 +132,12 @@
 	var afterNo = fileNum + 1;
 	var totSubCount = countArticles - 2;
 	
-	if(qrter = 'Q1_2024'){
-		var totSubCount = countArticles - 1;
+	if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){
+		totSubCount = countArticles - 3;
 	}
-	
+
 	$('#btnBefore').on("click", function() {
-		if(qrter = 'Q1_2024'){			
+		if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){			
 			if(fileNum == '00') {
 				alert("첫번째 기사입니다.");
 				return false;
