@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.mapper.MemberMapper;
@@ -128,6 +129,9 @@ public class MemberService implements UserDetailsService  {
 		member.setMPwd(passwordEncoder.encode(member.getPassword()));
 		member.setMAuth("USER");
 		
+		if(StringUtils.hasText(member.getMDi())==false) {
+			return false;
+		}
 		
 		if (memCount == 0) {
 			// 동시가입 체크 여부 1 이면 
@@ -148,8 +152,7 @@ public class MemberService implements UserDetailsService  {
 				
 				if(!member.getOutCode().equals("0000")) {
 					member.setMDualYn(member.getOutCode());
-				}
-					
+				}					
 			}
 			
 			queryResult = memberMapper.saveMember(member);

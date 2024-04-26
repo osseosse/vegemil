@@ -60,45 +60,11 @@
                                 <a href="#" class="brand-logo">
 <!-- 									<span class="logo_60"><img src="../common/images/logo/logo_b.png"  alt="정식품"/></span> -->
 									<span class="logo_60"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html_관리자/common/images/logo/logo_b.png"  alt="정식품"/></span>
-                                    <h2 class="brand-text text-white ms-1 ">정식품 관리자</h2>
+                                    <h2 class="brand-text text-white ms-1">정식품 관리자</h2>
                                 </a>
 
-                                <h4 class="card-title mb-1 text-center">관리자등록이 처음이신가요?</h4>
-                                <p class="card-text mb-2 text-center">아래정보를 남겨주시면 담당자가 확인 후 <br>메일을 보내드립니다.</p>
-
-
-                                <form class="auth-register-form mt-2" th:action="@{/admin/auth/signUp}" method="post" th:onsubmit="return checkMailDomain();">
-                                    <div class="mb-1">
-                                        <label for="register-username" class="form-label">이름</label>
-                                        <input type="text" class="form-control" id="mName" name="mName" placeholder="" aria-describedby="register-username" tabindex="1" autofocus />
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="register-email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="mId" name="mId" placeholder="사내 E-mail을 작성해 주세요." aria-describedby="register-email" tabindex="2"/>
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="register-email" class="form-label">부서</label>
-                                        <input type="text" class="form-control" id="mLocation" name="mLocation" placeholder="부서명 작성해 주세요. ex)정식품_홍보" aria-describedby="register-location" tabindex="3" />
-                                    </div>
-
-                                    <div class="mb-1">
-                                        <label for="register-password" class="form-label">Password</label>
-
-                                        <div class="input-group input-group-merge form-password-toggle">
-                                            <input type="password" class="form-control form-control-merge" id="mPwd" name="mPwd" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="4" />
-                                            <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
-                                        </div>
-                                    </div>
-                                   
-                                    <button class="btn btn-primary w-100" tabindex="5">관리자 가입하기</button>
-                                </form>
-
-                                 <p class="text-center mt-2">
-                                    <span>로그인 페이지 </span>
-                                    <a href="/admin/auth/login">
-                                        <span>돌아가기</span>
-                                    </a>
-                                </p>
+                               	<p th:text="${result}"></p>
+                               
                             </div>
                         </div>
                         <!-- /Register v1 -->

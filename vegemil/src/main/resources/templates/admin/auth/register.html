@@ -67,14 +67,14 @@
                                 <p class="card-text mb-2 text-center">아래정보를 남겨주시면 담당자가 확인 후 <br>메일을 보내드립니다.</p>
 
 
-                                <form class="auth-register-form mt-2" th:action="@{/admin/auth/signUp}" method="POST">
+                                <form class="auth-register-form mt-2" th:action="@{/admin/auth/signUp}" method="post" th:onsubmit="return checkMailDomain();">
                                     <div class="mb-1">
                                         <label for="register-username" class="form-label">이름</label>
                                         <input type="text" class="form-control" id="mName" name="mName" placeholder="" aria-describedby="register-username" tabindex="1" autofocus />
                                     </div>
                                     <div class="mb-1">
                                         <label for="register-email" class="form-label">Email</label>
-                                        <input type="text" class="form-control" id="mId" name="mId" placeholder="사내 E-mail을 작성해 주세요." aria-describedby="register-email" tabindex="2" />
+                                        <input type="text" class="form-control" id="mId" name="mId" placeholder="사내 E-mail을 작성해 주세요." aria-describedby="register-email" tabindex="2"/>
                                     </div>
                                     <div class="mb-1">
                                         <label for="register-email" class="form-label">부서</label>
@@ -137,6 +137,37 @@
                 });
             }
         })
+    </script>
+    <script>
+    	function checkMailDomain(){
+    		var email = $("#mId").val();
+    		var name = $("#mName").val();
+    		var location = $("#mLocation").val();
+    		var pwd = $("#mPwd").val();
+    		
+    		if(name == null || name == ''){
+    			alert("이름을 입력하세요.");
+	    		return false;
+    		}
+    		
+    		if(email.indexOf('vegemil.co.kr') == -1 && email.indexOf('osse.co.kr') == -1 ){
+    			alert("베지밀 또는 오쎄 이메일 계정을 입력하세요.");
+	    		return false;
+    		}
+    		
+    		if(location == null || location == ''){
+    			alert("부서를 입력하세요.");
+	    		return false;
+    		}
+    		
+    		if(pwd == null || pwd == ''){
+    			alert("비밀번호를 입력하세요.");
+	    		return false;
+    		}
+    		
+    		return true;
+    		
+    	}
     </script>
 </body>
 <!-- END: Body-->
