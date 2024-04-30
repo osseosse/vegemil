@@ -411,6 +411,10 @@ body {overflow-x:hidden}
 .G08001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G08001_S.jpg)}/* HP */
 .G02021_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_S.jpg)}/* 하이컴팩트  */
 .G06005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_S.jpg)}/* 하이키즈 */
+.G06006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06006_S.jpg)}/* 하이키즈 초코맛 */
+.G01017_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_S.jpg)}/* 영양케어 */
+.G02024_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_S.jpg)}/* 당케어 */
+.G02025_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_S.jpg)}/* 캔서케어 */
 
 .bg_plate {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/plate.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .bg_bigbanner {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_bigbanner.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
@@ -465,7 +469,7 @@ body {overflow-x:hidden}
 .round20 {background:#9d4e00;}
 .round21 {background:#00206c;}
 .round22 {background:#880033;}
-.round23 {background:#c94c00;}
+.round23 {background:#c94c00; }
 .round24 {background:#700069;}   
 .round25 {background:#161270;}
 .round26 {background:#d59100;}    
@@ -803,6 +807,41 @@ ul.G02021_kcal li:nth-child(2) {background:#1d5031} /* 빅배너 제품칼로리
 .col-md-4.G06005_bottom {background:none;}
 ul.G06005_kcal li:first-child {background:#77c126}  /* 빅배너 제품칼로리 하이키즈 */
 ul.G06005_kcal li:nth-child(2) {background:#d90051} /* 빅배너 제품칼로리 하이키즈 */
+
+/* 하이키즈 초코맛 */
+.h850-2.G06006{background:none} 
+.G06006 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06006_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G06006_top {background:none; }
+.col-md-4.G06006_top .round {background:#6c2310}
+.col-md-4.G06006_bottom {background:none;}
+ul.G06006_kcal li:first-child {background:#c38d69}  /* 빅배너 제품칼로리 하이키즈 초코맛 */
+ul.G06006_kcal li:nth-child(2) {background:#6c2310} /* 빅배너 제품칼로리 하이키즈 초코맛 */
+
+
+/* 영양케어 */
+.h850-2.G01017 {background:none} 
+.G01017 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G01017_top {background:none; }
+.col-md-4.G01017_top .round {background:#ec5c7c}
+.col-md-4.G01017_bottom {background:none;}
+ul.G01017_kcal li:first-child {background:#eec446}  /* 빅배너 제품칼로리 영양케어 */
+ul.G01017_kcal li:nth-child(2) {background:#ec5c7c} /* 빅배너 제품칼로리 영양케어 */
+/* 당케어 */
+.h850-2.G02024 {background:none} 
+.G02024 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G02024_top {background:none; }
+.col-md-4.G02024_top .round {background:#5b8638}
+.col-md-4.G02024_bottom {background:none;}
+ul.G02024_kcal li:first-child {background:#b5d71e}  /* 빅배너 제품칼로리 당케어 */
+ul.G02024_kcal li:nth-child(2) {background:#4e7f20} /* 빅배너 제품칼로리 당케어 */
+/* 켄서케어 */
+.h850-2.G02025 {background:none} 
+.G02025 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G02025_top {background:none; }
+.col-md-4.G02025_top .round {background:#ad6c4e}
+.col-md-4.G02025_bottom {background:none;}
+ul.G02025_kcal li:first-child {background:#edb236}  /* 빅배너 제품칼로리 켄서케어 */
+ul.G02025_kcal li:nth-child(2) {background:#ad6c4e} /* 빅배너 제품칼로리 켄서케어 */
 /* -------------------------
 	빅배너 > BAR-GRAPH 
 -------------------------- */
@@ -1091,9 +1130,9 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
 /* ------------------------------------
 		제품소개 버튼
 --------------------------------------- */
-.messonry-button button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:5%}
+.messonry-button button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:2% !important}
 .messonry-button button:last-child {margin-right:0}
-.messonry-button button span {position: relative;display: inline-block;padding: 5px 15px; }
+.messonry-button button span {position: relative;display: inline-block; padding: 5px 15px; }
 .messonry-button button span.filter-text {
 	font-weight: 600;
 	line-height: 1.58;
@@ -1884,8 +1923,12 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-2.G08001 {display:block}/* HP */
 	.h850-2.G02021 {display:block}/* 하이컴팩트  */
 	.h850-2.G06005 {display:block}/* 하이키즈 */
+	.h850-2.G06006 {display:block}/* 하이키즈 초코맛 */
 	.h850-2.G02022 {display:block}/* 화이바 RTH 400  */
 	.h850-2.G02023 {display:block}/* 당뇨식 RTH 400  */
+	.h850-2.G01017 {display:block}/* 영양케어 */
+	.h850-2.G02024 {display:block}/* 당케어 */
+	.h850-2.G02025 {display:block}/* 켄서케어 */
 
 
 
@@ -2384,6 +2427,12 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G06005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06005 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06005_bottom {background:#f9bd67 }
+	/* 하이키즈 초코맛 */
+	.row.G06006 {background:none;  }
+	.h850-1.G06006_top {background:#e96364; }
+	.h850-1.G06006_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G06006 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06006_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G06006_bottom {background:#f9bd67 }
 
 
 	/* 티에프1000 */
@@ -2424,6 +2473,27 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G02023_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02023 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02023_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02023_bottom {background:#76b038 }
+
+
+
+	/* 영양케어  */
+	.row.G01016 {background:none;  }
+	.h850-1.G01016_top {background:#fc941b; }
+	.h850-1.G01016_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G01016 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01016_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G01016_bottom {background:#df8127 }
+	/* 당케어 */
+	.row.G02024 {background:none;  }
+	.h850-1.G02024_top {background:#9ed256; }
+	.h850-1.G02024_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02024 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02024_bottom {background:#76b038 }
+	/* 켄서케어 */
+	.row.G02025 {background:none;  }
+	.h850-1.G02025_top {background:#9ed256; }
+	.h850-1.G02025_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02025 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02025_bottom {background:#76b038 }
 	
 	
 	
