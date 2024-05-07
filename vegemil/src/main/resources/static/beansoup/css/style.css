@@ -417,7 +417,7 @@ body {margin:0; padding:0; overflow-x:hidden}
 	.bgMV {background:#aed6a3}
 	.mv01 {position:absolute; right:0; top:0; z-index:10}
 	.mv02 {position:absolute; left:0; top:404px; z-index:1}
-	.mvc01 {position:absolute; left:-50px; top:188px; z-index:10}
+	.mvc01 {position:absolute; left:-50px; top:188px; z-index:10; border:2px solid blue}
 	.mvc02 {position:absolute; left:130px; top:338px; z-index:10}
 	.mvc03 {position:absolute; left:171px; top:71px; z-index:10}
 	.mvc04 {position:absolute; left:476px; top:480px; z-index:10}
@@ -527,8 +527,8 @@ body {margin:0; padding:0; overflow-x:hidden}
 	
 	
 	.btn_mainType01 {border:1px solid #CCCCCC; border-radius:25px; text-align:center; display:inline-block; background:#fff; }
-	.btn_mainType01 a {border-radius:25px; padding:12px 40px; display:inline-block; transition:all 0.4s;}
-	.btn_mainType01 a:hover {text-decoration:none; border:1px solid #F06339; border-radius:25px; color:#fff; background-color:#F06339}
+	.btn_mainType01 a {border-radius:25px; padding:12px 40px; display:inline-block; transition:all 0.2s;}
+	.btn_mainType01 a:hover {text-decoration:none; border:none; border-radius:25px; color:#fff; background-color:#F06339}
 	.gr {position:relative;}
 	.gr_color {color:#FFECD8}
 	.gallery_mo {position:relative;}
@@ -4530,19 +4530,6 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	
 
 
-	.mt10m {margin-top:10px}
-	.mt20m {margin-top:20px}
-	.mt30m {margin-top:30px}
-	.mt40m {margin-top:40px}
-	.mt50m {margin-top:50px}
-	.mt60m {margin-top:60px}
-	.mt70m {margin-top:70px}
-	.mt80m {margin-top:80px}
-	.mt90m {margin-top:90px}
-	.mt100m {margin-top:100px}
-	.mt110m {margin-top:110px}
-	.mt120m {margin-top:120px}
-	.mt130m {margin-top:130px}
 
 	.mt10 {margin-top:5px}
 	.mt20 {margin-top:10px}
@@ -4564,7 +4551,8 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 	.mt180 {margin-top:90px}
 	.mt190 {margin-top:95px}
 	.mt200 {margin-top:130px}
-	.pt200 {padding-top:100px}
+	.mt210 {margin-top:180px}
+
 	
 
 	.q01 {width:150px; text-align:center; margin:0 auto; margin-bottom:10px; margin-top:100px}
@@ -4654,15 +4642,15 @@ box-shadow: 2px 1px 18px -8px rgba(176,128,88,0.88);  }
 
 	.messonry-button2 button span.filter-counter {
 	    position: absolute;
-    top: -7px;
-    left: 50%;
-    visibility: hidden;
-    margin: 0 auto;
-    min-width: 20px;
-    height: 23px;
-    line-height: 13px;
-    
-    font-size: 12px;
+		top: -7px;
+		left: 50%;
+		visibility: hidden;
+		margin: 0 auto;
+		min-width: 20px;
+		height: 23px;
+		line-height: 13px;
+		
+		font-size: 12px;
 	;
     }
 
