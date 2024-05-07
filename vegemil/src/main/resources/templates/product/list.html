@@ -294,7 +294,12 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="${product.subCategoryCode} == 'CHP'">
+											<a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a>
+										</dd>
+										<dd th:unless="${product.subCategoryCode} == 'CHP'">
+											<a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a>
+										</dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
