@@ -137,7 +137,7 @@ function getAddrList(area) {
 			return;
 		},
 		error: function () {
-			console.log("error>>>>>>>");
+			console.log("error>>>>>>>" + area);
 			return;
 		}
 	});
@@ -196,7 +196,7 @@ function searchAndMark(map, geocoder, addr , name, isCenter){
 			});
 
 		} else {
-			console.log("error>>>>>>>");
+			console.log("error>>>>>>>" + addr);
 		}
 	});
 }
