@@ -8,7 +8,35 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		
-		$('#btnInfant1, #btnInfant2, #btnInfant3').click(function() {
+		$('#btnInfant1, #btnInfant3').click(function() {
+			
+			if(new Date().getDay() == '0'){
+				alert('일요일은 신청기간이 아닙니다. \n 월요일 오전 10시 이후로 신청해주세요.');
+				event.preventDefault();
+			}else if( new Date().getHours() <= '8'){
+				alert('오전 10시 이후로 신청해주세요 \n 감사합니다."');
+				event.preventDefault();
+			}
+			
+			
+			let isLogin = document.getElementById('isLogin').value;
+			if(isLogin == 'anonymousUser'){				 
+					 alert("로그인 후 작성해주시기 바랍니다.");				  
+			 	}	
+	    });
+		
+		$('#btnInfant2').click(function() {
+			
+			var infoline = 'NEW! 베지밀 영•유아식이 새로워집니다.\n\n'
+						+ '토들러 2단계의 경우, 리뉴얼된 제품으로 발송됩니다.\n'
+						+ '(발송 기간은 한달 이상 소요될 수 있습니다.발송 후 별도 문자 안내 예정)\n\n'
+						+ '제품은 \'베지밀 토들러 프리미엄 2단계 \'로 발송되오니 참고바랍니다.';
+			var input = confirm(infoline);
+			
+			if(input == false){
+				return false;
+			}
+			
 			
 			if(new Date().getDay() == '0'){
 				alert('일요일은 신청기간이 아닙니다. \n 월요일 오전 10시 이후로 신청해주세요.');
@@ -201,7 +229,7 @@
 					<div class="row  mg0 mt70 ">
 						<div class="container pd0 pb120">
 							<div class="col-md-12 center">
-								<p class="f45_6 mt50m">베지밀 영&middot;유아식 우리콩 무료샘플은<br>4팩 구성으로 받아보실 수 있습니다.</p>
+								<p class="f45_6 mt50m">베지밀 영&middot;유아식 무료샘플은<br>4팩 구성으로 받아보실 수 있습니다.</p>
 							</div>
 							<div class="col-md-12  row ">
 								<div class=" mt70 mt50m">
