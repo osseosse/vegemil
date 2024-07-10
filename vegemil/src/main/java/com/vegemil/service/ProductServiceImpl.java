@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
 		int brandStroyCount = productMapper.selectBrandStroyCount();
 
 		if (brandStroyCount > 0) {
-			brandStroyList = productMapper.selectBrandStroyList(categoryCode);
+			brandStroyList = productMapper.selectBrandStroyList2(categoryCode);
 		}
 
 		return brandStroyList;

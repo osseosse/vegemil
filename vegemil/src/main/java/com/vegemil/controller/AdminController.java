@@ -178,31 +178,34 @@ public class AdminController extends UiUtils {
     
     //회원 활성화
   	@GetMapping(value = "/admin/email/active")
-  	public void changeActive(@RequestParam(value="mId", required=true) String mId, 
+  	public String changeActive(@RequestParam(value="mId", required=true) String mId, 
   			@RequestParam(value="mName", required=true) String mName, Model model, HttpServletResponse response) throws Exception {
   		response.setContentType("text/html; charset=UTF-8");
   		PrintWriter out = response.getWriter();
-  		MemberDTO params = new MemberDTO();
+  		MemberDTO params = new MemberDTO();  		
+  		
   		if (mId == null || mName == null) {
-  			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
-  			out.flush();
+  			model.addAttribute("result", "필수 데이터 누락");
+  			return "admin/auth/confirmResult";
   		}
   		params.setMId(mId);
   		params.setMName(mName);
   		
-  		boolean isActived = mailService.verifyEmail(params);
-  		if (!isActived) {
-  			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
-  			out.flush();
-  		}
   		boolean isRegistered = adminService.activeMember(params);
   		if (isRegistered == false) {
-  			out.println("<script>alert('이메일인증에 실패하였습니다.'); window.location='/';</script>");
-  			out.flush();
+  			model.addAttribute("result", "관리자 활성화 실패");  	  		
+  	  		return "admin/auth/confirmResult";
   		}
   		
-  		out.println("<script>alert('이메일 인증이 완료되었습니다.'); window.close();</script>");
-		out.flush();
+  		boolean isActived = mailService.verifyEmail(mId);
+  		if (!isActived) {
+  			model.addAttribute("result", "확인 이메일 발송 실패");  	  		
+  	  		return "admin/auth/confirmResult";
+  		}
+  		
+  		model.addAttribute("result","관리자 활성화 및 메일 발송 완료");
+  		
+  		return "admin/auth/confirmResult";
   	}
   	
 

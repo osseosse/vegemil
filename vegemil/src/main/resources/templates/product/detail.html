@@ -74,8 +74,12 @@
 							<span class="f14" th:text="${product.tag1}"></span>
 							<span class="f14" th:text="${product.tag2}"></span>
 							<span class="f14" th:text="${product.tag3}"></span>
+						</div>				
+						<div class="ppl-label">
+							<img th:if="${product.pIdx == 73}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl2.png" alt="너는내운명"/>																					
+							<img th:if="${product.pIdx == 75}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야"/>
+							<img th:if="${product.pIdx == 76}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야"/>
 						</div>
-						<div class="ppl-label" th:if="${product.pIdx == 73}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl.png" alt="안사우면다행이야"></div>
 						<div class="prd-label">
 							<img th:if="${product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
 						</div>
@@ -119,8 +123,8 @@
 							</p>
 						</li>
 						<li th:if="${product.expirationMonth} != null">
-							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info02.png" alt="유통기한" /></p>
-							<p><span class="f16 fw400 gray04">유통기한</span><span class="f16 f_pp fw400" th:text="${product.expirationMonth}"></span></p>
+							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info02.png" alt="소비기한" /></p>
+							<p><span class="f16 fw400 gray04">소비기한</span><span class="f16 f_pp fw400" th:text="${product.expirationMonth}"></span></p>
 						</li>
 						<li th:if="${product.kcal1} != null">
 							<p><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_info03.png" alt="칼로리" /></p>

@@ -525,7 +525,7 @@
 				</a>
 				<!-- //프리미엄두유 > 신제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPM' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPM' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPreSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -545,19 +545,21 @@
 			</div>
 			<div class="col-md-6 brand_thumb mt50 mt50m" >
 				<!-- 프리미엄두유 > 대표제품 -->
-				<a href="/product/detail/4">
+				<!-- 2024-04-15 고단백초코 -->
+				<a href="/product/detail/92">
 					<div class="line_bottom_gray pb60">
-						<div class="h370 VPM04_860_01 mt20  brand_thumb_img">
+						<div class="h370 VPM06_860_01  mt20  brand_thumb_img">
 							<div class="top_tag"><p><span>프리미엄 두유</span></p></div>
-							<div class="bottom_tag"><p><span>#프리바이오틱스</span></p><p><span>#저당설계</span></p><p><span>#90kcal</span><span>프리미엄두유</span></p></div>
+							<div class="bottom_tag"><p><span>#맛있는단백질</span></p><p><span>#진한초코풍미</span></p><p><span>#프리미엄두유</span></p></div>
 						</div>
-						<p class="f27 mt40 fw500">베지밀 프리바이오틱스 두유</p>
-						<p class="f16 mt5 fw400 gray04">장내 유익균의 성장을 돕는 프리바이오틱스가 함유된 프리미엄 두유</p>
+						<p class="f27 mt40 fw500">베지밀 고단백두유 초코</p>
+						<p class="f16 mt5 fw400 gray04">고함량 단백질 12g을 한 팩으로 즐길 수 있는 프리미엄 두유</p>
 					</div>
 				</a>
+				<!-- // 2024-04-15 고단백초코 -->
 				<!-- //프리미엄두유 > 대표제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPM' and ${brandStroy.repProductCate} != 0 and ${brandStroy.repProductCate} != 3" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPM' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPostSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -593,7 +595,7 @@
 				</a>
 				<!-- //플레인두유 > 신제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPL' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPL' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPreSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -625,7 +627,7 @@
 				</a>
 				<!-- //플레인 > 대표제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPL' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VPL' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPostSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -661,7 +663,7 @@
 				</a>
 				<!-- //블랙두유 > 신제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VBL' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VBL' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPreSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -693,7 +695,7 @@
 				</a>
 				<!-- //블랙두유 > 대표제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VBL' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VBL' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPostSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -729,7 +731,7 @@
 				</a>
 				<!-- //곡물&견과 두유 > 신제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VGR' and ${brandStroy.newProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VGR' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPreSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>
@@ -761,7 +763,7 @@
 				</a>
 				<!-- //곡물&견과 두유 > 대표제품 -->
 				<div class="row" th:if="${not #lists.isEmpty( brandStroyList )}">
-					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VGR' and ${brandStroy.repProductCate} != 0" th:each="brandStroy, i : ${brandStroyList}">
+					<div class="col-md-6" th:if="${brandStroy.subCategoryCode} == 'VGR' and ${brandStroy.brandDisplay} == 1 and ${brandStroy.brandPostSection} == 1" th:each="brandStroy, i : ${brandStroyList}">
 						<div class="recom">
 							<a th:href="|/product/detail/${brandStroy.pIdx}|">
 								<div th:class="|${brandStroy.productClass2} h260 reImg mt60|"></div>

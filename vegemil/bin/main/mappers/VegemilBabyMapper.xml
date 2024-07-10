@@ -496,7 +496,7 @@
 	
 	<select id='selectCalenderModelTitlebyRownum'  parameterType="String" resultType="com.vegemil.domain.AdminCalendarTitleDTO">	
 		SELECT 
-			*
+			distinct t_year, t_month1,t_month1_string,t_month2 ,t_month2_string,t_rownum,t_babyname ,t_month3 ,t_month3_string
 		FROM 
 			m_calendar_title
 		WHERE

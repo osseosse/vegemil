@@ -9,6 +9,7 @@
 		, right(qrt_year, 4) as w_year
 		, left(qrt_year, 2) as w_quarter
 		, file_no
+		, remark
 		, title
 		, sns_title
 		, category

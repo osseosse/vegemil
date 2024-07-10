@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<title>정식품 프로필</title>
+<title>정식품 공시(결산공고)</title>
 <head th:replace="fragments/head :: headFragment"></head>
 <body>
 <!-- ================================ Header ================================ -->
@@ -38,8 +38,8 @@
 			<div class="col-md-4 financeBox centerMo">
 				<p class="f52 fw600 mt50 black">재무상태표 <span class="gray03">-</span></p>
 				<select class="f18 fw400 financeTitle mt50" id="selectbox" name="year" onchange="changeList();">
+                    <option value="51.jpg">2023년 제 51기 결산공고</option>
                     <option value="50.jpg">2022년 제 50기 결산공고</option>
-                    <option value="49.jpg">2021년 제 49기 결산공고</option>
                 </select>
 				<!--<div class="verticalType03 mt50">
                     <div class="ver-title03"><p class="f18 fw400">2021년 제 38기 결산공고</p></div>
@@ -57,7 +57,7 @@
 				    <p class="f27 fw500 black mt10">주식회사 정식품</p>
 				</div>
 				<!-- ★ 이미지 이름 기수 번호로 관리  -->
-				<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/Finance_50.jpg" alt="재무재표" class="mt50" id="img_area">
+				<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/Finance_51.jpg" alt="재무재표" class="mt50" id="img_area">
 			</div>
 		</div>
 		<br class="clear">

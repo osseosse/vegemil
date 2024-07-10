@@ -150,15 +150,23 @@ public class MailService {
 	    return mIdx;
 	}
 
-	public boolean verifyEmail(MemberDTO member) throws NotFoundException {
-		int queryResult = adminMapper.selectAdminCount(member);
-			
-		if (queryResult != 0) {
-			queryResult = adminMapper.activeAdmin(member);
+	public boolean verifyEmail(String email) throws NotFoundException {
+		MimeMessage message = mailSender.createMimeMessage();
+    	Context context = new Context();    	
+    	try {    	
+	    	message.setFrom(MailService.FROM_ADDRESS);
+			message.addRecipients(MimeMessage.RecipientType.TO, email);
+			//message.addRecipients(MimeMessage.RecipientType.TO, "kid4290@vegemil.co.kr");
+			message.setSubject("[정식품] 관리자 권한 부여 완료하였습니다.");
+			message.setText("관리자 권한 부여 완료하였습니다. 관리자 계정 아이디는 기입하신 이메일 주소입니다."); 
+	        mailSender.send(message);
+        
+    	} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-	
-		return (queryResult == 1) ? true : false;
-	    
+    	
+    	return true;
 	}
 	
 	// 묹자 메일 마케팅 정보 수신 동의 메일 

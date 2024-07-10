@@ -38,7 +38,7 @@ $(function(){
 });
 
 
-// ¸ð¹ÙÀÏ GNB
+// ï¿½ï¿½ï¿½ï¿½ï¿½ GNB
 function openNav() {
   document.getElementById("myNav").style.width = "100%";
 }
@@ -48,21 +48,21 @@ function closeNav() {
 }
 
 
-// ±×·¡ÇÁ À§Ä¡ÀÌµ¿
+// ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ìµï¿½
 $(document).ready(function(){
       
 	function example(){
 		var w = $(window).width();
 
-		if(w<752){ //tablet&¸ð¹ÙÀÏÀÌ¶ó¸é
+		if(w<752){ //tablet&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿½
 		   $('.bar-graph-m').after( $('.move_contents'));
 
-		}else{ //pc¶ó¸é
+		}else{ //pcï¿½ï¿½ï¿½
 			$('.bar-graph-web').after( $('.move_contents'));
 		}
 	}
 
-	//ÃÊ±â½ÇÇà
+	//ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	example();
 
 
@@ -222,7 +222,7 @@ $(document).ready(function(){
 
  
     /*=====================================
-    	25. Portfolio Masonry Activation // ÀüÃ¼Á¦Ç°
+    	25. Portfolio Masonry Activation // ï¿½ï¿½Ã¼ï¿½ï¿½Ç°
     =========================================*/
 
     $(window).load(function () {
@@ -327,35 +327,39 @@ $(document).ready(function(){
             });
             
             $('#expert0').change(function(){
-                selectAll('expert',7);
+                selectAll('expert',8);
             });
             
             $('#expert1').change(function(){
-                filter('expert','1',7);
+                filter('expert','1',8);
             });
             
             $('#expert2').change(function(){
-                filter('expert','2',7);
+                filter('expert','2',8);
             });
             
             $('#expert3').change(function(){
-                filter('expert','3',7);
+                filter('expert','3',8);
             });
             
             $('#expert4').change(function(){
-                filter('expert','4',7);
+                filter('expert','4',8);
             });
             
             $('#expert5').change(function(){
-                filter('expert','5',7);
+                filter('expert','5',8);
             });
             
             $('#expert6').change(function(){
-                filter('expert','6',7);
+                filter('expert','6',8);
             });
             
             $('#expert7').change(function(){
-                filter('expert','7',7);
+                filter('expert','7',8);
+            });
+            
+            $('#expert8').change(function(){
+                filter('expert','8',8);
             });
             
             $('#soft0').change(function(){
@@ -391,7 +395,7 @@ $(document).ready(function(){
     })
 
 	 /*=====================================
-    	25. Portfolio Masonry Activation // Á¦Ç°°Ë»ö
+    	25. Portfolio Masonry Activation // ï¿½ï¿½Ç°ï¿½Ë»ï¿½
     =========================================*/
 
     $(window).load(function () {
@@ -432,7 +436,7 @@ $(document).ready(function(){
 
 
 /*====================================================== 
-	ÀüÃ¼Á¦Ç° 
+	ï¿½ï¿½Ã¼ï¿½ï¿½Ç° 
 =======================================================*/
 $(function(){
 	$('.ico_pc_01').on('click',function(){
@@ -470,7 +474,7 @@ $(function(){
 
 
 /*====================================================== 
-	°æÀå¿µ¾ç½ÄÀÌ¶õ 
+	ï¿½ï¿½ï¿½å¿µï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ 
 =======================================================*/
 $(function(){
 	$('.ent001').on('mouseover',function(){
@@ -496,13 +500,13 @@ $(function(){
 
 
 /*====================================================== 
-	°æÀå¿µ¾ç½ÄÀÌ¶õ > slide
+	ï¿½ï¿½ï¿½å¿µï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ > slide
 =======================================================*/
 
-$.fn.basicTabs2 = function(options){ /* basicTabs2 º¯°æ */
+$.fn.basicTabs2 = function(options){ /* basicTabs2 ï¿½ï¿½ï¿½ï¿½ */
 var settings = $.extend({
   active_class: "current",
-  list_class: "tabs2", /* tabe2 º¯°æ*/
+  list_class: "tabs2", /* tabe2 ï¿½ï¿½ï¿½ï¿½*/
   content_class: "tab_content2", /* tab_content2 */
   starting_tab: 1
 }, options );

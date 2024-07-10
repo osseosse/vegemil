@@ -105,6 +105,7 @@ function btnAvtive() {
 	
 	const sId = $('#mId').val();
 	const idDuplicate = $('#idDuplicate').val();
+	const txtEmail = $("#txtEmail").val();
 	const sEmail = $('#mEmail').val();
 	const sPw1 = $('#pw1').val();
 	const sPw2 = $('#pw2').val();
@@ -119,6 +120,7 @@ function btnAvtive() {
 	&& $.trim(sAddr1).length > 1
 	&& $.trim(sAddr2).length > 1
 	&& $("input:radio[name='mEmailsend']").is(":checked") == true
+	&& $.trim(txtEmail).length > 1
 	&& $.trim(sEmail).length > 1) 
 	{
 		$("#joinBtn").attr("disabled", false); //해제
@@ -135,6 +137,11 @@ function btnAvtive() {
 $('#selEmail').change(function(){
    $("#selEmail option:selected").each(function () {
 		
+	   
+	   if($("#txtEmail").val().length < 1) {
+		   alert("이메일 앞자리를 입력해주세요.");
+		   return;
+	   }
 		if($(this).val()== '1'){ //직접입력일 경우
 			 $("#txtEmail2").val('');                        //값 초기화
 			 $("#txtEmail2").attr("disabled",false); //활성화
@@ -154,11 +161,17 @@ $('#mAddr2').keyup(function () {
 });
 
 $('#txtEmail').keyup(function () {
+	
+	if($("#txtEmail2").val().length > 0) {		
+		$("#mEmail").val($("#txtEmail").val()+"@"+ $("#txtEmail2").val());
+	}
 	btnAvtive();
 });
 
 $('#txtEmail2').keyup(function () {
-	$("#mEmail").val($("#txtEmail").val()+"@"+ $("#txtEmail2").val());
+	if($("#txtEmail").val().length > 0) {		
+		$("#mEmail").val($("#txtEmail").val()+"@"+ $("#txtEmail2").val());
+	}
 	btnAvtive();
 });
 

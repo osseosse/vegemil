@@ -68,6 +68,12 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
 	private Long live;
 	private Long sleep;
 	private Long comp;
+	
+	//edaymall 프로시저를 위한
+	private String isForeigner; // 외국인 여부
+	private String residentNo; // 생일 앞자리 + 성별구분 + * 마스킹 
+	private String outCode; // 결과(out) 코드 받는 필드 
+
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

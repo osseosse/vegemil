@@ -10,13 +10,13 @@
 	
 	- Description -
 
-	01. font	:	ÆùÆ®¼³Á¤
-	02. common			:	°øÅë»çÇ×, ·¹ÀÌ¾Æ¿ô
+	01. font	:	í°íŠ¸ì„¤ì •
+	02. common			:	ê³µí†µì‚¬í•­, ë ˆì´ì•„ì›ƒ
 	
-	03. nav			:	¸Ş´º
-	05. content		:	ÄÜÅÙÃ÷
-	06. responsive	:	¹Ìµğ¾îÄõ¸®
-	07. popup		:   ÆË¾÷
+	03. nav			:	ë©”ë‰´
+	05. content		:	ì½˜í…ì¸ 
+	06. responsive	:	ë¯¸ë””ì–´ì¿¼ë¦¬
+	07. popup		:   íŒì—…
 
 
 ==============================================*/
@@ -37,7 +37,7 @@
 .f20_3 {font-size:20px;color:#646464;  font-weight:300; line-height:150%}
 .f20_5 {font-size:20px;color:#323232;  font-weight:500; line-height:150%; border-bottom:2px solid #323232; padding-bottom:3px; }
 .f20_51 {font-size:20px;color:#323232;  font-weight:500; line-height:150%; }
-.f22_41 {font-size:22px;color:#646464; font-weight:400; line-height:150%; letter-spacing:-1px} /* ºê·£µå Core Value */
+.f22_41 {font-size:22px;color:#646464; font-weight:400; line-height:150%; letter-spacing:-1px} /* ë¸Œëœë“œ Core Value */
 .f22_4 {font-size:22px;color:#282828;  font-weight:400; line-height:150%}
 .f22_5 {font-size:22px;color:#282828;  font-weight:500; line-height:150%}
 .f22_7 {font-size:22px;color:#282828;  font-weight:700; line-height:150%; letter-spacing:2px}
@@ -96,13 +96,13 @@
 /* ----------------------------------------------- */
 /* common
 -------------------------------------------------- */
-html, body {margin:0; padding:0; font-family:"Noto Sans KR", sans-serif, Helve¹öºí°æ°ítica; overflow-x:hidden }
+html, body {margin:0; padding:0; font-family:"Noto Sans KR", sans-serif, Helveë²„ë¸”ê²½ê³ tica; overflow-x:hidden }
 .f_ms {font-family: 'Montserrat', sans-serif;}
 a:hover {text-decoration:none}
 #wrap {position:relative; width:100%} 
 #contant {overflow:hidden; padding-bottom:200px}
 .container100 {position:relative; width:100%; ;padding-right: 0px;padding-left: 0px;margin-right: auto;margin-left: auto;}
-.container100_15 {padding:0 15px; width:100%} /* °¡·Î ÆĞµùÀû¿ë */
+.container100_15 {padding:0 15px; width:100%} /* ê°€ë¡œ íŒ¨ë”©ì ìš© */
 .container1250_15 {padding:0 15px;width:100%;  max-width:1280px; margin-right: auto;margin-left: auto;}
 .container1400 {padding:0 0px; width:100%; max-width:1400px;  margin-right: auto;margin-left: auto;} 
 .container1400_15 {padding:0 15px;width:100%;  max-width:1430px; margin-right: auto;margin-left: auto;} 
@@ -117,28 +117,28 @@ ul li {list-style:none}
 img.img100 {width:100%;}
 .img100 {width:100%} 
 .bgGray {background:#eff0f2}
-.bgDark {background:#9d9d9d; color:#fff;  padding:1px 5px; border:0; display:inline-block} /* ´ëµÎ,À¯À¯ ÇÔÀ¯*/
+.bgDark {background:#9d9d9d; color:#fff;  padding:1px 5px; border:0; display:inline-block} /* ëŒ€ë‘,ìœ ìœ  í•¨ìœ */
 .bgPupple {background:#7f99e2}
 .bgWhite {background:#fff; position:relative}
 .row {position:relative}
 .pupple{color:#7f99e2}
-.gray01{color:#646464} /* ¿¬È¸»ö */
-.gray02{color:#323232} /* Â£ÀºÈ¸»ö */
+.gray01{color:#646464} /* ì—°íšŒìƒ‰ */
+.gray02{color:#323232} /* ì§™ì€íšŒìƒ‰ */
 /* ----------------------------------------------- */
 /* Nav
 -------------------------------------------------- */
 .logo {position:relative; margin-top:30px; margin-left:70px;float:left}
-header {position:relative; top:0; width:100%;} /*  min-width´Â ºê¶ó¿ìÀú ÁÙ¿´À» ½Ã ¿À·ù¹æÁö 2017-06-07 */
-.gnbBG {background:#fff;display:none; position:absolute; width:100%; top:80px; left:0; height:360px; border-top:1px solid #dadada} /* ¼­ºê¸Ş´º ¹è°æÆ÷ÇÔ */
+header {position:relative; top:0; width:100%;} /*  min-widthëŠ” ë¸Œë¼ìš°ì € ì¤„ì˜€ì„ ì‹œ ì˜¤ë¥˜ë°©ì§€ 2017-06-07 */
+.gnbBG {background:#fff;display:none; position:absolute; width:100%; top:80px; left:0; height:360px; border-top:1px solid #dadada} /* ì„œë¸Œë©”ë‰´ ë°°ê²½í¬í•¨ */
 #gnb {left: 0px; top: 0px; width: 100%; /*position: fixed;*/ z-index:10; background-color:#fff; height:80px; z-index:100;  }
 #gnb ul {max-width:800px; margin:0 auto}
 #gnb ul > li > a{}
 #gnb {position:relative;height:80px; width:100%; margin:0 auto;  }
 #gnb:after {display:block; content:"";clear:both;}
 #gnb li {position:relative;float:left; top:0; }
-#gnb li a.dep01{font-size:17px;font-weight:500;color:#323232;display:block;padding:32px 50px 28px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1µª */
+#gnb li a.dep01{font-size:17px;font-weight:500;color:#323232;display:block;padding:32px 50px 28px 50px;text-align:center;margin-left:1px;text-align:left; line-height:120% ; } /* 1ë */
 #gnb li.last a.dep01 {width:110px; }
-#gnb ul li ul {display:none; width:100%;height:360px;position:absolute; top:80px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ¿ÀÇÂÀ§Ä¡Á¶Àı */
+#gnb ul li ul {display:none; width:100%;height:360px;position:absolute; top:80px;left:0px; padding:0px 0px 0px 0px; margin-left:-1px; /* background:#fff; */ } /* ì˜¤í”ˆìœ„ì¹˜ì¡°ì ˆ */
 #gnb ul li.last ul {width:110px;margin-right:1px;}
 #gnb ul li.active > a {color:#6584dc}
 #gnb ul li.active > ul { background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bar_line.gif) no-repeat center 0px; }
@@ -214,7 +214,7 @@ table.p_info th,
 table.p_info td {font-size:14px; border-bottom:1px solid #d1d3dc; padding:10px 10px;line-height:22px}
 table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
 /* -------------------------
-	¸ŞÀÎ > Product Categories 
+	ë©”ì¸ > Product Categories 
 -------------------------- */
 .pcBox {text-align:center; width:100%; padding:0 10px}
 .pc_line01 {border-bottom:2px solid #d52c15; padding-bottom:15px; font-size:20px ; font-weight:400}
@@ -226,7 +226,7 @@ table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
 .pc a li {font-size:16px; margin-bottom:10px; padding:9px 20px; border-radius:15px; text-align:center; display:inline-block}
 .pc a:hover li {background:#fff;  color:#1c34b0; padding:9px 20px; border-radius:15px }
 /* -------------------------
-	±×¸°ºñ¾Æ¼Ò°³ > ±×¸°ºñ¾Æ´Â?
+	ê·¸ë¦°ë¹„ì•„ì†Œê°œ > ê·¸ë¦°ë¹„ì•„ëŠ”?
 -------------------------- */
 .tabMenu {position:relative; border-left:1px solid #d1d3dc; border-top:1px solid #d1d3dc; display:inline-block; width:100%; top:-30px  }
 .tabMenu li {width:100%;   border-right:1px solid #d1d3dc; border-bottom:1px solid #d1d3dc; text-align:center; background:#eef0f2 }
@@ -256,7 +256,7 @@ table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
 .tabMenu4 li a {padding:20px 0; font-size:20px; color:#a0a0a0; display:inline-block; width:100%}
 
 /* -------------------------
-	¸ŞÀÎ > Product Choice guide
+	ë©”ì¸ > Product Choice guide
 -------------------------- */
 .slider-wrap {
   height: 100%;
@@ -330,7 +330,7 @@ table.p_info th {font-weight:500;border-right:1px solid #d1d3dc}
   font-weight: 500;
   text-transform: uppercase;
 }
-/* Å©·Ò */
+/* í¬ë¡¬ */
 @media screen and (-webkit-min-device-pixel-ratio:0){ 
   .ieView { display:none; } 
 }
@@ -368,49 +368,53 @@ body {overflow-x:hidden}
 .vertical-bg-4 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/d.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }
 .vertical-bg-5 {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/e.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .thumb {background-repeat:no-repeat;background-size: cover;background-position:center 10%;}
-.G01004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_S.jpg)}/* ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À */
-.G01005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01005_S.jpg)}/* ¸¶ÀÏµåÄÉ¾î °ËÀºÂü±ú */
+.G01004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_S.jpg)}/* ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§› */
+.G01005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01005_S.jpg)}/* ë§ˆì¼ë“œì¼€ì–´ ê²€ì€ì°¸ê¹¨ */
 /* */
-.G01015_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_S.jpg)}/* ¸¶ÀÏµåÄÉ¾î ¿ÀÆ® */
-.G01009_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_S.jpg)}/* Å°Áî */
-.G01012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_S.jpg)}/* ÇÃ·¯½ºÄÉ¾î */
+.G01015_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_S.jpg)}/* ë§ˆì¼ë“œì¼€ì–´ ì˜¤íŠ¸ */
+.G01009_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_S.jpg)}/* í‚¤ì¦ˆ */
+.G01012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_S.jpg)}/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ */
 /* */
-.G01001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_S.jpg)}/* Æ¼¿¡ÇÁ */
-.G02003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_S.jpg)}/* ¾ËµğÇÃ·¯½º */
-.G01010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01010_S.jpg)}/* Àå¼Ö·ç¼Ç */
+.G01001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_S.jpg)}/* í‹°ì—í”„ */
+.G02003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_S.jpg)}/* ì•Œë””í”ŒëŸ¬ìŠ¤ */
+.G01010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01010_S.jpg)}/* ì¥ì†”ë£¨ì…˜ */
 .G02001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02001_S.jpg)}/* DM */
 .G01007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01007_S.jpg)}/* 1.5 */
-.G02006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_S.jpg)}/* ´ç´¢¼Ö·ç¼Ç */
-.G01002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_S.jpg)}/* È­ÀÌ¹Ù */
-.G02002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02002_S.jpg)}/* ¾Ëµğ */
+.G02006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_S.jpg)}/* ë‹¹ë‡¨ì†”ë£¨ì…˜ */
+.G01002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_S.jpg)}/* í™”ì´ë°” */
+.G02002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02002_S.jpg)}/* ì•Œë”” */
 /* */
-.G02008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_S.jpg)}/* °í´Ü¹é¼Ö·ç¼Ç */
-.G02012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_S.jpg)}/* ÇÃ·¯½ºÄÉ¾î´ç´¢½Ä */
-.G01014_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01014_S.jpg)}/* ÇÃ·¯½ºÄÉ¾îÈ­ÀÌ¹Ù */
+.G02008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_S.jpg)}/* ê³ ë‹¨ë°±ì†”ë£¨ì…˜ */
+.G02012_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_S.jpg)}/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ë‹¹ë‡¨ì‹ */
+.G01014_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01014_S.jpg)}/* í”ŒëŸ¬ìŠ¤ì¼€ì–´í™”ì´ë°” */
 .G01008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01008_S.jpg)}/* RTH */
-.G01011_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_S.jpg)}/* Àå¼Ö·ç¼Ç RTH */
-.G02010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_S.jpg)}/* ÀÌ¹ÃÆ÷¸£Å× RTH */
-.G02013_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_S.jpg)}/* ¾ËµğÇÃ·¯½º RTH */
+.G01011_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_S.jpg)}/* ì¥ì†”ë£¨ì…˜ RTH */
+.G02010_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_S.jpg)}/* ì´ë®¨í¬ë¥´í…Œ RTH */
+.G02013_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_S.jpg)}/* ì•Œë””í”ŒëŸ¬ìŠ¤ RTH */
 
-.G02022_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02022_S.jpg)}/* È­ÀÌ¹Ù RHT 400 */
-.G02023_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02023_S.jpg)}/* ´ç´¢½Ä RTH 400 */
+.G02022_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02022_S.jpg)}/* í™”ì´ë°” RHT 400 */
+.G02023_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02023_S.jpg)}/* ë‹¹ë‡¨ì‹ RTH 400 */
 
-.G02007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_S.jpg)}/* ´ç´¢¼Ö·ç¼Ç RTH */
-.G02005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_S.jpg)}/* ¿¬ÇÏ */
-.G05001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_S.jpg)}/* ÇÁ·ÎÆ¾ÇÃ·¯½º */
-.G06001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_S.jpg)}/* ¸ÖÆ¼¹ë·±½º */
-.G06002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_S.jpg)}/* ÇÁ·ÎÆ¾¹ë·±½º */
-.G06003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_S.jpg)}/* ÇÁ·ÎÆ¾¹Ğ ¾Æ¸óµå¿ÍÈ£µÎ */
-.G06004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_S.jpg)}/* ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
+.G02007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_S.jpg)}/* ë‹¹ë‡¨ì†”ë£¨ì…˜ RTH */
+.G02005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_S.jpg)}/* ì—°í•˜ */
+.G05001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_S.jpg)}/* í”„ë¡œí‹´í”ŒëŸ¬ìŠ¤ */
+.G06001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_S.jpg)}/* ë©€í‹°ë°¸ëŸ°ìŠ¤ */
+.G06002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_S.jpg)}/* í”„ë¡œí‹´ë°¸ëŸ°ìŠ¤ */
+.G06003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_S.jpg)}/* í”„ë¡œí‹´ë°€ ì•„ëª¬ë“œì™€í˜¸ë‘ */
+.G06004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_S.jpg)}/* í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
 /* */
-.G07001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_S.jpg)}/* ¸ÖÆ¼ÄÉ¾îÇÁ·ÎÆ¾ */
-.G01901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_S.jpg)}/* Æ¼¿¡ÇÁ1000 */
-.G01911_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_S.jpg)}/* Àå¼Ö·ç¼Ç1000 */
-.G01902_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_S.jpg)}/* È­ÀÌ¹Ù1000 */
-.G02901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02901_S.jpg)}/* µğ¿¥1000 */
+.G07001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_S.jpg)}/* ë©€í‹°ì¼€ì–´í”„ë¡œí‹´ */
+.G01901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_S.jpg)}/* í‹°ì—í”„1000 */
+.G01911_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_S.jpg)}/* ì¥ì†”ë£¨ì…˜1000 */
+.G01902_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_S.jpg)}/* í™”ì´ë°”1000 */
+.G02901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02901_S.jpg)}/* ë””ì— 1000 */
 .G08001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G08001_S.jpg)}/* HP */
-.G02021_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_S.jpg)}/* ÇÏÀÌÄÄÆÑÆ®  */
-.G06005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_S.jpg)}/* ÇÏÀÌÅ°Áî */
+.G02021_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_S.jpg)}/* í•˜ì´ì»´íŒ©íŠ¸  */
+.G06005_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_S.jpg)}/* í•˜ì´í‚¤ì¦ˆ */
+.G06006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06006_S.jpg)}/* í•˜ì´í‚¤ì¦ˆ ì´ˆì½”ë§› */
+.G01017_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_S.jpg)}/* ì˜ì–‘ì¼€ì–´ */
+.G02024_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_S.jpg)}/* ë‹¹ì¼€ì–´ */
+.G02025_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_S.jpg)}/* ìº”ì„œì¼€ì–´ */
 
 .bg_plate {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/plate.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .bg_bigbanner {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_bigbanner.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
@@ -465,38 +469,38 @@ body {overflow-x:hidden}
 .round20 {background:#9d4e00;}
 .round21 {background:#00206c;}
 .round22 {background:#880033;}
-.round23 {background:#c94c00;}
+.round23 {background:#c94c00; }
 .round24 {background:#700069;}   
 .round25 {background:#161270;}
 .round26 {background:#d59100;}    
 .slide-inner {position:relative; width:100%}
 .slide-inner ul { bottom:0;  z-index:1000} 
 /* -------------------------
-	°øÅëÄ®·Î¸® > »ó´Ü¹è³Ê, Áø¿­ 
+	ê³µí†µì¹¼ë¡œë¦¬ > ìƒë‹¨ë°°ë„ˆ, ì§„ì—´ 
 -------------------------- */
 ul.mlk {text-align:right; position:absolute; right:0; bottom:0; max-width:120px; }
 ul.mlk li {color:#fff; font-size:18px; font-weight:400; padding:16px 13px; text-align:left}
 /* -------------------------
-	¸ŞÀÎ > »ó´Ü¹è³Ê Ä®·Î¸® ÄÃ·¯¹Ú½º
+	ë©”ì¸ > ìƒë‹¨ë°°ë„ˆ ì¹¼ë¡œë¦¬ ì»¬ëŸ¬ë°•ìŠ¤
 --------------------------
-ul.mkg li:first-child {background:#f17a59}  /* ¸ŞÀÎ¹è³Ê ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À */
-ul.mkg li:nth-child(2) {background:#b42700} /* ¸ŞÀÎ¹è³Ê ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À */
+ul.mkg li:first-child {background:#f17a59}  /* ë©”ì¸ë°°ë„ˆ ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§› */
+ul.mkg li:nth-child(2) {background:#b42700} /* ë©”ì¸ë°°ë„ˆ ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§› */
 /* ------------------------------------
-	ºò¹è³Ê > ¹è°æ/Ä®·Î¸®
+	ë¹…ë°°ë„ˆ > ë°°ê²½/ì¹¼ë¡œë¦¬
 --------------------------------------- */
 ul.mlk2 {text-align:right;  right:0; bottom:0;  width:280px}
 ul.mlk2 li {color:#fff; font-size:25px; font-weight:600; padding:22px 0px; text-align:center; float:left; width:140px;}
 .kcalBox {position:absolute; left:48px; bottom:0; }
 
-/* ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À */
+/* ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§› */
 .h850-2.G01004 {background:none} 
 .G01004 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center}	
 .col-md-4.G01004_top {background:none}
 .col-md-4.G01004_top .round {background:#b42700}
 .col-md-4.G01004_bottom {background:none;}
-ul.G01004_kcal li:first-child {background:#f17a59}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À  */
-ul.G01004_kcal li:nth-child(2) {background:#b42700} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À  */
-/* ¸¶ÀÏµåÄÉ¾î °ËÀºÂü±ú 
+ul.G01004_kcal li:first-child {background:#f17a59}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§›  */
+ul.G01004_kcal li:nth-child(2) {background:#b42700} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§›  */
+/* ë§ˆì¼ë“œì¼€ì–´ ê²€ì€ì°¸ê¹¨ 
 
 
 */
@@ -508,88 +512,88 @@ ul.G01004_kcal li:nth-child(2) {background:#b42700} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸¶ÀÏµåÄ
 ul.G01005_kcal li:first-child {background:#4cbced}  
 ul.G01005_kcal li:nth-child(2) {background:#033865}
 
-/* ¸¶ÀÏµåÄÉ¾î ¿ÀÆ® */
+/* ë§ˆì¼ë“œì¼€ì–´ ì˜¤íŠ¸ */
 .h850-2.G01015 {background:none} 
 .G01015 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01015_top {background:none; }
 .col-md-4.G01015_top .round {background:#81392f}
 .col-md-4.G01015_bottom {background:none;}
-ul.G01015_kcal li:first-child {background:#e59883}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸¶ÀÏµåÄÉ¾î ¿ÀÆ®  */
-ul.G01015_kcal li:nth-child(2) {background:#81392f} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸¶ÀÏµåÄÉ¾î ¿ÀÆ®  */
-/* Å°Áî */
+ul.G01015_kcal li:first-child {background:#e59883}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë§ˆì¼ë“œì¼€ì–´ ì˜¤íŠ¸  */
+ul.G01015_kcal li:nth-child(2) {background:#81392f} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë§ˆì¼ë“œì¼€ì–´ ì˜¤íŠ¸  */
+/* í‚¤ì¦ˆ */
 .h850-2.G01009 {background:none} 
 .G01009 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01009_top {background:none; }
 .col-md-4.G01009_top .round {background:#354598}
 .col-md-4.G01009_bottom {background:none;}
-ul.G01009_kcal li:first-child {background:#9ee129}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Å°Áî  */
-ul.G01009_kcal li:nth-child(2) {background:#354598} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Å°Áî  */
-/* ÇÃ·¯½ºÄÉ¾î 
+ul.G01009_kcal li:first-child {background:#9ee129}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í‚¤ì¦ˆ  */
+ul.G01009_kcal li:nth-child(2) {background:#354598} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í‚¤ì¦ˆ  */
+/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ 
 */
 .h850-2.G01012 {background:none} 
 .G01012 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01012_top {background:none; }
 .col-md-4.G01012_top .round {background:#1e1e64}
 .col-md-4.G01012_bottom {background:none;}
-ul.G01012_kcal li:first-child {background:#4cab35}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÃ·¯½ºÄÉ¾î  */
-ul.G01012_kcal li:nth-child(2) {background:#1e1e64} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÃ·¯½ºÄÉ¾î  */
-/* Æ¼¿¡ÇÁ */
+ul.G01012_kcal li:first-child {background:#4cab35}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”ŒëŸ¬ìŠ¤ì¼€ì–´  */
+ul.G01012_kcal li:nth-child(2) {background:#1e1e64} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”ŒëŸ¬ìŠ¤ì¼€ì–´  */
+/* í‹°ì—í”„ */
 .h850-2.G01001 {background:none} 
 .G01001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01001_top {background:none; }
 .col-md-4.G01001_top .round {background:#128fb2}
 .col-md-4.G01001_bottom {background:none;}
-ul.G01001_kcal li:first-child {background:#77d9f4}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Æ¼¿¡ÇÁ  */
-ul.G01001_kcal li:nth-child(2) {background:#128fb2} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Æ¼¿¡ÇÁ */
-/* ¾ËµğÇÃ·¯½º */
+ul.G01001_kcal li:first-child {background:#77d9f4}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í‹°ì—í”„  */
+ul.G01001_kcal li:nth-child(2) {background:#128fb2} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í‹°ì—í”„ */
+/* ì•Œë””í”ŒëŸ¬ìŠ¤ */
 .h850-2.G02003 {background:none} 
 .G02003 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02003_top {background:none; }
 .col-md-4.G02003_top .round {background:#e98917}
 .col-md-4.G02003_bottom {background:none;}
-ul.G02003_kcal li:first-child {background:#f9cb5c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¾ËµğÇÃ·¯½º */
-ul.G02003_kcal li:nth-child(2) {background:#e98917} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¾ËµğÇÃ·¯½º */
-/* Àå¼Ö·ç¼Ç */
+ul.G02003_kcal li:first-child {background:#f9cb5c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì•Œë””í”ŒëŸ¬ìŠ¤ */
+ul.G02003_kcal li:nth-child(2) {background:#e98917} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì•Œë””í”ŒëŸ¬ìŠ¤ */
+/* ì¥ì†”ë£¨ì…˜ */
 .h850-2.G01010 {background:none} 
 .G01010 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01010_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01010_top {background:none; }
 .col-md-4.G01010_top .round {background:#5b2c8c}
 .col-md-4.G01010_bottom {background:none;}
-ul.G01010_kcal li:first-child {background:#bf91ef}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Àå¼Ö·ç¼Ç */
-ul.G01010_kcal li:nth-child(2) {background:#5b2c8c} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Àå¼Ö·ç¼Ç */
+ul.G01010_kcal li:first-child {background:#bf91ef}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì¥ì†”ë£¨ì…˜ */
+ul.G01010_kcal li:nth-child(2) {background:#5b2c8c} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì¥ì†”ë£¨ì…˜ */
 /* DM */
 .h850-2.G02001 {background:none} 
 .G02001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02001_top {background:none; }
 .col-md-4.G02001_top .round {background:#4c7c00}
 .col-md-4.G02001_bottom {background:none;}
-ul.G02001_kcal li:first-child {background:#c9e558}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® DM */
-ul.G02001_kcal li:nth-child(2) {background:#4c7c00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® DM */
+ul.G02001_kcal li:first-child {background:#c9e558}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ DM */
+ul.G02001_kcal li:nth-child(2) {background:#4c7c00} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ DM */
 /* 1.5 */
 .h850-2.G01007 {background:none} 
 .G01007 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01007_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01007_top {background:none; }
 .col-md-4.G01007_top .round {background:#245ca7}
 .col-md-4.G01007_bottom {background:none;}
-ul.G01007_kcal li:first-child {background:#78bcff}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® 1.5 */
-ul.G01007_kcal li:nth-child(2) {background:#245ca7} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® 1.5 */
-/* ´ç´¢¼Ö·ç¼Ç */
+ul.G01007_kcal li:first-child {background:#78bcff}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ 1.5 */
+ul.G01007_kcal li:nth-child(2) {background:#245ca7} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ 1.5 */
+/* ë‹¹ë‡¨ì†”ë£¨ì…˜ */
 .h850-2.G02006 {background:none} 
 .G02006 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02006_top {background:none; }
 .col-md-4.G02006_top .round {background:#009350}
 .col-md-4.G02006_bottom {background:none;}
-ul.G02006_kcal li:first-child {background:#aae83f}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ´ç´¢¼Ö·ç¼Ç */
-ul.G02006_kcal li:nth-child(2) {background:#009350} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ´ç´¢¼Ö·ç¼Ç */
-/* È­ÀÌ¹Ù */
+ul.G02006_kcal li:first-child {background:#aae83f}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ë‡¨ì†”ë£¨ì…˜ */
+ul.G02006_kcal li:nth-child(2) {background:#009350} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ë‡¨ì†”ë£¨ì…˜ */
+/* í™”ì´ë°” */
 .h850-2.G01002 {background:none} 
 .G01002 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01002_top {background:none; }
 .col-md-4.G01002_top .round {background:#d06200}
 .col-md-4.G01002_bottom {background:none;}
-ul.G01002_kcal li:first-child {background:#f9cb5c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® È­ÀÌ¹Ù */
-ul.G01002_kcal li:nth-child(2) {background:#d06200} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® È­ÀÌ¹Ù */
-/* ¾Ëµğ 
+ul.G01002_kcal li:first-child {background:#f9cb5c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í™”ì´ë°” */
+ul.G01002_kcal li:nth-child(2) {background:#d06200} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í™”ì´ë°” */
+/* ì•Œë”” 
 
 */
 .h850-2.G02002 {background:none} 
@@ -597,135 +601,135 @@ ul.G01002_kcal li:nth-child(2) {background:#d06200} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® È­ÀÌ¹Ù 
 .col-md-4.G02002_top {background:none; }
 .col-md-4.G01002_top .round {background:#d06200}
 .col-md-4.G02002_bottom {background:none;}
-ul.G02002_kcal li:first-child {background:#ffe036}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¾Ëµğ */
-ul.G02002_kcal li:nth-child(2) {background:#d59100} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¾Ëµğ */
-/* °í´Ü¹é¼Ö·ç¼Ç */
+ul.G02002_kcal li:first-child {background:#ffe036}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì•Œë”” */
+ul.G02002_kcal li:nth-child(2) {background:#d59100} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì•Œë”” */
+/* ê³ ë‹¨ë°±ì†”ë£¨ì…˜ */
 .h850-2.G02008 {background:none} 
 .G02008 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02008_top {background:none; }
 .col-md-4.G02008_top .round {background:#9d4e00}
 .col-md-4.G02008_bottom {background:none;}
-ul.G02008_kcal li:first-child {background:#edcd4b}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® °í´Ü¹é¼Ö·ç¼Ç */
-ul.G02008_kcal li:nth-child(2) {background:#9d4e00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® °í´Ü¹é¼Ö·ç¼Ç */
-/* ÇÃ·¯½ºÄÉ¾î´ç´¢½Ä */
+ul.G02008_kcal li:first-child {background:#edcd4b}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ê³ ë‹¨ë°±ì†”ë£¨ì…˜ */
+ul.G02008_kcal li:nth-child(2) {background:#9d4e00} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ê³ ë‹¨ë°±ì†”ë£¨ì…˜ */
+/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ë‹¹ë‡¨ì‹ */
 .h850-2.G02012 {background:none} 
 .G02012 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02012_top {background:none; }
 .col-md-4.G02012_top .round {background:#767676}
 .col-md-4.G02012_bottom {background:none;}
-ul.G02012_kcal li:first-child {background:#f28d2d}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÃ·¯½ºÄÉ¾î´ç´¢½Ä */
-ul.G02012_kcal li:nth-child(2) {background:#767676} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÃ·¯½ºÄÉ¾î´ç´¢½Ä */
-/* ÇÃ·¯½ºÄÉ¾îÈ­ÀÌ¹Ù */
+ul.G02012_kcal li:first-child {background:#f28d2d}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”ŒëŸ¬ìŠ¤ì¼€ì–´ë‹¹ë‡¨ì‹ */
+ul.G02012_kcal li:nth-child(2) {background:#767676} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”ŒëŸ¬ìŠ¤ì¼€ì–´ë‹¹ë‡¨ì‹ */
+/* í”ŒëŸ¬ìŠ¤ì¼€ì–´í™”ì´ë°” */
 .h850-2.G01014 {background:none} 
 .G01014 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01014_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01014_top {background:none; }
 .col-md-4.G01014_top .round {background:#91331d}
 .col-md-4.G01014_bottom {background:none;} 
-ul.G01014_kcal li:first-child {background:#757575}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÃ·¯½ºÄÉ¾îÈ­ÀÌ¹Ù */
-ul.G01014_kcal li:nth-child(2) {background:#91331d} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÃ·¯½ºÄÉ¾îÈ­ÀÌ¹Ù */
+ul.G01014_kcal li:first-child {background:#757575}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”ŒëŸ¬ìŠ¤ì¼€ì–´í™”ì´ë°” */
+ul.G01014_kcal li:nth-child(2) {background:#91331d} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”ŒëŸ¬ìŠ¤ì¼€ì–´í™”ì´ë°” */
 /* RTH */
 .h850-2.G01008 {background:none} 
 .G01008 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01008_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01008_top {background:none; }
 .col-md-4.G01008_top .round {background:#3b47a0}
 .col-md-4.G01008_bottom {background:none;}
-ul.G01008_kcal li:first-child {background:#9ba4eb}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® RTH */
-ul.G01008_kcal li:nth-child(2) {background:#3b47a0} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® RTH */
-/* Àå¼Ö·ç¼Ç RTH */
+ul.G01008_kcal li:first-child {background:#9ba4eb}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ RTH */
+ul.G01008_kcal li:nth-child(2) {background:#3b47a0} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ RTH */
+/* ì¥ì†”ë£¨ì…˜ RTH */
 .h850-2.G01011 {background:none} 
 .G01011 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01011_top {background:none; }
 .col-md-4.G01011_top .round {background:#5b2c8c}
 .col-md-4.G01011_bottom {background:none;}
-ul.G01011_kcal li:first-child {background:#bf91ef}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Àå¼Ö·ç¼Ç RTH */
-ul.G01011_kcal li:nth-child(2) {background:#5b2c8c} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® Àå¼Ö·ç¼Ç RTH */
-/* ÀÌ¹ÃÆ÷¸£Å× RTH */
+ul.G01011_kcal li:first-child {background:#bf91ef}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì¥ì†”ë£¨ì…˜ RTH */
+ul.G01011_kcal li:nth-child(2) {background:#5b2c8c} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì¥ì†”ë£¨ì…˜ RTH */
+/* ì´ë®¨í¬ë¥´í…Œ RTH */
 .h850-2.G02010 {background:none} 
 .G02010 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02010_top {background:none; }
 .col-md-4.G02010_top .round {background:#329ce5}
 .col-md-4.G02010_bottom {background:none;}
-ul.G02010_kcal li:first-child {background:#9acf00}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÀÌ¹ÃÆ÷¸£Å× RTH */
-ul.G02010_kcal li:nth-child(2) {background:#329ce5 } /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÀÌ¹ÃÆ÷¸£Å× RTH */
-/* ¾ËµğÇÃ·¯½º RTH */
+ul.G02010_kcal li:first-child {background:#9acf00}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì´ë®¨í¬ë¥´í…Œ RTH */
+ul.G02010_kcal li:nth-child(2) {background:#329ce5 } /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì´ë®¨í¬ë¥´í…Œ RTH */
+/* ì•Œë””í”ŒëŸ¬ìŠ¤ RTH */
 .h850-2.G02013 {background:none} 
 .G02013 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02013_top {background:none; }
 .col-md-4.G02013_top .round {background:#e98917}
 .col-md-4.G02013_bottom {background:none;}
-ul.G02013_kcal li:first-child {background:#f9cb5c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÀÌ¹ÃÆ÷¸£Å× RTH */
-ul.G02013_kcal li:nth-child(2) {background:#e98917} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÀÌ¹ÃÆ÷¸£Å× RTH */
-/* ´ç´¢¼Ö·ç¼Ç RTH */
+ul.G02013_kcal li:first-child {background:#f9cb5c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì´ë®¨í¬ë¥´í…Œ RTH */
+ul.G02013_kcal li:nth-child(2) {background:#e98917} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì´ë®¨í¬ë¥´í…Œ RTH */
+/* ë‹¹ë‡¨ì†”ë£¨ì…˜ RTH */
 .h850-2.G02007 {background:none} 
 .G02007 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02007_top {background:none; }
 .col-md-4.G02007_top .round {background:#009350}
 .col-md-4.G02007_bottom {background:none;}
-ul.G02007_kcal li:first-child {background:#aae83f}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ´ç´¢¼Ö·ç¼Ç RTH */
-ul.G02007_kcal li:nth-child(2) {background:#009350} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ´ç´¢¼Ö·ç¼Ç RTH */
-/* ¿¬ÇÏ */
+ul.G02007_kcal li:first-child {background:#aae83f}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ë‡¨ì†”ë£¨ì…˜ RTH */
+ul.G02007_kcal li:nth-child(2) {background:#009350} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ë‡¨ì†”ë£¨ì…˜ RTH */
+/* ì—°í•˜ */
 .h850-2.G02005 {background:none} 
 .G02005 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02005_top {background:none; }
 .col-md-4.G02005_top .round {background:#c00c77}
 .col-md-4.G02005_bottom {background:none;}
-ul.G02005_kcal li:first-child {background:#ff96d1}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¿¬ÇÏ¼Ö·ç¼Ç */
-ul.G02005_kcal li:nth-child(2) {background:#c00c77} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¿¬ÇÏ¼Ö·ç¼Ç */
+ul.G02005_kcal li:first-child {background:#ff96d1}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì—°í•˜ì†”ë£¨ì…˜ */
+ul.G02005_kcal li:nth-child(2) {background:#c00c77} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì—°í•˜ì†”ë£¨ì…˜ */
 
 
-/* È­ÀÌ¹Ù RTH 400 */
+/* í™”ì´ë°” RTH 400 */
 .h850-2.G02022 {background:none} 
 .G02022 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02022_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02022_top {background:none; }
 .col-md-4.G02022_top .round {background:#d06200}
 .col-md-4.G02022_bottom {background:none;}
-ul.G02022_kcal li:first-child {background:#f9b85c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® È­ÀÌ¹Ù RTH 400 */
-ul.G02022_kcal li:nth-child(2) {background:#d06200} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® È­ÀÌ¹Ù RTH 400 */
+ul.G02022_kcal li:first-child {background:#f9b85c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í™”ì´ë°” RTH 400 */
+ul.G02022_kcal li:nth-child(2) {background:#d06200} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í™”ì´ë°” RTH 400 */
 
-/* ´ç´¢½Ä RTH 400 */
+/* ë‹¹ë‡¨ì‹ RTH 400 */
 .h850-2.G02023 {background:none} 
 .G02023 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02023_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02023_top {background:none; }
 .col-md-4.G02023_top .round {background:#5b8638}
 .col-md-4.G02023_bottom {background:none;}
-ul.G02023_kcal li:first-child {background:#b5d71e}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ´ç´¢½Ä RTH 400 */
-ul.G02023_kcal li:nth-child(2) {background:#4e7f20} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ´ç´¢½Ä RTH 400 */
+ul.G02023_kcal li:first-child {background:#b5d71e}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ë‡¨ì‹ RTH 400 */
+ul.G02023_kcal li:nth-child(2) {background:#4e7f20} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ë‡¨ì‹ RTH 400 */
 
 
-/* ÇÁ·ÎÆ¾ÇÃ·¯½º */
+/* í”„ë¡œí‹´í”ŒëŸ¬ìŠ¤ */
 .h850-2.G05001{background:none} 
 .G05001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G05001_top {background:none; }
 .col-md-4.G05001_top .round {background:#9d4e00}
 .col-md-4.G05001_bottom {background:none;}
-ul.G05001_kcal li:first-child {background:#edcd4b}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾ÇÃ·¯½º */
-ul.G05001_kcal li:nth-child(2) {background:#9d4e00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾ÇÃ·¯½º */
-/* ¸ÖÆ¼¹ë·±½º */
+ul.G05001_kcal li:first-child {background:#edcd4b}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´í”ŒëŸ¬ìŠ¤ */
+ul.G05001_kcal li:nth-child(2) {background:#9d4e00} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´í”ŒëŸ¬ìŠ¤ */
+/* ë©€í‹°ë°¸ëŸ°ìŠ¤ */
 .h850-2.G06001{background:none} 
 .G06001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06001_top {background:none; }
 .col-md-4.G06001_top .round {background:#00206c}
 .col-md-4.G06001_bottom {background:none;}
-ul.G06001_kcal li:first-child {background:#f7aa15}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸ÖÆ¼¹ë·±½º */
-ul.G06001_kcal li:nth-child(2) {background:#00206c} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ¸ÖÆ¼¹ë·±½º */
-/* ÇÁ·ÎÆ¾¹ë·±½º */
+ul.G06001_kcal li:first-child {background:#f7aa15}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë©€í‹°ë°¸ëŸ°ìŠ¤ */
+ul.G06001_kcal li:nth-child(2) {background:#00206c} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë©€í‹°ë°¸ëŸ°ìŠ¤ */
+/* í”„ë¡œí‹´ë°¸ëŸ°ìŠ¤ */
 .h850-2.G06002{background:none} 
 .G06002 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06002_top {background:none; }
 .col-md-4.G06002_top .round {background:#880033}
 .col-md-4.G06002_bottom {background:none;}
-ul.G06002_kcal li:first-child {background:#b6d10e}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹ë·±½º */
-ul.G06002_kcal li:nth-child(2) {background:#880033} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹ë·±½º */
-/* ÇÁ·ÎÆ¾¹Ğ ¾Æ¸óµå¿ÍÈ£µÎ */
+ul.G06002_kcal li:first-child {background:#b6d10e}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°¸ëŸ°ìŠ¤ */
+ul.G06002_kcal li:nth-child(2) {background:#880033} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°¸ëŸ°ìŠ¤ */
+/* í”„ë¡œí‹´ë°€ ì•„ëª¬ë“œì™€í˜¸ë‘ */
 .h850-2.G06003{background:none} 
 .G06003 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06003_top {background:none; }
 .col-md-4.G06003_top .round {background:#c94c00}
 .col-md-4.G06003_bottom {background:none;}
-ul.G06003_kcal li:first-child {background:#ffc052}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ ¾Æ¸óµå¿ÍÈ£µÎ */
-ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ ¾Æ¸óµå¿ÍÈ£µÎ */
+ul.G06003_kcal li:first-child {background:#ffc052}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ì•„ëª¬ë“œì™€í˜¸ë‘ */
+ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ì•„ëª¬ë“œì™€í˜¸ë‘ */
 
-/* ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú 
+/* í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ 
 
 /*  */
 .h850-2.G06004{background:none} 
@@ -733,48 +737,48 @@ ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹
 .col-md-4.G06004_top {background:none; }
 .col-md-4.G06004_top .round {background:#700069}
 .col-md-4.G06004_bottom {background:none;}
-ul.G06004_kcal li:first-child {background:#ffc052}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
-ul.G06004_kcal li:nth-child(2) {background:#700069} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
-/* ¸ÖÆ¼ÄÉ¾îÇÁ·ÎÆ¾ */
+ul.G06004_kcal li:first-child {background:#ffc052}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
+ul.G06004_kcal li:nth-child(2) {background:#700069} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
+/* ë©€í‹°ì¼€ì–´í”„ë¡œí‹´ */
 .h850-2.G07001{background:none} 
 .G07001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G07001_top {background:none; }
 .col-md-4.G07001_top .round {background:#161270}
 .col-md-4.G07001_bottom {background:none;}
-ul.G07001_kcal li:first-child {background:#85d22c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
-ul.G07001_kcal li:nth-child(2) {background:#161270} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
-/* Æ¼¿¡ÇÁ1000 */
+ul.G07001_kcal li:first-child {background:#85d22c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
+ul.G07001_kcal li:nth-child(2) {background:#161270} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
+/* í‹°ì—í”„1000 */
 .h850-2.G01901{background:none} 
 .G01901 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01901_top {background:none; }
 .col-md-4.G01901_top .round {background:#128fb2}
 .col-md-4.G01901_bottom {background:none;}
-ul.G01901_kcal li:first-child {background:#77d9f4}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ Æ¼¿¡ÇÁ1000 */
-ul.G01901_kcal li:nth-child(2) {background:#128fb2} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ Æ¼¿¡ÇÁ1000 */
-/* Àå¼Ö·ç¼Ç1000 */
+ul.G01901_kcal li:first-child {background:#77d9f4}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ í‹°ì—í”„1000 */
+ul.G01901_kcal li:nth-child(2) {background:#128fb2} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ í‹°ì—í”„1000 */
+/* ì¥ì†”ë£¨ì…˜1000 */
 .h850-2.G01911{background:none} 
 .G01911 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01911_top {background:none; }
 .col-md-4.G01911_top .round {background:#5b2c8c}
 .col-md-4.G01911_bottom {background:none;}
-ul.G01911_kcal li:first-child {background:#bf91ef}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ Àå¼Ö·ç¼Ç1000 */
-ul.G01911_kcal li:nth-child(2) {background:#5b2c8c} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ Àå¼Ö·ç¼Ç1000 */
-/* È­ÀÌ¹Ù1000 */
+ul.G01911_kcal li:first-child {background:#bf91ef}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ì¥ì†”ë£¨ì…˜1000 */
+ul.G01911_kcal li:nth-child(2) {background:#5b2c8c} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ì¥ì†”ë£¨ì…˜1000 */
+/* í™”ì´ë°”1000 */
 .h850-2.G01902{background:none} 
 .G01902 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01902_top {background:none; }
 .col-md-4.G01902_top .round {background:#d06200}
 .col-md-4.G01902_bottom {background:none;}
-ul.G01902_kcal li:first-child {background:#f9b85c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ È­ÀÌ¹Ù1000 */
-ul.G01902_kcal li:nth-child(2) {background:#d06200} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ È­ÀÌ¹Ù1000 */
-/* µğ¿¥1000 */
+ul.G01902_kcal li:first-child {background:#f9b85c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ í™”ì´ë°”1000 */
+ul.G01902_kcal li:nth-child(2) {background:#d06200} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ í™”ì´ë°”1000 */
+/* ë””ì— 1000 */
 .h850-2.G02901{background:none} 
 .G02901 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02901_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02901_top {background:none; }
 .col-md-4.G02901_top .round {background:#4c7c00}
 .col-md-4.G02901_bottom {background:none;}
-ul.G02901_kcal li:first-child {background:#c9e558}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ µğ¿¥1000 */
-ul.G02901_kcal li:nth-child(2) {background:#4c7c00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ µğ¿¥1000 */
+ul.G02901_kcal li:first-child {background:#c9e558}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ë””ì— 1000 */
+ul.G02901_kcal li:nth-child(2) {background:#4c7c00} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ ë””ì— 1000 */
 
 /* HP */
 .h850-2.G08001{background:none} 
@@ -782,29 +786,64 @@ ul.G02901_kcal li:nth-child(2) {background:#4c7c00} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹
 .col-md-4.G08001_top {background:none; }
 .col-md-4.G08001_top .round {background:#245ca7}
 .col-md-4.G08001_bottom {background:none;}
-ul.G08001_kcal li:first-child {background:#78bcff}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ HP */
-ul.G08001_kcal li:nth-child(2) {background:#245ca7} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÁ·ÎÆ¾¹Ğ HP */
+ul.G08001_kcal li:first-child {background:#78bcff}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ HP */
+ul.G08001_kcal li:nth-child(2) {background:#245ca7} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í”„ë¡œí‹´ë°€ HP */
 
 
-/* ÇÏÀÌÄÄÆÑÆ® */
+/* í•˜ì´ì»´íŒ©íŠ¸ */
 .h850-2.G02021{background:none} 
 .G02021 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G02021_top {background:none; }
 .col-md-4.G02021_top .round {background:#1d5031}
 .col-md-4.G02021_bottom {background:none;}
-ul.G02021_kcal li:first-child {background:#85d22c}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÏÀÌÄÄÆÑÆ® */
-ul.G02021_kcal li:nth-child(2) {background:#1d5031} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÏÀÌÄÄÆÑÆ® */
+ul.G02021_kcal li:first-child {background:#85d22c}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í•˜ì´ì»´íŒ©íŠ¸ */
+ul.G02021_kcal li:nth-child(2) {background:#1d5031} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í•˜ì´ì»´íŒ©íŠ¸ */
 
-/* ÇÏÀÌÅ°Áî */
+/* í•˜ì´í‚¤ì¦ˆ */
 .h850-2.G06005{background:none} 
 .G06005 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G06005_top {background:none; }
 .col-md-4.G06005_top .round {background:#d90051}
 .col-md-4.G06005_bottom {background:none;}
-ul.G06005_kcal li:first-child {background:#77c126}  /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÏÀÌÅ°Áî */
-ul.G06005_kcal li:nth-child(2) {background:#d90051} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÏÀÌÅ°Áî */
+ul.G06005_kcal li:first-child {background:#77c126}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í•˜ì´í‚¤ì¦ˆ */
+ul.G06005_kcal li:nth-child(2) {background:#d90051} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í•˜ì´í‚¤ì¦ˆ */
+
+/* í•˜ì´í‚¤ì¦ˆ ì´ˆì½”ë§› */
+.h850-2.G06006{background:none} 
+.G06006 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06006_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G06006_top {background:none; }
+.col-md-4.G06006_top .round {background:#6c2310}
+.col-md-4.G06006_bottom {background:none;}
+ul.G06006_kcal li:first-child {background:#c38d69}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í•˜ì´í‚¤ì¦ˆ ì´ˆì½”ë§› */
+ul.G06006_kcal li:nth-child(2) {background:#6c2310} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ í•˜ì´í‚¤ì¦ˆ ì´ˆì½”ë§› */
+
+
+/* ì˜ì–‘ì¼€ì–´ */
+.h850-2.G01017 {background:none} 
+.G01017 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G01017_top {background:none; }
+.col-md-4.G01017_top .round {background:#ec5c7c}
+.col-md-4.G01017_bottom {background:none;}
+ul.G01017_kcal li:first-child {background:#eec446}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì˜ì–‘ì¼€ì–´ */
+ul.G01017_kcal li:nth-child(2) {background:#ec5c7c} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì˜ì–‘ì¼€ì–´ */
+/* ë‹¹ì¼€ì–´ */
+.h850-2.G02024 {background:none} 
+.G02024 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G02024_top {background:none; }
+.col-md-4.G02024_top .round {background:#5b8638}
+.col-md-4.G02024_bottom {background:none;}
+ul.G02024_kcal li:first-child {background:#b5d71e}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ì¼€ì–´ */
+ul.G02024_kcal li:nth-child(2) {background:#4e7f20} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ë‹¹ì¼€ì–´ */
+/* ì¼„ì„œì¼€ì–´ */
+.h850-2.G02025 {background:none} 
+.G02025 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G02025_top {background:none; }
+.col-md-4.G02025_top .round {background:#ad6c4e}
+.col-md-4.G02025_bottom {background:none;}
+ul.G02025_kcal li:first-child {background:#edb236}  /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì¼„ì„œì¼€ì–´ */
+ul.G02025_kcal li:nth-child(2) {background:#ad6c4e} /* ë¹…ë°°ë„ˆ ì œí’ˆì¹¼ë¡œë¦¬ ì¼„ì„œì¼€ì–´ */
 /* -------------------------
-	ºò¹è³Ê > BAR-GRAPH 
+	ë¹…ë°°ë„ˆ > BAR-GRAPH 
 -------------------------- */
 @keyframes bar-fill {
   0% {width: 0;}
@@ -851,7 +890,7 @@ ul.G06005_kcal li:nth-child(2) {background:#d90051} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÏÀÌÅ°Á
 }
 
 /* ------------------------------------
-	ºò¹è³Ê > loader ani
+	ë¹…ë°°ë„ˆ > loader ani
 --------------------------------------- */
 .relative {position: relative;}
 .loader-ring {}
@@ -899,7 +938,7 @@ ul.G06005_kcal li:nth-child(2) {background:#d90051} /* ºò¹è³Ê Á¦Ç°Ä®·Î¸® ÇÏÀÌÅ°Á
 .mview {display:none}
 }
 /* -----------------
-	¸ŞÀÎ > bestBox
+	ë©”ì¸ > bestBox
 -------------------- */
 .bestBox {position:relative; width:100%;  padding:40px 0; background:#fff}
 .bestBox ul a {border:2px dotted #393939; border-radius:30px; padding:6px 30px; display:inline-block; margin:0 15px 10px 15px ; overflow:hidden}
@@ -916,7 +955,7 @@ ul.bottomInfo li:first-child {float:left}
 ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 
 /* -------------------------
-	Á¦Ç°»ó¼¼ > ºò¹è³Ê > sibNav
+	ì œí’ˆìƒì„¸ > ë¹…ë°°ë„ˆ > sibNav
 -------------------------- */
 .subNav {position:absolute; left:0; top:0;   border-bottom:1px solid rgba(255, 255, 255, .5); z-index:10}
 .subNav .subNavBox {width:100%; max-width:1400px;margin:0 auto; position:relative}
@@ -934,7 +973,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 #yeon a,
 #health a{ background:none}
 /* -------------------------
-	Á¦Ç°»ó¼¼ > »ó¼¼,¿µ¾ç,±¸¸Å
+	ì œí’ˆìƒì„¸ > ìƒì„¸,ì˜ì–‘,êµ¬ë§¤
 -------------------------- */
 .infoMenuLine {border-top:1px solid #d1d3dc;border-bottom:1px solid #d1d3dc;  }
 #info01.infoMenuLine {border-top:0px ;border-bottom:1px solid #d1d3dc;  }
@@ -946,7 +985,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 .info_img {position:relative; text-align:center; margin-top:120px; margin-bottom:120px}
 .info_img img {width:100%; max-width:1000px}
 /* -------------------------
-	Á¦Ç°»ó¼¼ > Á¦Ç°ÃßÃµ 
+	ì œí’ˆìƒì„¸ > ì œí’ˆì¶”ì²œ 
 -------------------------- */
 .also {position:relative; padding:100px 0}
 .also .vertical-bg-1 {background-position:center 15%;  }
@@ -972,7 +1011,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 
 
 /* -------------------------
-	¼±ÅÃ°¡ÀÌµå > Á¦Ç°ÃßÃµ 
+	ì„ íƒê°€ì´ë“œ > ì œí’ˆì¶”ì²œ 
 -------------------------- */
 .result .also {position:relative; border-top:2px solid #323232; padding-top:60px; padding-bottom:0px}
 .result p.also_title {
@@ -987,7 +1026,7 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 .result .also .bg_point {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_point.png) no-repeat left 15px; padding-left:20px; margin-top:60px; margin-bottom:35px; background-size:10px 10px  }
 .result .also .col-md-12 {padding:0}
 /* -------------------------
-	ºê·£µå / ¿¬Çõ / ³í¹®
+	ë¸Œëœë“œ / ì—°í˜ / ë…¼ë¬¸
 -------------------------- */
 .brand_type01{padding-left:100px}
 .bradnVideType {background:#7f99e3; color:#fff; font-size:60px; font-weighT:700; display:inline-block; padding:10px 20px }
@@ -1025,7 +1064,7 @@ a:hover .jn .btn_type06 {background:#7f99e3; color:#fff}
 
 
 /* -------------------------
-	¼±ÅÃ°¡ÀÌµå
+	ì„ íƒê°€ì´ë“œ
 -------------------------- */
 .guide {position:relative; margin-top:-50px; padding-bottom:100px}
 ul.guide_nav {background:#fff;display:inline-block; width:100%;  border-bottom:1px solid #d1d3dc}
@@ -1071,7 +1110,7 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
   to { -webkit-transform: rotate(360deg); }
 }
 /* ------------------------------------
-		Á¦Ç°¼Ò°³ > Grid
+		ì œí’ˆì†Œê°œ > Grid
 --------------------------------------- */
 /* Metro Grid Style 3 */
 .portfolio-grid-metro4 {margin: 0 -15px;  margin-top:70px}
@@ -1089,11 +1128,11 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
 
 
 /* ------------------------------------
-		Á¦Ç°¼Ò°³ ¹öÆ°
+		ì œí’ˆì†Œê°œ ë²„íŠ¼
 --------------------------------------- */
-.messonry-button button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:5%}
+.messonry-button button {padding: 0;border: 0 none;position: relative;  background:none; outline:none; vertical-align:top; margin-right:2% !important}
 .messonry-button button:last-child {margin-right:0}
-.messonry-button button span {position: relative;display: inline-block;padding: 5px 15px; }
+.messonry-button button span {position: relative;display: inline-block; padding: 5px 15px; }
 .messonry-button button span.filter-text {
 	font-weight: 600;
 	line-height: 1.58;
@@ -1185,7 +1224,7 @@ ul.guide_nav li:nth-child(2) img {margin-left:7px; vertical-align:bottom}
 .thumb_line b {font-weight:400}
 .thumb b { padding:12px 13px; font-size:13px; font-weight:400; position:absolute; left:13px; top:13px; background:#7f99e3; color:#fff; border-radius:40px}
 /* ------------------------------------
-		Á¦Ç°°Ë»ö
+		ì œí’ˆê²€ìƒ‰
 --------------------------------------- */
 .searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:70px 200px }
 .searchBox input.search-input {max-width:786px; width:100%; bordeR:0; font-size:25px; outline:0; padding:17px 0;  }
@@ -1263,7 +1302,7 @@ button.tag_search {background:#fff}
 
 
 
-/*Á¦Ç°¼Ò°³ºĞ·ù Ã¼Å©¹Ú½º*/
+/*ì œí’ˆì†Œê°œë¶„ë¥˜ ì²´í¬ë°•ìŠ¤*/
 .prd_checkbox {border-top:1px solid #d1d3dc; border-bottom:2px solid #323232; padding:20px 0}
 .cateBox input[type="checkbox"] {display:none;}
 
@@ -1284,7 +1323,7 @@ background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pr
 
 
 /* ------------------------------------
-		°æÀå¿µ¾ç½ÄÀÌ¶õ
+		ê²½ì¥ì˜ì–‘ì‹ì´ë€
 --------------------------------------- */
 .entBG {background:#fff; position:relative; padding:0 130px 70px 130px }
 .entBox {position:relative; padding-top:30px; border-top:2px solid #323232; width:100%}
@@ -1326,21 +1365,21 @@ ul.ent_img li:first-child{margin-right:15px}
 .tabs2 li.li_icoBG04 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent04.png) 40px 10px no-repeat; z-index:100 }
 .tabs2 li.li_icoBG05 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent05.png) 40px 10px no-repeat; z-index:100 }
 .tabs2 li span {padding:120px 0 0 40px}
-.source{font-size:16px; color:#646464; text-align:right; line-height:140%;} /* ÀÌ¼ºÈñ Ãß°¡ */
+.source{font-size:16px; color:#646464; text-align:right; line-height:140%;} /* ì´ì„±í¬ ì¶”ê°€ */
 br.noneM {display:none}
 
 
 /* ------------------------------------
-		ÁÖÀÇ»çÇ×
+		ì£¼ì˜ì‚¬í•­
 --------------------------------------- */
 .check img {vertical-align:middle}
 ul.safety_info li.backgroundNone {background:none; padding-left:0; display:inline-block}
 ul.safety_info {position:relative;  width:100%; padding:40px 50px}
 ul.safety_info li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dot_gray.png)no-repeat 0px 13px ; padding-left:20px; margin-top:25px}
 ul.safety_info li:first-child {margin-top:0}
-.grayBox{width:100%; background-color:#eef0f2; padding: 30px 50px;} /* ÀÌ¼ºÈñ Ãß°¡ */
+.grayBox{width:100%; background-color:#eef0f2; padding: 30px 50px;} /* ì´ì„±í¬ ì¶”ê°€ */
 /* ------------------------------------
-		¼·Ãë¹æ¹ı
+		ì„­ì·¨ë°©ë²•
 --------------------------------------- */
 .entBG.bgGray {background:#eef0f2;  }
 .igs .col-md-4 { text-align:center; margin-bottom:50px}
@@ -1348,7 +1387,7 @@ ul.safety_info li:first-child {margin-top:0}
 .igs .col-md-4 img {width:100%}
 .igs .col-md-8 {background:#7f99e3; max-height:335px; text-align:left; padding:10% 0 10% 10%;} 
 
-.container1400_15 .col-md-12 .bgPupple {background:#7f99e3; max-height:335px; text-align:left; padding:10% 0 10% 10%; overflow:hidden;} /* ÀÌ¼ºÈñ Ãß°¡ */
+.container1400_15 .col-md-12 .bgPupple {background:#7f99e3; max-height:335px; text-align:left; padding:10% 0 10% 10%; overflow:hidden;} /* ì´ì„±í¬ ì¶”ê°€ */
 .container1400_15 .col-md-12 .bgPupple p{display: inline-block; float:left; }
 .container1400_15 .col-md-12 .bgPupple p:first-child{margin-right:15%;}
 
@@ -1360,7 +1399,7 @@ ul.safety_info li:first-child {margin-top:0}
 .igs_number {background:#7f99e3; font-size:20px; color:#fff; font-weight:400; padding:4px 10px; border-radius:20px;  min-width:30px; display:inline-block; text-align:center}
 
 /* ------------------------------------
-		°í°´»ó´ã
+		ê³ ê°ìƒë‹´
 --------------------------------------- */
 ul.faq {position:relative; width:100%}
 ul.faq li {margin-bottom:80px}
@@ -1371,7 +1410,7 @@ ul.faq li dd {background:#eef0f2; padding:40px 50px 40px 50px; border-top:2px so
 }
 
 /* ------------------------------------
-		»ùÇÃ½ÅÃ»
+		ìƒ˜í”Œì‹ ì²­
 --------------------------------------- */
 .sam_box {position:relative; }
 .sam_box div.sam_left {float:left; width:350px;}
@@ -1399,7 +1438,7 @@ button:active {bordeR:0}
 
 
 /* ------------------------------------
-		ÆË¾÷
+		íŒì—…
 --------------------------------------- */
 caption {display:none}
 table.popBaby {width:100%; position:relative; border:9px solid #eef0f2;}
@@ -1432,7 +1471,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 		1600 GNB
 	-------------------------- */
 	#gnb ul {width:700px; margin:0 auto;}
-	#gnb li a.dep01{padding:32px 35px 28px 35px; } /* 1µª */
+	#gnb li a.dep01{padding:32px 35px 28px 35px; } /* 1ë */
 	#gnb li.last a.dep01 {width:110px; }
 	#gnb ul li ul li dl {margin-left:30px; }
 	#gnb > dl {display:inline-block; float:right; margin-right:10px; }
@@ -1449,7 +1488,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.f50_5_w {font-size:45px;}
 	.f50_6_w {font-size:45px;color:#fff;  font-weight:700; line-height:100%; height:50px; }
 	/* -------------------------
-		1600 ºò¹è³Ê > BAR-GRAPH 
+		1600 ë¹…ë°°ë„ˆ > BAR-GRAPH 
 	-------------------------- */
 	.bar-graph li dl {width:100%; margin:0; padding:0}
 	.bar-graph li dl dd {width:100%; display:inline-block; margin:0; padding:0; vertical-align:middle;  margin-bottom:20px}
@@ -1457,7 +1496,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.bar-graph li dl dd:nth-child(2) {width:190px}
 	.bar-graph li dl dd:nth-child(3) {max-width:55px; padding-left:10px; line-height:120%; vertical-align:top; color:#fff; font-size:14px}
 	/* -------------------------
-		1600 ¼±ÅÃ°¡ÀÌµå
+		1600 ì„ íƒê°€ì´ë“œ
 	-------------------------- */
 	.qBox {padding:80px 20px; }
 	.qOX li:nth-child(2){ width:480px; height:480px}
@@ -1469,7 +1508,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.btn_no, 
 	.btn_no:hover { background-size:170px}
 	/* -------------------------
-		1600 Á¦Ç°¼Ò°³ ¹öÆ°
+		1600 ì œí’ˆì†Œê°œ ë²„íŠ¼
 	-------------------------- */
 	.messonry-button button span.filter-text {background:#eef0f2; padding:37px;  border-radius:250px; height:160px; width:160px; position:relative}
 	.messonry-button button span.filter-text b {position:absolute;bottom:5%;left:50%; transform: translate(-50%, -50%); font-size:17px; font-weighT:400; color:#323232 }
@@ -1483,7 +1522,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.messonry-button button.ico_pc_05.is-checked span.filter-text {background-size:70px 70px  }
 	.messonry-button button.ico_pc_05 span.filter-text {background-size:70px 70px  }
 	/* -------------------------
-		1600 ¼·Ãë¹æ¹ı
+		1600 ì„­ì·¨ë°©ë²•
 	-------------------------- */
 	.entBG {background:#fff; position:relative; padding:0 40px 70px 40px }
 	.igs_number {background:#7f99e3; font-size:15px; color:#fff; font-weight:400; padding:7px 12px; border-radius:20px;}
@@ -1501,7 +1540,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 		1200 GNB
 	-------------------------- */
 	#gnb ul {width:600px; margin:0 auto;}
-	#gnb li a.dep01{padding:32px 25px 28px 25px; } /* 1µª */
+	#gnb li a.dep01{padding:32px 25px 28px 25px; } /* 1ë */
 	#gnb li.last a.dep01 {width:110px; }
 	#gnb ul li ul li dl {margin-left:20px; }
 	#gnb > dl {display:inline-block; float:right; margin-right:10px; }
@@ -1511,7 +1550,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	#gnb ul li ul li dl dd a:focus,
 	#gnb ul li ul li dl dd a:hover {color:#fff; background:#8999db url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/arrow_left2.png) no-repeat 10px 14px; border-radius:20px; max-width:140px; padding:10px 0; padding-left:20px;}
 	/* -------------------------
-		1200 ¿µ¾ç¼ººĞ
+		1200 ì˜ì–‘ì„±ë¶„
 	-------------------------- */
 	.yys_title {background:#fff; font-size:12px;color:#282828; font-weight:300; line-height:200%; padding:10px ; border-top:1px solid #282828; border-right:1px solid #d1d3dc }
 	.yys dl dt.in {padding-left:10px; }
@@ -1522,7 +1561,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.yys_subtop dd{float:right; text-align:right; line-height:150%; font-size:11px}
 	.single-vertical-slide .slide-inner .info {padding: 30px 25px 80px 25px; }	
 	/* -------------------------
-	¸ŞÀÎ > »ó´Ü¹è³Ê Ä®·Î¸® ÄÃ·¯¹Ú½º
+	ë©”ì¸ > ìƒë‹¨ë°°ë„ˆ ì¹¼ë¡œë¦¬ ì»¬ëŸ¬ë°•ìŠ¤
 	-------------------------- */
 	ul.mlk li {color:#fff; font-size:13px; font-weight:400; padding:7px 7px; text-align:left}
 	ul.mlk2 li {color:#fff; font-size:13px; font-weight:400; padding:7px 7px; text-align:left}
@@ -1548,7 +1587,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
     
     
 	/* -------------------------
-		1200 ºò¹è³Ê > BAR-GRAPH 
+		1200 ë¹…ë°°ë„ˆ > BAR-GRAPH 
 	-------------------------- */
 	.bar-graph li dl {width:100%; margin:0; padding:0}
 	.bar-graph li dl dd {width:100%; display:inline-block; margin:0; padding:0; vertical-align:middle;  margin-bottom:20px}
@@ -1620,7 +1659,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	  border-radius: 50px; 
 	}
 	/* ---------------------------------
-		1200 ¸ŞÀÎ > Product Choice guide
+		1200 ë©”ì¸ > Product Choice guide
 	---------------------------------- */
 	.slider-wrap .slider {
 	  position: absolute;
@@ -1658,7 +1697,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	ul.bottomInfo li:first-child {clear:both}
 	ul.bottomInfo li:nth-child(2){clear:both; margin-right:0px}
 	/* -------------------------
-	Á¦Ç°»ó¼¼ > ºò¹è³Ê > sibNav
+	ì œí’ˆìƒì„¸ > ë¹…ë°°ë„ˆ > sibNav
 	-------------------------- */
 	.subNav .subNavBox {width:100%; max-width:1400px;margin:0 auto; position:relative; padding-left:20px}
 	.subNav .subNavBox ul li {display:inline-block; padding:15px 10px 15px 0; }
@@ -1666,27 +1705,27 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.subNav .subNavBox .btn_back {position:absolute; right:0; top:0px; border-left:1px solid rgba(255, 255, 255, .5); padding-left:20px; padding-right:15px; height:47px}
 	.subNav .subNavBox .btn_back img {margin-top:18px; width:22px}
 	/* -------------------------
-	1200 ºê·£µå / ¿¬Çõ / ³í¹®
+	1200 ë¸Œëœë“œ / ì—°í˜ / ë…¼ë¬¸
 	-------------------------- */
 	.tab li { margin:0 7px}
 	.tab li p {border-radius:30px; padding:15px 35px; font-size:15px}
 	.bg_brand_sky{padding: 0 40px;}
 	/* -------------------------
-	1200 ¼±ÅÃ°¡ÀÌµå
+	1200 ì„ íƒê°€ì´ë“œ
 	-------------------------- */
 	.result ul.result_icon {width:100%; text-align:center;  }
 	.result li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/guide5.png)no-repeat center center ;background-size:cover;  height:95px; width:100px;  position:relative;  text-align:center; padding-top:26px; margin:0 auto; display:inline-block; margin:5px 7px}
 	.result li p {margin-top:5px}
 	.result li img {max-width:30px}
 	/* ------------------------------------
-	1200 Á¦Ç°°Ë»ö
+	1200 ì œí’ˆê²€ìƒ‰
 	--------------------------------------- */
 	.searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:30px 50px }
 	.messonry-search {padding:35px 0; text-align:center}
 	.messonry-search button span.filter-text {padding:9px 0;  border-radius:50px;   position:relative; width:180px;}
 	.messonry-search button span.filter-text b { font-size:16px; font-weighT:500; color:#323232 }
 	/* ------------------------------------
-	1200 °æÀå¿µ¾ç½ÄÀÌ¶õ
+	1200 ê²½ì¥ì˜ì–‘ì‹ì´ë€
 	--------------------------------------- */
 	.entBox {position:relative; padding-top:30px; border-top:2px solid #323232; width:100%}
 	.entBox ul {bordeR:1px solid #d1d3dc; padding:20px 15px; background:#eef0f2}
@@ -1703,18 +1742,18 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.tabs2 li.li_icoBG05 span{background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_ent05.png) 10px 10px no-repeat; z-index:100; background-size:40px  }
 	.tabs2 li span {padding:60px 0 0 10px}
 	/* ------------------------------------
-	1200 ÁÖÀÇ»çÇ×
+	1200 ì£¼ì˜ì‚¬í•­
 	--------------------------------------- */
 	ul.safety_info {position:relative;  width:100%; padding:20px 10px}
 	ul.safety_info li {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dot_gray.png)no-repeat 0px 8px ; padding-left:15px; margin-top:20px}
-	.grayBox{padding: 20px 20px;} /* ÀÌ¼ºÈñ Ãß°¡ */
+	.grayBox{padding: 20px 20px;} /* ì´ì„±í¬ ì¶”ê°€ */
 	/* ------------------------------------
-	1200 ±×¸°ºñ¾Æ´Â
+	1200 ê·¸ë¦°ë¹„ì•„ëŠ”
 	--------------------------------------- */
 	.brand_txt {position:relative; background:#fff url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_line_p.gif) no-repeat center 72px; }
 
 	/* ------------------------------------
-	1200 »ùÇÃ½ÅÃ»
+	1200 ìƒ˜í”Œì‹ ì²­
 	--------------------------------------- */
 	.sam_box div.sam_left {clear:both; display:block; width:100%;  text-align:Center}
 	.sam_box div.sam_right {clear:both; display:block; width:100%;  margin:0 auto; margin-top:50px }
@@ -1732,7 +1771,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.sam_info_box li {font-size:15px; font-weight:400; color:#646464; margin-top:24px; line-height:160%; background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_dotGray.png) no-repeat 10px 10px; padding-left:30px}
 
 	/* ------------------------------------
-	1200 ÆË¾÷
+	1200 íŒì—…
 	--------------------------------------- */
 	caption {display:none}
 	table.popBaby {width:100%; position:relative; border:9px solid #eef0f2;}
@@ -1776,7 +1815,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 	.hcenter_right { position:absolute;top: 50%;left: 50%; padding-left:20px}
 	/* ----------------
-		992 ¸ğ¹ÙÀÏ¸Ş´º
+		992 ëª¨ë°”ì¼ë©”ë‰´
 	------------------- */
 	.wview {display:none}
 	.overlay_m {
@@ -1836,7 +1875,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	ul.m_ov_center li dl dd a {display:block; }
 	.m_line {border-top:2px solid #343434; width:26px; border-radius:5px; margin:5.5px 0; display:block}
 	/* ----------------
-		// 992 ¸ğ¹ÙÀÏ¸Ş´º
+		// 992 ëª¨ë°”ì¼ë©”ë‰´
 	------------------- */
 	.h500 {height:450px}
 	.h550 {height:350px}
@@ -1847,45 +1886,49 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-3 {height:730px}
 	.h850-2 {height:530px}
 	/* ------------------------------------
-		992 ºò¹è³Ê 
+		992 ë¹…ë°°ë„ˆ 
 	--------------------------------------- */
-	.h850-2.G01004 {display:block}/* ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À*/
-	.h850-2.G01005 {display:block}/* ¸¶ÀÏµåÄÉ¾î °ËÀºÂü±ú */
-	.h850-2.G01015 {display:block}/* ¸¶ÀÏµåÄÉ¾î ¿ÀÆ® */
-	.h850-2.G01009 {display:block}/* Å°Áî */
-	.h850-2.G01012 {display:block}/* ÇÃ·¯½ºÄÉ¾î */
-	.h850-2.G01001 {display:block}/* Æ¼¿¡ÇÁ */
-	.h850-2.G02003 {display:block}/* ¾ËµğÇÃ·¯½º */
-	.h850-2.G01010 {display:block}/* Àå¼Ö·ç¼Ç */
+	.h850-2.G01004 {display:block}/* ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§›*/
+	.h850-2.G01005 {display:block}/* ë§ˆì¼ë“œì¼€ì–´ ê²€ì€ì°¸ê¹¨ */
+	.h850-2.G01015 {display:block}/* ë§ˆì¼ë“œì¼€ì–´ ì˜¤íŠ¸ */
+	.h850-2.G01009 {display:block}/* í‚¤ì¦ˆ */
+	.h850-2.G01012 {display:block}/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ */
+	.h850-2.G01001 {display:block}/* í‹°ì—í”„ */
+	.h850-2.G02003 {display:block}/* ì•Œë””í”ŒëŸ¬ìŠ¤ */
+	.h850-2.G01010 {display:block}/* ì¥ì†”ë£¨ì…˜ */
 	.h850-2.G02001 {display:block}/* DM */
 	.h850-2.G01007 {display:block}/* 1.5 */
-	.h850-2.G02006 {display:block}/* ´ç´¢¼Ö·ç¼Ç */
-	.h850-2.G01002 {display:block}/* È­ÀÌ¹Ù */
-	.h850-2.G02002 {display:block}/* ¾Ëµğ */
-	.h850-2.G02008 {display:block}/* °í´Ü¹é¼Ö·ç¼Ç */
-	.h850-2.G02012 {display:block}/* ÇÃ·¯½ºÄÉ¾î´ç´¢½Ä */
-	.h850-2.G01014 {display:block}/* ÇÃ·¯½ºÄÉ¾îÈ­ÀÌ¹Ù */
+	.h850-2.G02006 {display:block}/* ë‹¹ë‡¨ì†”ë£¨ì…˜ */
+	.h850-2.G01002 {display:block}/* í™”ì´ë°” */
+	.h850-2.G02002 {display:block}/* ì•Œë”” */
+	.h850-2.G02008 {display:block}/* ê³ ë‹¨ë°±ì†”ë£¨ì…˜ */
+	.h850-2.G02012 {display:block}/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ë‹¹ë‡¨ì‹ */
+	.h850-2.G01014 {display:block}/* í”ŒëŸ¬ìŠ¤ì¼€ì–´í™”ì´ë°” */
 	.h850-2.G01008 {display:block}/* RTH */
-	.h850-2.G01011 {display:block}/* Àå¼Ö·ç¼Ç RTH */
-	.h850-2.G02010 {display:block}/* ÀÌ¹ÃÆ÷¸£Å× RTH */
-	.h850-2.G02013 {display:block}/* ¾ËµğÇÃ·¯½º RTH */
-	.h850-2.G02007 {display:block}/* ´ç´¢¼Ö·ç¼Ç RTH */
-	.h850-2.G02005 {display:block}/* ¿¬ÇÏ */
-	.h850-2.G05001 {display:block}/* ÇÁ·ÎÆ¾ÇÃ·¯½º */
-	.h850-2.G06001 {display:block}/* ¸ÖÆ¼¹ë·±½º */
-	.h850-2.G06002 {display:block}/* ÇÁ·ÎÆ¾¹ë·±½º */
-	.h850-2.G06003 {display:block}/* ÇÁ·ÎÆ¾¹Ğ ¾Æ¸óµå¿ÍÈ£µÎ */
-	.h850-2.G06004 {display:block}/* ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
-	.h850-2.G07001 {display:block}/* ¸ÖÆ¼ÄÉ¾îÇÁ·ÎÆ¾ */
-	.h850-2.G01901 {display:block}/* Æ¼¿¡ÇÁ1000 */
-	.h850-2.G01911 {display:block}/* Àå¼Ö·ç¼Ç1000 */
-	.h850-2.G01902 {display:block}/* È­ÀÌ¹Ù1000 */
-	.h850-2.G02901 {display:block}/* µğ¿¥1000 */
+	.h850-2.G01011 {display:block}/* ì¥ì†”ë£¨ì…˜ RTH */
+	.h850-2.G02010 {display:block}/* ì´ë®¨í¬ë¥´í…Œ RTH */
+	.h850-2.G02013 {display:block}/* ì•Œë””í”ŒëŸ¬ìŠ¤ RTH */
+	.h850-2.G02007 {display:block}/* ë‹¹ë‡¨ì†”ë£¨ì…˜ RTH */
+	.h850-2.G02005 {display:block}/* ì—°í•˜ */
+	.h850-2.G05001 {display:block}/* í”„ë¡œí‹´í”ŒëŸ¬ìŠ¤ */
+	.h850-2.G06001 {display:block}/* ë©€í‹°ë°¸ëŸ°ìŠ¤ */
+	.h850-2.G06002 {display:block}/* í”„ë¡œí‹´ë°¸ëŸ°ìŠ¤ */
+	.h850-2.G06003 {display:block}/* í”„ë¡œí‹´ë°€ ì•„ëª¬ë“œì™€í˜¸ë‘ */
+	.h850-2.G06004 {display:block}/* í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
+	.h850-2.G07001 {display:block}/* ë©€í‹°ì¼€ì–´í”„ë¡œí‹´ */
+	.h850-2.G01901 {display:block}/* í‹°ì—í”„1000 */
+	.h850-2.G01911 {display:block}/* ì¥ì†”ë£¨ì…˜1000 */
+	.h850-2.G01902 {display:block}/* í™”ì´ë°”1000 */
+	.h850-2.G02901 {display:block}/* ë””ì— 1000 */
 	.h850-2.G08001 {display:block}/* HP */
-	.h850-2.G02021 {display:block}/* ÇÏÀÌÄÄÆÑÆ®  */
-	.h850-2.G06005 {display:block}/* ÇÏÀÌÅ°Áî */
-	.h850-2.G02022 {display:block}/* È­ÀÌ¹Ù RTH 400  */
-	.h850-2.G02023 {display:block}/* ´ç´¢½Ä RTH 400  */
+	.h850-2.G02021 {display:block}/* í•˜ì´ì»´íŒ©íŠ¸  */
+	.h850-2.G06005 {display:block}/* í•˜ì´í‚¤ì¦ˆ */
+	.h850-2.G06006 {display:block}/* í•˜ì´í‚¤ì¦ˆ ì´ˆì½”ë§› */
+	.h850-2.G02022 {display:block}/* í™”ì´ë°” RTH 400  */
+	.h850-2.G02023 {display:block}/* ë‹¹ë‡¨ì‹ RTH 400  */
+	.h850-2.G01017 {display:block}/* ì˜ì–‘ì¼€ì–´ */
+	.h850-2.G02024 {display:block}/* ë‹¹ì¼€ì–´ */
+	.h850-2.G02025 {display:block}/* ì¼„ì„œì¼€ì–´ */
 
 
 
@@ -1894,7 +1937,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 
 	/* ------------------------------------
-		// 992 ºò¹è³Ê 
+		// 992 ë¹…ë°°ë„ˆ 
 	--------------------------------------- */
 	.plate_logo {max-width:183px}
 	.single-vertical-slide .slide-inner .info {padding:30px 30px 30px 30px}
@@ -1938,7 +1981,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	}
 
 	/* -------------------------
-		992 Á¦Ç°»ó¼¼ > Á¦Ç°ÃßÃµ
+		992 ì œí’ˆìƒì„¸ > ì œí’ˆì¶”ì²œ
 	-------------------------- */
 	.also {position:relative; padding:70px 0;}
 	.also .col-md-3 .h380 {margin-top:0px; text-align:center; height:230px; border-radius:15px}
@@ -1952,7 +1995,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 	/* .cateBox input[type="checkbox"] + label span {display:inline-block;background-size:15px 15px;} */
 
-	/*Á¦Ç°¼Ò°³ºĞ·ù Ã¼Å©¹Ú½º*/
+	/*ì œí’ˆì†Œê°œë¶„ë¥˜ ì²´í¬ë°•ìŠ¤*/
 	.prd_checkbox {border-top:1px solid #d1d3dc; border-bottom:2px solid #323232; padding:15px 0}
 	.cateBox input[type="checkbox"] {display:none;}
 
@@ -1978,7 +2021,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 
 
 	/* -------------------------
-		992 ±×¸°ºñ¾Æ¼Ò°³ > ±×¸°ºñ¾Æ´Â?
+		992 ê·¸ë¦°ë¹„ì•„ì†Œê°œ > ê·¸ë¦°ë¹„ì•„ëŠ”?
 	-------------------------- */
 	.tabMenu3 { top:-25px  }
 	.tabMenu3 li.active a {padding:16px 0; font-size:14px; }
@@ -1991,7 +2034,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	
 
 	/* -------------------------
-		992 ºê·£µå / ¿¬Çõ / ³í¹®
+		992 ë¸Œëœë“œ / ì—°í˜ / ë…¼ë¬¸
 	-------------------------- */
 	.brand_type01{padding-left:0px}
 	.bradnVideType {background:#7f99e3; color:#fff; font-size:30px; font-weighT:700; display:inline-block; padding:5px 10px }
@@ -2008,7 +2051,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.ttt {pointer-events: none; border:10px solid red; display:none}
 	
 	/* -------------------------
-		992 ¼±ÅÃ°¡ÀÌµå
+		992 ì„ íƒê°€ì´ë“œ
 	-------------------------- */
 	.qBox {padding:40px 20px; }
 	ul.guide_nav a:first-child li {padding:15px 20px; }
@@ -2035,7 +2078,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.result .also .bg_point {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_point.png) no-repeat left 11px; padding-left:13px; margin-bottom:0px; margin-top:40px; background-size:6px 6px  }
 	.result .also .col-md-12 {padding:0}
 	/* -------------------------
-		992 Á¦Ç°¼Ò°³ ¹öÆ°
+		992 ì œí’ˆì†Œê°œ ë²„íŠ¼
 	-------------------------- */
 	.messonry-button button span.filter-counter {font-size:13px}
 	.messonry-button button span.filter-text {background:#eef0f2; padding:0px;  border-radius:250px; height:90px; width:90px; position:relative}
@@ -2059,17 +2102,17 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.thumb b { padding:12px 15px; font-size:11px; font-weight:400; position:absolute; left:7px; top:7px; background:#7f99e3; color:#fff; }
 	
 	/* ------------------------------------
-		992 Á¦Ç°°Ë»ö
+		992 ì œí’ˆê²€ìƒ‰
 	--------------------------------------- */
 	.searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:20px 20px }
 	.searchBox input.search-input {max-width:786px; width:100%; bordeR:0; font-size:17px; outline:0; padding:15px 0;  }
 	.searchBox input.btn_search {position:absolute; right:0; top:5px; outline:0;  }
 	ul.search_in_box li {display:inline-block; position:relative;  vertical-align:top;}
 	ul.search_in_box li:nth-child(1) {width:73%; }
-	ul.search_in_box li:nth-child(2) {width:26%; vertical-align:top; position: absolute; top: 0;} /* °Ë»ö ¶³¾îÁö´Â°Å ¼öÁ¤ */
+	ul.search_in_box li:nth-child(2) {width:26%; vertical-align:top; position: absolute; top: 0;} /* ê²€ìƒ‰ ë–¨ì–´ì§€ëŠ”ê±° ìˆ˜ì • */
 	ul.search_in_box li:nth-child(2) input {padding:0px 13px; border-radius:3px; max-width:80px;}
 	/* ------------------------------------
-		992 °æÀå¿µ¾ç½ÄÀÌ¶õ
+		992 ê²½ì¥ì˜ì–‘ì‹ì´ë€
 	--------------------------------------- */
 	.entBG {padding:0 10px 70px 10px }
 	.ebtTitle {border-bottom:2px solid #323232; width:100%; padding-bottom:10px }
@@ -2094,19 +2137,19 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.tabs2 li.li_icoBG04 span{background:none; padding:0 }
 	.tabs2 li.li_icoBG05 span{background:none; padding:0 }
 	.tabs2 li .hcenter { font-size:12px; line-height:170%; }
-	br.noneM {display:block} /* ¸ğ¹ÙÀÏ»çÀÌÁî¿¡¼­ <br>»ı¼º */
+	br.noneM {display:block} /* ëª¨ë°”ì¼ì‚¬ì´ì¦ˆì—ì„œ <br>ìƒì„± */
 	/* ------------------------------------
-		992 ÁÖÀÇ»çÇ×
+		992 ì£¼ì˜ì‚¬í•­
 	--------------------------------------- */
 	.check img {max-width:23px; }
-	.grayBox{padding: 10px 10px;} /* ÀÌ¼ºÈñ Ãß°¡ */
+	.grayBox{padding: 10px 10px;} /* ì´ì„±í¬ ì¶”ê°€ */
 	/* ------------------------------------
-		992 ¼·Ãë¹æ¹ı
+		992 ì„­ì·¨ë°©ë²•
 	--------------------------------------- */
 	.igsType li:first-child {width:16%; padding-top:0px}
 	.igsType li:nth-child(2) {width:84%; }
 	/* ------------------------------------
-		°í°´»ó´ã
+		ê³ ê°ìƒë‹´
 	--------------------------------------- */
 	ul.faq {position:relative; width:100%}
 	ul.faq li {margin-bottom:40px}
@@ -2187,13 +2230,13 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-2 {height:400px; }
 	.h850-1 {height:460px; }
 	
-	.BU01 .col-md-4 {width:100%; flex:100%; max-width:100%} /* main > Á¦Ç°ºò¹è³Ê */
+	.BU01 .col-md-4 {width:100%; flex:100%; max-width:100%} /* main > ì œí’ˆë¹…ë°°ë„ˆ */
 	.BU01 .col-md-3 {width:100%; flex:100%; max-width:100%; } /* main > Product Choice guide */
 	.BU01 .col-md-9 {width:100%; flex:100%; max-width:100%} /* main > Product Choice guide */	
 	.thumb_line b  {display:none}
 	.thumb_line span  {display:none}
 	/* ------------------------------------
-		768 ¼·Ãë¹æ¹ı
+		768 ì„­ì·¨ë°©ë²•
 	--------------------------------------- */
 	.igsType li:first-child {width:18%; padding-top:2px}
 	.igsType li:nth-child(2) {width:82%; }
@@ -2202,51 +2245,51 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.igs .col-md-8.mt50m {width:100%}
 	.igs .col-md-8.mt50m .bgPupple  {width:95%; padding:20px }
 	/* ------------------------------------
-		768 ºò¹è³Ê 
+		768 ë¹…ë°°ë„ˆ 
 	--------------------------------------- */
-	/* ¸¶ÀÏµåÄÉ¾î ±¸¼öÇÑ¸À*/
+	/* ë§ˆì¼ë“œì¼€ì–´ êµ¬ìˆ˜í•œë§›*/
 	.row.G01004 {background:none;  }
 	.h850-1.G01004_top {background:#e05a35; }
 	.h850-1.G01004_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01004 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01004_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01004_bottom {background:#d1483d }
-	/* ¸¶ÀÏµåÄÉ¾î °ËÀºÂü±ú */
+	/* ë§ˆì¼ë“œì¼€ì–´ ê²€ì€ì°¸ê¹¨ */
 	.row.G01005 {background:none;  }
 	.h850-1.G01005_top {background:#128ec4; }
 	.h850-1.G01005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01005 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01005_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01005_bottom {background:#286099 }	
-	/* ¸¶ÀÏµåÄÉ¾î ¿ÀÆ® */
+	/* ë§ˆì¼ë“œì¼€ì–´ ì˜¤íŠ¸ */
 	.row.G01015 {background:none;  }
 	.h850-1.G01015_top {background:#c78370; }
 	.h850-1.G01015_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01015 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01015_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01015_bottom {background:#a56c5b }	
-	/* Å°Áî */
+	/* í‚¤ì¦ˆ */
 	.row.G01009 {background:none;  }
 	.h850-1.G01009_top {background:#74e0e2; }
 	.h850-1.G01009_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01009 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01009_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01009_bottom {background:#3fbcd8}	
-	/* ÇÃ·¯½ºÄÉ¾î */
+	/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ */
 	.row.G01012 {background:none;  }
 	.h850-1.G01012_top {background:#a6a6a6; }
 	.h850-1.G01012_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01012 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01012_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01012_bottom {background:#767676;}	
-	/* Æ¼¿¡ÇÁ */
+	/* í‹°ì—í”„ */
 	.row.G01001 {background:none;  }
 	.h850-1.G01001_top {background:#7cd6ee; }
 	.h850-1.G01001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01001_bottom {background:#5ac3e3 }	
-	/* ¾ËµğÇÃ·¯½º */
+	/* ì•Œë””í”ŒëŸ¬ìŠ¤ */
 	.row.G02003 {background:none;  }
 	.h850-1.G02003_top {background:#fab25d; }
 	.h850-1.G02003_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02003 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02003_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02003_bottom {background:#eab16c }
-	/* Àå¼Ö·ç¼Ç */
+	/* ì¥ì†”ë£¨ì…˜ */
 	.row.G01010 {background:none;  }
 	.h850-1.G01010_top {background:#7867d9; }
 	.h850-1.G01010_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2264,37 +2307,37 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G01007_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01007 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01007_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01007_bottom {background:#4c8cca }	
-	/* ´ç´¢¼Ö·ç¼Ç */
+	/* ë‹¹ë‡¨ì†”ë£¨ì…˜ */
 	.row.G02006 {background:none;  }
 	.h850-1.G02006_top {background:#589adb; }
 	.h850-1.G02006_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02006 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02006_bottom {background:#3f83c4 }	
-	/* È­ÀÌ¹Ù */
+	/* í™”ì´ë°” */
 	.row.G01002 {background:none;  }
 	.h850-1.G01002_top {background:#fa9f1b; }
 	.h850-1.G01002_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01002 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01002_bottom {background:#dc953d }	
-	/* ¾Ëµğ */
+	/* ì•Œë”” */
 	.row.G02002 {background:none;  }
 	.h850-1.G02002_top {background:#f2d345; }
 	.h850-1.G02002_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02002 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02002_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02002_bottom {background:#e3ca49 }	
-	/* °í´Ü¹é¼Ö·ç¼Ç */
+	/* ê³ ë‹¨ë°±ì†”ë£¨ì…˜ */
 	.row.G02008 {background:none;  }
 	.h850-1.G02008_top {background:#d1a658; }
 	.h850-1.G02008_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02008 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02008_bottom {background:#d3a162 }	
-	/* ÇÃ·¯½ºÄÉ¾î´ç´¢½Ä */
+	/* í”ŒëŸ¬ìŠ¤ì¼€ì–´ë‹¹ë‡¨ì‹ */
 	.row.G02012 {background:none;  }
 	.h850-1.G02012_top {background:#74cd65; }
 	.h850-1.G02012_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02012 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02012_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02012_bottom {background:#61b64f }	
-	/* ÇÃ·¯½ºÄÉ¾îÈ­ÀÌ¹Ù */
+	/* í”ŒëŸ¬ìŠ¤ì¼€ì–´í™”ì´ë°” */
 	.row.G01014 {background:none;  }
 	.h850-1.G01014_top {background:#f3b761; }
 	.h850-1.G01014_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2306,105 +2349,111 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G01008_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01008 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01008_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01008_bottom {background:#5b68ac }	
-	/* Àå¼Ö·ç¼Ç RTH */
+	/* ì¥ì†”ë£¨ì…˜ RTH */
 	.row.G01011 {background:none;  }
 	.h850-1.G01011_top {background:#7765d1; }
 	.h850-1.G01011_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01011 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01011_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01011_bottom {background:#a386da }	
-	/* ÀÌ¹ÃÆ÷¸£Å× RTH */
+	/* ì´ë®¨í¬ë¥´í…Œ RTH */
 	.row.G02010 {background:none;  }
 	.h850-1.G02010_top {background:#6c6354; }
 	.h850-1.G02010_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02010 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02010_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02010_bottom {background:#77796d }	
-	/* ¾ËµğÇÃ·¯½º RTH */
+	/* ì•Œë””í”ŒëŸ¬ìŠ¤ RTH */
 	.row.G02013 {background:none;  }
 	.h850-1.G02013_top {background:#fab25d; }
 	.h850-1.G02013_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02013 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02013_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02013_bottom {background:#ebb06a }	
-	/* ´ç´¢¼Ö·ç¼Ç RTH */
+	/* ë‹¹ë‡¨ì†”ë£¨ì…˜ RTH */
 	.row.G02007 {background:none;  }
 	.h850-1.G02007_top {background:#36cabc; }
 	.h850-1.G02007_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02007 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02007_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02007_bottom {background:#9cd56e }	
-	/* ¿¬ÇÏ */
+	/* ì—°í•˜ */
 	.row.G02005 {background:none;  }
 	.h850-1.G02005_top {background:#e89ec3; }
 	.h850-1.G02005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02005 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02005_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02005_bottom {background:#d682b4 }
-	/* ÇÁ·ÎÆ¾ÇÃ·¯½º */
+	/* í”„ë¡œí‹´í”ŒëŸ¬ìŠ¤ */
 	.row.G05001 {background:none;  }
 	.h850-1.G05001_top {background:#c5986f; }
 	.h850-1.G05001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G05001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G05001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G05001_bottom {background:#8b6c58 }
-    /* ¸ÖÆ¼¹ë·±½º */
+    /* ë©€í‹°ë°¸ëŸ°ìŠ¤ */
 	.row.G06001 {background:none;  }
 	.h850-1.G06001_top {background:#678bd7; }
 	.h850-1.G06001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06001_bottom {background:#5b62d7 }
-    /* ÇÁ·ÎÆ¾¹ë·±½º */
+    /* í”„ë¡œí‹´ë°¸ëŸ°ìŠ¤ */
 	.row.G06002 {background:none;  }
 	.h850-1.G06002_top {background:#d4537a; }
 	.h850-1.G06002_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06002 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06002_bottom {background:#cf577d }
-	/* ÇÁ·ÎÆ¾¹Ğ ¾Æ¸óµå¿ÍÈ£µÎ */
+	/* í”„ë¡œí‹´ë°€ ì•„ëª¬ë“œì™€í˜¸ë‘ */
 	.row.G06003 {background:none;  }
 	.h850-1.G06003_top {background:#e4944d; }
 	.h850-1.G06003_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06003 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06003_bottom {background:#de8c5c }
-	/* ÇÁ·ÎÆ¾¹Ğ °ËÀºÂü±ú */
+	/* í”„ë¡œí‹´ë°€ ê²€ì€ì°¸ê¹¨ */
 	.row.G06004 {background:none;  }
 	.h850-1.G06004_top {background:#a3669f; }
 	.h850-1.G06004_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06004 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06004_bottom {background:#9a6198 }
-	/* ¸ÖÆ¼ÄÉ¾îÇÁ·ÎÆ¾ */
+	/* ë©€í‹°ì¼€ì–´í”„ë¡œí‹´ */
 	.row.G07001 {background:none;  }
 	.h850-1.G07001_top {background:#7caa16; }
 	.h850-1.G07001_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G07001 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G07001_bottom {background:#8dad4a }
-	/* ÇÏÀÌÄÄÆÑÆ® */
+	/* í•˜ì´ì»´íŒ©íŠ¸ */
 	.row.G02021 {background:none;  }
 	.h850-1.G02021_top {background:#67cd8c; }
 	.h850-1.G02021_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02021 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02021_bottom {background:#11a87b }
-	/* ÇÏÀÌÅ°Áî */
+	/* í•˜ì´í‚¤ì¦ˆ */
 	.row.G06005 {background:none;  }
 	.h850-1.G06005_top {background:#e96364; }
 	.h850-1.G06005_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06005 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06005_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06005_bottom {background:#f9bd67 }
+	/* í•˜ì´í‚¤ì¦ˆ ì´ˆì½”ë§› */
+	.row.G06006 {background:none;  }
+	.h850-1.G06006_top {background:#ca8661; }
+	.h850-1.G06006_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G06006 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06006_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G06006_bottom {background:#9f7056 }
 
 
-	/* Æ¼¿¡ÇÁ1000 */
+	/* í‹°ì—í”„1000 */
 	.row.G01901 {background:none;  }
 	.h850-1.G01901_top {background:#7cd6ee; }
 	.h850-1.G01901_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01901 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01901_bottom {background:#5bc4e4 }
-	/* Àå¼Ö·ç¼Ç1000 */
+	/* ì¥ì†”ë£¨ì…˜1000 */
 	.row.G01911 {background:none;  }
 	.h850-1.G01911_top {background:#696cd3; }
 	.h850-1.G01911_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01911 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01911_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01911_bottom {background:#a386da }
-	/* È­ÀÌ¹Ù1000 */
+	/* í™”ì´ë°”1000 */
 	.row.G01902 {background:none;  }
 	.h850-1.G01902_top {background:#f99f1b; }
 	.h850-1.G01902_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01902 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01902_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01902_bottom {background:#dc953c }
-	/* µğ¿¥1000 */
+	/* ë””ì— 1000 */
 	.row.G02901 {background:none;  }
 	.h850-1.G02901_top {background:#9ed256; }
 	.h850-1.G02901_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2412,37 +2461,58 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-3.G02901_bottom {background:#aac82c }
 
 
-	/* È­ÀÌ¹Ù RTH 400  */
+	/* í™”ì´ë°” RTH 400  */
 	.row.G02022 {background:none;  }
 	.h850-1.G02022_top {background:#fc941b; }
 	.h850-1.G02022_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02022 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02022_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02022_bottom {background:#df8127 }
-	/* ´ç´¢½Ä RTH 400 */
+	/* ë‹¹ë‡¨ì‹ RTH 400 */
 	.row.G02023 {background:none;  }
 	.h850-1.G02023_top {background:#9ed256; }
 	.h850-1.G02023_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02023 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02023_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02023_bottom {background:#76b038 }
+
+
+
+	/* ì˜ì–‘ì¼€ì–´  */
+	.row.G01017 {background:none;  }
+	.h850-1.G01017_top {background:#f8b0bc; }
+	.h850-1.G01017_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G01017 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G01017_bottom {background:#e490a0 }
+	/* ë‹¹ì¼€ì–´ */
+	.row.G02024 {background:none;  }
+	.h850-1.G02024_top {background:#c2d75e; }
+	.h850-1.G02024_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02024 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02024_bottom {background:#9eb33e }
+	/* ì¼„ì„œì¼€ì–´ */
+	.row.G02025 {background:none;  }
+	.h850-1.G02025_top {background:#f1af37; }
+	.h850-1.G02025_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02025 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02025_bottom {background:#eda344 }
 	
 	
 	
 	/* ------------------------------------
-		// 768 ºò¹è³Ê 
+		// 768 ë¹…ë°°ë„ˆ 
 	--------------------------------------- */
 	.bar-graph li dl dd {width:100%; display:inline-block; margin:0; padding:0; vertical-align:middle;  margin-bottom:20px}
 	.bottomBox .col-md-6:first-child {border-bottom:1px solid #fff; border-right:0; }
 	.bottomBox .col-md-6 {margin:0px 0; padding-bottom:30px}
 	/* ------------------------------------
-		768 ºò¹è³Ê > loader ani
+		768 ë¹…ë°°ë„ˆ > loader ani
 	--------------------------------------- */
 	.loader-ring.list1 {width:100%; padding-left:0px; }
-	/*.loader-ring.list1 ul {display:inline-block; width:49%} ±âÁ¸¼³Á¤*/
+	/*.loader-ring.list1 ul {display:inline-block; width:49%} ê¸°ì¡´ì„¤ì •*/
     .loader-ring.list1 ul {display:inline-table; width:49%}
 	.loader-ring.list1 ul li:nth-child(1) {text-align:center; margin:0 auto; display:table}
 	.loader-ring.list1 ul li:nth-child(2) {display:block; text-align:center;  margin-top:10px; margin-bottom:30px}
 	.loader-ring.list2 {width:100%; padding-left:0px; }
-	/*.loader-ring.list2 ul {display:inline-block; width:32%} ±âÁ¸¼³Á¤*/
+	/*.loader-ring.list2 ul {display:inline-block; width:32%} ê¸°ì¡´ì„¤ì •*/
     .loader-ring.list2 ul {display:inline-table; width:32%}
 	.loader-ring.list2 ul li:nth-child(1) {text-align:center; margin:0 auto; display:table}
 	.loader-ring.list2 ul li:nth-child(2) {display:block; text-align:center;  margin-top:10px; margin-bottom:30px}
@@ -2469,7 +2539,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	  border-radius: 80px; 
 	}
 	/* ------------------------------------
-		768 ¸ŞÀÎ > bestBox
+		768 ë©”ì¸ > bestBox
 	--------------------------------------- */
 	.bestBox {position:relative; width:100%;  padding:40px 0; background:#fff}
 	.bestBox ul {margin-top:30px}
@@ -2480,7 +2550,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.bestBox ul a:nth-child(6) {display:none}
 	.bestBox ul a:nth-child(7) {display:none}
 	/* ------------------------------------
-		768 ¸ŞÀÎ > Product Choice guide
+		768 ë©”ì¸ > Product Choice guide
 	--------------------------------------- */
 	.slider-wrap .slider {
 	  position: absolute;
@@ -2489,7 +2559,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	  top: 0px;
 	}
 	/* -------------------------
-		768 Á¦Ç°»ó¼¼ > »ó¼¼,¿µ¾ç,±¸¸Å
+		768 ì œí’ˆìƒì„¸ > ìƒì„¸,ì˜ì–‘,êµ¬ë§¤
 	-------------------------- */
 	.info_img {margin-top:50px; margin-bottom:50px}
 	.infoMenu li a {color:#a0a0a0; font-size:13px; padding:18px 0;  display:inline-block; width:100%;  }
@@ -2497,7 +2567,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.subBigBnr .row .h850-1 {height:350px}
 
 	/* -------------------------
-		768 Á¦Ç°»ó¼¼ > Á¦Ç°ÃßÃµ
+		768 ì œí’ˆìƒì„¸ > ì œí’ˆì¶”ì²œ
 	-------------------------- */
 	.also {position:relative; padding:70px 0;}
 	.also .col-md-3 .h380 {margin-top:40px; text-align:center; height:330px; position:relative; background-position:center 0%; }
@@ -2511,7 +2581,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.also_mark img {max-width:35px}
 
 	/* -------------------------
-		768 ºê·£µå / ¿¬Çõ / ³í¹®
+		768 ë¸Œëœë“œ / ì—°í˜ / ë…¼ë¬¸
 	-------------------------- */
 	.brand_cv p.cvimg { height:300px; overflow-y:hidden}
 	.corebox {margin-bottom:20px}
@@ -2526,7 +2596,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.ht02 {display:none}
 	.hisR {display:none}
 	/* -------------------------
-		768 ¼±ÅÃ°¡ÀÌµå
+		768 ì„ íƒê°€ì´ë“œ
 	-------------------------- */
 	.guide {margin:0}
 	.result { padding:100px 15px 70px 15px}
@@ -2535,21 +2605,21 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.result .also .h380 { border-radius:0px; margin-top:20px; }
 	.bgGrayM {background:#eef0f2}
 	/* ------------------------------------
-		768 Á¦Ç°°Ë»ö
+		768 ì œí’ˆê²€ìƒ‰
 	--------------------------------------- */
 	.searchBox {position:relative; bordeR:1px solid #d1d3dc; padding:30px 15px }
 	.messonry-search {padding:35px 0; text-align:center}
 	.messonry-search button span.filter-text {padding:9px 15px;  border-radius:50px;   position:relative; width:auto;}
 	.messonry-search button span.filter-text b { font-size:14px; font-weighT:500; color:#323232 }
 	/* ------------------------------------
-		768 ¼·Ãë¹æ¹ı
+		768 ì„­ì·¨ë°©ë²•
 	--------------------------------------- */
 	.igs .col-md-4 { width:50%}
 	.container1400_15 .col-md-12 .bgPupple p:first-child{margin-right:12%;}
 	.container1400_15 .col-md-12 .bgPupple .mt20m{margin-top:0px;}
 
-	/* °æÀå ¿µ¾ç½ÄÀÌ¶õ? */
-	.source{font-size:12px; color:#646464; text-align:right; line-height:140%;} /* ÀÌ¼ºÈñ Ãß°¡ */
+	/* ê²½ì¥ ì˜ì–‘ì‹ì´ë€? */
+	.source{font-size:12px; color:#646464; text-align:right; line-height:140%;} /* ì´ì„±í¬ ì¶”ê°€ */
 }
 
 

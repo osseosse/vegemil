@@ -172,7 +172,7 @@
 								<!-- width 100%  -->
 								<div class="container">
 									<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-										<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
+										<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return false;">
 							<input type="hidden" name="qrt" th:value="${qrtYear}">
 							<div class="row intxt mt80-m">
 							</div>

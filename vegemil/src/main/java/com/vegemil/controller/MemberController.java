@@ -211,6 +211,7 @@ public class MemberController extends UiUtils {
 		MemberDTO member = new MemberDTO();
 		String returnHtml = "";
 		
+		
 		//-----------------------pcc 결과값--------------------------
 		String pccResult 			=	"";
 		String pccNameOrg			=	"";
@@ -245,6 +246,65 @@ public class MemberController extends UiUtils {
 			member.setMYear(pccBirymd);
 			member.setMHp(pccCellno);
 			member.setMDi(diKey);
+			// 동시가입 비동의 
+			member.setMDualYn("0");
+			model.addAttribute("member", member);
+			returnHtml = "member/join";
+		} else {
+			out.println("<script>alert('올바르지 않은 접근입니다.'); history.go(-1);</script>");
+			out.flush();
+			return showMessageWithRedirect("올바르지 않은 접근입니다.", "member/agreement", Method.GET, null, model);
+		}
+		
+		return returnHtml;
+	}
+	
+	@RequestMapping(value="/member/joinWithEdaymall" , method = {RequestMethod.GET, RequestMethod.POST})
+	public String joinWithEdaymal(Model model, HttpServletRequest request, HttpServletResponse response,
+			@RequestParam(value="step", required=false, defaultValue="1") int step) throws Exception {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		MemberDTO member = new MemberDTO();
+		String returnHtml = "";
+		
+		//-----------------------pcc 결과값--------------------------
+		String pccResult 			=	"";
+		String pccNameOrg			=	"";
+		String pccName 				=   "";
+		String pccSex 				=	"";
+		String pccBirymd 			=	"";
+		String pccDi 				=	"";
+		String pccCellno            =   "";
+		String diKey 				=	"";
+		pccResult 			=	request.getParameter("PCC_RESULT");
+		
+		if(pccResult != null && pccResult.equals("Y"))
+		{
+			step	=	2;
+			pccNameOrg			=	request.getParameter("PCC_NAME");
+			pccName 				=   URLDecoder.decode(pccNameOrg, "utf-8");
+			pccSex 				=	request.getParameter("PCC_SEX");
+			pccBirymd 			=	request.getParameter("PCC_BIRYMD");
+			pccDi 				=	request.getParameter("PCC_DI");
+			pccCellno            =   request.getParameter("PCC_CELLNO");
+			diKey 				=	request.getParameter("diKey");
+			diKey = pccDi;
+		}
+		//-----------------------pcc 결과값--------------------------
+		
+		if(step == 1) {
+			//model.addAttribute("member", member);
+			returnHtml = "member/agreement";
+		} else if(step == 2) {
+			member.setMName(pccName);
+			member.setMSex(pccSex);
+			member.setMYear(pccBirymd);
+			member.setMHp(pccCellno);
+			member.setMDi(diKey);
+			// 동시가입 
+			member.setMDualYn("1");
+			
 			model.addAttribute("member", member);
 			returnHtml = "member/join";
 		} else {
@@ -264,6 +324,8 @@ public class MemberController extends UiUtils {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		
+		System.out.println("member. MdualYn ========> " + member.getMDualYn());
 		
 		try {
 			

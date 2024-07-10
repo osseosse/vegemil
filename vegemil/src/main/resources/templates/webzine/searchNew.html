@@ -94,9 +94,9 @@
 						</div>
 					</div>
 					<!-- //container -->
-					<div class="container">
-						<div class="project-detail-wrap fl-wrap bg-w2 container-sub ">
-							<div class="row intxt">
+					<div class="container" >
+						<div class="project-detail-wrap fl-wrap bg-w2 container-sub bg-pink3 ">
+							<div class="row intxt bg-g" th:if="${!#lists.isEmpty(webzineListSearch)}">
 								<div class="col-md-12 mt50-m ">
 										<table>
 											<th:blcok th:each="item:${webzineListSearch}">

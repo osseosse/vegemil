@@ -22,7 +22,7 @@
 				<div class="slider" >
 					<div class="slider_area">
 						<div class="slides ">
-							<!-- 2024-02-29 배너 -->
+							<!-- 2024-04-15 배너 -->
 							<div class="slide">
 								<a href="/product/detail/73">
 									<div class="slidetitle SCI02_860_01 h300"></div>
@@ -33,11 +33,20 @@
 								</a>
 							</div>
 							<div class="slide">
+								<a href="/product/detail/92">
+									<div class="slidetitle VPM06_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f27 fw600 center0">베지밀 고단백두유 초코</p>
+										<p class="f13 fw400 gray04 mt10">초코맛으로 맛있게 단백질 충전!</p>
+									</div>
+								</a>
+							</div>
+							<div class="slide">
 								<a href="/product/detail/5">
 									<div class="slidetitle VPM05_860_03 h300"></div>
 									<div class="st-txt mt20">
-										<p class="f27 fw600 center0">베지밀 고단백 두유 검은콩</p>
-										<p class="f13 fw400 gray04 mt10">국산 검은콩으로 든든하고 고소한<br>고단백 두유 검은콩</p>
+										<p class="f27 fw600 center0">베지밀 고단백두유 검은콩</p><!-- 띄어쓰기 삭제 -->
+										<p class="f13 fw400 gray04 mt10">국산 검은콩으로 든든하고 고소한<br>고단백두유 검은콩</p><!-- 띄어쓰기 삭제 -->
 									</div>
 								</a>
 							</div>
@@ -68,7 +77,8 @@
 									</div>
 								</a>
 							</div>
-							<!-- //2024-02-29 배너 -->
+							
+							<!-- //2024-04-15 배너 -->
 						</div>
 					</div>
 					<a class="slider_left"></a>
@@ -245,7 +255,7 @@
 								<ul class="prd_subCate mt40">
 									<li class="hh active"><input type="radio" name="hh" id="#15" value="" > <label for="#15"><span></span>전체보기</label></li>
 									<li class="hh"><input type="radio" name="hh" id="#16" value="CHD" > <label for="#16"><span></span>균형영양음료</label></li>
-									<li class="hh"><input type="radio" name="hh" id="#17" value="GHF" > <label for="#17"><span></span>건강기능식품</label></li>
+									<!-- <li class="hh"><input type="radio" name="hh" id="#17" value="GHF" > <label for="#17"><span></span>건강기능식품</label></li> -->
 									<li class="hh"><input type="radio" name="hh" id="#18" value="CHP" > <label for="#18"><span></span>생식&선식</label></li>
 								</ul>
 							</div>
@@ -284,7 +294,12 @@
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd th:if="${product.subCategoryCode} == 'CHP'">
+											<a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a>
+										</dd>
+										<dd th:unless="${product.subCategoryCode} == 'CHP'">
+											<a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a>
+										</dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
@@ -317,9 +332,14 @@
 										</div>
 																												
 										<div class="prd-label ppl-label">
-											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
-											<img th:if="*{product.pIdx == 73}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl.png" alt="안사우면다행이야">
+											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">																															
 										</div>
+										<div class="ppl-label">
+											<img th:if="${product.pIdx == 73}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl2.png" alt="너는내운명">																					
+											<img th:if="${product.pIdx == 75}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야" >
+											<img th:if="${product.pIdx == 76}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야" >
+										</div>
+								
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}"></p>
@@ -342,6 +362,7 @@
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
 									<li class="ss active"><input type="radio" name="ss" id="#20" value="" > <label for="#20"><span></span>전체보기</label></li>
+									<li class="ss"><input type="radio" name="ss" id="#24" value="CDT" > <label for="#24"><span></span>차&전통음료</label></li>
 									<li class="ss"><input type="radio" name="ss" id="#21" value="CDR" > <label for="#21"><span></span>과일&야채음료</label></li>
 									<li class="ss"><input type="radio" name="ss" id="#22" value="CWA" > <label for="#22"><span></span>생수</label></li>
 								</ul>
