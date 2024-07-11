@@ -7,15 +7,16 @@
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->  
 <body>	
+	<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG05_02 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">수유법</p>
-								<p class="f20_4 mt20">베지밀 영&middot;유아식으로 편리하게<br>수유하세요!</p>
+								<p class="f40 fw600 white">수유법</p>
+								<p class="f20 mt20 white">베지밀 영∙유아식으로 편리하게<br>수유하세요!</p>
 							</div>
 						</div>
 					</div>
@@ -23,8 +24,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -42,11 +43,10 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
-														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
-														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
+														<li><a href="premium.html">Product</a></li>
+														<li><a href="event.html"> Event</a></li>
+														<li><a href="e_magazine.html"> Cummunity</a></li>
+														<li><a href="faq.html"> Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -66,8 +66,8 @@
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a th:href="@{/vegemilBaby/faq}">제품 FAQ</a></li>
-															<li><a th:href="@{/vegemilBaby/lactation}">수유법</a></li>
+															<li><a href="faq.html">제품 FAQ</a></li>
+															<li><a href="lactation.html">수유법</a></li>
 														</ul>
 													</div>
 												</div>
@@ -87,38 +87,48 @@
                 <div class="container">
                     <div class="row pd0 mg0">
                         <div class="col-md-12 brandTxt">
-                            <p class="f24_4_bg">우리 아기 간편 케어</p>
+                            <div class="subTitle">
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+								</div>
+								<div class="f24_6_bg">
+									<p class="f24_5_bg">우리 아기 간편 케어</p>
+								</div>
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+								</div>
+							</div>
                             <p class="f55_6 mt30">수유법</p>
                             <p class="f24_4 mt10">멸균, 무균 시스템으로 데울 필요 없이 바로 수유할 수 있습니다.</p>
                         </div>
                         <div class="col-md-12 mt120">
-                            <div class="col-md-4">
-                                <div class="underline">
-                                    <p class="f45_6">01.</p>
-                                    <p class="f30_5_b mt20">베지밀 영유아식 먹이는법</p>
-                                    <p class="f45_6 mt60">데우지 않고<br>바로 먹여도 되나요?</p>
-                                    <p class="f17_4 mt30">베지밀 영&middot;유아식은 실온에서 먹일 수 있게 설계되어 바로 먹이시면 되나, 
-						                                    장이 예민한 경우에는 개봉하지 않은 팩 그대로
-						                                    흐르는 따뜻한 물에 데워서 수유해 주세요.</p>
-                                    <p class="iconImg mt70"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_bag.png}" alt="편리한 휴대 아이콘" /></p>
-                                    <p class="f17_4 mt20">멸균.밀봉된 제품이라 실온보관이 가능하고, 데울 필요가 없어 외출, 여행시에도 휴대가 편해요.</p>
-                                </div>
-                                <p class="iconImg mt50"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_vegemil.png}" alt="베지밀팩 아이콘" /></p>
-                                <p class="f17_4 mt20">별도의 보관 용기 없이 바로 수유할 수 있어 언제 어디서나 이용할 수 있고 팩홀더에 팩을 끼워 간편하게 먹일 수 있어요.</p>
+                            <div class="col-md-5 laBox">
+								<p class="f45_6">01.</p>
+								<p class="f30_5_b">베지밀 영유아식 먹이는법</p>
+								<p class="f45_6 mt60">데우지 않고<br>바로 먹여도 되나요?</p>
+								<p class="f17_4 mt30">베지밀 영&middot;유아식은 실온에서 먹일 수 있게 설계되어 바로 먹이시면 되나, 
+								장이 예민한 경우에는 개봉하지 않은 팩 그대로
+								흐르는 따뜻한 물에 데워서 수유해 주세요.</p>
+								<div class="txtBox txtBox01">
+									<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_bag.png" alt="편리한 휴대 아이콘" /></p>
+									<p class="f17_4">멸균.밀봉된 제품이라 실온보관이 가능하고, 데울 필요가 없어 외출, 여행시에도 휴대가 편해요.</p>
+								</div>
+								<div class="txtBox txtBox02">
+									<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_vegemil.png" alt="베지밀팩 아이콘" /></p>
+									<p class="f17_4">별도의 보관 용기 없이 바로 수유할 수 있어 언제 어디서나 이용할 수 있고 팩홀더에 팩을 끼워 간편하게 먹일 수 있어요.</p>
+								</div>
                             </div>
-                            <div class="col-md-8 mt40m bg_y center">
-                                <p class="f26_4">월령별 베지밀 영&middot;유아식 <span class="highlight">선택 및 수유 가이드</span></p>
-                                <table class="tableBox mt50" cellspacing="0" summary="수유가이드">
+                            <div class="col-md-7 bg_g3 center">
+                                <p class="f26_7">월령별 베지밀 영∙유아식 선택 및 수유 가이드</p>
+                                <table class="tableBox mt40" cellspacing="0" summary="수유가이드">
                                     <colgroup>
-                                        <col width="12%">
-                                        <col width="29%">
-                                        <col width="29%">
                                         <col width="15%">
-                                        <col width="15%">
+                                        <col width="45%">
+                                        <col width="20%">
+                                        <col width="20%">
                                     </colgroup>
                                     <thead>
-                                        <tr>
-                                            <th></th>
+                                        <tr class="th01">
                                             <th colspan="2" class="center f17_4">성장기용 조제식</th>
                                             <th class="center f17_4">1회 용량&#40;ml&#41;</th>
                                             <th class="center f17_4">횟수&#47;1일</th>
@@ -126,38 +136,34 @@
                                     </thead>
                                     <tbody class="f17_4">
                                         <tr>
-                                            <td class="b_line">6~12개월</td>
+                                            <td class="g_line">6~12개월</td>
                                             <td class="b_line">
-                                                <p class="pd_p01"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_01.png}" alt="인펀트 프리미엄 1단계"/></p>
-                                                <p>인펀트 프리미엄 1단계</p>
+                                                <p class="pd_p01"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_05_02_01.png" alt="인펀트 프리미엄 1단계"/></p>
+                                                <p>베지밀 인펀트 프리미엄 1</p>
                                             </td>
-                                            <td class="r_line b_line">
-                                                <p class="pd_p02"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_02.png}" alt="인펀트 우리콩 1단계"/></p>
-                                                <p>인펀트 우리콩 1단계</p>
-                                            </td>
-                                            <td rowspan="3" class="b_line">190ml</td>
-                                            <td rowspan="3" class="b_line">2~4회</td>
+                                            <td rowspan="2" class="b_line">190ml</td>
+                                            <td rowspan="2" class="b_line">2~4회</td>
                                         </tr>
                                         <tr>
-                                            <td class="b_line">12~24개월</td>
+                                            <td class="g_line">12~24개월</td>
                                             <td class="b_line">
-                                                <p class="pd_p03"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_03.png}" alt="토들러 프리미엄 2단계"/></p>
-                                                <p>토들러 프리미엄 2단계</p>
-                                            </td>
-                                            <td class="r_line b_line">
-                                                <p class="pd_p04"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_04.png}" alt="토들러 우리콩 2단계"/></p>
-                                                <p>토들러 우리콩 2단계</p>
+                                                <p class="pd_p03"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_05_02_02.png" alt="토들러 프리미엄 2단계"/></p>
+                                                <p>베지밀 토들러 프리미엄 2</p>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="b_line">24~36개월</td>
+										<tr class="th02">
+                                            <th colspan="4" class="center f17_4">베지밀 킨더랜드 프리미엄 이런 아이에게 추천해요! </th>
+                                        </tr>
+										<tr>
+                                            <td class="g_line">24개월부터</td>
                                             <td class="b_line">
-                                                <p class="pd_p05"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_05.png}" alt="토들러 프리미엄 3단계"/></p>
-                                                <p>토들러 프리미엄 3단계</p>
-                                            </td>
-                                            <td class="r_line b_line">
-                                                <p class="pd_p06"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_06.png}" alt="토들러 우리콩 3단계"/></p>
-                                                <p>토들러 우리콩 3단계</p>
+                                                <p class="pd_p03"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_05_02_03.png" alt="토들러 프리미엄 2단계"/></p>
+                                                <p>베지밀 킨더랜드 프리미엄 3</p>
+												<td colspan="2" class="b_line f14">
+												- 활동량이 많아 영양 보충이필요한 아이<br>
+												- 편식하거나 잘 먹지 않는 아이<br>
+												- 맛있는 영양간식이 필요한 아이
+												</td>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -168,93 +174,105 @@
                 </div> <!-- //01 container -->
                 <div class="container mt200">
                     <div class="row">
-                        <div class="col-md-12 center">
+                        <div class="col-md-5 laBox02">
                             <p class="f45_6">02.</p>
-                            <p class="f30_5_g mt25">모유 또는 분유와 함께 먹이는 법</p>
-                            <p class="f45_6 mt70">모유와 영&middot;유아식을 함께 먹이는 방법</p>
-                            <p class="f17_4 mt50">모유 양이 부족하거나 직장생활로 인하여 모유와 베지밀 영&middot;유아식을 함께 먹이실 경우, 두 가지 방법 중 하나를 선택하여 수유해 주세요</p>
+                            <p class="f30_5_g">모유 또는 분유와 함께 먹이는 법</p>
+                            <p class="f45_6 mt60">모유와 영&middot;유아식을 함께 먹이는 방법</p>
+                            <p class="f17_4 mt30">모유 양이 부족하거나 직장생활로 인하여 모유와 베지밀 영&middot;유아식을 함께 먹이실 경우, 두 가지 방법 중 하나를 선택하여 수유해 주세요</p>
+							<div class="clickBox">
+								<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_click.png" alt="베지밀팩 아이콘" /></p>
+								<p class="f17_4">대한소아과학회에서는 최소한 4~6개월까지는 모유만 먹이고, 6개월 이후에서는 모유와 함께 아기의 발달에 맞추어 다양한 영양식품을 보충식으로 제공할 것을 권고하고 있습니다.</p>
+							</div>
                         </div>
+						<div class="col-md-7 laBox03">
+							<div class="txtBox">
+								<p class="dot01"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+								<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_01.png" alt="베지밀팩 아이콘" /></p>
+								<p class="dot02"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+								<p class="f26_4">아기에게 모유를 먼저 먹이고 모자란 양을 베지밀<br>영&middot;유아식으로 채워주세요!</p>
+								<p class="dot03"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+								<p class="dot04"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+							</div>
+							<div class="txtBox">
+								<p class="dot01"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+								<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_02.png" alt="베지밀팩 아이콘" /></p>
+								<p class="dot02"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+								<p class="f26_4">모유와 베지밀 영&middot;유아식을<br>각각 번갈아 가면서 수유해주세요!</p>
+								<p class="dot03"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+								<p class="dot04"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/method_dot.png" alt="베지밀팩 아이콘" /></p>
+							</div>
+							
+						</div>
                     </div>
-                    <div class="row mt80">
-                        <div class="col-md-6">
-                            <div class="gray_lineBox">
-                                <p class="f20_5_g underline02">방법 01</p>
-                                <p class="f26_4 mt40">아기에게 모유를 먼저 먹이고 모자란 양을 베지밀 영&middot;유아식으로 채워주세요!</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt30m">
-                           <div class="gray_lineBox">
-                                <p class="f20_5_g underline02">방법 02</p>
-                                <p class="f26_4 mt40">모유와 베지밀 영&middot;유아식을 각각 번갈아 가면서 수유해주세요!</p>
-                           </div> 
-                        </div>
-                    </div>
-                    <div class="row mg0">
-                        <div class="col-md-12 mt50 clickBox">
-                            <p class="f17_4">대한소아과학회에서는 최소한 4~6개월까지는 모유만 먹이고, 6개월 이후에서는 모유와 함께 아기의 발달에 맞추어 다양한 영양식품을 보충식으로 제공할 것을 권고하고 있습니다.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 center">
-                            <p class="f45_6 mt120">분유와 영&middot;유아식을 함께 먹이는 방법</p>
-                            <p class="f17_4 mt50">베지밀 영&middot;유아식 한번, 분유 한번씩 번갈아 가며 먹여 주세요.</p>
-                            <div class="gray_lineBox mt80">
-                                <p class="f26_4">베지밀 영&middot;유아식을 분유나 이유식을 탈 때 물 대신 이용하는 것은 권하지 않습니다.<br>
-                                조제 방법에 따라 만든 분유와 베지밀 영&middot;유아식을 따로 구분하여 한번씩 번갈아 먹이는 것이 좋습니다.  </p>
-                            </div>
-                            <div class="col-md-12 mt50 clickBox">
+                    
+                    <div class="row laBox04">
+                        <div class="col-md-5">
+                            <p class="f45_6">분유와 영&middot;유아식을 함께 먹이는 방법</p>
+                            <p class="f17_4 mt30">베지밀 영&middot;유아식 한번, 분유 한번씩 번갈아 가며 먹여 주세요.</p>
+							<div class="clickBox">
+								<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_click.png" alt="베지밀팩 아이콘" /></p>
                                 <p class="f17_4">베지밀 영&middot;유아식은 이미 모유의 조유농도에 맞게 만들어진 제품으로, 베지밀 영&middot;유아식에 분유 등을 타게 되면 조유농도가 높아져 아기들에게 탈수 현상, 설사 등의 문제가 생깁니다.</p>
+                            </div>
+						</div>
+						<div class="col-md-7">
+                            <div class="gray_lineBox">
+                                <p class="f26_4">분유를 타거나 이유식을 먹일 때 베지밀 영·유아식을<br>물 대신 이용하는 것은 권하지 않습니다.<br><br>
+								조제 방법에 따라 만든 분유와 베지밀 영·유아식을<br>따로 구분하여 한번씩 번갈아 먹이는 것이 좋습니다.</p>
                             </div>
                         </div>
                     </div>
                 </div> <!-- 02 container -->
                 <div class="container mt200 mb150">
-                    <div class="row pd0">
-                        <div class="col-md-12 center">
+                    <div class="row">
+                        <div class="col-md-12 laBox06">
                             <p class="f45_6">03.</p>
-                            <p class="f30_5_o mt25">모유나 분유를 영유아식으로 바꿔 먹이는 법</p>
-                            <div class="mt70 inb">
+                            <p class="f30_5_o">모유나 분유를 영유아식으로 바꿔 먹이는 법</p>
+                            <div class="row mt70">
                                 <div class="col-md-6">
-                                    <div class="bg_g">
-                                        <p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_07.jpg}" alt="모유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
-                                        <div class="whiteBox">
-                                            <p class="f45_6">모유에서 베지밀 영&middot;유아식으로<br> 바꿔 먹이기</p>
-                                            <p class="f17_4 mt50">모유수유를 하고 계시다면 모유를 먹이기 전에 약 20ml 정도 베지밀 영&middot;유아식을 먼저 먹이신 뒤 나머지 양을 모유로 채워 주시면 됩니다.<br>
-                                            하루 동안 같은 방법으로 먹이다가 다음날은 그 양을 늘려 40ml 정도 베지밀 영&middot;유아식을 먹인 뒤 나머지 양은 모유로 수유해 주시고, 이와 같은 방법으로 점점 베지밀 영&middot;유아식의 양을 늘려 수유해 주시기 바랍니다.</p>
-                                        </div>
-                                    </div>
+									<div class="whiteBox">
+										<p class="f45_6">모유에서 베지밀 영&middot;유아식으로<br> 바꿔 먹이기</p>
+										<p class="f17_4">모유수유를 하고 계시다면 모유를 먹이기 전에 약 20ml 정도 베지밀 영&middot;유아식을 먼저 먹이신 뒤 나머지 양을 모유로 채워 주시면 됩니다.<br>
+										하루 동안 같은 방법으로 먹이다가 다음날은 그 양을 늘려 40ml 정도 베지밀 영&middot;유아식을 먹인 뒤 나머지 양은 모유로 수유해 주시고, 이와 같은 방법으로 점점 베지밀 영&middot;유아식의 양을 늘려 수유해 주시기 바랍니다.</p>
+									</div>
                                 </div>
-                                <div class="col-md-6 mt30m">
-                                    <div class="bg_g">
-                                        <p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_05_02_08.jpg}" alt="분유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
-                                        <div class="whiteBox">
-                                            <p class="f45_6">분유에서 베지밀 영&middot;유아식으로<br> 바꿔 먹이기</p>
-                                            <p class="f17_4 mt50">
-                                                아기들의 신체 발달은 아직 미숙하여 성인과 같이 여러 가지 음식물의 변화에 쉽게 적응하기 어렵습니다.
-                                                따라서 분유에서 베지밀 영&middot;유아식으로 바꿔 먹이려면 아이의 적응 상태에 따라 분유 수유 양을 점차 줄이고 베지밀 영&middot;유아식의 수유 양을 서서히 늘려주세요.<br><br>
-
-                                                기존에 아이에게 먹이던 양을 기준으로<br><br>
-
-                                                첫째 날 &#47; 분유 &#58; 베지밀 영&middot;유아식 &#61; 7&#58;3<br>
-                                                둘째 날 &#47; 분유 &#58; 베지밀 영&middot;유아식 &#61; 5&#58;5<br>
-                                                셋째 날 &#47; 분유 &#58; 베지밀 영&middot;유아식 &#61; 3&#58;7<br>
-                                                넷째 날 &#47; 베지밀 영&middot;유아식으로 완전 대체
-                                            </p>
-                                            <div class="col-md-12 mt50 clickBox">
-                                                <p class="f17_4">비율 및 기간은 아이의 발육 정도 및 적응 상태에 따라 조정해주세요.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6">
+									<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/p_05_02_07.jpg" alt="모유에서 베지밀 영유아식으로 바꿔 먹이기" /></p> 
                                 </div>
+							</div>
+							<div class="row mt50">
+								<div class="col-md-6">
+									<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/p_05_02_08.jpg" alt="분유에서 베지밀 영유아식으로 바꿔 먹이기" /></p>
+								</div>
+								<div class="col-md-6">
+									<div class="whiteBox">
+										<p class="f45_6">분유에서 베지밀 영&middot;유아식으로<br> 바꿔 먹이기</p>
+										<p class="f17_4">
+											아기들의 신체 발달은 아직 미숙하여 성인과 같이 여러 가지 음식물의 변화에 쉽게 적응하기 어렵습니다.
+											따라서 분유에서 베지밀 영&middot;유아식으로 바꿔 먹이려면 아이의 적응 상태에 따라 분유 수유 양을 점차 줄이고 베지밀 영&middot;유아식의 수유 양을 서서히 늘려주세요.<br><br>
+
+											기존에 아이에게 먹이던 양을 기준으로<br><br>
+
+											첫째 날 &#47; 분유 &#58; 베지밀 영&middot;유아식 &#61; 7&#58;3<br>
+											둘째 날 &#47; 분유 &#58; 베지밀 영&middot;유아식 &#61; 5&#58;5<br>
+											셋째 날 &#47; 분유 &#58; 베지밀 영&middot;유아식 &#61; 3&#58;7<br>
+											넷째 날 &#47; 베지밀 영&middot;유아식으로 완전 대체
+										</p>
+									</div>
+								</div>
                             </div>
+							<div class="col-md-12 laBox05">
+								<div class="col-md-12 mt50 clickBox">
+									<p class="iconImg"><img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_click.png" alt="베지밀팩 아이콘" /></p>
+									<p class="f17_4">비율 및 기간은 아이의 발육 정도 및<br class="mView"> 적응 상태에 따라 조정해주세요.</p>
+								</div>
+							</div>
                         </div>
                     </div>
                 </div> <!-- //03 container -->
             </dl><!-- //con01 -->
         </div><!-- //row-->
-
-	 </div>
-		
+	</div>
+	<!-- ------------------- // content ------------------- -->
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
