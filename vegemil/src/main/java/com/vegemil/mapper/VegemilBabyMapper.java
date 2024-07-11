@@ -29,6 +29,11 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyCommunityDTO> selectMagazineIndex();
 	//육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
+	
+    // 메인 > 베스트리튜 
+	public List<VegemilBabyBestReviewDTO> selectBestReviewIndex();
+	// 메인 > 육아정보
+	public List<VegemilBabyCommunityDTO> selectBabyInfoIndex();
 
 	
 	//======[Brand]======	
@@ -104,9 +109,8 @@ public interface VegemilBabyMapper {
 	
 
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
-	
-
-
+    
+ 
 
 	
 	

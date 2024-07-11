@@ -299,6 +299,21 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		
 	}
 	
+	@Override
+	public List<VegemilBabyBestReviewDTO> selectBestReviewIndex() {
+		return vegemilBabyMapper.selectBestReviewIndex();
+	}
+	
+	@Override
+	public List<VegemilBabyCommunityDTO> selectBabyInfoIndex() {
+		List<VegemilBabyCommunityDTO> babyInfoList = vegemilBabyMapper.selectBabyInfoIndex();
+		for(int i=0; i<babyInfoList.size();i++) {			
+			VegemilBabyCommunityDTO info = babyInfoList.get(i);
+			info.setMbsContent(info.getMbsContent().replaceAll("<[^>]*>", ""));			
+		}
+		return babyInfoList;
+	}
+	
 	
 
 }

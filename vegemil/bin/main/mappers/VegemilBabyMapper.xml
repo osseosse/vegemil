@@ -24,6 +24,35 @@
 			mbs_check='1'
 		LIMIT 2;
 	</select>
+	<!-- index -  베스트 리뷰 -->	
+	<select id="selectBestReviewIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO" >			
+		SELECT 
+			s_edayId,
+			s_title,
+			s_writedate,
+			s_image
+		FROM 
+			m_sns 		
+		WHERE 
+			s_rank between 1 and 2
+		ORDER BY s_writedate desc
+		LIMIT 4;
+	</select>
+	<!-- index -  욱아정보-->	
+	<select id="selectBabyInfoIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
+		<![CDATA[
+		SELECT 
+			mbs_idx ,mbs_title, mbs_image, SUBSTRING_INDEX(mbs_content, '<img', 1) as mbs_content
+		FROM 
+			m_edit_brandbaby
+		WHERE
+			mbs_active = '1'
+		Order By 
+			mbs_getdate DESC
+		LIMIT
+			4;
+		]]>		    
+	</select>
 	
 	<!-- ======[Brand]====== -->
 	<!-- TvCf조회 -->			

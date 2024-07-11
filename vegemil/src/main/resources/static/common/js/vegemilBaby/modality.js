@@ -6,7 +6,7 @@
 /**
  * Modality JavaScript Plugin
  */
-(function () {
+;(function () {
 
     // Private ---------------------------------------
 
@@ -171,7 +171,7 @@
                 inst.setTrigger( inst.triggers[i] );
         }
 
-        // close modal if users clicks anywhere off of it íŒì—…ì—ì„œ ë¼ì´ì˜¤ ì²´í¬ë¶ˆê°€ë¡œ ì¸í•´ ë¹„í™œì„±í™”
+        // close modal if users clicks anywhere off of it ÆË¾÷¿¡¼­ ¶óÀÌ¿À Ã¼Å©ºÒ°¡·Î ÀÎÇØ ºñÈ°¼ºÈ­
         //if( inst.settings.clickOffToClose ) {
         //     _addEvent( inst.wrapper, "click", function(e) {
         //         _preventDefault(e); if(e.target == inst.wrapper) inst.close();

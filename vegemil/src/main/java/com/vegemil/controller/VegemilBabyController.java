@@ -71,6 +71,11 @@ public class VegemilBabyController extends UiUtils {
 	public String index(Model model) {
 		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
 		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());
+		// 배스트 리뷰 최신 4개
+		model.addAttribute("reviewList", vegemilBabyCommunityService.selectBestReviewIndex());
+		// 육아정보 최신 4개 
+		model.addAttribute("infoList", vegemilBabyCommunityService.selectBabyInfoIndex());		
+		
 		return "vegemilBaby/index";
 	}	
 	/* ======== Brand ======== */

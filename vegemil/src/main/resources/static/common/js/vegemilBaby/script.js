@@ -1,6 +1,7 @@
+/*
 $(document).ready(function(){
     
-    //Show dropdown on hover only for desktop devices
+
     var delay=0, setTimeoutConst;
     $('.site-navigation:not(.onclick) .navbar-nav>li.dropdown, .site-navigation:not(.onclick) li.dropdown>ul>li.dropdown').hover(
     function(){
@@ -16,7 +17,7 @@ $(document).ready(function(){
       $(this).find('.dropdown-toggle').removeClass('disabled');
     });
 
-    // Slicknav menu
+
     $('.navbar-nav').slicknav({
         allowParentLinks: true,
         label: "",
@@ -24,7 +25,7 @@ $(document).ready(function(){
         openedSymbol :'<i class="fa fa-chevron-up" aria-hidden="true"></i>'
     });
   
-  // menu click event
+
   $('.slicknav_btn').click(function() {
     $(this).toggleClass('act');
       if($(this).hasClass('act')) {
@@ -37,13 +38,13 @@ $(document).ready(function(){
 });
 
 /* ------------------------------------------------------
-		***** sliderë¦¬ë‰´ì–¼ *****
---------------------------------------------------------*/
+		***** slider¸®´º¾ó *****
+--------------------------------------------------------
 $(window).load(function(){
 	
-	/* main > ë¹…ë°°ë„ˆ(ë·°í‹°) */
+
 	$('#slider1 .slider').prrpleSlider({
-		autoPlay:true,				//play slider automatically?  //false ì‚¬ìš©ì‹œ ë©ˆì¶¤
+		autoPlay:true,				
 		autoPlayInterval:	4000,		
 		csstransforms:	false,
 		richSwiping:false
@@ -52,8 +53,8 @@ $(window).load(function(){
 
 
 /* ------------------------------------------------------
-		***** ë©”ì¸ circular *****
---------------------------------------------------------*/
+		***** ¸ÞÀÎ circular *****
+--------------------------------------------------------
 $(function(){ 
     $('.rotating-slider').rotatingSlider({
 		slideHeight : Math.min(340, window.innerWidth -80),
@@ -62,18 +63,15 @@ $(function(){
 });
 
 
-
-
-
 /* ------------------------------------------------------------------------------------------------------------
-		***** ë©”ì¸rotating-slider --> tab *****
---------------------------------------------------------------------------------------------------------------*/
+		***** ¸ÞÀÎrotating-slider --> tab *****
+--------------------------------------------------------------------------------------------------------------
 (function( $ ) {
-  $.fn.basicTabs1 = function(options){ /* tabe1 ë³€ê²½ */
+  $.fn.basicTabs1 = function(options){ 
 	var settings = $.extend({
 	  active_class: "current",
-	  list_class: "tabs1", /* tabe1 ë³€ê²½*/
-	  content_class: "tab_content1", /* tab_content1 */
+	  list_class: "tabs1", 
+	  content_class: "tab_content1", 
 	  starting_tab: 1
 	}, options );
 	var $content = $('.' + settings.content_class);
@@ -97,15 +95,15 @@ $(function(){
 		***** subMenu  > select1, select2  *****
 ----------------------------------------------------------------------------------------*/
 $(document).ready(function() {
-$(".view-btn_01").click(function(){  //í´ë¦­ì‹œ
+$(".view-btn_01").click(function(){  //Å¬¸¯½Ã
 		if($(this).attr("class")=="view-btn_01"){
-			$(this).addClass("open");  //í´ëž˜ìŠ¤ ê°’ ì¶”ê°€
-			$(".list_open_01").slideDown("fast"); // language_openì„  slideDown í•˜ì‹œì˜¤
-			$(".view-btn_02").removeClass("open");  // ë‹¤ë¥¸ë²„íŠ¼í´ë¦­ì‹œ ë‹«ê¹€
-			$(".list_open_02").slideUp("fast");  // ë‹¤ë¥¸ë²„íŠ¼í´ë¦­ì‹œ ë‹«ê¹€
+			$(this).addClass("open");  //Å¬·¡½º °ª Ãß°¡
+			$(".list_open_01").slideDown("fast"); // language_openÀ»  slideDown ÇÏ½Ã¿À
+			$(".view-btn_02").removeClass("open");  // ´Ù¸¥¹öÆ°Å¬¸¯½Ã ´Ý±è
+			$(".list_open_02").slideUp("fast");  // ´Ù¸¥¹öÆ°Å¬¸¯½Ã ´Ý±è
 		}else{
-			$(this).removeClass("open");   // í´ëž˜ìŠ¤ê°’ ì œê±° 
-			$(".list_open_01").slideUp("fast");  // language_openì„  slideUp í•˜ì‹œì˜¤
+			$(this).removeClass("open");   // Å¬·¡½º°ª Á¦°Å 
+			$(".list_open_01").slideUp("fast");  // language_openÀ»  slideUp ÇÏ½Ã¿À
 		}
 		return false;
 	});
@@ -113,15 +111,15 @@ $(".view-btn_01").click(function(){  //í´ë¦­ì‹œ
 
 
 $(document).ready(function() {
-$(".view-btn_02").click(function(){  //í´ë¦­ì‹œ
+$(".view-btn_02").click(function(){  //Å¬¸¯½Ã
 		if($(this).attr("class")=="view-btn_02"){
-			$(this).addClass("open");  //í´ëž˜ìŠ¤ ê°’ ì¶”ê°€
-			$(".list_open_02").slideDown("fast"); // language_openì„  slideDown í•˜ì‹œì˜¤
-			$(".view-btn_01").removeClass("open");  // ë‹¤ë¥¸ë²„íŠ¼í´ë¦­ì‹œ ë‹«ê¹€
-			$(".list_open_01").slideUp("fast");  // ë‹¤ë¥¸ë²„íŠ¼í´ë¦­ì‹œ ë‹«ê¹€
+			$(this).addClass("open");  //Å¬·¡½º °ª Ãß°¡
+			$(".list_open_02").slideDown("fast"); // language_openÀ»  slideDown ÇÏ½Ã¿À
+			$(".view-btn_01").removeClass("open");  // ´Ù¸¥¹öÆ°Å¬¸¯½Ã ´Ý±è
+			$(".list_open_01").slideUp("fast");  // ´Ù¸¥¹öÆ°Å¬¸¯½Ã ´Ý±è
 		}else{
-			$(this).removeClass("open");   // í´ëž˜ìŠ¤ê°’ ì œê±° 
-			$(".list_open_02").slideUp("fast");  // language_openì„  slideUp í•˜ì‹œì˜¤
+			$(this).removeClass("open");   // Å¬·¡½º°ª Á¦°Å 
+			$(".list_open_02").slideUp("fast");  // language_openÀ»  slideUp ÇÏ½Ã¿À
 		}
 		return false;
 	});
@@ -129,39 +127,37 @@ $(".view-btn_02").click(function(){  //í´ë¦­ì‹œ
 
 
 /* ------------------------------------------------------------------------------------------------------------
-		***** ë©”ì¸ > ëª¨ë°”ì¼ ë©”ë‰´  *****
+		***** ¸ÞÀÎ > ¸ð¹ÙÀÏ ¸Þ´º tab *****
 --------------------------------------------------------------------------------------------------------------*/
-  $(function(){
-  var duration = 300;
+$(function(){
+	var duration = 300;
 	var $aside = $('.page-main > aside');
-	var $asideButton = $aside.find('div.jjj')
+	var $asideButton = $aside.find('button')
 		.on('click', function(){
-			
 			$aside.toggleClass('open');
 			if($aside.hasClass('open')) {
-		
 				$aside.stop(true).animate({left:'-70px'}, duration, 'swing');
-				$asideButton.find('img').attr('src','https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn/btn_close.png');
-					//alert('hi');
+				$asideButton.find('img').attr('src','img/btn_close.png');
 			} else{
 				$aside.stop(true).animate({left:'-350px'}, duration, 'swing');
-				$asideButton.find('img').attr('src','https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn/btn_open.png');
+				$asideButton.find('img').attr('src','img/btn_open.png');
 			};
 
 		});
-  });
+});
+
 
 
 /* ------------------------------------------------------------------------------------------------------------
-		***** ë¸Œëžœë“œ > ì˜ì–‘ tab *****
+		***** ºê·£µå > ¿µ¾ç tab *****
 --------------------------------------------------------------------------------------------------------------*/
 (function( $ ) {
-  $.fn.basicTabs = function(options){ /* basicTabs ë³€ê²½ */
+  $.fn.basicTabs = function(options){ /* basicTabs º¯°æ */
 	var settings = $.extend({
 	  active_class: "current",
-	  list_class: "tabs2", /* tabe2 ë³€ê²½*/
+	  list_class: "tabs2", /* tabe2 º¯°æ*/
 	  content_class: "tab_content_brand", /* tab_content_brand */
-	  starting_tab: 1 /* ë² ìŠ¤íŠ¸í›„ê¸° ê°œë°œë¡œ ì¸í•œ 2ë¡œì„ ì • */
+	  starting_tab: 2 /* º£½ºÆ®ÈÄ±â °³¹ß·Î ÀÎÇÑ 2·Î¼±Á¤ */
 	}, options );
 	var $content = $('.' + settings.content_class);
 	var $list = $('.' + settings.list_class);
@@ -183,22 +179,22 @@ $(".view-btn_02").click(function(){  //í´ë¦­ì‹œ
 
 
 /* ------------------------------------------------------
-		***** ë‹¬ë ¥ì•„ê¸°ëª¨ë¸ > Select *****
+		***** ´Þ·Â¾Æ±â¸ðµ¨ > Select *****
 --------------------------------------------------------*/
 $(document).ready(function() { var selectTarget = $('.selectbox select'); selectTarget.change(function(){ var select_name = $(this).children('option:selected').text(); $(this).siblings('label').text(select_name); }); });
 
 
 
 /* ------------------------------------------------------
-		***** ë¸Œëžœë“œ > TV ê´‘ê³   *****
-		ì¸ë„¤ì¼ ë§ˆìš°ìŠ¤ì˜¤ë²„ì‹œ ì˜¤ë²„ëž©ì• ë‹ˆë©”ì´ì…˜
+		***** ºê·£µå > TV ±¤°í  *****
+		½æ³×ÀÏ ¸¶¿ì½º¿À¹ö½Ã ¿À¹ö·¦¾Ö´Ï¸ÞÀÌ¼Ç
 --------------------------------------------------------*/
 $(function(){
 	//
 	var duration = 300;
 	// images
 	var $images = $('.thumb-over .t_img');
-		//images ì„¸ ë²ˆì§¸ ì´ë¯¸ì§€ì˜ ìº¡ì…˜ í‘œí˜„ ë¶€ë¬¸
+		//images ¼¼ ¹øÂ° ÀÌ¹ÌÁöÀÇ Ä¸¼Ç Ç¥Çö ºÎ¹®
 		$images.filter('.t_img')
 			.on('mouseover', function(){
             $(this).find('strong').stop(true).animate({bottom:'0px'}, duration);
@@ -215,7 +211,7 @@ $(function(){
 
 
 /* ------------------------------------------------------
-		***** ë¸Œëžœë“œ > TV ê´‘ê³   *****
+		***** ºê·£µå > TV ±¤°í  *****
 		popup
 --------------------------------------------------------*/
 (function ( $ ) {
@@ -231,8 +227,7 @@ $(function(){
 			var settings = $.extend({
 				videoID: getvideoid,
 				autoPlay: true,
-				theme: "dark",
-				
+				theme: "dark"
 			}, options );
 
 			// Convert some values
@@ -245,7 +240,7 @@ $(function(){
 					 $("body").append('<div class="grtyoutube-popup '+settings.theme+'">'+
 								'<div class="grtyoutube-popup-content">'+
 									'<span class="grtyoutube-popup-close"></span>'+
-									'<iframe class="grtyoutube-iframe" src="https://www.youtube.com/embed/'+settings.videoID+'?rel=0&wmode=transparent&autoplay='+settings.autoPlay+'&iv_load_policy=3&loop=1;playlist=cMPWWSvNi74" allowfullscreen frameborder="0" allow="autoplay; fullscreen"></iframe>'+
+									'<iframe class="grtyoutube-iframe" src="https://www.youtube.com/embed/'+settings.videoID+'?rel=0&wmode=transparent&autoplay='+settings.autoPlay+'&iv_load_policy=3" allowfullscreen frameborder="0" allow="autoplay; fullscreen"></iframe>'+
 								'</div>'+
 							'</div>');
 				});

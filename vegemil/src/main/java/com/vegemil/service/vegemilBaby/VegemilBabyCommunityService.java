@@ -24,10 +24,15 @@ import com.vegemil.paging.BoardResponseVO;
 public interface VegemilBabyCommunityService {
 	
 	//======[Index]======	
-	//육아정보
+	// 육아정보
 	public List<VegemilBabyCommunityDTO> selectMagazineIndex();
-	//육아상담 QnA
+	// 육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
+	
+	// 메인 > 베스트리뷰
+    public List<VegemilBabyBestReviewDTO> selectBestReviewIndex();
+	// 메인 > 육아정보 리뉴얼 화면용
+	public List<VegemilBabyCommunityDTO> selectBabyInfoIndex();
 	
 	//======[Brand]======	
 	//TvCf 조회
@@ -83,12 +88,11 @@ public interface VegemilBabyCommunityService {
 	public AdminCalendarTitleDTO selectCalenderModelTitlebyRownum(String rownum);
 
 
-	
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);    
     public boolean isSampleForm(VegemilBabySampleDTO params);
-	
-	
+    
+   
        
     
     
