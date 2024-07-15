@@ -175,7 +175,7 @@
 				<!-- width 100%  -->
 				<div class="container">
 					<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-						<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post"  onsubmit="return btnActive();">
+						<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post"  onsubmit="return false;">
 							<input type="hidden" name="qrt" th:value="${qrtYear}">
 							<div class="row intxt mt80-m">
 							</div>
@@ -224,7 +224,7 @@
 										<li><input type="radio" name="chk_privacy" value="0" checked> 아니오</li>
 									</ul>
 									<div class="mt90 center">
-										<input  class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기">
+										<input  class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기" disabled>
 									</div>
 								</div>
 								<div class="col-md-12 mt100-m2" >
