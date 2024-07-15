@@ -69,12 +69,13 @@ public class VegemilBabyController extends UiUtils {
 	
 	@GetMapping("/vegemilBaby/index")
 	public String index(Model model) {
-		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
-		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());
+		//model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex())
 		// 배스트 리뷰 최신 4개
 		model.addAttribute("reviewList", vegemilBabyCommunityService.selectBestReviewIndex());
-		// 육아정보 최신 4개 
-		model.addAttribute("infoList", vegemilBabyCommunityService.selectBabyInfoIndex());		
+		// 육아정보 최신 2개 
+		model.addAttribute("infoList", vegemilBabyCommunityService.selectBabyInfoIndex());
+		// 육아 qna 최신 2개 
+		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());		
 		
 		return "vegemilBaby/index";
 	}	

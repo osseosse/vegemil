@@ -51,8 +51,19 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	}
 	// 육아상담 QnA
 	@Override
-	public List<VegemilBabyQnADTO> selectQnAIndex() {
-		return vegemilBabyMapper.selectQnAIndex();
+	public List<VegemilBabyQnADTO> selectQnAIndex() {	
+		
+		List<VegemilBabyQnADTO> babyQnaList = vegemilBabyMapper.selectQnAIndex();
+		
+		for(int i=0; i<babyQnaList.size();i++) {			
+			VegemilBabyQnADTO qna = babyQnaList.get(i);
+			qna.setMbsContent(qna.getMbsContent().replaceAll("<[^>]*>", "").substring(0, 200));
+		}
+		
+		
+		
+		return babyQnaList;
+		
 	}
 	
 	//======[Brand]======	

@@ -7,15 +7,16 @@
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
+	<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG03_01 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">진행 중 이벤트</p>
-								<p class="f20_4 mt20">다양한 이벤트에 참여하시고<br>푸짐한 상품도 받아가세요.</p>
+								<p class="f40 fw600 white">진행 중 이벤트</p>
+								<p class="f20 mt20 white">다양한 이벤트에 참여하시고<br>푸짐한 상품도 받아가세요.</p>
 							</div>
 						</div>
 					</div>
@@ -23,8 +24,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -42,11 +43,10 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
-														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
-														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
+														<li><a href="premium.html">Product</a></li>
+														<li><a href="event.html"> Event</a></li>
+														<li><a href="e_magazine.html"> Cummunity</a></li>
+														<li><a href="faq.html"> Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -66,10 +66,10 @@
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
-															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+															<li><a href="event.html">진행 중 이벤트</a></li>
+															<li><a href="event_review_best.html">후기 이벤트</a></li>
+															<li><a href="event_model.html">아기모델 선발대회</a></li>
+															<li><a href="sample.html">샘플신청</a></li>
 														</ul>
 													</div>
 												</div>
@@ -86,54 +86,130 @@
 		</div>
 		<!-- //container100 -->
 		
-		<!-- //container100 -->		
 		<div class="container100">
 			<div class="row mg0 pd0">
 				<div class="container">					
 					<div class="col-md-12 brandTxt">
-						<p class="f24_4_bg">Event</p>
+						<div class="subTitle">
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+							</div>
+							<div class="f24_6_bg">
+								<p class="f24_5_bg">Event</p>
+							</div>
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+							</div>
+						</div>
 						<p class="f55_6 mt30">진행 중 이벤트</p>
 						<p class="f24_4 mt10">현재 진행 중인 이벤트를 확인하세요.</p>
 					</div>
-					
-					<div th:if="${!#lists.isEmpty(eventList)}" class="col-md-12  eventBox">
-							<div class="col-md-4 hvr-float-shadow" th:each="event : ${eventList}">
-								<a th:href="${event.eUri}">
-									<div class="evBox">
-										<p class="e_img">
-											<span class="sign_" th:classappend="${event.eCate}" th:text=${event.eSubject}></span>
-											<span class="e_img_span" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/EVENT/'+ ${event.eImg}+');  background-position:center;-webkit-background-size: cover; background-size: cover;'" ></span>
-										<!-- <span class="e_winner"><img src="/Main/brandVegemilBaby/HTML/img/<%# DataBinder.Eval(Container.DataItem, "e_show") %>" /></span> -->
-										</p>
-										<p class="f17_4_b mt30w" th:text="|${event.eStart} ~ ${event.eEnd} |"  ></p>
-										<p class="f30_6 mt20 txtHide" th:text=${event.eSubject}></p>
-										<p class="f17_4 mt15 txtHide" th:text=${event.eContent}></p>
-									</div>
-								</a>
-							</div>	
-					</div>
-					
-					<div th:if="${#lists.isEmpty(eventList)}" style="text-align:center;padding-top:50px; font-size:16px; font-weight:600; color:#666666">
-						- 진행중인 이벤트가 없습니다. -
-					</div>
 
-					
-					<br><br><br><br><br><br>
-			         <!-- 글 없음 메세지 -->
+					<div class="col-md-12  eventBox">
+						<div class="col-md-4 hvr-float-shadow">
+							<a href="#">
+								<div class="evBox">
+									<p class="e_img">
+										<span class="sign_naver">네이버 카페</span>
+										<span class="e_img_span" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/e_thumb01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+										<span class="e_winner"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/winner.png" alt="당첨자발표" /></span>
+									</p>
+									<p class="f17_4_b mt30w">2018.08.30~09.12</p>
+									<p class="f30_6 mt20 txtHide">맘스홀릭 체험 이벤트 맘스홀릭 체험 이벤트 이벤트 맘스홀릭 체험 이벤트</p>
+									<p class="f17_4 mt15 txtHide">베지밀 인펀트/토들러 100명 체험단 모집 베지밀 인펀트/토들러 100명 체험단 모집</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 hvr-float-shadow">
+							<a href="#">
+								<div class="evBox">
+									<p class="e_img">
+										<span class="sign_daum">다음카페</span>
+										<span class="e_img_span" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/test02.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+										<span class="e_winner"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/winner.png" alt="당첨자발표" /></span>
+									</p>
+									<p class="f17_4_b mt30w">2018.08.30~09.12</p>
+									<p class="f30_6 mt20 txtHide">맘스홀릭 체험 이벤트</p>
+									<p class="f17_4 mt15 txtHide">베지밀 인펀트/토들러 100명 체험단 모집</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 hvr-float-shadow">
+							<a href="#">
+								<div class="evBox">
+									<p class="e_img">
+										<span class="sign_face">페이스북</span>
+										<span class="e_img_span" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/test.png);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+									</p>
+									<p class="f17_4_b mt30w">2018.08.30~09.12</p>
+									<p class="f30_6 mt20 txtHide">맘스홀릭 체험 이벤트</p>
+									<p class="f17_4 mt15 txtHide">베지밀 인펀트/토들러 100명 체험단 모집</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 hvr-float-shadow">
+							<a href="#">
+								<div class="evBox">
+									<p class="e_img">
+										<span class="sign_another">기타</span>
+										<span class="e_img_span" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/test03.png);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+									</p>
+									<p class="f17_4_b mt30w">2018.08.30~09.12</p>
+									<p class="f30_6 mt20 txtHide">맘스홀릭 체험 이벤트</p>
+									<p class="f17_4 mt15 txtHide">베지밀 인펀트/토들러 100명 체험단 모집</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 hvr-float-shadow">
+							<a href="#">
+								<div class="evBox">
+									<p class="e_img">
+										<span class="sign_naver">네이버 카페</span>
+										<span class="e_img_span" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/e_thumb01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+										<span class="e_winner"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/winner.png" alt="당첨자발표" /></span>
+									</p>
+									<p class="f17_4_b mt30w">2018.08.30~09.12</p>
+									<p class="f30_6 mt20 txtHide">맘스홀릭 체험 이벤트 맘스홀릭 체험 이벤트 이벤트 맘스홀릭 체험 이벤트</p>
+									<p class="f17_4 mt15 txtHide">베지밀 인펀트/토들러 100명 체험단 모집 베지밀 인펀트/토들러 100명 체험단 모집</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 hvr-float-shadow">
+							<a href="#">
+								<div class="evBox">
+									<p class="e_img">
+										<span class="sign_daum">다음카페</span>
+										<span class="e_img_span" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/test02.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+										<span class="e_winner"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/winner.png" alt="당첨자발표" /></span>
+									</p>
+									<p class="f17_4_b mt30w">2018.08.30~09.12</p>
+									<p class="f30_6 mt20 txtHide">맘스홀릭 체험 이벤트</p>
+									<p class="f17_4 mt15 txtHide">베지밀 인펀트/토들러 100명 체험단 모집</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- paging -->
+					<div class="paging3">
+						<ol>
+							<li class="preEnd"><img src="http://image.edaymall.com/images/btn/btn_preEnd.gif" alt="처음" /></li>
+							<li class="pre"><img src="http://image.edaymall.com/images/btn/btn_pre.gif" alt="이전" /></li>
+							<li><a href="#">1</a></li>
+							<li><strong>2</strong></li><!-- 현재페이지 -->
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li class="next"><img src="http://image.edaymall.com/images/btn/btn_next.gif" alt="다음" /></li>
+							<li class="nextEnd"><img src="http://image.edaymall.com/images/btn/btn_nextEnd.gif" alt="끝" /></li>
+						</ol>
+					</div>
+					<!-- paging //-->
 				</div><!-- //container -->
 			</div><!-- //row-->
 		</div><!-- //container100 -->
+	</div>
+	<!-- ------------------- // content ------------------- -->
 				
-				<!-- 탭 -->
-				<script type="text/javascript">
-					$(document).ready(function(){
-						$('#tab_brand').basicTabs();/* 영양탭 */
-					});
-				</script>
-				
-				
-	  </div>	
-
 	<!-- ================================ Footer ================================ -->
 	<footer th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->

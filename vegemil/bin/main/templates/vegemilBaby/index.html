@@ -515,6 +515,22 @@
 								</a>
 							</li>
 						</ul>
+						<ul class="cumu" th:each="qna : ${qnaList}">
+							<li>
+								<a th:href="@{/vegemilBaby/magazine/detail/{mbsIdx}(mbsIdx=${qna.mbsIdx})}">
+									<div class="h280" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/uploadQna/'+ ${qna.mbsImage} 
+																+ '); background-position:center;-webkit-background-size: cover; background-size: cover;'">
+									</div>
+								</a>
+							</li>
+							<li>
+								<a th:href="@{/vegemilBaby/magazine/detail/{mbsIdx}(mbsIdx=${qna.mbsIdx})}">
+									<p class="comuType01">육아상담 Q&A</p>
+									<p class="f30 fw600 black mt10" th:text="${qna.mbsTitle}">제목</p>
+									<p class="f20 fw400 gray mt40-m" th:utext="${qna.mbsContent}">내용</p>
+								</a>
+							</li>
+						</ul>
 					 </div><!-- //col-lg-7 -->
 				  </div>
 				  

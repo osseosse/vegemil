@@ -31,8 +31,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -93,7 +93,6 @@
 			</div>
 		</div>
 		<!-- //container100 -->
-		
 		<div class="container100">
 			<div class="row  pd0 mg0 ">
 
@@ -126,9 +125,7 @@
 												<p class="f55_6 mt30">베스트 후기</p>
 												<p class="f24_4 mt10">베스트 후기로 선정된 분들의 후기를 만나보세요</p>
 											</div>
-										
 										</div>
-										 
                                        <div class="container100 center best_center" id="list">
                                             <ul class="best_thumb mt90 review2 bg_best">
 													<li th:each="bestReview : ${bestReviewList}" th:class="|hvr-float-shadow mb80 mi${bestReview.sYear}${bestReview.sMonth}${bestReview.sRank}|">
@@ -150,9 +147,6 @@
 														</a>
 													</li>
 													
-													
-
-
 												<script>												
 												  $( document ).ready( function() {													
 													$( '.mi202311' ).before( '<br>' );
@@ -206,7 +200,7 @@
 
 												</script>
 											  
-												<br>
+												<br/>
 												<li class="hvr-float-shadow mb80">
                                                     <a href="https://www.instagram.com/p/B8oY6SyleBk/?igshid=154cds0017yk3" target="_blank">
                                                         <div class="best_r">
@@ -229,7 +223,7 @@
                                                         </div>
                                                     </a>
                                                 </li>
-												<br>
+												<br/>
 												<li class="hvr-float-shadow mb80">
                                                     <a href="https://blog.naver.com/zhazhadl/221760056300" target="_blank">
                                                         <div class="best_r">
@@ -251,7 +245,7 @@
                                                         </div>
                                                     </a>
                                                 </li>                              
-												<br>
+												<br/>
 												<li class="hvr-float-shadow mb80">
                                                     <a href="https://m.blog.naver.com/toounique/221754762833" target="_blank">
                                                         <div class="best_r">
@@ -1055,10 +1049,6 @@
                                                         </div>
                                                     </a>
                                                 </li>
-												
-
-
-
                                             </ul>
                                         </div>
 									</dl><!-- //con02 -->
@@ -1069,13 +1059,8 @@
 				<!-- //탭 -->
 			</div><!-- //row-->
 		</div><!-- //container100 -->
-
-
-		
 	</div>
 	<!-- ------------------- // content ------------------- -->
-	
-		
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->

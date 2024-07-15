@@ -15,13 +15,14 @@
 		LIMIT 1;
 	</select>
 	<!-- index - 육아상담 QnA -->	
-	<select id="selectQnAIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
+	<select id="selectQnAIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO" >			
 		SELECT 
 			mbs_idx, mbs_content, mbs_image, mbs_summary, mbs_title, mbs_getdate, mbs_category
 		FROM 
 			m_editQnA_brandBaby
 		WHERE 
-			mbs_check='1'
+			mbs_active = 1
+		ORDER BY mbs_idx desc	
 		LIMIT 2;
 	</select>
 	<!-- index -  베스트 리뷰 -->	
@@ -50,7 +51,7 @@
 		Order By 
 			mbs_getdate DESC
 		LIMIT
-			4;
+			2;
 		]]>		    
 	</select>
 	
