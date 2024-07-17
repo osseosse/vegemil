@@ -125,6 +125,7 @@ a:focus, a:hover {text-decoration:none; color: #3c3c3c; } /* 링크 태그 파�
 img,svg {
     vertical-align: middle;
 }
+.tp-btn-black-2 span {top:-2px !important;} /* 0711 */
 .tp-btn-black-2 span .svg-icon {top:11px !important; }
 
 /* bg */
@@ -194,11 +195,11 @@ textarea:-ms-input-placeholder {color: #a0a0a0}
 .f22_4 span {font-size:22px;color:#3c3c3c; font-weight:400; letter-spacing:-1px  }
 .f24_4_bg {font-size:24px;color:#3c3c3c; font-weight:400;  background:#e3f1f4; display:inline-block; padding:2px 7px }
 .f24_4 {font-size:24px;color:#3c3c3c; font-weight:400 }
-.subTitle {display:inline-block;}
-.subTitle .side {display:inline-block; position:relative; float:left;} 
-.subTitle img {display:inline-block; margin:0px; vertical-align:middle;} 
-.f24_5_bg {font-size:24px;color:#3c3c3c; font-weight:400; vertical-align:middle; background:#fff; display:inline-block; margin: 0px 0px 1.5px; line-height:49px; border-top:1px solid #A0A0A0; border-bottom:1px solid #A0A0A0; }
-.f24_6_bg {display:inline-block; position:relative; float:left; vertical-align:middle; text-align:center; margin:0px; padding-bottom:2px; line-height:58px; border-top:2px solid #A0A0A0; border-bottom:2px solid #A0A0A0; }
+.subTitle {display:inline-block;}/* 해리 */
+.subTitle .side {display:inline-block; position:relative; float:left;} /* 해리 */
+.subTitle img {display:inline-block; margin:0px; vertical-align:middle;} /* 해리 */
+.f24_5_bg {font-size:24px;color:#3c3c3c; font-weight:400; vertical-align:middle; background:#fff; display:inline-block; margin: 0px 0px 1.5px; line-height:49px; border-top:1px solid #A0A0A0; border-bottom:1px solid #A0A0A0; }/* 해리 */
+.f24_6_bg {display:inline-block; position:relative; float:left; vertical-align:middle; text-align:center; margin:0px; padding-bottom:2px; line-height:58px; border-top:2px solid #A0A0A0; border-bottom:2px solid #A0A0A0; }/* 해리 */
 .f24_7_bg {font-size:24px;color:#3c3c3c; font-weight:400; vertical-align:middle; background:#fff; display:inline-block; margin: 0px 0px 1.5px; line-height:49px; border-top:1px solid #A0A0A0; border-bottom:1px solid #A0A0A0; }/* 0711 */
 .f24_8_bg {display:inline-block; position:relative; float:left; vertical-align:middle; text-align:center; margin:0px; padding:4px 0; line-height:58px; border-top:2px solid #A0A0A0; border-bottom:2px solid #A0A0A0; }/* 0711 */
 .f26_4 {font-size:26px;color:#3c3c3c; font-weight:400; line-height:170% }
@@ -530,7 +531,7 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
   left: 0;
   right: 0;
   bottom: 0;
-  background: #eee8cb;
+  background: #C1DCAF; /* 0711 */
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
@@ -649,7 +650,7 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
 }
 
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 16px;
+  margin-top: 0px; /* 0711 */
   padding:10px 10px ;
 }
 
@@ -657,6 +658,7 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
 .dropdown-menu:hover {
   opacity: 1;
   visibility: visible;
+  border-radius:10px; /* 0711 */
 }
 
 .dropdown-menu > li {padding:5px 0}
@@ -665,7 +667,7 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
   font-size:15px
 }
 
-.dropdown-menu li a:hover {background:#e3f1f4 }
+.dropdown-menu li a:hover {background:#FFF0C9; border-radius:8px; } /* 0711 */
 
 
 
@@ -1106,7 +1108,8 @@ ul.cate_ul_list2 li:hover {background:#FFF0C9; border-radius:8px;}
 /* //2024.06.28 */
 .snbMenu dl dd {float:left}
 .container {position:relative;  }
-.subTxt {position: absolute; bottom: 30%;left: 0;height: 150px;margin: auto;} 
+.subTxt {position: absolute; bottom: 30%;left: 0;height: 150px;margin: auto;}
+.subTxt02 {position: absolute; bottom: 40%;left: 0;height: 150px;margin: auto;} /* 0711 */
 .h640 {height:640px}
 .h560 {height:560px} 
 .brand_line {border:10px solid #ede8ce; padding:120px 20px; text-align:center;  width:100%; font-size:26px; letter-spacing:-2px; }
@@ -1114,6 +1117,7 @@ ul.cate_ul_list2 li:hover {background:#FFF0C9; border-radius:8px;}
 .youtubeBox {display:block; height:380px;} /* 0711 */
 .youtubeBox iframe {height:700px; top:-230px; position:absolute; border-radius:20px} /* 0711 */
 .brandIcon {margin:120px 0 100px 0}
+/* .brandIcon2 {margin:0} */ /* 0716 */
 .brandTxt {position:relative; margin-top:120px; text-align:center}
 .brandTxt01 {position:relative; margin-top:100px; text-align:center}
 .brandDrJ {position:relative; margin-top:60px; }
@@ -1126,8 +1130,10 @@ ul.cate_ul_list2 li:hover {background:#FFF0C9; border-radius:8px;}
 /* 메인 - 0711 */
 .in_bear {position:absolute; top:-80%; right:-5%}
 @keyframes fadein {0% {opacity: 0; transform: translateY(20px);} 100%{opacity:1; transform: none;}}
-.d-md-inline-block svg {top:40px;}
+.tp-footer-4-big-title {margin-top:-50px;}
+.d-md-inline-block svg {margin:20px 25px 0 10px;}
 /* //0711 */
+	
 
 /* 영양 */
 ul.btn_ch19 {width:100%; background-color:#F5F5F5; padding:14px; display:inline-block; margin:0; border-radius:16px} 
@@ -1140,15 +1146,15 @@ ul.btn_ch19 li.current a { background:#fff; box-shadow: 0px 0px 4px rgba(0, 0, 0
 .underline {border-bottom:1px solid #000000; padding-bottom:50px; }
 .nutBox01 {margin:120px 0;  display:inline-block}
 .nutBox01 .txtBox {display:inline-block; float:left; border:1px solid #C9C9C9; border-radius:20px; padding:40px 50px; margin-top:110px;} 
-.nutBox01 .txtBox p:nth-child(1) {display:inline-block; float:left; width:30%;} 
-.nutBox01 .txtBox p:nth-child(2) {display:inline-block; float:left; width:70%;} 
+.nutBox01 .txtBox p:nth-child(1) {display:inline-block; float:left; width:30%;} /* 해리 */
+.nutBox01 .txtBox p:nth-child(2) {display:inline-block; float:left; width:70%;} /* 해리 */
 .nutBox02 {padding:100px 0 60px 0; text-align:center } 
 .nutBox02-1 {padding:0px 0 70px 0; text-align:center }
 .nutBox03 { display:inline-block; padding-bottom:50px}
 .nutBox03 .txtBox {display:inline-block; background-color:#fff; border-radius:20px; min-height:320px; padding:50px;} 
 .nutBox03 .txtBox p:nth-child(1) {display:block; text-align:center;} 
 .nutBox03 .txtBox p:nth-child(2) {display:block; text-align:center;} 
-.nut_bear {position:absolute; top:83.9%; left:-4%; transform:translate(-50%, -50%);} 
+.nut_bear {position:absolute; top:84.6%; left:-4%; transform:translate(-50%, -50%);} 
 .nutBox04 {margin-bottom:75px; padding-top:70px}
 table.t_type01 {width:100%; margin-top:30px; background:#fff}
 table.t_type01 tr:first-child {border-bottom:1px solid #c1cdd0}
@@ -1204,21 +1210,21 @@ table.t_type04 td:nth-child(3) {color:#3c3c3c; text-align:center}
 .nut li ol dd span {color:#a0a0a0}
 /* 안심플러스 */
 .bg_wbox {background-color:#FFF; padding:30px; border-radius:20px;}
-.safeBox01 {background-color:#F1F1F1; padding:30px 30px; border-radius:10px; min-height:150px} 
+.safeBox01 {background-color:#F1F1F1; padding:30px 30px; border-radius:10px; min-height:150px} /* 해리 */
 .safeBox01 span {color:#a0a0a0}
 .base01 {padding:80px 0 120px 0}
-.base03 {padding:100px 0}  
+.base03 {padding:100px 0}  /* 해리 */
 .base04 { padding: 120px 0 160px; } 
-.safe_img {background:#EBEBEB; padding:0px 0; border-radius:20px;} 
-.safe_img img {border-radius:20px 20px 0 0;} 
-.safe_img  p span{color:#3C3C3C; padding:25px 0 25px 0;  display:inline-block; font-weight:600; font-size:26px;} 
-/* .safe_img  p span b {border-bottom:1px solid #fff; padding-bottom:2px} */  
-.safe_img2 {background:#F5F5F5; text-align:center; padding:0px; margin-bottom:90px; border-radius:20px;} 
-.safe_img2_txt {display:block; background-color:#EBEBEB; margin-top:40px; padding:20px; border-radius:0px 0px 20px 20px;} 
-.f22_4 {font-size:20px;} 
-.step_box {background-color:#F5F5F5; height:600px; border-radius:20px; padding:30px;} 
-.step_txt {display:block; position:absolute; left:50%; transform:translate(-50%, -50%); width:max-content; font-size:26px; text-align:center; vertical-align:middle; color:#fff; background-color:#88CCE6; padding:6px 18px; border-radius:50px;} 
-.step_box p:nth-child(3) {text-align:center; vertical-align:middle;} 
+.safe_img {background:#EBEBEB; padding:0px 0; border-radius:20px;} /* 해리 */
+.safe_img img {border-radius:20px 20px 0 0;} /* 해리 */
+.safe_img  p span{color:#3C3C3C; padding:25px 0 25px 0;  display:inline-block; font-weight:600; font-size:26px;} /* 해리 */
+/* .safe_img  p span b {border-bottom:1px solid #fff; padding-bottom:2px} */  /* 해리 */
+.safe_img2 {background:#F5F5F5; text-align:center; padding:0px; margin-bottom:90px; border-radius:20px;} /* 해리 */
+.safe_img2_txt {display:block; background-color:#EBEBEB; margin-top:40px; padding:20px; border-radius:0px 0px 20px 20px;} /* 해리 */
+.f22_4 {font-size:20px;} /* 해리 */
+.step_box {background-color:#F5F5F5; height:600px; border-radius:20px; padding:30px;} /* 해리 */
+.step_txt {display:block; position:absolute; left:50%; transform:translate(-50%, -50%); width:max-content; font-size:26px; text-align:center; vertical-align:middle; color:#fff; background-color:#88CCE6; padding:6px 18px; border-radius:50px;} /* 해리 */
+.step_box p:nth-child(3) {text-align:center; vertical-align:middle;} /* 해리 */
 
 /* 안심 플러스- 이성희 */
 .base02 { padding: 120px 0 80px; }
@@ -1228,13 +1234,26 @@ table.t_type04 td:nth-child(3) {color:#3c3c3c; text-align:center}
 /* 안심 플러스, 영양, 브랜드소개 공통 - 이성희 */
 .safeBox02{position:relative; padding: 30px 30px 50px; height:740px; box-sizing: border-box; border-radius:20px } 
 .safeBox02 .img-wrap {overflow:hidden; border-radius:10px;} 
+.safeBox02 .img-wrap img {transition: 0.9s; } /* 0711 */
+.safeBox02 .img-wrap img:hover {transform: scale(1.2) rotate(-2deg); overflow: hidden;} /* 0711 */
+.safe-illust {position:absolute; top:62%; right:0%; transform:translate3d(-50%, -50%, 0);} 
+.safeBox02 div p:nth-child(1) {font-size:20px; width:max-content; text-align:center; color:#3c3c3c; background-color:#E3F1F4; padding:6px 12px; margin:32px 20px 0; border-radius:40px; } 
+.safeBox02 div p:nth-child(2) {font-size:30px; font-weight:600; line-height:160%; color:#3c3c3c; margin:20px 20px 0; text-transform:uppercase;} 
+.safeBox02 div p:nth-child(2) span {padding-bottom: 2px; background-size: 0 1px; transition: background-size 0.5s;} 
+.safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;}
+
+/* 0711 */
+/* 안심 플러스, 영양, 브랜드소개 공통 - 이성희 */
+/* .safeBox02{position:relative; padding: 30px 30px 50px; height:740px; box-sizing: border-box; border-radius:20px } 
+.safeBox02 .img-wrap {overflow:hidden; border-radius:10px;} 
 .safeBox02 .img-wrap img {transition: 0.9s; } 
 .safeBox02 .img-wrap img:hover {transform: scale(1.2) rotate(-2deg); overflow: hidden;} 
 .safe-illust {position:absolute; top:62%; right:0%; transform:translate3d(-50%, -50%, 0);} 
 .safeBox02 div p:nth-child(1) {font-size:20px; width:max-content; text-align:center; color:#3c3c3c; background-color:#E3F1F4; padding:6px 12px; margin:32px 20px 0; border-radius:40px; } 
 .safeBox02 div p:nth-child(2) {font-size:30px; font-weight:600; line-height:160%; color:#3c3c3c; margin:20px 20px 0; text-transform:uppercase;} 
 .safeBox02 div p:nth-child(2) span {padding-bottom: 2px; background-size: 0 1px; transition: background-size 0.5s;} 
-.safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;} 
+.safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;} */
+/* //0711 */
 
 
 .moreBtn{ display: block; max-width: 192px; height: 2.2em; background-image: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_long.png); background-repeat: no-repeat; background-position: bottom left; transition: background 0.8s ease; }
@@ -1265,8 +1284,8 @@ table.t_type04 td:nth-child(3) {color:#3c3c3c; text-align:center}
 .bgvid {width:100%}
 .tvBox {padding:0px 15px 30px 15px }
 .tvBox .col-md-6 {padding:0; margin:0; }
-.tvBox .tv_thumb {border:1px solid #dcdcdc; border-bottom:0; padding:9px 9px 25px 9px; border-radius:14px 14px 0 0;} 
-.t_img {width:100%; position:relative;height:220px; border-radius:10px} 
+.tvBox .tv_thumb {border:1px solid #dcdcdc; border-bottom:0; padding:9px 9px 25px 9px; border-radius:14px 14px 0 0;} /* 해리 */
+.t_img {width:100%; position:relative;height:220px; border-radius:10px} /* 해리 */
 .t_img_span { height:100%; max-height:220px;  display:inline-block;width:100%}
 .tv_ul {position:relative; margin:0 auto; text-align:left  }
 .tv_ul li {display:inline-block; width:47%; margin-left:12px}
@@ -1324,6 +1343,17 @@ table.t_type04 td:nth-child(3) {color:#3c3c3c; text-align:center}
 .prd_iconBox2 .col-md-5 ul li {display:inline-block; width:47%;;text-align:center;}
 .prd_iconBox2 .col-md-7 ul {margin:0; position:relative;  text-align:center}
 .prd_iconBox2 .col-md-7 ul li {display:inline-block; width:33%;text-align:center }
+
+/* 브랜드소개 */
+.container-1685 {position:absolute; width:100%; left:50%; transform:translate(-50%,0%);}
+.brandIcon2 {position:relative; margin:0} /* 0716 */
+.prd_iconBox3 {width:100%;} /* 0716 */
+.symbol {position:absolute; left:42.5%; top:38%; z-index:50;} /* 0716 */
+.prd_iconBox3 .col-md-6 li {display:inline-block; vertical-align:top}
+.prd_iconBox3 .col-md-6 li:first-child {margin-right:30px;}
+.prd_iconBox3 .col-md-6 ul {padding:70px 80px; border-radius:20px} /* 0716 */
+.bgivo {background:#FEF6E1}
+.bgmint {background:#EBF6EC}
 
 .prd_thum {position:relative; padding:110px 30px 200px 30px}
 .yy_foot {position:relative; padding:40px 0; display:inline-block}
@@ -2037,7 +2067,7 @@ ul.v_ul li dd.active a {color:#000; background:#fef6e1 url(https://image.edaymal
 .highlight{ background-image: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_tabel_line.jpg); background-repeat: no-repeat; background-position: bottom; }
 .laBox {} 
 .laBox .f30_5_b {color:#83BB95; margin-top:20px;} 
-.laBox .txtBox {display:inline-block; float:left; vertical-align:middle; border:1px solid #C9C9C9; background-color:#fff; border-radius:20px; padding:30px;}
+.laBox .txtBox {display:inline-block; float:left; vertical-align:middle; border:1px solid #C9C9C9; background-color:#fff; border-radius:20px; padding:30px;} 
 .laBox .txtBox01 {margin-top:100px;} 
 .laBox .txtBox02 {margin-top:20px;} 
 .laBox .txtBox p:nth-child(1) {display:inline-block; width:20%; float:left; margin-right:30px;} 
@@ -2255,17 +2285,17 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 @media only screen and (min-width : 1701px) {
 	.btn_top {display:none}
 	.navbar-nav > li > a {padding:25px 88px 25px 13px;  }
-	.navbar-nav {margin-left:150px; margin-top:4px; padding: 0 } 
+	.navbar-nav {margin-left:150px; margin-top:4px; padding: 0 } /* 해리 */
 	div.slicknav_menu.act ul.slicknav li a.dropdown-toggle {display:none; height:0}
 	.slicknav_menu.act {height:0; border:0.01px solid #fff} /* IE버그수정*/
 	.act .slicknav_nav {-webkit-transform: scale(0); transform: scale(0);height:0;}
     .navbar-wrapper {width:100%;  margin:0 auto; }
 	#primary-navigation {padding:0 20px }
-	.container-fluid_ {background:#fff;  ; height:80px; padding:0px 0px 0px 58px}
+	.container-fluid_ {background:#fff;  ; height:80px; padding:0px 0px 0px 40px} /* 0711 */
 	.main-menu {position:relative}
 	.navbar-header {padding:25px 0 25px} /* 0711 */
 	ul.nav i {display:none}
-	.tools {position:absolute; right:0; top:0px; padding: 16px 30px 0px 40px; } 
+	.tools {position:absolute; right:0; top:0px; padding: 16px 30px 0px 40px; } /* 해리 */
 	.tools li {float:left; margin-right:38px;  height:100%; vertical-align:middle; position:relative; text-align:center;}
 	/*.tools li img {width:22px; text-align:center ; }*/
 	.tools li.sns {margin-right:12px;background:#EEEEEE; border-radius:20px; margin-top:6px }
@@ -2276,7 +2306,8 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.tools a:hover {color:#3c3c3c}
 	.tools li p.pc_log {margin-top:0px;  }
 	.tools li p.pc_log span {display:block; margin-top:0px}
-	.tools li.login {text-align:center; margin-top:2px} 
+	.index_only .tools li.login {text-align:center; margin-top:5px} /* 0711 */
+	.tools li.login {text-align:center; margin-top:2px} /* 0711 */
 	.m_rs {display:none}
 	.m_log{display:none}
 	.rotating-slider {width:1200px}
@@ -2286,7 +2317,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.banner_special_mo {display:none}
 	.banner_special {position:fixed; right:50px; bottom:100px; z-index:100; animation:ani 1s infinite alternate;  text-align:right  }
 	.banner_special img {width:70%}
-	.main-big {position:relative; left:0%; border-radius:20px; overflow:hidden; width:100%; max-width:1800px; max-height:830px; margin:0 auto} /* 0711 */
+	.main-big {position:relative; left:0%; border-radius:20px; overflow:hidden; width:100%; max-width:1800px; max-height:820px; margin:0 auto} /* 0711 */
 	@keyframes ani{
 	   0%{transform:translate(0,0);}
 	   100%{transform:translate(0,20px);}
@@ -2299,25 +2330,39 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 @media only screen and (max-width : 3000px) {
 	.mView {display:none}
 	.wView {display:block}
+	.tView {display:none !important;} /* 0711 */
 	.main-card-t img{width:225px}
 	.btn-r-01 {border:1px solid #664400; color:#664400; padding:12px 30px; border-radius:40px; display:inline-block; margin:0 auto; text-align:center}
+	.btn-r-01:hover {background-color:#664400; color:#fff; transition: 0.3s;} /* 0711 */
 	.anim {}
 	.main-middle-box { padding:0px 0; border-top:1px solid #3C3C3C; border-bottom:1px solid #3C3C3C ;margin:120px 0}
 	.main-middle-box .col-md-6:first-child {border-right:1px solid #3C3C3C; }
 	.main-middle-box .col-md-6 { padding:50px 0 50px 20px} /* 0711 */
 	.tp-project-4-btn-box {position: absolute; right:7%; top:50px} /* 0711 */
 	.bestReview {position:relative}
-	.bestReview {border:1px solid #A0A0A0; border-radius:20px; overflow:hidden; padding:20px 20px 40px 20px; margin-top:20px}
-	.bestReview .be_img {border-radius:10px }
-	.btn_bestReview {border:1px solid #C9C9C9; padding:4px 25px; color:#3C3C3C; border-radius:25px; margin-top:12px; display:inline-block } /* 0711 */
+	.bestReview:hover {transform:scale(1.02);  transition: transform .5s;} /* 0711 */
+	.bestReview {border:1px solid #A0A0A0; height:570px; border-radius:20px; overflow:hidden; padding:20px; margin-top:20px;} /* 0711 */
+	.bestReview .be_img {border-radius:20px }
+	/* 0711 */
+	.bestReview .tp_img_reveal p:nth-child(2) span {padding-bottom: 2px; background-size: 0 1px; transition: background-size 0.5s;} 
+	.bestReview .tp_img_reveal p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#a0a0a0, #a0a0a0); background-repeat: no-repeat; background-position: left bottom;}
+	/* //0711 */
+	.btn_bestReview {border:1px solid #C9C9C9; padding:4px 25px 6px; color:#3C3C3C; border-radius:25px; margin-top:12px; display:inline-block } /* 0711 */
 	.key {border:1px solid #C9C9C9; padding:5px 20px; display:inline-block; border-radius:20px; margin-top:10px; } /* 0711 */
 	.h280 {height:280px; border-radius:20px}
+	/* 0711 */
+	/* ul.cumu {position:relative; width:100%; clear:both}
+	ul.cumu {border-top:1px solid #A0A0A0;  padding:25px 0; display:inline-block} */
 	ul.cumu {position:relative; width:100%; clear:both}
-	ul.cumu {border-top:1px solid #A0A0A0;  padding:25px 0; display:inline-block}
+	ul.cumu {border-bottom:1px solid #BFBFBF;  padding:25px 0; display:inline-block}
+	ul.cumu:first-child {border-top:1px solid #BFBFBF}
+	/* //0711 */
 	ul.cumu li {vertical-align:bottom}
 	ul.cumu li:first-child {width:30%;float:left; position:relative; }
 	ul.cumu li:nth-child(2) {width:65%;float:right; position:relative; }
-	ul.cumu:last-child {border-bottom:1px solid #A0A0A0}
+	/* 0711 */
+	/* ul.cumu:last-child {border-bottom:1px solid #A0A0A0} */
+	/* //0711 */
 	.comuType01 {border-radius:10px; padding:5px 10px; color:#3C3C3C; background:#E3F1F4; display:inline-block}
 	.centerH {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index:1}
 
@@ -2335,11 +2380,11 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	#primary-navigation {padding:0 20px }
 	.container-fluid_ {background:#fff;  ; height:90px; padding:0px 0px 0px 58px}
 	.main-menu {position:relative}
-	.navbar-header {padding:34px 0}
+	.navbar-header {height:90px; padding:34px 0} /* 0711 */
 	ul.nav i {display:none}
-	.tools {position:absolute;  right:0; top:0px; padding: 15px 0px 14px 40px;}
+	.tools {position:absolute;  right:0; top:0px; padding: 26px 0px 0px 40px;} /* 0711 */
 	.tools li {float:left; margin-right:38px;  height:100%; vertical-align:middle;}
-	.tools li a {text-align:center; }
+	.tools li a {text-align:center; color:#3C3C3C} /* 0711 */
 	.tools li.sns {margin-right:12px; }
 	.tools li.sns {margin-right:12px;background:#EEEEEE;; border-radius:20px;}
 	.tools li.sns img {width:40px; vertical-align:bottom; }
@@ -2376,12 +2421,11 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 
 	.youtubeBox {position:relative; display:block; height:280px ; margin-top:30px}
    .youtubeBox iframe {height:500px; top:-220px; position:absolute; }
-   
-   /* 영양 - 0711 */
+	
+	/* 영양 - 0711 */
    .nut_bear {display:none;}
    .safe-illust {display:none;}
-   
-   
+
    /* 이달의모델*/
 	.model_month {padding-bottom:50px; text-align:center; }
 	.model_box1 {width:300px;border-radius:250px; height:300px; margin:0 auto }
@@ -2449,6 +2493,8 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.drt_evt p {font-size: 17px; line-height:140%}
 	.drt_evt .btn02 {font-size: 17px}
 	.brand_line {font-size:16px; padding:70px 10px}
+	.youtubeBox {position:relative; display:block; height:280px}
+    
     
 
    .nut li {padding:40px 30px 40px 30px; width:100%}
@@ -2460,6 +2506,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
    .notice li:first-child {width:20%; padding-left:40px; }
    .mt50 {margin-top:35px !important;}
 	.subTxt {left:75px; }
+	.subTxt02 {left:75px; } /* 0711 */
 	.mo-nav {display:none}
     
     
@@ -2472,7 +2519,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
     .detailBox h6 {font-size:12px;}
     
     
-    /* 안심 플러스 - 이성희 0711 */
+   /* 안심 플러스 - 이성희 0711 */
     /* .safeBox02 div:nth-child(2){ padding: 0 20px; }
     	.safeBox02{position:relative; text-align:center; vertical-align:middle; padding: 20px 20px 20px; height:auto; box-sizing: border-box; border-radius:20px; } 
     	.safeBox02 .img-wrap {overflow:hidden; border-radius:10px;} 
@@ -2485,9 +2532,12 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
     	.safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;} */ 
 	/* // 0711 */
 	
+	
 	/* 안심 플러스, 브랜드소개, 영양 공통 - 이성희 */
     .moreBtn{ height: 2.2em; background-size: 90%; }
-	.be_img {height:220px; background:no-repeat scroll 0 0; }
+	/* 0711 */
+	/* .be_img {height:220px; background:no-repeat scroll 0 0; } */
+    /* //0711 */
     
     
 
@@ -2499,7 +2549,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.btn_type02 {background:#fff; padding:15px; }
 	.btn_type02 span {font-size:15px; font-weight:400; color:#3c3c3c; }
 	.btn.hide-icon.btn_type02 i {padding: 14px 20px 11px;left: -60px;height: 100%;line-height: 20px;display: inline-block;position: absolute;color:#fef6e1;top: 0;font-size:20px}
-	
+
 
 	.btn{
 		float:left;
@@ -2675,7 +2725,10 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 
 /* ~ 1300 */
 @media only screen and (max-width : 1300px) {
-	
+
+	.tNo{display:none;} /* 0711 */
+	.tView {display:inline-block !important;} /* 0711 */
+
 	.pt130 {padding-top:100px !important;} /* 0711 */
 	.pt140 {padding-top:140px !important;} /* 0711 */
 	.pb140 {padding-bottom:140px !important;} /* 0711 */
@@ -2687,6 +2740,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.prd_iconBox2 .col-md-5 ul li {display:inline-block; width:43%;;text-align:center; margin:0 7px}
 	.prd_iconBox2 .col-md-7 ul li {display:inline-block; width:30%;text-align:center;margin:0 7px }
 	.subTxt {left:75px; bottom:50%;} /* 0711 */
+	.subTxt02 {left:75px; bottom:55%;} /* 0711 */
 	.subIMG {height:400px} /* 0711 */
 	span.bestN_01 { background:#ffc063; padding:1px 12px; border-radius:25px; letter-spacing:-1px; font-weight:600; color:#45423d; font-size:19px; line-height:160%}
 	span.bestN_02 { letter-spacing:2px; font-weight:600; color:#45423d; font-size:19px; margin-left:10px; font-weight:100; display:none}
@@ -2694,9 +2748,75 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	span.win1 {background:#3c3c3c; border:1px solid #45423d; border-radius:60px; padding:10px; font-size:13px; font-weight:400; color:#fff; position:absolute; right:13%; bottom:1% }
 	span.win2 {background:#fff; border:1px solid #45423d; border-radius:60px; padding:10px; font-size:13px; font-weight:400; color:#000; position:absolute; right:13%; bottom:1% }
 	
+	/* 0711 */
+	/* subIMG - 해리*/
+	.subIMG01_01 {border-radius:0;}
+	.subIMG01_02 {border-radius:0;} 
+	.subIMG01_03 {border-radius:0;}
+	.subIMG01_04 {border-radius:0;} 
+	.subIMG02_01 {border-radius:0;}
+	.subIMG02_02 {border-radius:0;}
+
+	.subIMG03_01 {border-radius:0;}
+	.subIMG03_02 {border-radius:0;}
+	.subIMG03_03 {border-radius:0;}
+	.subIMG03_04 {border-radius:0;}
+
+	.subIMG04_01 {border-radius:0;}
+	.subIMG04_02 {border-radius:0;}
+	.subIMG04_03 {border-radius:0;}
+
+	.subIMG05_01 {border-radius:0;}
+	.subIMG05_02 {border-radius:0;}
+	/* //0711 */
+
 
 	/* 서브메뉴 -해리 */
 	.snbMenu_hr {width:92%;} /* 0711 */
+
+	/* 메인 - 0711 */
+	#paginations {bottom:-50px !important;}
+	.shop-slider-progress-bar {top: 50px !important;}
+	.pdl80 {padding:0 0 0 60px;}
+	.tp-shop-slider-btn-box .tp-shop-btn {border-radius: 8px !important;}
+	.in_bear {display:none;}
+	.tp-about-2-area .col-lg-6 {display:inline-block; vertical-align:middle}
+	.tp-about-2-thumb-box {left:10%; transform:scale(0.8);}
+	.tp-about-3-title-box {margin-left:40px;}
+	.tp-about-3-content------------- {margin-left:40px;}
+	.index_only .mt40 {margin-top:0px !important;}
+	.index_only .mt150 {margin-top:0px !important;}
+	.index_only .pt200 {padding-top:160px !important;}
+	.index_only .mt70 {margin-top:40px !important;}
+	.tp-project-3-title-box .tp-section-title-200 {margin-bottom:10px !important;}
+	.tp-project-3-btn-box {}
+	.tp-project-3-title-box h4 {display:inline-block}
+	.tp-project-3-title-box p {display:inline-block; margin-left:60px;}
+	.tp-project-3-wrap {margin:0 2rem;}
+	.tp-project-3-wrap .f52 {font-size:34px; margin-top:20px !important;}
+	.tp-project-3-wrap .f22 {font-size:16px;}
+	.tp-project-3-wrap .mt70 {margin-top:30px !important;}
+	.index_only .container1600 {padding:0 3rem 0 3rem;}
+	.main-middle-box {padding:20px 0px; margin: 60px 0;}
+	.tp-project-4-btn-box {transform:scale(0.9); right:5%; top:0px;}
+	.d-md-inline-block svg {margin:40px 25px 0 10px;}
+	.bestReviewWrap {/* margin:0 1.5rem; */}
+	.col-lg-7 .tp-about-3-title-box {text-align:center; margin-left:0px;}
+	.col-lg-5 .tp-btn-black-2 {float:left; text-align:center; left:44%; margin-top:40px;}
+	.bestReview {height:540px}
+	.be_img {height:360px; background:no-repeat scroll 0 0; }
+	.tp-about-2-area .mt80 {margin-top:0px !important;}
+	.col-lg-4 .tp-about-3-title-box {margin-left:0px;}
+	.col-lg-4 .key {display:inline-block; float:left; margin-top:0px; padding:0 5px; border:none;}
+	.col-lg-4 .tp-btn-black-2 {clear:both; float:left; display:inline-block; margin-top:30px;}
+	.index_only .col-lg-4 .tp-about-3-title-box {margin-left:20px;}
+	.index_only .col-lg-8 {margin-top:170px;}
+	ul.cumu li:first-child {width:30%; float:left; position:relative; }
+	ul.cumu li:nth-child(2) {width:65%;float:right; position:relative; }
+
+	
+	/* 0711 */
+
 
 	/* 안심 플러스, 영양, 브랜드소개 공통 - 0711 */
 	.base04 { padding: 80px 16px 120px; } 
@@ -2839,7 +2959,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.gray_lineBox .f26_4 {font-size:22px;}
 	.laBox05 .clickBox {margin-top:40px; padding:20px; border-radius:14px;}
 	/* 0711 */
-
+	
 	}
 
 
@@ -2853,6 +2973,14 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.f62_6 {font-size:30px; color:#3c3c3c; font-weight:600; letter-spacing:-1px}
 	.title_box_ {position:relative;  margin:150px 20px 0 50px}
 	.mt70_m {margin-top:30px !important;}
+
+	.prd_iconBox3 {width:100%;}
+	.prd_iconBox3 .col-md-6 li {display:inline-block; vertical-align:top}
+	.prd_iconBox3 .col-md-6 li:first-child {margin-right:15px;}
+	.prd_iconBox3 .col-md-6 li:first-child img {width:70px}
+	.prd_iconBox3 .col-md-6 ul { padding:20px; border-radius:20px}
+
+
 	.rotating-slider ul.direction-controls li.left-arrow{
 		position: absolute;
 		top: 50%;
@@ -2880,8 +3008,6 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.f17_3_g {font-size:15px}
 	.f30_4 {font-size:25px}
     
-	
-
     /* 샘플 신청 - 성희 */
     dl.divideType04 dd:nth-child(2) label{ top: -3px; }
     
@@ -2902,6 +3028,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
     .detail_lineB .detail_left .f20_4_w{ margin-left: 0px; font-size: 16px;}
     .detail_lineB .detail_right .f20_4_w{ font-size: 16px; }
 	.subTxt {left:45px;}
+	.subTxt02 {left:45px;} /* 0711 */
 
 
 	#pic1_text { display:inline-block; font-size:12px; margin-left:0px; padding-top:10px; }
@@ -2927,24 +3054,28 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.container1400 {width:100%; max-width:1400px; padding:0 1.5rem 0 1.5rem; margin:0; margin:0 auto; }
 	.container1600 {width:100%; max-width:1600px; padding:0 1.5rem 0 1.5rem; margin:0; margin:0 auto}
 	.container1720 {width:100%; max-width:1720px; padding:0 1.5rem 0 1.5rem; margin:0; margin:0 auto; }
-	.btn-main-middle {width:80px; position:absolute; right:0; top:0px}
+	.btn-main-middle {width:100px; position:absolute; right:0; top:0px} /* 0711 */
 	.main-middle { position:relative}
 
+    /* 0711 */
+	/*
     .main-middle-box {padding:20px 10px 10px 10px;  margin:50px 0}
-	.main-middle-box .col-md-6 {padding:30px 0}
+    .main-middle-box .col-md-6 {padding:30px 0}
     .main-middle-box .col-md-6:first-child {border-bottom:0px solid #3C3C3C;  border-right:0; }
-	.main-middle-box .col-md-6:nth-child(2) {}
+    .main-middle-box .col-md-6:nth-child(2) {}
 	.tp-project-4-btn-box {position:absolute; right:10%; top:0px}
+	*/
+	/* //0711 */
 	.bestReviewWrap .col-md-3 {  width: 49.6%;display: inline-block;vertical-align: top;margin: 0 auto  }
-	.bestReviewWrap .col-md-3:nth-child(2n+1) {padding-right:5px}
-	.bestReviewWrap .col-md-3:nth-child(2n) {padding-left:5px}
-	.bestReview  {padding:10px}
+	.bestReviewWrap .col-md-3:nth-child(2n+1) {padding-right:10px} /* 0711 */
+	.bestReviewWrap .col-md-3:nth-child(2n) {padding-left:10px} /* 0711 */
+	/* .bestReview  {padding:10px} */ /* 0711 */
 	.comuType01 {border-radius:10px; padding:2px 5px; color:#3C3C3C; background:#E3F1F4; display:inline-block; font-size:13px}
 	.h280 {height:180px}
 	.key {margin-right:5px}
 	.tools {top:0 !important; right:10px; height:50px}
 	.tools li {}
-	.tools li p.mt5 {margin-top:0px !important; font-size:11px}
+	.tools li p.mt5 {margin-top:5px !important; font-size:11px} /* 0711 */
 	.tools li.login { }
 	.tools li.login img {margin:0; padding:0}
 	.tp-shop-slider-btn-box .tp-shop-btn {padding:8px 15px !important; height:auto !important; line-height:140% !important;}
@@ -2953,7 +3084,8 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.tp-btn-black-2 {height:35px !important; line-height:30px !important; font-size:13px !important; padding:0 15px !important }	 
 	
 	/* w3school */
-	.myNav_ham {position:absolute; left:10px; top:10px; }
+	.index_only .myNav_ham {position:absolute; left:10px; /* top:10px; */ top:1.2rem; } /* 0711 */
+	.myNav_ham {position:absolute; left:10px; top:0.5rem; } /* 0711 */
 	.overlay {
 	  height: 100%;
 	  width: 0;
@@ -2962,37 +3094,48 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	  top: 0;
 	  left: 0;
 	  background-color: rgb(255,240,201);
-	  background-color: rgba(255,240,201, 0.9);
+	  background-color: rgba(255,240,201, 1); /* 0711 */
 	  overflow-x: hidden;
 	  transition: 0.5s;
 	}
 
+	/* 0711 */
 	.overlay-content {
 	  position: relative;
-	  top: 25%;
+	  top: 3%;
 	  width: 100%;
-	  text-align: center;
-	  margin-top: 30px;
+	  text-align: left; 
+	  margin-top: 0;
+	  padding: 0 2rem;
 	}
+	/* //0711 */
 
+	.overlay-content .category {padding-top:25px; border-bottom:1px solid #D8CEB3; } /* 0711 */
+	.overlay-content .category:last-child {padding-bottom:50px;} /* 0711 */
+	.overlay p {font-size: 18px; color:#3c3c3c; font-weight:700; padding: 0px 12px; margin-bottom:5px;} /* 0711 */
+	/* 0711 */
 	.overlay a {
-	  padding: 8px;
+	  padding: 10px 12px;
 	  text-decoration: none;
-	  font-size: 36px;
-	  color: #818181;
+	  font-size: 20px;
+	  color: #3c3c3c;
 	  display: block;
 	  transition: 0.3s;
 	}
-
+	.overlay a:last-child {margin-bottom:20px;}
+	
 	.overlay a:hover, .overlay a:focus {
-	  color: #fff;
+	  background-color:#FFF7E1;
+	  border-radius:8px;
 	}
+	/* //0711 */
 
 	.overlay .closebtn {
 	  position: absolute;
 	  top: 5px;
 	  right: 25px;
 	  font-size: 40px;
+	  z-index:50; /* 0711 */
 	}
 
 	/*
@@ -3075,7 +3218,9 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.container-fluid_ {background:#fff; height:55px; padding:0px; position:relative; }
 	.navbar-header {text-align:center; width:100%; padding:10px 0; position:relative; height:55px; }
 	#content.mt10 {margin-top:0 !important;}
-	.navbar-header img {width:135px}
+	.index_only .navbar-header img {width:135px; margin-top:0.5rem;} /* 0711 */
+	.index_only .tools {top: -0.5rem !important;} /* 0711 */
+	.navbar-header img {width:135px; margin-top:0.8rem;} /* 0711 */
 	.act .slicknav_nav {height:100%; width:85%}
 	.navbar-header .site-title {padding-left: 15px;}
 	.main-menu { position:absolute; top:0px; right:0px}
@@ -3344,11 +3489,11 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	 .mt50 {margin-top:25px !important;}
 	 .mt60 {margin-top:30px !important;}
 	.mt70 {margin-top:30px !important;}
-	.mt90 {margin-top:40px !important;} 
+	.mt90 {margin-top:40px !important;} /* 해리 */
 	.mt100 {margin-top:50px !important;}
 	.mt110 {margin-top:70px !important;} /* 0711 */
 	.mt-30 {margin-top:30px !important}
-	.mt40 {margin-top:40px !important} 
+	.mt40 {margin-top:40px !important} /* 해리 */
 	.mt50_be {margin-top:0px !important;}
 	.mt80 {margin-top:40px !important;}
 	.mt100_be {margin-top:0px !important;}
@@ -3398,8 +3543,9 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.be_f02 {font-size:20px; font-weight:600; color:#3c3c3c}
 	.be_f03 {font-size:32px; font-weight:600; color:#3c3c3c}
 
-	/* subIMG - 해리*/
-
+	/* subIMG - 해리*/ /* 확인 */
+	
+	.subIMG {height:640px}
 	.subIMG01_01 {border-radius:0;}
 	.subIMG01_02 {border-radius:0;} 
 	.subIMG01_03 {border-radius:0;}
@@ -3418,7 +3564,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 
 	.subIMG05_01 {border-radius:0;}
 	.subIMG05_02 {border-radius:0;}
-	
+	/* //0704 */ /* //확인 */
 
 	/* 배경에 사용한 이미지 - 해리 */
 	.bgIMG_safe01 {background:none; background-color:#DCEFD0; border-radius:0px;}
@@ -3445,7 +3591,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	footer .row .col-md-3.f_03 {margin-top:20px}
 	footer .row .col-md-2.f_02 br {display:none}
 	/* sub */
-	.brandTxt {position:relative; margin-top:40px; text-align:center} 
+	.brandTxt {position:relative; margin-top:40px; text-align:center} /* 해리 */
 	.brandTxt01 {position:relative; margin-top:60px; text-align:center}
 	.h640 {height:400px}
 	.h560 {height:400px} 
@@ -3461,9 +3607,9 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.f20_4 {font-size:16px;color:#3c3c3c; font-weight:400;  } 
 	.f24_4_bg {font-size:18px}
 	.f24_4 {font-size:15px}
-	.subTitle {display:inline-block;}
-	.subTitle img {display:none;} 
-	.f24_5_bg {font-size:16px; line-height:200%; padding:2px 6px; border:0.5px solid #A0A0A0; border-radius:6px; }
+	.subTitle {display:inline-block;}/* 해리 */
+	.subTitle img {display:none;} /* 해리 */
+	.f24_5_bg {font-size:16px; line-height:200%; padding:2px 6px; border:0.5px solid #A0A0A0; border-radius:6px; }/* 해리 */
 	.f24_6_bg {padding:2px 4px 3px; line-height:40px; border:1.5px solid #A0A0A0; border-radius:10px; } /* 0711 */
 	.f24_7_bg {font-size:16px; line-height:200%; padding:2px 6px; border:0.5px solid #A0A0A0; border-radius:6px; } /* 0711 */
 	.f24_8_bg {padding:3px 4px 3px; line-height:40px; border:1.5px solid #A0A0A0; border-radius:10px; } /* 0711 */
@@ -3479,30 +3625,64 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.f45_6 {font-size:27px;}
 	.f55_6 {font-size:35px; color:#3c3c3c; font-weight:600; letter-spacing:-1px}
 	.subTxt {position: absolute; bottom: 50%;left: 10px;width: 100%;height: 150px;margin: auto; padding:10px} /* 0711 */
+	.subTxt02 {position: absolute; bottom: 55%;left: 10px;width: 100%;height: 150px;margin: auto; padding:10px} /* 0711 */
 	.youtubeBox {position:relative; display:block; height:130px; margin-bottom:200px;} /* 0711 */
     .youtubeBox iframe {height:410px; top:-120px; position:absolute; } /* 0711 */
 	.brand_line {border:10px solid #ede8ce; padding:70px 20px; text-align:center;  display:inline-block; width:100%; font-size:18px; letter-spacing:-2px}
-	.brandIcon {margin:0px 0 100px 0; }
+	.brandIcon {margin:0px 0 0px 0; }
 	.brandIcon p:first-child {margin-top:70px;}
 	.brandDrJ div:nth-child(3) {margin-top:50px}
 	.brand_story {margin:90px 0px 0 0px;  text-align:center}
 	.brand_s_txt {margin:0 20px}
 	.brand_story img {margin-top:20px}
-	.cate_sel_01 {width:140px;} 
+	.cate_sel_01 {width:140px;} /* 해리 */
 	.list_open_01 {width:140px}
-	.option-list_01 {border-radius:8px;}
-	.view-btn_01 a {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_on.png) no-repeat 115px 26px; padding:18px 15px;  } 
+	.option-list_01 {border-radius:8px;}/* 해리 */
+	.view-btn_01 a {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_on.png) no-repeat 115px 26px; padding:18px 15px;  } /* 해리 */
 	.open.view-btn_01 {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_off.png) no-repeat 115px 26px;  z-index:200; padding:0px ;  }
-	ul.cate_ul_list li a {font-size:15px;color:#343434 ; padding:10px 0; padding-left:10px; display:inline-block; width:100%} 
-	ul.cate_ul_list li:hover {background:#FFF0C9; border-radius:8px;} 
+	ul.cate_ul_list li a {font-size:15px;color:#343434 ; padding:10px 0; padding-left:10px; display:inline-block; width:100%} /* 해리 */
+	ul.cate_ul_list li:hover {background:#FFF0C9; border-radius:8px;} /* 해리 */
 	.cate_sel_02 {width:140px}
 	.list_open_02 {width:140px}
-	.option-list_02 {border-radius:8px;}
-	.view-btn_02 a {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_on.png) no-repeat 115px 26px; padding:18px 15px;  } 
+	.option-list_02 {border-radius:8px;}/* 해리 */
+	.view-btn_02 a {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_on.png) no-repeat 115px 26px; padding:18px 15px;  } /* 해리 */
 	.open.view-btn_02 {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_off.png) no-repeat 115px 26px;  z-index:200; padding:0px ;  }
-    ul.cate_ul_list2 li a {font-size:15px;color:#343434 ; padding:10px 0; padding-left:10px; display:inline-block; width:100%} 
-	ul.cate_ul_list2 li:hover {background:#FFF0C9; border-radius:8px;} 
-    
+    ul.cate_ul_list2 li a {font-size:15px;color:#343434 ; padding:10px 0; padding-left:10px; display:inline-block; width:100%} /* 해리 */
+	ul.cate_ul_list2 li:hover {background:#FFF0C9; border-radius:8px;} /* 해리 */
+
+	/* 메인- 0711 */
+	.pdl80 {padding:0px;}
+	.main-middle-box {padding:0px 10px 0px 10px;  margin:50px 0}
+	.main-middle-box .col-md-6 {padding:30px 0}
+    .main-middle-box .col-md-6:first-child {border-bottom:0px solid #3C3C3C;  border-right:0; }
+	.main-middle-box .col-md-6:nth-child(2) {}
+	.tp-project-4-btn-box {position:absolute; right:10%; top:0px}
+	.be_img {height:320px; background:no-repeat scroll 0 0; }
+	.tp_img_reveal .mt20 {margin-top:20px !important;}
+	.tp_img_reveal .f20 {font-size:18px;}
+	.bestReview  {height:500px; padding:16px}
+
+	.index_only .col-md-12 {text-align:center;}
+	.tp-about-2-area .col-lg-6 {display:block; vertical-align:middle;}
+	.tp-about-2-thumb-box {left:15%; transform:scale(0.8);}
+	.col-lg-6 .tp-about-3-title-box {margin-left:0px; text-align:center;}
+	.tp-about-3-title-box .tp-section-subtitle-2 {margin-top:30px;}
+	.tp-about-3-content------------- {text-align:center; margin-left:0px;}
+	.tp-project-3-title-box h4 {display:block; }
+	.tp-project-3-title-box p {display:block; margin-left:0; }
+	.col-md-12 .tp-btn-black-2 {margin-top:20px;}
+	.main-card-t img {transform:scale(1.2); margin-top:30px;}
+	.tp-project-3-wrap .f52 {font-size:40px; margin-top:40px !important;}
+	.tp-project-3-wrap .mt20 {margin-top:20px !important;}
+	.tp-project-3-wrap .f22 {font-size:18px;}
+	.d-md-inline-block svg {margin:15px 25px 0 10px;}
+	.col-lg-5 .tp-btn-black-2 {left:41%; margin-top:0px;}
+
+	.tp-about-3-title-box .f18 {font-size:16px;}
+	.index_only .col-lg-8 {margin-top:160px !important;}
+
+
+	/* 0711 */
 
 
 	/* 서브 네비게이션 - 양해리 */
@@ -3525,7 +3705,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.safeBox02 div p:nth-child(2) span {padding-bottom: 2px; background-size: 0 1px; transition: background-size 0.5s;} 
 	.safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;} 
     /* //0711 */
-
+    
 	/*영양*/
 	.iconImg img{width:60px}
 	.iconImg2 img{width:100px}
@@ -3540,7 +3720,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.nutBox01 .txtBox p:nth-child(1) {display:inline-block; float:left; width:10%;} /* 0711 */
 	.nutBox01 .txtBox p:nth-child(2) {display:inline-block; float:left; width:70%;} 
 	.nutBox02 {padding:60px 0 30px 0; } 
-	.nutBox03 { display:inline-block; margin-bottom:10px} /* 0711 */
+	.nutBox03 { display:inline-block; margin-bottom:10px} /* 0711 */ 
 	.nutBox03 .txtBox {display:block; background-color:#fff; border-radius:20px; min-height:max-content; padding:20px;} 
 	.nut_bear {display:none;} 
 	.underline {border-bottom:1px solid #000000; padding-bottom:25px; }
@@ -3559,25 +3739,25 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.bg_wbox {min-height:max-content; padding:16px; border-radius:20px;} /* 0711 */
 	.safeBox01 {padding:20px 20px; border-radius:10px; min-height:max-content;} /* 0711 */
 	.base01 {padding:50px 0 70px 0 }
-	.base03 {padding:60px 0}  
+	.base03 {padding:60px 0}  /* 해리 */
 	.base04 { padding: 50px 16px 90px;} /* 0711 */
 	.img100m {text-align:center; width:100%;  }
 	.img100m img{width:100%; }
-	.safe_img {background:#EBEBEB; padding:0px 0; border-radius:16px;} 
-	.safe_img img {border-radius:16px 16px 0 0;} 
-	.safe_img p span {color:#3C3C3C; padding:12px 0 14px 0; display:inline-block; font-size:17px; font-weight:500;} 
-	/* .safe_img  p span b {padding-bottom:2px; border-bottom:1px solid #fff; font-weight:500;} */ 
-	.safe_img2 img {width:80%;} 
-	.safe_img2_txt {margin-top:30px;} 
-	.f22_4 {font-size:17px;} 
+	.safe_img {background:#EBEBEB; padding:0px 0; border-radius:16px;} /* 해리 */
+	.safe_img img {border-radius:16px 16px 0 0;} /* 해리 */
+	.safe_img p span {color:#3C3C3C; padding:12px 0 14px 0; display:inline-block; font-size:17px; font-weight:500;} /* 해리 */
+	/* .safe_img  p span b {padding-bottom:2px; border-bottom:1px solid #fff; font-weight:500;} */ /* 해리 */
+	.safe_img2 img {width:80%;} /* 해리 */
+	.safe_img2_txt {margin-top:30px;} /* 해리 */
+	.f22_4 {font-size:17px;} /* 해리 */
 	
 	
 	
-	/* .safe_img  p span b {padding-bottom:2px; border-bottom:1px solid #fff; font-weight:500;  } */ 
-	.step_box {background-color:#F5F5F5; height:600px; border-radius:20px; padding:20px; height:max-content;}
+	/* .safe_img  p span b {padding-bottom:2px; border-bottom:1px solid #fff; font-weight:500;  } */ /* 해리 */
+	.step_box {background-color:#F5F5F5; height:600px; border-radius:20px; padding:20px; height:max-content;} /* 해리 */
 	.step_box .img100 {width:100%; height:500px; overflow:hidden; border-radius:12px} /* 0711 */
-	.step_txt {width:max-content; font-size:22px; vertical-align:middle; padding:4px 18px 6px; border-radius:50px;} 
-	.step_box p:nth-child(3) {font-size:20px;} 
+	.step_txt {width:max-content; font-size:22px; vertical-align:middle; padding:4px 18px 6px; border-radius:50px;} /* 해리 */
+	.step_box p:nth-child(3) {font-size:20px;} /* 해리 */
 	/* TV광고*/
 	.tv {position:relative; padding:0 0px}
 	.tvTxt {width:100%; border-top:2px solid #3c3c3c;  border-bottom:1px solid #3c3c3c; padding:12px 5px; position:relative; displaY:inline-block}
@@ -3651,8 +3831,6 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.upBox .box04 .gray .f22 {font-size:18px; margin-top:20px;} 
 	.upBox .box04 .gray .f17 {color:#A0A0A0; margin-top:10px} 
 
-
-	
 	/* 킨더랜드-해리 */
 	.bg_blue5 {padding:100px 16px 100px;} 
 	.newBox {position:relative; width:100%; background-color:#E8FBFF; border:2px solid #fff; padding:6px; margin-bottom:70px; border-radius:16px;} /* 0711 */
@@ -3665,28 +3843,16 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.newBox .f40_6 {margin-top:12px;} 
 	.upBox .green {padding:6px 0; border-radius:12px 12px 0 0;} 
 	.upBox .green img {width:70%;} 
-	.upBox .box05 .gray {height:max-content; padding:20px 30px 30px; border-radius:0 0 12px 12px;} 
+	.upBox .box05 .gray {height:max-content; padding:20px 16px; border-radius:0 0 12px 12px;} 
 	.upBox .box05 .gray .img100 {margin-top:20px;} 
 	.upBox .box05 .gray .img100 img {border-radius:10px;} 
 	.upBox .box05 .gray .f22 {font-size:18px;} 
 	.upBox .box05 .gray .f17 {margin-top:10px;}
-	.upBox .box06 .gray {height:max-content; padding:20px 30px 30px; border-radius:0 0 12px 12px;} 
+	.upBox .box06 .gray {height:max-content; padding:20px 16px; border-radius:0 0 12px 12px;} 
 	.upBox .box06 .gray .img100 {margin-top:20px;} 
 	.upBox .box06 .gray .img100 img {border-radius:10px;} 
 	.upBox .box06 .gray .f22 {font-size:18px;} 
 	.upBox .box06 .gray .f17 {margin-top:10px;}
-	.upBox .box07 .gray {height:max-content; padding:20px 30px 30px; border-radius:0 0 12px 12px;} 
-	.upBox .box07 .gray img {width:20%; margin:0;} 
-	.upBox .box07 .gray .f22 {font-size:18px; margin-top:20px;} 
-	.upBox .box07 .gray .f17 {color:#A0A0A0; margin-top:10px;} 
-	.upBox .box08 .gray {height:max-content; padding:20px 30px 30px; border-radius:0 0 12px 12px;} 
-	.upBox .box08 .gray img {width:20%; margin:0;} 
-	.upBox .box08 .gray .f22 {font-size:18px; margin-top:20px;} 
-	.upBox .box08 .gray .f17 {color:#A0A0A0; margin-top:10px;} 
-	.upBox .box09 .gray {height:max-content; padding:20px 30px 30px; border-radius:0 0 12px 12px;} 
-	.upBox .box09 .gray img {width:20%; margin:0;} 
-	.upBox .box09 .gray .f22 {font-size:18px; margin-top:20px;} 
-	.upBox .box09 .gray .f17 {color:#A0A0A0; margin-top:10px;} 
 	.upBox .box10 .gray {position:relative; height:1%; overflow:hidden; padding:20px; border-radius:0 0 12px 12px;} /* 0711 */
 	.upBox .box10 .gray img {width:20%; margin:0;} /* 0711 */ 
 	.upBox .box10 .gray .f22 {font-size:18px; margin-top:20px;} /* 0711 */ 
@@ -3717,13 +3883,13 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.holder{display:none;} 
 
 
-	.pBox .row {padding:0 16px;}
+	.pBox .row {padding:0 16px;} 
 	.pBox .col-md-12 img { border-radius:16px;} 
-	.bgBox {height:max-content; padding:20px 30px; border-radius:16px;} /* 0711 */
+	.bgBox {height:max-content; padding:20px 30px; border-radius:16px;} /* 0711 */ 
 	.bgBox p {margin-bottom:10px} 
 	.bgBox .line {padding:0 0 20px; margin:0 0 20px;} 
-	.bgBox .line img {display:inline-block; width:14%;} /* 0711 */
-	.bgBox .line p {font-size:20px; margin:0 0 0 20px} 
+	.bgBox .line img {display:inline-block; width:14%;} /* 0711 */ 
+	.bgBox .line p {font-size:20px; margin:0 0 0 10px} 
 	.bgBox .f22 {font-size:16px;} 
 
 	.yy_title {position:relative; padding:12px 16px; border-radius:10px 10px 0 0;} 
@@ -3974,12 +4140,12 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.laBox03 .txtBox .dot02 img {width:80%;} 
 	.laBox03 .txtBox .dot03 img {width:80%;} 
 	.laBox03 .txtBox .dot04 img {width:80%;} 
-	.laBox03 .txtBox .iconImg img {width:120px;} 
+	.laBox03 .txtBox .iconImg img {width:120px;}
 	.laBox03 .txtBox .f26_4 {font-size:20px; margin:36px 0 20px;} /* 0711 */
 	.laBox04 {border-top:1px solid #A0A0A0; padding-top:60px; margin-top:60px;} 
 	.laBox04 .col-md-5 {height: 1%; overflow: hidden;} 
 	.laBox04 .clickBox {margin-top:30px; padding:16px; border-radius:16px;} 
-	.laBox04 .gray_lineBox {margin-top:20px; padding:40px 20px; border:8px solid #f0f0f0; border-radius:16px;} 
+	.laBox04 .gray_lineBox {margin-top:20px; padding:40px 20px; border:8px solid #f0f0f0; border-radius:16px;}
 	.laBox04 .gray_lineBox {font-size:20px;} /* 0711 */
 	.laBox06 .f30_5_o {font-size:20px; margin-top:16px;} 
 	.laBox06 img {border-radius:16px;} 
@@ -4028,7 +4194,9 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.f30_4 {font-size:20px}
 	.youtubeBox {margin-bottom:10px;} /* 0711 */
 	.youtubeBox iframe {height:220px; top:-70px; position:absolute; border-radius:12px} /* 0711 */
+	
 	.subTxt {display:none}
+	.subTxt02 {display:none} /* 0711 */
 	.imgh { height:120px; }
 
 	/* 0711 */
@@ -4036,6 +4204,45 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.bg_location {position:relative; top:-47px;}
 	.snbMenu_hr {width:92%; background:#fff; border:1px solid #C9C9C9; border-radius:10px; padding:14px; /* margin:0px 20px; */}
 	.snbMenu {position:relative; background-color:rgb(255,255,255,0);}
+	/* //0711 */
+
+	/* 메인 - 0711 */
+	/* .tp-about-3-content------------- {margin-left:0px;} */
+	.tp-about-2-thumb-box {left:0%}
+	.tp-about-2-thumb-box div:nth-child(2) {display:none;}
+	.col-lg-6 .tp-about-3-title-box {margin-top:-90px;}
+	.tp-about-3-title-box .f60 {font-size:38px !important; line-height:120%}
+	.tp-btn-black-2 {height:36px !important; line-height:30px !important; font-size:15px !important; padding:0 15px !important }/* 0711 */
+
+	/* .tp-reveal-line {margin-bottom:10px !important;} */
+	.tp-project-3-wrap {margin-bottom:40px !important;}
+	.mb-150 {margin-bottom:100px !important;}
+	.main-card-t img {transform:scale(1);}
+	.tp-project-3-wrap .f52 {font-size:32px; margin-top:20px !important;}
+	.tp-project-3-wrap .f22 {font-size:16px;}
+
+	.tp-footer-4-big-title {margin-top:0px;}
+	.d-md-inline-block svg {width:60%; margin:0px 15px 0 2px;}
+
+	.index_only .pt200 {padding-top:120px !important;}
+	.col-lg-5 .tp-btn-black-2 {left:33%; margin-top:0px;}
+	.bestReview {height:390px; border-radius:14px; padding:10px;}
+	.bestReviewWrap .col-md-3:nth-child(2n+1) {padding-right:5px}
+	.bestReviewWrap .col-md-3:nth-child(2n) {padding-left:5px}
+	.btn-main-middle {width:80px; position:absolute; right:0; top:0px}
+	.be_img {height:200px; background:no-repeat scroll 0 0; }
+	.tp_img_reveal .f20 {font-size:15px; margin-top:14px !important;}
+	.btn_bestReview {padding:0 12px 2px;}
+
+
+	.index_only .col-lg-4 .tp-about-3-title-box {margin-left:0px;}
+	.col-lg-4 .key {font-size:15px; margin-right:0px;}
+	.col-lg-4 .tp-btn-black-2 {margin-top:24px;}
+	.h280 {height:130px; border-radius:14px;}
+	.comuType01 {border-radius:4px;}
+	ul.cumu {padding:20px 0}
+	.cumu li p:nth-child(2) {font-size:16px; overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; display: -webkit-box;-webkit-line-clamp: 1 ;-webkit-box-orient: vertical;}
+	.cumu li p:nth-child(3) {overflow: hidden; text-overflow: ellipsis; word-wrap: break-word; display: -webkit-box;-webkit-line-clamp: 3 ;-webkit-box-orient: vertical;}
 	/* //0711 */
 
 	/* 안심 플러스, 영양, 브랜드소개 공통 - 0711 */
@@ -4055,7 +4262,6 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 
     /* 안심 시스템 - 이성희 */
     .step_all .f26_4{ font-size: 16px; }
-    
 
 	/* 제품소개 - 0711 */
 	
@@ -4093,6 +4299,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.bgBox .line p {font-size:20px; margin:0 0 0 10px} 
 	.bgBox .f22 {font-size:16px;}
 
+	.newBox .f40_6 {font-size:20px;} /* 0711 */
 	.upBox .box05 .gray {height:max-content; padding:20px 16px; border-radius:0 0 12px 12px;} 
 	.upBox .box05 .gray .img100 {margin-top:20px;} 
 	.upBox .box05 .gray .img100 img {border-radius:10px;} 
@@ -4138,7 +4345,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 
 
 	/* 0711 */
-
+    
     
 	 /* 이달의모델*/
 	.model_month {padding-bottom:30px; text-align:center; }
@@ -4225,8 +4432,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.laBox04 .gray_lineBox {padding:40px 12px;}
 	.laBox04 .gray_lineBox .f26_4 {font-size:16px;}
     /* //0711 */
-
-
+    
     /* FAQ - 성희 */
     .yellow_lineBox{ padding: 20px 40px; }
     .blue_lineBox{ padding: 20px 40px; }

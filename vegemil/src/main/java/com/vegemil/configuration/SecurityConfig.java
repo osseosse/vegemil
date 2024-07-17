@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import org.springframework.security.web.header.writers.StaticHeadersWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.vegemil.handler.CustomAuthenticationHandler;
 import com.vegemil.service.MemberService;
 
 @Configuration
@@ -25,6 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
     private MemberService memberService;
+	
+    @Autowired
+    private CustomAuthenticationHandler customAuthenticationHandler;
     
     @Order(1)
     @Configuration
@@ -120,8 +124,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		            .formLogin()
 		                .loginPage("/member/login")
 		                .loginProcessingUrl("/member/loginProc")
-		                .failureUrl("/member/login?error=true")
-		                .defaultSuccessUrl("/")
+		                .successHandler(customAuthenticationHandler) // 커스텀 핸들러 설정
+		                .failureHandler(customAuthenticationHandler) // 커스텀 핸들러 설정
+		                //.failureUrl("/member/login?error=true")
+		                //.defaultSuccessUrl("/")
 	            .and()
 	                .logout()
 		                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout")) // 로그아웃 시 URL 재정의

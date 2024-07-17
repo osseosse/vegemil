@@ -129,8 +129,8 @@ $(function(){
 				<ul class="tools" id="buttons2">
 						
 					<li class="shop" ><a href="http://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000029&pCateCode=20000002" class="hvr-float"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_shop2.png" alt="샵"/><p class="mt5">SHOP</p></a></li>
-					<li class="login"><a href="#pop_Login" class="hvr-float"><img class="wView" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_log2.png" alternatetext="로그인"><p class="mt5">LOGIN</p></a></li>
-					<li>
+					<li class="login"  sec:authorize="isAnonymous()"><a href="#pop_Login" class="hvr-float"><img class="wView" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_log2.png" alternatetext="로그인"><p class="mt5">LOGIN</p></a></li>
+					<li sec:authorize="isAnonymous()">
 						<a href="http://www.vegemil.co.kr/main/member/terms.aspx" class="hvr-float">
 							<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_love2.png" alt="조인"/>
 							<p class="mt5">JOIN</p>
