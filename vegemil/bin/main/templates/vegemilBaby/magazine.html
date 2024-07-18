@@ -26,8 +26,8 @@
 		</div>
 		<!-- /.row pd0 mg0 -->
 	</div>
-	<div class="container100 bg_b">
-		<div class="container">
+	<div class="container100 bg_location">
+		<div class="container snbMenu_hr">
 			<div class="row ">
 				<div class="col-md-12">
 					<!-- snbMenu -->
@@ -37,9 +37,9 @@
 								<!-- cate_sel_01 -->
 								<li>
 									<div class="cate_sel_01">
-										<div class="option-list_01">
-											<p class="view-btn_01">
-												<a>Community</a>
+										<div class="option-list_01" >
+											<p class="view-btn_01" >
+												<a href="javascript:void(0);">Community</a>
 											</p>
 										</div>
 										<div class="list_open_01">
@@ -59,27 +59,25 @@
 							</dd>
 							<dd>
 								<!-- cate_sel_02 -->
-								<li>
-									<div class="cate_sel_02">
-										<div class="option-list_02">
-											<p class="view-btn_02">
-												<a>육아정보</a>
-											</p>
-										</div>
-										<div class="list_open_02">
-											<div class="cate_content">
-												<ul class="cate_ul_list2">
-													<li><a th:href="@{/vegemilBaby/magazine?category=all}">육아정보</a></li>
-													<li><a th:href="@{/vegemilBaby/qna}">육아상담
-															Q&amp;A</a></li>
-													<li><a th:href="@{/vegemilBaby/recipe}">영&middot;유아식
-															레시피</a></li>
-												</ul>
+									<li>
+										<div class="cate_sel_02">
+											<div class="option-list_02" >
+												<p class="view-btn_02" >
+													<a href="e_magazine.html">육아정보</a>
+												</p>
+											</div>
+											<div class="list_open_02">
+												<div class="cate_content">
+													<ul class="cate_ul_list2">
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">육아정보</a></li>
+														<li><a th:href="@{/vegemilBaby/qna}">육아상담 Q&amp;A</a></li>
+														<li><a th:href="@{/vegemilBaby/recipe}">영&middot;유아식 레시피</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<!-- // cate_sel_02 -->
+									</li>
+							    <!-- // cate_sel_02 -->
 							</dd>
 						</dl>
 					</div>
@@ -88,16 +86,25 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- //container 100 -->		
 	<div class="container100 ">
 		<div class="row mg0 pd0">
 			<div class="container">
-				<div class="col-md-12 brandTxt ">
-					<p class="f24_4_bg">E-Magazine</p>
-					<p class="f55_6 mt30">육아정보</p>
-					<p class="f24_4 mt10">아래 카테고리를 선택하시면 원하시는 정보를 더 정확하게 확인할 수
-						있습니다.</p>
-				</div>
+				 <div class="col-md-12 brandTxt ">
+					<div class="subTitle">
+						<div class="side">
+							<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+						</div>
+						<div class="f24_6_bg">
+							<p class="f24_5_bg">E-Magazine</p>
+						</div>
+						<div class="side">
+							<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+						</div>
+					</div>
+	                <p class="f55_6 mt30">육아정보</p>
+	                <p class="f24_4 mt10">아래 카테고리를 선택하시면 원하시는 정보를 더 정확하게 확인할 수 있습니다.</p>
+                </div>
 				<div class="col-md-12 mt130" id="contentDetail">
 					<ul class="icon_all">
 						<li class="icon_01"><a th:href="@{/vegemilBaby/magazine?category=all}" title="전체보기">

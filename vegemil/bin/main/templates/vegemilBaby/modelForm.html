@@ -19,10 +19,10 @@
 		<div class="row pd0 mg0 ">
 			<div class="col-md-12">
 				<div class="subIMG03_03 subIMG">
-					<div class="container h640">
+					<div class="container h560">
 						<div class="subTxt">
-							<p class="f40_6">아기 달력모델 선발대회</p>
-							<p class="f20_4 mt20">매월 달력 모델에 도전하세요!</p>
+							<p class="f40 fw600 white">아기모델 선발대회</p>
+							<p class="f20 mt20 white">매월 달력 모델에 도전하세요!</p>
 						</div>
 					</div>
 				</div>
@@ -30,14 +30,15 @@
 		</div>
 		<!-- /.row pd0 mg0 -->
 	</div>
-	<div class="container100 bg_b2">
-		<div class="container">
+	<div class="container100 bg_location">
+		<div class="container snbMenu_hr">
 			<div class="row ">
 				<div class="col-md-12">
 					<!-- snbMenu -->
 					<div class="snbMenu modelsubMenu">
 						<dl>
 							<dd>
+								<!-- cate_sel_01 -->
 								<li>
 									<div class="cate_sel_01">
 										<div class="option-list_01" >
@@ -58,27 +59,30 @@
 										</div>
 									</div>
 								</li>
+								<!-- // cate_sel_01 -->
 							</dd>
 							<dd>
-								<li>
-									<div class="cate_sel_02">
-										<div class="option-list_02" >
-											<p class="view-btn_02" >
-												<a href="javascript:void(0);">아기모델선발대회</a>
-											</p>
-										</div>
-										<div class="list_open_02">
-											<div class="cate_content">
-												<ul class="cate_ul_list2">
-													<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-													<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
-													<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
-													<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
-												</ul>
+								<!-- cate_sel_02 -->
+									<li>
+										<div class="cate_sel_02">
+											<div class="option-list_02" >
+												<p class="view-btn_02" >
+													<a href="javascript:void(0);">아기모델선발대회</a>
+												</p>
+											</div>
+											<div class="list_open_02">
+												<div class="cate_content">
+													<ul class="cate_ul_list2">
+														<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+														<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+														<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
+														<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
-								</li>
+									</li>
+									<!-- // cate_sel_02 -->
 							</dd>
 						</dl>
 					</div>
@@ -88,159 +92,171 @@
 		</div>
 	</div>
 	<!-- //container100 -->
-     <div class="container100">
-         <div class="row  pd0 mg0 ">
-             <dl id="con01">
-                 <div class="container">					
-                     <div class="col-md-12 brandTxt">
-                         <p class="f24_4_bg">Event</p>
-                         <p class="f55_6 mt30">아기 달력모델 선발대회</p>
-                         <p class="f24_4 mt10">베지밀 아기 달력모델 선발대회 접수 페이지입니다.</p>
-                     </div>
-                 </div>
-                 <div class="container pb150">
-                     <div class="row">
-                         <div class="col-md-12 mt120 modelForm">
-<!--                             <form onchange="inputCheck()" th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data"> -->
-                            <form th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data">
-                                <fieldset>
-                                    <legend>개인 정보 수집 및 이용에 관한 안내</legend>
-                                     <div class="gray_lineBox">
-                                         <p class="f30_6">&#91;개인 정보 수집 및 이용에 관한 안내&#93;</p>
-                                         <p class="f14_4_1 mt50">
-                                             [개인정보 수집. 이용 동의]<br>
-                                             1. 수집 및 이용하는 개인정보 항목 성함, 휴대전화번호, 아기 출생일, 사진<br><br>
+         <div class="container100">
+            <div class="row  pd0 mg0 ">
+                <dl id="con01">
+                    <div class="container">					
+                        <div class="col-md-12 brandTxt">
+                            <div class="subTitle">
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+								</div>
+								<div class="f24_6_bg">
+									<p class="f24_5_bg">Event</p>
+								</div>
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+								</div>
+							</div>
+                            <p class="f55_6 mt30">아기모델 선발대회</p>
+                            <p class="f24_4 mt10">베지밀 달력 아기모델 콘테스트 접수 페이지입니다.</p>
+                        </div>
+                    </div>
+                    <div class="container pb150">
+                        <div class="row">
+                            <div class="col-md-12 mt120 modelForm">
+                                <form th:action="@{/vegemilBaby/model/apply}" name ="modelForm" th:object="${model}" method="post" enctype="multipart/form-data">
+                                   <fieldset>
+                                       <legend>개인 정보 수집 및 이용에 관한 안내</legend>
+                                        <div class="gray_lineBox">
+                                            <p class="f30_6">&#91;개인 정보 수집 및 이용에 관한 안내&#93;</p>
+                                            <p class="f14_4_1 mt50">
+                                                [개인정보 수집. 이용 동의]<br>
+                                                1. 수집 및 이용하는 개인정보 항목 성함, 휴대전화번호, 아기 출생일, 사진<br><br>
 
-                                             2. 개인정보의 수집 및 이용목적<br>
-                                             1) 이벤트 참여 목적(개인식별, 당첨자 선정과 안내, 경품 배송 등)<br>
-                                             2) 분쟁 조정을 위한 기록 보존과 편의사항 처리 등<br>
-                                             3) 회사가 수집한 개인 정보는 명시한 목적 이외의 다른 어떤 용도로도 사용되지 않음<br><br>
+                                                2. 개인정보의 수집 및 이용목적<br>
+                                                1) 이벤트 참여 목적(개인식별, 당첨자 선정과 안내, 경품 배송 등)<br>
+                                                2) 분쟁 조정을 위한 기록 보존과 편의사항 처리 등<br>
+                                                3) 회사가 수집한 개인 정보는 명시한 목적 이외의 다른 어떤 용도로도 사용되지 않음<br><br>
 
-                                             3. 개인정보의 보유 및 이용기간 - 이벤트 종료 3개월 후 까지 보유 후 파기<br><br>
+                                                3. 개인정보의 보유 및 이용기간 - 이벤트 종료 3개월 후 까지 보유 후 파기<br><br>
 
-                                             * 귀하는 상기 동의를 거부할 수 있습니다.<br>
-                                            	 다만, 이에 대한 동의를 하지 않을 경우엔 이벤트 참여가 불가능함을 알려드립니다.
-                                         </p>
-                                     </div>
-                                     <div class="radioBox01 mt30">
-                                         <p class="f20_4">개인 정보 수집 및 이용에 관한 안내 <span class="red_dot">*</span></p>
-                                         <span>
-                                             <input type="radio" id="agree_b" name="agree_radio" value="1" >
+                                                * 귀하는 상기 동의를 거부할 수 있습니다.<br>
+                                                다만, 이에 대한 동의를 하지 않을 경우엔 이벤트 참여가 불가능함을 알려드립니다.
+                                            </p>
+                                        </div>
+                                        <div class="radioBox01 mt30">
+                                            <p class="f20_4">개인 정보 수집 및 이용에 관한 안내 <span class="red_dot">*</span></p>
+                                            <span>
+                                              <input type="radio" id="agree_b" name="agree_radio" value="1" >
                                              <label for="agree_b" class="f17_3">동의</label>
                                              <input type="radio" id="agree_b_n" name="agree_radio" value="0" checked required>
                                              <label for="agree_b_n" class="f17_3">비동의</label>
-                                         </span>
-                                     </div>
-                                 </fieldset>
-                                
-                                 <fieldset class="mt140">
-                                     <legend>입력 폼</legend>
-                                     <ul class="formBox">
-                                         <li>
-										    <dl class="divideType01 f17_4">
-											    <dd>이름 <span class="red_dot">*</span></dd>
-											    <dd class="mt10"><input type="text" id="cName" name="cName" th:value="${member.mName}" required></dd>
-										    </dl>
-                                        </li>
-                                        <li>
-										    <dl class="divideType01 f17_4">
-											    <dd>휴대전화</dd>
-											    <dd class="mt10">
-											    <input type="text" id="cHp" name="cHp" th:value="${member.mHp}">
-											   
-											    <p class="mt10 f14_3"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png" alt="아이콘" />  &nbsp;이달의 모델 및 참가상 선정 시 상품 배송 정보로 사용됩니다. 신청 전 변경해야 하며 <a href="/mypage/myInfo">[회원정보변경]</a>을 이용해주세요.</p>
-											    </dd>
-										    </dl>
-                                        </li>
-                                        <li>
-				                            <dl class="divideType01 f17_4">
-					                            <dd>주소 <span class="red_dot">*</span></dd>
-					                            <dd class="linkType f17_3_g mt10m">
-						                            <input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" required/>&nbsp
+                                            </span>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="mt140">
+                                        <legend>입력 폼</legend>
+                                        <ul class="formBox">
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>아이디</dd>
+													<dd class="f17_3_g"><span th:text="${mId}"></span></dd>
+												</dl>
+                                            </li>
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>이름</dd>
+													<dd class="f17_3_g"><input type="text" id="cName" name="cName" th:value="${member.mName}" required></dd>
+												</dl>
+                                            </li>
+                                            <li>
+												<dl class="divideType01 f17_4">
+													<dd>휴대전화</dd>
+													<dd class="linkType f17_3_g"><input type="text" id="cHp" name="cHp" th:value="${member.mHp}">
+													<p class="mt10 f14_3"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_yellow4.png" alt="아이콘" />  &nbsp;이달의 모델 및 참가상 선정 시 상품 배송 정보로 사용됩니다. 신청 전 변경해야 하며 <a href="https://www.vegemil.co.kr:10001/Main/member/joinEdit.aspx?page_code=MYP">[회원정보변경]</a>을 이용해주세요.</p>
+													</dd>
+												</dl>
+                                            </li>
+											<li>
+												<dl class="divideType01 f17_4">
+													<dd>주소</dd>
+													<dd class="linkType f17_3_g">
+													<input class="inType01" name="cZipcode" id="cZipcode" type="text" value="" maxlength="5" onclick="javascript:execPostcode());" required/>&nbsp
 						                            <img id=imgZipcode class="veM" name="imgZipcode"  onclick=javascript:execPostcode(); alt="우편번호검색" align="top" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_zip.jpg"><br>
 						                            <input class="inType03 mt15" name="cAddr1" id="cAddr1" type="text" value="" maxlength="150" readonly/><br >
 						                            <input class="inType03 mt15" name="cAddr2" id="cAddr2" type="text" value="" maxlength="30" />
 						                            <input type="hidden" id="cAddr" name="cAddr" value="">
-					                            </dd>
-				                            </dl>
-		                            	</li>
-								    	<li>
-										    <dl class="divideType01 f17_4">
-											    <dd>E-mail <span class="red_dot">*</span></dd>
-											    <dd class="mt10m"><input type="text" id="cEmail" name="cEmail" th:value="${member.mEmail}" required></dd>
-										    </dl>
-                                        </li>
-                                        
-                                        	<li class="fileBox">
-                                                <p class="f17_3">달력모델 지원사진을 첨부해주세요. (베지밀 제품 노출 필수! 2000px이상) <span class="red_dot">*</span>
-                                                <br>첨부이미지 사이즈는 총 20MB 이내로 등록 가능합니다.
-                                                <br>베지밀과 함께한 우리아이 사진을 올려주세요. 제품이 포함되지 않으면 당첨자 선정에 제외될 수 있습니다.
-                                                </p>
-												<input id="frm_Photo_i" type="file" accept=".png,.gif,.jpg" name="fileName1" onchange="fileExtCheck('frm_Photo_i');" required>
-												<p class="mt10 f14_3"></p>
+													<p class="mt10 f14_3"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_yellow4.png" alt="아이콘" />  &nbsp;이달의 모델 및 참가상 선정 시 상품 배송 정보로 사용됩니다. 신청 전 변경해야 하며
+													<a href="https://www.vegemil.co.kr:10001/Main/member/joinEdit.aspx?page_code=MYP">[회원정보변경]</a>을 이용해주세요.</p>
+													</dd>
+												</dl>
                                             </li>
-                                            
-                                          <li class="fileBox">
-                                              <p class="f17_3">(선택사항) 추가 접수를 희망하시는 사진이 있으면 첨부해주세요. ^^</p>
-                                              <input id="frm_Photo_i2"  type="file" accept=".png,.gif,.jpg"  onchange="fileExtCheck('frm_Photo_i2');" name="fileName2">
-                                              <p class="mt10 f14_3"></p><br >
-                                          </li>
-                                        
-                                         <li class="radioBox02">
-                                             <p class="f17_3">베지밀 달력 아기모델 콘테스트 당첨자(영유아식 1박스 포함)로 선정되신 분의 사진은 정식품 홈페이지 및 SNS에 "베지밀베이비"로 소개될 수 있습니다. 동의하십니까?</p>
-                                             <span class="mt10">
-                                                 <input type="radio" id="agree_b02" name="agree_radio2" value="1" >
-                                                 <label for="agree_b02" class="f17_3">동의</label>
-                                                 <input type="radio" id="agree_b_n02" name="agree_radio2" value="0" checked>
-                                                 <label for="agree_b02_n" class="f17_3">비동의</label>
-                                             </span>
-                                         </li>
-                                         <!-- //마케팅동의 -->
-                                         <li>
-											<dl class="divideType02 f17_4">
-												<dd><p class="f17_3">사진에 나오는 아기(자녀)의 이름<span class="red_dot">*</span></p></dd>
-												<dd class="mt10">
-													<input type="text" class="w250" name="cBabyName" id="cBabyName" required>	
-												</dd>
-											</dl>
-                                         </li>
 											<li>
-											<dl class="divideType02 f17_4">
-												<dd>
-													<p class="f17_3">참여상 선정 시, 베지밀 영유아식을 보내드립니다.<br>
-													숫자로 개월 수를 적어주시면 단계에 맞춰서 보내드립니다.
-													(일반 성인용 베지밀을 받고 싶으신 경우 0으로 기재, 접수 후 제품 변경 불가)
-													</p>
-												</dd>
-												<dd class="mt10">
-													<input type="text" class="w250" name="cAlived" id="cAlived">	
-												</dd>
-											</dl>
-                                         </li>
-                                         <li>
-											<dl class="divideType02 f17_4">
-												<dd><p class="f17_3">이벤트를 알게된 경로를 적어주세요.(10자 이내)</p></dd>
-												<dd class="mt10">
-													<input type="text" class="urlBox" id="cRoute" name="cRoute">	
-												</dd>
-											</dl>
-                                         </li>
-                                     </ul>
-                                     <div class="col-md-12 center mt100">
-<!--                                          <input style="background:gray;" type="submit" disabled="disabled" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> input type="image --> 
-                                         <input type="submit" onclick="inputCheck()"src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> <!-- input type="image --> 
-                                     </div>
-                                 </fieldset>
-                             </form>
-                             
-                             
-                         </div>
-                     </div>
-                 </div><!-- //container-->
-             </dl><!-- //con01 -->
-         </div><!-- //row-->
-     </div><!-- //container100 -->
- </div>
+												<dl class="divideType01 f17_4">
+													<dd>E-mail</dd>
+													<dd class="f17_3_g"><input type="text" id="cEmail" name="cEmail" th:value="${member.mEmail}" required></dd>
+												</dl>
+                                            </li>
+                                            <li class="fileBox">
+                                                <p class="f17_3">9월 달력모델 지원사진을 첨부해주세요. (베지밀 제품 노출 필수! 2000px이상) <span class="red_dot">*</span><br>베지밀과 함께한 우리아이 사진을 올려주세요. 제품이 포함되지 않으면 당첨자 선정에 제외될 수 있습니다.</p>
+                                                <label for="form_pic" class="mt10 f17_4">이미지첨부</label>
+                                                <input id="form_pic" type="file" accept=".png,.gif,.jpg" name="fileName1" onchange="fileExtCheck('frm_Photo_i');" required>
+                                            </li>
+                                            <li class="fileBox">
+                                                <p class="f17_3">(선택사항) 추가 접수를 희망하시는 사진이 있으면 첨부해주세요. ^^</p>
+                                                <label for="form_pic02" class="mt10 f17_4">이미지첨부</label>
+												<input id="form_pic02"  type="file" accept=".png,.gif,.jpg"  onchange="fileExtCheck('frm_Photo_i2');" name="fileName2">                                                
+                                            </li>
+											<!-- 마케팅동의 -->
+                                            <li class="radioBox02">
+                                                <p class="f17_3">베지밀 달력 아기모델 콘테스트 당첨자(영유아식 1박스 포함)로 선정되신 분의 사진은 정식품 홈페이지 및 SNS에 "베지밀베이비"로 소개될 수 있습니다. 동의하십니까?</p>
+                                                <span class="mt10">
+                                                    <input type="radio" id="agree_b02" name="agree_radio2" value="1" >
+													<label for="agree_b02" class="f17_3">동의</label>
+													<input type="radio" id="agree_b_n02" name="agree_radio2" value="0" checked>
+													<label for="agree_b02_n" class="f17_3">비동의</label>
+                                                </span>
+                                            </li>
+											<!-- //마케팅동의 -->
+											
+											
+											
+											<li>
+												<dl class="divideType02 f17_4">
+													<dd><p class="f17_3">사진에 나오는 아기(자녀)의 이름</p></dd>
+														<input type="text" class="w250" name="cBabyName" id="cBabyName" required>	
+													<dd>
+													</dd>
+												</dl>
+                                            </li>
+											<li>
+												<dl class="divideType02 f17_4">
+													<dd>
+														<p class="f17_3">참여상 선정 시, 베지밀 영유아식을 보내드립니다.<br>
+														숫자로 개월 수를 적어주시면 단계에 맞춰서 보내드립니다.
+														(일반 성인용 베지밀을 받고 싶으신 경우 0으로 기재, 접수 후 제품 변경 불가)
+														</p>
+													</dd>
+													<dd>
+														<input type="text" class="w250" name="cAlived" id="cAlived">	
+													</dd>
+												</dl>
+                                            </li>
+											<li>
+												<dl class="divideType02 f17_4">
+													<dd>
+														<p class="f17_3">이벤트를 알게된 경로를 적어주세요.(10자 이내)</p></dd>
+													<dd>
+														<input type="text" class="urlBox" id="cRoute" name="cRoute">
+													</dd>
+												</dl>
+                                            </li>
+                                        </ul>
+                                        <div class="col-md-12 center mt100">
+                                            <!--<input type="button" value="제출하기" class="submitBtn f30_5">--> <!-- input type="button" -->
+                                            <!-- <input type="image" src="img/p03_03_button.jpg" alt="제출하기 버튼" class="submitBtn"> input type="image -->
+											 <input type="image" class="submitBtn" onclick="inputCheck()" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/p03_03_button.jpg" alt="제출하기 버튼"  id="joinBtn"> <!-- input type="image -->
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- //container-->
+                </dl><!-- //con01 -->
+            </div><!-- //row-->
+        </div><!-- //container100 -->
+    </div>
 <!-- ------------------- // content ------------------- -->
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
