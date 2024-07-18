@@ -21,8 +21,8 @@
 			
 			let isLogin = document.getElementById('isLogin').value;
 			if(isLogin == 'anonymousUser'){				 
-					 alert("로그인 후 작성해주시기 바랍니다.");				  
-			 	}	
+				alert("로그인 후 작성해주시기 바랍니다.");				  
+			}	
 	    });
 		
 		$('#btnInfant2').click(function() {
@@ -119,6 +119,7 @@
 <!-- ================================ // Header ================================ -->
 	<!-- ------------------- content ------------------- -->
 	<div id="content">
+		<input style="display:none;" id="isLogin" name="isLogin" th:value="${#authentication.principal}"/>
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
@@ -167,26 +168,26 @@
 								</dd>
 								<dd>
 									<!-- cate_sel_02 -->
-										<li>
-											<div class="cate_sel_02">
-												<div class="option-list_02" >
-													<p class="view-btn_02" >
-														<a href="javascript:void(0);">샘플신청</a>
-													</p>
-												</div>
-												<div class="list_open_02">
-													<div class="cate_content">
-														<ul class="cate_ul_list2">
-															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
-															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
-														</ul>
-													</div>
+									<li>
+										<div class="cate_sel_02">
+											<div class="option-list_02" >
+												<p class="view-btn_02" >
+													<a href="javascript:void(0);">샘플신청</a>
+												</p>
+											</div>
+											<div class="list_open_02">
+												<div class="cate_content">
+													<ul class="cate_ul_list2">
+														<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+														<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+														<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
+														<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+													</ul>
 												</div>
 											</div>
-										</li>
-										<!-- // cate_sel_02 -->
+										</div>
+									</li>
+									<!-- // cate_sel_02 -->
 								</dd>
 							</dl>
 						</div>
@@ -224,9 +225,9 @@
 				</div>
 				<div class="container100 mt120">
 					<div class="row pd0 mg0">
-							<div class="col-md-12 center">
-								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_01.jpg" alt="프리미엄제품"/>
-							</div>
+						<div class="col-md-12 center">
+							<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_01.jpg" alt="프리미엄제품"/>
+						</div>
 					</div>
 					<div class="row  mg0 mt120 ">
 						<div class="container pd0 pb120">
