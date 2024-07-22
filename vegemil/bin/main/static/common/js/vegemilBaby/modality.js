@@ -171,7 +171,7 @@
                 inst.setTrigger( inst.triggers[i] );
         }
 
-        // close modal if users clicks anywhere off of it ÆË¾÷¿¡¼­ ¶óÀÌ¿À Ã¼Å©ºÒ°¡·Î ÀÎÇØ ºñÈ°¼ºÈ­
+        // close modal if users clicks anywhere off of it ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ Ã¼Å©ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         //if( inst.settings.clickOffToClose ) {
         //     _addEvent( inst.wrapper, "click", function(e) {
         //         _preventDefault(e); if(e.target == inst.wrapper) inst.close();

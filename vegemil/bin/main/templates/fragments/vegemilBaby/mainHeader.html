@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
-				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> 
 <header th:fragment="headerFragment">
 <!-- include적용시 스크립트영역 노출안되는 부분때문에 mainHeader.html에서 스크립트적용. 개발시 삭제할것  -->
 <!-- <script>
@@ -53,32 +52,51 @@ $(function(){
 		<nav id="primary-navigation">
 		<div class="container-fluid_">
 			<div class="navbar-header">
-				<a th:href="@{/vegemilBaby/index}"  class="site-title yellow-text"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/logo.jpg" alt="베지밀 영유아식"/></a>
+				<a href="/vegemilBaby/index" class="site-title yellow-text">
+					<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/logo.jpg" alt="베지밀 영유아식"/>
+				</a>
 			</div>
-			<!-- 2024-07-09 -->
+		<!-- 2024-07-09 -->
 			<div class="page-main mView" >
 				<div id="myNav" class="overlay">
-				  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				  <div class="overlay-content">
-					<a href="#">About</a>
-					<a href="#">Services</a>
-					<a href="#">Clients</a>
-					<a href="#">Contact</a>
-				  </div>
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+						<div class="overlay-content">
+							<div class="category">
+								<p>Brand</p>
+								<a href="brand.html">브랜드소개</a>
+								<a href="nutrition.html">영양</a>
+								<a href="safe.html">안심플러스</a>
+								<a href="tv.html">TV광고</a>
+							</div>
+							<div class="category">
+								<p>Product</p>
+								<a href="premium.html">인펀트/토들러</a>
+								<a href="belief.html">킨더랜드</a>
+							</div>
+							<div class="category">
+								<p>Event</p>
+								<a href="event.html">진행 중 이벤트</a>
+								<a href="event_review_best.html">후기 이벤트</a>
+								<a href="event_model.html">아기 달력모델 선발대회</a>
+								<a href="sample.html">샘플신청</a>
+							</div>
+							<div class="category">
+								<p>Community</p>
+								<a href="e_magazine.html">육아정보</a>
+								<a href="qna.html">육아상담 Q&A</a>
+								<a href="recipe_list.html">영·유아식 레시피</a>
+							</div>
+							<div class="category">
+								<p>Support</p>
+								<a href="faq.html">제품 FAQ</a>
+								<a href="lactation.html">수유법</a>
+							</div>
+						</div>
+		
 				</div><!-- //myNav -->
 				<span class="myNav_ham" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 			</div>
 
-			<script>
-				function openNav() {
-				  document.getElementById("myNav").style.width = "100%";
-				}
-
-				function closeNav() {
-				  document.getElementById("myNav").style.width = "0%";
-				}
-			</script>
-			<!-- //2024-07-09 -->
 			
 			<div class="main-menu" id="perfect-navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -128,8 +146,18 @@ $(function(){
 				<!-- <img src="./html/img/ico_log2.png" class="hvr-float"/>		-->
 				<ul class="tools" id="buttons2">
 						
-					<li class="shop" ><a href="http://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000029&pCateCode=20000002" class="hvr-float"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_shop2.png" alt="샵"/><p class="mt5">SHOP</p></a></li>
-					<li class="login"  sec:authorize="isAnonymous()"><a href="#pop_Login" class="hvr-float"><img class="wView" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_log2.png" alternatetext="로그인"><p class="mt5">LOGIN</p></a></li>
+					<li class="shop" >
+						<a href="http://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000029&pCateCode=20000002" class="hvr-float">
+							<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_shop2.png" alt="샵"/>
+							<p class="mt5">SHOP</p>
+						</a>
+					</li>
+					<li class="login"  sec:authorize="isAnonymous()">
+						<a href="#pop_Login" class="hvr-float" >
+							<img class="wView" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_log2.png" alt="로그인">
+							<p class="mt5">LOGIN</p>
+						</a>
+					</li>
 					<!-- <li class="shop"  sec:authorize="isAuthenticated()"><a href="#pop_Login" class="hvr-float"><img class="wView" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png" alternatetext="로그아웃"><p class="mt5">LOGOUT</p></a></li> -->
 					<li sec:authorize="isAnonymous()">
 						<a href="http://www.vegemil.co.kr/main/member/terms.aspx" class="hvr-float">
@@ -141,11 +169,8 @@ $(function(){
 					<li class="sns"><a href="https://www.facebook.com/vegemilgood" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/snsBtn_01_off.png" alt="페이스북"/></a></li>
 					<li class="sns"><a href="https://blog.naver.com/PostList.nhn?blogId=vegemilstory" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/snsBtn_02_off.png" alt="블로그"/></a></li>
 					<li class="sns"><a href="https://www.youtube.com/channel/UCq8X6Ll0ZjacC4-M-vicVpw" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/snsBtn_03_off.png" alt="유튜브"/></a></li>
-					
-					
 				</ul>
 				<!-- //sns-menu -->
-
 			</div>
 		</div>
 	</nav>

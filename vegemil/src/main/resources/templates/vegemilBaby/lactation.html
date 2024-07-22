@@ -3,10 +3,11 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">   
 <title>수유법</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
-<!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->  
-<body>	
+<body>
+<div id="wrap">	
+	<!-- ================================ Header ================================ -->
+	<header th:replace="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+	<!-- ================================ // Header ================================ -->  
 	<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
@@ -45,7 +46,7 @@
 													<ul class="cate_ul_list">
 														<li><a href="premium.html">Product</a></li>
 														<li><a href="event.html"> Event</a></li>
-														<li><a href="e_magazine.html"> Cummunity</a></li>
+														<li><a href="e_magazine.html"> Community</a></li>
 														<li><a href="faq.html"> Support</a></li>
 													</ul>
 												</div>
@@ -276,5 +277,6 @@
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
-	</body>
+	</div>
+</body>
 </html>

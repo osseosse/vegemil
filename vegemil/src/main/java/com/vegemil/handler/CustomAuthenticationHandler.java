@@ -12,6 +12,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
+import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Component
 public class CustomAuthenticationHandler implements AuthenticationSuccessHandler, AuthenticationFailureHandler{
 	
+	private HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
 	
 	private final ObjectMapper objectMapper = new ObjectMapper();
 	@Override
@@ -47,7 +50,18 @@ public class CustomAuthenticationHandler implements AuthenticationSuccessHandler
 	            writer.println(objectMapper.writeValueAsString("{'success': true, 'message': 'Authentication successful'}"));
 	        } else {
 	            // Handle non-AJAX (regular form submit) success
-	            response.sendRedirect("/");
+	        	SavedRequest prevRequest = requestCache.getRequest(request, response);
+	        	
+	        	if (prevRequest != null) {
+
+	        		String url = prevRequest.getRedirectUrl();
+                 	response.sendRedirect(url);
+                 	
+	        	} else {
+	        		// 세션에 저장된 원래 요청 경로가 없는 경우
+	        		response.sendRedirect("/");
+	        	}
+	          
 	        }
 		
 	}

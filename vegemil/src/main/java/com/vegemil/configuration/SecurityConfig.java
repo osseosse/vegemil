@@ -112,7 +112,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        http	        	
 	            .authorizeRequests()
 	                .antMatchers("/mypage/**").authenticated()
-					 .antMatchers("/vegemilBaby/sample/form/**").authenticated() 
+					.antMatchers("/vegemilBaby/sample/form").authenticated() 
 	                .antMatchers("/rnd/factoryTour").authenticated()
 	                .antMatchers("/rnd/tourApply").authenticated()
 	                .antMatchers("/rnd/reviewWrite").authenticated()

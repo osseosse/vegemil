@@ -21,8 +21,19 @@
 			
 			let isLogin = document.getElementById('isLogin').value;
 			if(isLogin == 'anonymousUser'){				 
-				alert("로그인 후 작성해주시기 바랍니다.");				  
+				alert("로그인 후 작성해주시기 바랍니다.");
+
 			}	
+			
+			var btn = $(this).attr("id");
+			if(btn == 'btnInfant1'){
+				location.href = "/vegemilBaby/sample/form?sItem=INF";
+			}else if(btn == 'btnInfant3'){
+				location.href= "/vegemilBaby/sample/form?sItem=TO3";
+			}
+			
+			
+				
 	    });
 		
 		$('#btnInfant2').click(function() {
@@ -49,8 +60,10 @@
 			
 			let isLogin = document.getElementById('isLogin').value;
 			if(isLogin == 'anonymousUser'){				 
-					 alert("로그인 후 작성해주시기 바랍니다.");				  
-			 	}	
+				alert("로그인 후 작성해주시기 바랍니다.");				  
+			 }	
+			
+			location.href = "/vegemilBaby/sample/form?sItem=TO2";
 	    });
 	});
 	
