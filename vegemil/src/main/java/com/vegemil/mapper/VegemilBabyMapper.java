@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -107,8 +108,14 @@ public interface VegemilBabyMapper {
 	
 	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
 	
-
+	//월별 샘플 신청 현황
+	public VBSampleRequestMonthDTO selectVegemilBabySampleRequsetByMonth(String sItem);
+	
+	
+	
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
+	
+	
     
  
 

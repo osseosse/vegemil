@@ -4,10 +4,10 @@
 <title>샘플신청양식</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
 <body>
+<div id="wrap">	
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
- <div id="wrap">	
 <script>
 	 function modelSelNumSam(){	
 		 
@@ -85,53 +85,53 @@
 <!-- ------------------- content ------------------- -->
 <div id="content">
 	<div class="container100">
-		<div class="row pd0 mg0 ">
-			<div class="col-md-12">
-				<div class="subIMG03_04 subIMG">
-					<div class="container h640">
-						<div class="subTxt">
-							<p class="f40_6">샘플신청</p>
-							<p class="f20_4 mt20">베지밀 영&middot;유아식<br>우리 아이가 잘 먹을까 고민되시나요?</p>
+			<div class="row pd0 mg0 ">
+				<div class="col-md-12">
+					<div class="subIMG03_04 subIMG">
+						<div class="container h560">
+							<div class="subTxt">
+								<p class="f40 fw600 white">샘플신청</p>
+								<p class="f20 mt20 white">베지밀 영&middot;유아식,<br>우리 아이가 잘 먹을까 고민되시나요? </p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- /.row pd0 mg0 -->
 		</div>
-		<!-- /.row pd0 mg0 -->
-	</div>
-	<div class="container100 bg_b2">
-		<div class="container">
-			<div class="row ">
-				<div class="col-md-12">
-					<!-- snbMenu -->
-					<div class="snbMenu modelsubMenu">
-						<dl>
-							<dd>
-								<!-- cate_sel_01 -->
-								<li>
-									<div class="cate_sel_01">
-										<div class="option-list_01" >
-											<p class="view-btn_01" >
-												<a href="javascript:void(0);">Event</a>
-											</p>
-										</div>
-										<div class="list_open_01">
-											<div class="cate_content">
-												<ul class="cate_ul_list">
-													<li><a th:href="@{/vegemilBaby/brand}">brand</a></li>
-													<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-													<li><a th:href="@{/vegemilBaby/bv_event}"> Event</a></li>
-													<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
-													<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
-												</ul>
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
+				<div class="row ">
+					<div class="col-md-12">
+						<!-- snbMenu -->
+						<div class="snbMenu">
+							<dl>
+								<dd>
+									<!-- cate_sel_01 -->
+									<li>
+										<div class="cate_sel_01">
+											<div class="option-list_01" >
+												<p class="view-btn_01" >
+													<a href="javascript:void(0);">Event</a>
+												</p>
+											</div>
+											<div class="list_open_01">
+												<div class="cate_content">
+													<ul class="cate_ul_list">
+														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
+														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<!-- // cate_sel_01 -->
-							</dd>
-							<dd>
-								<!-- cate_sel_02 -->
+									</li>
+									<!-- // cate_sel_01 -->
+								</dd>
+								<dd>
+									<!-- cate_sel_02 -->
 									<li>
 										<div class="cate_sel_02">
 											<div class="option-list_02" >
@@ -142,25 +142,25 @@
 											<div class="list_open_02">
 												<div class="cate_content">
 													<ul class="cate_ul_list2">
-														<li><a href="/vegemilBaby/bv_event">진행 중 이벤트</a></li>
-														<li><a href="/vegemilBaby/event_review_form2">후기 이벤트</a></li>
-														<li><a href="/vegemilBaby/event_model">아기 달력모델 선발대회</a></li>
-														<li><a href="/vegemilBaby/sample2">샘플신청</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+														<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+														<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
+														<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
 													</ul>
 												</div>
 											</div>
 										</div>
 									</li>
 									<!-- // cate_sel_02 -->
-							</dd>
-						</dl>
+								</dd>
+							</dl>
+						</div>
+						<!-- snbMenu -->
 					</div>
-					<!-- snbMenu -->
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- //container100 -->
+		<!-- //container100 -->
        <div class="container100">
            <div class="row  pd0 mg0 ">
                <dl id="con01">

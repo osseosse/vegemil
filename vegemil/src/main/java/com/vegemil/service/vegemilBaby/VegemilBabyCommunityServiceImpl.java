@@ -12,14 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
+import com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -276,6 +275,23 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return (sampleCount >= 1) ? true : false;
 	}	
 	
+	
+	@Override
+	public boolean IsAvaliableSampleReq(String sItem) {
+		
+		boolean isAvailable = false;
+		
+		// 제품별 샘플 신청 가능 여부 
+		VBSampleRequestMonthDTO sampleMonth = vegemilBabyMapper.selectVegemilBabySampleRequsetByMonth(sItem);
+		
+		if(sampleMonth.getReqCnt()<100) {
+			isAvailable = true;
+		}
+		
+		System.out.println(sampleMonth);
+		return isAvailable;
+	}
+	
 	//아기모델센발대회 - 이달의모델 조회
 	@Override
 	public List<BoardResponseVO> selectModelList(BoardListSearchDTO boardListSearchDTO) {
@@ -324,7 +340,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		}
 		return babyInfoList;
 	}
-	
+
 	
 
 }

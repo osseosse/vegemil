@@ -468,9 +468,6 @@
 	</select>
 	
 	
-	
-	
-	
 	<!-- 아기모델센발대회 - 이달의모델 조회 -->
 	<select id='selectModelList'  parameterType ="com.vegemil.paging.BoardListSearchDTO" resultType="com.vegemil.paging.BoardResponseVO">	
 <!-- 	<select id='selectModelList'  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO"> -->	
@@ -578,13 +575,20 @@
 			s_item = #{sItem}
 	</select>
 	
+	<select id="selectVegemilBabySampleRequsetByMonth" resultType="com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO" parameterType="string">
 	
+		/* selectVegemilBabySampleRequsetByMonth */
+		
+	    <![CDATA[	
+			SELECT 
+				MONTH(NOW()) as req_month , s_item, count(*) as req_cnt 
+			FROM m_sample_baby 
+			WHERE 
+				s_writedate BETWEEN DATE_FORMAT(NOW(), '%Y-%m-01') AND LAST_DAY(NOW())
+		    GROUP BY s_item HAVING s_item = #{sItem}
+	    ]]>
 	
-	
-	
-	
-	
-	
+	</select>
 	
 	<select id ="magazineCount" parameterType ="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="int">
 		SELECT 

@@ -354,6 +354,12 @@ public class VegemilBabyController extends UiUtils {
 	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 	        }
 		}
+		
+		//sItem 값에 들어온 제품 현재 샘플 신청 카운트 구해서 튕기거나 보내거나 
+		if(vegemilBabyCommunityService.IsAvaliableSampleReq(sItem)==false) {
+			return showMessageWithRedirect("월 샘플 신청이 마감되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		}
+		
 
         model.addAttribute("member", member);		
         model.addAttribute("sItem", sItem);
