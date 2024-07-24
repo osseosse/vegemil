@@ -374,6 +374,10 @@ public class VegemilBabyController extends UiUtils {
 		PrintWriter out = response.getWriter();
 		
 		try {
+			//sItem 값에 들어온 제품 현재 샘플 신청 카운트 구해서 튕기거나 보내거나 
+			if(vegemilBabyCommunityService.IsAvaliableSampleReq(sample.getSItem())==false) {
+				return showMessageWithRedirect("해당 제품 월 샘플 신청이 마감되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
 			
 			boolean isRegistered = vegemilBabyCommunityService.isSampleForm(sample);
 			if (isRegistered == true) {
