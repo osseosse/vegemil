@@ -287,8 +287,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		if(sampleMonth.getReqCnt()<100) {
 			isAvailable = true;
 		}
-		
-		System.out.println(sampleMonth);
+		//System.out.println(sampleMonth);
 		return isAvailable;
 	}
 	

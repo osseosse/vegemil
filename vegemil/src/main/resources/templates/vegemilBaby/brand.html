@@ -3,11 +3,21 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
 <title>브랜드 소개</title>  
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
+<!-- forest 2407 리뉴얼 추가 css -->
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/animate.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/swiper-bundle.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/magnific-popup.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/font-awesome-pro.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/spacing.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/slick.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/custom-animation.css"/>
+<link rel="stylesheet" href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/forest/main.css"/>	
+<!-- // forest -->
 <body>
+<div id="wrap">
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ --> 
-  
   <!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
@@ -253,9 +263,11 @@
 			</div>
 		</div>
 		<!-- //container100 -->
+		</div>		
 	</div>
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	</div>
   </body>
 </html>

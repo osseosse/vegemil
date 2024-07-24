@@ -3,7 +3,8 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
 <title>영양</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
-<body >
+<body>
+<div id="wrap">
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
@@ -215,14 +216,11 @@
 				</div><!-- // Tab -->
 			</div><!-- //row-->
 		</div><!-- //container100 -->
-
-
-		
 	</div>
 	<!-- ------------------- // content ------------------- -->
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
-
+	</div>
 	</body>
 </html>
