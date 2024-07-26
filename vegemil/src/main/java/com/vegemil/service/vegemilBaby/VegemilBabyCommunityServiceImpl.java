@@ -280,11 +280,23 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	public boolean IsAvaliableSampleReq(String sItem) {
 		
 		boolean isAvailable = false;
+		int upperLimit = 0;
 		
 		// 제품별 샘플 신청 가능 여부 
 		VBSampleRequestMonthDTO sampleMonth = vegemilBabyMapper.selectVegemilBabySampleRequsetByMonth(sItem);
 		
-		if(sampleMonth.getReqCnt()<100) {
+		if(sampleMonth==null) {
+			// 아예 아무 신청도 없는 첫 데이터면 null이 반환되므로 무조건 true 
+			return true;
+		}
+		
+		if(sItem.equals("NKIN")) {
+			upperLimit = 200;
+		}else {
+			upperLimit = 150;
+		}
+		
+		if(sampleMonth.getReqCnt()<upperLimit) {
 			isAvailable = true;
 		}
 		//System.out.println(sampleMonth);

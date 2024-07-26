@@ -385,6 +385,7 @@ public class VegemilBabyController extends UiUtils {
 				out.flush();
 				return showMessageWithRedirect("고객님은 이미 샘플신청을 했습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 			}
+					
 			isRegistered = vegemilBabyCommunityService.insertSampleForm(sample);
 			if (isRegistered == false) {
 				out.println("<script>alert('샘플 신청이 실패했습니다.'); history.go(-1);</script>");

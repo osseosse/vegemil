@@ -229,12 +229,12 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sItem']==null)	return '미선택';
-      			else if(full['sItem']=='INF')	return '인펀트';
-      			else if(full['sItem']=='TO2')	return '토들러2';
-      			else if(full['sItem']=='TO3')	return '토들러3';
+      			else if(full['sItem']=='INF')	return '(구)인펀트';
+      			else if(full['sItem']=='TO2')	return '(구)토들러2';
+      			else if(full['sItem']=='TO3')	return '(구)토들러3';
       			else if(full['sItem']=='NINF')	return '(신)인펀트';
-      			else if(full['sItem']=='NTO2')	return '(신)토들러2';
-      			else if(full['sItem']=='NTO3')	return '(신)토들러3';
+      			else if(full['sItem']=='NTOD')	return '(신)토들러';
+      			else if(full['sItem']=='NKIN')	return '(신)킨더랜드';
       			else	return '미선택';
       			
       		}
