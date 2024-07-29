@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,9 +29,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.view.RedirectView;
 
-import com.mysql.cj.log.Log;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.CMRespDto;
 import com.vegemil.domain.MemberDTO;
@@ -353,14 +352,18 @@ public class VegemilBabyController extends UiUtils {
 			if("1".equals(member.getMIsIdle())){
 	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 	        }
+			
+			boolean isRegistered = vegemilBabyCommunityService.isSampleForm(member.getMId(), sItem);
+			if (isRegistered == true) {				
+				return showMessageWithRedirect("고객님은 이미 샘플신청을 했습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
 		}
 		
 		//sItem 값에 들어온 제품 현재 샘플 신청 카운트 구해서 튕기거나 보내거나 
 		if(vegemilBabyCommunityService.IsAvaliableSampleReq(sItem)==false) {
-			return showMessageWithRedirect("월 샘플 신청이 마감되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			return showMessageWithRedirect(LocalDate.now().getMonthValue() + "월 샘플 신청이 마감되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 		}
-		
-
+			
         model.addAttribute("member", member);		
         model.addAttribute("sItem", sItem);
 		return "vegemilBaby/sampleForm";

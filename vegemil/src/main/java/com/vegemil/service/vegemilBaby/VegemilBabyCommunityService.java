@@ -91,6 +91,7 @@ public interface VegemilBabyCommunityService {
 	//샘플 신청 등록
     public boolean insertSampleForm(VegemilBabySampleDTO sample);    
     public boolean isSampleForm(VegemilBabySampleDTO params);
+    public boolean isSampleForm(String sId, String sItem);
     
     
     // 샘플 신청 현황 100 개씩 제한

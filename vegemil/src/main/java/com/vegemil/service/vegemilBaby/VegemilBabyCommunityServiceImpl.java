@@ -275,6 +275,22 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return (sampleCount >= 1) ? true : false;
 	}	
 	
+	@Override
+	public boolean isSampleForm(String sId, String sItem) {
+		
+		int sampleCount = 0;
+		VegemilBabySampleDTO sampleDTO = new VegemilBabySampleDTO();
+		
+		sampleDTO.setSId(sId);
+		sampleDTO.setSItem(sItem);
+		
+		sampleCount = vegemilBabyMapper.sampleFormCountBySample(sampleDTO);
+
+		return (sampleCount >= 1) ? true : false;
+	}
+
+	
+	
 	
 	@Override
 	public boolean IsAvaliableSampleReq(String sItem) {
@@ -352,6 +368,5 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return babyInfoList;
 	}
 
-	
 
 }
