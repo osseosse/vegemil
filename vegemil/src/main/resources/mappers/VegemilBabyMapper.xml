@@ -560,8 +560,7 @@
 			#{cImage2},
 			#{cAlived}
 		)
-	</insert>
-	
+	</insert>	
 	
 	
 	<select id ="sampleFormCountBySample" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" resultType="int" >	
@@ -573,6 +572,18 @@
 			s_id = #{sId}
 		AND 
 			s_item = #{sItem}
+	</select>
+	
+	<select id ="selectSampleQtyLimit" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" 
+																										resultType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" >	
+		SELECT
+			*
+		FROM 
+			m_sample_qtylimit
+		WHERE
+			m_year = #{mYear}
+		AND 
+			m_mon = #{mMon}
 	</select>
 	
 	<select id="selectVegemilBabySampleRequsetByMonth" resultType="com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO" parameterType="string">

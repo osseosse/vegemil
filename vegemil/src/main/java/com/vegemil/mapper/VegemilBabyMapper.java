@@ -3,8 +3,6 @@ package com.vegemil.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
@@ -18,6 +16,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.paging.BoardListSearchDTO;
 import com.vegemil.paging.BoardResponseVO;
@@ -107,6 +106,8 @@ public interface VegemilBabyMapper {
 	public int selectCountRecentPosting(VegemilBabyCalendarModelDTO sample);
 	
 	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
+	
+	public VegemilBabySampleQtyDTO selectSampleQtyLimit(VegemilBabySampleQtyDTO sampleQtyDto);
 	
 	//월별 샘플 신청 현황
 	public VBSampleRequestMonthDTO selectVegemilBabySampleRequsetByMonth(String sItem);

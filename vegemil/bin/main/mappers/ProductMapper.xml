@@ -97,7 +97,8 @@
 			 <include refid="productColumns" />
 		FROM          
 			 m_product           
-		WHERE p_active = 1
+		WHERE 
+		  p_active = 1
 		  <if test="searchKeyword != null and searchKeyword != ''">  
 		  AND p_name like CONCAT('%',#{searchKeyword},'%')
 		  OR description like CONCAT('%',#{searchKeyword},'%')

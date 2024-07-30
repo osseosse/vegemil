@@ -157,7 +157,7 @@ $(function(){
 	  active_class: "current",
 	  list_class: "tabs2", /* tabe2 변경*/
 	  content_class: "tab_content_brand", /* tab_content_brand */
-	  starting_tab: 2 /* 베스트후기 개발로 인한 2로선정 */
+	  starting_tab: 1 /* 베스트후기 개발로 인한 2로선정 */
 	}, options );
 	var $content = $('.' + settings.content_class);
 	var $list = $('.' + settings.list_class);

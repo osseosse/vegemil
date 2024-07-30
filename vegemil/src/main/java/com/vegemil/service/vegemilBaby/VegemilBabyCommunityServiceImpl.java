@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -27,6 +28,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.mapper.VegemilBabyMapper;
 import com.vegemil.paging.BoardListSearchDTO;
@@ -289,9 +291,7 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return (sampleCount >= 1) ? true : false;
 	}
 
-	
-	
-	
+
 	@Override
 	public boolean IsAvaliableSampleReq(String sItem) {
 		
@@ -306,10 +306,14 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 			return true;
 		}
 		
+		VegemilBabySampleQtyDTO sampleQty = vegemilBabyMapper.selectSampleQtyLimit(new VegemilBabySampleQtyDTO(LocalDate.now()));
+		
 		if(sItem.equals("NKIN")) {
-			upperLimit = 200;
+			upperLimit = sampleQty.getMNkin();
+		}else if(sItem.equals("NTOD")){
+			upperLimit = sampleQty.getMNtod();
 		}else {
-			upperLimit = 150;
+			upperLimit = sampleQty.getMNinf();
 		}
 		
 		if(sampleMonth.getReqCnt()<upperLimit) {

@@ -236,14 +236,15 @@ $(function(){
 							>
 								<p class="mt5">LOGIN</p>
 						</a></li>
-						<!-- <li class="shop"  sec:authorize="isAuthenticated()"><a href="#pop_Login" class="hvr-float"><img class="wView" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png" alternatetext="로그아웃"><p class="mt5">LOGOUT</p></a></li> -->
-						<li sec:authorize="isAnonymous()"><a
-							href="/member/join"
-							class="hvr-float"
-						> <img
-								src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_love2.png"
-								alt="조인"
-							/>
+						 
+						<li class="shop" sec:authorize="isAuthenticated()">
+							<a href="/member/logout" class="hvr-float">
+				    		<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png" alt="로그아웃">				    	
+				    		<p class="mt5">LOGOUT</p>
+				    		</a>
+						</li>						
+						<li sec:authorize="isAnonymous()"><a href="/member/join" class="hvr-float"> 
+						<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/ico_love2.png" alt="조인"/>
 								<p class="mt5">JOIN</p>
 						</a></li>
 						<li class="sns"><a
