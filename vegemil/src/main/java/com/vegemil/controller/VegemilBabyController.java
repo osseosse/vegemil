@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -344,6 +345,17 @@ public class VegemilBabyController extends UiUtils {
 	@GetMapping("/vegemilBaby/sample/form")
 	public String moveSampleForm(Authentication authentication, Model model,
 							@RequestParam(value = "sItem", required = false) String sItem) {		
+		
+		List<String> sortOfSamples = Arrays.asList("NINF", "NTOD", "NKIN");
+		
+		if(StringUtils.hasText(sItem)) {
+			if(!sortOfSamples.contains(sItem)) {
+				return showMessageWithRedirect("잘못된 접근입니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
+		}else {
+			return showMessageWithRedirect("잘못된 접근입니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		}
+		
 		MemberDTO member = new MemberDTO();
 		if(authentication == null) {
 			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
