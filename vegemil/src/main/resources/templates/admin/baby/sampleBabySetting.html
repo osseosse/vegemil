@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorator="admin/layout/dataLayout">
+	
+	<th:block layout:fragment="title">
+		<title>샘플수량설정</title>
+	</th:block>
+	
+	<th:block layout:fragment="add-css">
+		<!-- BEGIN: Page CSS-->
+	    <!-- END: Page CSS-->
+	</th:block>
+	
+	<!-- BEGIN: Page Vendor JS-->
+	<th:block layout:fragment="add-script">
+	    <script th:src="@{/app-assets/admin/baby/sampleBabySetting.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
+	    <script th:src="@{/app-assets/admin/common/common.js}"></script>
+    </th:block>
+    <!-- END: Page Vendor JS-->
+	
+
+	<th:block layout:fragment="content">
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-start mb-0">샘플수량설정</h2>
+                            <div class="breadcrumb-wrapper">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+	                                    <a href="javascript:void(0);">
+	                                    	Home
+	                                    </a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                    	<a href="javascript:void(0);">
+                                    		영유아식
+                                    	</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">
+                                    	샘플신청내역
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="content-body">
+            	<form name="frm" id="frm">
+	                <!-- Analytics card section -->
+	                <section id="analytics-card">
+						 
+	                </section>
+	                <!--/ Analytics Card section -->
+	            </form>
+
+				<!-- 월별 샘플 수량 -->
+				<section id="basic-horizontal-layouts">
+					<div class="row" >
+						<div class="col-12">
+							<div class="card">								
+								<div class="table-responsive">
+									<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
+										<colgroup>
+											<col width="4%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">																					
+										</colgroup>
+										<thead>
+											<tr>
+												<th>No.</th>
+												<th>연월</th>
+												<th>인펀트</th>
+												<th>토들러</th>
+												<th>킨더랜드</th>
+												<th>수정일</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+                </section>
+				<!-- // 월별 샘플 수량 -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+    
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <form id="form" method="POST">
+    	<input type="hidden" id="mIdx" name="mIdx" />
+    	<input type="hidden" id="mTitle" name="mTitle" />
+    	<input type="hidden" id="mSrc" name="mSrc" />
+    	<input type="hidden" id="mDisplay" name="mDisplay" />
+    	<input type="hidden" id="action" name="action" />
+    </form>
+    
+    </th:block>
+    
+</html>

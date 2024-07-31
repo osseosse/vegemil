@@ -1017,6 +1017,19 @@
 		WHERE
 		c_idx = #{cIdx}
 	</update>
+	
+	<!-- 샘플 제공 수량 -->
+	<select id="selectVBSampleQty" parameterType="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" >
+		/* selectVBSampleQty by AdminBabyMapper.xml */
+		
+		SELECT
+			*
+		FROM 
+			m_sample_qtylimit
+		ORDER BY m_id DESC
+		LIMIT 10;			
+		
+	</select>
 
 
 </mapper>

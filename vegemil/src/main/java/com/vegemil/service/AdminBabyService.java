@@ -12,6 +12,7 @@ import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 
 public interface AdminBabyService {
 	
@@ -75,6 +76,8 @@ public interface AdminBabyService {
 	public boolean deleteSampleBaby(Map<String, Object> paramMap);
 
 	public List<AdminSampleBabyDTO> getSampleBabyList(AdminSampleBabyDTO paramMap);
+	
+	public List<VegemilBabySampleQtyDTO> getVBSampleQtyPerMon();
 	//=================== 샘플신청  =========================
 	
 	

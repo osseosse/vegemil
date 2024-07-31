@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -27,6 +26,7 @@ import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.mapper.AdminBabyMapper;
 import com.vegemil.paging.PaginationInfo;
 
@@ -646,7 +646,12 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		return (queryResult == 1) ? true : false;
 	}
 
-	
+
+	@Override
+	public List<VegemilBabySampleQtyDTO> getVBSampleQtyPerMon() {
+		return adminBabyMapper.selectVBSampleQty();
+	}
+
 	
 
 	

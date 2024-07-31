@@ -44,14 +44,13 @@ import com.google.gson.JsonObject;
 import com.vegemil.adapter.GsonLocalDateTimeAdapter;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.AdminBabyDTO;
-import com.vegemil.domain.AdminBeanSoupEventDTO;
 import com.vegemil.domain.AdminBestReviewDTO;
 import com.vegemil.domain.AdminCalendarModelDTO;
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
-import com.vegemil.domain.AdminMediaNewsDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.service.AdminBabyService;
 import com.vegemil.util.UiUtils;
 
@@ -720,6 +719,24 @@ public class AdminBabyController extends UiUtils {
 		}
 		return rtnMsg;
     }
+	
+	@GetMapping(value = "/admin/manage/baby/sampleBabySetting")
+	public @ResponseBody JsonObject sampleBabySetting(HttpServletResponse response) throws Exception {
+		
+		
+		List<VegemilBabySampleQtyDTO> sampleQtyList = adminBabyService.getVBSampleQtyPerMon();
+		JsonObject jsonObj = new JsonObject();
+		if (CollectionUtils.isEmpty(sampleQtyList) == false) {
+			Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTimeAdapter()).create();
+			JsonArray jsonArr = gson.toJsonTree(sampleQtyList).getAsJsonArray();
+			jsonObj.add("data", jsonArr);
+		}
+
+		return jsonObj;
+
+	}
+	
+	
 	//============================================ TVCF ============================================
 	
 	//정적 이미지 불러오기

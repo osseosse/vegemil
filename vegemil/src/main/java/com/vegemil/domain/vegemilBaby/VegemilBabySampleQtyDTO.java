@@ -2,6 +2,7 @@ package com.vegemil.domain.vegemilBaby;
 
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,7 @@ public class VegemilBabySampleQtyDTO {
 	private int mNinf; 
 	private int mNtod; 
 	private int mNkin;
+	private Date mUpdateDate;
 	
 	public VegemilBabySampleQtyDTO() {
 		// TODO Auto-generated constructor stub

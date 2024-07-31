@@ -11,6 +11,7 @@ import com.vegemil.domain.AdminCalendarModelDTO;
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.AdminSampleBabyDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 
 @Mapper
 public interface AdminBabyMapper {
@@ -107,6 +108,8 @@ public interface AdminBabyMapper {
 	public List<AdminSampleBabyDTO> selectSampleBabyList(AdminSampleBabyDTO params);
 
 	public int selectSampleBabyTotalCount(AdminSampleBabyDTO params);
+	
+	public List<VegemilBabySampleQtyDTO> selectVBSampleQty();
 	//=================== 샘플신청  =========================
 	
 	
