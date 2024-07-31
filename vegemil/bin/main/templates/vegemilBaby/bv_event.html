@@ -4,18 +4,20 @@
 <title>진행 중 이벤트</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>    
 <body>
+<div id="wrap">
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
+	<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG03_01 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">진행 중 이벤트</p>
-								<p class="f20_4 mt20">다양한 이벤트에 참여하시고<br>푸짐한 상품도 받아가세요.</p>
+								<p class="f40 fw600 white">진행 중 이벤트</p>
+								<p class="f20 mt20 white">다양한 이벤트에 참여하시고<br>푸짐한 상품도 받아가세요.</p>
 							</div>
 						</div>
 					</div>
@@ -23,12 +25,12 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
-						<div class="snbMenu">
+						<div class="snbMenu modelsubMenu"> <!-- 0725 -->
 							<dl>
 								<dd>
 									<!-- cate_sel_01 -->
@@ -44,8 +46,8 @@
 													<ul class="cate_ul_list">
 														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
 														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
 														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 													</ul>
 												</div>
@@ -66,10 +68,10 @@
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
-															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+															<li><a href="/vegemilBaby/event">진행 중 이벤트</a></li>
+															<li><a href="/vegemilBaby/event_review_best">후기 이벤트</a></li>
+															<li><a href="/vegemilBaby/event_model">아기 달력모델 선발대회</a></li>
+															<li><a href="/vegemilBaby/sample">샘플신청</a></li>
 														</ul>
 													</div>
 												</div>
@@ -86,16 +88,25 @@
 		</div>
 		<!-- //container100 -->
 		
-		<!-- //container100 -->		
 		<div class="container100">
 			<div class="row mg0 pd0">
 				<div class="container">					
 					<div class="col-md-12 brandTxt">
-						<p class="f24_4_bg">Event</p>
+						<div class="subTitle">
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+							</div>
+							<div class="f24_8_bg">
+								<p class="f24_7_bg">Event</p>
+							</div>
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+							</div>
+						</div>
 						<p class="f55_6 mt30">진행 중 이벤트</p>
 						<p class="f24_4 mt10">현재 진행 중인 이벤트를 확인하세요.</p>
 					</div>
-					
+
 					<div th:if="${!#lists.isEmpty(eventList)}" class="col-md-12  eventBox">
 							<div class="col-md-4 hvr-float-shadow" th:each="event : ${eventList}">
 								<a th:href="${event.eUri}">
@@ -113,29 +124,35 @@
 							</div>	
 					</div>
 					
-					<div th:if="${#lists.isEmpty(eventList)}" style="text-align:center;padding-top:50px; font-size:16px; font-weight:600; color:#666666">
+					<div th:if="${#lists.isEmpty(eventList)}" style="text-align:center;padding-top:100px; padding-bottom:100px; font-size:16px; font-weight:600; color:#666666">
 						- 진행중인 이벤트가 없습니다. -
 					</div>
-
-					
-					<br><br><br><br><br><br>
-			         <!-- 글 없음 메세지 -->
+					<!-- paging -->
+					<!-- 
+					<div class="paging3">
+						<ol>
+							<li class="preEnd"><img src="http://image.edaymall.com/images/btn/btn_preEnd.gif" alt="처음" /></li>
+							<li class="pre"><img src="http://image.edaymall.com/images/btn/btn_pre.gif" alt="이전" /></li>
+							<li><a href="#">1</a></li>
+							<li><strong>2</strong></li><!-- 현재페이지 
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li class="next"><img src="http://image.edaymall.com/images/btn/btn_next.gif" alt="다음" /></li>
+							<li class="nextEnd"><img src="http://image.edaymall.com/images/btn/btn_nextEnd.gif" alt="끝" /></li>
+						</ol>
+					</div>
+					-->
+					<!-- paging //-->
 				</div><!-- //container -->
 			</div><!-- //row-->
 		</div><!-- //container100 -->
+	</div>
+	<!-- ------------------- // content ------------------- -->
 				
-				<!-- 탭 -->
-				<script type="text/javascript">
-					$(document).ready(function(){
-						$('#tab_brand').basicTabs();/* 영양탭 */
-					});
-				</script>
-				
-				
-	  </div>	
-
 	<!-- ================================ Footer ================================ -->
 	<footer th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	</div>
 	</body>
 </html>

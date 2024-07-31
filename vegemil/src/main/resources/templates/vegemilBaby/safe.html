@@ -4,19 +4,20 @@
 <title>안심플러스</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
 <body>
+<div id="wrap">
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
-		
+<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG01_03 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">안심플러스</p>
-								<p class="f20_4 mt20">베지밀 인펀트&middot;토들러는 원료3중 관리 시스템으로 철저하게 관리하며,<br>두유업계 최초로 HACPP 인증까지 획득한 제품입니다.</p>
+								<p class="f40 fw600 white">안심플러스</p>
+								<p class="f20 mt20 white">베지밀 인펀트·토들러·킨더랜드는 원료3중 관리 시스템으로 철저하게 관리하며,<br>두유업계 최초로 HACPP 인증까지 획득한 제품입니다.</p>
 							</div>
 						</div>
 					</div>
@@ -24,8 +25,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -37,17 +38,17 @@
 										<div class="cate_sel_01">
 											<div class="option-list_01" >
 												<p class="view-btn_01" >
-													<a>Brand</a>
+													<a href="javascript:void(0);">Brand</a>
 												</p>
 											</div>
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
-														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
-														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
+														<li><a href="/vegemilBaby/brand">Brand</a></li>
+														<li><a href="/vegemilBaby/premium">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>	
+														<li><a href="/vegemilBaby/e_magazine"> Community</a></li>
+														<li><a href="/vegemilBaby/faq"> Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -67,10 +68,10 @@
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
-															<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
-															<li><a th:href="@{/vegemilBaby/safe}"> 안심플러스</a></li>
-															<li><a th:href="@{/vegemilBaby/tv}"> TV광고</a></li>
+															<li><a href="/vegemilBaby/brand">브랜드소개</a></li>
+															<li><a href="/vegemilBaby/nutrition">영양</a></li>
+															<li><a href="/vegemilBaby/safe"> 안심플러스</a></li>
+															<li><a href="/vegemilBaby/tv"> TV광고</a></li>
 														</ul>
 													</div>
 												</div>
@@ -85,66 +86,58 @@
 				</div>
 			</div>
 		</div>
-		<!-- //container100 -->
-		
+		<!-- //container100 -->		
 		<div class="container100">
-			<div class="row  pd0 mg0 ">
+			<div class="row pd0 mg0 ">
 				<div class="container">					
 					<div class="col-md-12 brandTxt">
-						<p class="f24_4_bg">철저한 안심 관리 시스템</p>
+						<div class="subTitle">
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+							</div>
+							<div class="f24_8_bg">
+								<p class="f24_7_bg">철저한 안심 관리 시스템</p>
+							</div>
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+							</div>
+						</div>
 						<p class="f55_6 mt30">안심플러스</p>
 						<p class="f24_4 mt10">국제적으로 공신력있는 중앙연구소의 체계적이고 <br>정밀한 검사 시스템을 바탕으로 원료부터 완제품까지 철저하게 관리하고 있습니다.</p>
 					</div>
-					
-					<!--
-					<div class="nutBox01">
-						<div class="col-md-4">
-							<div class="underline">
-								<p class="f45_6 mt30">생후 6개월 부터 중요한<br>동&middot;식물성 균형 영양</p>
-								<p class="mt70 iconImg"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_80_01.png}" alt="" /></p>
-								<p class="mt30 f17_4">영&middot;유아기 영양관리가 중요한 이유는 성장기의 발육에도 지속적으로 영향을 미치기 때문입니다.</p>
-							</div>
-							<p class="mt50 iconImg"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_80_02.png}" alt="" /></p>
-							<p class="mt30 f17_4">영&middot;유아기 영양관리가 중요한 이유는 성장기의 발육에도 지속적으로 영향을 미치기 때문입니다.</p>
-						</div>
-						<div class="col-md-8 img100 mt30m">
-							<img  src="./img/nut01.jpg}" />
-						</div>
-					</div>
-					-->
 				</div>
 			
-				<div class="container100 mt120">
+				<div class="container100 mt90">
 					<div class="row pd0 mg0">
-						<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe01.jpg}" alt="콩밭"/></p>
+						<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe01.jpg" alt="콩밭"/></p>
 						<div class="container">
 							<div class="col-md-12">
 								<!-- youtube -->
-								<div class="youtubeBox mt180">
+								<div class="youtubeBox mt160">
 									<iframe width="100%" src="https://www.youtube.com/embed/aoXfvRI7JWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 								<!-- //youtube -->
 							</div>
 						</div>
 					</div>
-					<div class="row mg0 bg_blue mt120">
-						<div class="container base01">
+					<div class="row mg0 bgIMG_safe01 mt150">
+						<div class="container base03">
 							<div class="col-md-12 center">
 								<p class="f45_6">식품 안전 시스템</p>
-								<p class="f17_4 mt40">베지밀은 두유 업계 최초로 HACCP*인증을 받았고, 국제식품 규격인 FSSC22000* 인증을 받음으로써, 한 단계 더 높은 품질관리를 실천합니다.</p>
+								<p class="f17_4 mt20">베지밀은 두유 업계 최초로 HACCP*인증을 받았고, 국제식품 규격인 FSSC22000* 인증을 받음으로써, 한 단계 더 높은 품질관리를 실천합니다.</p>
 							</div>
 							<div class=" mt70 inb">
 								<div class="col-md-6">
-									<div class="bg_g ">
-										<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_haccp.jpg}" alt="해썹" /></p>
-										<p class="f17_4_w safeBox01">* HACCP(식품안전관리인증)이란? <br>
+									<div class="bg_wbox">
+										<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_haccp.jpg" alt="해썹" /></p>
+										<p class="f17_4 safeBox01"><b>* HACCP(식품안전관리인증)이란?</b><br> <!-- 0725 적용 안됨 -->
 										<span>식품의 원재료부터 유통 전 단계에 발생할 수 있는 위해 요소를 관리하는 위생관리체계 </span></p>
 									</div>
 								</div>
 								<div class="col-md-6 mt30m">
-									<div class="bg_g ">
-										<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_fssc.jpg}" alt="fssc22000" /></p>
-										<p class="f17_4_w safeBox01">*FSSC 22000 (식품안전시스템인증)이란?<br>
+									<div class="bg_wbox">
+										<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_fssc.jpg" alt="fssc22000" /></p>
+										<p class="f17_4 safeBox01"><b>*FSSC 22000 (식품안전시스템인증)이란?</b><br> <!-- 0725 적용 안됨 -->
 										<span>국제식품안전협회(GFSI)가 승인한 국제 식품규격하나로 세계 각국의 인정기관(Accreditation Bodies)으로 부터 인정되고 있는 식품안전규격입니다.</span>
 										</p>
 									</div>
@@ -152,100 +145,113 @@
 							</div>
 						</div>
 					</div>
-					<div class="row mg0 bg_b">
-						<div class="container base01 bottomLine">
+					<div class="row mg0 bg_w">
+						<div class="container pt150 ">
 							<div class="col-md-12 center">
 								<p class="f45_6">철저한 3중 안심관리 시스템</p>
-								<p class="f17_4 mt40">원료 콩이 제품으로 탄생하기까지 철저한 3중 안심 관리 시스템으로 관리하여 안심에 안심을 더합니다.</p>
+								<p class="f17_4 mt30">원료 콩이 제품으로 탄생하기까지 철저한 3중 안심 관리 시스템으로 관리하여 안심에 안심을 더합니다.</p>
 							</div>
-							<div class="col-md-12 mt70">
-								<!--<div class="col-md-4">
-									<div class="center">
-										<p class="img100m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_step01.png}" alt="step1" /></p>
-										<p class="f26_4 mt40" >정부산하기관에서 구분 유통 관리하는 건강한 콩만을 공급 받아요!</p>
+							<!-- 0725 적용 안됨 -->
+							<div class="mt50 inb">
+								<div class="col-md-4">
+									<div class="step_box">
+										<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_step01.jpg" class="round10" alt="" /></p>
+										<p class="step_txt">STEP 01</p>
+										<p class="f26_4 mt40" >정부산하기관에서<br class="wView"> 구분 유통 관리하는<br class="wView"> 건강한 콩만을 공급 받아요!</p>
 									</div>
 								</div>
-								<div class="col-md-4 mt30m">
-									<div class="center">
-										<p class="img100m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_step02.png}" alt="step2" /></p>
-										<p class="f26_4 mt40">대두 입고 전 철저하게 품질검사를 실시해요!</p>
+								<div class="col-md-4 mt20m">
+									<div class="step_box">
+										<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_step02.jpg" class="round10" alt="" /></p>
+										<p class="step_txt">STEP 02</p>
+										<p class="f26_4 mt40" >대두 입고 전<br class="wView"> 철저하게 품질검사를 실시해요!</p>
 									</div>
 								</div>
-								<div class="col-md-4 mt30m">
-									<div class="center">
-										<p class="img100m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_step03.png}" alt="step3" /></p>
-										<p class="f26_4 mt40">최종 품질 검사를 통해 안전성을 확인해요!</p>
+								<div class="col-md-4 mt20m">
+									<div class="step_box">
+										<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_step03.jpg" class="round10" alt="" /></p>
+										<p class="step_txt">STEP 03</p>
+										<p class="f26_4 mt40">최종 품질 검사를 통해<br class="wView"> 안전성을 확인해요!</p>
 									</div>
-								</div>-->
+								</div>
+							</div>
+							<!-- //0725 적용 안됨 -->
+							<!-- <div class="col-md-12 mt70">
 								<ul class="step_all">
 								    <li>
-								        <p class="img100m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_step01.png}" alt="step1" /></p>
+								        <p class="img100m"><img src="./img/safe_step01.png" alt="step1" /></p>
 										<p class="f26_4 mt40" >정부산하기관에서 구분 유통 관리하는 건강한 콩만을 공급 받아요!</p>
 								    </li>
 								    <li>
-								        <p class="img100m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_step02.png}" alt="step2" /></p>
+								        <p class="img100m"><img src="./img/safe_step02.png" alt="step2" /></p>
 										<p class="f26_4 mt40">대두 입고 전 철저하게 품질검사를 실시해요!</p>
 								    </li>
 								    <li>
-								        <p class="img100m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_step03.png}" alt="step3" /></p>
+								        <p class="img100m"><img src="./img/safe_step03.png" alt="step3" /></p>
 										<p class="f26_4 mt40">최종 품질 검사를 통해 안전성을 확인해요!</p>
 								    </li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
-					<div class="row mg0 bg_b">
-						<div class="container base01 bottomLine">
+					<div class="row mg0 bg_w">
+						<div class="container pt180">
 							<div class="col-md-12 center">
 								<p class="f45_6">첨단 멸균 시스템</p>
-								<p class="f17_4 mt40">베지밀 영&middot;유아식은 고온 단시간 멸균 과정과 무균포장의 생산 공정을 통해<br>긴 유통기한(6개월)을 가질 수 있습니다.</p>
-								<div class="img100 mt70 safe_img">
-									<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_02.jpg}" alt="멸균 제품" /><span><b>유통기한 6개월</b><em></em></span></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row mg0 bg_b">
-						<div class="container base01">
-							<div class="col-md-12 center">
-								<p class="f45_6">식품이력추적관리 시스템</p>
-								<p class="f17_4 mt40">베지밀 영&middot;유아식은 소비자들의 안전한 식품선택을 위하여 콩유아식의 제조·가공단계부터 판매단계까지 각  단계별로 이력추적정보를 기록·관리하여 소비자에게 제공합니다</p>
-								<div class="img100 mt70 safe_img2">
-									<p><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/safe_03.jpg}" alt="식품이력추적관리" /><br>
-										<span class="f26_4">www.tfood.go.kr 에서 식품이력추적관리번호(바코드번호+유통기한 자리)를 입력하시면 식품의 정보를 확인하실 수 있습니다.</span>
+								<p class="f17_4 mt30">베지밀 영·유아식은 고온 단시간 멸균 과정과 무균포장의 생산 공정을 통해<br>실온에서 소비기한 동안 이용하실 수 있습니다.</p>
+								<div class="img100 mt50 safe_img">
+									<p>
+										<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_02.jpg" alt="멸균 제품" class="wView" />
+										<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_02m.jpg" alt="멸균 제품" class="mView" />
+										<span>인펀트·토들러 소비기한 6개월 /<br class="mView"> 킨더랜드 소비기한 7개월</span>
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mg0 bg_g2">
-						<div class="container base02">
+					<div class="row mg0 bg_w">
+						<div class="container pt180">
+							<div class="col-md-12 center">
+								<p class="f45_6">식품이력추적관리 시스템</p>
+								<p class="f17_4 mt30">소비자들의 안전한 식품 선택을 위해 성장기용 조제식 ‘베지밀 인펀트 프리미엄’, ‘베지밀 토들러 프리미엄’의<br>제조·가공단계부터 판매단계까지 각 단계별로 이력추적정보를 기록·관리하여 소비자에게 제공합니다.</p>
+								<div class="mt50 pt50 safe_img2">
+									<div>
+										<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/safe_03.png" alt="식품이력추적관리" /><br>
+										<span class="f22_4 safe_img2_txt">www.tfood.go.kr 에서 식품이력추적관리번호(바코드번호+유통기한 자리)를 입력하시면<br> 식품의 정보를 확인하실 수 있습니다.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt100 bg_g2">
+						<div class="container base04">
 							<div class="col-md-12 center">
 							    <p class="f30_4 mt40">아이의 건강한 성장을 위한 선택</p>
-								<p class="f45_6">베지밀 영&middot;유아식 인펀트/토들러</p>
+								<p class="f45_6">베지밀 영&middot;유아식<br class="mView"> 인펀트/토들러/킨더랜드</p>
 							</div>
 							<div class="mt70 inb">
 								<div class="col-md-6">
 									<div class="bg_w safeBox02">
-										<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_01_common.jpg}" alt="Premium - 1/2/3" /></p>
-                                        <div>
-                                            <p class="f30_6 mt50">Premium - 1 / 2 / 3</p>
-                                            <a th:href="@{/vegemilBaby/premium}" class="f17_4 moreBtn mt50 hvr-wobble-horizontal">
-                                                View more
-                                                <i class="arrowIcon"></i>
-                                            </a>
-                                        </div>
+										<a href="/vegemilBaby/premium">
+											<div class="img100 img-wrap"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common.jpg" alt="" /></div>
+											<p class="safe-illust"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common03.png" alt="" /></p>
+											<div>
+												<p>성장기용조제식</p>
+												<p><span>베지밀 인펀트 프리미엄<br>& 베지밀 토들러 프리미엄</span></p>
+											</div>
+										</a>
 									</div>
 								</div>
 								<div class="col-md-6 mt30m">
 									<div class="bg_w safeBox02">
-										<p class="img100"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p_01_common02.jpg}" alt="Premium - 1/2/3" /></p>
-                                        <div>
-                                            <p class="f30_6 mt50">Belief - 1 / 2 / 3</p>
-                                            <a th:href="@{/vegemilBaby/belief}" class="f17_4 moreBtn mt50 hvr-wobble-horizontal">
-                                                View more
-                                            </a>
-                                        </div>
+										<a href="/vegemilBaby/belief">
+											<div class="img100 img-wrap"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common02.jpg" alt="Premium - 1/2/3" /></div>
+											<p class="safe-illust"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common04.png" alt="" /></p>
+											<div>
+												<p>24개월 이상 유아를 위한 영양간식</p>
+												<p><span>베지밀 킨더랜드 프리미엄</span></p>
+											</div>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -256,18 +262,11 @@
 			</div><!-- //row-->
 		</div><!-- //container100 -->
 		
-	</div>	
-	
-	
-	
-	
-	
-	
-	
-	
-		
+	</div>
+	<!-- ------------------- // content ------------------- -->
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	</div>
 	</body>
 </html>

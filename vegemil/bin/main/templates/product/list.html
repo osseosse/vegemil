@@ -127,7 +127,7 @@
 									<li class="vv"><input type="radio" name="vv" id="#4" value="VGR" > <label for="#4"><span></span>곡물&견과 두유</label></li>
 									<li class="vv"><input type="radio" name="vv" id="#5" value="VFT" > <label for="#5"><span></span>과즙&차류 두유</label></li>
 									<li class="vv"><input type="radio" name="vv" id="#7" value="VMO" > <label for="#7"><span></span>임산 &middot; 수유부 영양식</label></li>
-									<li class="vv"><input type="radio" name="vv" id="#8" value="VBT" > <label for="#8"><span></span>영 &middot; 유아식</label></li>
+									<li class="vv"><input type="radio" name="vv" id="#8" value="VBB" > <label for="#8"><span></span>영 &middot; 유아식</label></li>
 								</ul>
 							</div>
 							
@@ -168,7 +168,7 @@
 											</a>
 											<!-- //swiper -->
 											<!-- swiper -->
-											<a th:if="${product.categoryCode == 'B'}" th:href="${product.subCategoryCode} == 'VBP'? '/vegemilBaby/premium' : '/vegemilBaby/belief'">																				
+											<a th:if="${product.categoryCode == 'B'}" th:href="${product.pCode} == 'VBK03'? '/vegemilBaby/belief' : '/vegemilBaby/premium' ">																				
 											<div class="swiper" th:classappend="|${product.swiperClass}|">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
@@ -196,7 +196,7 @@
 											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 										</a>
 									<dl class="prd-viewMore mt40">
-										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a th:href="${product.pCode} == 'VBK03'? '/vegemilBaby/belief' : '/vegemilBaby/premium' "><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
 										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>

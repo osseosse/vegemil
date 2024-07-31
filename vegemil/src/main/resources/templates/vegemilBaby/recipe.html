@@ -4,6 +4,7 @@
 <title>정식품 레시피</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <body>
+<div id="wrap">
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
@@ -13,10 +14,10 @@
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG04_03 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">영&middot;유아식 레시피</p>
-								<p class="f20_4 mt20">정식품 베지밀과 함께하는<br>간편 레시피</p>
+								<p class="f40 fw600 white">영·유아식 레시피</p>
+								<p class="f20 mt20 white">정식품 베지밀과 함께하는<br>간편 레시피</p>
 							</div>
 						</div>
 					</div>
@@ -24,8 +25,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b">
-			<div class="container">
+				<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -37,7 +38,7 @@
 										<div class="cate_sel_01">
 											<div class="option-list_01" >
 												<p class="view-btn_01" >
-													<a>Community</a>
+													<a href="javascript:void(0);">Community</a>
 												</p>
 											</div>
 											<div class="list_open_01">
@@ -45,8 +46,8 @@
 													<ul class="cate_ul_list">
 														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
 														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
 														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 													</ul>
 												</div>
@@ -61,7 +62,7 @@
 											<div class="cate_sel_02">
 												<div class="option-list_02" >
 													<p class="view-btn_02" >
-														<a>영&middot;유아식 레시피</a>
+														<a href="#">영·유아식 레시피</a>
 													</p>
 												</div>
 												<div class="list_open_02">
@@ -84,75 +85,72 @@
 				</div>
 			</div>
 		</div>
-		
-            <!-- //container100 -->
-			<!-- 탭 -->
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$('#tab_brand').basicTabs();/* 영양탭 */
-				});
-			</script>
+    <!-- //container100 -->
+ 	<!-- 탭 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#tab_brand').basicTabs();/* 영양탭 */
+		});
+	</script>
             <div class="container100 ">
                 <div class="row mg0 pd0">
                     <div class="container">					
                         <div class="col-md-12 brandTxt ">
-                            <p class="f24_4_bg">Recipe</p>
-                            <p class="f55_6 mt30">영&middot;유아식 레시피</p>
+                            <div class="subTitle">
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+								</div>
+								<div class="f24_8_bg">
+									<p class="f24_7_bg">Recipe</p>
+								</div>
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+								</div>
+							</div>
+                            <p class="f55_6 mt30">영·유아식 레시피</p>
                             <p class="f24_4 mt10">아래 레시피를 활용하여 다양한 요리를 만들어보세요!</p>
                         </div>
-						<div class="col-md-12  mt120">
-							<ul class="tabs2 btn_ch19">
-								<li class="li_icoBG01"><a>영&middot;유아식 레시피</a></li>
-								<li class="li_icoBG02"><a th:href="@{/product/cook}">정식품 기타 레시피</a></li>
-							</ul>
-						</div>
+						 <div class="col-md-12 mt100">
+                            <div class="recipe">
+                                <div class="recipe_line"></div>
+                            </div>
+                        </div>
                         <!--<div class="col-md-12">
                             <div class="recipe">
                                 <div class="recipe_line"></div>
                             </div>
                         </div>-->
-                        <!-- 위쪽 레시피 -->
-					    <div class="col-md-12 mt50 new_listBox mg0 pd0 mb80">
-                                <ul class="new_list thumb-over ">
-                               
-									<div th:each="recipe : ${recipeList}">                                          
-									
-										 <a th:with="var=${recipe.cIdx}" th:href="@{/vegemilBaby/recipe/detail/}+${var}">         
-											<li>
-												<div class="list_thumb">
-													<p class="t_img">
-													
-<!-- 											<p class="wz_img" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/'+ ${magazine.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" > -->
-													
-														<span class="t_img_span youtube-link" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/COMMUNITY/'+ ${recipe.cCode}+.jpg +');  background-position:center;-webkit-background-size: cover; background-size: cover;'" ></span>
-														<strong><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></strong>		
-													
-													
-													</p>													
-													<p class="f20_4 mt30 txtHide3" th:text="${recipe.cSubject}"></p>
-													<p class="f14_4_1 txtHide4"></p>		
-												</div>
-													
-												<p class="list_day" th:text="${recipe.cWritedate}"></p>						
-												
-												<input type="hidden" th:value="${recipe.cIdx}"/>
-											</li>
-										</a>
-									</div>
-										
-                                </ul>
-                            </div> 
-                        
-              
+                         <!--  레시피 new_list  -->
+                        <div class="col-md-12 mt50 new_listBox mg0 pd0 mb80">
+                             <ul class="new_list thumb-over ">
+							 <li th:each="recipe : ${recipeList}">
+                                      <a th:with="var=${recipe.cIdx}" th:href="@{/vegemilBaby/recipe/detail/}+${var}">
+                                          <div class="list_thumb">
+                                              <p class="t_img">
+                                                  <span class="t_img_span youtube-link"
+												th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/COMMUNITY/'+ ${recipe.cCode}+.jpg +');  background-position:center;-webkit-background-size: cover; background-size: cover;'" alt="레시피 썸네일">
+											</span>
+                                                  <strong><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif" alt="상세보기" /></strong>
+                                              </p>
+                                              <p class="f20_4 mt30 txtHide3" th:text="${recipe.cSubject}">딸기 크레이프</p>
+                                              <p class="f14_4_1 txtHide4">디저트 with 베지밀 에이</p>
+                                          </div>
+                                          <p class="list_day" th:text="${recipe.cWritedate}">2019.08.30</p>
+									<input type="hidden" th:value="${recipe.cIdx}"/>
+                                      </a>
+                                  </li>                                
+                              </ul>
+                        </div>
+                       <!--  //레시피 new_list  -->
                     <!-- //container -->
                 </div><!-- //row-->
             </div>
-            <!-- //container100 -->
-         
+            <!-- //container100 -->         
 	    </div> <!-- //content -->
-				
+	</div>				
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	</div>
 	</body>
 </html>

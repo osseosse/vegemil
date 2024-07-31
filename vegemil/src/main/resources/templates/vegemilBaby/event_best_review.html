@@ -20,10 +20,10 @@
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG03_02 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">후기 이벤트</p>
-								<p class="f20_4 mt20">우리 아기의 베지밀 이야기를 <br>남겨주세요!</p>
+								<p class="f40 fw600 white">후기 이벤트</p>
+								<p class="f20 mt20 white">우리 아기의 베지밀 이야기를 <br>남겨주세요!</p>
 							</div>
 						</div>
 					</div>
@@ -31,8 +31,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -52,8 +52,8 @@
 													<ul class="cate_ul_list">
 														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
 														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
 														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
 														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 													</ul>
 												</div>
@@ -93,7 +93,6 @@
 			</div>
 		</div>
 		<!-- //container100 -->
-		
 		<div class="container100">
 			<div class="row  pd0 mg0 ">
 
@@ -121,14 +120,30 @@
 							<div class="tab_content_brand ">									
 									<dl id="con02" class="pb120">
 										<div class="container">					
-											<div class="col-md-12 brandTxt">
-												<p class="f24_4_bg">Event</p>
+											<div class="col-md-12 brandTxt mt70m">
+												<div class="subTitle">
+													<div class="side">
+														<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+													</div>
+													<div class="f24_8_bg">
+														<p class="f24_7_bg">Event</p>
+													</div>
+													<div class="side">
+														<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+													</div>
+												</div>
 												<p class="f55_6 mt30">베스트 후기</p>
 												<p class="f24_4 mt10">베스트 후기로 선정된 분들의 후기를 만나보세요</p>
 											</div>
-										
+											<div class="col-md-12 textRight mt60">
+												<select class="selBox">
+													<option selected="selected" value="">선택해주세요</option>
+													<option value="2019">2019년</option>
+													<option value="2018">2018년</option>
+													<option value="2017">2017년</option>
+												</select>
+											</div>
 										</div>
-										 
                                        <div class="container100 center best_center" id="list">
                                             <ul class="best_thumb mt90 review2 bg_best">
 													<li th:each="bestReview : ${bestReviewList}" th:class="|hvr-float-shadow mb80 mi${bestReview.sYear}${bestReview.sMonth}${bestReview.sRank}|">
@@ -150,9 +165,6 @@
 														</a>
 													</li>
 													
-													
-
-
 												<script>												
 												  $( document ).ready( function() {													
 													$( '.mi202311' ).before( '<br>' );
@@ -206,7 +218,7 @@
 
 												</script>
 											  
-												<br>
+												<br/>
 												<li class="hvr-float-shadow mb80">
                                                     <a href="https://www.instagram.com/p/B8oY6SyleBk/?igshid=154cds0017yk3" target="_blank">
                                                         <div class="best_r">
@@ -229,7 +241,7 @@
                                                         </div>
                                                     </a>
                                                 </li>
-												<br>
+												<br/>
 												<li class="hvr-float-shadow mb80">
                                                     <a href="https://blog.naver.com/zhazhadl/221760056300" target="_blank">
                                                         <div class="best_r">
@@ -251,7 +263,7 @@
                                                         </div>
                                                     </a>
                                                 </li>                              
-												<br>
+												<br/>
 												<li class="hvr-float-shadow mb80">
                                                     <a href="https://m.blog.naver.com/toounique/221754762833" target="_blank">
                                                         <div class="best_r">
@@ -1055,10 +1067,6 @@
                                                         </div>
                                                     </a>
                                                 </li>
-												
-
-
-
                                             </ul>
                                         </div>
 									</dl><!-- //con02 -->
@@ -1069,13 +1077,8 @@
 				<!-- //탭 -->
 			</div><!-- //row-->
 		</div><!-- //container100 -->
-
-
-		
 	</div>
 	<!-- ------------------- // content ------------------- -->
-	
-		
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->

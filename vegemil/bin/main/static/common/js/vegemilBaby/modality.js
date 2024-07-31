@@ -6,7 +6,7 @@
 /**
  * Modality JavaScript Plugin
  */
-(function () {
+;(function () {
 
     // Private ---------------------------------------
 
@@ -171,7 +171,7 @@
                 inst.setTrigger( inst.triggers[i] );
         }
 
-        // close modal if users clicks anywhere off of it 팝업에서 라이오 체크불가로 인해 비활성화
+        // close modal if users clicks anywhere off of it �˾����� ���̿� üũ�Ұ��� ���� ��Ȱ��ȭ
         //if( inst.settings.clickOffToClose ) {
         //     _addEvent( inst.wrapper, "click", function(e) {
         //         _preventDefault(e); if(e.target == inst.wrapper) inst.close();

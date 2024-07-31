@@ -15,14 +15,44 @@
 		LIMIT 1;
 	</select>
 	<!-- index - 육아상담 QnA -->	
-	<select id="selectQnAIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
+	<select id="selectQnAIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO" >			
 		SELECT 
 			mbs_idx, mbs_content, mbs_image, mbs_summary, mbs_title, mbs_getdate, mbs_category
 		FROM 
 			m_editQnA_brandBaby
 		WHERE 
-			mbs_check='1'
+			mbs_active = 1
+		ORDER BY mbs_idx desc	
 		LIMIT 2;
+	</select>
+	<!-- index -  베스트 리뷰 -->	
+	<select id="selectBestReviewIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO" >			
+		SELECT 
+			s_edayId,
+			s_title,
+			s_writedate,
+			s_image
+		FROM 
+			m_sns 		
+		WHERE 
+			s_rank between 1 and 2
+		ORDER BY s_writedate desc
+		LIMIT 4;
+	</select>
+	<!-- index -  욱아정보-->	
+	<select id="selectBabyInfoIndex" resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCommunityDTO" >			
+		<![CDATA[
+		SELECT 
+			mbs_idx ,mbs_title, mbs_image, SUBSTRING_INDEX(mbs_content, '<img', 1) as mbs_content
+		FROM 
+			m_edit_brandbaby
+		WHERE
+			mbs_active = '1'
+		Order By 
+			mbs_getdate DESC
+		LIMIT
+			2;
+		]]>		    
 	</select>
 	
 	<!-- ======[Brand]====== -->
@@ -438,9 +468,6 @@
 	</select>
 	
 	
-	
-	
-	
 	<!-- 아기모델센발대회 - 이달의모델 조회 -->
 	<select id='selectModelList'  parameterType ="com.vegemil.paging.BoardListSearchDTO" resultType="com.vegemil.paging.BoardResponseVO">	
 <!-- 	<select id='selectModelList'  resultType="com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO"> -->	
@@ -533,8 +560,7 @@
 			#{cImage2},
 			#{cAlived}
 		)
-	</insert>
-	
+	</insert>	
 	
 	
 	<select id ="sampleFormCountBySample" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO" resultType="int" >	
@@ -548,13 +574,32 @@
 			s_item = #{sItem}
 	</select>
 	
+	<select id ="selectSampleQtyLimit" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" 
+																										resultType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" >	
+		SELECT
+			*
+		FROM 
+			m_sample_qtylimit
+		WHERE
+			m_year = #{mYear}
+		AND 
+			m_mon = #{mMon}
+	</select>
 	
+	<select id="selectVegemilBabySampleRequsetByMonth" resultType="com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO" parameterType="string">
 	
+		/* selectVegemilBabySampleRequsetByMonth */
+		
+	    <![CDATA[	
+			SELECT 
+				MONTH(NOW()) as req_month , s_item, count(*) as req_cnt 
+			FROM m_sample_baby 
+			WHERE 
+				s_writedate BETWEEN DATE_FORMAT(NOW(), '%Y-%m-01') AND LAST_DAY(NOW())
+		    GROUP BY s_item HAVING s_item = #{sItem}
+	    ]]>
 	
-	
-	
-	
-	
+	</select>
 	
 	<select id ="magazineCount" parameterType ="com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO" resultType="int">
 		SELECT 

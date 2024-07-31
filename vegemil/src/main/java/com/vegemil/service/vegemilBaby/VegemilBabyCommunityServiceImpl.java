@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -12,14 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
+import com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -28,6 +28,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.mapper.VegemilBabyMapper;
 import com.vegemil.paging.BoardListSearchDTO;
@@ -51,8 +52,19 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 	}
 	// 육아상담 QnA
 	@Override
-	public List<VegemilBabyQnADTO> selectQnAIndex() {
-		return vegemilBabyMapper.selectQnAIndex();
+	public List<VegemilBabyQnADTO> selectQnAIndex() {	
+		
+		List<VegemilBabyQnADTO> babyQnaList = vegemilBabyMapper.selectQnAIndex();
+		
+		for(int i=0; i<babyQnaList.size();i++) {			
+			VegemilBabyQnADTO qna = babyQnaList.get(i);
+			qna.setMbsContent(qna.getMbsContent().replaceAll("<[^>]*>", "").substring(0, 200));
+		}
+		
+		
+		
+		return babyQnaList;
+		
 	}
 	
 	//======[Brand]======	
@@ -265,6 +277,52 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		return (sampleCount >= 1) ? true : false;
 	}	
 	
+	@Override
+	public boolean isSampleForm(String sId, String sItem) {
+		
+		int sampleCount = 0;
+		VegemilBabySampleDTO sampleDTO = new VegemilBabySampleDTO();
+		
+		sampleDTO.setSId(sId);
+		sampleDTO.setSItem(sItem);
+		
+		sampleCount = vegemilBabyMapper.sampleFormCountBySample(sampleDTO);
+
+		return (sampleCount >= 1) ? true : false;
+	}
+
+
+	@Override
+	public boolean IsAvaliableSampleReq(String sItem) {
+		
+		boolean isAvailable = false;
+		int upperLimit = 0;
+		
+		// 제품별 샘플 신청 가능 여부 
+		VBSampleRequestMonthDTO sampleMonth = vegemilBabyMapper.selectVegemilBabySampleRequsetByMonth(sItem);
+		
+		if(sampleMonth==null) {
+			// 아예 아무 신청도 없는 첫 데이터면 null이 반환되므로 무조건 true 
+			return true;
+		}
+		
+		VegemilBabySampleQtyDTO sampleQty = vegemilBabyMapper.selectSampleQtyLimit(new VegemilBabySampleQtyDTO(LocalDate.now()));
+		
+		if(sItem.equals("NKIN")) {
+			upperLimit = sampleQty.getMNkin();
+		}else if(sItem.equals("NTOD")){
+			upperLimit = sampleQty.getMNtod();
+		}else {
+			upperLimit = sampleQty.getMNinf();
+		}
+		
+		if(sampleMonth.getReqCnt()<upperLimit) {
+			isAvailable = true;
+		}
+		//System.out.println(sampleMonth);
+		return isAvailable;
+	}
+	
 	//아기모델센발대회 - 이달의모델 조회
 	@Override
 	public List<BoardResponseVO> selectModelList(BoardListSearchDTO boardListSearchDTO) {
@@ -299,6 +357,20 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		
 	}
 	
+	@Override
+	public List<VegemilBabyBestReviewDTO> selectBestReviewIndex() {
+		return vegemilBabyMapper.selectBestReviewIndex();
+	}
 	
+	@Override
+	public List<VegemilBabyCommunityDTO> selectBabyInfoIndex() {
+		List<VegemilBabyCommunityDTO> babyInfoList = vegemilBabyMapper.selectBabyInfoIndex();
+		for(int i=0; i<babyInfoList.size();i++) {			
+			VegemilBabyCommunityDTO info = babyInfoList.get(i);
+			info.setMbsContent(info.getMbsContent().replaceAll("<[^>]*>", ""));			
+		}
+		return babyInfoList;
+	}
+
 
 }

@@ -4,6 +4,8 @@ import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,9 +30,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.view.RedirectView;
 
-import com.mysql.cj.log.Log;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.CMRespDto;
 import com.vegemil.domain.MemberDTO;
@@ -69,8 +69,14 @@ public class VegemilBabyController extends UiUtils {
 	
 	@GetMapping("/vegemilBaby/index")
 	public String index(Model model) {
-		model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex());
-		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());
+		//model.addAttribute("magazineList", vegemilBabyCommunityService.selectMagazineIndex())
+		// 배스트 리뷰 최신 4개
+		model.addAttribute("reviewList", vegemilBabyCommunityService.selectBestReviewIndex());
+		// 육아정보 최신 2개 
+		model.addAttribute("infoList", vegemilBabyCommunityService.selectBabyInfoIndex());
+		// 육아 qna 최신 2개 
+		model.addAttribute("qnaList", vegemilBabyCommunityService.selectQnAIndex());		
+		
 		return "vegemilBaby/index";
 	}	
 	/* ======== Brand ======== */
@@ -339,6 +345,17 @@ public class VegemilBabyController extends UiUtils {
 	@GetMapping("/vegemilBaby/sample/form")
 	public String moveSampleForm(Authentication authentication, Model model,
 							@RequestParam(value = "sItem", required = false) String sItem) {		
+		
+		List<String> sortOfSamples = Arrays.asList("NINF", "NTOD", "NKIN");
+		
+		if(StringUtils.hasText(sItem)) {
+			if(!sortOfSamples.contains(sItem)) {
+				return showMessageWithRedirect("잘못된 접근입니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
+		}else {
+			return showMessageWithRedirect("잘못된 접근입니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		}
+		
 		MemberDTO member = new MemberDTO();
 		if(authentication == null) {
 			return showMessageWithRedirect("로그인후 이용가능합니다.", "/vegemilBaby/sample", Method.GET, null, model);
@@ -347,8 +364,18 @@ public class VegemilBabyController extends UiUtils {
 			if("1".equals(member.getMIsIdle())){
 	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 	        }
+			
+			boolean isRegistered = vegemilBabyCommunityService.isSampleForm(member.getMId(), sItem);
+			if (isRegistered == true) {				
+				return showMessageWithRedirect("고객님은 이미 샘플신청을 했습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
 		}
-
+		
+		//sItem 값에 들어온 제품 현재 샘플 신청 카운트 구해서 튕기거나 보내거나 
+		if(vegemilBabyCommunityService.IsAvaliableSampleReq(sItem)==false) {
+			return showMessageWithRedirect(LocalDate.now().getMonthValue() + "월 샘플 신청이 마감되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+		}
+			
         model.addAttribute("member", member);		
         model.addAttribute("sItem", sItem);
 		return "vegemilBaby/sampleForm";
@@ -362,6 +389,10 @@ public class VegemilBabyController extends UiUtils {
 		PrintWriter out = response.getWriter();
 		
 		try {
+			//sItem 값에 들어온 제품 현재 샘플 신청 카운트 구해서 튕기거나 보내거나 
+			if(vegemilBabyCommunityService.IsAvaliableSampleReq(sample.getSItem())==false) {
+				return showMessageWithRedirect("해당 제품 월 샘플 신청이 마감되었습니다.", "/vegemilBaby/sample", Method.GET, null, model);
+			}
 			
 			boolean isRegistered = vegemilBabyCommunityService.isSampleForm(sample);
 			if (isRegistered == true) {
@@ -369,6 +400,7 @@ public class VegemilBabyController extends UiUtils {
 				out.flush();
 				return showMessageWithRedirect("고객님은 이미 샘플신청을 했습니다.", "/vegemilBaby/sample", Method.GET, null, model);
 			}
+					
 			isRegistered = vegemilBabyCommunityService.insertSampleForm(sample);
 			if (isRegistered == false) {
 				out.println("<script>alert('샘플 신청이 실패했습니다.'); history.go(-1);</script>");

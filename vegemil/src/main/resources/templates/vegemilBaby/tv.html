@@ -4,6 +4,7 @@
 <title>TV_cf</title>
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <body>
+<div id="wrap">
 <!-- ================================ Header ================================ -->
 <header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
@@ -15,15 +16,16 @@
 	</script>
 	
 	
+	<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG01_04 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">TV CF</p>
-								<p class="f20_4 mt20">베지밀 영&middot;유아식의 TV 광고 동영상을 <br>차례대로 보실 수 있습니다.</p>
+								<p class="f40 fw600 white">TV CF</p>
+								<p class="f20 mt20 white">베지밀 영&middot;유아식의 TV 광고 동영상을 <br>차례대로 보실 수 있습니다.</p> 
 							</div>
 						</div>
 					</div>
@@ -31,12 +33,12 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-	<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
-						<div class="snbMenu modelsubMenu">
+						<div class="snbMenu">
 							<dl>
 								<dd>
 									<!-- cate_sel_01 -->
@@ -50,11 +52,11 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
-														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
-														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
+														<li><a href="/vegemilBaby/brand">Brand</a></li>
+														<li><a href="/vegemilBaby/premium">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>	
+														<li><a href="/vegemilBaby/e_magazine"> Community</a></li>
+														<li><a href="/vegemilBaby/faq"> Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -68,16 +70,16 @@
 											<div class="cate_sel_02">
 												<div class="option-list_02" >
 													<p class="view-btn_02" >
-														<a href="javascript:void(0);">tv 광고</a>
+														<a href="javascript:void(0);">TV 광고</a>
 													</p>
 												</div>
 												<div class="list_open_02">
 													<div class="cate_content">
 														<ul class="cate_ul_list2">
-															<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
-															<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
-															<li><a th:href="@{/vegemilBaby/safe}"> 안심플러스</a></li>
-															<li><a th:href="@{/vegemilBaby/tv}"> TV광고</a></li>
+															<li><a href="/vegemilBaby/brand">브랜드소개</a></li>
+															<li><a href="/vegemilBaby/nutrition">영양</a></li>
+															<li><a href="/vegemilBaby/safe"> 안심플러스</a></li>
+															<li><a href="/vegemilBaby/tv"> TV광고</a></li>
 														</ul>
 													</div>
 												</div>
@@ -92,163 +94,122 @@
 				</div>
 			</div>
 		</div>
+		<!-- //container100 -->
 		
 		<div class="container100 ">
 			<div class="row mg0 pd0">
 				<div class="container ">					
 					<div class="col-md-12 brandTxt ">
-						<p class="f24_4_bg">Media</p>
+						<div class="subTitle">
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+							</div>
+							<div class="f24_8_bg">
+								<p class="f24_7_bg">Media</p>
+							</div>
+							<div class="side">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+							</div>
+						</div>
 						<p class="f55_6 mt30">TV 광고</p>
-						<!-- <p class="f24_4 mt10">정식품 베지밀 유아식 스토리입니다.</p>-->
 					</div>
 					
-					<!-- 
-					<div class="col-md-12 mt120">
-						<div class="tv">
-							<div class="tvTxt">
-								<p class="f17_4">2021년 베지밀 영유아식 CF (안현모)</p>
-								<p class="f17_4_g">2021.09.09</p>
-							</div>
-							<div class="tvVideo mt90">
-								<video autoplay  loop muted  class="bgvid">
-									<source src="/web/upload/vegemilBaby/tvcf/cf_baby_20210909.mp4" type="video/mp4"/>
-								</video>
-							</div>
-						</div>
-					</div>
-					 -->
-					
-					<div class="col-md-12 mt50 new_listBox mg0 pd0">
-					<ul class="thumb-over new_list">
-						<div th:each="tvCf : ${tvcfList}">
-							<li>
-								<a href="javascript:void(0);">
-									<div class="tv_thumb">
-										<p class="t_img">
-											<span class="t_img_span youtube-link" 												
-												th:style="'background: url(/web/upload/vegemilBaby/tvcf/' + ${tvCf.cImg} +');  background-position:center;-webkit-background-size: cover; background-size: cover;'"></span>
-											<strong>
-												<span class="youtube-link" th:youtubeid="${tvCf.cYoutubeId}">
-												<img th:src="|/web/upload/vegemilBaby/tvcf/btn_cf.gif|" alt="상세보기" />
-												</span>
-											</strong>
-										</p>
-										<p class="f17_4 mt40 txtHide2" th:text="${tvCf.cTitle}">제목</p>
-									</div>
-									<p class="tv_day" th:text="${tvCf.cDate}">2021.09.09 </p>
-									
-								</a>
-							</li>
-						</div>
-					</ul>
-					</div>
-					
-					
-									
 
-					<!-- <div class="col-md-12  tvBox mt70 ">
-					
-					
-					
+					<div class="col-md-12  tvBox mt70 ">
 						<div class="col-md-6">
 							<ul class="tv_ul thumb-over">
-							
 								<li>
 									<a href="javascript:void(0);">
 										<div class="tv_thumb">
 											<p class="t_img">
-												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/cf06.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
-												<strong><span class="youtube-link" youtubeid="W8lFbWZWS70"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></span></strong>
-											</p>
-											<p class="f17_4 mt40 txtHide2">2021년 베지밀 영유아식 CF(안현모)</p>
-										</div>
-										<p class="tv_day">2021.09.09 </p>
-									</a>
-								</li>
-								
-								
-								<li>
-									<a href="javascript:void(0);">
-										<div class="tv_thumb">
-											<p class="t_img">
-												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/cf05.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
-												<strong><span class="youtube-link" youtubeid="cMPWWSvNi74"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></span></strong>
+												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/cf05.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+												<strong><span class="youtube-link" youtubeid="cMPWWSvNi74"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_cf.gif" alt="상세보기" /></span></strong>
 											</p>
 											<p class="f17_4 mt40 txtHide2">2019 베지밀 영유아식CF(허양임)</p>
 										</div>
 										<p class="tv_day">2019.06.23 </p>
 									</a>
 								</li>
-								
 								<li>
 									<a href="javascript:void(0);">
 										<div class="tv_thumb">
 											<p class="t_img">
-												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/cf05.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
-												<strong><span class="youtube-link" youtubeid="cMPWWSvNi74"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></span></strong>
+												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/cf04.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+												<strong><span class="youtube-link" youtubeid="69zX_3pRRrU"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_cf.gif" alt="상세보기" /></span></strong>
 											</p>
-											<p class="f17_4 mt40 txtHide2">2019 베지밀 영유아식CF(허양임)</p>
+											<p class="f17_4 mt40 txtHide2">2017년 베지밀 유아식, 베지밀 건강맘 TV CF </p>
 										</div>
-										<p class="tv_day">2019.06.23 </p>
+										<p class="tv_day">2017.04.12</p>
 									</a>
 								</li>
-								
-								<li>
-									<a href="javascript:void(0);">
-										<div class="tv_thumb">
-											<p class="t_img">
-												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/cf05.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
-												<strong><span class="youtube-link" youtubeid="cMPWWSvNi74"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif}" alt="상세보기" /></span></strong>
-											</p>
-											<p class="f17_4 mt40 txtHide2">2018 베지밀 영유아식CF(허양임)</p>
-										</div>
-										<p class="tv_day">2019.06.23 </p>
-									</a>
-								</li>
-								
-								
-								
 							</ul>
-							
-							
-							
-							
-							
+						</div>
+						<div class="col-md-6 ">
+							<ul class="tv_ul thumb-over mt30m">
+								<li>
+									<a href="javascript:void(0);">
+										<div class="tv_thumb ">
+											<p class="t_img">
+												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/cf03.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+												<strong><span class="youtube-link" youtubeid="rrYvMwCDoEo"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_cf.gif" alt="상세보기" /></span></strong>
+											</p>
+											<p class="f17_4 mt40 txtHide2">베지밀 콩유아식 CF (2015년 베지밀 인펀트, 토들러 30초_REC버전) </p>
+										</div>
+										<p class="tv_day">2015.07.28 </p>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">
+										<div class="tv_thumb">
+											<p class="t_img">
+												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/cf02.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+												<strong><span class="youtube-link" youtubeid="vseuzBxTfA8"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_cf.gif" alt="상세보기" /></span></strong>
+											</p>
+											<p class="f17_4 mt40 txtHide2">베지밀 콩유아식 CF (2014년 베지밀 인펀트, 토들러 박신혜) </p>
+										</div>
+										<p class="tv_day">2014.06.01 </p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-12  tvBox mt30m mb150" >
+						<div class="col-md-6 ">
+							<ul class="tv_ul thumb-over">
+								<li>
+									<a href="javascript:void(0);">
+										<div class="tv_thumb">
+											<p class="t_img">
+												<span class="t_img_span youtube-link" style="background: url(https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/cf01.jpg);  background-position:center;-webkit-background-size: cover; background-size: cover" alt="이벤트 썸네일" ></span>
+												<strong><span class="youtube-link" youtubeid="qEJwFYIcneQ"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_cf.gif" alt="상세보기" /></span></strong>
+											</p>
+											<p class="f17_4 mt40 txtHide2">베지밀 콩유아식 CF (2012년 베지밀 인펀트, 토들러) </p>
+										</div>
+										<p class="tv_day">2012.10.01 </p>
+									</a>
+								</li>								
+							</ul>
+						</div>
+
+						<div class="col-md-6 ">
 							
 						</div>
-						
-						
-						
-						
-						
-						
-						
-						
-					</div> -->
-					
-					
-					
-					
-					
-					
-					
-					
+					</div>
 				</div><!-- //container -->
 			</div><!-- //row-->
 		</div><!-- //container100 -->
-		<script>
-		// Demo video 1
-		$(".youtube-link").grtyoutube({
-			autoPlay:true,
-			theme: "dark",
-		
-		});
-	</script>
-		
 	</div>
-			
+	<!-- ------------------- // content ------------------- -->
 	<!-- ================================ Footer ================================ -->
 	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
 	<!-- ================================ // Footer ================================ -->
+	<script>
+	// Demo video 1
+		$(".youtube-link").grtyoutube({
+			autoPlay:true,
+			theme: "dark"
+		});
+	</script>
+	</div>
 	</body>
 </html>

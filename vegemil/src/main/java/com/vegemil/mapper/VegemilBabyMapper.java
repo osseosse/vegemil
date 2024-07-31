@@ -3,12 +3,11 @@ package com.vegemil.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
 import com.vegemil.domain.SearchDTO;
+import com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -17,6 +16,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyEventDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyQnADTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyRecipeDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
+import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.paging.BoardListSearchDTO;
 import com.vegemil.paging.BoardResponseVO;
@@ -29,6 +29,11 @@ public interface VegemilBabyMapper {
 	public List<VegemilBabyCommunityDTO> selectMagazineIndex();
 	//육아상담 QnA
 	public List<VegemilBabyQnADTO> selectQnAIndex();
+	
+    // 메인 > 베스트리튜 
+	public List<VegemilBabyBestReviewDTO> selectBestReviewIndex();
+	// 메인 > 육아정보
+	public List<VegemilBabyCommunityDTO> selectBabyInfoIndex();
 
 	
 	//======[Brand]======	
@@ -102,11 +107,18 @@ public interface VegemilBabyMapper {
 	
 	public int sampleFormCountBySample(VegemilBabySampleDTO sample);
 	
-
+	public VegemilBabySampleQtyDTO selectSampleQtyLimit(VegemilBabySampleQtyDTO sampleQtyDto);
+	
+	//월별 샘플 신청 현황
+	public VBSampleRequestMonthDTO selectVegemilBabySampleRequsetByMonth(String sItem);
+	
+	
+	
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
 	
-
-
+	
+    
+ 
 
 	
 	

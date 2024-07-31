@@ -325,8 +325,6 @@ public class MemberController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
-		System.out.println("member. MdualYn ========> " + member.getMDualYn());
-		
 		try {
 			
 			boolean isRegistered = memberService.registerMember(member);

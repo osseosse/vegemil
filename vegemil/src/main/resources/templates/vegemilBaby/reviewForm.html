@@ -19,17 +19,17 @@
 	</script>
     </head>    
     
-	<body style="padding-top: 90px;">
+	<body>
 	
 	<div id="content">
 		<div class="container100">
 			<div class="row pd0 mg0 ">
 				<div class="col-md-12">
 					<div class="subIMG03_02 subIMG">
-						<div class="container h640">
+						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40_6">후기 이벤트</p>
-								<p class="f20_4 mt20">우리 아기의 베지밀 이야기를<br>남겨주세요!</p>
+								<p class="f40 fw600 white">후기 이벤트</p>
+								<p class="f20 mt20 white">우리 아기의 베지밀 이야기를<br>남겨주세요!</p>
 							</div>
 						</div>
 					</div>
@@ -37,8 +37,8 @@
 			</div>
 			<!-- /.row pd0 mg0 -->
 		</div>
-		<div class="container100 bg_b2">
-			<div class="container">
+		<div class="container100 bg_location">
+			<div class="container snbMenu_hr">
 				<div class="row ">
 					<div class="col-md-12">
 						<!-- snbMenu -->
@@ -102,9 +102,19 @@
         <div class="container100">
             <div class="row  pd0 mg0 ">
                 <dl id="con01">
-                    <div class="container">					
+                   <div class="container">					
                         <div class="col-md-12 brandTxt">
-                            <p class="f24_4_bg">Event</p>
+                            <div class="subTitle">
+								<div class="side">
+										<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+								</div>
+								<div class="f24_8_bg">
+									<p class="f24_7_bg">Event</p>
+								</div>
+								<div class="side">
+										<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+								</div>
+							</div>
                             <p class="f55_6 mt30">후기 이벤트</p>
                             <p class="f24_4 mt10">SNS에 베지밀 영&middot;유아식 체험후기 올리면, 할인쿠폰 100%발급! 우수 작성자께 드리는 온라인 상품권도 놓치지 마세요!</p>
                         </div>
@@ -121,92 +131,96 @@
 											<dd>등록일</dd>
 								        </dl>
 								      </li>
+								      <!-- 등록된 후기 없을때 -->
+									  <li>
+										<p class="f17_4 center">"등록된 후기가 없습니다."</p>
+									  </li>
+									  <!-- //등록된 후기 없을때 -->
 								      <li>  									      									
 							             <dl id="rptList" class="divideType05 f17_4" th:each="review : ${reviewList}">
 											<dd th:text="${review.sRank}">번호</dd>
 											<dd th:text="${review.sUrl}">url</dd>
 											<dd th:text="${review.sWritedate}">등록일</dd>
 									     </dl>	
-										
 									   </li>
-									
 								</ul>
-
 								<p class="f24_4 bestFomeTitle mt120">등록하기</p>
-                               
-                                    <form th:action=@{/vegemil/review/apply} th:object="${review}" method="post" enctype="multipart/form-data">
+      							 <form th:action=@{/vegemil/review/apply} th:object="${review}" method="post" enctype="multipart/form-data">
+                                    <fieldset>
                                         <legend>입력 폼</legend>
                                         <ul class="formBox">
-                                           <input style="display:none" type="text" name="sUid" th:value="${loggedId}">
+											<input style="display:none" type="text" name="sUid" th:value="${loggedId}">
                                            <li>
 												<dl class="divideType01 f17_4">
-													<dd>소개글 <span class="red_dot">*</span></dd>
+													<dd>소개글</dd>
 													<dd class="mt10m">
-														<input type="text" name="sTitle" required>													
+														<input type="text" name="sTitle" placeholder="ex)휴대하기 간편해서 외출용으로 사용해요!" required>		
 													</dd>
 												</dl>
                                             </li>
                                             <li>
 												<dl class="divideType01 f17_4">
-													<dd>공유 SNS <span class="red_dot">*</span></dd>
-													<dd>														
-														<select id=sSns name="sSns" required>
-														<option value="">선택하세요</option>
-														<option value="카카오 스토리">카카오 스토리</option>
-														<option value="인스타그램">인스타그램</option>
-														<option value="페이스북">페이스북</option>
-														<option value="블로그">블로그</option>
-														<option value="기타">기타</option>														  
-														</select>														
+													<dd>공유 SNS</dd>
+													<dd>
+														<div class="selectbox w200"> 
+															<label for="sSns">선택하세요</label> 
+															<select id=sSns name="sSns" required>
+																<option value="">선택하세요</option>
+																<option value="카카오 스토리">카카오 스토리</option>
+																<option value="인스타그램">인스타그램</option>
+																<option value="페이스북">페이스북</option>
+																<option value="블로그">블로그</option>
+																<option value="기타">기타</option>														  
+														</select>								
+														</div> 
 													</dd>
 												</dl>
                                             </li>
                                             <li class="fileBox">
 												<dl class="divideType01 f17_4">
-													<dd>대표사진 <span class="red_dot">*</span></dd>
+													<dd>대표사진</dd>
 													<dd>
-														 <p class="f17_3 mt10m">우리아이 대표사진1장을 등록해주세요. (3M이하 이미지를 등록)</p>		
-													    <input id="frm_Photo_i"  class="mt10" type="file"  accept=".png,.gif,.jpg" name="fileName" required/>
-													    
+														 <p class="f17_3 mt10m">우리아이 대표사진1장을 등록해주세요. (3M이하 이미지를 등록)</p>
+														  <label for="form_pic" class="f17_4 mt10">이미지첨부</label>
+														  <input id="form_pic"  type="file"  accept=".png,.gif,.jpg" name="fileName" required/>
 													</dd>
 												</dl>
-												 
-                                     					
                                             </li>
-                                           
                                             <li>
 												<dl class="divideType01 f17_4">
-													<dd>URL <span class="red_dot">*</span></dd>
+													<dd>URL</dd>
 													<dd class="mt10m">
-														 <input type="text" name="sUrl" id="sUrl" required>
+														<input type="text" name="sUrl" id="sUrl" required>
 														 <p class="f17_3_g mt10">
 														- 영&middot;유아식과 함께하는 모습의 사진<br>
 														- 제품 이용후기<br>
 														- 필수 해시태그 입력<br>
 														- 전체 공개<br>
 														- 대표사진 첨부</p>
-														<p class="f17_3 mt10m"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;SNS 업로드 시 [후기글 기본 요건]을 충족하셔야 합니다</p>
+														<p class="f17_3 mt10m"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png" alt="아이콘" />  &nbsp;SNS 업로드 시 [후기글 기본 요건]을 충족하셔야 합니다</p>
 													</dd>
 												</dl>
                                             </li>
                                             <li>
 												<dl class="divideType01 f17_4">
-													<dd>이데이몰 ID <span class="red_dot">*</span></dd>
+													<dd>이데이몰 ID</dd>
 													<dd class="mt10m">
-													 <input type="text" name="sEdayId" id="sEdayId" required>
-													
-														<p class="f17_3 mt10"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png}" alt="아이콘" />  &nbsp;SNS 후기 참여 선물은 담당자 확인 후 입력하신 이데이몰 ID로 자동 지급됩니다. <br>
-												정식품 회원가입 시 통합 가입에 동의하지 않으신 분은 별도 가입 후 이데이몰 ID를 입력해주세요. <a href="https://www.edaymall.com/customer/memberChoice.do?joinType_flag=generalMem"> [회원가입]</a></p>
+													  <input type="text" name="sEdayId" id="sEdayId" required>
+														<p class="f17_3 mt10"><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_yellow4.png" alt="아이콘" />  
+														&nbsp;SNS 후기 참여 선물은 담당자 확인 후 입력하신 이데이몰 ID로 자동 지급됩니다. <br>
+														정식품 회원가입 시 통합 가입에 동의하지 않으신 분은 별도 가입 후 이데이몰 ID를 입력해주세요. 
+														<a href="https://www.edaymall.com/customer/memberChoice.do?joinType_flag=generalMem"> [회원가입]</a></p>
 													</dd>
 												</dl>
                                             </li>
                                         </ul>
                                         <div class="col-md-12 center mt100">
-                                               <input type="image" id="uploadBtn"  th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg}" cssclass="submitBtn" alternatetext="응모하기"/>	
-													 <!-- input type="image -->
+                                            <!--<input type="button" value="제출하기" class="submitBtn f30_5">--> <!-- input type="button" -->
+                                            <!-- <input type="image" src="img/p03_03_button.jpg" alt="제출하기 버튼" class="submitBtn"> input type="image -->
+											<input type="image" id="uploadBtn"  th:src="@{https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/p03_03_button.jpg}" cssclass="submitBtn" alternatetext="응모하기"/>
                                         </div>
-                                    </form>
-                              
+                                    </fieldset>
+                                </form>
                             </div>
                         </div>
                     </div><!-- //container-->

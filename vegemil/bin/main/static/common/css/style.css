@@ -812,6 +812,8 @@
 	
 	.vs_bg01 {margin-top:-250px; z-index:10}
 	.bg_earth {background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/bg_earth.jpg) no-repeat   bottom; display:inline-block;  }
+	/* 0717_vn */
+	.bg_earth_vn {background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/bg_earth_vn.jpg) no-repeat   bottom; display:inline-block;  }
 	.h730 {height:730px}
 	.earth-txt { position:relative}
 	.earth-txt .centerH {width:90%}
@@ -1183,6 +1185,7 @@
 	.sbmBG02 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG03_02.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:left; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center}
 	.sbmBG03 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG03_03.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:10% center; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center}
 	.sbmBG04 {position:relative; background:url('https://image.edaymall.com/images/dcf/webzine/Q3_2018/03.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:25% center; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center;}
+	.sbmBG06 {position:relative; background:url('https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/subIMG06_01.jpg')no-repeat scroll 0 0; left:0; top:0; background-position:25% center; width:100%;-webkit-background-size: cover;background-size:cover;z-index:1; text-align:center;}
 	.bg-opa {background:rgba(250, 250, 246, 0.90); border-radius:20px; overflow:hidden; padding:15px 30px; -webkit-box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.71); box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.51);}
 	.bg-opa .btnType28 {margin:0 auto; background:#fd8156 ; background-size: 6px; padding:0 10px}
 	.sampleBnrMenu {position:relative; }
@@ -1389,6 +1392,12 @@ button:hover:before {content:"Reply!"}
 	ul.baseList li {display:inline-block; padding:10px 6%;  vertical-align:top; margin:30px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed.png") right 0px repeat-y; }
 	ul.baseList li:last-child {background:none}
 	ul.baseList li a:hover {color:#000; text-decoration:none}
+
+	/* 0717_vn */
+	ul.baseList_vn {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center}
+	ul.baseList_vn li {display:inline-block; padding:10px 4%;  vertical-align:top; margin:30px 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed.png") right 0px repeat-y; }
+	ul.baseList_vn li:last-child {background:none}
+	ul.baseList_vn li a:hover {color:#000; text-decoration:none}
 	
 	ul.dv6 {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center;display:inline-block; width:100%}
 	ul.dv6 li:first-child {text-align:left; padding-left:40px; }
@@ -1446,12 +1455,18 @@ button:hover:before {content:"Reply!"}
 	.tabs2 li.current a {background: #000;color: #fff;}
 	.tabs2 li:first-child {}
 
-	.tab_content2 {position:relative; padding:55px 0 100px 0 } 
+	.tab_content2 {position:relative; padding:55px 0 100px 0 }
+	/* 0717_vn */
+	.tab_content2_vn {position:relative; padding:5px 0 100px 0 }
 	
 	
 	.tab_content2 > div {clear: both;line-height: 19px;color: #666;display: none; border-radius:10px; }
 	.tab_content2 .current { display: block; }
 	.tab_content2 #home.first { display: block; }
+	/* 0717_vn */
+	.tab_content2_vn > div {clear: both;line-height: 19px;color: #666;display: none; border-radius:10px; }
+	.tab_content2_vn .current { display: block; }
+	.tab_content2_vn #home.first { display: block; }
 
 
 
@@ -1995,13 +2010,22 @@ button:hover:before {content:"Reply!"}
 	.tabs3 li.current .ico_CW  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_cate08_on.png") center 15px no-repeat; border-radius:5px; background-size:25px}
 	*/
 
-	.tabs3 li .ico_VE  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_13.png") center 10px no-repeat; background-size:95px}
-	.tabs3 li.current  .ico_VE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_13.png") center 10px no-repeat;border-radius:5px; background-size:95px}
+	.tabs3 li .ico_VE  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_14.png") center 10px no-repeat; background-size:95px}
+	.tabs3 li.current  .ico_VE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_14.png") center 10px no-repeat;border-radius:5px; background-size:95px}
+	/* 0717_vn */
+	.tabs3 li .ico_VE_vn  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01_vn.png") center 10px no-repeat; background-size:45px}
+	.tabs3 li.current  .ico_VE_vn {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01_vn.png") center 10px no-repeat;border-radius:5px; background-size:45px}
 
 	.tabs3 li .ico_VM {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_02.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_VM  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_02.png") center 10px no-repeat;border-radius:5px;  background-size:45px}
+	/* 0717_vn */
+	.tabs3 li .ico_VM_vn {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_03_vn.png") center 10px no-repeat; background-size:45px}
+	.tabs3 li.current .ico_VM_vn   {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_03_vn.png") center 10px no-repeat;border-radius:5px;  background-size:45px}
 	.tabs3 li .ico_VB {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_03.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_VB  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_03.png") center 10px no-repeat; border-radius:5px; background-size:45px}
+	/* 0717_vn */
+	.tabs3 li .ico_VB_vn {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_05_vn.png") center 10px no-repeat; background-size:45px}
+	.tabs3 li.current .ico_VB_vn {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_05_vn.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 	.tabs3 li .ico_VB.eng {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_10.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_VB.eng  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_10.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 	.tabs3 li .ico_GE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_04.png") center 10px no-repeat; background-size:45px}
@@ -2066,6 +2090,15 @@ button:hover:before {content:"Reply!"}
 	.prd-list:hover .prd-thumb {background:#fff; width:262px; height:262px; border-radius:200px; margin:0 auto  }
 	.prd-list:hover .prd-thumb img {transform: rotate( 15deg ) scale( 1.22 );transition: all 0.2s linear; margin-top:-25px; margin-right:-25px;  }
 
+	/* 3000 product-list - VN */
+	.prd-list_vn {position:relative; margin-bottom:80px}
+	.prd-list_vn {border:1px solid #DCDCDC; border-radius:10px; display:inline-block; padding:19px 19px 40px 19px; max-width:410px; width:100%; position:relative; height:600px}
+	.prd-list_vn:hover {background:#F1F4F5; border:1px solid #F1F4F5;}
+	.prd-list_vn .prd-thumb img {transition: all ease 0.2s;}
+	.prd-list_vn .prd-thumb {background:#fff; max-width:262px; height:262px; border-radius:200px;margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb {background:#fff; width:262px; height:262px; border-radius:200px; margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb img {transform: rotate( 15deg ) scale( 1.22 );transition: all 0.2s linear; margin-top:-25px; margin-right:-25px;  }
+
 
 
 	
@@ -2106,6 +2139,24 @@ button:hover:before {content:"Reply!"}
 	.prd-list.box-list .swiper-horizontal > .swiper-pagination-bullets {bottom:0px}
 	.prd-list.box-list .swiper-pagination-bullet {width:30px; border-radius:20px; height:4px; border:1px solid #787878; background:#fff}
 	.prd-list.box-list .swiper-pagination-bullet.swiper-pagination-bullet-active {background:#02A85A;  border:1px solid #02A85A;}
+
+	/* vn */
+	.prd-list_vn.box-list:hover {background:none; border:1px solid #DCDCDC }
+	.prd-list_vn.box-list:hover .prd-thumb {background:none;  }
+	.prd-list_vn.box-list:hover .prd-thumb img {transform:none;transition:none; margin-top:0px; margin-right:0px;  }
+	.prd-list_vn.box-list .prd-list-Swiper {position:static}
+	.prd-list_vn.box-list .swiper-button-next {margin-right:30px;}
+	.prd-list_vn.box-list .swiper-button-prev {margin-left:30px; }
+	.prd-list_vn.box-list .swiper-button-next:after, 
+	.prd-list_vn.box-list .swiper-button-prev:after {font-size:0}
+	.prd-list_vn.box-list .swiper-button-next, 
+	.prd-list_vn.box-list .swiper-button-prev  {width:42px; top:35% }
+	.prd-list_vn.box-list .prd-thumb {border-radius:0px;margin:0 auto; width:100% }
+	.prd-list_vn.box-list:hover .prd-thumb {border-radius:0px;margin:0 auto; width:100% }
+	.prd-list_vn.box-list .prd-thumb .swiper-slide img {max-width:262px; width:100%}
+	.prd-list_vn.box-list .swiper-horizontal > .swiper-pagination-bullets {bottom:0px}
+	.prd-list_vn.box-list .swiper-pagination-bullet {width:30px; border-radius:20px; height:4px; border:1px solid #787878; background:#fff}
+	.prd-list_vn.box-list .swiper-pagination-bullet.swiper-pagination-bullet-active {background:#02A85A;  border:1px solid #02A85A;}
 
 
 
@@ -3174,6 +3225,20 @@ button:hover:before {content:"Reply!"}
 	.prd-list.box-list .swiper-button-prev {margin-left:10px; }
 	.prd-list.box-list .swiper-button-next, 
 	.prd-list.box-list .swiper-button-prev  {width:32px; top:35% }
+
+	/* 1760 ��ǰ����Ʈ - VN */
+	.prd-list_vn {height:650px}
+
+	.prd-list_vn .prd-thumb img {transition: all ease 0.2s;}
+	.prd-list_vn .prd-thumb {background:#fff; max-width:220px; height:220px; border-radius:200px;margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb {background:#fff; width:220px; height:220px; border-radius:200px; margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb img {transform: rotate( 15deg ) scale( 1.22 );transition: all 0.2s linear; margin-top:-25px; margin-right:-25px;  }
+	.prd-list_vn .prd-name {font-size:20px} 
+
+	.prd-list_vn.box-list .swiper-button-next {margin-right:10px;}
+	.prd-list_vn.box-list .swiper-button-prev {margin-left:10px; }
+	.prd-list_vn.box-list .swiper-button-next, 
+	.prd-list_vn.box-list .swiper-button-prev  {width:32px; top:35% }
 	
 
 
@@ -3223,6 +3288,8 @@ button:hover:before {content:"Reply!"}
 	.cook_red {font-size:12px; width:70px }
 	.simBox li {display:inline-block; width:30%; text-align:center; max-width:250px; margin:0 50px}
 	ul.baseList li {display:inline-block; padding:10px 4%;  }
+	/* 0717_vn */
+	ul.baseList_vn li {display:inline-block; padding:10px 4%;  }
 	.reviewLine  {width:50%}
 
 	/* 1760 �귣�� �̵��̸� ��� */
@@ -3322,10 +3389,19 @@ button:hover:before {content:"Reply!"}
 	
 	.tabs3 li .ico_VE  {background-size:35px}
 	.tabs3 li.current  .ico_VE {background-size:35px}
+	/* 0717_vn */
+	.tabs3 li .ico_VE_vn  {background-size:35px}
+	.tabs3 li.current  .ico_VE_vn {background-size:35px}
 	.tabs3 li .ico_VM {background-size:35px}
 	.tabs3 li.current .ico_VM {background-size:35px}
+	/* 0717_vn */
+	.tabs3 li .ico_VM_vn {background-size:35px}
+	.tabs3 li.current .ico_VM_vn {background-size:35px}
 	.tabs3 li .ico_VB {background-size:35px}
 	.tabs3 li.current .ico_VB {background-size:35px}
+	/* 0717_vn */
+	.tabs3 li .ico_VB_vn {background-size:35px}
+	.tabs3 li.current .ico_VB_vn {background-size:35px}
 	.tabs3 li .ico_GE {background-size:35px}
 	.tabs3 li.current .ico_GE {background-size:35px}
 	.tabs3 li .ico_GH {background-size:35px}
@@ -3431,6 +3507,8 @@ button:hover:before {content:"Reply!"}
 	/* 1200 ���� */
 	.w80pm {width:80%}
 	.tab_content2 {position:relative; padding:55px 0 10px 0 } 
+	/* 0717_vn */
+	.tab_content2_vn {position:relative; padding:55px 0 10px 0 }
 	.recomTxt .key span {margin-left:10px; font-size:11px}
 	
 	/* 1200 ����̳� */
@@ -3585,6 +3663,10 @@ button:hover:before {content:"Reply!"}
 	/* 1200 ��ǰ����Ʈ */
 	.prd-list {margin-bottom:20px}
 	.prd-list .prd-name {font-size:18px}
+
+	/* 1200 ��ǰ����Ʈ -VN */
+	.prd-list_vn {margin-bottom:20px}
+	.prd-list_vn .prd-name {font-size:18px}
 
 	
 	.floting-left_prd {max-width:100%; width:100%; position:relative; margin-bottom:50px }
@@ -4173,6 +4255,10 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.bg_earth {background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/bg_earth.jpg) no-repeat scroll  0;
     left: 0;top: 0;background-position:center;width: 100%; height: 100%; -webkit-background-size: cover;
     background-size: cover; z-index: 1;}
+	/* 0717_vn */
+	.bg_earth_vn {background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/bg_earth_vn.jpg) no-repeat scroll  0;
+    left: 0;top: 0;background-position:center;width: 100%; height: 100%; -webkit-background-size: cover;
+    background-size: cover; z-index: 1;}
 	.h730 {height:300px;}
 	.vs_c_title {border-radius:50px; border:1px solid #CBCBCB ;padding:10px 40px; display:inline-block}
 	.vs-copy { position:relative}
@@ -4196,6 +4282,8 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 
 	/* 992 ������� */
 	ul.baseList li {padding:10px 25px;}
+	/* 0717_vn */
+	ul.baseList_vn li {padding:10px 25px;}
 
 
 	/* 992 �̵�� popup */
@@ -4375,6 +4463,21 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.prd-list.box-list .swiper-button-prev {margin-left:0px; }
 	.prd-list.box-list .swiper-button-next, 
 	.prd-list.box-list .swiper-button-prev  {width:26px; top:29% }
+
+	/* 992 ��ǰ����Ʈ - VN */
+	.prd-list_vn {height:550px}
+	.prd-list_vn .prd-label{width:40px; top:-4px}
+	.prd-list_vn .ppl-label {right:10px; top:10px; width:55px}
+	.prd-list_vn a .prd-thumb img {transition: all ease 0.2s;}
+	.prd-list_vn a .prd-thumb {background:#fff; max-width:200px;width:100%; max-height:200px;height:auto;  border-radius:200px;margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb {background:#fff; max-width:200px;width:100%; max-height:200px;height:auto; border-radius:200px; margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb img {transform: none; margin:0 }
+	.prd-list_vn.box-list .swiper-button-next {margin-right:0px;}
+	.prd-list_vn.box-list .swiper-button-prev {margin-left:0px; }
+	.prd-list_vn.box-list .swiper-button-next, 
+	.prd-list_vn.box-list .swiper-button-prev  {width:26px; top:29% }
+
+
 
 	/* 992 ��ǰī�װ��� tab */
 	
@@ -4563,6 +4666,17 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	ul.baseList li:nth-child(4) {width:48%; border-top:1px dashed #DCDCDC; padding-top:25px}
 	ul.baseList li:nth-child(5) {width:48%; border-top:1px dashed #DCDCDC; padding-top:25px}
 
+	/* 0717_vn */
+	ul.baseList_vn {position:relative; border-radius:10px; border:1px solid #DCDCDC; text-align:center}
+	ul.baseList_vn li {display:inline-block; padding:10px 15px;  vertical-align:top; margin:15px 0 0 0; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_dashed.png") right 0px repeat-y; }
+	ul.baseList_vn li:last-child {background:none}
+	ul.baseList_vn li a:hover {color:#000; text-decoration:none}
+	ul.baseList_vn li:nth-child(1) {width:32%}
+	ul.baseList_vn li:nth-child(2) {width:32%}
+	ul.baseList_vn li:nth-child(3) {width:32%; background:none; }
+	ul.baseList_vn li:nth-child(4) {width:48%; border-top:1px dashed #DCDCDC; padding-top:25px}
+	ul.baseList_vn li:nth-child(5) {width:48%; border-top:1px dashed #DCDCDC; padding-top:25px}
+
 	/* 768 ��ǰ�����ı� */
 	ul.reviewBox {position:relative; max-width:550px; width:100%}
 	ul.reviewBox li:nth-child(1) {width:43%; float:left;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/main/roundBox.png) no-repeat scroll 0 0; max-width:262px; background-size:100%}
@@ -4585,10 +4699,19 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	
 	.tabs3 li .ico_VE  {background-size:30px}
 	.tabs3 li.current  .ico_VE {background-size:30px}
+	/* 0717_vn */
+	.tabs3 li .ico_VE_vn  {background-size:30px}
+	.tabs3 li.current  .ico_VE_vn {background-size:30px}
 	.tabs3 li .ico_VM {background-size:30px}
 	.tabs3 li.current .ico_VM {background-size:30px}
+	/* 0717_vn */
+	.tabs3 li .ico_VM_vn {background-size:30px}
+	.tabs3 li.current .ico_VM_vn {background-size:30px}
 	.tabs3 li .ico_VB {background-size:30px}
 	.tabs3 li.current .ico_VB {background-size:30px}
+	/* 0717_vn */
+	.tabs3 li .ico_VB_vn {background-size:30px}
+	.tabs3 li.current .ico_VB_vn {background-size:30px}
 	.tabs3 li .ico_GE {background-size:30px}
 	.tabs3 li.current .ico_GE {background-size:30px}
 	.tabs3 li .ico_GH {background-size:30px}
@@ -4616,6 +4739,17 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.prd-list a .prd-thumb {background:none; max-width:200px; height:auto; border-radius:200px;margin:0 auto  }
 	.prd-list:hover .prd-thumb {background:none; max-width:200px; height:auto; border-radius:200px; margin:0 auto  }
 	.prd-list:hover .prd-thumb img {transform: none; margin:0 }
+	/* VN */
+	.prd-list_vn {height:400px; display:inline-block; padding:10px 10px}
+	.prd-list_vn:hover {background:#fff; border:1px solid #DCDCDC}
+	.prd-list_vn .prd-label{width:40px}
+	.prd-list_vn .prd-name {font-size:14px;}
+	.prd-list_vn .prd-thumb {text-align:center; margin:0 auto}
+	.prd-list_vn .prd-thumb img {transition:none;   text-align:Center; width:100% }
+	.prd-list_vn a .prd-thumb {background:none; max-width:200px; height:auto; border-radius:200px;margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb {background:none; max-width:200px; height:auto; border-radius:200px; margin:0 auto  }
+	.prd-list_vn:hover .prd-thumb img {transform: none; margin:0 }
+
 	ul.prd_subCate li {margin-top:10px}
 	ul.prd_subCate li.current a {font-size:15px}
 	ul.prd_subCate {position:relative}
@@ -4879,6 +5013,9 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 
 	/* 460 ��ǰ����Ʈ */
 	.prd-list {height:380px; display:inline-block; padding:10px 10px}
+
+	/* 460 ��ǰ����Ʈ - VN */
+	.prd-list_vn {height:380px; display:inline-block; padding:10px 10px}
 
 	 /* 460 Communication */
     .cpHandBook th, td{font-size: 14px;}

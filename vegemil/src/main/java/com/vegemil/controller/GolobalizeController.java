@@ -76,6 +76,13 @@ public class GolobalizeController extends UiUtils {
 		localeResolver.setLocale(request, response, Locale.ENGLISH);
 		return "en/index";
 	}
+	
+	@GetMapping("/vn")
+	public String GlobalVietnamIndex(HttpServletResponse response, HttpServletRequest request) {
+
+		localeResolver.setLocale(request, response, Locale.ENGLISH);
+		return "vn/index";
+	}
 
 	@GetMapping(value = "/en/company/{viewName}")
 	public String moveEnCompany(@PathVariable(value = "viewName", required = false) String viewName,

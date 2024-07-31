@@ -45,12 +45,14 @@
 								<dd><a href="#pop_privacy"><img th:src="@{/img/btn/btn_agree_plus.png}" alt="팝업띄우기"/></a></dd>
 							</dl>
 						</li>
+						<!-- 
 						<li>
 							<dl>
 								<dd class="checkStyle "><input type="checkbox" id="agree03" name="agree" /><label for="agree03"><span></span><b class="gray04">[선택]</b> 이데이몰에 동시 가입(선택)</label> </dd>
 								<dd><a href="#pop_edaymall"><img th:src="@{/img/btn/btn_agree_plus.png}" alt="팝업띄우기"/></a></dd>
 							</dl>
 						</li>
+						 -->
 					</ul>
 				</div>
 				<div class="w560 center0 mt20  text-right" >
@@ -184,11 +186,6 @@ function joinHPCheck(joinEday){
 	var urlStr_4 = urlStr[6];	
 	
 	// urlStr_2 : 주소 끝 
-	
-	if(joinEday == '1'){
-		urlStr_2 = "joinWithEdaymall";
-		//urlStr_2 = urlStr_2 + "WithEdaymall";
-	}
 
 	var reqURL;
 	if(urlStr_3 == null){
