@@ -72,20 +72,22 @@
 									<table class="datatables-basic table table-bordered text-center listTable mt-10 paddingType">
 										<colgroup>
 											<col width="4%">
+											<col width="10%">
 											<col width="20%">
 											<col width="20%">
 											<col width="20%">
 											<col width="20%">
-											<col width="20%">																					
+											<col width="10%">																					
 										</colgroup>
 										<thead>
 											<tr>
 												<th>No.</th>
-												<th>연월</th>
-												<th>인펀트</th>
-												<th>토들러</th>
-												<th>킨더랜드</th>
-												<th>수정일</th>
+												<th class="text-center">연월</th>
+												<th class="text-center">인펀트</th>
+												<th class="text-center">토들러</th>
+												<th class="text-center">킨더랜드</th>
+												<th class="text-center">수정일</th>
+												<th class="text-center">수정</th>
 											</tr>
 										</thead>
 									</table>
@@ -103,13 +105,12 @@
     
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-    <form id="form" method="POST">
-    	<input type="hidden" id="mIdx" name="mIdx" />
-    	<input type="hidden" id="mTitle" name="mTitle" />
-    	<input type="hidden" id="mSrc" name="mSrc" />
-    	<input type="hidden" id="mDisplay" name="mDisplay" />
-    	<input type="hidden" id="action" name="action" />
-    </form>
+    <form id="form" method="POST" name="params">
+    	<input type="hidden" id="mId" 	name="mId" 		/>
+    	<input type="hidden" id="mNinf" name="mNinf" 	/>
+    	<input type="hidden" id="mNtod" name="mNtod" 	/>
+    	<input type="hidden" id="mNkin" name="mNkin" 	/>
+	</form>
     
     </th:block>
     

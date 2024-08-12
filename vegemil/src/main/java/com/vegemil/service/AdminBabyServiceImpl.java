@@ -652,6 +652,16 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 		return adminBabyMapper.selectVBSampleQty();
 	}
 
+	@Override
+	public boolean updateBabySampleQtyLimit(VegemilBabySampleQtyDTO params) {
+		int result = adminBabyMapper.updateSampleQtyLimit(params);
+		
+		if(result>0) {
+			return true;
+		} 
+		return false;		
+	}
+
 	
 
 	

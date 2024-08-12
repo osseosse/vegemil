@@ -110,6 +110,8 @@ public interface AdminBabyMapper {
 	public int selectSampleBabyTotalCount(AdminSampleBabyDTO params);
 	
 	public List<VegemilBabySampleQtyDTO> selectVBSampleQty();
+	
+	public int updateSampleQtyLimit(VegemilBabySampleQtyDTO params);
 	//=================== 샘플신청  =========================
 	
 	

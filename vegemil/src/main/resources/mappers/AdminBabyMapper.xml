@@ -1022,14 +1022,33 @@
 	<select id="selectVBSampleQty" parameterType="String" resultType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" >
 		/* selectVBSampleQty by AdminBabyMapper.xml */
 		
-		SELECT
-			*
-		FROM 
-			m_sample_qtylimit
-		ORDER BY m_id DESC
-		LIMIT 10;			
-		
+		select a.* , 
+			SUM(CASE WHEN t.s_item = 'NTOD' THEN t.reqQty  ELSE 0 END) AS NTOD_CURRENT,
+			SUM(CASE WHEN t.s_item = 'NINF' THEN t.reqQty  ELSE 0 END) AS NINF_CURRENT,
+			SUM(CASE WHEN t.s_item = 'NKIN' THEN t.reqQty  ELSE 0 END) AS NKIN_CURRENT	
+		from m_sample_qtylimit a 
+			left outer join (SELECT 
+					year(s_writedate) as s_year , month(s_writedate) as s_mon, s_item, count(*) as reqQty
+				FROM m_sample_baby 
+				WHERE 
+					s_writedate BETWEEN DATE_FORMAT('2024-07-01', '%Y-%m-%d') AND NOW()
+				GROUP BY year(s_writedate), month(s_writedate), s_item) t 
+		on a.m_year = t.s_year and a.m_mon = t.s_mon    
+		group by a.m_year , a.m_mon
+		order by a.m_id DESC 
+		LIMIT 10;
 	</select>
-
-
+	
+	<!-- 샘플수량변경 -->
+	<update id="updateSampleQtyLimit" parameterType="com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO" >
+		UPDATE
+			m_sample_qtylimit
+		SET
+			m_ninf = #{mNinf},
+			m_ntod = #{mNtod},
+			m_nkin = #{mNkin},
+			m_update_date = now()			
+		WHERE
+			m_id = #{mId}
+	</update>
 </mapper>

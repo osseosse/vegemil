@@ -106,15 +106,6 @@ var normalizeDate = function (dateString) {
 $(function () {
   createTable();
   
-  // 전체 체크 하는 부분
-  $("[type=checkbox][name=allCheck]").on("change", function(){ //0
-  	var check = $(this).prop("checked"); //1
-	//전체 체크
-	if($(this).hasClass("form-check-input")){ //2
-		$("[type=checkbox][name=checkList]").prop("checked", check);
-	}
-  });
-  
 });
 
 var createTable = function() {
@@ -123,16 +114,16 @@ var createTable = function() {
     dt_date_table = $('.dt-date');
     const table = $('.datatables-basic').DataTable();
     table.destroy();
-
+	
   // DataTable with buttons
   // --------------------------------------------------------------------
 
   if (dt_basic_table.length) {
-	
     var dt_basic = dt_basic_table.DataTable({
+    
 	  lengthChange: false,
       ajax: {
-        url : '/admin/manage/beanSoup/videoList',
+        url : '/admin/manage/baby/sampleBabycntInfo',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -152,36 +143,41 @@ var createTable = function() {
 		}
 	  },
       columns: [
-      	{ data: 'mIdx' },
-        { data: 'mTitle' },
-        { data: 'mSrc' },
-        { data: 'mDisplay' },
-        { data: 'mWriteDate' }, 
-        { data: 'mModify' },
-        { data: 'mDelete' }
+      	{ data: 'mId' },
+      	{ data: 'mYear' },
+      	{ data: 'mNinf' },
+      	{ data: 'mNtod' },
+      	{ data: 'mNkin' },
+      	{ data: 'mUpdateDate' }
       ],
       columnDefs: [
-        {
-          // For Responsive
-          orderable: false,
-          targets: 0
-        },
+ 		
         {
           // For Checkboxes
+          targets: 0,
+          orderable: false,
+          render: function (data, type, full, meta) {
+            if(full['mId']==null)	return '';
+      			else return '<p type="text" class="form-control" id="mId'+full['mId']+'" value="'+full['mId']+'"/>';
+          }
+        },
+        {
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
-        	  
-            if(full['mTitle']==null)	return '';
-      			else	return '<input type="text" class="form-control" id="mTitle'+full['mIdx']+'" value="'+full['mTitle']+'">';
+            if(full['mYear']==null)	return '';
+      			else  return full['mYear']+'년  '+full['mMon']+'월';
           }
+          
         },
         {
           targets: 2,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mSrc']==null)	return '';
-      			else	return '<input type="text" class="form-control" id="mSrc'+full['mIdx']+'" value="'+full['mSrc']+'">';;
+            if(full['mNinf']==null)	return '';
+      			else  return '<input type="text" class="form-control" id="mNinf'+full['mId']+'" value="'+full['mNinf']+'">' 
+      				+ '<p class="small m-1 text-info">*현재신청수량 : <span>'+ full['ninfCurrent']+'</span></p>'
+      				+ '<p class="small m-1 text-warning">*현재잔여수량 : <span>'+ (parseInt(full['mNinf'], 10) - parseInt(full['ninfCurrent'], 10)) +'</span></p>'
           }
           
         },
@@ -189,13 +185,10 @@ var createTable = function() {
           targets: 3,
           orderable: false,
           render: function (data, type, full, meta) {
-            //return '영상';
-            return (
-					'<iframe '+ 
-						'width="200" height="150" src="'+full['mSrc']+'"' + 'title="YouTube video player" frameborder="0" '+
-						'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'+
-					'</iframe>'		
-					)
+            if(full['mNtod']==null)	return '';
+      			else  return '<input type="text" class="form-control" id="mNtod'+full['mId']+'" value="'+full['mNtod']+'">'
+      			    + '<p class="small mt-1 text-info">*현재신청수량 : <span>'+ full['ntodCurrent']+'</span></p>'
+      				+ '<p class="small m-1 text-warning">*현재잔여수량 : <span>'+ (parseInt(full['mNtod'], 10) - parseInt(full['ntodCurrent'], 10)) +'</span></p>'
           }
           
         },
@@ -203,44 +196,27 @@ var createTable = function() {
           targets: 4,
           orderable: false,
           render: function (data, type, full, meta) {
-            let checked = '';
-			if(full['mDisplay'] == 1) {
-				checked = 'checked';
-			}
-            return (
-              '<div class="form-check form-switch center-ck">'+
-                '<input type="checkbox" class="form-check-input" '+checked+' id="mDisplay'+full['mIdx']+ '" name="listOn" onclick="javascript:btnDisplay('+full['mIdx']+')" >'+
-				'<label class="form-check-label" for="listOn"></label>'+
-		      '</div>'
-            );
+            if(full['mNkin']==null)	return '';
+      			else  return '<input type="text" class="form-control" id="mNkin'+full['mId']+'" value="'+full['mNkin']+'">'
+      				+ '<p class="small m-1 text-info">*현재신청수량 : <span>'+ full['nkinCurrent']+'</span></p>'
+      				+ '<p class="small m-1 text-warning">*현재잔여수량 : <span>'+ (parseInt(full['mNkin'], 10) - parseInt(full['nkinCurrent'], 10)) +'</span></p>'
           }
           
         },
-        {
+     	{
           targets: 5,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['mWriteDate']==null)	return '';
-      			else	return full['mWriteDate'];
-          }
-        },
-        {
-          targets: 6,
-          orderable: false,
-          render: function (data, type, full, meta) {
-            return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'U\')" />수정</button>'
-            );
+            if(full['mUpdateDate']==null)	return '';
+      			else  return full['mUpdateDate'];
           }
           
         },
-        {
-          targets: 7,
+     	{
+          targets: 6,
           orderable: false,
           render: function (data, type, full, meta) {
-            return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['mIdx']+',\'D\')" />삭제</button>'
-            );
+            return '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+ full['mId'] + ',\'U\')">수정</button>'
           }
           
         }
@@ -258,31 +234,31 @@ var createTable = function() {
               extend: 'print',
               text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6] }
             },
             {
               extend: 'csv',
               text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6]}
             },
             {
               extend: 'excel',
               text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6]}
             },
             {
               extend: 'pdf',
               text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6]}
             },
             {
               extend: 'copy',
               text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6]}
             }
           ],
           init: function (api, node, config) {
@@ -315,7 +291,7 @@ var createTable = function() {
 		} );
 	} ).draw();
 	
-    $('div.head-label').html('<h4 class="card-title">간단요리사 목록 </h4> ');
+    $('div.head-label').html('<h4 class="card-title">샘플수량설정 </h4> ');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
@@ -323,74 +299,46 @@ var createTable = function() {
 	
 }
 
-function btnDisplay(idx) {
-	
-	let mActive;
-	if($('#mDisplay'+idx).is(":checked")){
-		mActive = 1;
-	}else{
-		mActive = 0;
-	}
-	
-	
-	if(confirm('진열을 수정하시겠습니까?')){
-		$.ajax({
-			url : '/admin/manage/beanSoup/displayBeanSoupVideo?mIdx='+idx+'&mDisplay='+mActive,
-			type : "get",
-			dataType : "json",
-			success : function(data) {
-				
-				if(data){
-					alert("수정되었습니다.");
-					$('.datatables-basic').DataTable().ajax.reload();
-				}
-				else{
-					alert("실패했습니다.");
-				}
-				
-			},
-			error : function(){
-			}
-		});
-	}
-}
 
 function btnSave(idx, action) {
 	
-	const form = $('#form');
-	let msg;
+	var msg = "";
+	const form = $('#form');	
 	
 	if(action == "I") {
 		msg = "등록하시겠습니까?";
-		$('#mIdx').val("");
-		$('#mTitle').val($('#title').val());
-		$('#mSrc').val($('#src').val());
-		$('#mDisplay').val($('#active').val()=="on"?"1":"0");
-		$('#action').val(action);
+		$('#mId').val(idx);
+		$('#mNinf').val($('#mNinf'+idx).val());
+		$('#mNtod').val($('#mNtod'+idx).val());
+		$('#mNkin').val($('#mNkin'+idx).val());
+
 	}else{
 		if(action == "U") {
 			msg = "수정하시겠습니까?";	
-		}else {
-			msg = "삭제하시겠습니까?";	
 		}
-		$('#mIdx').val(idx);
-		$('#mTitle').val($('#mTitle'+idx).val());
-		$('#mSrc').val($('#mSrc'+idx).val());
-		$('#mDisplay').val($('#mDisplay'+idx).val()=="on"?"1":"0");
-		$('#action').val(action);
+		$('#mId').val(idx);	
+		$('#mNinf').val($('#mNinf'+idx).val());
+		$('#mNtod').val($('#mNtod'+idx).val());
+		$('#mNkin').val($('#mNkin'+idx).val());
+
 	}
 	
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/saveBeanSoupVideo',
+	       url: '/admin/manage/baby/sampleBabycntUpdate',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
-		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
+		   contentType: 'application/x-www-form-urlencoded',  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),
-		   dataType : 'json',
+		   type: 'POST' 
 		}).done(function(data){
 	
-		   if(data.result) {
-		   	   alert('저장되었습니다.');
+		   if(data) {
+		   	   console.log(data.result);
+		   	   if(data.result){
+		   	   	alert('저장되었습니다.');
+		   	   }else{
+		   	    alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');
+		   	   }
 		   	   $('.datatables-basic').DataTable().ajax.reload();
 		   }else{
 		  	   alert('저장에 실패하였습니다.\n잠시 후 다시 시도해주세요.');

@@ -78,6 +78,8 @@ public interface AdminBabyService {
 	public List<AdminSampleBabyDTO> getSampleBabyList(AdminSampleBabyDTO paramMap);
 	
 	public List<VegemilBabySampleQtyDTO> getVBSampleQtyPerMon();
+	
+	public boolean updateBabySampleQtyLimit(VegemilBabySampleQtyDTO params);
 	//=================== 샘플신청  =========================
 	
 	

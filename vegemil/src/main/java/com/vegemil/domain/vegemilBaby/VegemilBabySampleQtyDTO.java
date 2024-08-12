@@ -21,6 +21,11 @@ public class VegemilBabySampleQtyDTO {
 	private int mNkin;
 	private Date mUpdateDate;
 	
+	private int ntodCurrent;
+	private int ninfCurrent;
+	private int nkinCurrent;	
+	
+	
 	public VegemilBabySampleQtyDTO() {
 		// TODO Auto-generated constructor stub
 	}

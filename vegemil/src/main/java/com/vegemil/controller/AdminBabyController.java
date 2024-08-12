@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -720,7 +721,7 @@ public class AdminBabyController extends UiUtils {
 		return rtnMsg;
     }
 	
-	@GetMapping(value = "/admin/manage/baby/sampleBabySetting")
+	@GetMapping(value = "/admin/manage/baby/sampleBabycntInfo")
 	public @ResponseBody JsonObject sampleBabySetting(HttpServletResponse response) throws Exception {
 		
 		
@@ -734,6 +735,23 @@ public class AdminBabyController extends UiUtils {
 
 		return jsonObj;
 
+	}
+	
+	@PostMapping(value = "/admin/manage/baby/sampleBabycntUpdate")
+	public @ResponseBody JsonObject sampleBabySettingUpdate(HttpServletResponse response,  VegemilBabySampleQtyDTO params) throws Exception {
+		
+		System.out.println(params.toString());
+		
+		log.info("zzz");
+		JsonObject jsonObj = new JsonObject();
+		
+		if(adminBabyService.updateBabySampleQtyLimit(params)) {
+			jsonObj.addProperty("result", true);
+		}else {
+			jsonObj.addProperty("result", false);
+		}
+	
+		return jsonObj;
 	}
 	
 	
