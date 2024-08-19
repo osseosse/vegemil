@@ -153,4 +153,74 @@ public class GolobalizeController extends UiUtils {
 
 	}
 	
+	
+	@GetMapping(value = "/vn/company/{viewName}")
+	public String moveVnCompany(@PathVariable(value = "viewName", required = false) String viewName,
+			HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie) throws Exception {
+		if (!("en".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		return "vn/" + viewName;
+	}
+	
+	@GetMapping(value = "/vn/rnd/{viewName}")
+	public String moveVnRnd(@PathVariable(value = "viewName", required = false) String viewName,
+			HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie) throws Exception {
+		if (!("en".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		return "vn/" + viewName;
+	}
+	
+	@GetMapping(value = "/vn/product/list")
+	public String moveVnProductList(HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie, Model model,
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws Exception {
+		
+		if (!("vn".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		List<ProductEnDTO> productGlobalList = productGlobalService.getProductList(searchKeyword);
+		model.addAttribute("productList", productGlobalList);
+		model.addAttribute("productCount", productGlobalList.size());
+		if (searchKeyword != null) {
+			model.addAttribute("searchKeyword", searchKeyword);
+			return "vn/product/list_searched";
+		} else {
+			return "vn/product/list";
+		}
+	}
+	
+	@GetMapping(value = "/vn/product/detail/{pIdx}")
+	public String moveVnProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model, 
+			HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie) {
+		
+		if (pIdx == null) {
+			return showMessageWithRedirect("It is an incorrect approach.", "/product/list", Method.GET, null, model);
+		}
+		
+		if (!("en".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		ProductEnDTO product = productGlobalService.getProductDetail(pIdx);
+		
+		if (product == null) {
+			return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list", Method.GET, null, model);
+		}
+		
+		List<ProductEnDTO> recProduct = productGlobalService.getRecProduct(product);
+		model.addAttribute("product", product);
+		model.addAttribute("recProduct", recProduct);
+		
+		return "en/product/detail";
+		
+	}
+	
 }

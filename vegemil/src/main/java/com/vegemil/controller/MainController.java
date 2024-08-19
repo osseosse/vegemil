@@ -76,14 +76,13 @@ public class MainController extends UiUtils {
 			return "en/index";
 		}
 		
+		if("vn".equals(localCookie)){
+			return "vn/index";
+		}
+		
 		MemberDTO member = new MemberDTO();
 		
 		try {
-//			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
-//			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133") || ipv4.equals("192.168.26.40")) {
-//			} else {
-//				return "member/server";
-//			}
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
