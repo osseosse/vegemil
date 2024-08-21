@@ -46,6 +46,7 @@
 	.mView {display:none !important}
 	.wView768 {position:relative !important; }
 	.mView768 {display:none !important;}
+	.vnView {display:none;}
 
 	/* skip */
 	#skipNav{position:relative;z-index:9999;}
@@ -61,6 +62,7 @@
 	.video {position:relative; display:inline-block; width:100%; margin-top:90px}
 	.video video{display: inline-block;width:100%;height:auto;}
 	.videoCopy {position:absolute; top:50%;left:25%;color:#fff;transform:translate(-50%,-50%); z-index:10}
+	.videoCopy.viet {position:absolute; top:50%;left:30%;color:#fff;transform:translate(-50%,-50%); z-index:10} /* 0806 */
 	#content {overflow-x:hidden}
 	.contant100 {width:100%; padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
 	.contant100_01 {width:100%; padding-right: 0px;padding-left: 0px;margin-right: auto; margin-left: auto;} 
@@ -121,6 +123,21 @@
 	#gnb.eng .depth02_menu_wrap .inner .gnb_depth2 > li > a:focus{color: #E3A62C; font-weight: 500; border-bottom:1px solid #E3A62C}
 	#gnb.eng .depth02_menu_wrap .inner{max-width: 1100px; padding: 30px 10px 40px; margin: 0 auto; display: flex; min-height: 80px }
 
+	/* 3000 Default : Gnb VN  - 0806 */ 
+	#gnb.viet > ul > li:nth-of-type(1) .depth02_menu_wrap .inner{width:850px; /* border:1px solid red; */ margin:0 auto}
+	#gnb.viet > ul > li:nth-of-type(1) .depth02_menu_wrap .inner .gnb_depth2 > li {WIDTH:33%}
+	#gnb.viet > ul > li:nth-of-type(2) .depth02_menu_wrap .inner{width:550px; /* border:1px solid blue; */ margin:0 auto;}
+	#gnb.viet > ul > li:nth-of-type(2) .inner .gnb_depth2 > li {width:100%;  /* border:1px solid green */}
+	#gnb.viet > ul > li:nth-of-type(2) .depth02_menu_wrap .inner .gnb_depth2 > li {WIDTH:100%;  /* border:2px solid yellow; */ margin-left:-4rem; }
+	#gnb.viet > ul > li:nth-of-type(3) .depth02_menu_wrap .inner{width:850px; /* border:2px solid pink; */ margin:0 auto; text-align:right}
+	#gnb.viet > ul > li:nth-of-type(3) .depth02_menu_wrap .inner .gnb_depth2 > li {WIDTH:33%}
+	#gnb.viet .depth02_menu_wrap .inner .gnb_depth2 > li {width:25%; }
+	#gnb.viet .depth02_menu_wrap .inner .gnb_depth2 > li a {color:#787878; font-size:14px; display:inline-block }
+	#gnb.viet .depth02_menu_wrap .inner .gnb_depth2 > li > a:hover,
+	#gnb.viet .depth02_menu_wrap .inner .gnb_depth2 > li > a:focus{color: #E3A62C; font-weight: 500; border-bottom:1px solid #E3A62C}
+	#gnb.viet .depth02_menu_wrap .inner{max-width: 1100px; padding: 30px 10px 40px; margin: 0 auto; display: flex; min-height: 80px }
+	/* //0806 */
+	
 
 	.depth02_menu_wrap .inner .gnb_depth2 > li{width: 16.5%; text-align: left; padding: 5px 10px 5px 20px; margin-bottom: 20px;  text-align:center; }
 	.depth02_menu_wrap .inner .gnb_depth2 > li::after{content: ""; position: absolute; top: 0; width: 1px; height: 100%; background-color: transparent;}
@@ -323,6 +340,7 @@
 	
 	.floting{position:absolute;  padding-bottom:0px;  width:100%; padding:0px;  background:#fff;   }
 	.floting .flotingContent {border:1px solid #DCDCDC;padding:40px 50px; border-radius:10px; position:relative;}
+	.floting .flotingContent.viet {border:1px solid #DCDCDC;padding:30px 30px; border-radius:10px; position:relative;} /* 0806 */
 	ul.f_ul {position:relative; }
 	ul.f_ul li { float:left;margin-right:10px; margin-bottom:30px }
 	ul.f_ul li div {width:95px; position:relative; border-radius:10px; padding:30px 0}
@@ -351,7 +369,9 @@
 	ul.f_ul_middle li:nth-child(5) img {max-width:56px; }
 	ul.f_ul_middle li:nth-child(5) {background:none}
 	ul.f_ul_middle li:nth-child(7) p{height:20px}
-	ul.f_ul_middle li:nth-child(8) p{height:20px}
+	
+
+	.viet ul.f_ul_middle01 li {width:32%; float:left;  text-align:center; padding:10px 0; } /* 0806 */
 	
 	/* --------------------------------------------- 
 	3000 hover-master 
@@ -1570,6 +1590,10 @@ button:hover:before {content:"Reply!"}
 	.subMenu p.btnSubLeft span {margin-left:20px; }
 	.subMenu p.btnSubRight span {margin-right:20px; }
 	.subMenu ul li {text-align:Center}
+	/* 0806 */
+	.subMenu.viet p.btnSubLeft {position:absolute; top:40px; left:110px; z-index:100}
+	.subMenu.viet p.btnSubRight {position:absolute; top:40px; right:110px}
+	/* //0806 */
 	.submenuUL {position:relative}
 	.submenuUL li {display:inline-block; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 35px no-repeat; padding:0 30px}
 	.submenuUL li span {padding:30px 0px; display:inline-block;}
@@ -2191,6 +2215,10 @@ button:hover:before {content:"Reply!"}
 	ul.info_btn_box li:nth-child(1) {width:72%; float:left}
 	ul.info_btn_box li:nth-child(2) {width:26%; float:right}
 
+	ul.info_btn_box_vn {position:relative; width:100%; display:inline-block}
+	ul.info_btn_box_vn li:nth-child(1) {width:58% !important; float:left}
+	ul.info_btn_box_vn li:nth-child(2) {width:40% !important; float:right}
+
 	.thumb_img {max-width:500px;margin:0 auto}
 	/* 3000 ��ǰ�� > �÷��ø޴� > ��ġ�������ϴ��¸޴� */
 	.section-01,
@@ -2252,6 +2280,7 @@ button:hover:before {content:"Reply!"}
 	.yys_top li {vertical-align:bottom;}
 
 	.txt_big07 {font-size:20px; font-weight:bold; letter-spacing:-2px; color:#282828; margin-bottom:0; padding:10px 0; vertical-align:top}
+	.txt_big07_vn {font-size:20px; font-weight:500; letter-spacing:0px; color:#282828; margin-bottom:0; padding:10px 0; vertical-align:top}
 	.subinfo {text-align:right}
 	table.dataTable {border-top:1px solid #282828; color:#5a5a5a; margin:0; padding:0;}
 	table.mt50 {margin-top:50px}
@@ -3127,6 +3156,7 @@ button:hover:before {content:"Reply!"}
 	.mView2{display: none !important;}
 	.wView768 {position:relative !important; }
 	.mView768 {display:none !important;}
+	.vnView {display:block;}
 	.contant1760 {max-width:1400px; width:100%;  padding-right:15px;padding-left:15px;}
 	.contant1460 {max-width:1400px; width:100%;  padding-right:15px;padding-left:15px;}
 	.contant1310 {max-width:1280px; width:100%;  padding-right:15px;padding-left:15px;}
@@ -3183,6 +3213,7 @@ button:hover:before {content:"Reply!"}
 	/* 1760 videocopy */
 	.btnType01.mt100 {margin-top:50px}
 	.videoCopy {position:absolute; top:50%;left:25%;color:#fff;transform:translate(-50%,-50%); }
+	.videoCopy.viet {position:absolute; top:50%;left:35%;color:#fff;transform:translate(-50%,-50%); } /* 0806 */
 	
 	/* 1760 btn */
 	.btnType16 { background:#fff; border-radius:5px; color:#222;display:inline-block; font-size:14px; padding-right:20px; border:1px solid #DCDCDC; border-radius:5px; }
@@ -3370,6 +3401,7 @@ button:hover:before {content:"Reply!"}
 	#gnb{width: 100%; height: 90px; text-align: center;  position: relative; margin-left:-70px }
 	#gnb > ul > li{display: inline-block; float: left; height: 100%; padding: 0 25px; min-width: 110px; letter-spacing: 0; }
 	#gnb > ul > li > a{height: 100%; line-height: 90px; font-size: 16px; color: #fff; font-weight: 500; padding-top: 0px; display: block; position: relative; }
+	#gnb.viet > ul > li:nth-of-type(2) .depth02_menu_wrap .inner .gnb_depth2 > li {WIDTH:100%;  border:2px solid yellow; margin-left:-8rem; } /* 0806 */
 
 	/* 1200 2���� �ڽ�, �������� */
 	.depth02_menu_wrap{display:none;opacity: 1; position: absolute; left: 70px; top: 100%; width: 100%; z-index: 1000;  }
@@ -3555,6 +3587,7 @@ button:hover:before {content:"Reply!"}
 	
 
 	.videoCopy {position:absolute; top:50%;left:25%;color:#fff;transform:translate(-50%,-50%);  }
+	.videoCopy.viet {position:absolute; top:50%;left:40%;color:#fff;transform:translate(-50%,-50%);  } /* 0806 */
 	.videoCopy .f80 {font-size:60px}
 	.videoCopy .btnType01.mt100 {margin-top:50px !important}
 
@@ -3990,6 +4023,7 @@ button:hover:before {content:"Reply!"}
 	table.int tr:last-child th {padding-bottom:15px}
 
 	.txt_big07 {font-size:17px}
+	.txt_big07_vn {font-size:17px}
 	table.dataTable th {border-left:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2; text-align:left; padding-left:15px;  font-size:11px; height:30px; font-weight:500 }
 	table.dataTable th:first-child {border-left:0px solid #d2d2d2}
 	table.dataTable td {border-bottom:1px solid #d2d2d2; text-align:left; padding-left:0px;  font-size:11px; height:30px; } 
@@ -4327,6 +4361,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	/* 992 videocopy */
 	.btnType01.mt100 {margin-top:30px}
 	.videoCopy {position:absolute; top:50%;left:58%;color:#fff;transform:translate(-50%,-50%); width:100%  }
+	.videoCopy.viet {position:absolute; top:50%;left:58%;color:#fff;transform:translate(-50%,-50%); width:100%  } /* 0806 */
 	.videoCopy .f80 {font-size:45px}
 	.videoCopy .f23 {font-size:18px}
 
@@ -4636,12 +4671,29 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.wView768 {display:none !important; }
 	.mView768 {display:block !important;}
 
+	
+	/* 768 subMenu */
 	.subMenu p.btnSubLeft {display: none;}
 	.subMenu p.btnSubRight {display: none;}
+	/* .submenuUL.d3 li {border:1px solid red; padding:0 2px; width:32%;} */
+	.submenuUL.d3 li { background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 25px no-repeat;}
+	.submenuUL.d3 li:last-child {background:none;}
+	.submenuUL.d6 li:nth-child(1) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 25px no-repeat; padding:0 14px; width:30%;}
+	.submenuUL.d6 li:nth-child(2) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 25px no-repeat; padding:0 14px; width:30%;}
+	.submenuUL.d6 li:nth-child(3) {/* border:1px solid red; */ background:none; padding:0 14px; width:30%;}
+	/* .submenuUL li {display:inline-block; background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 35px no-repeat; padding:0 30px} */
+	.submenuUL.d6 li:nth-child(4) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 25px no-repeat; padding:0 14px; width:30%;}
+	.submenuUL.d6 li:nth-child(5) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 25px no-repeat; padding:0 14px; width:30%;}
+	.submenuUL.d6 li:nth-child(6) {/* border:1px solid red; */ padding:0 14px; width:30%;}
+	/* .submenuUL.d6 li a {font-size:14px;} */
 
 
 	ul.snsUL li {width:48.2%; display:inline-block; vertical-align:top}
 	ul.snsUL li:nth-child(2n) { margin-left:5px;}
+
+	/* 768 videoCopy -0806 */
+	.videoCopy.viet .f80 {font-size:36px}
+	.videoCopy.viet .f23 {font-size:18px}
 
 	/* 768 ���� �����ƽ� */
 	.sbmBG01 .centerL {position:absolute; top:50%;left:50%;color:#fff;transform:translate(-50%,-50%); width:70%}
@@ -5001,6 +5053,13 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 }
 
 @media (max-width: 460px) {
+
+	/* 460 videoCopy -0806 */
+	.videoCopy.viet .f80 {font-size:28px}
+	.videoCopy.viet .f23 {font-size:13px}
+	.videoCopy.viet .btnType01 a {padding:8px 20px;}
+
+
 	/* 460 ���������� */
 	table.myT td:nth-child(2) .titletxt{text-align:center;  overflow: hidden;text-overflow: ellipsis;white-space: nowrap; width:140px ;  text-align:left; font-size:13px; padding:0 5px }
 	
@@ -5010,6 +5069,17 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.yys_subtop dd{float:right; text-align:right; line-height:150%; font-size:11px}
 	.yys dl dt {font-size:9px}
 	.yys dl dd {font-size:9px}
+	
+	/* 460 subMenu */
+	.submenuUL.d3 li {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 20px no-repeat; padding:0 2px; width:32%;}
+	.submenuUL.d3 li a {font-size:14px;}
+	.submenuUL.d6 li:nth-child(1) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 20px no-repeat; padding:0 1px; width:30%;}
+	.submenuUL.d6 li:nth-child(2) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 20px no-repeat; padding:0 1px; width:30%;}
+	.submenuUL.d6 li:nth-child(3) {/* border:1px solid red; */ padding:0 1px; width:30%;}
+	.submenuUL.d6 li:nth-child(4) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 20px no-repeat; padding:0 1px; width:30%;}
+	.submenuUL.d6 li:nth-child(5) {/* border:1px solid red; */ background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineS.png") right 20px no-repeat; padding:0 1px; width:30%;}
+	.submenuUL.d6 li:nth-child(6) {/* border:1px solid red; */ padding:0 1px; width:30%;}
+	.submenuUL.d6 li a {font-size:14px;}
 
 	/* 460 ��ǰ����Ʈ */
 	.prd-list {height:380px; display:inline-block; padding:10px 10px}
@@ -5039,6 +5109,12 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
         line-height: 155px;
     
     }
+
+	/* 460 font */
+	.f_only .f66 {font-size:30px;}
+	.f_only .f45 {font-size:20px;}
+	.f_only .f55 {font-size:30px; line-height:130%;}
+	.f_only .f22 {font-size:16px; line-height:150%;}
 	
 }
 

@@ -89,7 +89,7 @@
 		WHERE
 			p_idx = #{pIdx}
 	</select>
-
+		
 	<select id="selectProductList" parameterType="String" resultType="com.vegemil.domain.global.ProductEnDTO">
 		SELECT 
 			 <include refid="productColumns1" />
@@ -121,7 +121,45 @@
 		Limit
 			4 
 	</select>
-
+	
+	<select id="selectProductVnList" parameterType="String" resultType="com.vegemil.domain.global.ProductVnDTO">
+		SELECT 
+			 <include refid="productColumns1" />
+		FROM          
+			 m_product_vn
+		WHERE p_active = 1
+		  <if test="searchKeyword != null and searchKeyword != ''">  
+		  AND p_name like CONCAT('%',#{searchKeyword},'%')
+		  OR desc_product like CONCAT('%',#{searchKeyword},'%')
+		  </if>                 
+	    ORDER BY p_idx ASC
+	</select>
+	
+	<select id="selectRecVnProduct" parameterType="com.vegemil.domain.global.ProductVnDTO" resultType="com.vegemil.domain.global.ProductVnDTO">
+		SELECT 
+			 <include refid="productColumns1" />
+		FROM          
+			 m_product_vn           
+		WHERE p_active = 1
+		  <if test="categoryCode != null and categoryCode != ''">
+		  	AND category_code = #{categoryCode}
+		  	AND p_idx != #{pIdx}
+		  </if>
+		Order by
+        	rand()
+		Limit
+			4 
+	</select>
+	
+	<select id="selectVnProductDetail" parameterType="long" resultType="com.vegemil.domain.global.ProductVnDTO">
+		SELECT
+			<include refid="productColumns1" />
+		FROM
+			m_product_vn
+		WHERE
+			p_idx = #{pIdx}
+	</select>
+		
 	<select id="selectProductTotalCount" parameterType="com.vegemil.domain.global.ProductEnDTO" resultType="int">
 		SELECT
 			COUNT(*)

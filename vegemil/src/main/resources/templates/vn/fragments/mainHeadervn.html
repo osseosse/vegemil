@@ -7,7 +7,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<header th:fragment="headerFragmenten">
+<header th:fragment="headerFragmentvn">
 
 <!-- Skip -->
 <div id="skipNav">
@@ -17,52 +17,66 @@
 <div id="header" class="white ">
 	<div class="bg"></div>
 	<div class="wView" >
-		<h1 class="logo"><a href="vn_index.html" title="정식품 CI"></a></h1>
+		<h1 class="logo"><a href="/vn" title="정식품 CI"></a></h1>
 		<nav id="gnb" class="viet" >
 			<ul>
-				<li><a href="vn_01_21_greetings.html" id="gnbTarget" onclick="oneDepMenu()" class="f_ka fw"><p class="fw400">Công ty</p></a>
+				<li><a href="/vn/company/greetings" id="gnbTarget" onclick="oneDepMenu()" class="f_ka fw"><p class="fw400">Công ty</p></a>
 				<div class="depth02_menu_wrap">
 					<div class="inner">
 						<ul class="gnb_depth2">
-							<li><a href="vn_01_21_greetings.html"><p class="fw300">Thư ngỏ của Giám đốc đại diện</p></a></li>
-							<li><a href="vn_01_22_profile.html"><p class="fw300">Giới thiệu công ty</p></a></li>
-							<li><a href="vn_01_08.html"><p class="fw300">Phiên bản</p></a></li>
+							<li><a href="/vn/company/greetings"><p class="fw300">Thư ngỏ của Giám đốc đại diện</p></a></li>
+							<li><a href="/vn/company/profile"><p class="fw300">Giới thiệu công ty</p></a></li>
+							<li><a href="/vn/company/valueSys"><p class="fw300">Phiên bản</p></a></li>
 						</ul>
 					</div>
 				</div>
 				</li>
-				<li><a href="vn_02_21_productList.html" onclick="oneDepMenu()" class="f_ka"><p class="fw400">Sản phẩm</p></a>
+				<li><a href="/vn/product/list" onclick="oneDepMenu()" class="f_ka"><p class="fw400">Sản phẩm</p></a>
 				<div class="depth02_menu_wrap">
 					<div class="inner">
 						<ul class="gnb_depth2">
-							<li><a href="vn_02_21_productList.html"><p class="fw300">Sản phẩm</p></a></li>
+							<li><a href="/vn/product/list"><p class="fw300">Sản phẩm</p></a></li>
 						</ul>
 					</div>
 				</div>
 				</li>
-				<li><a href="vn_03_12_rndIntroduce.html" id="gnbTarget" onclick="oneDepMenu()" class="f_ka"><p class="fw400">Nghiên cứu phát triển</p></a>
+				<li><a href="/vn/rnd/introduce" id="gnbTarget" onclick="oneDepMenu()" class="f_ka"><p class="fw400">Nghiên cứu phát triển</p></a>
 				<div class="depth02_menu_wrap" >
 					<div class="inner" >
 						<ul class="gnb_depth2">
-							<li><a href="vn_03_12_rndIntroduce.html"><p class="fw300">Giới thiệu trung tâm nghiên cứu</p></a></li>
-							<li><a href="vn_03_31_haccp.html"><p class="fw300">Chứng nhận HACCP</p></a></li>
-							<li><a href="vn_03_32_fssc.html"><p class="fw300">Chứng nhận FSSC22000</p></a></li>
+							<li><a href="/vn/rnd/introduce"><p class="fw300">Giới thiệu trung tâm nghiên cứu</p></a></li>
+							<li><a href="/vn/rnd/haccp"><p class="fw300">Chứng nhận HACCP</p></a></li>
+							<li><a href="/vn/rnd/fssc"><p class="fw300">Chứng nhận FSSC22000</p></a></li>
 						</ul>
 					</div>
 				</div>
 				</li>
 			</ul>
 		</nav>
+		<script>
+			function changeLang(){
+				var lang = $("#globalLang option:selected").val();
+				var redUrl = $(location).attr('pathname');
+				location.href = "/langSwitch?lang="+lang+"&redUrl="+redUrl;
+			}
+			
+			function changeLangMo(){
+				var lang = $("#globalLangMo option:selected").val();
+				var redUrl = $(location).attr('pathname');
+				
+				location.href = "/langSwitch?lang="+lang+"&redUrl="+redUrl;
+			}
+		</script>
 		<div class="header-right">
 			<ul class="sub_area">
 				<li>
-					<div class="custom-sel ">
-					  <select>
-						<option value="ENG">VIET</option>
-						<option value="KOR">KOR</option>
-						<option value="ENG">ENG</option>
+					<div class="custom-sel">
+					  <select id="globalLang" onchange="changeLang();return false;">								  
+						<option value="vn" >VIET</option>
+						<option value="ko" >KOR</option>
+						<option value="en" >ENG</option>
 					  </select>
-					</div>
+					 </div>
 				</li>
 			    <li>
 					<!-- fullMenu -->
@@ -169,9 +183,9 @@
 				<div>
 					<div class="v_content">
 						<ul class="v_con_ul">
-							<li><a href="vn_01_21_greetings.html"><p class="fw300">Thư ngỏ của Giám đốc đại diện</p></a></li>
-							<li><a href="vn_01_22_profile.html"><p class="fw300">Giới thiệu công ty</p></a></li>
-							<li><a href="vn_01_08.html"><p class="fw300">Phiên bản</p></a></li>
+							<li><a href="/vn/company/greetings"><p class="fw300">Thư ngỏ của Giám đốc đại diện</p></a></li>
+							<li><a href="/vn/company/profile"><p class="fw300">Giới thiệu công ty</p></a></li>
+							<li><a href="/vn/company/valueSys"><p class="fw300">Phiên bản</p></a></li>
 						</ul>
 					</div>
 				</div>
@@ -179,7 +193,7 @@
 				<div>
 					<div class="v_content">
 						<ul class="v_con_ul">
-							<li><a href="vn_02_21_productList.html"><p class="fw300">Sản phẩm</p></a></li>
+							<li><a href="/vn/product/list"><p class="fw300">Sản phẩm</p></a></li>
 						</ul>
 					</div>
 				</div>
@@ -187,9 +201,9 @@
 				<div>
 					<div class="v_content" >
 						<ul class="v_con_ul">
-							<li><a href="vn_03_12_rndIntroduce.html"><p class="fw300">Giới thiệu trung tâm nghiên cứu</p></a></li>
-							<li><a href="vn_03_31_haccp.html"><p class="fw300">Chứng nhận HACCP</p></a></li>
-							<li><a href="vn_03_32_fssc.html"><p class="fw300">Chứng nhận FSSC22000</p></a></li>
+							<li><a href="/vn/rnd/introduce"><p class="fw300">Giới thiệu trung tâm nghiên cứu</p></a></li>
+							<li><a href="/vn/company/haccp"><p class="fw300">Chứng nhận HACCP</p></a></li>
+							<li><a href="/vn/company/fssc"><p class="fw300">Chứng nhận FSSC22000</p></a></li>
 						</ul>
 					</div>
 				</div>
@@ -197,13 +211,6 @@
 			<!-- //vertical -->
 		</div>
 		<ul class="maBotton">
-			<li><span><a href="/member/login">Log in</a></span></li>
-			<li><span><a href="/member/join">Sign up</a></span></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		    <li></li>
-		    <li><span></span></li>
 		</ul>
 	</div>
 	

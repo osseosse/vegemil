@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vegemil.domain.global.ProductEnDTO;
+import com.vegemil.domain.global.ProductVnDTO;
 import com.vegemil.mapper.ProductGlobalMapper;
 
 @Service
@@ -55,6 +56,34 @@ public class ProductGlobalServiceImpl implements ProductGlobalService {
 		}
 		return productList;
 	}
+
+	@Override
+	public List<ProductVnDTO> getVnProductList(String searchKeyword) {
+		List<ProductVnDTO> productList = Collections.emptyList();
+
+		productList = productMapper.selectProductVnList(searchKeyword);
+
+		return productList;
+	}
+	
+	@Override
+	public ProductVnDTO getVnProductDetail(Long pIdx) {
+		return productMapper.selectVnProductDetail(pIdx);
+	}
+	
+
+	@Override
+	public List<ProductVnDTO> getRecVnProduct(ProductVnDTO ProductVnDTO) {
+		
+		List<ProductVnDTO> productList = new ArrayList<>();	
+	
+		if(ProductVnDTO.getCategoryCode().equals("S") || ProductVnDTO.getCategoryCode().equals("W") || ProductVnDTO.getCategoryCode().equals("P")) {
+			ProductVnDTO.setCategoryCode("V");
+		}
+		productList = productMapper.selectRecVnProduct(ProductVnDTO);		
+	
+		return productList;
+	}
 	
 	@Override
 	public boolean updateAddCount(Long pIdx) {
@@ -64,6 +93,8 @@ public class ProductGlobalServiceImpl implements ProductGlobalService {
 
 		return (queryResult == 1) ? true : false;
 	}
+
+
 
 
 }

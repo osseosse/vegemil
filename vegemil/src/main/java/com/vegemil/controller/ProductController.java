@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.ProductDTO;
 import com.vegemil.domain.global.ProductEnDTO;
+import com.vegemil.domain.global.ProductVnDTO;
 import com.vegemil.service.ProductGlobalService;
 import com.vegemil.service.ProductService;
 import com.vegemil.util.UiUtils;
@@ -43,6 +44,19 @@ public class ProductController extends UiUtils {
 				return "en/product/list";
 			}			
 		}
+		
+		if("vi-VN".equals(localCookie)) {
+			List<ProductVnDTO> productGlobalList = productGlobalService.getVnProductList(searchKeyword);
+			model.addAttribute("productList", productGlobalList);
+			model.addAttribute("productCount", productGlobalList.size());
+			if(searchKeyword != null) {
+				model.addAttribute("searchKeyword", searchKeyword);
+				return "vn/product/list_searched";
+			}else {
+				return "vn/product/list";
+			}			
+		}
+		
 	    
 		List<ProductDTO> productList = productService.getProductList(searchKeyword);
 		model.addAttribute("productList", productList);
@@ -78,6 +92,10 @@ public class ProductController extends UiUtils {
 	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model, 
 													@CookieValue(value = "lang", required = false) String localCookie) {
 		
+		
+		
+		System.out.println("localeCookie >> " + localCookie);
+		
 		if (pIdx == null) {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/product/list", Method.GET, null, model);
 		}
@@ -94,10 +112,18 @@ public class ProductController extends UiUtils {
 			model.addAttribute("recProduct", recProduct);
 			return "en/product/detail";
 		}
-	    
 		
-		
-
+		if("vi-VN".equals(localCookie)) {
+			ProductVnDTO product = productGlobalService.getVnProductDetail(pIdx);
+			
+			if (product == null) {
+				return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list", Method.GET, null, model);
+			}
+					
+			model.addAttribute("product", product);			
+			return "vn/product/detail";
+		}
+	    			
 		ProductDTO product = productService.getProductDetail(pIdx);
 		if (product == null) {
 			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/list", Method.GET, null, model);
