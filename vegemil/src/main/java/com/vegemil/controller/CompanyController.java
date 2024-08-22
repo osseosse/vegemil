@@ -62,6 +62,9 @@ public class CompanyController {
 		if("en".equals(localCookie)) {
 			return "en/" + viewName;
 		}
+		if("vi-VN".equals(localCookie)) {
+			return "vn/" + viewName;
+		}
 
 		if(viewName.equals("media")) {
 			AdminAviCFDTO cfDto = new AdminAviCFDTO(); cfDto.setTOnair("1");
