@@ -18,22 +18,23 @@
 				<div class="slider" >
 					<div class="slider_area">
 						<div class="slides eng">
+							<!-- 0823 수정 -->
 							<div class="slide">
 								<a href="/vn/product/detail/36">
-									<div class="slidetitle VBK01_vn_860_01  h300"></div> <!-- 0821 수정 -->
+									<div class="slidetitle CHD03_860_03 h300"></div>
 									<div class="st-txt mt20">
-										<p class="f23 fw500 center0">Vegemil cho trẻ sơ sinh 1 & trẻ nhỏ 2</p>
-										<p class="f13 fw300 gray04 mt10">Công thức cho giai đoạn tăng trưởng<br>để cân bằng dinh dưỡng thực vật</p>
+										<p class="f23 fw500 center0">Greenbia Kids More</p>
+										<p class="f13 fw300 gray04 mt10">Chế độ dinh dưỡng cân bằng cho trẻ<br>trong giai đoạn phát triển</p>
 									</div>
 								</a>
 							</div>
 
 							<div class="slide">
 								<a href="/vn/product/detail/69">
-									<div class="slidetitle CHD03_860_03 h300"></div>
+									<div class="slidetitle VBK01_vn_860_01  h300"></div> <!-- 0821 수정 -->
 									<div class="st-txt mt20">
-										<p class="f23 fw500 center0">Greenbia Kids More</p>
-										<p class="f13 fw300 gray04 mt10">Chế độ dinh dưỡng cân bằng cho trẻ<br>trong giai đoạn phát triển</p>
+										<p class="f23 fw500 center0">Vegemil cho trẻ sơ sinh 1 & trẻ nhỏ 2</p>
+										<p class="f13 fw300 gray04 mt10">Công thức cho giai đoạn tăng trưởng<br>để cân bằng dinh dưỡng thực vật</p>
 									</div>
 								</a>
 							</div>
@@ -47,6 +48,7 @@
 									</div>
 								</a>
 							</div>
+							<!-- //0823 수정 -->
 							<!-- //2022-12-22 -->
 						</div>
 					</div>
@@ -89,9 +91,9 @@
 								<div class="prd-list">
 									<a th:href="|/vn/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
-											<span class="f14" th:text="${product.tag1}">#Designed for senior</span>
-											<span class="f14" th:text="${product.tag2}">#Increase vitality</span>
-											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Premium soymilk</span>
+											<span class="f14" th:utext="${product.tag1}">#Designed for senior</span>
+											<span class="f14" th:utext="${product.tag2}">#Increase vitality</span>
+											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:utext="${product.tag3}">#Premium soymilk</span>
 											<span class="f14" th:if="${not #strings.isEmpty(product.tag4)}" th:text="${product.tag4}">#Premium soymilk</span>
 										</div>
 										<div class="prd-thumb">
