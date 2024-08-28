@@ -731,15 +731,14 @@
 		SELECT 
 			count(*)
 		FROM 
-			m_calendar_model
+			(SELECT * FROM m_calendar_model ORDER BY C_IDX DESC LIMIT 5) AS TEMP 	
 		WHERE 
 			c_name = #{cName}
 			AND
 			c_email = #{cEmail}
 			AND
 			c_baby_name = #{cBabyName}			
-		ORDER BY C_IDX DESC
-		LIMIT 1;		
+				
 	</select>
 		
 
