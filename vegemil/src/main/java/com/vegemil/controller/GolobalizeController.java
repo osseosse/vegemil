@@ -108,7 +108,7 @@ public class GolobalizeController extends UiUtils {
 	@GetMapping("/vn")
 	public String GlobalVietnamIndex(HttpServletResponse response, HttpServletRequest request) {
 
-		localeResolver.setLocale(request, response, Locale.ENGLISH);
+		localeResolver.setLocale(request, response, new Locale("vi", "VN"));
 		return "vn/index";
 	}
 
