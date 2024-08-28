@@ -320,7 +320,7 @@ public class VegemilBabyController extends UiUtils {
 			
 			boolean isRegistered = vegemilBabyCommunityService.insertModelForm(calModel);
 			if (isRegistered == false) {
-				out.println("<script>alert('샘플 신청이 실패했습니다.'); history.go(-1);</script>");
+				out.println("<script>alert('모델 신청이 실패했습니다.'); history.go(-1);</script>");
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);
 			}

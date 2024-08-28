@@ -18,6 +18,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.vegemil.constant.Method;
 import com.vegemil.domain.global.ProductEnDTO;
+import com.vegemil.domain.global.ProductVnDTO;
 import com.vegemil.service.ProductGlobalService;
 import com.vegemil.util.UiUtils;
 
@@ -52,18 +53,45 @@ public class GolobalizeController extends UiUtils {
 					&& redUrl.contains("/product/detail") == false) {
 				redUrl = "/";
 			}
-		} else {
 			
-			// 한국어로 전환
-			if(redUrl.equals("/en")) {
+			//  베트남 -> 영어 
+			if(redUrl.equals("/vn")) {
+				redUrl = "/en";
+			}else if (redUrl.contains("/vn/")) {
+				redUrl = "/en/" + redUrl.substring(4);
+				log.info("베트남 => 영어) redUrl = {}", redUrl);
+			}		
+		}else if("vn".equals(lang)) {
+			
+			Locale vietnamLocale = new Locale("vi", "VN");
+			locale = vietnamLocale;
+			
+			if (PatternMatchUtils.simpleMatch(redUrlArr, redUrl) == false
+					&& redUrl.contains("/product/detail") == false) {
 				redUrl = "/";
+			}
+			
+			//  영어 -> 베트남 
+			if(redUrl.equals("/en")) {
+				redUrl = "/vn";
 			}else if (redUrl.contains("/en/")) {
+				redUrl = "/vn/" + redUrl.substring(4);
+				log.info("영어 => 베트남) redUrl = {}", redUrl);
+			}		
+			
+		}
+		else {			
+			// 한국어로 전환
+			if(redUrl.equals("/en") || redUrl.equals("/vn")) {
+				redUrl = "/";
+			}else if (redUrl.contains("/en/") || redUrl.contains("/vn/")) {
 				redUrl = redUrl.substring(4);
 				log.info("ko) redUrl = {}", redUrl);
 			}
 		}
 		
 		log.info("redUrl = {}", redUrl);
+		log.info("locale = {}", locale);
 		localeResolver.setLocale(request, response, locale);
 
 		redUrlArr = null;
@@ -151,6 +179,76 @@ public class GolobalizeController extends UiUtils {
 		
 		return "en/product/detail";
 
+	}
+	
+	
+	@GetMapping(value = "/vn/company/{viewName}")
+	public String moveVnCompany(@PathVariable(value = "viewName", required = false) String viewName,
+			HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie) throws Exception {
+		if (!("en".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		return "vn/" + viewName;
+	}
+	
+	@GetMapping(value = "/vn/rnd/{viewName}")
+	public String moveVnRnd(@PathVariable(value = "viewName", required = false) String viewName,
+			HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie) throws Exception {
+		if (!("en".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		return "vn/" + viewName;
+	}
+	
+	@GetMapping(value = "/vn/product/list")
+	public String moveVnProductList(HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie, Model model,
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws Exception {
+		
+		if (!("vn".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		List<ProductVnDTO> productGlobalList = productGlobalService.getVnProductList(searchKeyword);
+		model.addAttribute("productList", productGlobalList);
+		model.addAttribute("productCount", productGlobalList.size());
+		if (searchKeyword != null) {
+			model.addAttribute("searchKeyword", searchKeyword);
+			return "vn/product/list_searched";
+		} else {
+			return "vn/product/list";
+		}
+	}
+	
+	@GetMapping(value = "/vn/product/detail/{pIdx}")
+	public String moveVnProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model, 
+			HttpServletResponse response, HttpServletRequest request,
+			@CookieValue(value = "lang", required = false) String localCookie) {
+		
+		if (pIdx == null) {
+			return showMessageWithRedirect("It is an incorrect approach.", "/product/list", Method.GET, null, model);
+		}
+		
+		if (!("vn".equals(localCookie))) {
+			localeResolver.setLocale(request, response, Locale.ENGLISH);
+		}
+		
+		ProductVnDTO product = productGlobalService.getVnProductDetail(pIdx);
+		
+		if (product == null) {
+			return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list", Method.GET, null, model);
+		}
+		
+		List<ProductVnDTO> recProduct = productGlobalService.getRecVnProduct(product);
+		model.addAttribute("product", product);
+		model.addAttribute("recProduct", recProduct);
+		
+		return "vn/product/detail";
+		
 	}
 	
 }

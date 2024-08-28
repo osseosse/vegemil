@@ -15,36 +15,6 @@
 	<div class="contant1760 mt90h" >
 		<div class="row prd-sel">
 			<div class="col-md-8 mt50">
-			<!-- 메뉴 개발 필요
-				<select class="sel03 w180 mr5">
-					<option>두유(베지밀)</option>
-					<option>임산&middot;수유뷰 영양식(베지밀)</option>
-					<option>영&middot;유아식(베지밀)</option>
-					<option>특수영양식(그린비아)</option>
-					<option>건강식품</option>
-					<option>식재료</option>
-					<option>식물성음료(라잇미닛)</option>
-					<option>음료</option>
-					<option>생수(심천수)</option>
-				</select>
-				<select class="sel03 w180 mr5">
-					<option>플레인 두유</option>
-					<option>프리미엄 두유</option>
-					<option>플레인 두유</option>
-					<option>블랙 두유</option>
-					<option>곡물&견과 두유</option>
-					<option>과즙&차류 두유</option>
-				</select>
-				<select class="sel03 w250 dep3">
-					<option>담백한 베지밀 에이</option>
-					<option>달콤한 베지밀 비</option>
-					<option>베지밀 무첨가두유</option>
-					<option>베지밀 진하고 고소한 두유</option>
-					<option>베지밀에이 담백한 고칼슘 두유</option>
-					<option>베지밀비 달콤한 고칼슘 두유</option>
-					<option>베지밀 고칼슘 두유</option>
-				</select>
-				-->
 			</div>
 			<div class="col-md-4 mt50">
 <!-- 				<p class="f14 fw400 black  float-right btnType18"><a href="#"><img  src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
@@ -171,7 +141,14 @@
 					</script>
 					<!-- //tabs4 박스썸네일 작은 이미지 2024-02-15 -->
 					<ul class="info_btn_box mt40">
-						<li><p class="btnType19" th:if="${not #strings.isEmpty(product.pOnuri)}"><a target="_blank" id="toEdaymall" th:href="|${product.pOnuri}|">이데이몰에서 구매하기</a></p></li>
+						<li>
+							 <p class="btnType19" th:if="${not #strings.isEmpty(product.edayLink16)}">
+								<a target="_blank" id="toEdaymall" th:href="${product.edayLink16}">이데이몰에서 구매하기</a>
+							</p> 
+							 <p class="btnType19" th:if="${#strings.isEmpty(product.edayLink16) and not #strings.isEmpty(product.pOnuri)}">
+								<a target="_blank" id="toEdaymall" th:href="|https://edaymall.com/product/search.html?banner_action=&keyword=${product.pName}|">이데이몰에서 구매하기</a>
+							</p>
+						</li>
 						<li><p class="btnType20"><a href="#section-02">영양정보</a></p></li>
 					</ul>
 				</div>

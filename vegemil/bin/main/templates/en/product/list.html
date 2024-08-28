@@ -20,7 +20,7 @@
 					<div class="slider_area">
 						<div class="slides eng">
 							<div class="slide">
-								<a href="/en/product/detail/1">
+								<a href="/product/detail/1">
 									<div class="slidetitle VPM01_860_01  h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Vegemil 5060 Senior Soymilk</p>
@@ -28,6 +28,18 @@
 									</div>
 								</a>
 							</div>
+							
+							<!-- 0821 수정 -->
+							<div class="slide">
+								<a href="/en/product/detail/36">
+									<div class="slidetitle VBK01_vn_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw600 center0">Vegemil Infant & toddler</p>
+										<p class="f13 fw400 gray04 mt10">Premium infant and baby food with enhanced functional ingredients</p>
+									</div>
+								</a>
+							</div>
+							<!-- //0821 수정 -->
 
 							<div class="slide">
 								<a href="/en/product/detail/5">
@@ -40,7 +52,7 @@
 							</div>
 							
 							<div class="slide">
-								<a href="/en/product/detail/72">
+								<a href="/product/detail/72">
 									<div class="slidetitle SCI01_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Beef Bone Broth</p>
@@ -49,7 +61,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/en/product/detail/73">
+								<a href="/product/detail/73">
 									<div class="slidetitle SCI02_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Vegetable Broth for Hot Soup dish</p>
@@ -58,7 +70,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/en/product/detail/74">
+								<a href="/product/detail/74">
 									<div class="slidetitle SCI03_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Vegetable Broth for Cold Soup dish</p>
@@ -67,7 +79,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/en/product/detail/75">
+								<a href="/product/detail/75">
 									<div class="slidetitle SCI04_860_01  h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Plain Soybean Soup</p>
@@ -76,7 +88,7 @@
 								</a>
 							</div>
 							<div class="slide">
-								<a href="/en/product/detail/76">
+								<a href="/product/detail/76">
 									<div class="slidetitle SCI05_860_01 h300"></div>
 									<div class="st-txt mt20">
 										<p class="f23 fw600 center0">Black Soybean Soup</p>
@@ -103,9 +115,9 @@
 				<div class="prd_wrap mt20">
 					<ul class="tabs3">
 						<!-- 2023-01-05 -->
-						<li><a href="#V-ENG"><p class="ico_VE"></p></a><span>Soymilk (Vegemil)</span></li>
+						<li><a href="#V-ENG"><p class="ico_VE_en"></p></a><span>Soymilk (Vegemil)</span></li>
 						<li><a href="#P-ENG"><p class="ico_VM"></p></a><span>Soymilk for Lactating & <br>Pregnant Women</span></li>
-						<li><a href="#B-ENG"><p class="ico_VB eng"></p></a><span>Infant Formula</span></li>						
+						<li><a href="#B-ENG"><p class="ico_VE_vn eng"></p></a><span>Infant Formula</span></li>						
 						<li><a href="#O-ENG"><p class="ico_SC"></p></a><span>Others</span></li>
 					</ul>
 				</div>
@@ -222,7 +234,8 @@
 				<div id="O-ENG">					
 					<div class="floting-right_prd eng"><!-- eng 추가 -->
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
-							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'|| product.categoryCode == 'H'|| product.categoryCode == 'F'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'|| product.categoryCode == 'H'
+												|| product.categoryCode == 'F' || product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
 									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">

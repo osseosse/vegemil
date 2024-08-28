@@ -25,6 +25,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.PatternMatchUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -75,15 +76,14 @@ public class MainController extends UiUtils {
 		if("en".equals(localCookie)) {
 			return "en/index";
 		}
+
+		if("vi-VN".equals(localCookie)){
+			return "vn/index";
+		}
 		
 		MemberDTO member = new MemberDTO();
 		
 		try {
-//			String ipv4 = Inet4Address.getLocalHost().getHostAddress();
-//			if(ipv4.equals("211.204.41.41") || ipv4.equals("115.88.198.133") || ipv4.equals("192.168.26.40")) {
-//			} else {
-//				return "member/server";
-//			}
 			
 			//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
 			if(authentication != null) {
@@ -132,9 +132,7 @@ public class MainController extends UiUtils {
 		ModelAndView mav = new ModelAndView("input_seed");
 		return mav;
     }
-	
-	
-	
+			
 	@RequestMapping(value = "/fragments/{viewName}")
     public String openFragments(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
@@ -147,7 +145,10 @@ public class MainController extends UiUtils {
 		
 		if("en".equals(localCookie) && PatternMatchUtils.simpleMatch(globalRndList, viewName)) {			
 			return "en/" + viewName;
-		}		
+		}
+		if("vi-VN".equals(localCookie)&& PatternMatchUtils.simpleMatch(globalRndList, viewName)) {
+			return "vn/" + viewName;
+		}
 		return "rnd/"+viewName;
     }
 	
