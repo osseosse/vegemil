@@ -48,9 +48,10 @@ public class GolobalizeController extends UiUtils {
 
 		if ("en".equals(lang)) {
 			locale = Locale.ENGLISH;
-
+			
 			if (PatternMatchUtils.simpleMatch(redUrlArr, redUrl) == false
-					&& redUrl.contains("/product/detail") == false) {
+					&& redUrl.contains("/product/detail") == false
+					&& redUrl.contains("/vn") == false	) {
 				redUrl = "/";
 			}
 			
@@ -61,23 +62,25 @@ public class GolobalizeController extends UiUtils {
 				redUrl = "/en/" + redUrl.substring(4);
 				log.info("베트남 => 영어) redUrl = {}", redUrl);
 			}		
+
 		}else if("vn".equals(lang)) {
 			
 			Locale vietnamLocale = new Locale("vi", "VN");
 			locale = vietnamLocale;
 			
 			if (PatternMatchUtils.simpleMatch(redUrlArr, redUrl) == false
-					&& redUrl.contains("/product/detail") == false) {
+					&& redUrl.contains("/product/detail") == false 
+					&& redUrl.contains("/en") == false) {
 				redUrl = "/";
 			}
-			
+							
 			//  영어 -> 베트남 
 			if(redUrl.equals("/en")) {
 				redUrl = "/vn";
 			}else if (redUrl.contains("/en/")) {
 				redUrl = "/vn/" + redUrl.substring(4);
 				log.info("영어 => 베트남) redUrl = {}", redUrl);
-			}		
+			}	
 			
 		}
 		else {			
