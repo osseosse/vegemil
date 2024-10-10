@@ -100,8 +100,8 @@
 		WHERE 
 		  p_active = 1
 		  <if test="searchKeyword != null and searchKeyword != ''">  
-		  AND p_name like CONCAT('%',#{searchKeyword},'%')
-		  OR description like CONCAT('%',#{searchKeyword},'%')
+		  AND (p_name like CONCAT('%',#{searchKeyword},'%')
+		  OR description like CONCAT('%',#{searchKeyword},'%'))
 		  </if>                 
 	    ORDER BY display_priority ASC
 	</select>
