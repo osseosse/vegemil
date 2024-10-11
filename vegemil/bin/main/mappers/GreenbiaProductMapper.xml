@@ -191,7 +191,8 @@
 			(g_name like CONCAT('%',#{searchKeyword},'%') 
 			OR g_lcate like CONCAT('%',#{searchKeyword},'%') 
 			OR g_mcate like CONCAT('%',#{searchKeyword},'%') 
-			OR g_eating_way like CONCAT('%',#{searchKeyword},'%')) 
+			OR g_eating_way like CONCAT('%',#{searchKeyword},'%')
+			OR g_searchword like CONCAT('%',#{searchKeyword},'%')) 
 		ORDER BY g_display_order asc			
 		
 	</select>
