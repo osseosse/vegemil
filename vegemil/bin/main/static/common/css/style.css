@@ -1984,7 +1984,7 @@ button:hover:before {content:"Reply!"}
 	.tabs3 li p {display:inline-block; width:110px; height:110px; padding-top:75px; }
 	.tabs3 li span {display:block; margin-top:5px; color:#787878 ;}
 	.tab_content3 {position:relative; padding:0px 0 100px 0 ;} 
-	.tab_content3 > div {clear: both;line-height: 19px;color: #666; display: none;  width:100%;  display:inline-block }
+	.tab_content3 > div {clear: both;line-height: 19px;color: #666; display: none;  width:100%;  /*display:inline-block*/ }
 	
 	.tab_content3 > div#VM {display:none; }
 	.tab_content3 > div#VB {display:none; }
@@ -2009,6 +2009,10 @@ button:hover:before {content:"Reply!"}
 	.tab_content3 > div#P-ENG {display:none; }
 	.tab_content3 > div#B-ENG {display:none; }
 	.tab_content3 > div#O-ENG {display:none; }
+	.tab_content3 > div#C-ENG {display:none; }
+	
+
+
 
 
 	.tab_content3 .current { display: block; }
@@ -2036,6 +2040,10 @@ button:hover:before {content:"Reply!"}
 
 	.tabs3 li .ico_VE  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_14.png") center 10px no-repeat; background-size:95px}
 	.tabs3 li.current  .ico_VE {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_14.png") center 10px no-repeat;border-radius:5px; background-size:95px}
+
+	.tabs3 li .ico_VE_en  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_14_en.png") center 10px no-repeat; background-size:95px}
+	.tabs3 li.current  .ico_VE_en {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_14_en.png") center 10px no-repeat;border-radius:5px; background-size:95px}
+
 	/* 0717_vn */
 	.tabs3 li .ico_VE_vn  {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01_vn.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current  .ico_VE_vn {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_01_vn.png") center 10px no-repeat;border-radius:5px; background-size:45px}
@@ -2069,7 +2077,9 @@ button:hover:before {content:"Reply!"}
 	
 	.tabs3 li .ico_UV {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_11.png") center 10px no-repeat; background-size:45px}
 	.tabs3 li.current .ico_UV  {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_11.png") center 10px no-repeat; border-radius:5px; background-size:45px}
-	
+	/* 1015_vn */
+	.tabs3 li .ico_CD1_vn {background: url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_06_vn.png") center 10px no-repeat; background-size:45px}
+	.tabs3 li.current .ico_CD1_vn {background:#222222 url("https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_all_06_vn.png") center 10px no-repeat; border-radius:5px; background-size:45px}
 
 
 	.prd_subCateTitle {position:relative; border-bottom:2px solid #222222; padding-bottom:10px; width:100%; }
@@ -2354,6 +2364,7 @@ button:hover:before {content:"Reply!"}
 	.bnr_g_acd01 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_g_acd01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_g_acd02 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_g_acd02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_g_acd03 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_g_acd03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
+	.bnr_g_acd04 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_g_acd04.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 
 	.bnr_s_acd01 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_s_acd01.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
 	.bnr_s_acd02 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/brand/bnr_s_acd02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
@@ -3421,6 +3432,10 @@ button:hover:before {content:"Reply!"}
 	
 	.tabs3 li .ico_VE  {background-size:35px}
 	.tabs3 li.current  .ico_VE {background-size:35px}
+
+	.tabs3 li .ico_VE_en  {background-size:35px}
+	.tabs3 li.current  .ico_VE_en {background-size:35px}
+
 	/* 0717_vn */
 	.tabs3 li .ico_VE_vn  {background-size:35px}
 	.tabs3 li.current  .ico_VE_vn {background-size:35px}
@@ -3446,6 +3461,9 @@ button:hover:before {content:"Reply!"}
 	.tabs3 li.current .ico_CD  {background-size:35px}
 	.tabs3 li .ico_CW {background-size:35px}
 	.tabs3 li.current .ico_CW  {background-size:35px}
+	/* 1014_vn */
+	.tabs3 li .ico_CD1_vn {background-size:35px}
+	.tabs3 li.current .ico_CD1_vn  {background-size:35px}
 
 
 
@@ -4751,6 +4769,10 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	
 	.tabs3 li .ico_VE  {background-size:30px}
 	.tabs3 li.current  .ico_VE {background-size:30px}
+
+	.tabs3 li .ico_VE_en  {background-size:30px}
+	.tabs3 li.current  .ico_VE_en {background-size:30px}
+
 	/* 0717_vn */
 	.tabs3 li .ico_VE_vn  {background-size:30px}
 	.tabs3 li.current  .ico_VE_vn {background-size:30px}
