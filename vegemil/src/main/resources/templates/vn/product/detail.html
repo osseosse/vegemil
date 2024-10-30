@@ -63,7 +63,7 @@
 						<li>
 							<p><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/ico/ico_info02.png" alt="유통기한" /></p>
 							<p>
-								<span class="f16 fw400 gray04">Dung tích</span>
+								<span class="f16 fw400 gray04">Hạn sử dụng</span>
 								<span class="f16 f_ka fw400" th:text="${product.expirationMonth}">7month</span>
 							</p>
 						</li>
@@ -79,18 +79,21 @@
 					<ul class="info_ul_bottom mt30">
 
 						<li th:if="${product.recommender} != null">
-							<p class="f16 fw400">Khuyến nghị sử dụng </p>
+							<p class="f16 fw400">Đối tượng khách</p>
 							<p class="f14 fw300 gray04" th:text="${product.recommender}"></p>
 						</li>
 						
 						<li th:if="${product.tip} != null">
-							<p class="f16 fw400">Tip sử dụng</p>
+							<p class="f16 fw400">Mẹo sử dụng</p>
 							<p class="f14 fw300 gray04" th:text="${product.tip}"></p>
 						</li>
 					</ul>
 					
-					<ul class="info_btn_box_vn mt40">
-						<li><p class="btnType19"><a th:href="|${product.pOnuri}|">BUYING</a></p></li>
+					<ul class="info_btn_box_vn mt40" th:if="${product.pOnuri} != null">
+						<li><p class="btnType19" ><a th:href="|${product.pOnuri}|">BUYING</a></p></li>
+						<li><p class="btnType20"><a href="#section-02">Thông tin dinh dưỡng</a></p></li>
+					</ul>
+					<ul class="info_btn_box_vn mt40" th:if="${product.pOnuri} == null">						
 						<li><p class="btnType20"><a href="#section-02">Thông tin dinh dưỡng</a></p></li>
 					</ul>
 				</div>

@@ -47,6 +47,17 @@
 									</div>
 								</a>
 							</div>
+							<!-- 2024-10-30 상단슬라이드  -->
+							<div class="slide">
+								<a href="/vn/product/detail/111">
+									<div class="slidetitle CDR05_860_01 h300"></div>
+									<div class="st-txt mt20">
+										<p class="f23 fw500 center0">Nước gạo Dr.Chung's Food</p>
+										<p class="f13 fw300 gray04 mt10">Chứa trọn dinh dưỡng từ hạt gạo thơm mềm</p>
+									</div>
+								</a>
+							</div>
+							<!-- //2024-10-30상단슬라이드 -->
 							<!-- //0823 수정 -->
 							<!-- //2022-12-22 -->
 						</div>
@@ -70,6 +81,9 @@
 						<li><a href="#V-ENG"><p class="ico_VE_vn"></p></a><span class="fw300">Công thức cho<br>giai đoạn tăng trưởng</span></li>
 						<li><a href="#B-ENG"><p class="ico_VM_vn"></p></a><span class="fw300">Dinh dưỡng cho trẻ</span></li>
 						<li><a href="#P-ENG"><p class="ico_VB_vn"></p></a><span class="fw300">Dinh dưỡng cho mẹ bầu<br>& mẹ sau sinh</span></li><!-- eng 추가 -->
+						<!-- 2024-10-30 카테고리 -->
+						<li><a href="#C-ENG"><p class="ico_CD1_vn"></p></a><span class="fw300">Chứa trọn dinh dưỡng<br>từ hạt gạo thơm mềm</span></li>
+						<!-- //2024-10-30 카테고리 -->
 					</ul>
 				</div>
 				<script type="text/javascript">
@@ -154,6 +168,38 @@
 					<div class="floting-right_prd eng"><!-- eng 추가 -->
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
 							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'P'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
+								<div class="prd-list">
+									<a th:href="|/vn/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${#strings.replace(product.tag1, '<br>', '')}">#Growth formula</span>
+											<span class="f14" th:text="${#strings.replace(product.tag2, '<br>', '')}">#A plant-based nutrition</span>
+											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Thorough nutrition design</span>
+											<span class="f14" th:if="${not #strings.isEmpty(product.tag4)}" th:text="${product.tag4}">#Thorough nutrition design</span>
+
+										</div>
+										<div class="prd-thumb">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VBP01_600_01.png" 
+														th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|">
+										</div>
+										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Infant Formula</span></div>-->
+										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}">Vegemil Infant <br>Premium Step 1</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">Premium infant and baby food with enhanced functional ingredients</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a th:href="|/vn/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href="" th:href="@{|${product.pOnuri}|}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>	
+							</div>			
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>	
+				<div id="C-ENG">					
+					<div class="floting-right_prd eng"><!-- eng 추가 -->
+						<div class="row" th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'C'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
 									<a th:href="|/vn/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
