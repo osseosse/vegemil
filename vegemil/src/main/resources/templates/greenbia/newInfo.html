@@ -11,10 +11,10 @@
 <!--------------------- 
 		content
 ------------------- -->
+<main>
 <div class="container100">
 <!-- 	<div class="row h500 bg_info" th:style="'background-image:url('+ @{/img/greenbia/bg_subTopInfo.jpg}+');'"> -->
 	<div class="row h500 bg_info">
-	
 		<div class="hcenter center">
 			<p class="f26_4_w f_ms">About Greenbia</p>
 			<p class="f50_5_w mt20">그린비아는?</p>
@@ -31,15 +31,13 @@
 		
 	</div>
 </div>
-
-
 <div class="container100">
 	<div class="container">
 		<div class="row ">
 			<div class="col-md-12" >
-				<ul class="tabMenu4">
-					<li class="active hvr-underline-from-center"><a th:href="@{/greenbia/newInfo}">그린비아는?</a></li>
-					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/features}">특징</a></li>
+				<ul class="tabMenu4"><!-- 2024 그린비아 리뉴얼 -->
+					<li class="active hvr-underline-from-center"><a  th:href="@{/greenbia/newInfo}">그린비아는?</a></li>
+					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/features}">특징</a></li><!-- 2024 그린비아 리뉴얼 -->
 					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/history01}">연혁</a></li>
 					<li class="hvr-underline-from-center"><a th:href="@{/greenbia/thesis}">논문</a></li>
 				</ul>
@@ -47,26 +45,26 @@
 		</div>
 	</div>
 </div>
+<!-- 2024 그린비아 리뉴얼 -->
 <div class="container100">
 	<div class="container">
 		<div class="row ">
 			<div class="col-md-3 mt120" >
-				<p class="center brand_logo"><img th:src="@{https://image.edaymall.com/images/dcf/vegemil/img/greenbia/brand_logo.gif}" alt="그린비아로고"/></p>
+				<p class="center brand_logo"><img src="https://image.edaymall.com/images/mail/news/dcf/greenbia/img/brand_logo_renewal.gif" alt="그린비아로고"/></p>
 			</div>
 			<div class="col-md-9 mt120" >
 				<p class="f34_5">
-				수술 또는 특정 질환으로<br class="noneM"> 일반적인 식사가 어려운 <br class="none"><br class="noneM">
-				환자들의 영양 보충을 위한 <br class="noneM"><span class="pupple">특수용도 식품 브랜드</span>입니다.
+				‘혜춘’ 정재원 박사가 의사로서의 사명감과 소명의식으로 만든<br>
+				국내 최초의 <span class="pupple">특수의료용도식품 브랜드</span>입니다.
 				</p>
 				<p class="f20_3 mt50">
-				그린비아는 국내 최초의 경장 영양식 브랜드로 환자의 질환 및 용도에 따라 설계된 특수의료용도 제품을 공급합니다.<br>
-				국내 우수 대학과 지속적인 임상연구를 통해 환자용 균형 영양식의 체계를 만든 브랜드입니다 
+				그린비아는 질환별 영양요구에 따라 균형있게 영양을 섭취할 수 있도록 설계된 식품으로 <br>국내 우수 대학과 지속적인 임상연구를 통해 대한민국 균형영양식의 체계를 만들어 나갑니다.
 				</p>
 			</div>
 		</div>
 	</div>
 </div>
-
+<!-- //2024 그린비아 리뉴얼 -->
 <div class="container1660_15">
 	<div class="row ">
 		<div class="col-md-6 mt200">
@@ -95,8 +93,7 @@
 		</div>
 	</div>
 </div>
-
-
+<!-- 2024 그린비아 리뉴얼 -->
 <div class="container1250_15">
 	<div class="row">
 		<div class="col-md-12 corebox mt120">
@@ -108,7 +105,8 @@
 				<p class="bg_brand_cv01 h500"></p>
 				<div class="brand_txt">
 					<p class="f22_7 f_ms">First</p>
-					<p class="f22_41 mt50">한국인의 영양요구량에 <br>맞게 개발된<br>국내 최초 경장 영양식</p>
+					<!-- <p class="center mt20"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_line_p.gif" /></p> -->
+					<p class="f22_41 mt50">한국인의 영양요구량에<br>맞게 최초로 개발된</p>
 				</div>
 			</div>
 		</div>
@@ -117,8 +115,9 @@
 				<p class="number f_ms">02</p>
 				<p class="bg_brand_cv02 h500"></p>
 				<div class="brand_txt">
-					<p class="f22_7 f_ms">Balance</p>
-					<p class="f22_41 mt50">체계적이고 과학적인<br>영양학적 연구를 통한<br>균형적인 영양 공급</p>
+					<p class="f22_7 f_ms">Specialized</p>
+					<!-- <p class="center mt20"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_line_p.gif" /></p> -->
+					<p class="f22_41 mt50">체계적이고 과학적인<br>영양학적 연구를 통한</p>
 				</div>
 			</div>
 		</div>
@@ -127,48 +126,77 @@
 				<p class="number f_ms">03</p>
 				<p class="bg_brand_cv03 h500"></p>
 				<div class="brand_txt">
-					<p class="f22_7 f_ms">Safety</p>
-					<p class="f22_41 mt50">끊임 없는<br>임상 연구와 눈문으로<br>제품 안전성 검증</p>
+					<p class="f22_7 f_ms">Self-Care</p>
+					<!-- <p class="center mt20"><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_line_p.gif" /></p> -->
+					<p class="f22_41 mt50">오늘 더<br>건강한 나를 위해</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-<div class="container1660_15 mb100">
+<!-- //2024 그린비아 리뉴얼 -->
+<!-- 2024 그린비아 리뉴얼 -->
+<div class="container1660_15 mb140">
 	<div class="row ">
 		<div class="col-md-12 mt80">
 			<div class="bg_brand_mission h590 brandVideo">
 				<div class="hcenter center">
 					<p class="bradnVideType">MISSION <span>+</span> VISION</p>
-					<p class="f30_4 mt20">인류건강을 위한 의인(義&middot;醫人)의 <br class="noneM">마음을 담아 만듭니다.</p>
+					<p class="f30_4 mt20">인류건강을 위한 의인(義&middot;醫人)의 마음을 담아 만듭니다.</p>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4 mt110">
-			<div class="brand_type01">
-				<p class="f22_4 pupple">enteral nutrition : EN</p>
-				<p class="f50_6 mt20">경장영양식이란?</p>
-				<p class="f30_5 mt10">(환자용 식품)</p>
+	</div>
+</div>
+<div class="container1660_15 mb50">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="center">
+				<p class="f50_6">BI 소개<span class="pupple">.</span></p>
 			</div>
 		</div>
-		<div class="col-md-8 mt120">
-			<p class="f20_4 gray01">
-			각종 질환으로 거동이 불편하거나 씹고 넘기는 기능에 문제가 있는 환자들에게<br class="none">
-			적절한 영양을 공급하기 위해 사용하는 액상형태의 식품으로 환자식, 유동식, 관급식 등으로도 불립니다.
-			</p>
-			<p class="f25_5 mt50"><span class="unlerline_b">보다 자세한 설명</span>을 보시고 싶다면, &nbsp;&nbsp;<a th:href="@{/greenbia/enteral}"><span class="btn_type03 hvr-bounce-to-right mt20m">경장영양식 바로 알기</span></a></p>
+	</div>
+</div>
+<div class="bgGray2 pt140 pb120">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="center">
+					<p class="img100 brand_wordmark"><img src="https://image.edaymall.com/images/mail/news/dcf/greenbia/img/brand_logo_wordmark.png" alt="그린비아로고"/></p>
+					<p class="f22_41 mt70">
+						그린비아의 새로운 워드마크에 정식품 그린비아가 지켜온 철학과 가치를 담았습니다.<br class="wview">정식품은 국내 환자를 위한 특수의료용도식품이 없던 시절,<br>1991년 국내 최초로 한국인의 영양 특성을 고려하여 특수의료용도식품을 개발했습니다.
+						<br><br>
+						간결하지만 단단한 워드마크 안에서 힘차게 솟아오르는 B Arrow는 최초의 이미지를 상징합니다.<br>또한, 그린비아의 전문성, 개발 혁신, 그리고 특수의료용도식품 시장에서의 당당한 위상을 표출하는 깃발입니다.
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="container100">
-	<div class="row bg_brand_sky">
-		<p class="img100 center pb200">
-			<img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/brand10.png" alt="그린비아로고"/>
-		</p>
+<div class="container1250_15 mt80">
+	<div class="row">
+		<div class="col-md-6">
+			<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/greenbia/img/brand_logo_space.png" alt="그린비아로고 공간규정"/></p>
+		</div>
+		<div class="col-md-6">
+			<p class="f25_5 mt60">공간규정</p>
+			<p class="f22_41 mt10">워드마크가 조형적 특성을 유지하기 위해 주변의 다른 요소들로부터 분리되어야 하는 최소한의 보호 공간입니다. 심벌마크 적용 시 반드시 공간규정에 따른 충분한 최소 공간을 확보해야 합니다.</p>
+		</div>
 	</div>
 </div>
+<div class="container1250_15 mt70 mb200">
+	<div class="row">
+		<div class="col-md-6">
+			<p class="img100"><img src="https://image.edaymall.com/images/mail/news/dcf/greenbia/img/brand_logo_color.png" alt="그린비아로고 공간규정"/></p>
+		</div>
+		<div class="col-md-6">
+			<p class="f25_5 mt60">전용 색상</p>
+			<p class="f22_41 mt10">그린비아의 전용 색상은 주색인 GREENBIA DARK GREEN,<br>GREENBIA GREEN을 사용합니다.</p>
+		</div>
+	</div>
+</div>
+<!-- //2024 그린비아 리뉴얼 -->
+</main>
 <!--------------------- 
 		//content
 ------------------- -->
