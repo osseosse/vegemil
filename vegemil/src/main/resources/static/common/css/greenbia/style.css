@@ -1594,6 +1594,9 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 }
 
 @media (max-width: 1200px) {
+	/* 모바일에서 arrow 엑박으로 뜨는 문제 */
+	.slick-btn slick-prev slick-arrow {display:none; font-size:0}
+    .slick-btn slick-next slick-arrow {display:none; font-size:0}
 	/* body {border:0px solid green} */ /* 2024 그린비아 리뉴얼 */
 	/* -------------------------
 		1200 GNB

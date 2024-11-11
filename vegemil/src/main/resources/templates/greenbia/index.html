@@ -107,9 +107,8 @@
 					"infinite": true,
 					"centerMode": true,
 					"adaptiveHeight": true,
-					"dots": false,
-					"prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fas fa-angle-left" },
-					"nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fas fa-angle-right" }
+					"dots": false
+			
 					}'
 					data-slick-responsive='[
 						{"breakpoint":1367, "settings": {"slidesToShow": 3}},
@@ -134,7 +133,7 @@
 					<!-- Start Single Slide -->
 					<div class="single-vertical-slide d-flex align-items-end">
 						<div class="pcBox">
-							<p class="hvr-float-shadow"><a href="sub_02_02_product.html" ><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png'" alt="전문영양식" ></a></p>
+							<p class="hvr-float-shadow"><a th:href="@{/greenbia/product/list}" ><img src="https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png" onmouseover="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_on.png'" onmouseout="javascript:this.src='https://image.edaymall.com/images/dcf/vegemil/img/greenbia/ico_pc02_off.png'" alt="전문영양식" ></a></p>
 							<p class=" mt50 pc_line02">전문영양식</p>
 							<ul class="pc mt50">
 								<a th:href="@{/greenbia/search?searchKeyword=당뇨}"><li>당뇨 환자를 위한 균형 영양식</li></a>
@@ -187,13 +186,13 @@
 			<div class="center bestBox mt110" >
 				<p class="f28_4">베스트판매 인기상품</p>
 				<ul class="mt30">
-					<a href="G01017.html" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">1</span>영양 케어</li></a>
+					<a href="/greenbia/product/detail/103" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">1</span>영양 케어</li></a>
 					<!-- 2024-04-29 베스트 -->
-					<a href="G06005.html" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">2</span>키즈모아</li></a>
+					<a href="/greenbia/product/detail/69" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">2</span>키즈모아</li></a>
 					<!-- //2024-04-29 베스트 -->
-					<a href="G02024.html" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">3</span>당케어</li></a>
-					<a href="G06003.html" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">4</span>프로틴밀 아몬드와 호두</li></a>
-					<a href="G02012.html" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">5</span>플러스케어 당뇨식</li></a>
+					<a href="/greenbia/product/detail/104" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">3</span>당케어</li></a>
+					<a href="/greenbia/product/detail/67" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">4</span>프로틴밀 아몬드와 호두</li></a>
+					<a href="/greenbia/product/detail/46" class="hvr-bounce-to-right"><li class="f18_4"><span class="f_ms">5</span>플러스케어 당뇨식</li></a>
 				</ul>
 				<!--
 				<div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
@@ -293,7 +292,7 @@
 				<div class="" >
 					<ul class="bottomInfo">
 						<li><p class="f24_4_w mt10">그린비아를 구매해 보세요</p></li>
-						<li><a href="https://www.edaymall.com/display/specialBrandViewDetail.do?brandCodeYn=10&level=5&cateCode=20000034&pCateCode=20000002"><div class="btn_type02 f_ms">Read More</div></a></li>
+						<li><a href="https://edaymall.com/product/list.html?cate_no=24"><div class="btn_type02 f_ms">Read More</div></a></li>
 					</ul>
 				</div>
 			</div>
