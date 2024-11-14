@@ -78,11 +78,12 @@
 					let hrefUrl = response[i].hrefUrl
 					let startDate = new Date(response[i].startDate);
 					let endDate = new Date(response[i].endDate);
+					let target = response[i].target;
 					
 					console.log("alt = " + alt);
 					
 					popupStr += '<div class="slide"><div class="slidetitle">';
-					popupStr += '<a href="' + hrefUrl + '" target="_blank">';
+					popupStr += '<a href="' + hrefUrl + '" target="' + target +'">';
 					popupStr += '<img src="' + imgUrl + '" alt="' + alt + '" border="0" /></a>';
 					popupStr += '</div></div>';					
 					

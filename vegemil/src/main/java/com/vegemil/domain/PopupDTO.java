@@ -21,6 +21,7 @@ public class PopupDTO {
 	private String endDate;
 	private String alt;
 	private String active;
+	private String target;
 	
 	public PopupDTO(Long idx, String active) {
 		this.idx = idx;
