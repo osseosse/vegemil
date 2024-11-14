@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.vegemil.domain.GreenbiaMetaData;
 import com.vegemil.domain.GreenbiaProductDTO;
 
 @Mapper
@@ -34,7 +35,11 @@ public interface GreenbiaProductMapper {
 	public List<GreenbiaProductDTO> selectProductListTube(String searchKeyword);
 
 	public List<GreenbiaProductDTO> selectKeywordProduct();
+	
+	public int selectMetaguideCnt(String viewName);
 
+	public GreenbiaMetaData selectMetaguide(String viewName);
+	
 	
 
 }

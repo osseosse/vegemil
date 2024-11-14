@@ -233,5 +233,47 @@
 		 ORDER BY g_display_order asc		
 		 ]]>	
 	</select>
+	
+	<!-- 메타태그 데이터 조회 선 카운팅 -->
+	<select id="selectMetaguideCnt" parameterType="String" resultType="int">
+		<![CDATA[	
+		SELECT
+			count(*)							
+		FROM 
+			g_metaguide
+		WHERE 
+			active = '1'
+			AND url like CONCAT('%',#{viewName},'%') 
+		LIMIT 1
+		]]> 	
+	</select>
+	
+	<!-- 메타태그 데이터 조회  -->
+	<select id="selectMetaguide" parameterType="String" resultType="com.vegemil.domain.GreenbiaMetaData">
+		<![CDATA[	
+		SELECT
+			g_metaguide_id
+			, page_sort
+			, url
+			, m_title
+			, m_description
+			, image
+			, og_title
+			, og_description
+			, og_image
+			, x_title
+			, x_description
+			, x_image
+			, canon_tag							
+		FROM 
+			g_metaguide
+		WHERE 
+			active = '1'
+			AND url like CONCAT('%',#{viewName},'%') 
+		LIMIT 1
+		]]> 	
+	</select>
+	
+	
 
 </mapper>

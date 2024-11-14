@@ -2,6 +2,7 @@ package com.vegemil.service;
 
 import java.util.List;
 
+import com.vegemil.domain.GreenbiaMetaData;
 import com.vegemil.domain.GreenbiaProductDTO;
 
 public interface GreenbiaProductService {
@@ -28,7 +29,7 @@ public interface GreenbiaProductService {
 	
 	public List<GreenbiaProductDTO> getKeywordProduct();
 
-	
+	public GreenbiaMetaData getGreenbiaMetaTagData(String viewName);
 	
 
 

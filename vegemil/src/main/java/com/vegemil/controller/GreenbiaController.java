@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,36 +23,29 @@ public class GreenbiaController extends UiUtils {
 	@Autowired
 	private GreenbiaProductService greenbiaProductService;
 	
+	
 	@RequestMapping(value = "/greenbia/{viewName}")
-    public String moveGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
-		
+    public String moveGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName, Model model)throws Exception{
+		model.addAttribute("tags",greenbiaProductService.getGreenbiaMetaTagData(viewName));		
 		return "greenbia/"+viewName;
     }
 	
 	@RequestMapping(value = "/greenbia")
-    public String moveGreenbiaIndex(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
-		
+    public String moveGreenbiaIndex(Model model)throws Exception{
+		model.addAttribute("tags",greenbiaProductService.getGreenbiaMetaTagData("index"));		
 		return "greenbia/index";
     }
 	
-	@RequestMapping(value = "/main/brandgreenbia/index.aspx")
+	@RequestMapping(value = {"/main/brandgreenbia/index.aspx", "/Main/BrandGreenbia/{greenbiaAspx}"})
     public RedirectView moveOldGreenbiaPage(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		
 		return new RedirectView("/greenbia");
     }
 	
-	@GetMapping("/Main/BrandGreenbia/{greenbiaAspx}")
-	public String greenbiaRedirect(@PathVariable("greenbiaAspx") String greenbiaAspx) {
-		/*
-		if(greenbiaAspx.contains(".")) {
-			greenbiaAspx = greenbiaAspx.substring(0, greenbiaAspx.lastIndexOf("."));
-		}
-		*/
-		return "greenbia/index";
-	}
-	
 	@GetMapping("/greenbia/product/list")
 	public String moveGreenbiaProductList(Model model, @RequestParam(required = false) String category) {
+		
+		model.addAttribute("tags",greenbiaProductService.getGreenbiaMetaTagData("/product/list"));		
 		
 		model.addAttribute("category", category);
 		
@@ -87,6 +81,9 @@ public class GreenbiaController extends UiUtils {
 	
 	@GetMapping(value = "/greenbia/product/detail/{gIdx}")
 	public String moveGreenbiaProductDetail(@PathVariable(value = "gIdx", required = false) Long gIdx, Model model) {
+		
+		model.addAttribute("tags",greenbiaProductService.getGreenbiaMetaTagData("detail/"+gIdx));		
+		
 		if (gIdx == null) {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "greenbia/product/list", Method.GET, null, model);
 		}
@@ -106,6 +103,7 @@ public class GreenbiaController extends UiUtils {
 	@GetMapping("/greenbia/search")
 	public String openGreenbiaSearch(Model model, String searchKeyword) {
 		
+		model.addAttribute("tags",greenbiaProductService.getGreenbiaMetaTagData("search"));		
 				
 		List<GreenbiaProductDTO> searchList = greenbiaProductService.searchProduct(searchKeyword);
 		model.addAttribute("searchList", searchList);
@@ -115,6 +113,6 @@ public class GreenbiaController extends UiUtils {
 		
 		return "greenbia/search";
 		
-	}
+	}	    
 
 }

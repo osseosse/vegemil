@@ -48,10 +48,18 @@
 <div class="container_15">
     <div class="row ">
         <div class="col-md-12" >
-            <div id="Div1" class="info_img" th:if="${product.gImgCnt == '1'}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall.jpg|" alt="그린비아 상품상세정보" /></div>
-            <div id="Div1" class="info_img" th:if="${product.gImgCnt == '3'}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall01.jpg|" alt="그린비아 상품상세정보" /></div>
-            <div id="Div1" class="info_img" th:if="${product.gImgCnt == '3'}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall02.jpg|" alt="그린비아 상품상세정보" /></div>
-            <div id="Div1" class="info_img" th:if="${product.gImgCnt == '3'}"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall03.jpg|" alt="그린비아 상품상세정보" /></div>
+            <div id="info01" class="info_img" th:if="${product.gImgCnt == '1'}">
+            	<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall.jpg|" alt="그린비아 상품상세정보" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|"/>
+           	</div>
+            <div id="info01" class="info_img" th:if="${product.gImgCnt == '3'}">
+            	<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall01.jpg|" alt="그린비아 상품상세정보" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|"/>
+           	</div>
+            <div id="info01" class="info_img" th:if="${product.gImgCnt == '3'}">
+            	<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall02.jpg|" alt="그린비아 상품상세정보" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|"/>
+           	</div>
+            <div id="info01" class="info_img" th:if="${product.gImgCnt == '3'}">
+            	<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall03.jpg|" alt="그린비아 상품상세정보" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|"/>
+            </div>
                         
         </div>
     </div>

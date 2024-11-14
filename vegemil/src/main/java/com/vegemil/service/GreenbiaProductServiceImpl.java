@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.util.StringUtil;
+import com.vegemil.domain.GreenbiaMetaData;
 import com.vegemil.domain.GreenbiaProductDTO;
 import com.vegemil.mapper.GreenbiaProductMapper;
 
@@ -116,6 +117,22 @@ public class GreenbiaProductServiceImpl implements GreenbiaProductService {
 	public List<GreenbiaProductDTO> getAllProductList() {
 		
 		return greenbiaProductMapper.selectAllProduct();
+	}
+
+	@Override
+	public GreenbiaMetaData getGreenbiaMetaTagData(String viewName) {
+		
+		GreenbiaMetaData data = new GreenbiaMetaData();
+		
+		int cnt =  greenbiaProductMapper.selectMetaguideCnt(viewName);
+		
+		if(cnt > 0) {
+			data = greenbiaProductMapper.selectMetaguide(viewName);
+		} else {
+			data.defaultSetting();
+		}	
+		
+		return data;
 	}
 
 }
