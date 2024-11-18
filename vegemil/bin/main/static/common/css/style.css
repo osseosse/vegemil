@@ -3119,7 +3119,8 @@ button:hover:before {content:"Reply!"}
 	/* 3000 2024 loveVegemil */
 	.love2024 {position:relative}
 	.top-2024love {background:url(https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/01.jpg) no-repeat; height:2000px; width:100%; position:relative;background-position:center 0; }
-	.top01 {margin:0 auto;z-index:100;position:absolute;width:410px;margin-top:620px;left: 0;right: 0; display: inline-block;  }
+	.top01 {margin:0 auto; z-index:100; position:absolute; width:410px; margin-top:620px; left: 0;right: 0; display: inline-block;  }
+
 	.love2024_logo .logo01 {position:absolute; left:60px; top:20px; z-index:100;  }
 	.love2024_logo .logo01 a {margin-right:30px; vertical-align:top}
 	.love2024_logo .logo01 a:first-child img {width:95px}
@@ -3151,6 +3152,52 @@ button:hover:before {content:"Reply!"}
 
 	.bottom-2024love {background:url(https://image.edaymall.com/images/dcf/vegemil/img/communication/love2024/bg_bottom.jpg) no-repeat; height:2984px; width:100%; position:relative;background-position:center 0;}
 	/* //3000 2024 loveVegemil */
+ 
+
+
+ 	/* 3000 2025 loveVegemil */
+	.love2025 {position:relative}
+	.top-2025love {background:url(https://image.edaymall.com/images/dcf/vegemil/img/communication/love2025/01.jpg) no-repeat; height:1848px; width:100%; position:relative;background-position:center 0; }
+	.top2025_01 {position:relative; margin:0 auto; z-index:100; position:absolute; width:410px; margin-top:1000px; left: 0;right: 0; display: inline-block;  }
+	.top2025_02 {position:absolute; margin:0 auto; z-index:100; position:absolute; width:837px; margin-top:180px; left: 0px;right: 0; display: inline-block;}
+	.top2025_03 {position:absolute; margin:0 auto; z-index:100; position:absolute; width:347px; margin-top:900px; left: -17px;right: 0; display: inline-block;} /* 문 */
+	.top2025_04 {position:absolute; margin:0 auto; z-index:100; position:absolute; width:500px; margin-top:1350px; left: 220px; display: inline-block;}
+
+	.love2025_logo .logo01 {position:absolute; left:60px; top:20px; z-index:100;  }
+	.love2025_logo .logo01 a {margin-right:30px; vertical-align:top}
+	.love2025_logo .logo01 a:first-child img {width:95px}
+	.love2025_logo .logo02 {position:absolute; right:20px; top:20px; z-index:100; }
+	table.loveVegemil2025 {width:35px; position:absolute; bottom:254px; left:182px; height:240px;  } 
+	table.loveVegemil2025 td.whiteColor {background-color:#fff}
+	table.loveVegemil2025 td.pinkColor {background-color:#fd7e7e;}
+	.tome {background:#118659; border-radius:30px; padding:10px 15px; color:#fff; font-weight:600;font-size:25px; position:absolute; top:-27px; lefT:50px; line-height:120%;  z-index:1000; text-align:center; min-width:150px}
+	.love2025_bean {z-index:100; position:relative; border:0px solid blue}
+	.bgBrown {background:#6a451b}
+
+	.graBar {
+	 background: linear-gradient(-45deg, #e82222, #8c0404  );
+	 background-size: 400% 400%;
+	 animation: gradient 0.6s ease infinite;
+	 border-radius:20px  ;
+	 position:relative
+		}
+	@keyframes gradient {
+	 0% {background-position: 0% 50%;}
+	 50% {background-position: 100% 50%;}
+	 100% {background-position: 0% 50%;}
+	}
+
+  .love2025_snsbg {position:relative; margin-top:0px;  margin:0 auto}
+  .love2025_snsbg img {margin:0 auto; text-align:center}
+  .love2025_sns {position:absolute; right:550px; top:0; z-index:100;}
+
+
+  .love2025_car {position:absolute; width:800px; left:250px; z-index:100; bottom:2450px;}
+  .love2025_do {position:absolute; left:0px; z-index:100; bottom:1100px;}
+  .bottom-2025love {height:3020px; width:100%; position:relative; background-position:center 0;}
+
+
+	/* //3000 2025 loveVegemil */
  
 
 }
@@ -3382,7 +3429,13 @@ button:hover:before {content:"Reply!"}
 	.love2024_logo .logo01 {left:20px}
 	.love2024_logo .logo01 a {margin-right:30px; vertical-align:top}
 	.love2024_logo .logo01 a:first-child img {width:95px}
-	
+	/* 1760 2025 loveVegemil */
+	.love2025_snsbg {position:relative; margin-top:-45px}
+	.love2025_sns {position:absolute; right:350px; top:0; z-index:100; }
+	.love2025_sns p img {width:200px}
+	.love2025_car {position:absolute; left:200px; z-index:100; top:0;width:480px}
+	.love2025_do {position:absolute; left:0px; z-index:100; bottom:1100px;border:2px solid red}
+	.top2025_04 { width:300px; margin-top:1450px; left: 0px; display: inline-block;}
 }
 
 
@@ -4063,6 +4116,8 @@ button:hover:before {content:"Reply!"}
 	#star-page05 {position:relative; background:#000}
 	.bgStar03 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/company/star03m.jpg) 0 0px no-repeat;  }
 	.bgStar03.h700 {height:430px}
+	.love2025_snsbg {margin-top:0}
+	.love2025_sns2 {position:absolute; bottom:0; right:0; width:30%}
 }
 
 @media (max-width: 992px) {
@@ -4670,15 +4725,15 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	/* 992 2024 loveVegemil */
 	.love2024 .logo_m {position:absolute; top:0px; left:10px}
 	.love2024 .logo_m span a {vertical-align:top}
-	.love2024 .logo_m span a:first-child img {width:60px; margin-top:20px; margin-right:10px}
-	.love2024 .logo_m span a:nth-child(2) img {width:110px; margin-top:22px; }
+	.love2024 .logo_m span a:first-child img {width:50px; margin-top:10px; margin-right:10px}
+	.love2024 .logo_m span a:nth-child(2) img {width:90px; margin-top:14px; }
+	.countWrap { position:relative}
 	.love2024 .countBox {position:relative;}
 	.love2024 .countBox img {margin:0; padding:0}
-	.love2024 .countBox .count{text-align:center; position:absolute; margin:0 auto; width:100%; font-size:25px; font-weight:600; color:#fff; bottom:5px}
-	.love-mb0 img {margin-bottom:-2px; margin-top:-2px; border:0px solid red}
+	.love2024 .countBox .count{text-align:center; position:absolute; margin:0 auto; width:100%; font-size:23px; font-weight:600; color:#fff; bottom:0px; }
+	.love-mb0 img {margin-bottom:-2px; margin-top:-2px; }
+	.love2025_sns2 {position:absolute; bottom:0; right:0; width:35%}
 
-
-}
 
 
 @media (max-width: 768px) {
