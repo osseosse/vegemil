@@ -23,7 +23,7 @@ public class EventVegemilController {
 	@GetMapping("/event/loveVegemil/{year}")
 	public String getThermometerOfLove(@PathVariable("year") int year, Model model) {
 		
-		if(year != 2024) {
+		if(year == 2024) {
 			year = 2023;
 		}
 		
