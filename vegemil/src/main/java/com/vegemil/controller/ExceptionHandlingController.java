@@ -23,7 +23,7 @@ public class ExceptionHandlingController implements ErrorController {
 	private final String ERROR_500_PAGE_PATH = "error/500";
 	private final String ERROR_ETC_PAGE_PATH = "error/error";
 
-	@RequestMapping(value = "/error")
+	@RequestMapping(value = "/errorveg")
 	public String handleError(HttpServletRequest request, Model model) {
 
 		// 에러 코드를 획득한다.
