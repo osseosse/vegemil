@@ -3,6 +3,8 @@ package com.vegemil.service;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
@@ -22,8 +23,12 @@ import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.mapper.AdminEventMapper;
 import com.vegemil.mapper.PopupMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+
 @Service
 @Transactional
+@Slf4j
 public class AdminEventServiceImpl implements AdminEventService {
 	
 	@Value("${spring.servlet.multipart.location}")
@@ -265,6 +270,24 @@ public class AdminEventServiceImpl implements AdminEventService {
 
 	@Override
 	public ThermometerLoveDTO getThermometerLove(int year) {
+		
+		
+		ThermometerLoveDTO love= adminEventMapper.selectThermometerLove(year);
+		
+		if(love == null) {
+			log.info("사랑의온도계 이벤트 정보 없음");
+			return null;
+		}
+		
+		LocalDateTime fromDate = love.getFromDate();
+		LocalDateTime current = LocalDateTime.now();
+		log.info("이벤트 오픈 ====== > " + fromDate);
+		
+		if(current.isAfter(fromDate) == false) {
+			log.info("사랑의 온도계 오픈 전");
+			return null;
+		}
+		
 		return adminEventMapper.selectThermometerLove(year);
 	}
 

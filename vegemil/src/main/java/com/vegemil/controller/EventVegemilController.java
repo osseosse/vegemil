@@ -5,12 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.vegemil.constant.Method;
 import com.vegemil.domain.ThermometerLoveDTO;
 import com.vegemil.service.AdminEventService;
+import com.vegemil.util.UiUtils;
 
 
 @Controller
-public class EventVegemilController {
+public class EventVegemilController extends UiUtils {
 	
 	@Autowired
 	private AdminEventService adminEventService;
@@ -23,11 +25,15 @@ public class EventVegemilController {
 	@GetMapping("/event/loveVegemil/{year}")
 	public String getThermometerOfLove(@PathVariable("year") int year, Model model) {
 		
-		if(year == 2024) {
-			year = 2023;
-		}
+		
+		//if(year == 2024) { year = 2023; }
+		 
 		
 		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
+		
+		if(dto == null) {
+			return showMessageWithRedirect("유효하지 않은 접근입니다.", "/event/list", Method.GET, null, model);
+		}
 		
 		model.addAttribute("dto", dto);
 		model.addAttribute("loveHeight", dto.getTemperature() * 0.01);

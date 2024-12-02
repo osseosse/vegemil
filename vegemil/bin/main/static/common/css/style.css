@@ -4733,7 +4733,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.love2024 .countBox .count{text-align:center; position:absolute; margin:0 auto; width:100%; font-size:23px; font-weight:600; color:#fff; bottom:0px; }
 	.love-mb0 img {margin-bottom:-2px; margin-top:-2px; }
 	.love2025_sns2 {position:absolute; bottom:0; right:0; width:35%}
-
+}
 
 
 @media (max-width: 768px) {
@@ -5201,25 +5201,26 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 
 /* 3000 �귣����� */
 @media (max-width: 13000px) {
-.brand_big { padding:0;  margin-top:-150px}
-.brand_big .visual-slide {margin: 0px;height:580px;position: relative;animation-name: fadeInUp;animation-delay: 1.5s;animation-duration: 1s;animation-fill-mode: both;}
-.brand_big .visual-slide .swiper-slide { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50px; background-repeat: no-repeat; background-position: center; background-size: cover; text-align: center; }
-.brand_big .visual-slide .swiper-button-prev, 
-.brand_big .visual-slide .swiper-button-next {
-	width: 28px;margin-top: -13px;
-	background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_slim_left.png)no-repeat; background-size: contain; 
+	.brand_big { padding:0;  margin-top:-150px}
+	.brand_big .visual-slide {margin: 0px;height:580px;position: relative;animation-name: fadeInUp;animation-delay: 1.5s;animation-duration: 1s;animation-fill-mode: both;}
+	.brand_big .visual-slide .swiper-slide { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50px; background-repeat: no-repeat; background-position: center; background-size: cover; text-align: center; }
+	.brand_big .visual-slide .swiper-button-prev, 
+	.brand_big .visual-slide .swiper-button-next {
+		width: 28px;margin-top: -13px;
+		background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_slim_left.png)no-repeat; background-size: contain; 
+	}
+	.brand_big .visual-slide .swiper-button-prev { left: -70px; }
+	.brand_big .visual-slide .swiper-button-next { right: -70px; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); }
+	.brand_big .visual-slide .swiper-button-prev:after, .brand_big .visual-slide .swiper-button-next:after { display: none; }
+	.brand_big .visual-slide h2 { font-size: 4.24rem; letter-spacing: -2px; line-height: 1.25; color: #fff; }
+	.brand_big .visual-slide p { margin-top: 28px; color: #fff; }
+	.brand_big .visual-slide .swiper-pagination { }
+	.brand_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0}
+	.brand_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1}
+	.brand_big .swiper-horizontal>.swiper-pagination-bullets, 
+	.brand_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
+	.brand_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
 }
-.brand_big .visual-slide .swiper-button-prev { left: -70px; }
-.brand_big .visual-slide .swiper-button-next { right: -70px; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); }
-.brand_big .visual-slide .swiper-button-prev:after, .brand_big .visual-slide .swiper-button-next:after { display: none; }
-.brand_big .visual-slide h2 { font-size: 4.24rem; letter-spacing: -2px; line-height: 1.25; color: #fff; }
-.brand_big .visual-slide p { margin-top: 28px; color: #fff; }
-.brand_big .visual-slide .swiper-pagination { }
-.brand_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0}
-.brand_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1}
-.brand_big .swiper-horizontal>.swiper-pagination-bullets, 
-.brand_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
-.brand_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
 @media (max-width: 1200px) {
 	.brand_big .visual-slide .swiper-button-prev, .brand_big .visual-slide .swiper-button-next { display: none; }
 	.bnr_brand03 .centerH {width:80%}
@@ -5236,31 +5237,31 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.brand_big .visual-slide p { margin-top: 15px; }
 	.brand_big .visual-slide .swiper-pagination {  }
 	/* //3000 �귣����� */
-
+}
 
 /* 3000 Rnd Ȱ�� */
 @media (max-width: 13000px) {
-.rnd_big { padding:0;  margin-top:-150px}
-.rnd_big .visual-slide {margin: 0px;height:580px;position: relative;animation-name: fadeInUp;animation-delay: 1.5s;animation-duration: 1s;animation-fill-mode: both;}
-.rnd_big .visual-slide .swiper-slide { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50px; background-repeat: no-repeat; background-position: center; background-size: cover; text-align: center; }
-.rnd_big .visual-slide .swiper-button-prev, 
-.rnd_big .visual-slide .swiper-button-next {
-	width: 28px;margin-top: -13px;
-	background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_slim_left.png)no-repeat; background-size: contain; 
+	.rnd_big { padding:0;  margin-top:-150px}
+	.rnd_big .visual-slide {margin: 0px;height:580px;position: relative;animation-name: fadeInUp;animation-delay: 1.5s;animation-duration: 1s;animation-fill-mode: both;}
+	.rnd_big .visual-slide .swiper-slide { display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50px; background-repeat: no-repeat; background-position: center; background-size: cover; text-align: center; }
+	.rnd_big .visual-slide .swiper-button-prev, 
+	.rnd_big .visual-slide .swiper-button-next {
+		width: 28px;margin-top: -13px;
+		background: url(https://image.edaymall.com/images/dcf/vegemil/img/ico/btn_slim_left.png)no-repeat; background-size: contain; 
+	}
+	.rnd_big .visual-slide .swiper-button-prev { left: -70px; }
+	.rnd_big .visual-slide .swiper-button-next { right: -70px; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); }
+	.rnd_big .visual-slide .swiper-button-prev:after, .rnd_big .visual-slide .swiper-button-next:after { display: none; }
+	.rnd_big .visual-slide h2 { font-size: 4.24rem; letter-spacing: -2px; line-height: 1.25; color: #fff; }
+	.rnd_big .visual-slide p { margin-top: 28px; color: #fff; }
+	.rnd_big .visual-slide .swiper-pagination { }
+
+	.rnd_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0; }
+	.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1;  }
+	.rnd_big .swiper-horizontal>.swiper-pagination-bullets, 
+	.rnd_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
+	.rnd_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
 }
-.rnd_big .visual-slide .swiper-button-prev { left: -70px; }
-.rnd_big .visual-slide .swiper-button-next { right: -70px; transform: rotate(180deg); -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); }
-.rnd_big .visual-slide .swiper-button-prev:after, .rnd_big .visual-slide .swiper-button-next:after { display: none; }
-.rnd_big .visual-slide h2 { font-size: 4.24rem; letter-spacing: -2px; line-height: 1.25; color: #fff; }
-.rnd_big .visual-slide p { margin-top: 28px; color: #fff; }
-.rnd_big .visual-slide .swiper-pagination { }
-
-.rnd_big .visual-slide .swiper-pagination-bullet {background:none; opacity:1; border:1px solid #fff; height:5px ;width:58px; border-radius:0; }
-.rnd_big .visual-slide .swiper-pagination-bullet-active {background:#fff; opacity:1;  }
-.rnd_big .swiper-horizontal>.swiper-pagination-bullets, 
-.rnd_big .swiper-pagination-bullets.swiper-pagination-horizontal, 
-.rnd_big .swiper-pagination-custom, .swiper-pagination-fraction { top:30px; height:5px;}
-
 
 @media (max-width: 1200px) {
 	.rnd_big .visual-slide .swiper-button-prev, .rnd_big .visual-slide .swiper-button-next { display: none; }
@@ -5280,7 +5281,7 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
 	.rnd_big .visual-slide p { margin-top: 15px; }
 	.rnd_big .visual-slide .swiper-pagination {  }
 	
-
+}
 
 /* //3000 �귣����� */
 

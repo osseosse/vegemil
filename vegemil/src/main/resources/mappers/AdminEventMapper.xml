@@ -216,7 +216,8 @@
 		FROM
 			m_temperature
 		WHERE		
-			year = #{year}	
+			active = 1
+			and year = #{year}	
 	</select>
 	
  	<!-- 사랑의 온도계 최초 등록 -->
