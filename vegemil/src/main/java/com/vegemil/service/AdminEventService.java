@@ -30,8 +30,11 @@ public interface AdminEventService {
 	//이벤트 상세 조회 - 영유아식
 	public AdminEventDTO getEventDetailVB(Long eIdx);
 
-	// 사랑의 온도계 조회
+	// 사랑의 온도계 조회 - 유저용
 	public ThermometerLoveDTO getThermometerLove(int year);
+	
+	// 관리자 화면용 
+	public ThermometerLoveDTO getThermometerLoveAdmin(int year);
 	
 	// 사랑의 온도계 업데이트 
 	public boolean updateLoveThermometer(ThermometerLoveDTO dto);

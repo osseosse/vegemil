@@ -1,17 +1,17 @@
 package com.vegemil.controller;
 
-import java.util.Date;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
+import java.util.Date;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -23,8 +23,8 @@ public class ExceptionHandlingController implements ErrorController {
 	private final String ERROR_500_PAGE_PATH = "error/500";
 	private final String ERROR_ETC_PAGE_PATH = "error/error";
 
-	@RequestMapping(value = "/error")
-	public String handleError(HttpServletRequest request, HttpServletResponse response, Model model) {
+	@RequestMapping(value = "/errorveg")
+	public String handleError(HttpServletRequest request, Model model) {
 
 		// 에러 코드를 획득한다.
 		Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
@@ -53,11 +53,6 @@ public class ExceptionHandlingController implements ErrorController {
 				// 서버에 대한 에러이기 때문에 사용자에게 정보를 제공하지 않는다.
 				return ERROR_500_PAGE_PATH;
 			}
-			
-			
-			// 상태 코드를 200으로 변경
-            response.setStatus(HttpServletResponse.SC_OK);
-
 		}
 
 		// 정의한 에러 외 모든 에러는 error/error 페이지로 보낸다.

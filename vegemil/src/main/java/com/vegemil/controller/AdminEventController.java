@@ -257,7 +257,7 @@ public class AdminEventController extends UiUtils{
 	public String moveThermometerOfLoveAdminView(Model model) {
 		
 		int year = LocalDateTime.now().getYear();
-		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
+		ThermometerLoveDTO dto = adminEventService.getThermometerLoveAdmin(year);
 		model.addAttribute("dto", dto);
 		
 		return "admin/event/thermometerOfLove";		

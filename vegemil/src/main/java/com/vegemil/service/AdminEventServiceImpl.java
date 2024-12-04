@@ -290,6 +290,13 @@ public class AdminEventServiceImpl implements AdminEventService {
 		
 		return adminEventMapper.selectThermometerLove(year);
 	}
+	
+	@Override
+	public ThermometerLoveDTO getThermometerLoveAdmin(int year) {
+		
+		return adminEventMapper.selectThermometerLove(year);
+	}
+	
 
 	@Override
 	public boolean updateLoveThermometer(ThermometerLoveDTO dto) {
