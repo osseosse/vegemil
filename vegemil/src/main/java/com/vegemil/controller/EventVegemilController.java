@@ -26,17 +26,16 @@ public class EventVegemilController extends UiUtils {
 	public String getThermometerOfLove(@PathVariable("year") int year, Model model) {
 		
 		
-		//if(year == 2024) { year = 2023; }
-		 
-		
 		ThermometerLoveDTO dto = adminEventService.getThermometerLove(year);
 		
 		if(dto == null) {
 			return showMessageWithRedirect("유효하지 않은 접근입니다.", "/event/list", Method.GET, null, model);
 		}
 		
+		long loveHeight = (long) (dto.getTemperature() == 0.0 ? 1 : dto.getTemperature() * 0.01);
+				
 		model.addAttribute("dto", dto);
-		model.addAttribute("loveHeight", dto.getTemperature() * 0.01);
+		model.addAttribute("loveHeight", loveHeight);
 
 		return "event/thermometer/"+year; 
 		 
