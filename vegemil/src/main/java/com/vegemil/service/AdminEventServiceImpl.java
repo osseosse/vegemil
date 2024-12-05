@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.vegemil.domain.AdminEventDTO;
 import com.vegemil.domain.DataTableDTO;
@@ -333,6 +334,9 @@ public class AdminEventServiceImpl implements AdminEventService {
 		int result = 0;
 		
 		if(popupDTO.getIdx() == null) {
+			if(StringUtils.isEmpty(popupDTO.getHrefUrl())) {
+				popupDTO.setHrefUrl("javascript:void(0);");
+			}
 			result = popupMapper.insertPopupRow(popupDTO);
 		}else {
 			// 수정 추후 개발 

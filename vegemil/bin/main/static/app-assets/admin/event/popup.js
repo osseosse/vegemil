@@ -313,7 +313,7 @@ var createTable = function() {
 		} );
 	} ).draw();
 	
-    $('div.head-label').html('<h4 class="card-title">간단요리사 목록 </h4> ');
+    $('div.head-label').html('<h4 class="card-title">팝업 목록 </h4> ');
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
