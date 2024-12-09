@@ -11,9 +11,9 @@
 <div id="content"  >
 
 
-	<div class="love2025">
+	<div class="love2024">
 		<div class="wView">
-			<div class="love2025_logo">
+			<div class="love2024_logo">
 				<div class="logo01">
 					<a href="https://www.vegemil.co.kr/" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2025/ci01.png" alt="정식품 CI"/></a>
 					<a href="https://kws.or.kr/ " target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2025/ci01_01.png" alt="초록우산재단"/></a>
@@ -80,7 +80,7 @@
 		
 			<div class="countWrap " >
 				<p class="img100"><img src="https://image.edaymall.com/images/dcf/vegemil/img/communication/love2025/m02.jpg" alt="정식품"/></p>
-				<div class="countBox"><p class="count">25,000℃</p></div>
+				<div class="countBox"><p class="count" th:text="${#numbers.formatInteger(dto.temperature, 1, 'COMMA') + '℃'}">25,000℃</p></div>
 			</div>
 		
 

@@ -20,6 +20,7 @@ public class ThermometerLoveDTO {
 	private double temperature;
 	private int active;
 	private LocalDateTime fromDate;
+	private String metaImg;
 	
 	private int isOpen = 1;
 	
