@@ -11,7 +11,7 @@ function onYouTubePlayerAPIReady() {
   player = new YT.Player('player', {
    // width: 640,
    // height: 400,
-    videoId: 'zm6KsDso65Q',
+    videoId: cfLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -24,7 +24,7 @@ function onYouTubePlayerAPIReady() {
    // width: 640,
    // height: 400,
   
-    videoId: 'Xf3nXHwMeLY',
+    videoId: cmLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
@@ -37,7 +37,7 @@ function onYouTubePlayerAPIReady() {
    player3 = new YT.Player('player3', {
    // width: 640,
    // height: 400,
-    videoId: 'sskZWJ-pSnw',
+    videoId: etcLoadId,
     "playerVars": {
       //autoplay: 1,
       showinfo:0,
