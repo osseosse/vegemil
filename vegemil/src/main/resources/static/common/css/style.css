@@ -1,3 +1,4 @@
+@charset "utf-8";
 
 
 /*================================ 
@@ -1984,7 +1985,7 @@ button:hover:before {content:"Reply!"}
 	.tabs3 li p {display:inline-block; width:110px; height:110px; padding-top:75px; }
 	.tabs3 li span {display:block; margin-top:5px; color:#787878 ;}
 	.tab_content3 {position:relative; padding:0px 0 100px 0 ;} 
-	.tab_content3 > div {clear: both;line-height: 19px;color: #666; display: none;  width:100%;  /*display:inline-block*/ }
+	.tab_content3 > div {clear: both;line-height: 19px;color: #666;  width:100%;  display:inline-block }
 	
 	.tab_content3 > div#VM {display:none; }
 	.tab_content3 > div#VB {display:none; }
@@ -1993,7 +1994,7 @@ button:hover:before {content:"Reply!"}
 	.tab_content3 > div#SC {display:none; }
 	.tab_content3 > div#CV {display:none; }
 	.tab_content3 > div#CD {display:none; }
-	.tab_content3 > div#CW {display:none; }
+	.tab_content3 > div#CW {display:none; } 
 	/*���� ID*/
 	.tab_content3 > div#P {display:none; }
 	.tab_content3 > div#B {display:none; }
