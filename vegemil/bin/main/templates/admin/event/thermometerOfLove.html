@@ -9,14 +9,14 @@
 	
 	<th:block layout:fragment="add-css">
 	</th:block>
-	
+
 	<!-- BEGIN: Page Vendor JS-->
 	<!-- <th:block layout:fragment="add-script">			    	       
 	    <script th:src="@{/app-assets/admin/common/jquery.serializeObject.min.js}"></script>
 	    <script th:src="@{/app-assets/admin/common/common.js}"></script>	    
     </th:block> -->
     <!-- END: Page Vendor JS-->
-	
+
 
 	<th:block layout:fragment="content">
     <!-- BEGIN: Content-->
@@ -41,6 +41,32 @@
                 </div>
               
             </div>
+			<script>
+
+				function getLoveData(year){
+					
+					
+					$.ajax({
+				        url: '/event/loveBoard/'+year,  // 호출할 URL
+				        type: 'GET',          			// 요청 방식 (GET, POST 등)    	        
+				        success: function(response) {
+				            console.log('Success:', response); // 성공 시 처리
+	
+				            var yearRes = response.data.year;
+				            var temperature = response.data.temperature;
+				            
+				            $("#loveBoard").empty();
+				            $("#loveBoard").append('<p class="py-5" style="font-size: 30px; color: antiquewhite; "><span>' + yearRes + '</span>년  온도 현황 </p>')
+				            $("#loveBoard").append('<p class="pb-6" style="font-size: 100px; color: aliceblue;"><span>' + temperature + '</span></p>')	
+				          	                	                	            
+				        },
+				        error: function(error) {
+				            console.error('Error:', error);    // 에러 시 처리
+				        }
+				    });	
+				}
+
+			</script>
             <div class="content-body">
             	<form name="params" id="params" method="post">
 	                <!-- Basic table -->
@@ -57,7 +83,7 @@
 										<div class="row mb-1 ps-1">
 											<div class="col-sm-2">
 												<div class="mb-1">연도</div>	
-												<select class="form-select" id="year" name="year">
+												<select class="form-select" id="year" name="year" onchange="getLoveData(this.value)">
 													<option value="2024" selected>2024</option>
 													<option value="2023">2023</option>
 													<option value="2025">2025</option>
@@ -81,7 +107,7 @@
 		
 									</div>
 									<hr />	                            	
-					                <div class="text-center mt-4" style="height:400px;">
+					                <div class="text-center mt-4" style="height:400px;" id="loveBoard">
 					                	<p class="py-5" style="font-size: 30px; color: antiquewhite; "><span th:text="${dto.year}">2024</span>년  온도 현황 </p>
 					                	<p class="pb-6" style="font-size: 100px; color: aliceblue;"><span th:text="|${dto.temperature}|">24000</span></p>
 					                </div>
