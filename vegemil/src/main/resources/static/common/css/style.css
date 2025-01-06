@@ -72,6 +72,7 @@
 	.contant1460 {max-width:1460px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto;}
 	.contant1310 {max-width:1310px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
 	.contant1160 {max-width:1160px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
+	.contant1100 {max-width:1100px; width:100%;   padding-right:0px;padding-left:0px;margin-right: auto;margin-left: auto; }
 
 	/* 3000 popup*/
 	.main-popup {position:absolute; top:110px; right:150px; z-index:100; height:480px;}
@@ -509,7 +510,8 @@
 	.subMiddleHeri03{position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subMiddleHeri03.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subTopEvent {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/communication/subTopEvent.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subTopISO {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/R&D/subTopISO.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
-	
+	.subTopESG {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subTopESG.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subTopCSR {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subTopESG_02.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bnr_login {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/bnr/bnr_login.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bg_rightBlue {background:#F1F4F5}
 	.bg_White {background:#fff}
@@ -786,6 +788,24 @@
     .greetingSign img{position: absolute; right: 10%; top:-150px}
 	.greeBox {position:relative; width:100%; max-width:570px;}
 	/* 3000 company (���û� ������) */
+
+
+	/* 3000 company (ESG) */
+	.gsg_gra {
+		color:#fff; display:inline-block; padding:13px 70px; border-radius:100px; 
+		background: -moz-linear-gradient(left, #24B7ED 0%, #11c1c7 50%, #00CBA5 100%);
+		background: -webkit-linear-gradient(left, #24B7ED 0%, #11c1c7 50%, #00CBA5 100%);
+		background: linear-gradient(to right, #24B7ED 0%, #11c1c7 50%, #00CBA5 100%);
+	}
+	.est_color01{color:#56e2f1}
+	.est_color02{color:#39f1cf}
+	.egs-arrow {position:relative;  margin:30px 0 -17px 0 ; }
+	
+	.esg-list {position:relative; padding:30px 30px; border-radius:30px; max-width:300px; margin:0 auto;  background:#FBF8EE;z-index:-1  } 
+	.esg-list li{border-bottom:1px solid #E3A62C; line-height:130%;padding:15px 0}
+	.esg-list li:nth-child(3) {border-bottom:0; }
+	p.esgImg {border-radius:300px; overflow:hidden; padding:50px 0px 50px 0px; max-width:300px; margin:0 auto; -webkit-box-shadow: 4px 7px 24px 11px rgba(0,0,0,0.15); box-shadow: 4px 7px 24px 11px rgba(0,0,0,0.15);}
+
     .profileBg{
         background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/profileBg.jpg) center center no-repeat; border-radius: 20px;
         position: relative;
@@ -3981,6 +4001,24 @@ button:hover:before {content:"Reply!"}
     .greetingPhDSign{text-align: right;}
     .greetingPhDSign img{position: relative;}
 	.greetingsBg ul{height: 460px;}
+
+	/* 1200 company (ESG) */
+	.esg .row .col-4 {padding:8px; }
+	.gsg_gra {
+		color:#fff; display:inline-block; padding:7px 35px; border-radius:100px; 
+		background: -moz-linear-gradient(left, #24B7ED 0%, #11c1c7 50%, #00CBA5 100%);
+		background: -webkit-linear-gradient(left, #24B7ED 0%, #11c1c7 50%, #00CBA5 100%);
+		background: linear-gradient(to right, #24B7ED 0%, #11c1c7 50%, #00CBA5 100%);width:100%
+	}
+	.est_color01{color:#56e2f1}
+	.est_color02{color:#39f1cf}
+	.esg-list { background:#FBF8EE; padding:10px 10px ; border-radius:20px; max-width:300px; margin:0 auto; margin-top:30px; width:100%} 
+	.esg-list li{border-bottom:1px solid #E3A62C; line-height:170%;padding:7px 0}
+	.esg-list li:nth-child(3) {border-bottom:0; }
+	p.esgImg {border-radius:300px; overflow:hidden; padding:20px;width:100%; max-width:200px; width:100%; margin:0 auto; -webkit-box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.15); 
+box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.15);}
+	.egs-arrow {position:relative;  margin:10px 0 -17px 0 ; }
+	.egs-arrow img {width:15px}
 
 	/* 1200 �����ŷ� CP */
     .cpProgramBg{height: 400px; padding-top: 80px;}

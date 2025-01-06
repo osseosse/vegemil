@@ -129,7 +129,6 @@ public class CompanyController {
     
     @GetMapping("/company/notice")
     public String openNotice(Model model) {
-        
         return "company/notice";
     }
 
