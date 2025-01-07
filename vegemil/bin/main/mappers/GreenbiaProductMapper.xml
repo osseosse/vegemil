@@ -118,7 +118,7 @@
 	       AND 
 	       		g_active = 1
 	       ORDER BY 
-	       		g_display_order2 asc
+	       		g_incategory_order asc
 	       		
 		]]>
 	</select>
@@ -141,7 +141,7 @@
 		  FROM  m_greenbia_product
 		  WHERE g_lcate = '전문영양식'
 		  AND   g_active = 1 
-		  ORDER BY g_display_order asc
+		  ORDER BY g_incategory_order asc
 		]]>
 	</select>
 
@@ -156,7 +156,7 @@
 		 FROM m_greenbia_product
 		 WHERE g_lcate = '연하식' 
 		 AND   g_active = 1
-		 ORDER BY g_display_order asc
+		 ORDER BY g_incategory_order asc
 		]]>		
 	</select>
 
@@ -171,7 +171,7 @@
 		 FROM m_greenbia_product
 		 WHERE g_lcate = '건강식품'
 		 AND   g_active = 1 
-		 ORDER BY g_display_order asc
+		 ORDER BY g_incategory_order asc
 		]]>	
 	</select>
 	

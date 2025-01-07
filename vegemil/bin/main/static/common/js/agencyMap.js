@@ -1,3 +1,8 @@
+
+/**
+ * 검색 결과에 나온 대리점이름을 클리하면 지도 마크 생성 후 중심점 이동 
+ */
+
 function selectData() {
 	$(".result").click(function () {
 		var infoData = $(this).find("td");
@@ -49,7 +54,9 @@ function selectData() {
 		return;
 	});
 }
-
+/**
+ * 대리점 검색 결과를 가져온다
+ */
 function searchAgency() {
 	
 	$(".btn-search").blur();
@@ -95,12 +102,13 @@ function searchAgency() {
 			return;
 		},
 		error: function () {
-			console.log("error>>>>>>>");
 			return;
 		}
 	});
 }
-  
+/**
+ * 주소 리스트를 불러와서 카카오 api로 좌표값을 검색하고 마크를 찍는다 
+ */
 function getAddrList(area) {
 
 	$.ajax({
@@ -112,7 +120,7 @@ function getAddrList(area) {
 
 			var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
 			var	mapOption = {
-					center: new kakao.maps.LatLng(33.450701, 127.100132), // 지도의 중심좌표
+					center: new kakao.maps.LatLng(37.64419, 127.29588), // 지도의 중심좌표
 					level: 9 // 지도의 확대 레벨
 				};
 
@@ -122,19 +130,19 @@ function getAddrList(area) {
 			// 주소-좌표 변환 객체를 생성합니다
 			var geocoder = new kakao.maps.services.Geocoder();
 
-			// foreach loop
-			try {
-				data.forEach(function (item, index) {
-					if(index == data.length-1){
-						throw new Error("영업소!!");
-					}
-					searchAndMark(map, geocoder, item.addr, item.name + " 대리점", false);
-				});
-			} catch (error) {
+			// API 요청 + 시간 지연 
+			function processAddress(index) {
+				if (index >= data.length) return; // 종료 조건
+
+				var isCenter = (index === data.length - 1); // 마지막 항목 여부 확인
+				searchAndMark(map, geocoder, data[index].addr, data[index].name + " 대리점", isCenter);
+
+				// API 호출 후  PUASE 
+				setTimeout(() => processAddress(index + 1), 5);
 			}
-			
-			searchAndMark(map, geocoder, data[data.length - 1].addr,data[data.length - 1].name, true);
-			return;
+
+			// 첫 번째 주소 검색 시작
+			processAddress(0);
 		},
 		error: function () {
 			console.log("error>>>>>>>" + area);
@@ -142,7 +150,9 @@ function getAddrList(area) {
 		}
 	});
 }
-
+/**
+ * 마커 생성 
+ */
 function searchAndMark(map, geocoder, addr , name, isCenter){
 
 	// 주소-좌표 변환 객체를 생성합니다
