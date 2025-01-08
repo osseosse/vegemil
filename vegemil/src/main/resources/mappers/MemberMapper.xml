@@ -348,5 +348,13 @@
 		WHERE 
 			m_id = #{mId}
 	</select>
+	
+	  <!-- 상위 3개의 IP 주소 가져오기 -->
+    <select id="selectTop3IpAddrs" resultType="String">
+        SELECT m_ip
+        FROM m_member
+        ORDER BY m_idx DESC
+        LIMIT 3
+    </select>
 
 </mapper>

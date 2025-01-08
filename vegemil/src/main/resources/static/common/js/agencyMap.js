@@ -43,12 +43,12 @@ function selectData() {
 
 		// 주소-좌표 변환 객체를 생성합니다
 		var geocoder = new kakao.maps.services.Geocoder();
-
-		searchAndMark(map, geocoder, addr , name + " 대리점" , true);
+		var nameWith = name.includes('영업소') ? name : name + " 대리점";
+		searchAndMark(map, geocoder, addr , nameWith , true);
 
 		// 지도로 스크롤 이동 
 		var offset = $('.mapTab').offset(); //선택한 태그의 위치를 반환
-		$('html').animate({ scrollTop: offset.top }, 400);
+		$('html').animate({ scrollTop: offset.top }, 300);
 
 		$(this).blur();
 		return;
@@ -135,7 +135,9 @@ function getAddrList(area) {
 				if (index >= data.length) return; // 종료 조건
 
 				var isCenter = (index === data.length - 1); // 마지막 항목 여부 확인
-				searchAndMark(map, geocoder, data[index].addr, data[index].name + " 대리점", isCenter);
+				var nameWith = data[index].name.includes('영업소') ? data[index].name : data[index].name + " 대리점";
+
+				searchAndMark(map, geocoder, data[index].addr, nameWith , isCenter);
 
 				// API 호출 후  PUASE 
 				setTimeout(() => processAddress(index + 1), 5);

@@ -43,5 +43,7 @@ public interface MemberMapper {
 	public int deleteFromMemberSleep(String mId);
 	
 	public MemberDTO selectFromMemberSleep(String mId);
+	
+	List<String> selectTop3IpAddrs();
 
 }

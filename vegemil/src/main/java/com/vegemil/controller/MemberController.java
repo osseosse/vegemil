@@ -10,12 +10,12 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -259,7 +259,7 @@ public class MemberController extends UiUtils {
 		return returnHtml;
 	}
 	
-	@RequestMapping(value="/member/joinWithEdaymall" , method = {RequestMethod.GET, RequestMethod.POST})
+	//@RequestMapping(value="/member/joinWithEdaymall" , method = {RequestMethod.GET, RequestMethod.POST})
 	public String joinWithEdaymal(Model model, HttpServletRequest request, HttpServletResponse response,
 			@RequestParam(value="step", required=false, defaultValue="1") int step) throws Exception {
 		
@@ -322,6 +322,14 @@ public class MemberController extends UiUtils {
 			@ModelAttribute("member") final @Valid MemberDTO member,
 			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
 		
+		String clientIp = request.getHeader("X-Forwarded-For");
+		
+	    if (StringUtils.isEmpty(clientIp)) {
+	        clientIp = request.getRemoteAddr();
+	    }
+
+		member.setMIp(clientIp);
+
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
