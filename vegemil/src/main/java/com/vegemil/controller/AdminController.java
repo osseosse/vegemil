@@ -16,6 +16,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -102,7 +103,15 @@ public class AdminController extends UiUtils {
 	
     // 회원가입 처리
     @PostMapping("/admin/auth/signUp")
-    public String adminSignup(MemberDTO params, Model model) {
+    public String adminSignup(MemberDTO params, Model model, HttpServletRequest req) {
+    	
+		String clientIp = req.getHeader("X-Forwarded-For");
+		
+	    if (StringUtils.isEmpty(clientIp)) {
+	        clientIp = req.getRemoteAddr();
+	    }
+
+	    params.setMIp(clientIp);
     	
     	try {
 	    	

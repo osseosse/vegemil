@@ -4,6 +4,9 @@ import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Collections;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,6 +23,7 @@ import lombok.Setter;
 public class MemberDTO extends AdminCommonDTO implements UserDetails {
 
 	private Long   mIdx;
+	
 	private String mId;
 	private String mName;
 	private String mPwd;
@@ -55,6 +59,8 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
 	private String mRecoveryDate;	
 	private String mIsIdle;
 	private String mDualYn;
+	
+	
 	private String mDi;
 	private String mLocation;
 	
