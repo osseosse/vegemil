@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import org.springframework.security.web.header.writers.StaticHeadersWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.vegemil.handler.CompAccessDeniedHandler;
 import com.vegemil.handler.CustomAuthenticationHandler;
 import com.vegemil.service.MemberService;
 
@@ -29,6 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
     @Autowired
     private CustomAuthenticationHandler customAuthenticationHandler;
+    
+    @Autowired
+    private CompAccessDeniedHandler compAccessDeniedHandler;
     
     @Order(1)
     @Configuration
@@ -80,7 +84,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		                .loginPage("/member/payLogin")
 		                .loginProcessingUrl("/member/loginProc")
 		                .failureUrl("/member/login?error=true")
-		                .defaultSuccessUrl("/")
+		                .defaultSuccessUrl("/comp/payment/list")
 	            .and()
 	                .logout()
 		                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout")) // 로그아웃 시 URL 재정의
@@ -89,7 +93,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		                .deleteCookies("JSESSIONID") // 특정 쿠키 제거
 	            .and()
 	                .exceptionHandling()
-	                .accessDeniedPage("/error/error");
+	                .accessDeniedHandler(compAccessDeniedHandler);
+
 	    }
 	    
 	    @Override

@@ -249,4 +249,9 @@ public class WebzineServiceImpl implements WebzineService {
 	public BannerDTO getBanner(BannerDTO dto) {
 		return webzineMapper.selectWebzineBanner(dto);
 	}
+
+	@Override
+	public String getLatestQrt() {
+		return webzineMapper.selectLatestOpenQrtWebzine();
+	}
 }

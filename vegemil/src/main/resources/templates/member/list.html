@@ -23,6 +23,7 @@
 					<div class="myBox">
 						<p class="f14 fw400  mebOut gray04"><a href="/mypage/withdrawal">회원 탈퇴 신청</a></p>
 						<p class="f34 fw600 lh130 mt50" th:text="|${member.mName} 님,|"><br>반갑습니다.</p>
+						<a href="/comp/payment/pay" sec:authorize="hasAuthority('COMP')"><p class="btnType12 mt30"><span class="" > 그린비아 결제하러 가기</span></p></a>
 						<ul class="account_box mt40">
 							<li th:text="${member.mId}"></li>
 							<li th:if="${member.mAuth} == 'USER'">일반회원</li>

@@ -124,20 +124,6 @@ public class MemberService implements UserDetailsService  {
 		member.setMPwd(passwordEncoder.encode(member.getPassword()));
 		member.setMAuth("USER");
 		
-		//DI값 필수 체크 
-		if(StringUtils.hasText(member.getMDi())==false) {
-			return false;
-		}
-		
-		// 최근 아이피 중복 체크
-		List<String> currentJoinIp = memberMapper.selectTop3IpAddrs();
-		// 최근 아이피 3개랑 동일 아이피면 불순한 의도로 봄.
-		if(currentJoinIp.contains(member.getMIp())){
-			return false;
-		}
-		
-		
-		
 		if (memCount == 0) {			
 			queryResult = memberMapper.saveMember(member);
 		} else {
@@ -227,5 +213,17 @@ public class MemberService implements UserDetailsService  {
 	
 	public MemberDTO getMemberSleepInfo(String mId) {
 		return memberMapper.selectFromMemberSleep(mId);
+	}
+	
+	public boolean checkCurrentIp(String ipAddr) {
+		// 최근 아이피 중복 체크
+		List<String> currentJoinIp = memberMapper.selectTop3IpAddrs();
+		// 최근 아이피 3개랑 동일 아이피면 불순한 의도로 봄.
+		if(currentJoinIp.contains(ipAddr)){
+			return false;
+		}
+		
+		return true;
+		
 	}
 }

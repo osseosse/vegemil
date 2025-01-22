@@ -1,7 +1,11 @@
 package com.vegemil.domain;
 
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import com.vegemil.constant.WebzineEventCate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,9 +18,12 @@ public class WebzineEventDTO {
     
     @NotBlank
     private String custName;
+    
+    @NotBlank
     private String custHp;
     
     @NotBlank
+    @Email
     private String custEmail;
     
     @NotBlank
@@ -24,5 +31,8 @@ public class WebzineEventDTO {
     private String remark;
     private String answer;
     private String applyDate;
+    
+    @NotNull
+    WebzineEventCate category;
 
 }

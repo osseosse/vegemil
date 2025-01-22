@@ -22,6 +22,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -102,6 +103,7 @@ public class PaymentController extends UiUtils {
 					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 				}
 				
+				
 				if("1".equals(member.getMIsIdle())){
 		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 		        }
@@ -153,6 +155,7 @@ public class PaymentController extends UiUtils {
 					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
 				}
 				
+				
 				if("1".equals(member.getMIsIdle())){
 		        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 		        }
@@ -180,6 +183,14 @@ public class PaymentController extends UiUtils {
 	public String registerPayMember(
 			@ModelAttribute("member") final @Valid MemberDTO member,
 			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
+		
+		String clientIp = request.getHeader("X-Forwarded-For");
+		
+	    if (StringUtils.isEmpty(clientIp)) {
+	        clientIp = request.getRemoteAddr();
+	    }
+
+		member.setMIp(clientIp);
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();

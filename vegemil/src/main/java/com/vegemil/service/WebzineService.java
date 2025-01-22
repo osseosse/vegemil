@@ -54,4 +54,6 @@ public interface WebzineService {
     
     public BannerDTO getRandomBanner();
     public BannerDTO getBanner(BannerDTO dto);
+    
+    public String getLatestQrt();
 }

@@ -26,6 +26,7 @@
 		, qrt
 		<!-- , remark -->
 		, answer
+		, category
 		, DATE_FORMAT(apply_date,'%Y-%m-%d') as apply_date
     </sql>
     
@@ -121,6 +122,7 @@
 	        , qrt
 	        , remark
 	        , answer
+	        , category
 	        , apply_date
         ) VALUES (
             #{custName}
@@ -129,6 +131,7 @@
             , #{qrt}
             , #{remark}
             , #{answer}
+            , #{category}
             , NOW()
         )
     </insert>
@@ -216,7 +219,7 @@
             qrt_year = #{qrtYear}
         ORDER BY CASE 
 	               WHEN file_no = 'index.aspx' THEN 1
-	               WHEN file_no = 'event' THEN 3
+	               WHEN file_no LIKE '%event%' THEN 3
 	               ELSE 2
 	           END, file_no;
     </select>
@@ -327,7 +330,7 @@
             m_webzine
         ORDER BY CASE 
 	               WHEN file_no = 'index.aspx' THEN 1
-	               WHEN file_no = 'event' THEN 3
+               	   WHEN file_no LIKE '%event%'THEN 3
 	               ELSE 2
 	           END, file_no;
     </select>
@@ -472,6 +475,8 @@
          	cust_hp = #{custHp}
          and 
          	cust_email = #{custEmail}
+         and 
+         	category = #{category}
     </select>
 	
 	<select id="selectWebzineSearchList" resultType="com.vegemil.domain.WebzineDTO" parameterType="com.vegemil.domain.SearchDTO" >
@@ -502,5 +507,17 @@
            	OR remark LIKE CONCAT('%', #{searchKeyword}, '%')
 		</if>
 	</select>
+	
+	<select id="selectLatestOpenQrtWebzine" resultType="string">
+		SELECT
+			qrt_year
+		FROM 			
+			m_webzine
+		WHERE 
+			is_open = 1
+		ORDER BY INDEX_NO DESC 
+		LIMIT 1 
+			
+	</select> 
 	
 </mapper>

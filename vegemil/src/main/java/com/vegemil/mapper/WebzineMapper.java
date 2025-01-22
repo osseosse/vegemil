@@ -69,5 +69,7 @@ public interface WebzineMapper {
 	public BannerDTO selectWebzineBannerRandom();
 	public BannerDTO selectWebzineBanner(BannerDTO dto);
 	
+	public String selectLatestOpenQrtWebzine();
+	
 	
 }

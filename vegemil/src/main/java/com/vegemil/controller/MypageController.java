@@ -186,6 +186,10 @@ public class MypageController extends UiUtils {
 		//Authentication 객체를 통해 유저 정보를 가져올 수 있다.
         MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
         
+        if("COMP".equals(member.getMAuth())) {
+        	return "redirect:/comp/payment/list";
+        }
+        
         if("1".equals(member.getMIsIdle())){
         	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
         }

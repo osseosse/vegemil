@@ -90,6 +90,7 @@
 	var fileNum = parseInt(num);
 	var beforeNo = fileNum - 1;
 	var afterNo = fileNum + 1;
+
 	
 	$('#btnBefore').on("click", function() {
 		if(fileNum == '01') {
@@ -103,8 +104,14 @@
 			}
 		}
     });
+
 	
 	$('#btnNext').on("click", function() {
+		
+		if(qrter == 'Q1_2025' && fileNum == 15){
+			document.location.href="/webzine/event/"+qrter+"/1";
+			return;
+		}
 
 		if(fileNum == num) {
 			document.location.href="/webzine/event/"+qrter;
@@ -118,6 +125,7 @@
     });
 	
 	function moveUrl(str1, str2){
+
 	    document.location.href="/main/webzine/"+str1+"/"+str2;
 	}
     

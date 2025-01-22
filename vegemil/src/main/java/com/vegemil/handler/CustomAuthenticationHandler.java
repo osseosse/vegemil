@@ -17,6 +17,7 @@ import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vegemil.domain.MemberDTO;
 
 @Component
 public class CustomAuthenticationHandler implements AuthenticationSuccessHandler, AuthenticationFailureHandler{
@@ -59,7 +60,14 @@ public class CustomAuthenticationHandler implements AuthenticationSuccessHandler
                  	
 	        	} else {
 	        		// 세션에 저장된 원래 요청 경로가 없는 경우
-	        		response.sendRedirect("/");
+	        		
+	        		MemberDTO member = (MemberDTO) authentication.getPrincipal();
+	        		if("COMP".equals(member.getMAuth())) {
+	        			response.sendRedirect("/comp/payment/list");	
+	        		}else {	        			
+	        			response.sendRedirect("/");	
+	        		}
+	        		
 	        	}
 	          
 	        }

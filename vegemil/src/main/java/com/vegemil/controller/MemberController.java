@@ -272,11 +272,16 @@ public class MemberController extends UiUtils {
 	    }
 
 		member.setMIp(clientIp);
-
+		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		try {
+			
+			//DI값 필수 체크 ㅑp 중복 체크
+			if(StringUtils.hasText(member.getMDi())==false||memberService.checkCurrentIp(member.getMIp())==false) {
+				return showMessageWithRedirect("휴대폰 인증을 진행해주세요.", "/member/join", Method.GET, null, model);
+			}
 			
 			boolean isRegistered = memberService.registerMember(member);
 			if (isRegistered == false) {
@@ -284,6 +289,7 @@ public class MemberController extends UiUtils {
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 			}
+			
 			model.addAttribute("member", member);
 			
 		} catch (DataAccessException e) {

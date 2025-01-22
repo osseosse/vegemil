@@ -11,6 +11,13 @@
 <!-- ================================ 
 		Content
 ================================ -->
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('access') === 'denied') {
+        alert('일반 회원은 그린비아 결제 기능을 이용할 수 없습니다. 법인계정으로 로그인해주세요.');
+    }
+</script>
 <div id="content">
 	<div class="contant1460" >
 		
@@ -25,6 +32,7 @@
 					<p class="mt20 fw400 mt100 f20">로그인</p>
 					<p class="mt10 center"><input id="txtId" name="username" type="text" placeholder="사업자번호" class="inp01"></p>
 					<p class="error" id="idCheck" style="display: none;">아이디는 필수 입력값입니다.</p>
+					<p class="error" id="idCheck2" style="display: none;font-size:20pt">법인회원 아이디는 사업자 번호입니다.</p>
 					<p class="mt20 fw400 mt30 f20">비밀번호</p>
 					<p class="mt10 center"><input id="txtPw" name="password" type="password" placeholder="비밀번호" class="inp01"></p>
 					<p class="error" id="pwCheck" style="display: none;">비밀번호는  필수 입력값입니다.</p>
@@ -74,9 +82,17 @@ $('#txtId').keyup(function () {
 	
 	if ($.trim(sId).length == 0) {
 		$("#idCheck").css('display', 'inline-block');
+		$("#idCheck2").css('display', 'none');
 		$("#txtId").addClass('error');
-	} else {
+	} else if(isNaN(sId)){
+		$("#idCheck2").css('display', 'inline-block');
 		$("#idCheck").css('display', 'none');
+	    $("#txtId").addClass('error').val(''); // 값 비우기
+		
+	}
+	else {
+		$("#idCheck").css('display', 'none');
+		$("#idCheck2").css('display', 'none');
 		$("#txtId").removeClass('error');
 		//$("#idCheck").css('display', 'none');
 	}

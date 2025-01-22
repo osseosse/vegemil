@@ -132,9 +132,13 @@
 	var afterNo = fileNum + 1;
 	var totSubCount = countArticles - 2;
 	
-	if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){
+	// sub 제외한 컬럼 페이지가 3개 있는 분기들 => 2025년 전 cf 비하인드 00 번 컬럼 있는 분기 / 2025년 후 기본이 3개  
+	if(qrter == 'Q1_2024' || qrter == 'Q2_2024' || qrter.split("_")[1] >= 2025){
 		totSubCount = countArticles - 3;
 	}
+	
+	// 2025년 후 00번 컬럼 있는 분기 
+	
 
 	$('#btnBefore').on("click", function() {
 		if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){			
@@ -165,7 +169,11 @@
     });
 	
 	$('#btnNext').on("click", function() {
-
+		
+		if(qrter == 'Q1_2025' && fileNum >= 15){
+			document.location.href="/webzine/event/"+qrter+"/1";
+		}
+		
 		if(fileNum == totSubCount) {
 			document.location.href="/webzine/event/"+qrter;
 		} else {

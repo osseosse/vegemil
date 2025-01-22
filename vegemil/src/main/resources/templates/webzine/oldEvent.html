@@ -17,7 +17,8 @@
        <div class="content h550-3 home-content">
            <div class="hero-content fl-wrap h550-3">
 			<!-- IMG -->
-               <div th:class="|${qrtYear}_event|"></div>
+                <div th:class="${heroImgClass}"></div>
+
            </div>
        </div>
    </div>
@@ -37,9 +38,26 @@
 	</div>
 </div>
 <!-- ******************* main-content ******************* -->
-<div th:insert="|webzine/html/event/event_${qrtYear}|"></div>
+<div th:if="${qrtYear != null}" 
+     th:insert="${qrtYear == 'Q1_2025'} ? 
+                |webzine/html/event/event_${qrtYear}_${eventNum}| : 
+                |webzine/html/event/event_${qrtYear}|"></div>
+
 <!-- ******************* //main-content ******************* -->
 </div>
+<!-- 네비게이션 -->
+<div class="content" th:if="${wYear >= 2025}">
+	<div class="wrap-inner5">
+		<div class="container">
+			<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+				<!-- ******************* navi ******************* -->
+				<th:block th:replace="webzine/subNewNavy :: navyFragmentEvent"></th:block>
+				<!-- ******************* // navi ******************* -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 네비게이션 -->
 <!-- ******************* footer ******************* -->
 <footer  th:replace="webzine/mainFooter :: footerFragment"></footer>
 <!-- ******************* // footer ******************* -->
@@ -61,6 +79,11 @@
 				alert("개인정보취급에 동의하셔야 이벤트 응모가 가능합니다.");
 				return false;
 			}
+			
+			if(!isValidEmail(sEmail)){
+				alert("알맞은 이메일 주소를 입력하여 주세요.");
+				return false;
+			}
 			return true;
 		} else {
 			alert("필수 값을 입력해주세요");
@@ -75,6 +98,12 @@
         console.log(hp);
 	}
 	
+	function isValidEmail(email) {
+	    
+	    const emailValidator = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	    return emailValidator.test(email);
+	}
+	
 	$(function(){
 		
 		//이메일 입력방식 선택
@@ -85,6 +114,37 @@
 		});
 		
 	});
+	
+	
+	var countArticles = '[[${countArticles}]]'
+	var eventNum = '[[${eventNum}]]';		
+	var wYear = '[[${wYear}]]';		
+			
+	var qrter = '[[${qrtYear}]]';
+	var totSubCount = countArticles - 2;
+	
+	console.log(countArticles);
+	if(wYear>=2025){
+		// cf 비하인드 00 번 컬럼 있는 분기 
+		if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){
+			totSubCount = countArticles - 3;
+		}
+	
+		$('#btnBefore').on("click", function() {		
+			document.location.href="/webzine/"+qrter+"/sub"+totSubCount;			
+	    });
+		
+		$('#btnNext').on("click", function() {
+			
+			if(eventNum == 1){
+				document.location.href = "/webzine/"+qrter+"/event/2"
+			}
+			else{
+				document.location.href = "/webzine/" + qrter + "/index"
+			}
+	    });
+	}
+	
 //]]>
 </script>
 </body>
