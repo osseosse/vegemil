@@ -93,7 +93,7 @@
 		/* selectWebzineEventList by AdminSaboMapper.xml */
 		SELECT
 			index_no, cust_name, cust_hp, cust_email,
-			qrt, remark, answer, apply_date 
+			qrt, remark, answer, category ,apply_date 
 		  FROM m_webzine_event
 		  WHERE 1 = 1
 	    <if test='sStartdate != "" '>

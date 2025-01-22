@@ -1,5 +1,7 @@
 package com.vegemil.domain;
 
+import com.vegemil.constant.WebzineEventCate;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,5 +16,7 @@ public class AdminWebzineEventDTO {
     private String qrt;
     private String remark;
     private String answer;
+    
+    private WebzineEventCate category;
     private String applyDate;
 }

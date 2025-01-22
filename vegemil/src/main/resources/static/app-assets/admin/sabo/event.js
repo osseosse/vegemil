@@ -156,6 +156,7 @@ var createTable = function() {
         { data: 'custEmail' },
         { data: 'custHp' },
         { data: 'qrt' },
+        { data: 'category' },
         { data: 'remark' },
         { data: 'answer' }, 
         { data: 'applyDate' }
@@ -221,6 +222,15 @@ var createTable = function() {
         },
         {
           targets: 7,
+          orderable: false,
+          render: function (data, type, full, meta) {
+			if(data==null)	return '-';
+      			else	return data;
+          }
+          
+        },
+        {
+          targets: 8,
           orderable: false,
           render: function (data, type, full, meta) {
 			if(data==null)	return '-';
