@@ -16,5 +16,13 @@ public class ThermometerLoveDTO {
 	private double temperature;
 	private int active;
 	private LocalDateTime fromDate;
+	
+	public ThermometerLoveDTO(int year, double temperature) {
+		super();
+		this.year = year;
+		this.temperature = temperature;
+	}
+	
+	
 
 }

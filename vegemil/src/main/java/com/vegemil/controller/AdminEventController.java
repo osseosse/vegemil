@@ -306,9 +306,6 @@ public class AdminEventController extends UiUtils{
 		
 	}
 		
-	
-
-	
 	//정적 이미지 불러오기 
 	@GetMapping("/web/upload/EVENT/{filename}")
 	public ResponseEntity<Resource> display(@PathVariable(value = "filename", required = false) String filename) {
