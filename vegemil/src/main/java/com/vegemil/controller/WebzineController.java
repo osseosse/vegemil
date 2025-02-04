@@ -252,7 +252,7 @@ public class WebzineController extends UiUtils {
 		
 		if(wYear.equals("2017") || wYear.equals("2018") || qrtYear.equals("Q1_2019")) {
 			returnHtml = "webzine/oldSub";
-		} else if((Integer.parseInt(wYear)==2023 && Integer.parseInt(qrt.substring(1)) >= 2) || (Integer.parseInt(wYear)>=2024)) {
+		} else if((Integer.parseInt(wYear)==2023 && Integer.parseInt(qrt.substring(1)) >= 2) || (Integer.parseInt(wYear)>=2024)) { // 2023 2분기부터 최신 
 			model.addAttribute("banner",webzineService.getBanner(new BannerDTO(qrtYear, "sub"+fileNo)));
 			returnHtml = "webzine/newSub";
 		} else {
