@@ -1,143 +1,228 @@
 <script>
+	var type = "";
+	var times = 1;
+	var imgCommonPath = "https://image.edaymall.com/images/dcf/webzine/Q4_2023/";
+	var resultLandingCommonPath = "https://www.vegemil.co.kr/product/detail/";
+	$(document)
+			.ready(
+					function() {
+						//setInterval(getRes, 5000);
 
-var type = "";
-var times = 1;
-var imgCommonPath = "https://image.edaymall.com/images/dcf/webzine/Q4_2023/";
-var resultLandingCommonPath = "https://www.vegemil.co.kr/product/detail/";
-$(document).ready(function () {
-  //setInterval(getRes, 5000);
+						$(".choice")
+								.click(
+										function() {
+											var choiceId = $(this).attr("id");
 
-  $(".choice").click(function () {
-	var choiceId = $(this).attr("id");
-		
-	type += choiceId;
-	times++;
+											type += choiceId;
+											times++;
 
-	
-	// 편의점에서 베지밀에이를 발견했다
-	if(times == 2){		
-		// 질문 공통
-		//console.log(type);
-		
-		if(type == 'L'){
-		    $("#question").attr("src",imgCommonPath+"16_q2_1.jpg");
-		}else{
-		    $("#question").attr("src",imgCommonPath+"16_q2_2.jpg");
+											// 편의점에서 베지밀에이를 발견했다
+											if (times == 2) {
+												// 질문 공통
+												//console.log(type);
+
+												if (type == 'L') {
+													$("#question")
+															.attr(
+																	"src",
+																	imgCommonPath
+																			+ "16_q2_1.jpg");
+												} else {
+													$("#question")
+															.attr(
+																	"src",
+																	imgCommonPath
+																			+ "16_q2_2.jpg");
+												}
+
+												$("#leftImg")
+														.attr(
+																"src",
+																imgCommonPath
+																		+ "16_btn3.png");
+												$("#rightImg")
+														.attr(
+																"src",
+																imgCommonPath
+																		+ "16_btn4.png");
+
+											}
+											// 늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어! 
+											if (times == 3) {
+												$("#question")
+														.attr(
+																"src",
+																imgCommonPath
+																		+ "16_q3_1.jpg");
+												$("#leftImg")
+														.attr(
+																"src",
+																imgCommonPath
+																		+ "16_btn5.png");
+												$("#rightImg")
+														.attr(
+																"src",
+																imgCommonPath
+																		+ "16_btn6.png")
+											}
+											if (times == 4) {
+												var resultframe = '<div class="btn-mbti-center"><p class="green-btn img100 "><a class="resultLoading" id="resultBoard" href=""><img  class="content-center" id="resultImg" src=""/></a></p></div>'
+
+												$("#frameEx").html(resultframe);
+
+												$("#resultImg")
+														.attr(
+																"src",
+																imgCommonPath
+																		+ "16_loading.gif");
+
+												//return;
+
+												resultInterval = setInterval(
+														getRes, 3000);
+											}
+										});
+					});
+	function getRes() {
+
+		var btns = '<div class="greenFoot_BtnBox center mt50-m ">'
+				+ '<a href="javascript:void(0);" class="  center" onclick="reset();"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn_re.jpg" alt="다시 해보기"/></a>'
+				+ '<a href="#" class="resultLanding" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn.jpg" alt="구매하기" /></a>';
+
+		$("#resultBoard").removeClass('resultLoading');
+		$("#frameEx").append(btns);
+
+		switch (type) {
+		case "LLL":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "75");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_1.jpg");
+			break;
+		case "LLR":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "20");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_2.jpg");
+			break;
+
+		case "LRR": //? 4번 이미지를 노출해야한다는데 I를 선택했는데 E가 나온다고 ?
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "26");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_3.jpg");
+			break;
+		case "LRL":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "79");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_4.jpg");
+			break;
+
+		case "RRL":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "79");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_4.jpg");
+			break;
+		case "RLL":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "7");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_5.jpg");
+			break;
+
+		case "RLR":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "31");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_6.jpg");
+			break;
+		case "RRR":
+
+			$(".resultLanding").attr("href", resultLandingCommonPath + "26");
+			$("#resultImg").attr("src", imgCommonPath + "16_a4_3.jpg");
+			break;
 		}
-		
-		$("#leftImg").attr("src",imgCommonPath+"16_btn3.png");
-		$("#rightImg").attr("src",imgCommonPath+"16_btn4.png");	
-		
-	}		
-	// 늦은 저녁, 너무 배가 고파 뭐라도 먹어야겠어! 
-	if(times == 3){
-		$("#question").attr("src",imgCommonPath+"16_q3_1.jpg");
-		$("#leftImg").attr("src",imgCommonPath+"16_btn5.png");
-		$("#rightImg").attr("src",imgCommonPath+"16_btn6.png")
-	}	
-	if(times == 4){		
-		var resultframe = '<div class="btn-mbti-center"><p class="green-btn img100 "><a class="resultLoading" id="resultBoard" href=""><img  class="content-center" id="resultImg" src=""/></a></p></div>'
-						  
-		$("#frameEx").html(resultframe);
 
-		$("#resultImg").attr("src",imgCommonPath+"16_loading.gif");
-		
-		//return;
-		
-		resultInterval = setInterval(getRes, 3000);
+		clearInterval(resultInterval);
+
 	}
-  });
-});
-function getRes(){
-	
-	var btns = '<div class="greenFoot_BtnBox center mt50-m ">'+
-				  '<a href="javascript:void(0);" class="  center" onclick="reset();"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn_re.jpg" alt="다시 해보기"/></a>' +
-				  '<a href="#" class="resultLanding" class="hvr-float-shadow"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn.jpg" alt="구매하기" /></a>';
-				  
-	$("#resultBoard").removeClass('resultLoading');
-    $("#frameEx").append(btns);
-    
-	switch(type){
-	case "LLL" : 
-		
-		$(".resultLanding").attr("href",resultLandingCommonPath+"75");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_1.jpg");
-		break;		
-	case "LLR" :
-		
-		$(".resultLanding").attr("href",resultLandingCommonPath+"20");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_2.jpg");
-		break;
-		
-	case "LRR" : //? 4번 이미지를 노출해야한다는데 I를 선택했는데 E가 나온다고 ?
-		
-		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
-		break;				
-	case "LRL" :
-		
-		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
-		break;
-		
-	case "RRL" :
 
-		$(".resultLanding").attr("href",resultLandingCommonPath+"79");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_4.jpg");
-		break;		
-	case "RLL" :
-
-		$(".resultLanding").attr("href",resultLandingCommonPath+"7");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_5.jpg");
-		break;		
-		
-	case "RLR" :
-		
-		$(".resultLanding").attr("href",resultLandingCommonPath+"31");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_6.jpg");
-		break;
-	case "RRR" :
-		
-		$(".resultLanding").attr("href",resultLandingCommonPath+"26");
-		$("#resultImg").attr("src",imgCommonPath+"16_a4_3.jpg");
-		break;		
+	function reset() {
+		location.reload();
 	}
-	
-	clearInterval(resultInterval);
-	
-}
-
-function reset(){
-	location.reload();
-}
 </script>
-<div class="wrap-inner5" id="wzPage" >
-        <script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
-        <div class="container wz-left">
-        <div class="project-detail-wrap fl-wrap bg-w2 container-sub80" style="height:1364px;">
-	       	<div class="row">
-	                <div class="col-md-12 center">
-	                    <h3 class="center mt50">나의 정식품 MBTI는 무엇일까?</h3>
-	    				
-	                <p class="mt40 center">질문을 읽고 끌리는 답변을 골라주세요. 내 성격과 딱 맞는 제품을 추천해준답니다!<br> 이번 주말, 나의 정식품 MBTI 제품을 마셔보는건 어떨까요?</p>
-	                </div>	
-	        </div><!--//row-->
-	        <div class="row intxt mt50-m">
-	            <div class="col-md-12">
-	                <div class="w783" id="frameEx">
-	                    <!-- 질문1 I/E -->
-	                    <div class="geenBox">
-	                        <div class="greenHead"><div class="greenDot"><img  src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" /></div></div>
-	                        <p class="img100"><img id="question" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q01.jpg" alt="드디어 찾아온 주말 오늘같은 날은" /></p>
-	                        <div class="greenBtnBox">
-	                            <p class="green-btn img100"><a href="javascript:void(0);" class="choice" id="L"><img id="leftImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn1.png" alt="집에서 편안히 쉬면서 충전할래!" /></a></p>
-	                            <p class="green-btn img100"><a href="javascript:void(0);" class="choice" id="R"><img id="rightImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn2.png" alt="오늘은 어디로 가지? 주말은 친구들과 외출하는 날!" /></a></p>
-	                        </div>
-	                    </div>
-	                    <!-- //질문1 I/E -->
-	        	</div>
-	      	</div>
-	      </div>
-        </div>
-    </div><!-- //container -->
-	
+
+<div class="content bg-g3">
+	<section>
+		<div class="wrap-inner5" id="wzPage">
+			<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+			<div class="container wz-left">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<div class="row">
+						<div class="col-md-12 center">
+							<h3 class="center mt50">나의 정식품 MBTI는 무엇일까?</h3>
+
+							<p class="mt40 center">
+								질문을 읽고 끌리는 답변을 골라주세요. 내 성격과 딱 맞는 제품을 추천해준답니다!<br> 이번 주말, 나의 정식품 MBTI 제품을 마셔보는건 어떨까요?
+							</p>
+						</div>
+					</div>
+					<!--//row-->
+					<div class="row intxt mt50-m">
+						<div class="col-md-12">
+							<div class="w783" id="frameEx">
+								<!-- 질문1 I/E -->
+								<div class="geenBox">
+									<div class="greenHead">
+										<div class="greenDot">
+											<img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_dot.gif" alt="맞춤 레시피" />
+										</div>
+									</div>
+									<p class="img100">
+										<img id="question" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_q01.jpg" alt="드디어 찾아온 주말 오늘같은 날은" />
+									</p>
+									<div class="greenBtnBox">
+										<p class="green-btn img100">
+											<a href="javascript:void(0);" class="choice" id="L"><img id="leftImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn1.png" alt="집에서 편안히 쉬면서 충전할래!" /></a>
+										</p>
+										<p class="green-btn img100">
+											<a href="javascript:void(0);" class="choice" id="R"><img id="rightImg" class="hvr-float-shadow" src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/16_btn2.png" alt="오늘은 어디로 가지? 주말은 친구들과 외출하는 날!" /></a>
+										</p>
+									</div>
+								</div>
+								<!-- //질문1 I/E -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //container -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div>
+		<!-- //wrap-inner2 -->
+	</section>
+</div>
+
