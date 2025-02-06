@@ -85,12 +85,16 @@
 <script type="text/javascript">
 //<![CDATA[
 	
-	var num = '[[${num}]]';
+	var countArticles = '[[${countArticles}]]'
 	var qrter = '[[${qrtYear}]]';
+	var num = '[[${num}]]';
 	var fileNum = parseInt(num);
 	var beforeNo = fileNum - 1;
 	var afterNo = fileNum + 1;
-
+	var totSubCount = countArticles - 2;
+	
+	console.log("countArticles = "  , countArticles);
+	console.log("fileNum = "  , num);
 	
 	$('#btnBefore').on("click", function() {
 		if(fileNum == '01') {
@@ -104,16 +108,10 @@
 			}
 		}
     });
-
 	
 	$('#btnNext').on("click", function() {
-		
-		if(qrter == 'Q1_2025' && fileNum == 15){
-			document.location.href="/webzine/event/"+qrter+"/1";
-			return;
-		}
 
-		if(fileNum == num) {
+		if(fileNum == totSubCount) {
 			document.location.href="/webzine/event/"+qrter;
 		} else {
 			if(afterNo <= 9) {
@@ -125,7 +123,6 @@
     });
 	
 	function moveUrl(str1, str2){
-
 	    document.location.href="/main/webzine/"+str1+"/"+str2;
 	}
     
