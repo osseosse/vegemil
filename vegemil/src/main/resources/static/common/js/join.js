@@ -16,15 +16,16 @@ $("#overlappedID").click(function(){
 		success: function (data) {
 			if(data == 1) {
 				$("#idCheackOk").css('display', 'none');
+				$("#idCheackNo").text("이미 존재하는 아이디입니다.");
 	            $("#idCheackNo").css('display', 'inline-block');
-	            $("#idDuplicate").val('0');
-	            btnAvtive();
+	            $("#idDuplicate").val('0');	            
 			} else {
 				$("#idCheackNo").css('display', 'none');
 	            $("#idCheackOk").css('display', 'inline-block');
 				$("#joinBtn").prop("type", "submit");
 				$("#idDuplicate").val('1');
 			}
+			btnAvtive();
 		}
 	})
 	return;
@@ -33,8 +34,13 @@ $("#overlappedID").click(function(){
 $('#mId').keyup(function () {
 
     var retVal = false;
-    const vId = $("#mId").val();
-
+    var vId = $("#mId").val();
+    var idDuplicate = $("#idDuplicate").val();
+    
+	$("#idCheackNo").css('display', 'none');
+    $("#idCheackOk").css('display', 'none');
+	
+	
 	if (vId.length < 6 || vId.length > 20) {
 	    $("#idCheack").text("아이디는 6자 이상, 20자 이하여야합니다.");
 	    $("#idCheack").css('display', 'inline-block');
@@ -45,7 +51,12 @@ $('#mId').keyup(function () {
 	    $("#idCheack").text("아이디의 첫글자는 영문이여야합니다.");
 	    $("#idCheack").css('display', 'inline-block');
 	} else {
-		$("#idCheack").css('display', 'none');
+//		if(idDuplicate == 1) {
+//            $("#idCheackOk").css('display', 'inline-block');
+//		}
+		 $("#idCheackNo").text("id 중복체크를 진행해주세요.");
+		 $("#idCheackNo").css('display', 'inline-block');
+		 $("#idCheack").css('display', 'none');
 	    retVal = true;
 	    btnAvtive();
 	}
@@ -101,7 +112,7 @@ new daum.Postcode({
 }
 /*[- end of function -]*/
 
-function btnAvtive() {
+function btnAvtive() {	
 	
 	const sId = $('#mId').val();
 	const idDuplicate = $('#idDuplicate').val();
@@ -112,6 +123,7 @@ function btnAvtive() {
 	const sAddr1 = $('#mAddr1').val();
 	const sAddr2 = $('#mAddr2').val();
 	
+
 	if($.trim(sId).length > 1
 	&& $.trim(idDuplicate) == '1'
 	&& $.trim(sPw1).length > 1
@@ -131,6 +143,34 @@ function btnAvtive() {
 	}
 	
 	return;
+}
+
+function submitBtnMouseOver() {
+	const idDuplicate = $('#idDuplicate').val();
+	const sAddr2 = $('#mAddr2').val();
+	
+	console.log(sAddr2);
+	
+	if($.trim(idDuplicate) == '0') {
+		alert("아이디 중복 여부 체크를 완료해 주세요.")
+		return false;
+	}
+	if($("input:radio[name='mSmssend']").is(":checked") == false) {
+		alert("sms 수신 동의/거절 여부를 체크해 주세요")
+		return false;
+	}
+	if($("input:radio[name='mEmailsend']").is(":checked") == false) {
+		alert("이메일 수신 동의/거절 여부를 체크해 주세요")
+		return false;
+	}
+	
+	if($.trim(sAddr2).length < 1) {
+		alert("주소를 입력해 주세요.")
+		return false;
+	}
+	
+	
+	btnAvtive();
 }
 
 //이메일 입력방식 선택
@@ -168,7 +208,7 @@ $('#txtEmail').keyup(function () {
 	btnAvtive();
 });
 
-$('#txtEmail2').keyup(function () {
+$('#txtEmail2').change(function () {
 	if($("#txtEmail").val().length > 0) {		
 		$("#mEmail").val($("#txtEmail").val()+"@"+ $("#txtEmail2").val());
 	}
