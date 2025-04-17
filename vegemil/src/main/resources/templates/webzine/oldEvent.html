@@ -39,7 +39,7 @@
 </div>
 <!-- ******************* main-content ******************* -->
 <div th:if="${qrtYear != null}" 
-     th:insert="${qrtYear == 'Q1_2025'} ? 
+     th:insert="${qrtYear == 'Q1_2025' || qrtYear == 'Q2_2025'} ? 
                 |webzine/html/event/event_${qrtYear}_${eventNum}| : 
                 |webzine/html/event/event_${qrtYear}|"></div>
 
@@ -123,12 +123,13 @@
 	var qrter = '[[${qrtYear}]]';
 	var totSubCount = countArticles - 2;
 	
-	console.log(countArticles);
+	// cf 비하인드 00 번 컬럼 있는 분기 
+	if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){
+		totSubCount = countArticles - 3;
+	}
+	
 	if(wYear>=2025){
-		// cf 비하인드 00 번 컬럼 있는 분기 
-		if(qrter == 'Q1_2024' || qrter == 'Q2_2024'){
-			totSubCount = countArticles - 3;
-		}
+		totSubCount = countArticles - 3;
 	
 		$('#btnBefore').on("click", function() {		
 			document.location.href="/webzine/"+qrter+"/sub"+totSubCount;			

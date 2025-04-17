@@ -657,6 +657,8 @@ public class WebzineController extends UiUtils {
 		}
 		
 		String heroImgClass = wYear >= 2025 ? (qrtYear + "_event0" + eventNum):(qrtYear + "_event");
+		
+		
 		model.addAttribute("heroImgClass", heroImgClass);
 		
 		List<WebzineDTO> webzineYear = webzineService.getWebzineYear();

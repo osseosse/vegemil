@@ -1,0 +1,80 @@
+		<!doctype html><html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+					<div class="content bg-g3">
+						<section>
+							<div class="wrap-inner5" id="wzPage" >
+								<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+								<div class="container wz-left">
+									<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+										<div class="row">
+											<div class="col-md-12">
+												<h3 class="center mt100-m">마음에서 마음으로</h3>
+												<h1 class="center mt50-m">맷돌의 기억, 한 그릇의 그리움</h1>
+												<div class="mt100-m wsBox">
+													<div class="goldBox">
+														<p class="type25-1 center">인천 연수구 이정희님</p>
+														<p class="mt50-m mb40">
+														어릴 적 더운 날이면 대청마루에 앉아 할머니의 손끝에서 탄생하는 콩국수를 지켜보던 기억이 선명하다. 부지런히 콩을 불리고, 가마솥에 삶아낸 뒤 정성스레 맷돌을 돌려 곱게 거른 콩물. 몇 번이고 채에 내려 잡티 하나 없이 곱게 만들던 그 손길을 기억한다.<br><br>
+														“할머니, 아직 멀었어요?”<br><br>
+														기다림이 길수록 콩국수는 더욱 맛있어졌다. 진한 콩물에 탱글한 면발을 말고, 소금 간을 더한 뒤, 오이채를 살짝 올렸다. 숟가락으로 국물을 떠먹으면 고소한 향이 입안 가득 퍼졌고, 그 순간만큼은 세상의 더위도 잊었다.<br><br>
+														이제는 연로하신 할머니께서는 요리를 하지 않으신다. 그러던 어느 날, 마트에서 ‘간단요리사 진한 콩국물’을 접하게 됐다. 콩을 통째로 갈아 그대로 만든 콩국물이라니! 할머니의 콩국수에서 느꼈던 그 깊은 맛을 다시 맛볼 수 있을 것이란 기대감이 차올랐다.<br><br>
+														“할머니, 오늘은 제가 콩국수를 대접할게요.”<br><br>
+														면을 삶고, 냉장고에서 간단요리사 진한 콩국물을 꺼내 면 위에 부었다. 너무 쉽고 간단해서 이렇게 해도 괜찮을까? 싶었지만 맛을 본 순간 걱정이 사르르 사라졌다. 마치 할머니의 맷돌 앞에 앉아 있던 어린 시절로 되돌아간 듯했다.<br><br>
+														할머니께서 조용히 한 숟가락을 뜨셨다. 그리고 천천히 음미하시더니 이내 미소를 지으셨다.<br><br>
+														“우리 손녀가 이젠 내 손맛을 잇는구나.”<br><br>
+														그 한마디에 목이 메었다. 간단요리사 진한 콩국물 덕분에 소중했던 추억을 다시금 되새기게 됐다. 올여름도, 그리고 앞으로 여름도, 간단요리사 진한 콩국물과 함께 추억과 맛을 즐겨야겠다고 다짐했다.
+														</p>
+													</div>
+												 </div>
+											</div>											
+										</div><!--//row-->
+										<div class="row mt100-m">
+											<div class="col-md-2">
+												<p class="type19 comment " >
+													<img  src="https://image.edaymall.com/images/dcf/webzine/common/ico_comment_2.gif" alt="comment" />
+												<p>												
+											</div>
+											<div class="col-md-10">
+												<p class="type21-2">
+													&lt;마음에서 마음으로&gt;는 정식품을 사랑하는 여러분들이 만들어가는 페이지입니다. 정식품 제품에 얽힌 재미있고 감동적인 사연을 들려주세요. 
+													채택되신 분께는 상품권 5만원권을 선물로 드립니다. 정식품 가족 여러분의 많은 참여 바랍니다.<br>
+													보내실 곳 ehyang@vegemil.co.kr (사연을 보내시는 분의 성명, 주소, 전화번호도 꼭 기재해주세요!)
+												<p>												
+											</div>
+										</div><!--//row-->
+									</div>
+								</div><!-- //container -->
+								<!-- 추천기사 날개버전 -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div>
+		<!-- //wrap-inner2 -->
+	</section>
+</div>
+</html>
