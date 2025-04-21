@@ -122,7 +122,7 @@
 								<!-- width 100%  -->
 											<div class="container">
                 <div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-                    <form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="alert('이벤트 오픈전'); return false">
+                    <form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
                         <input type="hidden" name="qrt" th:value="${qrtYear}">
                         <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).QUIZ}">
                         <div class="row intxt mt80-m">
@@ -177,42 +177,31 @@
                                     <input class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기">
                                 </div>
                             </div>
-                            <div class="col-md-12 mt100-m2" >
-												<p class="type20 center">지난호 당첨자</p>
-												<div class="eventList2 mt50-m ">
-													<div class="col-md-3 mt30m">
-														<p class="type28-1">1등</p>		
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
+                   <div class="col-md-12 mt100-m2" >
+						<p class="type20 center">지난호 당첨자</p>
+						<div class="eventList2 mt50-m ">
+							<div class="col-md-3 mt30m">
+								<p class="type28-1">1등</p>		
+								<p>임*연</p>
+								
 
-													</div>
-													<div class="col-md-3 mt30m">
-														<p class="type28-1">2등</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-													</div>
-													<div class="col-md-3 mt30m">
-														<p class="type28-1">3등</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-													</div>
-													<div class="col-md-3 mt30m">
-														<p class="type28-1 hidden768">&nbsp;</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-														<p>***</p>
-													</div>
-												</div>
-											</div>
+							</div>
+							<div class="col-md-3 mt30m">
+								<p class="type28-1">2등</p>
+								<p>채*현</p>
+								<p>조*남</p>
+								
+							</div>
+							<div class="col-md-3 mt30m">
+								<p class="type28-1">3등</p>
+								<p>김*아</p>
+								<p>이*미</p>
+								<p>이*자</p>
+								<p>정*연</p>
+								<p>김*현</p>
+							</div>
+						</div>
+					</div>
                     </form>
                     <div class="row">
                     </div><!--//row-->

@@ -132,7 +132,11 @@
 		totSubCount = countArticles - 3;
 	
 		$('#btnBefore').on("click", function() {		
-			document.location.href="/webzine/"+qrter+"/sub"+totSubCount;			
+			if(eventNum == 2){
+				document.location.href = "/webzine/"+qrter+"/event/1"
+			}else{				
+				document.location.href="/webzine/"+qrter+"/sub"+totSubCount;			
+			}
 	    });
 		
 		$('#btnNext').on("click", function() {
