@@ -207,5 +207,40 @@
 		WHERE
 			p_idx = #{pIdx}
 	</update>
-
+	
+	<select id="selectMetaguideCnt" parameterType="String">
+		SELECT
+		 COUNT(*)
+		FROM 
+		 v_metaguide
+		WHERE 
+			active = '1'
+			AND url like CONCAT('%',#{viewPath},'%') 
+		LIMIT 1
+	</select>
+	<select id="selectVegemilMetaguide" parameterType="String" resultType="com.vegemil.domain.VegemilMetaData">
+		<![CDATA[	
+		SELECT
+			v_metaguide_id
+			, page_sort
+			, url
+			, m_title
+			, m_description
+			, image
+			, og_title
+			, og_description
+			, og_image
+			, x_title
+			, x_description
+			, x_image
+			, canon_tag							
+		FROM 
+			v_metaguide
+		WHERE 
+			active = '1'
+			AND url like CONCAT('%',#{viewPath},'%') 
+		LIMIT 1
+		]]> 	
+	</select>
+	
 </mapper>

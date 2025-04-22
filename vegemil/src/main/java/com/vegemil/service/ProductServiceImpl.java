@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.VegemilMetaData;
 import com.vegemil.mapper.ProductMapper;
 
 @Service
@@ -21,16 +22,16 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDTO getProductDetail(Long pIdx) {
-		
+
 		ProductDTO productDto = productMapper.selectProductDetail(pIdx);
 		productDto.detailImgClassSet();
-		
+
 		return productMapper.selectProductDetail(pIdx);
 	}
 
 	@Override
 	public List<ProductDTO> getProductList(String searchKeyword) {
-		
+
 		List<ProductDTO> productList = Collections.emptyList();
 
 		int productTotalCount = productMapper.selectProductTotalCount();
@@ -41,10 +42,10 @@ public class ProductServiceImpl implements ProductService {
 
 		return productList;
 	}
-	
+
 	@Override
 	public List<ProductDTO> getBrandStroyList(String categoryCode) {
-		
+
 		List<ProductDTO> brandStroyList = Collections.emptyList();
 
 		int brandStroyCount = productMapper.selectBrandStroyCount();
@@ -55,30 +56,40 @@ public class ProductServiceImpl implements ProductService {
 
 		return brandStroyList;
 	}
-	
+
 	@Override
 	public List<ProductDTO> getRecProduct(ProductDTO productDto) {
-		
+
 		List<ProductDTO> productList = new ArrayList<>();
-		
+
 		int productTotalCount = productMapper.selectProductTotalCount();
-		
+
 		if (productTotalCount > 0) {
-			if(productDto.getCategoryCode().equals("S") || productDto.getCategoryCode().equals("W") || productDto.getCategoryCode().equals("P")) {
+			if (productDto.getCategoryCode().equals("S") || productDto.getCategoryCode().equals("W")
+					|| productDto.getCategoryCode().equals("P")) {
 				productDto.setCategoryCode("V");
 			}
 			productList = productMapper.selectRecProduct(productDto);
 		}
 		return productList;
 	}
-	
+
 	@Override
 	public boolean updateAddCount(Long pIdx) {
-		
+
 		int queryResult = 0;
 		queryResult = productMapper.updateAddCount(pIdx);
 
 		return (queryResult == 1) ? true : false;
+	}
+	
+	/**
+	 * 제품 소개 페이지 메타 태그 조화
+	 */
+	@Override
+	public VegemilMetaData getVegemilMetaGuide(String viewPath) {
+		VegemilMetaData tag = productMapper.selectVegemilMetaguide(viewPath);
+		return tag != null ? tag : new VegemilMetaData().defaultSetting();
 	}
 
 }

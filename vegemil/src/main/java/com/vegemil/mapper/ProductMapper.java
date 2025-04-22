@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.vegemil.domain.ProductDTO;
+import com.vegemil.domain.VegemilMetaData;
 
 @Mapper
 public interface ProductMapper {
@@ -23,5 +24,11 @@ public interface ProductMapper {
 	public int selectBrandStroyCount();
 	
 	public int updateAddCount(Long pIdx);
+	
+	public int selectMetaguideCnt(String viewPath);
+	
+	public VegemilMetaData selectVegemilMetaguide(String viewPath);
+	
+	
 	
 }

@@ -1,4 +1,5 @@
 package com.vegemil.controller;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,109 +28,111 @@ public class ProductController extends UiUtils {
 	private ProductService productService;
 	@Autowired
 	private ProductGlobalService productGlobalService;
-	
-	@GetMapping(value = "/product/list")
-	public String openProductList( Model model, @RequestParam(value = "searchKeyword", required = false) String searchKeyword,
-																@CookieValue(value = "lang", required = false) String localCookie) {
-		
 
-		if("en".equals(localCookie)) {
+	@GetMapping(value = "/product/list")
+	public String openProductList(Model model,
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword,
+			@CookieValue(value = "lang", required = false) String localCookie) {
+
+		if ("en".equals(localCookie)) {
 			List<ProductEnDTO> productGlobalList = productGlobalService.getProductList(searchKeyword);
 			model.addAttribute("productList", productGlobalList);
 			model.addAttribute("productCount", productGlobalList.size());
-			if(searchKeyword != null) {
+			if (searchKeyword != null) {
 				model.addAttribute("searchKeyword", searchKeyword);
 				return "en/product/list_searched";
-			}else {
+			} else {
 				return "en/product/list";
-			}			
+			}
 		}
-		
-		if("vi-VN".equals(localCookie)) {
+
+		if ("vi-VN".equals(localCookie)) {
 			List<ProductVnDTO> productGlobalList = productGlobalService.getVnProductList(searchKeyword);
 			model.addAttribute("productList", productGlobalList);
 			model.addAttribute("productCount", productGlobalList.size());
-			if(searchKeyword != null) {
+			if (searchKeyword != null) {
 				model.addAttribute("searchKeyword", searchKeyword);
 				return "vn/product/list_searched";
-			}else {
+			} else {
 				return "vn/product/list";
-			}			
+			}
 		}
-		
-	    
+
 		List<ProductDTO> productList = productService.getProductList(searchKeyword);
+		model.addAttribute("tags", productService.getVegemilMetaGuide("/product/list"));
 		model.addAttribute("productList", productList);
 		model.addAttribute("productCount", productList.size());
-		
-		if(searchKeyword != null) {
+
+		if (searchKeyword != null) {
 			model.addAttribute("searchKeyword", searchKeyword);
 			return "product/list_searched";
 		}
 		return "product/list";
 	}
-	
+
 	@GetMapping(value = "/brandStory/{viewName}")
 	public String openBrandStroyList(Model model, @PathVariable(value = "viewName", required = false) String viewName) {
-	    
-		if(!viewName.equals("") && (viewName.equals("vegemil") || viewName.equals("greenbia"))) {
-			List<ProductDTO> brandStroyList = productService.getBrandStroyList(viewName.substring(0,1).toUpperCase());
+		
+
+		if (!viewName.equals("") && (viewName.equals("vegemil") || viewName.equals("greenbia"))) {
+			List<ProductDTO> brandStroyList = productService.getBrandStroyList(viewName.substring(0, 1).toUpperCase());
 			model.addAttribute("brandStroyList", brandStroyList);
 			model.addAttribute("brandStroyCount", brandStroyList.size());
 		}
-
-		return "brandStory/"+viewName;
+		
+		model.addAttribute("tags", productService.getVegemilMetaGuide("/brandStory/"+viewName));
+		return "brandStory/" + viewName;
 	}
-	
+
 	@GetMapping(value = "/product/cook")
 	public String openProductCook() {
-	    
+
 		return "product/cook";
 	}
-	
-	
+
 	@GetMapping(value = "/product/detail/{pIdx}")
-	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model, 
-													@CookieValue(value = "lang", required = false) String localCookie) {
-		
-		
-		
+	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model,
+			@CookieValue(value = "lang", required = false) String localCookie) {
+
 		System.out.println("localeCookie >> " + localCookie);
-		
+
 		if (pIdx == null) {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/product/list", Method.GET, null, model);
 		}
-		
-		if("en".equals(localCookie)) {
+
+		if ("en".equals(localCookie)) {
 			ProductEnDTO product = productGlobalService.getProductDetail(pIdx);
-			
+
 			if (product == null) {
-				return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list", Method.GET, null, model);
+				return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list",
+						Method.GET, null, model);
 			}
-			
+
 			List<ProductEnDTO> recProduct = productGlobalService.getRecProduct(product);
 			model.addAttribute("product", product);
 			model.addAttribute("recProduct", recProduct);
 			return "en/product/detail";
 		}
-		
-		if("vi-VN".equals(localCookie)) {
+
+		if ("vi-VN".equals(localCookie)) {
 			ProductVnDTO product = productGlobalService.getVnProductDetail(pIdx);
-			
+
 			if (product == null) {
-				return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list", Method.GET, null, model);
+				return showMessageWithRedirect("It's a product that is only distributed in korea", "/product/list",
+						Method.GET, null, model);
 			}
-					
-			model.addAttribute("product", product);			
+
+			model.addAttribute("product", product);
 			return "vn/product/detail";
 		}
-	    			
+
 		ProductDTO product = productService.getProductDetail(pIdx);
 		if (product == null) {
 			return showMessageWithRedirect("없는 게시글이거나 이미 삭제된 게시글입니다.", "product/list", Method.GET, null, model);
 		}
-		
+
 		List<ProductDTO> recProduct = productService.getRecProduct(product);
+		model.addAttribute("tags", productService.getVegemilMetaGuide("/detail/" + pIdx));
 		model.addAttribute("product", product);
 		model.addAttribute("recProduct", recProduct);
 
@@ -138,13 +141,13 @@ public class ProductController extends UiUtils {
 
 	@GetMapping("/product/addCount")
 	public @ResponseBody Map<String, Object> updateProductCount(@RequestParam("pIdx") Long pIdx) {
-		
+
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
-		
+
 		boolean isUpdate = productService.updateAddCount(pIdx);
 		rtnMap.put("result", isUpdate);
-		
+
 		return rtnMap;
 	}
-	
+
 }

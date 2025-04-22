@@ -1,67 +1,72 @@
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
-				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>육아상담 QnA</title>
-<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
+<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <body>
-<div id="wrap">
-<!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-<script type="text/javascript" th:src="@{/common/js/vegemilBaby/qna.js}"></script>	
-	<div id="content">
-		<div class="container100">
-			<div class="row pd0 mg0 ">
-				<div class="col-md-12">
-					<div class="subIMG04_02 subIMG">
-						<div class="container h560"> <!-- 0724 누락된 부분 -->
-							<div class="subTxt">
-								<p class="f40 fw600 white">육아상담 Q&amp;A</p> <!-- 0724 누락된 부분 -->
-								<p class="f20 mt20 white">전문가가 직접 답해준<br>속시원한 육아건강 상담</p> <!-- 0724 누락된 부분 -->
+	<div id="wrap">
+		<!-- ================================ Header ================================ -->
+		<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+		<!-- ================================ // Header ================================ -->
+		<script type="text/javascript" th:src="@{/common/js/vegemilBaby/qna.js}"></script>
+		<div id="content">
+			<div class="container100">
+				<div class="row pd0 mg0 ">
+					<div class="col-md-12">
+						<div class="subIMG04_02 subIMG">
+							<div class="container h560">
+								<!-- 0724 누락된 부분 -->
+								<div class="subTxt">
+									<H1>
+										<p class="f40 fw600 white">육아상담 Q&amp;A</p>
+										<!-- 0724 누락된 부분 -->
+										<p class="f20 mt20 white">
+											전문가가 직접 답해준<br>속시원한 육아건강 상담
+										</p>
+										<!-- 0724 누락된 부분 -->
+									</H1>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- /.row pd0 mg0 -->
 			</div>
-			<!-- /.row pd0 mg0 -->
-		</div>
-		<div class="container100 bg_location">
-			<div class="container snbMenu_hr">
-				<div class="row ">
-					<div class="col-md-12">
-						<!-- snbMenu -->
-						<div class="snbMenu">
-							<dl>
-								<dd>
-									<!-- cate_sel_01 -->
-									<li>
-										<div class="cate_sel_01">
-											<div class="option-list_01" >
-												<p class="view-btn_01" >
-													<a href="javascript:void(0);">Community</a>
-												</p>
-											</div>
-											<div class="list_open_01">
-												<div class="cate_content">
-													<ul class="cate_ul_list">
-														<li><a href="/vegemilBaby/brand">Brand</a></li>
-														<li><a href="/vegemilBaby/premium">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>	
-														<li><a href="/vegemilBaby/e_magazine"> Community</a></li>
-														<li><a href="/vegemilBaby/faq"> Support</a></li>
-													</ul>
+			<div class="container100 bg_location">
+				<div class="container snbMenu_hr">
+					<div class="row ">
+						<div class="col-md-12">
+							<!-- snbMenu -->
+							<div class="snbMenu">
+								<dl>
+									<dd>
+										<!-- cate_sel_01 -->
+										<li>
+											<div class="cate_sel_01">
+												<div class="option-list_01">
+													<p class="view-btn_01">
+														<a href="javascript:void(0);">Community</a>
+													</p>
+												</div>
+												<div class="list_open_01">
+													<div class="cate_content">
+														<ul class="cate_ul_list">
+															<li><a href="/vegemilBaby/brand">Brand</a></li>
+															<li><a href="/vegemilBaby/premium">Product</a></li>
+															<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>
+															<li><a href="/vegemilBaby/e_magazine"> Community</a></li>
+															<li><a href="/vegemilBaby/faq"> Support</a></li>
+														</ul>
+													</div>
 												</div>
 											</div>
-										</div>
-									</li>
-									<!-- // cate_sel_01 -->
-								</dd>
-								<dd>
-									<!-- cate_sel_02 -->
+										</li>
+										<!-- // cate_sel_01 -->
+									</dd>
+									<dd>
+										<!-- cate_sel_02 -->
 										<li>
 											<div class="cate_sel_02">
-												<div class="option-list_02" >
-													<p class="view-btn_02" >
+												<div class="option-list_02">
+													<p class="view-btn_02">
 														<a href="javascript:void(0);">육아상담 Q&amp;A</a>
 													</p>
 												</div>
@@ -76,21 +81,21 @@
 												</div>
 											</div>
 										</li>
-								    <!-- // cate_sel_02 -->
-								</dd>
-							</dl>
+										<!-- // cate_sel_02 -->
+									</dd>
+								</dl>
+							</div>
+							<!-- snbMenu -->
 						</div>
-						<!-- snbMenu -->
 					</div>
 				</div>
 			</div>
-		</div>		
-            <!-- //container100 -->
-            <div class="container100 ">
-                <div class="row mg0 pd0">
-                    <div class="container">					
-                        <div class="col-md-12 brandTxt ">
-                            <div class="subTitle">
+			<!-- //container100 -->
+			<div class="container100 ">
+				<div class="row mg0 pd0">
+					<div class="container">
+						<div class="col-md-12 brandTxt ">
+							<div class="subTitle">
 								<div class="side">
 									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
 								</div>
@@ -101,116 +106,90 @@
 									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
 								</div>
 							</div>
-                            <p class="f55_6 mt30">육아상담 Q&amp;A</p>
-                            <p class="f24_4 mt10">생기한의원 원장님들이 육아건강 관련 질문에 직접 답변해주신 상담내용입니다.</p>
-                        </div>
-                        <div class="col-md-12 mt130" id="contentDetail">
-                            <ul class="icon_all">
-                                <li class="icon_01">
-                                    <a th:href="@{/vegemilBaby/qna}" title="전체보기">
-                                        <div class="imgHover" id="LcateALL">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_all_off.png" alt="전체보기" class="icon_off">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_all_on.png" alt="전체보기" class="icon_on">
-                                        </div>
-                                        <p class="f26_5 mt20">전체보기</p>
-                                    </a>
-                                </li>
-                                <li class="icon_02">
-                                    <a th:href="@{/vegemilBaby/qna?category=sk}" title="피부">
-                                        <div class="imgHover" id="LcateSk">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_skin_off.png" alt="피부" class="icon_off">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_skin_on.png" alt="피부" class="icon_on">
-                                        </div>
-                                        <p class="f26_5 mt20">피부</p>
-                                    </a>
-                                </li>
-                                <li class="icon_03">
-                                    <a th:href="@{/vegemilBaby/qna?category=gh}" title="성장&건강">
-                                        <div class="imgHover" id="LcateGh">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_grow_off.png" alt="성장&건강" class="icon_off">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_grow_on.png" alt="성장&건강" class="icon_on">
-                                        </div>
-                                        <p class="f26_5 mt20">성장&amp;건강</p>
-                                    </a>
-                                </li>
-                                <li class="icon_04">
-                                    <a th:href="@{/vegemilBaby/qna?category=bo}" title="체질">
-                                        <div class="imgHover" id="LcateBo">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_balance_off.png" alt="체질" class="icon_off">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_balance_on.png" alt="체질" class="icon_on">
-                                        </div>
-                                        <p class="f26_5 mt20">체질</p>
-                                    </a>
-                                </li>
-                                <li class="icon_05 last">
-                                    <a th:href="@{/vegemilBaby/qna?category=di}" title="질병">
-                                        <div class="imgHover" id="LcateDi">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_disease_off.png" alt="질병" class="icon_off">
-                                            <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_disease_on.png" alt="질병" class="icon_on">
-                                        </div>
-                                        <p class="f26_5 mt20">질병</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12 mt120">
-                            <div class="recipe">
-                                <div class="recipe_line"></div>
-                            </div>
-                        </div>
-                      <!-- 위쪽 정보 일단 위쪽정보만 -->
-                      <div class="col-md-12 mt50 new_listBox mg0 pd0">
-	                      <ul class="thumb-over new_list">
-							<li th:each="qna : ${qnaList}">								                         
-	                              <a th:href="@{/vegemilBaby/qna/detail/}+${qna.mbsIdx}">  
-	                                  <div class="list_thumb">
-		                                  	<p class="t_img">
-	                                          <span class="t_img_span youtube-link" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/uploadQna/'+ ${qna.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'" ></span>
-	                                          <strong><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif" alt="상세보기" /></strong>
-	                                   	</p>
-	                                    <p class="f20_4 mt30 txtHide3" th:text="${qna.mbsTitle}">제목</p>
-	                                   </div>
-	                                   <p class="list_day" th:text="${qna.mbsGetdate}">날짜</p>
-	                               </a>
-							</li>	 
-	                       </ul>                      
-			  	 		</div> 
-                        <!-- // 아래쪽 정보 -->
-                    </div>
-                    <!-- //container -->
-                </div><!-- //row-->
-            </div>
-            <!-- //container100 -->
-            <!-- paging -->
-            <div class="paging3 mt50">
-         		<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
-			        <ol class="f_pp">
-			            <li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])">
-			                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-			            </li>
-			            <li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])">
-			                <a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
-			            </li>
-			            <li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}" >
-			                <a href="javascript:void(0)" th:class="${pageNo == params.currentPageNo} ? 'active'" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a>
-			            </li>
-			            <li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])">
-			                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
-			            </li>
-			            <li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])">
-			                <a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-			            </li>
-			        </ol>
-				</nav>               
-        	</div>
-            <!-- paging //-->
-	    </div> <!-- //content -->
-	
-	
-	<!-- ================================ Footer ================================ -->
-	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
-	<!-- ================================ // Footer ================================ -->
-	<script th:inline="javascript">
+							<p class="f55_6 mt30">육아상담 Q&amp;A</p>
+							<p class="f24_4 mt10">생기한의원 원장님들이 육아건강 관련 질문에 직접 답변해주신 상담내용입니다.</p>
+						</div>
+						<div class="col-md-12 mt130" id="contentDetail">
+							<ul class="icon_all">
+								<li class="icon_01"><a th:href="@{/vegemilBaby/qna}" title="전체보기">
+										<div class="imgHover" id="LcateALL">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_all_off.png" alt="전체보기" class="icon_off"> <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_all_on.png" alt="전체보기" class="icon_on">
+										</div>
+										<p class="f26_5 mt20">전체보기</p>
+								</a></li>
+								<li class="icon_02"><a th:href="@{/vegemilBaby/qna?category=sk}" title="피부">
+										<div class="imgHover" id="LcateSk">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_skin_off.png" alt="피부" class="icon_off"> <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_skin_on.png" alt="피부" class="icon_on">
+										</div>
+										<p class="f26_5 mt20">피부</p>
+								</a></li>
+								<li class="icon_03"><a th:href="@{/vegemilBaby/qna?category=gh}" title="성장&건강">
+										<div class="imgHover" id="LcateGh">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_grow_off.png" alt="성장&건강" class="icon_off"> <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_grow_on.png" alt="성장&건강" class="icon_on">
+										</div>
+										<p class="f26_5 mt20">성장&amp;건강</p>
+								</a></li>
+								<li class="icon_04"><a th:href="@{/vegemilBaby/qna?category=bo}" title="체질">
+										<div class="imgHover" id="LcateBo">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_balance_off.png" alt="체질" class="icon_off"> <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_balance_on.png" alt="체질" class="icon_on">
+										</div>
+										<p class="f26_5 mt20">체질</p>
+								</a></li>
+								<li class="icon_05 last"><a th:href="@{/vegemilBaby/qna?category=di}" title="질병">
+										<div class="imgHover" id="LcateDi">
+											<img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_disease_off.png" alt="질병" class="icon_off"> <img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_disease_on.png" alt="질병" class="icon_on">
+										</div>
+										<p class="f26_5 mt20">질병</p>
+								</a></li>
+							</ul>
+						</div>
+						<div class="col-md-12 mt120">
+							<div class="recipe">
+								<div class="recipe_line"></div>
+							</div>
+						</div>
+						<!-- 위쪽 정보 일단 위쪽정보만 -->
+						<div class="col-md-12 mt50 new_listBox mg0 pd0">
+							<ul class="thumb-over new_list">
+								<li th:each="qna : ${qnaList}"><a th:href="@{/vegemilBaby/qna/detail/}+${qna.mbsIdx}">
+										<div class="list_thumb">
+											<p class="t_img">
+												<span class="t_img_span youtube-link" th:style="'background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/summernote/uploadQna/'+ ${qna.mbsImage} +'); background-position:center;-webkit-background-size: cover; background-size: cover;'"></span> <strong><img src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/btn_cf.gif" alt="상세보기" /></strong>
+											</p>
+											<p class="f20_4 mt30 txtHide3" th:text="${qna.mbsTitle}">제목</p>
+										</div>
+										<p class="list_day" th:text="${qna.mbsGetdate}">날짜</p>
+								</a></li>
+							</ul>
+						</div>
+						<!-- // 아래쪽 정보 -->
+					</div>
+					<!-- //container -->
+				</div>
+				<!-- //row-->
+			</div>
+			<!-- //container100 -->
+			<!-- paging -->
+			<div class="paging3 mt50">
+				<nav th:fragment="pagination" th:if="${params != null and params.paginationInfo.totalRecordCount > 0}" th:object="${params.paginationInfo}" th:with="info=${params.paginationInfo}" aria-label="Page navigation" class="text-center">
+					<ol class="f_pp">
+						<li class="preEnd" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(1)} ]])"><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+						<li class="pre mr20" th:if="*{hasPreviousPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.firstPage - 1)} ]])"><a href="javascript:void(0)" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a></li>
+						<li th:each="pageNo : *{#numbers.sequence( firstPage, lastPage )}"><a href="javascript:void(0)" th:class="${pageNo == params.currentPageNo} ? 'active'" th:text="${pageNo}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(pageNo)} ]])"></a></li>
+						<li class="next ml20" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.lastPage + 1)} ]])"><a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a></li>
+						<li class="nextEnd" th:if="*{hasNextPage == true}" th:onclick="movePage([[ ${#request.requestURI} ]], [[ ${params.makeQueryString(info.totalPageCount)} ]])"><a href="javascript:void(0)" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+					</ol>
+				</nav>
+			</div>
+			<!-- paging //-->
+		</div>
+		<!-- //content -->
+
+
+		<!-- ================================ Footer ================================ -->
+		<footer th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+		<!-- ================================ // Footer ================================ -->
+		<script th:inline="javascript">
 	/*<![CDATA[*/	
 	    function movePage(uri, queryString) {
 					
@@ -228,5 +207,5 @@
 	/*]]>*/
 	</script>
 	</div>
-	</body>
+</body>
 </html>

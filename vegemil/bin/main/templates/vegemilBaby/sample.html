@@ -1,327 +1,359 @@
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
-				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <!-- 2023-07-24 -->
 <title>베지밀 영유아식 인펀트 토들러 샘플신청</title>
 <!-- //2023-07-24 -->
 <head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
 <script type="text/javascript">
-	$(document).ready(function () {
-		
+	$(document).ready(function() {
+
 		$('#btnInfant1, #btnInfant3').click(function() {
-			
-			if(new Date().getDay() == '0'){
+
+			if (new Date().getDay() == '0') {
 				alert('일요일은 신청기간이 아닙니다. \n 월요일 오전 10시 이후로 신청해주세요.');
 				event.preventDefault();
-			}else if( new Date().getHours() <= '8'){
+			} else if (new Date().getHours() <= '8') {
 				alert('오전 10시 이후로 신청해주세요 \n 감사합니다."');
 				event.preventDefault();
 			}
-			
-			
+
 			let isLogin = document.getElementById('isLogin').value;
-			if(isLogin == 'anonymousUser'){				 
+			if (isLogin == 'anonymousUser') {
 				alert("로그인 후 작성해주시기 바랍니다.");
 
-			}	
-			
-			var btn = $(this).attr("id");
-			if(btn == 'btnInfant1'){
-				location.href = "/vegemilBaby/sample/form?sItem=NINF";
-			}else if(btn == 'btnInfant3'){
-				location.href= "/vegemilBaby/sample/form?sItem=NKIN";
 			}
-			
-			
-				
-	    });
-		
+
+			var btn = $(this).attr("id");
+			if (btn == 'btnInfant1') {
+				location.href = "/vegemilBaby/sample/form?sItem=NINF";
+			} else if (btn == 'btnInfant3') {
+				location.href = "/vegemilBaby/sample/form?sItem=NKIN";
+			}
+
+		});
+
 		$('#btnInfant2').click(function() {
-				
-			if(new Date().getDay() == '0'){
+
+			if (new Date().getDay() == '0') {
 				alert('일요일은 신청기간이 아닙니다. \n 월요일 오전 10시 이후로 신청해주세요.');
 				event.preventDefault();
-			}else if( new Date().getHours() <= '8'){
+			} else if (new Date().getHours() <= '8') {
 				alert('오전 10시 이후로 신청해주세요 \n 감사합니다."');
 				event.preventDefault();
 			}
-			
-			
+
 			let isLogin = document.getElementById('isLogin').value;
-			if(isLogin == 'anonymousUser'){				 
-				alert("로그인 후 작성해주시기 바랍니다.");				  
-			 }	
-			
+			if (isLogin == 'anonymousUser') {
+				alert("로그인 후 작성해주시기 바랍니다.");
+			}
+
 			location.href = "/vegemilBaby/sample/form?sItem=NTOD";
-	    });
+		});
 	});
-	
-	
-	 var element = document.getElementById('isLogin').value;
-	 if(element == 'anonymousUser'){
-		 $("a[id='reviewForm']").on("click", function(){
-			 alert("로그인 후 작성해주시기 바랍니다.");
-		     return false;
-		 	})
-	 	}	
-	
-	
+
+	var element = document.getElementById('isLogin').value;
+	if (element == 'anonymousUser') {
+		$("a[id='reviewForm']").on("click", function() {
+			alert("로그인 후 작성해주시기 바랍니다.");
+			return false;
+		})
+	}
 
 	// 로그인
-	function MemberCheck(oName){
+	function MemberCheck(oName) {
 		var topsize = GetXYTop(oName);
 		var leftsize = GetXYLeft(oName);
-		
-		$("#MemberCheckDiv").css("top",eval(topsize) + 20);
-		$("#MemberCheckDiv").css("left",eval(leftsize));
-		$("#MemberCheckDiv").css("margin", "0")				
-		
+
+		$("#MemberCheckDiv").css("top", eval(topsize) + 20);
+		$("#MemberCheckDiv").css("left", eval(leftsize));
+		$("#MemberCheckDiv").css("margin", "0")
+
 		$("#MemberCheckDiv").show();
-		$("#MemberCheckFrame").attr("src","/main/brandVegemilBaby/SampleCheck.aspx");
-		
+		$("#MemberCheckFrame").attr("src",
+				"/main/brandVegemilBaby/SampleCheck.aspx");
+
 	}
 	// 쿠키 체크 후 팝업 띄움
-	function PopupView(){
-	// 팝업(멀티)
-	
+	function PopupView() {
+		// 팝업(멀티)
+
 		/*
 		if(CookieRead("PopupView") != "1"){
 			document.getElementById("PopupDiv").style.display = "block";
 			document.getElementById("PopupFrame").src = "/Main/popup/popupSample.aspx";
 		}
-		*/
-		
-		
+		 */
+
 		document.getElementById("popupErr").style.display = "none";
-		document.getElementById("popupErrorFrame").src = "about:blank";					
+		document.getElementById("popupErrorFrame").src = "about:blank";
 	}
-	
+
 	function popupError() {
 		//if(CookieRead("popupError") != "1"){
-			document.getElementById("popupErr").style.display = "block";
-			document.getElementById("popupErrorFrame").src = "/Main/popup/popupError.aspx";
+		document.getElementById("popupErr").style.display = "block";
+		document.getElementById("popupErrorFrame").src = "/Main/popup/popupError.aspx";
 		//}				
 	}
-	
+
 	// 쿠키 읽기
-	function CookieRead(cookieName){
+	function CookieRead(cookieName) {
 		thisCookie = document.cookie.split("; ");
-		for(i=0; i<thisCookie.length; i++){
-			if(cookieName == thisCookie[i].split("=")[0]){
-			return thisCookie[i].split("=")[1];
+		for (i = 0; i < thisCookie.length; i++) {
+			if (cookieName == thisCookie[i].split("=")[0]) {
+				return thisCookie[i].split("=")[1];
 			}
 		}
 		return "x";
 	}
-	
 </script>
 <body>
-<div id="wrap">
-<!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-	<!-- ------------------- content ------------------- -->
-	<div id="content">
-		<input style="display:none;" id="isLogin" name="isLogin" th:value="${#authentication.principal}"/>
-		<div class="container100">
-			<div class="row pd0 mg0 ">
-				<div class="col-md-12">
-					<div class="subIMG03_04 subIMG">
-						<div class="container h560">
-							<div class="subTxt">
-								<p class="f40 fw600 white">샘플신청</p>
-								<p class="f20 mt20 white">베지밀 영&middot;유아식,<br>우리 아이가 잘 먹을까 고민되시나요? </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /.row pd0 mg0 -->
-		</div>
-		<div class="container100 bg_location">
-			<div class="container snbMenu_hr">
-				<div class="row ">
+	<div id="wrap">
+		<!-- ================================ Header ================================ -->
+		<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+		<!-- ================================ // Header ================================ -->
+		<!-- ------------------- content ------------------- -->
+		<div id="content">
+			<input style="display: none;" id="isLogin" name="isLogin" th:value="${#authentication.principal}" />
+			<div class="container100">
+				<div class="row pd0 mg0 ">
 					<div class="col-md-12">
-						<!-- snbMenu -->
-						<div class="snbMenu modelsubMenu"> <!-- 0725 -->
-							<dl>
-								<dd>
-									<!-- cate_sel_01 -->
-									<li>
-										<div class="cate_sel_01">
-											<div class="option-list_01" >
-												<p class="view-btn_01" >
-													<a href="javascript:void(0);">Event</a>
-												</p>
-											</div>
-											<div class="list_open_01">
-												<div class="cate_content">
-													<ul class="cate_ul_list">
-														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
-														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>														
-														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
-														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- // cate_sel_01 -->
-								</dd>
-								<dd>
-									<!-- cate_sel_02 -->
-									<li>
-										<div class="cate_sel_02">
-											<div class="option-list_02" >
-												<p class="view-btn_02" >
-													<a href="javascript:void(0);">샘플신청</a>
-												</p>
-											</div>
-											<div class="list_open_02">
-												<div class="cate_content">
-													<ul class="cate_ul_list2">
-														<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
-														<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
-														<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
-														<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- // cate_sel_02 -->
-								</dd>
-							</dl>
+						<div class="subIMG03_04 subIMG">
+							<div class="container h560">
+								<div class="subTxt">
+									<H1>
+										<p class="f40 fw600 white">샘플신청</p>
+										<p class="f20 mt20 white">
+											베지밀 영&middot;유아식,<br>우리 아이가 잘 먹을까 고민되시나요?
+										</p>
+									</H1>
+								</div>
+							</div>
 						</div>
-						<!-- snbMenu -->
+					</div>
+				</div>
+				<!-- /.row pd0 mg0 -->
+			</div>
+			<div class="container100 bg_location">
+				<div class="container snbMenu_hr">
+					<div class="row ">
+						<div class="col-md-12">
+							<!-- snbMenu -->
+							<div class="snbMenu modelsubMenu">
+								<!-- 0725 -->
+								<dl>
+									<dd>
+										<!-- cate_sel_01 -->
+										<li>
+											<div class="cate_sel_01">
+												<div class="option-list_01">
+													<p class="view-btn_01">
+														<a href="javascript:void(0);">Event</a>
+													</p>
+												</div>
+												<div class="list_open_01">
+													<div class="cate_content">
+														<ul class="cate_ul_list">
+															<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
+															<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+															<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>
+															<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+															<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_01 -->
+									</dd>
+									<dd>
+										<!-- cate_sel_02 -->
+										<li>
+											<div class="cate_sel_02">
+												<div class="option-list_02">
+													<p class="view-btn_02">
+														<a href="javascript:void(0);">샘플신청</a>
+													</p>
+												</div>
+												<div class="list_open_02">
+													<div class="cate_content">
+														<ul class="cate_ul_list2">
+															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+															<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
+															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- // cate_sel_02 -->
+									</dd>
+								</dl>
+							</div>
+							<!-- snbMenu -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- //container100 -->
-		
-		<div class="container100">
-			<div class="row  pd0 mg0 ">
-				<div class="container">					
-					<div class="col-md-12 brandTxt">
-						<div class="subTitle">
-							<div class="side">
-								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+			<!-- //container100 -->
+
+			<div class="container100">
+				<div class="row  pd0 mg0 ">
+					<div class="container">
+						<div class="col-md-12 brandTxt">
+							<div class="subTitle">
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
+								</div>
+								<div class="f24_8_bg">
+									<p class="f24_7_bg">무료 샘플 신청</p>
+								</div>
+								<div class="side">
+									<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+								</div>
 							</div>
-							<div class="f24_8_bg">
-								<p class="f24_7_bg">무료 샘플 신청</p>
-							</div>
-							<div class="side">
-								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
+							<p class="f55_6 mt30">샘플신청</p>
+							<p class="f24_4 mt10">우리 아이 단계에 맞춰 신청하세요.</p>
+							<!-- 0731 -->
+						</div>
+						<div class="col-md-6">
+							<div class="yBox">
+								<img class="img100" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_03.jpg" alt="" />
 							</div>
 						</div>
-						<p class="f55_6 mt30">샘플신청</p>
-						<p class="f24_4 mt10">우리 아이 단계에 맞춰 신청하세요.</p> <!-- 0731 -->
-					</div>
-					<div class="col-md-6">
-						<div class="yBox"><img class="img100" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_03.jpg" alt=""/></div>
-					</div>
-					<div class="col-md-6">
-						<div class="BBox"><img class="img100" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_04.jpg" alt=""/></div>
-					</div>
-				</div>
-				<div class="container100 mt120">
-					<div class="row pd0 mg0">
-						<div class="col-md-12 center">
-							<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_01.jpg" alt="프리미엄제품"/>
+						<div class="col-md-6">
+							<div class="BBox">
+								<img class="img100" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_04.jpg" alt="" />
+							</div>
 						</div>
 					</div>
-					<div class="row  mg0 mt120 ">
-						<div class="container pd0 pb120">
+					<div class="container100 mt120">
+						<div class="row pd0 mg0">
 							<div class="col-md-12 center">
-								<p class="f45_6 mt50m">베지밀 영·유아식 무료샘플은<br>4팩 구성으로 받아보실 수 있습니다.</p>
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p03_04_01.jpg" alt="프리미엄제품" />
 							</div>
-							<div class="col-md-12  row ">
-								<div class=" mt70 mt50m">
-									<div class="col-md-4">
-										<p class="img100 per"><img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_list04.jpg" alt="우리콩1" /></p> <!-- 0726 -->
-										<div class="prd_box01" >
-											<p class="f20_4_b">6개월부터 첫돌까지</p>
-												<p class="f26_6_1 mt20">Infant Premium 1</p> <!-- 0725 -->
-											<p class="btn_sample mt40">
-												<input type="image" name="btnInfant1" id="btnInfant1" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_s_01.png" alt="1단계 신청하기" />
-												<!--
+						</div>
+						<div class="row  mg0 mt120 ">
+							<div class="container pd0 pb120">
+								<div class="col-md-12 center">
+									<p class="f45_6 mt50m">
+										베지밀 영·유아식 무료샘플은<br>4팩 구성으로 받아보실 수 있습니다.
+									</p>
+								</div>
+								<div class="col-md-12  row ">
+									<div class=" mt70 mt50m">
+										<div class="col-md-4">
+											<p class="img100 per">
+												<img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_list04.jpg" alt="우리콩1" />
+											</p>
+											<!-- 0726 -->
+											<div class="prd_box01">
+												<p class="f20_4_b">6개월부터 첫돌까지</p>
+												<p class="f26_6_1 mt20">Infant Premium 1</p>
+												<!-- 0725 -->
+												<p class="btn_sample mt40">
+													<input type="image" name="btnInfant1" id="btnInfant1" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_s_01.png" alt="1단계 신청하기" />
+													<!--
 												<input type="image" name="btnInfant1" id="btnInfant1" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_n_01.gif" alt="1단계 신청완료" /><!-- 본인이 신청했을시 신청완료 노출 
 												<input type="image" name="btnInfant1" id="btnInfant1" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_e_01.gif" alt="1단계 신청마감" /> -->
-											</p>
+												</p>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-4 mt50m">
-										<p class="img100 per"><img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_list05.jpg" alt="우리콩2" /></p> <!-- 0726 -->
-										<div class="prd_box01" >
-											<p class="f20_4_g">첫돌부터 24개월까지</p>
-											<p class="f26_6_1 mt20">Toddler Premium 2</p> <!-- 0725 -->
-											<p class="btn_sample mt40">
-												<input type="image" name="btnInfant2" id="btnInfant2" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_n_02.png" alt="2단계 신청완료" /><!-- 본인이 신청했을시 신청완료 노출 
+										<div class="col-md-4 mt50m">
+											<p class="img100 per">
+												<img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_list05.jpg" alt="우리콩2" />
+											</p>
+											<!-- 0726 -->
+											<div class="prd_box01">
+												<p class="f20_4_g">첫돌부터 24개월까지</p>
+												<p class="f26_6_1 mt20">Toddler Premium 2</p>
+												<!-- 0725 -->
+												<p class="btn_sample mt40">
+													<input type="image" name="btnInfant2" id="btnInfant2" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_n_02.png" alt="2단계 신청완료" />
+													<!-- 본인이 신청했을시 신청완료 노출 
 												<input type="image" name="btnInfant2" id="btnInfant2" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_s_02.gif" alt="2단계 신청하기" />
 												<input type="image" name="btnInfant2" id="btnInfant2" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_e_02.gif" alt="2단계 신청마감" /> -->
-											</p>
+												</p>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-4 mt50m">
-										<p class="img100 per"><img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_list06.jpg" alt="우리콩3" /></p> <!-- 0726 -->
-										<div class="prd_box01" >
-											<p class="f20_4_o">24개월부터 36개월까지</p>
-											<p class="f26_6_1 mt20">Kinderland Premium 3</p> <!-- 0725 -->
-											<p class="btn_sample mt40">
-												<!--
+										<div class="col-md-4 mt50m">
+											<p class="img100 per">
+												<img class="round20" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_list06.jpg" alt="우리콩3" />
+											</p>
+											<!-- 0726 -->
+											<div class="prd_box01">
+												<p class="f20_4_o">24개월부터 36개월까지</p>
+												<p class="f26_6_1 mt20">Kinderland Premium 3</p>
+												<!-- 0725 -->
+												<p class="btn_sample mt40">
+													<!--
 												<input type="image" name="btnInfant3" id="btnInfant3" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_s_03.gif" alt="3단계 신청하기" />
 												<input type="image" name="btnInfant3" id="btnInfant3" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/btn_n_03.gif" alt="3단계 신청완료" />
 												-->
-												<input type="image" name="btnInfant3" id="btnInfant3" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_s_03.png" alt="3단계 신청마감" />
-											</p>
+													<input type="image" name="btnInfant3" id="btnInfant3" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_s_03.png" alt="3단계 신청마감" />
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
+								<div class="col-md-12 center">
+									<p class="f45_6 mt220">
+										SNS에 베지밀 영&middot;유아식 체험후기 올리면 <br>
+										<span class="bg_blue4">할인쿠폰 100% 발급!</span>
+									</p>
+									<p class="f45_6 mt70">
+										우수 작성자께 드리는 <span class="bg_green2">온라인 상품권</span>도 놓치지 마세요!
+									</p>
+									<p class="mt100">
+										<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/p03_04_02.jpg" alt="후기상 안내" />
+									</p>
+									<p class="mt100">
+										<a href="/vegemilBaby/event_review_best"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_reviewGo.png" alt="후기 이벤트 참여하기" /></a>
+									</p>
+									<ul class="notice mt70">
+										<li><p class="f30_6">* 주의사항</p></li>
+										<!-- 0731 -->
+										<li class="f14_4_1">
+											<p>- 신청 횟수는 한 ID당 동일 단계 1회 신청 가능합니다. (다른 단계 중복 신청 가능)</p>
+											<p>- 다른 ID를 이용하여 동일한 주소지나 전화번호로 신청할 경우 신청 취소되며, 추후 이벤트 신청이 제한될 수 있습니다.</p>
+											<p>- 샘플 신청분은 차주 일괄 발송해드립니다. (신청부터 수령까지 최대 10일 이상 소요될 수 있습니다.)</p>
+											<p>- 샘플 체험 후 SNS 후기 참여 시(기본 요건 충족 시) 참가자 전원 5,000원 할인 쿠폰을 증정하여 드립니다.</p>
+											<p>- SNS 후기 참여 선물은 정식품 공식쇼핑몰인 이데이몰의 쿠폰 및 온라인상품권으로 지급됩니다. 회원가입 시 정식품과 이데이몰에 통합 가입하시면 편리합니다.</p>
+										</li>
+										<!-- //0731 -->
+									</ul>
+								</div>
 							</div>
-							<div class="col-md-12 center">
-								<p class="f45_6 mt220">SNS에 베지밀 영&middot;유아식 체험후기 올리면 <br><span class="bg_blue4">할인쿠폰 100% 발급!</span></p>
-								<p class="f45_6 mt70">우수 작성자께 드리는 <span class="bg_green2">온라인 상품권</span>도 놓치지 마세요!</p>
-								<p class="mt100"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/p03_04_02.jpg" alt="후기상 안내" /></p>
-								<p class="mt100"><a href="/vegemilBaby/event_review_best"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/btn_reviewGo.png" alt="후기 이벤트 참여하기"/></a></p>
-								<ul class="notice mt70">
-									<li><p class="f30_6">* 주의사항</p></li>
-									<!-- 0731 -->
-									<li class="f14_4_1">
-										<p>- 신청 횟수는 한 ID당 동일 단계 1회 신청 가능합니다. (다른 단계 중복 신청 가능) </p>
-										<p>- 다른 ID를 이용하여 동일한 주소지나 전화번호로 신청할 경우 신청 취소되며, 추후 이벤트 신청이 제한될 수 있습니다.</p>
-										<p>- 샘플 신청분은 차주 일괄 발송해드립니다. (신청부터 수령까지 최대 10일 이상 소요될 수 있습니다.)</p>
-										<p>- 샘플 체험 후 SNS 후기 참여 시(기본 요건 충족 시) 참가자 전원 5,000원 할인 쿠폰을 증정하여 드립니다. </p>
-										<p>- SNS 후기 참여 선물은 정식품 공식쇼핑몰인 이데이몰의 쿠폰 및 온라인상품권으로 지급됩니다. 회원가입 시 정식품과 이데이몰에 통합 가입하시면 편리합니다. </p>
-									</li>
-									<!-- //0731 -->
-								</ul>
-							</div>
-						</div><!-- //container -->
+							<!-- //container -->
+						</div>
 					</div>
-				</div><!-- //container100-->
-			</div><!-- //row-->
-		</div><!-- //container100 -->
+					<!-- //container100-->
+				</div>
+				<!-- //row-->
+			</div>
+			<!-- //container100 -->
+		</div>
+		<!-- ------------------- // content ------------------- -->
+		<!-- 뷰저블리 -->
+		<script type="text/javascript">
+			(function(w, d, a) {
+				w.__beusablerumclient__ = {
+					load : function(src) {
+						var b = d.createElement("script");
+						b.src = src;
+						b.async = true;
+						b.type = "text/javascript";
+						d.getElementsByTagName("head")[0].appendChild(b);
+					}
+				};
+				w.__beusablerumclient__.load(a);
+			})(window, document,
+					'//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5');
+		</script>
+		<!-- //뷰저블리 -->
+
+		<!-- ================================ Footer ================================ -->
+		<footer th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
+		<!-- ================================ // Footer ================================ -->
 	</div>
-	<!-- ------------------- // content ------------------- -->
-	<!-- 뷰저블리 -->
-   <script type="text/javascript">
-	(function(w, d, a){
-		w.__beusablerumclient__ = {
-			load : function(src){
-				var b = d.createElement("script");
-				b.src = src; b.async=true; b.type = "text/javascript";
-				d.getElementsByTagName("head")[0].appendChild(b);
-			}
-		};w.__beusablerumclient__.load(a);
-	})(window, document, '//rum.beusable.net/script/b161207e112311u833/2dbeafc7a5');
-	</script>
-	<!-- //뷰저블리 -->
-			
-	<!-- ================================ Footer ================================ -->
-	<footer  th:replace="fragments/vegemilBaby/mainFooter :: footerFragment"></footer>
-	<!-- ================================ // Footer ================================ -->
-	</div>
-	</body>
+</body>
 </html>
