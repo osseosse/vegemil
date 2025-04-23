@@ -1,71 +1,93 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:fragment="headFragment">
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html;" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	<!-- 2024-07-30 -->
-	<title>베지밀 영유아식 인펀트 토들러 킨더랜드</title>
-	<meta http-equiv="Expires" content="0" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Cache-Control" content="no-cache" />
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<meta name="Keywords" content="정식품,베지밀 아기두유,베지밀 유아식,베지밀 영유아식,베지밀 인펀트,베지밀 토들러,베지밀 킨더랜드,베지밀 샘플,베지밀 1단계,베지밀 2단계,베지밀 3단계,베지밀 아기모델선발대회" />
-	<meta name="description" content="식물성 유아식, 베지밀 영유아식으로 시작부터 균형있게! 샘플신청부터 아기 달력모델까지 만나보세요"/>
-	<meta property="og:type" content="website" /> 
-	<meta property="og:title" content="베지밀 영유아식 브랜드사이트">
-	<meta property="og:url" content="https://www.vegemil.co.kr/vegemilBaby/index" />
-	<meta property="og:image" content="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/og.jpg" />
-	<meta property="og:description" content="식물성 유아식, 베지밀 영유아식으로 시작부터 균형있게! 샘플신청부터 아기 달력모델까지 만나보세요"/>
-	<!-- //2024-07-30 -->
-	
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/><!-- 파비콘 추가 -->
-	
-	<!-- ========== CSS ========== -->
-	<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/reset.css" rel="stylesheet">
-	<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/style.css" rel="stylesheet">	
-	<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/modality.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-	
-	
-	<!-- ========== JS ========== -->
-	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.1.11.1.min.js" type="text/javascript"></script>	
-	<!-- slider -->
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.touchSwipe.1.6.min.js" type="text/javascript"></script>
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/prrple.slider.js" type="text/javascript"></script>
-	<!-- circular -->
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.rotating-slider.js" type="text/javascript"></script> 
-	<!-- nav -->
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.slicknav.min.js" type="text/javascript"></script>
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/script.js" type="text/javascript"></script>
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/modality.js" type="text/javascript"></script>
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jptab.js" type="text/javascript" ></script>
-	<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.collapse.js" type="text/javascript" ></script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html;" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Google tag (gtag.js) 구버전-->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141294099-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'UA-141294099-1');
-	</script>
-	
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1YK5SP1WL"></script> 
-	<script> 
-	    window.dataLayer = window.dataLayer || []; 
-	    function gtag(){dataLayer.push(arguments);} 
-	    gtag('js', new Date()); gtag('config', 'G-S1YK5SP1WL'); 
-	</script>
-	<!-- // Google tag (gtag.js)-->
-	
-	<script type="application/ld+json">
+<!-- 2024-07-30 -->
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<title th:text="${tags.mTitle != null && !tags.mTitle.isEmpty() ? tags.mTitle : '베지밀 영유아식 인펀트 토들러 킨더랜드'}"></title>
+<title>베지밀 영유아식 인펀트 토들러 킨더랜드</title>
+<!-- 제품 일반 메타 -->
+<meta name="title" content="베지밀 제품 리스트 페이지 - 정식품" th:content="${tags.mTitle != null && !tags.mTitle.isEmpty() ? tags.mTitle : '베지밀 제품 리스트 페이지 - 정식품'}" />
+<meta name="description" content="식물성 유아식, 베지밀 영유아식으로 시작부터 균형있게! 샘플신청부터 아기 달력모델까지 만나보세요" th:content="${tags.mDescription != null && !tags.mDescription.isEmpty() ? tags.mDescription : '식물성 유아식, 베지밀 영유아식으로 시작부터 균형있게! 샘플신청부터 아기 달력모델까지 만나보세요'}" />
+<meta name="Keywords" content="정식품,베지밀 아기두유,베지밀 유아식,베지밀 영유아식,베지밀 인펀트,베지밀 토들러,베지밀 킨더랜드,베지밀 샘플,베지밀 1단계,베지밀 2단계,베지밀 3단계,베지밀 아기모델선발대회" />
+<!--  제품 일반 메타-->
+<!-- 페이스북 Open Graph 메티 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="베지밀 제품 페이지" th:content="${tags.ogTitle != null && !tags.ogTitle.isEmpty() ? tags.ogTitle : ''}">
+<meta property="og:url" content="/product/list" th:content="${tags.url != null && !tags.url.isEmpty() ? 'https://www.vegemil.co.kr' + tags.url : ''}">
+<meta property="og:image" content="" th:content="${tags.ogImage != null && !tags.ogImage.isEmpty() ? tags.ogImage : ''}" />
+<meta property="og:description" content="" th:content="${tags.ogDescription != null && !tags.ogDescription.isEmpty() ? tags.ogDescription : ''}" />
+<!-- 페이스북 Open Graph 메타  -->
+<!-- x , twitter 메타  -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="베지밀 제품 리스트 페이지 - 정식품" th:content="${tags.xTitle != null && !tags.xTitle.isEmpty() ? tags.xTitle : '베지밀 제품 리스트 페이지 - 정식품'}"/>
+<meta name="twitter:description" content="베지밀 제품 리스트, 50여년 역사를 지닌 대한민국 정통 두유 브랜드 베지밀. 프리미엄 두유, 플레인 두유, 블랙 두유, 영·유아식 등 - 정식품" 
+											th:content="${tags.xDescription != null && !tags.xDescription.isEmpty() ? tags.xDescription : '베지밀 제품 리스트, 50여년 역사를 지닌 대한민국 정통 두유 브랜드 베지밀. 프리미엄 두유, 플레인 두유, 블랙 두유, 영·유아식 등 - 정식품'}"/>
+<meta name="twitter:url" content="https://www.vegemil.co.kr/product/list" 
+					th:content="${tags.url != null && !tags.url.isEmpty() ? 'https://www.vegemil.co.kr' + tags.url : 'https://www.vegemil.co.kr/product/list'}"/>
+				
+<meta name="twitter:image" content="" 
+					th:content="${tags.xImage != null && !tags.xImage.isEmpty() ? tags.xImage : ''}"/>
+<!-- x , twitter 메타  -->
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<!-- 파비콘 추가 -->
+<link rel="canonical" th:href="${tags.url != null && !tags.url.isEmpty() ? 'https://www.vegemil.co.kr' + tags.url : 'https://www.vegemil.co.kr/product/list'}">
+<!-- ========== CSS ========== -->
+<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/reset.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/style.css" rel="stylesheet">
+<link href="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/css/modality.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- ========== JS ========== -->
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.1.11.1.min.js" type="text/javascript"></script>
+<!-- slider -->
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.touchSwipe.1.6.min.js" type="text/javascript"></script>
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/prrple.slider.js" type="text/javascript"></script>
+<!-- circular -->
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.rotating-slider.js" type="text/javascript"></script>
+<!-- nav -->
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.slicknav.min.js" type="text/javascript"></script>
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/script.js" type="text/javascript"></script>
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/modality.js" type="text/javascript"></script>
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jptab.js" type="text/javascript"></script>
+<script src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/js/jquery.collapse.js" type="text/javascript"></script>
+
+<!-- Google tag (gtag.js) 구버전-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141294099-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-141294099-1');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1YK5SP1WL"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-S1YK5SP1WL');
+</script>
+<!-- // Google tag (gtag.js)-->
+
+<script type="application/ld+json">
     {
      "@context": "https://schema.org",
      "@type": "Person",

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
+import com.vegemil.domain.BabyMetaData;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
@@ -110,12 +111,13 @@ public interface VegemilBabyMapper {
 	public VegemilBabySampleQtyDTO selectSampleQtyLimit(VegemilBabySampleQtyDTO sampleQtyDto);
 	
 	//월별 샘플 신청 현황
-	public VBSampleRequestMonthDTO selectVegemilBabySampleRequsetByMonth(String sItem);
-	
-	
+	public VBSampleRequestMonthDTO selectVegemilBabySampleRequsetByMonth(String sItem);	
 	
 	public List<VegemilBabyBestReviewDTO> bestReviewList();
 	
+	// 메타 데이터 조회 
+	
+	public BabyMetaData selectBabyMetaguide(String viewPath);
 	
     
  

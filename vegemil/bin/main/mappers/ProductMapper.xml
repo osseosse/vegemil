@@ -202,7 +202,7 @@
 	<update id="updateAddCount" parameterType="Long">
 		UPDATE
 			m_product
-		SET
+		SETㅁ
 			count = count + 1
 		WHERE
 			p_idx = #{pIdx}

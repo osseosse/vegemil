@@ -4,11 +4,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
+import com.vegemil.domain.BabyMetaData;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCategoryDTO;
@@ -97,6 +95,9 @@ public interface VegemilBabyCommunityService {
     // 샘플 신청 현황 100 개씩 제한
     // 현재 제품별 신청 현황
     public boolean IsAvaliableSampleReq(String sItem);
+    
+    // 경로별 메타 데이터 조회 
+    public BabyMetaData getBabyMetaGuideData(String viewPath);
     
    
        

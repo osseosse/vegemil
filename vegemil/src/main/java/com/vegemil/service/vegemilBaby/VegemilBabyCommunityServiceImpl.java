@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.vegemil.domain.AdminCalendarTitleDTO;
 import com.vegemil.domain.AdminCfDTO;
+import com.vegemil.domain.BabyMetaData;
 import com.vegemil.domain.vegemilBaby.VBSampleRequestMonthDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
@@ -370,6 +371,14 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 			info.setMbsContent(info.getMbsContent().replaceAll("<[^>]*>", ""));			
 		}
 		return babyInfoList;
+	}
+	/**
+	 * 메타가이드 데이터 조회 
+	 */
+	@Override
+	public BabyMetaData getBabyMetaGuideData(String viewPath) {
+		BabyMetaData tags = vegemilBabyMapper.selectBabyMetaguide(viewPath);		
+		return tags != null ? tags : new BabyMetaData().defaultSetting();
 	}
 
 

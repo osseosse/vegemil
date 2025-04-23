@@ -709,9 +709,6 @@
 				mbs_active = '1'			
 	</select>
 	
-	
-	
-	
 	<!-- 베스트 리뷰 조회 -->
 	<select id='bestReviewList' resultType="com.vegemil.domain.vegemilBaby.VegemilBabyBestReviewDTO">	
 		SELECT 
@@ -738,9 +735,35 @@
 			AND
 			c_email = #{cEmail}
 			AND
-			c_baby_name = #{cBabyName}			
-				
+			c_baby_name = #{cBabyName}						
 	</select>
+	
+	<select id="selectBabyMetaguide" parameterType="String" resultType="com.vegemil.domain.BabyMetaData">
+		<![CDATA[	
+			SELECT
+				b_metaguide_id
+				, page_sort
+				, url
+				, m_title
+				, m_description
+				, image
+				, og_title
+				, og_description
+				, og_image
+				, x_title
+				, x_description
+				, x_image
+				, canon_tag							
+			FROM 
+				b_metaguide
+			WHERE 
+				active = '1'
+				AND url = #{viewPath}
+			LIMIT 1
+		]]> 	
+	</select>
+	
+	
 		
 
 </mapper>
