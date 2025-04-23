@@ -238,7 +238,7 @@
 			v_metaguide
 		WHERE 
 			active = '1'
-			AND url like CONCAT('%',#{viewPath},'%') 
+			AND url = #{viewPath}
 		LIMIT 1
 		]]> 	
 	</select>

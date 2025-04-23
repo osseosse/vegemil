@@ -132,7 +132,7 @@ public class ProductController extends UiUtils {
 		}
 
 		List<ProductDTO> recProduct = productService.getRecProduct(product);
-		model.addAttribute("tags", productService.getVegemilMetaGuide("/detail/" + pIdx));
+		model.addAttribute("tags", productService.getVegemilMetaGuide("/product/detail/" + pIdx));
 		model.addAttribute("product", product);
 		model.addAttribute("recProduct", recProduct);
 

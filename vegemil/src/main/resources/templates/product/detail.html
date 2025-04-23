@@ -2,8 +2,8 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<title>정식품</title>
 <head th:replace="fragments/head :: headFragmentProduct"></head>
+<title>정식품</title>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
@@ -130,9 +130,9 @@
 					<!-- tabs4 박스썸네일 작은 이미지 2024-02-15 -->
 					<ul class="tabs4 boxThumb mt20">
 						<li style="border:0"></li>
-						<li th:if="${not #strings.isEmpty(product.bottleImg)}"><a href="#photo04"><img th:onclick="pickPackage('[[${product.edayLinkBottle}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" alt=${product.pName}/></a></li>
+						<li th:if="${not #strings.isEmpty(product.bottleImg)}"><a href="#photo04"><img th:onclick="pickPackage('[[${product.edayLinkBottle}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" th:alt="|${tags.mTitle}|"/></a></li>
 						<li th:if="${not #strings.isEmpty(product.packaging16Img)}"><a href="#photo05"><img th:onclick="pickPackage('[[${product.edayLink16}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" /></a></li>
-						<li th:if="${not #strings.isEmpty(product.packaging24Img)}"><a href="#photo06"><img th:onclick="pickPackage('[[${product.edayLink24}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" /></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging24Img)}"><a href="#photo06"><img th:onclick="pickPackage('[[${product.edayLink24}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|"/></a></li>
 						<li th:if="${not #strings.isEmpty(product.packaging15Img)}"><a href="#photo07"><img th:onclick="pickPackage('[[${product.edayLink15}]]');"th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" /></a></li>						
 					</ul>
 					<script type="text/javascript">
