@@ -46,7 +46,7 @@
 							<span class="f14" th:text="${product.tag3}"></span>
 						</div>				
 						<div class="ppl-label">
-							<img th:if="${product.pIdx == 73}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야"/>																					
+							<!-- <img th:if="${product.pIdx == 73}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야"/> -->																					
 							<!--
 							<img th:if="${product.pIdx == 75}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야"/>
 							<img th:if="${product.pIdx == 76}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_ppl3.png" alt="푹쉬면다행이야"/> 
@@ -130,10 +130,10 @@
 					<!-- tabs4 박스썸네일 작은 이미지 2024-02-15 -->
 					<ul class="tabs4 boxThumb mt20">
 						<li style="border:0"></li>
-						<li th:if="${not #strings.isEmpty(product.bottleImg)}"><a href="#photo04"><img th:onclick="pickPackage('[[${product.edayLinkBottle}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" th:alt="|${tags.mTitle}|"/></a></li>
-						<li th:if="${not #strings.isEmpty(product.packaging16Img)}"><a href="#photo05"><img th:onclick="pickPackage('[[${product.edayLink16}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" /></a></li>
-						<li th:if="${not #strings.isEmpty(product.packaging24Img)}"><a href="#photo06"><img th:onclick="pickPackage('[[${product.edayLink24}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|"/></a></li>
-						<li th:if="${not #strings.isEmpty(product.packaging15Img)}"><a href="#photo07"><img th:onclick="pickPackage('[[${product.edayLink15}]]');"th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" /></a></li>						
+						<li th:if="${not #strings.isEmpty(product.bottleImg)}"><a href="#photo04"><img th:onclick="pickPackage('[[${product.edayLinkBottle}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.bottleImg}|" th:alt="|${product.pName} - 병 패키지 |"/></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging16Img)}"><a href="#photo05"><img th:onclick="pickPackage('[[${product.edayLink16}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging16Img}|" th:alt="|${product.pName} - 16개입 패키지|"/></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging24Img)}"><a href="#photo06"><img th:onclick="pickPackage('[[${product.edayLink24}]]');" th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging24Img}|" th:alt="|${product.pName} - 24개입 패키지|"/></a></li>
+						<li th:if="${not #strings.isEmpty(product.packaging15Img)}"><a href="#photo07"><img th:onclick="pickPackage('[[${product.edayLink15}]]');"th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.packaging15Img}|" th:alt="|${product.pName} - 15개입  패키지|"/></a></li>						
 					</ul>
 					<script type="text/javascript">
 					

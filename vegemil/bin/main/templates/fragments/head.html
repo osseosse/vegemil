@@ -217,7 +217,7 @@
 <meta property="og:url" content="/product/list" 
 					th:content="${tags.url != null && !tags.url.isEmpty() ? 'https://www.vegemil.co.kr' + tags.url : ''}"> 
 <meta property="og:image" content="" 
-					th:content="${tags.ogImage != null && !tags.ogImage.isEmpty() ? tags.ogImage : ''}"/> 
+					th:content="${tags.ogImage != null && !tags.ogImage.isEmpty() ? tags.ogImage : 'https://www.vegemil.co.kr/img/ico/og.png'}"/> 
 <meta property="og:description" content=""
 					th:content="${tags.ogDescription != null && !tags.ogDescription.isEmpty() ? tags.ogDescription : ''}" /> 
 <!-- 페이스북 Open Graph 메타  -->
@@ -230,7 +230,7 @@
 					th:content="${tags.url != null && !tags.url.isEmpty() ? 'https://www.vegemil.co.kr' + tags.url : 'https://www.vegemil.co.kr/product/list'}"/>
 				
 <meta name="twitter:image" content="" 
-					th:content="${tags.xImage != null && !tags.xImage.isEmpty() ? tags.xImage : ''}"/>
+					th:content="${tags.xImage != null && !tags.xImage.isEmpty() ? tags.xImage : 'https://www.vegemil.co.kr/img/ico/og.png'}"/>
 <!-- x , twitter 메타  -->
 
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
