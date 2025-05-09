@@ -20,7 +20,7 @@
 			</div>
 			<input type="hidden" th:field="*{mDi}" />
 			<div class="col-md-12 ">
-				<div class="w860 center0 mt80">
+				<div class="w860 center0 mt80"> 
 					<div cellspacing="0" border="0" class="joinT">
 						<ul>
 							<li>법인명</li>
@@ -36,6 +36,7 @@
 								<input type="text" th:field="*{mId}" class="inp02 w330" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="10" placeholder="10자리 숫자 "><button type="button" id="overlappedBiz" class="btnType09 ml10">중복확인</button>
 								<p class="confirm" id="bizCheackOk" style="display: none;">사용 가능한 아이디 입니다.</p>
 								<p class="error" id="bizCheackNo" style="display: none;">이미 사용중인 사업자번호 입니다.</p>
+								<p class="error" id="bizCheackRequired" style="display: none;">사업자번호 중복여부 확인해주세요.</p>
 								<p class="error" id="bizCheack" style="display: none;">사업자번호는 10자리 숫자여야합니다.</p>
 								<input type="hidden" id="bizDuplicate" value="0" />
 							</li>
@@ -89,7 +90,7 @@
 			<div class="w560 center0 mb200">
 				<ul class="joinbtnFoot mt50">
 					<li class="mr10"><button type="button" onclick="location.href='/home'" class="btnType10 f20 fw500 lh140" >취소</button></li>
-					<li><button type="submit" disabled id="joinBtn" class="btnType07 f20 fw500 lh140">회원가입</button></li>
+					<li><button type="submit" disabled id="joinBtn" class="btnType07 f20 fw500 lh140" onmouseenter="btnAvtive()">회원가입</button></li>
 				</ul>
 			</div>
 		</div>

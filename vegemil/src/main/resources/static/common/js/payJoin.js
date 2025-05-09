@@ -18,7 +18,7 @@ function btnAvtive() {
 		$("#joinBtn").addClass('active');
 	} else {
 		$("#joinBtn").attr("disabled", true); //설정
-		$("#joinBtn").removeClass('active');		
+		$("#joinBtn").removeClass('active');				
 	}
 }
 
@@ -44,6 +44,7 @@ $("#overlappedBiz").click(function(){
 	            btnAvtive();
 			} else {
 				$("#bizCheackNo").css('display', 'none');
+		        $("#bizCheackRequired").css('display', 'none');
 	            $("#bizCheackOk").css('display', 'inline-block');
 				$("#joinBtn").prop("type", "submit");
 				$("#bizDuplicate").val('1');
@@ -57,15 +58,23 @@ $('#mId').keyup(function () {
 
     var retVal = false;
     const vId = $("#mId").val();
+    const bizDuplicate = $('#bizDuplicate').val();
 
 	if (vId.length != 10) {
 	    $("#bizCheack").text("사업자번호는 10자 여야합니다.");
 	    $("#bizCheack").css('display', 'inline-block');
 	} else {
 		$("#bizCheack").css('display', 'none');
-	    retVal = true;
-	    btnAvtive();
+		if(bizDuplicate == '0'){
+		    $("#bizCheackRequired").css('display', 'inline-block');
+		
+		}
+	
+	    retVal = true;	    
 	}
+	
+
+	btnAvtive();
 	
 	return retVal;
 
