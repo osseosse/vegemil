@@ -1,0 +1,118 @@
+<!doctype html><html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div class="content bg-g3">
+	<section>
+		<div class="wrap-inner5" id="wzPage" >
+			<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+			<div class="container wz-left">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<div class="row grayLine2">
+						<div class="col-md-12">
+							<h3 class="center mt100-m">Q&A</h3>
+							<p class="mt80-m">대한민국 1등 두유기업, 정식품. 유당불내증을 앓던 아이들을 살리기 위해 개발한 베지밀을 시초로 52년이라는 긴 세월 동안 건강에 좋은 여러 가지 두유 등을 선보였습니다. 그간 소비자분들이 정식품에 문의했던 단골 질문들을 모아 명쾌한 해답을 제시합니다.</p>
+						</div>											
+					</div><!--//row-->
+					<div class="row">
+						<div class="col-md-12  mt80">
+							<div class="messenger3 ">
+								<p class="center mesTitle"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/15_01.png" alt="엣지"/></p>
+								<ul class="mt50">
+									<li class="mesQ">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType01 ">
+													<p style="font-family:'Verdana' ">Q. </p>
+													<p>베지밀을 외출시 가지고 나가려고 합니다.<br>한여름인데 상하지 않을까요?</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_qm.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+									<li class="mesA mt70">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType02">
+													<p style="font-family:'Verdana' ">A. </p>
+													<p>베지밀 전 제품은 실온(1~35도) 보관을 권장하고 있습니다.<br><br>
+													다만 고온에 장기간 보관할 경우 두유에 ‘유바’가 생길 수 있는데요. 유바는 제품이 변질된 것이 아니므로 안심하고 드셔도 됩니다.<br><br>
+													<span class="red3">*유바란? 두유 같이 단백질을 함유한 제품을 데우거나 온장고 보관, 고온에 장기간 노출된 경우 발생할 수 있는 현상입니다. 단백질 막이 생기거나 미끈거리는 덩어리 등의 형태로 나타날 수 있으나, 인체에 무해합니다.</span>
+													</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_am.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+									
+									<li class="mesQ">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType01 ">
+													<p style="font-family:'Verdana' ">Q. </p>
+													<p>베지밀을 얼렸다가 다시 녹여 먹어도 될까요? 맛이나 식감이 괜찮은지 궁금해요.</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_qm.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+									<li class="mesA mt70">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType02">
+													<p style="font-family:'Verdana' ">A. </p>
+													<p>얼린 후 드셔도 괜찮습니다.<br><br>다만 제품이 얼었다 녹으면서 온도 변화 때문에 흰색의 작은 알갱이나 덩어리 등이 나올 수 있습니다. 이는 두유에 있던 지방 성분이 분리된 것으로, 맛이나 안전성에는 문제가 없으니 안심하고 드셔도 됩니다.
+													</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_am.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+								</ul>
+
+								
+							</div>
+							<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_ui.jpg" alt="데코"/></a></p>
+						</div>	
+					</div><!--//row-->
+					<div class="row">
+						<div class="col-md-12 mt100-m">
+							<p class="type19">
+								<span>에디터 양은희</span>
+							</p>												
+						</div>
+					</div><!--//row-->
+				</div>
+			</div><!-- //container -->
+			<!-- 추천기사 날개버전 -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div><!-- //wrap-inner2 -->
+	</section>
+</div>
+</html>

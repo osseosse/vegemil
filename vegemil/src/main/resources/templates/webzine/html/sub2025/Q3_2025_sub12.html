@@ -1,0 +1,77 @@
+<!doctype html><html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div class="content bg-g3">
+	<section>
+		<div class="wrap-inner5" id="wzPage" >
+			<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+			<div class="container wz-left">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="center mt100-m">마음에서 마음으로</h3>
+							<h1 class="center mt50-m">‘담백한 베지밀 에이’가 내게 주는 위로</h1>
+							<div class="mt100-m wsBox">
+								<div class="goldBox">
+									<p class="type25-1 center">서울시 양천구 김은지님</p>
+									<p class="mt50-m mb40">
+									지난 여름, 월말 보고를 앞두고 보고서를 수정하느라 몇 시간이고 자리에 앉아 키보드를 두들겼다. 겨우 한숨 돌리고 사무실 밖 복도로 나가려던 순간, 누군가 어깨를 툭 치는 바람에 들고 있던 휴대폰을 떨어뜨렸다. 옆 팀 선배였다. 서로 연신 사과를 주고받고는 잠시 바람을 쐬고 돌아왔다. 자리로 돌아와보니, 책상 위에 쪽지가 붙은 음료수 병 하나가 놓여 있었다.<br><br>
+									“아까 많이 놀라셨죠? 요즘 보고서 때문에 힘드실 텐데 이거 드시고 힘내세요!”<br><br>
+									쪽지가 붙어있는 그 병은 다름 아닌 ‘담백한 베지밀 에이’. 어렸을 때부터 꾸준히 마시던 익숙한 두유다. 안 그래도 최근에 마시지 않아서 그리웠던 찰나였는데, 잘 됐다. 선배에게 감사 인사를 전하고, 뚜껑을 따 한 모금 마셨다. 담백하고 부드러운 두유가 목을 타고 내려가는 순간 마음이 편안해졌다. 뭐랄까, 어릴 적 엄마가 건네주던 냉장고 속 간식 같은 느낌. 그렇게 나는 베지밀 두유를 마시며 잠시 쉬어갈 수 있었다.<br><br>
+									그날 이후로 ‘담백한 베지밀 에이’는 내게 작은 ‘위로’가 되었다. 집중이 안 되는 날, 일이 마음처럼 안 풀리는 날, 또는 아무 이유 없이 무기력한 날이면 하나씩 꺼내 마신다. 그리고 나도 선배처럼 주변 사람들에게 슬며시 두유를 건넨다. 입맛 없다던 동기에게, 야근 후 지친 후배에게, 취업으로 고생하는 동생에게. 그렇게 내가 받았던 작은 배려를 또 다른 누군가에게 건네며, 베지밀 두유만이 줄 수 있는 위로의 힘을 함께 나누고 있다.<br><br>
+									담백한 베지밀 에이. 늘 알고 지냈지만 어느 날 문득 다시 보게 된 두유, 요즘 나를 가장 따듯하게 지탱해주는 존재다.
+									</p>
+								</div>
+							 </div>
+						</div>											
+					</div><!--//row-->
+					<div class="row mt100-m">
+						<div class="col-md-2">
+							<p class="type19 comment " >
+								<img  src="https://image.edaymall.com/images/dcf/webzine/common/ico_comment_2.gif" alt="comment" />
+							<p>												
+						</div>
+						<div class="col-md-10">
+							<p class="type21-2">
+								&lt;마음에서 마음으로&gt;는 정식품을 사랑하는 여러분들이 만들어가는 페이지입니다. 정식품 제품에 얽힌 재미있고 감동적인 사연을 들려주세요. 
+								채택되신 분께는 상품권 5만원권을 선물로 드립니다. 정식품 가족 여러분의 많은 참여 바랍니다.<br>
+								보내실 곳 ehyang@vegemil.co.kr (사연을 보내시는 분의 성명, 주소, 전화번호도 꼭 기재해주세요!)
+							<p>												
+						</div>
+					</div><!--//row-->
+				</div>
+			</div><!-- //container -->
+			<!-- 추천기사 날개버전 -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div><!-- //wrap-inner5 -->
+	</section>
+</div>
+
+</html>

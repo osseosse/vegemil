@@ -39,7 +39,7 @@
 </div>
 <!-- ******************* main-content ******************* -->
 <div th:if="${qrtYear != null}" 
-     th:insert="${qrtYear == 'Q1_2025' || qrtYear == 'Q2_2025'} ? 
+     th:insert="${wYear >= 2025} ? 
                 |webzine/html/event/event_${qrtYear}_${eventNum}| : 
                 |webzine/html/event/event_${qrtYear}|"></div>
 
