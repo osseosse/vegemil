@@ -24,6 +24,7 @@
 /* ----------------------------------------------- */
 /* Font 
 -------------------------------------------------- */
+body {word-break:keep-all;}
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 .f14_4 {font-size:14px;color:#282828;  font-weight:400; line-height:120%}
@@ -72,6 +73,7 @@
 .f50_6_w {font-size:50px;color:#fff;  font-weight:700; line-height:100%; height:50px }
 .f60_6_w {font-size:60px;color:#fff;  font-weight:600; line-height:150%}
 .f60_7_w {font-size:60px;color:#fff;  font-weight:700; line-height:150%}
+.f60_8_w {font-size:60px;color:#fff;  font-weight:600; line-height:100%}
 .unlerline_w {border-bottom:2px solid #fff; display:inline-block;padding-bottom:5px}
 .unlerline_b {border-bottom:2px solid #000; display:inline-block;padding-bottom:5px}
 /* btn Type */
@@ -390,7 +392,8 @@ body {overflow-x:hidden}
 .G01019_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01019_S.jpg)}/* �׸����?����ȯ ���ϵ��ɾ� �������� */
 .G01020_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01020_S.jpg)}/* �׸����?����ȯ ����ƾ�ɾ�  */
 .G01021_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01021_S.jpg)}/* �׸����?�����ɾ� �̴� */
-
+.G01022_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01022_S.jpg)}
+.G01023_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01023_S.jpg)}
 
 .G02006_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02006_S.jpg)}/* �索�ַ��?*/
 .G01002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01002_S.jpg)}/* ȭ�̹� */
@@ -415,6 +418,8 @@ body {overflow-x:hidden}
 .G06002_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06002_S.jpg)}/* ����ƾ�뷱�� */
 .G06003_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06003_S.jpg)}/* ����ƾ�� �Ƹ���ȣ�� */
 .G06004_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_S.jpg)}/* ����ƾ�� �������� */
+.G06007_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06007_S.jpg)}/* �׸���� �������� ���θӽ��ϸ� */
+.G06008_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06008_S.jpg)}/* �׸���� �������� ������ */
 /* */
 .G07001_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_S.jpg)}/* ��Ƽ�ɾ�����ƾ */
 .G01901_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01901_S.jpg)}/* Ƽ����1000 */
@@ -428,6 +433,8 @@ body {overflow-x:hidden}
 .G01017_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_S.jpg)}/* �����ɾ� */
 .G02024_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02024_S.jpg)}/* ���ɾ� */
 .G02025_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_S.jpg)}/* ĵ���ɾ� */
+.G02026_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02026_S.jpg)}/* ĵ���ɾ� */
+.G02027_s {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02027_S.jpg)}/* ĵ���ɾ� */
 
 .bg_plate {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/plate.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
 .bg_bigbanner {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_bigbanner.jpg);background-repeat: no-repeat;background-size: cover;background-position:center center; }	
@@ -457,7 +464,7 @@ body {overflow-x:hidden}
 .bg_faq {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_faq.jpg);background-repeat:no-repeat;background-size:cover; background-position:center center; } 
 .bg_mall {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_mall.jpg);background-repeat:no-repeat;background-size:cover; background-position:center center; } 
 .bg_features {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_features.jpg);background-repeat:no-repeat;background-size:cover; background-position:center center; } 
-.bg_sample {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_sample.jpg);background-repeat:no-repeat;background-size:cover; background-position:center center; } 
+.bg_sample {background-image: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/bg_sample.jpg); background-repeat:no-repeat; background-size:cover; background-position:center center; } 
 
 /* round */
 
@@ -772,6 +779,24 @@ ul.G06003_kcal li:nth-child(2) {background:#c94c00} /* ���� ��ǰĮ�
 .col-md-4.G06004_bottom {background:none;}
 ul.G06004_kcal li:first-child {background:#ffc052}  /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
 ul.G06004_kcal li:nth-child(2) {background:#6b3925} /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+
+/* �׸���� �������� ���θӽ��ϸ� */
+.h850-2.G06007{background:none} 
+.G06007 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06007_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G06007_top {background:none; }
+.col-md-4.G06007_top .round {background:#2b8537}
+.col-md-4.G06007_bottom {background:none;}
+ul.G06007_kcal li:first-child {background:#6ded57}  /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+ul.G06007_kcal li:nth-child(2) {background:#256b2e} /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+/* �׸���� �������� ������ */
+.h850-2.G06008{background:none} 
+.G06008 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06008_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G06008_top {background:none; }
+.col-md-4.G06008_top .round {background:#6b3925}
+.col-md-4.G06008_bottom {background:none;}
+ul.G06008_kcal li:first-child {background:#eda330}  /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+ul.G06008_kcal li:nth-child(2) {background:#6b3925} /* ���� ��ǰĮ�θ� ����ƾ�� �������� */
+
 /* ��Ƽ�ɾ�����ƾ */
 .h850-2.G07001{background:none} 
 .G07001 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G07001_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
@@ -873,8 +898,27 @@ ul.G02024_kcal li:nth-child(2) {background:#4e7f20} /* ���� ��ǰĮ�
 .col-md-4.G02025_top {background:none; }
 .col-md-4.G02025_top .round {background:#ad6c4e}
 .col-md-4.G02025_bottom {background:none;}
-ul.G02025_kcal li:first-child {background:#edb236}  /* ���� ��ǰĮ�θ� �˼��ɾ� */
-ul.G02025_kcal li:nth-child(2) {background:#ad6c4e} /* ���� ��ǰĮ�θ� �˼��ɾ� */
+ul.G02025_kcal li:first-child {background:#edb236}  
+ul.G02025_kcal li:nth-child(2) {background:#ad6c4e} 
+
+.h850-2.G02026 {background:none} 
+.G02026 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02026_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G02026_top {background:none; }
+.col-md-4.G02026_top .round {background:#ad6c4e}
+.col-md-4.G02026_bottom {background:none;}
+ul.G02026_kcal li:first-child {background:#edb236}  
+ul.G02026_kcal li:nth-child(2) {background:#ad6c4e} 
+
+.h850-2.G02027 {background:none} 
+.G02027 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02027_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G02027_top {background:none; }
+.col-md-4.G02027_top .round {background:#5b8638}
+.col-md-4.G02027_bottom {background:none;}
+ul.G02027_kcal li:first-child {background:#b5d71e}  
+ul.G02027_kcal li:nth-child(2) {background:#4e7f20} 
+
+
+
 
 
 /* �׸����?����ȯ ���ϵ��ɾ� �����Ѹ� */
@@ -904,14 +948,35 @@ ul.G01019_kcal li:nth-child(2) {background:#132762} /* ���� ��ǰĮ�
 ul.G01020_kcal li:first-child {background:#ba9c2d}  /* ���� ��ǰĮ�θ� ����ƾ�ɾ� */
 ul.G01020_kcal li:nth-child(2) {background:#9c811e} /* ���� ��ǰĮ�θ� ����ƾ�ɾ� */
 
-/* �׸����?�����ɾ� �̴� */
+
+
 .h850-2.G01021 {background:none} 
-.G01021 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01021_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.G01021  {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01021_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
 .col-md-4.G01021_top {background:none; }
-.col-md-4.G01021_top .round {background:#ec5c7c}
+.col-md-4.G01021_top .round {background:#0c1f3f}
 .col-md-4.G01021_bottom {background:none;}
-ul.G01021_kcal li:first-child {background:#e53854}  /* ���� ��ǰĮ�θ� �����ɾ� �̴� */
-ul.G01021_kcal li:nth-child(2) {background:#b5243c} /* ���� ��ǰĮ�θ� �����ɾ� �̴� */
+ul.G01021_kcal li:first-child {background:#e53854}  /* ���� ��ǰĮ�θ� �������� */
+ul.G01021_kcal li:nth-child(2) {background:#b5243c} /* ���� ��ǰĮ�θ� �������� */
+
+
+
+
+
+.h850-2.G01022 {background:none} 
+.G01022 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01022_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G01022_top {background:none; }
+.col-md-4.G01022_top .round {background:#ec5c7c}
+.col-md-4.G01022_bottom {background:none;}
+ul.G01022_kcal li:first-child {background:#eec446}  /* ���� ��ǰĮ�θ� �����ɾ� �̴� */
+ul.G01022_kcal li:nth-child(2) {background:#ec5c7c}
+
+.h850-2.G01023 {background:none} 
+.G01023 {background:url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01023_B.jpg);background-repeat: no-repeat;background-size:cover;background-position:center center; }	
+.col-md-4.G01023_top {background:none; }
+.col-md-4.G01023_top .round {background:#ec5c7c}
+.col-md-4.G01023_bottom {background:none;}
+ul.G01023_kcal li:first-child {background:#eec446}  /* ���� ��ǰĮ�θ� �����ɾ� �̴� */
+ul.G01023_kcal li:nth-child(2) {background:#ec5c7c}
 /* -------------------------
 	���� > BAR-GRAPH 
 -------------------------- */
@@ -1054,6 +1119,8 @@ ul.bottomInfo li:nth-child(2){float:right; margin-right:50px}
 .infoMenu li:nth-child(3) a {background:#000; color:#fff}
 .info_img {position:relative; text-align:center; margin-top:120px; margin-bottom:120px}
 .info_img img {width:100%; max-width:890px}
+.info_img.mb0 {margin-bottom:0 !important;}
+.info_img.mt0 {margin-top:0 !important;}
 /* -------------------------
 	��ǰ�� > ��ǰ��õ 
 -------------------------- */
@@ -1686,6 +1753,8 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.f35_6_w {font-size:24px}
 	.f45_6 {font-size:35px;}
 	.f60_6_w {font-size:40px}
+	.f60_8_w {font-size:40px}
+	
 	/* -------------------------
 		1200 btn
 	-------------------------- */
@@ -1989,6 +2058,8 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-2.G06002 {display:block}/* ����ƾ�뷱�� */
 	.h850-2.G06003 {display:block}/* ����ƾ�� �Ƹ���ȣ�� */
 	.h850-2.G06004 {display:block}/* ����ƾ�� �������� */
+	.h850-2.G06007 {display:block}/* �׸���� �������� ���θӽ��ϸ� */
+	.h850-2.G06008 {display:block}/* �׸���� �������� ������ */
 	.h850-2.G07001 {display:block}/* ��Ƽ�ɾ�����ƾ */
 	.h850-2.G01901 {display:block}/* Ƽ����1000 */
 	.h850-2.G01911 {display:block}/* ��ַ��1000 */
@@ -2003,11 +2074,15 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-2.G01017 {display:block}/* �����ɾ� */
 	.h850-2.G02024 {display:block}/* ���ɾ� */
 	.h850-2.G02025 {display:block}/* �˼��ɾ� */
+	.h850-2.G02026 {display:block}/* ���ɾ� ȣ�θ� */
+	.h850-2.G02027 {display:block}/* ���ɾ� �̴� ��� */
 
 	.h850-2.G01018 {display:block}/* ����ȯ ���ϵ��ɾ� �����Ѹ� */
 	.h850-2.G01019 {display:block}/* ����ȯ ���ϵ��ɾ� �������� */
 	.h850-2.G01020 {display:block}/* ����ȯ ����ƾ�ɾ�  */
 	.h850-2.G01021 {display:block}/* �����ɾ� �̴� */
+	.h850-2.G01022 {display:block}
+	.h850-2.G01023 {display:block}
 
 
 
@@ -2288,6 +2363,7 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.f50_6_w {font-size:30px;color:#fff;  font-weight:700; line-height:100%; height:40px }
 	.f60_6_w {font-size:40px}
 	.f60_7_w {font-size:40px;color:#fff;  font-weight:700; line-height:150%}
+	.f60_8_w {font-size:40px}
 }
 
 @media (max-width:768px) {
@@ -2414,16 +2490,16 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G02008_top {background:#d1a658; }
 	.h850-1.G02008_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02008 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02008_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
-	.h850-3.G02008_bottom {background:#d3a162 }
-		
-	/* ��ܹ�ַ��?*/
+	.h850-3.G02008_bottom {background:#d3a162 }	
+	/* �÷����ɾ��?���?*/
+
 	.row.G02009 {background:none;  }
 	.h850-1.G02009_top {background:#d1a658; }
 	.h850-1.G02009_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02009 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02009_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
-	.h850-3.G02009_bottom {background:#d3a162 }
-		
-	/* �÷����ɾ��?���?*/
+	.h850-3.G02009_bottom {background:#d3a162 }	
+
+
 	.row.G02012 {background:none;  }
 	.h850-1.G02012_top {background:#74cd65; }
 	.h850-1.G02012_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
@@ -2501,6 +2577,18 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G06004_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G06004 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06004_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G06004_bottom {background:#9a6198 }
+	/* �׸���� �������� ���θӽ��ϸ� */
+	.row.G06007 {background:none;  }
+	.h850-1.G06007_top {background:#6ed948; }
+	.h850-1.G06007_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G06007 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06007_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G06007_bottom {background:#68cd55 }
+	/* �׸���� �������� ������ */
+	.row.G06008 {background:none;  }
+	.h850-1.G06008_top {background:#fbb22a; }
+	.h850-1.G06008_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G06008 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G06008_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G06008_bottom {background:#ebc03b }
 	/* ��Ƽ�ɾ�����ƾ */
 	.row.G07001 {background:none;  }
 	.h850-1.G07001_top {background:#7caa16; }
@@ -2574,6 +2662,19 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G01017_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G01017 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01017_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01017_bottom {background:#e490a0 }
+	/* Nutrition Care Banana Flavor - ljj*/
+	.row.G01022 {background:none;  }
+	.h850-1.G01022_top {background:#eaa847; }
+	.h850-1.G01022_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G01022 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01022_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G01022_bottom {background:#e2b24e }
+	/* Nutrition Care Coffee Flavor - ljj*/
+	.row.G01023 {background:none;  }
+	.h850-1.G01023_top {background:#bf9066; }
+	.h850-1.G01023_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G01023 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01023_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G01023_bottom {background:#835b41}
+
 	/* ���ɾ� */
 	.row.G02024 {background:none;  }
 	.h850-1.G02024_top {background:#c2d75e; }
@@ -2586,30 +2687,61 @@ ul.popUL li:nth-child(2){float:right; width:50%}
 	.h850-1.G02025_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
 	.h850-2.G02025 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02025_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G02025_bottom {background:#eda344 }
+
+	.row.G02026 {background:none;  }
+	.h850-1.G02026_top {background:#e1a241; }
+	.h850-1.G02026_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02026 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02026_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02026_bottom {background:#d5ac67; }
+
+	.row.G02027 {background:none;  }
+	.h850-1.G02027_top {background:#c2d75e; }
+	.h850-1.G02027_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02027 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02027_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02027_bottom {background:#9cb23b }
+
+
 	/* ����ȯ ���ϵ��ɾ� �����Ѹ� */
 	.row.G01018 {background:none;  }
 	.h850-1.G01018_top {background:#d3464c; }
 	.h850-1.G01018_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
-	.h850-2.G01018_center {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01018_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-2.G01018 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01018_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01018_bottom {background: #c44458; }
 	/* ����ȯ ���ϵ��ɾ� �������� */
 	.row.G01019 {background:none;  }
 	.h850-1.G01019_top {background:#1b67bd; }
 	.h850-1.G01019_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
-	.h850-2.G01019_center {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01019_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-2.G01019 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01019_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01019_bottom {background:#2b4695; }
+
+
 	/* ����ȯ ����ƾ�ɾ�  */
 	.row.G01020 {background:none;  }
 	.h850-1.G01020_top {background:#c19964; }
 	.h850-1.G01020_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
-	.h850-2.G01020_center {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01020_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-2.G01020 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01020_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
 	.h850-3.G01020_bottom {background:#7c5c3b; }
-	/* �����ɾ� �̴� */
+
 	.row.G02021 {background:none;  }
-	.h850-1.G01021_top {background:#f8b0bc; }
-	.h850-1.G01021_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
-	.h850-2.G01021_center {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G01021_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
-	.h850-3.G01021_bottom {background:#e28496; }
+	.h850-1.G02021_top {background:#e8ab4c; }
+	.h850-1.G02021_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02021 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02021_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02021_bottom {background:#dfb551; }
+
+
+
+	/* banana */
+	.row.G02022 {background:none;  }
+	.h850-1.G02022_top {background:#e8ab4c; }
+	.h850-1.G02022_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02022 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02022_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02022_bottom {background:#dfb551; }
+	/* coffee */
+	.row.G02023 {background:none;  }
+	.h850-1.G02023_top {background:#be9368; }
+	.h850-1.G02023_top .hcenter_right div {transform:scale(1.1); bottom:0;   }
+	.h850-2.G02023 {background: url(https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/G02023_B.jpg); background-repeat:no-repeat;background-size:cover; background-position:center center; position:relative;  transform:scale(1.3);     }
+	.h850-3.G02023_bottom {background:#876043; }
 	
 	
 	

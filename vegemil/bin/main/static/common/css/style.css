@@ -738,6 +738,7 @@
     .companyRightInfo02{display: flex; flex-wrap: wrap; padding: 50px 0; text-align: center; border: 1px solid #DFDFDF; border-radius: 10px;}
     .companyRightInfo02 li{display: inline-block; padding: 15px 20px; background:url(https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_lineD.png) right 16px no-repeat;}
     .companyRightInfo02 li:last-child{background: none;}
+	.companyRightInfo03 li{display: inline-block; padding: 15px 20px;  width: calc(100% / 3.3); vertical-align:top; margin-bottom:30px}
 	.hcfInfo li{ padding: 20px;}
 	/* 3000 company (����) */
 	.financeBox .verticalType03{max-width: 340px;}
@@ -3503,6 +3504,9 @@ button:hover:before {content:"Reply!"}
 	.floting-right {order:1; }
 	*/
 
+	.companyRightInfo03 { display: inline-block; padding: 7px 5px;  width:100%; vertical-align:top; margin-bottom:30px}
+	.companyRightInfo03 li{ width: calc(100% / 3.3)}
+
 
 	.f23.fw500.lh150.mt20 {height:60px}
 	/* 1200 Gnb */
@@ -5010,6 +5014,12 @@ background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/vs_pho
     .companyRightInfo02{display: inline-block; padding: 0px 0; }
     .companyRightInfo02 li{ padding: 20px; background:none; border-bottom: 1px dashed #dfdfdf; }
     .companyRightInfo02 li:last-child{border-bottom: none;}
+
+
+	.companyRightInfo03 { display: inline-block; padding: 0px 0px;  width:100%; vertical-align:top; margin-bottom:30px}
+	.companyRightInfo03 li{ width: calc(100% / 2.1); padding:15px 5px }
+
+
     .financeBox .verticalType03{margin: 0 auto;}
     .greetingsBg .f52{font-size:24px;}
     .greetingsBg .f22{font-size:15px;}
