@@ -148,7 +148,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return false;">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
 						<input type="hidden" name="qrt" th:value="${qrtYear}"> <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).SNS}">
 						<div class="row intxt mt80-m"></div>
 						
@@ -204,30 +204,38 @@
 								</div>
 							</div>
 							<div class="col-md-12 mt100-m2" >
-								 <p class="type20 center">지난호 당첨자</p>
-								<div class="eventList2 mt50-m ">
-									<div class="col-md-3 mt30m">
-										<p class="type28-1">1등</p>		
-										<p>당첨자</p>
-										<p>당첨자</p>									
-									</div>
-									<div class="col-md-3 mt30m">
-										<p class="type28-1">2등</p>
-										<p>당첨자</p>
-										<p>당첨자</p>
-										<p>당첨자</p>
-										
-									</div>
-									<div class="col-md-3 mt30m">
-										<p class="type28-1">3등</p>
-										<p>당첨자</p>
-										<p>당첨자</p>
-										<p>당첨자</p>
-										<p>당첨자</p>
-										<p>당첨자</p>
-									</div>
-			
-								</div> 							
+							<p class="type20 center">지난호 당첨자</p>
+							<div class="eventList2 mt50-m ">
+								<div class="col-md-3 mt30m">
+									<p class="type28-1">1등</p>		
+									<p>김*원</p>
+									<p>박*진</p>
+									<p>김*현</p>			
+
+								</div>
+								<div class="col-md-3 mt30m">
+									<p class="type28-1">2등</p>
+									<p>김*리</p>
+									<p>남*우</p>
+									<p>김*연</p>
+									<p>장*선</p>
+									<p>이*림</p>
+									
+								</div>
+								<div class="col-md-3 mt30m">
+									<p class="type28-1">3등</p>
+									<p>박*화</p>
+									<p>강*구</p>
+									<p>한*연</p>
+									<p>최*정</p>
+									<p>김*철</p>
+									<p>윤*은</p>
+									<p>김*식</p>
+									<p>김*화</p>
+									<p>장*선</p>
+									<p>김*자</p>
+								</div>								
+							</div> 							
 						</form>
 					<div class="row"></div>
 					<!--//row-->				

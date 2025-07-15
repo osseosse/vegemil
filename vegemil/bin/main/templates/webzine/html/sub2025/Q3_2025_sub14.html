@@ -280,7 +280,7 @@
 							</p>
 						</div>
 					</div>
-
+					<!--
 					<div class="row">
 						<div class="col-md-12 mt30-m">
 							<p class="center" style="font-size:24px; font-weight:500; color:#f15c5c;">&lt; 카페메이븐 &gt;</p>
@@ -303,13 +303,15 @@
 							<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2025/14_22.jpg" alt="카페메이븐" /></p>
 						</div>
 					</div>
-
+					-->
 					<div class="row">
 						<div class="col-md-12 mt30-m">
 							<p class="center" style="font-size:24px; font-weight:500; color:#f15c5c;">&lt; 수원만두 &gt;</p>
 							<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2025/14_23.jpg" alt="수원만두" /></p>
 						</div>
 					</div>
+					
+
 					<div class="row intxt">
 						<div class="col-md-6 mt30-m">
 							<p>
@@ -357,10 +359,10 @@
 							<li>
 								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
 								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
-							</li>
+						</li>
 							<li>
 								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
-							</li>
+						</li>
 						</a>
 					</ul>
 					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
@@ -369,15 +371,10 @@
 					</p>
 					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
 						<ul class="wz-half-bnr">
-							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" >
-									<p>제품소개 바로가기</p> 
-								</a>
-							</li>
-							<li>
-								<a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" >
-									<p>제품소개 바로가기</p>
-								</a>
-							 </li>
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
 						</ul>
 					</div>
 				</div>

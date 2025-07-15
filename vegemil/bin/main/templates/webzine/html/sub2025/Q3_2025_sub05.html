@@ -72,7 +72,7 @@
 									<div class="txt">
 										<p class="f14">스케이트장은 여기로!</p>
 										<p class="f20 mt8">롯데월드 아이스링크</p>
-										<p class="f16 mt10">누구나 한번쯤 가봤을 롯데월드, 하지만 아이스링크장은 의외로 안 가본 분들이 많더시라고요. 놀이공원에 가지 않고 아이스링크장만 즐길 수 있으니 올여름 꼭 방문해보세요!</p>
+										<p class="f16 mt10">누구나 한번쯤 가봤을 롯데월드, 하지만 아이스링크장은 의외로 안 가본 분들이 많더라고요. 놀이공원에 가지 않고 아이스링크장만 즐길 수 있으니 올여름 꼭 방문해보세요!</p>
 									</div>
 								</div>
 							</div>
@@ -123,10 +123,10 @@
 							<li>
 								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
 								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
-						</li>
+							</li>
 							<li>
 								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
-						</li>
+							</li>
 						</a>
 					</ul>
 					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
