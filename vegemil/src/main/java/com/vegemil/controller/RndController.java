@@ -12,13 +12,13 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,10 +29,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -91,7 +91,8 @@ public class RndController extends UiUtils {
     public String moveTourApply(Model model, Authentication authentication, @RequestParam(value = "date", required = false) String date)throws Exception{
 		
 		MemberDTO member = new MemberDTO();
-		
+        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+
 		if(!date.equals("")) {
 			model.addAttribute("date",date);
 			int applyCnt = rndService.getApplyCount(date);
@@ -103,8 +104,14 @@ public class RndController extends UiUtils {
 			return showMessageWithRedirect("올바르지 않은 접근입니다.", "/rnd/factory", Method.GET, null, model);
 		}
 		
-		if(authentication != null) {
-	        member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
+		// 권한 정보 꺼내기 
+	    Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+	    // ADMIN 체크 
+	    boolean isAdmin = authorities.stream()
+	            .anyMatch(auth -> auth.getAuthority().equals("ADMIN"));
+		
+		if(authentication != null && !isAdmin) {
 	    	
 			if("1".equals(member.getMIsIdle())){
 	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
@@ -118,9 +125,8 @@ public class RndController extends UiUtils {
 				return showMessageWithRedirect("견학신청은 최대 월 2회 가능합니다.", "/rnd/factoryTour", Method.GET, null, model);
 			}
 			
-	        model.addAttribute("member",member);	//유저 정보
 		}
-		
+		model.addAttribute("member",member);	//유저 정보
 		return "rnd/tourApply";
     }
 
