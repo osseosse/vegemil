@@ -51,9 +51,9 @@
             	<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/greenbia/product/${product.gCode}_mall.jpg|" alt="그린비아 상품상세정보" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|"/>
            	</div>
             <div id="info01" class="info_img" th:if="${product.gImgCnt == '3'}">                        
-            	<p><img th:src="${product.gImg01}" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|" /></p>
-				<p><img th:src="${product.gImg02}" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|" /></p>
-				<p><img th:src="${product.gImg03}" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|" /></p>
+            	<p th:if="${product.gImg01 != null and product.gImg01 != ''}"><img th:src="${product.gImg01}" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|" /></p>
+				<p th:if="${product.gImg02 != null and product.gImg02 != ''}"><img th:src="${product.gImg02}" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|" /></p>
+				<p th:if="${product.gImg03 != null and product.gImg03 != ''}"><img th:src="${product.gImg03}" th:alt="|그린비아 제품상세 ${product.gLcate} ${product.gName}|" /></p>
             </div>
                         
         </div>
