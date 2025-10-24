@@ -2,6 +2,11 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
 	layout:decorator="admin/layout/dataLayout">
+	<style>
+		td, th {
+		    word-break: break-all;		   
+		}
+	</style>
 	
 	<th:block layout:fragment="title">
 		<title>베스트후기 선정</title>
@@ -11,6 +16,7 @@
 		<!-- BEGIN: Page CSS-->
 	    <!-- END: Page CSS-->
 	</th:block>
+	
 	
 	<!-- BEGIN: Page Vendor JS-->
 	<th:block layout:fragment="add-script">

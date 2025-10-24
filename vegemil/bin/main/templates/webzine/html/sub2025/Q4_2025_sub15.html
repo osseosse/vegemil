@@ -1,0 +1,122 @@
+<!doctype html><html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div class="content bg-g3">
+	<section>
+		<div class="wrap-inner5" id="wzPage" >
+			<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+			<div class="container wz-left">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<div class="row grayLine2">
+						<div class="col-md-12">
+							<h3 class="center mt100-m">Q&A</h3>
+							<p class="mt80-m">대한민국 1등 두유기업, 정식품. 유당불내증을 앓던 아이들을 살리기 위해 개발한 베지밀을 시초로 52년이라는 긴 세월 동안 건강에 좋은 여러 가지 두유 등을 선보였습니다. 그간 소비자분들이 정식품에 문의했던 단골 질문들을 모아 명쾌한 해답을 제시합니다.</p>
+						</div>											
+					</div><!--//row-->
+					<div class="row">
+						<div class="col-md-12  mt80">
+							<div class="messenger3 ">
+								<p class="center mesTitle"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2023/15_01.png" alt="엣지"/></p>
+								<ul class="mt50">
+									<li class="mesQ">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType01 ">
+													<p style="font-family:'Verdana' ">Q. </p>
+													<p>베지밀 고단백 제품은 운동 전과 운동 후 중, 언제 섭취하는 게 더 효과적인가요?</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_qm.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+									<li class="mesA mt70">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType02">
+													<p style="font-family:'Verdana' ">A. </p>
+													<p>
+													베지밀 고단백 제품은 식물성 단백질을 간편하게 보충할 수 있어 <span class="green-bg">운동 전후 모두 유용하게 활용</span>하실 수 있습니다. 본인의 라이프스타일과 운동 강도에 맞춰 섭취 시간을 조절하는 것이 좋습니다.
+													</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_am.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+									
+									<li class="mesQ">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType01 ">
+													<p style="font-family:'Verdana' ">Q. </p>
+													<p>Q. ‘검은콩’ 제품과 ‘오리지널 대두’ 제품의 차이점이 무엇인가요?</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_qm.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+									<li class="mesA mt70">
+										<dl class="chat-dl">
+											<dd class="chat">
+												<div class="mesType02">
+													<p style="font-family:'Verdana' ">A. </p>
+													<p>
+														두 제품 모두 맛있지만 <span class="green-bg">풍미에서 차이가</span> 있답니다.<br>
+														<span class="green-bg">‘검은콩’</span>은 껍질째 갈아 넣은 국산 검은콩으로 만들어 <span class="green-bg">고소하고 진한 맛</span>이 나고, 껍질에 들어 있는 안토시아닌과 식이섬유까지 챙길 수 있어 <span class="green-bg">영양까지 든든</span>해요.<br>
+														반대로 <span class="green-bg">‘오리지널 대두’</span>는 담백하고 부드러운 맛으로 <span class="green-bg">남녀노소 누구나 부담없이</span> 즐기기 좋아요. <span class="green-bg">매일 가볍게 단백질을 보충</span>하고 싶을 때 딱이랍니다.<br>
+														정리하자면, 진하고 깊은 맛이 끌린다면 ‘검은콩’을, 깔끔하고 부드러운 맛을 원한다면 ‘오리지널 대두’를 취향에 맞게 골라 즐기시면 된답니다. 
+													</p>
+												</div>
+											</dd>
+											<dd class="chat-edge"><p><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_am.png" alt="엣지"/></p></dd>
+										</dl>
+									</li>
+								</ul>
+
+								
+							</div>
+							<p class="img100"><img src="https://image.edaymall.com/images/dcf/webzine/Q3_2023/15_ui.jpg" alt="데코"/></a></p>
+						</div>	
+					</div><!--//row-->
+					<div class="row">
+						<div class="col-md-12 mt100-m">
+							<p class="type19">
+								<span>에디터 양은희</span>
+							</p>												
+						</div>
+					</div><!--//row-->
+				</div>
+			</div><!-- //container -->
+				<!-- 추천기사 날개버전 -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div><!-- //wrap-inner2 -->
+	</section>
+</div>
+
+</html>

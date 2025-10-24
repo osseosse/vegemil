@@ -274,7 +274,8 @@ var createTable = function() {
       		orderable: false,
       		render: function (data, type, full, meta) {
       			if(full['sUrl']==null)	return '';
-      			else	return '<a href="'+full['sUrl']+'" target="_blank">'+full['sUrl']+'</a>';
+      			else	return '<a href="'+full['sUrl']+'" target="_blank" style="word-break: break-all;">'+full['sUrl']+'</a>';
+
       			
       		}
       	},
