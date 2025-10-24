@@ -122,9 +122,10 @@ public class MemberService implements UserDetailsService  {
 		
 		memCount = memberMapper.selectMemberCount(member);
 		member.setMPwd(passwordEncoder.encode(member.getPassword()));
-		member.setMAuth("USER");
+
 		
 		if (memCount == 0) {			
+			member.setMAuth("USER");
 			queryResult = memberMapper.saveMember(member);
 		} else {
 			queryResult = memberMapper.updateMember(member);

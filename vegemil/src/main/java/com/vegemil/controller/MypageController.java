@@ -342,6 +342,10 @@ public class MypageController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		MemberDTO preMember = memberService.getMember(member.getMIdx());
+		
+		//기존 회원 구분 세팅 
+		member.setMAuth(preMember.getMAuth());
+		
 		boolean isPwChange = commonEncoder.matches(member.getMPwd(), preMember.getMPwd()); // 원시 비번과 해시된 비번 비교, 같으면 true 다르면 false 
 		
 		
