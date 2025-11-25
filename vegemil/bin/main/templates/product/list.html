@@ -128,7 +128,7 @@
 					<ul class="tabs3">
 						<!-- 2024-02-28 -->
 						<li><a href="#V"><p class="ico_VE"></p></a><span>두유</span></li>
-						<li><a href="#G"><p class="ico_GE"></p></a><span>균형 영양식</span></li>
+						<li><a href="#G"><p class="ico_GE"></p></a><span>특수영양식</span></li>
 						<li><a href="#H"><p class="ico_GH"></p></a><span>건강식품</span></li>
 						<li><a href="#F"><p class="ico_SC"></p></a><span>일반식품</span></li>
 						<li><a href="#S"><p class="ico_CW"></p></a><span>음료/생수</span></li>
@@ -287,7 +287,8 @@
 								<p class="f23 fw500 prd_subCateTitle">세부 카테고리</p>
 								<ul class="prd_subCate mt40">
 									<li class="hh active"><input type="radio" name="hh" id="#15" value="" > <label for="#15"><span></span>전체보기</label></li>
-									<li class="hh"><input type="radio" name="hh" id="#16" value="CHD" > <label for="#16"><span></span>균형영양음료</label></li>
+									<li class="hh"><input type="radio" name="hh" id="#16" value="CHD" > <label for="#16"><span></span>균형영양식</label></li>
+									<li class="hh"><input type="radio" name="hh" id="#25" value="CHD_S" > <label for="#25"><span></span>스포츠영양식</label></li>
 									<!-- <li class="hh"><input type="radio" name="hh" id="#17" value="GHF" > <label for="#17"><span></span>건강기능식품</label></li> -->
 									<!-- <li class="hh"><input type="radio" name="hh" id="#18" value="CHP" > <label for="#18"><span></span>생식&선식</label></li>-->
 								</ul>
@@ -296,7 +297,10 @@
 					</div><!-- //floting-left_prd -->
 					<div class="floting-right_prd">
 						<div class="row" id="h_tab" th:if="${not #lists.isEmpty( productList )}" >
-							<div class="col-md-4 col-6" id="h_list" th:if="${product.categoryCode == 'H'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}" >
+							<div class="col-md-4 col-6 h_list"
+								     th:each="product : ${productList}"
+								     th:if="${product.categoryCode == 'H'}"
+								     th:attr="name=${product.subCategoryCode}">
 								<div class="prd-list" >
 									<a th:if="${product.subCategoryCode} == 'CHP'" th:href="|/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
@@ -312,7 +316,21 @@
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
 										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
 									</a>
-									<a th:unless="${product.subCategoryCode} == 'CHP'" th:href="|/greenbia/product/detail/${product.pIdx}|">
+									<a th:if="${product.subCategoryCode} == 'CHD'" th:href="|/greenbia/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14" th:text="${product.tag1}"></span>
+											<span class="f14" th:text="${product.tag2}"></span>
+											<span class="f14" th:text="${product.tag3}"></span>
+										</div>
+										<div class="prd-label">
+											<img th:if="*{product.bestProduct == 1}" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_list_best.png" alt="베스트">
+										</div>
+										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
+										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
+										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+									</a>
+									<a th:if="${product.subCategoryCode} == 'CHD_S'" th:href="|/greenbia/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}"></span>
 											<span class="f14" th:text="${product.tag2}"></span>
@@ -599,24 +617,24 @@ $(document).ready(function(){
 	});
 	
 	$("input[name='hh']").on("click", function () {
-		const value = $(this).val();
-		
-		if(!$(this).is(":checked")) {
-			$(this).prop("checked", false);
-			$("#h_tab #h_list").filter(function() {
-				$(this).toggle()
-			});
-		} else {
-			$(this).prop("checked", true);
-			$("#h_tab #h_list").filter(function() {
-				$(this).toggle($(this).attr('name').indexOf(value) > -1)
-			});
-		}
-		
-		$("html, body").animate({scrollTop: offset.top},600);
-		$(".hh").removeClass("active");
-		$(this).parent().addClass("active");
-		
+	    const value = $(this).val();
+	    const $items = $("#h_tab .h_list");   // id 대신 class 사용 권장
+
+	    if (value === "") {
+	        //  전체보기 : 모든 항목 표시
+	        $items.show();
+	    } else {
+	        // 특정 카테고리 : 정확히 일치하는 항목만 표시
+	        $items.each(function () {
+	            $(this).toggle($(this).attr("name") === value);
+	        });
+	    }
+
+	    // 활성화 UI 처리
+	    $(".hh").removeClass("active");
+	    $(this).parent().addClass("active");
+
+	    $("html, body").animate({ scrollTop: offset.top }, 600);
 	});
 	
 	$("input[name='ff']").on("click", function () {

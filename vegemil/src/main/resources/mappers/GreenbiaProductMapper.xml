@@ -169,8 +169,8 @@
 		<![CDATA[	
 		 SELECT g_idx, g_name, g_code, g_lcate, g_mcate, g_contents, g_tube, g_capacity, g_cal,
 		 CASE WHEN g_tube = '1'  THEN '<b>경관<br>급식</b>' ELSE '' END AS g_tubeMark,
-		 CASE WHEN g_mcate = '균형영양음료'  THEN 'health1'
-		      WHEN g_mcate = '건강기능식품'  THEN 'health2'
+		 CASE WHEN g_mcate = '균형영양식'  THEN 'health1'		      
+		      WHEN g_mcate = '스포츠영양식'  THEN 'health2'
 		      END AS g_check
 		 FROM m_greenbia_product
 		 WHERE g_lcate = '건강식품'
