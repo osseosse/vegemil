@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 CCM 인증</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb200">
+	<div class="content100 ">
+	   <div class="subTopFAM h440 mt90h">
+			<!-- 2023-01-10 -->
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">R&D</p>
+				<p class="white f45 fw600">가족친화기업 인증</p>
+			</div>
+			<!-- //2023-01-10 -->
+		</div>
+	</div>
+	<div class="contant1460" >
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/rnd/iso"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p> <!-- 해리 수정 -->
+			<ul class="submenuUL d3"> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/rnd/ccm"><span>CCM 인증</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/epd"><span>환경성적표지 인증</span></a></li>
+				<li class="f18 fw500"><a href="/rnd/iso"><span>ISO 45001 인증</span></a></li>
+				<li class="f18 fw500 active"><a href="/rnd/family"><span>가족친화기업 인증</span></a></li> 
+			</ul>
+			<p class="btnSubRight"><a href="/webzine"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p> <!-- 해리 수정 -->
+		</div>
+		<!-- <p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+        <div class="center mt50 HaccpInfo01">
+           
+            <p class="f45 fw600 mt50">가족친화기업 인증</p>
+			<p class="mt50"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/R&D/family03.jpg" alt="가족친화기업 로고" class="round20"></p>
+            <p class="f18 mt10 fw400 gray04">
+			정식품이 가족친화기업으로 인증받으며 임직원의 <br class="none">
+				일 &middot; 생활 균형과 다양한 복지 지원 노력을 인정받았다.
+            </p>
+        </div>
+    </div><!--//contant1460-->
+   
+	<div class="contant1460 mt200">
+        <div class="row">
+            <div class="col-md-8">
+				 <p class="f38 fw500">
+					가족친화기업
+                </p>
+                <p class="f18 gray04 fw400 mt30">
+                   오리지널 1등 두유 베지밀을 생산·판매하는 ㈜정식품(대표 정연호)이 성평등가족부가 주관하는 ‘가족친화기업’에 선정됐다.<br>
+				   ‘가족친화기업’ 인증은 자녀 출산 및 양육 지원 등 가족친화제도를 모범적으로 운영하는 기업과 공공기관에 정부가 인증을 부여하는 제도다. <br>
+				   정식품은 이번 인증으로 오는 2028년 11월 30일까지 가족친화기업 자격을 유지하게 됐다.<br>
+				   정식품은 임직원들의 일&middot생활 균형을 위해 주 40시간 근무제를 시행하는 한편, 만 4~6세 자녀 양육 지원금과 대학생 자녀 학자금 지원 제도를 운영하고 있다. 
+				   이와 함께 복지포인트 지급, 휴양시설 운영, 동호회 지원 등 폭넓은 복리후생 프로그램을 운영 중이다. </span>
+                </p>
+				<p class="mt50"><img src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/R&D/fam01.jpg" alt="아빠등에탄 유아" class="round20"></p>
+            </div>
+            <div class="col-md-4 mt50m" >
+                <img style="border:1px solid #ccc; border-radius:20px" src="https://image.edaymall.com/images/mail/news/dcf/dcf2022/html/img/R&D/family.jpg" alt="가족친화기업 인증서">
+				<!-- <p class="mt10"><img style="border:1px solid #ccc; border-radius:20px" src="img/R&D/family02.jpg" alt="아빠등에탄 유아" class="round20"></p> -->
+            </div>
+        </div>
+		
+    </div><!--//contant1460-->
+</div>
+<!-- ================================ 
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>
