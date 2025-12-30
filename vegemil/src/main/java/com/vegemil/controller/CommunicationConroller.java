@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -17,6 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vegemil.constant.Method;
+import com.vegemil.domain.BizProposalDTO;
 import com.vegemil.domain.ClaimDTO;
 import com.vegemil.domain.EventDTO;
 import com.vegemil.domainEday.EdayVempDTO;
@@ -32,6 +35,8 @@ import com.vegemil.service.CommunicationService;
 import com.vegemil.service.EdayVempService;
 import com.vegemil.service.MailService;
 import com.vegemil.util.UiUtils;
+
+
 
 @Controller
 public class CommunicationConroller extends UiUtils{
@@ -198,6 +203,35 @@ public class CommunicationConroller extends UiUtils{
 		}
 		
 		return showMessageWithRedirect("신고 접수에 실패했습니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
+	}
+	
+	// 업체 문의 기능 추가 
+	
+	@GetMapping("/communication/biz")
+	public String getBisProposalView(Model model, HttpServletRequest req) {
+		
+		model.addAttribute("bizform", new BizProposalDTO(getClientIpVer2(req),getDeviceType(req)));
+		
+		
+		
+		return "communication/biz";	
+	}
+	
+	@PostMapping("/post/bizProposal")
+	public String postBizProposal(@Valid BizProposalDTO bizform, BindingResult bindingResult) {
+		
+		System.out.println("bizProposalDT = " + bizform);
+		
+		// 바인딩 에러 체크 
+	    if (bindingResult.hasErrors()) {
+	    	System.out.println("바인딩 에러 발생! ");
+	        return "bizform";
+	    }
+	    
+	    communicationService.enrollBizProposal(bizform.combineFilels().setFilePaths());
+	    
+		// 첨푸 파일 처리 
+		return "redirect:/communication/ask";
 	}
 	
 	

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegemil.mapper.BizProposalMapper">
+	
+	<sql id="bizColumns">
+		id,
+		company_name,
+		person_in_charge,
+		contact_number, 
+		email, 
+		item, 
+		title, 
+		content, 
+		file1, 
+		file2, 
+		file3, 
+		ip_addr, 
+		device, 
+		is_check, 
+		created_at
+	</sql>
+
+	<sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != ''">
+            AND company_name LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR contact_number LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR title LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
+    </sql>
+
+	<insert id="insertBizProposal" parameterType="com.vegemil.domain.BizProposalDTO" useGeneratedKeys="true" >
+		INSERT INTO v_biz_proposal (
+			company_name,
+			person_in_charge,
+			contact_number, 
+			email, 			
+			title, 
+			content, 
+			file_path1, 
+			file_path2, 
+			file_path3, 
+			ip_addr, 
+
+			is_check, 
+			created_at
+		) VALUES (
+			#{companyName},
+			#{personInCharge},
+			#{contactNumber},
+			#{email},			
+			#{title},
+			#{content},
+			#{filePath1},
+			#{filePath2},
+			#{filePath3},
+			#{ipAddr},
+		
+			0, 
+			NOW()
+		)
+	</insert>
+	
+	
+	<select id="selectProposalById" resultType="com.vegemil.domain.BizProposalDTO" >
+	
+		SELECT 
+			<include refid="bizColumns"></include>
+		FROM
+			v_biz_proposal
+		WHERE 
+			id = #{id}
+			
+	
+	</select>
+	
+	<select id="selectProposalsWithPaging" parameterType="com.vegemil.paging.PaginationInfo" resultType="com.vegemil.domain.BizProposalDTO" >
+	
+		SELECT
+            <include refid="bizColumns"></include>
+		FROM			
+            v_biz_proposal
+        WHERE
+        	active = 1
+            <include refid="search" />
+        ORDER BY
+            FIELD(s_best, 1, 0), s_idx DESC
+       	LIMIT
+		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	
+	<update id="updateIsCheck"  >
+			
+		UPDATE v_biz_proposal
+		SET is_check = #{check} 
+		WHERE id = ${id}
+			
+	</update>
+	
+	
+	
+</mapper>
