@@ -36,29 +36,28 @@ import com.vegemil.service.EdayVempService;
 import com.vegemil.service.MailService;
 import com.vegemil.util.UiUtils;
 
-
-
 @Controller
-public class CommunicationConroller extends UiUtils{
-	
+public class CommunicationConroller extends UiUtils {
+
 	@Autowired
 	private CommunicationService communicationService;
 
 	@Autowired
-	private ResourceLoader resourceLoader; 
-	
-	@Autowired MailService mailService;
-	
-    @Autowired
-    private EdayVempService edayVempService;
-    
+	private ResourceLoader resourceLoader;
+
+	@Autowired
+	MailService mailService;
+
+	@Autowired
+	private EdayVempService edayVempService;
+
 	@RequestMapping(value = "/communication/{viewName}")
-    public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName) throws Exception {
-		
-		return "communication/"+viewName;
-    }
-	
-	
+	public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName)
+			throws Exception {
+
+		return "communication/" + viewName;
+	}
+
 	@GetMapping("/communication/cp")
 	public String getCpPage() {
 		return "communication/cp/cp";
@@ -68,7 +67,7 @@ public class CommunicationConroller extends UiUtils{
 	public String getCpManual() {
 		return "communication/cp/cpHandbook";
 	}
-	
+
 	@GetMapping("/communication/cp/cpProgram")
 	public String getCpProgram() {
 		return "communication/cp/cpProgram";
@@ -78,73 +77,75 @@ public class CommunicationConroller extends UiUtils{
 	public String getCpProgramStatus() {
 		return "communication/cp/cpProgramStatus";
 	}
-	
+
 	@GetMapping("/communication/cp/cpEbookView")
 	public String getCpEbookView(Model model, String fileName) {
 		model.addAttribute("fileName", fileName);
 		return "communication/cp/cpEbookView";
 	}
-	
+
 	@RequestMapping(value = "/event/list")
-    public String moveEventList(@PathVariable(value = "viewName", required = false) String viewName, Model model)throws Exception{
-		
+	public String moveEventList(@PathVariable(value = "viewName", required = false) String viewName, Model model)
+			throws Exception {
+
 		List<EventDTO> eventList = communicationService.getEnevetList();
-		if(eventList != null) {
+		if (eventList != null) {
 			model.addAttribute("eventList", eventList);
 		}
-		
+
 		return "communication/event/list";
-    }
-	
+	}
+
 	@RequestMapping(value = "/event/detail/{eIdx}")
-    public String moveEventDetail(@PathVariable(value = "eIdx", required = false) String eIdx , Model model) throws Exception {
-		
+	public String moveEventDetail(@PathVariable(value = "eIdx", required = false) String eIdx, Model model)
+			throws Exception {
+
 		EventDTO event = new EventDTO();
-		
+
 		event = communicationService.getEvent(eIdx);
-		if(event != null) {
+		if (event != null) {
 			model.addAttribute("event", event);
 		}
-		
+
 		return "communication/event/detail";
-    }
-	
+	}
+
 	@PostMapping("/cp/cIdCheck")
 	public String cIdCheck(String cId, String fileName, Model model) {
-		model.addAttribute("fileName",fileName);
+		model.addAttribute("fileName", fileName);
 		if (communicationService.checkCompId(cId) <= 0) {
-			model.addAttribute("msg","사번 조회에 실패했습니다.");
-			model.addAttribute("validation","0");
+			model.addAttribute("msg", "사번 조회에 실패했습니다.");
+			model.addAttribute("validation", "0");
 			return "communication/cp/cpEbookView";
 		}
-		
-		model.addAttribute("validation","1");
-		model.addAttribute("msg","");
-		
+
+		model.addAttribute("validation", "1");
+		model.addAttribute("msg", "");
+
 		return "communication/cp/cpEbookView";
 	}
 
 	// 자율준수 편람 파일 다운 코드
 	@GetMapping("/cpEbookDown")
-	public ResponseEntity<Resource> cpEbookDown(@RequestParam("fileName")String fileName,
+	public ResponseEntity<Resource> cpEbookDown(@RequestParam("fileName") String fileName,
 			@RequestHeader(name = "user-agent") String userAgent) throws IOException {
 
 		try {
-			
+
 			fileName = fileName + ".pdf";
-			
+
 			Resource resource = resourceLoader.getResource("classpath:static/cp/papers/" + fileName);
 			String downName = null;
-			
+
 			// 인터넷 익스플로러 인 경우
 			boolean isMSIE = userAgent.indexOf("MSIE") != -1 || userAgent.indexOf("Trident") != -1;
-			
+
 			if (isMSIE) { // 익스플로러 대응
 				downName = URLEncoder.encode(fileName, "UTF-8").replaceAll("/+", "%20");
 			} else {
 				downName = new String(fileName.getBytes("UTF-8"), "ISO-8859-1"); // 크롬
 			}
-			
+
 			return ResponseEntity.ok()
 					.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=\"" + downName + "\"")
 					.header(HttpHeaders.CONTENT_LENGTH, String.valueOf(resource.contentLength()))
@@ -152,8 +153,8 @@ public class CommunicationConroller extends UiUtils{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 실패 시 
+
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 실패 시
 	}
 
 	@GetMapping("/communication/cp/cpDeclaration")
@@ -163,76 +164,80 @@ public class CommunicationConroller extends UiUtils{
 
 	@PostMapping("/communication/cp/cpDeclaration")
 	public String postCpClaim(Model model, ClaimDTO claimDTO, HttpServletRequest req) {
-		
-		long timeGap = (new Date().getTime()-claimDTO.getSubmitTime().getTime());
-		
-		if(claimDTO.getSubmitTime() == null) {
+
+		long timeGap = (new Date().getTime() - claimDTO.getSubmitTime().getTime());
+
+		if (claimDTO.getSubmitTime() == null) {
 			return showMessageWithRedirect("잘못된 접근입니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
 		}
-		
-		
+
 		String ip = getClientIpVer2(req);
-		if(ip.equals(communicationService.getRecentClaimIp()) || timeGap < 6000) {
-			return showMessageWithRedirect("앞에서 같은 아이피 주소로 접수한 기록이 있습니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
+		if (ip.equals(communicationService.getRecentClaimIp()) || timeGap < 6000) {
+			return showMessageWithRedirect("앞에서 같은 아이피 주소로 접수한 기록이 있습니다.", "/communication/cp/cpDeclaration",
+					Method.GET, null, model);
 		}
-		
+
 		claimDTO.setCIp(ip);
 		int result = communicationService.insertMclaim(claimDTO);
-		
+
 		List<String> recipientsId = new ArrayList<>();
-		//recipientsId.add("hypark023@osse.co.kr"); 테스트용
-    	
-		if(result > 0) {
-			if(recipientsId.size()>0) {
-				for(String recipientId : recipientsId) {
+		// recipientsId.add("hypark023@osse.co.kr"); 테스트용
+
+		if (result > 0) {
+			if (recipientsId.size() > 0) {
+				for (String recipientId : recipientsId) {
 					EdayVempDTO receiverEmp = edayVempService.getVempInfo(recipientId);
-					
-					if(receiverEmp.getExpireYn().equals("1")) {
-						// 담당자 확인 요청 메일 
+
+					if (receiverEmp.getExpireYn().equals("1")) {
+						// 담당자 확인 요청 메일
 						mailService.requestCheckPersonInCharge();
 						recipientsId.remove(recipientId);
 						break;
 					}
 				}
 			}
-			//관리자에게 알림 메일 발송
+			// 관리자에게 알림 메일 발송
 			mailService.alertSubmitCpDecl(claimDTO, recipientsId);
-			//신고인에게 확인 메일 발송
+			// 신고인에게 확인 메일 발송
 			mailService.confirmSubmitCpDecl(claimDTO);
 			return showMessageWithRedirect("신고가 정상적으로 접수되었습니다.", "/communication/cp", Method.GET, null, model);
 		}
-		
+
 		return showMessageWithRedirect("신고 접수에 실패했습니다.", "/communication/cp/cpDeclaration", Method.GET, null, model);
 	}
-	
-	// 업체 문의 기능 추가 
-	
+
+	// 업체 문의 기능 추가
+
 	@GetMapping("/communication/biz")
-	public String getBisProposalView(Model model, HttpServletRequest req) {
-		
-		model.addAttribute("bizform", new BizProposalDTO(getClientIpVer2(req),getDeviceType(req)));
-		
-		
-		
-		return "communication/biz";	
+	public String getBisProposalView(Model model) {
+
+		model.addAttribute("bizform", new BizProposalDTO());
+
+		return "communication/biz";
 	}
-	
+
 	@PostMapping("/post/bizProposal")
-	public String postBizProposal(@Valid BizProposalDTO bizform, BindingResult bindingResult) {
-		
+	public String postBizProposal(@Valid BizProposalDTO bizform, BindingResult bindingResult, Model model,
+			HttpServletRequest req) {
+
 		System.out.println("bizProposalDT = " + bizform);
-		
-		// 바인딩 에러 체크 
-	    if (bindingResult.hasErrors()) {
-	    	System.out.println("바인딩 에러 발생! ");
-	        return "bizform";
-	    }
-	    
-	    communicationService.enrollBizProposal(bizform.combineFilels().setFilePaths());
-	    
-		// 첨푸 파일 처리 
+
+		// 바인딩 에러 체크
+		if (bindingResult.hasErrors()) {
+			System.out.println("바인딩 에러 발생! ");
+			bindingResult.getAllErrors().forEach(error -> {
+				System.out.println(error);
+			});
+			model.addAttribute("errors", bindingResult.getFieldErrors());
+			model.addAttribute("bizform", bizform);
+			return "communication/biz";
+		}
+
+		communicationService.enrollBizProposal(
+				bizform.setDeviceAndIpAddr(getDeviceType(req), getClientIpVer2(req)).combineFilels().setFilePaths());
+
+		// 첨푸 파일 처리
 		return "redirect:/communication/ask";
 	}
-	
-	
+
 }

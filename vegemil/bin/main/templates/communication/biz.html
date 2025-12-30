@@ -45,10 +45,7 @@
 					<p class="f18 fw400 mt20 gray04 center">대한민국 두유의 기준, 정식품과 함께할 협력사의 제휴/제안을 기다리고 있습니다.</p>	
 				</div>
 				
-				<div class="col-md-12 ">
-						
-
-
+				<div class="col-md-12 ">					
 						<p class="f18 fw500 black mt100">제휴/제안 신청서</p>
 						<table cellspacing="0" border="0" class="int2 f14 gray04 mt10 mt10m" style="background:#faf9f9;" 
 								>
@@ -59,12 +56,22 @@
 								<td colspan="2">
 									<p class="f16 black">업체명 <span class="red fw600 f18 ">*</span></p>
 									<input name="" type="text" id="" class="inp04 w100p mt5" th:field="*{companyName}"  />
+									<span th:each="e : ${errors}"
+									      th:if="${e.field == 'companyName'}"
+									      style="color:red;"
+									      th:text="${e.defaultMessage}">
+									</span>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
 									<p class="f16 black">담당자 <span class="red fw600 f18 ">*</span></p>
-									<input name="" type="text" id="" class="inp04 w100p mt5" th:field="*{personInCharge}"  />
+									<input type="text" class="inp04 w100p mt5" th:field="*{personInCharge}"  />
+									<span th:each="e : ${errors}"
+									      th:if="${e.field == 'personInCharge'}"
+									      style="color:red;"
+									      th:text="${e.defaultMessage}">
+									</span>
 								</td>
 							</tr>
 							<tr>
@@ -101,14 +108,30 @@
 											<option value="hotmail.com">hotmail.com</option>
 											<option value="self">직접입력</option>
 										</select>
+								
 									</div>
-
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'emailId'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
+									<br/>
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'emailDomain'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
 									<p class="f16 black">제목 <span class="red fw600 f18 ">*</span></p>
 									<input  type="text" id="" class="inp04 w400 mt5" th:field="*{title}"  />
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'title'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
 								</td>
 							</tr>
 							<tr>
@@ -122,6 +145,11 @@
 								<td colspan="2">
 									<p class="f16 black">내용 <span class="red fw600 f18 ">*</span></p>
 									<textarea class="basetxt h200 mt5" placeholder="규격/용기/MOQ/견적 등" th:field="*{content}"  ></textarea>
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'content'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
 								</td>
 							</tr>
 							
@@ -170,8 +198,12 @@
 							
 							<input id="radioStip2" type="radio" value="false" th:field="*{consent}" />
 							<label for="radioStip2">동의하지 않습니다</label>
-
-						</p>
+						</p>							
+						<span th:each="e : ${errors}"
+					      th:if="${e.field == 'consent'}"
+					      style="color:red;"
+					      th:text="${e.defaultMessage}">
+						</span>
 
 
 					</div>	
