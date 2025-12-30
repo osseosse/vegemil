@@ -94,5 +94,14 @@ public class UiUtils {
 
 		return ip;
 	}
+	
+	public String getDeviceType(HttpServletRequest req) {
+		String userAgent = req.getHeader("User-Agent");
+		if (userAgent == null) {
+		    userAgent = "";
+		}
+		return userAgent;
+	}
+
 
 }
