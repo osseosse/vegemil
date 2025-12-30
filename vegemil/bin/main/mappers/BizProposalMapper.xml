@@ -42,7 +42,7 @@
 			file_path2, 
 			file_path3, 
 			ip_addr, 
-
+			device,
 			is_check, 
 			created_at
 		) VALUES (
@@ -56,7 +56,7 @@
 			#{filePath2},
 			#{filePath3},
 			#{ipAddr},
-		
+			#{device},
 			0, 
 			NOW()
 		)
