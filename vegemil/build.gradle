@@ -57,5 +57,5 @@ dependencies {
     // https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter
     implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.2'
     implementation 'com.github.rkpunjal.sqlsafe:sql-injection-safe:1.0.2'
-    
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 }
