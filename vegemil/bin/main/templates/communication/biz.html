@@ -82,7 +82,17 @@
 									- <input name="" type="text" maxlength="4" id=""  class="inp04 w200 mt5" th:field="*{contactNumberMid}"  />
 									- <input name="" type="text" maxlength="4" id="" class="inp04 w200 mt5" th:field="*{contactNumberEnd}"  />
 									</div>
+									<span th:each="e, stat : ${errors}"
+									      th:if="${stat.first and
+									              (e.field == 'contactNumberStart'
+									               or e.field == 'contactNumberMid'
+									               or e.field == 'contactNumberEnd')}"
+									      style="color:red;"
+									      th:text="${e.defaultMessage}">
+									</span>
 								</td>
+								
+								
 							</tr>
 							<tr>
 								

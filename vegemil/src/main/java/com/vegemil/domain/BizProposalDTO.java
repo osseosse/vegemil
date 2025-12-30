@@ -36,12 +36,12 @@ public class BizProposalDTO {
 	@NotBlank(message = "담당자 이름은 필수입니다")
 	private String personInCharge; // 담당자
 
-	@NotNull
-	private int contactNumberStart;
-	@NotNull
-	private int contactNumberMid;
-	@NotNull
-	private int contactNumberEnd;
+	@NotBlank(message = "연락처 입력은 필수입니다")
+	private String contactNumberStart;
+	@NotBlank(message = "연락처 입력은 필수입니다")
+	private String contactNumberMid;
+	@NotBlank(message = "연락처 입력은 필수입니다")
+	private String contactNumberEnd;
 
 	private String contactNumber; // 연락처
 
