@@ -67,19 +67,13 @@ public class BizProposalDTO {
 	private String filePath2; // 첨부2 경로
 	private String filePath3; // 첨부3 경로
 
-	@AssertTrue
+	@AssertTrue(message = "개인정보수집 방법에 동의해야만 문의가 등록됩니다.")
 	private boolean consent;
 
 	private String ipAddr; // 접속 아이피
 	private String device; // 접속 기기
 	private boolean isCheck; //
 	private Timestamp createdAt;
-
-	public BizProposalDTO(String ipAddr, String device) {
-		super();
-		this.ipAddr = ipAddr;
-		this.device = device;
-	}
 
 	public BizProposalDTO combineFilels() {
 
@@ -125,9 +119,11 @@ public class BizProposalDTO {
 	}
 	
 	
-	public void setDeviceAndIpAddr(String device, String ipAddr) {
+	public BizProposalDTO setDeviceAndIpAddr(String device, String ipAddr) {
 		this.device = device;
 		this.ipAddr = ipAddr;
+		
+		return this;
 	}
 
 
