@@ -2,8 +2,51 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" 
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<title>정식품 1:1문의</title>
+<title>정식품 비즈니스 문의</title>
 <head th:replace="fragments/head :: headFragment"></head>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<style>
+/* capcha text style */
+.captchaText {
+    display: inline-block;
+    padding: 6px 9px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 4px;
+
+    /* 텍스트 왜곡 */
+    transform: rotate(-3deg) skewX(-5deg);
+
+    /* 배경 노이즈 */
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #eaeaea,
+            #eaeaea 5px,
+            #f5f5f5 5px,
+            #f5f5f5 10px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.05) 2px,
+            transparent 2px,
+            transparent 6px
+        );
+
+    /* 텍스트 스타일 */
+    color: #333;
+    text-shadow:
+        1px 1px 0 #aaa,
+        -1px -1px 0 #ddd;
+
+    border-radius: 6px;
+    user-select: none;
+}
+</style>
 <body>
 <!-- ================================ Header ================================ -->
 <header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
@@ -40,6 +83,9 @@
 		      method="post"
 		      enctype="multipart/form-data"
 		        style="display:block; width:100%;">
+		        
+		 		<input type="hidden" th:field="*{capchaKey}" />
+
 				<div class=" col-md-12">
 					<p class="f52 fw600 mt130 black center">제휴/제안 문의</p>
 					<p class="f18 fw400 mt20 gray04 center">대한민국 두유의 기준, 정식품과 함께할 협력사의 제휴/제안을 기다리고 있습니다.</p>	
@@ -184,7 +230,39 @@
 							<tr>
 								<td colspan="2" style="border:3px dashed blue">
 									<p class="f16 black">자동등록방지코드<span class="red fw600 f18 ">*</span></p>
-									<div class="mt5">여기에 넣어주세요~</div>
+									<div class="mt5">
+										<div class="captcha-box row">
+										  <p id="captchaText" class="captchaText col-2">[[${capchaValue}]]</p>
+										  <div class="col-8">
+										    <button
+											  type="button"
+											  onclick="onClickRefreshCapcha()"
+											  style="
+											    margin-right: 8px;
+											    width: 36px;
+											    height: 36px;
+											    border-radius: 6px;
+											    border: 1px solid #ccc;
+											    background: #f8f9fa;
+											    cursor: pointer;
+											    font-size: 18px;
+											  "
+											>
+											  <i class="fa-solid fa-rotate-right"></i>
+											</button>
+													
+											<input type="text"  class="col-6 m-10 px-1 inp04 w200 bg_White" th:field="*{captchaInput}"
+																onkeyup="checkCaptchaRealtime()" name="captchaInput" id="captchaInput" placeholder="보안문자 입력">
+											<span id="checkresult" class="mx-1">불일치</span>
+											<P id="capchaErr"  th:each="e : ${errors}"
+										      th:if="${e.field == 'capchaKey'}"
+										      style="color:red; text-align: center; width: 260px;"
+										      
+										      th:text="${e.defaultMessage}">
+											</P>
+										  </div>
+										</div>
+									</div>
 								</td>
 							</tr>
 						</table>
@@ -234,10 +312,55 @@
 			</div>
 	
 		</div><!-- //contant900 -->
-	</div><!-- //contant1460 -->
-	
-	
+	</div><!-- //contant1460 -->	
 </div>
+
+
+<script>
+
+function onClickRefreshCapcha(){
+	
+  var capchaKey = document.getElementById('capchaKey').value;
+  
+  console.log("capchaKey = ", capchaKey)
+  fetch('/captcha/refresh?capchaKey='+capchaKey)
+    .then(res => res.text())
+    .then(text => {
+    	document.getElementById('captchaText').innerText = text.replace(/"/g, '');
+        document.getElementById('checkresult').innerText = ""
+        
+    })
+  	.catch(err => {
+      console.error(err.msg);      
+    });
+	
+}
+
+function checkCaptchaRealtime() {
+	
+	console.log("checkCaptchaRealtime")
+	
+    const capchaKey = document.getElementById('capchaKey').value;
+    const capchaValue = document.getElementById('captchaInput').value;
+
+    if (!capchaValue) return;
+
+    fetch(`/captcha/check?capchaKey=${encodeURIComponent(capchaKey)}&capchaValue=${encodeURIComponent(capchaValue)}`)
+        .then(res => res.json())
+        .then(isValid => {
+            if (isValid) {
+                console.log("captcha ok");
+                document.getElementById('checkresult').innerText = "일치"
+                document.getElementById('capchaErr').innerText = ""
+            } else {
+                console.log("captcha fail");
+                document.getElementById('checkresult').innerText = "불일치"
+            }
+        });
+}
+
+
+</script>
 <!-- ================================  
 		// Content
 ================================ -->

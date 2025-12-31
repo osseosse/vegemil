@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +20,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.github.pagehelper.util.StringUtil;
 import com.vegemil.constant.Method;
 import com.vegemil.domain.BizProposalDTO;
 import com.vegemil.domain.ClaimDTO;
@@ -34,9 +38,13 @@ import com.vegemil.domainEday.EdayVempDTO;
 import com.vegemil.service.CommunicationService;
 import com.vegemil.service.EdayVempService;
 import com.vegemil.service.MailService;
+import com.vegemil.util.RedisUtil;
 import com.vegemil.util.UiUtils;
 
+import groovy.util.logging.Log4j;
+
 @Controller
+@Log4j
 public class CommunicationConroller extends UiUtils {
 
 	@Autowired
@@ -44,6 +52,9 @@ public class CommunicationConroller extends UiUtils {
 
 	@Autowired
 	private ResourceLoader resourceLoader;
+	
+	@Autowired
+	RedisUtil redisUtil;
 
 	@Autowired
 	MailService mailService;
@@ -210,8 +221,13 @@ public class CommunicationConroller extends UiUtils {
 
 	@GetMapping("/communication/biz")
 	public String getBisProposalView(Model model) {
+		// 자동입력방지검증 
+		String capcha = generateCaptcha();
+		redisUtil.setData(capcha, capcha);
+		BizProposalDTO bizform = new BizProposalDTO(capcha);
+		model.addAttribute("bizform", bizform);
+		model.addAttribute("capchaValue", capcha);
 
-		model.addAttribute("bizform", new BizProposalDTO());
 
 		return "communication/biz";
 	}
@@ -221,6 +237,19 @@ public class CommunicationConroller extends UiUtils {
 			HttpServletRequest req) {
 
 		System.out.println("bizProposalDT = " + bizform);
+		System.out.println("=== > redis data key test = " + redisUtil.getData(bizform.getCapchaKey()));
+		
+		String capchaKey = bizform.getCapchaKey();
+		String capchInput = bizform.getCaptchaInput();
+		String capchaValue = redisUtil.getData(capchaKey).toString();
+		
+		if(!StringUtil.isEmpty(capchaKey)) {			
+			if(!capchInput.equals(capchaValue)) {
+				
+				System.out.println("캡차틀림");
+				bindingResult.addError(new FieldError("bizform", "capchaKey", "방지문자입력이 틀렸습니다."));
+			}			
+		}
 
 		// 바인딩 에러 체크
 		if (bindingResult.hasErrors()) {
@@ -230,14 +259,45 @@ public class CommunicationConroller extends UiUtils {
 			});
 			model.addAttribute("errors", bindingResult.getFieldErrors());
 			model.addAttribute("bizform", bizform);
+			model.addAttribute("capchaValue", capchaValue);
 			return "communication/biz";
 		}
+		
+		// redis 데이터 삭제 
+		redisUtil.deleteData(capchaKey);
 
 		communicationService.enrollBizProposal(
 				bizform.setDeviceAndIpAddr(getDeviceType(req), getClientIpVer2(req)).combineFilels().setFilePaths());
 
 		// 첨푸 파일 처리
 		return "redirect:/communication/ask";
+	}
+	
+	@GetMapping("/captcha/refresh")
+	@ResponseBody
+	public String refreshCaptcha(@RequestParam String capchaKey) {
+		System.out.println("capchaKey = "+ capchaKey);
+		
+		if(StringUtil.isEmpty(redisUtil.getData(capchaKey))) {
+	        throw new IllegalArgumentException("capchaKey가 없습니다.");
+	    }
+	    String captchaFresh = generateCaptcha(); 
+	    
+	    // 없는 키값을 꺼내면.. 뭐가 나오지 null 인감
+	    
+	    redisUtil.setData(capchaKey, captchaFresh);
+	    
+	   System.out.println("capcha refresh = " + captchaFresh);
+	    return captchaFresh;
+	}
+	
+	@GetMapping("/captcha/check")
+	@ResponseBody
+	public boolean checkCaptcha(@RequestParam String capchaKey, @RequestParam String capchaValue) {
+		
+	    String savedValue = redisUtil.getData(capchaKey);	    	   	    
+	    System.out.println(savedValue);
+	    return savedValue.equals(capchaValue)? true:false;
 	}
 
 }

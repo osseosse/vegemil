@@ -4,7 +4,7 @@ import java.net.Inet4Address;
 import java.net.UnknownHostException;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.WeakHashMap;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,12 +17,12 @@ import com.vegemil.paging.Criteria;
 
 @Controller
 public class UiUtils {
-	
+
 	public String showMessageWithRedirect(@RequestParam(value = "message", required = false) String message,
-										  @RequestParam(value = "redirectUri", required = false) String redirectUri,
-										  @RequestParam(value = "method", required = false) Method method,
-										  @RequestParam(value = "params", required = false) Map<String, Object> params, Model model) {
-		
+			@RequestParam(value = "redirectUri", required = false) String redirectUri,
+			@RequestParam(value = "method", required = false) Method method,
+			@RequestParam(value = "params", required = false) Map<String, Object> params, Model model) {
+
 		model.addAttribute("message", message);
 		model.addAttribute("redirectUri", redirectUri);
 		model.addAttribute("method", method);
@@ -42,66 +42,78 @@ public class UiUtils {
 
 		return params;
 	}
-	
-	//클라이언트 ip주소 가져오기
+
+	// 클라이언트 ip주소 가져오기
 	public String getClientIp(HttpServletRequest req) {
-	    String ip = "";
-	    try {
+		String ip = "";
+		try {
 			byte[] bytes = Inet4Address.getLocalHost().getAddress();
 			ip = new String(bytes);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-	    return ip;
+		return ip;
 	}
+
 	public String getClientIpVer2(HttpServletRequest request) {
 
-        String ip = null;
+		String ip = null;
 
-        ip = request.getHeader("X-Forwarded-For");
+		ip = request.getHeader("X-Forwarded-For");
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("Proxy-Client-IP"); 
-        } 
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("WL-Proxy-Client-IP"); 
-        } 
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("HTTP_CLIENT_IP"); 
-        } 
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("HTTP_CLIENT_IP");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("HTTP_X_FORWARDED_FOR"); 
-        }
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("HTTP_X_FORWARDED_FOR");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("X-Real-IP"); 
-        }
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("X-Real-IP");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("X-RealIP"); 
-        }
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("X-RealIP");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getHeader("REMOTE_ADDR");
-        }
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("REMOTE_ADDR");
+		}
 
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) { 
-            ip = request.getRemoteAddr(); 
-        }
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getRemoteAddr();
+		}
 
 		return ip;
 	}
-	
+
 	public String getDeviceType(HttpServletRequest req) {
 		String userAgent = req.getHeader("User-Agent");
 		if (userAgent == null) {
-		    userAgent = "";
+			userAgent = "";
 		}
 		return userAgent;
 	}
 
+	public static String generateCaptcha() {
+	    String chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+	    StringBuilder sb = new StringBuilder(5);
+	    Random random = new Random();
+
+	    for (int i = 0; i < 5; i++) {
+	        sb.append(chars.charAt(random.nextInt(chars.length())));
+	    }
+	    return sb.toString();
+	}
+	
 
 }

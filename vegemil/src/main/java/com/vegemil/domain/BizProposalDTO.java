@@ -30,6 +30,9 @@ public class BizProposalDTO {
 
 	private Long id;
 
+	private String capchaKey;
+	private String captchaInput;
+	
 	@NotBlank(message = "업체명은 필수입니다")
 	private String companyName; // 업체명
 
@@ -74,6 +77,14 @@ public class BizProposalDTO {
 	private String device; // 접속 기기
 	private boolean isCheck; //
 	private Timestamp createdAt;
+	
+	
+	public BizProposalDTO(String capString) {
+		
+		this.capchaKey = capString;
+
+	}
+	
 
 	public BizProposalDTO combineFilels() {
 
@@ -125,6 +136,7 @@ public class BizProposalDTO {
 		
 		return this;
 	}
+
 
 
 }
