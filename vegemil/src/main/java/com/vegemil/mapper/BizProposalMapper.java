@@ -1,10 +1,12 @@
 package com.vegemil.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
 import com.vegemil.domain.BizProposalDTO;
+import com.vegemil.domain.SearchDTO;
 import com.vegemil.paging.PaginationInfo;
 
 @Mapper
@@ -16,13 +18,14 @@ public interface BizProposalMapper {
 	
 	// 10개씩 페이징 조회
 	
-	public List<BizProposalDTO> selectProposalsWithPaging(PaginationInfo pageInfo);
+//	public List<BizProposalDTO> selectProposalsWithPaging(SearchDTO pageInfo);
+	public List<BizProposalDTO> selectProposalsWithPaging(Map<String, Object> map);
 	
 	// 인서트 
 	public Long insertBizProposal(BizProposalDTO bizProposalDTO);
 	
 	// 확인 체크 
-	public void updateIsCheck(Long id, boolean check);
+	public int updateIsCheck(Long id, int status);
 	
 
 }

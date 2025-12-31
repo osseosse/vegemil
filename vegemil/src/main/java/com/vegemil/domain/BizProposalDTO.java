@@ -75,7 +75,7 @@ public class BizProposalDTO {
 
 	private String ipAddr; // 접속 아이피
 	private String device; // 접속 기기
-	private boolean isCheck; //
+	private int isCheck; //
 	private Timestamp createdAt;
 	
 	

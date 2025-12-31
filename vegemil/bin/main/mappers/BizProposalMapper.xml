@@ -11,9 +11,9 @@
 		item, 
 		title, 
 		content, 
-		file1, 
-		file2, 
-		file3, 
+		file_path1, 
+		file_path2, 
+		file_path3, 
 		ip_addr, 
 		device, 
 		is_check, 
@@ -74,20 +74,34 @@
 			
 	
 	</select>
-	
-	<select id="selectProposalsWithPaging" parameterType="com.vegemil.paging.PaginationInfo" resultType="com.vegemil.domain.BizProposalDTO" >
+		<select id="selectProposalsWithPaging111" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.BizProposalDTO" >
 	
 		SELECT
             <include refid="bizColumns"></include>
 		FROM			
             v_biz_proposal
         WHERE
-        	active = 1
+        	1 = 1
             <include refid="search" />
         ORDER BY
-            FIELD(s_best, 1, 0), s_idx DESC
+            id DESC
        	LIMIT
 		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	<select id="selectProposalsWithPaging" parameterType="map" resultType="com.vegemil.domain.BizProposalDTO" >
+	
+		SELECT
+            <include refid="bizColumns"></include>
+		FROM			
+            v_biz_proposal
+        WHERE
+        	1 = 1
+            <include refid="search" />
+        ORDER BY
+            id DESC
+       	LIMIT
+		#{firstRecordIndex}, #{lastRecordIndex}
 	</select>
 	
 	

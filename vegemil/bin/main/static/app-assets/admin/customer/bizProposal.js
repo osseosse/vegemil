@@ -175,7 +175,7 @@ var createTable = function() {
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/manage/event/eventVegemilList',
+        url : '/admin/manage/customer/bizProposals',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   

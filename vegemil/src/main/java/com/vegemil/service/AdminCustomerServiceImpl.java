@@ -12,15 +12,21 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vegemil.domain.AdminFactpostDTO;
 import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.AdminVisitSetupDTO;
+import com.vegemil.domain.BizProposalDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.SearchDTO;
 import com.vegemil.mapper.AdminCustomerMapper;
+import com.vegemil.mapper.BizProposalMapper;
 
 @Service
 public class AdminCustomerServiceImpl implements AdminCustomerService {
 
 	@Autowired
 	private AdminCustomerMapper adminCustomerMapper;
+	
+	@Autowired
+	private BizProposalMapper bizProposalMapper;
 	
 	@Autowired
     private PasswordEncoder passwordEncoder;
@@ -246,6 +252,29 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		queryResult = adminCustomerMapper.updatePassword(params);
 		
 		return (queryResult == 1) ? true : false;
+	}
+
+	@Override
+	public List<BizProposalDTO> getBizProposalList(SearchDTO searchDTO) {
+		// 
+		return bizProposalMapper.selectProposalsWithPaging(null);
+	}
+
+	@Override
+	public boolean changeIsCheckStatus(Long id, int status) {
+		// TODO Auto-generated method stub
+		int result = bizProposalMapper.updateIsCheck(id, status);		
+		return result == 1? true:false;
+		
+	}
+
+	@Override
+	public List<BizProposalDTO> getBizProposalList(Map<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		
+		paramMap.put("firstRecordIndex",1);
+		paramMap.put("lastRecordIndex",2);
+		return bizProposalMapper.selectProposalsWithPaging(paramMap);
 	}
 	
 	
