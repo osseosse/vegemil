@@ -223,7 +223,8 @@ public class CommunicationConroller extends UiUtils {
 	public String getBisProposalView(Model model) {
 		// 자동입력방지검증 
 		String capcha = generateCaptcha();
-		redisUtil.setData(capcha, capcha);
+
+		redisUtil.setHourExpire(capcha, capcha, 1);
 		BizProposalDTO bizform = new BizProposalDTO(capcha);
 		model.addAttribute("bizform", bizform);
 		model.addAttribute("capchaValue", capcha);
@@ -260,6 +261,8 @@ public class CommunicationConroller extends UiUtils {
 			model.addAttribute("errors", bindingResult.getFieldErrors());
 			model.addAttribute("bizform", bizform);
 			model.addAttribute("capchaValue", capchaValue);
+			model.addAttribute("captchaInput", capchInput);
+			
 			return "communication/biz";
 		}
 		
@@ -276,7 +279,7 @@ public class CommunicationConroller extends UiUtils {
 	@GetMapping("/captcha/refresh")
 	@ResponseBody
 	public String refreshCaptcha(@RequestParam String capchaKey) {
-		System.out.println("capchaKey = "+ capchaKey);
+		
 		
 		if(StringUtil.isEmpty(redisUtil.getData(capchaKey))) {
 	        throw new IllegalArgumentException("capchaKey가 없습니다.");
@@ -285,9 +288,9 @@ public class CommunicationConroller extends UiUtils {
 	    
 	    // 없는 키값을 꺼내면.. 뭐가 나오지 null 인감
 	    
-	    redisUtil.setData(capchaKey, captchaFresh);
+	    redisUtil.setHourExpire(capchaKey, captchaFresh, 1);
 	    
-	   System.out.println("capcha refresh = " + captchaFresh);
+	   System.out.println("capcha key & refresh = "+ capchaKey + " & "+ captchaFresh);
 	    return captchaFresh;
 	}
 	
