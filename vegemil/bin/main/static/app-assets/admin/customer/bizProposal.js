@@ -294,12 +294,19 @@ var createTable = function() {
  			if(full['isCheck'] == 1) {
  				checked = 'checked';
  			}
-             return (
-               '<div class="form-check form-switch center-ck">'+
-                 '<input type="checkbox" class="form-check-input" '+checked+' id="isCheck'+full['id']+ '" name="listOn2"'+ 'value="'+full['isCheck']+ '" onclick="javascript:btnDisplay('+full['id']+')" >'+
- 				'<label class="form-check-label" for="listOn"></label>'+
- 		      '</div>'
-             );
+ 			return `
+ 					  <div class="form-check form-switch center-ck">
+ 					    <input
+ 					      type="checkbox"
+ 					      class="form-check-input"
+ 					      id="isCheck-${full.id}"
+ 					      name="listOn2"
+ 					      ${checked}
+ 					      onclick="updateStatus(${full.id}, ${full.isCheck})"
+ 					    >
+ 					    <label class="form-check-label" for="isCheck-${full.id}"></label>
+ 					  </div>
+ 					`;
            }
            
          }
@@ -319,31 +326,31 @@ var createTable = function() {
               extend: 'print',
               text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6, 7, 8] }
             },
             {
               extend: 'csv',
               text: feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) + 'Csv',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6, 7, 8] }
             },
             {
               extend: 'excel',
               text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6, 7, 8] }
             },
             {
               extend: 'pdf',
               text: feather.icons['clipboard'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6, 7, 8] }
             },
             {
               extend: 'copy',
               text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
               className: 'dropdown-item',
-              exportOptions: { columns: [0, 2, 3, 4, 5, 6, 7, 8, 10, 11] }
+              exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6, 7, 8] }
             }
           ],
           init: function (api, node, config) {
@@ -376,7 +383,7 @@ var createTable = function() {
 		} );
 	} ).draw();
 	
-    $('div.head-label').html('<h4 class="card-title">문의 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>');							 
+    $('div.head-label').html('<h4 class="card-title">문의 목록 </h4>');							 
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
@@ -403,40 +410,29 @@ function showupContentModal(id) {
 	    }
 	  });
 
-	}
+}
 
-function btnDisplay(idx) {
-
-		
-	if($('#eActive'+eIdx).is(":checked")){
-		eActive = 1;
-	}else{
-		eActive = 0;
-	}
-	if($('#eBvactive'+eIdx).is(":checked")){
-		eBvactive = 1;
-	}else{
-		eBvactive = 0;
-	}
+function updateStatus(id, status) {
 	
-	if(confirm('진열을 수정하시겠습니까?')){		
-		$.ajax({
-			url : '/admin/manage/event/displayEventInfo?eIdx='+eIdx+'&eActive='+eActive+'&eBvactive='+eBvactive,			
-			type : "get",
-			dataType : "json",
-			success : function(data) {
-				
-				if(data){
-					alert("수정되었습니다.");
-					$('.datatables-basic').DataTable().ajax.reload();
-				}
-				else{
-					alert("실패했습니다.");
-				}				
-			},
-			error : function(){
-			}
-		});
-	}
+  if(status === "1") {	  
+	  status = 0
+  }else{
+	  status = 1
+  }
+	
+  $.ajax({
+	    url: '/admin/manage/customer/bizProposeCheck/'+id + '/' + status,
+
+	    type: 'get',
+	    dataType: 'json',
+	    success: function (data) {
+	    	  if (data) {
+	    	    alert("변경되었습니다.")
+	    	  }
+	    },
+	    error: function () {
+	      alert('처리 중 오류가 발생했습니다.');
+	    }
+	  });
 }
 

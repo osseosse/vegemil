@@ -129,11 +129,11 @@
 	</select>
 	
 	
-	<update id="updateIsCheck"  >
+	<update id="updateIsCheck">
 			
 		UPDATE v_biz_proposal
-		SET is_check = #{check} 
-		WHERE id = ${id}
+		SET is_check = #{isCheck} 
+		WHERE id = #{id}
 			
 	</update>
 	

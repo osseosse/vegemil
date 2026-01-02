@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.vegemil.domain.BizProposalDTO;
-import com.vegemil.domain.SearchDTO;
-import com.vegemil.paging.PaginationInfo;
 
 @Mapper
 public interface BizProposalMapper {
@@ -25,7 +24,7 @@ public interface BizProposalMapper {
 	public Long insertBizProposal(BizProposalDTO bizProposalDTO);
 	
 	// 확인 체크 
-	public int updateIsCheck(Long id, int status);
+	public int updateIsCheck(@Param("id") Long id,@Param("isCheck") int isCheck);
 	
 	// 전체 데이터 수 
 	public int selectAll();

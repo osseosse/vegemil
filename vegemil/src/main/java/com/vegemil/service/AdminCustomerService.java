@@ -59,7 +59,7 @@ public interface AdminCustomerService {
 	
 	
 	//비즈니스 체크 기능 
-	public boolean changeIsCheckStatus(Long id, int status);
+	public int changeIsCheckStatus(Long id, int status);
 	
 	
 

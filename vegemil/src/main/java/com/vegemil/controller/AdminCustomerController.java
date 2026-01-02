@@ -90,6 +90,12 @@ public class AdminCustomerController extends UiUtils {
 		return bizProposal;
 	 }
 	
+	@RequestMapping(value = "/admin/manage/customer/bizProposeCheck/{id}/{status}")
+	public @ResponseBody int changeBizProposalCheckStatus(@PathVariable Long id, @PathVariable int status) {
+		
+		System.out.println(id +"/" + status);
+		return adminCustomerService.changeIsCheckStatus(id, status);		
+	 }
 	
 	
 	@RequestMapping(value = "/admin/manage/customer/faqList")

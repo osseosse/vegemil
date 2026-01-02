@@ -261,10 +261,12 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 	}
 
 	@Override
-	public boolean changeIsCheckStatus(Long id, int status) {
+	public int changeIsCheckStatus(Long id, int status) {
 		// TODO Auto-generated method stub
-		int result = bizProposalMapper.updateIsCheck(id, status);		
-		return result == 1? true:false;
+		bizProposalMapper.updateIsCheck(id, status);		
+		BizProposalDTO bizProposalDTO = bizProposalMapper.selectProposalById(id);
+				
+		return bizProposalDTO.getIsCheck(); 
 		
 	}
 
@@ -278,8 +280,7 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 		DataTableDTO dataTableDto = new DataTableDTO();
 		
 		int proposalTotalCount = bizProposalMapper.selectAll();
-		
-		System.out.println("??");
+			
 		if(proposalTotalCount > 0) {
 			int start = Integer.parseInt(paramMap.get("start").toString());
 			int length = Integer.parseInt(paramMap.get("length").toString());
