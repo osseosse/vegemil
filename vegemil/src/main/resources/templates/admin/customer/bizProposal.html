@@ -10,6 +10,7 @@
 	<th:block layout:fragment="add-css">
 	</th:block>
 	
+
 	<!-- BEGIN: Page Vendor JS-->
 	<th:block layout:fragment="add-script">		
 - 	    <script th:src="@{/app-assets/admin/customer/bizProposal.js}"></script>	    	        -
@@ -100,7 +101,7 @@
 												상세검색
 											</div>
 											<div class="col-md-4 col-4">
-												<input type="text" id="searchWord" class="form-control" name="keyword" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
+												<input type="text" id="searchKeyword" class="form-control" name="searchKeyword" placeholder="제목, 본문에 포함된 된어를 입력하세요" />
 											</div>
 										</div>
 										<hr />
@@ -132,15 +133,15 @@
 											<colgroup>
 	
 												<col width="3%"><!-- 아이디 -->
-												<col width="4%"><!-- 업체명 -->
-												<col width="4%"><!--  담당자 -->
-												<col width="4%"><!-- 연락처  -->
-												<col width="5%"><!-- 이메일 -->
-												<col width="5%"><!-- 품목 -->
-												<col width="14%"><!-- 제목 -->
-												<col width="4%"><!-- 등록일시 -->		
-												<col width="4%"><!-- IP -->
-												<col width="3%"><!-- 답변 -->
+												<col width="10%"><!-- 업체명 -->
+												<col width="7%"><!--  담당자 -->
+												<col width="10%"><!-- 연락처  -->
+												<col width="10%"><!-- 이메일 -->
+												<col width="10%"><!-- 품목 -->
+												<col width="26%"><!-- 제목 -->
+												<col width="15%"><!-- 등록일시 -->		
+												<col width="5%"><!-- IP -->
+												<col width="1%"><!-- 답변 -->
 	
 											</colgroup>
 											<thead>
@@ -156,8 +157,7 @@
 													<th>등록일시</th>
 													<th>IP</th>
 													<th>답변</th>
-												
-													
+																								
 												</tr>
 											</thead>
 										</table>
@@ -174,6 +174,31 @@
     </div>
     <!-- END: Content-->
 
+	<!-- 모달 -->
+	<div class="modal fade" id="contentModal" tabindex="-1" aria-hidden="true">
+	  <div class="modal-dialog modal-lg modal-dialog-centered">
+	    <div class="modal-content">
+	
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="modal-title"></h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" style="margin-right: 20px; margin-top: 10px;"></button>
+	      </div>
+	
+	      <div class="modal-body" id="modal-body">
+	        <!-- 내용 -->
+	      </div>
+	
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+	          닫기
+	        </button>
+	      </div>
+	
+	    </div>
+	  </div>
+	</div>
+
+	
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
     

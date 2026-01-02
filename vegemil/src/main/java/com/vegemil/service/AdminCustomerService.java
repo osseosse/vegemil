@@ -51,7 +51,12 @@ public interface AdminCustomerService {
 	
 	// 비즈니스 문의 리스트 	
 	public List<BizProposalDTO> getBizProposalList(SearchDTO searchDTO);
-	public List<BizProposalDTO> getBizProposalList(Map<String, Object> paramMap);
+	public DataTableDTO getBizProposalList(Map<String, Object> paramMap);
+	
+	// 비즈니스 단건
+	
+	public BizProposalDTO getBizProposalData(Long id);
+	
 	
 	//비즈니스 체크 기능 
 	public boolean changeIsCheckStatus(Long id, int status);

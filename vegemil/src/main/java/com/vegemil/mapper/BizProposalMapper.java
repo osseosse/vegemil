@@ -27,5 +27,8 @@ public interface BizProposalMapper {
 	// 확인 체크 
 	public int updateIsCheck(Long id, int status);
 	
+	// 전체 데이터 수 
+	public int selectAll();
+	
 
 }

@@ -79,10 +79,17 @@ public class AdminCustomerController extends UiUtils {
 	
 	
 	@RequestMapping(value = "/admin/manage/customer/bizProposals")
-	public @ResponseBody List<BizProposalDTO> getBizProposalList(@ModelAttribute("params") SearchDTO searchDTO, Model model,  @RequestParam Map<String, Object> commandMap) {
-		List<BizProposalDTO> bizProposals = adminCustomerService.getBizProposalList(commandMap);
+	public @ResponseBody DataTableDTO getBizProposalList(@ModelAttribute("params") SearchDTO searchDTO, Model model,  @RequestParam Map<String, Object> commandMap) {
+		DataTableDTO bizProposals = adminCustomerService.getBizProposalList(commandMap);
 		return bizProposals;
 	 }
+	
+	@RequestMapping(value = "/admin/manage/customer/bizProposeContent/{id}")
+	public @ResponseBody BizProposalDTO getBizProposalContent(@PathVariable Long id) {
+		BizProposalDTO bizProposal = adminCustomerService.getBizProposalData(id);
+		return bizProposal;
+	 }
+	
 	
 	
 	@RequestMapping(value = "/admin/manage/customer/faqList")

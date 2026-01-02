@@ -269,12 +269,38 @@ public class AdminCustomerServiceImpl implements AdminCustomerService {
 	}
 
 	@Override
-	public List<BizProposalDTO> getBizProposalList(Map<String, Object> paramMap) {
+	public DataTableDTO getBizProposalList(Map<String, Object> paramMap) {			
 		// TODO Auto-generated method stub
 		
-		paramMap.put("firstRecordIndex",1);
-		paramMap.put("lastRecordIndex",2);
-		return bizProposalMapper.selectProposalsWithPaging(paramMap);
+		System.out.println("parameters =  " + paramMap.toString());
+		List<BizProposalDTO> proposalList = Collections.emptyList();
+		
+		DataTableDTO dataTableDto = new DataTableDTO();
+		
+		int proposalTotalCount = bizProposalMapper.selectAll();
+		
+		System.out.println("??");
+		if(proposalTotalCount > 0) {
+			int start = Integer.parseInt(paramMap.get("start").toString());
+			int length = Integer.parseInt(paramMap.get("length").toString());
+			paramMap.put("start", start);
+			paramMap.put("length", length);
+			
+			proposalList = bizProposalMapper.selectProposalsWithPaging(paramMap);
+		}
+		
+		dataTableDto.setData(proposalList);
+		dataTableDto.setRecordsTotal(proposalTotalCount);
+		dataTableDto.setRecordsFiltered(proposalTotalCount);
+		dataTableDto.setDraw(Integer.parseInt(paramMap.get("draw").toString()));
+
+		return dataTableDto;
+
+	}
+
+	@Override
+	public BizProposalDTO getBizProposalData(Long id) {
+		return bizProposalMapper.selectProposalById(id);
 	}
 	
 	

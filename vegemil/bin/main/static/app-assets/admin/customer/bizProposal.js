@@ -163,11 +163,11 @@ var createTable = function() {
   // --------------------------------------------------------------------
 
   if (dt_basic_table.length) {
-//	const range = $('#fp-range').val().split(' to ');
-//	const startdate = range[0];
-//	const enddate = range[1];
-//	$('#sStartdate').attr("value",startdate);
-//	$('#sEnddate').attr("value",enddate);
+	const range = $('#fp-range').val().split(' to ');
+	const startdate = range[0];
+	const enddate = range[1];
+	$('#sStartdate').attr("value",startdate);
+	$('#sEnddate').attr("value",enddate);
     var dt_basic = dt_basic_table.DataTable({
 	  lengthChange: false,
 	  bPaginate: true,
@@ -195,15 +195,15 @@ var createTable = function() {
 		}
 	  },
       columns: [
-      	{ data: 'eIdx' },
-        { data: 'eIdx' },
-        { data: 'eIdx' },
-        { data: 'eStart' },
-        { data: 'eEnd' },
-        { data: 'eSubject' },
-        { data: 'eImg' },
-        { data: 'eActive' },
-        { data: 'eBvactive' }
+      	{ data: 'companyName' },
+        { data: 'personInCharge' },
+        { data: 'contactNumber' },
+        { data: 'email' },
+        { data: 'item' },
+        { data: 'title' },
+        { data: 'createdAt' },
+        { data: 'ipAddr' },
+        { data: 'device' }
       ],
       columnDefs: [
         {
@@ -212,94 +212,91 @@ var createTable = function() {
           targets: 0
         },
         {
-          // For Checkboxes
+          // 업체명
           targets: 1,
           orderable: false,
           render: function (data, type, full, meta) {
-            return (
-              '<div class="form-check"> <input class="form-check-input dt-checkboxes" type="checkbox" name="checkList" value="'+data+'" id="checkbox' +
-              data +
-              '" /><label class="form-check-label" for="checkbox' +
-              data +
-              '"></label></div>'
-            );
-          },
-          checkboxes: {
-            selectAllRender:
-              '<div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="checkboxSelectAll" /><label class="form-check-label" for="checkboxSelectAll"></label></div>'
-          }
+              if(full['companyName']==null)	return ''; else return full['companyName'];
+            }
         },
         {
+          // 담당자
           targets: 2,
           orderable: false,
           render: function (data, type, full, meta) {
-            return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="location.href = \'eventUpdate?eIdx='+full['eIdx']+ '\'">수정</button>'
-            );
-          }
-          
-        },
-        {
-          targets: 3, /*시작일*/
-          orderable: false,
-          render: function (data, type, full, meta) {
-              if(full['eStart']==null)	return '';
-        			else	return full['eStart'];
+              if(full['personInCharge']==null)	return ''; else return full['personInCharge'];
             }
           
         },
         {
-          targets: 4, /*종료일*/
-	      orderable: false,
-	      render: function (data, type, full, meta) {
-	          if(full['eEnd']==null)	return '';
-	          		else	return full['eEnd'];
-	      }            
+          // 연락처
+          targets: 3, 
+          orderable: false,
+          render: function (data, type, full, meta) {
+            if(full['contactNumber']==null)	return ''; else return full['contactNumber'];
+          }
+        
         },
         {
-          targets: 5, /*제목*/
+          // 이메일
+          targets: 4, 
+	      orderable: false,
+	      render: function (data, type, full, meta) {
+	            if(full['email']==null)	return ''; else return full['email'];
+          }
+        },
+        {
+          // 품목
+          targets: 5, 
   	      orderable: false,
   	      render: function (data, type, full, meta) {
-  	          if(full['eSubject']==null)	return '';
-  	          		else	return full['eSubject'];
-  	      }            
+	            if(full['item']==null) return ''; else return full['item'];
+	      }
         },
         {
          targets: 6,
          orderable: false,
          render: function (data, type, full, meta) {
-        	 if(full['eImg']==null)	return '-';
-    			else	return '<img src="/web/upload/EVENT/'+full['eImg']+  '" height="60" width="100" class="rounded">';
- 			//	else	return '<img src="D:/upload/admin/'+full['eImg']+  '" height="60" width="100" class="rounded">';
-         	}            
-         },
-         {
-		  targets: 7,
-	      orderable: false,
-	      render: function (data, type, full, meta) {
-	    	  let checked = '';
-	    	  if(full['eActive'] == 1) {
-	    		  checked = 'checked';
-	    	  }
-		       return (
-		         '<div class="form-check form-switch center-ck">'+
-		           '<input type="checkbox" class="form-check-input " '+checked+' id="eActive'+full['eIdx']+ '" name="listOn1"'+ 'value="'+full['eActive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
-				'<label class="form-check-label" for="listOn"></label>'+
-		      '</div>'
-		       );
-	       	}            
-           },
+	            if(full['title']==null)	return ''; 
+	            else return `
+	            		  <div class="d-flex align-items-center">
+	            <span class="text-truncate">${full.title}</span>
+
+	            <span
+	              class="btn btn-sm btn-info rounded-pill ms-auto"
+	              style="font-size:11px;"
+	              onclick="showupContentModal(${full.id})">
+	            				내용
+	            </span>
+	          </div>
+	        `;
+	      }        
+        },
         {
-      	 targets: 8,
+        	targets: 7,
+        	orderable: false,
+        	render: function (data, type, full, meta) {
+        		if(full['createdAt']==null)	return ''; else return full['createdAt'];
+        	}        
+        },
+        {
+        	targets: 8,
+        	orderable: false,
+        	render: function (data, type, full, meta) {
+        		if(full['ipAddr']==null)	return ''; else return full['ipAddr'];
+        	}        
+        },
+        {
+      	 targets: 9,
            orderable: false,
            render: function (data, type, full, meta) {
              let checked = '';
- 			if(full['eBvactive'] == 1) {
+ 			if(full['isCheck'] == 1) {
  				checked = 'checked';
  			}
              return (
                '<div class="form-check form-switch center-ck">'+
-                 '<input type="checkbox" class="form-check-input" '+checked+' id="eBvactive'+full['eIdx']+ '" name="listOn2"'+ 'value="'+full['eBvactive']+ '" onclick="javascript:btnDisplay('+full['eIdx']+', '+full['eActive']+', '+full['eBvactive']+')" >'+
+                 '<input type="checkbox" class="form-check-input" '+checked+' id="isCheck'+full['id']+ '" name="listOn2"'+ 'value="'+full['isCheck']+ '" onclick="javascript:btnDisplay('+full['id']+')" >'+
  				'<label class="form-check-label" for="listOn"></label>'+
  		      '</div>'
              );
@@ -379,8 +376,7 @@ var createTable = function() {
 		} );
 	} ).draw();
 	
-    $('div.head-label').html('<h4 class="card-title">문의 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-                             '<button type="button" onclick="location.href=\'/admin/manage/event/eventAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');							 
+    $('div.head-label').html('<h4 class="card-title">문의 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>');							 
     $('input.dt-input').on('keyup', function () {
 	    filterColumn($(this).val());
 	  });
@@ -388,13 +384,30 @@ var createTable = function() {
 }
 
 
-function btnDisplay(idx, idx1, idx2) {
-	
-	let eIdx = idx;
-	let eActive;
-	let eBvactive;	
-		
+function showupContentModal(id) {
 
+	  $.ajax({
+	    url: '/admin/manage/customer/bizProposeContent/' + id,
+	    type: 'get',
+	    dataType: 'json',
+	    success: function (data) {
+	    	  if (data) {
+	    	    $('#modal-title').text(data.title);
+	    	    $('#modal-body').text(data.content);
+
+	    	    $('#contentModal').modal('show'); // ← 이거
+	    	  }
+    	  },
+	    error: function () {
+	      alert('조회 중 오류가 발생했습니다.');
+	    }
+	  });
+
+	}
+
+function btnDisplay(idx) {
+
+		
 	if($('#eActive'+eIdx).is(":checked")){
 		eActive = 1;
 	}else{

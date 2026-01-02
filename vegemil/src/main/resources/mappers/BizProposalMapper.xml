@@ -22,12 +22,29 @@
 
 	<sql id="search">
         <!-- 검색 키워드가 있을 때 -->
-        <if test="searchKeyword != null and searchKeyword != ''">
+        <if test="searchKeyword != null and searchKeyword != '' and searchType == 'companyName'">
             AND company_name LIKE CONCAT('%', #{searchKeyword}, '%')
-            OR person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
-            OR contact_number LIKE CONCAT('%', #{searchKeyword}, '%')
-            OR title LIKE CONCAT('%', #{searchKeyword}, '%')
         </if>
+          <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != '' and searchType == 'personInCharge'">
+            AND person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
+         <if test="searchKeyword != null and searchKeyword != '' and searchType == ''">
+            AND 
+            (
+            	   company_name LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR title LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR content LIKE CONCAT('%', #{searchKeyword}, '%')
+            )
+        </if>            
+        <if test="sStartdate != null and sStartdate != '' 
+		       and sEnddate != null and sEnddate != ''">
+		    AND created_at BETWEEN
+		        STR_TO_DATE(CONCAT(#{sStartdate}, ' 00:00:00'), '%Y-%m-%d %H:%i:%s')
+		    AND STR_TO_DATE(CONCAT(#{sEnddate}, ' 23:59:59'), '%Y-%m-%d %H:%i:%s')
+		</if>
+
     </sql>
 
 	<insert id="insertBizProposal" parameterType="com.vegemil.domain.BizProposalDTO" useGeneratedKeys="true" >
@@ -37,6 +54,7 @@
 			contact_number, 
 			email, 			
 			title, 
+			item,
 			content, 
 			file_path1, 
 			file_path2, 
@@ -51,6 +69,7 @@
 			#{contactNumber},
 			#{email},			
 			#{title},
+			#{item},
 			#{content},
 			#{filePath1},
 			#{filePath2},
@@ -100,8 +119,13 @@
             <include refid="search" />
         ORDER BY
             id DESC
-       	LIMIT
-		#{firstRecordIndex}, #{lastRecordIndex}
+        LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	<select id="selectAll" parameterType="hashMap" resultType="int">
+		SELECT
+			count(*) 
+		FROM v_biz_proposal					
 	</select>
 	
 	
