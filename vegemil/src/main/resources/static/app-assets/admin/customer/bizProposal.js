@@ -105,50 +105,7 @@ var normalizeDate = function (dateString) {
 
 $(function () {
   createTable();
-  
-  // 전체 체크 하는 부분
-  $("[type=checkbox][name=allCheck]").on("change", function(){ //0
-  	var check = $(this).prop("checked"); //1
-	//전체 체크
-	if($(this).hasClass("form-check-input")){ //2
-		$("[type=checkbox][name=checkList]").prop("checked", check);
-	}
-  });
-  
-  $('#btnDel').click(function(e){
-	
-    var form = document.form;
-      
-    // Output form data to a console
-     
-      
-    if(confirm('삭제하시겠습니까?')){
-		$.ajax({
-			url : '/admin/manage/event/deleteVegemilEvent',
-			type : "post",
-			data : $(form).serialize(),
-			dataType : "json",
-			success : function(data) {
-	
-				if(data){
-					alert("삭제되었습니다.");
-					//window.location.reload();
-					$('.datatables-basic').DataTable().ajax.reload();
-				}
-				else{
-					alert("실패했습니다.");
-				}
-				
-			},
-			error : function(){
-			}
-		});
-	}
-      
-       
-      // Prevent actual form submission
-      e.preventDefault();
- });
+
 
 });
 
@@ -209,7 +166,10 @@ var createTable = function() {
         {
           // For Responsive
           orderable: false,
-          targets: 0
+          targets: 0,
+          render: function (data, type, full, meta) {
+         	 return full['id']
+		  }
         },
         {
           // 업체명
