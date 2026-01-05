@@ -46,6 +46,20 @@
     border-radius: 6px;
     user-select: none;
 }
+.captchaText::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 90%;
+    height: 2px;
+    background: rgba(0,0,0,0.25);
+    transform: rotate(-12deg);
+}
+.captchaText {
+    filter: blur(0.4px);
+}
+
 </style>
 <body>
 <!-- ================================ Header ================================ -->
@@ -318,7 +332,34 @@
 
 
 <script>
+function rotateCapcha(){
+	  const captchaEl = document.getElementById("captchaText");
+	  const text = captchaEl.innerText;
 
+	  captchaEl.innerHTML = ""; // 기존 문자열 제거
+
+	  [...text].forEach(ch => {
+	    const span = document.createElement("span");
+	    span.textContent = ch;
+
+	    // 여기서 글자 왜곡 적용
+	    const rotate = -25 + Math.random() * 50;
+	    const skewX = -20 + Math.random() * 40;
+	    const skewY = -10 + Math.random() * 20;
+	    const translateY = -6 + Math.random() * 12;
+
+	    span.style.display = "inline-block";
+	    span.style.transform = `
+	      rotate(${rotate}deg)
+	      skew(${skewX}deg, ${skewY}deg)
+	      translateY(${translateY}px)
+	    `;
+
+	    captchaEl.appendChild(span);
+	  });
+	}
+	
+rotateCapcha()	
 function onClickRefreshCapcha(){
 	
   var capchaKey = document.getElementById('capchaKey').value;
@@ -329,6 +370,7 @@ function onClickRefreshCapcha(){
     .then(text => {
     	document.getElementById('captchaText').innerText = text.replace(/"/g, '');
         document.getElementById('checkresult').innerText = ""
+        rotateCapcha()
         
     })
   	.catch(err => {
@@ -530,6 +572,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 </script>
+<script>
+
+</script>
+
 <!-- ================================  
 		// Content
 ================================ -->
