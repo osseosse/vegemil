@@ -12,6 +12,7 @@ import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
@@ -27,6 +28,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class BizProposalDTO {
+	
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	private Long id;
 
@@ -98,7 +103,11 @@ public class BizProposalDTO {
 
 	public BizProposalDTO setFilePaths() {
 
+		// 개발 로컬
 		String savePath = "D:\\uploadData";
+		
+		// 운영 
+		//String savePath = uploadPath + "/upload/biz/";
 		this.filePath1 = saveFile(savePath, file1);
 		this.filePath2 = saveFile(savePath, file2);
 		this.filePath3 = saveFile(savePath, file3);

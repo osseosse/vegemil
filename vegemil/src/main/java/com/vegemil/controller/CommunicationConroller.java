@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
@@ -58,6 +59,9 @@ public class CommunicationConroller extends UiUtils {
 
 	@Autowired
 	MailService mailService;
+	
+	@Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
 	@Autowired
 	private EdayVempService edayVempService;
