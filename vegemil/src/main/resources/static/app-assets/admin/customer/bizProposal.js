@@ -364,7 +364,6 @@ function showupContentModal(id) {
 	    	    var fileText = ""
 	    	    if(data.filePath1 != null && data.filePath1 !== "" ) {
 	    	    	fileText += `[파일첨부1] <a href="${data.filePath1}" download>첨부1 다운로드</a><br/>`;
-
 	    	    }
 	    	    
 	    	    if(data.filePath2 != null && data.filePath2 !== "" ) {
@@ -373,6 +372,10 @@ function showupContentModal(id) {
 	    	    
 	    	    if(data.filePath3 != null && data.filePath3 !== "" ) {
 	    	    	fileText += `[파일첨부3] <a href="${data.filePath3}" download>첨부3 다운로드</a><br/>`;
+	    	    }
+	    	    
+	    	    if(fileText === "") {
+	    	    	fileText += "* 첨부된 파일이 없습니다 * "
 	    	    }
 	    	    document.getElementById("modal_file").innerHTML = fileText
 	    	    
