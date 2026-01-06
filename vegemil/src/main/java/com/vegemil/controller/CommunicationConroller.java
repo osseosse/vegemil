@@ -223,7 +223,7 @@ public class CommunicationConroller extends UiUtils {
 
 	// 업체 문의 기능 추가
 
-	@GetMapping("/communication/biz")
+	@GetMapping("/communication/biz_0105_tmp")
 	public String getBisProposalView(Model model) {
 		// 자동입력방지검증 
 		String capcha = generateCaptcha();
@@ -306,5 +306,8 @@ public class CommunicationConroller extends UiUtils {
 	    System.out.println(savedValue);
 	    return savedValue.equals(capchaValue)? true:false;
 	}
+	
+
+
 
 }

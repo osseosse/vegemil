@@ -30,8 +30,6 @@ import lombok.ToString;
 public class BizProposalDTO {
 	
 	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
 
 	private Long id;
 
@@ -104,10 +102,12 @@ public class BizProposalDTO {
 	public BizProposalDTO setFilePaths() {
 
 		// 개발 로컬
-		String savePath = "D:\\uploadData";
+		//String savePath = "D:\\uploadData";
 		
 		// 운영 
-		//String savePath = uploadPath + "/upload/biz/";
+		String savePath = "/web/upload/biz/";
+		
+		System.out.println("savePath = " + savePath);
 		this.filePath1 = saveFile(savePath, file1);
 		this.filePath2 = saveFile(savePath, file2);
 		this.filePath3 = saveFile(savePath, file3);
