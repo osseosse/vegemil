@@ -222,7 +222,16 @@ public class CommunicationConroller extends UiUtils {
 	}
 
 	// 업체 문의 기능 추가
-
+	
+	/**
+	 * 사업 제안 포스트 화면 조회
+	 * - 처리 내용:
+	 *   1. 자동입력방지(CAPTCHA) 생성
+	 *   2. 화면 렌더링을 위한 데이터 모델 세팅
+	 *
+	 * @param model 화면에 전달할 데이터 모델
+	 * @return 사업 제안서 화면 뷰 이름
+	 */
 	@GetMapping("/communication/biz_0105_tmp")
 	public String getBisProposalView(Model model) {
 		// 자동입력방지검증 
@@ -236,29 +245,38 @@ public class CommunicationConroller extends UiUtils {
 
 		return "communication/biz";
 	}
-
+	
+	/**
+	 * 사업제안서 등록  
+	 * - 처리 내용 :
+	 * 	1. 자동압룍벙자뮨저 일치 여부 검증
+	 *  2. form validation 검증
+	 *  3. redis 데이타 삭제
+	 *  4. DB insert
+	 * @param bizform
+	 * @param bindingResult
+	 * @param model
+	 * @param req
+	 * @return
+	 */
 	@PostMapping("/post/bizProposal")
 	public String postBizProposal(@Valid BizProposalDTO bizform, BindingResult bindingResult, Model model,
 			HttpServletRequest req) {
 
 		System.out.println("bizProposalDT = " + bizform);
-		System.out.println("=== > redis data key test = " + redisUtil.getData(bizform.getCapchaKey()));
-		
+
 		String capchaKey = bizform.getCapchaKey();
 		String capchInput = bizform.getCaptchaInput();
 		String capchaValue = redisUtil.getData(capchaKey).toString();
 		
 		if(!StringUtil.isEmpty(capchaKey)) {			
-			if(!capchInput.equals(capchaValue)) {
-				
-				System.out.println("캡차틀림");
+			if(!capchInput.equals(capchaValue)) {					
 				bindingResult.addError(new FieldError("bizform", "capchaKey", "방지문자입력이 틀렸습니다."));
 			}			
 		}
 
 		// 바인딩 에러 체크
-		if (bindingResult.hasErrors()) {
-			System.out.println("바인딩 에러 발생! ");
+		if (bindingResult.hasErrors()) {		
 			bindingResult.getAllErrors().forEach(error -> {
 				System.out.println(error);
 			});
@@ -276,14 +294,18 @@ public class CommunicationConroller extends UiUtils {
 		communicationService.enrollBizProposal(
 				bizform.setDeviceAndIpAddr(getDeviceType(req), getClientIpVer2(req)).combineFilels().setFilePaths());
 
-		// 첨푸 파일 처리
 		return "redirect:/communication/ask";
 	}
 	
+	/**
+	 * capch value 새로고침
+	 *  
+	 * @param capchaKey
+	 * @return
+	 */
 	@GetMapping("/captcha/refresh")
 	@ResponseBody
-	public String refreshCaptcha(@RequestParam String capchaKey) {
-		
+	public String refreshCaptcha(@RequestParam String capchaKey) {		
 		
 		if(StringUtil.isEmpty(redisUtil.getData(capchaKey))) {
 	        throw new IllegalArgumentException("capchaKey가 없습니다.");
@@ -298,12 +320,17 @@ public class CommunicationConroller extends UiUtils {
 	    return captchaFresh;
 	}
 	
+	/**
+	 * capcha 입력 값 일치 여부 실시간 검증
+	 * @param capchaKey
+	 * @param capchaValue
+	 * @return
+	 */
 	@GetMapping("/captcha/check")
 	@ResponseBody
 	public boolean checkCaptcha(@RequestParam String capchaKey, @RequestParam String capchaValue) {
 		
-	    String savedValue = redisUtil.getData(capchaKey);	    	   	    
-	    System.out.println(savedValue);
+	    String savedValue = redisUtil.getData(capchaKey);	    	   	    	    
 	    return savedValue.equals(capchaValue)? true:false;
 	}
 	
