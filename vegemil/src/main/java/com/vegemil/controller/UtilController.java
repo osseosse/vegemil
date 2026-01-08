@@ -24,14 +24,14 @@ public class UtilController {
     private String uploadPath;
 	
 	/**
-	 *  ajax로 파일명 체크 
+	 *  업로드된 파일 다운로드 controller 
 	 */
 	
 	@GetMapping("/download/web/upload/{dir}/{fileName}")
 	public ResponseEntity<Resource> downloadFile(@PathVariable("dir") String dir, @PathVariable("fileName") String fileName) throws IOException {
-//	    Path filePath = Paths.get("/web/upload/"+dir+"/"+fileName); // 실제 파일 경로
+	    Path filePath = Paths.get("/web/upload/"+dir+"/"+fileName); // 실제 파일 경로
 		
-		Path filePath = Paths.get("D:\\uploadData\\"+fileName); // 테스트용
+		//Path filePath = Paths.get("D:\\uploadData\\"+fileName); // 테스트용
 		
 	    Resource resource = new UrlResource(filePath.toUri());
 
