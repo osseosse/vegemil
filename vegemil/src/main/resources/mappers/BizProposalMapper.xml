@@ -85,7 +85,12 @@
 	<select id="selectProposalById" resultType="com.vegemil.domain.BizProposalDTO" >
 	
 		SELECT 
-			<include refid="bizColumns"></include>
+			id,
+			title, 
+			content, 
+			file_path1, 
+			file_path2, 
+			file_path3 
 		FROM
 			v_biz_proposal
 		WHERE 
@@ -111,7 +116,17 @@
 	<select id="selectProposalsWithPaging" parameterType="map" resultType="com.vegemil.domain.BizProposalDTO" >
 	
 		SELECT
-            <include refid="bizColumns"></include>
+            id,
+			company_name,
+			person_in_charge,
+			contact_number, 
+			email, 
+			item, 
+			title, 			
+			ip_addr, 
+			device, 
+			is_check, 
+			created_at
 		FROM			
             v_biz_proposal
         WHERE
