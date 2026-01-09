@@ -77,13 +77,24 @@ public class AdminCustomerController extends UiUtils {
 		return "admin/customer/"+viewName;
     }
 	
-	
+	/**
+	 * 사업 제안 글 리스트 조회 
+	 * @param searchDTO
+	 * @param model
+	 * @param commandMap
+	 * @return
+	 */
 	@RequestMapping(value = "/admin/manage/customer/bizProposals")
 	public @ResponseBody DataTableDTO getBizProposalList(@ModelAttribute("params") SearchDTO searchDTO, Model model,  @RequestParam Map<String, Object> commandMap) {
 		DataTableDTO bizProposals = adminCustomerService.getBizProposalList(commandMap);
 		return bizProposals;
 	 }
 	
+	/**
+	 * 사업 제안 글 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "/admin/manage/customer/bizProposeContent/{id}")
 	public @ResponseBody BizProposalDTO getBizProposalContent(@PathVariable Long id) {
 		BizProposalDTO bizProposal = adminCustomerService.getBizProposalData(id);

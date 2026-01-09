@@ -312,8 +312,6 @@ public class CommunicationConroller extends UiUtils {
 	    }
 	    String captchaFresh = generateCaptcha(); 
 	    
-	    // 없는 키값을 꺼내면.. 뭐가 나오지 null 인감
-	    
 	    redisUtil.setHourExpire(capchaKey, captchaFresh, 1);
 	    
 	   System.out.println("capcha key & refresh = "+ capchaKey + " & "+ captchaFresh);
