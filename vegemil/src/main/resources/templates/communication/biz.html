@@ -332,12 +332,12 @@
 
 
 <script>
-
+/**
+ * Captcha 텍스트 이미지 새로가져오기  
+ */
 function onClickRefreshCapcha(){
 	
   var capchaKey = document.getElementById('capchaKey').value;
-
-  console.log("capchaKey = ", capchaKey);
 
   var img = document.getElementById('captchaImg');
 
@@ -350,6 +350,9 @@ function onClickRefreshCapcha(){
 
 }
 
+/**
+ * 실시간 Captcha 텍스트와 입력 텍스트 비교
+ */
 function checkCaptchaRealtime() {
 	
 	console.log("checkCaptchaRealtime")
@@ -373,6 +376,10 @@ function checkCaptchaRealtime() {
         }
     );
 }
+
+/**
+ * 메일 도메인 셀렉트 시 input에 반영 
+ */
 function writeMailAddr() {
 	  const select = document.getElementById("selEmail");
 	  const input = document.getElementById("emailDomain");
@@ -389,6 +396,9 @@ function writeMailAddr() {
 	  }
 	}
 	
+/**
+ * 제출 버튼 활성화를 위한 최소 유효성 체크 
+ */
 function isFormValid() {
 	  const f = document.forms[0];
 
@@ -415,6 +425,9 @@ function isFormValid() {
 	  return true;
 	}
 	
+/**
+ * 제출버튼 활성화 / 비활성화 
+ */
 function updateSubmitButton() {
 	  const btn = document.getElementById("submitBtn");
 
@@ -426,6 +439,10 @@ function updateSubmitButton() {
 	    btn.classList.remove("active");
 	  }
 	}
+/**
+ * 폼 최종 제출 전 captcha  텍스트 입력 일치 여부 확인 (정합성 체크)
+ * onSubmit 동작방식에 대응 - 동기 요청으로 별도 생성 ==> async: false, // ⭐ 핵심: 동기
+ */
 function checkCaptchaSync() {
 	  const capchaKey = document.getElementById('capchaKey').value;
 	  const capchaValue = document.getElementById('captchaInput').value;
@@ -442,8 +459,7 @@ function checkCaptchaSync() {
 	      capchaValue: capchaValue
 	    },
 	    async: false, // ⭐ 핵심: 동기
-	    success: function (res) {
-	      // 서버가 true / false 반환한다고 가정
+	    success: function (res) {	      
 	      result = (res === true || res === "true");
 	    },
 	    error: function () {
@@ -454,6 +470,9 @@ function checkCaptchaSync() {
 	  return result;
 	}
 
+/**
+ * 폼 제출 전 최종 validation 체크  
+ */
 function validateForm() {
 	  const f = document.forms[0]; // form 하나라는 가정
 	  
@@ -529,8 +548,7 @@ function validateForm() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	  const form = document.forms[0];
-	  if (!form) {
-		  console.log("????????")
+	  if (!form) {		  
 		  return; // 안전장치
 	  }
 	  // input, textarea, select 전부 감지
