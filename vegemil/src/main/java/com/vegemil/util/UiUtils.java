@@ -1,5 +1,10 @@
 package com.vegemil.util;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
 import java.util.LinkedHashMap;
@@ -114,6 +119,84 @@ public class UiUtils {
 	    }
 	    return sb.toString();
 	}
+	
+	protected BufferedImage generateCaptchaImage(String text) {
+		final int W = 160;
+	    final int H = 50;
+
+	    BufferedImage i = new BufferedImage(W, H, BufferedImage.TYPE_INT_RGB);
+	    Graphics2D g = i.createGraphics();
+
+	    Random r = new Random(System.nanoTime());
+
+	    // 배경
+	    g.setColor(new Color(
+	            200 + r.nextInt(30),
+	            200 + r.nextInt(30),
+	            200 + r.nextInt(30)
+	    ));
+	    g.fillRect(0, 0, W, H);
+
+	    // 왜곡
+	    g.shear(
+	        (r.nextDouble() - 0.5) * 0.8,
+	        (r.nextDouble() - 0.5) * 0.3
+	    );
+
+	    g.setFont(new Font("Arial", Font.ITALIC, 32));
+
+	    FontMetrics m = g.getFontMetrics();
+	    int bx = (W - m.stringWidth(text)) / 2;
+	    int by = (H - m.getHeight()) / 2 + m.getAscent();
+
+	    char[] c = text.toCharArray();
+
+	    for (int k = 0; k < c.length; k++) {
+
+	        double θ = (r.nextDouble() - 0.5) * 0.6;
+	        g.rotate(θ, bx + k * 24, by);
+
+	        g.setColor(new Color(
+	                r.nextInt(120),
+	                r.nextInt(120),
+	                r.nextInt(120)
+	        ));
+
+	        g.drawString(
+	            String.valueOf(c[k]),
+	            bx + k * 24 + r.nextInt(5) - 2,
+	            by + r.nextInt(5) - 2
+	        );
+
+	        g.rotate(-θ, bx + k * 24, by);
+	    }
+
+	    // 선 노이즈
+	    for (int n = 0; n < 8; n++) {
+	        g.setColor(new Color(
+	                r.nextInt(255),
+	                r.nextInt(255),
+	                r.nextInt(255)
+	        ));
+	        g.drawLine(
+	                r.nextInt(W), r.nextInt(H),
+	                r.nextInt(W), r.nextInt(H)
+	        );
+	    }
+
+	    // 점 노이즈
+	    for (int p = 0; p < 80; p++) {
+	        i.setRGB(
+	                r.nextInt(W),
+	                r.nextInt(H),
+	                r.nextInt(0xFFFFFF)
+	        );
+	    }
+
+	    g.dispose();
+	    return i;
+	}
+
 	
 
 }

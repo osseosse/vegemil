@@ -1,13 +1,16 @@
 package com.vegemil.controller;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -298,27 +301,6 @@ public class CommunicationConroller extends UiUtils {
 	}
 	
 	/**
-	 * capch value 새로고침
-	 *  
-	 * @param capchaKey
-	 * @return
-	 */
-	@GetMapping("/captcha/refresh")
-	@ResponseBody
-	public String refreshCaptcha(@RequestParam String capchaKey) {		
-		
-		if(StringUtil.isEmpty(redisUtil.getData(capchaKey))) {
-	        throw new IllegalArgumentException("capchaKey가 없습니다.");
-	    }
-	    String captchaFresh = generateCaptcha(); 
-	    
-	    redisUtil.setHourExpire(capchaKey, captchaFresh, 1);
-	    
-	   System.out.println("capcha key & refresh = "+ capchaKey + " & "+ captchaFresh);
-	    return captchaFresh;
-	}
-	
-	/**
 	 * capcha 입력 값 일치 여부 실시간 검증
 	 * @param capchaKey
 	 * @param capchaValue
@@ -330,6 +312,27 @@ public class CommunicationConroller extends UiUtils {
 		
 	    String savedValue = redisUtil.getData(capchaKey);	    	   	    	    
 	    return savedValue.equals(capchaValue)? true:false;
+	}
+	
+	@GetMapping("/captcha/image")
+	public void captcha(@RequestParam("captchaKey") String captchaKey,HttpServletResponse response) throws IOException {
+		
+		if(StringUtil.isEmpty(redisUtil.getData(captchaKey))) {			
+	        throw new IllegalArgumentException("capchaKey가 없습니다.");
+	    }
+		
+	    String captchaFresh = generateCaptcha(); 
+	    
+	    redisUtil.setHourExpire(captchaKey, captchaFresh, 1);
+	    
+	    System.out.println("capcha key & refresh = "+ captchaKey + " & "+ captchaFresh);
+	
+	    BufferedImage image = generateCaptchaImage(captchaFresh);
+
+	    response.setContentType("image/png");
+	    response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+
+	    ImageIO.write(image, "png", response.getOutputStream());
 	}
 	
 

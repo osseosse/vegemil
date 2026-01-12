@@ -247,7 +247,7 @@
 									<p class="f16 black">자동등록방지코드<span class="red fw600 f18 ">*</span></p>
 									<div class="mt5">
 										<div class="captcha-box row">
-										  <p id="captchaText" class="captchaText col-2">[[${capchaValue}]]</p>
+										  <img th:src="@{/captcha/image(captchaKey=${bizform.capchaKey})}"alt="captcha" id="captchaImg">
 										  <div class="col-8">
 										    <button
 											  type="button"
@@ -332,52 +332,22 @@
 
 
 <script>
-function rotateCapcha(){
-	  const captchaEl = document.getElementById("captchaText");
-	  const text = captchaEl.innerText;
 
-	  captchaEl.innerHTML = ""; // 기존 문자열 제거
-
-	  [...text].forEach(ch => {
-	    const span = document.createElement("span");
-	    span.textContent = ch;
-
-	    // 여기서 글자 왜곡 적용
-	    const rotate = -25 + Math.random() * 50;
-	    const skewX = -20 + Math.random() * 40;
-	    const skewY = -10 + Math.random() * 20;
-	    const translateY = -6 + Math.random() * 12;
-
-	    span.style.display = "inline-block";
-	    span.style.transform = `
-	      rotate(${rotate}deg)
-	      skew(${skewX}deg, ${skewY}deg)
-	      translateY(${translateY}px)
-	    `;
-
-	    captchaEl.appendChild(span);
-	  });
-	}
-	
-rotateCapcha()	
 function onClickRefreshCapcha(){
 	
   var capchaKey = document.getElementById('capchaKey').value;
-  
-  console.log("capchaKey = ", capchaKey)
-  fetch('/captcha/refresh?capchaKey='+capchaKey)
-    .then(res => res.text())
-    .then(text => {
-    	document.getElementById('captchaText').innerText = text.replace(/"/g, '');
-        document.getElementById('checkresult').innerText = ""
-        rotateCapcha()
-        
-    })
-  	.catch(err => {
-      console.error(err.msg);
-      
-    });
-	
+
+  console.log("capchaKey = ", capchaKey);
+
+  var img = document.getElementById('captchaImg');
+
+  // 캐시 방지용 ts 추가
+  img.src = '/captcha/image?captchaKey='
+            + encodeURIComponent(capchaKey)
+
+
+  document.getElementById('checkresult').innerText = "";
+
 }
 
 function checkCaptchaRealtime() {
