@@ -1,12 +1,13 @@
 package com.vegemil.controller;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.http.CacheControl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,10 +30,12 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.github.pagehelper.util.StringUtil;
 import com.vegemil.constant.Method;
@@ -235,7 +239,7 @@ public class CommunicationConroller extends UiUtils {
 	 * @param model 화면에 전달할 데이터 모델
 	 * @return 사업 제안서 화면 뷰 이름
 	 */
-	@GetMapping("/communication/biz_0105_tmp")
+	@GetMapping("/communication/biz")
 	public String getBisProposalView(Model model) {
 		// 자동입력방지검증 
 		String capcha = generateCaptcha();
@@ -248,6 +252,15 @@ public class CommunicationConroller extends UiUtils {
 
 		return "communication/biz";
 	}
+	
+	
+	@GetMapping("/communication/biz_complete")
+	public String biz_complete(Model model, @RequestParam String company) {
+					
+		model.addAttribute("company", company);
+		return "communication/biz_complete";
+	}
+	
 	
 	/**
 	 * 사업제안서 등록  
@@ -264,7 +277,7 @@ public class CommunicationConroller extends UiUtils {
 	 */
 	@PostMapping("/post/bizProposal")
 	public String postBizProposal(@Valid BizProposalDTO bizform, BindingResult bindingResult, Model model,
-			HttpServletRequest req) {
+			HttpServletRequest req, RedirectAttributes ra) {
 
 		System.out.println("bizProposalDT = " + bizform);
 
@@ -296,8 +309,10 @@ public class CommunicationConroller extends UiUtils {
 
 		communicationService.enrollBizProposal(
 				bizform.setDeviceAndIpAddr(getDeviceType(req), getClientIpVer2(req)).combineFilels().setFilePaths());
+		
+		ra.addAttribute("company",bizform.getCompanyName());
 
-		return "redirect:/communication/ask";
+		return "redirect:/communication/biz_complete";
 	}
 	
 	/**
@@ -314,25 +329,35 @@ public class CommunicationConroller extends UiUtils {
 	    return savedValue.equals(capchaValue)? true:false;
 	}
 	
-	@GetMapping("/captcha/image")
-	public void captcha(@RequestParam("captchaKey") String captchaKey,HttpServletResponse response) throws IOException {
-		
+	@PostMapping(value = "/captcha/image", produces = MediaType.IMAGE_PNG_VALUE)
+	@ResponseBody
+	public ResponseEntity<byte[]>  captcha(@RequestBody String captchaKey,HttpServletResponse response) throws IOException {
+				
 		if(StringUtil.isEmpty(redisUtil.getData(captchaKey))) {			
-	        throw new IllegalArgumentException("capchaKey가 없습니다.");
+			
+			String json = "{\"error\":\"INVALID_CAPTCHA_KEY\"}";
+	        return ResponseEntity
+	                .status(HttpStatus.BAD_REQUEST)
+	                .contentType(MediaType.APPLICATION_JSON)
+	                .body(json.getBytes(StandardCharsets.UTF_8));
 	    }
 		
-	    String captchaFresh = generateCaptcha(); 
-	    
+	    String captchaFresh = generateCaptcha(); 	    
 	    redisUtil.setHourExpire(captchaKey, captchaFresh, 1);
 	    
 	    System.out.println("capcha key & refresh = "+ captchaKey + " & "+ captchaFresh);
 	
 	    BufferedImage image = generateCaptchaImage(captchaFresh);
 
-	    response.setContentType("image/png");
-	    response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+	    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	    ImageIO.write(image, "png", baos);
 
-	    ImageIO.write(image, "png", response.getOutputStream());
+	    // 3. 정상 응답
+	    return ResponseEntity
+	            .ok()
+	            .contentType(MediaType.IMAGE_PNG)
+	            .cacheControl(CacheControl.noStore())
+	            .body(baos.toByteArray());
 	}
 	
 
