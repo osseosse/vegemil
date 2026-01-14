@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
@@ -73,6 +74,10 @@ public class BizProposalDTO {
 	private String filePath1; // 첨부1 경로
 	private String filePath2; // 첨부2 경로
 	private String filePath3; // 첨부3 경로
+	
+	private String fileOriginName1; // 첨부1 경로
+	private String fileOriginName2; // 첨부2 경로
+	private String fileOriginName3; // 첨부3 경로
 
 	@AssertTrue(message = "개인정보수집 방법에 동의해야만 문의가 등록됩니다.")
 	private boolean consent;
@@ -108,10 +113,13 @@ public class BizProposalDTO {
 		// 운영 
 		String savePath = "/web/upload/biz/";
 		
-		System.out.println("savePath = " + savePath);
 		this.filePath1 = saveFile(savePath, file1);
 		this.filePath2 = saveFile(savePath, file2);
 		this.filePath3 = saveFile(savePath, file3);
+		
+		this.fileOriginName1 = file1 != null && !file1.isEmpty() ?file1.getOriginalFilename():"";
+		this.fileOriginName2 = file2 != null && !file2.isEmpty() ?file2.getOriginalFilename():"";
+		this.fileOriginName3 = file3 != null && !file3.isEmpty() ?file3.getOriginalFilename():"";
 
 		System.out.println("========setFilePaths=========");
 		return this;
@@ -123,9 +131,19 @@ public class BizProposalDTO {
 		}
 
 		try {
-			String filename = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")) + "_"
-					+ file.getOriginalFilename();
+			 
+			
+			String original = file.getOriginalFilename();
+			String extension = "";
 
+			if (original != null && original.contains(".")) {
+			    extension = original.substring(original.lastIndexOf(".") + 1);
+			}
+			
+			System.out.println("extension = " + extension);
+			String filename = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")) + UUID.randomUUID() + "." + extension; 
+						
+					
 			Path dirPath = Paths.get(saveDir);
 			Files.createDirectories(dirPath);
 

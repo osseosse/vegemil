@@ -74,7 +74,7 @@
 	   <div class="subTopBusiness h440 mt90h">
 			<div class="centerH">
 				<p class="f_pp white f18 fw400">Communication</p>
-				<p class="white f45 fw600">제휴/제안</p>
+				<p class="white f45 fw600">B2B(상품) 제휴/제안</p>
 			</div>
 		</div>
 	</div>
@@ -84,8 +84,8 @@
 			<ul class="submenuUL d3">
 				<li class="f18 fw500"><a href="/communication/voc"><span>고객의 소리</span></a></li>
 				<li class="f18 fw500"><a href="/faq/list"><span>자주 묻는 질문</span></a></li>
-				<li class="f18 fw500"><a href="/communication/ask"><span>1:1문의</span></a></li>
-				<li class="f18 fw500 active"><a href="/communication/biz"><span>제휴문의</span></a></li>
+				<li class="f18 fw500"><a href="/communication/ask"><span>고객문의</span></a></li>
+				<li class="f18 fw500 active"><a href="/communication/biz"><span>B2B(상품) 제휴/제안</span></a></li>
 			</ul>
 <!-- 			<p class="btnSubRight"><a href="/communication/ccm"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p> -->
 		</div>
@@ -102,8 +102,8 @@
 		 		<input type="hidden" th:field="*{capchaKey}" />
 
 				<div class=" col-md-12">
-					<p class="f52 fw600 mt130 black center">제휴/제안 문의</p>
-					<p class="f18 fw400 mt20 gray04 center">대한민국 두유의 기준, 정식품과 함께할 협력사의 제휴/제안을 기다리고 있습니다.</p>	
+					<p class="f52 fw600 mt130 black center">B2B(상품) 제휴/제안</p>
+					<p class="f18 fw400 mt20 gray04 center ">정식품과 함께할 귀사의 우수한 제품을 기다리고 있습니다.</p>	
 				</div>
 				
 				<div class="col-md-12 ">					
@@ -247,7 +247,7 @@
 									<p class="f16 black">자동등록방지코드<span class="red fw600 f18 ">*</span></p>
 									<div class="mt5">
 										<div class="captcha-box row">
-										  <img th:src="@{/captcha/image(captchaKey=${bizform.capchaKey})}"alt="captcha" id="captchaImg">
+										  <img alt="captcha" id="captchaImg">
 										  <div class="col-8">
 										    <button
 											  type="button"
@@ -335,21 +335,41 @@
 /**
  * Captcha 텍스트 이미지 새로가져오기  
  */
-function onClickRefreshCapcha(){
+ function onClickRefreshCapcha() {
+	  const captchaKey = document.getElementById("capchaKey").value;
+	  
+	  fetch("/captcha/image", {
+	    method: "POST",
+	    headers: { "Content-Type": "application/json" },
+	    body:  captchaKey
+	  })
+	  .then(res => {
+	  if (!res.ok) {
+		  const text =  res.text();   // JSON 말고 무조건 문자열로 읽기
+		    try {
+		      const err = JSON.parse(text);
+		      throw err;
+		    } catch {
+		      throw { error: "INVALID_CAPTCHA_KEY" };
+		    }
+    	}
+	    return res.blob();
+	  })
+	  .then(blob => {
+	    const url = URL.createObjectURL(blob);
+	    document.getElementById("captchaImg").src = url;
+	  })
+	  .catch(err => {
+		  if (err.error === "INVALID_CAPTCHA_KEY") {
+		      alert("잘못된 접근입니다");
+		      location.href="/communication/biz_0105_tmp"
+		  } else {
+		      document.getElementById("checkresult").innerText = "캡차 로딩 실패";
+		  }
+	  })
+	}
 	
-  var capchaKey = document.getElementById('capchaKey').value;
-
-  var img = document.getElementById('captchaImg');
-
-  // 캐시 방지용 ts 추가
-  img.src = '/captcha/image?captchaKey='
-            + encodeURIComponent(capchaKey)
-
-
-  document.getElementById('checkresult').innerText = "";
-
-}
-
+onClickRefreshCapcha()
 /**
  * 실시간 Captcha 텍스트와 입력 텍스트 비교
  */

@@ -363,15 +363,15 @@ function showupContentModal(id) {
 	    	    $('#modal-body').text(data.content);
 	    	    var fileText = ""
 	    	    if(data.filePath1 != null && data.filePath1 !== "" ) {
-	    	    	fileText += `[파일첨부1] <a href="/download${data.filePath1}" download>첨부1 다운로드</a><br/>`;
+	    	    	fileText += `[파일첨부1] <a href="/download${data.filePath1}" download>${data.fileOriginName1}</a><br/>`;
 	    	    }
 	    	    
 	    	    if(data.filePath2 != null && data.filePath2 !== "" ) {
-	    	    	fileText += `[파일첨부2] <a href="/download${data.filePath2}" download>첨부2 다운로드</a><br/>`; 
+	    	    	fileText += `[파일첨부2] <a href="/download${data.filePath2}" download>${data.fileOriginName2}</a><br/>`; 
 	    	    }
 	    	    
 	    	    if(data.filePath3 != null && data.filePath3 !== "" ) {
-	    	    	fileText += `[파일첨부3] <a href="/download${data.filePath3}" download>첨부3 다운로드</a><br/>`;
+	    	    	fileText += `[파일첨부3] <a href="/download${data.filePath3}" download>${data.fileOriginName3}</a><br/>`;
 	    	    }
 	    	    
 	    	    if(fileText === "") {

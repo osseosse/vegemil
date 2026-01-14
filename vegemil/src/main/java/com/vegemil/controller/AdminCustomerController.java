@@ -108,25 +108,6 @@ public class AdminCustomerController extends UiUtils {
 		return adminCustomerService.changeIsCheckStatus(id, status);		
 	 }
 	
-	// biz 첨부 파일 가져오기
-	@GetMapping("/web/upload/biz/{filename}")
-	public ResponseEntity<Resource> getBizAttachedFile(@PathVariable(value = "filename", required = false) String filename) {
-		Resource resource = new FileSystemResource(uploadPath + "/upload/biz/" + filename);
-		//Resource resource = new FileSystemResource("D:/upload/vegemilBaby/" + filename);
-		if(!resource.exists()) 
-			return new ResponseEntity<Resource>(HttpStatus.NOT_FOUND);
-		HttpHeaders header = new HttpHeaders();
-		Path filePath = null;
-		try {
-			filePath = Paths.get(uploadPath + "/upload/biz/" + filename);
-			//filePath = Paths.get("D:/upload/vegemilBaby/" + filename);
-			header.add("Content-type", Files.probeContentType(filePath));
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<Resource>(resource, header, HttpStatus.OK);
-	}
-	
 	
 	@RequestMapping(value = "/admin/manage/customer/faqList")
 	 public @ResponseBody DataTableDTO getFaqList(@ModelAttribute("params") FaqDTO params, Model model,

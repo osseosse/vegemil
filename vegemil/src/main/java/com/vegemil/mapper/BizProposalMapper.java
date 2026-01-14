@@ -29,5 +29,9 @@ public interface BizProposalMapper {
 	// 전체 데이터 수 
 	public int selectAll();
 	
+	//파일 원래 이름조회
+	public String selectOriginFileName(@Param("filePath") String filePath);
+	
+	
 
 }

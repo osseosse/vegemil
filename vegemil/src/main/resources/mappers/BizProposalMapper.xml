@@ -14,6 +14,9 @@
 		file_path1, 
 		file_path2, 
 		file_path3, 
+		file_origin_name1, 
+		file_origin_name2, 
+		file_origin_name3,  
 		ip_addr, 
 		device, 
 		is_check, 
@@ -36,6 +39,7 @@
             	OR person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
             	OR title LIKE CONCAT('%', #{searchKeyword}, '%')
             	OR content LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR item LIKE CONCAT('%', #{searchKeyword}, '%')
             )
         </if>            
         <if test="sStartdate != null and sStartdate != '' 
@@ -59,6 +63,9 @@
 			file_path1, 
 			file_path2, 
 			file_path3, 
+			file_origin_name1, 
+			file_origin_name2, 
+			file_origin_name3,  
 			ip_addr, 
 			device,
 			is_check, 
@@ -74,6 +81,9 @@
 			#{filePath1},
 			#{filePath2},
 			#{filePath3},
+			#{fileOriginName1},
+			#{fileOriginName2},
+			#{fileOriginName3},
 			#{ipAddr},
 			#{device},
 			0, 
@@ -90,7 +100,10 @@
 			content, 
 			file_path1, 
 			file_path2, 
-			file_path3 
+			file_path3,
+			file_origin_name1, 
+			file_origin_name2, 
+			file_origin_name3
 		FROM
 			v_biz_proposal
 		WHERE 
@@ -152,6 +165,17 @@
 			
 	</update>
 	
-	
-	
+	<select id="selectOriginFileName" resultType="java.lang.String">
+		SELECT
+		  CASE
+		    WHEN file_path1 = #{filePath} THEN file_origin_name1
+		    WHEN file_path2 = #{filePath} THEN file_origin_name2
+		    WHEN file_path3 = #{filePath} THEN file_origin_name3
+		  END
+		FROM v_biz_proposal
+		WHERE file_path1 = #{filePath}
+		   OR file_path2 = #{filePath}
+		   OR file_path3 = #{filePath}
+	</select>
+		
 </mapper>
