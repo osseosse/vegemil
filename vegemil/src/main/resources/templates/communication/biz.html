@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 비즈니스 문의</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<style>
+/* capcha text style */
+.captchaText {
+    display: inline-block;
+    padding: 6px 9px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 4px;
+
+    /* 텍스트 왜곡 */
+    transform: rotate(-3deg) skewX(-5deg);
+
+    /* 배경 노이즈 */
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #eaeaea,
+            #eaeaea 5px,
+            #f5f5f5 5px,
+            #f5f5f5 10px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.05) 2px,
+            transparent 2px,
+            transparent 6px
+        );
+
+    /* 텍스트 스타일 */
+    color: #333;
+    text-shadow:
+        1px 1px 0 #aaa,
+        -1px -1px 0 #ddd;
+
+    border-radius: 6px;
+    user-select: none;
+}
+.captchaText::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 90%;
+    height: 2px;
+    background: rgba(0,0,0,0.25);
+    transform: rotate(-12deg);
+}
+.captchaText {
+    filter: blur(0.4px);
+}
+
+</style>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	<div class="content100 ">
+	   <div class="subTopBusiness h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Communication</p>
+				<p class="white f45 fw600">B2B(상품) 제휴/제안</p>
+			</div>
+		</div>
+	</div>
+	<div class="contant1460" >
+<div class="subMenu">
+			<p class="btnSubLeft"><a href="/faq/list"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
+			<ul class="submenuUL d3">
+				<li class="f18 fw500"><a href="/communication/voc"><span>고객의 소리</span></a></li>
+				<li class="f18 fw500"><a href="/faq/list"><span>자주 묻는 질문</span></a></li>
+				<li class="f18 fw500"><a href="/communication/ask"><span>고객문의</span></a></li>
+				<li class="f18 fw500 active"><a href="/communication/biz"><span>B2B(상품) 제휴/제안</span></a></li>
+			</ul>
+<!-- 			<p class="btnSubRight"><a href="/communication/ccm"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p> -->
+		</div>
+		<div class="contant900" >
+			<div class="row mt90h">
+			
+		<form th:action="@{/post/bizProposal}"
+		      th:object="${bizform}"
+		      method="post"
+		      onsubmit="return validateForm();"
+		      enctype="multipart/form-data"
+		        style="display:block; width:100%;">
+		        
+		 		<input type="hidden" th:field="*{capchaKey}" />
+
+				<div class=" col-md-12">
+					<p class="f52 fw600 mt130 black center">B2B(상품) 제휴/제안</p>
+					<p class="f18 fw400 mt20 gray04 center ">정식품과 함께할 귀사의 우수한 제품을 기다리고 있습니다.</p>	
+				</div>
+				
+				<div class="col-md-12 ">					
+						<p class="f18 fw500 black mt100">제휴/제안 신청서</p>
+						<table cellspacing="0" border="0" class="int2 f14 gray04 mt10 mt10m" style="background:#faf9f9;" 
+								>
+							<colgroup>
+							
+							</colgroup>
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">업체명 <span class="red fw600 f18 ">*</span></p>
+									<input name="" type="text" id="" class="inp04 w100p mt5" th:field="*{companyName}"  />
+									<span th:each="e : ${errors}"
+									      th:if="${e.field == 'companyName'}"
+									      style="color:red;"
+									      th:text="${e.defaultMessage}">
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">담당자 <span class="red fw600 f18 ">*</span></p>
+									<input type="text" class="inp04 w100p mt5" th:field="*{personInCharge}"  />
+									<span th:each="e : ${errors}"
+									      th:if="${e.field == 'personInCharge'}"
+									      style="color:red;"
+									      th:text="${e.defaultMessage}">
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">연락처 <span class="red fw600 f18 ">*</span></p>
+									<div class="mt5">
+									<input name="" type="text" maxlength="3" id="" class="inp04 w200 mt5" th:field="*{contactNumberStart}"  />
+									- <input name="" type="text" maxlength="4" id=""  class="inp04 w200 mt5" th:field="*{contactNumberMid}"  />
+									- <input name="" type="text" maxlength="4" id="" class="inp04 w200 mt5" th:field="*{contactNumberEnd}"  />
+									</div>
+									<span th:each="e, stat : ${errors}"
+									      th:if="${stat.first and
+									              (e.field == 'contactNumberStart'
+									               or e.field == 'contactNumberMid'
+									               or e.field == 'contactNumberEnd')}"
+									      style="color:red;"
+									      th:text="${e.defaultMessage}">
+									</span>
+								</td>
+								
+								
+							</tr>
+							<tr>
+								
+								<td colspan="2">
+									<p class="f16 black">이메일 <span class="red fw600 f18 ">*</span></p>
+									<div class="mt5">
+										<input name="" type="text" maxlength="50" id="" class="inp04 w200" th:field="*{emailId}"  /> @  
+										<input name="" type="text" maxlength="50" id="" class="inp04 w200" th:field="*{emailDomain}"  />
+										<select name="selEmail" id="selEmail" onchange="writeMailAddr();" class="sel03 ml10">
+											<option selected="selected" value="">선택하세요</option>
+											<option value="naver.com">naver.com</option>
+											<option value="nate.com">nate.com</option>
+											<option value="dreamwiz.com">dreamwiz.com</option>
+											<option value="yahoo.co.kr">yahoo.co.kr</option>
+											<option value="empal.com">empal.com</option>
+											<option value="unitel.co.kr">unitel.co.kr</option>
+											<option value="gmail.com">gmail.com</option>
+											<option value="korea.com">korea.com</option>
+											<option value="chol.com">chol.com</option>
+											<option value="paran.com">paran.com</option>
+											<option value="freechal.com">freechal.com</option>
+											<option value="hanmail.net">hanmail.net</option>
+											<option value="hotmail.com">hotmail.com</option>
+											<option value="self">직접입력</option>
+										</select>
+								
+									</div>
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'emailId'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
+									<br/>
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'emailDomain'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">제목 <span class="red fw600 f18 ">*</span></p>
+									<input  type="text" id="" class="inp04 w400 mt5" th:field="*{title}"  />
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'title'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">품목</p>
+									<input  type="text" id="" class="inp04 w400 mt5" th:field="*{item}"  />
+								</td>
+							</tr>
+							<tr>
+							
+								<td colspan="2">
+									<p class="f16 black">내용 <span class="red fw600 f18 ">*</span></p>
+									<textarea class="basetxt h200 mt5" placeholder="규격/용기/MOQ/견적 등" th:field="*{content}"  ></textarea>
+									<span th:each="e : ${errors}"
+								      th:if="${e.field == 'content'}"
+								      style="color:red;"
+								      th:text="${e.defaultMessage}">
+									</span>
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">첨부파일 (제안서 또는 제품소개서, 회사소개서 등)</p>
+									 <div class="mt5">
+						                <input type="file" class="inp04 w400 bg_White" th:field="*{file1}"   />
+						            </div>
+						
+						            <div class="mt10">
+						                <input type="file" class="inp04 w400 bg_White" th:field="*{file2}"  />
+						            </div>
+						
+						            <div class="mt10">
+						                <input type="file" class="inp04 w400 bg_White" th:field="*{file3}"  />
+						            </div>
+								</td>
+							</tr>
+							
+							<tr>
+								<td colspan="2">
+									<p class="f16 black">자동등록방지코드<span class="red fw600 f18 ">*</span></p>
+									<div class="mt5">
+										<div class="captcha-box row">
+										  <img alt="captcha" id="captchaImg">
+										  <div class="col-8">
+										    <button
+											  type="button"
+											  onclick="onClickRefreshCapcha()"
+											  style="
+											    margin-right: 8px;
+											    width: 36px;
+											    height: 36px;
+											    border-radius: 6px;
+											    border: 1px solid #ccc;
+											    background: #f8f9fa;
+											    cursor: pointer;
+											    font-size: 18px;
+											  "
+											>
+											  <i class="fa-solid fa-rotate-right"></i>
+											</button>
+													
+											<input type="text"  class="col-6 m-10 px-1 inp04 w200 bg_White" th:field="*{captchaInput}"
+																onkeyup="checkCaptchaRealtime()" name="captchaInput" id="captchaInput" placeholder="보안문자 입력">
+											<span id="checkresult" class="mx-1"></span>
+											<P id="capchaErr"  th:each="e : ${errors}"
+										      th:if="${e.field == 'capchaKey'}"
+										      style="color:red; text-align: center; width: 260px;"
+										      
+										      th:text="${e.defaultMessage}">
+											</P>
+										  </div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<p class="mt20 fw400 f14 gray04"><span class="red fw600 f18">*</span> 필수정보를 입력해주세요.</p>
+
+
+						<p class="f18 fw500 black mt50">개인정보의 수집 이용에 대한 안내</p>
+						<div class="center0 mt20">
+							<textarea class="busi_text gray03 f13">
+								[개인 정보 취급 방침]
+								개인정보수집 범위 : 기업명, 성함, 연락처, 이메일주소
+								개인정보수집 및 이용목적 : 온라인 문의 및 상담 자료와 결과 회신
+							
+								[정보통신망 이용촉진 및 정보 보호 등에 관한 법률]
+								제 74조 1항 3호에 따라 '공포심'이나 '불안감'을 유발하는 심한 욕설, 비하, 협박성 내용이
+								담긴 내용을 반복적으로 기재할 시, 처벌될 수 있는 점, 안내드립니다.
+						</textarea>
+						<p class="mt10 gray04 f14 fw400"><span class="mr20">* 위 개인정보수집 방법에 동의하십니까?(필수) </span>
+							<input  type="radio" value="true" th:field="*{consent}" />
+							<label for="consent">동의합니다</label>
+							
+							<input id="consentFalse" type="radio" value="false" th:field="*{consent}" />
+							<label for="consentFalse">동의하지 않습니다</label>
+						</p>							
+						<span th:each="e : ${errors}"
+					      th:if="${e.field == 'consent'}"
+					      style="color:red;"
+					      th:text="${e.defaultMessage}">
+						</span>
+
+
+					</div>	
+				</div>
+				<div class="col-md-12 mt50 pb100">
+					<div class="w560 center0 ">
+						<ul class="joinbtnFoot mt50">
+							<li class="mr10"><button type="text" class="btnType10 f20 fw500 lh140" >취소</button></li>
+							<li>
+								<button type="submit" id="submitBtn" class="btnType17 f20 fw500 lh140" onmouseover="validateForm()" disabled>접수하기</button>
+								<!-- <button type="submit" class="btnType17 active f20 fw500 lh140"  >접수하기</button> -->
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				</form>
+			</div>
+	
+		</div><!-- //contant900 -->
+	</div><!-- //contant1460 -->	
+</div>
+
+
+<script>
+/**
+ * Captcha 텍스트 이미지 새로가져오기  
+ */
+ function onClickRefreshCapcha() {
+	  const captchaKey = document.getElementById("capchaKey").value;
+	  
+	  fetch("/captcha/image", {
+	    method: "POST",
+	    headers: { "Content-Type": "application/json" },
+	    body:  captchaKey
+	  })
+	  .then(res => {
+	  if (!res.ok) {
+		  const text =  res.text();   // JSON 말고 무조건 문자열로 읽기
+		    try {
+		      const err = JSON.parse(text);
+		      throw err;
+		    } catch {
+		      throw { error: "INVALID_CAPTCHA_KEY" };
+		    }
+    	}
+	    return res.blob();
+	  })
+	  .then(blob => {
+	    const url = URL.createObjectURL(blob);
+	    document.getElementById("captchaImg").src = url;
+	  })
+	  .catch(err => {
+		  if (err.error === "INVALID_CAPTCHA_KEY") {
+		      alert("잘못된 접근입니다");
+		      location.href="/communication/biz_0105_tmp"
+		  } else {
+		      document.getElementById("checkresult").innerText = "캡차 로딩 실패";
+		  }
+	  })
+	}
+	
+onClickRefreshCapcha()
+/**
+ * 실시간 Captcha 텍스트와 입력 텍스트 비교
+ */
+function checkCaptchaRealtime() {
+	
+	console.log("checkCaptchaRealtime")
+	
+    const capchaKey = document.getElementById('capchaKey').value;
+    const capchaValue = document.getElementById('captchaInput').value;
+
+    if (!capchaValue) return;
+
+    fetch(`/captcha/check?capchaKey=${encodeURIComponent(capchaKey)}&capchaValue=${encodeURIComponent(capchaValue)}`)
+        .then(res => res.json())
+        .then(isValid => {
+            if (isValid) {
+                console.log("captcha ok");
+                document.getElementById('checkresult').innerText = "일치"
+                document.getElementById('capchaErr').innerText = ""
+            } else {
+                console.log("captcha fail");
+                document.getElementById('checkresult').innerText = "불일치"
+            }
+        }
+    );
+}
+
+/**
+ * 메일 도메인 셀렉트 시 input에 반영 
+ */
+function writeMailAddr() {
+	  const select = document.getElementById("selEmail");
+	  const input = document.getElementById("emailDomain");
+
+	  const value = select.value;
+
+	  if (value === "self") {
+	    input.value = "";
+	    input.readOnly = false;
+	    input.focus();
+	  } else {
+	    input.value = value;
+	    input.readOnly = true;
+	  }
+	}
+	
+/**
+ * 제출 버튼 활성화를 위한 최소 유효성 체크 
+ */
+function isFormValid() {
+	  const f = document.forms[0];
+
+	  if (!f.companyName.value.trim()) return false;
+	  if (!f.personInCharge.value.trim()) return false;
+
+	  if (!f.contactNumberStart.value.trim()
+	   || !f.contactNumberMid.value.trim()
+	   || !f.contactNumberEnd.value.trim()) return false;
+
+	  if (!f.emailId.value.trim()) return false;
+	  if (!f.emailDomain.value.trim()) return false;
+
+	  if (!f.title.value.trim()) return false;
+	  if (!f.content.value.trim()) return false;
+
+	  // radio consent: true 체크 여부
+	  const consentTrue = f.querySelector('input[name="consent"][value="true"]');
+	  if (!consentTrue || !consentTrue.checked) return false;
+
+	  // 캡차 입력값 존재 여부만 (정합성은 submit에서)
+	  if (!f.captchaInput.value.trim()) return false;
+
+	  return true;
+	}
+	
+/**
+ * 제출버튼 활성화 / 비활성화 
+ */
+function updateSubmitButton() {
+	  const btn = document.getElementById("submitBtn");
+
+	  if (isFormValid()) {
+	    btn.disabled = false;
+	    btn.classList.add("active");
+	  } else {
+	    btn.disabled = true;
+	    btn.classList.remove("active");
+	  }
+	}
+/**
+ * 폼 최종 제출 전 captcha  텍스트 입력 일치 여부 확인 (정합성 체크)
+ * onSubmit 동작방식에 대응 - 동기 요청으로 별도 생성 ==> async: false, // ⭐ 핵심: 동기
+ */
+function checkCaptchaSync() {
+	  const capchaKey = document.getElementById('capchaKey').value;
+	  const capchaValue = document.getElementById('captchaInput').value;
+
+	  if (!capchaValue) return false;
+
+	  let result = false;
+
+	  $.ajax({
+	    url: "/captcha/check",
+	    type: "GET",
+	    data: {
+	      capchaKey: capchaKey,
+	      capchaValue: capchaValue
+	    },
+	    async: false, // ⭐ 핵심: 동기
+	    success: function (res) {	      
+	      result = (res === true || res === "true");
+	    },
+	    error: function () {
+	      result = false;
+	    }
+	  });
+
+	  return result;
+	}
+
+/**
+ * 폼 제출 전 최종 validation 체크  
+ */
+function validateForm() {
+	  const f = document.forms[0]; // form 하나라는 가정
+	  
+
+	  if (!f.companyName.value.trim()) {
+	    alert("업체명은 필수입니다");
+	    f.companyName.focus();
+	    return false;
+	  }
+
+	  if (!f.personInCharge.value.trim()) {
+	    alert("담당자 이름은 필수입니다");
+	    f.personInCharge.focus();
+	    return false;
+	  }
+
+	  if (!f.contactNumberStart.value.trim()
+	   || !f.contactNumberMid.value.trim()
+	   || !f.contactNumberEnd.value.trim()) {
+	    alert("연락처 입력은 필수입니다");
+	    f.contactNumberStart.focus();
+	    return false;
+	  }
+
+	  if (!f.emailId.value.trim()) {
+	    alert("이메일 아이디 입력은 필수입니다");
+	    f.emailId.focus();
+	    return false;
+	  }
+
+	  if (!f.emailDomain.value.trim()) {
+	    alert("이메일 도메인 입력은 필수입니다");
+	    f.emailDomain.focus();
+	    return false;
+	  }
+
+	  if (!f.title.value.trim()) {
+	    alert("제목을 입력해주세요");
+	    f.title.focus();
+	    return false;
+	  }
+
+	  if (!f.content.value.trim()) {
+	    alert("내용을 입력해주세요");
+	    f.content.focus();
+	    return false;
+	  }
+
+	  const consentTrue = f.querySelector('input[name="consent"][value="true"]');
+
+	  if (!consentTrue.checked) {
+	    alert("개인정보수집 방법에 동의해야 합니다");
+	    consentTrue.focus();
+	    return false;
+	  }
+
+
+	  if (!f.captchaInput.value.trim()) {
+	    alert("자동입력방지문자를 입력해주세요.");
+	    f.captchaInput.focus();
+	    return false;
+	  }
+		
+
+	  if(!checkCaptchaSync()){
+		  alert("자동입력방지문자를 잘못 입력하셨습니다.")
+	      f.captchaInput.focus();
+	      return false;
+	  }
+	  
+	  return true; // 통과
+	}
+
+document.addEventListener("DOMContentLoaded", function () {
+	  const form = document.forms[0];
+	  if (!form) {		  
+		  return; // 안전장치
+	  }
+	  // input, textarea, select 전부 감지
+	  form.addEventListener("input", updateSubmitButton);
+	  form.addEventListener("change", updateSubmitButton);
+
+	  // 최초 로딩 시 1회
+	  updateSubmitButton();
+	});
+
+</script>
+<script>
+
+</script>
+
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

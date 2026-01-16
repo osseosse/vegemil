@@ -23,7 +23,6 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
@@ -49,9 +48,11 @@ import com.vegemil.domain.AdminFaqScoreDTO;
 import com.vegemil.domain.AdminSupportDTO;
 import com.vegemil.domain.AdminVisitDTO;
 import com.vegemil.domain.AdminVisitSetupDTO;
+import com.vegemil.domain.BizProposalDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.FaqDTO;
 import com.vegemil.domain.MemberDTO;
+import com.vegemil.domain.SearchDTO;
 import com.vegemil.service.AdminCustomerService;
 import com.vegemil.service.AdminFaqService;
 import com.vegemil.util.UiUtils;
@@ -76,6 +77,38 @@ public class AdminCustomerController extends UiUtils {
 		return "admin/customer/"+viewName;
     }
 	
+	/**
+	 * 사업 제안 글 리스트 조회 
+	 * @param searchDTO
+	 * @param model
+	 * @param commandMap
+	 * @return
+	 */
+	@RequestMapping(value = "/admin/manage/customer/bizProposals")
+	public @ResponseBody DataTableDTO getBizProposalList(@ModelAttribute("params") SearchDTO searchDTO, Model model,  @RequestParam Map<String, Object> commandMap) {
+		DataTableDTO bizProposals = adminCustomerService.getBizProposalList(commandMap);
+		return bizProposals;
+	 }
+	
+	/**
+	 * 사업 제안 글 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = "/admin/manage/customer/bizProposeContent/{id}")
+	public @ResponseBody BizProposalDTO getBizProposalContent(@PathVariable Long id) {
+		BizProposalDTO bizProposal = adminCustomerService.getBizProposalData(id);
+		return bizProposal;
+	 }
+	
+	@RequestMapping(value = "/admin/manage/customer/bizProposeCheck/{id}/{status}")
+	public @ResponseBody int changeBizProposalCheckStatus(@PathVariable Long id, @PathVariable int status) {
+		
+		System.out.println(id +"/" + status);
+		return adminCustomerService.changeIsCheckStatus(id, status);		
+	 }
+	
+	
 	@RequestMapping(value = "/admin/manage/customer/faqList")
 	 public @ResponseBody DataTableDTO getFaqList(@ModelAttribute("params") FaqDTO params, Model model,
 			 @RequestParam Map<String, Object> commandMap) {
@@ -91,6 +124,11 @@ public class AdminCustomerController extends UiUtils {
 		
 		return "admin/customer/faqAdd";
     }
+	
+	
+	
+	
+	
 	
 	@PostMapping(value = "/admin/manage/customer/uploadFaq")
 	@ResponseBody

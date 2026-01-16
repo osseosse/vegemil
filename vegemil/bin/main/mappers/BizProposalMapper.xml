@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegemil.mapper.BizProposalMapper">
+	
+	<sql id="bizColumns">
+		id,
+		company_name,
+		person_in_charge,
+		contact_number, 
+		email, 
+		item, 
+		title, 
+		content, 
+		file_path1, 
+		file_path2, 
+		file_path3, 
+		file_origin_name1, 
+		file_origin_name2, 
+		file_origin_name3,  
+		ip_addr, 
+		device, 
+		is_check, 
+		created_at
+	</sql>
+
+	<sql id="search">
+        <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != '' and searchType == 'companyName'">
+            AND company_name LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
+          <!-- 검색 키워드가 있을 때 -->
+        <if test="searchKeyword != null and searchKeyword != '' and searchType == 'personInCharge'">
+            AND person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
+        </if>
+         <if test="searchKeyword != null and searchKeyword != '' and searchType == ''">
+            AND 
+            (
+            	   company_name LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR person_in_charge LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR title LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR content LIKE CONCAT('%', #{searchKeyword}, '%')
+            	OR item LIKE CONCAT('%', #{searchKeyword}, '%')
+            )
+        </if>            
+        <if test="sStartdate != null and sStartdate != '' 
+		       and sEnddate != null and sEnddate != ''">
+		    AND created_at BETWEEN
+		        STR_TO_DATE(CONCAT(#{sStartdate}, ' 00:00:00'), '%Y-%m-%d %H:%i:%s')
+		    AND STR_TO_DATE(CONCAT(#{sEnddate}, ' 23:59:59'), '%Y-%m-%d %H:%i:%s')
+		</if>
+
+    </sql>
+
+	<insert id="insertBizProposal" parameterType="com.vegemil.domain.BizProposalDTO" useGeneratedKeys="true" >
+		INSERT INTO v_biz_proposal (
+			company_name,
+			person_in_charge,
+			contact_number, 
+			email, 			
+			title, 
+			item,
+			content, 
+			file_path1, 
+			file_path2, 
+			file_path3, 
+			file_origin_name1, 
+			file_origin_name2, 
+			file_origin_name3,  
+			ip_addr, 
+			device,
+			is_check, 
+			created_at
+		) VALUES (
+			#{companyName},
+			#{personInCharge},
+			#{contactNumber},
+			#{email},			
+			#{title},
+			#{item},
+			#{content},
+			#{filePath1},
+			#{filePath2},
+			#{filePath3},
+			#{fileOriginName1},
+			#{fileOriginName2},
+			#{fileOriginName3},
+			#{ipAddr},
+			#{device},
+			0, 
+			NOW()
+		)
+	</insert>
+	
+	
+	<select id="selectProposalById" resultType="com.vegemil.domain.BizProposalDTO" >
+	
+		SELECT 
+			id,
+			title, 
+			content, 
+			file_path1, 
+			file_path2, 
+			file_path3,
+			file_origin_name1, 
+			file_origin_name2, 
+			file_origin_name3
+		FROM
+			v_biz_proposal
+		WHERE 
+			id = #{id}
+			
+	
+	</select>
+		<select id="selectProposalsWithPaging111" parameterType="com.vegemil.domain.SearchDTO" resultType="com.vegemil.domain.BizProposalDTO" >
+	
+		SELECT
+            <include refid="bizColumns"></include>
+		FROM			
+            v_biz_proposal
+        WHERE
+        	1 = 1
+            <include refid="search" />
+        ORDER BY
+            id DESC
+       	LIMIT
+		#{paginationInfo.firstRecordIndex}, #{paginationInfo.lastRecordIndex}
+	</select>
+	
+	<select id="selectProposalsWithPaging" parameterType="map" resultType="com.vegemil.domain.BizProposalDTO" >
+	
+		SELECT
+            id,
+			company_name,
+			person_in_charge,
+			contact_number, 
+			email, 
+			item, 
+			title, 			
+			ip_addr, 
+			device, 
+			is_check, 
+			created_at
+		FROM			
+            v_biz_proposal
+        WHERE
+        	1 = 1
+            <include refid="search" />
+        ORDER BY
+            id DESC
+        LIMIT #{start, jdbcType=INTEGER}, #{length, jdbcType=INTEGER}
+	</select>
+	
+	<select id="selectAll" parameterType="hashMap" resultType="int">
+		SELECT
+			count(*) 
+		FROM v_biz_proposal					
+	</select>
+	
+	
+	<update id="updateIsCheck">
+			
+		UPDATE v_biz_proposal
+		SET is_check = #{isCheck} 
+		WHERE id = #{id}
+			
+	</update>
+	
+	<select id="selectOriginFileName" resultType="java.lang.String">
+		SELECT
+		  CASE
+		    WHEN file_path1 = #{filePath} THEN file_origin_name1
+		    WHEN file_path2 = #{filePath} THEN file_origin_name2
+		    WHEN file_path3 = #{filePath} THEN file_origin_name3
+		  END
+		FROM v_biz_proposal
+		WHERE file_path1 = #{filePath}
+		   OR file_path2 = #{filePath}
+		   OR file_path3 = #{filePath}
+	</select>
+		
+</mapper>

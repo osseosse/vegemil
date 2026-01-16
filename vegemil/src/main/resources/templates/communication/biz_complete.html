@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 비즈니스 문의</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+
+<!-- ================================ 
+		Content
+================================ -->
+<div id="content" class="pb100">
+	
+	<div class="contant1460" >
+		
+		<div class="contant900" >
+			<div class="row mt90h">
+				<div class=" col-md-12 mb100">
+					<p class="f45 fw600 mt200 black center"><span class="f52" th:text="${company}"></span>의 <br>제안이 접수되었습니다.</p>
+					<p class="f18 fw400 mt20 gray04 center ">정식품에 보내주신 귀사의 소중한 제안에 깊이 감사드립니다. <br>전달해 주신 내용은 내부적으로 신중히 검토한 뒤 연락드리겠습니다.</p>	
+				</div>
+
+				<div class="col-md-12  pb200">
+					<div class="w560 center0 ">
+						<ul class="joinbtnFoot ">
+							<li class="mr10"><button type="text" class="btnType10 f20 fw500 lh140" onclick="location.href='/'" >메인</button></li>
+							<li>
+								
+								<button type="text" class="btnType17 active f20 fw500 lh140" onclick="location.href='/communication/biz'">추가 접수하기</button>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				
+				
+			</div>
+		</div><!-- //contant900 -->
+	</div><!-- //contant1460 -->
+	
+	
+</div>
+<!-- ================================  
+		// Content
+================================ -->
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

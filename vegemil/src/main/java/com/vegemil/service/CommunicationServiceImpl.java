@@ -2,19 +2,73 @@ package com.vegemil.service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import com.vegemil.domain.BizProposalDTO;
 import com.vegemil.domain.ClaimDTO;
 import com.vegemil.domain.EventDTO;
+import com.vegemil.domain.SearchDTO;
+import com.vegemil.mapper.BizProposalMapper;
 import com.vegemil.mapper.CommunicationMapper;
+import com.vegemil.paging.PaginationInfo;
 
 @Service
 public class CommunicationServiceImpl implements CommunicationService{
 	@Autowired
 	CommunicationMapper communicationMapper;
+	@Autowired
+	BizProposalMapper bizProposalMapper;
 	
+	@Override
+	public BizProposalDTO getBizProposal(Long id) {
+		// BizProposalDTO bizProposalDTO
+		return bizProposalMapper.selectProposalById(id);
+	}
+
+	@Override
+	public List<BizProposalDTO> getBizProposals(SearchDTO searchDTO) {
+		// TODO Auto-generated method stub
+		return bizProposalMapper.selectProposalsWithPaging(null);
+	}
+
+	@Override
+	public List<BizProposalDTO> getBizProposals(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return bizProposalMapper.selectProposalsWithPaging(map);
+	}
+	@Override
+	public Long enrollBizProposal(BizProposalDTO bizProposalDTO) {
+		// TODO Auto-generated method stub		
+		return bizProposalMapper.insertBizProposal(bizProposalDTO);
+	}
+
+	@Override
+	public BizProposalDTO changeCheckStatus(Long id, int check) {
+		// TODO Auto-generated method stub
+		// 이거 성공하면 1 뱉나? 확인해서 체크 코드 넣을 것 
+		bizProposalMapper.updateIsCheck(id, check);
+		return bizProposalMapper.selectProposalById(id);
+	}
+
+	@Override
+	public BizProposalDTO changeCheckStatus(BizProposalDTO bizProposalDTO) {
+		// TODO Auto-generated method stub
+		
+		if(!StringUtils.isEmpty(bizProposalDTO.getId())) {
+			bizProposalMapper.updateIsCheck(bizProposalDTO.getId(), bizProposalDTO.getIsCheck());	
+		}
+		
+		return bizProposalMapper.selectProposalById(bizProposalDTO.getId());
+	}
+	
+	
+	
+	
+
 	@Override
 	public int checkCompId(String cId) {
 		return communicationMapper.selectOneMemberCP(cId);
@@ -52,5 +106,8 @@ public class CommunicationServiceImpl implements CommunicationService{
 	public String getRecentClaimIp() {
 		return communicationMapper.selectClaimIPRecent();
 	}
+
+
+
 	
 }
