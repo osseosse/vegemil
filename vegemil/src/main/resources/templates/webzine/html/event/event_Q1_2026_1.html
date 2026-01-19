@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <div class="content">
 	<section>
 		<div class="wrap-inner5">
@@ -20,7 +21,7 @@
 					<div class="row ">
 						<div class="col-md-12 mt50">
 							<p class="mt50-m  eventTitle  ">
-								<img src="https://image.edaymall.com/images/dcf/webzine/Q2_2024/16_01.jpg" alt="event01" />
+								<img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/16_01.jpg" alt="event01" />
 							</p>
 							<p class="center mt20-m type26">정식품 웹진 홍보왕은 누구?</p>
 							<h2 class="center mt20">
@@ -105,9 +106,8 @@
 							</p>
 							<p class=" center">
 							<p class="policy-box">
-								*2등 경품 수령자는 당첨자 발표 직후 문자 발송을 통해 주소지를 수집할 예정입니다.</sub>
+								<sub>*2등 경품 수령자는 당첨자 발표 직후 문자 발송을 통해 주소지를 수집할 예정입니다.</sub>
 							</p>
-
 						</div>
 						<div class="col-md-4 mt10">
 							<p class="img100">
@@ -117,7 +117,6 @@
 						</div>
 					</div>
 					<!--//row-->
-
 					<div class="row mt50-m">
 						<div class="col-md-12 mt30-m">
 							<div class="event-sub2_1 mt30-m">이벤트 기간 & 발표</div>
@@ -130,13 +129,13 @@
 										<dd>
 											<span>기간</span>
 										</dd>
-										<dd class="type40 ">2025. 01. 01 ~ 03. 31</dd>
+										<dd class="type40 ">2026.01. 01 ~ 03. 31</dd>
 									</dl>
 									<dl class="e-number">
 										<dd>
 											<span>발표</span>
 										</dd>
-										<dd class="type40 ">2025년 2분기 정식품 웹진</dd>
+										<dd class="type40 ">2026년 2분기 정식품 웹진</dd>
 									</dl>
 								</li>
 							</ul>
@@ -144,26 +143,23 @@
 
 					</div>
 					<!--//row-->
-
-
 				</div>
 			</div>
-
 			<!-- width 100%  -->
 			<div class="fl-wrap ">
 				<!-- hero-wrap-->
-				<div class="container bg_event3_7">
+				<div class="container bg_event3_9">
 					<div class="event-item">
 						<div class="row">
 							<div class="col-md-9">
-								<p class="type23-4 fw600 white">TIP</p>
-								<p class="type02 white">
+								<p class="type23-4 fw600 black">TIP</p>
+								<p class="type02 black">
 									* 정식품 웹진 구독하면 당첨 확률 UP!<br> * 웹진 공유 시 제목 및 본문에 &lt;정식품 웹진&gt; 키워드를 넣어 작성하면 당첨 확률 UP!
 								</p>
 							</div>
 							<div class="col-md-3">
 								<p class="event-item-btn">
-									<a href="https://www.vegemil.co.kr/webzine/subscribe"><img src="https://image.edaymall.com/images/dcf/webzine/Q1_2025/16_11.png" alt="정식품 웹진 구독 신청하기" /></a>
+									<a href="https://www.vegemil.co.kr/webzine/subscribe"><img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/16_11.png" alt="정식품 웹진 구독 신청하기" /></a>
 								</p>
 							</div>
 						</div>
@@ -175,7 +171,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return btnActive();">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return false;">
 						<input type="hidden" name="qrt" th:value="${qrtYear}"> <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).SNS}">
 						<div class="row intxt mt80-m"></div>
 						<div class="row intxt mt80-m">
@@ -235,34 +231,20 @@
 								<div class="eventList2 mt50-m ">
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">1등</p>
-										<p>신*영</p>
-										<p>이*우</p>
-										<p>박*민</p>
+
 
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">2등</p>
-										<p>송*서</p>
-										<p>진*규</p>
-										<p>김*수</p>
-										<p>유*미</p>
-										<p>최*나</p>
+
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">3등</p>
-										<p>이*호</p>
-										<p>강*구</p>
-										<p>김*현</p>
-										<p>주*원</p>
-										<p>조*희</p>
+
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1 hidden768">&nbsp;</p>
-										<p>이*섭</p>
-										<p>정*준</p>
-										<p>윤*은</p>
-										<p>박*민</p>
-										<p>최*빈</p>
+
 									</div>
 								</div>
 							</div>

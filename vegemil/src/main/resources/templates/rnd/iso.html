@@ -66,9 +66,9 @@
                 <img src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_01.jpg" alt="베지밀공정이미지">
             </div>
         </div>
-				<!-- 2026-01-15 -->
+		<!-- 2026-01-16 -->
 		<div class="row">
-            <div class="col-md-6 mt150">
+            <div class="col-md-5 mt150">
                 <p class="f38 fw500">
 					국제적으로 인증된 안전보건경영<br>
 					ISO 45001 인증 완료
@@ -76,19 +76,54 @@
                 <p class="f14 gray04 mt20">
                    ISO 45001 인증 일자 : 2022년 12월 22일
                 </p>
-				<p class="f27  mt60 centerMo">안전보건경영시스템 인증서</p>
+				
                 <p class="centerMo mt20  ">
                    
                 </p>
             </div>
-            <div class="col-md-6 mt150">
+            <div class="col-md-7 mt150">
+				<p class="f27 mt10  centerMo">안전보건경영시스템 인증서</p>
 			<!--
                 <img src="img/R&D/iso_04.jpg" alt="베지밀공정이미지">
 				-->
-				 <img class="centerMo" src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_03.jpg" alt="ISO45001">
+				 <p class="f14 fw500 gray04 mt30"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_floting_search.png" alt="돋보기"/> 이미지 클릭시 큰 화면으로 볼 수 있습니다.</p>
+				 <img class="centerMo mt20" src="https://image.edaymall.com/images/dcf/vegemil/img/R&D/iso_03.jpg" alt="ISO45001" onclick="openModal(this)">
+				 
+				 <div id="myModal" class="modal-overlay" onclick="closeModalBg(event)">
+					<span class="close-btn" onclick="closeModal()">&times;</span>
+					<img class="modal-content" id="imgPopup">
+				</div>
+
+				
+				 <script>
+					// 팝업 열기
+					function openModal(element) {
+						var modal = document.getElementById("myModal");
+						var modalImg = document.getElementById("imgPopup");
+						
+						// 팝업을 보이게 설정 (flex로 해야 중앙 정렬이 유지됨)
+						modal.style.display = "flex";
+						// 클릭한 이미지의 주소를 팝업 이미지로 전달
+						modalImg.src = element.src;
+					}
+
+					// 팝업 닫기 (X버튼)
+					function closeModal() {
+						document.getElementById("myModal").style.display = "none";
+					}
+
+					// 배경 클릭 시 닫기
+					function closeModalBg(event) {
+						var modalImg = document.getElementById("imgPopup");
+						// 클릭한 대상이 이미지가 아닐 경우(배경일 경우)에만 닫기
+						if (event.target !== modalImg) {
+							closeModal();
+						}
+					}
+				</script>
             </div>
         </div>
-		<!--// 2026-01-15 -->
+		<!--// 2026-01-16 -->
     </div><!--//contant1460-->
 </div>
 <!-- ================================ 

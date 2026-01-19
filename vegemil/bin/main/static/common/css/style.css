@@ -955,6 +955,11 @@ box-shadow: 7px 7px 26px -9px rgba(0,0,0,0.22);}
 	/* 3000 RnD ISO 45001 */
 	.iso_05 {max-width:345px; width:50%}
 	.iso_02 {max-width:308px; width:80%}
+	.modal-overlay {display: none; position: fixed; z-index: 9999; left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5); display: none;justify-content: center; align-items: center; }
+    .modal-content {max-width: 1200px; width:90%; /* 화면 꽉 차지 않게 여백 둠 */max-height: 90%;box-shadow: 0 0 10px rgba(0,0,0,0.5); /* 그림자 효과 */}
+    .close-btn {position: absolute;top: 20px;right: 30px;color: #fff;font-size: 40px;font-weight: bold;cursor: pointer;z-index: 10000;}
+    .centerMo {cursor: pointer;}
+
 
     /* 3000 company (�������� �λ縻) */
     .greetingsPhDBg ul{
