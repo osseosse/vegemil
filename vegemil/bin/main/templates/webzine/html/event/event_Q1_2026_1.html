@@ -171,7 +171,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return false;">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return  btnActive();">
 						<input type="hidden" name="qrt" th:value="${qrtYear}"> <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).SNS}">
 						<div class="row intxt mt80-m"></div>
 						<div class="row intxt mt80-m">
@@ -231,16 +231,32 @@
 								<div class="eventList2 mt50-m ">
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">1등</p>
-
+										<p>이*아</p>
+										<p>박*화</p>
+										<p>이*림</p>
 
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">2등</p>
+										<p>장*선</p>
+										<p>유*미</p>
+										<p>이*성</p>
+										<p>김*수</p>
+										<p>원*은</p>
 
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">3등</p>
-
+										<p>박*철</p>
+										<p>지*환</p>
+										<p>박*배</p>
+										<p>김*헌</p>
+										<p>김*원</p>
+										<p>김*우</p>
+										<p>류*나</p>
+										<p>박*진</p>
+										<p>유*렬</p>
+										<p>황*성</p>
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1 hidden768">&nbsp;</p>
