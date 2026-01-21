@@ -7,9 +7,7 @@
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
 					<div class="row">
-						<div class="col-md-12">
-							<uc1:subTopSns id=subTopSns1 runat="server"></uc1:subTopSns>
-						</div>
+						<div class="col-md-12"></div>
 
 					</div>
 					<div class="row grayLine2">
@@ -23,30 +21,30 @@
 					<div class="row ">
 						<div class="col-md-12 grayLine2 mt50">
 							<p class="mt50-m eventTitle">
-								<img src="https://image.edaymall.com/images/dcf/webzine/Q4_2025/17_01.png" alt="event02" />
+								<img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/17_01.jpg" alt="event02" />
 							</p>
 							<p class="center mt20-m type26">퀴즈를 맞혀라!</p>
 							<h2 class="center mt20">낱말 퀴즈! 보라색 빈칸 속 낱말을 맞혀 주세요.</h2>
 
 
 							<p class="img100 mt50-m">
-								<img src="https://image.edaymall.com/images/dcf/webzine/Q4_2025/17_01.jpg" alt="낱말퀴즈" />
+								<img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/17_02.jpg" alt="낱말퀴즈" />
 							</p>
 
 							<p class="img100 mt50-m">
-								<img src="https://image.edaymall.com/images/dcf/webzine/Q4_2025/17_02.jpg" alt="낱말퀴즈" />
+								<img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/17_03.jpg" alt="낱말퀴즈" />
 							</p>
 							<p class="mt10-m right">
-								<a href="/main/webzine/Q4_2025/sub11.aspx"><span class="type28-3 blueNum">?</span> <span class="type44 blue4">힌트 보러가기</span></a>
+								<a href="/main/webzine/Q1_2026/sub02.aspx"><span class="type28-3 blueNum">?</span> <span class="type44 blue4">힌트 보러가기</span></a>
 							</p>
 
 
 
 							<p class="img100 mt50-m">
-								<img src="https://image.edaymall.com/images/dcf/webzine/Q4_2025/17_03.jpg" alt="낱말퀴즈" />
+								<img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/17_04.jpg" alt="낱말퀴즈" />
 							</p>
 							<p class="mt10-m right">
-								<a href="/main/webzine/Q4_2025/sub03.aspx"><span class="type28-3 blueNum">?</span> <span class="type44 blue4">힌트 보러가기</span></a>
+								<a href="/main/webzine/Q1_2026/sub07.aspx"><span class="type28-3 blueNum">?</span> <span class="type44 blue4">힌트 보러가기</span></a>
 							</p>
 
 							<p class="type07-1 fw600">참여방법</p>
@@ -115,13 +113,13 @@
 										<dd>
 											<span>기간</span>
 										</dd>
-										<dd class="type40 ">2025.10. 01 ~ 12. 31</dd>
+										<dd class="type40 ">2026.01. 01 ~ 03. 31</dd>
 									</dl>
 									<dl class="e-number">
 										<dd>
 											<span>발표</span>
 										</dd>
-										<dd class="type40 ">2026년 1분기 정식품 웹진</dd>
+										<dd class="type40 ">2026년 2분기 정식품 웹진</dd>
 									</dl>
 								</li>
 							</ul>
@@ -129,13 +127,15 @@
 
 					</div>
 					<!--//row-->
+
+
 				</div>
 			</div>
 
 			<!-- width 100%  -->
 			<div class="fl-wrap ">
 				<!-- hero-wrap-->
-				<div class="container bg_event3_13">
+				<div class="container bg_event3_8">
 					<div class="event-item" style="display: block">
 						<div class="row">
 							<div class="col-md-9">
@@ -147,7 +147,7 @@
 							</div>
 							<div class="col-md-3">
 								<p class="event-item-btn">
-									<a href="https://www.vegemil.co.kr/webzine/subscribe"><img src="https://image.edaymall.com/images/dcf/webzine/Q4_2025/17_11.png" alt="정식품 웹진 구독 신청하기" /></a>
+									<a href="https://www.vegemil.co.kr/webzine/subscribe"><img src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/17_11.png" alt="정식품 웹진 구독 신청하기" /></a>
 								</p>
 							</div>
 						</div>
@@ -159,7 +159,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return  false;">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return  btnActive();">
 						<input type="hidden" name="qrt" th:value="${qrtYear}"> <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).QUIZ}">
 						<div class="row intxt mt80-m"></div>
 						<div class="row intxt mt80-m">
@@ -220,39 +220,40 @@
 								<div class="eventList2 mt50-m ">
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">1등</p>
-										<p>김*수</p>
-										<p>이*라</p>
-										<p>김*원</p>
+										<p>이*아</p>
+										<p>박*화</p>
+										<p>이*림</p>
 
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">2등</p>
-										<p>박*찬</p>
-										<p>이*우</p>
-										<p>이*훈</p>
-										<p>홍*진</p>
+										<p>장*선</p>
+										<p>유*미</p>
 										<p>이*성</p>
+										<p>김*수</p>
+										<p>원*은</p>
 
 									</div>
 									<div class="col-md-3 mt30m">
 										<p class="type28-1">3등</p>
+										<p>박*철</p>
+										<p>지*환</p>
+										<p>박*배</p>
+										<p>김*헌</p>
+										<p>김*원</p>
 										<p>김*우</p>
-										<p>이*주</p>
-										<p>성*숙</p>
-										<p>백*주</p>
-										<p>홍*진</p>
-										<p>안*현</p>
-										<p>한*연</p>
-										<p>김*현</p>
-										<p>양*자</p>
-										<p>이*라</p>
+										<p>류*나</p>
+										<p>박*진</p>
+										<p>유*렬</p>
+										<p>황*성</p>
 									</div>
+
 								</div>
 							</div>
-						</div>
 					</form>
 					<div class="row"></div>
 					<!--//row-->
+
 				</div>
 			</div>
 			<!-- //container -->
@@ -260,5 +261,4 @@
 		<!-- //wrap-inner2 -->
 	</section>
 </div>
-
 </html>

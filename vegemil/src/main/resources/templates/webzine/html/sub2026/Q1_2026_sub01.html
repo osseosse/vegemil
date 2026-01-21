@@ -1,0 +1,106 @@
+<!doctype html><html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<div class="content bg-g3">
+	<section>
+		<div class="wrap-inner5" id="wzPage" >
+			<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+			<div class="container wz-left">
+				<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="center mt100-m">정식품 뉴스</h3>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="center mt100-m2 type23-3">정식품, ‘사랑의 베지밀 온도계 캠페인’ 진행</h1>
+						</div>
+					</div>
+					<div class="row ">
+						<div class="col-md-12">
+							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/01_01.jpg" alt="사랑의 베지밀 온도계 캠페인" /></p>
+						</div>
+					</div>
+					<div class="row intxt grayLine2">
+						<div class="col-md-6">
+							<p class="mt30-m">
+							오리지널 1등 두유 베지밀을 생산·판매하는 ㈜정식품(대표 정연호)이 12월 한 달간 소비자 참여형 기부 캠페인 ‘사랑의 베지밀 온도계’를 진행했다.<br><br>
+							‘사랑의 베지밀 온도계’ 캠페인은 소비자와 함께 지역 사회의 소외이웃에게 베지밀 두유를 기부하는 정식품의 대표적인 나눔 캠페인으로, 2012년 시작 이후 14년째 이어오고 있다. 
+
+							</p>
+						</div>
+						<div class="col-md-6">
+							<p class="mt30-m">
+							이번 캠페인은 정식품 공식 SNS 채널에서 진행되었으며, 온도계가 1℃ 상승할 때마다 베지밀 1개가 기부되는 방식으로 총 2만 6천개 기부를 목표로 진행하였다. 기부된 베지밀은 사회복지법인 대한사회복지회를 통해 소외이웃에게 전달된다.<br><br>
+							정식품 관계자는 “적극적으로 참여해 주신 소비자분들 덕분에 올 겨울 14년째 이어온 ‘사랑의 베지밀 온도계’ 캠페인 목표를 달성했다"며 “앞으로도 더욱 따뜻한 온기를 전할 수 있도록 지속적으로 나눔 캠페인을 전개할 계획”이라고 말했다.
+							</p>
+						</div>
+					</div><!--//row-->
+
+
+					<div class="row ">
+						<div class="col-md-12">
+							<h1 class="center mt100-m2 type23-3">정식품 혜춘장학회, 제41기 장학금 수여식 개최</h1>
+
+							<p class="img100 mt50-m"><img  src="https://image.edaymall.com/images/dcf/webzine/Q1_2026/01_02.jpg" alt="정식품 혜춘장학회, 제41기 장학금 수여식" /></p>
+						</div>
+					</div>
+					<div class="row intxt">
+						<div class="col-md-6">
+							<p class="mt30-m">
+								재단법인 혜춘장학회는 작년 10월 31일 서울 중구 회현동 ㈜정식품 서울사무소에서 ‘제41기 혜춘장학회 장학금 수여식’을 개최했다.<br><br>
+								혜춘장학회는 올해로 42년째 정식품과 함께 우수 인재를 선발해 장학금을 전달하고 있다. 매년 장학금 규모와 장학생 수를 확대하며 우수한 인재들을 지원하고 있다.<br><br>
+								2025년 장학금 규모는 2024년보다 2,500만 원이 늘어난 총 1억 9,700만 원으로, 학업성적이 우수한 대학생 및 대학원생 48명에게 1인당 약 410만 원씩 전달됐다. 
+							</p>
+						</div>
+						<div class="col-md-6">
+							<p class="mt30-m">
+								혜춘장학회는 ㈜정식품의 창업자인 고(故) 정재원 명예회장이 우수 인재들이 학업에 전념할 수 있도록 지원하고, 국가 발전에 기여하는 인재를 양성하기 위해 1984년 설립한 재단법인이다. 현재까지 총 2,641명의 학생이 장학금 혜택을 받았으며, 누적 지원금액은 약 31억 6,000만 원에 달한다.<br><br>
+								혜춘장학회 관계자는 “혜춘장학회는 우수한 인재들이 꿈을 실현할 수 있도록 꾸준히 지원하고 있다”며 “장학생들이 앞으로 사회 각 분야에서 의미 있는 성과를 내는 훌륭한 인재로 성장하길 바란다”고 말했다.
+							</p>
+						</div>
+					</div>									
+					
+				
+
+				
+				</div>
+			</div><!-- //container -->
+			<!-- 추천기사 날개버전 -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div>
+		<!-- //wrap-inner2 -->
+	</section>
+</div>
+</html>
