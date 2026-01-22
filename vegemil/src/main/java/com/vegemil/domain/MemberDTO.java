@@ -1,11 +1,11 @@
 package com.vegemil.domain;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -53,7 +53,11 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
 	private String mType;
 	private String mGreenbiaPay;
 	private String mTermsOk;
-	private String mAuth;		
+	private String mAuth;
+	
+	// 어드민 권한 세분화로 인해 추가한 
+	private List<GrantedAuthority> authorities = Collections.emptyList();
+	
 	private String mReceiveModifydate;		
 	private String mIdleDate;		
 	private String mRecoveryDate;	
@@ -83,7 +87,15 @@ public class MemberDTO extends AdminCommonDTO implements UserDetails {
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority(this.mAuth));
+	    // ADMIN 계열만 DB 권한 사용
+
+	    if ("ADMIN".equals(mAuth)) {
+	        return authorities;
+	    }
+
+	    return Collections.singletonList(
+	        new SimpleGrantedAuthority(mAuth)
+	    );
     }
 
     @Override
