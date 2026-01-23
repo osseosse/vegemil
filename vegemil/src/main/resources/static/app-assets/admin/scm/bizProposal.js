@@ -132,7 +132,7 @@ var createTable = function() {
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/manage/customer/bizProposals',
+        url : '/admin/manage/scm/bizProposals',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -255,17 +255,16 @@ var createTable = function() {
  				checked = 'checked';
  			}
  			return `
- 					  <div class="form-check form-switch center-ck">
- 					    <input
- 					      type="checkbox"
- 					      class="form-check-input"
- 					      id="isCheck-${full.id}"
- 					      name="listOn2"
- 					      ${checked}
- 					      onclick="updateStatus(${full.id}, ${full.isCheck})"
- 					    >
- 					    <label class="form-check-label" for="isCheck-${full.id}"></label>
- 					  </div>
+ 					 <div class="form-check form-switch center-ck">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="isCheck-${full.id}"
+      ${checked}
+      onclick="updateStatus(${full.id}, this)"
+    >
+    <label class="form-check-label" for="isCheck-${full.id}"></label>
+  </div>
  					`;
            }
            
@@ -354,7 +353,7 @@ var createTable = function() {
 function showupContentModal(id) {
 
 	  $.ajax({
-	    url: '/admin/manage/customer/bizProposeContent/' + id,
+	    url: '/admin/manage/scm/bizProposeContent/' + id,
 	    type: 'get',
 	    dataType: 'json',
 	    success: function (data) {
@@ -389,27 +388,22 @@ function showupContentModal(id) {
 
 }
 
-function updateStatus(id, status) {
-	
-  if(status === "1") {	  
-	  status = 0
-  }else{
-	  status = 1
-  }
-	
-  $.ajax({
-	    url: '/admin/manage/customer/bizProposeCheck/'+id + '/' + status,
+function updateStatus(id, el) {
+	  // 체크된 상태가 true면 1, 아니면 0
+	  const status = el.checked ? "1" : "0";
 
+	  $.ajax({
+	    url: `/admin/manage/scm/bizProposeCheck/${id}/${status}`,
 	    type: 'get',
 	    dataType: 'json',
-	    success: function (data) {
-	    	  if (data) {
-	    	    alert("변경되었습니다.")
-	    	  }
+	    success: function () {
+	      alert("변경되었습니다.");
 	    },
 	    error: function () {
 	      alert('처리 중 오류가 발생했습니다.');
+	      // 실패 시 원래 상태로 되돌리기
+	      el.checked = !el.checked;
 	    }
 	  });
-}
+	}
 

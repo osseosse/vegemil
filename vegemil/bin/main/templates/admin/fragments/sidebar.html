@@ -62,9 +62,15 @@
                         <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faqAdd')}? 'active': ''">
                         	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqAdd}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 새글등록</span></a>
                         </li>
-                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/bizProposal')}? 'active': ''">
-                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/bizProposal}"><i data-feather="circle"></i><span class="menu-item text-truncate">사업문의</span></a>
+                 
+                    </ul>
+                </li>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_SCM')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">SCM</span></a>
+                    <ul class="menu-content">
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/scm/bizProposal')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/scm/bizProposal}"><i data-feather="circle"></i><span class="menu-item text-truncate">사업문의</span></a>
                         </li>
+
                     </ul>
                 </li>
                 <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_FACTORY')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">공장견학</span></a>
