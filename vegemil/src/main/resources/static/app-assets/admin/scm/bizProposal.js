@@ -217,19 +217,28 @@ var createTable = function() {
          targets: 6,
          orderable: false,
          render: function (data, type, full, meta) {
-	            if(full['title']==null)	return ''; 
-	            else return `
-	            		  <div class="d-flex align-items-center">
-	            <span class="text-truncate">${full.title}</span>
+        	 if (!full.title) return '';
 
-	            <span
-	              class="btn btn-sm btn-info rounded-pill ms-auto"
-	              style="font-size:11px;"
-	              onclick="showupContentModal(${full.id})">
-	            				내용
-	            </span>
-	          </div>
-	        `;
+        	    const MAX = 29; // 원하는 길이
+        	    const title =
+        	        full.title.length > MAX
+        	            ? full.title.substring(0, MAX) + '…'
+        	            : full.title;
+
+        	    return `
+        	      <div class="d-flex align-items-center">
+        	        <span class="text-truncate" title="${full.title}">
+        	          ${title}
+        	        </span>
+
+        	        <span
+        	          class="btn btn-sm btn-info rounded-pill ms-auto"
+        	          style="font-size:11px;"
+        	          onclick="showupContentModal(${full.id})">
+        	          내용
+        	        </span>
+        	      </div>
+        	    `;
 	      }        
         },
         {

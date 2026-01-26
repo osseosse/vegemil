@@ -41,47 +41,40 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			http.authorizeRequests()
-				// 🔹 도메인별 관리자 (MASTER 또는 해당 DOMAIN)
-				.antMatchers("/admin/manage/baby/**")
+					// 🔹 도메인별 관리자 (MASTER 또는 해당 DOMAIN)
+					.antMatchers("/admin/manage/baby/**")
 					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_BABY')")
 
-				.antMatchers("/admin/manage/customer/**")
+					.antMatchers("/admin/manage/customer/**")
 					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_CS')")
 
-				.antMatchers("/admin/manage/factory/**")
+					.antMatchers("/admin/manage/factory/**")
 					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_FACTORY')")
 
-				.antMatchers("/admin/manage/scm/**")
-					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_SCM')")
+					.antMatchers("/admin/manage/scm/**").access("hasAuthority('MASTER') or hasAuthority('DOMAIN_SCM')")
 
-				.antMatchers("/admin/manage/event/**")
+					.antMatchers("/admin/manage/event/**")
 					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_EVENT')")
 
-				.antMatchers("/admin/manage/webzine/**")
+					.antMatchers("/admin/manage/webzine/**")
 					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_WEBZINE')")
-					
-				.antMatchers("/admin/manage/payment/**")
-					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_GREENBIA')")
-				//  admin/manage 루트 (ADMIN + MASTER)
-				.antMatchers("/admin/manage")
-					.access("hasAuthority('ADMIN') or hasAuthority('MASTER')")
-				// 🔹 admin/manage 하위 공통 (fallback)
-				.antMatchers("/admin/manage/**").hasAuthority("MASTER")
-				
 
-				.and().
-					csrf()
-						.disable()
-							.formLogin().loginPage("/admin/auth/login")
-				.loginProcessingUrl("/member/loginProc")
-					.failureUrl("/admin/auth/login?error=true")
-				.defaultSuccessUrl("/admin/manage").and().logout()
-				
-				.logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout")) // 로그아웃 시 URL 재정의
-				.logoutSuccessUrl("/") // 로그아웃 성공 시 redirect 이동
-				.invalidateHttpSession(true) // HTTP Session 초기화
-				.deleteCookies("JSESSIONID") // 특정 쿠키 제거
-				.and().exceptionHandling().accessDeniedPage("/error/error");
+					.antMatchers("/admin/manage/payment/**")
+					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_GREENBIA')")
+					// admin/manage 루트 (ADMIN + MASTER)
+					.antMatchers("/admin/manage").access("hasAuthority('ADMIN') or hasAuthority('MASTER')")
+					// 🔹 admin/manage 하위 공통 (fallback)
+					.antMatchers("/admin/manage/**").hasAuthority("MASTER")
+
+					.and().csrf().disable().formLogin().loginPage("/admin/auth/login")
+					.loginProcessingUrl("/member/loginProc").failureUrl("/admin/auth/login?error=true")
+					.defaultSuccessUrl("/admin/manage").and().logout()
+
+					.logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout")) // 로그아웃 시 URL 재정의
+					.logoutSuccessUrl("/") // 로그아웃 성공 시 redirect 이동
+					.invalidateHttpSession(true) // HTTP Session 초기화
+					.deleteCookies("JSESSIONID") // 특정 쿠키 제거
+					.and().exceptionHandling().accessDeniedPage("/error/error");
 
 		}
 
