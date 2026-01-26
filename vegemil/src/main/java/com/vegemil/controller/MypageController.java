@@ -148,7 +148,7 @@ public class MypageController extends UiUtils {
 					String savefileName = uuid + "_" + file;
 					//테스트경로
 					Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
-//					Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
+					//Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
 					
 					//저장
 					fileName.transferTo(savePath);
