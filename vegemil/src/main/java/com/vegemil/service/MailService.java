@@ -42,14 +42,42 @@ public class MailService {
     private EdayVempService edayVempService;
 
     public void mailSendOrigen(MailDTO mailDto) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(mailDto.getAddress());
-        message.setFrom(MailService.FROM_ADDRESS);
-        message.setSubject(mailDto.getTitle());
-        message.setText(mailDto.getMessage());
+    	try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(mailDto.getAddress());
+            message.setFrom(MailService.FROM_ADDRESS);
+            message.setSubject(mailDto.getTitle());
+            message.setText(mailDto.getMessage());
 
-        mailSender.send(message);
+            mailSender.send(message);
+            
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
     }
+    
+    public boolean mailSendOriginReturnBoolean(MailDTO mailDto) {
+    	
+    	try {
+    		
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(mailDto.getAddress());
+            message.setFrom(MailService.FROM_ADDRESS);
+            message.setSubject(mailDto.getTitle());
+            message.setText(mailDto.getMessage());
+
+            mailSender.send(message);
+            
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+    }
+    
     
     public void mailSend(MemberDTO member) {
     	

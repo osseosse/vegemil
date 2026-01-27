@@ -11,10 +11,10 @@ import org.springframework.util.StringUtils;
 import com.vegemil.domain.BizProposalDTO;
 import com.vegemil.domain.ClaimDTO;
 import com.vegemil.domain.EventDTO;
+import com.vegemil.domain.MailDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.mapper.BizProposalMapper;
 import com.vegemil.mapper.CommunicationMapper;
-import com.vegemil.paging.PaginationInfo;
 
 @Service
 public class CommunicationServiceImpl implements CommunicationService{
@@ -22,6 +22,9 @@ public class CommunicationServiceImpl implements CommunicationService{
 	CommunicationMapper communicationMapper;
 	@Autowired
 	BizProposalMapper bizProposalMapper;
+	
+	@Autowired
+	MailService mailService;
 	
 	@Override
 	public BizProposalDTO getBizProposal(Long id) {
@@ -43,7 +46,19 @@ public class CommunicationServiceImpl implements CommunicationService{
 	@Override
 	public Long enrollBizProposal(BizProposalDTO bizProposalDTO) {
 		// TODO Auto-generated method stub		
-		return bizProposalMapper.insertBizProposal(bizProposalDTO);
+		Long result = bizProposalMapper.insertBizProposal(bizProposalDTO);
+		
+		if(result>0) {
+			MailDTO mail = new MailDTO();
+
+			mail.setAddress("hypark023@osse.co.kr");
+			mail.setTitle("[vegemilcokr]사업제휴문의글 등록");
+			mail.setMessage("\n\n사업제휴문의글이 등록되었습니다. 관리자 페이지에서 확인 바랍니다.\n\n");
+			
+			mailService.mailSendOriginReturnBoolean(mail);
+		}
+		
+		return result;
 	}
 
 	@Override
