@@ -266,6 +266,25 @@ Dropzone.options.fileDropzone = {
 
 
 //]]>
+
+//dz-remove 요소가 있을 때만 텍스트 변경 (방어 코드) 기본 remove file > 삭제 
+const observer = new MutationObserver(() => {
+  document.querySelectorAll(".dz-remove").forEach((el) => {
+    if (el.textContent.trim() === "Remove file") {
+      el.textContent = "삭제";
+    }
+  });
+});
+
+const dropzoneEl = document.getElementById("fileDropzone");
+
+if (dropzoneEl) {
+  observer.observe(dropzoneEl, {
+    childList: true,	
+    subtree: true,
+  });
+}
+//dz-remove 요소가 있을 때만 텍스트 변경 (방어 코드) 기본 remove file > 삭제 
 </script>
 </body>
 </html>
