@@ -259,7 +259,8 @@ Dropzone.options.fileDropzone = {
     paramName: 'fileName', // formdata 이름 설정
     parallelUploads: 1, // 동시파일업로드 수(이걸 지정한 수 만큼 여러파일을 한번에 컨트롤러에 넘긴다.)
     addRemoveLinks: true, // 삭제버튼 표시 여부
-    dictCancelUpload: '삭제', // 삭제버튼 표시 텍스트
+    dictRemoveFile: '삭제',
+    dictCancelUpload: '업로드취소', // 삭제버튼 표시 텍스트
     uploadMultiple: false, // 다중업로드 기능
     acceptedFiles: 'image/*'
 };
@@ -267,24 +268,7 @@ Dropzone.options.fileDropzone = {
 
 //]]>
 
-//dz-remove 요소가 있을 때만 텍스트 변경 (방어 코드) 기본 remove file > 삭제 
-const observer = new MutationObserver(() => {
-  document.querySelectorAll(".dz-remove").forEach((el) => {
-    if (el.textContent.trim() === "Remove file") {
-      el.textContent = "삭제";
-    }
-  });
-});
 
-const dropzoneEl = document.getElementById("fileDropzone");
-
-if (dropzoneEl) {
-  observer.observe(dropzoneEl, {
-    childList: true,	
-    subtree: true,
-  });
-}
-//dz-remove 요소가 있을 때만 텍스트 변경 (방어 코드) 기본 remove file > 삭제 
 </script>
 </body>
 </html>
