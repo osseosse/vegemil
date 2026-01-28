@@ -132,29 +132,39 @@ public class MypageController extends UiUtils {
 	@PostMapping(value = "/mypage/registerQna")
 	@ResponseBody
 	public Map<String, Object> registerQna(@ModelAttribute("params") final QnaDTO params,
-			BindingResult bindingResult, @RequestParam(value="fileName", required=false) MultipartFile fileName, Model model,
+			BindingResult bindingResult,  Model model,
 			HttpServletResponse response, HttpServletRequest request, Authentication authentication) throws Exception {
 		
+		
+		MultipartFile[] files = params.getFiles();
 		Map<String, Object> rtnMap = new HashMap<>();
 		try {
-			
-			if(authentication != null) {
-			
+			int idx = 0;
+			if(authentication != null) {			
+				if(files != null) {
+					for(MultipartFile file : files) {						
+						String originalName = file==null?"":file.getOriginalFilename();
+						
+						System.out.println("origianalName =" + originalName);
+						if(!"".equals(originalName)) {
+							String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
+							String uuid = UUID.randomUUID().toString();
+							String savefileName = uuid + "_" + fileName;
+							//테스트경로
+							//Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
+							Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
+							
+							//저장
+							file.transferTo(savePath);							
+							params.addFilePaths(idx, savefileName);
+							idx++;
+						}
+						
+					}
+					params.setFileFields();	
+					System.out.println(params);
+				}				
 				
-				String originalName = fileName==null?"":fileName.getOriginalFilename();
-				if(!"".equals(originalName)) {
-					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-					String uuid = UUID.randomUUID().toString();
-					String savefileName = uuid + "_" + file;
-					//테스트경로
-					Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
-					//Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
-					
-					//저장
-					fileName.transferTo(savePath);
-					params.setSFile(savefileName);
-				}
-			
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();
 			    
 				if(member != null) {
