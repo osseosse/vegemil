@@ -51,9 +51,16 @@ public class CommunicationServiceImpl implements CommunicationService{
 		if(result>0) {
 			MailDTO mail = new MailDTO();
 
-			mail.setAddress("hypark023@osse.co.kr");
+			mail.setAddress("sohnssang@vegemil.co.kr");
 			mail.setTitle("[vegemilcokr]사업제휴문의글 등록");
-			mail.setMessage("\n\n사업제휴문의글이 등록되었습니다. 관리자 페이지에서 확인 바랍니다.\n\n");
+			mail.setMessage(
+				    "\n\n안녕하세요.\n" +
+				    "정식품 사이트에 사업제휴문의글이 등록되었습니다.\n" +
+				    "관리자 페이지에서 확인해주세요.\n\n" +
+				    "▶ 관리자 페이지:\n" +
+				    "https://vegemil.co.kr/admin/manage/scm/bizProposal\n"
+			);
+
 			
 			mailService.mailSendOriginReturnBoolean(mail);
 		}

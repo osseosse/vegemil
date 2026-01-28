@@ -22,7 +22,8 @@
             	<li class=" nav-item" th:classappend="${#request.requestURI.equals('/admin/manage')}? 'active': ''">
                 	<a class="d-flex align-items-center" th:href="@{/admin/manage}"><i data-feather="grid"></i><span class="menu-item text-truncate" data-i18n="Basic">메인</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">영유아식</span></a>
+                <li class=" nav-item" sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_BABY')">
+                <a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">영유아식</span></a>
                     <ul class="menu-content">
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/baby/calendarModel')}? 'active': ''">
                     		<a class="d-flex align-items-center" th:href="@{/admin/manage/baby/calendarModel}"><i data-feather="circle"></i><span class="menu-item text-truncate">아기 달력 모델 선정</span></a>
@@ -44,7 +45,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">고객지원</span></a>
+                <li class=" nav-item" sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_CS')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">고객지원</span></a>
                     <ul class="menu-content">
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/customer/member')}? 'active': ''">
 		                	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/member}"><i data-feather="circle"></i><span class="menu-item text-truncate">회원관리</span></a>
@@ -61,22 +62,28 @@
                         <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faqAdd')}? 'active': ''">
                         	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqAdd}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 새글등록</span></a>
                         </li>
-                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/bizProposal')}? 'active': ''">
-                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/bizProposal}"><i data-feather="circle"></i><span class="menu-item text-truncate">사업문의</span></a>
-                        </li>
+                 
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">공장견학</span></a>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_SCM')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">SCM</span></a>
                     <ul class="menu-content">
-                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/visit')}? 'active': ''">
-                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/visit}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학신청</span></a>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/scm/bizProposal')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/scm/bizProposal}"><i data-feather="circle"></i><span class="menu-item text-truncate">사업문의</span></a>
                         </li>
-                        <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/factoryTourReview')}? 'active': ''">
-                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/factoryTourReview}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학후기관리</span></a>
+
+                    </ul>
+                </li>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_FACTORY')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">공장견학</span></a>
+                    <ul class="menu-content">
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/factory/visit')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/factory/visit}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학신청</span></a>
+                        </li>
+                        <li th:classappend="${#request.requestURI.equals('/admin/manage/factory/factoryTourReview')}? 'active': ''">
+                        	<a class="d-flex align-items-center" th:href="@{/admin/manage/factory/factoryTourReview}"><i data-feather="circle"></i><span class="menu-item text-truncate">견학후기관리</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">간단요리사</span></a>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_EVENT')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">간단요리사</span></a>
                     <ul class="menu-content">
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/beanSoup/video')}? 'active': ''">
                     		<a class="d-flex align-items-center" th:href="@{/admin/manage/beanSoup/video}"><i data-feather="circle"></i><span class="menu-item text-truncate">영상</span></a>
@@ -92,7 +99,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">그린비아</span></a>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_GREENBIA')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">그린비아</span></a>
                     <ul class="menu-content">
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/payment/list')}? 'active': ''">
                     		<a class="d-flex align-items-center" th:href="@{/admin/manage/payment/list}"><i data-feather="circle"></i><span class="menu-item text-truncate">그린비아 결제내역관리</span></a>
@@ -103,7 +110,7 @@
                     </ul>
                 </li>
                 
-                <li class=" nav-item">
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_WEBZINE')">
                 	<a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">웹진</span></a>
                     <ul class="menu-content">
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/mediaNews')}? 'active': ''">
@@ -114,7 +121,7 @@
 		                </li>                        
                     </ul>
                 </li>
-                <li class=" nav-item">
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_EVENT')">
                 	<a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">홍보</span></a>
                     <ul class="menu-content">
                     	<li th:classappend="${#request.requestURI.equals('/admin/manage/publicCenter/mediaNews')}? 'active': ''">
@@ -138,7 +145,7 @@
                     </ul>
                 </li>
                 
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">이벤트관리</span></a>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_EVENT')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">이벤트관리</span></a>
                     <ul class="menu-content">
                     	<li><a class="d-flex align-items-center" th:href="@{/admin/manage/event/vegemil}"><i data-feather="circle"></i><span class="menu-item text-truncate">정식품 이벤트</span></a>
                         </li>
@@ -150,7 +157,7 @@
                         </li>                         
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">베지밀 레시피</span></a>
+                <li class=" nav-item"  sec:authorize="hasAuthority('MASTER') or hasAuthority('DOMAIN_EVENT')"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="User">베지밀 레시피</span></a>
                     <ul class="menu-content">
                     	<li><a class="d-flex align-items-center" th:href="@{/admin/manage/recipe/vegemil}"><i data-feather="circle"></i><span class="menu-item text-truncate">레시피 정보</span></a>
                         </li>

@@ -131,7 +131,7 @@ var createTable = function() {
 	  serverSide: true,
 	  processing: true,
       ajax: {
-        url : '/admin/manage/factory/factoryTourReviewList',
+        url : '/admin/manage/customer/factoryTourReviewList',
         dataType : 'json',
         contentType : "application/json; charset=utf-8",
         data:function(params){   
@@ -376,7 +376,7 @@ function btnSave(idx, action) {
 	
 	if(confirm(msg)) {
 		$.ajax({
-	       url: '/admin/manage/factory/saveFactoryTourReview',
+	       url: '/admin/manage/customer/saveFactoryTourReview',
 		   processData: false,  // 데이터 객체를 문자열로 바꿀지에 대한 값이다. true면 일반문자...
 		   contentType: false,  // 해당 타입을 true로 하면 일반 text로 구분되어 진다.
 		   data: form.serialize(),
