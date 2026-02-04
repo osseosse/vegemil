@@ -14,6 +14,8 @@
 		s_subject,
 		s_content,
 		s_file,
+		s_file_sub,
+		s_file_third,
 		DATE_FORMAT(s_writedate,'%Y-%m') as s_writedate,
 		DATE_FORMAT(s_updatedate,'%Y-%m') as s_updatedate,
 		s_activeuser,

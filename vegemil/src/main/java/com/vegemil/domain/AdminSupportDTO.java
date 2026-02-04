@@ -16,6 +16,8 @@ public class AdminSupportDTO extends AdminCommonDTO {
 	private String sSubject;
 	private String sContent;
 	private String sFile;
+	private String sFileSub;
+	private String sFileThird;	
 	private String sWritedate;
 	private String sWritetime;
 	private String sActiveuser;
