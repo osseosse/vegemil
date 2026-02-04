@@ -34,13 +34,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private CompAccessDeniedHandler compAccessDeniedHandler;
 
-	@Order(2)
+	@Order(1)
 	@Configuration
 	public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.authorizeRequests()
+			http.antMatcher("/admin/**").authorizeRequests()
 					// 🔹 도메인별 관리자 (MASTER 또는 해당 DOMAIN)
 					.antMatchers("/admin/manage/baby/**")
 					.access("hasAuthority('MASTER') or hasAuthority('DOMAIN_BABY')")
@@ -67,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.antMatchers("/admin/manage/**").hasAuthority("MASTER")
 
 					.and().csrf().disable().formLogin().loginPage("/admin/auth/login")
-					.loginProcessingUrl("/admin/loginProc").failureUrl("/admin/auth/login?error=true")
+					.loginProcessingUrl("/member/loginProc").failureUrl("/admin/auth/login?error=true")
 					.defaultSuccessUrl("/admin/manage").and().logout()
 
 					.logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout")) // 로그아웃 시 URL 재정의
@@ -85,7 +85,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-	@Order(3)
+	@Order(2)
 	@Configuration
 	public class PaymentSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -109,7 +109,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-	@Order(1)
+	@Order(3)
 	@Configuration
 	public class CommonSecurityConfig extends WebSecurityConfigurerAdapter {
 
