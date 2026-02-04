@@ -189,7 +189,12 @@
 	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
 	     </if>
 		 <if test='searchWord != "" '>
-		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+	   	   AND (
+			   s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') 
+			   or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') 
+			   or s_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+			   or s_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   )    
 		 </if>
 		 <if test='sCate != "" '>
 		   AND s_cate = #{sCate, jdbcType=VARCHAR}
@@ -208,7 +213,12 @@
 	       AND s_writedate &lt;= #{sEnddate, jdbcType=VARCHAR}
 	     </if>
 		 <if test='searchWord != "" '>
-		   AND (s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%'))  
+		   AND (
+			   s_subject like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') 
+			   or s_content like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%') 
+			   or s_hp like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+			   or s_name like CONCAT('%',#{searchWord, jdbcType=VARCHAR},'%')
+		   )  
 		 </if>
 		 <if test='sCate != "" '>
 		   AND s_cate = #{sCate, jdbcType=VARCHAR}
