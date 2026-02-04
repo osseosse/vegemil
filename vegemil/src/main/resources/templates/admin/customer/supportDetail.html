@@ -205,11 +205,31 @@
 										<div class="col-5">
 											<!-- 사진없을때 -- 공백으로 해주세요~ <!-- // 사진없을때 -->
 											<!-- 사진있을때 -->
-											<p>사진 <a th:if="*{support.sFile != null}" download class="btn btn-secondary btn-sm2" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFile}|">다운로드</a></p> 
+											<p>첨부1 <a th:if="*{support.sFile != null}" download  class="btn btn-secondary btn-sm px-2 py-1 waves-effect waves-light" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFile}|">다운로드</a></p> 
 											<div class="scroll-h250">
 												<p class="img100" th:if="*{support.sFile != null}">
 <!-- 													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" /> -->
 													<img th:src="|/web/upload/${support.sFile}|">
+												</p>
+												
+											</div>
+											<!-- //사진있을때 -->
+											<!-- 사진있을때 -->
+											<p>첨부2<a th:if="*{support.sFileSub != null}" download class="btn btn-secondary btn-sm px-2 py-1 waves-effect waves-light" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFileSub}|">다운로드</a></p> 
+											<div class="scroll-h250">
+												<p class="img100" th:if="*{support.sFileSub != null}">
+<!-- 													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" /> -->
+													<img th:src="|/web/upload/${support.sFileSub}|">
+												</p>
+												
+											</div>
+											<!-- //사진있을때 -->
+												<!-- 사진있을때 -->
+											<p>첨부3<a th:if="*{support.sFileThird != null}" download class="btn btn-secondary btn-sm px-2 py-1 waves-effect waves-light" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFileThird}|">다운로드</a></p> 
+											<div class="scroll-h250">
+												<p class="img100" th:if="*{support.sFileThird != null}">
+<!-- 													<img th:if="*{support.sFile != null}" th:src="@{https://www.vegemil.co.kr/Upload/CUSTOMER/} + ${support.sFile}" /> -->
+													<img th:src="|/web/upload/${support.sFileThird}|">
 												</p>
 												
 											</div>

@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.vegemil.constant.Method;
 import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.PaymentDTO;
@@ -54,7 +55,7 @@ public class PaymentController extends UiUtils {
 	@Autowired
 	private MailService emailService;
 	
-	@GetMapping(value = "/payment/login")
+	@GetMapping(value = {"/payment/login","/comp/login"})
 	public String movePayLogin(Model model, Authentication authentication, HttpServletResponse response) {
 		
 		response.setContentType("text/html; charset=UTF-8");
@@ -98,9 +99,9 @@ public class PaymentController extends UiUtils {
 				member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
 			
 				if (member == null) {
-					out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
+//					out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 					out.flush();
-					return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
+					return showMessageWithRedirect("로그인 후 이용바랍니다.", "/member/payLogin", Method.GET, null, model);
 				}
 				
 				
@@ -127,9 +128,9 @@ public class PaymentController extends UiUtils {
 
 				
 			} else {
-				out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
+//				out.println("<script>alert('로그인 후 이용바랍니다.'); history.go(-1);</script>");
 				out.flush();
-				return showMessageWithRedirect("로그인 후 이용바랍니다.", "member/payLogin", Method.GET, null, model);
+				return showMessageWithRedirect("로그인 후 이용바랍니다.", "/member/payLogin", Method.GET, null, model);
 			}
 			
 		} catch (Exception e) {
@@ -250,7 +251,7 @@ public class PaymentController extends UiUtils {
         //String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
         String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
         /* base64 encoding */
-		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
+		byte[] encodedBytes =  java.util.Base64.getEncoder().encode(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
 		int responseCode = 0;
 
@@ -383,7 +384,7 @@ public class PaymentController extends UiUtils {
 		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
         String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
 		/* base64 encoding */
-		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
+		byte[] encodedBytes =   java.util.Base64.getEncoder().encode(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
 
 		int responseCode = 0;
@@ -486,7 +487,7 @@ public class PaymentController extends UiUtils {
 		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
         String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
 		/* base64 encoding */
-		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
+		byte[] encodedBytes =   java.util.Base64.getEncoder().encode(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
 
 		int responseCode = 0;

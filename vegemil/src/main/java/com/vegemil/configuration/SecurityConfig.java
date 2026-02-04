@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private CompAccessDeniedHandler compAccessDeniedHandler;
 
-	@Order(1)
+	@Order(2)
 	@Configuration
 	public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -67,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.antMatchers("/admin/manage/**").hasAuthority("MASTER")
 
 					.and().csrf().disable().formLogin().loginPage("/admin/auth/login")
-					.loginProcessingUrl("/member/loginProc").failureUrl("/admin/auth/login?error=true")
+					.loginProcessingUrl("/admin/loginProc").failureUrl("/admin/auth/login?error=true")
 					.defaultSuccessUrl("/admin/manage").and().logout()
 
 					.logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout")) // 로그아웃 시 URL 재정의
@@ -85,16 +85,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-	@Order(2)
+	@Order(3)
 	@Configuration
 	public class PaymentSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			http.antMatcher("/comp/payment/**").authorizeRequests().anyRequest().hasAuthority("COMP").and().csrf()
-					.disable().formLogin().loginPage("/member/payLogin").loginProcessingUrl("/member/loginProc")
+					.disable().formLogin().loginPage("/member/payLogin").loginProcessingUrl("/comp/loginProc")
 					.failureUrl("/member/login?error=true").defaultSuccessUrl("/comp/payment/list").and().logout()
-					.logoutRequestMatcher(new AntPathRequestMatcher("/member/logout")) // 로그아웃 시 URL 재정의
+					.logoutRequestMatcher(new AntPathRequestMatcher("/comp/logout")) // 로그아웃 시 URL 재정의
 					.logoutSuccessUrl("/") // 로그아웃 성공 시 redirect 이동
 					.invalidateHttpSession(true) // HTTP Session 초기화
 					.deleteCookies("JSESSIONID") // 특정 쿠키 제거
@@ -109,7 +109,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-	@Order(3)
+	@Order(1)
 	@Configuration
 	public class CommonSecurityConfig extends WebSecurityConfigurerAdapter {
 
