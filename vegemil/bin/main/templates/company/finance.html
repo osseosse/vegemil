@@ -1,48 +1,55 @@
 <!doctype html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
-				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <title>정식품 공시(결산공고)</title>
 <head th:replace="fragments/head :: headFragment"></head>
 <body>
-<!-- ================================ Header ================================ -->
-<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-<!-- ================================ 
+	<!-- ================================ Header ================================ -->
+	<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+	<!-- ================================ // Header ================================ -->
+	<!-- ================================ 
 		Content
 ================================ -->
-<div id="content" class="pb100">
-	<div class="content100 ">
-	   <div class="subTopFinance h440 mt90h">
-			<div class="centerH">
-				<p class="f_pp white f18 fw400">Company</p>
-				<p class="white f45 fw600">공시(결산공고)</p>
+	<div id="content" class="pb100">
+		<div class="content100 ">
+			<div class="subTopFinance h440 mt90h">
+				<div class="centerH">
+					<p class="f_pp white f18 fw400">Company</p>
+					<p class="white f45 fw600">공시(결산공고)</p>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="contant1460" >
-		<div class="subMenu">
-			<p class="btnSubLeft"><a href="/company/nnp"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p>
-			<ul class="submenuUL d6">
-				<li class="f18 fw500"><a href="/company/greetings"><span>대표이사 인사말</span></a></li>
-				<li class="f18 fw500"><a href="/company/profile"><span>프로필</span></a></li>
-				<li class="f18 fw500"><a href="/company/valueSys"><br class="mView"><span>가치체계</span></a></li>
-				<li class="f18 fw500"><a href="/company/history"><span>연혁</span></a></li>
-				<li class="f18 fw500"><a href="/company/nnp"><span>관련사</span></a></li>
-				<li class="f18 fw500 active"><a href="/company/finance"><span>공시</span></a></li>
-			</ul>
-			<p class="btnSubRight"><a href="/company/media"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽"/></a></p>
-		</div>
-<!-- 		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
-		<div class="row">
-			<div class="col-md-4 financeBox centerMo">
-				<p class="f52 fw600 mt50 black">재무상태표 <span class="gray03">-</span></p>
-				<select class="f18 fw400 financeTitle mt50" id="selectbox" name="year" onchange="changeList();">
-                    <option value="52.jpg">2024년 제 52기 결산공고</option>
-                    <option value="51.jpg">2023년 제 51기 결산공고</option>
-                    <!-- <option value="50.jpg">2022년 제 50기 결산공고</option> -->
-                </select>
-				<!--<div class="verticalType03 mt50">
+		<div class="contant1460">
+			<div class="subMenu">
+				<p class="btnSubLeft">
+					<a href="/company/nnp"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽" /><span class="f13 fw400 gray04">Back</span></a>
+				</p>
+				<ul class="submenuUL d6">
+					<li class="f18 fw500"><a href="/company/greetings"><span>대표이사 인사말</span></a></li>
+					<li class="f18 fw500"><a href="/company/profile"><span>프로필</span></a></li>
+					<li class="f18 fw500"><a href="/company/valueSys"><br class="mView">
+						<span>가치체계</span></a></li>
+					<li class="f18 fw500"><a href="/company/history"><span>연혁</span></a></li>
+					<li class="f18 fw500"><a href="/company/nnp"><span>관련사</span></a></li>
+					<li class="f18 fw500 active"><a href="/company/finance"><span>공시</span></a></li>
+				</ul>
+				<p class="btnSubRight">
+					<a href="/company/media"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="왼쪽" /></a>
+				</p>
+			</div>
+			<!-- 		<p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+			<div class="row">
+				<div class="col-md-4 financeBox centerMo">
+					<p class="f52 fw600 mt50 black">
+						재무상태표 <span class="gray03">-</span>
+					</p>
+					<select class="f18 fw400 financeTitle mt50" id="selectbox" name="year" onchange="changeList();">
+						<option value="53.jpg">2025년 제 53기 결산공고</option>
+						<option value="52.jpg">2024년 제 52기 결산공고</option>
+
+						<!-- <option value="51.jpg">2023년 제 51기 결산공고</option> -->
+						<!-- <option value="50.jpg">2022년 제 50기 결산공고</option> -->
+					</select>
+					<!--<div class="verticalType03 mt50">
                     <div class="ver-title03"><p class="f18 fw400">2021년 제 38기 결산공고</p></div>
                     <div>
                         <div class="v_content ">
@@ -51,31 +58,35 @@
                         </div>
                     </div>
                 </div>-->
-			</div>
-			<div class="col-md-8 center">
-				<div class="mt50 grayBox2">
-				    <p class="f18">투명하고 정확한 경영정보 공개로 기업의 책임을 다합니다.</p>
-				    <p class="f27 fw500 black mt10">주식회사 정식품</p>
 				</div>
-				<!-- ★ 이미지 이름 기수 번호로 관리  -->
-				<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/Finance_52.jpg" alt="재무재표" class="mt50" id="img_area">
+				<div class="col-md-8 center">
+					<div class="mt50 grayBox2">
+						<p class="f18">투명하고 정확한 경영정보 공개로 기업의 책임을 다합니다.</p>
+						<p class="f27 fw500 black mt10">주식회사 정식품</p>
+					</div>
+					<!-- ★ 이미지 이름 기수 번호로 관리  -->
+					<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/Finance_53.jpg" alt="재무재표" class="mt50" id="img_area">
+				</div>
 			</div>
+			<br class="clear">
+
 		</div>
-		<br class="clear">
-		
-	</div><!-- //contant1460 -->
-</div>
-<script>
-	function changeList(){
-		var num = $("#selectbox option:selected").val();
-		$("#img_area").attr("src","https://image.edaymall.com/images/dcf/vegemil/img/company/Finance_"+num);
-	}
-</script>
-<!-- ================================ 
+		<!-- //contant1460 -->
+	</div>
+	<script>
+		function changeList() {
+			var num = $("#selectbox option:selected").val();
+			$("#img_area").attr(
+					"src",
+					"https://image.edaymall.com/images/dcf/vegemil/img/company/Finance_"
+							+ num);
+		}
+	</script>
+	<!-- ================================ 
 		// Content
 ================================ -->
-<!-- ================================ Footer ================================ -->
-<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
-<!-- ================================ // Footer ================================ -->
+	<!-- ================================ Footer ================================ -->
+	<footer th:replace="fragments/mainFooter :: footerFragment"></footer>
+	<!-- ================================ // Footer ================================ -->
 </body>
 </html>
