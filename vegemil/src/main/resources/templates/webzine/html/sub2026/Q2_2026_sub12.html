@@ -1,0 +1,79 @@
+<!doctype html><html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+					<div class="content bg-g3">
+						<section>
+							<div class="wrap-inner5" id="wzPage" >
+								<script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+								<div class="container wz-left">
+									<div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+										<div class="row">
+											<div class="col-md-12">
+												<h3 class="center mt100-m">마음에서 마음으로</h3>
+												<h1 class="center mt50-m">편식하던 아이의 변화,<br>베지밀 고단백두유 초코</h1>
+												<div class="mt60-m ">
+													<div class="Q1_2026_12_bg goldBox2 ">
+														<p class="type25-1 center">인천시 연수구 김미진님</p>
+														<p class="mt20-m">“나 이거 먹기 싫어”<br>
+														식탁에 앉을 때마다 늘 반복되는 딸의 말. 고기나 계란처럼 단백질이 많은 음식은 유독 입을 대지 않으려 하고, 결국 밥 몇 숟갈 뜨다 말고 자리를 뜨기 일쑤다.<br><br>
+														처음엔 그럴 수 있다고 생각했다. 크면서 자연스럽게 입맛이 바뀌겠지 싶었는데, 어느덧 초등학교 고학년. 시간이 지날수록 걱정이 커졌다. 단백질을 덜 섭취해서일까. 또래보다 체력이 약한 것 같고, 자주 피곤해하는 모습이 눈에 밟혔다.<br><br>
+														“이거 한 입만 먹어보면 안 될까?”<br>
+														조심스럽게 권해봐도 아이는 고개를 저었다. 억지로 먹이자니 거부감만 더 커질 것 같고, 그렇다고 그냥 두기엔 마음이 편치 않았다. 그렇게 식탁 앞에서 고민만 쌓여갔다.<br><br>
+														아이의 방식에 맞춰보자는 생각이 들었다. 아이는 평소 달달한 음료를 좋아하니 ‘초코 맛’이어야 하고, 단백질을 풍부하게 함유하고 있어야 했다. 그리고 아이가 먹는 제품이다보니 믿을 수 있는 회사에서 만들어야 하고. 조건이 참 많아 과연 이 기준에 맞는 제품이 있을까? 의문이 들었다. 그러던 와중 평소 간식으로 챙겨먹는 베지밀에도 이런 제품이 있지 않을까 해서 찾아본 결과 ‘베지밀 고단백두유 초코’를 발견했다.<br><br>
+														“엄청 맛있다 엄마!”<br>
+														아이 입에서 나온 긍정적인 반응에 웃음이 절로 나왔다. 식사로 채우기 어려웠던 부분을 두유로 보충할 수 있다니, 참 다행이다.<br><br>
+														그날 이후로 식사 분위기가 달라졌다. 단백질을 먹이려 애쓰기보다, 아이의 선택을 존중하는 쪽으로 방향을 바꾸었다. 모든 것을 한 번에 바꾸기보다는, 아이의 속도에 맞춰 조금씩 채워가야 겠다. 이렇게 훌륭한 제품을 만든 정식품에 감사를 전하고 싶다.</p>
+													</div>
+												 </div>
+											</div>											
+										</div><!--//row-->
+										<div class="row mt100-m">
+											<div class="col-md-2">
+												<p class="type19 comment " >
+													<img  src="https://image.edaymall.com/images/dcf/webzine/common/ico_comment_2.gif" alt="comment" />
+												<p>												
+											</div>
+											<div class="col-md-10">
+												<p class="type21-2">
+													&lt;마음에서 마음으로&gt;는 정식품을 사랑하는 여러분들이 만들어가는 페이지입니다. 정식품 제품에 얽힌 재미있고 감동적인 사연을 들려주세요. 
+													채택되신 분께는 상품권 5만원권을 선물로 드립니다. 정식품 가족 여러분의 많은 참여 바랍니다.<br>
+													보내실 곳 ehyang@vegemil.co.kr (사연을 보내시는 분의 성명, 주소, 전화번호도 꼭 기재해주세요!)
+												<p>												
+											</div>
+										</div><!--//row-->
+									</div>
+								</div><!-- //container -->
+									<!-- 추천기사 날개버전 -->
+			<div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+				<div class="wz-floting">
+					<p class="wz-news-title">추천기사</p>
+					<ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}" th:each="recWebzine : ${recommandWebzineList}">
+						<a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+							<li>
+								<p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+								<p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+						</li>
+							<li>
+								<p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+						</li>
+						</a>
+					</ul>
+					<p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+						<a href="#" th:href="${banner.linkAddr}"> <img src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png" th:src="${banner.imgName}" />
+						</a>
+					</p>
+					<div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+						<ul class="wz-half-bnr">
+							<li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+							<li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}" alt="과즙두유" />
+									<p>제품소개 바로가기</p> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 추천기사 날개 버전 -->
+		</div>
+		<!-- //wrap-inner2 -->
+	</section>
+</div>
+</html>
