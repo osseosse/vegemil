@@ -93,6 +93,11 @@ public class ProductController extends UiUtils {
 	@GetMapping(value = "/product/detail/{pIdx}")
 	public String openProductDetail(@PathVariable(value = "pIdx", required = false) Long pIdx, Model model,
 			@CookieValue(value = "lang", required = false) String localCookie) {
+		
+		// 임시 큐알용
+		if(pIdx == 125 || pIdx==126) {
+			return "/product/temp"+pIdx;
+		}
 
 		System.out.println("localeCookie >> " + localCookie);
 

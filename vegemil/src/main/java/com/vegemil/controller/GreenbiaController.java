@@ -81,7 +81,11 @@ public class GreenbiaController extends UiUtils {
 	
 	@GetMapping(value = "/greenbia/product/detail/{gIdx}")
 	public String moveGreenbiaProductDetail(@PathVariable(value = "gIdx", required = false) Long gIdx, Model model) {
-		
+
+		// 임시 큐알용
+		if(gIdx == 125 || gIdx==126) {
+			return "/product/temp"+gIdx;
+		}
 		
 		model.addAttribute("tags",greenbiaProductService.getGreenbiaMetaTagData("detail/"+gIdx));		
 		

@@ -177,7 +177,7 @@
 			<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return false;">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return  btnActive();">
 						<input type="hidden" name="qrt" th:value="${qrtYear}"> <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).SNS}">
 						<div class="row intxt mt80-m"></div>
 
@@ -234,29 +234,39 @@
 						</div>
 						<div class="col-md-12 mt100-m2">
 							<p class="type20 center">지난호 당첨자</p>
-							<!-- <div class="eventList2 mt50-m ">
-													<div class="col-md-3 mt30m">
-														<p class="type28-1">1등</p>		
-														<p>박*재</p>
-														<p>김*애</p>
-														
+							<div class="eventList2 mt50-m ">
+								<div class="col-md-3 mt30m">
+									<p class="type28-1">1등</p>
+									<p>김*수</p>
+									<p>박*철</p>
+									<p>이*성</p>
 
-													</div>
-													<div class="col-md-3 mt30m">
-														<p class="type28-1">2등</p>
-														<p>최*나</p>
-														<p>박*애</p>
-														<p>김*철</p>
-														
-													</div>
-													<div class="col-md-3 mt30m">
-														<p class="type28-1">3등</p>
-														<p>윤*희</p>
-														<p>양*연</p>
-														<p>김*조</p>
-														<p>박*은</p>
-														<p>유*미</p>
-													</div> -->
+
+								</div>
+								<div class="col-md-3 mt30m">
+									<p class="type28-1">2등</p>
+									<p>김*호</p>
+									<p>최*나</p>
+									<p>김*영</p>
+									<p>이*희</p>
+									<p>최*희</p>
+
+								</div>
+								<div class="col-md-3 mt30m">
+									<p class="type28-1">3등</p>
+									<p>이*구</p>
+									<p>김*주</p>
+									<p>이*람</p>
+									<p>김*호</p>
+									<p>한*원</p>
+									<p>이*욱</p>
+									<p>이*희</p>
+									<p>전*형</p>
+									<p>위*현</p>
+									<p>박*정</p>
+								</div>
+
+							</div>
 						</div>
 					</form>
 					<div class="row"></div>
