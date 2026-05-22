@@ -100,7 +100,7 @@
 		  AND p_name like CONCAT('%',#{searchKeyword},'%')
 		  OR desc_product like CONCAT('%',#{searchKeyword},'%')
 		  </if>                 
-	    ORDER BY p_idx ASC
+	    ORDER BY display_priority ASC, p_idx DESC;
 	</select>
 	
 	<select id="selectRecProduct" parameterType="com.vegemil.domain.global.ProductEnDTO" resultType="com.vegemil.domain.global.ProductEnDTO">

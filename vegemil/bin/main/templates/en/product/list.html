@@ -113,12 +113,12 @@
 			<div class="col-md-12 mt100">
 				<!-- tabs3 -->
 				<div class="prd_wrap mt20">
-					<ul class="tabs3">
-						<!-- 2023-01-05 -->
-						<li><a href="#V-ENG"><p class="ico_VE_en"></p></a><span>Soymilk (Vegemil)</span></li>
-						<li><a href="#P-ENG"><p class="ico_VM"></p></a><span>Soymilk for Lactating & <br>Pregnant Women</span></li>
-						<li><a href="#B-ENG"><p class="ico_VE_vn eng"></p></a><span>Infant Formula</span></li>						
-						<li><a href="#O-ENG"><p class="ico_SC"></p></a><span>Others</span></li>
+					<ul class="tabs3">					
+						<li><a href="#V-ENG"><p class="ico_VE_en eng"></p></a><span>Soymilk (Vegemil)</span></li> <!-- 0821 수정 -->
+						<li><a href="#P-ENG"><p class="ico_VM eng"></p></a><span>Soymilk for Lactating & <br>Pregnant Women</span></li>
+						<li><a href="#H-ENG"><p class="ico_GH eng"></p></a><span>Sports Nutrition Drinks</span></li>
+						<li><a href="#B-ENG"><p class="ico_VE_vn eng"></p></a><span>Infant Formula</span></li><!-- eng 추가 --> 
+						<li><a href="#O-ENG"><p class="ico_SC eng"></p></a><span>Others</span></li>					
 					</ul>
 				</div>
 				<script type="text/javascript">
@@ -140,6 +140,7 @@
 									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
 											<span class="f14" th:text="${product.tag1}">#Designed for senior</span>
+										
 											<span class="f14" th:text="${product.tag2}">#Increase vitality</span>
 											<span class="f14" th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Premium soymilk</span>
 											<span class="f14" th:if="${not #strings.isEmpty(product.tag4)}" th:text="${product.tag4}">#Premium soymilk</span>
@@ -198,7 +199,41 @@
 					<!-- //floting-right_prd -->
 					<br class="clear">
 				</div>
-				
+				<div id="H-ENG">
+					<div class="floting-right_prd eng"><!-- eng 추가 -->
+						<div class="row"  th:if="${not #lists.isEmpty( productList )}">
+							<div class="col-md-4 col-6"  th:if="${product.categoryCode == 'H'}" th:name="${product.subCategoryName}" th:each="product, i : ${productList}">
+								<div class="prd-list">
+									<a th:href="|/en/product/detail/${product.pIdx}|">
+										<div class="prd-txt">
+											<span class="f14"  th:text="${product.tag1}">#Thorough nutrition design</span>
+											<!-- <span class="f14"  th:text="${product.categoryCode}">#Thorough nutrition design</span> -->
+											<span class="f14"  th:text="${product.tag2}">#Mother's nutrition </span>
+											<span class="f14"  th:if="${not #strings.isEmpty(product.tag3)}" th:text="${product.tag3}">#Must have item for prenatal and postnatal</span>
+											<span class="f14"  th:if="${not #strings.isEmpty(product.tag4)}" th:text="${product.tag4}">#Must have item for prenatal and postnatal</span>
+										</div>
+										<div class="prd-thumb">
+											<img class="eng" src="https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/VMO01_600_01.png"
+												th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|">
+										</div>
+										<!--<div class="prd-key mt20"><span class="key-green">Vegemil</span> <span class="key-white">Lactating & Pregnant Women</span></div>-->
+										<p class="prd-name f27 fw500 black mt30" th:text="${product.pName}">Vegemil Soymilk for Healthy Mom</p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}">
+											For the pregnant and lactating women who need nutritional supplement
+										</p>
+									</a>
+									<dl class="prd-viewMore mt40">
+										<dd><a th:href="|/en/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
+										<dd><a href=""  th:href="@{|${product.pOnuri}|}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+									</dl>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+					<!-- //floting-right_prd -->
+					<br class="clear">
+				</div>
 				<div id="B-ENG">					
 					<div class="floting-right_prd eng"><!-- eng 추가 -->
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
@@ -234,8 +269,8 @@
 				<div id="O-ENG">					
 					<div class="floting-right_prd eng"><!-- eng 추가 -->
 						<div class="row" th:if="${not #lists.isEmpty( productList )}">
-							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'|| product.categoryCode == 'H'
-												|| product.categoryCode == 'F' || product.categoryCode == 'B'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
+							<div class="col-md-4 col-6" th:if="${product.categoryCode == 'S'
+												|| product.categoryCode == 'F' || product.categoryCode == 'C'}" th:name="${product.subCategoryCode}" th:each="product, i : ${productList}">
 								<div class="prd-list">
 									<a th:href="|/en/product/detail/${product.pIdx}|">
 										<div class="prd-txt">

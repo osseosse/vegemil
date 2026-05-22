@@ -237,7 +237,9 @@
 										<a th:href="|/product/detail/${product.pIdx}|">
 											<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 											<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+																			
+											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}"th:text="${product.tip}"></p>
+											<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}"th:text="${product.description}"></p>
 										</a>
 									<dl class="prd-viewMore mt40">
 										<dd th:if= "${!product.pCode.contains('VBK')}"><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd> 
@@ -280,7 +282,8 @@
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}" th:text="${product.description}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
@@ -326,7 +329,8 @@
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}" th:text="${product.description}"></p>
 									</a>
 									<a th:if="${product.subCategoryCode} == 'CHD'" th:href="|/greenbia/product/detail/${product.pIdx}|">
 										<div class="prd-txt">
@@ -354,7 +358,8 @@
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}" th:text="${product.description}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd th:if="${product.subCategoryCode} == 'CHP'">
@@ -408,7 +413,8 @@
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}" th:text="${product.description}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
@@ -450,7 +456,8 @@
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}" th:text="${product.description}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
@@ -491,7 +498,8 @@
 										<div class="prd-thumb"><img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|"></div>
 										<div class="prd-key mt20"><span class="key-green" th:text="${product.categoryName}"></span> <span class="key-white" th:text="${product.subCategoryName}"></span></div>
 										<p class="prd-name f27 fw500 black mt30" th:utext="${product.pName}"></p>
-										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'tip'}" th:text="${product.tip}"></p>
+										<p class="prd-subTxt f14 gray04 mt20 center lh160" th:if="${product.thumbTextField == 'description'}" th:text="${product.description}"></p>
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>

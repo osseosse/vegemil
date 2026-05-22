@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<ProductDTO> getProductList(String searchKeyword) {
 
-		List<ProductDTO> productList = Collections.emptyList();
+		List<ProductDTO> productList = new ArrayList<>();
 
 		int productTotalCount = productMapper.selectProductTotalCount();
 

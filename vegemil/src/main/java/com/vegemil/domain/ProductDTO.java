@@ -79,6 +79,8 @@ public class ProductDTO extends CommonDTO {
 	private int brandPostSection;
 	private int brandEntire;
 	
+	private String thumbTextField; 
+	
 	public void detailImgClassSet() {
 		if(!StringUtil.isEmpty(bottleImg)) {
 			this.productClassBottle = bottleImg.substring(0,bottleImg.indexOf('.'));
