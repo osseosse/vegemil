@@ -138,8 +138,7 @@ function btnAvtive() {
 		$("#joinBtn").attr("disabled", false); //해제
 		$("#joinBtn").addClass('active');
 	} else {
-		$("#joinBtn").attr("disabled", true); //설정
-		$("#joinBtn").removeClass('active');		
+		$("#joinBtn").attr("disabled", true); //설정		
 	}
 	
 	return;

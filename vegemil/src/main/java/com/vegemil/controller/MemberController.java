@@ -279,7 +279,7 @@ public class MemberController extends UiUtils {
 		try {
 			
 			//DI값 필수 체크 ㅑp 중복 체크
-			if(StringUtils.hasText(member.getMDi())==false||memberService.checkCurrentIp(member.getMIp())==false) {
+			if(StringUtils.hasText(member.getMDi())==false) {
 				return showMessageWithRedirect("휴대폰 인증을 진행해주세요.", "/member/join", Method.GET, null, model);
 			}
 			

@@ -199,8 +199,7 @@
 		    m_email = #{mEmail},
 		    m_emailsend = #{mEmailsend},
 		    m_greenbia_pay = #{mGreenbiaPay},
-		    m_smssend = #{mSmssend},
-		    m_leavedate = NOW(),
+		    m_smssend = #{mSmssend},		    
 		    m_leavememo = #{mLeavememo}
 		WHERE
 		    m_idx = #{mIdx}

@@ -70,15 +70,15 @@
 							<tr>
 								<th><p class="cate">제목</p></th>
 								<td>
-									<input type="text" th:field="*{sSubject}" class="inp04" maxlength="20">
+									<input type="text" th:field="*{sSubject}" class="inp04" maxlength="50">
 									<p class="error" id="titleCheck" style="display: none;"><img src="https://image.edaymall.com/images/dcf/vegemil/img/error.png">제목을 입력해 주세요</p>
 								</td>
 							</tr>
 							<tr>
 								<th><p class="cate">내용</p></th>
 								<td class="day ">
-									<textarea th:field="*{sContent}" maxlength="200"></textarea>
-									<div class="mt10 f14 gray f_right" id="cnt">(0/200)</div>
+									<textarea th:field="*{sContent}" maxlength="2000"></textarea>
+									<div class="mt10 f14 gray f_right" id="cnt">(0/2000)</div>
 									<p class="error" id="contentCheck" style="display: none;"><img src="https://image.edaymall.com/images/dcf/vegemil/img/error.png">내용을 입력해 주세요</p>
 								</td>
 							</tr>
@@ -126,11 +126,11 @@
 $(document).ready(function() {
 
 	$('#sContent').on('keyup', function() {
-        $('#cnt').html("("+$(this).val().length+" / 200)");
+        $('#cnt').html("("+$(this).val().length+" / 2000)");
  
-        if($(this).val().length > 200) {
-            $(this).val($(this).val().substring(0, 500));
-            $('#cnt').html("(200 / 200)");
+        if($(this).val().length > 2000) {
+            $(this).val($(this).val().substring(0, 1999));
+            $('#cnt').html("(2000 / 2000)");
         }
     });
 	
