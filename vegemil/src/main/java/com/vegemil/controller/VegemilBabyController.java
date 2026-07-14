@@ -217,7 +217,7 @@ public class VegemilBabyController extends UiUtils {
 	}
 	
 	@GetMapping("/api2/vegemilBaby/event/model")
-	public  ResponseEntity moveEventModelPage2(BoardListSearchDTO boardListSearchDTO) {
+	public ResponseEntity moveEventModelPage2(BoardListSearchDTO boardListSearchDTO) {
 			
 		List<VegemilBabyCalendarModelDTO> modelList = vegemilBabyCommunityService.selectModelList();
         
