@@ -289,7 +289,12 @@ public class MemberController extends UiUtils {
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 			}
-			
+
+			// 마케팅 수신 동의(이메일 또는 SMS) 시 확인 메일 발송
+			if("1".equals(member.getMEmailsend()) || "1".equals(member.getMSmssend())){
+				mailService.marketingInfoReceiveAgreeConfirm(member);
+			}
+
 			model.addAttribute("member", member);
 			
 		} catch (DataAccessException e) {

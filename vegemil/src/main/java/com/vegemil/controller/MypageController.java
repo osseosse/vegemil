@@ -355,10 +355,8 @@ public class MypageController extends UiUtils {
 		
 		//기존 회원 구분 세팅 
 		member.setMAuth(preMember.getMAuth());
-		
-		boolean isPwChange = commonEncoder.matches(member.getMPwd(), preMember.getMPwd()); // 원시 비번과 해시된 비번 비교, 같으면 true 다르면 false 
-		
-		
+		boolean isPwChange = commonEncoder.matches(member.getMPwd(), preMember.getMPwd()); // 원시 비번과 해시된 비번 비교, 같으면 true 다르면 false
+
 		try {
 			
 			boolean isRegistered = memberService.registerMember(member);
@@ -371,6 +369,7 @@ public class MypageController extends UiUtils {
 			// =========> 마케팅 수신 동의 메일코드 시작
 			if(member.getMSmssend().equals(preMember.getMSmssend()) == false
 							|| member.getMEmailsend().equals(preMember.getMEmailsend())==false) {
+				// 마케팅 관련 체크 항목이 이전과 비교해서 변화가 있을 떄
 				mailService.marketingInfoReceiveAgreeConfirm(member);
 			}
 			// 마케팅 수신 동의 메일 코드 끝 <========= 

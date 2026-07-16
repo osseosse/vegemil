@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정식품 광고성 정보 수신동의 내역 안내</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
+            background-color: #f4f4f4;
+            -webkit-text-size-adjust: 100%;
+        }
+        .email-wrapper {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 40px 0;
+        }
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+           
+            border-bottom: 1px solid #dddddd;
+            border-left: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .header {
+            padding: 40px 30px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333333;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.4;
+        }
+        .header h1 span {
+            color: #00873d;
+        }
+        .content {
+            padding: 0 40px 40px;
+            color: #444444;
+            line-height: 1.6;
+        }
+        .greeting {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #00873d;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #00873d;
+        }
+        .desc-text {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 15px;
+            word-break: keep-all;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+        .info-table th, .info-table td {
+            border: 1px solid #e5e5e5;
+            padding: 12px 15px;
+            word-break: keep-all;
+        }
+        .info-table th {
+            background-color: #f9fbf9;
+            color: #333333;
+            font-weight: 600;
+            text-align: left;
+            width: 30%;
+        }
+        .info-table td {
+            color: #555555;
+            line-height: 1.5;
+        }
+        .notice-box {
+            background-color: #f7f7f7;
+            border: 1px solid #eeeeee;
+            padding: 20px 25px;
+            margin-top: 35px;
+        }
+        .notice-box h2 {
+            font-size: 14px;
+            color: #333333;
+            margin: 0 0 10px 0;
+        }
+        .notice-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.6;
+        }
+        .notice-box li {
+            margin-bottom: 6px;
+        }
+        .btn-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #00873d;
+            border: 1px solid #00873d;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .footer {
+            background-color: #eeeeee;
+            padding: 30px 40px;
+            font-size: 12px;
+            color: #777777;
+            line-height: 1.7;
+        }
+        .footer strong {
+            color: #555555;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #777777;
+            text-decoration: underline;
+        }
+        .cs-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #dddddd;
+        }
+		p.logo {margin:40px 0 20px 40px; display:inline-block}
+		p.logo img {width:60px}
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+			<p class="logo"><a href="https://www.vegemil.co.kr" target="_blank"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png" alt="정식품CI" border="0"></a></p>
+            <div class="header">
+                <h1>정식품 광고성 정보 수신동의 내역<br>안내드립니다.</h1>
+            </div>
+
+            <div class="content">
+                <div class="greeting">
+                    안녕하세요. <strong>고객님!</strong><br>
+                    항상 ㈜정식품을 사랑해주시고 이용해주시는 고객님께 깊은 감사의 말씀을 드립니다.
+                </div>
+                <p class="desc-text">
+                    본 메일은 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제50조 제8항에 의거하여, ㈜정식품(www.vegemil.co.kr)의 광고성 정보 수신에 동의하신 회원님께 <strong>수신동의 내역을 정기적(2년 주기)으로 안내</strong>해 드리기 위해 발송되었습니다.
+                </p>
+
+                <div class="section-title">광고성 정보 수신동의 내역</div>
+                
+                <table class="info-table">
+                    <tr>
+                        <th>회원 아이디(ID)</th>
+                        <td th:text="${mem_id}"></td>
+                    </tr>
+                    <tr>
+                        <th>수신동의 항목</th>
+						<td> <div class="chk-wrap" th:if="${mEmailsend == '1' or mSmssend == '1'}">
+                                <label th:if="${mEmailsend == '1'}">
+                                    <input type="checkbox" name="mail" value="메일" onclick="return false;" > 메일(웹진 포함)
+                                </label>
+                                <label th:if="${mSmssend == '1'}">
+                                    <input type="checkbox" name="SMS" value="SMS" onclick="return false;" checked> SMS
+                                </label>
+                            </div>
+							</td>
+                        
+                    </tr>
+                    <tr>
+                        <th>수신동의 일자</th>
+                        <td th:text="${agreeDate}"></td>
+                    </tr>
+                    <tr>
+                        <th>수신동의 상태</th>
+                        <td><strong>수신 동의 (유지)</strong></td>
+                    </tr>
+                </table>
+
+                <div class="notice-box">
+                    <h2>* 수신동의 철회(수신거부) 방법 안내</h2>
+                    <ul>
+                        <li>고객님께서는 언제든지 광고성 정보 수신동의를 철회(수신거부)하실 수 있습니다.</li>
+                        <li>수신동의 상태 유지를 원하시는 경우 별도의 조치를 취하지 않으셔도 됩니다.</li>
+                        <li><strong>수신거부 방법:</strong> 정식품 홈페이지 접속 후 로그인 > [마이페이지 > 회원정보수정] 에서 이메일/SMS 수신 여부를 '동의 안함'으로 변경</li>
+                    </ul>
+                    <div class="btn-wrapper">
+                        <a href="https://www.vegemil.co.kr/mypage/list" class="btn">수신동의 상태 변경하기 (마이페이지)</a>
+                    </div>
+                </div>
+                
+                <p class="desc-text" style="font-size: 13px; margin-top: 20px;">
+                    ※ 본 메일은 정보통신망법에 따른 의무 안내 메일이므로, 메일 수신거부 시에도 고객님의 알 권리를 위해 발송됩니다.
+                </p>
+            </div>
+
+            <div class="footer">
+                <strong>고객센터 080-930-8888</strong><br>
+                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #dddddd;">
+                    (주)정식품ㅣ충청북도 청주시 흥덕구 산단로 124 (우)28446<br>
+                    사업자등록번호: 315-81-19977<br>
+                    ⓒ Dr.CHUNG'S FOOD Co., Ltd. All Right Reserved.<br><br>
+                    본 메일은 발신전용 메일이므로 회신되지 않습니다. 문의사항은 <a href="https://www.vegemil.co.kr/communication/ask" target="_blank">고객센터</a>로 문의해주시기 바랍니다.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
