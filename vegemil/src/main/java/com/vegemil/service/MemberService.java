@@ -1,6 +1,7 @@
 package com.vegemil.service;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -132,6 +133,7 @@ public class MemberService implements UserDetailsService {
 			member.setMAuth("USER");
 			queryResult = memberMapper.saveMember(member);
 		} else {
+
 			queryResult = memberMapper.updateMember(member);
 		}
 

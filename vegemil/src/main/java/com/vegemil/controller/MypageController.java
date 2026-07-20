@@ -4,10 +4,9 @@ import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -356,19 +355,23 @@ public class MypageController extends UiUtils {
 		//기존 회원 구분 세팅 
 		member.setMAuth(preMember.getMAuth());
 		boolean isPwChange = commonEncoder.matches(member.getMPwd(), preMember.getMPwd()); // 원시 비번과 해시된 비번 비교, 같으면 true 다르면 false
+		boolean isMarketingInfoConsentChange = !Objects.equals(member.getMSmssend(), preMember.getMSmssend())
+				|| !Objects.equals(member.getMEmailsend(), preMember.getMEmailsend());
+		if(isMarketingInfoConsentChange){
+			member.setMReceiveModifydate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+		}
 
 		try {
 			
 			boolean isRegistered = memberService.registerMember(member);
-			if (isRegistered == false) {
+			if (!isRegistered) {
 				out.println("<script>alert('수정에 실패했습니다.'); history.go(-1);</script>");
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 			}
-			
+
 			// =========> 마케팅 수신 동의 메일코드 시작
-			if(member.getMSmssend().equals(preMember.getMSmssend()) == false
-							|| member.getMEmailsend().equals(preMember.getMEmailsend())==false) {
+			if(isMarketingInfoConsentChange) {
 				// 마케팅 관련 체크 항목이 이전과 비교해서 변화가 있을 떄
 				mailService.marketingInfoReceiveAgreeConfirm(member);
 			}
