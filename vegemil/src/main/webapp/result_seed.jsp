@@ -1,6 +1,6 @@
 <%
 /**************************************************************************************************************************
-* Program Name  : ║╗└╬╚о└╬ ░с░· ╝Ў╜┼ Sample JSP 
+* Program Name  : я┐╜я┐╜я┐╜я┐╜╚оя┐╜я┐╜ я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ Sample JSP 
 * File Name     : pcc_result_seed2.jsp
 * Comment       : 
 * History       :  
@@ -11,44 +11,44 @@
 <%@ page  contentType = "text/html;charset=ksc5601"%>
 <%@ page import = "java.util.*" %> 
 <%
-    // ║п╝Ў --------------------------------------------------------------------------------
-    String retInfo		= "";																// ░с░·┴д║╕
+    // я┐╜я┐╜я┐╜я┐╜ --------------------------------------------------------------------------------
+    String retInfo		= "";																// я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
 
-	String id			= "";                                                               //╚╕┐°╗ч ║ё┴ю╗ч└╠╖╗╛╞└╠╡Ё
-	String name			= "";                                                               //╝║╕э
-	String sex			= "";																//╝║║░
-	String birYMD		= "";																//╗¤│т┐∙└╧
-	String fgnGbn		= "";																//│╗┐▄▒╣└╬ ▒╕║╨░к
-	String scCode		= "";																//░б╗є╜─║░╣°╚г
+	String id			= "";                                                               //╚╕я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╠╖я┐╜я┐╜я┐╜я┐╜╠╡я┐╜
+	String name			= "";                                                               //я┐╜я┐╜я┐╜я┐╜
+	String sex			= "";																//я┐╜я┐╜я┐╜я┐╜
+	String birYMD		= "";																//я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
+	String fgnGbn		= "";																//я┐╜я┐╜я┐╜▄▒я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜╨░я┐╜
+	String scCode		= "";																//я┐╜я┐╜я┐╜я┐╜─║я┐╜я┐╜я┐╜╚г
     String di			= "";																//DI
     String ci1			= "";																//CI
     String ci2			= "";																//CI
     String civersion    = "";                                                               //CI Version
     
-    String reqNum		= "";                                                               // ║╗└╬╚о└╬ ┐ф├╗╣°╚г
-    String result		= "";                                                               // ║╗└╬╚о└╬░с░· (Y/N)
-    String certDate		= "";                                                               // ░╦┴ї╜├░г
-    String certGb		= "";                                                               // └╬┴ї╝Ў┤▄
-	String cellNo		= "";																// ╟┌╡х╞∙ ╣°╚г
-	String cellCorp		= "";																// └╠╡┐┼ы╜┼╗ч
+    String reqNum		= "";                                                               // я┐╜я┐╜я┐╜я┐╜╚оя┐╜я┐╜ я┐╜я┐╜├╗я┐╜я┐╜╚г
+    String result		= "";                                                               // я┐╜я┐╜я┐╜я┐╜╚оя┐╜╬░я┐╜я┐╜ (Y/N)
+    String certDate		= "";                                                               // я┐╜я┐╜я┐╜я┐╜я┐╜├░я┐╜
+    String certGb		= "";                                                               // я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜
+	String cellNo		= "";																// я┐╜┌╡я┐╜я┐╜я┐╜ я┐╜я┐╜╚г
+	String cellCorp		= "";																// я┐╜╠╡я┐╜я┐╜я┐╜┼╗я┐╜
 	String addVar		= "";
 
-	//┐╣╛р ╟╩╡х
+	//я┐╜я┐╜я┐╜я┐╜ я┐╜╩╡я┐╜
 	String ext1			= "";
 	String ext2			= "";
 	String ext3			= "";
 	String ext4			= "";
 	String ext5			= "";
 
-	//║╣╚н╚н┐ы ║п╝Ў
+	//я┐╜я┐╜╚н╚ня┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜
 	String encPara		= "";
 	String encMsg		= "";
 	String msgChk       = "N";  
 	
     //-----------------------------------------------------------------------------------------------------------------
     
-	//sample ╞ф└╠┴Ў└╟ reqNum░· ╡┐└╧╟╧┴Ў ╛╩└╕╕щ ░с░·╞ф└╠┴Ў ║╣╚г╚н ╜├ ┐б╖п
-	//─э┼░░к ░б┴о ┐└▒т
+	//sample я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ reqNumя┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜╚г╚н я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜
+	//я┐╜я┐╜┼░я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜
     Cookie[] cookies = request.getCookies();
     String cookiename = "";
     String cookiereqNum = "";
@@ -65,28 +65,28 @@
 
     try{
 
-        // Parameter ╝Ў╜┼ --------------------------------------------------------------------
-        retInfo  = request.getParameter("retInfo").trim(); //╣▌╡х╜├ get░· post ╣ц╜─ ╡╤ ┤┘ ╣▐└╗╝Ў└╓░╘ ╟у┐ы╟╪│Ў╛▀╟╘.
+        // Parameter я┐╜я┐╜я┐╜я┐╜ --------------------------------------------------------------------
+        retInfo  = request.getParameter("retInfo").trim(); //я┐╜▌╡я┐╜я┐╜ getя┐╜я┐╜ post я┐╜я┐╜я┐╜ я┐╜я┐╜ я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜╓░я┐╜ я┐╜я┐╜я┐╜я┐╜╪│я┐╜я┐╜я┐╜я┐╜я┐╜.
 
 %>
 <%
-        // 1. ╛╧╚г╚н ╕Ё╡т (jar) Loading
+        // 1. я┐╜я┐╜╚г╚н я┐╜я┐╜я┐╜ (jar) Loading
         com.sci.v2.pccv2.secu.SciSecuManager sciSecuMg = new com.sci.v2.pccv2.secu.SciSecuManager();
-		sciSecuMg.setInfoPublic("SJSP001","309089EAF0519818D08884A89D66756F");  //bizsiren.com > ╚╕┐°╗ч└№┐ы ╖╬▒╫└╬╚─ ╚о└╬. 
+		sciSecuMg.setInfoPublic("SJSP001","309089EAF0519818D08884A89D66756F");  //bizsiren.com > ╚╕я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜╬▒я┐╜я┐╜я┐╜я┐╜я┐╜ ╚оя┐╜я┐╜. 
 
-        // 3. 1┬ў ╞─╜╠---------------------------------------------------------------
+        // 3. 1я┐╜я┐╜ я┐╜─╜я┐╜---------------------------------------------------------------
 
 		retInfo  = sciSecuMg.getDec(retInfo, cookiereqNum);
 
-		// 4. ┐ф├╗░с░· ║╣╚г╚н
+		// 4. я┐╜я┐╜├╗я┐╜я┐╜я┐╜ я┐╜я┐╜╚г╚н
         String[] aRetInfo1 = retInfo.split("\\^");
 
-		encPara  = aRetInfo1[0];         //╛╧╚г╚н╡╚ ┼ы╟╒ ╞─╢є╣╠┼═
-        encMsg   = aRetInfo1[1];    //╛╧╚г╚н╡╚ ┼ы╟╒ ╞─╢є╣╠┼═└╟ Hash░к
+		encPara  = aRetInfo1[0];         //я┐╜я┐╜╚г╚ня┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜─╢я┐╜я┐╜я┐╜я┐╜
+        encMsg   = aRetInfo1[1];    //я┐╜я┐╜╚г╚ня┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ я┐╜─╢я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ Hashя┐╜я┐╜
 		
 		String encMsg2   = sciSecuMg.getMsg(encPara);
 		
-		// 5. └з/║п┴╢ ░╦┴ї ---------------------------------------------------------------
+		// 5. я┐╜я┐╜/я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ ---------------------------------------------------------------
 
         if(encMsg2.equals(encMsg)){
             msgChk="Y";
@@ -95,13 +95,13 @@
 		if(msgChk.equals("N")){
 %>
 		    <script language=javascript>
-            alert("║ё┴д╗є└√└╬ ┴в▒┘└╘┤╧┤┘.!!<%=msgChk%>");
+            alert("я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜я┐╜╘┤╧┤я┐╜.!!<%=msgChk%>");
 		    </script>
 <%
 			return;
 		}
 
-        // ║╣╚г╚н ╣╫ └з/║п┴╢ ░╦┴ї ---------------------------------------------------------------
+        // я┐╜я┐╜╚г╚н я┐╜я┐╜ я┐╜я┐╜/я┐╜я┐╜я┐╜я┐╜ я┐╜я┐╜я┐╜я┐╜ ---------------------------------------------------------------
 		retInfo  = sciSecuMg.getDec(encPara, cookiereqNum);
 
         String[] aRetInfo = retInfo.split("\\^");
@@ -122,12 +122,27 @@
         certDate	= aRetInfo[13];
 		addVar		= aRetInfo[14];
 
-		//┐╣╛р ╟╩╡х
+		//я┐╜я┐╜я┐╜я┐╜ я┐╜╩╡я┐╜
 		ext1		= aRetInfo[15];
 		ext2		= aRetInfo[16];
 		ext3		= aRetInfo[17];
 		ext4		= aRetInfo[18];
 		ext5		= aRetInfo[19];
+
+		//----------------------------------------------------------------------
+		// [SECURITY] Save the verified result into the server session.
+		// The hidden form below is submitted through the browser and can be
+		// forged, so server must read these values from the session
+		// only, never from the request parameters.
+		//----------------------------------------------------------------------
+		if ("Y".equals(result)) {
+			session.setAttribute("PCC_VERIFIED_DI",     di);
+			session.setAttribute("PCC_VERIFIED_NAME",   name);
+			session.setAttribute("PCC_VERIFIED_SEX",    sex);
+			session.setAttribute("PCC_VERIFIED_BIRYMD", birYMD);
+			session.setAttribute("PCC_VERIFIED_CELLNO", cellNo);
+			session.setAttribute("PCC_VERIFIED_TIME",   Long.valueOf(System.currentTimeMillis()));
+		}
 %>
 <html>
 	<body>

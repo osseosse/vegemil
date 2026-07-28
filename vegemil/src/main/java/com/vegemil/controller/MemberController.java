@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -278,17 +279,44 @@ public class MemberController extends UiUtils {
 		
 		try {
 			
-			//DI값 필수 체크 ㅑp 중복 체크
-			if(StringUtils.hasText(member.getMDi())==false) {
+			// [보안] 2026-07-28 본인인증 결과는 폼이 아니라 세션에서만 읽는다.
+			// 기존에는 폼으로 넘어온 mDi가 비어있지 않기만 하면 통과해서,
+			// result_seed.jsp(본인인증)를 거치지 않고 /member/register로 직접 POST하면
+			// 인증 없이 가입이 가능했다. (봇 대량 가입 경로)
+			// 세션 값은 result_seed.jsp에서 SCI 복호화·해시검증을 통과한 뒤에만 기록된다.
+			HttpSession session = request.getSession(false);
+			String verifiedDi = (session == null) ? null : (String) session.getAttribute("PCC_VERIFIED_DI");
+
+			if (StringUtils.hasText(verifiedDi) == false) {
 				return showMessageWithRedirect("휴대폰 인증을 진행해주세요.", "/member/join", Method.GET, null, model);
 			}
-			
+
+			// 폼으로 넘어온 인적사항은 신뢰하지 않고 인증받은 값으로 덮어쓴다.
+			member.setMDi(verifiedDi);
+			member.setMName((String) session.getAttribute("PCC_VERIFIED_NAME"));
+			member.setMYear((String) session.getAttribute("PCC_VERIFIED_BIRYMD"));
+
+			// m_sex는 기존 데이터가 '남'/'여'로 저장되어 있다.
+			// join.html의 th:value="*{mSex == 'M' ? '남' : '여'}" 와 동일하게 변환한다.
+			String verifiedSex = (String) session.getAttribute("PCC_VERIFIED_SEX");
+			member.setMSex("M".equals(verifiedSex) ? "남" : "여");
+
+			member.setMHp((String) session.getAttribute("PCC_VERIFIED_CELLNO"));
+
 			boolean isRegistered = memberService.registerMember(member);
 			if (isRegistered == false) {
 				out.println("<script>alert('이미 가입된 회원입니다.'); history.go(-1);</script>");
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/home", Method.GET, null, model);
 			}
+
+			// [보안] 인증 1건당 가입 1건. 재사용 못 하도록 즉시 폐기한다.
+			session.removeAttribute("PCC_VERIFIED_DI");
+			session.removeAttribute("PCC_VERIFIED_NAME");
+			session.removeAttribute("PCC_VERIFIED_SEX");
+			session.removeAttribute("PCC_VERIFIED_BIRYMD");
+			session.removeAttribute("PCC_VERIFIED_CELLNO");
+			session.removeAttribute("PCC_VERIFIED_TIME");
 
 			// 마케팅 수신 동의(이메일 또는 SMS) 시 확인 메일 발송
 			if("1".equals(member.getMEmailsend()) || "1".equals(member.getMSmssend())){
