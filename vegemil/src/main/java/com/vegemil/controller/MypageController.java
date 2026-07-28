@@ -342,14 +342,30 @@ public class MypageController extends UiUtils {
 		
 		return "member/myInfo";
 	}
-	
+
+	/**
+	 * 마이페이지에서 정보 update
+	 * @param member
+	 * @param model
+	 * @param response
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping(value = "/mypage/update")
 	public String updateMember(
 			@ModelAttribute("member") final @Valid MemberDTO member,
-			Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
+			Model model, HttpServletResponse response, HttpServletRequest request,
+			Authentication authentication) throws Exception {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		// Security session에 있는 데이터로 확인
+		if (authentication == null || !(authentication.getPrincipal() instanceof MemberDTO)) {
+			return showMessageWithRedirect("로그인이 필요합니다.", "/member/login", Method.GET, null, model);
+		}
+		member.setMIdx(((MemberDTO) authentication.getPrincipal()).getMIdx());
+
 		MemberDTO preMember = memberService.getMember(member.getMIdx());
 		
 		//기존 회원 구분 세팅 
@@ -363,7 +379,9 @@ public class MypageController extends UiUtils {
 
 		try {
 			
-			boolean isRegistered = memberService.registerMember(member);
+			// [보안] 업서트인 registerMember() 대신 UPDATE 전용 메서드 사용.
+			// registerMember()는 m_id + m_email 조합이 DB에 없으면 신규 INSERT로 빠진다.
+			boolean isRegistered = memberService.updateMemberInfo(member);
 			if (!isRegistered) {
 				out.println("<script>alert('수정에 실패했습니다.'); history.go(-1);</script>");
 				out.flush();

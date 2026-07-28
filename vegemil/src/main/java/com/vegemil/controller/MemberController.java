@@ -331,6 +331,10 @@ public class MemberController extends UiUtils {
 		return "member/detail";
 	}
 	
+	// [보안] 2026-07-28 아래 두 엔드포인트 주석 처리
+	// - /member/infoUpdate, /member/infoCheck 모두 인증 검사가 없어 외부에서 누구나 호출 가능
+	// - todo: 우선 주석 처리 해놓고 모니터링 하다가 이상 없으면 삭제 예정
+	/*
 	@PostMapping(value = "/member/infoUpdate")
 	public String updateMemberInfo(@ModelAttribute("params") final MemberDTO params, Model model, HttpServletResponse response, HttpServletRequest request) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
@@ -376,6 +380,8 @@ public class MemberController extends UiUtils {
 		}
 	}
 	
+	*/
+
 	//휴면해제
 	@GetMapping(value="/member/di")
 	public String checkDi(Model model, Authentication authentication) throws Exception{

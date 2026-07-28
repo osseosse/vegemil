@@ -140,6 +140,27 @@ public class MemberService implements UserDetailsService {
 		return (queryResult == 1) ? true : false;
 	}
 
+	/**
+	 * [보안] 회원 정보 수정 전용. (2026-07-28 추가)
+	 *
+	 * registerMember()는 업서트(존재하면 UPDATE, 없으면 INSERT)라
+	 * 수정 화면에서 호출해도 m_id + m_email 조합만 바꿔 보내면 신규 회원이 INSERT 된다.
+	 * 수정 화면에서는 INSERT 분기가 없는 이 메서드를 사용할 것.
+	 *
+	 * 주의: member.getMIdx()가 WHERE 대상이므로,
+	 * 호출부에서 반드시 로그인한 본인의 m_idx로 고정한 뒤 넘겨야 한다.
+	 */
+	@Transactional
+	public boolean updateMemberInfo(MemberDTO member) {
+
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		member.setMPwd(passwordEncoder.encode(member.getPassword()));
+
+		int queryResult = memberMapper.updateMember(member);
+
+		return (queryResult == 1) ? true : false;
+	}
+
 	@Transactional
 	public boolean registerComp(MemberDTO member) {
 
