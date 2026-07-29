@@ -1,72 +1,8 @@
-﻿<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-<meta name="description" content="정식품 간단요리사에서 빠른요리 정보와 유용한 컨텐츠를 만나 보세요">
-<meta name="Keywords" content="간단요리사, 요리용 육수, 간단해지는 요리, 고민없이, 물없이, 실패없이, 시원한 채소육수, 담백한 채소육수, 냉요리용" />
-<meta property="og:title" content="정식품 간단요리사"> 
-<meta property="og:url" content="https://www.vegemil.co.kr/beanSoup/"> 
-<meta property="og:image" content="https://image.edaymall.com/images/vegemil/beansoup/img/og02.jpg" /> 
-<meta property="og:description" content="간단요리사는 소비자의 건강을 최우선으로 하는 정식품의 새로운 브랜드입니다. 누구나 간단요리사와 함께 간단하고 맛있는 요리를 경험해 보세요."/> 
-<meta name="author" content="OSSE">
-<title>정식품 간단요리사</title>
-<link href="./common/css/reset.css" rel="stylesheet">
-<!-- 추천렛피 -->
-<link rel='stylesheet' href='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.css'>
-<!-- 리뷰슬라이드 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
-<link href="./common/css/review.css" rel="stylesheet">
-<!-- //리뷰슬라이드 -->
-<script src="./common/js/jquery.1.11.1.min.js"></script>
-<script src="./common/js/jquery.touchSwipe.1.6.min.js"></script>
-<script src="./common/js/prrple.slider.js"></script>
-<script src="./common/js/design.js"></script>
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-
-
-<!-- Bootstrap core CSS -->
-<link href="./common/css/bootstrap.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="./common/css/style.css" rel="stylesheet">
-
-
-</head>
-<body>
-<!-- ================================ 
-		Header
-================================ -->
-<header>
-<!-- 모바일 메뉴 -->
-
-<!-- //모바일 메뉴 -->
-</header>
-<script>
-	/* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'header' ).load( './mainHeader.html' );
-  } );
-  //주소복사
- function TourUrlCopy() {
-    
-    var isIE = false;
-    var agent = navigator.userAgent.toLowerCase();
-    if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ) {
-	    isIE = true;
-    }
-
-    if(isIE){
-    if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?"))
-        window.clipboardData.setData("Text",document.location.href);
-    }else{
-        temp = prompt("Ctrl+C를 눌러 주소를 클립보드로 복사하세요.",document.location.href);
-    }
- }  
-</script>
-<!-- ================================ 
-		// Header
-================================ -->
 
 <!-- ================================ 
 		Content
@@ -103,10 +39,9 @@
 						<p class="f32 fw600 gray">1인분</p>
 					</li>
 				</ul>
-				<ul>
 
 				<ul class="cardBtnRound mt30">
-					<li><a href="" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
+					<li><a href="javascript:void(0)" onclick="TourUrlCopy(); return false;" ><img src="https://image.edaymall.com/images/vegemil/beansoup/img/ico_copy.png" alt="공유" /></a></li>
 					<li class="btn_orange"><a href="https://edaymall.com/product/detail.html?product_no=42950&cate_no=114&display_group=1" target="_blank">제품 구매하기</a></li>
 				</ul>
 				<div class="clear"></div>
@@ -152,11 +87,6 @@
 					</div>
 				</div>
 			</aside>
-			<script>
-			$(document).ready(function(){
-				$( '.sidebar_right' ).fixedsticky();
-			});
-			</script>
 
 
 
@@ -209,7 +139,6 @@
 		  -->
 		</section>
 		<div style=" border:1"><br><br><br></div>
-		<script src='https://cdn.rawgit.com/filamentgroup/fixed-sticky/master/fixedsticky.js'></script>
 	</div>
 	<!-- //제품상세 -->
 
@@ -220,107 +149,8 @@
 
 	
 </div><!-- // container -->
-<div class="container mt130 detailLine2">
-	<div class="row recommend">
-		<div class="col-lg-12 mb30 mt50">
-			<p class="f28 fw600 ">이런 레시피는 어떠세요?</p>
-		</div>
-		<div class="col-lg-3 col-sm-6">
-			<div class="thumbBox">
-				<a href="#">
-					<div class="chef_03_big h220 round">
-					<ul class="labelBox">
-						<li class="new"><span>NEW</span></li>
-						<li class="hit"><span>HIT</span></li>
-					</ul>
-					</div>
-					<div class="recipeTxt_white">
-						<p class="f16 gray">#집밥  #한식 #국요리</p>
-						<p class="f22 fw600 mt10">대파육계장</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-sm-6">
-			<div class="thumbBox">
-				<a href="#">
-					<div class="chef_04_big h220 round">
-					<ul class="labelBox">
-						<li class="new"><span>NEW</span></li>
-						<li class="hit"><span>HIT</span></li>
-					</ul>
-					</div>
-					<div class="recipeTxt_white">
-						<p class="f16 gray">#김치  #면요리 #간단요리</p>
-						<p class="f22 fw600 mt10">동치미국수</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-sm-6">
-			<div class="thumbBox">
-				<a href="#">
-					<div class="chef_05_big h220 round">
-					<ul class="labelBox">
-						<li class="new"><span>NEW</span></li>
-						<li class="hit"><span>HIT</span></li>
-					</ul>
-					</div>
-					<div class="recipeTxt_white">
-						<p class="f16 gray">#두부  #단백질  #전골 </p>
-						<p class="f22 fw600 mt10">두부버섯전골</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		
-		<div class="col-lg-3 col-sm-6">
-			<div class="thumbBox">
-				<a href="#">
-					<div class="chef_07_big h220 round">
-					<ul class="labelBox">
-						<li class="new"><span>NEW</span></li>
-						<li class="hit"><span>HIT</span></li>
-					</ul>
-					</div>
-					<div class="recipeTxt_white">
-						<p class="f16 gray">#한식  #건강식</p>
-						<p class="f22 fw600 mt10">묵사발</p>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
-
-</div>
-	
-
-<!-- //container -->
-
-
-
 
 <!-- ================================ 
 		// Content
 ================================ -->
-
-
-<!-- ================================ 
-		Footer
-================================ -->
-<footer class="container100" >
-	
-</footer>
-<script>
-	/* 로드방식 local 크롬에서 노출되지 않음. */
-  $( document ).ready( function() {
-	$( 'footer' ).load( './mainFooter.html' );
-  } );
-</script>
-<!-- ================================ 
-		// Footer
-================================ -->
-
-
-</body>
 </html>
