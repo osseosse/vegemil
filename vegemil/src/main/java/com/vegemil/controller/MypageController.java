@@ -420,6 +420,12 @@ public class MypageController extends UiUtils {
 	@PostMapping(value = "/member/withdrawal")
 	public String withdrawalMember(@ModelAttribute("params") MemberDTO member, Model model, Authentication authentication) {
 
+		// 로그인 체크
+		if(authentication == null || !(authentication.getPrincipal() instanceof MemberDTO)){
+			return showMessageWithRedirect("로그인을 먼저 진행해주세요","/member/login", Method.GET, null, model);
+		}
+		member.setMIdx(((MemberDTO) authentication.getPrincipal()).getMIdx());
+
 		try {
 			boolean isDeleted = memberService.withdrawalMember(member);
 			if (isDeleted == false) {
