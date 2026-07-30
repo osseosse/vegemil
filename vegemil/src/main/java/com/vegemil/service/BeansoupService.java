@@ -20,6 +20,9 @@ public interface BeansoupService {
 	public List<BeansoupDTO> selectBeanListWithKeywordRenew(String searchKeyword);
 	public BeansoupDTO selectBeansoupDetail(String fileNo);
 	public List<BeansoupDTO> selectBeansoupProposalList(String mCate);
+	// 카테고리 카운트 맵에서 '전체' 건수를 담는 키
+	public static final String CATE_COUNT_ALL = "allCount";
+	public Map<String, Integer> selectBeansoupCateCount(List<String> tags);
 	
 	//BeansoupEventDTO 
 	public List<BeansoupEventDTO> selectBeansoupEventList(BeansoupEventDTO params);

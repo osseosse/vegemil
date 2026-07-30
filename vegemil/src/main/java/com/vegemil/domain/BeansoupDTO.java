@@ -17,6 +17,9 @@ public class BeansoupDTO {
 	private String nCateb;
 	private String nCatec;
 	private String nCated;
+	private String nCatef;
+	private String nCateg;
+	private String nCateh;
 	private String mCate;
 	private String product;
 	private String name;

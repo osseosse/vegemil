@@ -22,7 +22,8 @@ public interface BeansoupMapper {
 	public List<BeansoupDTO> selectBeanListWithKeywordRenew(String tag);
 	public BeansoupDTO selectBeansoupDetail(String fileNo);
 	public List<BeansoupDTO> selectBeansoupProposalList(String mCate);
-	
+	public List<Map<String, Object>> selectBeansoupCateSource();
+
 	// m_beanSoup_event
 	public List<BeansoupEventDTO> selectBeansoupEventList(BeansoupEventDTO params);
 	public List<BeansoupEventDTO> selectMainBeansoupEventList();

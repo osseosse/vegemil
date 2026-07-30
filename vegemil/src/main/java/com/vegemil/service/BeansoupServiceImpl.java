@@ -62,6 +62,36 @@ public class BeansoupServiceImpl implements BeansoupService {
 	}
 
 	@Override
+	public Map<String, Integer> selectBeansoupCateCount(List<String> tags) {
+
+		Map<String, Integer> countMap = new HashMap<>();
+		countMap.put(BeansoupService.CATE_COUNT_ALL, 0);
+		for (String tag : tags) {
+			countMap.put(tag, 0);
+		}
+
+		for (Map<String, Object> row : beansoupMapper.selectBeansoupCateSource()) {
+
+			// 전체 버튼은 노출(display='1') 건만 보여주므로 동일 기준으로 센다
+			if ("1".equals(String.valueOf(row.get("display")))) {
+				countMap.put(BeansoupService.CATE_COUNT_ALL, countMap.get(BeansoupService.CATE_COUNT_ALL) + 1);
+			}
+
+			Object cateText = row.get("cate_text");
+			if (cateText == null) {
+				continue;
+			}
+			String cate = String.valueOf(cateText);
+			for (String tag : tags) {
+				if (cate.contains(tag)) {
+					countMap.put(tag, countMap.get(tag) + 1);
+				}
+			}
+		}
+		return countMap;
+	}
+
+	@Override
 	public BeansoupDTO selectBeansoupDetail(String fileNo) {
 		return beansoupMapper.selectBeansoupDetail(fileNo);
 	}

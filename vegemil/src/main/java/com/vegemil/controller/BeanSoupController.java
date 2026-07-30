@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -71,7 +72,16 @@ public class BeanSoupController extends UiUtils {
 	@Autowired
 	BeansoupService beansoupService;
 
-	
+	// 간단레시피 리스트 상단 카테고리 버튼 (버튼 문구 = 검색 태그)
+	private static final List<String> BEANSOUP_CATE_TAGS = Arrays.asList(
+			"맑은 국물", "진한 국물", "봄", "여름", "가을", "겨울",
+			"우리집 파티", "아이와 함께", "채소를 듬뿍", "고소한 간식", "새로운 발견");
+
+	// 검색바 아래 해시태그 버튼 (list.html 의 링크 태그와 반드시 일치시킬 것)
+	private static final List<String> BEANSOUP_BROTH_TAGS = Arrays.asList(
+			"담백한 채소육수", "시원한 채소육수", "구수한 사골육수", "콩국물");
+
+
 	@RequestMapping(value={"/beanSoup", "/Main/beanSoup/intro.aspx"})
 	public String beanSoupMainDev(Model model) {
 		
@@ -137,9 +147,9 @@ public class BeanSoupController extends UiUtils {
 			beansoupSearchList = beansoupService.selectBeanListWithKeywordRenew(tag);
 			model.addAttribute("tagSearched", "tagSearched");
 			
-			if("담백한 채소육수".equals(tag) || "시원한 채소육수".equals(tag) || "구수한 사골육수".equals(tag) || "진한 콩국물".equals(tag)) {
+			if (BEANSOUP_BROTH_TAGS.contains(tag)) {
 				// model.addAttribute("search_html", beansoupSearchList.size() + "건");
-				model.addAttribute("search_result_html", "#" + tag);	
+				model.addAttribute("search_result_html", "#" + tag);
 			}
 			
 			
@@ -149,14 +159,16 @@ public class BeanSoupController extends UiUtils {
 		model.addAttribute("tag", tag);
 		model.addAttribute("searchList", beansoupSearchList);
 		model.addAttribute("beansoupList", beansoupList);
-		
+		model.addAttribute("cateCountMap", beansoupService.selectBeansoupCateCount(BEANSOUP_CATE_TAGS));
+
 		return "beansoup/list";
 	}
-	
+
 	@PostMapping("/beanSoup/list")
 	public String beanSoupRecipeRenewSearch(Model model, @RequestParam("txtSearchWord") String searchKeyword) {
-		
+
 		List<BeansoupDTO> beansoupList = beansoupService.selectBeanListWithKeyword(searchKeyword);
+		model.addAttribute("cateCountMap", beansoupService.selectBeansoupCateCount(BEANSOUP_CATE_TAGS));
 		model.addAttribute("search_html", beansoupList.size() + "건");
 		model.addAttribute("search_result_html", "#" + searchKeyword);
 		model.addAttribute("searchList", beansoupList);
