@@ -154,11 +154,11 @@ public class BeanSoupController extends UiUtils {
 	}
 	
 	@PostMapping("/beanSoup/list")
-	public String beanSoupRecipeRenewSearch(Model model, @RequestParam("txtSearchWord") String serachKeyword) {
+	public String beanSoupRecipeRenewSearch(Model model, @RequestParam("txtSearchWord") String searchKeyword) {
 		
-		List<BeansoupDTO> beansoupList = beansoupService.selectBeanListWithKeyword(serachKeyword);
+		List<BeansoupDTO> beansoupList = beansoupService.selectBeanListWithKeyword(searchKeyword);
 		model.addAttribute("search_html", beansoupList.size() + "건");
-		model.addAttribute("search_result_html", "#" + serachKeyword);
+		model.addAttribute("search_result_html", "#" + searchKeyword);
 		model.addAttribute("searchList", beansoupList);
 		model.addAttribute("beansoupList", beansoupList);
 
