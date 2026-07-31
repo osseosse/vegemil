@@ -139,22 +139,16 @@ public class BeanSoupController extends UiUtils {
 	
 	@GetMapping("/beanSoup/list")
 	public String beanSoupRecipeRenew(Model model, @RequestParam(required = false) String tag) {
-		
+
+		// 상단 카테고리(BEANSOUP_CATE_TAGS)는 전체 목록을 한 번에 내려주고 화면에서 필터링한다.
+		// 검색창 아래 해시태그(BEANSOUP_BROTH_TAGS)만 서버에서 별도 검색 결과를 조회한다.
 		List<BeansoupDTO> beansoupSearchList = Collections.emptyList();
-		List<BeansoupDTO> beansoupList = Collections.emptyList();
-		
-		if (tag != null && tag != "") {
+		List<BeansoupDTO> beansoupList = beansoupService.selectBeansoupList();
+
+		if (tag != null && tag != "" && BEANSOUP_BROTH_TAGS.contains(tag)) {
 			beansoupSearchList = beansoupService.selectBeanListWithKeywordRenew(tag);
 			model.addAttribute("tagSearched", "tagSearched");
-			
-			if (BEANSOUP_BROTH_TAGS.contains(tag)) {
-				// model.addAttribute("search_html", beansoupSearchList.size() + "건");
-				model.addAttribute("search_result_html", "#" + tag);
-			}
-			
-			
-		}else {
-			beansoupList = beansoupService.selectBeansoupList();
+			model.addAttribute("search_result_html", "#" + tag);
 		}
 		model.addAttribute("tag", tag);
 		model.addAttribute("searchList", beansoupSearchList);
