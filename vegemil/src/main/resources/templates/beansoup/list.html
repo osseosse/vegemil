@@ -27,6 +27,13 @@
 	// 카테고리 버튼: 서버 재요청 없이 이미 내려받은 전체 목록을 Isotope 필터로만 전환한다.
 	// (Isotope가 아이템을 절대좌표로 배치하므로, 단순 show/hide 대신 filter 옵션을 통해 재배치까지 맡겨야 화면이 안 틀어진다)
 	function applyCateFilter(tag) {
+		if ($('#searchList').css('display') === 'block') {
+			$('#searchList').css('display', 'none');
+			$('#resultWord').css('display', 'none');
+			$('#originList').css('display', 'block');
+
+		}
+
 		var $buttons = $('.messonry-button2 button');
 		$buttons.removeClass('is-checked');
 		var $target = tag ? $buttons.filter(function() { return $(this).data('tag') === tag; }) : $('.cate0');
@@ -154,7 +161,7 @@
 
 					<th:block th:if="${not #strings.isEmpty(search_result_html)}">
 						<!-- listLine 은 밑줄만 그리는 요소라, 건수가 없으면 빈 줄만 남으므로 함께 감춘다 -->
-						<div class="listLine mt30m" th:if="${search_html != null}">
+						<div class="listLine mt30m" th:if="${search_html != null}" id="searchResult">
 							<div id="searchTotal">
 								<div class='count'><p class='f16'>검색결과 <span class='green' th:text="${search_html}"></span> 조회</p></div>
 							</div>
