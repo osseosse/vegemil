@@ -112,7 +112,17 @@ new daum.Postcode({
 }
 /*[- end of function -]*/
 
-function btnAvtive() {	
+// 이메일 형식 검증 (최종 제출 시 사용)
+function checkEmail() {
+	const local  = $.trim($("#txtEmail").val());
+	const domain = $.trim($("#txtEmail2").val());
+	const email  = local + "@" + domain;
+	const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+	return emailRegex.test(email);
+}
+
+function btnAvtive() {
 	
 	const sId = $('#mId').val();
 	const idDuplicate = $('#idDuplicate').val();
@@ -167,8 +177,13 @@ function submitBtnMouseOver() {
 		alert("주소를 입력해 주세요.")
 		return false;
 	}
-	
-	
+
+	if(!checkEmail()) {
+		alert("이메일 형식을 확인해 주세요.");
+		return false;
+	}
+
+
 	btnAvtive();
 }
 

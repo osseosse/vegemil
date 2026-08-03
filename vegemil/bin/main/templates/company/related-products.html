@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대두 원산지 관련 안내</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
+            background-color: #f4f4f4;
+            -webkit-text-size-adjust: 100%;
+        }
+        .email-wrapper {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 0px 0;
+        }
+        .email-container {
+            position: relative; /* 닫기 버튼 위치 기준점을 위해 추가 */
+            max-width: 600px;
+            width:100%;
+            margin: 0 auto;
+            background-color: none;
+            
+           
+        }
+		 .email-container img { border-bottom: 1px solid #dddddd;
+            border-left: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-radius:10px}
+        
+        
+        /* 닫기 버튼 스타일 추가 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+            color: #b63428;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .close-btn:hover {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container" >
+            <button type="button" class="close-btn" onclick="window.close();" aria-label="닫기">&times;</button>
+            
+            <p style="padding-bottom:0"><a href="https://www.vegemil.co.kr/" ><img src="https://image.edaymall.com/images/dcf/vegemil/img/popup/popup_origin_detail.jpg" alt="" style="width: 100%; display: block;"/></a></p>
+        </div>
+    </div>
+</body>
+</html>

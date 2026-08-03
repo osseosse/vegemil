@@ -60,6 +60,7 @@
 		   m_smssend,
 		   m_emailsend,
 		   m_joindate,
+		   m_receive_modifydate,
 		   m_logincount,
 		   m_ip,
 		   m_active,
@@ -84,6 +85,7 @@
 		   #{mSmssend},
 		   #{mEmailsend},
 		   NOW(),
+		   NOW(),
 		   0,
 		   #{mIp},
 		   #{mActive},
@@ -103,6 +105,7 @@
 		SET
 			m_pwd = #{mPwd}
 			, m_pwd_moddate = NOW()
+			, m_receive_modifydate = #{mReceiveModifydate}
 			, m_auth = #{mAuth}
 			, m_name = #{mName}
 			, m_year = #{mYear}

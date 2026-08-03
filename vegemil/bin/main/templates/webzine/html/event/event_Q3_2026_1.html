@@ -178,7 +178,7 @@
 				<!-- width 100%  -->
 			<div class="container">
 				<div class="project-detail-wrap fl-wrap bg-w2 container-sub">
-					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return false;">
+					<form th:action="|@{/webzine/saveEvent}|" th:object="${webzineEvent}" method="post" onsubmit="return  btnActive();">
 						<input type="hidden" name="qrt" th:value="${qrtYear}"> <input type="hidden" name="category" th:value="${T(com.vegemil.constant.WebzineEventCate).SNS}">
 						<div class="row intxt mt80-m"></div>
 
@@ -233,21 +233,35 @@
 								<input class="btn-event-sm center" type="submit" alt="응모하기" value="제출하기">
 							</div>
 						</div>
-						<div class="col-md-12 mt100-m2">
+						<div class="col-md-12 mt100-m2" >
 							<p class="type20 center">지난호 당첨자</p>
 							<div class="eventList2 mt50-m ">
 								<div class="col-md-3 mt30m">
 									<p class="type28-1">1등</p>
-
+									<p>이*욱</p>
+									<p>이*림</p>
+									<p>최*름</p>
 								</div>
 								<div class="col-md-3 mt30m">
 									<p class="type28-1">2등</p>
-									
-
+									<p>박*주</p>
+									<p>고*연</p>
+									<p>홍*진</p>
+									<p>이*림</p>
+									<p>김*경</p>
 								</div>
 								<div class="col-md-3 mt30m">
 									<p class="type28-1">3등</p>
-									
+									<p>유*은</p>
+									<p>백*주</p>
+									<p>김*하</p>
+									<p>안*현</p>
+									<p>이*경</p>
+									<p>김*현</p>
+									<p>전*형</p>
+									<p>김*성</p>
+									<p>이*성</p>
+									<p>강*현</p>
 								</div>
 
 							</div>
