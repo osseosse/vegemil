@@ -15,6 +15,9 @@
 		n_cateb,
 		n_catec,
 		n_cated,
+		n_catef,
+		n_categ,
+		n_cateh,
 		m_cate,
 		product, 
 		name, 
@@ -59,7 +62,10 @@
 		  	OR n_cateb like CONCAT('%',#{searchKeyword},'%')
 		  	OR n_catec like CONCAT('%',#{searchKeyword},'%')
 		  	OR n_cated like CONCAT('%',#{searchKeyword},'%')
-		</if>  
+		  	OR n_catef like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_categ like CONCAT('%',#{searchKeyword},'%')
+		  	OR n_cateh like CONCAT('%',#{searchKeyword},'%')
+		</if>
 		ORDER BY
 			idx DESC
 	</select>
@@ -77,12 +83,26 @@
 		 OR n_cateb like CONCAT('%',#{searchKeyword},'%')
 		 OR n_catec like CONCAT('%',#{searchKeyword},'%')
 		 OR n_cated like CONCAT('%',#{searchKeyword},'%')
+		 OR n_catef like CONCAT('%',#{searchKeyword},'%')
+		 OR n_categ like CONCAT('%',#{searchKeyword},'%')
+		 OR n_cateh like CONCAT('%',#{searchKeyword},'%')
 		 OR product like CONCAT('%',#{searchKeyword},'%')
 		 
 
 		</if>  
 		ORDER BY
 			idx DESC
+	</select>
+
+	<!-- 리스트 상단 카테고리 버튼 카운터용 원본. 태그별 집계는 서비스에서 계산한다.
+	     cate_text 는 selectBeanListWithKeywordRenew 의 검색 대상 컬럼과 동일하게 유지할 것 -->
+	<select id="selectBeansoupCateSource" resultType="map">
+		/* BeansoupMapper.xml ===> selectBeansoupCateSource */
+		SELECT
+			display,
+			CONCAT_WS('|', n_catea, n_cateb, n_catec, n_cated, n_catef, n_categ, n_cateh, product) AS cate_text
+		FROM
+			m_beansoup
 	</select>
 
 	<select id="selectBeansoupListCount" parameterType="com.vegemil.domain.BeansoupDTO" resultType="int">

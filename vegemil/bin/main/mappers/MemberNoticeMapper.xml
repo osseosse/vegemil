@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vegemil.mapper.MemberNoticeMapper">
+
+    <!-- Save a new MemberNotice -->
+    <insert id="save"     parameterType="com.vegemil.domain.MemberNoticeDTO">
+        INSERT INTO member_notice (m_id, notice_type, last_sent_at, created_at, updated_at, updated_by)
+        VALUES (#{mId}, #{noticeType}, NOW(), NOW(), NOW(), 'ADMIN')
+    </insert>
+
+    <!-- Update an existing MemberNotice -->
+    <update id="update"     parameterType="com.vegemil.domain.MemberNoticeDTO">
+        UPDATE member_notice
+        SET
+        last_sent_at = NOW(),
+        updated_at = NOW(),
+        updated_by = 'ADMIN'
+        WHERE m_id = #{mId} AND notice_type = #{noticeType}
+    </update>
+
+    <!-- Delete a MemberNotice -->
+    <delete id="delete" parameterType="map">
+        DELETE FROM member_notice
+        WHERE m_id = #{mId} AND notice_type = #{noticeType}
+    </delete>
+
+    <!-- Find a MemberNotice by m_id -->
+    <select id="findByMid" parameterType="String" resultType="com.vegemil.domain.MemberNoticeDTO">
+        SELECT idx, m_id, notice_type, last_sent_at, created_at, updated_at
+        FROM member_notice
+        WHERE m_id = #{mId}
+    </select>
+
+    <select id="findByMidAndNoticeType"
+                parameterType="com.vegemil.domain.MemberNoticeDTO"
+                                resultType="com.vegemil.domain.MemberNoticeDTO">
+        SELECT idx, m_id, notice_type, last_sent_at, created_at, updated_at
+        FROM member_notice
+        WHERE m_id = #{mId} and notice_type = #{noticeType}
+    </select>
+
+</mapper>

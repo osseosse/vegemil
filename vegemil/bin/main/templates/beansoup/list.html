@@ -12,14 +12,6 @@
 				return false;
 			}
 		});
-		
-		$(".moveCate").click(function(e){
-			e.preventDefault();
-			var elementPressed = $(this).find('p');
-			// alert(elementPressed.text());
-			location.href="/beanSoup/list?tag=" + elementPressed.text();
-			return;			
-		});
 
 		function onKeydownEnterKey(obj) {
 			if (event.keycode == 13) {
@@ -32,6 +24,44 @@
 
 	});
 
+	// 카테고리 버튼: 서버 재요청 없이 이미 내려받은 전체 목록을 Isotope 필터로만 전환한다.
+	// (Isotope가 아이템을 절대좌표로 배치하므로, 단순 show/hide 대신 filter 옵션을 통해 재배치까지 맡겨야 화면이 안 틀어진다)
+	function applyCateFilter(tag) {
+		if ($('#searchList').css('display') === 'block') {
+			$('#searchList').css('display', 'none');
+			$('#resultWord').css('display', 'none');
+			$('#originList').css('display', 'block');
+
+		}
+
+		var $buttons = $('.messonry-button2 button');
+		$buttons.removeClass('is-checked');
+		var $target = tag ? $buttons.filter(function() { return $(this).data('tag') === tag; }) : $('.cate0');
+		$target.addClass('is-checked');
+
+		var $grid = $('#originList');
+		if ($grid.data('isotope')) {
+			$grid.isotope({
+				filter: function() {
+					if (!tag) return true;
+					var cate = String($(this).data('cate') || '');
+					return cate.indexOf(tag) !== -1;
+				}
+			});
+		} else {
+			$grid.find('.portfolio').each(function() {
+				var cate = String($(this).data('cate') || '');
+				$(this).toggle(!tag || cate.indexOf(tag) !== -1);
+			});
+		}
+	}
+
+	$(window).on('load', function() {
+		$('.messonry-button2 button').on('click', function(e) {
+			e.preventDefault();
+			applyCateFilter($(this).data('tag') || '');
+		});
+	});
 
 </script>
 <script th:inline="javascript">
@@ -39,16 +69,19 @@
       $(document).ready(function(){
     	var current = 'ㅡㅡ';
       	current = /*[[ ${tagSearched} ]]*/;
-      	
-      	/* if (current == null){
-      		$('#originList')show();
-      	} */
-      	
-      	if (current != null) { 
+
+      	if (current != null) {
 			$('#originList').hide();
 			$('#searchList').show();
 			$('#searchTotal').show();
 			$('#resultWord').show();
+		} else {
+			var initialTag = /*[[ ${tag} ]]*/ null;
+			if (initialTag) {
+				$(window).on('load', function() {
+					applyCateFilter(initialTag);
+				});
+			}
 		}
 	});
 	/*]]>*/
@@ -90,7 +123,7 @@
 							<li><a href="/beanSoup/list?tag=담백한 채소육수">#담백한 채소육수</a></li>
 							<li><a href="/beanSoup/list?tag=시원한 채소육수">#시원한 채소육수</a></li>
 							<li><a href="/beanSoup/list?tag=구수한 사골육수">#구수한 사골육수</a></li>
-							<li><a href="/beanSoup/list?tag=진한 콩국물">#진한 콩국물</a></li>
+							<li><a href="/beanSoup/list?tag=콩국물">#콩국물</a></li>
 						  </ul>
 						</div>
 						<!-- //subSearch -->
@@ -103,32 +136,33 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="messonry-button2 text-center pb30 ">
-						<button data-filter="*" onclick="location.href='/beanSoup/list'" class="cate0" th:classappend="${tag == null} ? 'is-checked' : ''"><span class="filter-text"></span><span class="filter-counter">78</span>
+						<button data-tag="" class="cate0" th:classappend="${tag == null} ? 'is-checked' : ''"><span class="filter-text"></span><span class="filter-counter" th:text="${cateCountMap?.get('allCount')}">78</span>
 						<p class="f16 f500 mt10" >전체</p></button>
-						<button data-filter=".recType01" class="cate1 moveCate" th:classappend="${tag == '맑은 국물'} ? 'is-checked' : ''">
+						<button data-tag="맑은 국물" class="cate1" th:classappend="${tag == '맑은 국물'} ? 'is-checked' : ''">
 							<span class="filter-text"></span>
-							<span class="filter-counter">6</span>
+							<span class="filter-counter" th:text="${cateCountMap?.get('맑은 국물')}">6</span>
 							<p class="f16 f500 mt10">맑은 국물</p>
 						</button>
-						<button data-filter=".recType02" class="cate2 moveCate" th:classappend="${tag == '진한 국물'} ? 'is-checked' : ''">
-							<span class="filter-text"></span> 
-							<span class="filter-counter">11</span>
+						<button data-tag="진한 국물" class="cate2" th:classappend="${tag == '진한 국물'} ? 'is-checked' : ''">
+							<span class="filter-text"></span>
+							<span class="filter-counter" th:text="${cateCountMap?.get('진한 국물')}">11</span>
 							<p class="f16 f500 mt10">진한 국물</p>
 						</button>
-						<button class="cate3 moveCate" th:classappend="${tag == '봄'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">7</span><p class="f16 f500 mt10">봄</p></button>
-						<button class="cate4 moveCate" th:classappend="${tag == '여름'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">12</span><p class="f16 f500 mt10">여름</p></button>
-						<button class="cate5 moveCate" th:classappend="${tag == '가을'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">9</span><p class="f16 f500 mt10">가을</p></button>
-						<button class="cate6 moveCate" th:classappend="${tag == '겨울'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">12</span><p class="f16 f500 mt10">겨울</p></button>
-						<button class="cate7 moveCate" th:classappend="${tag == '우리집 파티'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">10</span><p class="f16 f500 mt10">우리집 파티</p></button>
-						<button class="cate8 moveCate" th:classappend="${tag == '아이와 함께'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">12</span><p class="f16 f500 mt10">아이와 함께</p></button>
-						<button class="cate9 moveCate" th:classappend="${tag == '채소를 듬뿍'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">11</span><p class="f16 f500 mt10">채소를 듬뿍</p></button>
-						<button class="cate10 moveCate"  th:classappend="${tag == '고소한 간식'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">8</span><p class="f16 f500 mt10">고소한 간식</p></button>
-						<button class="cate11 moveCate"  th:classappend="${tag == '새로운 발견'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter">9</span><p class="f16 f500 mt10">새로운 발견</p></button>
+						<button data-tag="봄" class="cate3" th:classappend="${tag == '봄'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('봄')}">7</span><p class="f16 f500 mt10">봄</p></button>
+						<button data-tag="여름" class="cate4" th:classappend="${tag == '여름'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('여름')}">12</span><p class="f16 f500 mt10">여름</p></button>
+						<button data-tag="가을" class="cate5" th:classappend="${tag == '가을'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('가을')}">9</span><p class="f16 f500 mt10">가을</p></button>
+						<button data-tag="겨울" class="cate6" th:classappend="${tag == '겨울'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('겨울')}">12</span><p class="f16 f500 mt10">겨울</p></button>
+						<button data-tag="우리집 파티" class="cate7" th:classappend="${tag == '우리집 파티'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('우리집 파티')}">10</span><p class="f16 f500 mt10">우리집 파티</p></button>
+						<button data-tag="아이와 함께" class="cate8" th:classappend="${tag == '아이와 함께'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('아이와 함께')}">12</span><p class="f16 f500 mt10">아이와 함께</p></button>
+						<button data-tag="채소를 듬뿍" class="cate9" th:classappend="${tag == '채소를 듬뿍'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('채소를 듬뿍')}">11</span><p class="f16 f500 mt10">채소를 듬뿍</p></button>
+						<button data-tag="고소한 간식" class="cate10"  th:classappend="${tag == '고소한 간식'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('고소한 간식')}">8</span><p class="f16 f500 mt10">고소한 간식</p></button>
+						<button data-tag="새로운 발견" class="cate11"  th:classappend="${tag == '새로운 발견'} ? 'is-checked' : ''"><span class="filter-text"></span> <span class="filter-counter" th:text="${cateCountMap?.get('새로운 발견')}">9</span><p class="f16 f500 mt10">새로운 발견</p></button>
 					</div>
 
 					<th:block th:if="${not #strings.isEmpty(search_result_html)}">
-						<div class="listLine mt30m">
-							<div id="searchTotal" th:if="${search_html!=null}">
+						<!-- listLine 은 밑줄만 그리는 요소라, 건수가 없으면 빈 줄만 남으므로 함께 감춘다 -->
+						<div class="listLine mt30m" th:if="${search_html != null}" id="searchResult">
+							<div id="searchTotal">
 								<div class='count'><p class='f16'>검색결과 <span class='green' th:text="${search_html}"></span> 조회</p></div>
 							</div>
 						</div>
@@ -157,7 +191,8 @@
 						<div class="resizer"></div>
 						<!--나중에 th:block -> div로 바꿔보기 -->
 						<th:block th:each="item : ${beansoupList}">
-							<div class="portfolio portfolio_style--1 portfolio-25">
+							<div class="portfolio portfolio_style--1 portfolio-25"
+								th:attr="data-cate=${(item.nCatea ?: '') + '|' + (item.nCateb ?: '') + '|' + (item.nCatec ?: '') + '|' + (item.nCated ?: '') + '|' + (item.nCatef ?: '') + '|' + (item.nCateg ?: '') + '|' + (item.nCateh ?: '') + '|' + (item.product ?: '')}">
 								<div class="thumbBox">
 									<a th:href="|/beanSoup/detail?recipe=${item.fileNo}|">
 										<!--pk:fileNo -->
