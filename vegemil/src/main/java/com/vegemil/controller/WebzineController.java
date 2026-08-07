@@ -1006,5 +1006,17 @@ public class WebzineController extends UiUtils {
 		return "webzine/searchNew";
 	}
 
+	@GetMapping({"/webzine/recipes", "/webzine/recipes/{page}"})
+	public String recipe(Model model, @PathVariable(value = "page", required = false ) Integer page){
+		if (page == null){
+			page = 1;
+		}
+		model.addAttribute("page", page);
+		model.addAttribute("totalPages", 4);
+
+		return "webzine/recipes";
+
+	}
+
 	
 }

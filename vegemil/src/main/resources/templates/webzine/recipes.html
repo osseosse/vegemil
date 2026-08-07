@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 검색엔진 최적화 (SEO) 메타태그 -->
+  <title>정식품 웹진 | 간단요리사 맛있는 건강 레시피</title>
+  <meta name="description" content="정식품 웹진에서 만나는 간단요리사 레시피! 담백한 채소육수, 시원한 채소육수, 진한 콩국물로 만드는 풍성하고 맛있는 요리법을 확인해보세요.">
+  <meta name="keywords" content="정식품, 정식품 웹진, 간단요리사, 베지밀, 채소육수, 진한 콩국물, 냉이된장국, 주꾸미샤브샤브, 간단레시피, 건강레시피">
+  <meta name="author" content="정식품">
+  <meta name="robots" content="index, follow">
+
+  <!-- 오픈그래프 (Open Graph - 카카오톡, 페이스북, 라인 공유용) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="정식품 웹진 | 간단요리사 맛있는 건강 레시피">
+  <meta property="og:description" content="간단요리사 채소육수 & 콩국물로 완성하는 특별한 요리! 쉽고 맛있는 건강 레시피를 웹진에서 확인하세요.">
+  <meta property="og:image" content="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05_big.jpg">
+  <meta property="og:url" content="https://www.vegemil.co.kr/webzine/">
+  <meta property="og:site_name" content="정식품 웹진">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- 트위터 카드 (Twitter Card) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="정식품 웹진 | 간단요리사 맛있는 건강 레시피">
+  <meta name="twitter:description" content="간단요리사 채소육수 & 콩국물로 완성하는 특별한 요리! 쉽고 맛있는 건강 레시피를 웹진에서 확인하세요.">
+  <meta name="twitter:image" content="https://image.edaymall.com/images/dcf/vegemil/img/beanSoupRecipe/project/recipe_05big.jpg">
+
+  <!-- 스타일시트 및 폰트 연동 -->
+  <link href="https://image.edaymall.com/images/mail/news/webzine/202607레시피페이지/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+  <style>
+    /* 페이지(1~4) 간 이동 시 브라우저가 자동으로 크로스페이드 전환해줌.
+       Chrome/Edge 126+ 에서만 동작하고 그 외 브라우저는 그냥 즉시 전환됨(깨지지 않음, 스무스 효과만 없음). */
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+</head>
+<body th:with="page=${page != null ? page : 1}, totalPages=4">
+  <div th:class="|container bg0${page}|">
+    <!-- 좌측 상단 정식품 로고 + 웹진 링크 -->
+    <div onclick="window.open('https://www.vegemil.co.kr/webzine/', '_blank')" class="top-header-logo" style="cursor: pointer;">
+      <img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/logo.png" alt="정식품 로고">
+      <span class="webzine-text">웹진</span>
+    </div>
+
+    <!-- 우측 상단 간단요리사 BI 링크 -->
+    <div onclick="window.open('https://www.vegemil.co.kr/beanSoup/list', '_blank')" class="top-right-chef-bi" style="cursor: pointer;">
+      <img src="https://image.edaymall.com/images/vegemil/beansoup/img/logox2.png" alt="간단요리사 BI">
+    </div>
+
+    <!-- 화면 좌우 이동 버튼: 원본 퍼블리싱 마크업 그대로(button), 이동은 JS에서 처리 -->
+    <button class="main-nav-btn prev" id="mainPrev" title="이전 페이지">‹</button>
+    <button class="main-nav-btn next" id="mainNext" title="다음 페이지">›</button>
+
+    <div class="recipe-grid">
+      <!-- 4페이지 전체를 처음 로드 시 한 번에 렌더링해두고, 현재 페이지만 보이게 한다.
+           클릭마다 서버에 다시 요청/재렌더링하지 않고 display만 토글한다. -->
+      <div class="recipe-page" data-page="1" th:style="${page == 1} ? 'display:contents' : 'display:none'">
+        <th:block th:insert="webzine/html/recipes/index"></th:block>
+      </div>
+      <div class="recipe-page" data-page="2" th:style="${page == 2} ? 'display:contents' : 'display:none'">
+        <th:block th:insert="webzine/html/recipes/index_2"></th:block>
+      </div>
+      <div class="recipe-page" data-page="3" th:style="${page == 3} ? 'display:contents' : 'display:none'">
+        <th:block th:insert="webzine/html/recipes/index_3"></th:block>
+      </div>
+      <div class="recipe-page" data-page="4" th:style="${page == 4} ? 'display:contents' : 'display:none'">
+        <th:block th:insert="webzine/html/recipes/index_4"></th:block>
+      </div>
+
+      <!-- 오른쪽 하단(모바일: 하단 센터 고정) 페이징 컨트롤: 원본 퍼블리싱 마크업 그대로(button) -->
+      <div class="grid-pagination">
+        <button class="grid-page-btn" id="pagePrev" title="이전 페이지">‹</button>
+        <span class="grid-page-num" id="pageNum" th:text="|${page} / ${totalPages}|">1 / 4</span>
+        <button class="grid-page-btn" id="pageNext" title="다음 페이지">›</button>
+      </div>
+    </div>
+  </div>
+
+  <img class="product-cursor-preview" src="" alt="">
+
+  <!-- 유튜브 레이어 모달 팝업 -->
+  <div class="youtube-modal" id="youtubeModal">
+    <div class="youtube-modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <button class="modal-nav-btn prev" id="modalPrev">‹</button>
+      <button class="modal-nav-btn next" id="modalNext">›</button>
+      <iframe id="youtubeIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+  <script src="https://image.edaymall.com/images/mail/news/webzine/202607레시피페이지/common.js"></script>
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+    (function() {
+      var currentPage = /*[[${page}]]*/ 1;
+      var totalPages = /*[[${totalPages}]]*/ 4;
+
+      var pages = document.querySelectorAll('.recipe-page');
+      var pageNum = document.getElementById('pageNum');
+
+      // 4페이지 전체가 이미 DOM에 로드돼 있으므로(common.js도 로드 시점에 전부 바인딩함),
+      // 재요청/재렌더링 없이 display만 토글한다.
+      function goToPage(n) {
+        if (n < 1) n = totalPages;
+        if (n > totalPages) n = 1;
+
+        pages.forEach(function(p) {
+          // .recipe-grid는 카드가 직속 자식이어야 하는 grid라, 보여줄 때는 display:none이 아니라
+          // display:contents로 둬서 .recipe-page 래퍼 자체는 레이아웃에서 사라지고 카드들만 grid item으로 남게 한다.
+          p.style.display = (Number(p.dataset.page) === n) ? 'contents' : 'none';
+        });
+
+        currentPage = n;
+        pageNum.textContent = n + ' / ' + totalPages;
+        history.pushState({page: n}, '', '/webzine/recipes/' + n);
+      }
+
+      ['mainPrev', 'pagePrev'].forEach(function(id) {
+        document.getElementById(id).addEventListener('click', function() { goToPage(currentPage - 1); });
+      });
+      ['mainNext', 'pageNext'].forEach(function(id) {
+        document.getElementById(id).addEventListener('click', function() { goToPage(currentPage + 1); });
+      });
+
+      window.addEventListener('popstate', function(e) {
+        goToPage(e.state && e.state.page ? e.state.page : 1);
+      });
+    })();
+    /*]]>*/
+  </script>
+</body>
+</html>
