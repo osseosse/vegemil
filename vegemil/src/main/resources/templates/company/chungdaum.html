@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<title>정식품 정다움</title>
+<head th:replace="fragments/head :: headFragment"></head>
+<body>
+<!-- ================================ Header ================================ -->
+<header class="white" th:replace="fragments/mainHeader :: headerFragment"></header>
+<!-- ================================ // Header ================================ -->
+<!-- ================================
+		Content
+================================ -->
+<div id="content" class="gradient-background">
+	<!-- 2023-11-09 -->
+	<div class="content100">
+		<div class="subTopChungdaum h440 mt90h">
+			<div class="centerH">
+				<p class="f_pp white f18 fw400">Company</p>
+				<p class="white f45 fw600">정다움</p>
+			</div>
+		</div>
+	</div>
+	<!-- //2023-11-09 -->
+	<div class="contant1460">
+		<div class="subMenu">
+			<p class="btnSubLeft"><a href="/company/valueSys"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayLeft.png" alt="왼쪽"/><span class="f13 fw400 gray04">Back</span></a></p> <!-- 해리 수정 -->
+			<ul class="submenuUL d6"> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/company/greetings"><span>대표이사 인사말</span></a></li> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/company/profile"><span>프로필</span></a></li> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/company/valueSys"><span>가치체계<br class="mView"></span></a></li> <!-- 해리 수정 -->
+				<li class="f18 fw500 active"><a href="/company/chungdaum"><span>정다움<br class="mView"></span></a></li> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/company/history"><span>연혁</span></a></li> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/company/nnp"><span>관련사</span></a></li> <!-- 해리 수정 -->
+				<li class="f18 fw500"><a href="/company/finance"><span>공시</span></a></li> <!-- 해리 수정 -->
+			</ul>
+			<p class="btnSubRight"><a href="/company/history"><span class="f13 fw400 gray04">Next</span><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_grayRight.png" alt="오른쪽"/></a></p> <!-- 해리 수정 -->
+		</div>
+		<!-- <p class="f14 fw400 black mt70 float-right btnType03"><a href="#"><img class="mr5" src="./img/ico/ico_share.png" alt="공유"/>공유</a></p><br class="clear"> -->
+	</div>
+
+
+	<div class="contant100">
+		<div class="row">
+			<div class="col-md-12 center mt100">
+				<p class="vs_title gold fw500 f38 f_pp mt50m">정식품 경영철학</p>
+				<p class="mt80 cdu01"><img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu01.png" alt="정다움 CHUNGDAUM"/></p>
+				<p class="f23 mt50">우리의 <span class="green02 fw600">뿌리(鄭)</span>를 기억하고, <span class="green02 fw600">바르게(正)</span> 일하며,<br class="mView"> <span class="green02 fw600">따뜻한(情)</span> 문화를 만드는 것,<br>
+					그것이 바로 정식품의 ‘정다움’입니다.</p>
+
+				<button class="custom-btn mt120 f23 fw500" onclick="openPopup()">선포문 보기 <span>&gt;</span></button>
+				<!-- 레이어 팝업 -->
+				<div class="popup-overlay-cdu " id="declarationPopup" onclick="closePopup(event)">
+					<div class="popup-wrapper">
+						<div class="popup-content">
+							<button class="popup-close" onclick="closePopup(event)">&times;</button>
+							<h2 class="popup-title">정식품 경영철학 「정다움」 선포문</h2>
+							<div class="popup-body">
+								<br><br>
+								사랑하는 정식품 임직원 여러분,<br><br>
+								오늘 저는 정식품의 과거와 현재, 그리고 미래를 하나로 잇는 우리의 경영철학, 「정다움」을 선포하고자 합니다.
+								<br><br>
+								기업이 지속적으로 성장하기 위해서는 무엇보다 올바른 윤리의식과 투명한 경영이 바탕이 되어야 합니다. 정식품 역시 윤리경영을 더욱 굳건히 실천하기 위해 끊임없이 고민해 왔습니다. 그리고 우리는 한 걸음 더 나아가 스스로에게 질문했습니다.
+								<br><br>
+								'정식품의 윤리경영은 무엇으로부터 시작되어야 하는가?'
+								<br><br>
+								윤리는 모든 기업이 지켜야 할 보편적인 가치입니다. 하지만 정식품의 윤리경영은 창업주께서 남겨 주신 생명존중 정신과 반세기 동안 이어온 우리의 문화가 더해질 때 비로소 정식품만의 가치가 됩니다. 이러한 윤리경영의 뿌리를 우리의 역사와 정체성 속에서 다시 찾고, 그 철학을 정식품만의 언어로 담아낸 이름이 바로 「정다움」입니다.
+								<br><br>
+								윤리경영이 기업이 지켜야 할 보편적 가치라면, 정다움은 그 가치 위에 정식품의 뿌리(鄭), 바른 원칙(正), 따뜻한 문화(情)를 더해 완성한 우리만의 경영철학입니다.
+								<br><br>
+								정다움에는 세 가지 의미가 담겨 있습니다.
+								<br><br>
+								첫째, 뿌리를 기억하는 정(鄭)입니다.
+								<br><br>
+								정(鄭)은 정식품의 시작이며 창업정신의 상징입니다. 아픈 아이들을 살리고자 했던 창업주 정재원 명예회장님의 숭고한 생명존중 정신과 창업이념을 변함없이 계승하고 실천하는 것입니다.
+								<br><br>
+								둘째, 바르게 실천하는 정(正)입니다.
+								<br><br>
+								정(正)은 우리가 반드시 지켜야 할 경영의 기준입니다. 어떠한 상황에서도 원칙을 지키고 공정하며 투명하게 행동하는 것, 그것이 우리가 실천해야 할 윤리경영의 핵심입니다.
+								<br><br>
+								셋째, 따뜻함을 나누는 정(情)입니다.
+								<br><br>
+								정(情)은 우리가 함께 만들어 갈 정식품의 조직문화입니다. 서로를 존중하고 배려하며 신뢰를 쌓고, 따뜻한 정이 살아 있는 일터를 함께 만들어 가겠다는 우리의 약속입니다.
+								<br><br>
+								결국 정다움이란, 우리의 뿌리(鄭)를 기억하고, 바르게(正) 실천하며, 따뜻한 정(情)을 나누는 정식품만의 경영철학입니다.
+								<br><br>
+								사랑하는 정식품 임직원 여러분,
+								<br><br>
+								경영철학은 벽에 걸린 액자 속 글귀가 아니라, 우리가 매일 내리는 결정과 동료를 대하는 태도 속에 살아있어야 합니다. 저부터 앞장서서 우리의 「정다움」을 실천하고, 여러분이 자부심을 가지고 일할 수 있는 환경을 만드는 데 최선을 다하겠습니다.
+								<br><br>
+								반세기를 이어온 우리의 생명존중 정신이 앞으로도 「정다움」이라는 이름으로 더욱 빛날 수 있도록, 임직원 여러분의 적극적인 공감과 동참을 부탁드립니다. 늘 현장에서 헌신해 주시는 여러분께 깊은 감사를 전합니다.
+								<br><br><br>
+								<p class="text-right">
+									2026년 7월 6일
+									<br>
+									대표이사 사장 정 연 호</p>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+				function openPopup() {
+				  document.getElementById('declarationPopup').classList.add('active');
+				  document.body.style.overflow = 'hidden';
+				}
+
+				function closePopup(event) {
+				  if (event.target === event.currentTarget || event.currentTarget.classList.contains('popup-close')) {
+					document.getElementById('declarationPopup').classList.remove('active');
+					document.body.style.overflow = '';
+				  }
+				}
+				</script>
+				<!-- //레이어 팝업 -->
+			</div>
+		</div>
+		<div class="text-carousel-container mt230">
+			<div class="text-carousel-content">
+				<!-- 무한 반복을 위해 텍스트 내용을 2번 복사합니다. -->
+				<div class="text-item">&middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情&middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情 &middot; 鄭正情</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contant100">
+		<div class="row">
+			<div class="col-md-12 center">
+				<p class="vs_title gold fw500 f38 f_pp mt200">THREE VALUES</p>
+				<p class="f60 fw600 mt30 black lh120">정다움의 세 가지 의미</p>
+				<p class="f23 mt30 black">정식품의 역사와 일하는 방식, <br class="mView">조직문화를 모두 아우르는 진정한 경영철학입니다.</p>
+			</div>
+		</div>
+		<div class="row mt30m">
+			<div class="col-md-12 center">
+				<div class="mt50">
+					<!-- -->
+					<ul class="cdu_box">
+						<li>
+							<p style="position: relative; display: inline-block; overflow: hidden;">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message01.png" alt="메시지 이미지" style="display: block; transition: opacity 0.4s ease;">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message01_over.png" alt="메시지 오버 이미지" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.4s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+							</p>
+							<p class="f34 fw600 mt20">창업정신의 헤리티지</p>
+							<p class="f22 fw400 gray05 mt20">창업주 정재원 명예회장님의<br>생명존중정신 창업이념 계승</p>
+						</li>
+						<li class="mt100">
+							<p style="position: relative; display: inline-block; overflow: hidden; ">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message02.png" alt="메시지 이미지" style="display: block; transition: opacity 0.4s ease;">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message02_over.png" alt="메시지 오버 이미지" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.4s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+							</p>
+							<p class="f34 fw600 mt20">윤리적 가치</p>
+							<p class="f22 fw400 gray05 mt20">원칙을 지키고 투명하게 일하는<br class="wView">“바를 정(正)”의 윤리적 가치</p>
+						</li>
+						<li>
+							<p style="position: relative; display: inline-block; overflow: hidden;">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message03.png" alt="메시지 이미지" style="display: block; transition: opacity 0.4s ease;">
+								<img src="https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message03_over.png" alt="메시지 오버 이미지" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.4s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+							</p>
+							<p class="f34 fw600 mt20">기업 문화</p>
+							<p class="f22 fw400 gray05 mt20">서로를 존중하고 배려하는<br>따뜻한 정(情)이 넘치는 기업 문화</p>
+						</li>
+					</ul>
+					<!-- // -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contant100_01">
+		<div class="cdu_footer_bg mt200"><p class="centerH f30 "><span class="f60 fw600 lh50 " style="color:#E3A62C;">“</span><br>반세기를 이어온 생명존중 정신,<br>
+			이제 ‘정다움’이라는 이름으로 임직원 모두의 일상 속에 자리합니다.<br><span class="f60 fw600 center mt30" style="color:#E3A62C; display:inline-block">”</span></p></div>
+	</div>
+
+
+	<!-- //2023-11-09 -->
+</div>
+<!-- ================================
+		// Content
+================================ -->
+
+
+<!-- ================================ Footer ================================ -->
+<footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
+<!-- ================================ // Footer ================================ -->
+</body>
+</html>

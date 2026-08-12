@@ -523,6 +523,7 @@
 	.subTopENV {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subTopESG_environment.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.subTopETH {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subTopESG_ethic.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	.bnr_login {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/bnr/bnr_login.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
+	.subTopChungdaum{position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/subTopChungdaum.jpg) no-repeat scroll 0 0; right:0; top:0; background-position:right; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center}
 	
 	.bg_rightBlue {background:#F1F4F5}
 	.bg_White {background:#fff}
@@ -1102,6 +1103,93 @@ box-shadow: 7px 7px 26px -9px rgba(0,0,0,0.22);}
 	.tab_content5 .current { display: block; }
 	.tab_content5 #home.first { display: block; }
     /* // 3000 �����ŷ� CP */
+
+	/* 3000 정다움 */
+	.gradient-background {
+		width: 100vw; /* 화면 너비 전체 */
+		min-height: 100vh; /* 화면 높이 전체(콘텐츠가 더 길면 늘어남) */
+		
+		/* 핵심 1: 이미지와 유사한 부드러운 파스텔 그라데이션 정의 */
+		/* 상단: 연한 크림/피치 (#f5e6d3) -> 중앙: 매우 연한 민트그레이 (#e0f2f1) -> 하단: 연한 민트 (#c8e6c9) */
+		background: linear-gradient(-45deg, #c8e6c9, #e0f2f1, #f5e6d3);
+		
+		/* 핵심 2: 배경 이미지 크기를 요소 크기의 400%로 설정 */
+		/* 이렇게 해야 배경을 움직일 때 다른 색상이 자연스럽게 나타납니다. */
+		background-size: 400% 400%;
+		
+		/* 핵심 3: 애니메이션 정의 */
+		/* 이름: gradient-move, 기간: 15초, 방식: ease (부드럽게), 반복: 무한 */
+		animation: gradient-move 15s ease infinite;
+	}
+
+	/* 애니메이션 키프레임 정의 */
+	@keyframes gradient-move {
+		0% {
+			background-position: 0% 50%; /* 시작 위치: 왼쪽 중앙 */
+		}
+		50% {
+			background-position: 100% 50%; /* 중간 위치: 오른쪽 중앙 */
+		}
+		100% {
+			background-position: 0% 50%; /* 끝 위치: 다시 왼쪽 중앙으로 복귀 (부드러운 반복) */
+		}
+	}
+
+	.custom-btn { border: none; outline: none; cursor: pointer; padding: 16px 5%; background-color: #ffffff; border-radius: 12px; color: #333333;  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); transition: all 0.2s ease-in-out; display: inline-flex; align-items: center; gap: 8px; }
+	.custom-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
+	.custom-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+	.text-carousel-container { width: 100%; display: flex; overflow: hidden; }
+	.text-carousel-container .text-carousel-content { display: flex; white-space: nowrap; animation: move-left 70s linear infinite; }
+	.text-carousel-container .text-item { color: #ffffff; font-family: 'Noto Serif KR', serif; font-size: 190px; opacity: 0.6; padding: 0 50px; display: flex; align-items: center; }
+	@keyframes move-left { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+	.heritage-section { width: 100%; max-width: 1200px; padding: 50px 20px; display: flex; justify-content: space-between; align-items: flex-start; position: relative; }
+	.background-arc { position: absolute; top: 100px; left: 50%; transform: translateX(-50%); width: 80%; height: 150px; border-top: 2px solid #d4e3d6; border-radius: 50% / 100% 100% 0 0; z-index: 0; }
+	.heritage-item { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; padding: 0 20px; }
+	.dot { width: 8px; height: 8px; border-radius: 50%; margin-bottom: 30px; transition: background-color 0.3s ease; }
+	.item-1 .dot { background-color: #dbeaf9; }
+	.item-2 .dot { background-color: #d6e9d8; }
+	.item-3 .dot { background-color: #efe0db; }
+	.circle-image { width: 220px; height: 220px; background-size: contain; background-repeat: no-repeat; background-position: center; margin-bottom: 30px; cursor: pointer; transition: background-image 0.3s ease; }
+	.item-1 .circle-image { background-image: url('circle1_default.png'); }
+	.item-1:hover .circle-image { background-image: url('circle1_over.png'); }
+	.item-1:hover .dot { background-color: #317fcc; }
+	.item-2 .circle-image { background-image: url('circle2_default.png'); }
+	.item-2:hover .circle-image { background-image: url('circle2_over.png'); }
+	.item-2:hover .dot { background-color: #29823e; }
+	.item-3 .circle-image { background-image: url('circle3_default.png'); }
+	.item-3:hover .circle-image { background-image: url('circle3_over.png'); }
+	.item-3:hover .dot { background-color: #a45037; }
+	.text-group { width: 100%; }
+	.title { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #222; }
+	.description { font-size: 14px; line-height: 1.6; color: #666; word-break: keep-all; }
+	.cdu_box {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message_smile.png) no-repeat scroll 0 0; 
+	left:0; top:0; background-position:center; width:100%;-webkit-background-size: 630px auto;background-size:630px auto;z-index:1; text-align:center; margin-top:100px}
+	.cdu_box {padding-top:80px; background-position-y:top; }
+	.cdu_box li {display:inline-block;  vertical-align:top; margin:0 20px}
+	.cdu_box li:nth-child(2n)  {padding-top:50px}
+	.cdu_footer_bg {position:relative;  background:url(https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_footer_bg.jpg) no-repeat scroll 0 0; left:0; top:0; background-position:center; width:100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center;}
+	.cdu_footer_bg {height:513px}
+
+	.popup-overlay-cdu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 1000; }
+	.popup-overlay-cdu.active { display: flex; }
+	.popup-overlay-cdu .popup-content { background: #ffffff; width: 100%; max-width: 550px; padding: 40px 7px 7px; border-radius: 16px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); max-height: 80vh; display: flex; flex-direction: column; }
+	.popup-overlay-cdu .popup-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; color: #666; cursor: pointer; padding: 0; line-height: 1; }
+	.popup-overlay-cdu .popup-close:hover { color: #000; }
+	.popup-overlay-cdu .popup-title { margin: 0 0 20px; font-size: 22px; font-weight: 700; text-align: center; color: #222; }
+	.popup-overlay-cdu .popup-body { font-size: 15px; line-height: 1.7; color: #444; overflow-y: auto; word-break: keep-all; padding:0 20px}
+
+	/* 팝업 외곽 컨테이너 (빛 테두리 프레임) */
+    .popup-wrapper { position: relative; max-width: 550px; width:90%; padding: 7px; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+    /* 빛 흐름 애니메이션 요소 (회전하는 conic-gradient) */
+    .popup-wrapper::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 0%, #007acc 20%, #2e8b57 40%, #d9381e 60%, transparent 80%); animation: rotate-light 4s linear infinite; }
+    /* 팝업 내부 흰색 상자 */
+    .popup-content { position: relative; background: #ffffff; border-radius: 13px; padding: 30px 24px; color: #333333; z-index: 1;  text-align:left}
+    .popup-content h2 { margin-top: 0; font-size: 20px; color: #111111; }
+    .popup-content p { color: #666666; font-size: 14px; line-height: 1.6; }
+
+    /* 회전 애니메이션 키프레임 */
+    @keyframes rotate-light { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
 
 
 	/* 3000 ���� */
@@ -4239,6 +4327,19 @@ box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.15);}
 	.bgStar03.h700 {height:430px}
 	.love2025_snsbg {margin-top:0}
 	.love2025_sns2 {position:absolute; bottom:0; right:0; width:30%}
+
+	/* 1200 정다움 */
+	.cdu01 img {width:220px}
+	.text-carousel-content .text-item {font-size:60px}
+	.cdu_box {position:relative;  background: url(https://image.edaymall.com/images/dcf/vegemil/img/company/cdu_message_smile.png) no-repeat scroll 0 0; 
+	left:0; top:0; background-position:center; width:100%;-webkit-background-size: 100% auto;background-size:100% auto;z-index:1; text-align:center; }
+	.cdu_box {padding-top:80px; background-position-y:top;  margin-top:0}
+
+	.cdu_box li {width:32%;  margin:0}
+	.cdu_box li .f32 {font-size:17px}
+	.cdu_box li .f22 {font-size:13px}
+	.cdu_footer_bg {height:300px}
+
 }
 
 @media (max-width: 992px) {
@@ -4444,7 +4545,7 @@ box-shadow: 2px 3px 14px 5px rgba(0,0,0,0.15);}
 	.w220 {max-width:120px; width:100%}
 
 	/* 992 popup */
-	.main-popup {position:absolute; top:110px; right:0px; z-index:100; height:480px; text-align:center; }
+	.main-popup {position:absolute; top:110px; left:70px; z-index:100; height:480px; text-align:center; }
 
 	/* 992 main > ����Ʈ */
 	.contactBox {position:relative}
