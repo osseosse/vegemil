@@ -49,7 +49,7 @@ public class VegemilBabyController extends UiUtils {
 
 	@Autowired
 	private VegemilBabyCommunityService vegemilBabyCommunityService;
-	
+
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
 
@@ -243,19 +243,26 @@ public class VegemilBabyController extends UiUtils {
 		}
         model.addAttribute("member", member);
         model.addAttribute("model", calModel);
-        
-		return "vegemilBaby/modelForm";		
+		model.addAttribute("formLoadTime", System.currentTimeMillis());
+
+		return "vegemilBaby/modelForm";
 	}
 	
 	//달력아기모델 등록	
 	@PostMapping("/vegemilBaby/model/apply")
 	public String submitModelForm(@ModelAttribute("model") VegemilBabyCalendarModelDTO calModel,
 							BindingResult bindingResult,
+							@RequestParam(value = "formLoadTime", required = false, defaultValue = "0") long formLoadTime,
 							HttpServletRequest request, Model model, HttpServletResponse response) throws Exception {
-		
+
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		
+
+		long elapsed = System.currentTimeMillis() - formLoadTime;
+		if(formLoadTime == 0 || elapsed < 3000) {
+			return showMessageWithRedirect("비정상적인 접근입니다.", "/vegemilBaby/event_model", Method.GET, null, model);
+		}
+
 		if(vegemilBabyCommunityService.isDuple(calModel)) {
 			return showMessageWithRedirect( calModel.getCName()+"("+ calModel.getCEmail()+")님의 자녀 "					   
 					+ calModel.getCBabyName() +" 님은 최근 접수한 이력이 있습니다.", "/vegemilBaby/event_model", Method.GET, null, model);

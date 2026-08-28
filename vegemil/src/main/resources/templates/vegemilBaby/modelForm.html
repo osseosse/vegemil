@@ -112,6 +112,7 @@
 						<div class="row">
 							<div class="col-md-12 mt120 modelForm">
 								<form th:action="@{/vegemilBaby/model/apply}" name="modelForm" th:object="${model}" method="post" enctype="multipart/form-data">
+									<input type="hidden" name="formLoadTime" th:value="${formLoadTime}">
 									<fieldset>
 										<legend>개인 정보 수집 및 이용에 관한 안내</legend>
 										<div class="gray_lineBox">
