@@ -138,32 +138,28 @@ public class MypageController extends UiUtils {
 		MultipartFile[] files = params.getFiles();
 		Map<String, Object> rtnMap = new HashMap<>();
 		try {
-			int idx = 0;
-			if(authentication != null) {			
+			if(authentication != null) {
 				if(files != null) {
-					for(MultipartFile file : files) {						
+					for(MultipartFile file : files) {
 						String originalName = file==null?"":file.getOriginalFilename();
-						
+
 						System.out.println("origianalName =" + originalName);
 						if(!"".equals(originalName)) {
 							String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
 							String uuid = UUID.randomUUID().toString();
 							String savefileName = uuid + "_" + fileName;
 							//테스트경로
-							Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
-							//Path savePath = Paths.get("D:\\upload\\/qna/" + savefileName);
-							
+							//Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
+							Path savePath = Paths.get("C:\\Dev/" + savefileName);
+
 							//저장
-							file.transferTo(savePath);							
-							params.addFilePaths(idx, savefileName);
-							idx++;
+							file.transferTo(savePath);
+							params.setFileToEmptySlot(savefileName);
 						}
-						
+
 					}
-					params.setFileFields();	
-					System.out.println(params);
-				}				
-				
+				}
+
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();
 			    
 				if(member != null) {
@@ -257,6 +253,30 @@ public class MypageController extends UiUtils {
 		
 	}
 	
+	@PostMapping(value = "/mypage/deleteQna")
+	@ResponseBody
+	public Map<String, Object> deleteMyQna(@RequestParam("sIdx") Long sIdx, Authentication authentication) {
+		Map<String, Object> rtnMap = new HashMap<>();
+		rtnMap.put("result", false);
+
+		if (authentication == null || sIdx == null) {
+			return rtnMap;
+		}
+
+		MemberDTO member = (MemberDTO) authentication.getPrincipal();
+		QnaDTO params = new QnaDTO();
+		params.setSIdx(sIdx);
+		params.setSId(member.getMId());
+
+		try {
+			rtnMap.put("result", qnaService.deleteQna(params));
+		} catch (Exception e) {
+			// ignore
+		}
+
+		return rtnMap;
+	}
+
 	@PostMapping(value = "/qna/delete")
 	public String deleteQna(@ModelAttribute("params") QnaDTO params, @RequestParam(value = "sIdx", required = false) Long sIdx, Model model) {
 		if (sIdx == null) {

@@ -27,7 +27,29 @@
 		s_delete_yn
 	</sql>
 
-	<insert id="insertQna" parameterType="com.vegemil.domain.QnaDTO">
+	<insert id="insertQnaContent" parameterType="com.vegemil.domain.QnaDTO">
+		INSERT INTO m_support_faq_content (s_idx, revision, s_subject, s_content, s_gory, s_cate, s_file, s_file_sub, s_file_third, created_at)
+		VALUES (
+			#{sIdx},
+			(SELECT IFNULL(MAX(t.revision), 0) + 1 FROM m_support_faq_content t WHERE t.s_idx = #{sIdx}),
+			#{sSubject},
+			#{sContent},
+			#{sGory},
+			<choose>
+				<when test="sGory != null and sGory.equalsIgnoreCase('11')">'제품 관련 문의',</when>
+				<when test="sGory != null and sGory.equalsIgnoreCase('22')">'고객의 소리',</when>
+				<when test="sGory != null and sGory.equalsIgnoreCase('33')">'불편 사항 접수',</when>
+				<when test="sGory != null and sGory.equalsIgnoreCase('44')">'기타 문의',</when>
+				<otherwise>NULL,</otherwise>
+			</choose>
+			#{sFile},
+			#{sFileSub},
+			#{sFileThird},
+			NOW()
+		)
+	</insert>
+
+	<insert id="insertQna" parameterType="com.vegemil.domain.QnaDTO" useGeneratedKeys="true" keyProperty="sIdx">
 		INSERT INTO m_support_faq (
 			s_cate,
 			s_id,
@@ -95,17 +117,27 @@
 			  s_updatedate = NOW()
 			, s_subject = #{sSubject}
 			, s_content = #{sContent}
-			, s_cate = #{sCate}
 			, s_gory = #{sGory}
+			, s_cate =
+			<choose>
+				<when test="sGory != null and sGory.equalsIgnoreCase('11')">'제품 관련 문의'</when>
+				<when test="sGory != null and sGory.equalsIgnoreCase('22')">'고객의 소리'</when>
+				<when test="sGory != null and sGory.equalsIgnoreCase('33')">'불편 사항 접수'</when>
+				<when test="sGory != null and sGory.equalsIgnoreCase('44')">'기타 문의'</when>
+				<otherwise>s_cate</otherwise>
+			</choose>
+			, s_file = #{sFile}
+			, s_file_sub = #{sFileSub}
+			, s_file_third = #{sFileThird}
 		WHERE
 			s_idx = #{sIdx} and s_id = #{sId}
 	</update>
 
-	<update id="deleteQna" parameterType="long">
+	<update id="deleteQna" parameterType="com.vegemil.domain.QnaDTO">
 		UPDATE m_support_faq
 		SET
 			  s_delete_yn = 'Y'
-			, r_delete_date = NOW()
+			, s_updatedate = NOW()
 		WHERE
 			s_idx = #{sIdx} and s_id = #{sId}
 	</update>

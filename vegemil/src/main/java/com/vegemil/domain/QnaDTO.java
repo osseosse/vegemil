@@ -33,6 +33,7 @@ public class QnaDTO extends CommonDTO {
 	private String sFileSub;
 	private String sFileThird;
 
+
 	private String sWritedate;
 	private String sUpdatedate;
 	private String sActiveuser;
@@ -44,30 +45,22 @@ public class QnaDTO extends CommonDTO {
 	private String sAnswerYn;
 	private String sAnswer;
 
+
+
 	public String[] addFilePaths(int idx, String path) {
 
 		filePaths[idx] = path;
 		return filePaths;
 	}
 
-	public boolean setFileFields() {
-
-		String[] targets = new String[] { sFile, sFileSub, sFileThird };
-
-		if (filePaths != null) {
-			for (int i = 0; i < Math.min(filePaths.length, targets.length); i++) {
-				if (filePaths[i] != null && !filePaths[i].isEmpty()) {
-					targets[i] = filePaths[i];
-				}
-			}
+	public void setFileToEmptySlot(String fileName) {
+		if (sFile == null || sFile.isEmpty()) {
+			sFile = fileName;
+		} else if (sFileSub == null || sFileSub.isEmpty()) {
+			sFileSub = fileName;
+		} else if (sFileThird == null || sFileThird.isEmpty()) {
+			sFileThird = fileName;
 		}
-
-		sFile = targets[0];
-		sFileSub = targets[1];
-		sFileThird = targets[2];
-
-		return true;
-
 	}
 
 }

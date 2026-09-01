@@ -69,8 +69,20 @@
 							<tr>
 								<td colspan="3" class="q_box lh180 " th:text="${qna.sContent}"></td>
 							</tr>
+							<tr th:if="${(qna.sFile != null and !qna.sFile.isEmpty()) or (qna.sFileSub != null and !qna.sFileSub.isEmpty()) or (qna.sFileThird != null and !qna.sFileThird.isEmpty())}">
+								<td colspan="3" class="q_box">
+									<p class="f14 fw400 gray04 mb10">첨부이미지</p>
+									<img th:if="${qna.sFile != null and !qna.sFile.isEmpty()}" th:src="|/web/upload/${qna.sFile}|" style="max-width:200px; margin-right:10px;" />
+									<img th:if="${qna.sFileSub != null and !qna.sFileSub.isEmpty()}" th:src="|/web/upload/${qna.sFileSub}|" style="max-width:200px; margin-right:10px;" />
+									<img th:if="${qna.sFileThird != null and !qna.sFileThird.isEmpty()}" th:src="|/web/upload/${qna.sFileThird}|" style="max-width:200px;" />
+								</td>
+							</tr>
 						</table>
 						<div class="ansBox  lh180" th:if="${qna.sAnswerYn} == 'Y'" th:utext="${qna.sAnswer}">
+						</div>
+						<div class="faqBtnbox mt30" th:if="${qna.sAnswerYn} != 'Y'">
+							<button type="button" class="btnType14" th:onclick="|location.href='/mypage/qna?sIdx=${qna.sIdx}'|">수정하기</button>
+							<button type="button" class="btnType15 ml5" th:data-sidx="${qna.sIdx}" onclick="deleteQna(this)">삭제하기</button>
 						</div>
 					</div>
 				</div>
@@ -85,5 +97,24 @@
 <!-- ================================ Footer ================================ -->
 <footer  th:replace="fragments/mainFooter :: footerFragment"></footer>
 <!-- ================================ // Footer ================================ -->
+<script>
+function deleteQna(btn) {
+	if (!confirm('문의글을 삭제하시겠습니까?')) return;
+	$.ajax({
+		url: '/mypage/deleteQna',
+		type: 'post',
+		data: { sIdx: $(btn).data('sidx') },
+		dataType: 'json',
+		success: function(data) {
+			if (data.result) {
+				alert('삭제되었습니다.');
+				location.href = '/mypage/list';
+			} else {
+				alert('삭제에 실패하였습니다.');
+			}
+		}
+	});
+}
+</script>
 </body>
 </html>

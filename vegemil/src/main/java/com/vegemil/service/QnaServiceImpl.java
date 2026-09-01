@@ -16,14 +16,24 @@ public class QnaServiceImpl implements QnaService {
 	@Autowired
 	private QnaMapper qnaMapper;
 
+	/**
+	 * 문의글 upsert
+	 * @param params
+	 * @return
+	 */
 	@Override
 	public boolean registerQna(QnaDTO params) {
 		int queryResult = 0;
-
+		System.out.println("params = "+ params.getSIdx());
 		if (params.getSIdx() == null) {
 			queryResult = qnaMapper.insertQna(params);
 		} else {
 			queryResult = qnaMapper.updateQna(params);
+		}
+
+		// 이력 테이블에도 추가
+		if (queryResult == 1) {
+			qnaMapper.insertQnaContent(params);
 		}
 
 		return (queryResult == 1) ? true : false;

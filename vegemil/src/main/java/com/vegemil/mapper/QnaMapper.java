@@ -10,6 +10,8 @@ public interface QnaMapper {
 
 	public int insertQna(QnaDTO params);
 
+	public int insertQnaContent(QnaDTO params);
+
 	public QnaDTO selectQnaDetail(QnaDTO params);
 
 	public int updateQna(QnaDTO params);
@@ -19,5 +21,8 @@ public interface QnaMapper {
 	public List<QnaDTO> selectQnaList(String sId);
 
 	public int selectQnaTotalCount(QnaDTO params);
+
+
+
 
 }
