@@ -45,6 +45,7 @@
 		, s_active
 		, s_answer
 		, s_gory
+		, s_delete_yn
 		, s_updatedate
 		, s_answer_yn
 		, s_answer_date
@@ -261,5 +262,12 @@
 		   SET s_answer =  #{sAnswer, jdbcType=VARCHAR}, s_answer_yn = 'Y', s_answer_date = now()
 		 WHERE s_idx = #{sIdx, jdbcType=VARCHAR}
 	</update>
-	
+
+	<select id="selectSupportContentHistory" parameterType="long" resultType="java.util.Map">
+		SELECT revision, s_subject, s_content, s_gory, s_cate, s_file, s_file_sub, s_file_third, created_at
+		FROM m_support_faq_content
+		WHERE s_idx = #{sIdx}
+		ORDER BY revision ASC
+	</select>
+
 </mapper>

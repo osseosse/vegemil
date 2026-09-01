@@ -31,4 +31,6 @@ public interface AdminFaqService {
 	public AdminSupportDTO getSupport(AdminSupportDTO params);
 	
 	public boolean registerSupportDetail(AdminSupportDTO params);
+
+	public List<Map<String, Object>> getSupportContentHistory(Long sIdx);
 }

@@ -152,7 +152,12 @@ public class AdminFaqServiceImpl implements AdminFaqService {
 		} else {
 			return false;
 		}
-               
+
     }
+
+	@Override
+	public List<Map<String, Object>> getSupportContentHistory(Long sIdx) {
+		return adminFaqMapper.selectSupportContentHistory(sIdx);
+	}
 
 }

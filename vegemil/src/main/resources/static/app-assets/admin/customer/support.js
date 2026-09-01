@@ -95,7 +95,8 @@ var createTable = function() {
         { data: 'sSubject' },
         { data: 'sFile' },
         { data: 'sWritedate' },
-        { data: 'sActive' }
+        { data: 'sActive' },
+        { data: 'sDeleteYn' }
       ],
       columnDefs: [
         {
@@ -204,7 +205,15 @@ var createTable = function() {
 							'<button type="button" class="btn btn-outline-success btn-sm2 waves-effect">완료</button>'
 						);
           }
-          
+
+        },
+        {
+          targets: 11,
+          orderable: false,
+          render: function (data, type, full, meta) {
+            if(full['sDeleteYn']=='Y')	return '<span class="badge rounded-pill badge-light-danger">삭제</span>';
+      			else	return '-';
+          }
         }
       ],
       order: [[0, 'desc']],

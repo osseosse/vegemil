@@ -24,6 +24,7 @@ public class AdminSupportDTO extends AdminCommonDTO {
 	private String sHit;
 	private String sActive;
 	private String sAnswer;
+	private String sDeleteYn;
 	private String sGory;
 	private String sUpdatedate;
 	private String sAnswerYn;

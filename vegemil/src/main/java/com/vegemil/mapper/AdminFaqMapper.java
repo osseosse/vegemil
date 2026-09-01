@@ -41,4 +41,6 @@ public interface AdminFaqMapper {
 	public AdminSupportDTO selectSupport(AdminSupportDTO params);
 	
 	public int updateSupportDetail(AdminSupportDTO params);
+
+	public List<Map<String, Object>> selectSupportContentHistory(Long sIdx);
 }

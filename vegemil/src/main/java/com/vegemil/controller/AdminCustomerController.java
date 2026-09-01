@@ -247,9 +247,10 @@ public class AdminCustomerController extends UiUtils {
 	@GetMapping(value = "/admin/manage/customer/supportDetail")
     public String getSupportDetail(@ModelAttribute("params") AdminSupportDTO params, HttpServletRequest req, Model model)throws Exception{
 		AdminSupportDTO supportDto = adminFaqService.getSupport(params);
-		
+
 		model.addAttribute("support", supportDto);
-		
+		model.addAttribute("contentHistory", adminFaqService.getSupportContentHistory(supportDto.getSIdx()));
+
 		return "admin/customer/supportDetail";
     }
 	
