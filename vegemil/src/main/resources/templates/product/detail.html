@@ -145,8 +145,9 @@
 					<ul class="info_btn_box mt40">
 						<li>
 							 <p class="btnType19" th:if="${not #strings.isEmpty(product.edayLink16)}">
-								<a target="_blank" id="toEdaymall" th:href="${product.edayLink16}">이데이몰에서 구매하기</a>
-							</p> 
+								<a target="_blank" id="toEdaymall" th:href="${product.edayLink16}"
+								   th:text="${#strings.contains(#strings.substringBefore(#strings.substringAfter(product.edayLink16, '://'), '/'), 'eday')} ? '이데이몰에서 구매하기' : '구매하기'">구매하기</a>
+							</p>
 							 <p class="btnType19" th:if="${#strings.isEmpty(product.edayLink16) and not #strings.isEmpty(product.pOnuri)}">
 								<a target="_blank" id="toEdaymall" th:href="|https://edaymall.com/product/search.html?banner_action=&keyword=${product.pName}|">이데이몰에서 구매하기</a>
 							</p>
