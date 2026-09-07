@@ -197,7 +197,7 @@
 										<div class="prd-thumb">
 											<!-- swiper -->
 											<a th:if="${product.categoryCode != 'B'}" th:href="|/product/detail/${product.pIdx}|">																				
-											<div class="swiper" th:classappend="|${product.swiperClass}|">
+											<div class="swiper" th:classappend="${not #strings.isEmpty(product.swiperClass)} ? |${product.swiperClass}| : ''">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
 														<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" alt="대표" />
@@ -212,8 +212,8 @@
 											</a>
 											<!-- //swiper -->
 											<!-- swiper -->
-											<a th:if="${product.categoryCode == 'B'}" th:href="${product.pCode} == 'VBK03'? '/vegemilBaby/belief' : '/vegemilBaby/premium' ">																				
-											<div class="swiper" th:classappend="|${product.swiperClass}|">
+											<a th:if="${product.categoryCode == 'B'}" th:href="${product.pCode} == 'VBK03'? '/vegemilBaby/belief' : '/vegemilBaby/premium' ">
+											<div class="swiper" th:classappend="${not #strings.isEmpty(product.swiperClass)} ? |${product.swiperClass}| : ''">
 												<div class="swiper-wrapper">
 													<div class="swiper-slide" th:if="${not #strings.isEmpty(product.thumbnail1)}">
 														<img th:src="|https://image.edaymall.com/images/dcf/vegemil/img/product/thumb/${product.thumbnail1}|" alt="대표" />
@@ -229,7 +229,7 @@
 											<!-- //swiper -->
 										</div>
 										<!-- swiper-button -->
-										<div class="listSwiper10-botton" th:class="|${product.swiperClass}-botton|">
+										<div th:if="${not #strings.isEmpty(product.swiperClass)}" th:class="|${product.swiperClass}-botton|">
 											<div class="swiper-button-next"><img src="/img/ico/btn_prdlist_next.png" alt="좌" /></div>
 											<div class="swiper-button-prev"><img src="/img/ico/btn_prdlist_prev.png" alt="우" /></div>
 										</div>
@@ -244,7 +244,7 @@
 									<dl class="prd-viewMore mt40">
 										<dd th:if= "${!product.pCode.contains('VBK')}"><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd> 
 										<dd th:if= "${product.pCode.contains('VBK')}"><a th:href="${product.pCode} == 'VBK03'? '/vegemilBaby/belief' : '/vegemilBaby/premium' "><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd th:if="${not #strings.isEmpty(product.pOnuri)}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -287,7 +287,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd th:if="${not #strings.isEmpty(product.pOnuri)}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -368,7 +368,7 @@
 										<dd th:unless="${product.subCategoryCode} == 'CHP'">
 											<a th:href="|/greenbia/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a>
 										</dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd th:if="${not #strings.isEmpty(product.pOnuri)}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -418,7 +418,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd th:if="${not #strings.isEmpty(product.pOnuri)}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -461,7 +461,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd th:if="${not #strings.isEmpty(product.pOnuri)}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
@@ -503,7 +503,7 @@
 									</a>
 									<dl class="prd-viewMore mt40">
 										<dd><a th:href="|/product/detail/${product.pIdx}|"><p class="btnType16"><span class="lh140">View More</span></p></a></dd>
-										<dd th:if="*{product.pOnuri != null}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
+										<dd th:if="${not #strings.isEmpty(product.pOnuri)}"><a th:href="*{product.pOnuri}"><img src="https://image.edaymall.com/images/dcf/vegemil/img/ico/ico_buy.png"></a></dd>
 									</dl>
 								</div>
 							</div>
