@@ -73,6 +73,9 @@ public class CommunicationConroller extends UiUtils {
 	@Autowired
 	private EdayVempService edayVempService;
 
+	@Autowired
+	private com.vegemil.service.ImageServerService imageServerService;
+
 	@RequestMapping(value = "/communication/{viewName}")
 	public String moveCommunication(@PathVariable(value = "viewName", required = false) String viewName)
 			throws Exception {
@@ -304,12 +307,24 @@ public class CommunicationConroller extends UiUtils {
 			return "communication/biz";
 		}
 		
-		// redis 데이터 삭제 
+		// redis 데이터 삭제
 		redisUtil.deleteData(capchaKey);
 
-		communicationService.enrollBizProposal(
-				bizform.setDeviceAndIpAddr(getDeviceType(req), getClientIpVer2(req)).combineFilels().setFilePaths());
-		
+		// DTO 조립
+		bizform.setDeviceAndIpAddr(getDeviceType(req), getClientIpVer2(req));
+		bizform.setContactNumber(bizform.getContactNumberStart() + "-" + bizform.getContactNumberMid() + "-" + bizform.getContactNumberEnd());
+		bizform.setEmail(bizform.getEmailId() + "@" + bizform.getEmailDomain());
+
+		// 파일 업로드
+		bizform.setFilePath1(imageServerService.upload(bizform.getFile1(), "biz"));
+		bizform.setFilePath2(imageServerService.upload(bizform.getFile2(), "biz"));
+		bizform.setFilePath3(imageServerService.upload(bizform.getFile3(), "biz"));
+		bizform.setFileOriginName1(bizform.getFile1() != null && !bizform.getFile1().isEmpty() ? bizform.getFile1().getOriginalFilename() : "");
+		bizform.setFileOriginName2(bizform.getFile2() != null && !bizform.getFile2().isEmpty() ? bizform.getFile2().getOriginalFilename() : "");
+		bizform.setFileOriginName3(bizform.getFile3() != null && !bizform.getFile3().isEmpty() ? bizform.getFile3().getOriginalFilename() : "");
+
+		communicationService.enrollBizProposal(bizform);
+
 		ra.addAttribute("company",bizform.getCompanyName());
 
 		return "redirect:/communication/biz_complete";

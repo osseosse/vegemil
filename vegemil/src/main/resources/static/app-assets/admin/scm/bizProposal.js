@@ -371,15 +371,15 @@ function showupContentModal(id) {
 	    	    $('#modal-body').text(data.content);
 	    	    var fileText = ""
 	    	    if(data.filePath1 != null && data.filePath1 !== "" ) {
-	    	    	fileText += `[파일첨부1] <a href="/download${data.filePath1}" download>${data.fileOriginName1}</a><br/>`;
+	    	    	fileText += `[파일첨부1] <a href="${buildFileHref(data.filePath1, data.fileOriginName1)}" target="_blank">${data.fileOriginName1}</a><br/>`;
 	    	    }
-	    	    
+
 	    	    if(data.filePath2 != null && data.filePath2 !== "" ) {
-	    	    	fileText += `[파일첨부2] <a href="/download${data.filePath2}" download>${data.fileOriginName2}</a><br/>`; 
+	    	    	fileText += `[파일첨부2] <a href="${buildFileHref(data.filePath2, data.fileOriginName2)}" target="_blank">${data.fileOriginName2}</a><br/>`;
 	    	    }
-	    	    
+
 	    	    if(data.filePath3 != null && data.filePath3 !== "" ) {
-	    	    	fileText += `[파일첨부3] <a href="/download${data.filePath3}" download>${data.fileOriginName3}</a><br/>`;
+	    	    	fileText += `[파일첨부3] <a href="${buildFileHref(data.filePath3, data.fileOriginName3)}" target="_blank">${data.fileOriginName3}</a><br/>`;
 	    	    }
 	    	    
 	    	    if(fileText === "") {
@@ -395,6 +395,43 @@ function showupContentModal(id) {
 	    }
 	  });
 
+}
+
+function buildFileLink(filePath, originName) {
+	if (!filePath.startsWith("http")) {
+		return `<a href="/download${filePath}" target="_blank">${originName}</a>`;
+	}
+	return `<a href="javascript:void(0)" onclick="downloadFromImageServer('${filePath}', '${(originName || '').replace(/'/g, "\\'")}')">${originName}</a>`;
+}
+
+function downloadFromImageServer(filePath, originName) {
+	var url = new URL(filePath);
+	var parts = url.pathname.replace("/images/vegemil-upload/", "").split("/");
+	var folder = parts[0];
+	var filename = parts[1];
+	var downloadUrl = url.origin + "/api/download?folder=" + encodeURIComponent(folder)
+		+ "&filename=" + encodeURIComponent(filename)
+		+ "&original_name=" + encodeURIComponent(originName || filename);
+
+	fetch(downloadUrl, {
+		headers: { "X-API-KEY": "For-the-health-and-culture-of-humankind" }
+	})
+	.then(function(res) {
+		if (!res.ok) throw new Error("다운로드 실패");
+		return res.blob();
+	})
+	.then(function(blob) {
+		var a = document.createElement("a");
+		a.href = URL.createObjectURL(blob);
+		a.download = originName || filename;
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		URL.revokeObjectURL(a.href);
+	})
+	.catch(function() {
+		alert("파일 다운로드에 실패했습니다.");
+	});
 }
 
 function updateStatus(id, el) {
