@@ -211,7 +211,7 @@ var createTable = function() {
             if(full['cImg']==null)	
 				return '<input type="file" accept=".png,.gif,.jpg" id="fileName2" name="fileName2" >';
       			else	
-				return '<img src="/web/upload/vegemilBaby/tvcf/'+full['cImg']+' " width="80" />'+
+				return '<img src="https://image.edaymall.com/images/vegemil-upload/vegemilBaby/tvcf/'+full['cImg']+' " width="80" />'+
       			'</br>'+
       			'</br>'+      		      			      			
       			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'DI\')" style="display: inline-block;" />수정</button>'

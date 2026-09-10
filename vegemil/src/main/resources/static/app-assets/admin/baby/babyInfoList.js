@@ -334,7 +334,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             if(full['mbsImage']==null)	return '-';
-      			else	return '<img src="/web/upload/vegemilBaby/babyInfo/thumbnail/'+full['mbsImage']+  '" height="60" width="100" class="rounded">';
+      			else	return '<img src="https://image.edaymall.com/images/vegemil-upload/vegemilBaby/babyInfo/thumbnail/'+full['mbsImage']+  '" height="60" width="100" class="rounded">';
           }
         },
         {

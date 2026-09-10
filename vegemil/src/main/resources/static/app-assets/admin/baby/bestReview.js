@@ -285,7 +285,7 @@ var createTable = function() {
 	        orderable: false,
 	        render: function (data, type, full, meta) {
 				if(!full['sImage'])	return '';
-				var imgSrc = full['sImage'].startsWith('http') ? full['sImage'] : '/web/upload/vegemilBaby/'+full['sImage'];
+				var imgSrc = full['sImage'].startsWith('http') ? full['sImage'] : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/'+full['sImage'];
 				return '<img src="'+imgSrc+'" height="40" width="40" class="rounded">';
 	  		}
         },
@@ -509,7 +509,7 @@ function getModal(obj) {
 	modal +=											'<button type="button"  class="rotateD1'+obj.sIdx+' btn btn-outline-primary btn-sm">아래</button>'
 	modal +=											'<button type="button"  class="rotateC1'+obj.sIdx+' btn btn-outline-primary btn-sm">취소</button>'
 	modal +=											'<input type="hidden"  name="sAngle" id="angleInfo1'+obj.sIdx+'" value='+obj.sAngle+' >'
-	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="'+(obj.sImage.startsWith('http') ? obj.sImage : '/web/upload/vegemilBaby/'+obj.sImage)+'"  width="100%"></p>'
+	modal +=											'<p class="mt-1"><img class="imageToRotate1'+obj.sIdx+'" src="'+(obj.sImage.startsWith('http') ? obj.sImage : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/'+obj.sImage)+'"  width="100%"></p>'
 	modal +=										'</div>'
 	modal +=									'</div>'
 	modal +=								'</dd>'
