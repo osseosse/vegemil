@@ -83,11 +83,19 @@ public class ImageServerService {
 
 	@SuppressWarnings("unchecked")
 	public void rotate(String imageUrl, int angle) {
-		String path = imageUrl.replace(imageServerUrl, "");
-		int lastSlash = path.lastIndexOf("/");
-		String filename = path.substring(lastSlash + 1);
-		String beforeFilename = path.substring(0, lastSlash);
-		String folder = beforeFilename.substring(beforeFilename.lastIndexOf("/") + 1);
+		String folder;
+		String filename;
+
+		if (imageUrl.startsWith("http")) {
+			String path = imageUrl.replace(imageServerUrl, "");
+			int lastSlash = path.lastIndexOf("/");
+			filename = path.substring(lastSlash + 1);
+			String beforeFilename = path.substring(0, lastSlash);
+			folder = beforeFilename.substring(beforeFilename.lastIndexOf("/") + 1);
+		} else {
+			filename = imageUrl;
+			folder = "vegemilBaby";
+		}
 
 		log.info("[ImageServer] 회전 요청 - folder: {}, file: {}, angle: {}", folder, filename, angle);
 
