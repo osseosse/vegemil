@@ -1,20 +1,18 @@
 package com.vegemil.controller;
 
 import java.io.PrintWriter;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.security.Principal;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +37,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabyCalendarModelDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.paging.BoardListSearchDTO;
+import com.vegemil.service.ImageServerService;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
 import com.vegemil.util.UiUtils;
 
@@ -50,8 +49,8 @@ public class VegemilBabyController extends UiUtils {
 	@Autowired
 	private VegemilBabyCommunityService vegemilBabyCommunityService;
 
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
+	@Autowired
+	private ImageServerService imageServerService;
 
 	@RequestMapping(value = "/vegemilBaby/{viewName}")
 	public String moveVegemilBabyPage(@PathVariable(value = "viewName", required = false) String viewName)
@@ -272,61 +271,34 @@ public class VegemilBabyController extends UiUtils {
 		String extensionList = "jpg, jpeg, png, gif";
 		
 		try {
-			String uuid = UUID.randomUUID().toString();
-			
 			String originalName1 = calModel.getFileName1().getOriginalFilename();
 			String originalName2 = calModel.getFileName2().getOriginalFilename();
 			String fileExtension2 = "";
-			
-			
-			//확장자 분리 - for check		
+
 			String fileExtension1 = StringUtils.getFilenameExtension(originalName1);
-			
-			// 옵션데이터인 두번째 이미지 부터 체크 
+
 			if(StringUtils.hasText(originalName2)) {
 				 fileExtension2 = StringUtils.getFilenameExtension(originalName2);
-				 if(extensionList.contains(fileExtension2.toLowerCase()) == false) {
+				 if(!extensionList.contains(fileExtension2.toLowerCase())) {
 					 return showMessageWithRedirect("이미지 형식만 업로드 가능합니다", "/vegemilBaby/model/apply", Method.GET, null, model);
 				 }
 			}
 
-			// extension check
-			if(extensionList.contains(fileExtension1.toLowerCase()) == false) {					
+			if(!extensionList.contains(fileExtension1.toLowerCase())) {
 				return showMessageWithRedirect("이미지 형식만 업로드 가능합니다", "/vegemilBaby/model/apply", Method.GET, null, model);
 			}
-						
-			if(!"".equals(originalName1)) {
-				String file1 = originalName1.substring(originalName1.lastIndexOf("\\") + 1);
-				
-				String savefileName1 = uuid + "_" + file1.replaceAll("\\s", "");
-				
-				//저장 - 실제 경로
-				Path savePath = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName1);
-				//저장 - 테스트경로
-				//Path savePath = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName1);
 
-				//저장
-				calModel.getFileName1().transferTo(savePath);
-				//포트폴리오
-				calModel.setCImage(savefileName1);
+			if(!"".equals(originalName1)) {
+				String imageUrl1 = imageServerService.upload(calModel.getFileName1(), "vegemilBaby");
+				calModel.setCImage(imageUrl1);
 			}
-			if(!"".equals(originalName2)) {
-				String file2 = originalName2.substring(originalName2.lastIndexOf("\\") + 1);
-				
-				String savefileName2 = uuid + "_" + file2.replaceAll("\\s", "");;
-				//저장 - 실제 경로
-				Path savePath2 = Paths.get(uploadPath + "/upload/vegemilBaby/" + savefileName2);
-				//저장 - 테스트경로
-				//Path savePath2 = Paths.get("D:/upload/admin/vegemilbaby/"+savefileName2);
-				
-				//저장
-				calModel.getFileName2().transferTo(savePath2);
-				//포트폴리오
-				calModel.setCImage2(savefileName2);
+			if(StringUtils.hasText(originalName2)) {
+				String imageUrl2 = imageServerService.upload(calModel.getFileName2(), "vegemilBaby");
+				calModel.setCImage2(imageUrl2);
 			}
 			
 			boolean isRegistered = vegemilBabyCommunityService.insertModelForm(calModel);
-			if (isRegistered == false) {
+			if (!isRegistered) {
 				out.println("<script>alert('모델 신청이 실패했습니다.'); history.go(-1);</script>");
 				out.flush();
 				return showMessageWithRedirect("데이터베이스 처리 과정에 문제가 발생하였습니다.", "/vegemilBaby/event_model", Method.GET, null, model);

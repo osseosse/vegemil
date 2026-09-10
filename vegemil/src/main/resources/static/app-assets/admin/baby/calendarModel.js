@@ -310,7 +310,8 @@ var createTable = function() {
           className: 'my_modal',
           render: function (data, type, full, meta) {
 			  if(full['cImage']==null)	return '';
-      		  else	return '<img src="/web/upload/vegemilBaby/'+full['cImage']+'" height="40" width="40" class="rounded">';
+			  var imgSrc = full['cImage'].startsWith('http') ? full['cImage'] : '/web/upload/vegemilBaby/'+full['cImage'];
+      		  return '<img src="'+imgSrc+'" height="40" width="40" class="rounded">';
           }
         },
         {
@@ -610,8 +611,7 @@ function getModal(obj) {
 	modal +=													'<button type="button"  class="rotateD1'+obj.cIdx+' btn btn-outline-primary btn-sm">아래</button>'
 	modal +=													'<button type="button"  class="rotateC1'+obj.cIdx+' btn btn-outline-primary btn-sm">취소</button>'
 	modal +=													'<input type="hidden"  name="cAngle" id="angleInfo1'+obj.cIdx+'" value='+obj.cAngle+' >'
-//	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="/image/'+obj.cImage+'" width="100%"/></p>'
-	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="/web/upload/vegemilBaby/'+obj.cImage+'" width="100%"/></p>'
+	modal +=													'<p class="mt-1"><img class="imageToRotate1'+obj.cIdx+'" src="'+(obj.cImage.startsWith('http') ? obj.cImage : '/web/upload/vegemilBaby/'+obj.cImage)+'" width="100%"/></p>'
 	modal +=												'</div>'
 	modal +=											'</div>'
 	modal +=										'</dd>'
@@ -628,8 +628,7 @@ function getModal(obj) {
 	modal +=													'<button type="button"  class="rotateD2'+obj.cIdx+' btn btn-outline-primary btn-sm">아래</button>'
 	modal +=													'<button type="button"  class="rotateC2'+obj.cIdx+' btn btn-outline-primary btn-sm">취소</button>'
 	modal +=													'<input type="hidden"  name="cAngle2" id="angleInfo2'+obj.cIdx+'" value='+obj.cAngle2+' >'	
-//	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="/image/'+obj.cImage2+'" width="100%"/></p>'
-	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="/web/upload/vegemilBaby/'+obj.cImage2+'" width="100%"/></p>'
+	modal +=													'<p class="mt-1"><img class="imageToRotate2'+obj.cIdx+'" src="'+(obj.cImage2.startsWith('http') ? obj.cImage2 : '/web/upload/vegemilBaby/'+obj.cImage2)+'" width="100%"/></p>'
 
 	modal +=												'</div>'
 	modal +=											'</div>'
