@@ -398,9 +398,6 @@ function showupContentModal(id) {
 }
 
 function buildFileLink(filePath, originName) {
-	if (!filePath.startsWith("http")) {
-		return `<a href="/download${filePath}" target="_blank">${originName}</a>`;
-	}
 	return `<a href="javascript:void(0)" onclick="downloadFromImageServer('${filePath}', '${(originName || '').replace(/'/g, "\\'")}')">${originName}</a>`;
 }
 
