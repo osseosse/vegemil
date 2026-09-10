@@ -1,18 +1,13 @@
 package com.vegemil.service.vegemilBaby;
 
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +27,7 @@ import com.vegemil.domain.vegemilBaby.VegemilBabySampleDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySearchDTO;
 import com.vegemil.mapper.VegemilBabyMapper;
+import com.vegemil.service.ImageServerService;
 import com.vegemil.paging.BoardListSearchDTO;
 import com.vegemil.paging.BoardResponseVO;
 import com.vegemil.paging.PaginationInfo;
@@ -39,11 +35,11 @@ import com.vegemil.paging.PaginationInfo;
 @Service
 public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityService {
 	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
-
 	@Autowired
 	private VegemilBabyMapper vegemilBabyMapper;
+
+	@Autowired
+	private ImageServerService imageServerService;
 
 	// ======[Index]======
 	// 육아정보
@@ -207,29 +203,17 @@ public class VegemilBabyCommunityServiceImpl implements VegemilBabyCommunityServ
 		  response.setContentType("text/html; charset=UTF-8"); 
 		  PrintWriter out = response.getWriter();
 		  
-			String uuid = UUID.randomUUID().toString();
-			String originalName = review.getFileName().getOriginalFilename();	
-					
+			String originalName = review.getFileName().getOriginalFilename();
+
 			if(!"".equals(originalName)) {
-				String file = originalName.substring(originalName.lastIndexOf("\\")+1);
-				
-				String savefileName = uuid + "_" +file.replaceAll("\\s", "");
-				
-				//저장 - 실제경로 
-				Path savePath = Paths.get(uploadPath+ "/upload/vegemilBaby/" + savefileName);
-				//저장 - Test로컬경로
-				//Path savePath = Paths.get("D:/upload/vegemilBaby/" + savefileName);
-												
-				//저장
-				review.getFileName().transferTo(savePath);				
-				review.setSImage(savefileName);
-				
-				long filesize = Files.size(savePath); 			
-				if(filesize > 3145728) {
+				if(review.getFileName().getSize() > 3145728) {
 					out.println("<script>alert('3M이하 이미지를 등록해주세요'); history.back();</script>");
-					out.flush();	
+					out.flush();
 					return 0;
-				}			
+				}
+
+				String imageUrl = imageServerService.upload(review.getFileName(), "vegemilBaby");
+				review.setSImage(imageUrl);
 			}
 		
 		return vegemilBabyMapper.insertReviewEvent(review);
