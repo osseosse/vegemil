@@ -318,7 +318,6 @@
 	        console.log(res);
 	        res.data.list.forEach((model) => {
 
-
 	            let babyModel = makeBabyModel(model)
 	            $("#babyList").append(babyModel);
 	          
@@ -334,12 +333,13 @@
 	
 	//이달의모델 생성
 	function makeBabyModel(model) {
+		let imgSrc = model.cImage.startsWith('http') ? model.cImage : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/' + model.cImage;
 		let item =
 		    `
 		    <li  class="md${model.ROWNUM}" id="md${model.ROWNUM}" >
 		    <div class="model_month">
-		    <p class="model_box${model.cRank}"  
-		    style="background: url(/web/upload/vegemilBaby/${model.cImage}); background-position:center;-webkit-background-size: cover; background-size: cover;">
+		    <p class="model_box${model.cRank}"
+		    style="background: url(${imgSrc}); background-position:center;-webkit-background-size: cover; background-size: cover;">
 			</p>											
 				<p class="f17_4 mt50" >${model.cHonor}</p>
 				<p class="f26_4" >*${model.cName}님</p>
