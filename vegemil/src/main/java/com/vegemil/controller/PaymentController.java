@@ -43,15 +43,21 @@ import com.vegemil.util.UiUtils;
 @Controller
 public class PaymentController extends UiUtils {
 
+	@org.springframework.beans.factory.annotation.Value("${tosspayment.secretkey.live}")
+	private String liveSecretKey;
+
+	@org.springframework.beans.factory.annotation.Value("${tosspayment.secretkey.test}")
+	private String testSecretKey;
+
 	@Autowired
 	private MemberService memberService;
-	
+
 	@Autowired
 	private QnaService qnaService;
-	
+
 	@Autowired
 	private PaymentService paymentService;
-	
+
 	@Autowired
 	private MailService emailService;
 	
@@ -248,8 +254,7 @@ public class PaymentController extends UiUtils {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		//request 데이터
-        //String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+        String secretKey	= liveSecretKey;
         /* base64 encoding */
 		byte[] encodedBytes =  java.util.Base64.getEncoder().encode(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
@@ -260,7 +265,7 @@ public class PaymentController extends UiUtils {
 			if(authentication != null) {
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
 				if (member != null) {
-					
+
 					URL url = new URL("https://api.tosspayments.com/v1/payments/confirm");
 		
 					StringBuffer paramData = new StringBuffer();
@@ -381,8 +386,7 @@ public class PaymentController extends UiUtils {
 		Boolean result = false;
 
 		//request 데이터
-		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+        String secretKey	= liveSecretKey;
 		/* base64 encoding */
 		byte[] encodedBytes =   java.util.Base64.getEncoder().encode(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
@@ -484,8 +488,7 @@ public class PaymentController extends UiUtils {
 		PrintWriter out = response.getWriter();
 
 		//request 데이터
-		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-        String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+        String secretKey	= liveSecretKey;
 		/* base64 encoding */
 		byte[] encodedBytes =   java.util.Base64.getEncoder().encode(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
@@ -493,7 +496,7 @@ public class PaymentController extends UiUtils {
 		int responseCode = 0;
 
 		try {
-			
+
 			if(authentication != null) {
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();  //userDetail 객체를 가져옴
 				if (member != null) {

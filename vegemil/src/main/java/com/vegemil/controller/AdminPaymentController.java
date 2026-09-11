@@ -35,7 +35,12 @@ import com.vegemil.util.UiUtils;
 
 @Controller
 public class AdminPaymentController extends UiUtils {
-	
+	@org.springframework.beans.factory.annotation.Value("${tosspayment.secretkey.live}")
+	private String liveSecretKey;
+
+	@org.springframework.beans.factory.annotation.Value("${tosspayment.secretkey.test}")
+	private String testSecretKey;
+
 	@Autowired
 	private AdminPaymentService adminPaymentService;
 	
@@ -73,8 +78,7 @@ public class AdminPaymentController extends UiUtils {
 		PrintWriter out = response.getWriter();
 
 		//request 데이터
-		//String secretKey	= "test_sk_OAQ92ymxN34d7vzQwZP3ajRKXvdk:";//테스트
-		String secretKey	= "live_sk_jkYG57Eba3GjLkbKXQ58pWDOxmA1:";//라이브
+		String secretKey	= liveSecretKey;
 		/* base64 encoding */
 		byte[] encodedBytes = Base64.encodeBase64(secretKey.getBytes());
         String base64Credentials = new String(encodedBytes);
