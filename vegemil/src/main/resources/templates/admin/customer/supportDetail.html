@@ -111,8 +111,40 @@
 	    	   form.submit();
 		   }
 	       
+		   function downloadFile(el) {
+			   var fileUrl = el.getAttribute('data-url');
+			   if (fileUrl.startsWith('http')) {
+				   var url = new URL(fileUrl);
+				   var parts = url.pathname.replace('/images/vegemil-upload/', '').split('/');
+				   var folder = parts[0];
+				   var filename = parts[1];
+				   var downloadUrl = url.origin + '/api/download?folder=' + encodeURIComponent(folder)
+					   + '&filename=' + encodeURIComponent(filename)
+					   + '&original_name=' + encodeURIComponent(filename);
+				   fetch(downloadUrl, {
+					   headers: { 'X-API-KEY': 'For-the-health-and-culture-of-humankind' }
+				   })
+				   .then(function(res) {
+					   if (!res.ok) throw new Error('다운로드 실패');
+					   return res.blob();
+				   })
+				   .then(function(blob) {
+					   var a = document.createElement('a');
+					   a.href = URL.createObjectURL(blob);
+					   a.download = filename;
+					   document.body.appendChild(a);
+					   a.click();
+					   document.body.removeChild(a);
+					   URL.revokeObjectURL(a.href);
+				   })
+				   .catch(function() { alert('파일 다운로드에 실패했습니다.'); });
+			   } else {
+				   window.open('https://www.vegemil.co.kr/download/web/upload/' + fileUrl, '_blank');
+			   }
+		   }
+
 		       /*]]>*/
- 	    </script> 
+ 	    </script>
     </th:block>
     <!-- END: Page Vendor JS-->
 	
@@ -199,16 +231,16 @@
 										<div class="col-5" th:if="${not #strings.isEmpty(support.sFile) or not #strings.isEmpty(support.sFileSub) or not #strings.isEmpty(support.sFileThird)}">
 											<p class="text-muted mb-2">첨부파일</p>
 											<div th:if="${not #strings.isEmpty(support.sFile)}" class="mb-2">
-												<a download class="btn btn-outline-secondary btn-sm mb-1" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFile}|">다운로드</a>
-												<div><img th:src="|/web/upload/${support.sFile}|" class="img-fluid rounded" style="max-height:180px;" /></div>
+												<a href="javascript:void(0)" class="btn btn-outline-secondary btn-sm mb-1" th:data-url="${#strings.startsWith(support.sFile, 'http') ? support.sFile : 'https://www.vegemil.co.kr/web/upload/' + support.sFile}" onclick="downloadFile(this)">다운로드</a>
+												<div><img th:src="${#strings.startsWith(support.sFile, 'http') ? support.sFile : '/web/upload/' + support.sFile}" class="img-fluid rounded" style="max-height:180px;" /></div>
 											</div>
 											<div th:if="${not #strings.isEmpty(support.sFileSub)}" class="mb-2">
-												<a download class="btn btn-outline-secondary btn-sm mb-1" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFileSub}|">다운로드</a>
-												<div><img th:src="|/web/upload/${support.sFileSub}|" class="img-fluid rounded" style="max-height:180px;" /></div>
+												<a href="javascript:void(0)" class="btn btn-outline-secondary btn-sm mb-1" th:data-url="${#strings.startsWith(support.sFileSub, 'http') ? support.sFileSub : 'https://www.vegemil.co.kr/web/upload/' + support.sFileSub}" onclick="downloadFile(this)">다운로드</a>
+												<div><img th:src="${#strings.startsWith(support.sFileSub, 'http') ? support.sFileSub : '/web/upload/' + support.sFileSub}" class="img-fluid rounded" style="max-height:180px;" /></div>
 											</div>
 											<div th:if="${not #strings.isEmpty(support.sFileThird)}" class="mb-2">
-												<a download class="btn btn-outline-secondary btn-sm mb-1" target="_blank" th:href="|https://www.vegemil.co.kr/web/upload/${support.sFileThird}|">다운로드</a>
-												<div><img th:src="|/web/upload/${support.sFileThird}|" class="img-fluid rounded" style="max-height:180px;" /></div>
+												<a href="javascript:void(0)" class="btn btn-outline-secondary btn-sm mb-1" th:data-url="${#strings.startsWith(support.sFileThird, 'http') ? support.sFileThird : 'https://www.vegemil.co.kr/web/upload/' + support.sFileThird}" onclick="downloadFile(this)">다운로드</a>
+												<div><img th:src="${#strings.startsWith(support.sFileThird, 'http') ? support.sFileThird : '/web/upload/' + support.sFileThird}" class="img-fluid rounded" style="max-height:180px;" /></div>
 											</div>
 										</div>
 									</div>
@@ -230,9 +262,9 @@
 												<span style="font-size:11px; color:#999;" th:text="${h['s_subject']}"></span>
 												<span style="font-size:11px; color:#bbb; margin-left:8px;" th:if="${h['s_content'] != null}" th:text="${#strings.abbreviate(h['s_content'], 60)}"></span>
 												<span th:if="${not #strings.isEmpty(h['s_file']) or not #strings.isEmpty(h['s_file_sub']) or not #strings.isEmpty(h['s_file_third'])}" class="ms-1">
-													<img th:if="${not #strings.isEmpty(h['s_file'])}" th:src="|/web/upload/${h['s_file']}|" style="max-width:36px; max-height:36px; opacity:0.5; border-radius:3px;" />
-													<img th:if="${not #strings.isEmpty(h['s_file_sub'])}" th:src="|/web/upload/${h['s_file_sub']}|" style="max-width:36px; max-height:36px; opacity:0.5; border-radius:3px; margin-left:2px;" />
-													<img th:if="${not #strings.isEmpty(h['s_file_third'])}" th:src="|/web/upload/${h['s_file_third']}|" style="max-width:36px; max-height:36px; opacity:0.5; border-radius:3px; margin-left:2px;" />
+													<img th:if="${not #strings.isEmpty(h['s_file'])}" th:src="${#strings.startsWith(h['s_file'], 'http') ? h['s_file'] : '/web/upload/' + h['s_file']}" style="max-width:36px; max-height:36px; opacity:0.5; border-radius:3px;" />
+													<img th:if="${not #strings.isEmpty(h['s_file_sub'])}" th:src="${#strings.startsWith(h['s_file_sub'], 'http') ? h['s_file_sub'] : '/web/upload/' + h['s_file_sub']}" style="max-width:36px; max-height:36px; opacity:0.5; border-radius:3px; margin-left:2px;" />
+													<img th:if="${not #strings.isEmpty(h['s_file_third'])}" th:src="${#strings.startsWith(h['s_file_third'], 'http') ? h['s_file_third'] : '/web/upload/' + h['s_file_third']}" style="max-width:36px; max-height:36px; opacity:0.5; border-radius:3px; margin-left:2px;" />
 												</span>
 											</div>
 										</div>
