@@ -72,9 +72,18 @@
 							<tr th:if="${(qna.sFile != null and !qna.sFile.isEmpty()) or (qna.sFileSub != null and !qna.sFileSub.isEmpty()) or (qna.sFileThird != null and !qna.sFileThird.isEmpty())}">
 								<td colspan="3" class="q_box">
 									<p class="f14 fw400 gray04 mb10">첨부이미지</p>
-									<img th:if="${qna.sFile != null and !qna.sFile.isEmpty()}" th:src="|/web/upload/${qna.sFile}|" style="max-width:200px; margin-right:10px;" />
-									<img th:if="${qna.sFileSub != null and !qna.sFileSub.isEmpty()}" th:src="|/web/upload/${qna.sFileSub}|" style="max-width:200px; margin-right:10px;" />
-									<img th:if="${qna.sFileThird != null and !qna.sFileThird.isEmpty()}" th:src="|/web/upload/${qna.sFileThird}|" style="max-width:200px;" />
+									<th:block th:if="${qna.sFile != null and !qna.sFile.isEmpty()}">
+										<img th:if="${qna.sFile.startsWith('http')}" th:src="${qna.sFile}" style="max-width:200px; margin-right:10px;" />
+										<img th:unless="${qna.sFile.startsWith('http')}" th:src="|/web/upload/${qna.sFile}|" style="max-width:200px; margin-right:10px;" />
+									</th:block>
+									<th:block th:if="${qna.sFileSub != null and !qna.sFileSub.isEmpty()}">
+										<img th:if="${qna.sFileSub.startsWith('http')}" th:src="${qna.sFileSub}" style="max-width:200px; margin-right:10px;" />
+										<img th:unless="${qna.sFileSub.startsWith('http')}" th:src="|/web/upload/${qna.sFileSub}|" style="max-width:200px; margin-right:10px;" />
+									</th:block>
+									<th:block th:if="${qna.sFileThird != null and !qna.sFileThird.isEmpty()}">
+										<img th:if="${qna.sFileThird.startsWith('http')}" th:src="${qna.sFileThird}" style="max-width:200px;" />
+										<img th:unless="${qna.sFileThird.startsWith('http')}" th:src="|/web/upload/${qna.sFileThird}|" style="max-width:200px;" />
+									</th:block>
 								</td>
 							</tr>
 						</table>

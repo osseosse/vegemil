@@ -208,14 +208,28 @@ var createTable = function() {
           targets: 4,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['cImg']==null)	
-				return '<input type="file" accept=".png,.gif,.jpg" id="fileName2" name="fileName2" >';
-      			else	
-				return '<img src="https://image.edaymall.com/images/vegemil-upload/vegemilBaby/tvcf/'+full['cImg']+' " width="80" />'+
-      			'</br>'+
-      			'</br>'+      		      			      			
-      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'DI\')" style="display: inline-block;" />수정</button>'
-          }          
+            var idx = full['cIdx'];
+            if(full['cImg']==null || full['cImg']=='') {
+				return '<label for="fileName2_'+idx+'" class="btn btn-outline-secondary btn-sm" style="font-size:11px;cursor:pointer;">' +
+				feather.icons['image'].toSvg({width:13,height:13}) + ' 파일선택</label>' +
+				'<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+idx+'" name="fileName2" style="display:none;" />' +
+				'<span class="file-name-label" id="fileLabel_'+idx+'" style="display:block;font-size:11px;color:#999;margin-top:4px;">선택된 파일 없음</span>';
+      		} else {
+				var imgSrc = full['cImg'].startsWith('http') ? full['cImg'] : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/tvcf/'+full['cImg'];
+				return '<div style="display:flex;align-items:center;gap:6px;">' +
+				'<img src="'+imgSrc+'" width="80" style="border-radius:4px;" />' +
+				'<div style="display:flex;flex-direction:column;gap:4px;">' +
+      			'<button type="button" class="btn btn-outline-primary btn-sm p-25" onclick="btnSave('+idx+',\'UI\')" title="이미지 수정">' + feather.icons['upload'].toSvg({width:14,height:14}) + '</button>' +
+      			'<button type="button" class="btn btn-outline-danger btn-sm p-25" onclick="btnSave('+idx+',\'DI\')" title="이미지 삭제">' + feather.icons['trash-2'].toSvg({width:14,height:14}) + '</button>' +
+				'</div></div>' +
+				'<div style="margin-top:6px;">' +
+				'<label for="fileName2_'+idx+'" class="btn btn-outline-secondary btn-sm" style="font-size:11px;padding:2px 8px;cursor:pointer;">' +
+				feather.icons['image'].toSvg({width:12,height:12}) + ' 파일선택</label>' +
+				'<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+idx+'" name="fileName2" style="display:none;" />' +
+				'<span class="file-name-label" id="fileLabel_'+idx+'" style="font-size:11px;color:#999;margin-left:6px;">선택된 파일 없음</span>' +
+				'</div>';
+			}
+          }
         },
  		{
           targets: 5,
@@ -238,7 +252,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'U\')" />수정</button>'
+              '<button type="button" class="btn btn-primary btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'U\')" />수정</button>'
             );
           }
           
@@ -248,7 +262,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'D\')" />삭제</button>'
+              '<button type="button" class="btn btn-primary btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'D\')" />삭제</button>'
             );
           }          
         }
@@ -322,6 +336,16 @@ var createTable = function() {
 			cell.innerHTML = i+1;
 		} );
 	} ).draw();
+
+    $('.datatables-basic').on('change', 'input[type="file"][name="fileName2"]', function() {
+		var idx = this.id.replace('fileName2_', '');
+		var label = $('#fileLabel_' + idx);
+		if(this.files && this.files.length > 0) {
+			label.text(this.files[0].name).css('color', '#333');
+		} else {
+			label.text('선택된 파일 없음').css('color', '#999');
+		}
+	});
 	
     $('div.head-label').html('<h4 class="card-title">TV CF 목록 </h4> ');
     $('input.dt-input').on('keyup', function () {
@@ -417,7 +441,7 @@ function btnSave(idx, action) {
 	        $('#cDisplay').val('0');
 	    }	    
 	   
-		if($('input[type=file]')[0].files[0] === undefined){
+		if($('#fileName1')[0].files[0] === undefined){
 			alert('썸네일을 등록해주세요');
 			return false;
 		}
@@ -431,22 +455,31 @@ function btnSave(idx, action) {
 	    formData.append("cDate", $('#cDate').val());
 	    formData.append("cDisplay", $('#cDisplay').val());   
 		formData.append("action", $('#action').val());
-	    formData.append('fileName', $('input[type=file]')[0].files[0]); 
+	    formData.append('fileName', $('#fileName1')[0].files[0]);
 	    
 
 	}else{
 		const form = $('#form')[0];
 		var formData = new FormData();
 		
-		if(action == "U" || action =="UI") {
-			msg = "수정하시겠습니까??";
-			if( $('#fileName2')[0] !== undefined){				
-				var fileInput = $('#fileName2')[0].files[0];				
+		if(action == "U") {
+			msg = "수정하시겠습니까?";
+			if( $('#fileName2_'+idx)[0] !== undefined){
+				var fileInput = $('#fileName2_'+idx)[0].files[0];
 			}
-		}else if(action == "DI"){			
-			msg = "썸네일을 수정하시겠습니까??";	
+		}else if(action == "UI") {
+			msg = "이미지를 수정하시겠습니까?";
+			if( $('#fileName2_'+idx)[0] !== undefined){
+				var fileInput = $('#fileName2_'+idx)[0].files[0];
+			}
+			if(!fileInput){
+				alert('수정할 이미지를 선택해주세요.');
+				return false;
+			}
+		}else if(action == "DI"){
+			msg = "이미지를 삭제하시겠습니까?";
 		}else if(action == "D"){
-			msg = "삭제하시겠습니까?";				
+			msg = "삭제하시겠습니까?";
 		}
 		
 		
@@ -491,17 +524,20 @@ function btnSave(idx, action) {
 		   type: "POST",
            enctype: 'multipart/form-data',
 		   dataType : 'json',
-		}).done(function(data){		   
-		   if(data.result) {			   
-			   if(action == "U") {
+		}).done(function(data){
+		   if(data.result) {
+			   if(action == "U" || action == "UI") {
 				   alert('수정되었습니다.');
 			   	   $('.datatables-basic').DataTable().ajax.reload();
 			   }else if(action == "I") {
 					alert('저장되었습니다.');
-					$('.datatables-basic').DataTable().ajax.reload();		
+					$('.datatables-basic').DataTable().ajax.reload();
+			   }else if(action == "DI") {
+					alert('이미지가 삭제되었습니다.');
+					$('.datatables-basic').DataTable().ajax.reload();
 			   } else {
 					alert('삭제되었습니다.');
-					$('.datatables-basic').DataTable().ajax.reload();		
+					$('.datatables-basic').DataTable().ajax.reload();
 				}
 		   	   
 		   }else{

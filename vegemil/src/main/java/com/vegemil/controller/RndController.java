@@ -53,6 +53,7 @@ import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.ScheduleDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.domain.VisitDTO;
+import com.vegemil.service.ImageServerService;
 import com.vegemil.service.RndService;
 import com.vegemil.util.UiUtils;
 
@@ -61,7 +62,10 @@ public class RndController extends UiUtils {
 
 	@Autowired
 	RndService rndService;
-	
+
+	@Autowired
+	ImageServerService imageServerService;
+
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
 	
@@ -319,19 +323,10 @@ public class RndController extends UiUtils {
 	@RequestMapping(value="/rnd/multiImageUpload")
 	public void smarteditorMultiImageUpload(HttpServletRequest request, HttpServletResponse response){
 		try {
-			//파일정보
-			String sFileInfo = "";
-			//파일명을 받는다 - 일반 원본파일명
 			String sFilename = request.getHeader("file-name");
-			//파일 확장자
-			String sFilenameExt = sFilename.substring(sFilename.lastIndexOf(".")+1);
-			//확장자를소문자로 변경
-			sFilenameExt = sFilenameExt.toLowerCase();
-				
-			//이미지 검증 배열변수
-			String[] allowFileArr = {"jpg","png","bmp","gif"};
+			String sFilenameExt = sFilename.substring(sFilename.lastIndexOf(".")+1).toLowerCase();
 
-			//확장자 체크
+			String[] allowFileArr = {"jpg","png","bmp","gif"};
 			int nCnt = 0;
 			for(int i=0; i<allowFileArr.length; i++) {
 				if(sFilenameExt.equals(allowFileArr[i])){
@@ -339,56 +334,50 @@ public class RndController extends UiUtils {
 				}
 			}
 
-			//이미지가 아니라면
 			if(nCnt == 0) {
 				PrintWriter print = response.getWriter();
 				print.print("NOTALLOW_"+sFilename);
 				print.flush();
 				print.close();
 			} else {
-				//디렉토리 설정 및 업로드	
-				
-				//파일경로
-				//String filePath = "D:/upload/";
-				String filePath = uploadPath + "/upload/tourReview/";
-				File file = new File(filePath);
-				
-				if(!file.exists()) {
-					file.mkdirs();
+				java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+				InputStream is = request.getInputStream();
+				byte[] buf = new byte[4096];
+				int n;
+				while ((n = is.read(buf)) != -1) {
+					baos.write(buf, 0, n);
 				}
-				
-				String sRealFileNm = "";
-				SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-				String today= formatter.format(new java.util.Date());
-				sRealFileNm = today+UUID.randomUUID().toString() + sFilename.substring(sFilename.lastIndexOf("."));
-				String rlFileNm = filePath + sRealFileNm;
-				
-				///////////////// 서버에 파일쓰기 ///////////////// 
-				InputStream inputStream = request.getInputStream();
-				OutputStream outputStream=new FileOutputStream(rlFileNm);
-				int numRead;
-				byte bytes[] = new byte[Integer.parseInt(request.getHeader("file-size"))];
-				while((numRead = inputStream.read(bytes,0,bytes.length)) != -1){
-					outputStream.write(bytes,0,numRead);
-				}
-				if(inputStream != null) {
-					inputStream.close();
-				}
-				outputStream.flush();
-				outputStream.close();
-				
-				///////////////// 이미지 /////////////////
-				// 정보 출력
-				sFileInfo += "&bNewLine=true";
-				// img 태그의 title 속성을 원본파일명으로 적용시켜주기 위함
+				is.close();
+				final byte[] fileBytes = baos.toByteArray();
+				final String fileName = sFilename;
+				final String contentType = request.getHeader("file-Type");
+
+				org.springframework.web.multipart.MultipartFile multipartFile =
+					new org.springframework.web.multipart.MultipartFile() {
+						public String getName() { return "file"; }
+						public String getOriginalFilename() { return fileName; }
+						public String getContentType() { return contentType; }
+						public boolean isEmpty() { return fileBytes.length == 0; }
+						public long getSize() { return fileBytes.length; }
+						public byte[] getBytes() { return fileBytes; }
+						public InputStream getInputStream() { return new java.io.ByteArrayInputStream(fileBytes); }
+						public void transferTo(File dest) throws IOException {
+							OutputStream os = new FileOutputStream(dest);
+							os.write(fileBytes);
+							os.close();
+						}
+					};
+
+				String imageUrl = imageServerService.upload(multipartFile, "tourReview");
+
+				String sFileInfo = "&bNewLine=true";
 				sFileInfo += "&sFileName="+ sFilename;
-				//sFileInfo += "&sFileURL="+"D:/upload/"+sRealFileNm;
-				sFileInfo += "&sFileURL="+ uploadPath + "/upload/tourReview/"+sRealFileNm;
+				sFileInfo += "&sFileURL="+ imageUrl;
 				PrintWriter printWriter = response.getWriter();
 				printWriter.print(sFileInfo);
 				printWriter.flush();
 				printWriter.close();
-			}	
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

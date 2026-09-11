@@ -68,7 +68,7 @@ public class AdminCustomerController extends UiUtils {
 	
 	@Autowired
 	private AdminCustomerService adminCustomerService;
-	
+
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
 

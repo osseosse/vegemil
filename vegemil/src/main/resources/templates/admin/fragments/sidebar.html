@@ -59,9 +59,11 @@
                         <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faqScore')}? 'active': ''">
                         	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqScore}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 점수확인</span></a>
                         </li>
+                        <!-- FAQ 새글등록 미사용 (퍼블리싱팀 납품 → DB 직접 입력 방식)
                         <li th:classappend="${#request.requestURI.equals('/admin/manage/customer/faqAdd')}? 'active': ''">
                         	<a class="d-flex align-items-center" th:href="@{/admin/manage/customer/faqAdd}"><i data-feather="circle"></i><span class="menu-item text-truncate">FAQ 새글등록</span></a>
                         </li>
+                        -->
                  
                     </ul>
                 </li>
