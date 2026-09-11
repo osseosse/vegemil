@@ -208,15 +208,26 @@ var createTable = function() {
           targets: 4,
           orderable: false,
           render: function (data, type, full, meta) {
+            var idx = full['cIdx'];
             if(full['cImg']==null || full['cImg']=='') {
-				return '<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+full['cIdx']+'" name="fileName2" >';
+				return '<label for="fileName2_'+idx+'" class="btn btn-outline-secondary btn-sm" style="font-size:11px;cursor:pointer;">' +
+				feather.icons['image'].toSvg({width:13,height:13}) + ' 파일선택</label>' +
+				'<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+idx+'" name="fileName2" style="display:none;" />' +
+				'<span class="file-name-label" id="fileLabel_'+idx+'" style="display:block;font-size:11px;color:#999;margin-top:4px;">선택된 파일 없음</span>';
       		} else {
 				var imgSrc = full['cImg'].startsWith('http') ? full['cImg'] : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/tvcf/'+full['cImg'];
-				return '<img src="'+imgSrc+'" width="80" />' +
-      			'<br/><br/>' +
-				'<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+full['cIdx']+'" name="fileName2" style="margin-bottom:4px;font-size:11px;width:160px;" />' +
-      			'<button type="button" class="btn btn-outline-primary btn-sm p-25" onclick="btnSave('+full['cIdx']+',\'UI\')" title="이미지 수정">' + feather.icons['upload'].toSvg({width:14,height:14}) + '</button> ' +
-      			'<button type="button" class="btn btn-outline-danger btn-sm p-25" onclick="btnSave('+full['cIdx']+',\'DI\')" title="이미지 삭제">' + feather.icons['trash-2'].toSvg({width:14,height:14}) + '</button>';
+				return '<div style="display:flex;align-items:center;gap:6px;">' +
+				'<img src="'+imgSrc+'" width="80" style="border-radius:4px;" />' +
+				'<div style="display:flex;flex-direction:column;gap:4px;">' +
+      			'<button type="button" class="btn btn-outline-primary btn-sm p-25" onclick="btnSave('+idx+',\'UI\')" title="이미지 수정">' + feather.icons['upload'].toSvg({width:14,height:14}) + '</button>' +
+      			'<button type="button" class="btn btn-outline-danger btn-sm p-25" onclick="btnSave('+idx+',\'DI\')" title="이미지 삭제">' + feather.icons['trash-2'].toSvg({width:14,height:14}) + '</button>' +
+				'</div></div>' +
+				'<div style="margin-top:6px;">' +
+				'<label for="fileName2_'+idx+'" class="btn btn-outline-secondary btn-sm" style="font-size:11px;padding:2px 8px;cursor:pointer;">' +
+				feather.icons['image'].toSvg({width:12,height:12}) + ' 파일선택</label>' +
+				'<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+idx+'" name="fileName2" style="display:none;" />' +
+				'<span class="file-name-label" id="fileLabel_'+idx+'" style="font-size:11px;color:#999;margin-left:6px;">선택된 파일 없음</span>' +
+				'</div>';
 			}
           }
         },
@@ -241,7 +252,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'U\')" />수정</button>'
+              '<button type="button" class="btn btn-primary btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'U\')" />수정</button>'
             );
           }
           
@@ -251,7 +262,7 @@ var createTable = function() {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'D\')" />삭제</button>'
+              '<button type="button" class="btn btn-primary btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'D\')" />삭제</button>'
             );
           }          
         }
@@ -325,6 +336,16 @@ var createTable = function() {
 			cell.innerHTML = i+1;
 		} );
 	} ).draw();
+
+    $('.datatables-basic').on('change', 'input[type="file"][name="fileName2"]', function() {
+		var idx = this.id.replace('fileName2_', '');
+		var label = $('#fileLabel_' + idx);
+		if(this.files && this.files.length > 0) {
+			label.text(this.files[0].name).css('color', '#333');
+		} else {
+			label.text('선택된 파일 없음').css('color', '#999');
+		}
+	});
 	
     $('div.head-label').html('<h4 class="card-title">TV CF 목록 </h4> ');
     $('input.dt-input').on('keyup', function () {
