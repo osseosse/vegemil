@@ -208,14 +208,17 @@ var createTable = function() {
           targets: 4,
           orderable: false,
           render: function (data, type, full, meta) {
-            if(full['cImg']==null)	
-				return '<input type="file" accept=".png,.gif,.jpg" id="fileName2" name="fileName2" >';
-      			else	
-				return '<img src="https://image.edaymall.com/images/vegemil-upload/vegemilBaby/tvcf/'+full['cImg']+' " width="80" />'+
-      			'</br>'+
-      			'</br>'+      		      			      			
-      			'<button type="button" class="btn btn-primary btn-sm btn-sm waves-effect waves-float waves-light" onclick="btnSave('+full['cIdx']+',\'DI\')" style="display: inline-block;" />수정</button>'
-          }          
+            if(full['cImg']==null || full['cImg']=='') {
+				return '<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+full['cIdx']+'" name="fileName2" >';
+      		} else {
+				var imgSrc = full['cImg'].startsWith('http') ? full['cImg'] : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/tvcf/'+full['cImg'];
+				return '<img src="'+imgSrc+'" width="80" />' +
+      			'<br/><br/>' +
+				'<input type="file" accept=".png,.gif,.jpg" id="fileName2_'+full['cIdx']+'" name="fileName2" style="margin-bottom:4px;font-size:11px;width:160px;" />' +
+      			'<button type="button" class="btn btn-outline-primary btn-sm p-25" onclick="btnSave('+full['cIdx']+',\'UI\')" title="이미지 수정">' + feather.icons['upload'].toSvg({width:14,height:14}) + '</button> ' +
+      			'<button type="button" class="btn btn-outline-danger btn-sm p-25" onclick="btnSave('+full['cIdx']+',\'DI\')" title="이미지 삭제">' + feather.icons['trash-2'].toSvg({width:14,height:14}) + '</button>';
+			}
+          }
         },
  		{
           targets: 5,
@@ -417,7 +420,7 @@ function btnSave(idx, action) {
 	        $('#cDisplay').val('0');
 	    }	    
 	   
-		if($('input[type=file]')[0].files[0] === undefined){
+		if($('#fileName1')[0].files[0] === undefined){
 			alert('썸네일을 등록해주세요');
 			return false;
 		}
@@ -431,22 +434,31 @@ function btnSave(idx, action) {
 	    formData.append("cDate", $('#cDate').val());
 	    formData.append("cDisplay", $('#cDisplay').val());   
 		formData.append("action", $('#action').val());
-	    formData.append('fileName', $('input[type=file]')[0].files[0]); 
+	    formData.append('fileName', $('#fileName1')[0].files[0]);
 	    
 
 	}else{
 		const form = $('#form')[0];
 		var formData = new FormData();
 		
-		if(action == "U" || action =="UI") {
-			msg = "수정하시겠습니까??";
-			if( $('#fileName2')[0] !== undefined){				
-				var fileInput = $('#fileName2')[0].files[0];				
+		if(action == "U") {
+			msg = "수정하시겠습니까?";
+			if( $('#fileName2_'+idx)[0] !== undefined){
+				var fileInput = $('#fileName2_'+idx)[0].files[0];
 			}
-		}else if(action == "DI"){			
-			msg = "썸네일을 수정하시겠습니까??";	
+		}else if(action == "UI") {
+			msg = "이미지를 수정하시겠습니까?";
+			if( $('#fileName2_'+idx)[0] !== undefined){
+				var fileInput = $('#fileName2_'+idx)[0].files[0];
+			}
+			if(!fileInput){
+				alert('수정할 이미지를 선택해주세요.');
+				return false;
+			}
+		}else if(action == "DI"){
+			msg = "이미지를 삭제하시겠습니까?";
 		}else if(action == "D"){
-			msg = "삭제하시겠습니까?";				
+			msg = "삭제하시겠습니까?";
 		}
 		
 		
@@ -491,17 +503,20 @@ function btnSave(idx, action) {
 		   type: "POST",
            enctype: 'multipart/form-data',
 		   dataType : 'json',
-		}).done(function(data){		   
-		   if(data.result) {			   
-			   if(action == "U") {
+		}).done(function(data){
+		   if(data.result) {
+			   if(action == "U" || action == "UI") {
 				   alert('수정되었습니다.');
 			   	   $('.datatables-basic').DataTable().ajax.reload();
 			   }else if(action == "I") {
 					alert('저장되었습니다.');
-					$('.datatables-basic').DataTable().ajax.reload();		
+					$('.datatables-basic').DataTable().ajax.reload();
+			   }else if(action == "DI") {
+					alert('이미지가 삭제되었습니다.');
+					$('.datatables-basic').DataTable().ajax.reload();
 			   } else {
 					alert('삭제되었습니다.');
-					$('.datatables-basic').DataTable().ajax.reload();		
+					$('.datatables-basic').DataTable().ajax.reload();
 				}
 		   	   
 		   }else{
