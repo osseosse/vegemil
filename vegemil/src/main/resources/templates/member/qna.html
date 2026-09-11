@@ -257,7 +257,8 @@ Dropzone.options.fileDropzone = {
                     var mock = { name: existVals[i], size: 1, accepted: true, status: Dropzone.SUCCESS, existIdx: i };
                     myDropzone.files.push(mock);
                     myDropzone.emit("addedfile", mock);
-                    myDropzone.emit("thumbnail", mock, "/web/upload/" + existVals[i]);
+                    var thumbUrl = existVals[i].startsWith('http') ? existVals[i] : '/web/upload/' + existVals[i];
+                    myDropzone.emit("thumbnail", mock, thumbUrl);
                     myDropzone.emit("complete", mock);
                 }
             }

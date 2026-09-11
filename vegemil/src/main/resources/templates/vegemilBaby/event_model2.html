@@ -103,12 +103,13 @@
 	
 	
 	function getStoryItem(model) {
+		let imgSrc = model.cImage.startsWith('http') ? model.cImage : 'https://image.edaymall.com/images/vegemil-upload/vegemilBaby/' + model.cImage;
 		let item =
 		    `
 		    <li  class="md${model.ROWNUM}"  th:classappend="${model.cRank =='1'} ? 1st">
 		    <div class="model_month">
-				<p class="model_box${model.cRank}"	
-		             <img src="/web/upload/vegemilBaby/${model.cImage}" />
+				<p class="model_box${model.cRank}"
+		             <img src="${imgSrc}" />
 
 				</p>
 				<p class="f17_4 mt50" >${model.cHonor}</p>

@@ -302,8 +302,7 @@ var createTable = function() {
 	} );
   } ).draw();
 	
-  $('div.head-label').html('<h4 class="card-title">FAQ 글 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button>'+
-                           '<button type="button" onclick="location.href=\'/admin/manage/customer/faqAdd\'" class="btn btn-outline-info btn-sm me-1">새글등록</button></h4>');
+  $('div.head-label').html('<h4 class="card-title">FAQ 글 목록 <button type="button" id="btnDel" class="btn btn-outline-danger btn-sm me-1">선택삭제</button></h4>');
 
   // Delete Record
   $('.datatables-basic tbody').on('click', '.delete-record', function () {

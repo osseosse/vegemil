@@ -36,6 +36,7 @@ import com.vegemil.service.MailService;
 import com.vegemil.service.MemberService;
 import com.vegemil.service.QnaService;
 import com.vegemil.service.vegemilBaby.VegemilBabyCommunityService;
+import com.vegemil.service.ImageServerService;
 import com.vegemil.util.CommonEncoder;
 import com.vegemil.util.UiUtils;
 
@@ -56,6 +57,9 @@ public class MypageController extends UiUtils {
 	
 	@Autowired
 	private MailService mailService;
+
+	@Autowired
+	private ImageServerService imageServerService;
 	
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
@@ -72,9 +76,9 @@ public class MypageController extends UiUtils {
 	        if("1".equals(member.getMIsIdle())){
 	        	return showMessageWithRedirect("고객님은 휴면 회원입니다. 휴면 해제 페이지로 이동합니다.", "/member/wakeUp", Method.GET, null, model);
 	        }
-	        
+
 	        if(member != null) {
-		        
+
 		        if (sIdx == null) {
 					model.addAttribute("qna", new QnaDTO());
 				} else {
@@ -86,10 +90,10 @@ public class MypageController extends UiUtils {
 						model.addAttribute("qna", qna);
 					}
 				}
-		        
+
 		        model.addAttribute("member", member);
 		        returnPage = "member/qna";
-		        
+
 	        }
 		} else {
 			model.addAttribute("qna", new QnaDTO());
@@ -142,24 +146,12 @@ public class MypageController extends UiUtils {
 				if(files != null) {
 					for(MultipartFile file : files) {
 						String originalName = file==null?"":file.getOriginalFilename();
-
-						System.out.println("origianalName =" + originalName);
 						if(!"".equals(originalName)) {
-							String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
-							String uuid = UUID.randomUUID().toString();
-							String savefileName = uuid + "_" + fileName;
-							//테스트경로
-							//Path savePath = Paths.get(uploadPath + "/upload/CUSTOMER/" + savefileName);
-							Path savePath = Paths.get("C:\\Dev/" + savefileName);
-
-							//저장
-							file.transferTo(savePath);
-							params.setFileToEmptySlot(savefileName);
+							String imageUrl = imageServerService.upload(file, "customer");
+							params.setFileToEmptySlot(imageUrl);
 						}
-
 					}
 				}
-
 				MemberDTO member = (MemberDTO) authentication.getPrincipal();
 			    
 				if(member != null) {
