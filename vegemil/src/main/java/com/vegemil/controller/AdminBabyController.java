@@ -53,6 +53,7 @@ import com.vegemil.domain.AdminSampleBabyDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.domain.vegemilBaby.VegemilBabySampleQtyDTO;
 import com.vegemil.service.AdminBabyService;
+import com.vegemil.service.ImageServerService;
 import com.vegemil.util.UiUtils;
 
 import lombok.extern.log4j.Log4j2;
@@ -63,10 +64,13 @@ public class AdminBabyController extends UiUtils {
 
 	@Autowired
 	private AdminBabyService adminBabyService;
-	
+
+	@Autowired
+	private ImageServerService imageServerService;
+
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
-	
+
 	@RequestMapping(value = "/admin/manage/baby/{viewName}")
     public String adminMoveCustomer(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
 		return "admin/baby/"+viewName;
@@ -108,26 +112,14 @@ public class AdminBabyController extends UiUtils {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
-			String uuid = UUID.randomUUID().toString();
-			String savefileName = uuid + "_" + file;
-			
-			//test경로
-			//String dirPath = "\\\\211.233.87.7\\data\\images\\testUpload\\";
-			//실제경로			
-			String dirPath = uploadPath + "/upload/vegemilBaby/babyInfo/";
-			
-			File f1 = new File(dirPath + savefileName);
-			
-			uploadFile.transferTo(f1);			
-			
-			params.setMbsImage(savefileName);
+			String imageUrl = imageServerService.upload(uploadFile, "vegemilBaby/babyInfo");
 
-			rtnMap.put("uploadPath", f1);
-			rtnMap.put("uuid", uuid);
+			params.setMbsImage(imageUrl);
+
+			rtnMap.put("uploadPath", imageUrl);
 			rtnMap.put("fileName", originalName);
-		} catch(IOException e) {
-			e.printStackTrace();
+		} catch(Exception e) {
+			log.error("육아정보 본문 이미지 업로드 실패", e);
 		}
 		return rtnMap;
 	}
@@ -189,13 +181,8 @@ public class AdminBabyController extends UiUtils {
 		try {
 				if(!fileName.getOriginalFilename().equals("")) {
 					String originalName = fileName.getOriginalFilename();
-					String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-					String uuid = UUID.randomUUID().toString();
-					String savefileName = uuid + "_" + file;
-					Path savePath = Paths.get(request.getSession().getServletContext().getRealPath("/..") + "/WEB-INF/classes/static/upload/admin/babyInfo/" + savefileName);
-					
-					fileName.transferTo(savePath);
-					params.setMbsImage(savefileName);
+					String imageUrl = imageServerService.upload(fileName, "vegemilBaby/babyInfo");
+					params.setMbsImage(imageUrl);
 				}
 			boolean isRegistered = adminBabyService.registerBabyInfo(params, fileName);
 			if (isRegistered == false) {
@@ -332,14 +319,9 @@ public class AdminBabyController extends UiUtils {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			if(!"".equals(originalName)) {
-				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + file;
-				
-				Path savePath = Paths.get(uploadPath + "/Admin/summerNote/" + savefileName);
-				params.getFileName().transferTo(savePath);
-				params.setMbsImage(savefileName);
+			if(originalName != null && !"".equals(originalName)) {
+				String imageUrl = imageServerService.upload(uploadFile, "vegemilBaby/babyQna");
+				params.setMbsImage(imageUrl);
 			}
 			boolean isRegistered = adminBabyService.registerBabyQna(params);
 			rtnMap.put("result", isRegistered);
@@ -381,14 +363,8 @@ public class AdminBabyController extends UiUtils {
 		PrintWriter out = response.getWriter();
 		try {
 			if(!fileName.getOriginalFilename().equals("")) {
-				String originalName = fileName.getOriginalFilename();
-				String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + file;
-				Path savePath = Paths.get(request.getSession().getServletContext().getRealPath("/") + "/WEB-INF/classes/static/upload/admin/babyQna/" + savefileName);
-					
-				fileName.transferTo(savePath);
-				params.setMbsImage(savefileName);
+				String imageUrl = imageServerService.upload(fileName, "vegemilBaby/babyQna");
+				params.setMbsImage(imageUrl);
 			}
 			boolean isRegistered = adminBabyService.registerBabyQna(params);
 			if (isRegistered == false) {

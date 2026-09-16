@@ -626,8 +626,7 @@
 						<ul class="tp-award-list-item cumu" th:each="info : ${infoList}">
 							<li>
 								<a th:href="@{/vegemilBaby/magazine/detail/{mbsIdx}(mbsIdx=${info.mbsIdx})}">
-									<div class="h280" th:style="'background: url(https://www.vegemil.co.kr/web/upload/vegemilBaby/babyInfo/thumbnail/'+ ${info.mbsImage} 
-																+ '); background-position:center;-webkit-background-size: cover; background-size: cover;'">
+									<div class="h280" th:style="${#strings.startsWith(info.mbsImage, 'http') ? 'background: url('+ info.mbsImage +'); background-position:center;-webkit-background-size: cover; background-size: cover;' : 'background: url(https://www.vegemil.co.kr/web/upload/vegemilBaby/babyInfo/thumbnail/'+ info.mbsImage +'); background-position:center;-webkit-background-size: cover; background-size: cover;'}">
 									</div>
 								</a>
 							</li>

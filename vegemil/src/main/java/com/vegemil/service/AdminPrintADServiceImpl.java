@@ -1,30 +1,27 @@
 package com.vegemil.service;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vegemil.domain.AdminPrintAdDTO;
-import com.vegemil.domain.AdminRadioCMDTO;
 import com.vegemil.mapper.AdminPrintAdMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 @Transactional
 public class AdminPrintADServiceImpl implements AdminPrintADService{
-	
+
 	@Autowired
 	private AdminPrintAdMapper adminPrintAdMapper;
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
+
+	@Autowired
+	private ImageServerService imageServerService;
 	
 	@Override
 	public List<AdminPrintAdDTO> getPrintADList(AdminPrintAdDTO params) {
@@ -81,40 +78,26 @@ public class AdminPrintADServiceImpl implements AdminPrintADService{
 	}
 	
 	private AdminPrintAdDTO uploadFile(MultipartFile uploadFile, AdminPrintAdDTO params) {
-		
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			
-			if(originalName.length() > 0) {
-				
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;			
-								
-				Path savePath = Paths.get(uploadPath+ "/upload/PAD/" + originalName);					
-				uploadFile.transferTo(savePath);
-				params.setTImg(originalName);
 
-				
+			if(originalName != null && originalName.length() > 0) {
+				String imageUrl = imageServerService.upload(uploadFile, "pad");
+				params.setTImg(imageUrl);
 				return params;
 			}
 		}catch(Exception e) {
-			e.printStackTrace();
+			log.error("인쇄광고 이미지 업로드 실패", e);
 		}
 		return params;
-		
 	}
+
 	public boolean deleteFile(String fileName) {
-		
 		if(fileName == null || "".equals(fileName)) {
 			return true;
 		}
-		try {
-			File file = new File(uploadPath+ "/upload/PAD/" +fileName);
-			file.delete();
-			return true;
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return false;
+		log.info("이미지 서버 파일 삭제 생략: {}", fileName);
+		return true;
 	}
 
 }

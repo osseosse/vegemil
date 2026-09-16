@@ -1,17 +1,10 @@
 package com.vegemil.service;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,9 +23,6 @@ import com.vegemil.paging.PaginationInfo;
 @Service
 @Transactional
 public class AdminBabyServiceImpl implements AdminBabyService {
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
 	
 	@Autowired
 	private AdminBabyMapper adminBabyMapper;
@@ -67,99 +57,31 @@ public class AdminBabyServiceImpl implements AdminBabyService {
 	
 	@Override
 	public boolean registerBabyInfo(AdminBabyDTO params, MultipartFile uploadFile) throws Exception {
-		System.out.println(params.toString());
 
 		if (params.getMbsIdx() == null) { //신규등록이라면
-			
-			String originalName = uploadFile.getOriginalFilename();			
-			
-			if(originalName != null && !"".equals(originalName)) {
-				
-				String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
-				String uuid = UUID.randomUUID().toString();
-				String savefileName = uuid + "_" + file;
-				
-				//Test 로컬경로
-				//File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
-				//실제 경로
-				File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + savefileName);				 
-
-				uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
-				params.setMbsImage(savefileName);	
-				params.setMbsImageOriginal(originalName);				
-			}	
-			
+			if(uploadFile != null) {
+				String originalName = uploadFile.getOriginalFilename();
+				if(originalName != null && !"".equals(originalName)) {
+					String imageUrl = imageServerService.upload(uploadFile, "vegemilBaby/babyInfo/thumbnail");
+					params.setMbsImage(imageUrl);
+					params.setMbsImageOriginal(originalName);
+				}
+			}
 		}else {
-			System.out.println("게시글 수정");			
-			if(uploadFile != null ) {
-				//전달된 파일
-				String originalName = uploadFile.getOriginalFilename();	
-				
-				//DB에 저장된 파일 불러오기
+			if(uploadFile != null) {
+				String originalName = uploadFile.getOriginalFilename();
 				String storedImgOriginal = adminBabyMapper.selectImgFileOriginalBabyInfo(params.getMbsIdx());
 				String storedImg = adminBabyMapper.selectImgFileBabyInfo(params.getMbsIdx());
-				
-				if(storedImgOriginal == null || storedImgOriginal.equals("") ) { // 1. DB에 첨부 파일 존재X
-					System.out.println("=============DB에  파일이 없습니다.==============");
-					if(originalName != null && !"".equals(originalName)) { //   1 -1 :전달되어온 파일이 존재
-						System.out.println("=============새로 입력되는 파일이 있습니다.==============");
-						
-						String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
-						String uuid = UUID.randomUUID().toString();
-						String savefileName = uuid + "_" + file;
-						
-						//Test 로컬경로
-						//File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
-						//실제 경로
-						File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + savefileName);
-																	
-						uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
-						params.setMbsImage(savefileName);	
+
+				if(originalName != null && !"".equals(originalName)) {
+					if(storedImgOriginal == null || !originalName.equals(storedImgOriginal)) {
+						String imageUrl = imageServerService.upload(uploadFile, "vegemilBaby/babyInfo/thumbnail");
+						params.setMbsImage(imageUrl);
 						params.setMbsImageOriginal(originalName);
-					}else {
-						System.out.println("=============새로 입력되는 파일이 없습니다.==============");
-					}					
-						
-				}else { 			// 2. DB에  첨부 파일 존재
-					System.out.println("=============DB에  파일이 있습니다.==============");
-					if(originalName != null && !"".equals(originalName)) {  //전달된 파일이 존재
-						System.out.println("=============새로 입력되는 파일이 있습니다.==============");
-						System.out.println("기존 파일명:" + storedImgOriginal);
-						System.out.println("새로 등록 파일명:" + originalName);
-						if(!originalName.equals(storedImgOriginal)) { //전달된 파일과 기존 파일이 다르면 		
-							System.out.println("=============전달될 파일과 기존 파일이 다릅니다..==============");
-							
-							String file = originalName.substring(originalName.lastIndexOf("\\") + 1).replaceAll("\\s", "");
-							String uuid = UUID.randomUUID().toString();
-							String savefileName = uuid + "_" + file;			
-											
-							//Test 로컬경로
-							//File destinationFile = new File("D:/upload/admin/vegemilbaby/" + savefileName);
-							//실제 경로
-							File destinationFile = new File(uploadPath + "/upload/vegemilBaby/babyInfo/thumbnail/" + savefileName);											
-						
-							uploadFile.transferTo(destinationFile);  // 이 메소드에 의해 저장 경로에 실질적으로 File이 생성됨
-							params.setMbsImage(savefileName);	
-							params.setMbsImageOriginal(originalName);											
-							
-							//삭제 - Test로컬경로						
-							//String storedfilePath = "D:/upload/admin/vegemilbaby/" + storedImg;
-							//삭제 - 실제경로
-							String storedfilePath = uploadPath+ "/upload/vegemilBaby/babyInfo/thumbnail/" + storedImg;
-														
-					        File deleteFile = new File(storedfilePath);
-					        if(deleteFile.exists()) {			            
-					            deleteFile.delete(); 			            
-					            System.out.println("파일을 삭제하였습니다.");			            
-					        } else {
-					            System.out.println("파일이 존재하지 않습니다.");
-					        }
-						}				
-					}else {
-						System.out.println("=============새로 입력되는 파일이 없습니다.==============");
-						params.setMbsImage(storedImg);	
-						params.setMbsImageOriginal(storedImgOriginal);											
 					}
+				}else {
+					params.setMbsImage(storedImg);
+					params.setMbsImageOriginal(storedImgOriginal);
 				}
 			}
 		}

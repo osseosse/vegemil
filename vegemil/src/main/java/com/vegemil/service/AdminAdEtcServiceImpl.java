@@ -1,13 +1,8 @@
 package com.vegemil.service;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,15 +10,18 @@ import org.springframework.web.multipart.MultipartFile;
 import com.vegemil.domain.AdminAdEctDTO;
 import com.vegemil.mapper.AdminAdEtcMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 @Transactional
 public class AdminAdEtcServiceImpl implements AdminAdEtcService{
-	
+
 	@Autowired
 	private AdminAdEtcMapper adminAdEtcMapper;
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
+
+	@Autowired
+	private ImageServerService imageServerService;
 	
 	@Override
 	public List<AdminAdEctDTO> getAdminAdEtcList(AdminAdEctDTO params) {
@@ -80,36 +78,25 @@ public class AdminAdEtcServiceImpl implements AdminAdEtcService{
 	}
 	
 	private AdminAdEctDTO uploadFile(MultipartFile uploadFile, AdminAdEctDTO params) {
-		
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			
-			if(originalName.length() > 0) {
-				
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;			
-								
-				Path savePath = Paths.get(uploadPath+ "/upload/OM/" + originalName);					
-				uploadFile.transferTo(savePath);
-				params.setTImgNew(originalName);
-				
+
+			if(originalName != null && originalName.length() > 0) {
+				String imageUrl = imageServerService.upload(uploadFile, "om");
+				params.setTImgNew(imageUrl);
 				return params;
 			}
 		}catch(Exception e) {
-			e.printStackTrace();
+			log.error("기타광고 이미지 업로드 실패", e);
 		}
 		return params;
 	}
-	
+
 	public boolean deleteFile(String fileName) {
-		
-		try {
-			File file = new File(uploadPath+ "/upload/OM/" +fileName);
-			file.delete();
+		if(fileName == null || "".equals(fileName)) {
 			return true;
-		} catch(Exception e) {
-			e.printStackTrace();
 		}
-		
-		return false;
+		log.info("이미지 서버 파일 삭제 생략: {}", fileName);
+		return true;
 	}
 }

@@ -1,13 +1,10 @@
 package com.vegemil.controller;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,17 +34,18 @@ import com.vegemil.domain.AdminBeanSoupVideoDTO;
 import com.vegemil.domain.AdminSaboDTO;
 import com.vegemil.domain.DataTableDTO;
 import com.vegemil.service.AdminBeanSoupService;
+import com.vegemil.service.ImageServerService;
 
 
 
 @Controller
 public class AdminBeanSoupController {
-	
+
 	@Autowired
 	AdminBeanSoupService adminBeanSoupService;
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
+
+	@Autowired
+	private ImageServerService imageServerService;
 	
 	@RequestMapping(value = "/admin/manage/beanSoup/{viewName}")
     public String adminBeanSoup(@PathVariable(value = "viewName", required = false) String viewName)throws Exception{
@@ -160,15 +158,10 @@ public class AdminBeanSoupController {
 		try {
 			
 			if("I".equals(beanSoupNews.getAction())) {
-				String uuid = UUID.randomUUID().toString();
 				String originalName = beanSoupNews.getFileName().getOriginalFilename();
-				if(!"".equals(originalName)) {
-					String file1 = originalName.substring(originalName.lastIndexOf("\\") + 1);
-					
-					String savefileName1 = uuid + "_" + file1;
-					Path savePath = Paths.get(uploadPath + "/main/BeanSoup/assets/news/" + savefileName1);
-					beanSoupNews.getFileName().transferTo(savePath);
-					beanSoupNews.setMThum(savefileName1);
+				if(originalName != null && !"".equals(originalName)) {
+					String imageUrl = imageServerService.upload(beanSoupNews.getFileName(), "beansoup/news");
+					beanSoupNews.setMThum(imageUrl);
 				}
 			}
 			
@@ -215,23 +208,13 @@ public class AdminBeanSoupController {
 		try {
 			
 			if("I".equals(beanSoupEvent.getAction())) {
-				if(beanSoupEvent.getMIdx() == null) {
-					System.out.println("이미지 등록로직 시작");
-					
-					String uuid = UUID.randomUUID().toString();
+				if(beanSoupEvent.getMIdx() == null && beanSoupEvent.getFileName() != null) {
 					String originalName = beanSoupEvent.getFileName().getOriginalFilename();
-					
-					if(!"".equals(originalName)) {
-						String file = originalName.substring(originalName.lastIndexOf("\\") + 1);						
-						String savefileName = uuid + "_" + file;
-						//저장 - 실제경로
-						Path savePath = Paths.get(uploadPath + "/upload/BEANSOUP/event/" + savefileName);
-						//저장 - Test로컬경로
-						//Path savePath = Paths.get("D:/upload/admin/beanSoup/" + savefileName);		
-						beanSoupEvent.getFileName().transferTo(savePath);
-						beanSoupEvent.setMThum(savefileName);
+					if(originalName != null && !"".equals(originalName)) {
+						String imageUrl = imageServerService.upload(beanSoupEvent.getFileName(), "beansoup/event");
+						beanSoupEvent.setMThum(imageUrl);
 						beanSoupEvent.setMThumOriginal(originalName);
-					}					
+					}
 				}
 			}
 			

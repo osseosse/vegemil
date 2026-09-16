@@ -190,7 +190,7 @@
 								<li th:if="${not #lists.isEmpty( mediaNewsList )}" th:each="mediaNews : ${mediaNewsList}" th:id="${mediaNews.mIdx}" >
 									<dl>
 										<a th:href="${mediaNews.mAduri1}">
-											<dd class="newsImg"><img th:src="|/web/upload/MediaNews/${mediaNews.mImg}|" alt="제품사진"/></dd>
+											<dd class="newsImg"><img th:src="${#strings.startsWith(mediaNews.mImg, 'http') ? mediaNews.mImg : '/web/upload/MediaNews/' + mediaNews.mImg}" alt="제품사진"/></dd>
 											<dd class="newsTxt f14" th:text="${mediaNews.mSubject}"></dd>
 										</a>
 									</dl>

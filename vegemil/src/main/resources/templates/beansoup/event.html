@@ -43,8 +43,8 @@
 		                        <ul>
 			                        <!--1-->
 			                        <li class="review-img">
-			                        <img src="https://image.edaymall.com/images/vegemil/beansoup/event/test.JPG" 				                        
-								                    			th:src="|/web/upload/BEANSOUP/event/${item.mThum}|"
+			                        <img src="https://image.edaymall.com/images/vegemil/beansoup/event/test.JPG"
+								                    			th:src="${#strings.startsWith(item.mThum, 'http') ? item.mThum : '/web/upload/BEANSOUP/event/' + item.mThum}"
 								                         		alt="이벤트이미지" />
 			                        </li>
 			                        <li>

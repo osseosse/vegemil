@@ -1,6 +1,5 @@
 package com.vegemil.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,6 +53,7 @@ import com.vegemil.domain.MemberDTO;
 import com.vegemil.domain.SearchDTO;
 import com.vegemil.service.AdminCustomerService;
 import com.vegemil.service.AdminFaqService;
+import com.vegemil.service.ImageServerService;
 import com.vegemil.util.UiUtils;
 
 import lombok.extern.log4j.Log4j2;
@@ -62,12 +61,15 @@ import lombok.extern.log4j.Log4j2;
 @Controller
 @Log4j2
 public class AdminCustomerController extends UiUtils {
-	
+
 	@Autowired
 	private AdminFaqService adminFaqService;
-	
+
 	@Autowired
 	private AdminCustomerService adminCustomerService;
+
+	@Autowired
+	private ImageServerService imageServerService;
 
 	@Value("${spring.servlet.multipart.location}")
     private String uploadPath;
@@ -105,22 +107,13 @@ public class AdminCustomerController extends UiUtils {
 		Map<String, Object> rtnMap = new HashMap<String, Object>();
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			String file = originalName.substring(originalName.lastIndexOf("\\") + 1);
-			String uuid = UUID.randomUUID().toString();
-			String savefileName = uuid + "_" + file;
-			String dirPath = "\\\\211.233.87.7\\data\\images\\mail\\news\\dcf\\dcf2022\\temp_img\\";//"D:/data/dcf/";
-//			Path savePath = Paths.get(dirPath + savefileName);
-			File f1 = new File(dirPath + savefileName);
-			
-			uploadFile.transferTo(f1);
+			String imageUrl = imageServerService.upload(uploadFile, "customer/faq");
 
-			rtnMap.put("uploadPath", f1);
-			rtnMap.put("uuid", uuid);
+			rtnMap.put("uploadPath", imageUrl);
 			rtnMap.put("fileName", originalName);
-		} catch(IOException e) {
-			e.printStackTrace();
+		} catch(Exception e) {
+			log.error("FAQ 이미지 업로드 실패", e);
 		}
-
 
 		return rtnMap;
 	}

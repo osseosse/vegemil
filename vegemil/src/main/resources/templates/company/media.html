@@ -64,7 +64,7 @@
 					<ul class="videoList force-overflow scrollbar-3  menu-style01">
 						<li class="hvr-float-shadow" th:each="cf : ${cfList}">
 						 <a href="#cf38" th:href="'#'+ ${#strings.substringBefore(cf.tYoutubeImg,'.')}"> 
-							<img class="imge " th:src="|https://www.vegemil.co.kr/web/upload/CF/${cf.tYoutubeImg}|" th:data-id="${#strings.substringAfter(cf.tYoutube,'embed/')}" alt="">
+							<img class="imge " th:src="${#strings.startsWith(cf.tYoutubeImg, 'http') ? cf.tYoutubeImg : 'https://www.vegemil.co.kr/web/upload/CF/' + cf.tYoutubeImg}" th:data-id="${#strings.substringAfter(cf.tYoutube,'embed/')}" alt="">
 							<p class="f14 fw400 gray04" th:text="${cf.tSubject}"> cf subject </p>
 							</a>
 						</li>
@@ -132,7 +132,7 @@
 						<a href="#popup-pr01" th:href="|#popup-pr${printStat.index}|">
 							<p class="f20 fw500" th:text="${print.tSubject}"></p>
 							<p class="mt10 pr-img">
-								<img th:src="|https://www.vegemil.co.kr/web/upload/PAD/${print.tImg}|" th:alt="${print.tSubject}"/>
+								<img th:src="${#strings.startsWith(print.tImg, 'http') ? print.tImg : 'https://www.vegemil.co.kr/web/upload/PAD/' + print.tImg}" th:alt="${print.tSubject}"/>
 							</p>
 						</a>
 				    </div>
@@ -145,7 +145,7 @@
 							<p class="f18 fw500" th:text="${print.tSubject}">2023 설 명절 인쇄광고</p>
 							<a class="close" href="#pr">&times;</a>
 							<div class="content mt10">
-								<p><img th:src="|https://www.vegemil.co.kr/web/upload/PAD/${print.tImg}|" th:alt="${print.tSubject}"/></p>
+								<p><img th:src="${#strings.startsWith(print.tImg, 'http') ? print.tImg : 'https://www.vegemil.co.kr/web/upload/PAD/' + print.tImg}" th:alt="${print.tSubject}"/></p>
 							</div>
 						</div>
 					</div>
@@ -196,9 +196,9 @@
 						<li class="hvr-float-shadow" th:each="etc:${etcList}">
 							<a href="#om01" th:href="|#om${etc.tIdx}|">
 							<img class="imge3" th:if="${#strings.containsIgnoreCase(etc.tFlv,'youtube')}"
-									th:src="|https://image.edaymall.com/images/dcf/vegemil/upload/OM/${etc.tImgNew}|" th:data-id="${#strings.substringAfter(etc.tFlv,'embed/')}">
+									th:src="${#strings.startsWith(etc.tImgNew, 'http') ? etc.tImgNew : 'https://image.edaymall.com/images/dcf/vegemil/upload/OM/' + etc.tImgNew}" th:data-id="${#strings.substringAfter(etc.tFlv,'embed/')}">
 							<img class="imgeMp" th:unless="${#strings.containsIgnoreCase(etc.tFlv,'youtube')}"	th:video-id="|#om${etc.tIdx}|"
-									th:src="https://www.vegemil.co.kr/web/upload/OM/${etc.tImgNew}|" th:data-id="|https://www.vegemil.co.kr/web/upload/OM/${etc.tFlv}|"> 
+									th:src="${#strings.startsWith(etc.tImgNew, 'http') ? etc.tImgNew : 'https://www.vegemil.co.kr/web/upload/OM/' + etc.tImgNew}" th:data-id="|https://www.vegemil.co.kr/web/upload/OM/${etc.tFlv}|"> 
 							<p class="f14 fw400 gray04" th:if = "${#strings.containsIgnoreCase(etc.tFlv,'youtube')}" th:text="${etc.tSubject}"> etc subject </p>
 							<p class="f14 fw400 gray04" th:unless="${#strings.containsIgnoreCase(etc.tFlv,'youtube')}" th:text="${etc.tContent}"> etc content </p>
 							</a>

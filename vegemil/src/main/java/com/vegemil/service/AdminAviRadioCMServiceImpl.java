@@ -1,32 +1,27 @@
 package com.vegemil.service;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.vegemil.domain.AdminAdEctDTO;
 import com.vegemil.domain.AdminRadioCMDTO;
-import com.vegemil.domain.AdminVideoContestDTO;
 import com.vegemil.mapper.AdminAviRadioCMMapper;
-import com.vegemil.mapper.AdminVideoContestMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 @Transactional
 public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
-	
+
 	@Autowired
 	private AdminAviRadioCMMapper adminRadioCMMapper;
-	
-	@Value("${spring.servlet.multipart.location}")
-    private String uploadPath;
+
+	@Autowired
+	private ImageServerService imageServerService;
 	
 	@Override
 	public List<AdminRadioCMDTO> getRadioCMList(AdminRadioCMDTO params) {
@@ -78,42 +73,25 @@ public class AdminAviRadioCMServiceImpl implements AdminAviRadioCMService{
 	}
 	
 	private AdminRadioCMDTO uploadFile(MultipartFile uploadFile, AdminRadioCMDTO params) {
-		
 		try {
 			String originalName = uploadFile.getOriginalFilename();
-			
-			if(originalName.length() > 0) {
-				
-				originalName = UUID.randomUUID().toString().substring(0,3) + "_" + originalName;			
-								
-				Path savePath = Paths.get(uploadPath+ "/upload/RCM/" + originalName);					
-				uploadFile.transferTo(savePath);
-				params.setTImg(originalName);
 
-				
+			if(originalName != null && originalName.length() > 0) {
+				String imageUrl = imageServerService.upload(uploadFile, "rcm");
+				params.setTImg(imageUrl);
 				return params;
 			}
 		}catch(Exception e) {
-			e.printStackTrace();
+			log.error("라디오CM 이미지 업로드 실패", e);
 		}
 		return params;
-		
 	}
+
 	public boolean deleteFile(String fileName) {
-		
 		if(fileName == null || "".equals(fileName)) {
 			return true;
 		}
-
-		try {
-			File file = new File(uploadPath+ "/upload/RCM/" +fileName);
-			file.delete();
-			return true;
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-		
+		log.info("이미지 서버 파일 삭제 생략: {}", fileName);
+		return true;
 	}
 }
