@@ -1,13 +1,13 @@
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/vegemilBaby/head_renew :: headFragment"></head>
 <body>
 <div id="wrap">
-<!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
-	
+	<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader_renew :: headerFragment"></header>
+	<!-- ================================ // Header ================================ -->
 	<!-- ------------------- content ------------------- -->
 	<div id="content">
 		<div class="container100">
@@ -16,8 +16,8 @@
 					<div class="subIMG01_02 subIMG">
 						<div class="container h560">
 							<div class="subTxt">
-								<p class="f40 fw600 white">영양</p>
-								<p class="f20 mt20 white">성장발달이 활발해지는 생후 6개월, 동물성&middot;식물성 영양균형이 중요합니다.<br>우리 아이 성장균형, 베지밀 인펀트&middot;토들러&middot;킨더랜드로 시작부터 챙기세요.</p>
+								<p class="tp_reveal_anim f40 fw600 white">영양</p>
+								<p class="tp_reveal_anim f20 mt20 white">성장발달이 활발해지는 생후 6개월, 동물성&middot;식물성 영양균형이 중요합니다.<br>우리 아이 성장균형, 베지밀 인펀트&middot;토들러&middot;킨더랜드로 시작부터 챙기세요.</p>
 							</div>
 						</div>
 					</div>
@@ -44,11 +44,11 @@
 											<div class="list_open_01">
 												<div class="cate_content">
 													<ul class="cate_ul_list">
-														<li><a href="/vegemilBaby/brand">Brand</a></li>
-														<li><a href="/vegemilBaby/premium">Product</a></li>
-														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>	
-														<li><a href="/vegemilBaby/e_magazine"> Community</a></li>
-														<li><a href="/vegemilBaby/faq"> Support</a></li>
+														<li><a th:href="@{/vegemilBaby/brand}">Brand</a></li>
+														<li><a th:href="@{/vegemilBaby/premium}">Product</a></li>
+														<li><a th:href="@{/vegemilBaby/bv_event}">Event</a></li>
+														<li><a th:href="@{/vegemilBaby/magazine?category=all}">Community</a></li>
+														<li><a th:href="@{/vegemilBaby/faq}">Support</a></li>
 													</ul>
 												</div>
 											</div>
@@ -58,26 +58,26 @@
 								</dd>
 								<dd>
 									<!-- cate_sel_02 -->
-										<li>
-											<div class="cate_sel_02">
-												<div class="option-list_02" >
-													<p class="view-btn_02" >
-														<a href="javascript:void(0);">영양</a>
-													</p>
-												</div>
-												<div class="list_open_02">
-													<div class="cate_content">
-														<ul class="cate_ul_list2">
-															<li><a href="/vegemilBaby/brand">브랜드소개</a></li>
-															<li><a href="/vegemilBaby/nutrition">영양</a></li>
-															<li><a href="/vegemilBaby/safe"> 안심플러스</a></li>
-															<li><a href="/vegemilBaby/tv"> TV광고</a></li>
-														</ul>
-													</div>
+									<li>
+										<div class="cate_sel_02">
+											<div class="option-list_02" >
+												<p class="view-btn_02" >
+													<a href="javascript:void(0);">영양</a>
+												</p>
+											</div>
+											<div class="list_open_02">
+												<div class="cate_content">
+													<ul class="cate_ul_list2">
+														<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
+														<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
+														<li><a th:href="@{/vegemilBaby/safe}">안심플러스</a></li>
+														<li><a th:href="@{/vegemilBaby/tv}">TV광고</a></li>
+													</ul>
 												</div>
 											</div>
-										</li>
-										<!-- // cate_sel_02 -->
+										</div>
+									</li>
+									<!-- // cate_sel_02 -->
 								</dd>
 							</dl>
 						</div>
@@ -88,130 +88,166 @@
 		</div>
 		<!-- //container100 -->
 
-		<div class="container100">
+		<div class="container100 over-hidden">
 			<div class="row  pd0 mg0 ">
 				<div id="tab_brand">
 					<div class="tab_content_brand ">
-							<dl id="con01">
-								<div class="container">
-									<div class="row">
-										<div class="col-md-12 brandTxt">
-											<div class="subTitle">
-												<div class="side">
-													<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
-												</div>
-												<div class="f24_8_bg">
-													<p class="f24_7_bg">지속적인 연구개발로 이루어낸</p>
-												</div>
-												<div class="side">
-													<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
-												</div>
-											</div>
-											<p class="f55_6 mt30">동&middot;식물성 균형 영양</p>
+						<dl id="con01">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12 brandTxt">
+										<div class="subTitle">
+											<p class="f24 fw500">지속적인 연구개발로 이루어낸</p>
 										</div>
-										<div class="nutBox01">
-											<div class="col-md-5">
-												<p class="f45_6">생후 6개월 부터 중요한<br>동&middot;식물성 균형 영양</p>
-												<div class="txtBox">
-													<p class="iconImg">
-														<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_80_01.png" alt="" />
-													</p>
-													<p class="f17_4">영&middot;유아기 영양관리가 중요한 이유는 성장기의 발육에도 지속적으로 영향을 미치기 때문입니다.</p>
-												</div>
-												<div class="txtBox mt20">
-													<p class="iconImg">
-														<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_80_02.png" alt="" />
-													</p>
-													<p class="f17_4">베지밀 영·유아식은 식물성으로, 한쪽으로만 치우칠 수 있는 우리 아기의 영양이 균형 잡힐 수 있도록 도와줍니다. </p>
-												</div>
+										<p class="f55_6 mt30">동&middot;식물성 균형 영양</p>
+									</div>
+									<div class="nutBox01">
+										<div class="col-md-5">
+											<p class="f45_6">생후 6개월 부터 중요한<br>동&middot;식물성 균형 영양</p>
+											<div class="txtBox">
+												<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/ico_80_01.png" alt="" /></p>
+												<p class="f17_4">영&middot;유아기 영양관리가 중요한 이유는 성장기의 발육에도 지속적으로 영향을 미치기 때문입니다.</p>
 											</div>
-											<div class="col-md-7 img100">
-												<img class="round20 mt20m"src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/nut01.jpg" />
+											<div class="txtBox mt20">
+												<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/ico_80_02.png" alt="" /></p>
+												<p class="f17_4">베지밀 영·유아식은 식물성으로, 한쪽으로만 치우칠 수 있는 우리 아기의 영양이 균형 잡힐 수 있도록 도와줍니다. </p>
 											</div>
+										</div>
+										<div class="col-md-7 img100">
+											<img class="round20 mt20m" src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/nut01.jpg" />
 										</div>
 									</div>
 								</div>
-								<div class="container100 bgIMG_nut01">
-									<div class="container">
-										<div class="col-md-12 nutBox02">
-											<p class="f45_6">성장기용 조제식</p>
-											<p class="f24 mt20">‘베지밀 인펀트 프리미엄’,<br class="mView"> ‘베지밀 토들러 프리미엄’</p>
-										</div>
-										<div class="row nutBox03">
-											<div class="col-md-6">
-												<div class="txtBox">
-													<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_80_03.png" alt="" /></p>
-													<p class="mt30 f17_4">'베지밀 인펀트 프리미엄', '베지밀 토들러 프리미엄'은 일반두유(soy milk)와 달리 주식 용도인 '성장기용 조제식'으로 설계하였습니다.</p>
-												</div>
-											</div>
-											<div class="col-md-6 mt20m">
-												<div class="txtBox">
-													<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_80_04.png" alt="" /></p>
-													<p class="mt30 f17_4">'베지밀 인펀트 프리미엄', '베지밀 토들러 프리미엄'은 모유의 영양성분을 기초로 만들어졌으며, 각 월령 별로 필요로 하는 영양성분을 국내외 영양권장량에 기초하여 구성한 우리 아기의 주식입니다.</p>
-												</div>
+							</div>
+							<div class="container100 bgIMG_nut01">
+								<div class="container">
+									<div class="col-md-12 nutBox02">
+										<p class="f45_6">성장기용 조제식</p>
+										<p class="f24 mt20">‘베지밀 인펀트 프리미엄’,<br class="mView"> ‘베지밀 토들러 프리미엄’</p>
+									</div>
+									<div class="row nutBox03">
+										<div class="col-md-6">
+											<div class="txtBox">
+												<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/ico_80_03.png" alt="" /></p>
+												<p class="mt30 f17_4">'베지밀 인펀트 프리미엄', '베지밀 토들러 프리미엄'은 일반두유(soy milk)와 달리 주식 용도인 '성장기용 조제식'으로 설계하였습니다.</p>
 											</div>
 										</div>
-										<div class="nut_bear">
-											<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/nut_bear.png" alt="" /></p>
+										<div class="col-md-6 mt20m">
+											<div class="txtBox">
+												<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/ico_80_04.png" alt="" /></p>
+												<p class="mt30 f17_4">'베지밀 인펀트 프리미엄', '베지밀 토들러 프리미엄'은 모유의 영양성분을 기초로 만들어졌으며, 각 월령 별로 필요로 하는 영양성분을 국내외 영양권장량에 기초하여 구성한 우리 아기의 주식입니다.</p>
+											</div>
 										</div>
 									</div>
+									<div class="nut_bear">
+										<p class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/nut_bear.png" alt="" /></p>
+									</div>
 								</div>
-								<div class="container">
-									<div class="row">
-										<div class="nutBox01">
-											<div class="col-md-5">
-												<div class="nutBox05">
-													<p class="f45_6">조제식과 동등한 <br>성장 발달</p>
-													<div class="txtBox">
-														<div class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/ico_80_05.png" alt="" /></div>
-														<div class="f17_4">미국 소아과학회는 2019년 [Pediatric Nutrition. AAP. 2019] 소아영양핸드북을 통해 "콩유아식은 우유 유아식과 같이 표준 영·유아식으로 동등한 성장을 도와 아기들에게 안전하고 건강한 성장 발육을 할 수 있는 영양 공급원이다" 라고 발표한 바 있습니다.</div>
-														<div class="f17_4">
-															Soy formulas support growth equivalent to that of breastfed and cow milk-based formula-fed infants. Bone mineralization is similar in full-term infants fed soy and cow milk-based formulas. [AAP Committee on Nutrition. Pediatric Nutrition 8th edition. 2019]
-														</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="nutBox01">
+										<div class="col-md-5">
+											<div class="nutBox05">
+												<p class="f45_6">조제식과 동등한 <br>성장 발달</p>
+												<div class="txtBox">
+													<div class="iconImg"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/ico_80_05.png" alt="" /></div>
+													<div class="f17_4">미국 소아과학회는 2019년 [Pediatric Nutrition. AAP. 2019] 소아영양핸드북을 통해 "콩 영&middot;유아식은 우유 유아식과 같이 표준 영·유아식으로 동등한 성장을 도와 아기들에게 안전하고 건강한 성장 발육을 할 수 있는 영양 공급원이다" 라고 발표한 바 있습니다.</div>
+													<div class="f17_4">
+														Soy formulas support growth equivalent
+														to that of breastfed and cow milk-based
+														formula-fed infants.
+														Bone mineralization is similar in full-term
+														infants fed soy and cow milk-based formulas.
+														[AAP Committee on Nutrition. Pediatric Nutrition 8th edition. 2019]
 													</div>
 												</div>
 											</div>
-											<div class="col-md-7 img100">
-												<img class="round20 mt20m" src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/nut02.jpg" />
+										</div>
+										<div class="col-md-7 img100">
+											<img class="round20 mt20m" src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/nut02.jpg" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 추가 -->
+							<div class="row mt100 bg_nut">
+								<div class="container base04">
+									<div class="col-md-12 center">
+										<p class="f24_4 mt40 lh150">우리 아이 식단! 분유, 우유, 소고기, 돼지고기, 닭고기 등<br>
+											동물성 단백질 위주로만 구성되어 있지 않으신가요?</p>
+										<p class="center" style=" height:40px; border-left:1px solid #000;  text-align:center; margin:15px auto; width:1px;  display:inline-block "></p>
+										<p class="f45_6">우리 아이에게 식물성 단백질 왜 중요할까요?</p>
+									</div>
+									<div class="mt70 inb">
+										<div class="col-md-6">
+											<div class="img100 img-wrap radius20"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/nut_01.jpg" alt="" /></div>
+											<p class="safe-illust02"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/nut_07.png" alt="" /></p>
+
+										</div>
+										<div class="col-md-6 mt30m">
+											<div class="bg_w safeBox03">
+												<div class="nut_bottom"><p class="f26 fw500">제품과 무관한 연구 결과 정보입니다.</p></div>
+												<p class="lh170 f16 fw400 mt40">본 연구는 2014년부터 2019년까지 국민건강영양조사 자료를 이용하여
+													아동·청소년의 단백질 섭취와 성장지표 및 비만과의 관련성을 규명하고자 하였다.
+													···  <span class="nut_line">동물성 단백질은 과체중 및 비만과 양의 연관성이 있었으나, 식물성 단백질은
+													유의한 연관성이 없었다. ··· 총 단백질 섭취량이 증가하면 동물성 단백질 섭취는
+													증가하지만 식물성 단백질은 감소</span>했으며, 탄수화물 섭취량은 감소하고 지방
+													섭취량은 증가하는 경향을 보였다. ···
+												</p>
+												<p class="lh170 f16 fw400 mt20">
+													이상과 같은 결과를 통해 <span class="nut_line">최근 10년간 우리나라 아동 및 청소년의 총 단백질과
+													동물성 단백질 섭취량은 증가하였으며, 총 단백질 및 동물성 단백질의 높은
+													섭취는 과체중 및 비만의 위험 증가와 관련이 있었다.</span> 특히, 식생활은
+													아동비만에 주요한 영향을 미치므로 향후 아동 및 청소년의 성장발달과
+													비만예방을 위해 전향적 연구수행을 통한 단백질 적정섭취 가이드라인 및
+													효과적인 영양교육 프로그램 마련이 필요한 것이다.
+												</p>
+												<p class="gray03 lh170 f14 mt40">
+													출처 : 한국 아동 및 청소년의 단백질 섭취와 과체중 및 비만과의 연관성 <br>(Journal of Nutrition and Health, 2023; 56(1): 54-66 / DOI: 10.4163/jnh.2023.56.1.54)
+												</p>
+												<p class="safe-illust03"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/nut_06.png" alt="" /></p>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="row mt100 bg_g2">
-									<div class="container base04">
-										<div class="col-md-12 center">
-											<p class="f30_4 mt40">아이의 건강한 성장을 위한 선택</p>
-											<p class="f45_6">베지밀 영&middot;유아식<br class="mView"> 인펀트/토들러/킨더랜드</p>
-										</div>
-										<div class="mt70 inb">
-											<div class="col-md-6">
-												<div class="bg_w safeBox02">
-													<a href="/vegemilBaby/premium">
-														<div class="img100 img-wrap"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common.jpg" alt="" /></div>
-														<p class="safe-illust"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common03.png" alt="" /></p>
-														<div>
-															<p>성장기용조제식</p>
-															<p><span>베지밀 인펀트 프리미엄<br>& 베지밀 토들러 프리미엄</span></p>
-														</div>
-													</a>
-												</div>
+							</div>
+							<!-- //추가 -->
+							<div class="row  bg_g4">
+								<div class="container base04">
+									<div class="col-md-12 center">
+										<p class="f30_4 mt40">아이의 건강한 성장을 위한 선택</p>
+										<p class="f45_6">베지밀 영&middot;유아식<br class="mView"> 인펀트/토들러/킨더랜드</p>
+									</div>
+									<div class="mt70 inb">
+										<div class="col-md-6">
+											<div class="bg_w safeBox02">
+												<a th:href="@{/vegemilBaby/premium}">
+													<div class="img100 img-wrap"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/p_01_common.jpg" alt="" /></div>
+													<p class="safe-illust"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/p_01_common03.png" alt="" /></p>
+													<div>
+														<p>성장기용조제식</p>
+														<p><span>베지밀 인펀트 프리미엄<br>& 베지밀 토들러 프리미엄</span></p>
+													</div>
+												</a>
 											</div>
-											<div class="col-md-6 mt30m">
-												<div class="bg_w safeBox02">
-													<a href="/vegemilBaby/belief">
-														<div class="img100 img-wrap"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common02.jpg" alt="Premium - 1/2/3" /></div>
-														<p class="safe-illust"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/p_01_common04.png" alt="" /></p>
-														<div>
-															<p>24개월 이상 유아를 위한 영양간식</p>
-															<p><span>베지밀 킨더랜드 프리미엄</span></p>
-														</div>
-													</a>
-												</div>
+										</div>
+										<div class="col-md-6 mt30m">
+											<div class="bg_w safeBox02">
+												<a th:href="@{/vegemilBaby/belief}">
+													<div class="img100 img-wrap"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/p_01_common02.jpg" alt="Premium - 1/2/3" /></div>
+													<p class="safe-illust"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/p_01_common04.png" alt="" /></p>
+													<div>
+														<p>24개월 이상 유아를 위한 영양간식</p>
+														<p><span>베지밀 킨더랜드 프리미엄</span></p>
+													</div>
+												</a>
 											</div>
 										</div>
 									</div>
 								</div>
-							</dl><!-- //con01 -->
+							</div>
+						</dl><!-- //con01 -->
 					</div><!-- //tab_content_brand -->
 				</div><!-- // Tab -->
 			</div><!-- //row-->

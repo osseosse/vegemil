@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!--
+	2026 리뉴얼 서브페이지 타이틀
+	사용 : <div th:replace="fragments/vegemilBaby/pageTitle :: pageTitle('서브타이틀', '메인타이틀', '설명', null)"></div>
+	- title / desc 는 생략하려면 null 전달
+	- title / desc 는 utext 이므로 <br> 사용 가능
+	- cls : 추가 클래스 (예: 'mt70m'), 없으면 null
+-->
+<div class="col-md-12 brandTxt" th:fragment="pageTitle(sub, title, desc, cls)" th:classappend="${cls}">
+	<div class="subTitle">
+		<p class="f24 fw500" th:text="${sub}">서브타이틀</p>
+	</div>
+	<p class="f55_6 mt30" th:if="${title != null}" th:utext="${title}">메인타이틀</p>
+	<p class="f24_4 mt10" th:if="${desc != null}" th:utext="${desc}">설명</p>
+</div>
+</html>

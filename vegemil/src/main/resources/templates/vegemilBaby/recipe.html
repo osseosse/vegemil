@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+<head th:replace="fragments/vegemilBaby/head_renew :: headFragment"></head>
 <body>
 	<div id="wrap">
 		<!-- ================================ Header ================================ -->
-		<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+		<header th:insert="fragments/vegemilBaby/mainHeader_renew :: headerFragment"></header>
 		<!-- ================================ // Header ================================ -->
 
 		<div id="content">
@@ -62,7 +63,7 @@
 										<div class="cate_sel_02">
 											<div class="option-list_02">
 												<p class="view-btn_02">
-													<a href="#">영·유아식 레시피</a>
+													<a href="javascript:void(0);">영·유아식 레시피</a>
 												</p>
 											</div>
 											<div class="list_open_02">
@@ -95,21 +96,7 @@
 		<div class="container100 ">
 			<div class="row mg0 pd0">
 				<div class="container">
-					<div class="col-md-12 brandTxt ">
-						<div class="subTitle">
-							<div class="side">
-								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
-							</div>
-							<div class="f24_8_bg">
-								<p class="f24_7_bg">Recipe</p>
-							</div>
-							<div class="side">
-								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
-							</div>
-						</div>
-						<p class="f55_6 mt30">영·유아식 레시피</p>
-						<p class="f24_4 mt10">아래 레시피를 활용하여 다양한 요리를 만들어보세요!</p>
-					</div>
+					<div th:replace="fragments/vegemilBaby/pageTitle :: pageTitle('Recipe', '영·유아식 레시피', '아래 레시피를 활용하여 다양한 요리를 만들어보세요!', null)"></div>
 					<div class="col-md-12 mt100">
 						<div class="recipe">
 							<div class="recipe_line"></div>

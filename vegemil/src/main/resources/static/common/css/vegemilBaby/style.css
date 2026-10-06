@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 /*==============================================
 
@@ -148,7 +148,8 @@ img,svg {
 .bg_y2 {background:#fff6e0; }
 .bg_y3 {background:#FFF8E6; } 
 .bg_pink {background:#f09cb4 }
-.bg_base {background:#FFF0C9}
+.bg_base {background: #E7FBE5 url(../img/2024/bg_main01.png) no-repeat; background-size:100%}
+.bg_nut {background:url(../img/2024/bg_nut.jpg) no-repeat; background-size:100%; }
 .bg_orange {background:#FFDF94}
 
 input::placeholder {color:#a0a0a0}
@@ -195,7 +196,7 @@ textarea:-ms-input-placeholder {color: #a0a0a0}
 .f22_4 span {font-size:22px;color:#3c3c3c; font-weight:400; letter-spacing:-1px  }
 .f24_4_bg {font-size:24px;color:#3c3c3c; font-weight:400;  background:#e3f1f4; display:inline-block; padding:2px 7px }
 .f24_4 {font-size:24px;color:#3c3c3c; font-weight:400; line-height:150%; }
-.subTitle {display:inline-block;}/* 해리 */
+.subTitle {display:inline-block; background:#E1F6DF; border-radius:25px; padding:9px 20px}/* 해리 */
 .subTitle .side {display:inline-block; position:relative; float:left;} /* 해리 */
 .subTitle img {display:inline-block; margin:0px; vertical-align:middle;} /* 해리 */
 .f24_5_bg {font-size:24px;color:#3c3c3c; font-weight:400; vertical-align:middle; background:#fff; display:inline-block; margin: 0px 0px 1.5px; line-height:49px; border-top:1px solid #A0A0A0; border-bottom:1px solid #A0A0A0; }/* 해리 */
@@ -580,7 +581,7 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
 /* ===========================
 	04. nav
 =========================== */
-.navbar-wrapper {position:relative; margin-left: auto;margin-right: auto;left: 0;right: 0; top:0px; z-index:1000;  }
+.navbar-wrapper {position:relative; margin-left: auto;margin-right: auto;left: 0;right: 0; top:0px; z-index:1000; height:72px  }
 .navbar-nav.navbar-right {
   margin-right: 0;
 }
@@ -941,7 +942,7 @@ src:url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format
 
 
 
-
+.tp-shop-slider-thumb {}
 
 
 /* circular */
@@ -1063,12 +1064,19 @@ ul.cate_ul_list li:hover {background:#FFF0C9; border-radius:8px;}
 
 /* 2024.06.28 */
 .cate_sel_02 {  vertical-align:middle; z-index:20; width:196px; margin-left:10px;}
+.cate_sel_03 {  vertical-align:middle; z-index:20; width:220px; margin-left:10px;}
 .option-list_02 {background: #fff;  z-index:1000; border:1px solid #C9C9C9; border-radius:12px;}
 .list_open_02 { top:60px;  display: none; position: absolute;   padding:0; margin:0; vertical-align:bottom; width:196px; z-index:100;   }
 .list_open_02 ul {z-index:10000; padding-bottom:0px; padding:8px }
 .view-btn_02 a {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_on.png) no-repeat 170px 26px; display: block;  border:0;   color:#343434;font-size:15px; font-weight:400; line-height:110%; vertical-align:top;  padding:22px 15px; text-align:left;  }
 .open.view-btn_02 {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_off.png) no-repeat 170px 26px;  z-index:200; padding:0px ;  }
 .open.view-btn_02 a {background-position: -150px;}
+
+.view-btn_03 a {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_on.png) no-repeat 190px 26px; display: block;  border:0;   color:#343434;font-size:15px; font-weight:400; line-height:110%; vertical-align:top;  padding:22px 15px; text-align:left;  }
+.open.view-btn_03 {background: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_sub_off.png) no-repeat 190px 26px;  z-index:200; padding:0px ;  }
+.open.view-btn_03 a {background-position: -150px;}
+
+
 ul.cate_ul_list2 {background: #fff; margin:0; border:1px solid #C9C9C9; border-radius:12px;}
 ul.cate_ul_list2 li a {font-size:15px;color:#343434 ; padding:12px 0; padding-left:15px; display:inline-block; width:100%}
 /* ul.cate_ul_list2 li { border-top:1px solid #ccc;} */
@@ -1132,7 +1140,7 @@ ul.cate_ul_list2 li:hover {background:#FFF0C9; border-radius:8px;}
 .in_bear {position:absolute; top:-80%; right:-5%}
 @keyframes fadein {0% {opacity: 0; transform: translateY(20px);} 100%{opacity:1; transform: none;}}
 .tp-footer-4-big-title {margin-top:-50px;}
-.d-md-inline-block svg {margin:20px 25px 0 10px;}
+.d-md-inline-block svg {margin:-5px 25px 0 10px;}
 .tp-project-3-thumb img {border-radius:40px !important; box-shadow: 0px 3px 6px rgba(0, 0, 0, .2);} /* 0723 */
 .tp-line-text-wrap .swiper-wrapper {height:10% !important; margin-top:55px;}
 /* //0711 */
@@ -1157,7 +1165,7 @@ ul.btn_ch19 li.current a { background:#fff; box-shadow: 0px 0px 4px rgba(0, 0, 0
 .nutBox03 .txtBox {display:inline-block; background-color:#fff; border-radius:20px; min-height:320px; padding:50px;} 
 .nutBox03 .txtBox p:nth-child(1) {display:block; text-align:center;} 
 .nutBox03 .txtBox p:nth-child(2) {display:block; text-align:center;} 
-.nut_bear {position:absolute; top:83.6%; left:-4%; transform:translate(-50%, -50%);} 
+.nut_bear {position:absolute; top:83.6%; right:-11%; transform:translate(-50%, -50%);} 
 .nutBox04 {margin-bottom:75px; padding-top:70px}
 table.t_type01 {width:100%; margin-top:30px; background:#fff}
 table.t_type01 tr:first-child {border-bottom:1px solid #c1cdd0}
@@ -1244,7 +1252,6 @@ table.t_type04 td:nth-child(3) {color:#3c3c3c; text-align:center}
 .safeBox02 div p:nth-child(2) {font-size:30px; font-weight:600; line-height:160%; color:#3c3c3c; margin:20px 20px 0; text-transform:uppercase;} 
 .safeBox02 div p:nth-child(2) span {padding-bottom: 2px; background-size: 0 1px; transition: background-size 0.5s;} 
 .safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;}
-
 /* 0711 */
 /* 안심 플러스, 영양, 브랜드소개 공통 - 이성희 */
 /* .safeBox02{position:relative; padding: 30px 30px 50px; height:740px; box-sizing: border-box; border-radius:20px } 
@@ -1257,6 +1264,7 @@ table.t_type04 td:nth-child(3) {color:#3c3c3c; text-align:center}
 .safeBox02 div p:nth-child(2) span {padding-bottom: 2px; background-size: 0 1px; transition: background-size 0.5s;} 
 .safeBox02 div p:nth-child(2):hover span {background-size: 100% 1px; background-image: linear-gradient(#3c3c3c, #3c3c3c); background-repeat: no-repeat; background-position: left bottom;} */
 /* //0711 */
+.safeBox03{position:relative; padding: 50px 40px ; height:auto; box-sizing: border-box; border-radius:20px } 
 
 
 .moreBtn{ display: block; max-width: 192px; height: 2.2em; background-image: url(https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_arrow_long.png); background-repeat: no-repeat; background-position: bottom left; transition: background 0.8s ease; }
@@ -2237,7 +2245,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 
   /* Navbar positioning foo */
   .navbar-wrapper {
-    margin: 0px;
+    margin: 0px; max-width:95%; position:fixed; top:28px; border-radius:20px;  background:#fff
   }
   .navbar-wrapper .container {
     padding-right: 15px;
@@ -2290,30 +2298,31 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 /* 1701 ~ */
 @media only screen and (min-width : 1701px) {
 	.btn_top {display:none}
-	.navbar-nav > li > a {padding:25px 88px 25px 13px;  }
+	.navbar-nav > li > a {padding:22px 88px 25px 13px;  }
 	.navbar-nav {margin-left:150px; margin-top:4px; padding: 0 } /* 해리 */
 	div.slicknav_menu.act ul.slicknav li a.dropdown-toggle {display:none; height:0}
 	.slicknav_menu.act {height:0; border:0.01px solid #fff} /* IE버그수정*/
 	.act .slicknav_nav {-webkit-transform: scale(0); transform: scale(0);height:0;}
     .navbar-wrapper {width:100%;  margin:0 auto; }
-	#primary-navigation {padding:0 20px }
-	.container-fluid_ {background:#fff;  ; height:80px; padding:0px 0px 0px 40px} /* 0711 */
+	#primary-navigation {padding:0 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+	.container-fluid_ {background:#fff;  ; height:72px; padding:0px 0px 0px 40px} /* 0711 */
 	.main-menu {position:relative}
-	.navbar-header {padding:28px 0 28px} /* 0711 */
+	.navbar-header {padding:18px 0 28px} /* 0711 */
 	ul.nav i {display:none}
-	.tools {position:absolute; right:0; top:0px; padding: 20px 30px 0px 40px; } /* 해리 */
-	.tools li {float:left; margin-right:38px;  height:100%; vertical-align:middle; position:relative; text-align:center;}
+	.tools {position:absolute; right:0; top:0px; padding: 8px 30px 0px 40px; } /* 해리 */
+	.tools li {float:left; margin-right:38px;  height:100%; vertical-align:middle; position:relative; text-align:center; }
 	/*.tools li img {width:22px; text-align:center ; }*/
-	.tools li.sns {margin-right:12px;background:#EEEEEE; border-radius:20px; margin-top:2px }
-	.tools li.sns img {width:40px; vertical-align:bottom; }
+	.tools li.sns {margin-right:12px;background:#EEEEEE; border-radius:20px; margin-top:9px }
+	.tools li.sns img {width:40px; vertical-align:bottom;  }
 	.tools li.sns button img {width:40px; vertical-align:bottom; }
 	.tools li p {font-size:13px; margin-top:0px; line-height:130%;}
 	.tools a {color:#3c3c3c}
 	.tools a:hover {color:#3c3c3c}
 	.tools li p.pc_log {margin-top:0px;  }
 	.tools li p.pc_log span {display:block; margin-top:0px}
-	.index_only .tools li.login {text-align:center; margin-top:5px} /* 0711 */
-	.tools li.login {text-align:center; /* margin-top:7px */} /* 0711 */
+	.index_only .tools li.login {text-align:center; } /* 0711 */
+	.tools li.login {text-align:center;margin-top:11px; /* margin-top:7px */} /* 0711 */
+	.tools li.login img {padding:0; margin:0; }
 	.m_rs {display:none}
 	.m_log{display:none}
 	.rotating-slider {width:1200px}
@@ -2323,7 +2332,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.banner_special_mo {display:none}
 	.banner_special {position:fixed; right:50px; bottom:100px; z-index:100; animation:ani 1s infinite alternate;  text-align:right  }
 	.banner_special img {width:70%}
-	.main-big {position:relative; left:0%; border-radius:20px; overflow:hidden; width:100%; max-width:1800px; max-height:820px; margin:0 auto} /* 0711 */
+	.main-big {position:relative; left:0%; overflow:hidden; width:100%; max-height:820px; margin:0 auto} /* 0711 */
 	@keyframes ani{
 	   0%{transform:translate(0,0);}
 	   100%{transform:translate(0,20px);}
@@ -2339,8 +2348,8 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.mView640 {display:none}
 	.wView640 {display:block}
 	.tView {display:none !important;} /* 0711 */
-	.main-card-t img{width:225px}
-	.btn-r-01 {border:1px solid #664400; color:#664400; padding:12px 30px; border-radius:40px; display:inline-block; margin:0 auto; text-align:center}
+	.main-card-t img{width:344px}
+	.btn-r-01 {border:1px solid #664400; color:#664400; padding:9px 30px; border-radius:40px; display:inline-block; margin:0 auto; text-align:center}
 	.btn-r-01:hover {background-color:#664400; color:#fff; transition: 0.3s;} /* 0711 */
 	.anim {}
 	.main-middle-box { padding:0px 0; border-top:1px solid #3C3C3C; border-bottom:1px solid #3C3C3C ;margin:120px 0}
@@ -2387,9 +2396,9 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.act .slicknav_nav {-webkit-transform: scale(0); transform: scale(0);height:0;}
     .navbar-wrapper {width:100%;  margin:0 auto; }
 	#primary-navigation {padding:0 20px }
-	.container-fluid_ {background:#fff;  ; height:90px; padding:0px 0px 0px 58px}
+	.container-fluid_ {background:#fff;  ; height:72px; padding:0px 0px 0px 58px}
 	.main-menu {position:relative}
-	.navbar-header {height:90px; padding:34px 0} /* 0711 */
+	.navbar-header { padding:34px 0} /* 0711 */
 	ul.nav i {display:none}
 	.tools {position:absolute;  right:0; top:0px; padding: 30px 0px 0px 40px;} /* 0711 */
 	.tools li {float:left; margin-right:38px;  height:100%; vertical-align:middle;}
@@ -2495,7 +2504,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.tools li.login {text-align:center; /* margin-top:6px */}
 	.imgh { height:340px; max-height:280px; }
 	#font-ani {display:none}
-	.container-fluid_ {background:#fff; height:90px; padding:0px 0px 0px 58px}
+	.container-fluid_ {background:#fff; height:72px; padding:0px 0px 0px 58px}
 	.tools {position:absolute; right:0; top:0px; }
 	.navbar-nav > li > a {padding:37px 38px 35px 13px;  }
 	.tools li.sns {display:none}
@@ -2999,7 +3008,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 /* ~ 1150 모바일민주 */
 @media only screen and (max-width : 1150px) {
 	.imgh { height:230px; }
-	.container-fluid_ {background:#fff; height:90px; padding:0px 0px 0px 28px}
+	.container-fluid_ {background:#fff; height:72px; padding:0px 0px 0px 28px}
 	.navbar-nav {margin-left:30px; }
 	.navbar-nav > li > a {padding:35px 18px 35px 20px;  }
 	.f62_3 {font-size:30px; color:#3c3c3c; font-weight:300; letter-spacing:-1px}
@@ -3269,7 +3278,7 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.navbar-wrapper {top:0px; position:relative} /* 2020-02-05 */
 	#primary-navigation {padding:0 0px}
 	.container-fluid_ {background:#fff; height:55px; padding:0px; position:relative; }
-	.navbar-header {text-align:center; width:100%; padding:10px 0; position:relative; height:55px; }
+	.navbar-header {text-align:center; width:100%; padding:10px 0; position:relative; }
 	#content.mt10 {margin-top:0 !important;}
 	.index_only .navbar-header img {width:135px; margin-top:0.5rem;} /* 0711 */
 	.index_only .tools {top: -0.5rem !important;} /* 0711 */
@@ -3465,7 +3474,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 		-webkit-transition: all 400ms 510ms;
 		transition: all 400ms 510ms;
 		opacity: 0;
-		border:2px solid green
+	
 	}
 
 	.slicknav_nav > li:nth-child(odd) {
@@ -3734,7 +3743,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 
 	.tp-about-3-title-box .f18 {font-size:16px;}
 	.index_only .col-lg-8 {margin-top:160px !important;}
-	.tp-line-text-wrap .swiper-wrapper {height:10% !important; margin-top:85px;}
+	.tp-line-text-wrap .swiper-wrapper {height:10% !important; }
 	#paginations {bottom:-50px !important;} /* 0731 */
 	.shop-slider-progress-bar {top: 50px !important;} /* 0731 */
 
@@ -4298,7 +4307,7 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	.col-lg-6 .tp-about-3-title-box {margin-top:-90px;}
 	.tp-about-3-title-box .f60 {font-size:38px !important; line-height:120%}
 	.tp-btn-black-2 {height:36px !important; line-height:30px !important; font-size:15px !important; padding:0 15px !important }/* 0711 */
-	.tp-line-text-wrap .swiper-wrapper {margin-top:20px;}
+	.tp-line-text-wrap .swiper-wrapper {margin-top:0px;}
 	.bestReview .be_img {border-radius:10px }
 
 
@@ -4325,6 +4334,8 @@ box-shadow: 50px 14px 50px 36px rgba(0,0,0,0.53);}
 	  transform: translatey(-120px) !important;
 	  transition: all 2500ms ease;
 	}
+
+	
 	/* //0731 */
 
 
@@ -4714,5 +4725,226 @@ a:hover .btn_add_n {background:#3c3c3c;color:#fff; }
 }
 
 
+
+
+/* ==========================================
+   헤더 & 상단 풀와이드 슬라이더 오버라이드
+========================================== */
+/* 1. 최외곽 래퍼 높이 지정 */
+.main-big-full {
+	position: relative;
+	width: 100% !important;
+	max-width: 100% !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+	overflow: hidden;
+	height: 990px !important;
+}
+
+/* 2. 스와이퍼 내부 컨테이너 및 슬라이드 전체 높이 100% 강제 */
+.main-big-full .shop-slider-wrapper,
+.main-big-full .tp-shop-slider-active,
+.main-big-full .swiper-wrapper,
+.main-big-full .swiper-slide,
+.main-big-full .tp-shop-slider-bg {
+	height: 100% !important;
+	max-height: none !important;
+}
+
+/* 3. 실제 배경 이미지가 들어가는 요소 높이를 990px(100%)로 확장 */
+.main-big-full .tp-shop-slider-thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important; /* 720px -> 부모 높이(990px)를 100% 채우도록 변경 */
+	background-size: cover !important;
+	background-position: center center !important;
+}
+
+/* 4. 슬라이드 내부 텍스트 콘텐츠 위치 중앙 정렬 유지 */
+.main-big-full .tp-shop-slider-content {
+	position: relative;
+	z-index: 10;
+	padding-top: 100px; /* 990px 높이에 맞춰 상단 여백 조절 (필요에 따라 가감) */
+}
+
+/* 반응형 처리 */
+@media (max-width: 1200px) {
+	.main-big-full {
+		height: 650px !important;
+	}
+	.main-big-full .tp-shop-slider-content {
+		padding-top: 150px;
+	}
+}
+
+@media (max-width: 768px) {
+	.main-big-full {
+		height: 500px !important;
+	}
+	.main-big-full .tp-shop-slider-content {
+		padding-top: 100px;
+	}
+}
+
+
+
+/* 2026 responsive header: original markup and links retained */
+
+.navbar-wrapper.baby-header {
+  position: fixed;
+  top: 28px;
+  left: 2%;
+  right: auto;
+  width: 96%;
+  max-width: none;
+  height: 72px;
+  margin: 0;
+  border-radius: 20px;
+  background: #fff;
+  z-index: 1000;
+ 
+/* top 대신 transform으로 숨기면 내부 fixed 모바일 메뉴의 기준이 바뀝니다. */
+  transition: top .22s ease;
+}
+
+.navbar-wrapper.baby-header.is-stuck { top: 0; }
+
+.baby-header #primary-navigation { padding: 0; border-radius: inherit; }
+
+.baby-header .container-fluid_ {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 clamp(20px, 3vw, 60px);
+  border-radius: inherit;
+  gap: clamp(20px, 2.5vw, 48px);
+}
+
+.baby-header .container-fluid_::before,
+.baby-header .container-fluid_::after { display: none; }
+
+.baby-header .navbar-header { float: none; flex: 0 0 auto; padding: 0; }
+
+.baby-header .site-title { display: block; line-height: 1; }
+
+.baby-header .navbar-header img { display: block; width: 160px; height: auto; margin: 0; }
+
+.baby-header .main-menu {
+  position: static;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: clamp(16px, 2vw, 36px);
+}
+.baby-header .navbar-nav {
+  float: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+.baby-header .navbar-nav > li { float: none; position: relative; }
+
+.baby-header .navbar-nav > li > a {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 72px;
+  padding: 0 clamp(8px, 1vw, 20px);
+  margin: 0;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.baby-header .tools {
+  position: static;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: clamp(12px, 1.2vw, 24px);
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.baby-header .tools > li { float: none; height: auto; margin: 0; }
+.baby-header .tools > li.login,
+.baby-header .tools > li.sns { margin: 0; }
+.baby-header .tools > li > a { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 44px; }
+.baby-header .tools > li:not(.sns) img { height: 24px; width: auto; padding: 0; margin: 0; }
+.baby-header .tools li p.mt5 { margin: 4px 0 0 !important; font-size: 11px; line-height: 1.2; }
+.baby-header .tools li.sns img { width: 40px; height: 40px; }
+.baby-header .page-main.mView { display: none; }
+.baby-header .myNav_ham { border: 0; background: transparent; color: #3d3d3d; font: inherit; cursor: pointer; }
+.baby-header .myNav_ham:focus-visible { outline: 2px solid #006b3d; outline-offset: 2px; }
+@media (min-width: 1001px) and (max-width: 1400px) {
+  .baby-header .container-fluid_ { padding: 0 24px; gap: 24px; }
+  .baby-header .main-menu { gap: 16px; }
+  .baby-header .navbar-nav > li > a { padding: 0 10px; }
+  .baby-header .tools { gap: 20px; }
+  .baby-header .tools li.sns { display: none; }
+}
+@media (max-width: 1000px) {
+  .navbar-wrapper.baby-header {
+    top: calc(12px + env(safe-area-inset-top, 0px));
+    left: 12px;
+    width: calc(100% - 24px);
+    height: 64px;
+    border-radius: 18px;
+  }
+  .navbar-wrapper.baby-header.is-stuck { top: env(safe-area-inset-top, 0px); }
+  .navbar-wrapper.baby-header.is-scroll-hidden { top: calc(-80px - env(safe-area-inset-top, 0px)); }
+  .baby-header .container-fluid_ { position: relative; display: block; height: 64px; padding: 0 64px; }
+  .baby-header .navbar-header { display: flex; align-items: center; justify-content: center; width: 100%; height: 64px; padding: 0; }
+  .baby-header .navbar-header .site-title { padding: 0; max-width: 100%; }
+  .baby-header .navbar-header img { width: 135px; max-width: 100%; height: auto; margin: 0; }
+  .baby-header .page-main.mView { display: block; }
+  .baby-header .myNav_ham { position: absolute; left: 8px; top: 10px; width: 44px; height: 44px; padding: 0; font-size: 28px; line-height: 44px; }
+  .baby-header .main-menu { position: absolute; top: 0; right: 8px; height: 64px; display: flex; }
+  .baby-header .main-menu .navbar-nav { display: none; }
+  .baby-header .main-menu ul.tools { position: static; display: flex; height: 64px; padding: 0; margin: 0; gap: 0; }
+  .baby-header .main-menu ul.tools > li { display: none; }
+  .baby-header .main-menu ul.tools > li.login { display: block; margin: 0; }
+  .baby-header .tools li.login > a { min-width: 44px; min-height: 44px; }
+  .baby-header .tools li.login img { display: none; }
+  .baby-header .tools li p.mt5 { margin: 0 !important; font-size: 10px; }
+  .baby-header #myNav { z-index: 1100; height: 100vh; height: 100dvh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navbar-wrapper.baby-header { transition: none; }
+}
+
+
+.green {color:#00834D !important}
+
+.product_detail_tab_wrap { width: 100%; background-color: #fff; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea; margin-top: 80px; position: relative; z-index: 100; }
+.prd_detail_tab { display: flex; margin: 0; padding: 0; list-style: none; width: 100%; }
+.prd_detail_tab li { flex: 1; text-align: center; }
+.prd_detail_tab li a { display: block; padding: 22px 0; font-size: 19px; font-weight: 500; color: #777; text-decoration: none; position: relative; transition: all 0.2s ease; }
+.prd_detail_tab li.active a, .prd_detail_tab li a:hover { color: #17763d; font-weight: 700; }
+.prd_detail_tab li.active a::after, .prd_detail_tab li a:hover::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 100%; height: 3px; background-color: #17763d; }
+#detailInfo, #nutritionInfo { scroll-margin-top: 90px; }
+.prd_box {position:relative; margin:0 auto; text-align:center;  }
+.nut_line {background:#FEF6E1; font-weight:600; padding:0 5px }
+.nut_bottom {border-bottom:1px solid #B2B2B2;  padding-bottom:10px}
+.radius20 {border-radius:20px; overflow:hidden}
+.safe-illust02 {position:absolute; left:-60px; top:100px}
+.safe-illust03 {position:absolute; right:-150px; bottom:-50px}
+
+@media (max-width: 768px) {
+  .bg_nut {
+    /* 비율을 유지하면서 요소의 가로·세로 전체를 꽉 채우도록 확대 */
+    background-size: cover;
+    
+    /* 세로로 길어질 때 보여주고 싶은 중심 위치 (가운데 기준) */
+    background-position: center center;
+  }
+}
 
 

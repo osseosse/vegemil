@@ -1,12 +1,13 @@
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>   
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/vegemilBaby/head_renew :: headFragment"></head>
 <body>
-<div id="wrap">	
-<!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
-<!-- ================================ // Header ================================ -->
+<div id="wrap">
+	<!-- ================================ Header ================================ -->
+	<header th:insert="fragments/vegemilBaby/mainHeader_renew :: headerFragment"></header>
+	<!-- ================================ // Header ================================ -->
 <script>
 	 function modelSelNumSam(){	
 		 
@@ -164,11 +165,7 @@
            <div class="row  pd0 mg0 ">
                <dl id="con01">
                    <div class="container">					
-                       <div class="col-md-12 brandTxt">
-                           <p class="f24_4_bg">무료 샘플 신청</p>
-                           <p class="f55_6 mt30">샘플신청</p>
-                           <p class="f24_4 mt10">회원정보 수정은 하단에 수정하기 버튼을 클릭 후, 정식품 기업 사이트 개인정보 변경 페이지에서 수정할 수 있습니다.</p>
-                       </div>
+                       <div th:replace="fragments/vegemilBaby/pageTitle :: pageTitle('무료 샘플 신청', '샘플신청', '회원정보 수정은 하단에 수정하기 버튼을 클릭 후, 정식품 기업 사이트 개인정보 변경 페이지에서 수정할 수 있습니다.', null)"></div>
                    </div>
                    <div class="container pb150" th:object="${member}">
                        <div class="row">

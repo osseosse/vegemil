@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html
+	lang="ko"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<!-- 2026 리뉴얼 헤더 (published/mainHeader.html 기준, 기존 mainHeader.html 링크 유지) -->
+<header th:fragment="headerFragment">
+
+	<div class="navbar-wrapper baby-header">
+		<!-- nav -->
+		<nav id="primary-navigation">
+			<div class="container-fluid_">
+				<div class="navbar-header">
+					<a href="/vegemilBaby/index" class="site-title yellow-text">
+						<img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/logo.jpg" alt="베지밀 영유아식" />
+					</a>
+				</div>
+
+				<!-- 모바일 메뉴 -->
+				<div class="page-main mView">
+					<div id="myNav" class="overlay">
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+						<div class="overlay-content">
+							<div class="category">
+								<p>Brand</p>
+								<a th:href="@{/vegemilBaby/brand}">브랜드소개</a>
+								<a th:href="@{/vegemilBaby/nutrition}">영양</a>
+								<a th:href="@{/vegemilBaby/safe}">안심플러스</a>
+								<a th:href="@{/vegemilBaby/tv}">TV 광고</a>
+							</div>
+							<div class="category">
+								<p>Product</p>
+								<a th:href="@{/vegemilBaby/premium}">인펀트·토들러</a>
+								<a th:href="@{/vegemilBaby/belief}">킨더랜드</a>
+							</div>
+							<div class="category">
+								<p>Event</p>
+								<a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a>
+								<a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a>
+								<a th:href="@{/vegemilBaby/event/model}">베지타임 달력모델 선발대회</a>
+								<a th:href="@{/vegemilBaby/sample}">샘플신청</a>
+							</div>
+							<div class="category">
+								<p>Community</p>
+								<a th:href="@{/vegemilBaby/magazine?category=all}">육아정보</a>
+								<a th:href="@{/vegemilBaby/qna}">육아상담 Q&amp;A</a>
+								<a th:href="@{/vegemilBaby/recipe}">영&middot;유아식 레시피</a>
+							</div>
+							<div class="category">
+								<p>Support</p>
+								<a th:href="@{/vegemilBaby/faq}">제품 FAQ</a>
+								<a th:href="@{/vegemilBaby/lactation}">수유법</a>
+							</div>
+						</div>
+					</div>
+					<!-- //myNav -->
+					<button type="button" class="myNav_ham" aria-label="메뉴 열기" aria-controls="myNav" aria-expanded="false" onclick="openNav()">&#9776;</button>
+				</div>
+				<!-- //모바일 메뉴 -->
+
+				<div class="main-menu" id="perfect-navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active dropdown">
+							<a th:href="@{/vegemilBaby/brand}" class="dropdown-toggle">Brand <i class="fa hidden-xs" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/vegemilBaby/brand}">브랜드소개</a></li>
+								<li><a th:href="@{/vegemilBaby/nutrition}">영양</a></li>
+								<li><a th:href="@{/vegemilBaby/safe}">안심플러스</a></li>
+								<li><a th:href="@{/vegemilBaby/tv}">TV 광고</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a th:href="@{/vegemilBaby/premium}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Product<i class="fa hidden-xs" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/vegemilBaby/premium}">인펀트·토들러</a></li>
+								<li><a th:href="@{/vegemilBaby/belief}">킨더랜드</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a th:href="@{/vegemilBaby/bv_event}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Event<i class="fa hidden-xs" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
+								<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
+								<li><a th:href="@{/vegemilBaby/event/model}">베지타임 달력모델 선발대회</a></li>
+								<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a th:href="@{/vegemilBaby/magazine?category=all}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Community<i class="fa hidden-xs" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/vegemilBaby/magazine?category=all}">육아정보</a></li>
+								<li><a th:href="@{/vegemilBaby/qna}">육아상담 Q&amp;A</a></li>
+								<li><a th:href="@{/vegemilBaby/recipe}">영&middot;유아식 레시피</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a th:href="@{/vegemilBaby/faq}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Support<i class="fa hidden-xs" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/vegemilBaby/faq}">제품 FAQ</a></li>
+								<li><a th:href="@{/vegemilBaby/lactation}">수유법</a></li>
+							</ul>
+						</li>
+					</ul>
+
+					<!-- sns-menu -->
+					<ul class="tools" id="buttons2">
+						<li class="shop">
+							<a href="https://edaymall.com/product/list.html?cate_no=120" class="hvr-float">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/ico_shop2.png" alt="샵" />
+								<p class="mt5">SHOP</p>
+							</a>
+						</li>
+						<li class="login" sec:authorize="isAnonymous()">
+							<a href="#pop_Login" class="hvr-float">
+								<img class="wView" src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/2024/ico_log2.png" alt="로그인">
+								<p class="mt5">LOGIN</p>
+							</a>
+						</li>
+						<!-- 리뉴얼 CSS는 모바일에서 li.login만 노출하므로 로그아웃도 login 클래스 사용 -->
+						<li class="login" sec:authorize="isAuthenticated()">
+							<a href="/member/logout" class="hvr-float">
+								<img class="wView" src="https://image.edaymall.com/images/dcf/vegemil/vegemilBaby/ico_log2.png" alt="로그아웃">
+								<p class="mt5">LOGOUT</p>
+							</a>
+						</li>
+						<li sec:authorize="isAnonymous()">
+							<a href="/member/join" class="hvr-float">
+								<img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/ico_love2.png" alt="조인" />
+								<p class="mt5">JOIN</p>
+							</a>
+						</li>
+						<li class="sns"><a href="https://www.instagram.com/vegemil.official/?hl=ko" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/snsBtn_05_off.png" alt="인스타" /></a></li>
+						<li class="sns"><a href="https://www.facebook.com/vegemilgood" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/snsBtn_01_off.png" alt="페이스북" /></a></li>
+						<li class="sns"><a href="https://blog.naver.com/PostList.nhn?blogId=vegemilstory" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/snsBtn_02_off.png" alt="블로그" /></a></li>
+						<li class="sns"><a href="https://www.youtube.com/channel/UCq8X6Ll0ZjacC4-M-vicVpw" class="hvr-bounce-to-top"><img src="https://image.edaymall.com/images/mail/news/dcf/baby2026/html/img/snsBtn_03_off.png" alt="유튜브" /></a></li>
+					</ul>
+					<!-- //sns-menu -->
+				</div>
+			</div>
+		</nav>
+		<!-- //nav-->
+	</div>
+
+	<script>
+		function openNav() {
+			document.getElementById("myNav").style.width = "100%";
+			var header = document.querySelector('.baby-header');
+			header.classList.add('is-menu-open');
+			header.classList.remove('is-scroll-hidden');
+			header.querySelector('.myNav_ham').setAttribute('aria-expanded', 'true');
+		}
+
+		function closeNav() {
+			document.getElementById("myNav").style.width = "0%";
+			var header = document.querySelector('.baby-header');
+			header.classList.remove('is-menu-open');
+			header.querySelector('.myNav_ham').setAttribute('aria-expanded', 'false');
+		}
+
+		// 스크롤 시 헤더 상단 고정(is-stuck) / 모바일 스크롤 다운 시 숨김(is-scroll-hidden)
+		(function initBabyHeaderScroll() {
+			var header = document.querySelector('.baby-header');
+			if (!header || header.dataset.scrollReady) return;
+			header.dataset.scrollReady = 'true';
+			var mobile = window.matchMedia('(max-width: 1000px)');
+			var lastY = Math.max(0, window.pageYOffset);
+			var travel = 0;
+			var pending = false;
+			function update(reset) {
+				var y = Math.max(0, window.pageYOffset);
+				var delta = y - lastY;
+				var menuOpen = header.classList.contains('is-menu-open');
+				var focused = header.querySelector(':focus-visible');
+				header.classList.toggle('is-stuck', y > 0);
+				if (reset || !mobile.matches || y <= 12 || menuOpen || focused) {
+					header.classList.remove('is-scroll-hidden');
+					travel = 0;
+				} else if (delta) {
+					travel = (delta > 0) === (travel > 0) ? travel + delta : delta;
+					if (Math.abs(travel) >= 8) {
+						header.classList.toggle('is-scroll-hidden', travel > 0);
+						travel = 0;
+					}
+				}
+				lastY = y;
+			}
+			window.addEventListener('scroll', function () {
+				if (pending) return;
+				pending = true;
+				window.requestAnimationFrame(function () { update(false); pending = false; });
+			}, { passive: true });
+			window.addEventListener('resize', function () {
+				if (!mobile.matches && header.classList.contains('is-menu-open')) closeNav();
+				update(true);
+			});
+			window.addEventListener('pageshow', function () { update(true); });
+			header.addEventListener('focusin', function () { update(true); });
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && header.classList.contains('is-menu-open')) closeNav();
+			});
+			update(true);
+		})();
+	</script>
+
+</header>
+</html>

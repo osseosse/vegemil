@@ -1,7 +1,8 @@
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" 
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
 				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-				xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-<head th:replace="fragments/vegemilBaby/head :: headFragment"></head>
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/vegemilBaby/head_renew :: headFragment"></head>
 
 <script>  
  $('li_icoBG01').click(function(e){
@@ -12,7 +13,7 @@
 </script>    
 <body>
 <!-- ================================ Header ================================ -->
-<header th:insert="fragments/vegemilBaby/mainHeader :: headerFragment"></header>
+<header th:insert="fragments/vegemilBaby/mainHeader_renew :: headerFragment"></header>
 <!-- ================================ // Header ================================ -->
 	
 	<div id="content">
@@ -76,7 +77,7 @@
 														<ul class="cate_ul_list2">
 															<li><a th:href="@{/vegemilBaby/bv_event}">진행 중 이벤트</a></li>
 															<li><a th:href="@{/vegemilBaby/event_review_best}">후기 이벤트</a></li>
-															<li><a th:href="@{/vegemilBaby/event_model}">아기 달력모델 선발대회</a></li>
+															<li><a th:href="@{/vegemilBaby/event_model}">베지타임 달력모델</a></li>
 															<li><a th:href="@{/vegemilBaby/sample}">샘플신청</a></li>
 														</ul>
 													</div>
@@ -120,21 +121,7 @@
 							<div class="tab_content_brand ">									
 									<dl id="con02" class="pb120">
 										<div class="container">					
-											<div class="col-md-12 brandTxt mt70m">
-												<div class="subTitle">
-													<div class="side">
-														<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_01.png">
-													</div>
-													<div class="f24_8_bg">
-														<p class="f24_7_bg">Event</p>
-													</div>
-													<div class="side">
-														<img src="https://image.edaymall.com/images/mail/news/dcf/baby2024/html/img/2024/subTitle_02.png">
-													</div>
-												</div>
-												<p class="f55_6 mt30">베스트 후기</p>
-												<p class="f24_4 mt10">베스트 후기로 선정된 분들의 후기를 만나보세요</p>
-											</div>
+											<div th:replace="fragments/vegemilBaby/pageTitle :: pageTitle('Event', '베스트 후기', '베스트 후기로 선정된 분들의 후기를 만나보세요', 'mt70m')"></div>
 											<div class="col-md-12 textRight mt60">
 												<select class="selBox">
 													<option selected="selected" value="">선택해주세요</option>
