@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div class="content bg-g3">
+    <section>
+        <div class="wrap-inner5" id="wzPage">
+            <script type="text/javascript" src="https://www.vegemil.co.kr/common/js/jquery.Floater.js"></script>
+            <div class="container wz-left">
+                <div class="project-detail-wrap fl-wrap bg-w2 container-sub80">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="center mt100-m">마음에서 마음으로</h3>
+                            <h1 class="center mt50-m">추억의 맛을 다시 만나다, <br>달콤한 베지밀 비</h1>
+                            <div class="mt60-m ">
+                                <div class="Q1_2026_12_bg goldBox2 ">
+
+                                    <p class="type25-1 center mt20-m">경기도 고양시 이수진님</p>
+                                    <p class="mt20-m">얼마 전 주말, 남편과 함께 집 근처 공원으로 산책을 나갔다. 돗자리를 펴고 도시락을 먹는 가족들과 신나게 뛰어노는
+                                        아이들을 바라보다가 문득 어린 시절 소풍날이 떠올랐다.<br><br>
+                                        소풍 전날이면 나는 좀처럼 잠을 이루지 못했다. 그럴 때마다 엄마는 내 가방을 열어 직접 싼 김밥과 과일을 차곡차곡 담아주셨다. 그리고
+                                        마지막에는 늘 ‘달콤한 베지밀 비’ 한 병을 넣어주셨다.<br><br>
+                                        “김밥 먹고 목마를 때 마셔.”<br><br>
+                                        다음 날 친구들과 둘러앉아 도시락을 먹은 뒤 꺼내 마시던 베지밀은 유난히 맛있었다. 달콤하고 고소한 맛은 물론, 유리병의 묵직한 감촉과 뚜껑을
+                                        열 때 나던 소리까지도 어린 시절 소풍의 한 장면으로 남아 있다.<br><br>
+                                        “나 어릴 때 소풍 가면 꼭 이거 가져갔는데.”<br><br>
+                                        남편에게 추억을 이야기하며 편의점에 들렀다가 반가운 병을 발견했다. 남편과 한 병씩 들고 벤치에 앉아 마셔보니 기억 속 그 맛이 그대로
+                                        느껴졌다. 유리병이 서로 부딪치며 내는 맑은 소리까지도 정겨웠다.<br><br>
+                                        일주일 후, 친정에 갈 때 베지밀을 챙겨갔다. 엄마와 나란히 앉아 한 병씩 마시며 어린 시절 소풍 이야기를 나눴다. “소풍 전날마다 잠도 안
+                                        자고 가방만 들여다 봤잖아" 나는 까맣게 잊고 있던 순간들을 엄마는 여전히 선명하게 기억하고 계셨다.<br><br>
+                                        “그때는 엄마가 챙겨줬으니까, 이제는 내가 챙겨 줄게.”<br><br>
+                                        내 말에 엄마는 별것 아닌 일에 유난을 떤다는 듯 웃으셨다. 예전에는 엄마가 내 가방에 넣어 줬던 베지밀을 이제는 내가 엄마에게 건네고 있다는
+                                        사실이 조금은 뭉클했다.<br><br>
+                                        달콤한 베지밀 병 비 한 병 덕분에 어린 시절의 나와 지금의 엄마가 다시 이어진 것 같았다. 익숙한 맛에는 한 사람의 시간과 추억까지 고스란히
+                                        담길 수 있다는 것을 새삼 느꼈다. 오랫동안 변함없는 맛으로 소중한 기억을 간직하게 해준 정식품에 감사드린다.<br><br></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--//row-->
+                    <div class="row mt100-m">
+                        <div class="col-md-2">
+                            <p class="type19 comment ">
+                                <img src="https://image.edaymall.com/images/dcf/webzine/common/ico_comment_2.gif"
+                                     alt="comment"/>
+                            <p>
+                        </div>
+                        <div class="col-md-10">
+                            <p class="type21-2">
+                                &lt;마음에서 마음으로&gt;는 정식품을 사랑하는 여러분들이 만들어가는 페이지입니다. 정식품 제품에 얽힌 재미있고 감동적인 사연을 들려주세요.
+                                채택되신 분께는 상품권 5만원권을 선물로 드립니다. 정식품 가족 여러분의 많은 참여 바랍니다.<br>
+                                보내실 곳 ehyang@vegemil.co.kr (사연을 보내시는 분의 성명, 주소, 전화번호도 꼭 기재해주세요!)
+                            <p>
+                        </div>
+                    </div><!--//row-->
+                </div>
+            </div><!-- //container -->
+            <!-- 추천기사 날개버전 -->
+            <div class="wz-right" th:with="bannerSize=${#lists.size('banner')}">
+                <div class="wz-floting">
+                    <p class="wz-news-title">추천기사</p>
+                    <ul class="wz-news" th:if="${not #lists.isEmpty( recommandWebzineList )}"
+                        th:each="recWebzine : ${recommandWebzineList}">
+                        <a th:href="|javascript:moveUrl('${recWebzine.qrtYear}','${recWebzine.fileNo}');|">
+                            <li>
+                                <p class="wz-news-type01" th:text="${recWebzine.snsTitle}"></p>
+                                <p class="wz-news-type02" th:text="|${recWebzine.sumLine}|"></p>
+                            </li>
+                            <li>
+                                <p th:class="|h180-m ${recWebzine.qrtYear}_${#strings.substring(recWebzine.fileNo,3, 5)}|"></p>
+                            </li>
+                        </a>
+                    </ul>
+                    <p class="wz-bnr" th:if="${banner != null && banner.imgCount == '1'}">
+                        <a href="#" th:href="${banner.linkAddr}"> <img
+                                src="https://image.edaymall.com/images/dcf/webzine/Q2_2023/bnr_greenbia_brand.png"
+                                th:src="${banner.imgName}"/>
+                        </a>
+                    </p>
+                    <div class="wz-bnr VFT01_860_01" th:if="${banner != null && banner.imgCount == '2'}">
+                        <ul class="wz-half-bnr">
+                            <li><a th:href="${banner.linkAddr}" target="_blank"><img th:src="${banner.imgName}"
+                                                                                     alt="과즙두유"/>
+                                <p>제품소개 바로가기</p></a></li>
+                            <li><a th:href="${banner.linkAddr2}" target="_blank"><img th:src="${banner.imgName2}"
+                                                                                      alt="과즙두유"/>
+                                <p>제품소개 바로가기</p></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- // 추천기사 날개 버전 -->
+        </div>
+        <!-- //wrap-inner2 -->
+    </section>
+</div>
+</html>
