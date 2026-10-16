@@ -2349,8 +2349,8 @@ ul.pop_style01 li.btn_in input {width:100%; padding:0; border:0}
 	.wView640 {display:block}
 	.tView {display:none !important;} /* 0711 */
 	.main-card-t img{width:344px}
-	.btn-r-01 {border:1px solid #664400; color:#664400; padding:9px 30px; border-radius:40px; display:inline-block; margin:0 auto; text-align:center}
-	.btn-r-01:hover {background-color:#664400; color:#fff; transition: 0.3s;} /* 0711 */
+	.btn-r-01 {border:1px solid #00834D; color:#00834D; padding:9px 30px; border-radius:40px; display:inline-block; margin:0 auto; text-align:center}
+	.btn-r-01:hover {background-color:#00834D; color:#fff; transition: 0.3s;} /* 0711 */
 	.anim {}
 	.main-middle-box { padding:0px 0; border-top:1px solid #3C3C3C; border-bottom:1px solid #3C3C3C ;margin:120px 0}
 	.main-middle-box .col-md-6:first-child {border-right:1px solid #3C3C3C; }
@@ -4809,7 +4809,7 @@ a:hover .btn_add_n {background:#3c3c3c;color:#fff; }
   transition: top .22s ease;
 }
 
-.navbar-wrapper.baby-header.is-stuck { top: 0; }
+.navbar-wrapper.baby-header.is-stuck { top: 28px; }
 
 .baby-header #primary-navigation { padding: 0; border-radius: inherit; }
 
@@ -4945,6 +4945,62 @@ a:hover .btn_add_n {background:#3c3c3c;color:#fff; }
     /* 세로로 길어질 때 보여주고 싶은 중심 위치 (가운데 기준) */
     background-position: center center;
   }
+
+  .navbar-wrapper.baby-header {position: fixed; top: 0px; left: 0%; right: auto; width: 100%; max-width: none; height: 55px !important; margin: 0; border-radius: 0px; background: #fff;z-index: 1000;/* top 대신 transform으로 숨기면 내부 fixed 모바일 메뉴의 기준이 바뀝니다. */ transition: top .22s ease;}
+
 }
 
 
+/* ====================================================
+   모바일 메인 슬라이드 높이 확장 (텍스트 위치 유지)
+==================================================== */
+@media (max-width: 768px) {
+  /* 1. 슬라이더 영역 전체 높이 확장 */
+  .main-big-full,
+  .main-big-full .tp-shop-slider-active,
+  .main-big-full .swiper-slide,
+  .main-big-full .tp-shop-slider-bg {
+    min-height: 680px !important;  /* 기존보다 시원하게 길어지도록 설정 (원하는 길이에 따라 540px~620px 조절 가능) */
+    height: 100% !important; 
+  }
+
+  /* 2. 배경 이미지(mView640)가 늘어난 높이에 맞춰 잘 표현되도록 처리 */
+  .main-big-full .tp-shop-slider-thumb.mView640 {
+    min-height: 680px !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center bottom !important; /* 바닥 제품/상어가 잘리지 않고 아래까지 채워지도록 기준점 설정 */ 
+  }
+
+  /* 3. 텍스트 컨텐츠는 상단 기준 위치를 고정 유지 */
+  .main-big-full .tp-shop-slider-content {
+    position: relative !important;
+    top: auto !important;
+    padding-top: 50px !important; /* 상단 헤더 바로 아래 현재 텍스트 위치 유지 */
+    transform: none !important;   /* 세로 중앙 정렬로 인한 밀림 방지 */
+  }
+}
+
+
+/* PC 기본 및 상단 고정 스타일 */
+.baby-header {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 스크롤 발생 시 상단 고정 */
+.baby-header.is-stuck {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background-color: #ffffff; /* 스크롤 시 배경이 비치지 않도록 설정 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* 하단 그림자 효과 */
+}
+
+/* 모바일에서 아래로 스크롤 시 숨김 처리 연동 */
+.baby-header.is-scroll-hidden {
+  top: -100px !important; /* 헤더 높이만큼 위로 숨김 */
+}
