@@ -516,7 +516,7 @@ ul li.logo_web  {background:#fff; position:relative; }
 /* 2025.10.14 */
 .type47 {display:inline-block; background:#F6EFE3; border-radius:90px; padding:2px 24px; }
 .type47 img {display:inline-block;} 
-.type47 p {display:inline-block; vertical-align:middle; padding:0; font-size:27px; font-weight:500; color:#6F311C; line-height:160%;}
+.type47 p {display:inline-block; vertical-align:middle; padding:0; font-size:24px; font-weight:500; color:#6F311C; line-height:160%;}
 /* //2025.10.14 */
 .new {background:red; border-radius:30px; padding:2px 7px; color:#fff; font-size:12px}
 .copyBox01 {background:#f9f0de; padding:50px 50px; border-radius:20px}
@@ -565,6 +565,7 @@ ul li.logo_web  {background:#fff; position:relative; }
 /* 2024.06.04 */
 .grayBox8 {position:relative; border-radius:10px; background:#f0f0f0; padding:20px 20px 20px 20px; font-size:18px;}
 .grayBox10 {position:relative; border-radius:10px; background:#f0f0f0; padding:50px 50px 50px 50px; font-size:18px;}
+.grayBox11 {position:relative; border-radius:10px; background:#f0f0f0; padding:30px;}
 
 /* // 2024.06.04 */
 /* Q4_2024 */
@@ -573,6 +574,7 @@ ul li.logo_web  {background:#fff; position:relative; }
 /* //Q4_2024 */
 .wsBox{ background-color: #fff; box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.25); padding:15px; box-sizing: border-box;}/* ??��???�붽? */
 .goldBox{border: 5px solid #c19652; padding: 100px; box-sizing: border-box;} /* ??��???�붽? */
+.goldBox2{border: 1px solid #c19652; padding:100px ; box-sizing: border-box;} 
 .purpleLine{width:100%;background:url(https://image.edaymall.com/images/dcf/webzine/common/ico_line.gif) no-repeat center 21px;height:42px;}
 .page-main aside{position:fixed;width:190px;height:100%;top:0;left:-190px;background-color:rgba(0,0,0,0.8);z-index:10;}
 .number {border:1px solid #a0a0a0;  font-size:35px; font-weight:600; color:#000;  border-radius:80px;  text-align:center; line-height:100%; max-width:130px; margin:0 auto; padding:47px 0px  ; }
@@ -633,6 +635,7 @@ input.search-p img {vertical-align:middle; }
 .blue2 {color:#6dbcca}
 .blue3 {color:#5c88cf}
 .blue4 {color:#1ca7ff}
+.blue5 {color:#2f51c1}
 .pink1 {color: #ffe8f6}
 .apricot {color:#f7a765; line-height:180%; display:inline-block}
 .apricot span {border-bottom:2px solid #fbf2b8}
@@ -1012,7 +1015,14 @@ div.numPinkBox2 .numPink04{height:80px; background:url(https://image.edaymall.co
 .tableBox th{ border: none; padding: 20px 5px; box-sizing: border-box; }         
 .tableBox tr > td:last-child{border-right: none;}          
 .tableBox td{ border-bottom: 1px solid #b4b4b4; border-right: 1px solid #b4b4b4; padding: 28px 5px; box-sizing: border-box;}
-            
+
+/* 01_2026 */
+.table_col3 {border-top:1px solid #676767; border-bottom:1px solid #676767; padding:0; background-color:#FFF;}
+.table_col3 dl:nth-child(1) {text-align:center; font-size:18px; font-weight:600; color:#4E8F6F; padding:14px 0; border-bottom:1px solid #676767;}
+.table_col3 dl:nth-child(2) {text-align:center; font-size:18px; font-weight:600; color:#4E8F6F; padding:14px 0;}
+.table_col9 {border-top:1px solid #676767; border-bottom:1px solid #676767; padding:0;}
+.table_col9 dl:nth-child(1) {font-size:18px; padding:14px 0 14px 12px; border-bottom:1px solid #676767;}
+.table_col9 dl:nth-child(2) {font-size:18px; padding:14px 0 14px 12px;}
 
 
 .news a{color:#000;font-size:15px;font-weight:500;letter-spacing:-0.5px;}
@@ -1121,6 +1131,12 @@ ul.sns-bnt-box li img {width:100%; padding:0 5px}
 .btn-50 li a {background:#000; color:#fff; padding:20px 0; width:100%; display:inline-block; text-align:center} 
 .btn-pink {background:#f05161; color:#fff;  line-height:100%; padding:5px 10px; border-radius:10px; }
 /* @media  */
+
+/* Q2_2026 표만들기 */
+    table {border-collapse: collapse; width: 400px;}
+    td {border: 1px solid #9cc; padding: 12px; text-align: center;}
+    .left_01 {background-color: #6fb3b8; color: white; font-size: 12pt; width: 30%;}
+    .right_01 {background-color: #ffffff; font-size: 12pt; width: 70%; vertical-align: middle;}
 
 
 @media only screen and  (max-width: 3000px){
@@ -1401,6 +1417,10 @@ ul.sns-bnt-box li img {width:100%; padding:0 5px}
 		.gray-box2 .txt {}
 		.gray-box2 .f14 {font-size:14px; background-color:#F15C5C; color:#fff; padding:1px 10px; width:max-content; border-radius:50px;}
 		.gray-box2 .f20 {font-size:20px; font-weight:500; margin-top:4px;}
+
+
+		.gray-box3 {background-color:#F5F5F5; border-radius:10px; padding:24px;}
+
 		/* //Q2_2025_hl */
 
 		/* messenger2 */
@@ -1605,6 +1625,10 @@ box-shadow: 10px 10px 0px 0px #000000;
 		.bg_event3_11 {background:url("https://image.edaymall.com/images/dcf/webzine/Q3_2025/17_04.jpg") no-repeat scroll 0 0; left:0; top:0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
 		.bg_event3_12 {background:url("https://image.edaymall.com/images/dcf/webzine/Q4_2025/16_10.jpg") no-repeat scroll 0 0; left:0; top:0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
 		.bg_event3_13 {background:url("https://image.edaymall.com/images/dcf/webzine/Q4_2025/17_04.jpg") no-repeat scroll 0 0; left:0; top:0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
+		.bg_event3_14 {background:url("https://image.edaymall.com/images/dcf/webzine/Q2_2026/16_10.jpg") no-repeat scroll 0 0; left:0; top:0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
+		.bg_event3_15 {background:url("https://image.edaymall.com/images/dcf/webzine/Q4_2026/16_10.jpg") no-repeat scroll 0 0; left:0; top:0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
+		.bg_event3_16 {background:url("https://image.edaymall.com/images/dcf/webzine/Q4_2026/17_06.jpg") no-repeat scroll 0 0; left:0; top:0; background-position:center; width: 100%;height: 100%;-webkit-background-size: cover;background-size: cover;z-index:1; text-align:center; }
+
 
 		.event-item {position:relative; padding:30px 73px; display:inline-block; }
 		.event-item-btn {position:relative; vertical-align:bottom; margin-top:40px}
@@ -2204,6 +2228,9 @@ box-shadow: 10px 10px 0px 0px #000000;
 		.gray-box1 .col-md-6:nth-child(2)  {margin-top:30px;}
 		.gray-box2 {margin:0 8px; padding:40px 20px 30px 20px;}
 		.gray-box2 .col-md-6:nth-child(2)  {margin-top:30px;}
+		.gray-box3 {background-color:#FFF;}
+
+
 		/* //Q2_2025_hl */
 		
 
@@ -2362,6 +2389,7 @@ box-shadow: 10px 10px 0px 0px #000000;
 		.closeBox{display:none;}
 		.wsBox{ padding:10px;} 
 		.goldBox{ padding: 50px; }
+		.goldBox2{ padding: 50px; }
 		.page-main aside .sideMenu{display:none;}
 		.menuM{background:#f15c5c;}
 		div.menuBox ul a li.menuM:hover{background:#f15c5c;}
@@ -2596,7 +2624,8 @@ box-shadow: 10px 10px 0px 0px #000000;
 		.h98{height:95px;background-color:rgba(255,255,255,0.7);padding:0px 1px 1px 1px;}
 		.h110{height:85px;background-color:rgba(255,255,255,0.7);padding:0px 1px 0px 1px;}
 		select.selBox { font-size:16px; color:#505050; padding:5px 10px; width:100%; margin-top:10px; }
-		.goldBox{ padding: 25px; } 
+		.goldBox{ padding: 25px; }
+		.goldBox2{ padding: 25px; } 
 		/* search */
 		.searchBoxp {position:relative; border-bottom:1px solid #fff; width:90%; margin:0 auto;  padding:10px 0px 0px 0px; margin-bottom:30px }
 		input.search-p {position:relative;  padding-bottom:12px; background:none; border:0; font-size:17px; color:#c196ff; letter-spacing:-1px; padding-left:45px; text-align:left; width:100%;line-height:100%; }
@@ -3885,6 +3914,7 @@ p.leaf03 {
 	.fw400 {font-weight:400}
 	.fw500 {font-weight:500}
 	.fw600 {font-weight:600}
+	.f13 {font-size:13px}
 	.f16 {font-size:16px}
 	.f18 {font-size:18px}
 	.f19 {font-size:19px}
@@ -4150,6 +4180,7 @@ box-shadow: 18px 18px 21px 4px rgba(0,0,0,0.17); }
 	/* �����������1200 ������ */
 	.mt80 {margin-top:40px}
 	.mt200 {margin-top:100px}
+	.f13 {font-size:13px}
 	.f16 {font-size:14px}
 	.f18 {font-size:16px}
 	.f19 {font-size:17px}
@@ -4242,6 +4273,14 @@ box-shadow: 8px 8px 10px 4px rgba(0,0,0,0.17); vertical-align:top ; margin-botto
 			.s-title05 {font-size:14px; font-weight:400; color:#000; line-height:140%; z-index:10; position:relative; margin-top:10px; text-align:left }
 			ul.s-numBox li:last-child .tumbtxt {border-top:1px solid #000; border-bottom:1px solid #000; font-size:9px; padding:3px 5px 3px 0 ; line-height:140%; text-align:right; font-weight:500 }
 	
+	/* 01_2026 */
+	.table_col3 {width:20%; display:inline-block; border-top:1px solid #676767; border-bottom:1px solid #676767; padding:0; background-color:#F3F3F3;}
+	.table_col3 dl:nth-child(1) {text-align:center; font-size:14px; font-weight:600; color:#4E8F6F; padding:14px 0; border-bottom:1px solid #676767;}
+	.table_col3 dl:nth-child(2) {text-align:center; font-size:14px; font-weight:600; color:#4E8F6F; padding:14px 0;}
+	.table_col9 {width:75%; display:inline-block; border-top:1px solid #676767; border-bottom:1px solid #676767; padding:0;}
+	.table_col9 dl:nth-child(1) {font-size:14px; padding:14px 0 14px 12px; border-bottom:1px solid #676767;}
+	.table_col9 dl:nth-child(2) {font-size:14px; padding:14px 0 14px 12px;}
+
 
 	/*����������� - slide */
 	#slider7 .slider {max-height:800px; height:100%; position:relative; width:100%;  float:right; margin-right:-80px; }
@@ -4744,6 +4783,6 @@ width:65px; padding:3px 0; margin-top:0  }
 /* //2023 3�б� ���㷹���� */
 
 
-
+li.simpleRec img {width:100px;margin-top:-3px }
 
 

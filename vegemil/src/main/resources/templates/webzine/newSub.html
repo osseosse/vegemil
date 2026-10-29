@@ -43,7 +43,15 @@
         <div class="content h550-3 home-content">
             <div class="hero-content fl-wrap h550-3">
 				<!-- IMG -->
-                <div th:class="|${qrtYear}_${num}|"></div> 
+                <!-- 동영상 비주얼 (CSS background로는 mp4 재생 불가) -->
+                <th:block th:if="${qrtYear == 'Q4_2026' and num == '07'}">
+                    <video autoplay loop muted playsinline
+                           th:poster="|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${num}.jpg|"
+                           style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <source th:src="|https://image.edaymall.com/images/dcf/webzine/${qrtYear}/${num}.mp4|" type="video/mp4">
+                    </video>
+                </th:block>
+                <div th:unless="${qrtYear == 'Q4_2026' and num == '07'}" th:class="|${qrtYear}_${num}|"></div>
                 <div th:class="|Q1_2023_01|"></div>
             </div>
         </div>
